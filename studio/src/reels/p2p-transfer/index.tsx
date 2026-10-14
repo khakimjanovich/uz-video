@@ -9,6 +9,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { getThemeTokens, ReelProps, ThemeName } from "../../themes";
 
 export const FPS = 30;
 export const DURATION_IN_FRAMES = 345;
@@ -52,11 +53,14 @@ export const P2PTransferComposition: React.FC = () => {
       fps={FPS}
       width={VIDEO_WIDTH}
       height={VIDEO_HEIGHT}
+      defaultProps={{
+        theme: "xray" as ThemeName,
+      }}
     />
   );
 };
 
-export const P2PVideo: React.FC = () => {
+export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -64,6 +68,10 @@ export const P2PVideo: React.FC = () => {
   const isPhase1 = frame < 145;
   const isPhase2 = frame >= 145 && frame < 252;
   const isPhase3 = frame >= 252;
+  const isBackendPhase = !isPhase1;
+
+  // Active theme tokens
+  const tokens = getThemeTokens(theme, isBackendPhase);
 
   // Header spring
   const headerSpring = spring({
@@ -130,12 +138,13 @@ export const P2PVideo: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#F8F9FA",
+        backgroundColor: tokens.background,
         fontFamily:
           '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", Roboto, sans-serif',
-        color: "#0F172A",
+        color: tokens.textColor,
         overflow: "hidden",
         position: "relative",
+        transition: "background-color 0.4s ease",
       }}
     >
       <Audio src={staticFile("reels/p2p-transfer/voiceover.mp3")} />
@@ -148,9 +157,9 @@ export const P2PVideo: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: "radial-gradient(#CBD5E1 1.2px, transparent 1.2px)",
+          backgroundImage: `radial-gradient(${tokens.gridColor} 1.4px, transparent 1.4px)`,
           backgroundSize: "36px 36px",
-          opacity: 0.45,
+          opacity: tokens.gridOpacity,
         }}
       />
       <div
@@ -162,8 +171,8 @@ export const P2PVideo: React.FC = () => {
           width: 960,
           height: 550,
           background: isPhase2
-            ? "radial-gradient(circle, rgba(239,68,68,0.12) 0%, rgba(245,158,11,0.06) 50%, transparent 75%)"
-            : "radial-gradient(circle, rgba(0,191,165,0.14) 0%, rgba(0,119,255,0.08) 50%, transparent 75%)",
+            ? "radial-gradient(circle, rgba(239,68,68,0.18) 0%, rgba(245,158,11,0.08) 50%, transparent 75%)"
+            : `radial-gradient(circle, ${tokens.glowColor1} 0%, ${tokens.glowColor2} 50%, transparent 75%)`,
           filter: "blur(60px)",
         }}
       />
@@ -191,8 +200,8 @@ export const P2PVideo: React.FC = () => {
             gap: 10,
             padding: "10px 24px",
             borderRadius: 999,
-            backgroundColor: "#FFFFFF",
-            border: "1px solid #E2E8F0",
+            backgroundColor: tokens.badgeBg,
+            border: tokens.badgeBorder,
             boxShadow: "0 4px 14px rgba(0,0,0,0.04)",
             marginBottom: 18,
           }}
@@ -211,7 +220,7 @@ export const P2PVideo: React.FC = () => {
               fontSize: 22,
               fontWeight: 700,
               letterSpacing: "0.08em",
-              color: "#475569",
+              color: tokens.badgeText,
               textTransform: "uppercase",
             }}
           >
@@ -229,7 +238,7 @@ export const P2PVideo: React.FC = () => {
             margin: 0,
             lineHeight: 1.15,
             letterSpacing: "-0.03em",
-            color: "#0F172A",
+            color: tokens.textColor,
           }}
         >
           {isPhase1 && (
@@ -269,16 +278,16 @@ export const P2PVideo: React.FC = () => {
         <div
           style={{
             flex: 1,
-            backgroundColor: "#FFFFFF",
+            backgroundColor: tokens.cardBg,
             borderRadius: 36,
             padding: 30,
-            border: "1.5px solid #E2E8F0",
-            boxShadow:
-              "0 20px 45px -12px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(0,0,0,0.04)",
+            border: tokens.cardBorder,
+            boxShadow: tokens.cardShadow,
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             position: "relative",
+            transition: "all 0.3s ease",
           }}
         >
           <div>
@@ -308,18 +317,23 @@ export const P2PVideo: React.FC = () => {
                   P
                 </div>
                 <div>
-                  <div style={{ fontSize: 22, fontWeight: 800 }}>Payme</div>
-                  <div style={{ fontSize: 16, color: "#64748B" }}>Alisher M.</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: tokens.textColor }}>
+                    Payme
+                  </div>
+                  <div style={{ fontSize: 16, color: tokens.subtextColor }}>
+                    Alisher M.
+                  </div>
                 </div>
               </div>
               <div
                 style={{
                   padding: "6px 14px",
                   borderRadius: 10,
-                  backgroundColor: "#F1F5F9",
+                  backgroundColor: tokens.badgeBg,
+                  border: tokens.badgeBorder,
                   fontSize: 16,
                   fontWeight: 700,
-                  color: "#334155",
+                  color: tokens.subtextColor,
                 }}
               >
                 HUMO
@@ -377,8 +391,8 @@ export const P2PVideo: React.FC = () => {
             style={{
               padding: "16px 20px",
               borderRadius: 18,
-              backgroundColor: frame >= 38 ? "#FEF2F2" : "#F8FAFC",
-              border: `1.5px solid ${frame >= 38 ? "#FCA5A5" : "#E2E8F0"}`,
+              backgroundColor: frame >= 38 ? "#FEF2F2" : tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
+              border: `1.5px solid ${frame >= 38 ? "#FCA5A5" : tokens.cardBorder.replace(/^1\.5px solid /, "")}`,
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -390,7 +404,7 @@ export const P2PVideo: React.FC = () => {
                 style={{
                   fontSize: 18,
                   fontWeight: 700,
-                  color: frame >= 38 ? "#DC2626" : "#64748B",
+                  color: frame >= 38 ? "#DC2626" : tokens.subtextColor,
                 }}
               >
                 {frame >= 38 ? "-500 000 UZS" : "O'tkazma tayyor"}
@@ -417,16 +431,16 @@ export const P2PVideo: React.FC = () => {
         <div
           style={{
             flex: 1,
-            backgroundColor: "#FFFFFF",
+            backgroundColor: tokens.cardBg,
             borderRadius: 36,
             padding: 30,
-            border: "1.5px solid #E2E8F0",
-            boxShadow:
-              "0 20px 45px -12px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(0,0,0,0.04)",
+            border: tokens.cardBorder,
+            boxShadow: tokens.cardShadow,
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             position: "relative",
+            transition: "all 0.3s ease",
           }}
         >
           <div>
@@ -456,15 +470,20 @@ export const P2PVideo: React.FC = () => {
                   C
                 </div>
                 <div>
-                  <div style={{ fontSize: 22, fontWeight: 800 }}>Click</div>
-                  <div style={{ fontSize: 16, color: "#64748B" }}>Jasur K.</div>
+                  <div style={{ fontSize: 22, fontWeight: 800, color: tokens.textColor }}>
+                    Click
+                  </div>
+                  <div style={{ fontSize: 16, color: tokens.subtextColor }}>
+                    Jasur K.
+                  </div>
                 </div>
               </div>
               <div
                 style={{
                   padding: "6px 14px",
                   borderRadius: 10,
-                  backgroundColor: "#F1F5F9",
+                  backgroundColor: tokens.badgeBg,
+                  border: tokens.badgeBorder,
                   fontSize: 16,
                   fontWeight: 700,
                   color: "#0077FF",
@@ -525,8 +544,8 @@ export const P2PVideo: React.FC = () => {
             style={{
               padding: "16px 20px",
               borderRadius: 18,
-              backgroundColor: frame >= 60 ? "#ECFDF5" : "#F8FAFC",
-              border: `1.5px solid ${frame >= 60 ? "#6EE7B7" : "#E2E8F0"}`,
+              backgroundColor: frame >= 60 ? "#ECFDF5" : tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
+              border: `1.5px solid ${frame >= 60 ? "#6EE7B7" : tokens.cardBorder.replace(/^1\.5px solid /, "")}`,
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -538,7 +557,7 @@ export const P2PVideo: React.FC = () => {
                 style={{
                   fontSize: 18,
                   fontWeight: 700,
-                  color: frame >= 60 ? "#059669" : "#64748B",
+                  color: frame >= 60 ? "#059669" : tokens.subtextColor,
                 }}
               >
                 {frame >= 60 ? "+500 000 UZS" : "Kutilmoqda..."}
@@ -614,11 +633,11 @@ export const P2PVideo: React.FC = () => {
         {isPhase1 && (
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: tokens.middleCardBg,
               borderRadius: 36,
               padding: "42px 36px",
-              border: "1.5px solid #E2E8F0",
-              boxShadow: "0 20px 45px -10px rgba(15,23,42,0.06)",
+              border: tokens.middleCardBorder,
+              boxShadow: tokens.middleCardShadow,
               textAlign: "center",
             }}
           >
@@ -626,7 +645,7 @@ export const P2PVideo: React.FC = () => {
               style={{
                 fontSize: 18,
                 fontWeight: 700,
-                color: "#64748B",
+                color: tokens.subtextColor,
                 textTransform: "uppercase",
                 letterSpacing: "0.08em",
                 marginBottom: 12,
@@ -638,7 +657,7 @@ export const P2PVideo: React.FC = () => {
               style={{
                 fontSize: 34,
                 fontWeight: 800,
-                color: "#0F172A",
+                color: tokens.textColor,
                 marginBottom: 32,
               }}
             >
@@ -657,9 +676,11 @@ export const P2PVideo: React.FC = () => {
                 style={{
                   padding: "18px 28px",
                   borderRadius: 20,
-                  backgroundColor: "#F1F5F9",
+                  backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
+                  border: tokens.cardBorder,
                   fontWeight: 700,
                   fontSize: 22,
+                  color: tokens.textColor,
                 }}
               >
                 Kapitalbank (HUMO)
@@ -677,9 +698,11 @@ export const P2PVideo: React.FC = () => {
                 style={{
                   padding: "18px 28px",
                   borderRadius: 20,
-                  backgroundColor: "#F1F5F9",
+                  backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
+                  border: tokens.cardBorder,
                   fontWeight: 700,
                   fontSize: 22,
+                  color: tokens.textColor,
                 }}
               >
                 Ipak Yo&apos;li (UZCARD)
@@ -694,14 +717,15 @@ export const P2PVideo: React.FC = () => {
                 gap: 12,
                 padding: "14px 28px",
                 borderRadius: 999,
-                backgroundColor: "#ECFDF5",
-                color: "#065F46",
+                backgroundColor: tokens.background === "#090D16" ? "rgba(16, 185, 129, 0.2)" : "#ECFDF5",
+                color: tokens.background === "#090D16" ? "#4ADE80" : "#065F46",
                 fontWeight: 700,
                 fontSize: 20,
+                border: "1px solid rgba(16, 185, 129, 0.3)",
               }}
             >
               <span>⏱️ Tranzaksiya tezligi:</span>
-              <span style={{ fontWeight: 900, color: "#059669" }}>
+              <span style={{ fontWeight: 900, color: "#10B981" }}>
                 0.38 soniya
               </span>
             </div>
@@ -712,11 +736,11 @@ export const P2PVideo: React.FC = () => {
         {isPhase2 && (
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: tokens.middleCardBg,
               borderRadius: 36,
               padding: "44px 38px",
-              border: "2px solid #FCA5A5",
-              boxShadow: "0 25px 50px -12px rgba(239,68,68,0.15)",
+              border: "2px solid #EF4444",
+              boxShadow: "0 25px 50px -12px rgba(239,68,68,0.25), 0 0 25px rgba(239,68,68,0.1)",
               textAlign: "center",
               transform: `scale(${interpolate(phase2Spring, [0, 1], [0.92, 1])})`,
               opacity: phase2Spring,
@@ -745,7 +769,7 @@ export const P2PVideo: React.FC = () => {
               style={{
                 fontSize: 38,
                 fontWeight: 800,
-                color: "#0F172A",
+                color: tokens.textColor,
                 lineHeight: 1.25,
                 marginBottom: 26,
               }}
@@ -758,7 +782,7 @@ export const P2PVideo: React.FC = () => {
               style={{
                 padding: "26px 36px",
                 borderRadius: 24,
-                backgroundColor: "#FFF1F2",
+                backgroundColor: tokens.background === "#090D16" ? "rgba(239, 68, 68, 0.15)" : "#FFF1F2",
                 border: "2.5px dashed #EF4444",
                 marginBottom: 28,
               }}
@@ -777,7 +801,7 @@ export const P2PVideo: React.FC = () => {
                 style={{
                   fontSize: 22,
                   fontWeight: 700,
-                  color: "#991B1B",
+                  color: tokens.background === "#090D16" ? "#FCA5A5" : "#991B1B",
                   marginTop: 6,
                 }}
               >
@@ -792,15 +816,15 @@ export const P2PVideo: React.FC = () => {
                 alignItems: "center",
                 padding: "20px 24px",
                 borderRadius: 20,
-                backgroundColor: "#F8FAFC",
-                border: "1.5px solid #E2E8F0",
+                backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F8FAFC",
+                border: tokens.cardBorder,
               }}
             >
               <div style={{ textAlign: "left" }}>
-                <div style={{ fontSize: 16, color: "#64748B", fontWeight: 600 }}>
+                <div style={{ fontSize: 16, color: tokens.subtextColor, fontWeight: 600 }}>
                   Bank A Nostro
                 </div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: "#0F172A" }}>
+                <div style={{ fontSize: 20, fontWeight: 800, color: tokens.textColor }}>
                   Kapitalbank
                 </div>
               </div>
@@ -822,10 +846,10 @@ export const P2PVideo: React.FC = () => {
                 <span>Qatnov yo&apos;q</span>
               </div>
               <div style={{ textAlign: "right" }}>
-                <div style={{ fontSize: 16, color: "#64748B", fontWeight: 600 }}>
+                <div style={{ fontSize: 16, color: tokens.subtextColor, fontWeight: 600 }}>
                   Bank B Nostro
                 </div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: "#0F172A" }}>
+                <div style={{ fontSize: 20, fontWeight: 800, color: tokens.textColor }}>
                   Ipak Yo&apos;li Bank
                 </div>
               </div>
@@ -837,11 +861,11 @@ export const P2PVideo: React.FC = () => {
         {isPhase3 && (
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: tokens.middleCardBg,
               borderRadius: 36,
               padding: "40px 36px",
-              border: "2px solid #38BDF8",
-              boxShadow: "0 25px 50px -12px rgba(14,165,233,0.18)",
+              border: "2px solid #0284C7",
+              boxShadow: "0 25px 50px -12px rgba(14,165,233,0.3), 0 0 30px rgba(14,165,233,0.12)",
               transform: `scale(${interpolate(phase3Spring, [0, 1], [0.92, 1])})`,
               opacity: phase3Spring,
             }}
@@ -875,13 +899,13 @@ export const P2PVideo: React.FC = () => {
                   style={{
                     fontSize: 36,
                     fontWeight: 900,
-                    color: "#0F172A",
+                    color: tokens.textColor,
                     letterSpacing: "-0.02em",
                   }}
                 >
                   Pul qayerdan keldi?
                 </div>
-                <div style={{ fontSize: 18, color: "#64748B", fontWeight: 600 }}>
+                <div style={{ fontSize: 18, color: tokens.subtextColor, fontWeight: 600 }}>
                   Fintech arxitekturasining 3 asosiy qoidasi:
                 </div>
               </div>
@@ -923,8 +947,8 @@ export const P2PVideo: React.FC = () => {
                       gap: 18,
                       padding: "16px 20px",
                       borderRadius: 20,
-                      backgroundColor: "#F8FAFC",
-                      border: "1px solid #E2E8F0",
+                      backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
+                      border: tokens.cardBorder,
                       transform: `translateY(${interpolate(itemSpring, [0, 1], [20, 0])}px)`,
                       opacity: itemSpring,
                     }}
@@ -934,8 +958,8 @@ export const P2PVideo: React.FC = () => {
                         width: 42,
                         height: 42,
                         borderRadius: 14,
-                        backgroundColor: "#0F172A",
-                        color: "#FFFFFF",
+                        backgroundColor: tokens.background === "#090D16" ? "#38BDF8" : "#0F172A",
+                        color: tokens.background === "#090D16" ? "#0F172A" : "#FFFFFF",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -951,13 +975,13 @@ export const P2PVideo: React.FC = () => {
                         style={{
                           fontSize: 20,
                           fontWeight: 800,
-                          color: "#0F172A",
+                          color: tokens.textColor,
                           marginBottom: 4,
                         }}
                       >
                         {item.title}
                       </div>
-                      <div style={{ fontSize: 16, color: "#475569" }}>
+                      <div style={{ fontSize: 16, color: tokens.subtextColor }}>
                         {item.desc}
                       </div>
                     </div>
@@ -982,15 +1006,15 @@ export const P2PVideo: React.FC = () => {
       >
         <div
           style={{
-            backgroundColor: "#FFFFFF",
+            backgroundColor: tokens.subtitleBg,
             borderRadius: 28,
-            padding: "26px 36px",
-            border: "1.5px solid #E2E8F0",
-            boxShadow:
-              "0 25px 45px -10px rgba(15, 23, 42, 0.1), 0 2px 6px rgba(0,0,0,0.04)",
+            padding: tokens.showSubtitleHeader ? "24px 36px" : "28px 36px",
+            border: tokens.subtitleBorder,
+            boxShadow: tokens.subtitleShadow,
             display: "flex",
             alignItems: "center",
             gap: 20,
+            transition: "all 0.3s ease",
           }}
         >
           <div
@@ -998,7 +1022,7 @@ export const P2PVideo: React.FC = () => {
               width: 50,
               height: 50,
               borderRadius: 16,
-              backgroundColor: isPhase2 ? "#FEF2F2" : "#ECFDF5",
+              backgroundColor: isPhase2 ? "#FEF2F2" : tokens.background === "#090D16" ? "rgba(0,191,165,0.15)" : "#ECFDF5",
               color: isPhase2 ? "#DC2626" : "#059669",
               display: "flex",
               alignItems: "center",
@@ -1011,24 +1035,26 @@ export const P2PVideo: React.FC = () => {
           </div>
 
           <div style={{ flex: 1 }}>
-            <div
-              style={{
-                fontSize: 14,
-                fontWeight: 700,
-                color: "#94A3B8",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                marginBottom: 6,
-              }}
-            >
-              Ovozli matn (Uzbek TTS)
-            </div>
+            {tokens.showSubtitleHeader && (
+              <div
+                style={{
+                  fontSize: 14,
+                  fontWeight: 700,
+                  color: "#94A3B8",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  marginBottom: 6,
+                }}
+              >
+                Ovozli matn (Uzbek TTS)
+              </div>
+            )}
             <div
               style={{
                 fontSize: 28,
                 fontWeight: 700,
-                lineHeight: 1.3,
-                color: "#0F172A",
+                lineHeight: 1.35,
+                color: tokens.subtitleTextColor,
               }}
             >
               {currentSubtitle.prefix}<span
@@ -1036,8 +1062,8 @@ export const P2PVideo: React.FC = () => {
                   color: isPhase2 ? "#DC2626" : "#00BFA5",
                   fontWeight: 900,
                   backgroundColor: isPhase2
-                    ? "rgba(239,68,68,0.12)"
-                    : "rgba(0,191,165,0.12)",
+                    ? "rgba(239,68,68,0.15)"
+                    : "rgba(0,191,165,0.15)",
                   padding: "2px 8px",
                   borderRadius: 6,
                 }}
@@ -1060,7 +1086,7 @@ export const P2PVideo: React.FC = () => {
           alignItems: "center",
           justifyContent: "center",
           gap: 10,
-          color: "#94A3B8",
+          color: tokens.footerColor,
           fontSize: 18,
           fontWeight: 600,
         }}

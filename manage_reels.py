@@ -2,6 +2,7 @@
 """
 Uzbek Tech Reel Manager & Regenerator
 Manages code-only, fully regeneratable Remotion tech reels.
+Supports swappable voices (sardor / madina) and visual themes (xray / dark / light).
 Git tracks only scripts (txt), subtitles (srt), and React/Remotion code (tsx).
 Binary audio (mp3) and video (mp4) are generated on-demand.
 """
@@ -11,6 +12,7 @@ import sys
 import shutil
 import re
 import math
+import json
 import subprocess
 import argparse
 from pathlib import Path
@@ -20,6 +22,15 @@ STUDIO_DIR = ROOT_DIR / "studio"
 REELS_SRC_DIR = STUDIO_DIR / "src" / "reels"
 PUBLIC_REELS_DIR = STUDIO_DIR / "public" / "reels"
 OUT_DIR = ROOT_DIR / "out"
+
+VOICE_MAP = {
+    "sardor": "uz-UZ-SardorNeural",
+    "madina": "uz-UZ-MadinaNeural",
+}
+
+
+def resolve_voice(voice: str) -> str:
+    return VOICE_MAP.get(voice.lower(), voice)
 
 
 def get_edge_tts_bin():
@@ -102,7 +113,8 @@ def list_reels():
     print("\n" + "=" * 65 + "\n")
 
 
-def generate_voice(reel_name: str, voice="uz-UZ-SardorNeural", rate="+5%"):
+def generate_voice(reel_name: str, voice_raw="sardor", rate="+5%"):
+    voice = resolve_voice(voice_raw)
     reel_dir = REELS_SRC_DIR / reel_name
     if not reel_dir.exists():
         print(f"Error: Reel '{reel_name}' does not exist in {REELS_SRC_DIR}", file=sys.stderr)
@@ -128,7 +140,7 @@ def generate_voice(reel_name: str, voice="uz-UZ-SardorNeural", rate="+5%"):
         "--write-subtitles", str(dest_srt),
     ]
 
-    print(f"🎙️ Generating voice for '{reel_name}' ({voice}, {rate})...")
+    print(f"🎙️ Generating voice for '{reel_name}' (voice: {voice}, rate: {rate})...")
     subprocess.run(cmd, check=True)
 
     cues = parse_srt_file(dest_srt)
@@ -141,7 +153,7 @@ def generate_voice(reel_name: str, voice="uz-UZ-SardorNeural", rate="+5%"):
     return True
 
 
-def render_video(reel_name: str):
+def render_video(reel_name: str, theme="xray"):
     reel_dir = REELS_SRC_DIR / reel_name
     if not reel_dir.exists():
         print(f"Error: Reel '{reel_name}' not found.", file=sys.stderr)
@@ -154,13 +166,15 @@ def render_video(reel_name: str):
         generate_voice(reel_name)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_file = OUT_DIR / f"{reel_name}.mp4"
+    out_file = OUT_DIR / f"{reel_name}-{theme}.mp4"
+    props_arg = json.dumps({"theme": theme})
 
-    print(f"🎬 Rendering reel '{reel_name}' -> {out_file}...")
+    print(f"🎬 Rendering reel '{reel_name}' [Theme: {theme}] -> {out_file}...")
     cmd = [
         "npx", "remotion", "render",
         reel_name,
         str(out_file),
+        f"--props={props_arg}",
     ]
     subprocess.run(cmd, cwd=str(STUDIO_DIR), check=True)
     print(f"🎉 Render finished! Video ready at: {out_file}\n")
@@ -168,13 +182,17 @@ def render_video(reel_name: str):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Manage code-only regeneratable Uzbek Tech Reels")
+    parser = argparse.ArgumentParser(description="Manage code-only regeneratable Uzbek Tech Reels with themes & voices")
     parser.add_argument("command", choices=["list", "voice", "render", "build"], nargs="?", default="list",
                         help="Action to perform (default: list)")
     parser.add_argument("reel", nargs="?", default="all",
                         help="Reel ID name or 'all'")
-    parser.add_argument("--voice", default="uz-UZ-SardorNeural", help="TTS voice (default: uz-UZ-SardorNeural)")
-    parser.add_argument("--rate", default="+5%", help="TTS speech rate (default: +5%%)")
+    parser.add_argument("--voice", default="sardor",
+                        help="TTS voice: sardor, madina, or full voice name (default: sardor)")
+    parser.add_argument("--rate", default="+5%",
+                        help="TTS speech rate (default: +5%%)")
+    parser.add_argument("--theme", choices=["xray", "dark", "light"], default="xray",
+                        help="Visual theme: xray, dark, or light (default: xray)")
 
     args = parser.parse_args()
 
@@ -191,9 +209,9 @@ def main():
         if args.reel == "all":
             reels = sorted([p.name for p in REELS_SRC_DIR.iterdir() if p.is_dir()])
             for r in reels:
-                render_video(r)
+                render_video(r, args.theme)
         else:
-            render_video(args.reel)
+            render_video(args.reel, args.theme)
 
 
 if __name__ == "__main__":

@@ -9,6 +9,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { getThemeTokens, ReelProps, ThemeName } from "../../themes";
 
 export const FPS = 30;
 export const DURATION_IN_FRAMES = 510;
@@ -49,11 +50,14 @@ export const CardTokenizationComposition: React.FC = () => {
       fps={FPS}
       width={VIDEO_WIDTH}
       height={VIDEO_HEIGHT}
+      defaultProps={{
+        theme: "xray" as ThemeName,
+      }}
     />
   );
 };
 
-export const CardTokenizationVideo: React.FC = () => {
+export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -61,6 +65,10 @@ export const CardTokenizationVideo: React.FC = () => {
   const isPhase1 = frame < 188;
   const isPhase2 = frame >= 188 && frame < 330;
   const isPhase3 = frame >= 330;
+  const isBackendPhase = !isPhase1;
+
+  // Active Theme Tokens
+  const tokens = getThemeTokens(theme, isBackendPhase);
 
   // Header entrance spring
   const headerSpring = spring({
@@ -134,12 +142,13 @@ export const CardTokenizationVideo: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#F8F9FA",
+        backgroundColor: tokens.background,
         fontFamily:
           '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", Roboto, sans-serif',
-        color: "#0F172A",
+        color: tokens.textColor,
         overflow: "hidden",
         position: "relative",
+        transition: "background-color 0.4s ease",
       }}
     >
       <Audio src={staticFile("reels/card-tokenization/voiceover.mp3")} />
@@ -152,9 +161,9 @@ export const CardTokenizationVideo: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: "radial-gradient(#CBD5E1 1.2px, transparent 1.2px)",
+          backgroundImage: `radial-gradient(${tokens.gridColor} 1.4px, transparent 1.4px)`,
           backgroundSize: "36px 36px",
-          opacity: 0.45,
+          opacity: tokens.gridOpacity,
         }}
       />
       <div
@@ -166,10 +175,8 @@ export const CardTokenizationVideo: React.FC = () => {
           width: 980,
           height: 520,
           background: isPhase2
-            ? "radial-gradient(circle, rgba(239,68,68,0.14) 0%, rgba(245,158,11,0.06) 50%, transparent 75%)"
-            : isPhase3
-            ? "radial-gradient(circle, rgba(14,165,233,0.15) 0%, rgba(99,102,241,0.08) 50%, transparent 75%)"
-            : "radial-gradient(circle, rgba(16,185,129,0.14) 0%, rgba(14,165,233,0.08) 50%, transparent 75%)",
+            ? "radial-gradient(circle, rgba(239,68,68,0.18) 0%, rgba(245,158,11,0.08) 50%, transparent 75%)"
+            : `radial-gradient(circle, ${tokens.glowColor1} 0%, ${tokens.glowColor2} 50%, transparent 75%)`,
           filter: "blur(60px)",
         }}
       />
@@ -197,8 +204,8 @@ export const CardTokenizationVideo: React.FC = () => {
             gap: 10,
             padding: "10px 24px",
             borderRadius: 999,
-            backgroundColor: "#FFFFFF",
-            border: "1px solid #E2E8F0",
+            backgroundColor: tokens.badgeBg,
+            border: tokens.badgeBorder,
             boxShadow: "0 4px 14px rgba(0,0,0,0.04)",
             marginBottom: 18,
           }}
@@ -221,7 +228,7 @@ export const CardTokenizationVideo: React.FC = () => {
               fontSize: 22,
               fontWeight: 700,
               letterSpacing: "0.08em",
-              color: "#475569",
+              color: tokens.badgeText,
               textTransform: "uppercase",
             }}
           >
@@ -239,7 +246,7 @@ export const CardTokenizationVideo: React.FC = () => {
             margin: 0,
             lineHeight: 1.15,
             letterSpacing: "-0.03em",
-            color: "#0F172A",
+            color: tokens.textColor,
           }}
         >
           {isPhase1 && (
@@ -278,15 +285,15 @@ export const CardTokenizationVideo: React.FC = () => {
       >
         <div
           style={{
-            backgroundColor: "#FFFFFF",
+            backgroundColor: tokens.cardBg,
             borderRadius: 36,
             padding: 32,
-            border: "1.5px solid #E2E8F0",
-            boxShadow:
-              "0 20px 45px -12px rgba(15, 23, 42, 0.08), 0 2px 5px rgba(0,0,0,0.04)",
+            border: tokens.cardBorder,
+            boxShadow: tokens.cardShadow,
             display: "flex",
             flexDirection: "column",
             gap: 20,
+            transition: "all 0.3s ease",
           }}
         >
           {/* Top Bar: Food Delivery Header */}
@@ -315,10 +322,10 @@ export const CardTokenizationVideo: React.FC = () => {
                 🛵
               </div>
               <div>
-                <div style={{ fontSize: 24, fontWeight: 800 }}>
+                <div style={{ fontSize: 24, fontWeight: 800, color: tokens.textColor }}>
                   Yetkazib berish ilovasi
                 </div>
-                <div style={{ fontSize: 16, color: "#64748B" }}>
+                <div style={{ fontSize: 16, color: tokens.subtextColor }}>
                   Buyurtma: Issiq Lavash + Cola • 85 000 so&apos;m
                 </div>
               </div>
@@ -327,10 +334,11 @@ export const CardTokenizationVideo: React.FC = () => {
               style={{
                 padding: "6px 16px",
                 borderRadius: 12,
-                backgroundColor: "#F1F5F9",
+                backgroundColor: tokens.badgeBg,
+                border: tokens.badgeBorder,
                 fontSize: 16,
                 fontWeight: 700,
-                color: "#475569",
+                color: tokens.subtextColor,
               }}
             >
               Buyurtma #4821
@@ -410,8 +418,8 @@ export const CardTokenizationVideo: React.FC = () => {
                 gap: 12,
                 padding: "12px 18px",
                 borderRadius: 16,
-                backgroundColor: "#F8FAFC",
-                border: "1.5px solid #E2E8F0",
+                backgroundColor: isBackendPhase && tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
+                border: tokens.cardBorder,
               }}
             >
               <div
@@ -430,7 +438,7 @@ export const CardTokenizationVideo: React.FC = () => {
               >
                 ✓
               </div>
-              <span style={{ fontSize: 18, fontWeight: 700, color: "#0F172A" }}>
+              <span style={{ fontSize: 18, fontWeight: 700, color: tokens.textColor }}>
                 Kartani saqlash (Eslab qolish)
               </span>
             </div>
@@ -476,11 +484,11 @@ export const CardTokenizationVideo: React.FC = () => {
         {isPhase1 && (
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: tokens.middleCardBg,
               borderRadius: 36,
               padding: "42px 36px",
-              border: "1.5px solid #E2E8F0",
-              boxShadow: "0 20px 45px -10px rgba(15,23,42,0.06)",
+              border: tokens.middleCardBorder,
+              boxShadow: tokens.middleCardShadow,
               textAlign: "center",
             }}
           >
@@ -488,7 +496,7 @@ export const CardTokenizationVideo: React.FC = () => {
               style={{
                 fontSize: 18,
                 fontWeight: 700,
-                color: "#64748B",
+                color: tokens.subtextColor,
                 textTransform: "uppercase",
                 letterSpacing: "0.08em",
                 marginBottom: 14,
@@ -500,7 +508,7 @@ export const CardTokenizationVideo: React.FC = () => {
               style={{
                 fontSize: 34,
                 fontWeight: 800,
-                color: "#0F172A",
+                color: tokens.textColor,
                 lineHeight: 1.25,
                 marginBottom: 30,
               }}
@@ -521,9 +529,11 @@ export const CardTokenizationVideo: React.FC = () => {
                 style={{
                   padding: "18px 26px",
                   borderRadius: 20,
-                  backgroundColor: "#F1F5F9",
+                  backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
+                  border: tokens.cardBorder,
                   fontWeight: 700,
                   fontSize: 22,
+                  color: tokens.textColor,
                 }}
               >
                 📱 Ilova bazasi
@@ -552,10 +562,11 @@ export const CardTokenizationVideo: React.FC = () => {
                 gap: 10,
                 padding: "12px 24px",
                 borderRadius: 999,
-                backgroundColor: "#FEF3C7",
-                color: "#92400E",
+                backgroundColor: tokens.background === "#090D16" ? "rgba(245, 158, 11, 0.2)" : "#FEF3C7",
+                color: tokens.background === "#090D16" ? "#FCD34D" : "#92400E",
                 fontSize: 20,
                 fontWeight: 700,
+                border: "1px solid rgba(245, 158, 11, 0.3)",
               }}
             >
               <span>🤔 Haqiqatda qayerda saqlanadi?</span>
@@ -567,11 +578,11 @@ export const CardTokenizationVideo: React.FC = () => {
         {isPhase2 && (
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: tokens.middleCardBg,
               borderRadius: 36,
               padding: "40px 38px",
-              border: "2px solid #FCA5A5",
-              boxShadow: "0 25px 50px -12px rgba(239,68,68,0.18)",
+              border: "2px solid #EF4444",
+              boxShadow: "0 25px 50px -12px rgba(239,68,68,0.25), 0 0 25px rgba(239,68,68,0.1)",
               transform: `scale(${interpolate(phase2Spring, [0, 1], [0.92, 1])})`,
               opacity: phase2Spring,
               position: "relative",
@@ -587,7 +598,7 @@ export const CardTokenizationVideo: React.FC = () => {
                 height: 2,
                 background: "linear-gradient(90deg, transparent, #EF4444, transparent)",
                 boxShadow: "0 0 12px #EF4444",
-                opacity: 0.6,
+                opacity: 0.8,
               }}
             />
 
@@ -614,7 +625,7 @@ export const CardTokenizationVideo: React.FC = () => {
                 style={{
                   fontSize: 36,
                   fontWeight: 800,
-                  color: "#0F172A",
+                  color: tokens.textColor,
                 }}
               >
                 Ilova bazasida karta ma&apos;lumotlari:
@@ -636,11 +647,11 @@ export const CardTokenizationVideo: React.FC = () => {
                   alignItems: "center",
                   padding: "18px 22px",
                   borderRadius: 18,
-                  backgroundColor: "#FFF1F2",
-                  border: "1.5px solid #FECDD3",
+                  backgroundColor: tokens.background === "#090D16" ? "rgba(239, 68, 68, 0.12)" : "#FFF1F2",
+                  border: "1.5px solid rgba(239, 68, 68, 0.35)",
                 }}
               >
-                <span style={{ fontSize: 20, fontWeight: 700, color: "#881337" }}>
+                <span style={{ fontSize: 20, fontWeight: 700, color: tokens.textColor }}>
                   16 talik Karta Raqami (PAN)
                 </span>
                 <span
@@ -664,11 +675,11 @@ export const CardTokenizationVideo: React.FC = () => {
                   alignItems: "center",
                   padding: "18px 22px",
                   borderRadius: 18,
-                  backgroundColor: "#FFF1F2",
-                  border: "1.5px solid #FECDD3",
+                  backgroundColor: tokens.background === "#090D16" ? "rgba(239, 68, 68, 0.12)" : "#FFF1F2",
+                  border: "1.5px solid rgba(239, 68, 68, 0.35)",
                 }}
               >
-                <span style={{ fontSize: 20, fontWeight: 700, color: "#881337" }}>
+                <span style={{ fontSize: 20, fontWeight: 700, color: tokens.textColor }}>
                   CVV / CVC Maxfiy Kod
                 </span>
                 <span
@@ -690,16 +701,16 @@ export const CardTokenizationVideo: React.FC = () => {
               style={{
                 padding: "16px 20px",
                 borderRadius: 18,
-                backgroundColor: "#F8FAFC",
-                border: "1.5px solid #E2E8F0",
+                backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F8FAFC",
+                border: tokens.cardBorder,
                 display: "flex",
                 alignItems: "center",
                 gap: 14,
               }}
             >
               <span style={{ fontSize: 28 }}>🛡️</span>
-              <span style={{ fontSize: 18, fontWeight: 600, color: "#475569" }}>
-                <strong style={{ color: "#0F172A" }}>PCI-DSS Xalqaro qoidasi:</strong>{" "}
+              <span style={{ fontSize: 18, fontWeight: 600, color: tokens.subtextColor }}>
+                <strong style={{ color: tokens.textColor }}>PCI-DSS Xalqaro qoidasi:</strong>{" "}
                 Ilovaga to&apos;liq karta raqamini saqlash taqiqlanadi!
               </span>
             </div>
@@ -710,11 +721,11 @@ export const CardTokenizationVideo: React.FC = () => {
         {isPhase3 && (
           <div
             style={{
-              backgroundColor: "#FFFFFF",
+              backgroundColor: tokens.middleCardBg,
               borderRadius: 36,
               padding: "36px 36px",
-              border: "2px solid #38BDF8",
-              boxShadow: "0 25px 50px -12px rgba(14,165,233,0.18)",
+              border: "2px solid #0284C7",
+              boxShadow: "0 25px 50px -12px rgba(14,165,233,0.3), 0 0 30px rgba(14,165,233,0.12)",
               transform: `scale(${interpolate(phase3Spring, [0, 1], [0.92, 1])})`,
               opacity: phase3Spring,
             }}
@@ -744,10 +755,10 @@ export const CardTokenizationVideo: React.FC = () => {
                 ⚡
               </div>
               <div>
-                <div style={{ fontSize: 32, fontWeight: 900, color: "#0F172A" }}>
+                <div style={{ fontSize: 32, fontWeight: 900, color: tokens.textColor }}>
                   Tokenizatsiya Jarayoni
                 </div>
-                <div style={{ fontSize: 17, color: "#64748B", fontWeight: 600 }}>
+                <div style={{ fontSize: 17, color: tokens.subtextColor, fontWeight: 600 }}>
                   Karta va Ilova o&apos;rtasidagi xavfsiz shlyuz
                 </div>
               </div>
@@ -759,8 +770,8 @@ export const CardTokenizationVideo: React.FC = () => {
                 style={{
                   padding: "18px 22px",
                   borderRadius: 20,
-                  backgroundColor: "#F0FDF4",
-                  border: "1.5px solid #86EFAC",
+                  backgroundColor: tokens.background === "#090D16" ? "rgba(16, 185, 129, 0.12)" : "#F0FDF4",
+                  border: "1.5px solid rgba(16, 185, 129, 0.4)",
                   display: "flex",
                   alignItems: "center",
                   gap: 18,
@@ -772,13 +783,13 @@ export const CardTokenizationVideo: React.FC = () => {
                     style={{
                       fontSize: 19,
                       fontWeight: 800,
-                      color: "#166534",
+                      color: tokens.background === "#090D16" ? "#4ADE80" : "#166534",
                       marginBottom: 2,
                     }}
                   >
                     PCI-DSS Bank Shlyuzi (Vault)
                   </div>
-                  <div style={{ fontSize: 15, color: "#15803D" }}>
+                  <div style={{ fontSize: 15, color: tokens.background === "#090D16" ? "#86EFAC" : "#15803D" }}>
                     Haqiqiy karta faqat bankda <strong>AES-256</strong> bilan
                     shifrlanadi.
                   </div>
@@ -787,8 +798,8 @@ export const CardTokenizationVideo: React.FC = () => {
                   style={{
                     padding: "6px 12px",
                     borderRadius: 10,
-                    backgroundColor: "#DCFCE7",
-                    color: "#166534",
+                    backgroundColor: tokens.background === "#090D16" ? "rgba(16, 185, 129, 0.25)" : "#DCFCE7",
+                    color: tokens.background === "#090D16" ? "#86EFAC" : "#166534",
                     fontSize: 14,
                     fontWeight: 800,
                   }}
@@ -803,7 +814,7 @@ export const CardTokenizationVideo: React.FC = () => {
                   textAlign: "center",
                   fontSize: 22,
                   fontWeight: 900,
-                  color: "#0284C7",
+                  color: "#38BDF8",
                 }}
               >
                 ⬇️ Karta o&apos;rniga Token yaratiladi ⬇️
@@ -814,8 +825,8 @@ export const CardTokenizationVideo: React.FC = () => {
                 style={{
                   padding: "18px 22px",
                   borderRadius: 20,
-                  backgroundColor: "#F0F9FF",
-                  border: "1.5px solid #7DD3FC",
+                  backgroundColor: tokens.background === "#090D16" ? "rgba(56, 189, 248, 0.12)" : "#F0F9FF",
+                  border: "1.5px solid rgba(56, 189, 248, 0.4)",
                   display: "flex",
                   alignItems: "center",
                   gap: 18,
@@ -827,7 +838,7 @@ export const CardTokenizationVideo: React.FC = () => {
                     style={{
                       fontSize: 19,
                       fontWeight: 800,
-                      color: "#075985",
+                      color: tokens.background === "#090D16" ? "#38BDF8" : "#075985",
                       marginBottom: 4,
                     }}
                   >
@@ -839,7 +850,8 @@ export const CardTokenizationVideo: React.FC = () => {
                       fontWeight: 700,
                       fontFamily: "monospace",
                       color: "#0284C7",
-                      backgroundColor: "#E0F2FE",
+                      backgroundColor: tokens.background === "#090D16" ? "rgba(15, 23, 42, 0.8)" : "#E0F2FE",
+                      border: "1px solid rgba(56, 189, 248, 0.2)",
                       padding: "6px 14px",
                       borderRadius: 10,
                       display: "inline-block",
@@ -852,8 +864,8 @@ export const CardTokenizationVideo: React.FC = () => {
                   style={{
                     padding: "6px 12px",
                     borderRadius: 10,
-                    backgroundColor: "#E0F2FE",
-                    color: "#0369A1",
+                    backgroundColor: tokens.background === "#090D16" ? "rgba(56, 189, 248, 0.25)" : "#E0F2FE",
+                    color: tokens.background === "#090D16" ? "#7DD3FC" : "#0369A1",
                     fontSize: 14,
                     fontWeight: 800,
                   }}
@@ -869,7 +881,7 @@ export const CardTokenizationVideo: React.FC = () => {
                 textAlign: "center",
                 fontSize: 17,
                 fontWeight: 700,
-                color: "#475569",
+                color: tokens.subtextColor,
               }}
             >
               💡 Ilova buzilsa ham, Token begona joyda <strong>0 so&apos;m</strong> ahamiyatga ega!
@@ -891,15 +903,15 @@ export const CardTokenizationVideo: React.FC = () => {
       >
         <div
           style={{
-            backgroundColor: "#FFFFFF",
+            backgroundColor: tokens.subtitleBg,
             borderRadius: 28,
-            padding: "26px 36px",
-            border: "1.5px solid #E2E8F0",
-            boxShadow:
-              "0 25px 45px -10px rgba(15, 23, 42, 0.1), 0 2px 6px rgba(0,0,0,0.04)",
+            padding: tokens.showSubtitleHeader ? "24px 36px" : "28px 36px",
+            border: tokens.subtitleBorder,
+            boxShadow: tokens.subtitleShadow,
             display: "flex",
             alignItems: "center",
             gap: 20,
+            transition: "all 0.3s ease",
           }}
         >
           <div
@@ -907,7 +919,7 @@ export const CardTokenizationVideo: React.FC = () => {
               width: 50,
               height: 50,
               borderRadius: 16,
-              backgroundColor: isPhase2 ? "#FEF2F2" : "#F0F9FF",
+              backgroundColor: isPhase2 ? "#FEF2F2" : tokens.background === "#090D16" ? "rgba(56, 189, 248, 0.15)" : "#F0F9FF",
               color: isPhase2 ? "#DC2626" : "#0284C7",
               display: "flex",
               alignItems: "center",
@@ -920,24 +932,26 @@ export const CardTokenizationVideo: React.FC = () => {
           </div>
 
           <div style={{ flex: 1 }}>
-            <div
-              style={{
-                fontSize: 14,
-                fontWeight: 700,
-                color: "#94A3B8",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                marginBottom: 6,
-              }}
-            >
-              Ovozli matn (Uzbek TTS)
-            </div>
+            {tokens.showSubtitleHeader && (
+              <div
+                style={{
+                  fontSize: 14,
+                  fontWeight: 700,
+                  color: "#94A3B8",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  marginBottom: 6,
+                }}
+              >
+                Ovozli matn (Uzbek TTS)
+              </div>
+            )}
             <div
               style={{
                 fontSize: 28,
                 fontWeight: 700,
-                lineHeight: 1.3,
-                color: "#0F172A",
+                lineHeight: 1.35,
+                color: tokens.subtitleTextColor,
               }}
             >
               {currentSubtitle.prefix}<span
@@ -945,8 +959,8 @@ export const CardTokenizationVideo: React.FC = () => {
                   color: isPhase2 ? "#DC2626" : "#0284C7",
                   fontWeight: 900,
                   backgroundColor: isPhase2
-                    ? "rgba(239,68,68,0.12)"
-                    : "rgba(2,132,199,0.12)",
+                    ? "rgba(239,68,68,0.15)"
+                    : "rgba(2,132,199,0.15)",
                   padding: "2px 8px",
                   borderRadius: 6,
                 }}
@@ -969,7 +983,7 @@ export const CardTokenizationVideo: React.FC = () => {
           alignItems: "center",
           justifyContent: "center",
           gap: 10,
-          color: "#94A3B8",
+          color: tokens.footerColor,
           fontSize: 18,
           fontWeight: 600,
         }}
