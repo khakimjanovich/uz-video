@@ -1,11 +1,8 @@
 import React from "react";
-import { ThemeTokens } from "../themes";
-import { useThemeTokens } from "../context";
 
 export type CardVariant = "default" | "middle" | "danger" | "accent" | "success";
 
 export interface UiCardProps {
-  tokens?: ThemeTokens;
   variant?: CardVariant;
   className?: string;
   style?: React.CSSProperties;
@@ -13,46 +10,30 @@ export interface UiCardProps {
 }
 
 export const UiCard: React.FC<UiCardProps> = ({
-  tokens: propTokens,
   variant = "default",
   className = "",
   style = {},
   children,
 }) => {
-  const contextTokens = useThemeTokens();
-  const tokens = propTokens || contextTokens;
-
-  let bg = tokens.cardBg;
-  let border = tokens.cardBorder;
-  let shadow = tokens.cardShadow;
+  let variantClass = "bg-card border border-border shadow-2xl";
 
   if (variant === "middle") {
-    bg = tokens.middleCardBg;
-    border = tokens.middleCardBorder;
-    shadow = tokens.middleCardShadow;
+    variantClass = "bg-card-middle border border-border shadow-2xl";
   } else if (variant === "danger") {
-    bg = tokens.middleCardBg;
-    border = "2px solid #EF4444";
-    shadow = tokens.isDark
-      ? "0 25px 50px -12px rgba(239,68,68,0.25), 0 0 25px rgba(239,68,68,0.1)"
-      : "0 25px 50px -12px rgba(239,68,68,0.18)";
+    variantClass =
+      "bg-card-middle border-2 border-danger shadow-[0_25px_50px_-12px_rgba(239,68,68,0.25)]";
   } else if (variant === "accent") {
-    bg = tokens.middleCardBg;
-    border = "2px solid #0284C7";
-    shadow = tokens.isDark
-      ? "0 25px 50px -12px rgba(14,165,233,0.3), 0 0 30px rgba(14,165,233,0.12)"
-      : "0 25px 50px -12px rgba(14,165,233,0.18)";
+    variantClass =
+      "bg-card-middle border-2 border-accent shadow-[0_25px_50px_-12px_rgba(14,165,233,0.25)]";
+  } else if (variant === "success") {
+    variantClass =
+      "bg-card-middle border-2 border-success shadow-[0_25px_50px_-12px_rgba(16,185,129,0.25)]";
   }
 
   return (
     <div
-      className={`rounded-[36px] ${className}`}
-      style={{
-        backgroundColor: bg,
-        border,
-        boxShadow: shadow,
-        ...style,
-      }}
+      className={`rounded-[36px] ${variantClass} ${className}`}
+      style={style}
     >
       {children}
     </div>

@@ -1,14 +1,11 @@
 import React from "react";
 import { interpolate } from "remotion";
-import { ThemeTokens } from "../themes";
-import { useThemeTokens } from "../context";
 
 export interface ReelHeaderProps {
   badgeText: string;
   badgeDotColor?: string;
   title: React.ReactNode;
   springProgress: number;
-  tokens?: ThemeTokens;
 }
 
 export const ReelHeader: React.FC<ReelHeaderProps> = ({
@@ -16,11 +13,7 @@ export const ReelHeader: React.FC<ReelHeaderProps> = ({
   badgeDotColor = "#10B981",
   title,
   springProgress,
-  tokens: propTokens,
 }) => {
-  const contextTokens = useThemeTokens();
-  const tokens = propTokens || contextTokens;
-
   const translateY = interpolate(springProgress, [0, 1], [-50, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -35,13 +28,7 @@ export const ReelHeader: React.FC<ReelHeaderProps> = ({
       }}
     >
       {/* Category / Topic Pill Badge */}
-      <div
-        className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full mb-4.5 shadow-sm"
-        style={{
-          backgroundColor: tokens.badgeBg,
-          border: tokens.badgeBorder,
-        }}
-      >
+      <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full mb-4.5 shadow-sm bg-card border border-border">
         <div
           className="w-2.5 h-2.5 rounded-full"
           style={{
@@ -49,19 +36,13 @@ export const ReelHeader: React.FC<ReelHeaderProps> = ({
             boxShadow: `0 0 10px ${badgeDotColor}`,
           }}
         />
-        <span
-          className="text-[22px] font-bold tracking-wider uppercase"
-          style={{ color: tokens.badgeText }}
-        >
+        <span className="text-[22px] font-bold tracking-wider uppercase text-primary">
           {badgeText}
         </span>
       </div>
 
       {/* Main Reel Title */}
-      <h1
-        className="text-[52px] font-extrabold text-center m-0 leading-[1.15] tracking-tight"
-        style={{ color: tokens.textColor }}
-      >
+      <h1 className="text-[52px] font-extrabold text-center m-0 leading-[1.15] tracking-tight text-primary">
         {title}
       </h1>
     </div>

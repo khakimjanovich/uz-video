@@ -23,7 +23,7 @@ uz-video/
     │       ├── p2p-transfer/voiceover.mp3
     │       └── card-tokenization/voiceover.mp3
     └── src/
-        ├── index.css              # Tailwind CSS v4 entry point (@import "tailwindcss")
+        ├── index.css              # Tailwind CSS v4 entry point with CSS variables (--bg-canvas, --bg-card)
         ├── themes.ts              # Continuous Theme Token System (dark / light) & font bundling
         ├── Root.tsx               # Remotion Root registering all reels
         ├── index.ts               # Entry point
@@ -37,6 +37,7 @@ uz-video/
         │   └── createReelComposition.tsx # Standardized 1080x1920 @ 30fps factory
         ├── components/            # Reusable UI component library (Tailwind + Remotion)
         │   ├── ReelScaffold.tsx   # Unifies Audio, Background, Header, Subtitles, Footer & Theme
+        │   ├── MotionBox.tsx      # Declarative enter/exit animations (zero math in reel files)
         │   ├── ReelBackground.tsx # Radial grid overlay & ambient spotlight glows
         │   ├── ReelHeader.tsx     # Animated topic pill & 52px h1 title
         │   ├── UiCard.tsx         # Standard rounded container (default, danger, accent, middle)
@@ -44,17 +45,27 @@ uz-video/
         │   ├── SubtitleCard.tsx   # Synced voiceover caption card with active highlight
         │   ├── RegulatoryFooter.tsx # Bottom legal/regulatory citation
         │   └── index.ts           # Barrel export
-        └── reels/                 # Modular, lightweight reel compositions (~150-250 lines)
+        └── reels/                 # Ultra-clean declarative reel compositions (60–80 lines each)
             ├── p2p-transfer/
             │   ├── script.txt     # Uzbek voiceover text
             │   ├── subtitles.srt  # Exact cue timings
             │   ├── subtitles.json # Auto-generated frame-based cue metadata & highlights
-            │   └── index.tsx      # React Remotion animation component
+            │   ├── scenes/        # Modular 25–40 line scene sub-components
+            │   │   ├── SenderReceiverCards.tsx
+            │   │   ├── HookScene.tsx
+            │   │   ├── RealityScene.tsx
+            │   │   └── ClearingScene.tsx
+            │   └── index.tsx      # Declarative Remotion Sequence composition (~75 lines)
             └── card-tokenization/
                 ├── script.txt
                 ├── subtitles.srt
                 ├── subtitles.json
-                └── index.tsx
+                ├── scenes/
+                │   ├── DeliveryCheckoutCard.tsx
+                │   ├── MisconceptionScene.tsx
+                │   ├── DatabaseScanScene.tsx
+                │   └── VaultTokenScene.tsx
+                └── index.tsx      # Declarative Remotion Sequence composition (~75 lines)
 ```
 
 ---
@@ -103,13 +114,17 @@ cd studio && npm run dev
 
 ---
 
-## 3. Video Specifications & Best Practices
+## 3. Video Specifications & Pro Remotion Architecture
 
-- **Dimensions:** 1080 x 1920 (9:16 Vertical Reel)
-- **FPS:** 30 fps
-- **Typography:** Deterministic `@remotion/google-fonts/Inter` with zero FOUT across headless CI and OS environments.
-- **Audio Premounting:** `<Audio src={...} premountFor={fps} />` ensures decoders preload 1 second ahead.
-- **Cue-Driven Animations:** All reel stages (`isPhase1`, `isPhase2`, `isPhase3`) and animations derive directly from `useSubtitles(subtitles)`. If voiceover duration changes, animations never desync.
-- **Transform Shorthands:** Modern CSS transform properties (`scale`, `translate: "0px ...px"`) instead of concatenated `transform` strings.
-- **Clamped Interpolations:** Clamped with `{ extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }` on all `interpolate()` calls.
-- **Scaffold Architecture:** `ReelScaffold` encapsulates the chrome, audio, theme tokens, and subtitle synchronization, keeping individual reel compositions concise and focused purely on content.
+1. **No `spring()` or `interpolate()` math inside reel files:**
+   - `<MotionBox enter="pop" delay={5}>` handles animation physics once. Reel files and scenes remain purely declarative.
+2. **Remotion `<Sequence>` per scene (No Giant Ternaries):**
+   - Each phase of a video is an isolated 25–40 line sub-component mounted inside `<Sequence from={cue.startFrame} durationInFrames={cue.duration}>`.
+   - Reel root files are concise (60–80 lines of declarative data).
+3. **Real Tailwind + CSS Variables:**
+   - Theme colors (`--bg-canvas`, `--bg-card`, `--border-card`, `--text-primary`, `--text-secondary`) are defined in `index.css`.
+   - Native Tailwind classes (`bg-canvas`, `bg-card`, `border-border`, `text-primary`) work seamlessly without if/else inline style hacks.
+4. **Deterministic Typography:**
+   - Inter loaded via `@remotion/google-fonts/Inter` with zero FOUT across headless CI/OS environments.
+5. **Audio Premounting:**
+   - `<Audio src={...} premountFor={fps} />` ensures decoders preload 1 second ahead.

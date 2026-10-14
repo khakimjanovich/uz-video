@@ -5,3 +5,79 @@
     box-sizing: border-box;
   }
 }
+
+:root, [data-theme="dark"] {
+  --bg-canvas: #080C15;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --bg-card-middle: rgba(30, 41, 59, 0.7);
+  --border-card: 1.5px solid rgba(56, 189, 248, 0.18);
+  --border-card-subtle: 1px solid rgba(56, 189, 248, 0.12);
+  --border-color: rgba(56, 189, 248, 0.18);
+  --border-subtle: rgba(56, 189, 248, 0.12);
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --accent: #38BDF8;
+  --accent-bg: rgba(56, 189, 248, 0.15);
+  --danger: #EF4444;
+  --danger-bg: rgba(239, 68, 68, 0.15);
+  --success: #10B981;
+  --success-bg: rgba(16, 185, 129, 0.15);
+  --warning: #F59E0B;
+  --warning-bg: rgba(245, 158, 11, 0.15);
+  --badge-bg: rgba(15, 23, 42, 0.8);
+  --badge-text: #F8FAFC;
+  --badge-border: 1px solid rgba(56, 189, 248, 0.25);
+  --subtitle-bg: rgba(15, 23, 42, 0.85);
+  --subtitle-border: 1.5px solid rgba(56, 189, 248, 0.2);
+  --subtitle-text: #F8FAFC;
+  --footer-text: #64748B;
+}
+
+[data-theme="light"] {
+  --bg-canvas: #F8F9FA;
+  --bg-card: #FFFFFF;
+  --bg-card-middle: #FFFFFF;
+  --border-card: 1.5px solid #E2E8F0;
+  --border-card-subtle: 1px solid #F1F5F9;
+  --border-color: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --accent: #0284C7;
+  --accent-bg: #E0F2FE;
+  --danger: #DC2626;
+  --danger-bg: #FEE2E2;
+  --success: #059669;
+  --success-bg: #DCFCE7;
+  --warning: #D97706;
+  --warning-bg: #FEF3C7;
+  --badge-bg: #FFFFFF;
+  --badge-text: #0F172A;
+  --badge-border: 1.5px solid #E2E8F0;
+  --subtitle-bg: #FFFFFF;
+  --subtitle-border: 1.5px solid #E2E8F0;
+  --subtitle-text: #0F172A;
+  --footer-text: #64748B;
+}
+
+@theme {
+  --color-canvas: var(--bg-canvas);
+  --color-card: var(--bg-card);
+  --color-card-middle: var(--bg-card-middle);
+  --color-card-border: var(--border-color);
+  --color-card-border-subtle: var(--border-subtle);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-subtle: var(--accent-bg);
+  --color-danger: var(--danger);
+  --color-danger-subtle: var(--danger-bg);
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-bg);
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-bg);
+  --color-border: var(--border-color);
+}

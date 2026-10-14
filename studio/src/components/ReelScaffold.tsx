@@ -19,9 +19,9 @@ export interface ReelScaffoldProps {
   reelId: string;
   subtitles: SubtitleCue[];
   highlightsMap?: HighlightsMap;
-  badgeText: string;
-  badgeDotColor?: string;
-  title: React.ReactNode;
+  badgeText?: string | ((cueIndex: number) => string);
+  badgeDotColor?: string | ((cueIndex: number) => string);
+  title: React.ReactNode | ((cueIndex: number) => React.ReactNode);
   lawCitation: string;
   citationIcon?: string;
   isPhase2?: boolean;
@@ -35,12 +35,12 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   reelId,
   subtitles,
   highlightsMap,
-  badgeText,
+  badgeText = "",
   badgeDotColor = "#10B981",
   title,
   lawCitation,
   citationIcon = "🛡️",
-  isPhase2 = false,
+  isPhase2: propIsPhase2,
   headerSpringProgress,
   audioPremountFor,
   children,
@@ -50,6 +50,15 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
 
   const tokens = getThemeTokens(theme);
   const subState = useSubtitles(subtitles, highlightsMap);
+
+  const isPhase2 = propIsPhase2 !== undefined ? propIsPhase2 : subState.cueIndex === 1;
+
+  const resolvedBadgeText =
+    typeof badgeText === "function" ? badgeText(subState.cueIndex) : badgeText;
+  const resolvedBadgeDotColor =
+    typeof badgeDotColor === "function" ? badgeDotColor(subState.cueIndex) : badgeDotColor;
+  const resolvedTitle =
+    typeof title === "function" ? title(subState.cueIndex) : title;
 
   const defaultHeaderSpring = spring({
     frame,
@@ -62,11 +71,10 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
     <ThemeProvider theme={theme} tokens={tokens}>
       <SubtitlesContext.Provider value={subState}>
         <AbsoluteFill
-          className="overflow-hidden relative"
+          data-theme={theme}
+          className="overflow-hidden relative bg-canvas text-primary"
           style={{
             fontFamily: tokens.fontFamily,
-            backgroundColor: tokens.background,
-            color: tokens.textColor,
           }}
         >
           {/* Audio with premountFor */}
@@ -80,11 +88,10 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
 
           {/* Top Header & Title */}
           <ReelHeader
-            tokens={tokens}
             springProgress={activeHeaderSpring}
-            badgeDotColor={badgeDotColor}
-            badgeText={badgeText}
-            title={title}
+            badgeDotColor={resolvedBadgeDotColor}
+            badgeText={resolvedBadgeText}
+            title={resolvedTitle}
           />
 
           {/* Reel-Specific Animation Stages */}
@@ -92,13 +99,12 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
 
           {/* Bottom Subtitle Caption Card */}
           <SubtitleCard
-            tokens={tokens}
             currentSubtitle={subState.currentSubtitle}
             isPhase2={isPhase2}
           />
 
           {/* Bottom Legal / Regulatory Footer */}
-          <RegulatoryFooter tokens={tokens} text={lawCitation} icon={citationIcon} />
+          <RegulatoryFooter text={lawCitation} icon={citationIcon} />
         </AbsoluteFill>
       </SubtitlesContext.Provider>
     </ThemeProvider>
