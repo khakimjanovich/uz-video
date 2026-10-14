@@ -17,13 +17,16 @@ export const ReelHeader: React.FC<ReelHeaderProps> = ({
   springProgress,
   tokens,
 }) => {
-  const translateY = interpolate(springProgress, [0, 1], [-50, 0]);
+  const translateY = interpolate(springProgress, [0, 1], [-50, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   return (
     <div
       className="absolute top-[86px] left-[60px] right-[60px] flex flex-col items-center z-10"
       style={{
-        transform: `translateY(${translateY}px)`,
+        translate: `0px ${translateY}px`,
         opacity: springProgress,
       }}
     >

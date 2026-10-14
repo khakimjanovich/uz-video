@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AbsoluteFill,
+  CalculateMetadataFunction,
   Composition,
   interpolate,
   spring,
@@ -49,6 +50,13 @@ const SUBTITLES = [
   },
 ];
 
+const calculateMetadata: CalculateMetadataFunction<ReelProps> = async () => {
+  const lastCue = SUBTITLES[SUBTITLES.length - 1];
+  return {
+    durationInFrames: lastCue ? lastCue.endFrame : DURATION_IN_FRAMES,
+  };
+};
+
 export const CardTokenizationComposition: React.FC = () => {
   return (
     <Composition
@@ -61,6 +69,7 @@ export const CardTokenizationComposition: React.FC = () => {
       defaultProps={{
         theme: "dark" as ThemeName,
       }}
+      calculateMetadata={calculateMetadata}
     />
   );
 };
@@ -82,11 +91,6 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
   const appCardSpring = spring({ frame: frame - 6, fps, config: { damping: 13, stiffness: 95 } });
   const phase2Spring = spring({ frame: frame - 188, fps, config: { damping: 13, stiffness: 100 } });
   const phase3Spring = spring({ frame: frame - 330, fps, config: { damping: 13, stiffness: 95 } });
-
-  const buttonTapScale = interpolate(frame, [40, 46, 54], [1, 0.94, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
 
   const cardDigitsDisappear = spring({
     frame: frame - 55,
@@ -118,8 +122,9 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
 
   return (
     <AbsoluteFill
-      className="overflow-hidden relative font-sans"
+      className="overflow-hidden relative"
       style={{
+        fontFamily: tokens.fontFamily,
         backgroundColor: tokens.background,
         color: tokens.textColor,
       }}
@@ -164,7 +169,10 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
       <div
         className="absolute top-[275px] left-[60px] right-[60px]"
         style={{
-          transform: `scale(${interpolate(appCardSpring, [0, 1], [0.92, 1])})`,
+          scale: interpolate(appCardSpring, [0, 1], [0.92, 1], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          }),
           opacity: appCardSpring,
         }}
       >
@@ -232,7 +240,10 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
               className="p-4 px-7 rounded-[18px] text-white text-xl font-extrabold flex items-center gap-2.5 shadow-lg"
               style={{
                 background: "linear-gradient(135deg, #7000FF 0%, #5800CC 100%)",
-                transform: `scale(${buttonTapScale})`,
+                scale: interpolate(frame, [40, 46, 54], [1, 0.94, 1], {
+                  extrapolateLeft: "clamp",
+                  extrapolateRight: "clamp",
+                }),
               }}
             >
               <span>To&apos;lash va Saqlash</span>
@@ -290,7 +301,10 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
             variant="danger"
             className="p-10 px-9.5 relative overflow-hidden text-center"
             style={{
-              transform: `scale(${interpolate(phase2Spring, [0, 1], [0.92, 1])})`,
+              scale: interpolate(phase2Spring, [0, 1], [0.92, 1], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              }),
               opacity: phase2Spring,
             }}
           >
@@ -367,7 +381,10 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
             variant="accent"
             className="p-9 px-9"
             style={{
-              transform: `scale(${interpolate(phase3Spring, [0, 1], [0.92, 1])})`,
+              scale: interpolate(phase3Spring, [0, 1], [0.92, 1], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              }),
               opacity: phase3Spring,
             }}
           >

@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AbsoluteFill,
+  CalculateMetadataFunction,
   Composition,
   interpolate,
   spring,
@@ -52,6 +53,13 @@ const SUBTITLES = [
   },
 ];
 
+const calculateMetadata: CalculateMetadataFunction<ReelProps> = async () => {
+  const lastCue = SUBTITLES[SUBTITLES.length - 1];
+  return {
+    durationInFrames: lastCue ? lastCue.endFrame : DURATION_IN_FRAMES,
+  };
+};
+
 export const P2PTransferComposition: React.FC = () => {
   return (
     <Composition
@@ -64,6 +72,7 @@ export const P2PTransferComposition: React.FC = () => {
       defaultProps={{
         theme: "dark" as ThemeName,
       }}
+      calculateMetadata={calculateMetadata}
     />
   );
 };
@@ -118,8 +127,9 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
 
   return (
     <AbsoluteFill
-      className="overflow-hidden relative font-sans"
+      className="overflow-hidden relative"
       style={{
+        fontFamily: tokens.fontFamily,
         backgroundColor: tokens.background,
         color: tokens.textColor,
       }}
@@ -162,7 +172,10 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
       <div
         className="absolute top-[280px] left-[60px] right-[60px] h-[450px] flex gap-6"
         style={{
-          transform: `scale(${interpolate(cardsEntrance, [0, 1], [0.9, 1])})`,
+          scale: interpolate(cardsEntrance, [0, 1], [0.9, 1], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          }),
           opacity: cardsEntrance,
         }}
       >
@@ -332,12 +345,15 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
             className="absolute top-1/2 z-30 p-2.5 px-5 rounded-full text-white font-extrabold text-lg shadow-xl flex items-center gap-2"
             style={{
               background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
-              left: `${interpolate(transferProgress, [0, 1], [180, 720])}px`,
-              transform: `translateY(-50%) scale(${interpolate(
-                transferProgress,
-                [0, 0.5, 1],
-                [0.85, 1.15, 0.95]
-              )})`,
+              left: `${interpolate(transferProgress, [0, 1], [180, 720], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              })}px`,
+              translate: "0 -50%",
+              scale: interpolate(transferProgress, [0, 0.5, 1], [0.85, 1.15, 0.95], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              }),
             }}
           >
             <span>💸</span>
@@ -404,7 +420,10 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
             variant="danger"
             className="p-11 px-9.5 text-center"
             style={{
-              transform: `scale(${interpolate(phase2Spring, [0, 1], [0.92, 1])})`,
+              scale: interpolate(phase2Spring, [0, 1], [0.92, 1], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              }),
               opacity: phase2Spring,
             }}
           >
@@ -457,7 +476,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                 tokens={tokens}
                 tone="danger"
                 className="p-2.5 px-5 rounded-2xl text-lg flex items-center gap-2"
-                style={{ transform: `scale(${lockPulse})` }}
+                style={{ scale: lockPulse }}
               >
                 <span>🔒</span>
                 <span>Qatnov yo&apos;q</span>
@@ -481,7 +500,10 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
             variant="accent"
             className="p-10 px-9"
             style={{
-              transform: `scale(${interpolate(phase3Spring, [0, 1], [0.92, 1])})`,
+              scale: interpolate(phase3Spring, [0, 1], [0.92, 1], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              }),
               opacity: phase3Spring,
             }}
           >
@@ -533,7 +555,10 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                     style={{
                       backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
                       border: tokens.cardBorder,
-                      transform: `translateY(${interpolate(itemSpring, [0, 1], [20, 0])}px)`,
+                      translate: `0px ${interpolate(itemSpring, [0, 1], [20, 0], {
+                        extrapolateLeft: "clamp",
+                        extrapolateRight: "clamp",
+                      })}px`,
                       opacity: itemSpring,
                     }}
                   >

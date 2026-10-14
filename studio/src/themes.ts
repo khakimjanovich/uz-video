@@ -1,10 +1,18 @@
+import { loadFont } from "@remotion/google-fonts/Inter";
+
+export const { fontFamily } = loadFont("normal", {
+  weights: ["400", "600", "700", "800", "900"],
+  subsets: ["latin"],
+});
+
 export type ThemeName = "dark" | "light" | "xray";
 
-export interface ReelProps {
+export interface ReelProps extends Record<string, unknown> {
   theme?: ThemeName;
 }
 
 export interface ThemeTokens {
+  fontFamily: string;
   background: string;
   gridColor: string;
   gridOpacity: number;
@@ -31,6 +39,7 @@ export interface ThemeTokens {
 }
 
 export const LIGHT_THEME: ThemeTokens = {
+  fontFamily,
   background: "#F8F9FA",
   gridColor: "#CBD5E1",
   gridOpacity: 0.45,
@@ -57,6 +66,7 @@ export const LIGHT_THEME: ThemeTokens = {
 };
 
 export const DARK_THEME: ThemeTokens = {
+  fontFamily,
   background: "#080C15", // Pure continuous midnight black
   gridColor: "rgba(56, 189, 248, 0.35)",
   gridOpacity: 0.2,
