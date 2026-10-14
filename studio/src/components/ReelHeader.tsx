@@ -1,13 +1,14 @@
 import React from "react";
 import { interpolate } from "remotion";
 import { ThemeTokens } from "../themes";
+import { useThemeTokens } from "../context";
 
-interface ReelHeaderProps {
+export interface ReelHeaderProps {
   badgeText: string;
   badgeDotColor?: string;
   title: React.ReactNode;
   springProgress: number;
-  tokens: ThemeTokens;
+  tokens?: ThemeTokens;
 }
 
 export const ReelHeader: React.FC<ReelHeaderProps> = ({
@@ -15,8 +16,11 @@ export const ReelHeader: React.FC<ReelHeaderProps> = ({
   badgeDotColor = "#10B981",
   title,
   springProgress,
-  tokens,
+  tokens: propTokens,
 }) => {
+  const contextTokens = useThemeTokens();
+  const tokens = propTokens || contextTokens;
+
   const translateY = interpolate(springProgress, [0, 1], [-50, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",

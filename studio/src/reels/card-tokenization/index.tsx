@@ -1,99 +1,54 @@
-import React from "react";
-import {
-  AbsoluteFill,
-  CalculateMetadataFunction,
-  Composition,
-  interpolate,
-  spring,
-  staticFile,
-  useCurrentFrame,
-  useVideoConfig,
-} from "remotion";
-import { Audio } from "@remotion/media";
-import { getThemeTokens, ReelProps, ThemeName } from "../../themes";
-import {
-  ReelBackground,
-  ReelHeader,
-  SubtitleCard,
-  RegulatoryFooter,
-  UiCard,
-  StatusBadge,
-} from "../../components";
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { getThemeTokens, ReelProps } from "../../themes";
+import { ReelScaffold, UiCard, StatusBadge } from "../../components";
+import { createReelComposition } from "../../utils/createReelComposition";
+import { useSubtitles } from "../../hooks/useSubtitles";
+import rawSubtitles from "./subtitles.json";
+import { SubtitleCue } from "../../components/SubtitleCard";
 
-export const FPS = 30;
-export const DURATION_IN_FRAMES = 510;
-export const VIDEO_WIDTH = 1080;
-export const VIDEO_HEIGHT = 1920;
+const subtitles = rawSubtitles as SubtitleCue[];
 
-// Subtitles exact timings from subtitles.srt
-const SUBTITLES = [
-  {
-    startFrame: 3, // 00:00:00,100
-    endFrame: 191, // 00:00:06,432
-    prefix: "Yetkazib berish ilovasida 'Kartani saqlash' tugmasini bosganingizda, ",
-    highlight: "karta raqamingiz qayerga boradi?",
-    suffix: "",
-  },
-  {
-    startFrame: 191, // 00:00:06,382
-    endFrame: 332, // 00:00:11,068
-    prefix: "Aslida ilovaning o'zi karta raqamingizni ",
-    highlight: "umuman ko'rmaydi va saqlamaydi",
-    suffix: ".",
-  },
-  {
-    startFrame: 332, // 00:00:11,068
-    endFrame: 510, // 00:00:15,977 + padding
-    prefix: "Unga ",
-    highlight: "faqat maxsus Token beriladi",
-    suffix: ", karta esa xavfsiz bank omborida qoladi.",
-  },
-];
+export const CardTokenizationComposition = createReelComposition({
+  id: "card-tokenization",
+  component: CardTokenizationVideo,
+  subtitles,
+});
 
-const calculateMetadata: CalculateMetadataFunction<ReelProps> = async () => {
-  const lastCue = SUBTITLES[SUBTITLES.length - 1];
-  return {
-    durationInFrames: lastCue ? lastCue.endFrame : DURATION_IN_FRAMES,
-  };
-};
-
-export const CardTokenizationComposition: React.FC = () => {
-  return (
-    <Composition
-      id="card-tokenization"
-      component={CardTokenizationVideo}
-      durationInFrames={DURATION_IN_FRAMES}
-      fps={FPS}
-      width={VIDEO_WIDTH}
-      height={VIDEO_HEIGHT}
-      defaultProps={{
-        theme: "dark" as ThemeName,
-      }}
-      calculateMetadata={calculateMetadata}
-    />
-  );
-};
-
-export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
+export function CardTokenizationVideo({ theme = "dark" }: ReelProps) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Phases
-  const isPhase1 = frame < 188;
-  const isPhase2 = frame >= 188 && frame < 330;
-  const isPhase3 = frame >= 330;
+  // Dynamic cue-driven timings (never desyncs if voice/speed changes)
+  const { cueIndex, subtitles: cues } = useSubtitles(subtitles);
+  const isPhase1 = cueIndex === 0;
+  const isPhase2 = cueIndex === 1;
+  const isPhase3 = cueIndex >= 2;
 
-  // Active Continuous Theme Tokens (Pure Dark or Pure Light throughout)
+  const cue0Start = cues[0]?.startFrame ?? 0;
+  const cue1Start = cues[1]?.startFrame ?? 191;
+  const cue2Start = cues[2]?.startFrame ?? 332;
+
   const tokens = getThemeTokens(theme);
 
   // Springs & Animations
-  const headerSpring = spring({ frame, fps, config: { damping: 14, stiffness: 100 } });
-  const appCardSpring = spring({ frame: frame - 6, fps, config: { damping: 13, stiffness: 95 } });
-  const phase2Spring = spring({ frame: frame - 188, fps, config: { damping: 13, stiffness: 100 } });
-  const phase3Spring = spring({ frame: frame - 330, fps, config: { damping: 13, stiffness: 95 } });
+  const appCardSpring = spring({
+    frame: frame - (cue0Start + 6),
+    fps,
+    config: { damping: 13, stiffness: 95 },
+  });
+  const phase2Spring = spring({
+    frame: frame - cue1Start,
+    fps,
+    config: { damping: 13, stiffness: 100 },
+  });
+  const phase3Spring = spring({
+    frame: frame - cue2Start,
+    fps,
+    config: { damping: 13, stiffness: 95 },
+  });
 
   const cardDigitsDisappear = spring({
-    frame: frame - 55,
+    frame: frame - (cue0Start + 52),
     fps,
     config: { damping: 12, stiffness: 85 },
   });
@@ -103,7 +58,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
   const tokenLength = Math.min(
     fullToken.length,
     Math.floor(
-      interpolate(frame, [345, 385], [0, fullToken.length], {
+      interpolate(frame, [cue2Start + 13, cue2Start + 53], [0, fullToken.length], {
         extrapolateLeft: "clamp",
         extrapolateRight: "clamp",
       })
@@ -111,61 +66,46 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
   );
   const displayedToken = fullToken.slice(0, tokenLength);
 
-  const currentSubtitle =
-    SUBTITLES.find((s) => frame >= s.startFrame && frame <= s.endFrame) ||
-    SUBTITLES[SUBTITLES.length - 1];
-
-  const scanLineY = interpolate((frame - 188) % 60, [0, 60], [0, 260], {
+  const scanLineY = interpolate((frame - cue1Start) % 60, [0, 60], [0, 260], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
   return (
-    <AbsoluteFill
-      className="overflow-hidden relative"
-      style={{
-        fontFamily: tokens.fontFamily,
-        backgroundColor: tokens.background,
-        color: tokens.textColor,
-      }}
+    <ReelScaffold
+      theme={theme}
+      reelId="card-tokenization"
+      subtitles={subtitles}
+      isPhase2={isPhase2}
+      badgeDotColor={isPhase2 ? "#EF4444" : isPhase3 ? "#0284C7" : "#10B981"}
+      badgeText={
+        isPhase1
+          ? "🔐 FINTECH SIRI • KARTA XAVFSIZLIGI"
+          : isPhase2
+          ? "⚠️ SHOK HAQIQAT: BAZADA KARTA YO'Q!"
+          : "⚡ TOKENIZATSIYA MO'JIZASI"
+      }
+      title={
+        isPhase1 ? (
+          <span>
+            &apos;Kartani saqlash&apos;da raqam{" "}
+            <span className="text-[#0284C7]">qayerga boradi?</span>
+          </span>
+        ) : isPhase2 ? (
+          <span>
+            Yetkazib beruvchi kartangizni{" "}
+            <span className="text-[#EF4444]">umuman ko&apos;rmaydi!</span>
+          </span>
+        ) : (
+          <span>
+            Ilovaga faqat <span className="text-[#0284C7]">xavfsiz TOKEN</span> beriladi
+          </span>
+        )
+      }
+      lawCitation="Manba: PCI-DSS (Payment Card Industry Data Security Standard) xavfsizlik standarti"
+      citationIcon="🛡️"
     >
-      <Audio src={staticFile("reels/card-tokenization/voiceover.mp3")} premountFor={fps} />
-
-      {/* Decorative Grid & Ambient Glows */}
-      <ReelBackground tokens={tokens} isPhase2={isPhase2} />
-
-      {/* 1. Header & Title */}
-      <ReelHeader
-        tokens={tokens}
-        springProgress={headerSpring}
-        badgeDotColor={isPhase2 ? "#EF4444" : isPhase3 ? "#0284C7" : "#10B981"}
-        badgeText={
-          isPhase1
-            ? "🔐 FINTECH SIRI • KARTA XAVFSIZLIGI"
-            : isPhase2
-            ? "⚠️ SHOK HAQIQAT: BAZADA KARTA YO'Q!"
-            : "⚡ TOKENIZATSIYA MO'JIZASI"
-        }
-        title={
-          isPhase1 ? (
-            <span>
-              &apos;Kartani saqlash&apos;da raqam{" "}
-              <span className="text-[#0284C7]">qayerga boradi?</span>
-            </span>
-          ) : isPhase2 ? (
-            <span>
-              Yetkazib beruvchi kartangizni{" "}
-              <span className="text-[#EF4444]">umuman ko&apos;rmaydi!</span>
-            </span>
-          ) : (
-            <span>
-              Ilovaga faqat <span className="text-[#0284C7]">xavfsiz TOKEN</span> beriladi
-            </span>
-          )
-        }
-      />
-
-      {/* 2. Top UI Card: Food Delivery Checkout */}
+      {/* 1. Top UI Card: Food Delivery Checkout */}
       <div
         className="absolute top-[275px] left-[60px] right-[60px]"
         style={{
@@ -176,7 +116,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
           opacity: appCardSpring,
         }}
       >
-        <UiCard tokens={tokens} className="p-8 flex flex-col gap-5">
+        <UiCard className="p-8 flex flex-col gap-5">
           {/* Header Row */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3.5">
@@ -192,7 +132,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                 </div>
               </div>
             </div>
-            <StatusBadge tokens={tokens}>Buyurtma #4821</StatusBadge>
+            <StatusBadge>Buyurtma #4821</StatusBadge>
           </div>
 
           {/* Bank Card Input Box */}
@@ -205,7 +145,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                 Kiritilgan Bank Kartasi
               </div>
               <div className="text-[26px] tracking-widest font-bold font-mono">
-                {frame < 55 ? (
+                {frame < cue0Start + 52 ? (
                   <span>8600 4521 8901 9912</span>
                 ) : (
                   <span style={{ opacity: cardDigitsDisappear }}>
@@ -240,24 +180,29 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
               className="p-4 px-7 rounded-[18px] text-white text-xl font-extrabold flex items-center gap-2.5 shadow-lg"
               style={{
                 background: "linear-gradient(135deg, #7000FF 0%, #5800CC 100%)",
-                scale: interpolate(frame, [40, 46, 54], [1, 0.94, 1], {
-                  extrapolateLeft: "clamp",
-                  extrapolateRight: "clamp",
-                }),
+                scale: interpolate(
+                  frame,
+                  [cue0Start + 37, cue0Start + 43, cue0Start + 51],
+                  [1, 0.94, 1],
+                  {
+                    extrapolateLeft: "clamp",
+                    extrapolateRight: "clamp",
+                  }
+                ),
               }}
             >
               <span>To&apos;lash va Saqlash</span>
-              {frame >= 45 && <span>⚡</span>}
+              {frame >= cue0Start + 42 && <span>⚡</span>}
             </div>
           </div>
         </UiCard>
       </div>
 
-      {/* 3. Middle Flow: Architecture & Security Reveal */}
+      {/* 2. Middle Flow: Architecture & Security Reveal */}
       <div className="absolute top-[795px] left-[60px] right-[60px] h-[670px] flex flex-col justify-center">
         {/* PHASE 1: Misconception */}
         {isPhase1 && (
-          <UiCard tokens={tokens} variant="middle" className="p-10.5 px-9 text-center">
+          <UiCard variant="middle" className="p-10.5 px-9 text-center">
             <div
               className="text-lg font-bold uppercase tracking-wider mb-3.5"
               style={{ color: tokens.subtextColor }}
@@ -283,12 +228,12 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                 📱 Ilova bazasi
               </div>
               <div className="text-[32px] text-[#EF4444] font-black">❌ ??? ❌</div>
-              <StatusBadge tokens={tokens} tone="danger" className="p-4.5 px-6.5 rounded-[20px] text-[22px]">
+              <StatusBadge tone="danger" className="p-4.5 px-6.5 rounded-[20px] text-[22px]">
                 👨‍💻 Xakerlar xavfi?
               </StatusBadge>
             </div>
 
-            <StatusBadge tokens={tokens} tone="warning" className="p-3 px-6 rounded-full text-xl font-bold">
+            <StatusBadge tone="warning" className="p-3 px-6 rounded-full text-xl font-bold">
               🤔 Haqiqatda qayerda saqlanadi?
             </StatusBadge>
           </UiCard>
@@ -297,7 +242,6 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
         {/* PHASE 2: Shocking Reality (Merchant Database Inspected) */}
         {isPhase2 && (
           <UiCard
-            tokens={tokens}
             variant="danger"
             className="p-10 px-9.5 relative overflow-hidden text-center"
             style={{
@@ -318,7 +262,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
             />
 
             <div className="mb-6">
-              <StatusBadge tokens={tokens} tone="danger" className="mb-4 uppercase tracking-wider text-lg">
+              <StatusBadge tone="danger" className="mb-4 uppercase tracking-wider text-lg">
                 🔍 MERCHANT BAZASI TEKSHIRILGANDA
               </StatusBadge>
               <div className="text-4xl font-extrabold" style={{ color: tokens.textColor }}>
@@ -331,13 +275,15 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                 className="flex justify-between items-center p-4.5 px-5.5 rounded-[18px]"
                 style={{
                   backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.12)" : "#FFF1F2",
-                  border: tokens.isDark ? "1.5px solid rgba(239, 68, 68, 0.35)" : "1.5px solid #FECDD3",
+                  border: tokens.isDark
+                    ? "1.5px solid rgba(239, 68, 68, 0.35)"
+                    : "1.5px solid #FECDD3",
                 }}
               >
                 <span className="text-xl font-bold" style={{ color: tokens.textColor }}>
                   16 talik Karta Raqami (PAN)
                 </span>
-                <StatusBadge tokens={tokens} tone="danger" className="text-lg">
+                <StatusBadge tone="danger" className="text-lg">
                   ❌ SAQLANMAYDI (0 TA)
                 </StatusBadge>
               </div>
@@ -346,13 +292,15 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                 className="flex justify-between items-center p-4.5 px-5.5 rounded-[18px]"
                 style={{
                   backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.12)" : "#FFF1F2",
-                  border: tokens.isDark ? "1.5px solid rgba(239, 68, 68, 0.35)" : "1.5px solid #FECDD3",
+                  border: tokens.isDark
+                    ? "1.5px solid rgba(239, 68, 68, 0.35)"
+                    : "1.5px solid #FECDD3",
                 }}
               >
                 <span className="text-xl font-bold" style={{ color: tokens.textColor }}>
                   CVV / CVC Maxfiy Kod
                 </span>
-                <StatusBadge tokens={tokens} tone="danger" className="text-lg">
+                <StatusBadge tone="danger" className="text-lg">
                   🚫 QAT&apos;IYAN TAQIQLANGAN
                 </StatusBadge>
               </div>
@@ -377,7 +325,6 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
         {/* PHASE 3: Tokenization & Vault Solution */}
         {isPhase3 && (
           <UiCard
-            tokens={tokens}
             variant="accent"
             className="p-9 px-9"
             style={{
@@ -408,7 +355,9 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                 className="p-4.5 px-5.5 rounded-[20px] flex items-center gap-4.5"
                 style={{
                   backgroundColor: tokens.isDark ? "rgba(16, 185, 129, 0.12)" : "#F0FDF4",
-                  border: tokens.isDark ? "1.5px solid rgba(16, 185, 129, 0.4)" : "1.5px solid #86EFAC",
+                  border: tokens.isDark
+                    ? "1.5px solid rgba(16, 185, 129, 0.4)"
+                    : "1.5px solid #86EFAC",
                 }}
               >
                 <div className="text-[34px]">🏦</div>
@@ -419,13 +368,14 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                   >
                     PCI-DSS Bank Shlyuzi (Vault)
                   </div>
-                  <div className="text-[15px]" style={{ color: tokens.isDark ? "#86EFAC" : "#15803D" }}>
+                  <div
+                    className="text-[15px]"
+                    style={{ color: tokens.isDark ? "#86EFAC" : "#15803D" }}
+                  >
                     Haqiqiy karta faqat bankda <strong>AES-256</strong> bilan shifrlanadi.
                   </div>
                 </div>
-                <StatusBadge tokens={tokens} tone="success">
-                  Maxfiy Ombor 🔐
-                </StatusBadge>
+                <StatusBadge tone="success">Maxfiy Ombor 🔐</StatusBadge>
               </div>
 
               {/* Arrow */}
@@ -438,7 +388,9 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                 className="p-4.5 px-5.5 rounded-[20px] flex items-center gap-4.5"
                 style={{
                   backgroundColor: tokens.isDark ? "rgba(56, 189, 248, 0.12)" : "#F0F9FF",
-                  border: tokens.isDark ? "1.5px solid rgba(56, 189, 248, 0.4)" : "1.5px solid #7DD3FC",
+                  border: tokens.isDark
+                    ? "1.5px solid rgba(56, 189, 248, 0.4)"
+                    : "1.5px solid #7DD3FC",
                 }}
               >
                 <div className="text-[34px]">📱</div>
@@ -459,9 +411,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
                     {displayedToken || "tok_uz_..."}
                   </div>
                 </div>
-                <StatusBadge tokens={tokens} tone="accent">
-                  Xavfsiz ✅
-                </StatusBadge>
+                <StatusBadge tone="accent">Xavfsiz ✅</StatusBadge>
               </div>
             </div>
 
@@ -474,16 +424,6 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) =
           </UiCard>
         )}
       </div>
-
-      {/* 4. Synced Subtitle Card (Bottom) */}
-      <SubtitleCard currentSubtitle={currentSubtitle} isPhase2={isPhase2} tokens={tokens} />
-
-      {/* 5. Regulatory Footer */}
-      <RegulatoryFooter
-        tokens={tokens}
-        icon="🛡️"
-        text="Manba: PCI-DSS (Payment Card Industry Data Security Standard) xavfsizlik standarti"
-      />
-    </AbsoluteFill>
+    </ReelScaffold>
   );
-};
+}

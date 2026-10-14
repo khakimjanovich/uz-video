@@ -1,115 +1,67 @@
-import React from "react";
-import {
-  AbsoluteFill,
-  CalculateMetadataFunction,
-  Composition,
-  interpolate,
-  spring,
-  staticFile,
-  useCurrentFrame,
-  useVideoConfig,
-} from "remotion";
-import { Audio } from "@remotion/media";
-import { getThemeTokens, ReelProps, ThemeName } from "../../themes";
-import {
-  ReelBackground,
-  ReelHeader,
-  SubtitleCard,
-  RegulatoryFooter,
-  UiCard,
-  StatusBadge,
-} from "../../components";
+import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { getThemeTokens, ReelProps } from "../../themes";
+import { ReelScaffold, UiCard, StatusBadge } from "../../components";
+import { createReelComposition } from "../../utils/createReelComposition";
+import { useSubtitles } from "../../hooks/useSubtitles";
+import rawSubtitles from "./subtitles.json";
+import { SubtitleCue } from "../../components/SubtitleCard";
 
-export const FPS = 30;
-export const DURATION_IN_FRAMES = 345;
-export const VIDEO_WIDTH = 1080;
-export const VIDEO_HEIGHT = 1920;
+const subtitles = rawSubtitles as SubtitleCue[];
 
-// Subtitles exact timings from subtitles.srt
-const SUBTITLES = [
-  {
-    startFrame: 3, // 00:00:00,100
-    endFrame: 151, // 00:00:05,086
-    text: "Do'stingizga Payme yoki Click orqali pul yubordingiz, u bir zumda keldi.",
-    prefix: "Do'stingizga Payme yoki Click orqali pul yubordingiz, u ",
-    highlight: "bir zumda keldi",
-    suffix: ".",
-  },
-  {
-    startFrame: 151, // 00:00:05,036
-    endFrame: 254, // 00:00:08,537
-    text: "Lekin banklar orasida hali bir so'm ham ko'chmagan.",
-    prefix: "Lekin banklar orasida hali ",
-    highlight: "bir so'm ham ko'chmagan",
-    suffix: ".",
-  },
-  {
-    startFrame: 254, // 00:00:08,537
-    endFrame: 345, // 00:00:10,477 + padding
-    text: "Pul qayerdan keldi?",
-    prefix: "",
-    highlight: "Pul qayerdan keldi?",
-    suffix: "",
-  },
-];
+export const P2PTransferComposition = createReelComposition({
+  id: "p2p-transfer",
+  component: P2PVideo,
+  subtitles,
+});
 
-const calculateMetadata: CalculateMetadataFunction<ReelProps> = async () => {
-  const lastCue = SUBTITLES[SUBTITLES.length - 1];
-  return {
-    durationInFrames: lastCue ? lastCue.endFrame : DURATION_IN_FRAMES,
-  };
-};
-
-export const P2PTransferComposition: React.FC = () => {
-  return (
-    <Composition
-      id="p2p-transfer"
-      component={P2PVideo}
-      durationInFrames={DURATION_IN_FRAMES}
-      fps={FPS}
-      width={VIDEO_WIDTH}
-      height={VIDEO_HEIGHT}
-      defaultProps={{
-        theme: "dark" as ThemeName,
-      }}
-      calculateMetadata={calculateMetadata}
-    />
-  );
-};
-
-export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
+export function P2PVideo({ theme = "dark" }: ReelProps) {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Phases
-  const isPhase1 = frame < 145;
-  const isPhase2 = frame >= 145 && frame < 252;
-  const isPhase3 = frame >= 252;
+  // Dynamic cue-driven timings (never desyncs if voice/speed changes)
+  const { cueIndex, subtitles: cues } = useSubtitles(subtitles);
+  const isPhase1 = cueIndex === 0;
+  const isPhase2 = cueIndex === 1;
+  const isPhase3 = cueIndex >= 2;
 
-  // Active Continuous Theme Tokens (Pure Dark or Pure Light throughout)
+  const cue0Start = cues[0]?.startFrame ?? 0;
+  const cue1Start = cues[1]?.startFrame ?? 151;
+  const cue2Start = cues[2]?.startFrame ?? 254;
+
   const tokens = getThemeTokens(theme);
 
-  // Springs & Animations
-  const headerSpring = spring({ frame, fps, config: { damping: 14, stiffness: 100 } });
-  const cardsEntrance = spring({ frame: frame - 6, fps, config: { damping: 13, stiffness: 95 } });
-  const phase2Spring = spring({ frame: frame - 145, fps, config: { damping: 12, stiffness: 100 } });
-  const phase3Spring = spring({ frame: frame - 252, fps, config: { damping: 12, stiffness: 95 } });
+  // Springs & Animations derived from cue start frames
+  const cardsEntrance = spring({
+    frame: frame - (cue0Start + 6),
+    fps,
+    config: { damping: 13, stiffness: 95 },
+  });
+  const phase2Spring = spring({
+    frame: frame - cue1Start,
+    fps,
+    config: { damping: 12, stiffness: 100 },
+  });
+  const phase3Spring = spring({
+    frame: frame - cue2Start,
+    fps,
+    config: { damping: 12, stiffness: 95 },
+  });
 
   const transferProgress = spring({
-    frame: frame - 28,
+    frame: frame - (cue0Start + 28),
     fps,
     config: { damping: 14, stiffness: 75, mass: 0.9 },
   });
 
   const senderBalance = Math.round(
-    interpolate(frame, [38, 62], [1200000, 700000], {
+    interpolate(frame, [cue0Start + 38, cue0Start + 62], [1200000, 700000], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     })
   );
 
   const receiverBalance = Math.round(
-    interpolate(frame, [60, 84], [250000, 750000], {
+    interpolate(frame, [cue0Start + 60, cue0Start + 84], [250000, 750000], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     })
@@ -119,56 +71,41 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
     return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " so'm";
   };
 
-  const currentSubtitle =
-    SUBTITLES.find((s) => frame >= s.startFrame && frame <= s.endFrame) ||
-    SUBTITLES[SUBTITLES.length - 1];
-
   const lockPulse = 1 + Math.sin(frame * 0.25) * 0.08;
 
   return (
-    <AbsoluteFill
-      className="overflow-hidden relative"
-      style={{
-        fontFamily: tokens.fontFamily,
-        backgroundColor: tokens.background,
-        color: tokens.textColor,
-      }}
+    <ReelScaffold
+      theme={theme}
+      reelId="p2p-transfer"
+      subtitles={subtitles}
+      isPhase2={isPhase2}
+      badgeDotColor={isPhase2 ? "#EF4444" : isPhase3 ? "#0284C7" : "#10B981"}
+      badgeText={
+        isPhase1
+          ? "⚡ TEZKOR O'TKAZMA • P2P SIRLARI"
+          : isPhase2
+          ? "⚠️ BANKLARARO SIR FOSh BO'LDI"
+          : "🤔 QAYERDAN KELDI BU PUL?"
+      }
+      title={
+        isPhase1 ? (
+          <span>
+            Payme orqali 500 000 so&apos;m yubordingiz:{" "}
+            <span className="text-[#00BFA5]">u bir zumda yetib bordi!</span>
+          </span>
+        ) : isPhase2 ? (
+          <span>
+            Lekin banklar orasida hali{" "}
+            <span className="text-[#EF4444]">1 tiyin ham ko&apos;chmadi!</span>
+          </span>
+        ) : (
+          <span>Pul qayerdan paydo bo&apos;ldi?</span>
+        )
+      }
+      lawCitation="Manba: O'zbekiston Respublikasi Markaziy Banki Kliring va Hisob-kitob qoidalari"
+      citationIcon="🏛️"
     >
-      <Audio src={staticFile("reels/p2p-transfer/voiceover.mp3")} premountFor={fps} />
-
-      {/* Decorative Grid & Ambient Glows */}
-      <ReelBackground tokens={tokens} isPhase2={isPhase2} />
-
-      {/* 1. Header & Title */}
-      <ReelHeader
-        tokens={tokens}
-        springProgress={headerSpring}
-        badgeDotColor={isPhase2 ? "#EF4444" : "#10B981"}
-        badgeText={
-          isPhase1
-            ? "⚡ P2P O'TKAZMA ANATOMIYASI"
-            : isPhase2
-            ? "⚠️ BANKLARARO SIR FOSh BO'LDI"
-            : "🤔 QAYERDAN KELDI BU PUL?"
-        }
-        title={
-          isPhase1 ? (
-            <span>
-              Payme orqali 500 000 so&apos;m yubordingiz:{" "}
-              <span className="text-[#00BFA5]">u bir zumda yetib bordi!</span>
-            </span>
-          ) : isPhase2 ? (
-            <span>
-              Lekin banklar orasida hali{" "}
-              <span className="text-[#EF4444]">1 tiyin ham ko&apos;chmadi!</span>
-            </span>
-          ) : (
-            <span>Pul qayerdan paydo bo&apos;ldi?</span>
-          )
-        }
-      />
-
-      {/* 2. Top Phone Cards (Sender & Receiver) */}
+      {/* 1. Phone Cards (Sender & Receiver) */}
       <div
         className="absolute top-[280px] left-[60px] right-[60px] h-[450px] flex gap-6"
         style={{
@@ -180,7 +117,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
         }}
       >
         {/* SENDER PHONE CARD (Payme / Kapitalbank) */}
-        <UiCard tokens={tokens} className="flex-1 p-7.5 flex flex-col justify-between relative">
+        <UiCard className="flex-1 p-7.5 flex flex-col justify-between relative">
           <div>
             <div className="flex items-center justify-between mb-4.5">
               <div className="flex items-center gap-2.5">
@@ -196,7 +133,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                   </div>
                 </div>
               </div>
-              <StatusBadge tokens={tokens}>HUMO</StatusBadge>
+              <StatusBadge>HUMO</StatusBadge>
             </div>
 
             {/* Virtual Card */}
@@ -222,7 +159,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
             className="p-4 px-5 rounded-[18px] flex items-center justify-between"
             style={{
               backgroundColor:
-                frame >= 38
+                frame >= cue0Start + 38
                   ? tokens.isDark
                     ? "rgba(239, 68, 68, 0.15)"
                     : "#FEF2F2"
@@ -230,7 +167,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                   ? "rgba(30, 41, 59, 0.7)"
                   : "#F8FAFC",
               border: `1.5px solid ${
-                frame >= 38
+                frame >= cue0Start + 38
                   ? tokens.isDark
                     ? "rgba(239, 68, 68, 0.4)"
                     : "#FCA5A5"
@@ -241,26 +178,27 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
             }}
           >
             <div className="flex items-center gap-2.5">
-              <span className="text-[22px]">{frame >= 38 ? "📤" : "💳"}</span>
+              <span className="text-[22px]">{frame >= cue0Start + 38 ? "📤" : "💳"}</span>
               <span
                 className="text-lg font-bold"
                 style={{
-                  color: frame >= 38 ? (tokens.isDark ? "#F87171" : "#DC2626") : tokens.subtextColor,
+                  color:
+                    frame >= cue0Start + 38
+                      ? tokens.isDark
+                        ? "#F87171"
+                        : "#DC2626"
+                      : tokens.subtextColor,
                 }}
               >
-                {frame >= 38 ? "-500 000 UZS" : "O'tkazma tayyor"}
+                {frame >= cue0Start + 38 ? "-500 000 UZS" : "O'tkazma tayyor"}
               </span>
             </div>
-            {frame >= 38 && (
-              <StatusBadge tokens={tokens} tone="danger">
-                Yuborildi
-              </StatusBadge>
-            )}
+            {frame >= cue0Start + 38 && <StatusBadge tone="danger">Yuborildi</StatusBadge>}
           </div>
         </UiCard>
 
         {/* RECEIVER PHONE CARD (Click / Ipak Yo'li) */}
-        <UiCard tokens={tokens} className="flex-1 p-7.5 flex flex-col justify-between relative">
+        <UiCard className="flex-1 p-7.5 flex flex-col justify-between relative">
           <div>
             <div className="flex items-center justify-between mb-4.5">
               <div className="flex items-center gap-2.5">
@@ -276,7 +214,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                   </div>
                 </div>
               </div>
-              <StatusBadge tokens={tokens}>UZCARD</StatusBadge>
+              <StatusBadge>UZCARD</StatusBadge>
             </div>
 
             {/* Virtual Card */}
@@ -302,7 +240,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
             className="p-4 px-5 rounded-[18px] flex items-center justify-between"
             style={{
               backgroundColor:
-                frame >= 60
+                frame >= cue0Start + 60
                   ? tokens.isDark
                     ? "rgba(16, 185, 129, 0.15)"
                     : "#ECFDF5"
@@ -310,7 +248,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                   ? "rgba(30, 41, 59, 0.7)"
                   : "#F8FAFC",
               border: `1.5px solid ${
-                frame >= 60
+                frame >= cue0Start + 60
                   ? tokens.isDark
                     ? "rgba(16, 185, 129, 0.4)"
                     : "#6EE7B7"
@@ -321,26 +259,27 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
             }}
           >
             <div className="flex items-center gap-2.5">
-              <span className="text-[22px]">{frame >= 60 ? "📥" : "⏳"}</span>
+              <span className="text-[22px]">{frame >= cue0Start + 60 ? "📥" : "⏳"}</span>
               <span
                 className="text-lg font-bold"
                 style={{
-                  color: frame >= 60 ? (tokens.isDark ? "#34D399" : "#059669") : tokens.subtextColor,
+                  color:
+                    frame >= cue0Start + 60
+                      ? tokens.isDark
+                        ? "#34D399"
+                        : "#059669"
+                      : tokens.subtextColor,
                 }}
               >
-                {frame >= 60 ? "+500 000 UZS" : "Kutilmoqda..."}
+                {frame >= cue0Start + 60 ? "+500 000 UZS" : "Kutilmoqda..."}
               </span>
             </div>
-            {frame >= 60 && (
-              <StatusBadge tokens={tokens} tone="success">
-                0.4 soniya! ⚡
-              </StatusBadge>
-            )}
+            {frame >= cue0Start + 60 && <StatusBadge tone="success">0.4 soniya! ⚡</StatusBadge>}
           </div>
         </UiCard>
 
         {/* Moving Money Pill Animation */}
-        {frame >= 28 && frame <= 74 && (
+        {frame >= cue0Start + 28 && frame <= cue0Start + 74 && (
           <div
             className="absolute top-1/2 z-30 p-2.5 px-5 rounded-full text-white font-extrabold text-lg shadow-xl flex items-center gap-2"
             style={{
@@ -362,11 +301,11 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
         )}
       </div>
 
-      {/* 3. Middle Flow (Architecture / Reality / Explanation) */}
+      {/* 2. Middle Flow (Architecture / Reality / Explanation) */}
       <div className="absolute top-[780px] left-[60px] right-[60px] h-[690px] flex flex-col justify-center">
         {/* PHASE 1: User's Illusion */}
         {isPhase1 && (
-          <UiCard tokens={tokens} variant="middle" className="p-11 px-9 text-center">
+          <UiCard variant="middle" className="p-11 px-9 text-center">
             <div
               className="text-lg font-bold uppercase tracking-wider mb-3"
               style={{ color: tokens.subtextColor }}
@@ -405,7 +344,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
             </div>
 
             <div className="mt-9">
-              <StatusBadge tokens={tokens} tone="success" className="p-3.5 px-7 rounded-full text-xl font-bold">
+              <StatusBadge tone="success" className="p-3.5 px-7 rounded-full text-xl font-bold">
                 <span>⏱️ Tranzaksiya tezligi:</span>
                 <span className="font-black text-[#10B981]">0.38 soniya</span>
               </StatusBadge>
@@ -416,7 +355,6 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
         {/* PHASE 2: Interbank Reality (0 so'm moved!) */}
         {isPhase2 && (
           <UiCard
-            tokens={tokens}
             variant="danger"
             className="p-11 px-9.5 text-center"
             style={{
@@ -427,7 +365,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
               opacity: phase2Spring,
             }}
           >
-            <StatusBadge tokens={tokens} tone="danger" className="mb-5 uppercase tracking-wider text-lg">
+            <StatusBadge tone="danger" className="mb-5 uppercase tracking-wider text-lg">
               ⚠️ PARDA ORTIDAGI HAQIQAT
             </StatusBadge>
 
@@ -473,7 +411,6 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                 </div>
               </div>
               <StatusBadge
-                tokens={tokens}
                 tone="danger"
                 className="p-2.5 px-5 rounded-2xl text-lg flex items-center gap-2"
                 style={{ scale: lockPulse }}
@@ -496,7 +433,6 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
         {/* PHASE 3: The Mystery & Explanation */}
         {isPhase3 && (
           <UiCard
-            tokens={tokens}
             variant="accent"
             className="p-10 px-9"
             style={{
@@ -512,7 +448,10 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                 ?
               </div>
               <div>
-                <div className="text-4xl font-black tracking-tight" style={{ color: tokens.textColor }}>
+                <div
+                  className="text-4xl font-black tracking-tight"
+                  style={{ color: tokens.textColor }}
+                >
                   Pul qayerdan keldi?
                 </div>
                 <div className="text-lg font-semibold" style={{ color: tokens.subtextColor }}>
@@ -528,19 +467,19 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                   num: "1",
                   title: "Markaziy Protsessing Kafolati",
                   desc: "HUMO & UZCARD banklar o'rtasida to'lov kafolatini oladi.",
-                  startAt: 254,
+                  startAt: cue2Start,
                 },
                 {
                   num: "2",
                   title: "Ichki Daftardagi Yozuv (Ledger)",
                   desc: "Qabul qiluvchi bank o'z hisobidan mijozga kredit yozadi.",
-                  startAt: 268,
+                  startAt: cue2Start + 14,
                 },
                 {
                   num: "3",
                   title: "Kechki Kliring & Netting (17:00)",
                   desc: "Real pul Markaziy Bank kliring tizimi orqali kechqurun to'planadi.",
-                  startAt: 282,
+                  startAt: cue2Start + 28,
                 },
               ].map((item, idx) => {
                 const itemSpring = spring({
@@ -572,7 +511,10 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                       {item.num}
                     </div>
                     <div className="flex-1">
-                      <div className="text-xl font-extrabold mb-1" style={{ color: tokens.textColor }}>
+                      <div
+                        className="text-xl font-extrabold mb-1"
+                        style={{ color: tokens.textColor }}
+                      >
                         {item.title}
                       </div>
                       <div className="text-base" style={{ color: tokens.subtextColor }}>
@@ -586,16 +528,6 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
           </UiCard>
         )}
       </div>
-
-      {/* 4. Synced Subtitle Card */}
-      <SubtitleCard currentSubtitle={currentSubtitle} isPhase2={isPhase2} tokens={tokens} />
-
-      {/* 5. Regulatory Footer */}
-      <RegulatoryFooter
-        tokens={tokens}
-        icon="🏛️"
-        text="Manba: O'zbekiston Respublikasi Markaziy Banki Kliring va Hisob-kitob qoidalari"
-      />
-    </AbsoluteFill>
+    </ReelScaffold>
   );
-};
+}

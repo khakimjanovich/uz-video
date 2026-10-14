@@ -113,6 +113,81 @@ def list_reels():
     print("\n" + "=" * 65 + "\n")
 
 
+def sync_subtitles_json(reel_name: str, cues=None):
+    reel_dir = REELS_SRC_DIR / reel_name
+    srt_file = reel_dir / "subtitles.srt"
+    json_file = reel_dir / "subtitles.json"
+
+    if cues is None:
+        cues = parse_srt_file(srt_file)
+    if not cues:
+        return None
+
+    existing_by_idx = {}
+    existing_by_text = {}
+    if json_file.exists():
+        try:
+            with open(json_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                for item in data:
+                    if "index" in item:
+                        existing_by_idx[item["index"]] = item
+                    if "text" in item:
+                        existing_by_text[item["text"].strip()] = item
+        except Exception:
+            pass
+
+    updated_cues = []
+    total = len(cues)
+    for i, cue in enumerate(cues):
+        idx = i + 1
+        start_frame = math.floor(cue["start"] * 30)
+        # For the final cue, extend to match video padding (+1.0s)
+        if i == total - 1:
+            end_frame = math.ceil((cue["end"] + 1.0) * 30)
+        else:
+            end_frame = math.ceil(cue["end"] * 30)
+
+        text = cue["text"].strip()
+        prev = existing_by_idx.get(idx) or existing_by_text.get(text) or {}
+
+        highlight = prev.get("highlight", "")
+        highlight_color = prev.get("highlightColor")
+        highlight_bg = prev.get("highlightBg")
+
+        if highlight and highlight in text:
+            parts = text.split(highlight, 1)
+            prefix = parts[0]
+            suffix = parts[1]
+        else:
+            prefix = prev.get("prefix", text)
+            highlight = prev.get("highlight", "")
+            suffix = prev.get("suffix", "")
+
+        cue_obj = {
+            "index": idx,
+            "startFrame": start_frame,
+            "endFrame": end_frame,
+            "text": text,
+            "prefix": prefix,
+            "highlight": highlight,
+            "suffix": suffix,
+        }
+        if highlight_color:
+            cue_obj["highlightColor"] = highlight_color
+        if highlight_bg:
+            cue_obj["highlightBg"] = highlight_bg
+
+        updated_cues.append(cue_obj)
+
+    with open(json_file, "w", encoding="utf-8") as f:
+        json.dump(updated_cues, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    print(f"📝 Subtitles JSON synced -> {json_file}")
+    return updated_cues
+
+
 def generate_voice(reel_name: str, voice_raw="sardor", rate="+5%"):
     voice = resolve_voice(voice_raw)
     reel_dir = REELS_SRC_DIR / reel_name
@@ -144,6 +219,7 @@ def generate_voice(reel_name: str, voice_raw="sardor", rate="+5%"):
     subprocess.run(cmd, check=True)
 
     cues = parse_srt_file(dest_srt)
+    sync_subtitles_json(reel_name, cues)
     last_end = max(c["end"] for c in cues) if cues else 0.0
     total_frames = math.ceil((last_end + 1.0) * 30)
 
@@ -151,6 +227,7 @@ def generate_voice(reel_name: str, voice_raw="sardor", rate="+5%"):
     print(f"✅ Subtitles saved -> {dest_srt}")
     print(f"⚡ Recommended durationInFrames: {total_frames} ({last_end + 1.0:.2f}s @ 30fps)\n")
     return True
+
 
 
 def render_video(reel_name: str, theme="dark"):
@@ -183,7 +260,7 @@ def render_video(reel_name: str, theme="dark"):
 
 def main():
     parser = argparse.ArgumentParser(description="Manage code-only regeneratable Uzbek Tech Reels with themes & voices")
-    parser.add_argument("command", choices=["list", "voice", "render", "build"], nargs="?", default="list",
+    parser.add_argument("command", choices=["list", "voice", "render", "build", "subtitles"], nargs="?", default="list",
                         help="Action to perform (default: list)")
     parser.add_argument("reel", nargs="?", default="all",
                         help="Reel ID name or 'all'")
@@ -205,6 +282,13 @@ def main():
                 generate_voice(r, args.voice, args.rate)
         else:
             generate_voice(args.reel, args.voice, args.rate)
+    elif args.command == "subtitles":
+        if args.reel == "all":
+            reels = sorted([p.name for p in REELS_SRC_DIR.iterdir() if p.is_dir()])
+            for r in reels:
+                sync_subtitles_json(r)
+        else:
+            sync_subtitles_json(args.reel)
     elif args.command in ["render", "build"]:
         if args.reel == "all":
             reels = sorted([p.name for p in REELS_SRC_DIR.iterdir() if p.is_dir()])
@@ -212,6 +296,7 @@ def main():
                 render_video(r, args.theme)
         else:
             render_video(args.reel, args.theme)
+
 
 
 if __name__ == "__main__":

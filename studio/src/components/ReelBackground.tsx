@@ -1,15 +1,19 @@
 import React from "react";
 import { ThemeTokens } from "../themes";
+import { useThemeTokens } from "../context";
 
-interface ReelBackgroundProps {
-  tokens: ThemeTokens;
+export interface ReelBackgroundProps {
+  tokens?: ThemeTokens;
   isPhase2?: boolean;
 }
 
 export const ReelBackground: React.FC<ReelBackgroundProps> = ({
-  tokens,
+  tokens: propTokens,
   isPhase2 = false,
 }) => {
+  const contextTokens = useThemeTokens();
+  const tokens = propTokens || contextTokens;
+
   return (
     <>
       {/* Decorative Radial Grid */}

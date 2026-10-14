@@ -1,10 +1,11 @@
 import React from "react";
 import { ThemeTokens } from "../themes";
+import { useThemeTokens } from "../context";
 
 export type CardVariant = "default" | "middle" | "danger" | "accent" | "success";
 
-interface UiCardProps {
-  tokens: ThemeTokens;
+export interface UiCardProps {
+  tokens?: ThemeTokens;
   variant?: CardVariant;
   className?: string;
   style?: React.CSSProperties;
@@ -12,12 +13,15 @@ interface UiCardProps {
 }
 
 export const UiCard: React.FC<UiCardProps> = ({
-  tokens,
+  tokens: propTokens,
   variant = "default",
   className = "",
   style = {},
   children,
 }) => {
+  const contextTokens = useThemeTokens();
+  const tokens = propTokens || contextTokens;
+
   let bg = tokens.cardBg;
   let border = tokens.cardBorder;
   let shadow = tokens.cardShadow;

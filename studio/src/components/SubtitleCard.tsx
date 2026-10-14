@@ -1,18 +1,24 @@
 import React from "react";
 import { ThemeTokens } from "../themes";
+import { useThemeTokens } from "../context";
 
 export interface SubtitleCue {
+  index?: number;
+  id?: number | string;
   startFrame: number;
   endFrame: number;
-  prefix: string;
-  highlight: string;
-  suffix: string;
+  text?: string;
+  prefix?: string;
+  highlight?: string;
+  suffix?: string;
+  highlightColor?: string;
+  highlightBg?: string;
 }
 
-interface SubtitleCardProps {
+export interface SubtitleCardProps {
   currentSubtitle: SubtitleCue;
   isPhase2?: boolean;
-  tokens: ThemeTokens;
+  tokens?: ThemeTokens;
   accentColor?: string;
   accentBg?: string;
 }
@@ -20,10 +26,13 @@ interface SubtitleCardProps {
 export const SubtitleCard: React.FC<SubtitleCardProps> = ({
   currentSubtitle,
   isPhase2 = false,
-  tokens,
+  tokens: propTokens,
   accentColor,
   accentBg,
 }) => {
+  const contextTokens = useThemeTokens();
+  const tokens = propTokens || contextTokens;
+
   const iconBg = isPhase2
     ? tokens.isDark
       ? "rgba(239, 68, 68, 0.2)"
@@ -56,6 +65,13 @@ export const SubtitleCard: React.FC<SubtitleCardProps> = ({
     ? "rgba(56, 189, 248, 0.2)"
     : accentBg || "rgba(2, 132, 199, 0.15)";
 
+  const highlightColor = currentSubtitle.highlightColor || defaultHighlightColor;
+  const highlightBg = currentSubtitle.highlightBg || defaultHighlightBg;
+
+  const prefix = currentSubtitle.prefix ?? currentSubtitle.text ?? "";
+  const highlight = currentSubtitle.highlight ?? "";
+  const suffix = currentSubtitle.suffix ?? "";
+
   return (
     <div className="absolute bottom-[120px] left-[60px] right-[60px] z-20">
       <div
@@ -81,17 +97,19 @@ export const SubtitleCard: React.FC<SubtitleCardProps> = ({
             className="text-[28px] font-bold leading-[1.35]"
             style={{ color: tokens.subtitleTextColor }}
           >
-            {currentSubtitle.prefix}
-            <span
-              className="font-black px-2 py-0.5 rounded-md"
-              style={{
-                color: defaultHighlightColor,
-                backgroundColor: defaultHighlightBg,
-              }}
-            >
-              {currentSubtitle.highlight}
-            </span>
-            {currentSubtitle.suffix}
+            {prefix}
+            {highlight ? (
+              <span
+                className="font-black px-2 py-0.5 rounded-md"
+                style={{
+                  color: highlightColor,
+                  backgroundColor: highlightBg,
+                }}
+              >
+                {highlight}
+              </span>
+            ) : null}
+            {suffix}
           </div>
         </div>
       </div>

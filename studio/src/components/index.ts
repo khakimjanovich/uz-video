@@ -4,3 +4,4 @@ export * from "./SubtitleCard";
 export * from "./RegulatoryFooter";
 export * from "./UiCard";
 export * from "./StatusBadge";
+export * from "./ReelScaffold";

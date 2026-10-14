@@ -1,12 +1,13 @@
 import React from "react";
 import { ThemeTokens } from "../themes";
+import { useThemeTokens } from "../context";
 
 export type BadgeTone = "neutral" | "danger" | "success" | "accent" | "warning";
 
-interface StatusBadgeProps {
+export interface StatusBadgeProps {
   children: React.ReactNode;
   tone?: BadgeTone;
-  tokens: ThemeTokens;
+  tokens?: ThemeTokens;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -14,10 +15,13 @@ interface StatusBadgeProps {
 export const StatusBadge: React.FC<StatusBadgeProps> = ({
   children,
   tone = "neutral",
-  tokens,
+  tokens: propTokens,
   className = "",
   style = {},
 }) => {
+  const contextTokens = useThemeTokens();
+  const tokens = propTokens || contextTokens;
+
   let bg = tokens.badgeBg;
   let color = tokens.badgeText;
   let border = tokens.badgeBorder;

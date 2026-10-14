@@ -1,17 +1,21 @@
 import React from "react";
 import { ThemeTokens } from "../themes";
+import { useThemeTokens } from "../context";
 
-interface RegulatoryFooterProps {
+export interface RegulatoryFooterProps {
   text: string;
   icon?: string;
-  tokens: ThemeTokens;
+  tokens?: ThemeTokens;
 }
 
 export const RegulatoryFooter: React.FC<RegulatoryFooterProps> = ({
   text,
   icon = "🛡️",
-  tokens,
+  tokens: propTokens,
 }) => {
+  const contextTokens = useThemeTokens();
+  const tokens = propTokens || contextTokens;
+
   return (
     <div
       className="absolute bottom-[42px] left-[60px] right-[60px] flex items-center justify-center gap-2.5 text-[17px] font-semibold tracking-wide z-20"
