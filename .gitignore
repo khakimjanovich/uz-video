@@ -1,0 +1,30 @@
+# Node & Dependencies
+node_modules/
+.npm
+package-lock.json
+
+# Python & Virtualenv
+venv/
+__pycache__/
+*.py[cod]
+
+# Media & Render Artifacts (Can be regenerated anytime via manage_reels.py)
+*.mp4
+*.mov
+*.mp3
+*.wav
+out/
+studio/public/**/*.mp3
+studio/public/voiceover.mp3
+studio/public/subtitles.srt
+voiceover.mp3
+subtitles.srt
+
+# Keep subtitles.srt tracked inside reels source folders
+!studio/src/reels/**/subtitles.srt
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
