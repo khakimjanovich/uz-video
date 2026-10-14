@@ -1,7 +1,6 @@
 import React from "react";
 import {
   AbsoluteFill,
-  Audio,
   Composition,
   interpolate,
   spring,
@@ -9,7 +8,16 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
+import { Audio } from "@remotion/media";
 import { getThemeTokens, ReelProps, ThemeName } from "../../themes";
+import {
+  ReelBackground,
+  ReelHeader,
+  SubtitleCard,
+  RegulatoryFooter,
+  UiCard,
+  StatusBadge,
+} from "../../components";
 
 export const FPS = 30;
 export const DURATION_IN_FRAMES = 345;
@@ -72,28 +80,18 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
   // Active Continuous Theme Tokens (Pure Dark or Pure Light throughout)
   const tokens = getThemeTokens(theme);
 
-  // Header spring
-  const headerSpring = spring({
-    frame,
-    fps,
-    config: { damping: 14, stiffness: 100 },
-  });
+  // Springs & Animations
+  const headerSpring = spring({ frame, fps, config: { damping: 14, stiffness: 100 } });
+  const cardsEntrance = spring({ frame: frame - 6, fps, config: { damping: 13, stiffness: 95 } });
+  const phase2Spring = spring({ frame: frame - 145, fps, config: { damping: 12, stiffness: 100 } });
+  const phase3Spring = spring({ frame: frame - 252, fps, config: { damping: 12, stiffness: 95 } });
 
-  // Cards entrance
-  const cardsEntrance = spring({
-    frame: frame - 6,
-    fps,
-    config: { damping: 13, stiffness: 95 },
-  });
-
-  // Pill transfer animation (Frame 28 -> 70)
   const transferProgress = spring({
     frame: frame - 28,
     fps,
     config: { damping: 14, stiffness: 75, mass: 0.9 },
   });
 
-  // Balances
   const senderBalance = Math.round(
     interpolate(frame, [38, 62], [1200000, 700000], {
       extrapolateLeft: "clamp",
@@ -108,276 +106,99 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
     })
   );
 
-  // Phase springs
-  const phase2Spring = spring({
-    frame: frame - 145,
-    fps,
-    config: { damping: 12, stiffness: 100 },
-  });
-
-  const phase3Spring = spring({
-    frame: frame - 252,
-    fps,
-    config: { damping: 12, stiffness: 95 },
-  });
-
-  // Active subtitle
-  const currentSubtitle =
-    SUBTITLES.find((s) => frame >= s.startFrame && frame <= s.endFrame) ||
-    SUBTITLES[SUBTITLES.length - 1];
-
-  // Currency formatter
   const formatUZS = (val: number) => {
     return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " so'm";
   };
 
-  // Lock pulse animation in Phase 2
+  const currentSubtitle =
+    SUBTITLES.find((s) => frame >= s.startFrame && frame <= s.endFrame) ||
+    SUBTITLES[SUBTITLES.length - 1];
+
   const lockPulse = 1 + Math.sin(frame * 0.25) * 0.08;
 
   return (
     <AbsoluteFill
+      className="overflow-hidden relative font-sans"
       style={{
         backgroundColor: tokens.background,
-        fontFamily:
-          '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", Roboto, sans-serif',
         color: tokens.textColor,
-        overflow: "hidden",
-        position: "relative",
       }}
     >
-      <Audio src={staticFile("reels/p2p-transfer/voiceover.mp3")} />
+      <Audio src={staticFile("reels/p2p-transfer/voiceover.mp3")} premountFor={fps} />
 
-      {/* Decorative Grid and Soft Glows */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `radial-gradient(${tokens.gridColor} 1.4px, transparent 1.4px)`,
-          backgroundSize: "36px 36px",
-          opacity: tokens.gridOpacity,
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          top: -180,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: 960,
-          height: 550,
-          background: isPhase2
-            ? "radial-gradient(circle, rgba(239,68,68,0.18) 0%, rgba(245,158,11,0.08) 50%, transparent 75%)"
-            : `radial-gradient(circle, ${tokens.glowColor1} 0%, ${tokens.glowColor2} 50%, transparent 75%)`,
-          filter: "blur(60px)",
-        }}
-      />
+      {/* Decorative Grid & Ambient Glows */}
+      <ReelBackground tokens={tokens} isPhase2={isPhase2} />
 
-      {/* ============================================================== */}
-      {/* 1. TOP HEADER & CATEGORY BADGE                                 */}
-      {/* ============================================================== */}
-      <div
-        style={{
-          position: "absolute",
-          top: 86,
-          left: 60,
-          right: 60,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          transform: `translateY(${interpolate(headerSpring, [0, 1], [-50, 0])}px)`,
-          opacity: headerSpring,
-        }}
-      >
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 10,
-            padding: "10px 24px",
-            borderRadius: 999,
-            backgroundColor: tokens.badgeBg,
-            border: tokens.badgeBorder,
-            boxShadow: "0 4px 14px rgba(0,0,0,0.04)",
-            marginBottom: 18,
-          }}
-        >
-          <div
-            style={{
-              width: 10,
-              height: 10,
-              borderRadius: "50%",
-              backgroundColor: isPhase2 ? "#EF4444" : "#10B981",
-              boxShadow: isPhase2 ? "0 0 10px #EF4444" : "0 0 10px #10B981",
-            }}
-          />
-          <span
-            style={{
-              fontSize: 22,
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              color: tokens.badgeText,
-              textTransform: "uppercase",
-            }}
-          >
-            {isPhase1 && "⚡ P2P O'TKAZMA ANATOMIYASI"}
-            {isPhase2 && "⚠️ BANKLARARO SIR FOSh BO'LDI"}
-            {isPhase3 && "🤔 QAYERDAN KELDI BU PUL?"}
-          </span>
-        </div>
-
-        <h1
-          style={{
-            fontSize: 54,
-            fontWeight: 800,
-            textAlign: "center",
-            margin: 0,
-            lineHeight: 1.15,
-            letterSpacing: "-0.03em",
-            color: tokens.textColor,
-          }}
-        >
-          {isPhase1 && (
+      {/* 1. Header & Title */}
+      <ReelHeader
+        tokens={tokens}
+        springProgress={headerSpring}
+        badgeDotColor={isPhase2 ? "#EF4444" : "#10B981"}
+        badgeText={
+          isPhase1
+            ? "⚡ P2P O'TKAZMA ANATOMIYASI"
+            : isPhase2
+            ? "⚠️ BANKLARARO SIR FOSh BO'LDI"
+            : "🤔 QAYERDAN KELDI BU PUL?"
+        }
+        title={
+          isPhase1 ? (
             <span>
-              500 000 so&apos;m{" "}
-              <span style={{ color: "#00BFA5" }}>bir zumda</span> o&apos;tdi
+              Payme orqali 500 000 so&apos;m yubordingiz:{" "}
+              <span className="text-[#00BFA5]">u bir zumda yetib bordi!</span>
             </span>
-          )}
-          {isPhase2 && (
+          ) : isPhase2 ? (
             <span>
-              Banklararo{" "}
-              <span style={{ color: "#EF4444" }}>0 SO&apos;M</span> ko&apos;chgan!
+              Lekin banklar orasida hali{" "}
+              <span className="text-[#EF4444]">1 tiyin ham ko&apos;chmadi!</span>
             </span>
-          )}
-          {isPhase3 && <span>Pul qayerdan paydo bo&apos;ldi?</span>}
-        </h1>
-      </div>
+          ) : (
+            <span>Pul qayerdan paydo bo&apos;ldi?</span>
+          )
+        }
+      />
 
-      {/* ============================================================== */}
-      {/* 2. TWO PHONE UI CARDS (SENDER & RECEIVER)                      */}
-      {/* ============================================================== */}
+      {/* 2. Top Phone Cards (Sender & Receiver) */}
       <div
+        className="absolute top-[280px] left-[60px] right-[60px] h-[450px] flex gap-6"
         style={{
-          position: "absolute",
-          top: 275,
-          left: 54,
-          right: 54,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "stretch",
-          gap: 24,
           transform: `scale(${interpolate(cardsEntrance, [0, 1], [0.9, 1])})`,
           opacity: cardsEntrance,
         }}
       >
         {/* SENDER PHONE CARD (Payme / Kapitalbank) */}
-        <div
-          style={{
-            flex: 1,
-            backgroundColor: tokens.cardBg,
-            borderRadius: 36,
-            padding: 30,
-            border: tokens.cardBorder,
-            boxShadow: tokens.cardShadow,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            position: "relative",
-          }}
-        >
+        <UiCard tokens={tokens} className="flex-1 p-7.5 flex flex-col justify-between relative">
           <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: 18,
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div
-                  style={{
-                    width: 38,
-                    height: 38,
-                    borderRadius: 12,
-                    backgroundColor: "#00BFA5",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#FFFFFF",
-                    fontWeight: 900,
-                    fontSize: 20,
-                  }}
-                >
+            <div className="flex items-center justify-between mb-4.5">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9.5 h-9.5 rounded-xl bg-[#00BFA5] text-white font-black text-xl flex items-center justify-center">
                   P
                 </div>
                 <div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: tokens.textColor }}>
+                  <div className="text-[22px] font-extrabold" style={{ color: tokens.textColor }}>
                     Payme
                   </div>
-                  <div style={{ fontSize: 16, color: tokens.subtextColor }}>
+                  <div className="text-base" style={{ color: tokens.subtextColor }}>
                     Alisher M.
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  padding: "6px 14px",
-                  borderRadius: 10,
-                  backgroundColor: tokens.badgeBg,
-                  border: tokens.badgeBorder,
-                  fontSize: 16,
-                  fontWeight: 700,
-                  color: tokens.subtextColor,
-                }}
-              >
-                HUMO
-              </div>
+              <StatusBadge tokens={tokens}>HUMO</StatusBadge>
             </div>
 
             {/* Virtual Card */}
             <div
-              style={{
-                borderRadius: 20,
-                padding: "20px 22px",
-                background: "linear-gradient(135deg, #0F172A 0%, #1E293B 100%)",
-                color: "#FFFFFF",
-                marginBottom: 20,
-                boxShadow: "0 10px 25px -8px rgba(15,23,42,0.3)",
-              }}
+              className="p-5 px-5.5 rounded-[20px] text-white mb-5 shadow-md"
+              style={{ background: "linear-gradient(135deg, #0F172A 0%, #1E293B 100%)" }}
             >
-              <div
-                style={{
-                  fontSize: 14,
-                  letterSpacing: "0.1em",
-                  color: "#94A3B8",
-                  textTransform: "uppercase",
-                  marginBottom: 6,
-                }}
-              >
+              <div className="text-sm tracking-wider text-slate-400 uppercase mb-1.5">
                 Kapitalbank
               </div>
-              <div
-                style={{
-                  fontSize: 18,
-                  letterSpacing: "0.15em",
-                  fontWeight: 600,
-                  fontFamily: "monospace",
-                  marginBottom: 14,
-                }}
-              >
+              <div className="text-lg tracking-widest font-semibold font-mono mb-3.5">
                 9860 •••• •••• 4210
               </div>
-              <div style={{ fontSize: 13, color: "#94A3B8" }}>Karta balansi</div>
-              <div
-                style={{
-                  fontSize: 30,
-                  fontWeight: 800,
-                  letterSpacing: "-0.02em",
-                }}
-              >
+              <div className="text-[13px] text-slate-400">Karta balansi</div>
+              <div className="text-[30px] font-extrabold tracking-tight">
                 {formatUZS(senderBalance)}
               </div>
             </div>
@@ -385,28 +206,32 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
 
           {/* Action Status */}
           <div
+            className="p-4 px-5 rounded-[18px] flex items-center justify-between"
             style={{
-              padding: "16px 20px",
-              borderRadius: 18,
-              backgroundColor: frame >= 38
-                ? (tokens.isDark ? "rgba(239, 68, 68, 0.15)" : "#FEF2F2")
-                : (tokens.isDark ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC"),
+              backgroundColor:
+                frame >= 38
+                  ? tokens.isDark
+                    ? "rgba(239, 68, 68, 0.15)"
+                    : "#FEF2F2"
+                  : tokens.isDark
+                  ? "rgba(30, 41, 59, 0.7)"
+                  : "#F8FAFC",
               border: `1.5px solid ${
                 frame >= 38
-                  ? (tokens.isDark ? "rgba(239, 68, 68, 0.4)" : "#FCA5A5")
-                  : (tokens.isDark ? "rgba(56, 189, 248, 0.22)" : "#E2E8F0")
+                  ? tokens.isDark
+                    ? "rgba(239, 68, 68, 0.4)"
+                    : "#FCA5A5"
+                  : tokens.isDark
+                  ? "rgba(56, 189, 248, 0.22)"
+                  : "#E2E8F0"
               }`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ fontSize: 22 }}>{frame >= 38 ? "📤" : "💳"}</span>
+            <div className="flex items-center gap-2.5">
+              <span className="text-[22px]">{frame >= 38 ? "📤" : "💳"}</span>
               <span
+                className="text-lg font-bold"
                 style={{
-                  fontSize: 18,
-                  fontWeight: 700,
                   color: frame >= 38 ? (tokens.isDark ? "#F87171" : "#DC2626") : tokens.subtextColor,
                 }}
               >
@@ -414,128 +239,46 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
               </span>
             </div>
             {frame >= 38 && (
-              <span
-                style={{
-                  fontSize: 14,
-                  fontWeight: 800,
-                  color: tokens.isDark ? "#F87171" : "#DC2626",
-                  backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.25)" : "#FEE2E2",
-                  padding: "4px 10px",
-                  borderRadius: 8,
-                }}
-              >
+              <StatusBadge tokens={tokens} tone="danger">
                 Yuborildi
-              </span>
+              </StatusBadge>
             )}
           </div>
-        </div>
+        </UiCard>
 
         {/* RECEIVER PHONE CARD (Click / Ipak Yo'li) */}
-        <div
-          style={{
-            flex: 1,
-            backgroundColor: tokens.cardBg,
-            borderRadius: 36,
-            padding: 30,
-            border: tokens.cardBorder,
-            boxShadow: tokens.cardShadow,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            position: "relative",
-          }}
-        >
+        <UiCard tokens={tokens} className="flex-1 p-7.5 flex flex-col justify-between relative">
           <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: 18,
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div
-                  style={{
-                    width: 38,
-                    height: 38,
-                    borderRadius: 12,
-                    backgroundColor: "#0077FF",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#FFFFFF",
-                    fontWeight: 900,
-                    fontSize: 20,
-                  }}
-                >
+            <div className="flex items-center justify-between mb-4.5">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9.5 h-9.5 rounded-xl bg-[#0284C7] text-white font-black text-xl flex items-center justify-center">
                   C
                 </div>
                 <div>
-                  <div style={{ fontSize: 22, fontWeight: 800, color: tokens.textColor }}>
+                  <div className="text-[22px] font-extrabold" style={{ color: tokens.textColor }}>
                     Click
                   </div>
-                  <div style={{ fontSize: 16, color: tokens.subtextColor }}>
-                    Jasur K.
+                  <div className="text-base" style={{ color: tokens.subtextColor }}>
+                    Bobur T.
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  padding: "6px 14px",
-                  borderRadius: 10,
-                  backgroundColor: tokens.badgeBg,
-                  border: tokens.badgeBorder,
-                  fontSize: 16,
-                  fontWeight: 700,
-                  color: "#0077FF",
-                }}
-              >
-                UZCARD
-              </div>
+              <StatusBadge tokens={tokens}>UZCARD</StatusBadge>
             </div>
 
             {/* Virtual Card */}
             <div
-              style={{
-                borderRadius: 20,
-                padding: "20px 22px",
-                background: "linear-gradient(135deg, #0284C7 0%, #0369A1 100%)",
-                color: "#FFFFFF",
-                marginBottom: 20,
-                boxShadow: "0 10px 25px -8px rgba(3,105,161,0.35)",
-              }}
+              className="p-5 px-5.5 rounded-[20px] text-white mb-5 shadow-md"
+              style={{ background: "linear-gradient(135deg, #0284C7 0%, #0369A1 100%)" }}
             >
-              <div
-                style={{
-                  fontSize: 14,
-                  letterSpacing: "0.1em",
-                  color: "#BAE6FD",
-                  textTransform: "uppercase",
-                  marginBottom: 6,
-                }}
-              >
+              <div className="text-sm tracking-wider text-sky-200 uppercase mb-1.5">
                 Ipak Yo&apos;li Bank
               </div>
-              <div
-                style={{
-                  fontSize: 18,
-                  letterSpacing: "0.15em",
-                  fontWeight: 600,
-                  fontFamily: "monospace",
-                  marginBottom: 14,
-                }}
-              >
-                8600 •••• •••• 8820
+              <div className="text-lg tracking-widest font-semibold font-mono mb-3.5">
+                8600 •••• •••• 9912
               </div>
-              <div style={{ fontSize: 13, color: "#BAE6FD" }}>Karta balansi</div>
-              <div
-                style={{
-                  fontSize: 30,
-                  fontWeight: 800,
-                  letterSpacing: "-0.02em",
-                }}
-              >
+              <div className="text-[13px] text-sky-200">Karta balansi</div>
+              <div className="text-[30px] font-extrabold tracking-tight">
                 {formatUZS(receiverBalance)}
               </div>
             </div>
@@ -543,28 +286,32 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
 
           {/* Action Status */}
           <div
+            className="p-4 px-5 rounded-[18px] flex items-center justify-between"
             style={{
-              padding: "16px 20px",
-              borderRadius: 18,
-              backgroundColor: frame >= 60
-                ? (tokens.isDark ? "rgba(16, 185, 129, 0.15)" : "#ECFDF5")
-                : (tokens.isDark ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC"),
+              backgroundColor:
+                frame >= 60
+                  ? tokens.isDark
+                    ? "rgba(16, 185, 129, 0.15)"
+                    : "#ECFDF5"
+                  : tokens.isDark
+                  ? "rgba(30, 41, 59, 0.7)"
+                  : "#F8FAFC",
               border: `1.5px solid ${
                 frame >= 60
-                  ? (tokens.isDark ? "rgba(16, 185, 129, 0.4)" : "#6EE7B7")
-                  : (tokens.isDark ? "rgba(56, 189, 248, 0.22)" : "#E2E8F0")
+                  ? tokens.isDark
+                    ? "rgba(16, 185, 129, 0.4)"
+                    : "#6EE7B7"
+                  : tokens.isDark
+                  ? "rgba(56, 189, 248, 0.22)"
+                  : "#E2E8F0"
               }`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <span style={{ fontSize: 22 }}>{frame >= 60 ? "📥" : "⏳"}</span>
+            <div className="flex items-center gap-2.5">
+              <span className="text-[22px]">{frame >= 60 ? "📥" : "⏳"}</span>
               <span
+                className="text-lg font-bold"
                 style={{
-                  fontSize: 18,
-                  fontWeight: 700,
                   color: frame >= 60 ? (tokens.isDark ? "#34D399" : "#059669") : tokens.subtextColor,
                 }}
               >
@@ -572,144 +319,68 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
               </span>
             </div>
             {frame >= 60 && (
-              <span
-                style={{
-                  fontSize: 14,
-                  fontWeight: 800,
-                  color: tokens.isDark ? "#34D399" : "#059669",
-                  backgroundColor: tokens.isDark ? "rgba(16, 185, 129, 0.25)" : "#D1FAE5",
-                  padding: "4px 10px",
-                  borderRadius: 8,
-                }}
-              >
+              <StatusBadge tokens={tokens} tone="success">
                 0.4 soniya! ⚡
-              </span>
+              </StatusBadge>
             )}
           </div>
-        </div>
-      </div>
+        </UiCard>
 
-      {/* FLYING 500,000 SO'M PILL BADGE */}
-      {frame >= 28 && frame <= 100 && (
-        <div
-          style={{
-            position: "absolute",
-            top: 725,
-            left: interpolate(transferProgress, [0, 1], [270, 810]),
-            transform: `translate(-50%, -50%) scale(${interpolate(
-              transferProgress,
-              [0, 0.5, 1],
-              [0.9, 1.08, 1]
-            )})`,
-            padding: "16px 30px",
-            borderRadius: 999,
-            background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
-            color: "#FFFFFF",
-            fontWeight: 800,
-            fontSize: 24,
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            boxShadow:
-              "0 18px 36px -6px rgba(16, 185, 129, 0.45), 0 0 0 4px rgba(255,255,255,0.95)",
-            whiteSpace: "nowrap",
-            zIndex: 100,
-          }}
-        >
-          <span>⚡</span>
-          <span>500 000 so&apos;m</span>
-          <span>➔</span>
-        </div>
-      )}
-
-      {/* ============================================================== */}
-      {/* 3. MIDDLE FLOW (CENTRAL CLEARING / INTERBANK REALITY)           */}
-      {/* ============================================================== */}
-      <div
-        style={{
-          position: "absolute",
-          top: 790,
-          left: 54,
-          right: 54,
-          height: 680,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
-        {/* PHASE 1: Processing Switch (Instant appearance) */}
-        {isPhase1 && (
+        {/* Moving Money Pill Animation */}
+        {frame >= 28 && frame <= 74 && (
           <div
+            className="absolute top-1/2 z-30 p-2.5 px-5 rounded-full text-white font-extrabold text-lg shadow-xl flex items-center gap-2"
             style={{
-              backgroundColor: tokens.middleCardBg,
-              borderRadius: 36,
-              padding: "42px 36px",
-              border: tokens.middleCardBorder,
-              boxShadow: tokens.middleCardShadow,
-              textAlign: "center",
+              background: "linear-gradient(135deg, #10B981 0%, #059669 100%)",
+              left: `${interpolate(transferProgress, [0, 1], [180, 720])}px`,
+              transform: `translateY(-50%) scale(${interpolate(
+                transferProgress,
+                [0, 0.5, 1],
+                [0.85, 1.15, 0.95]
+              )})`,
             }}
           >
+            <span>💸</span>
+            <span>500 000 UZS</span>
+          </div>
+        )}
+      </div>
+
+      {/* 3. Middle Flow (Architecture / Reality / Explanation) */}
+      <div className="absolute top-[780px] left-[60px] right-[60px] h-[690px] flex flex-col justify-center">
+        {/* PHASE 1: User's Illusion */}
+        {isPhase1 && (
+          <UiCard tokens={tokens} variant="middle" className="p-11 px-9 text-center">
             <div
-              style={{
-                fontSize: 18,
-                fontWeight: 700,
-                color: tokens.subtextColor,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                marginBottom: 12,
-              }}
+              className="text-lg font-bold uppercase tracking-wider mb-3"
+              style={{ color: tokens.subtextColor }}
             >
               Foydalanuvchi ko&apos;zidagi holat
             </div>
             <div
-              style={{
-                fontSize: 34,
-                fontWeight: 800,
-                color: tokens.textColor,
-                marginBottom: 32,
-              }}
+              className="text-[34px] font-extrabold mb-8"
+              style={{ color: tokens.textColor }}
             >
               To&apos;lov shlyuzi tranzaksiyani bir zumda tasdiqladi
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 20,
-              }}
-            >
+            <div className="flex items-center justify-center gap-5">
               <div
+                className="p-4.5 px-7 rounded-[20px] font-bold text-[22px]"
                 style={{
-                  padding: "18px 28px",
-                  borderRadius: 20,
                   backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
                   border: tokens.cardBorder,
-                  fontWeight: 700,
-                  fontSize: 22,
                   color: tokens.textColor,
                 }}
               >
                 Kapitalbank (HUMO)
               </div>
+              <div className="text-[28px] text-[#10B981] font-black">➔ ⚡ ➔</div>
               <div
+                className="p-4.5 px-7 rounded-[20px] font-bold text-[22px]"
                 style={{
-                  fontSize: 28,
-                  color: "#10B981",
-                  fontWeight: 900,
-                }}
-              >
-                ➔ ⚡ ➔
-              </div>
-              <div
-                style={{
-                  padding: "18px 28px",
-                  borderRadius: 20,
                   backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
                   border: tokens.cardBorder,
-                  fontWeight: 700,
-                  fontSize: 22,
                   color: tokens.textColor,
                 }}
               >
@@ -717,214 +388,119 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
               </div>
             </div>
 
-            <div
-              style={{
-                marginTop: 36,
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 12,
-                padding: "14px 28px",
-                borderRadius: 999,
-                backgroundColor: tokens.isDark ? "rgba(16, 185, 129, 0.2)" : "#ECFDF5",
-                color: tokens.isDark ? "#4ADE80" : "#065F46",
-                fontWeight: 700,
-                fontSize: 20,
-                border: "1px solid rgba(16, 185, 129, 0.3)",
-              }}
-            >
-              <span>⏱️ Tranzaksiya tezligi:</span>
-              <span style={{ fontWeight: 900, color: "#10B981" }}>
-                0.38 soniya
-              </span>
+            <div className="mt-9">
+              <StatusBadge tokens={tokens} tone="success" className="p-3.5 px-7 rounded-full text-xl font-bold">
+                <span>⏱️ Tranzaksiya tezligi:</span>
+                <span className="font-black text-[#10B981]">0.38 soniya</span>
+              </StatusBadge>
             </div>
-          </div>
+          </UiCard>
         )}
 
         {/* PHASE 2: Interbank Reality (0 so'm moved!) */}
         {isPhase2 && (
-          <div
+          <UiCard
+            tokens={tokens}
+            variant="danger"
+            className="p-11 px-9.5 text-center"
             style={{
-              backgroundColor: tokens.middleCardBg,
-              borderRadius: 36,
-              padding: "44px 38px",
-              border: "2px solid #EF4444",
-              boxShadow: tokens.isDark
-                ? "0 25px 50px -12px rgba(239,68,68,0.25), 0 0 25px rgba(239,68,68,0.1)"
-                : "0 25px 50px -12px rgba(239,68,68,0.15)",
-              textAlign: "center",
               transform: `scale(${interpolate(phase2Spring, [0, 1], [0.92, 1])})`,
               opacity: phase2Spring,
             }}
           >
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                padding: "8px 20px",
-                borderRadius: 999,
-                backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.18)" : "#FEF2F2",
-                color: tokens.isDark ? "#F87171" : "#B91C1C",
-                fontWeight: 800,
-                fontSize: 18,
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                marginBottom: 20,
-              }}
-            >
-              <span>⚠️ PARDA ORTIDAGI HAQIQAT</span>
-            </div>
+            <StatusBadge tokens={tokens} tone="danger" className="mb-5 uppercase tracking-wider text-lg">
+              ⚠️ PARDA ORTIDAGI HAQIQAT
+            </StatusBadge>
 
             <div
-              style={{
-                fontSize: 38,
-                fontWeight: 800,
-                color: tokens.textColor,
-                lineHeight: 1.25,
-                marginBottom: 26,
-              }}
+              className="text-[38px] font-extrabold leading-tight mb-6.5"
+              style={{ color: tokens.textColor }}
             >
               Banklar hisob raqamlari o&apos;rtasida:
             </div>
 
             {/* BIG HIGHLIGHT COUNTER */}
             <div
+              className="p-6.5 px-9 rounded-3xl mb-7"
               style={{
-                padding: "26px 36px",
-                borderRadius: 24,
                 backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.15)" : "#FFF1F2",
                 border: "2.5px dashed #EF4444",
-                marginBottom: 28,
               }}
             >
-              <div
-                style={{
-                  fontSize: 74,
-                  fontWeight: 900,
-                  color: "#DC2626",
-                  letterSpacing: "-0.03em",
-                }}
-              >
+              <div className="text-[74px] font-black text-[#DC2626] tracking-tight">
                 0 SO&apos;M
               </div>
               <div
-                style={{
-                  fontSize: 22,
-                  fontWeight: 700,
-                  color: tokens.isDark ? "#FCA5A5" : "#991B1B",
-                  marginTop: 6,
-                }}
+                className="text-[22px] font-bold mt-1.5"
+                style={{ color: tokens.isDark ? "#FCA5A5" : "#991B1B" }}
               >
                 Hozirgacha bir so&apos;m ham o&apos;tkazilmagan!
               </div>
             </div>
 
             <div
+              className="flex justify-between items-center p-5 px-6 rounded-[20px]"
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "20px 24px",
-                borderRadius: 20,
                 backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.8)" : "#F8FAFC",
                 border: tokens.cardBorder,
               }}
             >
-              <div style={{ textAlign: "left" }}>
-                <div style={{ fontSize: 16, color: tokens.subtextColor, fontWeight: 600 }}>
+              <div className="text-left">
+                <div className="text-base font-semibold" style={{ color: tokens.subtextColor }}>
                   Bank A Nostro
                 </div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: tokens.textColor }}>
+                <div className="text-xl font-extrabold" style={{ color: tokens.textColor }}>
                   Kapitalbank
                 </div>
               </div>
-              <div
-                style={{
-                  padding: "10px 20px",
-                  borderRadius: 14,
-                  backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.25)" : "#FEE2E2",
-                  color: tokens.isDark ? "#FCA5A5" : "#DC2626",
-                  fontWeight: 800,
-                  fontSize: 18,
-                  transform: `scale(${lockPulse})`,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 8,
-                }}
+              <StatusBadge
+                tokens={tokens}
+                tone="danger"
+                className="p-2.5 px-5 rounded-2xl text-lg flex items-center gap-2"
+                style={{ transform: `scale(${lockPulse})` }}
               >
                 <span>🔒</span>
                 <span>Qatnov yo&apos;q</span>
-              </div>
-              <div style={{ textAlign: "right" }}>
-                <div style={{ fontSize: 16, color: tokens.subtextColor, fontWeight: 600 }}>
+              </StatusBadge>
+              <div className="text-right">
+                <div className="text-base font-semibold" style={{ color: tokens.subtextColor }}>
                   Bank B Nostro
                 </div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: tokens.textColor }}>
+                <div className="text-xl font-extrabold" style={{ color: tokens.textColor }}>
                   Ipak Yo&apos;li Bank
                 </div>
               </div>
             </div>
-          </div>
+          </UiCard>
         )}
 
-        {/* PHASE 3: The Mystery & Explanation (Pul qayerdan keldi?) */}
+        {/* PHASE 3: The Mystery & Explanation */}
         {isPhase3 && (
-          <div
+          <UiCard
+            tokens={tokens}
+            variant="accent"
+            className="p-10 px-9"
             style={{
-              backgroundColor: tokens.middleCardBg,
-              borderRadius: 36,
-              padding: "40px 36px",
-              border: "2px solid #0284C7",
-              boxShadow: tokens.isDark
-                ? "0 25px 50px -12px rgba(14,165,233,0.3), 0 0 30px rgba(14,165,233,0.12)"
-                : "0 25px 50px -12px rgba(14,165,233,0.18)",
               transform: `scale(${interpolate(phase3Spring, [0, 1], [0.92, 1])})`,
               opacity: phase3Spring,
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 16,
-                marginBottom: 24,
-              }}
-            >
-              <div
-                style={{
-                  width: 56,
-                  height: 56,
-                  borderRadius: 18,
-                  backgroundColor: "#0284C7",
-                  color: "#FFFFFF",
-                  fontSize: 32,
-                  fontWeight: 900,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-[#0284C7] text-white text-[32px] font-black flex items-center justify-center">
                 ?
               </div>
               <div>
-                <div
-                  style={{
-                    fontSize: 36,
-                    fontWeight: 900,
-                    color: tokens.textColor,
-                    letterSpacing: "-0.02em",
-                  }}
-                >
+                <div className="text-4xl font-black tracking-tight" style={{ color: tokens.textColor }}>
                   Pul qayerdan keldi?
                 </div>
-                <div style={{ fontSize: 18, color: tokens.subtextColor, fontWeight: 600 }}>
+                <div className="text-lg font-semibold" style={{ color: tokens.subtextColor }}>
                   Fintech arxitekturasining 3 asosiy qoidasi:
                 </div>
               </div>
             </div>
 
             {/* 3 Staggered Explanation Pillars */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <div className="flex flex-col gap-4">
               {[
                 {
                   num: "1",
@@ -953,12 +529,8 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                 return (
                   <div
                     key={idx}
+                    className="flex items-center gap-4.5 p-4 px-5 rounded-[20px]"
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 18,
-                      padding: "16px 20px",
-                      borderRadius: 20,
                       backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
                       border: tokens.cardBorder,
                       transform: `translateY(${interpolate(itemSpring, [0, 1], [20, 0])}px)`,
@@ -966,34 +538,19 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                     }}
                   >
                     <div
+                      className="w-10.5 h-10.5 rounded-2xl flex items-center justify-center font-extrabold text-xl shrink-0"
                       style={{
-                        width: 42,
-                        height: 42,
-                        borderRadius: 14,
                         backgroundColor: tokens.isDark ? "#38BDF8" : "#0F172A",
                         color: tokens.isDark ? "#0F172A" : "#FFFFFF",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontWeight: 800,
-                        fontSize: 20,
-                        flexShrink: 0,
                       }}
                     >
                       {item.num}
                     </div>
-                    <div style={{ flex: 1 }}>
-                      <div
-                        style={{
-                          fontSize: 20,
-                          fontWeight: 800,
-                          color: tokens.textColor,
-                          marginBottom: 4,
-                        }}
-                      >
+                    <div className="flex-1">
+                      <div className="text-xl font-extrabold mb-1" style={{ color: tokens.textColor }}>
                         {item.title}
                       </div>
-                      <div style={{ fontSize: 16, color: tokens.subtextColor }}>
+                      <div className="text-base" style={{ color: tokens.subtextColor }}>
                         {item.desc}
                       </div>
                     </div>
@@ -1001,104 +558,19 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
                 );
               })}
             </div>
-          </div>
+          </UiCard>
         )}
       </div>
 
-      {/* ============================================================== */}
-      {/* 4. SYNCED SUBTITLE CARD (BOTTOM)                               */}
-      {/* ============================================================== */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 140,
-          left: 54,
-          right: 54,
-        }}
-      >
-        <div
-          style={{
-            backgroundColor: tokens.subtitleBg,
-            borderRadius: 28,
-            padding: "28px 36px",
-            border: tokens.subtitleBorder,
-            boxShadow: tokens.subtitleShadow,
-            display: "flex",
-            alignItems: "center",
-            gap: 20,
-          }}
-        >
-          <div
-            style={{
-              width: 50,
-              height: 50,
-              borderRadius: 16,
-              backgroundColor: isPhase2
-                ? (tokens.isDark ? "rgba(239, 68, 68, 0.2)" : "#FEF2F2")
-                : (tokens.isDark ? "rgba(0,191,165,0.15)" : "#ECFDF5"),
-              color: isPhase2
-                ? (tokens.isDark ? "#F87171" : "#DC2626")
-                : (tokens.isDark ? "#34D399" : "#059669"),
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 26,
-              flexShrink: 0,
-            }}
-          >
-            {isPhase2 ? "📢" : "🎙️"}
-          </div>
+      {/* 4. Synced Subtitle Card */}
+      <SubtitleCard currentSubtitle={currentSubtitle} isPhase2={isPhase2} tokens={tokens} />
 
-          <div style={{ flex: 1 }}>
-            <div
-              style={{
-                fontSize: 28,
-                fontWeight: 700,
-                lineHeight: 1.35,
-                color: tokens.subtitleTextColor,
-              }}
-            >
-              {currentSubtitle.prefix}<span
-                style={{
-                  color: isPhase2
-                    ? (tokens.isDark ? "#F87171" : "#DC2626")
-                    : (tokens.isDark ? "#38BDF8" : "#00BFA5"),
-                  fontWeight: 900,
-                  backgroundColor: isPhase2
-                    ? (tokens.isDark ? "rgba(239,68,68,0.2)" : "rgba(239,68,68,0.15)")
-                    : (tokens.isDark ? "rgba(0,191,165,0.2)" : "rgba(0,191,165,0.15)"),
-                  padding: "2px 8px",
-                  borderRadius: 6,
-                }}
-              >{currentSubtitle.highlight}</span>{currentSubtitle.suffix}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ============================================================== */}
-      {/* 5. REGULATORY SOURCE FOOTER                                    */}
-      {/* ============================================================== */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 50,
-          left: 60,
-          right: 60,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 10,
-          color: tokens.footerColor,
-          fontSize: 18,
-          fontWeight: 600,
-        }}
-      >
-        <span>🏛️</span>
-        <span>
-          Manba: O&apos;zbekiston Respublikasi Markaziy Banki to&apos;lov tizimlari reglamenti
-        </span>
-      </div>
+      {/* 5. Regulatory Footer */}
+      <RegulatoryFooter
+        tokens={tokens}
+        icon="🏛️"
+        text="Manba: O'zbekiston Respublikasi Markaziy Banki Kliring va Hisob-kitob qoidalari"
+      />
     </AbsoluteFill>
   );
 };

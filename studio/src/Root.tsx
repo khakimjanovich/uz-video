@@ -1,3 +1,4 @@
+import "./index.css";
 import React from "react";
 import { P2PTransferComposition } from "./reels/p2p-transfer";
 import { CardTokenizationComposition } from "./reels/card-tokenization";
