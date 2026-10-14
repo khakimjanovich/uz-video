@@ -1,4 +1,4 @@
-export type ThemeName = "light" | "dark" | "xray";
+export type ThemeName = "dark" | "light" | "xray";
 
 export interface ReelProps {
   theme?: ThemeName;
@@ -27,6 +27,7 @@ export interface ThemeTokens {
   showSubtitleHeader: boolean;
   glowColor1: string;
   glowColor2: string;
+  isDark: boolean;
 }
 
 export const LIGHT_THEME: ThemeTokens = {
@@ -49,52 +50,46 @@ export const LIGHT_THEME: ThemeTokens = {
   subtitleBorder: "1.5px solid #E2E8F0",
   subtitleTextColor: "#0F172A",
   subtitleShadow: "0 25px 45px -10px rgba(15, 23, 42, 0.1), 0 2px 6px rgba(0,0,0,0.04)",
-  showSubtitleHeader: true,
+  showSubtitleHeader: false,
   glowColor1: "rgba(0,191,165,0.14)",
   glowColor2: "rgba(0,119,255,0.08)",
+  isDark: false,
 };
 
 export const DARK_THEME: ThemeTokens = {
-  background: "#090D16",
+  background: "#080C15", // Pure continuous midnight black
   gridColor: "rgba(56, 189, 248, 0.35)",
-  gridOpacity: 0.22,
-  textColor: "#F8FAFC",
+  gridOpacity: 0.2,
+  textColor: "#FFFFFF",
   subtextColor: "#94A3B8",
-  cardBg: "rgba(15, 23, 42, 0.85)",
+  cardBg: "#0F172A",
   cardBorder: "1.5px solid rgba(56, 189, 248, 0.22)",
-  cardShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.55), 0 0 24px rgba(56, 189, 248, 0.06)",
-  badgeBg: "rgba(15, 23, 42, 0.9)",
+  cardShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.65), 0 0 24px rgba(56, 189, 248, 0.06)",
+  badgeBg: "#0F172A",
   badgeBorder: "1px solid rgba(56, 189, 248, 0.35)",
   badgeText: "#38BDF8",
-  middleCardBg: "rgba(15, 23, 42, 0.92)",
-  middleCardBorder: "1.5px solid rgba(56, 189, 248, 0.3)",
-  middleCardShadow: "0 25px 50px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.08)",
+  middleCardBg: "#0F172A",
+  middleCardBorder: "1.5px solid rgba(56, 189, 248, 0.25)",
+  middleCardShadow: "0 25px 50px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(56, 189, 248, 0.08)",
   footerColor: "#64748B",
-  subtitleBg: "rgba(15, 23, 42, 0.92)",
-  subtitleBorder: "1.5px solid rgba(56, 189, 248, 0.35)",
-  subtitleTextColor: "#F8FAFC",
+  subtitleBg: "#0F172A",
+  subtitleBorder: "1.5px solid rgba(56, 189, 248, 0.3)",
+  subtitleTextColor: "#FFFFFF",
   subtitleShadow: "0 25px 45px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.1)",
   showSubtitleHeader: false,
-  glowColor1: "rgba(56, 189, 248, 0.18)",
+  glowColor1: "rgba(56, 189, 248, 0.16)",
   glowColor2: "rgba(99, 102, 241, 0.12)",
+  isDark: true,
 };
 
-export const getThemeTokens = (theme: ThemeName = "xray", isBackendPhase: boolean = false): ThemeTokens => {
-  if (theme === "dark") {
-    return DARK_THEME;
-  }
+/**
+ * Returns a 100% continuous, unified theme for the entire video.
+ * No mid-video flipping between light and dark.
+ */
+export const getThemeTokens = (theme: ThemeName = "dark"): ThemeTokens => {
   if (theme === "light") {
     return LIGHT_THEME;
   }
-  // "xray" mode: Light on user hook (Phase 1), switches to high-tech dark blueprint on backend reveal (Phases 2 & 3)
-  if (isBackendPhase) {
-    return {
-      ...DARK_THEME,
-      showSubtitleHeader: false,
-    };
-  }
-  return {
-    ...LIGHT_THEME,
-    showSubtitleHeader: false, // X-Ray removes the debug header
-  };
+  // Default to pure dark theme
+  return DARK_THEME;
 };

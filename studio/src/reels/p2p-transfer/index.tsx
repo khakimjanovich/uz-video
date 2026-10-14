@@ -54,13 +54,13 @@ export const P2PTransferComposition: React.FC = () => {
       width={VIDEO_WIDTH}
       height={VIDEO_HEIGHT}
       defaultProps={{
-        theme: "xray" as ThemeName,
+        theme: "dark" as ThemeName,
       }}
     />
   );
 };
 
-export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
+export const P2PVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -68,10 +68,9 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
   const isPhase1 = frame < 145;
   const isPhase2 = frame >= 145 && frame < 252;
   const isPhase3 = frame >= 252;
-  const isBackendPhase = !isPhase1;
 
-  // Active theme tokens
-  const tokens = getThemeTokens(theme, isBackendPhase);
+  // Active Continuous Theme Tokens (Pure Dark or Pure Light throughout)
+  const tokens = getThemeTokens(theme);
 
   // Header spring
   const headerSpring = spring({
@@ -144,7 +143,6 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
         color: tokens.textColor,
         overflow: "hidden",
         position: "relative",
-        transition: "background-color 0.4s ease",
       }}
     >
       <Audio src={staticFile("reels/p2p-transfer/voiceover.mp3")} />
@@ -287,7 +285,6 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
             flexDirection: "column",
             justifyContent: "space-between",
             position: "relative",
-            transition: "all 0.3s ease",
           }}
         >
           <div>
@@ -391,8 +388,14 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
             style={{
               padding: "16px 20px",
               borderRadius: 18,
-              backgroundColor: frame >= 38 ? "#FEF2F2" : tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
-              border: `1.5px solid ${frame >= 38 ? "#FCA5A5" : tokens.cardBorder.replace(/^1\.5px solid /, "")}`,
+              backgroundColor: frame >= 38
+                ? (tokens.isDark ? "rgba(239, 68, 68, 0.15)" : "#FEF2F2")
+                : (tokens.isDark ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC"),
+              border: `1.5px solid ${
+                frame >= 38
+                  ? (tokens.isDark ? "rgba(239, 68, 68, 0.4)" : "#FCA5A5")
+                  : (tokens.isDark ? "rgba(56, 189, 248, 0.22)" : "#E2E8F0")
+              }`,
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -404,7 +407,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 style={{
                   fontSize: 18,
                   fontWeight: 700,
-                  color: frame >= 38 ? "#DC2626" : tokens.subtextColor,
+                  color: frame >= 38 ? (tokens.isDark ? "#F87171" : "#DC2626") : tokens.subtextColor,
                 }}
               >
                 {frame >= 38 ? "-500 000 UZS" : "O'tkazma tayyor"}
@@ -415,8 +418,8 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 style={{
                   fontSize: 14,
                   fontWeight: 800,
-                  color: "#DC2626",
-                  backgroundColor: "#FEE2E2",
+                  color: tokens.isDark ? "#F87171" : "#DC2626",
+                  backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.25)" : "#FEE2E2",
                   padding: "4px 10px",
                   borderRadius: 8,
                 }}
@@ -440,7 +443,6 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
             flexDirection: "column",
             justifyContent: "space-between",
             position: "relative",
-            transition: "all 0.3s ease",
           }}
         >
           <div>
@@ -544,8 +546,14 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
             style={{
               padding: "16px 20px",
               borderRadius: 18,
-              backgroundColor: frame >= 60 ? "#ECFDF5" : tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
-              border: `1.5px solid ${frame >= 60 ? "#6EE7B7" : tokens.cardBorder.replace(/^1\.5px solid /, "")}`,
+              backgroundColor: frame >= 60
+                ? (tokens.isDark ? "rgba(16, 185, 129, 0.15)" : "#ECFDF5")
+                : (tokens.isDark ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC"),
+              border: `1.5px solid ${
+                frame >= 60
+                  ? (tokens.isDark ? "rgba(16, 185, 129, 0.4)" : "#6EE7B7")
+                  : (tokens.isDark ? "rgba(56, 189, 248, 0.22)" : "#E2E8F0")
+              }`,
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -557,7 +565,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 style={{
                   fontSize: 18,
                   fontWeight: 700,
-                  color: frame >= 60 ? "#059669" : tokens.subtextColor,
+                  color: frame >= 60 ? (tokens.isDark ? "#34D399" : "#059669") : tokens.subtextColor,
                 }}
               >
                 {frame >= 60 ? "+500 000 UZS" : "Kutilmoqda..."}
@@ -568,8 +576,8 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 style={{
                   fontSize: 14,
                   fontWeight: 800,
-                  color: "#059669",
-                  backgroundColor: "#D1FAE5",
+                  color: tokens.isDark ? "#34D399" : "#059669",
+                  backgroundColor: tokens.isDark ? "rgba(16, 185, 129, 0.25)" : "#D1FAE5",
                   padding: "4px 10px",
                   borderRadius: 8,
                 }}
@@ -676,7 +684,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 style={{
                   padding: "18px 28px",
                   borderRadius: 20,
-                  backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
+                  backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
                   border: tokens.cardBorder,
                   fontWeight: 700,
                   fontSize: 22,
@@ -698,7 +706,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 style={{
                   padding: "18px 28px",
                   borderRadius: 20,
-                  backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
+                  backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
                   border: tokens.cardBorder,
                   fontWeight: 700,
                   fontSize: 22,
@@ -717,8 +725,8 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 gap: 12,
                 padding: "14px 28px",
                 borderRadius: 999,
-                backgroundColor: tokens.background === "#090D16" ? "rgba(16, 185, 129, 0.2)" : "#ECFDF5",
-                color: tokens.background === "#090D16" ? "#4ADE80" : "#065F46",
+                backgroundColor: tokens.isDark ? "rgba(16, 185, 129, 0.2)" : "#ECFDF5",
+                color: tokens.isDark ? "#4ADE80" : "#065F46",
                 fontWeight: 700,
                 fontSize: 20,
                 border: "1px solid rgba(16, 185, 129, 0.3)",
@@ -740,7 +748,9 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
               borderRadius: 36,
               padding: "44px 38px",
               border: "2px solid #EF4444",
-              boxShadow: "0 25px 50px -12px rgba(239,68,68,0.25), 0 0 25px rgba(239,68,68,0.1)",
+              boxShadow: tokens.isDark
+                ? "0 25px 50px -12px rgba(239,68,68,0.25), 0 0 25px rgba(239,68,68,0.1)"
+                : "0 25px 50px -12px rgba(239,68,68,0.15)",
               textAlign: "center",
               transform: `scale(${interpolate(phase2Spring, [0, 1], [0.92, 1])})`,
               opacity: phase2Spring,
@@ -753,8 +763,8 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 gap: 10,
                 padding: "8px 20px",
                 borderRadius: 999,
-                backgroundColor: "#FEF2F2",
-                color: "#B91C1C",
+                backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.18)" : "#FEF2F2",
+                color: tokens.isDark ? "#F87171" : "#B91C1C",
                 fontWeight: 800,
                 fontSize: 18,
                 letterSpacing: "0.05em",
@@ -782,7 +792,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
               style={{
                 padding: "26px 36px",
                 borderRadius: 24,
-                backgroundColor: tokens.background === "#090D16" ? "rgba(239, 68, 68, 0.15)" : "#FFF1F2",
+                backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.15)" : "#FFF1F2",
                 border: "2.5px dashed #EF4444",
                 marginBottom: 28,
               }}
@@ -801,7 +811,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 style={{
                   fontSize: 22,
                   fontWeight: 700,
-                  color: tokens.background === "#090D16" ? "#FCA5A5" : "#991B1B",
+                  color: tokens.isDark ? "#FCA5A5" : "#991B1B",
                   marginTop: 6,
                 }}
               >
@@ -816,7 +826,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 alignItems: "center",
                 padding: "20px 24px",
                 borderRadius: 20,
-                backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F8FAFC",
+                backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.8)" : "#F8FAFC",
                 border: tokens.cardBorder,
               }}
             >
@@ -832,8 +842,8 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                 style={{
                   padding: "10px 20px",
                   borderRadius: 14,
-                  backgroundColor: "#FEE2E2",
-                  color: "#DC2626",
+                  backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.25)" : "#FEE2E2",
+                  color: tokens.isDark ? "#FCA5A5" : "#DC2626",
                   fontWeight: 800,
                   fontSize: 18,
                   transform: `scale(${lockPulse})`,
@@ -865,7 +875,9 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
               borderRadius: 36,
               padding: "40px 36px",
               border: "2px solid #0284C7",
-              boxShadow: "0 25px 50px -12px rgba(14,165,233,0.3), 0 0 30px rgba(14,165,233,0.12)",
+              boxShadow: tokens.isDark
+                ? "0 25px 50px -12px rgba(14,165,233,0.3), 0 0 30px rgba(14,165,233,0.12)"
+                : "0 25px 50px -12px rgba(14,165,233,0.18)",
               transform: `scale(${interpolate(phase3Spring, [0, 1], [0.92, 1])})`,
               opacity: phase3Spring,
             }}
@@ -947,7 +959,7 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                       gap: 18,
                       padding: "16px 20px",
                       borderRadius: 20,
-                      backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
+                      backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
                       border: tokens.cardBorder,
                       transform: `translateY(${interpolate(itemSpring, [0, 1], [20, 0])}px)`,
                       opacity: itemSpring,
@@ -958,8 +970,8 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
                         width: 42,
                         height: 42,
                         borderRadius: 14,
-                        backgroundColor: tokens.background === "#090D16" ? "#38BDF8" : "#0F172A",
-                        color: tokens.background === "#090D16" ? "#0F172A" : "#FFFFFF",
+                        backgroundColor: tokens.isDark ? "#38BDF8" : "#0F172A",
+                        color: tokens.isDark ? "#0F172A" : "#FFFFFF",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -1008,13 +1020,12 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
           style={{
             backgroundColor: tokens.subtitleBg,
             borderRadius: 28,
-            padding: tokens.showSubtitleHeader ? "24px 36px" : "28px 36px",
+            padding: "28px 36px",
             border: tokens.subtitleBorder,
             boxShadow: tokens.subtitleShadow,
             display: "flex",
             alignItems: "center",
             gap: 20,
-            transition: "all 0.3s ease",
           }}
         >
           <div
@@ -1022,8 +1033,12 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
               width: 50,
               height: 50,
               borderRadius: 16,
-              backgroundColor: isPhase2 ? "#FEF2F2" : tokens.background === "#090D16" ? "rgba(0,191,165,0.15)" : "#ECFDF5",
-              color: isPhase2 ? "#DC2626" : "#059669",
+              backgroundColor: isPhase2
+                ? (tokens.isDark ? "rgba(239, 68, 68, 0.2)" : "#FEF2F2")
+                : (tokens.isDark ? "rgba(0,191,165,0.15)" : "#ECFDF5"),
+              color: isPhase2
+                ? (tokens.isDark ? "#F87171" : "#DC2626")
+                : (tokens.isDark ? "#34D399" : "#059669"),
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -1035,20 +1050,6 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
           </div>
 
           <div style={{ flex: 1 }}>
-            {tokens.showSubtitleHeader && (
-              <div
-                style={{
-                  fontSize: 14,
-                  fontWeight: 700,
-                  color: "#94A3B8",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.1em",
-                  marginBottom: 6,
-                }}
-              >
-                Ovozli matn (Uzbek TTS)
-              </div>
-            )}
             <div
               style={{
                 fontSize: 28,
@@ -1059,11 +1060,13 @@ export const P2PVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
             >
               {currentSubtitle.prefix}<span
                 style={{
-                  color: isPhase2 ? "#DC2626" : "#00BFA5",
+                  color: isPhase2
+                    ? (tokens.isDark ? "#F87171" : "#DC2626")
+                    : (tokens.isDark ? "#38BDF8" : "#00BFA5"),
                   fontWeight: 900,
                   backgroundColor: isPhase2
-                    ? "rgba(239,68,68,0.15)"
-                    : "rgba(0,191,165,0.15)",
+                    ? (tokens.isDark ? "rgba(239,68,68,0.2)" : "rgba(239,68,68,0.15)")
+                    : (tokens.isDark ? "rgba(0,191,165,0.2)" : "rgba(0,191,165,0.15)"),
                   padding: "2px 8px",
                   borderRadius: 6,
                 }}

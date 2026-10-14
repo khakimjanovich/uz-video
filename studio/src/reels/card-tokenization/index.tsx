@@ -51,13 +51,13 @@ export const CardTokenizationComposition: React.FC = () => {
       width={VIDEO_WIDTH}
       height={VIDEO_HEIGHT}
       defaultProps={{
-        theme: "xray" as ThemeName,
+        theme: "dark" as ThemeName,
       }}
     />
   );
 };
 
-export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) => {
+export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "dark" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -65,10 +65,9 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
   const isPhase1 = frame < 188;
   const isPhase2 = frame >= 188 && frame < 330;
   const isPhase3 = frame >= 330;
-  const isBackendPhase = !isPhase1;
 
-  // Active Theme Tokens
-  const tokens = getThemeTokens(theme, isBackendPhase);
+  // Active Continuous Theme Tokens (Pure Dark or Pure Light throughout)
+  const tokens = getThemeTokens(theme);
 
   // Header entrance spring
   const headerSpring = spring({
@@ -148,7 +147,6 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
         color: tokens.textColor,
         overflow: "hidden",
         position: "relative",
-        transition: "background-color 0.4s ease",
       }}
     >
       <Audio src={staticFile("reels/card-tokenization/voiceover.mp3")} />
@@ -293,7 +291,6 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
             display: "flex",
             flexDirection: "column",
             gap: 20,
-            transition: "all 0.3s ease",
           }}
         >
           {/* Top Bar: Food Delivery Header */}
@@ -418,7 +415,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                 gap: 12,
                 padding: "12px 18px",
                 borderRadius: 16,
-                backgroundColor: isBackendPhase && tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
+                backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.7)" : "#F8FAFC",
                 border: tokens.cardBorder,
               }}
             >
@@ -529,7 +526,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                 style={{
                   padding: "18px 26px",
                   borderRadius: 20,
-                  backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
+                  backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.8)" : "#F1F5F9",
                   border: tokens.cardBorder,
                   fontWeight: 700,
                   fontSize: 22,
@@ -545,8 +542,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                 style={{
                   padding: "18px 26px",
                   borderRadius: 20,
-                  backgroundColor: "#FEF2F2",
-                  color: "#DC2626",
+                  backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.18)" : "#FEF2F2",
+                  color: tokens.isDark ? "#F87171" : "#DC2626",
                   fontWeight: 700,
                   fontSize: 22,
                 }}
@@ -562,8 +559,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                 gap: 10,
                 padding: "12px 24px",
                 borderRadius: 999,
-                backgroundColor: tokens.background === "#090D16" ? "rgba(245, 158, 11, 0.2)" : "#FEF3C7",
-                color: tokens.background === "#090D16" ? "#FCD34D" : "#92400E",
+                backgroundColor: tokens.isDark ? "rgba(245, 158, 11, 0.2)" : "#FEF3C7",
+                color: tokens.isDark ? "#FCD34D" : "#92400E",
                 fontSize: 20,
                 fontWeight: 700,
                 border: "1px solid rgba(245, 158, 11, 0.3)",
@@ -582,7 +579,9 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
               borderRadius: 36,
               padding: "40px 38px",
               border: "2px solid #EF4444",
-              boxShadow: "0 25px 50px -12px rgba(239,68,68,0.25), 0 0 25px rgba(239,68,68,0.1)",
+              boxShadow: tokens.isDark
+                ? "0 25px 50px -12px rgba(239,68,68,0.25), 0 0 25px rgba(239,68,68,0.1)"
+                : "0 25px 50px -12px rgba(239,68,68,0.18)",
               transform: `scale(${interpolate(phase2Spring, [0, 1], [0.92, 1])})`,
               opacity: phase2Spring,
               position: "relative",
@@ -610,8 +609,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                   gap: 10,
                   padding: "8px 20px",
                   borderRadius: 999,
-                  backgroundColor: "#FEF2F2",
-                  color: "#B91C1C",
+                  backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.18)" : "#FEF2F2",
+                  color: tokens.isDark ? "#F87171" : "#B91C1C",
                   fontWeight: 800,
                   fontSize: 18,
                   letterSpacing: "0.05em",
@@ -647,8 +646,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                   alignItems: "center",
                   padding: "18px 22px",
                   borderRadius: 18,
-                  backgroundColor: tokens.background === "#090D16" ? "rgba(239, 68, 68, 0.12)" : "#FFF1F2",
-                  border: "1.5px solid rgba(239, 68, 68, 0.35)",
+                  backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.12)" : "#FFF1F2",
+                  border: tokens.isDark ? "1.5px solid rgba(239, 68, 68, 0.35)" : "1.5px solid #FECDD3",
                 }}
               >
                 <span style={{ fontSize: 20, fontWeight: 700, color: tokens.textColor }}>
@@ -658,8 +657,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                   style={{
                     fontSize: 18,
                     fontWeight: 900,
-                    color: "#DC2626",
-                    backgroundColor: "#FEE2E2",
+                    color: tokens.isDark ? "#F87171" : "#DC2626",
+                    backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.22)" : "#FEE2E2",
                     padding: "6px 14px",
                     borderRadius: 10,
                   }}
@@ -675,8 +674,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                   alignItems: "center",
                   padding: "18px 22px",
                   borderRadius: 18,
-                  backgroundColor: tokens.background === "#090D16" ? "rgba(239, 68, 68, 0.12)" : "#FFF1F2",
-                  border: "1.5px solid rgba(239, 68, 68, 0.35)",
+                  backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.12)" : "#FFF1F2",
+                  border: tokens.isDark ? "1.5px solid rgba(239, 68, 68, 0.35)" : "1.5px solid #FECDD3",
                 }}
               >
                 <span style={{ fontSize: 20, fontWeight: 700, color: tokens.textColor }}>
@@ -686,8 +685,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                   style={{
                     fontSize: 18,
                     fontWeight: 900,
-                    color: "#DC2626",
-                    backgroundColor: "#FEE2E2",
+                    color: tokens.isDark ? "#F87171" : "#DC2626",
+                    backgroundColor: tokens.isDark ? "rgba(239, 68, 68, 0.22)" : "#FEE2E2",
                     padding: "6px 14px",
                     borderRadius: 10,
                   }}
@@ -701,7 +700,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
               style={{
                 padding: "16px 20px",
                 borderRadius: 18,
-                backgroundColor: tokens.background === "#090D16" ? "rgba(30, 41, 59, 0.8)" : "#F8FAFC",
+                backgroundColor: tokens.isDark ? "rgba(30, 41, 59, 0.8)" : "#F8FAFC",
                 border: tokens.cardBorder,
                 display: "flex",
                 alignItems: "center",
@@ -725,7 +724,9 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
               borderRadius: 36,
               padding: "36px 36px",
               border: "2px solid #0284C7",
-              boxShadow: "0 25px 50px -12px rgba(14,165,233,0.3), 0 0 30px rgba(14,165,233,0.12)",
+              boxShadow: tokens.isDark
+                ? "0 25px 50px -12px rgba(14,165,233,0.3), 0 0 30px rgba(14,165,233,0.12)"
+                : "0 25px 50px -12px rgba(14,165,233,0.18)",
               transform: `scale(${interpolate(phase3Spring, [0, 1], [0.92, 1])})`,
               opacity: phase3Spring,
             }}
@@ -770,8 +771,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                 style={{
                   padding: "18px 22px",
                   borderRadius: 20,
-                  backgroundColor: tokens.background === "#090D16" ? "rgba(16, 185, 129, 0.12)" : "#F0FDF4",
-                  border: "1.5px solid rgba(16, 185, 129, 0.4)",
+                  backgroundColor: tokens.isDark ? "rgba(16, 185, 129, 0.12)" : "#F0FDF4",
+                  border: tokens.isDark ? "1.5px solid rgba(16, 185, 129, 0.4)" : "1.5px solid #86EFAC",
                   display: "flex",
                   alignItems: "center",
                   gap: 18,
@@ -783,13 +784,13 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                     style={{
                       fontSize: 19,
                       fontWeight: 800,
-                      color: tokens.background === "#090D16" ? "#4ADE80" : "#166534",
+                      color: tokens.isDark ? "#4ADE80" : "#166534",
                       marginBottom: 2,
                     }}
                   >
                     PCI-DSS Bank Shlyuzi (Vault)
                   </div>
-                  <div style={{ fontSize: 15, color: tokens.background === "#090D16" ? "#86EFAC" : "#15803D" }}>
+                  <div style={{ fontSize: 15, color: tokens.isDark ? "#86EFAC" : "#15803D" }}>
                     Haqiqiy karta faqat bankda <strong>AES-256</strong> bilan
                     shifrlanadi.
                   </div>
@@ -798,8 +799,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                   style={{
                     padding: "6px 12px",
                     borderRadius: 10,
-                    backgroundColor: tokens.background === "#090D16" ? "rgba(16, 185, 129, 0.25)" : "#DCFCE7",
-                    color: tokens.background === "#090D16" ? "#86EFAC" : "#166534",
+                    backgroundColor: tokens.isDark ? "rgba(16, 185, 129, 0.25)" : "#DCFCE7",
+                    color: tokens.isDark ? "#86EFAC" : "#166534",
                     fontSize: 14,
                     fontWeight: 800,
                   }}
@@ -825,8 +826,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                 style={{
                   padding: "18px 22px",
                   borderRadius: 20,
-                  backgroundColor: tokens.background === "#090D16" ? "rgba(56, 189, 248, 0.12)" : "#F0F9FF",
-                  border: "1.5px solid rgba(56, 189, 248, 0.4)",
+                  backgroundColor: tokens.isDark ? "rgba(56, 189, 248, 0.12)" : "#F0F9FF",
+                  border: tokens.isDark ? "1.5px solid rgba(56, 189, 248, 0.4)" : "1.5px solid #7DD3FC",
                   display: "flex",
                   alignItems: "center",
                   gap: 18,
@@ -838,7 +839,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                     style={{
                       fontSize: 19,
                       fontWeight: 800,
-                      color: tokens.background === "#090D16" ? "#38BDF8" : "#075985",
+                      color: tokens.isDark ? "#38BDF8" : "#075985",
                       marginBottom: 4,
                     }}
                   >
@@ -850,7 +851,7 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                       fontWeight: 700,
                       fontFamily: "monospace",
                       color: "#0284C7",
-                      backgroundColor: tokens.background === "#090D16" ? "rgba(15, 23, 42, 0.8)" : "#E0F2FE",
+                      backgroundColor: tokens.isDark ? "rgba(15, 23, 42, 0.8)" : "#E0F2FE",
                       border: "1px solid rgba(56, 189, 248, 0.2)",
                       padding: "6px 14px",
                       borderRadius: 10,
@@ -864,8 +865,8 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
                   style={{
                     padding: "6px 12px",
                     borderRadius: 10,
-                    backgroundColor: tokens.background === "#090D16" ? "rgba(56, 189, 248, 0.25)" : "#E0F2FE",
-                    color: tokens.background === "#090D16" ? "#7DD3FC" : "#0369A1",
+                    backgroundColor: tokens.isDark ? "rgba(56, 189, 248, 0.25)" : "#E0F2FE",
+                    color: tokens.isDark ? "#7DD3FC" : "#0369A1",
                     fontSize: 14,
                     fontWeight: 800,
                   }}
@@ -905,13 +906,12 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
           style={{
             backgroundColor: tokens.subtitleBg,
             borderRadius: 28,
-            padding: tokens.showSubtitleHeader ? "24px 36px" : "28px 36px",
+            padding: "28px 36px",
             border: tokens.subtitleBorder,
             boxShadow: tokens.subtitleShadow,
             display: "flex",
             alignItems: "center",
             gap: 20,
-            transition: "all 0.3s ease",
           }}
         >
           <div
@@ -919,8 +919,12 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
               width: 50,
               height: 50,
               borderRadius: 16,
-              backgroundColor: isPhase2 ? "#FEF2F2" : tokens.background === "#090D16" ? "rgba(56, 189, 248, 0.15)" : "#F0F9FF",
-              color: isPhase2 ? "#DC2626" : "#0284C7",
+              backgroundColor: isPhase2
+                ? (tokens.isDark ? "rgba(239, 68, 68, 0.2)" : "#FEF2F2")
+                : (tokens.isDark ? "rgba(56, 189, 248, 0.15)" : "#F0F9FF"),
+              color: isPhase2
+                ? (tokens.isDark ? "#F87171" : "#DC2626")
+                : (tokens.isDark ? "#38BDF8" : "#0284C7"),
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -932,20 +936,6 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
           </div>
 
           <div style={{ flex: 1 }}>
-            {tokens.showSubtitleHeader && (
-              <div
-                style={{
-                  fontSize: 14,
-                  fontWeight: 700,
-                  color: "#94A3B8",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.1em",
-                  marginBottom: 6,
-                }}
-              >
-                Ovozli matn (Uzbek TTS)
-              </div>
-            )}
             <div
               style={{
                 fontSize: 28,
@@ -956,11 +946,13 @@ export const CardTokenizationVideo: React.FC<ReelProps> = ({ theme = "xray" }) =
             >
               {currentSubtitle.prefix}<span
                 style={{
-                  color: isPhase2 ? "#DC2626" : "#0284C7",
+                  color: isPhase2
+                    ? (tokens.isDark ? "#F87171" : "#DC2626")
+                    : (tokens.isDark ? "#38BDF8" : "#0284C7"),
                   fontWeight: 900,
                   backgroundColor: isPhase2
-                    ? "rgba(239,68,68,0.15)"
-                    : "rgba(2,132,199,0.15)",
+                    ? (tokens.isDark ? "rgba(239,68,68,0.2)" : "rgba(239,68,68,0.15)")
+                    : (tokens.isDark ? "rgba(56,189,248,0.2)" : "rgba(2,132,199,0.15)"),
                   padding: "2px 8px",
                   borderRadius: 6,
                 }}

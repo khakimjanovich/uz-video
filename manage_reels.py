@@ -153,7 +153,7 @@ def generate_voice(reel_name: str, voice_raw="sardor", rate="+5%"):
     return True
 
 
-def render_video(reel_name: str, theme="xray"):
+def render_video(reel_name: str, theme="dark"):
     reel_dir = REELS_SRC_DIR / reel_name
     if not reel_dir.exists():
         print(f"Error: Reel '{reel_name}' not found.", file=sys.stderr)
@@ -191,8 +191,8 @@ def main():
                         help="TTS voice: sardor, madina, or full voice name (default: sardor)")
     parser.add_argument("--rate", default="+5%",
                         help="TTS speech rate (default: +5%%)")
-    parser.add_argument("--theme", choices=["xray", "dark", "light"], default="xray",
-                        help="Visual theme: xray, dark, or light (default: xray)")
+    parser.add_argument("--theme", choices=["dark", "light", "xray"], default="dark",
+                        help="Visual theme: dark or light (default: dark)")
 
     args = parser.parse_args()
 
