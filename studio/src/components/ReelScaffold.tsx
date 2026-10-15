@@ -7,6 +7,7 @@ import { ReelHeader } from "./ReelHeader";
 import { SubtitleCard, SubtitleCue } from "./SubtitleCard";
 import { RegulatoryFooter } from "./RegulatoryFooter";
 import {
+  ActsMap,
   HighlightsMap,
   SubtitlesContext,
   useSubtitles,
@@ -15,15 +16,15 @@ import {
 
 export interface ReelScaffoldProps {
   theme?: ThemeName;
-  reelId: string;
+  reelId?: string; // omit for silent Studio-only compositions
   subtitles: SubtitleCue[];
   highlightsMap?: HighlightsMap;
+  acts?: ActsMap;
   badgeText?: string | ((cueIndex: number) => string);
   badgeDotColor?: string | ((cueIndex: number) => string);
   title: React.ReactNode | ((cueIndex: number) => React.ReactNode);
   lawCitation: string;
   citationIcon?: string;
-  isPhase2?: boolean;
   headerSpringProgress?: number;
   audioPremountFor?: number;
   children: React.ReactNode | ((subState: UseSubtitlesReturn) => React.ReactNode);
@@ -34,12 +35,12 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   reelId,
   subtitles,
   highlightsMap,
+  acts,
   badgeText = "",
   badgeDotColor = "#10B981",
   title,
   lawCitation,
   citationIcon = "🛡️",
-  isPhase2: propIsPhase2,
   headerSpringProgress,
   audioPremountFor,
   children,
@@ -48,9 +49,8 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   const { fps } = useVideoConfig();
 
   const tokens = getThemeTokens(theme);
-  const subState = useSubtitles(subtitles, highlightsMap);
-
-  const isPhase2 = propIsPhase2 !== undefined ? propIsPhase2 : subState.cueIndex === 1;
+  const subState = useSubtitles(subtitles, highlightsMap, acts);
+  const danger = subState.act === "break";
 
   const resolvedBadgeText =
     typeof badgeText === "function" ? badgeText(subState.cueIndex) : badgeText;
@@ -76,13 +76,15 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
         }}
       >
         {/* Audio with premountFor */}
-        <Audio
-          src={staticFile(`reels/${reelId}/voiceover.mp3`)}
-          premountFor={audioPremountFor ?? fps}
-        />
+        {reelId ? (
+          <Audio
+            src={staticFile(`reels/${reelId}/voiceover.mp3`)}
+            premountFor={audioPremountFor ?? fps}
+          />
+        ) : null}
 
         {/* Decorative Grid & Ambient Glows */}
-        <ReelBackground tokens={tokens} isPhase2={isPhase2} />
+        <ReelBackground tokens={tokens} danger={danger} />
 
         {/* Top Header & Title */}
         <ReelHeader
@@ -98,7 +100,7 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
         {/* Bottom Subtitle Caption Card */}
         <SubtitleCard
           currentSubtitle={subState.currentSubtitle}
-          isPhase2={isPhase2}
+          danger={danger}
         />
 
         {/* Bottom Legal / Regulatory Footer */}

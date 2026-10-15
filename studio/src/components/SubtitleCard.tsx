@@ -15,14 +15,14 @@ export interface SubtitleCue {
 
 export interface SubtitleCardProps {
   currentSubtitle: SubtitleCue;
-  isPhase2?: boolean;
+  danger?: boolean;
   accentColor?: string;
   accentBg?: string;
 }
 
 export const SubtitleCard: React.FC<SubtitleCardProps> = ({
   currentSubtitle,
-  isPhase2 = false,
+  danger = false,
   accentColor,
   accentBg,
 }) => {
@@ -43,10 +43,10 @@ export const SubtitleCard: React.FC<SubtitleCardProps> = ({
       <div className="rounded-[28px] p-[28px_36px] flex items-center gap-5 bg-card border border-border shadow-2xl">
         <div
           className={`w-[50px] h-[50px] rounded-2xl flex items-center justify-center text-[26px] shrink-0 ${
-            isPhase2 ? "bg-danger-subtle text-danger" : "bg-accent-subtle text-accent"
+            danger ? "bg-danger-subtle text-danger" : "bg-accent-subtle text-accent"
           }`}
         >
-          {isPhase2 ? "📢" : "🎙️"}
+          {danger ? "📢" : "🎙️"}
         </div>
 
         <div className="flex-1">
@@ -55,7 +55,7 @@ export const SubtitleCard: React.FC<SubtitleCardProps> = ({
             {highlight ? (
               <span
                 className={`font-black px-2 py-0.5 rounded-md ${
-                  isPhase2 ? "text-danger bg-danger-subtle" : "text-accent bg-accent-subtle"
+                  danger ? "text-danger bg-danger-subtle" : "text-accent bg-accent-subtle"
                 }`}
                 style={customStyle}
               >

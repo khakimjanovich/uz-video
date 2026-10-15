@@ -40,8 +40,12 @@ uz-video/
         │   ├── StatusBadge.tsx    # Styled inline status badges & chips
         │   ├── SubtitleCard.tsx   # Synced voiceover caption card with active highlight
         │   ├── RegulatoryFooter.tsx # Bottom legal/regulatory citation
+        │   ├── diagram/           # ArchDiagram, ArchNode, ArchEdge, Packet (see §4)
         │   └── index.ts           # Barrel export
+        ├── series/
+        │   └── acquiring/nodes.ts # Shared node catalogue for the Acquiring series
         └── reels/                 # Ultra-clean declarative reel compositions (60–80 lines each)
+            ├── _playground/       # Studio-only sandbox for diagram primitives ("_" = skipped by manage_reels.py)
             └── <reel-id>/         # Register each reel's composition in Root.tsx
                 ├── script.txt     # Uzbek voiceover text
                 ├── subtitles.srt  # Exact cue timings
@@ -109,3 +113,71 @@ cd studio && npm run dev
    - Inter loaded via `@remotion/google-fonts/Inter` with zero FOUT across headless CI/OS environments.
 5. **Audio Premounting:**
    - `<Audio src={...} premountFor={fps} />` ensures decoders preload 1 second ahead.
+6. **House rules beat upstream skills:**
+   - The `remotion-markup` skill recommends `Interactive.withSchema` and inline `interpolate()` at call sites. This repo deliberately keeps animation math inside components (`MotionBox`, `ArchDiagram`) so reel files stay pure data. When they conflict, this file wins.
+
+---
+
+## 4. Series Format (Software Architecture & Solution Engineering)
+
+Every episode is **one architecture diagram that evolves with the voiceover**, following Alex Xu's progressive design method. Both tiers are 1080×1920 (9:16).
+
+| Tier | Length | Content |
+|------|--------|---------|
+| 1 — Buy-In Reel | 20–35s, ~5–7 cues | High-level progressive system flow |
+| 2 — Deep-Dive | 2–4 min | Zoom into one node: payloads, DB rows, state machines (extra `scenes/`) |
+
+### A. The four acts
+Pass `acts` to `ReelScaffold`. Each value is the **subtitle cue index** where that act starts:
+
+```tsx
+acts={{ hook: 0, v1: 1, break: 2, v2: 3, handoff: 5 }}
+```
+
+1. **hook** — everyday action + 2–3 hard engineering constraints.
+2. **v1** — the naive 3-box flow (`buyer → merchant → bank`).
+3. **break** — the real edge case that kills v1 (timeout, race condition, raw card leak). Red glow + red subtitle styling turn on automatically during this act.
+4. **v2** — insert the service that fixes it (Gateway, Pre-Check Webhook, Token Vault, Hold/Capture, Split engine).
+5. **handoff** — leave **exactly one** node/edge marked `danger` as the open bottleneck. The next episode opens on this exact diagram.
+
+The current act is available to any component via `useSubtitlesContext().act`.
+
+### B. Episode file shape
+`reels/<reel-id>/index.tsx` is data only:
+
+```tsx
+<ReelScaffold reelId="ep01-gateway" subtitles={subtitles} acts={{...}} badgeText="Ep 1 · Acquiring" title="..." lawCitation="...">
+  <ArchDiagram catalog={ACQUIRING_NODES} steps={steps} />
+</ReelScaffold>
+```
+
+`steps: DiagramStep<AcquiringNodeId>[]` — one entry per change, keyed by `cue`:
+
+| Field | Meaning |
+|-------|---------|
+| `cue` | Subtitle cue index where the step starts |
+| `layout` | `{ nodeId: [col, row] }` on a 3×5 grid (fractions allowed). Kept nodes slide, new nodes pop in, missing nodes fade out |
+| `edges` | `{ from, to, label?, broken? }` — new edges draw on; `broken` = red dashed + ✕ label |
+| `packets` | `{ from, to, label, delay?, duration?, stopAt? }` — chip travelling an edge; `stopAt < 1` freezes it red (timeout) |
+| `accent` / `danger` / `crossed` | Node ids to highlight as new / broken / hand-drawn cross-out |
+| `badges` | `{ nodeId: "T+1" }` corner status chip |
+
+Each step lists the **full** diagram state (not a diff). Copy the previous step and edit it. See `reels/_playground/index.tsx` for a complete v1 → break → v2 → handoff example (`npm run dev` → **Playground**).
+
+### C. Rules
+- **Node catalogue:** new actors/services go into `series/acquiring/nodes.ts`, never inline in an episode, so labels and icons stay identical across all 7 episodes.
+- **Continuity:** Ep N's first step should equal Ep N-1's last step.
+- **Diagram safe zone:** `ArchDiagram` positions inside y≈400–1560px, between `ReelHeader` and `SubtitleCard`. Don't place scenes over it.
+- **New primitives:** build from `ArchNode`/`ArchEdge` first; extract a new component only when two episodes need it.
+
+### D. Pronunciation glossary
+On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it correctly. Add every new term here before writing a script.
+
+| On screen | In `script.txt` |
+|-----------|-----------------|
+| `T+1` | T plyus bir |
+| `PCI-DSS` | pi-si-ay di-es-es |
+| `OFD` | o-ef-de |
+| `9998` | to'qqiz ming to'qqiz yuz to'qson sakkiz |
+| `tok_uz_…` | token |
+| `API` | ey-pi-ay |

@@ -44,6 +44,11 @@ def get_edge_tts_bin():
     sys.exit(1)
 
 
+def reel_dirs():
+    # Folders starting with "_" are Studio-only sandboxes (no voice, never rendered).
+    return sorted(p for p in REELS_SRC_DIR.iterdir() if p.is_dir() and not p.name.startswith("_"))
+
+
 def parse_srt_timestamp(ts: str) -> float:
     match = re.match(r"(\d+):(\d+):(\d+)[,\.](\d+)", ts.strip())
     if not match:
@@ -82,7 +87,7 @@ def list_reels():
         print("No reels found.")
         return
 
-    reels = sorted([p for p in REELS_SRC_DIR.iterdir() if p.is_dir()])
+    reels = reel_dirs()
     if not reels:
         print("No reels found.")
         return
@@ -277,21 +282,21 @@ def main():
         list_reels()
     elif args.command == "voice":
         if args.reel == "all":
-            reels = sorted([p.name for p in REELS_SRC_DIR.iterdir() if p.is_dir()])
+            reels = [p.name for p in reel_dirs()]
             for r in reels:
                 generate_voice(r, args.voice, args.rate)
         else:
             generate_voice(args.reel, args.voice, args.rate)
     elif args.command == "subtitles":
         if args.reel == "all":
-            reels = sorted([p.name for p in REELS_SRC_DIR.iterdir() if p.is_dir()])
+            reels = [p.name for p in reel_dirs()]
             for r in reels:
                 sync_subtitles_json(r)
         else:
             sync_subtitles_json(args.reel)
     elif args.command in ["render", "build"]:
         if args.reel == "all":
-            reels = sorted([p.name for p in REELS_SRC_DIR.iterdir() if p.is_dir()])
+            reels = [p.name for p in reel_dirs()]
             for r in reels:
                 render_video(r, args.theme)
         else:

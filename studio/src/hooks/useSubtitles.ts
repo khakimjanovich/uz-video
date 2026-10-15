@@ -12,12 +12,17 @@ export interface HighlightConfig {
 
 export type HighlightsMap = Record<number, HighlightConfig>;
 
+// Series teaching structure; each value is the cue index where the act starts.
+export type Act = "hook" | "v1" | "break" | "v2" | "handoff";
+export type ActsMap = Partial<Record<Act, number>>;
+
 export interface UseSubtitlesReturn {
   cueIndex: number;
   cueStartFrame: number;
   cueEndFrame: number;
   cueDuration: number;
   cueProgress: number; // 0.0 to 1.0 progress within the currently active cue
+  act?: Act;
   currentSubtitle: SubtitleCue;
   isPhase: (index: number) => boolean;
   phaseProgress: (index: number) => number;
@@ -28,7 +33,8 @@ export const SubtitlesContext = createContext<UseSubtitlesReturn | null>(null);
 
 export function useSubtitles(
   subtitles: SubtitleCue[],
-  highlightsMap?: HighlightsMap
+  highlightsMap?: HighlightsMap,
+  acts?: ActsMap
 ): UseSubtitlesReturn {
   const frame = useCurrentFrame();
 
@@ -76,7 +82,7 @@ export function useSubtitles(
   const override = highlightsMap ? highlightsMap[activeIndex] : undefined;
 
   const highlight = override?.highlight ?? rawCue.highlight ?? "";
-  let prefix = override?.prefix ?? rawCue.prefix ?? "";
+  let prefix = override?.prefix ?? rawCue.prefix ?? rawCue.text ?? "";
   let suffix = override?.suffix ?? rawCue.suffix ?? "";
 
   // If text exists and override highlight specified without prefix/suffix, split dynamically
@@ -106,6 +112,15 @@ export function useSubtitles(
     extrapolateRight: "clamp",
   });
 
+  let act: Act | undefined;
+  let actStart = -1;
+  for (const [name, start] of Object.entries(acts ?? {}) as [Act, number][]) {
+    if (start <= activeIndex && start > actStart) {
+      act = name;
+      actStart = start;
+    }
+  }
+
   const isPhase = (index: number) => activeIndex === index;
 
   const phaseProgress = (index: number) => {
@@ -123,6 +138,7 @@ export function useSubtitles(
     cueEndFrame,
     cueDuration,
     cueProgress,
+    act,
     currentSubtitle,
     isPhase,
     phaseProgress,

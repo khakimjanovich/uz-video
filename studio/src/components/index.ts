@@ -6,3 +6,4 @@ export * from "./UiCard";
 export * from "./StatusBadge";
 export * from "./ReelScaffold";
 export * from "./MotionBox";
+export * from "./diagram";
