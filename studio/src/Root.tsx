@@ -1,13 +1,7 @@
 import "./index.css";
 import React from "react";
-import { P2PTransferComposition } from "./reels/p2p-transfer";
-import { CardTokenizationComposition } from "./reels/card-tokenization";
 
+// Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
-  return (
-    <>
-      <P2PTransferComposition />
-      <CardTokenizationComposition />
-    </>
-  );
+  return <></>;
 };

@@ -2,7 +2,7 @@
 """
 Uzbek Tech Reel Manager & Regenerator
 Manages code-only, fully regeneratable Remotion tech reels.
-Supports swappable voices (sardor / madina) and visual themes (xray / dark / light).
+Supports swappable voices (sardor / madina) and visual themes (dark / light).
 Git tracks only scripts (txt), subtitles (srt), and React/Remotion code (tsx).
 Binary audio (mp3) and video (mp4) are generated on-demand.
 """
@@ -268,7 +268,7 @@ def main():
                         help="TTS voice: sardor, madina, or full voice name (default: sardor)")
     parser.add_argument("--rate", default="+5%",
                         help="TTS speech rate (default: +5%%)")
-    parser.add_argument("--theme", choices=["dark", "light", "xray"], default="dark",
+    parser.add_argument("--theme", choices=["dark", "light"], default="dark",
                         help="Visual theme: dark or light (default: dark)")
 
     args = parser.parse_args()

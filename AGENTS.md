@@ -13,23 +13,19 @@ uz-video/
 ├── .agents/skills/                # Remotion official agent skills (remotion-markup, etc.)
 ├── .gitignore                     # Ignores *.mp4, *.mp3, node_modules/, venv/
 ├── AGENTS.md                      # Pipeline specifications for AI agents
-├── GEMINI.md                      # Architecture overview & guidelines
+├── GEMINI.md                      # Symlink -> AGENTS.md
 ├── manage_reels.py                # Master CLI for listing, voicing, syncing, and rendering reels
 ├── out/                           # Rendered MP4 output folder (git-ignored)
 └── studio/
     ├── remotion.config.ts         # Rspack + @remotion/tailwind-v4 bundler config
     ├── public/
     │   └── reels/                 # Generated voiceovers (git-ignored)
-    │       ├── p2p-transfer/voiceover.mp3
-    │       └── card-tokenization/voiceover.mp3
+    │       └── <reel-id>/voiceover.mp3
     └── src/
         ├── index.css              # Tailwind CSS v4 entry point with CSS variables (--bg-canvas, --bg-card)
-        ├── themes.ts              # Continuous Theme Token System (dark / light) & font bundling
+        ├── themes.ts              # Inter font + the few inline background tokens (dark / light)
         ├── Root.tsx               # Remotion Root registering all reels
         ├── index.ts               # Entry point
-        ├── context/               # React Context
-        │   ├── ThemeContext.tsx   # ThemeProvider & useTheme / useThemeTokens
-        │   └── index.ts
         ├── hooks/                 # Custom Remotion hooks
         │   ├── useSubtitles.ts    # Cue-driven boundaries (cueIndex, cueStartFrame, cueProgress)
         │   └── index.ts
@@ -46,25 +42,11 @@ uz-video/
         │   ├── RegulatoryFooter.tsx # Bottom legal/regulatory citation
         │   └── index.ts           # Barrel export
         └── reels/                 # Ultra-clean declarative reel compositions (60–80 lines each)
-            ├── p2p-transfer/
-            │   ├── script.txt     # Uzbek voiceover text
-            │   ├── subtitles.srt  # Exact cue timings
-            │   ├── subtitles.json # Auto-generated frame-based cue metadata & highlights
-            │   ├── scenes/        # Modular 25–40 line scene sub-components
-            │   │   ├── SenderReceiverCards.tsx
-            │   │   ├── HookScene.tsx
-            │   │   ├── RealityScene.tsx
-            │   │   └── ClearingScene.tsx
-            │   └── index.tsx      # Declarative Remotion Sequence composition (~75 lines)
-            └── card-tokenization/
-                ├── script.txt
-                ├── subtitles.srt
-                ├── subtitles.json
-                ├── scenes/
-                │   ├── DeliveryCheckoutCard.tsx
-                │   ├── MisconceptionScene.tsx
-                │   ├── DatabaseScanScene.tsx
-                │   └── VaultTokenScene.tsx
+            └── <reel-id>/         # Register each reel's composition in Root.tsx
+                ├── script.txt     # Uzbek voiceover text
+                ├── subtitles.srt  # Exact cue timings
+                ├── subtitles.json # Auto-generated frame-based cue metadata & highlights
+                ├── scenes/        # Modular 25–40 line scene sub-components
                 └── index.tsx      # Declarative Remotion Sequence composition (~75 lines)
 ```
 
@@ -81,10 +63,10 @@ Displays all reels, script previews, duration in seconds, frame counts at 30fps,
 ### B. Generate Voiceover & Auto-Sync Subtitles from `script.txt`:
 ```bash
 # Generate voice for a specific reel:
-./manage_reels.py voice p2p-transfer
+./manage_reels.py voice <reel-id>
 
 # Generate voice with female voice:
-./manage_reels.py voice card-tokenization --voice madina
+./manage_reels.py voice <reel-id> --voice madina
 
 # Generate voice for all reels:
 ./manage_reels.py voice all
@@ -97,11 +79,10 @@ Uses `edge-tts` (`uz-UZ-SardorNeural` or `uz-UZ-MadinaNeural` at `+5%` rate), ou
 ### C. Render Final MP4 Video:
 ```bash
 # Render with default dark theme:
-./manage_reels.py render p2p-transfer
-./manage_reels.py render card-tokenization
+./manage_reels.py render <reel-id>
 
 # Render with clean light theme:
-./manage_reels.py render card-tokenization --theme light
+./manage_reels.py render <reel-id> --theme light
 
 # Or render all reels:
 ./manage_reels.py render all --theme dark
