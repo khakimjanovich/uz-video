@@ -154,6 +154,24 @@ const ART = {
       <path d="M70 29 Q84 24 98 28 M70 39 Q84 34 98 38 M70 49 Q84 44 98 48" />
     </>
   ),
+  // Durable workflow: a clock inside a looping arrow (retries over time).
+  workflow: (
+    <>
+      <path d="M86 26 A28 28 0 1 0 88 50" />
+      <path d="M80 18 L87 26 L78 31" />
+      <circle cx="60" cy="40" r="14" />
+      <path d="M60 32 V40 L66 44" />
+    </>
+  ),
+  // Manual review: a person with a magnifying glass.
+  reviewer: (
+    <>
+      <circle cx="40" cy="20" r="10" />
+      <path d="M20 66 Q20 38 40 38 Q60 38 60 66" />
+      <circle cx="88" cy="36" r="12" />
+      <path d="M96 45 L108 58" />
+    </>
+  ),
 } satisfies Record<string, React.ReactNode>;
 
 export type ArtName = keyof typeof ART;

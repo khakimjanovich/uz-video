@@ -80,14 +80,6 @@ Displays all reels, script previews, duration in seconds, frame counts at 30fps,
 ```
 Uses `edge-tts` (`uz-UZ-SardorNeural` or `uz-UZ-MadinaNeural` at `+5%` rate), outputs audio to `studio/public/reels/<name>/voiceover.mp3`, updates `subtitles.srt`, and automatically computes `subtitles.json` with frame-exact timings while preserving existing keyword highlights.
 
-### B2. Self-voiced reels (human voiceover, e.g. Uzbek):
-Put an empty `SELF_VOICE` file in the reel folder; TTS (`voice`, `render`) then never touches it.
-```bash
-# Estimate one cue per sentence from script.txt (~13 chars/s) so the video can be built before recording:
-./manage_reels.py draft ep01-gateway-uz
-```
-Uzbek versions reuse the English `steps.ts` and translate on-screen text with `localizeSteps` / `localizeCatalog` and the shared dictionary `studio/src/series/acquiring/uz.ts`.
-
 ### C. Render Final MP4 Video:
 ```bash
 # Render with default dark theme:
@@ -130,7 +122,7 @@ cd studio && npm run dev
 
 **Visual identity: Receipt.** Every video is a thermal payment slip on a dark counter: Archivo Black headlines (one per step), IBM Plex Mono for everything else, ink boxes, rubber-stamp badges (red = problem, green = OK), captions on black tape, a dotted "totals" footer line. Tokens live in `studio/src/index.css`; no emoji in diagram labels.
 
-Episode plans live in [`SERIES.md`](SERIES.md). Order of work: **plan → script → video**. Videos are in English.
+Episode plans live in [`SERIES.md`](SERIES.md). Order of work: **plan → script → voice → stills check**. English only. MP4s are rendered only on request; review happens in Studio or on stills.
 
 Every episode is **one architecture diagram that evolves with the voiceover**, following Alex Xu's progressive design method. Both tiers are 1080×1920 (9:16).
 

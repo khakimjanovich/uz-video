@@ -21,7 +21,6 @@ export interface ReelScaffoldProps {
   highlightsMap?: HighlightsMap;
   acts?: ActsMap;
   series: string; // header line, e.g. "HEEYPAY ACQ · EP 01"
-  stepLabel?: string; // "STEP" (en) / "QADAM" (uz)
   title: React.ReactNode | ((cueIndex: number) => React.ReactNode);
   footer: { label: string; value: string }; // receipt totals line, e.g. LAW .... ZRU-578
   audioPremountFor?: number;
@@ -37,7 +36,6 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   highlightsMap,
   acts,
   series,
-  stepLabel = "STEP",
   title,
   footer,
   audioPremountFor,
@@ -58,7 +56,7 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
         <ReelBackground />
         <ReelHeader
           series={series}
-          step={`${stepLabel} ${pad(subState.cueIndex + 1)}/${pad(Math.max(subtitles.length, 1))}`}
+          step={`STEP ${pad(subState.cueIndex + 1)}/${pad(Math.max(subtitles.length, 1))}`}
           title={resolvedTitle}
         />
 

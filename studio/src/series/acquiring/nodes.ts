@@ -23,6 +23,8 @@ export const ACQUIRING_NODES = {
   store3: { label: "Store C", art: "store" },
   payment: { label: "Payment", sublabel: "Record", art: "receipt" },
   journal: { label: "Operation journal", sublabel: "Audit trail", art: "journal" },
+  workflow: { label: "Workflow", sublabel: "Temporal", art: "workflow" },
+  reviewer: { label: "Manual review", sublabel: "Queue", art: "reviewer" },
   // Ledger accounts (BRD §10, settlement — planned)
   transit: { label: "Clearing transit", sublabel: "10511", art: "transit" },
   terminalacc: { label: "Terminal account", sublabel: "23508", art: "tray" },

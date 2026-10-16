@@ -193,39 +193,7 @@ def sync_subtitles_json(reel_name: str, cues=None):
     return updated_cues
 
 
-def is_self_voiced(reel_name: str) -> bool:
-    # An empty SELF_VOICE file marks a reel voiced by a human: TTS never touches it.
-    return (REELS_SRC_DIR / reel_name / "SELF_VOICE").exists()
-
-
-def draft_subtitles(reel_name: str, chars_per_sec=13.0, gap=0.4):
-    """Estimate cue timings from script.txt (one cue per sentence) for a human voiceover."""
-    reel_dir = REELS_SRC_DIR / reel_name
-    text = (reel_dir / "script.txt").read_text(encoding="utf-8").strip()
-    sentences = [x.strip() for x in re.split(r"(?<=[.?!])\s+", text) if x.strip()]
-    cues, t = [], 0.3
-    for i, sentence in enumerate(sentences):
-        dur = max(2.5, len(sentence) / chars_per_sec)
-        end = t + dur + (1.0 if i == len(sentences) - 1 else 0)
-        cues.append({
-            "index": i + 1,
-            "startFrame": math.floor(t * 30),
-            "endFrame": math.ceil(end * 30),
-            "text": sentence,
-            "prefix": sentence,
-            "highlight": "",
-            "suffix": "",
-        })
-        t = end + gap
-    out = reel_dir / "subtitles.json"
-    out.write_text(json.dumps(cues, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"📝 Draft timings for {len(cues)} sentences ({cues[-1]['endFrame'] / 30:.1f}s) -> {out}")
-
-
 def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
-    if is_self_voiced(reel_name):
-        print(f"ℹ️ '{reel_name}' is self-voiced (SELF_VOICE); skipping TTS.")
-        return False
     voice = resolve_voice(voice_raw)
     reel_dir = REELS_SRC_DIR / reel_name
     if not reel_dir.exists():
@@ -275,7 +243,7 @@ def render_video(reel_name: str, theme="dark"):
 
     # Ensure voiceover is generated
     mp3_file = PUBLIC_REELS_DIR / reel_name / "voiceover.mp3"
-    if not mp3_file.exists() and not is_self_voiced(reel_name):
+    if not mp3_file.exists():
         print(f"ℹ️ Audio missing for '{reel_name}'. Generating voiceover first...")
         generate_voice(reel_name)
 
@@ -297,7 +265,7 @@ def render_video(reel_name: str, theme="dark"):
 
 def main():
     parser = argparse.ArgumentParser(description="Manage code-only regeneratable Uzbek Tech Reels with themes & voices")
-    parser.add_argument("command", choices=["list", "voice", "render", "build", "subtitles", "draft"], nargs="?", default="list",
+    parser.add_argument("command", choices=["list", "voice", "render", "build", "subtitles"], nargs="?", default="list",
                         help="Action to perform (default: list)")
     parser.add_argument("reel", nargs="?", default="all",
                         help="Reel ID name or 'all'")
@@ -319,8 +287,6 @@ def main():
                 generate_voice(r, args.voice, args.rate)
         else:
             generate_voice(args.reel, args.voice, args.rate)
-    elif args.command == "draft":
-        draft_subtitles(args.reel)
     elif args.command == "subtitles":
         if args.reel == "all":
             reels = [p.name for p in reel_dirs()]
