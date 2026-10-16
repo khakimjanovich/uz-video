@@ -22,7 +22,7 @@ Nodes:    <ids from series/acquiring/nodes.ts; new ones to add>
 
 ## MVP 1 — Core payment acceptance
 
-### 1. Why an acquirer — id: ep01-gateway · status: video
+### 1. Why an acquirer — id: ep01-gateway (+ -uz) · status: video
 Source:   Law ZRU-578; BRD §2
 Hook:     What does an online store in Uzbekistan need to accept card payments?
 Break:    Only CBU-licensed banks / payment orgs may connect to Uzcard & Humo — not stores.
@@ -30,7 +30,7 @@ Fix (v2): A bank acquirer sits in between; card entered on the bank's page; one 
 Handoff:  Before a store takes its first payment, what does the bank check?
 Nodes:    buyer, merchant, bank, network
 
-### 2. Onboarding — id: ep02-onboarding · status: plan
+### 2. Onboarding — id: ep02-onboarding (+ -uz) · status: video
 Source:   Code (partner onboarding service)
 Hook:     Before a store takes its first payment, what does the bank check?
 Naive v1: Store signs up → admin clicks "activate".

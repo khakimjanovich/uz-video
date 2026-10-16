@@ -63,13 +63,14 @@ const edgePath = (a: Pt, b: Pt) => {
   return `M ${a.x + dx * t} ${a.y + dy * t} L ${b.x - dx * t} ${b.y - dy * t}`;
 };
 
-// 30% along the edge, pushed sideways, so labels stay clear of packets
-// (which usually pass or freeze around the middle).
+// Labels sit beside the line, clear of packets: centred under mostly-horizontal edges
+// (packets are short, so 70px is enough), 30% along mostly-vertical ones (packets are wide).
 const labelPos = (a: Pt, b: Pt): Pt => {
   const dx = b.x - a.x;
   const dy = b.y - a.y;
   const len = Math.hypot(dx, dy) || 1;
-  return { x: a.x + dx * 0.3 + (-dy / len) * 70, y: a.y + dy * 0.3 + (dx / len) * 70 };
+  const t = Math.abs(dx) > Math.abs(dy) ? 0.5 : 0.3;
+  return { x: a.x + dx * t + (-dy / len) * 70, y: a.y + dy * t + (dx / len) * 70 };
 };
 
 // Remotion's hosted SFX, fetched at render time (no audio files in git).

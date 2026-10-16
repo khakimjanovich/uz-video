@@ -14,6 +14,9 @@ export const ACQUIRING_NODES = {
   munis: { label: "MUNIS", sublabel: "9998" },
   uzqr: { label: "UzQR", sublabel: "In-store QR" },
   attacker: { label: "Attacker", sublabel: "Data breach" },
+  admin: { label: "Admin", sublabel: "Bank · maker" },
+  checker: { label: "Admin 2", sublabel: "Checker" },
+  salespoint: { label: "Sales point", sublabel: "API key" },
 } satisfies Record<string, NodeDef>;
 
 export type AcquiringNodeId = keyof typeof ACQUIRING_NODES;
