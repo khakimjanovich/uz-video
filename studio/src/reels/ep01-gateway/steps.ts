@@ -19,6 +19,18 @@ const LICENSED: Edge[] = [{ from: "bank", to: "network" }];
 const CARD: Edge = { from: "buyer", to: "bank", label: "card" };
 const ACQUIRER: Edge = { from: "bank", to: "merchant", label: "acquirer" };
 
+// Episode 1 as the parent: the route of the six later parts, drawn as a snake.
+const ROUTE: Partial<Record<AcquiringNodeId, Slot>> = {
+  stage2: [0, 0.2], stage3: [2, 0.2], stage4: [2, 1.95], stage5: [0, 1.95], stage6: [0, 3.7], stage7: [2, 3.7],
+};
+const ROUTE_EDGES: Edge[] = [
+  { from: "stage2", to: "stage3" },
+  { from: "stage3", to: "stage4" },
+  { from: "stage4", to: "stage5" },
+  { from: "stage5", to: "stage6" },
+  { from: "stage6", to: "stage7" },
+];
+
 export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: what does an online store in Uzbekistan need to accept card payments?
   {
@@ -65,5 +77,25 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     packets: [{ from: "bank", to: "merchant", label: "payout", duration: 40 }],
     accent: ["bank", "merchant"],
     badges: { merchant: "1 contract" },
+  },
+  // 5 Roadmap: the series follows one payment from start to finish.
+  {
+    cue: 5,
+    layout: ROUTE,
+    edges: ROUTE_EDGES,
+  },
+  // 6 Roadmap: onboarding -> create payment -> card + debit -> status -> links -> settlement.
+  {
+    cue: 6,
+    layout: ROUTE,
+    edges: ROUTE_EDGES,
+    packets: [
+      { from: "stage2", to: "stage3", label: "payment", delay: 10, duration: 22 },
+      { from: "stage3", to: "stage4", label: "payment", delay: 35, duration: 22 },
+      { from: "stage4", to: "stage5", label: "payment", delay: 60, duration: 22 },
+      { from: "stage5", to: "stage6", label: "payment", delay: 85, duration: 22 },
+      { from: "stage6", to: "stage7", label: "payment", delay: 110, duration: 22 },
+    ],
+    accent: ["stage7"],
   },
 ];

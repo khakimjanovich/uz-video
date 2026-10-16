@@ -15,6 +15,8 @@ const TITLES = [
   "The acquirer",
   "The payment",
   "The payout",
+  "The route",
+  "Six stops",
 ];
 
 const Ep01Gateway: React.FC<ReelProps> = ({ theme }) => (
@@ -23,7 +25,7 @@ const Ep01Gateway: React.FC<ReelProps> = ({ theme }) => (
     reelId="ep01-gateway"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · EP 01"
+    position={{ part: 1 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Law", value: "ZRU-578" }}
   >

@@ -27,7 +27,7 @@ const T208Refund: React.FC<ReelProps> = ({ theme }) => (
     reelId="t2-08-refund"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · DEEP DIVE 08"
+    position={{ deepDive: 8 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Money back", value: "Reversal ≠ refund" }}
   >

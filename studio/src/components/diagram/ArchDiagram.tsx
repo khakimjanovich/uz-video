@@ -6,6 +6,7 @@ import { StatusBadge } from "../StatusBadge";
 import { ArchNode, NODE_H, NODE_W, NodeDef } from "./ArchNode";
 import { ArchEdge } from "./ArchEdge";
 import { Packet } from "./Packet";
+import { deepDive, pad2 } from "../../series/acquiring/map";
 
 export type Slot = [col: number, row: number];
 
@@ -34,6 +35,7 @@ export interface DiagramStep<Id extends string> {
   danger?: Id[]; // broken / bottleneck
   crossed?: Id[]; // hand-drawn cross-out
   badges?: Partial<Record<Id, string>>;
+  deepDive?: number[]; // Tier 2 deep dives this step points to (shown as tags under the diagram)
 }
 
 export interface ArchDiagramProps<Id extends string> {
@@ -42,7 +44,7 @@ export interface ArchDiagramProps<Id extends string> {
 }
 
 // Safe zone between ReelHeader and SubtitleCard on the 1080x1920 canvas.
-const ZONE = { x: 60, y: 300, w: 960, h: 1120, cols: 3, rows: 5 };
+const ZONE = { x: 60, y: 330, w: 960, h: 1090, cols: 3, rows: 5 };
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 type Pt = { x: number; y: number };
@@ -259,6 +261,18 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
           />
         );
       })}
+      {step.deepDive?.length ? (
+        <div
+          className="absolute flex flex-wrap gap-3 font-mono uppercase"
+          style={{ left: ZONE.x + 24, right: ZONE.x + 24, top: ZONE.y + ZONE.h + 8, opacity: drawIn }}
+        >
+          {step.deepDive.map((n) => (
+            <div key={n} className="px-3 py-1.5 border-[3px] border-dashed border-ink bg-paper text-ink text-[22px] font-bold whitespace-nowrap">
+              → Deep dive {pad2(n)} · {deepDive(n).title}
+            </div>
+          ))}
+        </div>
+      ) : null}
       {sfx.map(({ at, sound }, k) => (
         <Sequence key={`sfx-${i}-${k}`} from={stepStart + at} layout="none">
           <Audio src={sound.src} volume={sound.volume} premountFor={fps} />

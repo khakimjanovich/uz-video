@@ -10,6 +10,14 @@ Terms: use widely known industry names (replay attack, HMAC, nonce, idempotency 
 
 Sources: the story comes from the **BRD** (what the system should do); precision comes from the **code** (real names, steps, order). Videos never mention build status ("planned", "not live") — not in voice, not on screen. Values that are settings in the code (timeouts, expiry, roles, limits) are described as "the configured time / role / limit", never as their default number.
 
+## How the parts are linked
+- **Series map** lives in `studio/src/series/acquiring/map.ts` (Tier 1 stops, Tier 2 deep dives with their parent). Route strip, header line and deep-dive tags all read from it.
+- **Episode 1 is the parent:** it ends by walking the route of Parts 2–7.
+- **Route strip (view hint):** every video shows the 7 stops; Tier 1 fills its own stop, a deep dive fills its parent and hangs `↳ DD nn · title`.
+- **Voice hint:** a Tier 1 sentence names the deep dive by its tech term where the topic appears ("…the four-eyes principle, which gets its own deep dive later"). No new sentences, no closing line.
+- **Visual hint:** the same step carries a tag under the diagram: `→ DEEP DIVE 01 · FOUR-EYES` (step field `deepDive: [1]`).
+- Tier 2 voices don't announce the link; the strip and header (`DEEP DIVE 03 · FROM PART 03`) show it. Tier 3 is never announced.
+
 ## Template
 
 ```
@@ -60,7 +68,7 @@ Flow:     Clearing → terminal account → fee withheld → store account, T+1.
 
 ## Tier 2 — MVP 1 deep dives (after Tier 1)
 
-Each zooms into its parent Tier 1 part and uses naive → break → fix. Ordered by dependency, then by flow.
+Each zooms into its parent Tier 1 part and uses naive → break → fix. Tier 1 names them in voice and with a tag at the step they extend. Ordered by dependency, then by flow.
 
 ### T2-1. Four-eyes (maker-checker) — parent: Part 2 · id: t2-01-four-eyes · status: video
 Source:   BRD FR-93; code (PRS dual control; commission-reference-service change requests)

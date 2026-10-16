@@ -172,6 +172,13 @@ const ART = {
       <path d="M96 45 L108 58" />
     </>
   ),
+  // Payment link: two chain links.
+  link: (
+    <>
+      <rect x="14" y="28" width="54" height="24" rx="12" />
+      <rect x="52" y="28" width="54" height="24" rx="12" />
+    </>
+  ),
 } satisfies Record<string, React.ReactNode>;
 
 export type ArtName = keyof typeof ART;

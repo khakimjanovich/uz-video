@@ -25,6 +25,13 @@ export const ACQUIRING_NODES = {
   journal: { label: "Operation journal", sublabel: "Audit trail", art: "journal" },
   workflow: { label: "Workflow", sublabel: "Temporal", art: "workflow" },
   reviewer: { label: "Manual review", sublabel: "Queue", art: "reviewer" },
+  // Series route (Episode 1 roadmap): one stop per later Tier 1 part.
+  stage2: { label: "Onboarding", sublabel: "Part 2", art: "admin" },
+  stage3: { label: "Create payment", sublabel: "Part 3", art: "salespoint" },
+  stage4: { label: "Card + debit", sublabel: "Part 4", art: "vault" },
+  stage5: { label: "Status", sublabel: "Part 5", art: "receipt" },
+  stage6: { label: "Payment links", sublabel: "Part 6", art: "link" },
+  stage7: { label: "Settlement", sublabel: "Part 7", art: "wallet" },
   // Ledger accounts (BRD §10, settlement — planned)
   transit: { label: "Clearing transit", sublabel: "10511", art: "transit" },
   terminalacc: { label: "Terminal account", sublabel: "23508", art: "tray" },

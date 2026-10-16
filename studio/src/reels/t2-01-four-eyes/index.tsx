@@ -17,7 +17,7 @@ const T201FourEyes: React.FC<ReelProps> = ({ theme }) => (
     reelId="t2-01-four-eyes"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · DEEP DIVE 01"
+    position={{ deepDive: 1 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Control", value: "Four-eyes" }}
   >

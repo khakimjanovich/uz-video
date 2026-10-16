@@ -17,7 +17,7 @@ const Ep03S2s: React.FC<ReelProps> = ({ theme }) => (
     reelId="ep03-s2s"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · EP 03"
+    position={{ part: 3 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Signature", value: "HMAC-SHA256" }}
   >

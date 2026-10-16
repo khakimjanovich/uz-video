@@ -120,6 +120,8 @@ cd studio && npm run dev
 
 ## 4. Series Format (Software Architecture & Solution Engineering)
 
+**Series links.** Pass `position={{ part: n }}` (Tier 1) or `position={{ deepDive: n }}` (Tier 2) to `ReelScaffold`: it draws the route strip and the header line from `series/acquiring/map.ts`. Add `deepDive: [n]` to the step where a Tier 1 topic is extended by a deep dive; the tag appears under the diagram.
+
 **Visual identity: Receipt.** Every video is a thermal payment slip on a dark counter: Archivo Black headlines (one per step), IBM Plex Mono for everything else, ink boxes, rubber-stamp badges (red = problem, green = OK), captions on black tape, a dotted "totals" footer line. Tokens live in `studio/src/index.css`; no emoji in diagram labels.
 
 Episode plans live in [`SERIES.md`](SERIES.md). Order of work: **plan → script → voice → stills check**. English only. MP4s are rendered only on request; review happens in Studio or on stills.

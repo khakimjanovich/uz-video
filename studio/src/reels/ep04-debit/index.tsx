@@ -17,7 +17,7 @@ const Ep04Debit: React.FC<ReelProps> = ({ theme }) => (
     reelId="ep04-debit"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · EP 04"
+    position={{ part: 4 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Card data", value: "Bank only" }}
   >

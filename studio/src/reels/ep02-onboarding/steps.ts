@@ -42,6 +42,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 2 Bank reviews, signs a contract, records the settlement account.
   {
     cue: 2,
+    deepDive: [2],
     layout: REVIEW,
     edges: [DOCS],
     packets: [{ from: "admin", to: "merchant", label: "contract", delay: 30 }],
@@ -58,6 +59,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 4 The bank switches the store on; it can start taking payments.
   {
     cue: 4,
+    deepDive: [1],
     layout: WITH_SITE,
     edges: [SITE, { from: "admin", to: "merchant", label: "activate" }],
     packets: [{ from: "admin", to: "merchant", label: "active", delay: 20 }],

@@ -27,7 +27,7 @@ const T202Commission: React.FC<ReelProps> = ({ theme }) => (
     reelId="t2-02-commission"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · DEEP DIVE 02"
+    position={{ deepDive: 2 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Fee", value: "% + fixed" }}
   >

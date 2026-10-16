@@ -23,7 +23,7 @@ const Ep05Status: React.FC<ReelProps> = ({ theme }) => (
     reelId="ep05-status"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · EP 05"
+    position={{ part: 5 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Truth", value: "Bank status" }}
   >

@@ -17,7 +17,7 @@ const Ep02Onboarding: React.FC<ReelProps> = ({ theme }) => (
     reelId="ep02-onboarding"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · EP 02"
+    position={{ part: 2 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Check", value: "KYB" }}
   >

@@ -17,7 +17,7 @@ const T205Debit: React.FC<ReelProps> = ({ theme }) => (
     reelId="t2-05-debit"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · DEEP DIVE 05"
+    position={{ deepDive: 5 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Debit", value: "Exactly once" }}
   >

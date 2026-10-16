@@ -27,7 +27,7 @@ const T203SafeRequests: React.FC<ReelProps> = ({ theme }) => (
     reelId="t2-03-safe-requests"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · DEEP DIVE 03"
+    position={{ deepDive: 3 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Signature", value: "HMAC-SHA256" }}
   >

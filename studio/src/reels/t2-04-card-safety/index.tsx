@@ -17,7 +17,7 @@ const T204CardSafety: React.FC<ReelProps> = ({ theme }) => (
     reelId="t2-04-card-safety"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · DEEP DIVE 04"
+    position={{ deepDive: 4 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Card data", value: "PCI DSS" }}
   >

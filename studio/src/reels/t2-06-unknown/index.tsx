@@ -17,7 +17,7 @@ const T206Unknown: React.FC<ReelProps> = ({ theme }) => (
     reelId="t2-06-unknown"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · DEEP DIVE 06"
+    position={{ deepDive: 6 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Rule", value: "Never blind-retry" }}
   >

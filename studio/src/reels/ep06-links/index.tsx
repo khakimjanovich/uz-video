@@ -24,7 +24,7 @@ const Ep06Links: React.FC<ReelProps> = ({ theme }) => (
     reelId="ep06-links"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · EP 06"
+    position={{ part: 6 }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Link", value: "Single-use" }}
   >

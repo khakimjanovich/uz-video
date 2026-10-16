@@ -6,6 +6,8 @@ import { ReelBackground } from "./ReelBackground";
 import { ReelHeader } from "./ReelHeader";
 import { SubtitleCard, SubtitleCue } from "./SubtitleCard";
 import { RegulatoryFooter } from "./RegulatoryFooter";
+import { SeriesMap } from "./SeriesMap";
+import { deepDive, pad2, SeriesPosition } from "../series/acquiring/map";
 import {
   ActsMap,
   HighlightsMap,
@@ -20,7 +22,8 @@ export interface ReelScaffoldProps {
   subtitles: SubtitleCue[];
   highlightsMap?: HighlightsMap;
   acts?: ActsMap;
-  series: string; // header line, e.g. "HEEYPAY ACQ · EP 01"
+  position?: SeriesPosition; // where this video sits in the series: drives the route strip and header line
+  series?: string; // header line override (e.g. the Studio playground)
   title: React.ReactNode | ((cueIndex: number) => React.ReactNode);
   footer: { label: string; value: string }; // receipt totals line, e.g. LAW .... ZRU-578
   audioPremountFor?: number;
@@ -35,6 +38,7 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   subtitles,
   highlightsMap,
   acts,
+  position,
   series,
   title,
   footer,
@@ -44,6 +48,13 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   const { fps } = useVideoConfig();
   const subState = useSubtitles(subtitles, highlightsMap, acts);
   const danger = subState.act === "break";
+  const seriesLine =
+    series ??
+    (position && "part" in position
+      ? `HEEYPAY ACQ · PART ${pad2(position.part)} OF 07`
+      : position
+        ? `HEEYPAY ACQ · DEEP DIVE ${pad2(position.deepDive)} · FROM PART ${pad2(deepDive(position.deepDive).parent)}`
+        : "");
   const resolvedTitle = typeof title === "function" ? title(subState.cueIndex) : title;
 
   return (
@@ -54,8 +65,9 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
         ) : null}
 
         <ReelBackground />
+        {position ? <SeriesMap position={position} /> : null}
         <ReelHeader
-          series={series}
+          series={seriesLine}
           step={`STEP ${pad(subState.cueIndex + 1)}/${pad(Math.max(subtitles.length, 1))}`}
           title={resolvedTitle}
         />
