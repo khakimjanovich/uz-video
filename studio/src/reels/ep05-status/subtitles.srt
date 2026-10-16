@@ -1,0 +1,24 @@
+1
+00:00:00,050 --> 00:00:02,964
+The money is captured, so how does the store find out?
+
+2
+00:00:02,964 --> 00:00:06,428
+The bank's page sends the buyer back to the store's website.
+
+3
+00:00:06,428 --> 00:00:09,630
+Then the store's server asks the bank for the payment status.
+
+4
+00:00:09,630 --> 00:00:14,380
+The bank answers with the final state: captured, with the amount and reference number.
+
+5
+00:00:14,380 --> 00:00:16,809
+Only then does the store mark the order as paid.
+
+6
+00:00:16,809 --> 00:00:18,928
+But what if a store has no website at all?
+

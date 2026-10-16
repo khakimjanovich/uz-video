@@ -74,4 +74,13 @@ export const UZ: Dict = {
   "captured · ref": "yakunlandi · ref",
   "status?": "holat?",
   "paid?": "to'landimi?",
+  // Part 5: payment status
+  redirect: "yo'naltirish",
+  return: "qaytish",
+  status: "holat",
+  "back to store": "do'konga",
+  "get status": "holatni so'rash",
+  "captured · amount · ref": "yakunlandi · summa · ref",
+  "order paid": "buyurtma to'landi",
+  "no website?": "sayt yo'qmi?",
 };

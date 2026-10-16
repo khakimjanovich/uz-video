@@ -47,7 +47,7 @@ Hook:     What happens to the buyer's card?
 Flow:     Card on the bank's page → token → SMS code → bank debits through the processing center → approved → captured.
 Handoff:  The money is captured — how does the store find out?
 
-### 5. Payment status — id: ep05-status · status: plan
+### 5. Payment status — id: ep05-status (+ -uz) · status: video
 Source:   Code (GET payment is the authoritative state); BRD FR-95/96 for webhooks ("planned")
 Hook:     The money is captured — how does the store find out?
 Handoff:  No website at all — can a store still get paid?
