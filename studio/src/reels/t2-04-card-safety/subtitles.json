@@ -1,0 +1,74 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 79,
+    "text": "How does a card number stay safe on its way to the bank?",
+    "prefix": "How does a card number stay safe on its way to the bank?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 78,
+    "endFrame": 224,
+    "text": "The simplest way is that the store's website collects the card number and sends it to the bank.",
+    "prefix": "The simplest way is that the store's website collects the card number and sends it to the bank.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 223,
+    "endFrame": 432,
+    "text": "But then every store holds card data, and under PCI DSS that makes each one a target and a liability.",
+    "prefix": "But then every store holds card data, and under PCI DSS that makes each one a target and a liability.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 431,
+    "endFrame": 599,
+    "text": "So the card is entered only on the bank's hosted payment page, opened by a one-time session link.",
+    "prefix": "So the card is entered only on the bank's hosted payment page, opened by a one-time session link.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 598,
+    "endFrame": 779,
+    "text": "The bank's token vault turns the card number into a token, and the payment keeps only a masked PAN.",
+    "prefix": "The bank's token vault turns the card number into a token, and the payment keeps only a masked PAN.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 778,
+    "endFrame": 914,
+    "text": "The real number is revealed only inside the bank, at the moment of the debit.",
+    "prefix": "The real number is revealed only inside the bank, at the moment of the debit.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 913,
+    "endFrame": 1082,
+    "text": "To prove the payer owns the card, a one-time password goes by SMS to the card's phone.",
+    "prefix": "To prove the payer owns the card, a one-time password goes by SMS to the card's phone.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1081,
+    "endFrame": 1264,
+    "text": "Resends are limited and spaced by the configured time, and wrong attempts are limited too.",
+    "prefix": "Resends are limited and spaced by the configured time, and wrong attempts are limited too.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

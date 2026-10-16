@@ -21,6 +21,8 @@ import { T202CommissionComposition } from "./reels/t2-02-commission";
 import { T202CommissionUzComposition } from "./reels/t2-02-commission-uz";
 import { T203SafeRequestsComposition } from "./reels/t2-03-safe-requests";
 import { T203SafeRequestsUzComposition } from "./reels/t2-03-safe-requests-uz";
+import { T204CardSafetyComposition } from "./reels/t2-04-card-safety";
+import { T204CardSafetyUzComposition } from "./reels/t2-04-card-safety-uz";
 
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
@@ -47,6 +49,8 @@ export const RemotionRoot: React.FC = () => {
       <T202CommissionUzComposition />
       <T203SafeRequestsComposition />
       <T203SafeRequestsUzComposition />
+      <T204CardSafetyComposition />
+      <T204CardSafetyUzComposition />
     </>
   );
 };

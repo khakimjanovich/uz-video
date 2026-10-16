@@ -134,6 +134,17 @@ const ART = {
       <path d="M44 54 H60 M66 54 H76" />
     </>
   ),
+  // Token vault: a safe with a dial and handle.
+  vault: (
+    <>
+      <rect x="22" y="8" width="76" height="62" rx="4" />
+      <rect x="30" y="16" width="60" height="46" rx="2" />
+      <circle cx="56" cy="39" r="11" />
+      <path d="M56 28 V32 M56 46 V50 M45 39 H49 M63 39 H67" />
+      <path d="M80 30 V48" />
+      <path d="M30 70 V75 M90 70 V75" />
+    </>
+  ),
 } satisfies Record<string, React.ReactNode>;
 
 export type ArtName = keyof typeof ART;

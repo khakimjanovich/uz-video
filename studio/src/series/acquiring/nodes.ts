@@ -9,7 +9,7 @@ export const ACQUIRING_NODES = {
   bank: { label: "Bank", sublabel: "Acquirer", art: "bank" },
   network: { label: "Processing center", sublabel: "Uzcard·Humo·Visa·MC", art: "processing" },
   payorg: { label: "Payme / Click", sublabel: "Payment org", art: "buyer" },
-  vault: { label: "Token Vault", sublabel: "PCI-DSS" },
+  vault: { label: "Token Vault", sublabel: "PCI DSS", art: "vault" },
   ofd: { label: "Soliq OFD", sublabel: "Fiscal receipt" },
   munis: { label: "MUNIS", sublabel: "9998" },
   uzqr: { label: "UzQR", sublabel: "In-store QR" },
@@ -21,7 +21,7 @@ export const ACQUIRING_NODES = {
   feerule: { label: "Fee rule", sublabel: "Commission", art: "fee" },
   store2: { label: "Store B", art: "store" },
   store3: { label: "Store C", art: "store" },
-  payment: { label: "Payment", sublabel: "Fee saved", art: "receipt" },
+  payment: { label: "Payment", sublabel: "Record", art: "receipt" },
   // Ledger accounts (BRD §10, settlement — planned)
   transit: { label: "Clearing transit", sublabel: "10511", art: "transit" },
   terminalacc: { label: "Terminal account", sublabel: "23508", art: "tray" },
