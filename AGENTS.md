@@ -140,6 +140,8 @@ Every episode is **one architecture diagram that evolves with the voiceover**, f
 | 2 — Deep-Dive | 2–4 min | Zoom into one node: payloads, DB rows, state machines (extra `scenes/`) |
 
 ### A. The four acts
+**Tier 1 episodes (the high road) use only `{ hook, handoff }`: no naive version, no break/fix.** The full act structure below is for Tier 2 deep dives (see `SERIES.md`).
+
 Pass `acts` to `ReelScaffold`. Each value is the **subtitle cue index** where that act starts:
 
 ```tsx

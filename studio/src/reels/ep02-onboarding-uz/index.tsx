@@ -9,7 +9,7 @@ import subtitlesJson from "./subtitles.json";
 
 // Uzbek Part 2: same steps as English, Uzbek text, self-voiced (timings from `manage_reels.py draft`).
 const subtitles = subtitlesJson as SubtitleCue[];
-const TITLES = ["Tekshiruv?", "Ro'yxatga olish", "Ko'rib chiqish", "Savdo nuqtasi", "Bitta admin?", "Ikki admin", "Keyingi: API"];
+const TITLES = ["Tekshiruv?", "Ro'yxatga olish", "Ko'rib chiqish", "Savdo nuqtasi", "Faollashtirish", "Keyingi: API"];
 const catalog = localizeCatalog(ACQUIRING_NODES, UZ);
 const uzSteps = localizeSteps(steps, UZ);
 
@@ -21,7 +21,7 @@ const Ep02OnboardingUz: React.FC<ReelProps> = ({ theme }) => (
     series="HEEYPAY ACQ · 02-QISM"
     stepLabel="QADAM"
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
-    footer={{ label: "Nazorat", value: "Maker-checker" }}
+    footer={{ label: "Tekshiruv", value: "KYB" }}
   >
     <ArchDiagram catalog={catalog} steps={uzSteps} />
   </ReelScaffold>

@@ -7,6 +7,8 @@ import { Ep02OnboardingComposition } from "./reels/ep02-onboarding";
 import { Ep02OnboardingUzComposition } from "./reels/ep02-onboarding-uz";
 import { Ep03S2sComposition } from "./reels/ep03-s2s";
 import { Ep03S2sUzComposition } from "./reels/ep03-s2s-uz";
+import { Ep04DebitComposition } from "./reels/ep04-debit";
+import { Ep04DebitUzComposition } from "./reels/ep04-debit-uz";
 
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
@@ -19,6 +21,8 @@ export const RemotionRoot: React.FC = () => {
       <Ep02OnboardingUzComposition />
       <Ep03S2sComposition />
       <Ep03S2sUzComposition />
+      <Ep04DebitComposition />
+      <Ep04DebitUzComposition />
     </>
   );
 };

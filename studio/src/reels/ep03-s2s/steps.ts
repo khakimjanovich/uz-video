@@ -2,93 +2,62 @@ import { DiagramEdge, DiagramStep, Slot } from "../../components";
 import { ActsMap } from "../../hooks";
 import { AcquiringNodeId } from "../../series/acquiring/nodes";
 
-// One step per script sentence. Source: acquiring service create-payment flow
-// (OAuth token + HMAC signature with timestamp/nonce, Idempotency-Key, one-time payment URL).
-export const acts: ActsMap = { hook: 0, v1: 1, break: 2, v2: 4, handoff: 6 };
+// Tier 1 (high road): one step per sentence, no naive/break. Source: acquiring service create-payment flow.
+// Replay/retry protection (HMAC timestamp + nonce, idempotency key) is left for a Tier 2 deep dive.
+export const acts: ActsMap = { hook: 0, handoff: 4 };
 
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
 
 const PAIR: Layout = { merchant: [0, 1.5], bank: [2, 1.5] };
-const WITH_ATTACKER: Layout = { ...PAIR, attacker: [1, 3.3] };
+const WITH_BUYER: Layout = { ...PAIR, buyer: [1, 3.3] };
 
-const API: Edge = { from: "merchant", to: "bank", label: "api" };
-const REPLAY: Edge = { from: "attacker", to: "bank", label: "replay", broken: true };
+const SIGNED: Edge = { from: "merchant", to: "bank", label: "signed" };
+const LINK: Edge = { from: "merchant", to: "buyer", label: "link" };
 
 export const steps: DiagramStep<AcquiringNodeId>[] = [
-  // 0 Hook: Part 2's last diagram — the store has an API key; how does it create a payment safely?
+  // 0 Hook: Part 2's last diagram — the store has an API key; how does its server create a payment?
   {
     cue: 0,
-    layout: { merchant: [1, 0], salespoint: [2, 1.5], admin: [0, 3.6], checker: [2, 3.6] },
+    layout: { merchant: [1, 0], admin: [1, 2.3], salespoint: [2, 1.5] },
     edges: [
       { from: "merchant", to: "salespoint", label: "website" },
-      { from: "admin", to: "checker", label: "request" },
-      { from: "checker", to: "merchant", label: "approve" },
+      { from: "admin", to: "merchant", label: "activate" },
     ],
     accent: ["salespoint"],
     badges: { merchant: "create payment?" },
   },
-  // 1 Naive v1: send amount + order number with the key.
+  // 1 The server sends amount + order number to the bank, signed with its secret key.
   {
     cue: 1,
     layout: PAIR,
-    edges: [API],
-    packets: [{ from: "merchant", to: "bank", label: "amount + key", delay: 20 }],
+    edges: [SIGNED],
+    packets: [{ from: "merchant", to: "bank", label: "amount + order", delay: 20 }],
   },
-  // 2 Break: anyone who copies the request can send it again.
+  // 2 The bank checks the signature and creates the payment.
   {
     cue: 2,
-    layout: WITH_ATTACKER,
-    edges: [API, { from: "merchant", to: "attacker", label: "copy", broken: true }, REPLAY],
-    packets: [
-      { from: "merchant", to: "attacker", label: "amount + key", delay: 5, duration: 25 },
-      { from: "attacker", to: "bank", label: "amount + key", delay: 35, duration: 25 },
-    ],
-    danger: ["attacker", "bank"],
-    badges: { bank: "accepted" },
+    layout: PAIR,
+    edges: [SIGNED],
+    accent: ["bank"],
+    badges: { bank: "signature ok" },
   },
-  // 3 Break: network drops, the store retries -> second payment for the same order.
+  // 3 It returns a one-time payment link; the store sends it to the buyer.
   {
     cue: 3,
-    layout: PAIR,
-    edges: [API],
+    layout: WITH_BUYER,
+    edges: [SIGNED, LINK],
     packets: [
-      { from: "merchant", to: "bank", label: "pay #1042", delay: 10, stopAt: 0.5 },
-      { from: "merchant", to: "bank", label: "retry #1042", delay: 55 },
+      { from: "bank", to: "merchant", label: "payment link", delay: 15, duration: 25 },
+      { from: "merchant", to: "buyer", label: "payment link", delay: 50, duration: 25 },
     ],
-    danger: ["bank"],
-    badges: { bank: "2 payments" },
+    accent: ["bank"],
   },
-  // 4 Fix: request signed with secret + timestamp + one-time number; a copy is rejected.
+  // 4 Handoff: the buyer opens the link — what happens to their card next? -> Part 4
   {
     cue: 4,
-    layout: WITH_ATTACKER,
-    edges: [{ from: "merchant", to: "bank", label: "signed" }, REPLAY],
-    packets: [
-      { from: "merchant", to: "bank", label: "sig · time · nonce", delay: 15 },
-      { from: "attacker", to: "bank", label: "replay", delay: 55, stopAt: 0.6 },
-    ],
-    accent: ["bank"],
-    badges: { bank: "replay blocked" },
-  },
-  // 5 Fix: idempotency key ties retries to the first payment; bank returns a one-time payment link.
-  {
-    cue: 5,
-    layout: PAIR,
-    edges: [{ from: "merchant", to: "bank", label: "signed" }],
-    packets: [
-      { from: "merchant", to: "bank", label: "idempotency-key", delay: 15 },
-      { from: "bank", to: "merchant", label: "payment link", delay: 60 },
-    ],
-    accent: ["bank"],
-    badges: { bank: "1 payment" },
-  },
-  // 6 Handoff: the buyer opens the link — what happens to their card next? -> card, OTP, debit
-  {
-    cue: 6,
-    layout: { ...PAIR, buyer: [1, 3.3] },
-    edges: [{ from: "merchant", to: "bank", label: "signed" }, { from: "merchant", to: "buyer", label: "link" }],
-    packets: [{ from: "merchant", to: "buyer", label: "payment link", delay: 15 }],
+    layout: WITH_BUYER,
+    edges: [SIGNED, LINK],
     accent: ["buyer"],
     badges: { buyer: "card?" },
   },

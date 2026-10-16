@@ -1,28 +1,24 @@
 1
-00:00:00,050 --> 00:00:03,690
+00:00:00,050 --> 00:00:03,797
 Before a store takes its first payment, what does the bank check?
 
 2
-00:00:03,690 --> 00:00:08,869
+00:00:03,797 --> 00:00:09,023
 The store registers, confirms its email, and uploads its company documents.
 
 3
-00:00:08,869 --> 00:00:13,607
+00:00:09,023 --> 00:00:13,928
 The bank reviews them, signs a contract, and records the store's settlement account.
 
 4
-00:00:13,607 --> 00:00:20,011
+00:00:13,928 --> 00:00:20,321
 Each website becomes a sales point with its own API key, and the bank checks that the site is real.
 
 5
-00:00:20,011 --> 00:00:24,178
-But if one admin could switch a store on alone, one mistake is enough.
+00:00:20,321 --> 00:00:24,333
+Then the bank switches the store on, and it can start taking payments.
 
 6
-00:00:24,178 --> 00:00:28,916
-So a second admin has to approve, and nobody can approve their own request.
-
-7
-00:00:28,916 --> 00:00:33,416
-Now the store has an API key, so how does its server create a payment safely?
+00:00:24,333 --> 00:00:28,392
+Now the store has an API key, so how does its server create a payment?
 

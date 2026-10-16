@@ -2,22 +2,18 @@ import { DiagramEdge, DiagramStep, Slot } from "../../components";
 import { ActsMap } from "../../hooks";
 import { AcquiringNodeId } from "../../series/acquiring/nodes";
 
-// One step per script sentence. Source: partner onboarding service (KYB, contract, sales point, site check, maker-checker).
-export const acts: ActsMap = { hook: 0, v1: 1, break: 4, v2: 5, handoff: 6 };
+// Tier 1 (high road): one step per sentence, no naive/break. Source: partner onboarding service.
+// Maker-checker activation is left for a Tier 2 deep dive.
+export const acts: ActsMap = { hook: 0, handoff: 5 };
 
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
 
 const REVIEW: Layout = { merchant: [1, 0], admin: [1, 2.3] };
 const WITH_SITE: Layout = { ...REVIEW, salespoint: [2, 1.5] };
-const TWO_ADMINS: Layout = { merchant: [1, 0], salespoint: [2, 1.5], admin: [0, 3.6], checker: [2, 3.6] };
 
 const DOCS: Edge = { from: "merchant", to: "admin", label: "documents" };
 const SITE: Edge = { from: "merchant", to: "salespoint", label: "website" };
-const MAKER_CHECKER: Edge[] = [
-  { from: "admin", to: "checker", label: "request" },
-  { from: "checker", to: "merchant", label: "approve" },
-];
 
 export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: Part 1's last diagram — before the first payment, what does the bank check?
@@ -59,32 +55,20 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     packets: [{ from: "admin", to: "salespoint", label: "site check", delay: 30 }],
     badges: { salespoint: "site ok" },
   },
-  // 4 Break: one admin switching a store on alone — one mistake is enough.
+  // 4 The bank switches the store on; it can start taking payments.
   {
     cue: 4,
     layout: WITH_SITE,
     edges: [SITE, { from: "admin", to: "merchant", label: "activate" }],
-    packets: [{ from: "admin", to: "merchant", label: "active", delay: 25 }],
-    danger: ["admin"],
-    badges: { admin: "alone" },
-  },
-  // 5 Fix: a second admin approves (maker-checker); no self-approval.
-  {
-    cue: 5,
-    layout: TWO_ADMINS,
-    edges: [SITE, ...MAKER_CHECKER],
-    packets: [
-      { from: "admin", to: "checker", label: "request", delay: 20 },
-      { from: "checker", to: "merchant", label: "active", delay: 60 },
-    ],
-    accent: ["checker"],
+    packets: [{ from: "admin", to: "merchant", label: "active", delay: 20 }],
+    accent: ["merchant"],
     badges: { merchant: "active" },
   },
-  // 6 Handoff: the store has an API key — how does its server create a payment safely? -> Part 3 (S2S)
+  // 5 Handoff: the store has an API key — how does its server create a payment? -> Part 3
   {
-    cue: 6,
-    layout: TWO_ADMINS,
-    edges: [SITE, ...MAKER_CHECKER],
+    cue: 5,
+    layout: WITH_SITE,
+    edges: [SITE, { from: "admin", to: "merchant", label: "activate" }],
     accent: ["salespoint"],
     badges: { merchant: "create payment?" },
   },

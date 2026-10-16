@@ -1,7 +1,10 @@
 # heeyPay Acquiring Series — Episode Plans
 
 Workflow: **plan (this file) → script (`reels/<id>/script.txt`) → video (`steps.ts` + voice + render)**.
-Videos are in English. Each episode's handoff question is the next episode's hook.
+Each episode ships in English (TTS voice) and Uzbek (self-voiced). Each episode's handoff question is the next episode's hook.
+
+**Tier 1 — the high road:** walk the whole flow first, one stage per episode: *what happens and who does it*. No naive version, no break/fix.
+**Tier 2 — deep dives:** only after Tier 1 is complete. Naive → break → fix, one mechanism per episode.
 
 Sources: **Code** = implemented in the acquiring services; **BRD** = requirement only, not built yet (say "planned", never show as live).
 
@@ -11,90 +14,74 @@ Sources: **Code** = implemented in the acquiring services; **BRD** = requirement
 ### <N>. <Title>  — id: epNN-<slug>  · status: plan | script | video
 Source:   Code | BRD (+ section / FR ids)
 Hook:     <question the viewer has>
-Naive v1: <simplest design>                      (optional)
-Break:    <real edge case that kills v1>
-Fix (v2): <what the system actually does>
+Flow:     <Tier 1: what happens, step by step>
+Naive v1 / Break / Fix:  <Tier 2 only>
 Handoff:  <open question → next episode>
-Nodes:    <ids from series/acquiring/nodes.ts; new ones to add>
 ```
 
 ---
 
-## MVP 1 — Core payment acceptance
+## Tier 1 — MVP 1 high road
 
 ### 1. Why an acquirer — id: ep01-gateway (+ -uz) · status: video
 Source:   Law ZRU-578; BRD §2
 Hook:     What does an online store in Uzbekistan need to accept card payments?
-Break:    Only CBU-licensed banks / payment orgs may connect to Uzcard & Humo — not stores.
-Fix (v2): A bank acquirer sits in between; card entered on the bank's page; one contract, payout to the store's own account.
+Flow:     Only CBU-licensed banks / payment orgs connect to processing centers → an acquirer sits between store and processing → card on the bank's page → one contract, payout to the store's own account.
 Handoff:  Before a store takes its first payment, what does the bank check?
-Nodes:    buyer, merchant, bank, network
 
 ### 2. Onboarding — id: ep02-onboarding (+ -uz) · status: video
 Source:   Code (partner onboarding service)
 Hook:     Before a store takes its first payment, what does the bank check?
-Naive v1: Store signs up → admin clicks "activate".
-Break:    One admin alone can switch on any store — fraud or mistake goes live instantly.
-Fix (v2): Email OTP → KYB documents → verification → offline contract → settlement account + chargeback clause → sales point (API key, callback, schemes) → site check → activation needs a second admin (maker-checker, no self-approval, 24h expiry).
-Handoff:  The store has an API key — how does its server safely create a payment?
-Nodes:    merchant, bank, + admin, checker, salespoint
+Flow:     Register + email code + company documents → review, contract, settlement account → sales point with API key + site check → bank switches the store on.
+Handoff:  Now the store has an API key, so how does its server create a payment?
 
-### 3. Creating a payment (S2S) — id: ep03-s2s (+ -uz) · status: video
+### 3. Creating a payment — id: ep03-s2s (+ -uz) · status: video
 Source:   Code (acquiring service)
-Hook:     The store has an API key — how does its server safely create a payment?
-Naive v1: POST amount + order with the API key.
-Break:    A captured request is replayed, or a retry charges the same order twice.
-Fix (v2): OAuth token + HMAC signature (timestamp ±5 min, one-time nonce) + Idempotency-Key → returns a one-time payment URL.
+Hook:     How does the store's server create a payment?
+Flow:     Signed request (amount + order) → bank checks the signature, creates the payment → one-time payment link → store sends it to the buyer.
 Handoff:  The buyer opens the link — what happens to their card next?
-Nodes:    merchant, bank, attacker, buyer
 
-### 4. Card → OTP → Uzcard/Humo — id: ep04-debit · status: plan
+### 4. Card → debit — id: ep04-debit (+ -uz) · status: video
 Source:   Code
-Hook:     The buyer opens the link — what happens to their card next?
-Naive v1: Take card number, send debit.
-Break:    Anyone with a stolen card number could pay.
-Fix (v2): Hosted page → card tokenised → SMS code (from Uzcard/Humo or the bank) → debit via scheme terminal → CAPTURED.
-Handoff:  What if Uzcard/Humo never answers?
-Nodes:    buyer, gateway, network, + processor
+Hook:     What happens to the buyer's card?
+Flow:     Card on the bank's page → token → SMS code → bank debits through the processing center → approved → captured.
+Handoff:  The money is captured — how does the store find out?
 
-### 5. Unknown outcome — id: ep05-unknown · status: plan
-Source:   Code
-Hook:     The debit timed out — was the money taken or not?
-Naive v1: Retry the debit.
-Break:    Retry = buyer charged twice.
-Fix (v2): Payment stays AUTHORIZING; a workflow polls the scheme status → capture / cancel / manual review. Never blind-retry money.
+### 5. Payment status — id: ep05-status · status: plan
+Source:   Code (GET payment is the authoritative state); BRD FR-95/96 for webhooks ("planned")
+Hook:     The money is captured — how does the store find out?
 Handoff:  No website at all — can a store still get paid?
-Nodes:    gateway, network, + workflow, reviewer
 
 ### 6. Payment links — id: ep06-links · status: plan
 Source:   Code
 Hook:     No website at all — can a store still get paid?
-Break:    A reusable link gets paid twice or after the deal is off.
-Fix (v2): Single-use link with expiry; cancel unused; claim → normal payment session.
-Handoff:  The buyer wants the money back — same day or next week, is it the same?
-Nodes:    merchant, buyer, gateway
+Flow:     Single-use link with expiry → buyer claims it → normal payment session.
+Handoff:  "Paid" in one second — so when does the money reach the store?
 
-### 7. Reversal vs Refund — id: ep07-refund · status: plan
-Source:   BRD §7.1.4 (not built — "planned")
-Hook:     Money back — same day or next week, is it the same?
-Fix (v2): Before clearing: reversal, full only, never debited. After clearing: refund, full/partial, ≤ original, only to the original card, 10 / 60-day window.
-Handoff:  How does the store's server learn about all these status changes?
-Nodes:    buyer, merchant, gateway, network
+### 7. T+1 settlement — id: ep07-settlement · status: plan
+Source:   BRD FR-114..116, §10 (not built — "planned")
+Hook:     "Paid" in one second — so when does the money reach the store?
+Flow:     Clearing → terminal account → fee withheld → store account, T+1.
 
-### 8. Webhook & T+1 settlement — id: ep08-settlement · status: plan
-Source:   BRD FR-95/96, FR-114..116, §10 (not built — "planned")
-Hook:     "Paid" in one second — so why does money arrive tomorrow?
-Fix (v2): Signed webhook with retries; clearing → terminal account → fee withheld → store account, T+1.
-Handoff:  Can a returning buyer skip typing the card?
-Nodes:    gateway, merchant, bank, + ledger accounts
+## Tier 2 — MVP 1 deep dives (after Tier 1)
 
-Dropped from MVP 1: merchant pre-check (stock/price validation is the store's side, not acquiring).
+Material cut from Tier 1, kept here. Each uses naive → break → fix.
+
+- **Maker-checker activation** (from Part 2): one admin alone can switch a store on → second admin approves, no self-approval, 24h expiry.
+- **Safe requests** (from Part 3): replayed copy, retry creates a second payment → HMAC signature with timestamp + one-time nonce, idempotency key.
+- **Card safety** (from Part 4): store takes the card number, stolen card pays → bank page, token, SMS code.
+- **Inside the debit** (from Part 4): one claimed debit per payment, terminal with MID/TID, hold + capture at the processing center.
+- **Unknown outcome:** processing center never answers → payment stays AUTHORIZING, workflow polls status → capture / cancel / manual review; never blind-retry money.
+- **Declines & released holds:** decline → another card while attempts remain; capture fails → cancel the hold, confirm the money is released.
+- **Reversal vs refund** (BRD §7.1.4, "planned"): before clearing reversal, full only; after clearing refund, full/partial, ≤ original, original card only, 10 / 60-day window.
+
+Dropped: merchant pre-check (stock/price validation is the store's side, not acquiring).
 
 ## Later MVPs (BRD only)
 
-### 9. Saved cards & recurring — MVP 2
-### 10. Invoicing by phone number — MVP 3
-### 11. Mobile SDK — MVP 4
-### 12. Split payments — MVP 5
-### 13. Hold & Capture + OFD receipt — MVP 6
-### 14. UzQR & MUNIS — separate topic
+### 8. Saved cards & recurring — MVP 2
+### 9. Invoicing by phone number — MVP 3
+### 10. Mobile SDK — MVP 4
+### 11. Split payments — MVP 5
+### 12. Hold & Capture + OFD receipt — MVP 6
+### 13. UzQR & MUNIS — separate topic

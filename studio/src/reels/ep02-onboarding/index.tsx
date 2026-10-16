@@ -9,7 +9,7 @@ import { acts, steps } from "./steps";
 const subtitles = subtitlesJson as SubtitleCue[];
 
 // One headline per sentence/step.
-const TITLES = ["Checks?", "Sign up", "Review", "Sales point", "One admin?", "Two admins", "Next: API"];
+const TITLES = ["Checks?", "Sign up", "Review", "Sales point", "Switched on", "Next: API"];
 
 const Ep02Onboarding: React.FC<ReelProps> = ({ theme }) => (
   <ReelScaffold
@@ -19,7 +19,7 @@ const Ep02Onboarding: React.FC<ReelProps> = ({ theme }) => (
     acts={acts}
     series="HEEYPAY ACQ · EP 02"
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
-    footer={{ label: "Control", value: "Maker-checker" }}
+    footer={{ label: "Check", value: "KYB" }}
   >
     <ArchDiagram catalog={ACQUIRING_NODES} steps={steps} />
   </ReelScaffold>

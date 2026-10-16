@@ -9,7 +9,7 @@ import subtitlesJson from "./subtitles.json";
 
 // Uzbek Part 3: same steps as English, Uzbek text, self-voiced (timings from `manage_reels.py draft`).
 const subtitles = subtitlesJson as SubtitleCue[];
-const TITLES = ["Yangi to'lov?", "Shunchaki yubor", "Takror so'rov", "Qayta urinish", "Imzo", "Idempotency", "Keyingi: karta"];
+const TITLES = ["Yangi to'lov?", "Imzoli so'rov", "Tekshirildi", "To'lov havolasi", "Keyingi: karta"];
 const catalog = localizeCatalog(ACQUIRING_NODES, UZ);
 const uzSteps = localizeSteps(steps, UZ);
 
