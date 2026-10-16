@@ -149,4 +149,16 @@ export const UZ: Dict = {
   "new rule": "yangi qoida",
   payment: "to'lov",
   "rule changed": "qoida o'zgardi",
+  // T2-3: safe requests
+  "who? once?": "kim? bir marta?",
+  "secret key": "maxfiy kalit",
+  tampered: "o'zgartirilgan",
+  "amount 9 999 999": "summa 9 999 999",
+  create: "yaratish",
+  "same key · same body": "o'sha kalit · o'sha so'rov",
+  "first result": "birinchi natija",
+  "still 1": "hamon 1",
+  "same key · new body": "o'sha kalit · yangi so'rov",
+  "hmac mismatch": "hmac mos emas",
+  "same nonce": "o'sha nonce",
 };

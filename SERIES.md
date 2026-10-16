@@ -6,6 +6,8 @@ Each episode ships in English (TTS voice) and Uzbek (self-voiced). Videos open w
 **Tier 1 — the high road:** walk the whole flow first, one stage per episode: *what happens and who does it*. No naive version, no break/fix.
 **Tier 2 — deep dives:** only after Tier 1 is complete. Naive → break → fix, one mechanism per episode.
 
+Terms: use widely known industry names (replay attack, HMAC, nonce, idempotency key, maker-checker…), never invented ones; each Tier 2 names the technology, its Tier 3 child explains how it works.
+
 Sources: the story comes from the **BRD** (what the system should do); precision comes from the **code** (real names, steps, order). Videos never mention build status ("planned", "not live") — not in voice, not on screen. Values that are settings in the code (timeouts, expiry, roles, limits) are described as "the configured time / role / limit", never as their default number.
 
 ## Template
@@ -75,12 +77,20 @@ Break:    Stores need their own rates per store, sales point and card network.
 Fix (v2): Rules with percent + fixed, min/max, validity window and priority, set per store / sales point / card network, approved with four-eyes. At card submit the most specific rule wins, the fee is saved with the payment, then withheld at settlement.
 
 ### Later deep dives
-- **T2-3 Safe requests** (parent Part 3): replayed copy, retry creates a second payment → HMAC signature with timestamp + one-time nonce, idempotency key.
+- **T2-3 Safe requests** (parent Part 3, id: t2-03-safe-requests (+ -uz), status: video): replay attack, retry creates a second payment → HMAC-SHA256 signature over body + timestamp + nonce, idempotency key.
 - **T2-4 Card safety** (parent Part 4): store takes the card number, stolen card pays → bank page, token, SMS code.
 - **T2-5 Inside the debit** (parent Part 4): one recorded debit per payment, terminal with MID/TID, hold + capture.
 - **T2-6 Unknown outcome** (parent Part 4): processing center never answers → payment waits, status is polled → capture / cancel / manual review; never blind-retry money.
 - **T2-7 Declines & released holds** (parent Part 4): decline → another card while attempts remain; capture fails → cancel the hold, confirm the money is released.
 - **T2-8 Reversal vs refund** (separate flow, BRD §7.1.4): before clearing reversal, full only; after clearing refund, full/partial, ≤ original, original card only, 10 / 60-day window.
+
+## Tier 3 — technology deep dives (children of Tier 2)
+
+How a standard technology works inside, once its Tier 2 parent has named it. Videos never announce these.
+
+- **T3 HMAC-SHA256** (parent T2-3): hash function, secret key, why a changed byte breaks the signature.
+- **T3 Nonce & replay windows** (parent T2-3): clock skew, where nonces are stored and for how long.
+- **T3 Idempotency key pattern** (parent T2-3): request fingerprint, stored result, conflict on a different body.
 
 Dropped: merchant pre-check (stock/price validation is the store's side, not acquiring).
 
