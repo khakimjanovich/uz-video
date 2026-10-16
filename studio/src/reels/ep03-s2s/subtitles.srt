@@ -1,0 +1,28 @@
+1
+00:00:00,050 --> 00:00:04,404
+Now the store has an API key, so how does its server create a payment safely?
+
+2
+00:00:04,404 --> 00:00:07,845
+The simplest way is to send the amount and order number with the key.
+
+3
+00:00:07,845 --> 00:00:10,559
+But anyone who copies that request can send it again.
+
+4
+00:00:10,559 --> 00:00:15,773
+And if the network drops, the store's retry can create a second payment for the same order.
+
+5
+00:00:15,773 --> 00:00:23,571
+So every request is signed with a secret, a timestamp and a one-time number, and a copied request is rejected.
+
+6
+00:00:23,571 --> 00:00:30,821
+An idempotency key ties every retry to the first payment, and the bank returns a one-time payment link.
+
+7
+00:00:30,821 --> 00:00:34,035
+The buyer opens that link, so what happens to their card next?
+

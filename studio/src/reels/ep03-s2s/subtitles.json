@@ -1,0 +1,65 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 133,
+    "text": "Now the store has an API key, so how does its server create a payment safely?",
+    "prefix": "Now the store has an API key, so how does its server create a payment safely?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 132,
+    "endFrame": 236,
+    "text": "The simplest way is to send the amount and order number with the key.",
+    "prefix": "The simplest way is to send the amount and order number with the key.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 235,
+    "endFrame": 317,
+    "text": "But anyone who copies that request can send it again.",
+    "prefix": "But anyone who copies that request can send it again.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 316,
+    "endFrame": 474,
+    "text": "And if the network drops, the store's retry can create a second payment for the same order.",
+    "prefix": "And if the network drops, the store's retry can create a second payment for the same order.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 473,
+    "endFrame": 708,
+    "text": "So every request is signed with a secret, a timestamp and a one-time number, and a copied request is rejected.",
+    "prefix": "So every request is signed with a secret, a timestamp and a one-time number, and a copied request is rejected.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 707,
+    "endFrame": 925,
+    "text": "An idempotency key ties every retry to the first payment, and the bank returns a one-time payment link.",
+    "prefix": "An idempotency key ties every retry to the first payment, and the bank returns a one-time payment link.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 924,
+    "endFrame": 1052,
+    "text": "The buyer opens that link, so what happens to their card next?",
+    "prefix": "The buyer opens that link, so what happens to their card next?",
+    "highlight": "",
+    "suffix": ""
+  }
+]
