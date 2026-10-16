@@ -52,7 +52,7 @@ Source:   Code (GET payment is the authoritative state); BRD FR-95/96 for webhoo
 Hook:     The money is captured — how does the store find out?
 Handoff:  No website at all — can a store still get paid?
 
-### 6. Payment links — id: ep06-links · status: plan
+### 6. Payment links — id: ep06-links (+ -uz) · status: video
 Source:   Code
 Hook:     No website at all — can a store still get paid?
 Flow:     Single-use link with expiry → buyer claims it → normal payment session.

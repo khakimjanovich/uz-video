@@ -83,4 +83,13 @@ export const UZ: Dict = {
   "captured · amount · ref": "yakunlandi · summa · ref",
   "order paid": "buyurtma to'landi",
   "no website?": "sayt yo'qmi?",
+  // Part 6: payment links
+  "create link": "havola yaratish",
+  "purpose · amount · expiry": "maqsad · summa · muddat",
+  open: "ochish",
+  "open link": "havolani ochish",
+  "purpose · amount": "maqsad · summa",
+  "link closed": "havola yopildi",
+  "money?": "pul?",
+  "when?": "qachon?",
 };
