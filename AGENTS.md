@@ -120,6 +120,8 @@ cd studio && npm run dev
 
 ## 4. Series Format (Software Architecture & Solution Engineering)
 
+Episode plans live in [`SERIES.md`](SERIES.md). Order of work: **plan → script → video**. Videos are in English.
+
 Every episode is **one architecture diagram that evolves with the voiceover**, following Alex Xu's progressive design method. Both tiers are 1080×1920 (9:16).
 
 | Tier | Length | Content |

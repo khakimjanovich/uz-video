@@ -24,6 +24,8 @@ PUBLIC_REELS_DIR = STUDIO_DIR / "public" / "reels"
 OUT_DIR = ROOT_DIR / "out"
 
 VOICE_MAP = {
+    "andrew": "en-US-AndrewMultilingualNeural",
+    "ava": "en-US-AvaMultilingualNeural",
     "sardor": "uz-UZ-SardorNeural",
     "madina": "uz-UZ-MadinaNeural",
 }
@@ -161,13 +163,11 @@ def sync_subtitles_json(reel_name: str, cues=None):
         highlight_bg = prev.get("highlightBg")
 
         if highlight and highlight in text:
-            parts = text.split(highlight, 1)
-            prefix = parts[0]
-            suffix = parts[1]
+            prefix, suffix = text.split(highlight, 1)
         else:
-            prefix = prev.get("prefix", text)
-            highlight = prev.get("highlight", "")
-            suffix = prev.get("suffix", "")
+            # Old highlight no longer fits the new text: show the new text plain.
+            prefix, highlight, suffix = text, "", ""
+            highlight_color = highlight_bg = None
 
         cue_obj = {
             "index": idx,
@@ -193,7 +193,7 @@ def sync_subtitles_json(reel_name: str, cues=None):
     return updated_cues
 
 
-def generate_voice(reel_name: str, voice_raw="sardor", rate="+5%"):
+def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
     voice = resolve_voice(voice_raw)
     reel_dir = REELS_SRC_DIR / reel_name
     if not reel_dir.exists():
@@ -269,8 +269,8 @@ def main():
                         help="Action to perform (default: list)")
     parser.add_argument("reel", nargs="?", default="all",
                         help="Reel ID name or 'all'")
-    parser.add_argument("--voice", default="sardor",
-                        help="TTS voice: sardor, madina, or full voice name (default: sardor)")
+    parser.add_argument("--voice", default="andrew",
+                        help="TTS voice: andrew, ava, sardor, madina, or full voice name (default: andrew)")
     parser.add_argument("--rate", default="+5%",
                         help="TTS speech rate (default: +5%%)")
     parser.add_argument("--theme", choices=["dark", "light"], default="dark",

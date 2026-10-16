@@ -221,7 +221,7 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
             path={edgePath(pos[pk.from], pos[pk.to])}
             progress={interpolate(t, [delay, end], [0, stopAt], CLAMP)}
             label={pk.label}
-            stuck={stopAt < 1 && t >= end}
+            danger={(stopAt < 1 && t >= end) || edges.some((e) => e.broken && e.from === pk.from && e.to === pk.to)}
             opacity={interpolate(t, [delay, delay + 5, end, end + 8], [0, 1, 1, stopAt < 1 ? 1 : 0], CLAMP)}
           />
         );
