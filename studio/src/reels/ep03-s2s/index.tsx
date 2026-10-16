@@ -18,6 +18,7 @@ const Ep03S2s: React.FC<ReelProps> = ({ theme }) => (
     subtitles={subtitles}
     acts={acts}
     position={{ part: 3 }}
+    deepDives={{ 1: [3] }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Signature", value: "HMAC-SHA256" }}
   >

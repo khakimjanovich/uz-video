@@ -23,6 +23,7 @@ export interface ReelScaffoldProps {
   highlightsMap?: HighlightsMap;
   acts?: ActsMap;
   position?: SeriesPosition; // where this video sits in the series: drives the route strip and header line
+  deepDives?: Record<number, number[]>; // cue index -> Tier 2 deep dives that sentence teases
   series?: string; // header line override (e.g. the Studio playground)
   title: React.ReactNode | ((cueIndex: number) => React.ReactNode);
   footer: { label: string; value: string }; // receipt totals line, e.g. LAW .... ZRU-578
@@ -39,6 +40,7 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   highlightsMap,
   acts,
   position,
+  deepDives,
   series,
   title,
   footer,
@@ -74,7 +76,7 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
 
         {typeof children === "function" ? children(subState) : children}
 
-        <SubtitleCard currentSubtitle={subState.currentSubtitle} danger={danger} />
+        <SubtitleCard currentSubtitle={subState.currentSubtitle} danger={danger} deepDives={deepDives?.[subState.cueIndex]} />
         <RegulatoryFooter label={footer.label} value={footer.value} />
       </AbsoluteFill>
     </SubtitlesContext.Provider>

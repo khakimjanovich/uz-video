@@ -42,24 +42,30 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 2 Bank reviews, signs a contract, records the settlement account.
   {
     cue: 2,
-    deepDive: [2],
     layout: REVIEW,
     edges: [DOCS],
     packets: [{ from: "admin", to: "merchant", label: "contract", delay: 30 }],
     badges: { admin: "verified", merchant: "contract" },
   },
-  // 3 Each website becomes a sales point with its own API key; bank checks the site.
+  // 3 Teaser: the commission deep dive unpacks how every fee is calculated.
   {
     cue: 3,
+    layout: REVIEW,
+    edges: [DOCS],
+    accent: ["merchant"],
+    badges: { admin: "verified", merchant: "commission" },
+  },
+  // 4 Each website becomes a sales point with its own API key; bank checks the site.
+  {
+    cue: 4,
     layout: WITH_SITE,
     edges: [{ from: "merchant", to: "admin" }, SITE], // drop "documents" label: it would sit beside "website"
     packets: [{ from: "admin", to: "salespoint", label: "site check", delay: 30 }],
     badges: { salespoint: "site ok" },
   },
-  // 4 The bank switches the store on; it can start taking payments.
+  // 5 The bank switches the store on; it can start taking payments.
   {
-    cue: 4,
-    deepDive: [1],
+    cue: 5,
     layout: WITH_SITE,
     edges: [SITE, { from: "admin", to: "merchant", label: "activate" }],
     packets: [{ from: "admin", to: "merchant", label: "active", delay: 20 }],

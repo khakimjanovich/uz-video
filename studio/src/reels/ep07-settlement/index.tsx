@@ -24,6 +24,7 @@ const Ep07Settlement: React.FC<ReelProps> = ({ theme }) => (
     subtitles={subtitles}
     acts={acts}
     position={{ part: 7 }}
+    deepDives={{ 3: [2, 8] }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Payout", value: "T+1" }}
   >

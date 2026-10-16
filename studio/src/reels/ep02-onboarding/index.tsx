@@ -9,7 +9,7 @@ import { acts, steps } from "./steps";
 const subtitles = subtitlesJson as SubtitleCue[];
 
 // One headline per sentence/step.
-const TITLES = ["Checks?", "Sign up", "Review", "Sales point", "Switched on"];
+const TITLES = ["Checks?", "Sign up", "Review", "Commission", "Sales point", "Switched on"];
 
 const Ep02Onboarding: React.FC<ReelProps> = ({ theme }) => (
   <ReelScaffold
@@ -18,6 +18,7 @@ const Ep02Onboarding: React.FC<ReelProps> = ({ theme }) => (
     subtitles={subtitles}
     acts={acts}
     position={{ part: 2 }}
+    deepDives={{ 3: [2], 5: [1] }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Check", value: "KYB" }}
   >

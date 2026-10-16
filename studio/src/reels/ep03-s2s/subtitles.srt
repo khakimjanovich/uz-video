@@ -1,16 +1,16 @@
 1
-00:00:00,050 --> 00:00:03,904
+00:00:00,050 --> 00:00:04,023
 Now the store has an API key, so how does its server create a payment?
 
 2
-00:00:03,904 --> 00:00:13,428
-The store's server sends the amount and order number to the bank with an HMAC signature and an idempotency key, which the request-signing deep dive covers later.
+00:00:04,023 --> 00:00:17,071
+The store's server sends the amount and order number to the bank with an HMAC signature and an idempotency key, two safeguards the request-signing deep dive dissects, showing how they thwart forged and duplicate payments.
 
 3
-00:00:13,428 --> 00:00:16,571
+00:00:17,071 --> 00:00:20,214
 The bank checks the signature and creates the payment.
 
 4
-00:00:16,571 --> 00:00:20,702
+00:00:20,214 --> 00:00:24,452
 It returns a one-time payment link, and the store sends it to the buyer.
 

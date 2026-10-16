@@ -30,7 +30,6 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 1 The server sends amount + order number to the bank, signed with its secret key.
   {
     cue: 1,
-    deepDive: [3],
     layout: PAIR,
     edges: [SIGNED],
     packets: [{ from: "merchant", to: "bank", label: "amount + order", delay: 20 }],

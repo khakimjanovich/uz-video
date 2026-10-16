@@ -14,8 +14,8 @@ Sources: the story comes from the **BRD** (what the system should do); precision
 - **Series map** lives in `studio/src/series/acquiring/map.ts` (Tier 1 stops, Tier 2 deep dives with their parent). Route strip, header line and deep-dive tags all read from it.
 - **Episode 1 is the parent:** it ends by walking the route of Parts 2–7.
 - **Route strip (view hint):** every video shows the 7 stops; Tier 1 fills its own stop, a deep dive fills its parent and hangs `↳ DD nn · title`.
-- **Voice hint:** a Tier 1 sentence names the deep dive by its tech term where the topic appears ("…the four-eyes principle, which gets its own deep dive later"). No new sentences, no closing line.
-- **Visual hint:** the same step carries a tag under the diagram: `→ DEEP DIVE 01 · FOUR-EYES` (step field `deepDive: [1]`).
+- **Voice hint:** a Tier 1 sentence teases the deep dive by its tech term and promises the payoff ("…the four-eyes principle, which its own deep dive explores in depth, revealing why one admin alone is never enough"). Vary the verb in every teaser (unpack, explore in depth, dissect, lay bare, trace, shed light on); never "later". No closing line.
+- **Visual hint:** the same sentence carries a tag on top of the caption: `→ DEEP DIVE 01 · FOUR-EYES` (`deepDives={{ 5: [1] }}` on `ReelScaffold`).
 - Tier 2 voices don't announce the link; the strip and header (`DEEP DIVE 03 · FROM PART 03`) show it. Tier 3 is never announced.
 
 ## Template

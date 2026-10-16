@@ -1,4 +1,5 @@
 import React from "react";
+import { deepDive, pad2 } from "../series/acquiring/map";
 
 export interface SubtitleCue {
   index?: number;
@@ -16,16 +17,26 @@ export interface SubtitleCue {
 export interface SubtitleCardProps {
   currentSubtitle: SubtitleCue;
   danger?: boolean;
+  deepDives?: number[]; // deep dives this sentence teases: tags ride on top of the tape
 }
 
 // Caption printed on black tape; the highlight is marker yellow (stamp red during the break act).
-export const SubtitleCard: React.FC<SubtitleCardProps> = ({ currentSubtitle, danger = false }) => {
+export const SubtitleCard: React.FC<SubtitleCardProps> = ({ currentSubtitle, danger = false, deepDives }) => {
   const prefix = currentSubtitle.prefix ?? currentSubtitle.text ?? "";
   const highlight = currentSubtitle.highlight ?? "";
   const suffix = currentSubtitle.suffix ?? "";
 
   return (
     <div className="absolute bottom-[150px] left-[84px] right-[84px] z-20 bg-ink px-9 py-7">
+      {deepDives?.length ? (
+        <div className="absolute bottom-full left-0 mb-3 flex flex-wrap gap-3 font-mono uppercase">
+          {deepDives.map((n) => (
+            <div key={n} className="px-3 py-1.5 border-[3px] border-dashed border-ink bg-paper text-ink text-[22px] font-bold whitespace-nowrap">
+              → Deep dive {pad2(n)} · {deepDive(n).title}
+            </div>
+          ))}
+        </div>
+      ) : null}
       <div className="font-mono text-[32px] font-semibold leading-[1.35] text-paper">
         {prefix}
         {highlight ? (

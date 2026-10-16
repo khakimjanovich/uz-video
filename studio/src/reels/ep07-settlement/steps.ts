@@ -10,9 +10,9 @@ export const acts: ActsMap = { hook: 0 };
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
 
-const CHAIN: Layout = { network: [1, 0], transit: [1, 1.35], terminalacc: [1, 2.7] };
-const FULL: Layout = { ...CHAIN, feeacc: [0, 4], storeacc: [2, 4] };
-const WITH_STORE: Layout = { ...FULL, merchant: [2, 1.35] };
+const CHAIN: Layout = { network: [1, 0], transit: [1, 1.2], terminalacc: [1, 2.4] };
+const FULL: Layout = { ...CHAIN, feeacc: [0, 3.6], storeacc: [2, 3.6] };
+const WITH_STORE: Layout = { ...FULL, merchant: [2, 1.2] };
 
 const CLEARING: Edge = { from: "network", to: "transit", label: "clearing" };
 const LAND: Edge = { from: "transit", to: "terminalacc" };
@@ -51,7 +51,6 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 3 The bank keeps its fee, the rest goes to the store's own account by the next banking day.
   {
     cue: 3,
-    deepDive: [2, 8],
     layout: FULL,
     edges: [CLEARING, LAND, ...SPLIT],
     packets: [

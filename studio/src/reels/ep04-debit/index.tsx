@@ -18,6 +18,7 @@ const Ep04Debit: React.FC<ReelProps> = ({ theme }) => (
     subtitles={subtitles}
     acts={acts}
     position={{ part: 4 }}
+    deepDives={{ 1: [4], 3: [5, 6, 7] }}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Card data", value: "Bank only" }}
   >
