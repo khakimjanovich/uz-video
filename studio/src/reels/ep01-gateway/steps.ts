@@ -27,7 +27,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     edges: [SHOP],
     badges: { merchant: "❓ cards" },
   },
-  // 1 Law: only CBU-licensed banks / payment orgs connect to Uzcard & Humo, not stores.
+  // 1 Law: only CBU-licensed banks / payment orgs connect to processing centers, not stores.
   {
     cue: 1,
     layout: { ...LAYOUT, bank: [0, 2.3] }, // left, clear of the "not allowed" line; slides to centre next step
@@ -35,7 +35,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     danger: ["merchant"],
     badges: { bank: "✅ licensed" },
   },
-  // 2 An acquirer has to sit between the store and the card network.
+  // 2 An acquirer has to sit between the store and the processing center.
   {
     cue: 2,
     layout: LAYOUT,
@@ -47,10 +47,12 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     cue: 3,
     layout: LAYOUT,
     edges: [SHOP, ...LICENSED, CARD, ACQUIRER],
+    // Processing shown silently: card -> debit at processing center -> approved -> paid.
     packets: [
       { from: "buyer", to: "bank", label: "💳 + SMS code" },
-      { from: "bank", to: "network", label: "auth ✓", delay: 50 },
-      { from: "bank", to: "merchant", label: "✅ paid", delay: 75, duration: 25 },
+      { from: "bank", to: "network", label: "💳 debit", delay: 55, duration: 25 },
+      { from: "network", to: "bank", label: "✅ approved", delay: 85, duration: 25 },
+      { from: "bank", to: "merchant", label: "✅ paid", delay: 115, duration: 25 },
     ],
     accent: ["bank"],
     badges: { merchant: "8600 •••• 9012" },

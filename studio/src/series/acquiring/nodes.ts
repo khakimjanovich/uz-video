@@ -7,7 +7,7 @@ export const ACQUIRING_NODES = {
   merchant: { icon: "🏪", label: "Store", sublabel: "Merchant" },
   gateway: { icon: "🛡️", label: "Gateway", sublabel: "heeyPay acquiring" },
   bank: { icon: "🏦", label: "Bank", sublabel: "Acquirer" },
-  network: { icon: "🔀", label: "Uzcard / Humo", sublabel: "Card network" },
+  network: { icon: "🔀", label: "Processing center", sublabel: "Uzcard·Humo·Visa·MC" },
   payorg: { icon: "📲", label: "Payme / Click", sublabel: "Payment org" },
   vault: { icon: "🔐", label: "Token Vault", sublabel: "PCI-DSS" },
   ofd: { icon: "🧾", label: "Soliq OFD", sublabel: "Fiscal receipt" },

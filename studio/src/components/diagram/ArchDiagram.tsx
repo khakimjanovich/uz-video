@@ -1,4 +1,5 @@
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, Sequence, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { Audio } from "@remotion/media";
 import { CrossedOff } from "@remotion/rough-notation";
 import { useSubtitlesContext } from "../../hooks/useSubtitles";
 import { StatusBadge } from "../StatusBadge";
@@ -71,6 +72,14 @@ const labelPos = (a: Pt, b: Pt): Pt => {
   return { x: a.x + dx * 0.3 + (-dy / len) * 70, y: a.y + dy * 0.3 + (dx / len) * 70 };
 };
 
+// Remotion's hosted SFX, fetched at render time (no audio files in git).
+const SFX = {
+  pop: { src: "https://remotion.media/whoosh.wav", volume: 0.3 },
+  packet: { src: "https://remotion.media/mouse-click.wav", volume: 0.5 },
+  error: { src: "https://remotion.media/record-scratch.wav", volume: 0.35 },
+  success: { src: "https://remotion.media/ding.wav", volume: 0.3 },
+};
+
 const has =<T,>(list: T[] | undefined, item: T) => !!list && list.indexOf(item) !== -1;
 const sameEdge = <Id extends string>(a: DiagramEdge<Id>, b: DiagramEdge<Id>) =>
   a.from === b.from && a.to === b.to;
@@ -111,6 +120,16 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
   }
 
   const edges = (step.edges ?? []).filter((e) => pos[e.from] && pos[e.to]);
+
+  // Sound cues derived from what changed in this step (frame offsets from step start).
+  const stepStart = subtitles[step.cue]?.startFrame ?? 0;
+  const sfx: { at: number; sound: (typeof SFX)[keyof typeof SFX] }[] = [];
+  if (ids.some((id) => !prev?.layout[id])) sfx.push({ at: 0, sound: SFX.pop });
+  const newlyBroken = edges.some((e) => e.broken && !prev?.edges?.some((pe) => pe.broken && sameEdge(pe, e)));
+  const newlyCrossed = (step.crossed ?? []).some((id) => !has(prev?.crossed, id));
+  if (newlyBroken || newlyCrossed) sfx.push({ at: 10, sound: SFX.error });
+  if ((step.accent ?? []).some((id) => !has(prev?.accent, id))) sfx.push({ at: 15, sound: SFX.success });
+  (step.packets ?? []).forEach((pk) => sfx.push({ at: pk.delay ?? 20, sound: SFX.packet }));
 
   return (
     <AbsoluteFill>
@@ -226,6 +245,11 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
           />
         );
       })}
+      {sfx.map(({ at, sound }, k) => (
+        <Sequence key={`sfx-${i}-${k}`} from={stepStart + at} layout="none">
+          <Audio src={sound.src} volume={sound.volume} premountFor={fps} />
+        </Sequence>
+      ))}
     </AbsoluteFill>
   );
 }
