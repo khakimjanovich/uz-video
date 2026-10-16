@@ -79,7 +79,7 @@ Fix (v2): Rules with percent + fixed, min/max, validity window and priority, set
 ### Later deep dives
 - **T2-3 Safe requests** (parent Part 3, id: t2-03-safe-requests (+ -uz), status: video): replay attack, retry creates a second payment → HMAC-SHA256 signature over body + timestamp + nonce, idempotency key.
 - **T2-4 Card safety** (parent Part 4, id: t2-04-card-safety (+ -uz), status: video): store holds card data (PCI DSS) → hosted payment page, token vault + masked PAN, PAN revealed only for the debit, OTP with configured limits.
-- **T2-5 Inside the debit** (parent Part 4): one recorded debit per payment, terminal with MID/TID, hold + capture.
+- **T2-5 Inside the debit** (parent Part 4, id: t2-05-debit (+ -uz), status: video): double charge → atomic state update (one winner), operation journal, terminal MID/TID, authorization + capture, captured with RRN.
 - **T2-6 Unknown outcome** (parent Part 4): processing center never answers → payment waits, status is polled → capture / cancel / manual review; never blind-retry money.
 - **T2-7 Declines & released holds** (parent Part 4): decline → another card while attempts remain; capture fails → cancel the hold, confirm the money is released.
 - **T2-8 Reversal vs refund** (separate flow, BRD §7.1.4): before clearing reversal, full only; after clearing refund, full/partial, ≤ original, original card only, 10 / 60-day window.

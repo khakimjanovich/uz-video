@@ -23,6 +23,8 @@ import { T203SafeRequestsComposition } from "./reels/t2-03-safe-requests";
 import { T203SafeRequestsUzComposition } from "./reels/t2-03-safe-requests-uz";
 import { T204CardSafetyComposition } from "./reels/t2-04-card-safety";
 import { T204CardSafetyUzComposition } from "./reels/t2-04-card-safety-uz";
+import { T205DebitComposition } from "./reels/t2-05-debit";
+import { T205DebitUzComposition } from "./reels/t2-05-debit-uz";
 
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
@@ -51,6 +53,8 @@ export const RemotionRoot: React.FC = () => {
       <T203SafeRequestsUzComposition />
       <T204CardSafetyComposition />
       <T204CardSafetyUzComposition />
+      <T205DebitComposition />
+      <T205DebitUzComposition />
     </>
   );
 };

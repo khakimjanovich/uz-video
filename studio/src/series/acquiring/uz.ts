@@ -172,4 +172,12 @@ export const UZ: Dict = {
   "inside only": "faqat ichkarida",
   resend: "qayta yuborish",
   "configured limit": "belgilangan limit",
+  // T2-5: inside the debit
+  "Operation journal": "Operatsiyalar jurnali",
+  "Audit trail": "Audit izi",
+  "inside?": "ichkarida?",
+  "charged twice": "ikki marta yechildi",
+  "one winner": "bitta g'olib",
+  log: "yozish",
+  "op · result · ref": "operatsiya · natija · ref",
 };

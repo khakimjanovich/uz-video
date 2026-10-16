@@ -145,6 +145,15 @@ const ART = {
       <path d="M30 70 V75 M90 70 V75" />
     </>
   ),
+  // Operation journal: an open log book (two pages and a spine).
+  journal: (
+    <>
+      <path d="M12 16 Q36 8 60 18 Q84 8 108 16 V68 Q84 60 60 70 Q36 60 12 68 Z" />
+      <path d="M60 18 V70" />
+      <path d="M22 28 Q36 24 50 29 M22 38 Q36 34 50 39 M22 48 Q36 44 50 49" />
+      <path d="M70 29 Q84 24 98 28 M70 39 Q84 34 98 38 M70 49 Q84 44 98 48" />
+    </>
+  ),
 } satisfies Record<string, React.ReactNode>;
 
 export type ArtName = keyof typeof ART;
