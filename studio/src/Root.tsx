@@ -15,6 +15,7 @@ import { T204CardSafetyComposition } from "./reels/t2-04-card-safety";
 import { T205DebitComposition } from "./reels/t2-05-debit";
 import { T206UnknownComposition } from "./reels/t2-06-unknown";
 import { T207DeclinesComposition } from "./reels/t2-07-declines";
+import { T208RefundComposition } from "./reels/t2-08-refund";
 
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
@@ -35,6 +36,7 @@ export const RemotionRoot: React.FC = () => {
       <T205DebitComposition />
       <T206UnknownComposition />
       <T207DeclinesComposition />
+      <T208RefundComposition />
     </>
   );
 };

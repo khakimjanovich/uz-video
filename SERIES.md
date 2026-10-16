@@ -82,7 +82,7 @@ Fix (v2): Rules with percent + fixed, min/max, validity window and priority, set
 - **T2-5 Inside the debit** (parent Part 4, id: t2-05-debit, status: video): double charge → atomic state update (one winner), operation journal, terminal MID/TID, authorization + capture, captured with RRN.
 - **T2-6 Unknown outcome** (parent Part 4, id: t2-06-unknown, status: video): no answer, retry charges twice → timeout = unknown outcome (payment stays authorizing), durable workflow (Temporal) polls status on a configured retry schedule → captured / declined, configured time limit → manual review queue, scheduled sweep.
 - **T2-7 Declines & released holds** (parent Part 4, id: t2-07-declines, status: video): error-and-end loses fixable payments → decline code, another card while the session is open and attempts remain, else declined; capture declined → void the authorization hold, status check confirms release, workflow if still held.
-- **T2-8 Reversal vs refund** (separate flow, BRD §7.1.4): before clearing reversal, full only; after clearing refund, full/partial, ≤ original, original card only, 10 / 60-day window.
+- **T2-8 Reversal vs refund** (separate flow, BRD §7.1.4, id: t2-08-refund, status: video): one button can't serve both → before clearing reversal (full, never charged); after clearing refund (new operation, full/partial, ≤ captured, original card only, configured refund window extendable per sales point), via portal or API.
 
 ## Tier 3 — technology deep dives (children of Tier 2)
 
