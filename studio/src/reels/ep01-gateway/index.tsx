@@ -8,15 +8,18 @@ import { acts, steps } from "./steps";
 
 const subtitles = subtitlesJson as SubtitleCue[];
 
+// One headline per sentence/step.
+const TITLES = ["Cards online?", "The law", "The acquirer", "The payment", "The payout", "Next: checks"];
+
 const Ep01Gateway: React.FC<ReelProps> = ({ theme }) => (
   <ReelScaffold
     theme={theme}
     reelId="ep01-gateway"
     subtitles={subtitles}
     acts={acts}
-    badgeText="heeyPay · Part 1"
-    title="How does an online store accept cards?"
-    lawCitation="Law ZRU-578 «On Payments and Payment Systems»"
+    series="HEEYPAY ACQ · EP 01"
+    title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
+    footer={{ label: "Law", value: "ZRU-578" }}
   >
     <ArchDiagram catalog={ACQUIRING_NODES} steps={steps} />
   </ReelScaffold>

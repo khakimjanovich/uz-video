@@ -83,9 +83,9 @@ const Playground: React.FC<ReelProps> = ({ theme }) => (
     theme={theme}
     subtitles={subtitles}
     acts={{ hook: 0, v1: 1, break: 2, v2: 3, handoff: 5 }}
-    badgeText="Playground"
+    series="PLAYGROUND"
     title="Diagram primitives"
-    lawCitation="Studio-only sandbox"
+    footer={{ label: "Mode", value: "Studio only" }}
   >
     <ArchDiagram catalog={ACQUIRING_NODES} steps={steps} />
   </ReelScaffold>

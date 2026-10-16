@@ -1,7 +1,7 @@
 import React from "react";
-import { AbsoluteFill, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, staticFile, useVideoConfig } from "remotion";
 import { Audio } from "@remotion/media";
-import { getThemeTokens, ThemeName } from "../themes";
+import { fonts, ThemeName } from "../themes";
 import { ReelBackground } from "./ReelBackground";
 import { ReelHeader } from "./ReelHeader";
 import { SubtitleCard, SubtitleCue } from "./SubtitleCard";
@@ -20,15 +20,15 @@ export interface ReelScaffoldProps {
   subtitles: SubtitleCue[];
   highlightsMap?: HighlightsMap;
   acts?: ActsMap;
-  badgeText?: string | ((cueIndex: number) => string);
-  badgeDotColor?: string | ((cueIndex: number) => string);
+  series: string; // header line, e.g. "HEEYPAY ACQ · EP 01"
+  stepLabel?: string; // "STEP" (en) / "QADAM" (uz)
   title: React.ReactNode | ((cueIndex: number) => React.ReactNode);
-  lawCitation: string;
-  citationIcon?: string;
-  headerSpringProgress?: number;
+  footer: { label: string; value: string }; // receipt totals line, e.g. LAW .... ZRU-578
   audioPremountFor?: number;
   children: React.ReactNode | ((subState: UseSubtitlesReturn) => React.ReactNode);
 }
+
+const pad = (n: number) => String(n).padStart(2, "0");
 
 export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   theme = "dark",
@@ -36,75 +36,36 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
   subtitles,
   highlightsMap,
   acts,
-  badgeText = "",
-  badgeDotColor = "#10B981",
+  series,
+  stepLabel = "STEP",
   title,
-  lawCitation,
-  citationIcon = "🛡️",
-  headerSpringProgress,
+  footer,
   audioPremountFor,
   children,
 }) => {
-  const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-
-  const tokens = getThemeTokens(theme);
   const subState = useSubtitles(subtitles, highlightsMap, acts);
   const danger = subState.act === "break";
-
-  const resolvedBadgeText =
-    typeof badgeText === "function" ? badgeText(subState.cueIndex) : badgeText;
-  const resolvedBadgeDotColor =
-    typeof badgeDotColor === "function" ? badgeDotColor(subState.cueIndex) : badgeDotColor;
-  const resolvedTitle =
-    typeof title === "function" ? title(subState.cueIndex) : title;
-
-  const defaultHeaderSpring = spring({
-    frame,
-    fps,
-    config: { damping: 14, stiffness: 100 },
-  });
-  const activeHeaderSpring = headerSpringProgress ?? defaultHeaderSpring;
+  const resolvedTitle = typeof title === "function" ? title(subState.cueIndex) : title;
 
   return (
     <SubtitlesContext.Provider value={subState}>
-      <AbsoluteFill
-        data-theme={theme}
-        className="overflow-hidden relative bg-canvas text-primary"
-        style={{
-          fontFamily: tokens.fontFamily,
-        }}
-      >
-        {/* Audio with premountFor */}
+      <AbsoluteFill data-theme={theme} className="overflow-hidden" style={{ fontFamily: fonts.mono }}>
         {reelId ? (
-          <Audio
-            src={staticFile(`reels/${reelId}/voiceover.mp3`)}
-            premountFor={audioPremountFor ?? fps}
-          />
+          <Audio src={staticFile(`reels/${reelId}/voiceover.mp3`)} premountFor={audioPremountFor ?? fps} />
         ) : null}
 
-        {/* Decorative Grid & Ambient Glows */}
-        <ReelBackground tokens={tokens} danger={danger} />
-
-        {/* Top Header & Title */}
+        <ReelBackground />
         <ReelHeader
-          springProgress={activeHeaderSpring}
-          badgeDotColor={resolvedBadgeDotColor}
-          badgeText={resolvedBadgeText}
+          series={series}
+          step={`${stepLabel} ${pad(subState.cueIndex + 1)}/${pad(Math.max(subtitles.length, 1))}`}
           title={resolvedTitle}
         />
 
-        {/* Reel-Specific Animation Stages */}
         {typeof children === "function" ? children(subState) : children}
 
-        {/* Bottom Subtitle Caption Card */}
-        <SubtitleCard
-          currentSubtitle={subState.currentSubtitle}
-          danger={danger}
-        />
-
-        {/* Bottom Legal / Regulatory Footer */}
-        <RegulatoryFooter text={lawCitation} icon={citationIcon} />
+        <SubtitleCard currentSubtitle={subState.currentSubtitle} danger={danger} />
+        <RegulatoryFooter label={footer.label} value={footer.value} />
       </AbsoluteFill>
     </SubtitlesContext.Provider>
   );

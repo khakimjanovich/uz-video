@@ -42,7 +42,7 @@ export interface ArchDiagramProps<Id extends string> {
 }
 
 // Safe zone between ReelHeader and SubtitleCard on the 1080x1920 canvas.
-const ZONE = { x: 60, y: 400, w: 960, h: 1160, cols: 3, rows: 5 };
+const ZONE = { x: 60, y: 300, w: 960, h: 1120, cols: 3, rows: 5 };
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 type Pt = { x: number; y: number };

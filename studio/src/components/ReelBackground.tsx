@@ -1,36 +1,23 @@
 import React from "react";
-import { ThemeTokens } from "../themes";
+import { useVideoConfig } from "remotion";
 
-export interface ReelBackgroundProps {
-  tokens: ThemeTokens;
-  danger?: boolean;
-}
+const MARGIN = 36; // dark counter visible on each side
+const TOOTH = 24; // torn-edge zigzag width
 
-export const ReelBackground: React.FC<ReelBackgroundProps> = ({
-  tokens,
-  danger = false,
-}) => {
+// A strip of thermal receipt paper on a dark counter, torn at the bottom.
+export const ReelBackground: React.FC = () => {
+  const { width, height } = useVideoConfig();
+  const bottom = height - 40;
+  let tear = "";
+  for (let x = width - MARGIN, up = true; x > MARGIN; x -= TOOTH / 2, up = !up) {
+    tear += ` L ${x - TOOTH / 2} ${up ? bottom + 12 : bottom}`;
+  }
+  const d = `M ${MARGIN} 0 H ${width - MARGIN} V ${bottom}${tear} L ${MARGIN} ${bottom} Z`;
+
   return (
-    <>
-      {/* Decorative Radial Grid */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(${tokens.gridColor} 1.4px, transparent 1.4px)`,
-          backgroundSize: "36px 36px",
-          opacity: tokens.gridOpacity,
-        }}
-      />
-
-      {/* Ambient Glow Spotlight */}
-      <div
-        className="absolute -top-40 left-1/2 -translate-x-1/2 w-[980px] h-[520px] pointer-events-none filter blur-[60px]"
-        style={{
-          background: danger
-            ? "radial-gradient(circle, rgba(239,68,68,0.18) 0%, rgba(245,158,11,0.08) 50%, transparent 75%)"
-            : `radial-gradient(circle, ${tokens.glowColor1} 0%, ${tokens.glowColor2} 50%, transparent 75%)`,
-        }}
-      />
-    </>
+    <svg width={width} height={height} className="absolute inset-0">
+      <rect width={width} height={height} style={{ fill: "var(--counter)" }} />
+      <path d={d} style={{ fill: "var(--paper)" }} />
+    </svg>
   );
 };

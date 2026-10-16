@@ -1,50 +1,21 @@
 import React from "react";
-import { interpolate } from "remotion";
 
 export interface ReelHeaderProps {
-  badgeText: string;
-  badgeDotColor?: string;
-  title: React.ReactNode;
-  springProgress: number;
+  series: string; // e.g. "HEEYPAY ACQ · EP 01"
+  step: string; // e.g. "STEP 02/06"
+  title: React.ReactNode; // per-step headline
 }
 
-export const ReelHeader: React.FC<ReelHeaderProps> = ({
-  badgeText,
-  badgeDotColor = "#10B981",
-  title,
-  springProgress,
-}) => {
-  const translateY = interpolate(springProgress, [0, 1], [-50, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-
+// Receipt header: series line + step counter, big headline, dotted rule.
+export const ReelHeader: React.FC<ReelHeaderProps> = ({ series, step, title }) => {
   return (
-    <div
-      className="absolute top-[86px] left-[60px] right-[60px] flex flex-col items-center z-10"
-      style={{
-        translate: `0px ${translateY}px`,
-        opacity: springProgress,
-      }}
-    >
-      {/* Category / Topic Pill Badge */}
-      <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full mb-4.5 shadow-sm bg-card border border-border">
-        <div
-          className="w-2.5 h-2.5 rounded-full"
-          style={{
-            backgroundColor: badgeDotColor,
-            boxShadow: `0 0 10px ${badgeDotColor}`,
-          }}
-        />
-        <span className="text-[22px] font-bold tracking-wider uppercase text-primary">
-          {badgeText}
-        </span>
+    <div className="absolute top-[78px] left-[84px] right-[84px] z-10 font-mono text-ink">
+      <div className="flex justify-between text-[24px] text-ink-muted tracking-wider uppercase">
+        <span>{series}</span>
+        <span>{step}</span>
       </div>
-
-      {/* Main Reel Title */}
-      <h1 className="text-[52px] font-extrabold text-center m-0 leading-[1.15] tracking-tight text-primary">
-        {title}
-      </h1>
+      <h1 className="font-display text-[88px] leading-[1.05] uppercase m-0 mt-5">{title}</h1>
+      <div className="mt-6 border-t-[3px] border-dotted border-ink" />
     </div>
   );
 };
