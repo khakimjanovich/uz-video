@@ -1,20 +1,16 @@
 1
-00:00:00,050 --> 00:00:04,071
+00:00:00,050 --> 00:00:04,047
 Now the store has an API key, so how does its server create a payment?
 
 2
-00:00:04,071 --> 00:00:09,083
+00:00:04,047 --> 00:00:09,083
 The store's server sends the amount and order number to the bank, signed with its secret key.
 
 3
-00:00:09,083 --> 00:00:12,226
+00:00:09,083 --> 00:00:12,202
 The bank checks the signature and creates the payment.
 
 4
-00:00:12,226 --> 00:00:16,261
+00:00:12,202 --> 00:00:16,202
 It returns a one-time payment link, and the store sends it to the buyer.
-
-5
-00:00:16,261 --> 00:00:19,500
-The buyer opens that link, so what happens to their card next?
 

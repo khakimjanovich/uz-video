@@ -9,7 +9,13 @@ import { acts, steps } from "./steps";
 const subtitles = subtitlesJson as SubtitleCue[];
 
 // One headline per sentence/step.
-const TITLES = ["Paid?", "Back to store", "Ask the bank", "Final state", "Order paid", "Next: links"];
+const TITLES = [
+  "Paid?",
+  "Back to store",
+  "Ask the bank",
+  "Final state",
+  "Order paid",
+];
 
 const Ep05Status: React.FC<ReelProps> = ({ theme }) => (
   <ReelScaffold

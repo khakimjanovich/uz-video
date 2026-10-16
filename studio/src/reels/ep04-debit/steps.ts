@@ -4,7 +4,7 @@ import { AcquiringNodeId } from "../../series/acquiring/nodes";
 
 // Tier 1 (high road): one step per sentence, no naive/break. Source: acquiring service payment session.
 // Debit internals (one claimed debit, MID/TID terminal, hold + capture) are left for a Tier 2 deep dive.
-export const acts: ActsMap = { hook: 0, handoff: 5 };
+export const acts: ActsMap = { hook: 0 };
 
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
@@ -63,13 +63,5 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     packets: [{ from: "network", to: "bank", label: "approved", delay: 15 }],
     accent: ["bank"],
     badges: { bank: "captured" },
-  },
-  // 5 Handoff: the money is captured — how does the store find out? -> Part 5 (payment status)
-  {
-    cue: 5,
-    layout: { ...BANK_FLOW, merchant: [0, 1.1] },
-    edges: [CARD, DEBIT, { from: "bank", to: "merchant", label: "status?" }],
-    accent: ["bank"],
-    badges: { bank: "captured", merchant: "paid?" },
   },
 ];

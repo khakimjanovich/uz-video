@@ -5,7 +5,7 @@ import { AcquiringNodeId } from "../../series/acquiring/nodes";
 // Tier 1 (high road): one step per sentence. Source: acquiring API —
 // payer's browser returns to the allowlisted returnUrl; GET /payments/{id} is the authoritative state.
 // Webhooks are BRD-only ("planned"), so not shown.
-export const acts: ActsMap = { hook: 0, handoff: 5 };
+export const acts: ActsMap = { hook: 0 };
 
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
@@ -62,12 +62,5 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     edges: [REDIRECT_QUIET, RETURN, STATUS],
     accent: ["merchant"],
     badges: { merchant: "order paid" },
-  },
-  // 5 Handoff: what if a store has no website at all? -> Part 6 (payment links)
-  {
-    cue: 5,
-    layout: LAYOUT,
-    edges: [REDIRECT_QUIET, RETURN, STATUS],
-    badges: { merchant: "no website?" },
   },
 ];

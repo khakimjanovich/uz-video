@@ -4,7 +4,7 @@ import { AcquiringNodeId } from "../../series/acquiring/nodes";
 
 // Tier 1 (high road): one step per sentence, no naive/break. Source: partner onboarding service.
 // Maker-checker activation is left for a Tier 2 deep dive.
-export const acts: ActsMap = { hook: 0, handoff: 5 };
+export const acts: ActsMap = { hook: 0 };
 
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
@@ -63,13 +63,5 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     packets: [{ from: "admin", to: "merchant", label: "active", delay: 20 }],
     accent: ["merchant"],
     badges: { merchant: "active" },
-  },
-  // 5 Handoff: the store has an API key — how does its server create a payment? -> Part 3
-  {
-    cue: 5,
-    layout: WITH_SITE,
-    edges: [SITE, { from: "admin", to: "merchant", label: "activate" }],
-    accent: ["salespoint"],
-    badges: { merchant: "create payment?" },
   },
 ];

@@ -3,7 +3,7 @@ import { ActsMap } from "../../hooks";
 import { AcquiringNodeId } from "../../series/acquiring/nodes";
 
 // One step per script sentence (edge-tts emits one subtitle cue per sentence).
-export const acts: ActsMap = { hook: 0, break: 1, v2: 2, handoff: 5 };
+export const acts: ActsMap = { hook: 0, break: 1, v2: 2 };
 
 type Edge = DiagramEdge<AcquiringNodeId>;
 
@@ -65,13 +65,5 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     packets: [{ from: "bank", to: "merchant", label: "payout", duration: 40 }],
     accent: ["bank", "merchant"],
     badges: { merchant: "1 contract" },
-  },
-  // 5 Handoff: before the first payment, what does the bank check? -> Part 2 (onboarding)
-  {
-    cue: 5,
-    layout: LAYOUT,
-    edges: [SHOP, ...LICENSED, CARD, { from: "bank", to: "merchant", label: "own account" }],
-    accent: ["bank"],
-    badges: { merchant: "checked?" },
   },
 ];

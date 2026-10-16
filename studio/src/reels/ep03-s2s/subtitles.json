@@ -2,7 +2,7 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 123,
+    "endFrame": 122,
     "text": "Now the store has an API key, so how does its server create a payment?",
     "prefix": "Now the store has an API key, so how does its server create a payment?",
     "highlight": "",
@@ -10,7 +10,7 @@
   },
   {
     "index": 2,
-    "startFrame": 122,
+    "startFrame": 121,
     "endFrame": 273,
     "text": "The store's server sends the amount and order number to the bank, signed with its secret key.",
     "prefix": "The store's server sends the amount and order number to the bank, signed with its secret key.",
@@ -29,18 +29,9 @@
   {
     "index": 4,
     "startFrame": 366,
-    "endFrame": 488,
+    "endFrame": 517,
     "text": "It returns a one-time payment link, and the store sends it to the buyer.",
     "prefix": "It returns a one-time payment link, and the store sends it to the buyer.",
-    "highlight": "",
-    "suffix": ""
-  },
-  {
-    "index": 5,
-    "startFrame": 487,
-    "endFrame": 615,
-    "text": "The buyer opens that link, so what happens to their card next?",
-    "prefix": "The buyer opens that link, so what happens to their card next?",
     "highlight": "",
     "suffix": ""
   }

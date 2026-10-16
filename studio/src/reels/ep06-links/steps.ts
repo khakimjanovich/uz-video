@@ -4,7 +4,7 @@ import { AcquiringNodeId } from "../../series/acquiring/nodes";
 
 // Tier 1 (high road): one step per sentence. Source: acquiring API — single-use payment links
 // (purpose + expiresAt + optional amount; opening mints a regular payment session; ACTIVE until PAID/EXPIRED/CANCELLED).
-export const acts: ActsMap = { hook: 0, handoff: 6 };
+export const acts: ActsMap = { hook: 0 };
 
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
@@ -70,12 +70,5 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     edges: [CREATE, CHAT, OPEN],
     packets: [{ from: "buyer", to: "bank", label: "open link", delay: 15, stopAt: 0.5 }],
     badges: { bank: "link closed" },
-  },
-  // 6 Handoff: paid in seconds — when does the money reach the store? -> Part 7 (T+1 settlement)
-  {
-    cue: 6,
-    layout: LAYOUT,
-    edges: [CHAT, { from: "bank", to: "merchant", label: "money?" }], // no "create link": it would overlap
-    badges: { merchant: "when?" },
   },
 ];

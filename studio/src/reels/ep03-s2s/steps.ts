@@ -4,7 +4,7 @@ import { AcquiringNodeId } from "../../series/acquiring/nodes";
 
 // Tier 1 (high road): one step per sentence, no naive/break. Source: acquiring service create-payment flow.
 // Replay/retry protection (HMAC timestamp + nonce, idempotency key) is left for a Tier 2 deep dive.
-export const acts: ActsMap = { hook: 0, handoff: 4 };
+export const acts: ActsMap = { hook: 0 };
 
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
@@ -52,13 +52,5 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
       { from: "merchant", to: "buyer", label: "payment link", delay: 50, duration: 25 },
     ],
     accent: ["bank"],
-  },
-  // 4 Handoff: the buyer opens the link — what happens to their card next? -> Part 4
-  {
-    cue: 4,
-    layout: WITH_BUYER,
-    edges: [SIGNED, LINK],
-    accent: ["buyer"],
-    badges: { buyer: "card?" },
   },
 ];

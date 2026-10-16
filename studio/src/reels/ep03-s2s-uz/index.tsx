@@ -1,5 +1,11 @@
 import React from "react";
-import { ArchDiagram, localizeCatalog, localizeSteps, ReelScaffold, SubtitleCue } from "../../components";
+import {
+  ArchDiagram,
+  localizeCatalog,
+  localizeSteps,
+  ReelScaffold,
+  SubtitleCue,
+} from "../../components";
 import { ReelProps } from "../../themes";
 import { createReelComposition } from "../../utils/createReelComposition";
 import { ACQUIRING_NODES } from "../../series/acquiring/nodes";
@@ -9,7 +15,12 @@ import subtitlesJson from "./subtitles.json";
 
 // Uzbek Part 3: same steps as English, Uzbek text, self-voiced (timings from `manage_reels.py draft`).
 const subtitles = subtitlesJson as SubtitleCue[];
-const TITLES = ["Yangi to'lov?", "Imzoli so'rov", "Tekshirildi", "To'lov havolasi", "Keyingi: karta"];
+const TITLES = [
+  "Yangi to'lov?",
+  "Imzoli so'rov",
+  "Tekshirildi",
+  "To'lov havolasi",
+];
 const catalog = localizeCatalog(ACQUIRING_NODES, UZ);
 const uzSteps = localizeSteps(steps, UZ);
 

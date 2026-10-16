@@ -17,6 +17,11 @@ export const ACQUIRING_NODES = {
   admin: { label: "Admin", sublabel: "Bank · maker" },
   checker: { label: "Admin 2", sublabel: "Checker" },
   salespoint: { label: "Sales point", sublabel: "API key" },
+  // Ledger accounts (BRD §10, settlement — planned)
+  transit: { label: "Clearing transit", sublabel: "10511" },
+  terminalacc: { label: "Terminal account", sublabel: "23508" },
+  feeacc: { label: "Bank fee", sublabel: "45265" },
+  storeacc: { label: "Store account", sublabel: "20208" },
 } satisfies Record<string, NodeDef>;
 
 export type AcquiringNodeId = keyof typeof ACQUIRING_NODES;
