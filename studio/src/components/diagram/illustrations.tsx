@@ -1,0 +1,126 @@
+import React from "react";
+
+// Hand-drawn ink line art for diagram nodes (Receipt identity: single colour, no fills).
+// Drawn on a 120x80 grid; colour comes from the parent (currentColor), so accent/danger boxes recolour them.
+const ART = {
+  buyer: (
+    <>
+      <circle cx="40" cy="20" r="10" />
+      <path d="M20 66 Q20 38 40 38 Q60 38 60 66" />
+      <rect x="72" y="22" width="24" height="42" rx="4" />
+      <path d="M79 56 H89" />
+      <path d="M60 50 L72 44" />
+    </>
+  ),
+  store: (
+    <>
+      <path d="M18 30 L25 14 H95 L102 30 Z" />
+      <path d="M18 30 q7 9 14 0 q7 9 14 0 q7 9 14 0 q7 9 14 0 q7 9 14 0 q7 9 14 0" />
+      <path d="M24 37 V68 H96 V37" />
+      <rect x="52" y="46" width="16" height="22" />
+      <rect x="30" y="44" width="15" height="12" />
+      <rect x="75" y="44" width="15" height="12" />
+    </>
+  ),
+  bank: (
+    <>
+      <path d="M14 30 L60 10 L106 30 Z" />
+      <path d="M18 35 H102" />
+      <path d="M30 39 V60 M50 39 V60 M70 39 V60 M90 39 V60" />
+      <path d="M16 64 H104 M12 70 H108" />
+    </>
+  ),
+  processing: (
+    <>
+      <rect x="30" y="10" width="60" height="18" rx="3" />
+      <rect x="30" y="32" width="60" height="18" rx="3" />
+      <rect x="30" y="54" width="60" height="18" rx="3" />
+      <path d="M38 19 H58 M38 41 H58 M38 63 H58" />
+      <circle cx="80" cy="19" r="2.5" />
+      <circle cx="80" cy="41" r="2.5" />
+      <circle cx="80" cy="63" r="2.5" />
+      <path d="M8 41 H30 M90 41 H112" />
+    </>
+  ),
+  admin: (
+    <>
+      <circle cx="40" cy="20" r="10" />
+      <path d="M20 66 Q20 38 40 38 Q60 38 60 66" />
+      <rect x="70" y="20" width="30" height="44" rx="3" />
+      <rect x="79" y="15" width="12" height="7" rx="2" />
+      <path d="M77 42 L83 48 L94 36" />
+    </>
+  ),
+  salespoint: (
+    <>
+      <rect x="10" y="12" width="72" height="54" rx="4" />
+      <path d="M10 24 H82" />
+      <circle cx="18" cy="18" r="1.8" />
+      <circle cx="25" cy="18" r="1.8" />
+      <circle cx="32" cy="18" r="1.8" />
+      <path d="M20 36 H60 M20 46 H48" />
+      <circle cx="98" cy="54" r="9" />
+      <path d="M89 54 H72 M78 54 V61 M84 54 V59" />
+    </>
+  ),
+  attacker: (
+    <>
+      <path d="M32 70 Q30 22 60 16 Q90 22 88 70" />
+      <ellipse cx="60" cy="44" rx="14" ry="16" />
+      <path d="M52 42 H57 M63 42 H68" />
+    </>
+  ),
+  // Settlement accounts — one distinct drawing per role.
+  transit: (
+    <>
+      <path d="M16 28 H96 M86 18 L96 28 L86 38" />
+      <path d="M104 54 H24 M34 44 L24 54 L34 64" />
+      <circle cx="56" cy="28" r="7" />
+      <circle cx="64" cy="54" r="7" />
+    </>
+  ),
+  tray: (
+    <>
+      <path d="M14 46 L26 70 H94 L106 46" />
+      <path d="M14 46 H40 L46 56 H74 L80 46 H106" />
+      <circle cx="60" cy="18" r="8" />
+      <circle cx="44" cy="32" r="6" />
+      <circle cx="76" cy="32" r="6" />
+    </>
+  ),
+  fee: (
+    <>
+      <path d="M20 40 L40 14 H100 V66 H40 Z" />
+      <circle cx="34" cy="40" r="4" />
+      <circle cx="58" cy="28" r="5" />
+      <circle cx="84" cy="52" r="5" />
+      <path d="M56 56 L86 24" />
+    </>
+  ),
+  wallet: (
+    <>
+      <rect x="16" y="22" width="84" height="48" rx="6" />
+      <path d="M16 34 H100" />
+      <rect x="74" y="42" width="30" height="16" rx="4" />
+      <circle cx="84" cy="50" r="3" />
+      <path d="M28 22 L44 10 L58 22" />
+    </>
+  ),
+} satisfies Record<string, React.ReactNode>;
+
+export type ArtName = keyof typeof ART;
+
+export const NodeArt: React.FC<{ name: ArtName; size?: number }> = ({ name, size = 96 }) => (
+  <svg
+    viewBox="0 0 120 80"
+    width={size}
+    height={(size * 80) / 120}
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    {ART[name]}
+  </svg>
+);

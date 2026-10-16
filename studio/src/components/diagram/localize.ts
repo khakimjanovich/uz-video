@@ -11,7 +11,7 @@ export function localizeCatalog<Id extends string>(catalog: Record<Id, NodeDef>,
   const out = {} as Record<Id, NodeDef>;
   for (const id in catalog) {
     const d = catalog[id];
-    out[id] = { label: tr(dict, d.label), sublabel: d.sublabel && tr(dict, d.sublabel) };
+    out[id] = { ...d, label: tr(dict, d.label), sublabel: d.sublabel && tr(dict, d.sublabel) };
   }
   return out;
 }

@@ -10,9 +10,9 @@ export const acts: ActsMap = { hook: 0 };
 type Layout = Partial<Record<AcquiringNodeId, Slot>>;
 type Edge = DiagramEdge<AcquiringNodeId>;
 
-const CHAIN: Layout = { network: [1, 0], transit: [1, 1.3], terminalacc: [1, 2.6] };
-const FULL: Layout = { ...CHAIN, feeacc: [0, 3.9], storeacc: [2, 3.9] };
-const WITH_STORE: Layout = { ...FULL, merchant: [2, 1.3] };
+const CHAIN: Layout = { network: [1, 0], transit: [1, 1.4], terminalacc: [1, 2.8] };
+const FULL: Layout = { ...CHAIN, feeacc: [0, 4.2], storeacc: [2, 4.2] };
+const WITH_STORE: Layout = { ...FULL, merchant: [2, 1.4] };
 
 const CLEARING: Edge = { from: "network", to: "transit", label: "clearing" };
 const LAND: Edge = { from: "transit", to: "terminalacc" };
@@ -35,7 +35,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 1 End of day: the processing center settles all card payments with the bank.
   {
     cue: 1,
-    layout: { network: [1, 0], transit: [1, 1.3] },
+    layout: { network: [1, 0], transit: [1, 1.4] },
     edges: [CLEARING],
     packets: [{ from: "network", to: "transit", label: "day total", delay: 20 }],
     badges: { transit: "end of day" },

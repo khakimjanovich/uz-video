@@ -52,25 +52,34 @@ const toPx = ([col, row]: Slot): Pt => ({
   y: ZONE.y + (row + 0.5) * (ZONE.h / ZONE.rows),
 });
 
-// Straight line between two node centres, trimmed to each box's border.
-const edgePath = (a: Pt, b: Pt) => {
+// Visible part of the line between two node centres: trimmed to each box's border.
+const trim = (a: Pt, b: Pt): [Pt, Pt] => {
   const dx = b.x - a.x;
   const dy = b.y - a.y;
   const t = Math.min(
     dx ? (NODE_W / 2 + 10) / Math.abs(dx) : Infinity,
     dy ? (NODE_H / 2 + 10) / Math.abs(dy) : Infinity,
   );
-  return `M ${a.x + dx * t} ${a.y + dy * t} L ${b.x - dx * t} ${b.y - dy * t}`;
+  return [
+    { x: a.x + dx * t, y: a.y + dy * t },
+    { x: b.x - dx * t, y: b.y - dy * t },
+  ];
 };
 
-// Labels sit beside the line, clear of packets: centred under mostly-horizontal edges
+const edgePath = (a: Pt, b: Pt) => {
+  const [p, q] = trim(a, b);
+  return `M ${p.x} ${p.y} L ${q.x} ${q.y}`;
+};
+
+// Labels sit beside the visible line, clear of packets: centred under mostly-horizontal edges
 // (packets are short, so 70px is enough), 30% along mostly-vertical ones (packets are wide).
 const labelPos = (a: Pt, b: Pt): Pt => {
-  const dx = b.x - a.x;
-  const dy = b.y - a.y;
+  const [p, q] = trim(a, b);
+  const dx = q.x - p.x;
+  const dy = q.y - p.y;
   const len = Math.hypot(dx, dy) || 1;
   const t = Math.abs(dx) > Math.abs(dy) ? 0.5 : 0.3;
-  return { x: a.x + dx * t + (-dy / len) * 70, y: a.y + dy * t + (dx / len) * 70 };
+  return { x: p.x + dx * t + (-dy / len) * 70, y: p.y + dy * t + (dx / len) * 70 };
 };
 
 // Remotion's hosted SFX, fetched at render time (no audio files in git).
@@ -108,6 +117,8 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
   const drawIn = interpolate(t, [10, 25], [0, 1], CLAMP);
 
   const ids = Object.keys(step.layout) as Id[];
+  // A box is named only in the step where it first appears in this video; after that, image only.
+  const introduced = (id: Id) => steps.findIndex((st) => st.layout[id]) === i;
   const leaving = prev ? (Object.keys(prev.layout) as Id[]).filter((id) => !step.layout[id]) : [];
 
   const pos = {} as Record<Id, Pt>;
@@ -193,7 +204,7 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
             className="absolute"
             style={{ left: at.x, top: at.y, translate: "-50% -50%", opacity: 1 - p }}
           >
-            <ArchNode def={catalog[id]} />
+            <ArchNode def={catalog[id]} showLabel={false} />
           </div>
         );
       })}
@@ -201,7 +212,9 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
       {ids.map((id) => {
         const isNew = !prev?.layout[id];
         const variant = has(step.danger, id) ? "danger" : has(step.accent, id) ? "accent" : "default";
-        const node = <ArchNode def={catalog[id]} variant={variant} badge={step.badges?.[id]} />;
+        const node = (
+          <ArchNode def={catalog[id]} variant={variant} badge={step.badges?.[id]} showLabel={introduced(id)} />
+        );
         return (
           <div
             key={id}
