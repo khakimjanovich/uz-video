@@ -126,6 +126,14 @@ const ART = {
       <path d="M78 46 H104 M78 74 H104 M80 46 Q80 60 91 60 Q102 60 102 46 M80 74 Q80 60 91 60 Q102 60 102 74" />
     </>
   ),
+  // A saved payment record: receipt slip with a torn bottom edge.
+  receipt: (
+    <>
+      <path d="M36 8 H84 V66 l-6 6 -6 -6 -6 6 -6 -6 -6 6 -6 -6 -6 6 -6 -6 Z" />
+      <path d="M44 22 H76 M44 32 H70 M44 42 H76" />
+      <path d="M44 54 H60 M66 54 H76" />
+    </>
+  ),
 } satisfies Record<string, React.ReactNode>;
 
 export type ArtName = keyof typeof ART;

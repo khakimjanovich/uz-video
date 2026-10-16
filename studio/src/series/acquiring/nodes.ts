@@ -19,6 +19,9 @@ export const ACQUIRING_NODES = {
   salespoint: { label: "Sales point", sublabel: "API key", art: "salespoint" },
   request: { label: "Request", sublabel: "Pending", art: "request" },
   feerule: { label: "Fee rule", sublabel: "Commission", art: "fee" },
+  store2: { label: "Store B", art: "store" },
+  store3: { label: "Store C", art: "store" },
+  payment: { label: "Payment", sublabel: "Fee saved", art: "receipt" },
   // Ledger accounts (BRD §10, settlement — planned)
   transit: { label: "Clearing transit", sublabel: "10511", art: "transit" },
   terminalacc: { label: "Terminal account", sublabel: "23508", art: "tray" },

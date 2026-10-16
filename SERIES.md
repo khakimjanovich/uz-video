@@ -67,7 +67,7 @@ Naive v1: One admin changes it and it takes effect at once.
 Break:    One mistake or one bad actor goes live instantly.
 Fix (v2): The change becomes a pending request; a second admin approves or rejects it; nobody approves their own request; unanswered requests expire after the configured time.
 
-### T2-2. Commission: agreement and usage — parent: Parts 2 + 7 · id: t2-02-commission · status: plan
+### T2-2. Commission: agreement and usage — parent: Parts 2 + 7 · id: t2-02-commission (+ -uz) · status: video
 Source:   BRD FR-88, FR-93, FR-73, FR-115; code (commission-reference-service rules; ecom resolves at card submit)
 Hook:     How much does the bank earn from each payment, and who decides it?
 Naive v1: One fixed fee for every store.

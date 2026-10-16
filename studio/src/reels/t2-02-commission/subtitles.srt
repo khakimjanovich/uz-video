@@ -1,0 +1,36 @@
+1
+00:00:00,050 --> 00:00:03,630
+How much does the bank earn from each payment, and who decides it?
+
+2
+00:00:03,630 --> 00:00:07,357
+The simplest way is one fixed fee for every store.
+
+3
+00:00:07,357 --> 00:00:13,142
+But stores differ, and each one needs its own rate, sometimes per sales point or per card network.
+
+4
+00:00:13,142 --> 00:00:19,071
+So the bank keeps commission rules: a percent, a fixed part, and an optional minimum and maximum.
+
+5
+00:00:19,071 --> 00:00:26,166
+A rule can cover one sales point, a whole store or a card network, and it applies only within its configured period.
+
+6
+00:00:26,166 --> 00:00:30,595
+Every new rule or change goes through four-eyes before it takes effect.
+
+7
+00:00:30,595 --> 00:00:36,440
+When the buyer enters the card, the bank picks the most specific matching rule and calculates the fee.
+
+8
+00:00:36,440 --> 00:00:41,238
+The fee is saved with the payment, so a later rule change never touches it.
+
+9
+00:00:41,238 --> 00:00:45,416
+At settlement, the bank keeps that fee and pays the store the rest.
+
