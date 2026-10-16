@@ -6,7 +6,7 @@ Each episode ships in English (TTS voice) and Uzbek (self-voiced). Videos open w
 **Tier 1 — the high road:** walk the whole flow first, one stage per episode: *what happens and who does it*. No naive version, no break/fix.
 **Tier 2 — deep dives:** only after Tier 1 is complete. Naive → break → fix, one mechanism per episode.
 
-Sources: the story comes from the **BRD** (what the system should do); precision comes from the **code** (real names, steps, order). Videos never mention build status ("planned", "not live") — not in voice, not on screen.
+Sources: the story comes from the **BRD** (what the system should do); precision comes from the **code** (real names, steps, order). Videos never mention build status ("planned", "not live") — not in voice, not on screen. Values that are settings in the code (timeouts, expiry, roles, limits) are described as "the configured time / role / limit", never as their default number.
 
 ## Template
 
@@ -58,15 +58,29 @@ Flow:     Clearing → terminal account → fee withheld → store account, T+1.
 
 ## Tier 2 — MVP 1 deep dives (after Tier 1)
 
-Material cut from Tier 1, kept here. Each uses naive → break → fix.
+Each zooms into its parent Tier 1 part and uses naive → break → fix. Ordered by dependency, then by flow.
 
-- **Maker-checker activation** (from Part 2): one admin alone can switch a store on → second admin approves, no self-approval, 24h expiry.
-- **Safe requests** (from Part 3): replayed copy, retry creates a second payment → HMAC signature with timestamp + one-time nonce, idempotency key.
-- **Card safety** (from Part 4): store takes the card number, stolen card pays → bank page, token, SMS code.
-- **Inside the debit** (from Part 4): one claimed debit per payment, terminal with MID/TID, hold + capture at the processing center.
-- **Unknown outcome:** processing center never answers → payment stays AUTHORIZING, workflow polls status → capture / cancel / manual review; never blind-retry money.
-- **Declines & released holds:** decline → another card while attempts remain; capture fails → cancel the hold, confirm the money is released.
-- **Reversal vs refund** (BRD §7.1.4): before clearing reversal, full only; after clearing refund, full/partial, ≤ original, original card only, 10 / 60-day window.
+### T2-1. Four-eyes (maker-checker) — parent: Part 2 · id: t2-01-four-eyes (+ -uz) · status: video
+Source:   BRD FR-93; code (PRS dual control; commission-reference-service change requests)
+Hook:     Who is allowed to switch a store on, or change its fee?
+Naive v1: One admin changes it and it takes effect at once.
+Break:    One mistake or one bad actor goes live instantly.
+Fix (v2): The change becomes a pending request; a second admin approves or rejects it; nobody approves their own request; unanswered requests expire after the configured time.
+
+### T2-2. Commission: agreement and usage — parent: Parts 2 + 7 · id: t2-02-commission · status: plan
+Source:   BRD FR-88, FR-93, FR-73, FR-115; code (commission-reference-service rules; ecom resolves at card submit)
+Hook:     How much does the bank earn from each payment, and who decides it?
+Naive v1: One fixed fee for every store.
+Break:    Stores need their own rates per store, sales point and card network.
+Fix (v2): Rules with percent + fixed, min/max, validity window and priority, set per store / sales point / card network, approved with four-eyes. At card submit the most specific rule wins, the fee is saved with the payment, then withheld at settlement.
+
+### Later deep dives
+- **T2-3 Safe requests** (parent Part 3): replayed copy, retry creates a second payment → HMAC signature with timestamp + one-time nonce, idempotency key.
+- **T2-4 Card safety** (parent Part 4): store takes the card number, stolen card pays → bank page, token, SMS code.
+- **T2-5 Inside the debit** (parent Part 4): one recorded debit per payment, terminal with MID/TID, hold + capture.
+- **T2-6 Unknown outcome** (parent Part 4): processing center never answers → payment waits, status is polled → capture / cancel / manual review; never blind-retry money.
+- **T2-7 Declines & released holds** (parent Part 4): decline → another card while attempts remain; capture fails → cancel the hold, confirm the money is released.
+- **T2-8 Reversal vs refund** (separate flow, BRD §7.1.4): before clearing reversal, full only; after clearing refund, full/partial, ≤ original, original card only, 10 / 60-day window.
 
 Dropped: merchant pre-check (stock/price validation is the store's side, not acquiring).
 

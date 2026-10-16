@@ -106,6 +106,26 @@ const ART = {
       <path d="M28 22 L44 10 L58 22" />
     </>
   ),
+  // Four-eyes: the second admin holds the approval stamp.
+  checker: (
+    <>
+      <circle cx="40" cy="20" r="10" />
+      <path d="M20 66 Q20 38 40 38 Q60 38 60 66" />
+      <circle cx="89" cy="16" r="6" />
+      <path d="M89 22 V34" />
+      <rect x="74" y="34" width="30" height="10" rx="2" />
+      <path d="M70 56 H108" />
+    </>
+  ),
+  // Four-eyes: a pending request (paper with an hourglass).
+  request: (
+    <>
+      <path d="M22 8 H70 L86 24 V72 H22 Z" />
+      <path d="M70 8 V24 H86" />
+      <path d="M32 34 H62 M32 44 H56" />
+      <path d="M78 46 H104 M78 74 H104 M80 46 Q80 60 91 60 Q102 60 102 46 M80 74 Q80 60 91 60 Q102 60 102 74" />
+    </>
+  ),
 } satisfies Record<string, React.ReactNode>;
 
 export type ArtName = keyof typeof ART;

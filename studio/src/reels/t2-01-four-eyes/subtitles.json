@@ -1,0 +1,74 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 101,
+    "text": "Who is allowed to switch a store on, or change its fee?",
+    "prefix": "Who is allowed to switch a store on, or change its fee?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 100,
+    "endFrame": 245,
+    "text": "The simplest way is that one admin changes it, and it takes effect at once.",
+    "prefix": "The simplest way is that one admin changes it, and it takes effect at once.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 244,
+    "endFrame": 395,
+    "text": "But that's neither professional nor secure: one wrong click changes real money.",
+    "prefix": "But that's neither professional nor secure: one wrong click changes real money.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 394,
+    "endFrame": 522,
+    "text": "So every such change becomes a request that waits as pending.",
+    "prefix": "So every such change becomes a request that waits as pending.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 521,
+    "endFrame": 642,
+    "text": "A second admin with an approver role approves or rejects it.",
+    "prefix": "A second admin with an approver role approves or rejects it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 641,
+    "endFrame": 807,
+    "text": "Nobody can approve their own request, and for fees the database itself enforces that.",
+    "prefix": "Nobody can approve their own request, and for fees the database itself enforces that.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 806,
+    "endFrame": 1032,
+    "text": "If the fee changed while the request was waiting, approval is refused, so the checker approves exactly what they saw.",
+    "prefix": "If the fee changed while the request was waiting, approval is refused, so the checker approves exactly what they saw.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1031,
+    "endFrame": 1210,
+    "text": "Requests to switch a store on also expire if nobody answers within the configured time.",
+    "prefix": "Requests to switch a store on also expire if nobody answers within the configured time.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

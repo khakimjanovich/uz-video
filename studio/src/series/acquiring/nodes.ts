@@ -15,8 +15,10 @@ export const ACQUIRING_NODES = {
   uzqr: { label: "UzQR", sublabel: "In-store QR" },
   attacker: { label: "Attacker", sublabel: "Data breach", art: "attacker" },
   admin: { label: "Admin", sublabel: "Bank · maker", art: "admin" },
-  checker: { label: "Admin 2", sublabel: "Checker", art: "admin" },
+  checker: { label: "Admin 2", sublabel: "Checker", art: "checker" },
   salespoint: { label: "Sales point", sublabel: "API key", art: "salespoint" },
+  request: { label: "Request", sublabel: "Pending", art: "request" },
+  feerule: { label: "Fee rule", sublabel: "Commission", art: "fee" },
   // Ledger accounts (BRD §10, settlement — planned)
   transit: { label: "Clearing transit", sublabel: "10511", art: "transit" },
   terminalacc: { label: "Terminal account", sublabel: "23508", art: "tray" },

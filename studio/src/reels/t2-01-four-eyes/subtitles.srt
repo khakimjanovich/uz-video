@@ -1,0 +1,32 @@
+1
+00:00:00,050 --> 00:00:03,345
+Who is allowed to switch a store on, or change its fee?
+
+2
+00:00:03,345 --> 00:00:08,142
+The simplest way is that one admin changes it, and it takes effect at once.
+
+3
+00:00:08,142 --> 00:00:13,142
+But that's neither professional nor secure: one wrong click changes real money.
+
+4
+00:00:13,142 --> 00:00:17,380
+So every such change becomes a request that waits as pending.
+
+5
+00:00:17,380 --> 00:00:21,369
+A second admin with an approver role approves or rejects it.
+
+6
+00:00:21,369 --> 00:00:26,880
+Nobody can approve their own request, and for fees the database itself enforces that.
+
+7
+00:00:26,880 --> 00:00:34,380
+If the fee changed while the request was waiting, approval is refused, so the checker approves exactly what they saw.
+
+8
+00:00:34,380 --> 00:00:39,321
+Requests to switch a store on also expire if nobody answers within the configured time.
+
