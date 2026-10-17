@@ -24,19 +24,30 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 
 ---
 
+## Architecture (decided 2026-10-18)
+
+**Modular monolith outside, hexagonal at the edges inside.**
+
+- **One app, one deploy, one Postgres with a schema per module:** `partner`, `commission`, `terminal`, `card`, `payment`. The real repo's microservices become our module boundaries.
+- **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 23).
+- **Ports and adapters only at the edges that change or get faked:** processing center (Uzcard REST, Humo SOAP, simulator), Keycloak, Vault, email. One port, several adapters. Plain layered code (controller → service → repository) for simple CRUD.
+- **Why:** a solo viewer runs one app instead of nine; boundaries stay honest; hexagonal pays only where there are real alternative implementations.
+
+---
+
 ## Stack (pinned to the real repo)
 
 | Concern | Choice | Real repo |
 |---|---|---|
 | Language / framework | Java 21+, Spring Boot 4.1 | ✅ |
-| Build | Gradle, one project per service, `*-api` + `*-impl` modules | ✅ |
+| Build | Gradle multi-module: one Spring Boot app + one module per bounded context | real repo: one project per service |
 | Database | PostgreSQL + Liquibase | ✅ |
 | Cache / short-lived state | Redis (OTP, nonces, locks, route access) | ✅ |
 | Identity | Keycloak (portal users, M2M clients, JWT claims) | ✅ |
 | Secrets | HashiCorp Vault (kv-v2, AppRole) | ✅ |
 | Long-running work | Temporal (payment resolution) | ✅ |
 | Scheduled jobs | ShedLock | ✅ |
-| Service calls | synchronous REST via generated OpenAPI clients; no broker | ✅ |
+| Module calls | in-process Java interfaces (`*Api`); OpenAPI only for the outside world | real repo: REST between services |
 
 ---
 
@@ -60,14 +71,14 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **02 · Setup**
 - Problem: nothing runs yet.
-- Build: Gradle skeleton (`partner-service`, `payment-service`, each `-api`/`-impl`), `docker-compose.yml` with Postgres, Redis, Keycloak, Vault, Temporal (+ UI), health checks, a `make up` / `make down`.
+- Build: Gradle multi-module skeleton (`app` + `partner`, `commission`, `terminal`, `card`, `payment` modules, a schema each), a module-boundary test that fails if one module touches another's internals, `docker-compose.yml` with Postgres, Redis, Keycloak, Vault, Temporal (+ UI), health checks, a `make up` / `make down`.
 - Why: every later demo depends on one command bringing the world up.
 - Demo: `docker compose up` → all health checks green; an empty Spring app answers `/actuator/health`.
 
 **03 · Domain → contract → database (the method)**
 - Problem: where do you start designing?
 - Build: one tiny example end to end: the `Partner` entity, its first two states, its OpenAPI path, its Liquibase table, a generated client.
-- Why: teaches the six-step episode method once, slowly.
+- Why: teaches the six-step episode method once, slowly, plus the two architecture rules: modules talk through `*Api` interfaces; ports and adapters only at the edges.
 - Tables: `partner`. Endpoints: `GET /partners/{id}`.
 - Demo: generated client calls the endpoint; the row exists in Postgres.
 
@@ -222,6 +233,14 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Problem: production needs more than happy paths.
 - Build, as viewer exercises: tracing + metrics (absent in the real repo), outbox relay (events are written but never published), the HMAC nonce/timestamp window fix, KYB enforcement at activation, per-sales-point payment limits.
 - Why: honest engineering; shows how a real system grows.
+
+### Part 5: Growing up
+
+**23 · Extract a module into a service**
+- Problem: the card vault needs stricter security and its own deploy (PCI DSS scope).
+- Build: move the `card` module into its own Spring Boot service; replace the in-process `CardApi` with a REST adapter behind the same port; give it its own database.
+- Why: shows *why* microservices exist: clean boundaries made the move cheap. Mirrors the real card-processor-service.
+- Demo: same payment flow, now across two services.
 
 ---
 
