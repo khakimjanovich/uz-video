@@ -57,9 +57,33 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     accent: ["storeacc"],
     badges: { storeacc: "deposit" },
   },
-  // Fake site worry: a too-good iPhone site looks as real as Aziza's shop.
+  // Alert: running payments means facing fraudsters; threats close in on the bank.
   {
     cue: 4,
+    layout: { attacker: [0, 0.3], fakesite: [2, 0.3], bank: [1, 2.8] },
+    edges: [
+      { from: "attacker", to: "bank" },
+      { from: "fakesite", to: "bank" },
+    ],
+    danger: ["attacker", "fakesite", "bank"],
+    badges: { bank: "at risk?" },
+  },
+  // Alert: the four threats every bank fears close in from all sides.
+  {
+    cue: 5,
+    layout: { fakesite: [0, 0.2], attacker: [2, 0.2], bank: [1, 1.95], payment: [0, 3.7], buyer: [2, 3.7] },
+    edges: [
+      { from: "fakesite", to: "bank" },
+      { from: "attacker", to: "bank" },
+      { from: "payment", to: "bank" },
+      { from: "buyer", to: "bank" },
+    ],
+    danger: ["fakesite", "attacker", "payment", "buyer"],
+    badges: { fakesite: "fake site", attacker: "forged", payment: "× 2", buyer: "card theft" },
+  },
+  // Fake site worry: a too-good iPhone site looks as real as Aziza's shop.
+  {
+    cue: 6,
     layout: { shoeshop: [0, 1.2], fakesite: [2, 1.2], bank: [1, 3.6] },
     edges: [
       { from: "shoeshop", to: "bank" },
@@ -73,7 +97,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Fake site relief: two bank employees check every shop; only Aziza's connects.
   {
-    cue: 5,
+    cue: 7,
     layout: { admin: [0, 0.2], checker: [2, 0.2], shoeshop: [0, 2], fakesite: [2, 2], bank: [1, 3.8] },
     edges: [
       { from: "admin", to: "shoeshop" },
@@ -90,7 +114,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Forged amount worry: a hacker copies Aziza's payment and inflates it.
   {
-    cue: 6,
+    cue: 8,
     layout: { ...PAIR, attacker: [0, 3.4] },
     edges: [
       { from: "shoeshop", to: "bank" },
@@ -104,7 +128,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Forged amount relief: Aziza's signed payment passes, the forged copy bounces off.
   {
-    cue: 7,
+    cue: 9,
     layout: { ...PAIR, attacker: [0, 3.4] },
     edges: [
       { from: "shoeshop", to: "bank", label: "signed" },
@@ -119,7 +143,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Double charge worry: the same payment heads to the bank twice; the customer could be charged twice.
   {
-    cue: 8,
+    cue: 10,
     layout: { ...PAIR, buyer: [2, 3.4] },
     edges: [{ from: "shoeshop", to: "bank" }],
     packets: [
@@ -131,7 +155,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Double charge relief: the repeat is stopped; one charge, a happy customer.
   {
-    cue: 9,
+    cue: 11,
     layout: { ...PAIR, buyer: [2, 3.4] },
     edges: [
       { from: "shoeshop", to: "bank" },
@@ -147,7 +171,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Card worry: hackers go after Aziza's shop for card numbers.
   {
-    cue: 10,
+    cue: 12,
     layout: { attacker: [0, 0.6], shoeshop: [2, 0.6], bank: [1, 3.4] },
     edges: [{ from: "attacker", to: "shoeshop" }],
     packets: [{ from: "attacker", to: "shoeshop", label: "card numbers?", delay: 15, duration: 50 }],
@@ -156,7 +180,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Card relief: the card goes to the bank's own page, the shop keeps only a code; nothing to steal.
   {
-    cue: 11,
+    cue: 13,
     layout: { attacker: [0, 0.6], shoeshop: [2, 0.6], buyer: [0, 3.4], bank: [2, 3.4] },
     edges: [
       { from: "buyer", to: "bank", label: "card" },
@@ -173,7 +197,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Money flow: hundreds of shops pay into the bank every day.
   {
-    cue: 12,
+    cue: 14,
     layout: { shoeshop: [0, 0.3], store2: [1, 0.3], store3: [2, 0.3], bank: [1, 2.8] },
     edges: [
       { from: "shoeshop", to: "bank" },
@@ -188,7 +212,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Money flow: the bank keeps its fee, each store's money stays in its account at the bank.
   {
-    cue: 13,
+    cue: 15,
     layout: { bank: [1, 0.3], feeacc: [0, 2.8], storeacc: [2, 2.8] },
     edges: [
       { from: "bank", to: "feeacc", label: "fee" },
@@ -203,7 +227,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Result: a year later, the stores pay through the bank; Payme / Click is crossed out.
   {
-    cue: 14,
+    cue: 16,
     layout: { payorg: [2, 0.3], shoeshop: [0, 0.3], store2: [0, 2], store3: [0, 3.7], bank: [2, 2.6] },
     edges: [
       { from: "shoeshop", to: "bank" },
@@ -217,7 +241,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   },
   // Result: Aziza recommends the bank; a new merchant joins and pays in.
   {
-    cue: 15,
+    cue: 17,
     layout: { aziza: [0, 0.3], merchant: [2, 0.3], bank: [1, 3] },
     edges: [
       { from: "aziza", to: "merchant", label: "recommends" },

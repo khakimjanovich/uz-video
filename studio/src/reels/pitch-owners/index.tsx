@@ -14,6 +14,8 @@ const TITLES = [
   "Missed money",
   "Commission",
   "Deposits",
+  "Fraudsters",
+  "Four threats",
   "Too good?",
   "Real shops",
   "Forged amount",
