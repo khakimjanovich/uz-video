@@ -32,7 +32,7 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   temporal: { label: "Temporal", x: 388, y: 310, w: 78, h: 64, logos: [siTemporal.path] },
   kafka: { label: "Kafka", x: 475, y: 310, w: 78, h: 64, logos: [siApachekafka.path] },
   observability: { label: "Observe", x: 562, y: 310, w: 78, h: 64, logos: [siPrometheus.path, siGrafana.path] },
-  emailsvc: { label: "Email service", sub: "OTP codes", x: 56, y: 420, w: 220, h: 56 },
+  emailsvc: { label: "Email · SMTP", sub: "Mailpit locally", x: 56, y: 420, w: 220, h: 56 },
   procsvc: { label: "Processing center", sub: "Uzcard, Humo", x: 404, y: 420, w: 220, h: 56 },
   // Not a box: the cluster boundary around the app and its infrastructure (drawn by BuildMap as a dashed frame).
   kubernetes: { label: "Kubernetes", x: 28, y: 90, w: 624, h: 300, logos: [siKubernetes.path] },
