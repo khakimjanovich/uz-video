@@ -39,8 +39,10 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 
 | Concern | Choice | Real repo |
 |---|---|---|
-| Language / framework | Java 21+, Spring Boot 4.1 | ✅ |
-| Build | Gradle multi-module: one Spring Boot app + one module per bounded context | real repo: one project per service |
+| Language / framework | Java 25 (LTS), Spring Boot 4.1 | ✅ (Boot 4.1) |
+| Build | Gradle multi-module: one Spring Boot app + one module per bounded context, version catalog | real repo: one project per service |
+| API | contract-first OpenAPI, server interfaces + DTOs generated | ✅ |
+| Email | Spring Mail (SMTP) behind the email port; Mailpit locally | real repo: external notification-manager |
 | Database | PostgreSQL + Liquibase | ✅ |
 | Cache / short-lived state | Redis (OTP, nonces, locks, route access) | ✅ |
 | Identity | Keycloak (portal users, M2M clients, JWT claims) | ✅ |
@@ -51,6 +53,26 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 
 ---
 
+## Build setup
+
+- **Java 25 + Spring Boot 4.1.** Plain Spring Boot starters (web, data-jpa, validation, actuator, security, mail); our own starters are extracted in episode 09.
+- **Contract-first.** Each module owns `src/main/openapi/<module>-v1.yaml`. The `org.openapi.generator` Gradle plugin generates the API interfaces and DTOs (`interfaceOnly`); controllers implement the generated interfaces. A spec change that the code doesn't follow breaks the build.
+- **One Gradle build, many modules.** `settings.gradle.kts` includes `app`, the five domain modules and (later) the starters. No publishing to `mavenLocal`: that is for separate repos and brings stale snapshots.
+- **Rebuild only what changed:**
+  - modules depend on each other with `implementation`, not `api`, so a change to a module's internals doesn't recompile its dependents (compile avoidance);
+  - `org.gradle.caching=true` and `org.gradle.configuration-cache=true` in `gradle.properties`;
+  - each module exposes only its `*Api` package; the boundary test from episode 02 enforces it.
+- **Versions** live in `gradle/libs.versions.toml` (see Versions).
+
+## Email
+
+- **Port:** `EmailSender` in the partner module (send OTP, send notice).
+- **Adapter:** Spring Mail over SMTP. In production it points at the bank's SMTP server; a second adapter can call the bank's notification-manager without touching the partner module.
+- **Locally: Mailpit**, a real SMTP server with a web inbox (`localhost:8025`) that never delivers to the internet. Every OTP email is visible during demos.
+- Arrives in episode 04, with the first OTP.
+
+---
+
 ## When each tool arrives
 
 Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, never earlier.
@@ -58,6 +80,7 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 | Tool | Episode | The problem that brings it |
 |---|---|---|
 | Postgres, Redis, Keycloak | 02 Setup | the first episodes need them immediately |
+| Mailpit + Spring Mail | 04 Registration | the first OTP email |
 | Structured JSON logs + Actuator health | 02 Setup | cheap, and nothing is debuggable without them |
 | Vault, app config (`secret/app`) | 07 Keycloak clients | the first real secret appears; `.env` until then |
 | Vault, merchant HMAC secrets (`secret/merchants`) | 14 Create payment | same Vault, second path. Not the card vault module |
@@ -120,11 +143,11 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **04 · Partner registration + email OTP**
 - Problem: anyone can type any email; we need proof they own it.
-- Build: register, send OTP, verify; Redis-backed OTP with lifespan, attempt and resend limits (configured). First clean error responses.
+- Build: register, send OTP, verify; Redis-backed OTP with lifespan, attempt and resend limits (configured); the `EmailSender` port with a Spring Mail adapter, Mailpit in docker-compose. First clean error responses.
 - Why: the first gate of trust. Introduces the `otp` and `error` starters' ideas in place.
 - Tables: `partner`, `contact_person`. Redis: `otp:*`.
 - Endpoints: `POST /auth/register`, `POST /auth/otp/verify`, `POST /auth/otp/resend`.
-- Demo: register → code (dev mode prints it) → verified; wrong code ×N → blocked.
+- Demo: register → the OTP email arrives in Mailpit → verified; wrong code ×N → blocked.
 - Real code: `PartnerAuthServiceImpl`, `PartnerOtpServiceImpl`, `NotificationServiceImpl`.
 
 **05 · Partner lifecycle (state machine)**
