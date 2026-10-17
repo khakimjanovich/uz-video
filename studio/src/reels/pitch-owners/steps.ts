@@ -2,7 +2,7 @@ import { DiagramStep, Slot } from "../../components";
 import { ActsMap } from "../../hooks";
 import { AcquiringNodeId } from "../../series/acquiring/nodes";
 
-// Owner pitch: opening, Pain, 3 gates, card, money flow, result; planned picture-first in coaching.
+// Owner pitch: opening, Pain, alert, 4 threats, money flow; planned picture-first in coaching.
 // Feelings: connection -> regret -> hope; each gate is worry -> relief, and every gate protects Aziza or her money.
 export const acts: ActsMap = { hook: 0 };
 
@@ -80,6 +80,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     ],
     danger: ["fakesite", "attacker", "payment", "buyer"],
     badges: { fakesite: "fake shop", attacker: "forged payment", payment: "double charge", buyer: "stolen card" },
+    shake: { fakesite: 0.42, attacker: 0.53, payment: 0.7, buyer: 0.88 }, // in the order the voice names them
   },
   // Fake site worry: a too-good iPhone site looks as real as Aziza's shop.
   {
@@ -107,18 +108,19 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
       { from: "checker", to: "shoeshop" },
       { from: "checker", to: "fakesite" },
       { from: "shoeshop", to: "bank" },
-      { from: "fakesite", to: "bank", broken: true },
+      { from: "fakesite", to: "bank" },
     ],
+    // One shop at a time: both admins approve Aziza's shop and it connects; then both reject the fake one.
     packets: [
-      { from: "admin", to: "shoeshop", label: "check 1", delay: 8, duration: 22 },
-      { from: "admin", to: "fakesite", label: "check 1", delay: 8, duration: 22 },
-      { from: "checker", to: "shoeshop", label: "check 2", delay: 34, duration: 22 },
-      { from: "checker", to: "fakesite", label: "check 2", delay: 34, duration: 22 },
-      { from: "shoeshop", to: "bank", label: "100 000", delay: 62 },
-      { from: "fakesite", to: "bank", label: "50 000", delay: 62, stopAt: 0.5 },
+      { from: "admin", to: "shoeshop", label: "approve", delay: 6, duration: 20 },
+      { from: "checker", to: "shoeshop", label: "approve", delay: 28, duration: 20 },
+      { from: "shoeshop", to: "bank", label: "100 000", delay: 50, duration: 22 },
+      { from: "admin", to: "fakesite", label: "reject", delay: 80, duration: 20 },
+      { from: "checker", to: "fakesite", label: "reject", delay: 102, duration: 20 },
+      { from: "fakesite", to: "bank", label: "50 000", delay: 124, duration: 22, stopAt: 0.5 },
     ],
     danger: ["fakesite"],
-    badges: { shoeshop: "checked", fakesite: "rejected" },
+    shake: { fakesite: 0.72 },
   },
   // Forged amount worry: a hacker copies Aziza's payment and inflates it.
   {
@@ -233,34 +235,5 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     ],
     accent: ["feeacc", "storeacc"],
     badges: { storeacc: "at your bank" },
-  },
-  // Result: a year later, the stores pay through the bank; Payme / Click is crossed out.
-  {
-    cue: 16,
-    layout: { payorg: [2, 0.3], shoeshop: [0, 0.3], store2: [0, 2], store3: [0, 3.7], bank: [2, 2.6] },
-    edges: [
-      { from: "shoeshop", to: "bank" },
-      { from: "store2", to: "bank" },
-      { from: "store3", to: "bank" },
-    ],
-    packets: (["shoeshop", "store2", "store3"] as const).map((from, i) => ({ from, to: "bank" as const, label: "100 000", delay: 10 + i * 12 })),
-    crossed: ["payorg"],
-    accent: ["bank"],
-    badges: { bank: "a year later" },
-  },
-  // Result: Aziza recommends the bank; a new merchant joins and pays in.
-  {
-    cue: 17,
-    layout: { aziza: [0, 0.3], merchant: [2, 0.3], bank: [1, 3] },
-    edges: [
-      { from: "aziza", to: "merchant", label: "recommends" },
-      { from: "merchant", to: "bank" },
-    ],
-    packets: [
-      { from: "aziza", to: "merchant", label: "word of mouth", delay: 10 },
-      { from: "merchant", to: "bank", label: "100 000", delay: 45 },
-    ],
-    accent: ["bank"],
-    badges: { merchant: "new merchant", bank: "commission + deposit" },
   },
 ];

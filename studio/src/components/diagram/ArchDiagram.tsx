@@ -33,6 +33,7 @@ export interface DiagramStep<Id extends string> {
   accent?: Id[]; // newly introduced service
   danger?: Id[]; // broken / bottleneck
   crossed?: Id[]; // hand-drawn cross-out
+  shake?: Partial<Record<Id, number>>; // when each node shakes, as a fraction of the cue (sync to the word that names it)
   badges?: Partial<Record<Id, string>>;
 }
 
@@ -213,8 +214,12 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
       {ids.map((id) => {
         const isNew = !prev?.layout[id];
         const variant = has(step.danger, id) ? "danger" : has(step.accent, id) ? "accent" : "default";
-        // A threat that just turned red shakes for a moment so the eye lands on it.
-        const shake = has(step.danger, id) && !has(prev?.danger, id) ? Math.sin(t * 1.4) * interpolate(t, [4, 26], [12, 0], CLAMP) : 0;
+        // A node shakes for a moment so the eye lands on it: at its `shake` time, or when it first turns red.
+        const cueLen = (subtitles[step.cue]?.endFrame ?? 0) - stepStart;
+        const shakeAt =
+          step.shake?.[id] !== undefined ? step.shake[id]! * cueLen : has(step.danger, id) && !has(prev?.danger, id) ? 4 : null;
+        const shake =
+          shakeAt === null || t < shakeAt ? 0 : Math.sin((t - shakeAt) * 1.4) * interpolate(t, [shakeAt, shakeAt + 22], [12, 0], CLAMP);
         const node = (
           <ArchNode def={catalog[id]} variant={variant} badge={step.badges?.[id]} showLabel={introduced(id)} />
         );

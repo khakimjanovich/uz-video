@@ -26,8 +26,6 @@ const TITLES = [
   "Kod, xolos",
   "Har kuni",
   "Ertasi kuni",
-  "Bir yil o'tib",
-  "Tavsiya",
 ];
 
 const CATALOG = {
@@ -61,8 +59,8 @@ const UZ: Record<string, string> = {
   "double charge": "ikki marta",
   "stolen card": "karta o'g'irligi",
   checked: "tekshirildi",
-  "check 1": "1-tekshiruv",
-  "check 2": "2-tekshiruv",
+  approve: "tasdiq",
+  reject: "rad",
   rejected: "rad etildi",
   signed: "imzolangan",
   "charged once": "bir marta",
@@ -87,6 +85,8 @@ const stepsUz: DiagramStep<AcquiringNodeId>[] = steps.map((s) => ({
   edges: s.edges?.map((e) => ({ ...e, label: tr(e.label) })),
   packets: s.packets?.map((p) => ({ ...p, label: tr(p.label) ?? p.label })),
   badges: s.badges && Object.fromEntries(Object.entries(s.badges).map(([id, b]) => [id, tr(b) ?? b])),
+  // Uzbek names the four threats at different points in the sentence.
+  shake: s.cue === 5 ? { fakesite: 0.34, attacker: 0.47, payment: 0.62, buyer: 0.83 } : s.shake,
 }));
 
 const PitchOwnersUz: React.FC<ReelProps> = ({ theme }) => (

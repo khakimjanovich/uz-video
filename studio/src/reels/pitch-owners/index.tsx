@@ -26,8 +26,6 @@ const TITLES = [
   "Nothing there",
   "Every day",
   "Next day",
-  "A year later",
-  "Word of mouth",
 ];
 
 const PitchOwners: React.FC<ReelProps> = ({ theme }) => (
