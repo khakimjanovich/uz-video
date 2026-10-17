@@ -1,0 +1,83 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 168,
+    "text": "What happens when a second module needs the same error handling and security as the first?",
+    "prefix": "What happens when a second module needs the same error handling and security as the first?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 167,
+    "endFrame": 277,
+    "text": "We copy it, and now every fix must be made twice.",
+    "prefix": "We copy it, and now every fix must be made twice.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 276,
+    "endFrame": 413,
+    "text": "So we extract the shared parts into our own Spring Boot starters.",
+    "prefix": "So we extract the shared parts into our own Spring Boot starters.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 412,
+    "endFrame": 545,
+    "text": "The error starter turns every failure into the same clean response.",
+    "prefix": "The error starter turns every failure into the same clean response.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 544,
+    "endFrame": 677,
+    "text": "The security starter protects every endpoint in exactly the same way.",
+    "prefix": "The security starter protects every endpoint in exactly the same way.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 676,
+    "endFrame": 867,
+    "text": "The OTP and Redis starters give any module one-time codes and caching with a single dependency.",
+    "prefix": "The OTP and Redis starters give any module one-time codes and caching with a single dependency.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 866,
+    "endFrame": 1001,
+    "text": "Each starter configures itself, so a new module gets all of it for free.",
+    "prefix": "Each starter configures itself, so a new module gets all of it for free.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1000,
+    "endFrame": 1150,
+    "text": "Same behavior, half the code, and every fix now lands in one place.",
+    "prefix": "Same behavior, half the code, and every fix now lands in one place.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1149,
+    "endFrame": 1298,
+    "text": "Next, the money rules begin, with the commission on every payment.",
+    "prefix": "Next, the money rules begin, with the commission on every payment.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

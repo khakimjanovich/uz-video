@@ -1,0 +1,74 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 122,
+    "text": "Where do merchants' passwords and API keys actually live?",
+    "prefix": "Where do merchants' passwords and API keys actually live?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 121,
+    "endFrame": 269,
+    "text": "Storing passwords yourself is a risk you don't need: one leak exposes them all.",
+    "prefix": "Storing passwords yourself is a risk you don't need: one leak exposes them all.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 268,
+    "endFrame": 446,
+    "text": "Keycloak holds the identities: a portal login for the merchant, and a machine client for their server.",
+    "prefix": "Keycloak holds the identities: a portal login for the merchant, and a machine client for their server.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 445,
+    "endFrame": 578,
+    "text": "Each sales point gets its own client, and its token carries the merchant's ID.",
+    "prefix": "Each sales point gets its own client, and its token carries the merchant's ID.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 577,
+    "endFrame": 740,
+    "text": "The client secret is shown only once, and the merchant can rotate it at any time.",
+    "prefix": "The client secret is shown only once, and the merchant can rotate it at any time.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 739,
+    "endFrame": 922,
+    "text": "Our own secrets, like Keycloak's admin password, move out of environment files and into Vault.",
+    "prefix": "Our own secrets, like Keycloak's admin password, move out of environment files and into Vault.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 921,
+    "endFrame": 1061,
+    "text": "Every endpoint now checks the token before any business code runs.",
+    "prefix": "Every endpoint now checks the token before any business code runs.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1060,
+    "endFrame": 1190,
+    "text": "Next, the websites that will actually take the payments.",
+    "prefix": "Next, the websites that will actually take the payments.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

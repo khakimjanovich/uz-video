@@ -1,0 +1,40 @@
+1
+00:00:00,050 --> 00:00:03,321
+How do we know a new merchant really owns the email they typed?
+
+2
+00:00:03,321 --> 00:00:07,833
+Anyone can type any address, so a sign-up alone proves nothing.
+
+3
+00:00:07,833 --> 00:00:13,428
+So the partner module saves the merchant as pending, and sends a one-time code to that email.
+
+4
+00:00:13,428 --> 00:00:18,547
+The code lives in Redis with a configured lifetime, and disappears when it expires.
+
+5
+00:00:18,547 --> 00:00:24,202
+The email goes out through the email port, and locally it lands in Mailpit, where we can open it.
+
+6
+00:00:24,202 --> 00:00:29,369
+The merchant types the code back, and only then is the email marked as verified.
+
+7
+00:00:29,369 --> 00:00:33,857
+Wrong codes count against a configured limit, and too many lock the attempt.
+
+8
+00:00:33,857 --> 00:00:37,452
+Resends are limited too, so nobody can flood an inbox.
+
+9
+00:00:37,452 --> 00:00:41,857
+Every failure returns a clear error with a code, never a stack trace.
+
+10
+00:00:41,857 --> 00:00:46,523
+Next, the merchant moves through a lifecycle, from pending to active.
+

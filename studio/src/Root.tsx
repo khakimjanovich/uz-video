@@ -11,6 +11,18 @@ import { Yt02SetupComposition } from "./reels/yt-02-setup";
 
 import { Yt03MethodComposition } from "./reels/yt-03-method";
 
+import { Yt04RegistrationComposition } from "./reels/yt-04-registration";
+
+import { Yt05LifecycleComposition } from "./reels/yt-05-lifecycle";
+
+import { Yt06FourEyesComposition } from "./reels/yt-06-four-eyes";
+
+import { Yt07KeycloakComposition } from "./reels/yt-07-keycloak";
+
+import { Yt08SalesPointsComposition } from "./reels/yt-08-sales-points";
+
+import { Yt09StartersComposition } from "./reels/yt-09-starters";
+
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
   return (
@@ -22,6 +34,12 @@ export const RemotionRoot: React.FC = () => {
       <Yt01AcquiringComposition />
       <Yt02SetupComposition />
       <Yt03MethodComposition />
+      <Yt04RegistrationComposition />
+      <Yt05LifecycleComposition />
+      <Yt06FourEyesComposition />
+      <Yt07KeycloakComposition />
+      <Yt08SalesPointsComposition />
+      <Yt09StartersComposition />
     </>
   );
 };

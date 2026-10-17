@@ -1,0 +1,92 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 100,
+    "text": "How do we know a new merchant really owns the email they typed?",
+    "prefix": "How do we know a new merchant really owns the email they typed?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 99,
+    "endFrame": 235,
+    "text": "Anyone can type any address, so a sign-up alone proves nothing.",
+    "prefix": "Anyone can type any address, so a sign-up alone proves nothing.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 234,
+    "endFrame": 403,
+    "text": "So the partner module saves the merchant as pending, and sends a one-time code to that email.",
+    "prefix": "So the partner module saves the merchant as pending, and sends a one-time code to that email.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 402,
+    "endFrame": 557,
+    "text": "The code lives in Redis with a configured lifetime, and disappears when it expires.",
+    "prefix": "The code lives in Redis with a configured lifetime, and disappears when it expires.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 556,
+    "endFrame": 727,
+    "text": "The email goes out through the email port, and locally it lands in Mailpit, where we can open it.",
+    "prefix": "The email goes out through the email port, and locally it lands in Mailpit, where we can open it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 726,
+    "endFrame": 882,
+    "text": "The merchant types the code back, and only then is the email marked as verified.",
+    "prefix": "The merchant types the code back, and only then is the email marked as verified.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 881,
+    "endFrame": 1016,
+    "text": "Wrong codes count against a configured limit, and too many lock the attempt.",
+    "prefix": "Wrong codes count against a configured limit, and too many lock the attempt.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1015,
+    "endFrame": 1124,
+    "text": "Resends are limited too, so nobody can flood an inbox.",
+    "prefix": "Resends are limited too, so nobody can flood an inbox.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1123,
+    "endFrame": 1256,
+    "text": "Every failure returns a clear error with a code, never a stack trace.",
+    "prefix": "Every failure returns a clear error with a code, never a stack trace.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1255,
+    "endFrame": 1426,
+    "text": "Next, the merchant moves through a lifecycle, from pending to active.",
+    "prefix": "Next, the merchant moves through a lifecycle, from pending to active.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

@@ -1,0 +1,36 @@
+1
+00:00:00,050 --> 00:00:03,214
+What stops one admin from switching on a fraudulent shop?
+
+2
+00:00:03,214 --> 00:00:07,488
+If one person can do it, one mistake or one bribe is enough.
+
+3
+00:00:07,488 --> 00:00:12,940
+So activation becomes a request: a maker creates it, and nothing changes yet.
+
+4
+00:00:12,940 --> 00:00:18,595
+A different admin, the checker, approves it, and only then does the merchant become active.
+
+5
+00:00:18,595 --> 00:00:21,166
+The maker can never approve their own request.
+
+6
+00:00:21,166 --> 00:00:25,988
+A request that waits too long expires after the configured time.
+
+7
+00:00:25,988 --> 00:00:31,940
+A scheduled sweep marks old requests as expired, and a lock makes sure it runs only once.
+
+8
+00:00:31,940 --> 00:00:38,464
+Only one pending request per merchant can exist, enforced by a unique index in the database.
+
+9
+00:00:38,464 --> 00:00:43,809
+Next, logins and API keys, without storing a single password ourselves.
+

@@ -1,0 +1,32 @@
+1
+00:00:00,050 --> 00:00:04,035
+Where do merchants' passwords and API keys actually live?
+
+2
+00:00:04,035 --> 00:00:08,940
+Storing passwords yourself is a risk you don't need: one leak exposes them all.
+
+3
+00:00:08,940 --> 00:00:14,857
+Keycloak holds the identities: a portal login for the merchant, and a machine client for their server.
+
+4
+00:00:14,857 --> 00:00:19,250
+Each sales point gets its own client, and its token carries the merchant's ID.
+
+5
+00:00:19,250 --> 00:00:24,654
+The client secret is shown only once, and the merchant can rotate it at any time.
+
+6
+00:00:24,654 --> 00:00:30,702
+Our own secrets, like Keycloak's admin password, move out of environment files and into Vault.
+
+7
+00:00:30,702 --> 00:00:35,357
+Every endpoint now checks the token before any business code runs.
+
+8
+00:00:35,357 --> 00:00:38,654
+Next, the websites that will actually take the payments.
+

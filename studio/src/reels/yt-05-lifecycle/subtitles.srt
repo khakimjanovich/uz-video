@@ -1,0 +1,36 @@
+1
+00:00:00,050 --> 00:00:03,833
+Can a merchant jump straight from signing up to taking payments?
+
+2
+00:00:03,833 --> 00:00:08,333
+Without rules, one wrong update could switch on a shop nobody ever checked.
+
+3
+00:00:08,333 --> 00:00:15,678
+So a partner moves through fixed states: pending, verified, waiting for a contract, approved, and active.
+
+4
+00:00:15,678 --> 00:00:21,059
+A guard allows only the legal moves, and an illegal jump is rejected with a clear error.
+
+5
+00:00:21,059 --> 00:00:26,250
+The admin verifies the documents, and the bank signs a contract with a unique number.
+
+6
+00:00:26,250 --> 00:00:31,583
+Every change is written to a status history, so we always know who moved what, and when.
+
+7
+00:00:31,583 --> 00:00:35,797
+An active merchant can be suspended and restored, or terminated for good.
+
+8
+00:00:35,797 --> 00:00:40,511
+Every later check in the system asks the same question: is this merchant active?
+
+9
+00:00:40,511 --> 00:00:44,607
+Next, we make sure no single admin can switch a merchant on alone.
+
