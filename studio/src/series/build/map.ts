@@ -1,14 +1,15 @@
 // The Series B build map: one source of truth for the presentation diagram and the progress panel.
 // Coordinates are in a 680×500 design space; BuildMap scales them to fit.
 // Infrastructure boxes show the product's official monochrome logo (Simple Icons) above its name.
-import { siApachekafka, siGrafana, siKeycloak, siPostgresql, siPrometheus, siRedis, siTemporal, siVault } from "simple-icons";
+import { siApachekafka, siGrafana, siKeycloak, siKubernetes, siPostgresql, siPrometheus, siRedis, siTemporal, siVault } from "simple-icons";
 
 export type BuildNodeId =
   | "merchant" | "buyer" | "admin"
   | "partner" | "commission" | "terminal" | "card" | "payment"
   | "emailport" | "procport"
   | "postgres" | "redis" | "keycloak" | "vault" | "temporal" | "kafka" | "observability"
-  | "emailsvc" | "procsvc";
+  | "emailsvc" | "procsvc"
+  | "kubernetes";
 
 type Box = { label: string; sub?: string; x: number; y: number; w: number; h: number; logos?: string[] };
 
@@ -33,6 +34,8 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   observability: { label: "Observe", x: 562, y: 310, w: 78, h: 64, logos: [siPrometheus.path, siGrafana.path] },
   emailsvc: { label: "Email service", sub: "OTP codes", x: 56, y: 420, w: 220, h: 56 },
   procsvc: { label: "Processing center", sub: "Uzcard, Humo", x: 404, y: 420, w: 220, h: 56 },
+  // Not a box: the cluster boundary around the app and its infrastructure (drawn by BuildMap as a dashed frame).
+  kubernetes: { label: "Kubernetes", x: 28, y: 90, w: 624, h: 300, logos: [siKubernetes.path] },
 };
 
 // Vertical arrows: [x, fromY, toY].
@@ -53,7 +56,7 @@ export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes:
   { n: 2, title: "Money rules", episodes: ["Commission", "Terminals"], nodes: ["commission", "terminal"] },
   { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "BIN + card vault"], nodes: ["card", "procport", "procsvc"] },
   { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Hosted page", "The debit", "Observability", "Silent processing", "Outbox + Kafka", "Links", "Refunds", "Billing", "Hardening"], nodes: ["payment", "merchant", "buyer", "observability", "temporal", "kafka"] },
-  { n: 5, title: "Growing up", episodes: ["Extract the card vault"], nodes: ["card"] },
+  { n: 5, title: "Growing up", episodes: ["Deploy to Kubernetes", "Extract the card vault"], nodes: ["kubernetes", "card"] },
 ];
 
 /** Every node built by the parts before `part`. */

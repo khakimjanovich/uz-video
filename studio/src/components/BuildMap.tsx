@@ -45,7 +45,27 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
         {BUILD_ARROWS.map(([ax, y1, y2]) => (
           <path key={`${ax}-${y1}`} d={`M ${ax} ${y1} V ${y2 - 4} M ${ax - 5} ${y2 - 10} L ${ax} ${y2 - 3} L ${ax + 5} ${y2 - 10}`} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} />
         ))}
-        {(Object.keys(BUILD_NODES) as BuildNodeId[]).map((id) => {
+        {(() => {
+          // The cluster is a frame, not a box: dashed until its part, then solid; its tab sits on the bottom edge.
+          const k = BUILD_NODES.kubernetes;
+          const on = step.current?.includes("kubernetes");
+          const built = !on && step.built?.includes("kubernetes");
+          const color = on ? "var(--ink)" : built ? "var(--stamp-green)" : "var(--ink-muted)";
+          const tabX = 380;
+          const tabY = k.y + k.h;
+          return (
+            <g>
+              <rect x={k.x} y={k.y} width={k.w} height={k.h} rx={20} fill="none" stroke={color}
+                strokeWidth={on || built ? 3 : 1.5} strokeDasharray={on || built ? "10 6" : "3 6"} />
+              <rect x={tabX} y={tabY - 14} width={130} height={28} rx={6}
+                fill={on ? "var(--ink)" : "var(--paper)"} stroke={color} strokeWidth={1.5} />
+              <path d={k.logos![0]} transform={`translate(${tabX + 8} ${tabY - 9}) scale(0.75)`} fill={on ? "var(--paper)" : color} />
+              <text x={tabX + 34} y={tabY} dominantBaseline="central" fontSize={12} fontWeight={700}
+                fill={on ? "var(--paper)" : color} style={{ textTransform: "uppercase" }}>{k.label}</text>
+            </g>
+          );
+        })()}
+        {(Object.keys(BUILD_NODES) as BuildNodeId[]).filter((id) => id !== "kubernetes").map((id) => {
           const n = BUILD_NODES[id];
           const isCurrent = step.current?.includes(id);
           const isBuilt = !isCurrent && step.built?.includes(id);

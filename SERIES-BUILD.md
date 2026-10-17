@@ -29,7 +29,7 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 **Modular monolith outside, hexagonal at the edges inside.**
 
 - **One app, one deploy, one Postgres with a schema per module:** `partner`, `commission`, `terminal`, `card`, `payment`. The real repo's microservices become our module boundaries.
-- **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 24).
+- **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 25).
 - **Ports and adapters only at the edges that talk to the outside world:** processing center (Uzcard REST, Humo SOAP), Keycloak, Vault, email. One port, several adapters. Plain layered code (controller → service → repository) for simple CRUD.
 - **Why:** a solo viewer runs one app instead of nine; boundaries stay honest; hexagonal pays only where there are real alternative implementations.
 
@@ -64,6 +64,7 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 | Prometheus + Grafana, Tempo, Loki | 17 Observability | a stuck payment is invisible without metrics and traces; Loki instead of ELK (lighter on a laptop) |
 | Temporal | 18 Silent processing | unknown outcomes need durable retries |
 | Kafka | 19 Outbox + Kafka | events must reach other systems exactly once |
+| Kubernetes (+ Helm) | 24 Deploy to Kubernetes | one laptop is not production: replicas, probes, rolling updates |
 
 ## Versions
 
@@ -276,11 +277,17 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 ### Part 5: Growing up
 
-**24 · Extract a module into a service**
+**24 · Deploy to Kubernetes**
+- Problem: production needs more than one process on one laptop: several replicas, health checks, rolling updates, secrets that never touch a file.
+- Build: container image, a Helm chart, liveness and readiness probes from Actuator, secrets injected from Vault, three replicas behind a Service, an autoscaler.
+- Why: with three replicas every scheduled job would run three times; ShedLock (already in the code) is what keeps it to one. The cluster also makes the next episode's split concrete.
+- Demo: scale to three replicas, kill a pod mid-payment → traffic moves, the payment still resolves once; the expiry sweep runs exactly once.
+
+**25 · Extract a module into a service**
 - Problem: the card vault needs stricter security and its own deploy (PCI DSS scope).
 - Build: move the `card` module into its own Spring Boot service; replace the in-process `CardApi` with a REST adapter behind the same port; give it its own database.
 - Why: shows *why* microservices exist: clean boundaries made the move cheap. Mirrors the real card-processor-service.
-- Demo: same payment flow, now across two services.
+- Demo: same payment flow, now across two services on the same cluster.
 
 ---
 
