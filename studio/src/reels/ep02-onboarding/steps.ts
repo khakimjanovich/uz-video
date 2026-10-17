@@ -50,10 +50,10 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 3 Teaser: the commission deep dive unpacks how every fee is calculated.
   {
     cue: 3,
-    layout: REVIEW,
+    layout: { ...REVIEW, dd2: [2, 1.15] },
     edges: [DOCS],
-    accent: ["merchant"],
-    badges: { admin: "verified", merchant: "commission" },
+    accent: ["dd2"],
+    badges: { admin: "verified", merchant: "contract" },
   },
   // 4 Each website becomes a sales point with its own API key; bank checks the site.
   {
@@ -66,10 +66,10 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 5 The bank switches the store on; it can start taking payments.
   {
     cue: 5,
-    layout: WITH_SITE,
+    layout: { ...WITH_SITE, dd1: [0, 2.3] },
     edges: [SITE, { from: "admin", to: "merchant", label: "activate" }],
     packets: [{ from: "admin", to: "merchant", label: "active", delay: 20 }],
-    accent: ["merchant"],
+    accent: ["dd1"],
     badges: { merchant: "active" },
   },
 ];

@@ -1,3 +1,5 @@
+import type { ArtName } from "../../components/diagram/illustrations";
+
 // The series map: one source of truth for the route strip, deep-dive tags and parent links.
 export const TIER1 = [
   { n: 1, short: "Acquirer" },
@@ -10,15 +12,15 @@ export const TIER1 = [
 ] as const;
 
 export const TIER2 = [
-  { n: 1, title: "Four-eyes", parent: 2 },
-  { n: 2, title: "Commission", parent: 2 },
-  { n: 3, title: "HMAC + idempotency", parent: 3 },
-  { n: 4, title: "Tokenization", parent: 4 },
-  { n: 5, title: "Auth + capture", parent: 4 },
-  { n: 6, title: "Timeouts", parent: 4 },
-  { n: 7, title: "Declines", parent: 4 },
-  { n: 8, title: "Reversal + refund", parent: 7 },
-] as const;
+  { n: 1, icon: "foureyes", title: "Four-eyes", parent: 2 },
+  { n: 2, icon: "commission", title: "Commission", parent: 2 },
+  { n: 3, icon: "seal", title: "HMAC + idempotency", parent: 3 },
+  { n: 4, icon: "token", title: "Tokenization", parent: 4 },
+  { n: 5, icon: "authcap", title: "Auth + capture", parent: 4 },
+  { n: 6, icon: "hourglass", title: "Timeouts", parent: 4 },
+  { n: 7, icon: "declined", title: "Declines", parent: 4 },
+  { n: 8, icon: "uturn", title: "Reversal + refund", parent: 7 },
+] as const satisfies readonly { n: number; icon: ArtName; title: string; parent: number }[];
 
 export type SeriesPosition = { part: number } | { deepDive: number };
 

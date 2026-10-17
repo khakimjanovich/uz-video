@@ -26,7 +26,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: what happens inside the bank when it takes money from a card?
   {
     cue: 0,
-    layout: SIMPLE,
+    layout: { ...SIMPLE, dd5: [0, 2.4] },
+    accent: ["dd5"],
     badges: { bank: "inside?" },
   },
   // 1 Naive v1: one debit request straight to the processing center.

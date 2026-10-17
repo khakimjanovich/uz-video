@@ -24,7 +24,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: did the request really come from the store, and only once?
   {
     cue: 0,
-    layout: PAIR,
+    layout: { ...PAIR, dd3: [1, 3.4] },
+    accent: ["dd3"],
     edges: [REQUEST],
     badges: { bank: "who? once?" },
   },

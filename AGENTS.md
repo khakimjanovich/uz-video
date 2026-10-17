@@ -120,7 +120,7 @@ cd studio && npm run dev
 
 ## 4. Series Format (Software Architecture & Solution Engineering)
 
-**Series links.** Pass `position={{ part: n }}` (Tier 1) or `position={{ deepDive: n }}` (Tier 2) to `ReelScaffold`: it draws the route strip and the header line from `series/acquiring/map.ts`. Pass `deepDives={{ cue: [n] }}` for the sentences that tease a deep dive; the tags ride on top of the caption.
+**Series links.** Pass `position={{ part: n }}` (Tier 1) or `position={{ deepDive: n }}` (Tier 2) to `ReelScaffold`: it draws the route strip and the header line from `series/acquiring/map.ts`. Pass `deepDives={{ cue: [n] }}` for the sentences that tease a deep dive; the tags ride on top of the caption. To show a deep dive's icon in a diagram, place its node (`dd1`…`dd8`) in the step layout.
 
 **Visual identity: Receipt.** Every video is a thermal payment slip on a dark counter: Archivo Black headlines (one per step), IBM Plex Mono for everything else, ink boxes, rubber-stamp badges (red = problem, green = OK), captions on black tape, a dotted "totals" footer line. Tokens live in `studio/src/index.css`; no emoji in diagram labels.
 

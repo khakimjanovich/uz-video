@@ -29,7 +29,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: how much does the bank earn from each payment, and who decides?
   {
     cue: 0,
-    layout: { merchant: [0, 1.5], bank: [2, 1.5] },
+    layout: { merchant: [0, 1.5], bank: [2, 1.5], dd2: [1, 3.5] },
+    accent: ["dd2"],
     edges: [{ from: "merchant", to: "bank", label: "payment" }],
     badges: { bank: "how much?" },
   },

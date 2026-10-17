@@ -8,6 +8,7 @@ import { Ep04DebitComposition } from "./reels/ep04-debit";
 import { Ep05StatusComposition } from "./reels/ep05-status";
 import { Ep06LinksComposition } from "./reels/ep06-links";
 import { Ep07SettlementComposition } from "./reels/ep07-settlement";
+import { T200DeepDivesComposition } from "./reels/t2-00-deep-dives";
 import { T201FourEyesComposition } from "./reels/t2-01-four-eyes";
 import { T202CommissionComposition } from "./reels/t2-02-commission";
 import { T203SafeRequestsComposition } from "./reels/t2-03-safe-requests";
@@ -29,6 +30,7 @@ export const RemotionRoot: React.FC = () => {
       <Ep05StatusComposition />
       <Ep06LinksComposition />
       <Ep07SettlementComposition />
+      <T200DeepDivesComposition />
       <T201FourEyesComposition />
       <T202CommissionComposition />
       <T203SafeRequestsComposition />

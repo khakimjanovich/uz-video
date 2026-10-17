@@ -32,6 +32,15 @@ export const ACQUIRING_NODES = {
   stage5: { label: "Status", sublabel: "Part 5", art: "receipt" },
   stage6: { label: "Payment links", sublabel: "Part 6", art: "link" },
   stage7: { label: "Settlement", sublabel: "Part 7", art: "wallet" },
+  // Deep-dive icons: first met in Tier 1 at the teaser, then the clue that opens each deep dive.
+  dd1: { label: "Four-eyes", sublabel: "Deep dive 01", art: "foureyes" },
+  dd2: { label: "Commission", sublabel: "Deep dive 02", art: "commission" },
+  dd3: { label: "HMAC + idempotency", sublabel: "Deep dive 03", art: "seal" },
+  dd4: { label: "Tokenization", sublabel: "Deep dive 04", art: "token" },
+  dd5: { label: "Auth + capture", sublabel: "Deep dive 05", art: "authcap" },
+  dd6: { label: "Timeouts", sublabel: "Deep dive 06", art: "hourglass" },
+  dd7: { label: "Declines", sublabel: "Deep dive 07", art: "declined" },
+  dd8: { label: "Reversal + refund", sublabel: "Deep dive 08", art: "uturn" },
   // Ledger accounts (BRD §10, settlement — planned)
   transit: { label: "Clearing transit", sublabel: "10511", art: "transit" },
   terminalacc: { label: "Terminal account", sublabel: "23508", art: "tray" },

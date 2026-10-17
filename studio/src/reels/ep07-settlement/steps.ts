@@ -51,13 +51,13 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 3 The bank keeps its fee, the rest goes to the store's own account by the next banking day.
   {
     cue: 3,
-    layout: FULL,
+    layout: { ...FULL, dd2: [0, 1.8], dd8: [2, 1.8] },
     edges: [CLEARING, LAND, ...SPLIT],
     packets: [
       { from: "terminalacc", to: "feeacc", label: "fee", delay: 20, duration: 25 },
       { from: "terminalacc", to: "storeacc", label: "net", delay: 50, duration: 25 },
     ],
-    accent: ["storeacc"],
+    accent: ["dd2", "dd8"],
     badges: { storeacc: "next banking day" },
   },
   // 4 A daily report lets the store match every payment with its books.

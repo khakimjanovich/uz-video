@@ -16,7 +16,9 @@ Sources: the story comes from the **BRD** (what the system should do); precision
 - **Route strip (view hint):** every video shows the 7 stops; Tier 1 fills its own stop, a deep dive fills its parent and hangs `↳ DD nn · title`.
 - **Voice hint:** a Tier 1 sentence teases the deep dive by its tech term and promises the payoff ("…the four-eyes principle, which its own deep dive explores in depth, revealing why one admin alone is never enough"). Vary the verb in every teaser (unpack, explore in depth, dissect, lay bare, trace, shed light on); never "later". No closing line.
 - **Visual hint:** the same sentence carries a tag on top of the caption: `→ DEEP DIVE 01 · FOUR-EYES` (`deepDives={{ 5: [1] }}` on `ReelScaffold`).
-- Tier 2 voices don't announce the link; the strip and header (`DEEP DIVE 03 · FROM PART 03`) show it. Tier 3 is never announced.
+- **Deep-dive icon:** each deep dive has its own ink drawing (`dd1`…`dd8` in `nodes.ts`, `icon` in `map.ts`). Tier 1 teaches it: at the teaser it pops into the diagram, named once. It then rides on the tag, the entrance reel and the strip label.
+- **Entrance:** `t2-00-deep-dives` plays once before Tier 2 ("Now, let's talk about the deep dives…") and lines up all 8 icons.
+- **Deep-dive hook:** opens with the same key term Tier 1 used ("The four-eyes principle: who…?") while its icon stands in the diagram. No per-video "deep dive N" announcement; the strip and header (`DEEP DIVE 03 · FROM PART 03`) show the link. Tier 3 is never announced.
 
 ## Template
 

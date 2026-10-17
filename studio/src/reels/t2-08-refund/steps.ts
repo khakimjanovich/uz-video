@@ -23,7 +23,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: money back today or next week — the same?
   {
     cue: 0,
-    layout: ASK,
+    layout: { ...ASK, dd8: [1, 3.5] },
+    accent: ["dd8"],
     edges: [{ from: "buyer", to: "merchant", label: "money back?" }],
     badges: { buyer: "today? later?" },
   },

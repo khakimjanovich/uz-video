@@ -1,32 +1,32 @@
 1
-00:00:00,050 --> 00:00:03,797
-The processing center never answered: was the money taken or not?
+00:00:00,050 --> 00:00:04,821
+Timeouts: the processing center never answered, so was the money taken or not?
 
 2
-00:00:03,797 --> 00:00:06,238
+00:00:04,821 --> 00:00:07,226
 The simplest way is to send the debit again.
 
 3
-00:00:06,238 --> 00:00:10,821
+00:00:07,226 --> 00:00:11,892
 But if the first debit did go through, the retry charges the buyer twice.
 
 4
-00:00:10,821 --> 00:00:16,440
+00:00:11,892 --> 00:00:17,130
 So a timeout is treated as an unknown outcome, and the payment stays authorizing.
 
 5
-00:00:16,440 --> 00:00:23,250
+00:00:17,130 --> 00:00:23,952
 A durable workflow, built on Temporal, asks the processing center for the status on a configured retry schedule.
 
 6
-00:00:23,250 --> 00:00:29,452
+00:00:23,952 --> 00:00:29,845
 If the money was taken, the payment is captured, and if nothing happened, it is declined.
 
 7
-00:00:29,452 --> 00:00:35,428
+00:00:29,845 --> 00:00:35,583
 If there is still no clear answer within the configured time limit, the payment goes to a manual review queue.
 
 8
-00:00:35,428 --> 00:00:40,321
+00:00:35,583 --> 00:00:40,583
 A scheduled sweep also picks up any payment left stuck, so nothing is forgotten.
 

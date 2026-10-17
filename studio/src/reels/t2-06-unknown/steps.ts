@@ -25,7 +25,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: no answer — was the money taken or not?
   {
     cue: 0,
-    layout: SIMPLE,
+    layout: { ...SIMPLE, dd6: [0, 2.1] },
+    accent: ["dd6"],
     edges: [DEBIT],
     packets: [{ from: "bank", to: "network", label: "debit", delay: 10, stopAt: 0.5 }],
     danger: ["network"],

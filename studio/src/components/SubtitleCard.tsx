@@ -1,5 +1,6 @@
 import React from "react";
 import { deepDive, pad2 } from "../series/acquiring/map";
+import { NodeArt } from "./diagram/illustrations";
 
 export interface SubtitleCue {
   index?: number;
@@ -31,8 +32,8 @@ export const SubtitleCard: React.FC<SubtitleCardProps> = ({ currentSubtitle, dan
       {deepDives?.length ? (
         <div className="absolute bottom-full left-0 mb-3 flex flex-wrap gap-3 font-mono uppercase">
           {deepDives.map((n) => (
-            <div key={n} className="px-3 py-1.5 border-[3px] border-dashed border-ink bg-paper text-ink text-[22px] font-bold whitespace-nowrap">
-              → Deep dive {pad2(n)} · {deepDive(n).title}
+            <div key={n} className="flex items-center gap-2 px-3 py-1.5 border-[3px] border-dashed border-ink bg-paper text-ink text-[19px] font-bold whitespace-nowrap">
+              <NodeArt name={deepDive(n).icon} size={32} /> Deep dive {pad2(n)} · {deepDive(n).title}
             </div>
           ))}
         </div>

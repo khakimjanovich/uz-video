@@ -1,5 +1,6 @@
 import React from "react";
 import { deepDive, pad2, SeriesPosition, TIER1 } from "../series/acquiring/map";
+import { NodeArt } from "./diagram/illustrations";
 
 // Route strip at the top of the receipt: the 7 Tier 1 stops. A Tier 1 video fills its own stop;
 // a deep dive fills its parent stop and hangs a "DD nn · title" tag under it.
@@ -29,10 +30,16 @@ export const SeriesMap: React.FC<{ position: SeriesPosition }> = ({ position }) 
         );
       })}
       <div
-        className="absolute top-[48px] text-[22px] font-bold tracking-wider whitespace-nowrap"
+        className="absolute top-[48px] flex items-center gap-2 text-[22px] font-bold tracking-wider whitespace-nowrap"
         style={{ left: at(current), translate: current === 1 ? "-20px 0" : current === TIER1.length ? "calc(-100% + 20px) 0" : "-50% 0" }}
       >
-        {"deepDive" in position ? `↳ ${label}` : label}
+        {"deepDive" in position ? (
+          <>
+            ↳ <NodeArt name={deepDive(position.deepDive).icon} size={36} /> {label}
+          </>
+        ) : (
+          label
+        )}
       </div>
     </div>
   );

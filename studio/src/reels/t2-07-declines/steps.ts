@@ -25,7 +25,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: the processing center says no.
   {
     cue: 0,
-    layout: SIMPLE,
+    layout: { ...SIMPLE, dd7: [0, 2.4] },
+    accent: ["dd7"],
     edges: [DEBIT],
     packets: [{ from: "network", to: "bank", label: "declined", delay: 15 }],
     badges: { network: "no" },

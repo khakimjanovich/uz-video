@@ -1,32 +1,32 @@
 1
-00:00:00,050 --> 00:00:02,607
-How does a card number stay safe on its way to the bank?
+00:00:00,050 --> 00:00:03,869
+Tokenization: how does a card number stay safe on its way to the bank?
 
 2
-00:00:02,607 --> 00:00:07,464
+00:00:03,869 --> 00:00:08,738
 The simplest way is that the store's website collects the card number and sends it to the bank.
 
 3
-00:00:07,464 --> 00:00:14,380
+00:00:08,738 --> 00:00:15,547
 But then every store holds card data, and under PCI DSS that makes each one a target and a liability.
 
 4
-00:00:14,380 --> 00:00:19,952
+00:00:15,547 --> 00:00:21,238
 So the card is entered only on the bank's hosted payment page, opened by a one-time session link.
 
 5
-00:00:19,952 --> 00:00:25,964
+00:00:21,238 --> 00:00:27,130
 The bank's token vault turns the card number into a token, and the payment keeps only a masked PAN.
 
 6
-00:00:25,964 --> 00:00:30,452
+00:00:27,130 --> 00:00:31,607
 The real number is revealed only inside the bank, at the moment of the debit.
 
 7
-00:00:30,452 --> 00:00:36,047
+00:00:31,607 --> 00:00:37,035
 To prove the payer owns the card, a one-time password goes by SMS to the card's phone.
 
 8
-00:00:36,047 --> 00:00:41,130
+00:00:37,035 --> 00:00:42,238
 Resends are limited and spaced by the configured time, and wrong attempts are limited too.
 

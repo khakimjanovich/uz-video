@@ -179,6 +179,86 @@ const ART = {
       <rect x="52" y="28" width="54" height="24" rx="12" />
     </>
   ),
+  // Deep-dive icons: one per Tier 2 topic, taught in Tier 1, reused as the clue on tickets and hooks.
+  // Four-eyes: two faces, two pairs of eyes.
+  foureyes: (
+    <>
+      <circle cx="35" cy="40" r="26" />
+      <circle cx="85" cy="40" r="26" />
+      <path d="M17 38 Q25 30 33 38 Q25 46 17 38 Z M37 38 Q45 30 53 38 Q45 46 37 38 Z" />
+      <path d="M67 38 Q75 30 83 38 Q75 46 67 38 Z M87 38 Q95 30 103 38 Q95 46 87 38 Z" />
+      <circle cx="25" cy="38" r="2" />
+      <circle cx="45" cy="38" r="2" />
+      <circle cx="75" cy="38" r="2" />
+      <circle cx="95" cy="38" r="2" />
+    </>
+  ),
+  // Commission: a percent sign inside a round seal.
+  commission: (
+    <>
+      <circle cx="60" cy="40" r="32" />
+      <circle cx="60" cy="40" r="25" />
+      <path d="M49 54 L71 26" />
+      <circle cx="50" cy="30" r="5" />
+      <circle cx="70" cy="50" r="5" />
+    </>
+  ),
+  // HMAC + idempotency: a wax seal and the key that made it.
+  seal: (
+    <>
+      <circle cx="40" cy="36" r="20" />
+      <circle cx="40" cy="36" r="12" />
+      <path d="M30 54 L24 72 L32 68 L36 74 L40 56 M50 54 L56 72 L48 68 L44 74 L40 56" />
+      <circle cx="88" cy="22" r="9" />
+      <path d="M88 31 V72 M88 60 H97 M88 68 H95" />
+    </>
+  ),
+  // Tokenization: a card turns into a token coin.
+  token: (
+    <>
+      <rect x="6" y="20" width="52" height="38" rx="4" />
+      <path d="M6 30 H58 M14 48 H30" />
+      <path d="M64 39 H80 M74 33 L80 39 L74 45" />
+      <circle cx="99" cy="39" r="16" />
+      <path d="M92 33 H106 M99 33 V48" />
+    </>
+  ),
+  // Authorization + capture: a padlock marked 1 · 2 (hold, then capture).
+  authcap: (
+    <>
+      <rect x="34" y="32" width="52" height="42" rx="4" />
+      <path d="M45 32 V22 Q45 8 60 8 Q75 8 75 22 V32" />
+      <path d="M46 47 L51 43 V63" />
+      <circle cx="60" cy="56" r="1.5" />
+      <path d="M67 47 Q67 43 71 43 Q75 43 75 47 Q75 51 67 63 H76" />
+    </>
+  ),
+  // Timeouts: an hourglass.
+  hourglass: (
+    <>
+      <path d="M40 8 H80 M40 72 H80" />
+      <path d="M45 8 Q45 32 60 40 Q75 32 75 8 M45 72 Q45 48 60 40 Q75 48 75 72" />
+      <path d="M51 66 Q60 57 69 66" />
+    </>
+  ),
+  // Declines: a card with a stamped cross.
+  declined: (
+    <>
+      <rect x="12" y="14" width="66" height="46" rx="4" />
+      <path d="M12 25 H78 M20 48 H38" />
+      <circle cx="88" cy="52" r="17" />
+      <path d="M80 44 L96 60 M96 44 L80 60" />
+    </>
+  ),
+  // Reversal + refund: a U-turn arrow bringing the money back.
+  uturn: (
+    <>
+      <path d="M84 72 V32 Q84 12 66 12 Q48 12 48 32 V44" />
+      <path d="M41 37 L48 45 L55 37" />
+      <circle cx="48" cy="62" r="10" />
+      <path d="M48 57 V67" />
+    </>
+  ),
 } satisfies Record<string, React.ReactNode>;
 
 export type ArtName = keyof typeof ART;

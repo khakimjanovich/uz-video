@@ -1,32 +1,32 @@
 1
-00:00:00,050 --> 00:00:03,023
-What happens inside the bank when it takes money from a card?
+00:00:00,050 --> 00:00:05,190
+Authorization and capture: what happens inside the bank when it takes money from a card?
 
 2
-00:00:03,023 --> 00:00:07,404
+00:00:05,190 --> 00:00:09,571
 The simplest way is to send one debit request straight to the processing center.
 
 3
-00:00:07,404 --> 00:00:13,750
+00:00:09,571 --> 00:00:15,904
 But if two requests run at the same time, or the page is submitted twice, the card is charged twice.
 
 4
-00:00:13,750 --> 00:00:21,547
+00:00:15,904 --> 00:00:23,785
 So before any money moves, the payment switches from open to authorizing in one atomic update, and only one request can win it.
 
 5
-00:00:21,547 --> 00:00:28,059
+00:00:23,785 --> 00:00:30,119
 Every call to the processing center is written to an operation journal, with its result and reference numbers.
 
 6
-00:00:28,059 --> 00:00:33,821
+00:00:30,119 --> 00:00:35,607
 The bank sends the debit through its terminal, identified by a merchant ID and a terminal ID.
 
 7
-00:00:33,821 --> 00:00:40,000
+00:00:35,607 --> 00:00:41,785
 The debit runs as authorization and capture: first the money is held, then it is captured.
 
 8
-00:00:40,000 --> 00:00:45,714
+00:00:41,785 --> 00:00:47,488
 When the processing center approves, the payment becomes captured, with its retrieval reference number.
 

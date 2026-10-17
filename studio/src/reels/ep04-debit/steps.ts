@@ -29,10 +29,10 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 1 Card entered on the bank's own page; the bank swaps it for a token.
   {
     cue: 1,
-    layout: BANK_FLOW,
+    layout: { ...BANK_FLOW, dd4: [2, 1.6] },
     edges: [CARD],
     packets: [{ from: "buyer", to: "bank", label: "8600 1234 5678 9012", delay: 15 }],
-    accent: ["bank"],
+    accent: ["dd4"],
     badges: { bank: "token" },
   },
   // 2 SMS code to the owner's phone confirms it's really them.
@@ -50,10 +50,10 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 3 The bank debits the card through the processing center.
   {
     cue: 3,
-    layout: BANK_FLOW,
+    layout: { ...BANK_FLOW, dd5: [0, 2.4], dd6: [2, 1.6], dd7: [2, 3.2] },
     edges: [CARD, DEBIT],
     packets: [{ from: "bank", to: "network", label: "debit", delay: 20 }],
-    accent: ["bank"],
+    accent: ["dd5", "dd6", "dd7"],
   },
   // 4 Processing center approves -> payment captured.
   {

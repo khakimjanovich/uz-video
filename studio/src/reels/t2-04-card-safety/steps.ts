@@ -30,7 +30,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: how does a card number stay safe on its way to the bank?
   {
     cue: 0,
-    layout: OTP,
+    layout: { ...OTP, dd4: [1, 3.4] },
+    accent: ["dd4"],
     edges: [CARD],
     badges: { buyer: "safe?" },
   },

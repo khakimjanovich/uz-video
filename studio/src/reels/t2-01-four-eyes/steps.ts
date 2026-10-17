@@ -28,7 +28,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // 0 Hook: who may switch a store on, or change its fee?
   {
     cue: 0,
-    layout: NAIVE,
+    layout: { ...NAIVE, dd1: [0, 3.8] },
+    accent: ["dd1"],
     badges: { merchant: "on?", feerule: "fee?" },
   },
   // 1 Naive v1: one admin changes it, effective at once.
