@@ -79,7 +79,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
       { from: "buyer", to: "bank" },
     ],
     danger: ["fakesite", "attacker", "payment", "buyer"],
-    badges: { fakesite: "fake site", attacker: "forged", payment: "× 2", buyer: "card theft" },
+    badges: { fakesite: "fake shop", attacker: "forged payment", payment: "double charge", buyer: "stolen card" },
   },
   // Fake site worry: a too-good iPhone site looks as real as Aziza's shop.
   {
@@ -93,7 +93,8 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
       { from: "shoeshop", to: "bank", label: "100 000", delay: 10, duration: 40 },
       { from: "fakesite", to: "bank", label: "50 000", delay: 20, duration: 40 },
     ],
-    badges: { fakesite: "looks real" },
+    danger: ["fakesite"],
+    badges: { fakesite: "fake shop" },
   },
   // Fake site relief: two bank employees check every shop; only Aziza's connects.
   {
@@ -125,6 +126,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
       { from: "attacker", to: "bank", label: "10 000 000", delay: 35, duration: 50 },
     ],
     danger: ["attacker"],
+    badges: { attacker: "forged payment" },
   },
   // Forged amount relief: Aziza's signed payment passes, the forged copy bounces off.
   {
@@ -151,7 +153,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
       { from: "shoeshop", to: "bank", label: "100 000", delay: 26, duration: 40 },
     ],
     danger: ["buyer"],
-    badges: { buyer: "charged twice?" },
+    badges: { buyer: "double charge" },
   },
   // Double charge relief: the repeat is stopped; one charge, a happy customer.
   {
@@ -176,7 +178,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     edges: [{ from: "attacker", to: "shoeshop" }],
     packets: [{ from: "attacker", to: "shoeshop", label: "card numbers?", delay: 15, duration: 50 }],
     danger: ["attacker"],
-    badges: { shoeshop: "breach?" },
+    badges: { attacker: "stolen card" },
   },
   // Card relief: the card goes to the bank's own page, the shop keeps only a code; nothing to steal.
   {
