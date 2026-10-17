@@ -29,7 +29,7 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 **Modular monolith outside, hexagonal at the edges inside.**
 
 - **One app, one deploy, one Postgres with a schema per module:** `partner`, `commission`, `terminal`, `card`, `payment`. The real repo's microservices become our module boundaries.
-- **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 23).
+- **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 25).
 - **Ports and adapters only at the edges that change or get faked:** processing center (Uzcard REST, Humo SOAP, simulator), Keycloak, Vault, email. One port, several adapters. Plain layered code (controller → service → repository) for simple CRUD.
 - **Why:** a solo viewer runs one app instead of nine; boundaries stay honest; hexagonal pays only where there are real alternative implementations.
 
@@ -48,6 +48,39 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 | Long-running work | Temporal (payment resolution) | ✅ |
 | Scheduled jobs | ShedLock | ✅ |
 | Module calls | in-process Java interfaces (`*Api`); OpenAPI only for the outside world | real repo: REST between services |
+
+---
+
+## When each tool arrives
+
+Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, never earlier.
+
+| Tool | Episode | The problem that brings it |
+|---|---|---|
+| Postgres, Redis, Keycloak | 02 Setup | the first episodes need them immediately |
+| Structured JSON logs + Actuator health | 02 Setup | cheap, and nothing is debuggable without them |
+| Vault, app config (`secret/app`) | 07 Keycloak clients | the first real secret appears; `.env` until then |
+| Vault, merchant HMAC secrets (`secret/merchants`) | 15 Create payment | same Vault, second path. Not the card vault module |
+| Prometheus + Grafana, Tempo, Loki | 18 Observability | a stuck payment is invisible without metrics and traces; Loki instead of ELK (lighter on a laptop) |
+| Temporal | 19 Silent processing | unknown outcomes need durable retries |
+| Kafka | 20 Outbox + Kafka | events must reach other systems exactly once |
+
+## Versions
+
+- Policy: the latest stable release on the day an episode is recorded, pinned exactly (no `latest` tags, no ranges).
+- Where: one Gradle version catalog (`gradle/libs.versions.toml`, as in the real repo) and image tags in `docker-compose.yml`.
+- Each episode's `git tag` freezes its versions, so a viewer can reproduce it later. Upgrades get their own short episode when needed.
+
+## Database design
+
+- **Episode 03, once:** a one-page entity sketch for the whole system: entities per module, their owners and relations, no columns. Cross-module links are IDs only (`payment.sales_point_id` is a UUID, no foreign key across schemas), which keeps modules extractable.
+- **Every episode after:** detailed tables just in time, as Liquibase migrations in that module's own schema, designed with the method (domain → contract → database).
+- **Episode 02:** empty schemas only (`partner`, `commission`, `terminal`, `card`, `payment`).
+
+## Video notes
+
+- Format: YouTube 16:9 (1920×1080). Every episode opens on the build map (`series/build/map.ts`, `BuildMap`) with its part lit.
+- Infrastructure appears on the map as its official monochrome logo (Simple Icons). Video description must include: "All product names and logos are trademarks of their respective owners."
 
 ---
 
@@ -71,7 +104,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **02 · Setup**
 - Problem: nothing runs yet.
-- Build: Gradle multi-module skeleton (`app` + `partner`, `commission`, `terminal`, `card`, `payment` modules, a schema each), a module-boundary test that fails if one module touches another's internals, `docker-compose.yml` with Postgres, Redis, Keycloak, Vault, Temporal (+ UI), health checks, a `make up` / `make down`.
+- Build: Gradle multi-module skeleton (`app` + `partner`, `commission`, `terminal`, `card`, `payment` modules, a schema each), a module-boundary test that fails if one module touches another's internals, `docker-compose.yml` with Postgres, Redis and Keycloak only (the rest arrives with its episode), structured JSON logs, Actuator health, the version catalog, a `make up` / `make down`.
 - Why: every later demo depends on one command bringing the world up.
 - Demo: `docker compose up` → all health checks green; an empty Spring app answers `/actuator/health`.
 
@@ -113,7 +146,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **07 · Logins and API clients (Keycloak)**
 - Problem: partners need a portal login and their servers need machine credentials.
-- Build: Keycloak realm; portal user on registration; M2M client per sales point with `partner_id` claim; secret shown once; rotation. Resource-server security on every endpoint.
+- Build: Vault joins docker-compose (app config secrets under `secret/app`, replacing `.env`); Keycloak realm; portal user on registration; M2M client per sales point with `partner_id` claim; secret shown once; rotation. Resource-server security on every endpoint.
 - Why: identity is separate from business data; never store passwords yourself.
 - Tables: `partner_client`, `keycloak_audit_log`.
 - Endpoints: `POST /portal/clients`, `POST /portal/clients/{id}/rotate`.
@@ -183,7 +216,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **15 · Create a payment: HMAC + idempotency**
 - Problem: anyone can fake a request, replay it, or a retry can create a second payment.
-- Build: `POST /payments` with JWT + HMAC-SHA256 (method, path, timestamp, nonce, body hash), configured timestamp window, Redis nonces, merchant secret from Vault; `Idempotency-Key` with stored response replay; sales-point guard that fails closed.
+- Build: `POST /payments` with JWT + HMAC-SHA256 (method, path, timestamp, nonce, body hash), configured timestamp window, Redis nonces, merchant secret from Vault (second path: `secret/merchants`); `Idempotency-Key` with stored response replay; sales-point guard that fails closed.
 - Why: the three request threats from the owner pitch, in code.
 - Tables: `payment`, `idempotency_key`. Redis: `ecom:hmac:nonce:*`.
 - Demo: valid request → 201; replayed → rejected; same key twice → same response, one payment.
@@ -205,7 +238,13 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Demo: fire two confirms at once → exactly one debit.
 - Real code: `DebitClaim`, `ProcessorPaymentExecutionAdapter`, `statemachine/PaymentStateMachine`.
 
-**18 · When the processing center goes silent**
+**18 · Observability: metrics, traces, logs**
+- Problem: one payment crosses five modules and a processing center; when it's slow or stuck, nobody can see where.
+- Build: Prometheus + Grafana (Micrometer metrics: payments by status, processing latency, timeouts), OpenTelemetry tracing into Tempo, logs into Loki; a starter dashboard.
+- Why: the next episode (silent processing) is invisible without it. The real repo has no metrics or tracing yet.
+- Demo: run 20 payments, one timeout; follow that payment's trace across modules; see the timeout spike on the dashboard.
+
+**19 · When the processing center goes silent**
 - Problem: a timeout leaves the money state unknown.
 - Build: Temporal resolution workflow (status polling with backoff), sweep workflow, manual review queue, outbox events.
 - Why: never blind-retry a debit; resolve the truth first.
@@ -213,30 +252,37 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Demo: simulator in "no answer" mode → workflow resolves → CAPTURED or reversed.
 - Real code: `PaymentResolutionWorkflowImpl`, `ResolutionSweepWorkflowImpl`, `AttemptLimitEscalator`.
 
-**19 · Payment links**
+**20 · Events: transactional outbox + Kafka**
+- Problem: other systems (merchant webhooks, notifications, antifraud) must learn about payment events, and a crash between "save" and "publish" must never lose or invent an event.
+- Build: transactional outbox (event row written in the same DB transaction), a relay that publishes to Kafka, a merchant webhook consumer with retries.
+- Why: the real repo writes `event_outbox` but nothing publishes it. Messaging, not event sourcing: Postgres stays the source of truth.
+- Tables: `event_outbox`. Topics: `payments.captured`, `payments.declined`.
+- Demo: kill the app between save and publish → the event still arrives exactly once after restart.
+
+**21 · Payment links**
 - Problem: merchants selling in chats have no website checkout.
 - Build: link creation, claim, expiry sweep.
 - Tables: `payment_link`.
 - Real code: `PaymentLinkServiceImpl`, `PaymentLinkExpirySweep`.
 
-**20 · Refunds and reversals**
+**22 · Refunds and reversals**
 - Problem: money must go back: same day (reversal) or later (refund within the configured window).
 - Build: reverse vs refund operations, partial refunds, PARTIALLY_REFUNDED → REFUNDED.
 - Demo: refund 30% → PARTIALLY_REFUNDED.
 
-**21 · Billing and reports**
+**23 · Billing and reports**
 - Problem: partners pay for API usage; merchants need a daily report.
 - Build: billing counters flushed by a Spring Batch job; daily report export.
 - Real code: `BillingFlushJob`.
 
-**22 · Hardening (exercises from real gaps)**
+**24 · Hardening (exercises from real gaps)**
 - Problem: production needs more than happy paths.
-- Build, as viewer exercises: tracing + metrics (absent in the real repo), outbox relay (events are written but never published), the HMAC nonce/timestamp window fix, KYB enforcement at activation, per-sales-point payment limits.
+- Build, as viewer exercises: the HMAC nonce/timestamp window fix, KYB enforcement at activation, per-sales-point payment limits.
 - Why: honest engineering; shows how a real system grows.
 
 ### Part 5: Growing up
 
-**23 · Extract a module into a service**
+**25 · Extract a module into a service**
 - Problem: the card vault needs stricter security and its own deploy (PCI DSS scope).
 - Build: move the `card` module into its own Spring Boot service; replace the in-process `CardApi` with a REST adapter behind the same port; give it its own database.
 - Why: shows *why* microservices exist: clean boundaries made the move cheap. Mirrors the real card-processor-service.
@@ -249,4 +295,3 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 1. **Companion repo:** a new public teaching repo (simplified) vs excerpts from the real one. Recommended: new repo; the real one stays private.
 2. **Length:** Part 0 short (3–6 min each); build episodes 8–15 min with code on screen.
 3. **Language:** English first; Uzbek copies on request (as with the owner pitch).
-4. **Which episodes become Tier 2 deep dives already made?** 06 ↔ T2-1, 10 ↔ T2-2, 15 ↔ T2-3, 14 ↔ T2-4, 17 ↔ T2-5, 18 ↔ T2-6/7, 20 ↔ T2-8. Their diagrams can open those episodes.

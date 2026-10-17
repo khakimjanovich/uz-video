@@ -1,68 +1,68 @@
 1
-00:00:00,050 --> 00:00:04,107
+00:00:00,050 --> 00:00:04,035
 What does it take to build a bank's e-commerce acquiring system from scratch?
 
 2
-00:00:04,107 --> 00:00:10,321
+00:00:04,035 --> 00:00:10,059
 In this series we build one, part by part, and this map is where we track every step.
 
 3
-00:00:10,321 --> 00:00:18,809
+00:00:10,059 --> 00:00:18,714
 On top are the three users: the merchant's server, the buyer, and the bank admin. Inside is one modular monolith with five modules.
 
 4
-00:00:18,809 --> 00:00:23,357
+00:00:18,714 --> 00:00:23,380
 Partner owns the merchants: who they are, and whether they may sell.
 
 5
-00:00:23,357 --> 00:00:26,309
+00:00:23,380 --> 00:00:26,369
 Commission decides the fee on every payment.
 
 6
-00:00:26,309 --> 00:00:32,357
+00:00:26,369 --> 00:00:32,642
 Terminal knows which bank terminal, the MID and TID, each payment goes through.
 
 7
-00:00:32,357 --> 00:00:36,750
+00:00:32,642 --> 00:00:37,035
 The card vault keeps card numbers encrypted, and hands out tokens instead.
 
 8
-00:00:36,750 --> 00:00:41,357
+00:00:37,035 --> 00:00:41,416
 Payment creates every payment, debits the card, and resolves the outcome.
 
 9
-00:00:41,357 --> 00:00:46,750
+00:00:41,416 --> 00:00:46,952
 At the edges, two ports talk to the outside world: email, and the processing center.
 
 10
-00:00:46,750 --> 00:00:52,988
-Below sits the shared infrastructure: Postgres, Redis, Keycloak, Vault, and Temporal.
+00:00:46,952 --> 00:00:56,750
+Below sits the shared infrastructure: Postgres, Redis, Keycloak, Vault, Temporal, Kafka, and monitoring with Prometheus and Grafana.
 
 11
-00:00:52,988 --> 00:00:56,571
-Part zero brings that infrastructure up with a single command.
+00:00:56,750 --> 00:01:04,321
+Part zero brings up Postgres, Redis, and Keycloak with a single command, and the rest arrives when a problem needs it.
 
 12
-00:00:56,571 --> 00:01:03,261
-Part one builds the merchants: sign-up, email codes, two-admin approval, and API credentials.
+00:01:04,321 --> 00:01:11,630
+Part one builds the merchants: sign-up, email codes, two-admin approval, and API credentials kept in Vault.
 
 13
-00:01:03,261 --> 00:01:08,440
+00:01:11,630 --> 00:01:16,726
 Part two adds the money rules: the commission, and the terminals we debit through.
 
 14
-00:01:08,440 --> 00:01:15,345
+00:01:16,726 --> 00:01:23,607
 Part three handles cards: a fake processing center, the adapters, and a vault that stores only tokens.
 
 15
-00:01:15,345 --> 00:01:21,333
-Part four builds the payment itself, and it comes last because it needs everything before it.
+00:01:23,607 --> 00:01:30,511
+Part four builds the payment last, with monitoring, retries, and Kafka events, because it needs everything else.
 
 16
-00:01:21,333 --> 00:01:26,345
+00:01:30,511 --> 00:01:35,428
 Part five moves the card vault into its own service, to show why clean boundaries matter.
 
 17
-00:01:26,345 --> 00:01:30,642
+00:01:35,428 --> 00:01:39,500
 Next, we set up the project and bring the whole world up with one command.
 

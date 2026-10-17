@@ -66,7 +66,17 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
                 strokeWidth={isBuilt ? 3 : 1.5}
                 strokeDasharray={isCurrent || isBuilt ? undefined : "4 4"}
               />
-              <text x={cx} y={n.sub ? cy - 7 : cy} textAnchor="middle" dominantBaseline="central" fontSize={14} fontWeight={700}
+              {n.logos?.map((d, k) => {
+                const size = 24;
+                const gap = 6;
+                const total = n.logos!.length * size + (n.logos!.length - 1) * gap;
+                const lx = cx - total / 2 + k * (size + gap);
+                return (
+                  <path key={k} d={d} transform={`translate(${lx} ${n.y + 9})`}
+                    fill={isCurrent ? "var(--paper)" : isBuilt ? "var(--ink)" : "var(--ink-muted)"} />
+                );
+              })}
+              <text x={cx} y={n.logos ? n.y + n.h - 13 : n.sub ? cy - 7 : cy} textAnchor="middle" dominantBaseline="central" fontSize={n.logos ? 12 : 14} fontWeight={700}
                 fill={isCurrent ? "var(--paper)" : isBuilt ? "var(--ink)" : "var(--ink-muted)"} style={{ textTransform: "uppercase" }}>
                 {n.label}
               </text>
