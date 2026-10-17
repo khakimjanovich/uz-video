@@ -98,7 +98,6 @@ const PitchOwnersUz: React.FC<ReelProps> = ({ theme }) => (
     reelId="pitch-owners-uz"
     subtitles={subtitles}
     acts={acts}
-    series=""
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Bankingiz", value: "O'z ekvayringi" }}
   >

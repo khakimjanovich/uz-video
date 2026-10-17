@@ -1,1 +1,0 @@
-The money is captured, so how does the store find out? The bank's page sends the buyer back to the store's website. Then the store's server asks the bank for the payment status. The bank answers with the final state: captured, with the amount and reference number. Only then does the store mark the order as paid.

@@ -120,22 +120,13 @@ cd studio && npm run dev
 
 ## 4. Series Format (Software Architecture & Solution Engineering)
 
-**Series links.** Pass `position={{ part: n }}` (Tier 1) or `position={{ deepDive: n }}` (Tier 2) to `ReelScaffold`: it draws the route strip and the header line from `series/acquiring/map.ts`. Pass `deepDives={{ cue: [n] }}` for the sentences that tease a deep dive; the tags ride on top of the caption. To show a deep dive's icon in a diagram, place its node (`dd1`…`dd8`) in the step layout.
-
 **Visual identity: Receipt.** Every video is a thermal payment slip on a dark counter: Archivo Black headlines (one per step), IBM Plex Mono for everything else, ink boxes, rubber-stamp badges (red = problem, green = OK), captions on black tape, a dotted "totals" footer line. Tokens live in `studio/src/index.css`; no emoji in diagram labels.
 
-Episode plans live in [`SERIES.md`](SERIES.md). Order of work: **plan → script → voice → stills check**. English only. MP4s are rendered only on request; review happens in Studio or on stills.
+Products and rules live in [`SERIES.md`](SERIES.md); the programmer series plan in [`SERIES-BUILD.md`](SERIES-BUILD.md). Order of work: **plan → script → voice → stills check**. English first; Uzbek copies only on request. MP4s are rendered only on request; review happens in Studio or on stills.
 
-Every episode is **one architecture diagram that evolves with the voiceover**, following Alex Xu's progressive design method. Both tiers are 1080×1920 (9:16).
-
-| Tier | Length | Content |
-|------|--------|---------|
-| 1 — Buy-In Reel | 20–35s, ~5–7 cues | High-level progressive system flow |
-| 2 — Deep-Dive | 2–4 min | Zoom into one node: payloads, DB rows, state machines (extra `scenes/`) |
+Every video is **one architecture diagram that evolves with the voiceover**, 1080×1920 (9:16). `captions={false}` on `ReelScaffold` turns the caption tape off.
 
 ### A. The four acts
-**Tier 1 episodes (the high road) use only `{ hook }`: no naive version, no break/fix, and no closing question — the video ends on the last flow step.** The full act structure below is for Tier 2 deep dives (see `SERIES.md`).
-
 Pass `acts` to `ReelScaffold`. Each value is the **subtitle cue index** where that act starts:
 
 ```tsx
@@ -154,7 +145,7 @@ The current act is available to any component via `useSubtitlesContext().act`.
 `reels/<reel-id>/index.tsx` is data only:
 
 ```tsx
-<ReelScaffold reelId="ep01-gateway" subtitles={subtitles} acts={{...}} badgeText="Ep 1 · Acquiring" title="..." lawCitation="...">
+<ReelScaffold reelId="pitch-owners" subtitles={subtitles} acts={acts} title={(cue) => TITLES[cue]} footer={{ label: "Your bank", value: "Own acquiring" }}>
   <ArchDiagram catalog={ACQUIRING_NODES} steps={steps} />
 </ReelScaffold>
 ```
@@ -166,15 +157,15 @@ The current act is available to any component via `useSubtitlesContext().act`.
 | `cue` | Subtitle cue index where the step starts |
 | `layout` | `{ nodeId: [col, row] }` on a 3×5 grid (fractions allowed). Kept nodes slide, new nodes pop in, missing nodes fade out |
 | `edges` | `{ from, to, label?, broken? }` — new edges draw on; `broken` = red dashed + ✕ label |
-| `packets` | `{ from, to, label, delay?, duration?, stopAt? }` — chip travelling an edge; `stopAt < 1` freezes it red (timeout) |
+| `packets` | `{ from, to, label, delay?, duration?, stopAt? }` — chip travelling an edge; `stopAt < 1` stops it red and bounces it back (blocked / timeout) |
 | `accent` / `danger` / `crossed` | Node ids to highlight as new / broken / hand-drawn cross-out |
 | `badges` | `{ nodeId: "T+1" }` corner status chip |
+| `shake` | `{ nodeId: 0.4 }` shake a node at that fraction of the cue (sync to the word that names it); new `danger` nodes shake automatically |
 
 Each step lists the **full** diagram state (not a diff). Copy the previous step and edit it. See `reels/_playground/index.tsx` for a complete v1 → break → v2 → handoff example (`npm run dev` → **Playground**).
 
 ### C. Rules
-- **Node catalogue:** new actors/services go into `series/acquiring/nodes.ts`, never inline in an episode, so labels and icons stay identical across all 7 episodes.
-- **Continuity:** Ep N's first step should equal Ep N-1's last step.
+- **Node catalogue:** new actors/services go into `series/acquiring/nodes.ts`, never inline in an episode, so labels and icons stay identical across every video.
 - **Diagram safe zone:** `ArchDiagram` positions inside y≈400–1560px, between `ReelHeader` and `SubtitleCard`. Don't place scenes over it.
 - **New primitives:** build from `ArchNode`/`ArchEdge` first; extract a new component only when two episodes need it.
 

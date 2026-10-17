@@ -1,116 +1,33 @@
-# heeyPay Acquiring Series — Episode Plans
+# heeyPay Acquiring — Video Products
 
-Workflow: **plan (this file) → script (`reels/<id>/script.txt`) → steps + voice → stills check**.
-Episodes are English only (TTS voice); MP4s are rendered only on request. Videos open with the episode's question and end on the last step of the flow — no closing question.
+Workflow: **plan → script (`reels/<id>/script.txt`) → steps + voice → stills check → render on request**.
+English first (TTS voice); an Uzbek copy only when asked. Videos never end on a question.
 
-**Owner pitch:** `pitch-owners` (+ `pitch-owners-uz`) — final. **Series B for programmers (build it yourself):** see [`SERIES-BUILD.md`](SERIES-BUILD.md).
+## Products
 
-**Tier 1 — the high road:** walk the whole flow first, one stage per episode: *what happens and who does it*. No naive version, no break/fix.
-**Tier 2 — deep dives:** only after Tier 1 is complete. Naive → break → fix, one mechanism per episode.
+| Product | Audience | Goal | Status |
+|---|---|---|---|
+| **Owner pitch**: `pitch-owners`, `pitch-owners-uz` | bank owners | buy or invest | final |
+| **Series B, build it yourself**: plan in [`SERIES-BUILD.md`](SERIES-BUILD.md) | backend programmers | build a working acquiring system | planning |
 
-Terms: use widely known industry names (replay attack, HMAC, nonce, idempotency key, maker-checker…), never invented ones; each Tier 2 names the technology, its Tier 3 child explains how it works.
+Retired on 2026-10-18: Tier 1 (`ep01`–`ep07`) and Tier 2 (`t2-00`–`t2-08`). They mixed both audiences; the owner pitch and Series B replace them. Restore from commit `67f4751` if ever needed.
 
-Sources: the story comes from the **BRD** (what the system should do); precision comes from the **code** (real names, steps, order). Videos never mention build status ("planned", "not live") — not in voice, not on screen. Values that are settings in the code (timeouts, expiry, roles, limits) are described as "the configured time / role / limit", never as their default number.
+## Rules for every video
 
-## How the parts are linked
-- **Series map** lives in `studio/src/series/acquiring/map.ts` (Tier 1 stops, Tier 2 deep dives with their parent). Route strip, header line and deep-dive tags all read from it.
-- **Episode 1 is the parent:** it ends by walking the route of Parts 2–7.
-- **Route strip (view hint):** every video shows the 7 stops; Tier 1 fills its own stop, a deep dive fills its parent and hangs `↳ DD nn · title`.
-- **Voice hint:** a Tier 1 sentence teases the deep dive by its tech term and promises the payoff ("…the four-eyes principle, which its own deep dive explores in depth, revealing why one admin alone is never enough"). Vary the verb in every teaser (unpack, explore in depth, dissect, lay bare, trace, shed light on); never "later". No closing line.
-- **Visual hint:** the same sentence carries a tag on top of the caption: `→ DEEP DIVE 01 · FOUR-EYES` (`deepDives={{ 5: [1] }}` on `ReelScaffold`).
-- **Deep-dive icon:** each deep dive has its own ink drawing (`dd1`…`dd8` in `nodes.ts`, `icon` in `map.ts`). Tier 1 teaches it: at the teaser it pops into the diagram, named once. It then rides on the tag, the entrance reel and the strip label.
-- **Entrance:** `t2-00-deep-dives` plays once before Tier 2 ("Now, let's talk about the deep dives…") and lines up all 8 icons.
-- **Deep-dive hook:** opens with the same key term Tier 1 used ("The four-eyes principle: who…?") while its icon stands in the diagram. No per-video "deep dive N" announcement; the strip and header (`DEEP DIVE 03 · FROM PART 03`) show the link. Tier 3 is never announced.
+- **Audience first:** pick one audience and one action before writing a line.
+- **Picture first:** the picture carries the idea, the voice explains why, on-screen text stays short. Show the process, not the label.
+- **Order by the viewer's questions:** each block arrives because a problem needs it.
+- **Emotion:** a person + stakes + change. Keep the hero on screen; every protection protects someone the viewer cares about.
+- **Worry → relief:** show the threat coming (never the disaster landing), then the fix.
+- **Signposting:** name a list once, then number each item as it arrives, with the same name and look.
+- **Terms:** widely known industry names (replay attack, HMAC, nonce, idempotency key, maker-checker), never invented ones.
+- **Sources:** the story comes from the BRD; precision comes from the code. Never mention build status ("planned", "not live"). Settings in the code are "the configured time / role / limit", never their default number.
 
-## Template
+## Owner pitch (final)
 
-```
-### <N>. <Title>  — id: epNN-<slug>  · status: plan | script | video
-Source:   Code | BRD (+ section / FR ids)
-Hook:     <question the viewer has>
-Flow:     <Tier 1: what happens, step by step>
-Naive v1 / Break / Fix:  <Tier 2 only>
-```
-
----
-
-## Tier 1 — MVP 1 high road
-
-### 1. Why an acquirer — id: ep01-gateway · status: video
-Source:   Law ZRU-578; BRD §2
-Hook:     What does an online store in Uzbekistan need to accept card payments?
-Flow:     Only CBU-licensed banks / payment orgs connect to processing centers → an acquirer sits between store and processing → card on the bank's page → one contract, payout to the store's own account.
-
-### 2. Onboarding — id: ep02-onboarding · status: video
-Source:   Code (partner onboarding service)
-Hook:     Before a store takes its first payment, what does the bank check?
-Flow:     Register + email code + company documents → review, contract, settlement account → sales point with API key + site check → bank switches the store on.
-
-### 3. Creating a payment — id: ep03-s2s · status: video
-Source:   Code (acquiring service)
-Hook:     How does the store's server create a payment?
-Flow:     Signed request (amount + order) → bank checks the signature, creates the payment → one-time payment link → store sends it to the buyer.
-
-### 4. Card → debit — id: ep04-debit · status: video
-Source:   Code
-Hook:     What happens to the buyer's card?
-Flow:     Card on the bank's page → token → SMS code → bank debits through the processing center → approved → captured.
-
-### 5. Payment status — id: ep05-status · status: video
-Source:   Code (GET payment is the authoritative state); BRD FR-95/96 for webhooks
-Hook:     The money is captured — how does the store find out?
-
-### 6. Payment links — id: ep06-links · status: video
-Source:   Code
-Hook:     No website at all — can a store still get paid?
-Flow:     Single-use link with expiry → buyer claims it → normal payment session.
-
-### 7. T+1 settlement — id: ep07-settlement · status: video
-Source:   BRD FR-114..116, §10
-Hook:     "Paid" in one second — so when does the money reach the store?
-Flow:     Clearing → terminal account → fee withheld → store account, T+1.
-
-## Tier 2 — MVP 1 deep dives (after Tier 1)
-
-Each zooms into its parent Tier 1 part and uses naive → break → fix. Tier 1 names them in voice and with a tag at the step they extend. Ordered by dependency, then by flow.
-
-### T2-1. Four-eyes (maker-checker) — parent: Part 2 · id: t2-01-four-eyes · status: video
-Source:   BRD FR-93; code (PRS dual control; commission-reference-service change requests)
-Hook:     Who is allowed to switch a store on, or change its fee?
-Naive v1: One admin changes it and it takes effect at once.
-Break:    One mistake or one bad actor goes live instantly.
-Fix (v2): The change becomes a pending request; a second admin approves or rejects it; nobody approves their own request; unanswered requests expire after the configured time.
-
-### T2-2. Commission: agreement and usage — parent: Parts 2 + 7 · id: t2-02-commission · status: video
-Source:   BRD FR-88, FR-93, FR-73, FR-115; code (commission-reference-service rules; ecom resolves at card submit)
-Hook:     How much does the bank earn from each payment, and who decides it?
-Naive v1: One fixed fee for every store.
-Break:    Stores need their own rates per store, sales point and card network.
-Fix (v2): Rules with percent + fixed, min/max, validity window and priority, set per store / sales point / card network, approved with four-eyes. At card submit the most specific rule wins, the fee is saved with the payment, then withheld at settlement.
-
-### Later deep dives
-- **T2-3 Safe requests** (parent Part 3, id: t2-03-safe-requests, status: video): replay attack, retry creates a second payment → HMAC-SHA256 signature over body + timestamp + nonce, idempotency key.
-- **T2-4 Card safety** (parent Part 4, id: t2-04-card-safety, status: video): store holds card data (PCI DSS) → hosted payment page, token vault + masked PAN, PAN revealed only for the debit, OTP with configured limits.
-- **T2-5 Inside the debit** (parent Part 4, id: t2-05-debit, status: video): double charge → atomic state update (one winner), operation journal, terminal MID/TID, authorization + capture, captured with RRN.
-- **T2-6 Unknown outcome** (parent Part 4, id: t2-06-unknown, status: video): no answer, retry charges twice → timeout = unknown outcome (payment stays authorizing), durable workflow (Temporal) polls status on a configured retry schedule → captured / declined, configured time limit → manual review queue, scheduled sweep.
-- **T2-7 Declines & released holds** (parent Part 4, id: t2-07-declines, status: video): error-and-end loses fixable payments → decline code, another card while the session is open and attempts remain, else declined; capture declined → void the authorization hold, status check confirms release, workflow if still held.
-- **T2-8 Reversal vs refund** (separate flow, BRD §7.1.4, id: t2-08-refund, status: video): one button can't serve both → before clearing reversal (full, never charged); after clearing refund (new operation, full/partial, ≤ captured, original card only, configured refund window extendable per sales point), via portal or API.
-
-## Tier 3 — technology deep dives (children of Tier 2)
-
-How a standard technology works inside, once its Tier 2 parent has named it. Videos never announce these.
-
-- **T3 HMAC-SHA256** (parent T2-3): hash function, secret key, why a changed byte breaks the signature.
-- **T3 Nonce & replay windows** (parent T2-3): clock skew, where nonces are stored and for how long.
-- **T3 Idempotency key pattern** (parent T2-3): request fingerprint, stored result, conflict on a different body.
-
-Dropped: merchant pre-check (stock/price validation is the store's side, not acquiring).
+Aziza, a toy-figure shop owner, is the hero. Feeling journey: regret → hope → worry/relief → good greed.
+Opening (Aziza, money skips the bank) → commission + deposits → alert ("four threats") → 1 fake shop, 2 forged payment, 3 double charge, 4 card theft (each worry → relief) → money flow → summary.
 
 ## Later MVPs (BRD only)
 
-### 8. Saved cards & recurring — MVP 2
-### 9. Invoicing by phone number — MVP 3
-### 10. Mobile SDK — MVP 4
-### 11. Split payments — MVP 5
-### 12. Hold & Capture + OFD receipt — MVP 6
-### 13. UzQR & MUNIS — separate topic
+Saved cards & recurring (MVP 2) · Invoicing by phone number (MVP 3) · Mobile SDK (MVP 4) · Split payments (MVP 5) · Hold & capture + OFD receipt (MVP 6) · UzQR & MUNIS (separate topic).

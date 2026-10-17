@@ -36,7 +36,6 @@ const PitchOwners: React.FC<ReelProps> = ({ theme }) => (
     reelId="pitch-owners"
     subtitles={subtitles}
     acts={acts}
-    series=""
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Your bank", value: "Own acquiring" }}
   >
