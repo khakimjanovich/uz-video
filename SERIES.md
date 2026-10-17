@@ -3,6 +3,8 @@
 Workflow: **plan (this file) → script (`reels/<id>/script.txt`) → steps + voice → stills check**.
 Episodes are English only (TTS voice); MP4s are rendered only on request. Videos open with the episode's question and end on the last step of the flow — no closing question.
 
+**Owner pitch:** `pitch-owners` (+ `pitch-owners-uz`) — final. **Series B for programmers (build it yourself):** see [`SERIES-BUILD.md`](SERIES-BUILD.md).
+
 **Tier 1 — the high road:** walk the whole flow first, one stage per episode: *what happens and who does it*. No naive version, no break/fix.
 **Tier 2 — deep dives:** only after Tier 1 is complete. Naive → break → fix, one mechanism per episode.
 
