@@ -20,6 +20,12 @@ const TITLES = [
   "Bounced off",
   "Double charge?",
   "Charged once",
+  "Card thieves?",
+  "Nothing there",
+  "Every day",
+  "Next day",
+  "A year later",
+  "Word of mouth",
 ];
 
 const PitchOwners: React.FC<ReelProps> = ({ theme }) => (
