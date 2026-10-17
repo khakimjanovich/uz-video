@@ -179,6 +179,41 @@ const ART = {
       <rect x="52" y="28" width="54" height="24" rx="12" />
     </>
   ),
+  // Pitch persona: Aziza, a toy-figure businesswoman (blazer, hair bun, C-shaped hands).
+  aziza: (
+    <>
+      <rect x="48" y="7" width="24" height="19" rx="5" />
+      <path d="M45 26 V14 Q45 5 60 5 Q75 5 75 14 V26" />
+      <path d="M48 12 Q56 12 62 7" />
+      <circle cx="60" cy="3" r="3" />
+      <circle cx="55" cy="16" r="1.3" />
+      <circle cx="65" cy="16" r="1.3" />
+      <path d="M56 21 Q60 24 64 21" />
+      <path d="M56 26 V29 M64 26 V29" />
+      <path d="M44 29 H76 L80 55 H40 Z" />
+      <path d="M60 29 L54 42 M60 29 L66 42 M60 42 V55" />
+      <path d="M44 31 L35 48 M76 31 L85 48" />
+      <path d="M31 48 A4 4 0 1 0 39 48 M81 48 A4 4 0 1 0 89 48" />
+      <path d="M41 55 H79 V61 H41 Z" />
+      <path d="M43 61 V76 H58 V61 M62 61 V76 H77 V61" />
+    </>
+  ),
+  // Aziza's online shoe store: a browser window with a sneaker and a cart.
+  shoeshop: (
+    <>
+      <rect x="8" y="8" width="104" height="64" rx="4" />
+      <path d="M8 18 H112" />
+      <circle cx="15" cy="13" r="1.5" />
+      <circle cx="21" cy="13" r="1.5" />
+      <circle cx="27" cy="13" r="1.5" />
+      <path d="M20 56 V44 Q28 42 34 48 L50 52 Q60 54 60 60 H20 Z" />
+      <path d="M20 56 H60 M30 46 L33 43 M35 49 L38 46" />
+      <path d="M72 34 H78 L83 52 H100 L105 40 H80" />
+      <circle cx="86" cy="58" r="2.5" />
+      <circle cx="98" cy="58" r="2.5" />
+      <path d="M74 66 H106" />
+    </>
+  ),
   // Deep-dive icons: one per Tier 2 topic, taught in Tier 1, reused as the clue on tickets and hooks.
   // Four-eyes: two faces, two pairs of eyes.
   foureyes: (

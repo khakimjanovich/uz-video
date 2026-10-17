@@ -33,7 +33,10 @@ export const ACQUIRING_NODES = {
   stage6: { label: "Payment links", sublabel: "Part 6", art: "link" },
   stage7: { label: "Settlement", sublabel: "Part 7", art: "wallet" },
   // Owner pitch
-  fakesite: { label: "Fake website", sublabel: "Illegal goods", art: "salespoint" },
+  aziza: { label: "Aziza", sublabel: "Your bank's client", art: "aziza" },
+  shoeshop: { label: "Aziza's shop", sublabel: "Online shoes", art: "shoeshop" },
+  shellco: { label: "Shell company", sublabel: "Fake director", art: "attacker" },
+  fakesite: { label: "iPhone deals", sublabel: "Too good to be true", art: "salespoint" },
   statuscheck: { label: "Store check", sublabel: "Is it active?", art: "processing" },
   // Deep-dive icons: first met in Tier 1 at the teaser, then the clue that opens each deep dive.
   dd1: { label: "Four-eyes", sublabel: "Deep dive 01", art: "foureyes" },

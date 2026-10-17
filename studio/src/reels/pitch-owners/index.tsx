@@ -10,14 +10,21 @@ const subtitles = subtitlesJson as SubtitleCue[];
 
 // One headline per sentence/step.
 const TITLES = [
-  "Skipped",
+  "Meet Aziza",
+  "Missed money",
   "Commission",
   "Deposits",
+  "Fake company?",
   "Two checks",
+  "Too good?",
   "Real sites only",
+  "Gone rogue?",
   "Stop button",
+  "Forged amount",
   "Signed, once",
+  "Double charge?",
   "Charged once",
+  "Lights out",
   "When in doubt",
 ];
 
@@ -28,7 +35,6 @@ const PitchOwners: React.FC<ReelProps> = ({ theme }) => (
     subtitles={subtitles}
     acts={acts}
     series="HEEYPAY ACQ · FOR BANK OWNERS"
-    captions={false}
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Your bank", value: "Own acquiring" }}
   >

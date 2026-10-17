@@ -56,6 +56,7 @@ const toPx = ([col, row]: Slot): Pt => ({
 const trim = (a: Pt, b: Pt): [Pt, Pt] => {
   const dx = b.x - a.x;
   const dy = b.y - a.y;
+  if (!dx && !dy) return [a, { x: a.x, y: a.y + 1 }]; // nodes overlap mid-slide: keep a valid 1px path
   const t = Math.min(
     dx ? (NODE_W / 2 + 10) / Math.abs(dx) : Infinity,
     dy ? (NODE_H / 2 + 10) / Math.abs(dy) : Infinity,
