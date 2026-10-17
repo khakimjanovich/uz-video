@@ -213,6 +213,8 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
       {ids.map((id) => {
         const isNew = !prev?.layout[id];
         const variant = has(step.danger, id) ? "danger" : has(step.accent, id) ? "accent" : "default";
+        // A threat that just turned red shakes for a moment so the eye lands on it.
+        const shake = has(step.danger, id) && !has(prev?.danger, id) ? Math.sin(t * 1.4) * interpolate(t, [4, 26], [12, 0], CLAMP) : 0;
         const node = (
           <ArchNode def={catalog[id]} variant={variant} badge={step.badges?.[id]} showLabel={introduced(id)} />
         );
@@ -223,7 +225,7 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
             style={{
               left: pos[id].x,
               top: pos[id].y,
-              translate: "-50% -50%",
+              translate: `calc(-50% + ${shake}px) -50%`,
               scale: isNew ? interpolate(p, [0, 1], [0.6, 1]) : 1,
               opacity: isNew ? p : 1,
             }}
@@ -253,7 +255,12 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
           <Packet
             key={k}
             path={edgePath(pos[pk.from], pos[pk.to])}
-            progress={interpolate(t, [delay, end], [0, stopAt], CLAMP)}
+            // A blocked packet hits the gate and bounces back a little before it settles.
+            progress={
+              stopAt < 1
+                ? interpolate(t, [delay, end, end + 6, end + 14], [0, stopAt, stopAt - 0.12, stopAt - 0.08], CLAMP)
+                : interpolate(t, [delay, end], [0, stopAt], CLAMP)
+            }
             label={pk.label}
             danger={(stopAt < 1 && t >= end) || edges.some((e) => e.broken && e.from === pk.from && e.to === pk.to)}
             opacity={interpolate(t, [delay, delay + 5, end, end + 8], [0, 1, 1, stopAt < 1 ? 1 : 0], CLAMP)}

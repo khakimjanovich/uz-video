@@ -71,7 +71,7 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   // Alert: the four threats every bank fears close in from all sides.
   {
     cue: 5,
-    layout: { fakesite: [0, 0.2], attacker: [2, 0.2], bank: [1, 1.95], payment: [0, 3.7], buyer: [2, 3.7] },
+    layout: { attacker: [0, 0.2], fakesite: [2, 0.2], bank: [1, 1.95], payment: [0, 3.7], buyer: [2, 3.7] },
     edges: [
       { from: "fakesite", to: "bank" },
       { from: "attacker", to: "bank" },
@@ -100,15 +100,22 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
   {
     cue: 7,
     layout: { admin: [0, 0.2], checker: [2, 0.2], shoeshop: [0, 2], fakesite: [2, 2], bank: [1, 3.8] },
+    // Maker-checker: both admins check both shops before either can take payments.
     edges: [
       { from: "admin", to: "shoeshop" },
+      { from: "admin", to: "fakesite" },
+      { from: "checker", to: "shoeshop" },
       { from: "checker", to: "fakesite" },
       { from: "shoeshop", to: "bank" },
       { from: "fakesite", to: "bank", broken: true },
     ],
     packets: [
-      { from: "shoeshop", to: "bank", label: "100 000", delay: 30 },
-      { from: "fakesite", to: "bank", label: "50 000", delay: 30, stopAt: 0.5 },
+      { from: "admin", to: "shoeshop", label: "check 1", delay: 8, duration: 22 },
+      { from: "admin", to: "fakesite", label: "check 1", delay: 8, duration: 22 },
+      { from: "checker", to: "shoeshop", label: "check 2", delay: 34, duration: 22 },
+      { from: "checker", to: "fakesite", label: "check 2", delay: 34, duration: 22 },
+      { from: "shoeshop", to: "bank", label: "100 000", delay: 62 },
+      { from: "fakesite", to: "bank", label: "50 000", delay: 62, stopAt: 0.5 },
     ],
     danger: ["fakesite"],
     badges: { shoeshop: "checked", fakesite: "rejected" },

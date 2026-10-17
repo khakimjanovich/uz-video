@@ -61,6 +61,8 @@ const UZ: Record<string, string> = {
   "double charge": "ikki marta",
   "stolen card": "karta o'g'irligi",
   checked: "tekshirildi",
+  "check 1": "1-tekshiruv",
+  "check 2": "2-tekshiruv",
   rejected: "rad etildi",
   signed: "imzolangan",
   "charged once": "bir marta",
