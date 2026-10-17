@@ -35,9 +35,7 @@ export const ACQUIRING_NODES = {
   // Owner pitch
   aziza: { label: "Aziza", sublabel: "Your bank's client", art: "aziza" },
   shoeshop: { label: "Aziza's shop", sublabel: "Online shoes", art: "shoeshop" },
-  shellco: { label: "Shell company", sublabel: "Fake director", art: "attacker" },
   fakesite: { label: "iPhone deals", sublabel: "Too good to be true", art: "salespoint" },
-  statuscheck: { label: "Store check", sublabel: "Is it active?", art: "processing" },
   // Deep-dive icons: first met in Tier 1 at the teaser, then the clue that opens each deep dive.
   dd1: { label: "Four-eyes", sublabel: "Deep dive 01", art: "foureyes" },
   dd2: { label: "Commission", sublabel: "Deep dive 02", art: "commission" },

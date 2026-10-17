@@ -14,18 +14,12 @@ const TITLES = [
   "Missed money",
   "Commission",
   "Deposits",
-  "Fake company?",
-  "Two checks",
   "Too good?",
-  "Real sites only",
-  "Gone rogue?",
-  "Stop button",
+  "Real shops",
   "Forged amount",
-  "Signed, once",
+  "Bounced off",
   "Double charge?",
   "Charged once",
-  "Lights out",
-  "When in doubt",
 ];
 
 const PitchOwners: React.FC<ReelProps> = ({ theme }) => (
