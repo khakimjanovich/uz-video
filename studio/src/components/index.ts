@@ -7,3 +7,4 @@ export * from "./StatusBadge";
 export * from "./ReelScaffold";
 export * from "./MotionBox";
 export * from "./diagram";
+export * from "./BuildMap";

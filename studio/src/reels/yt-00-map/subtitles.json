@@ -1,0 +1,110 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 123,
+    "text": "What does it take to build a bank's e-commerce acquiring system from scratch?",
+    "prefix": "What does it take to build a bank's e-commerce acquiring system from scratch?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 122,
+    "endFrame": 298,
+    "text": "In this series we build one, part by part, and this map is where we track every step.",
+    "prefix": "In this series we build one, part by part, and this map is where we track every step.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 297,
+    "endFrame": 557,
+    "text": "On top are the three users: the merchant's server, the buyer, and the bank admin. Inside is one modular monolith with five modules.",
+    "prefix": "On top are the three users: the merchant's server, the buyer, and the bank admin. Inside is one modular monolith with five modules.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 556,
+    "endFrame": 717,
+    "text": "At the edges, two ports talk to the outside world: email, and the processing center.",
+    "prefix": "At the edges, two ports talk to the outside world: email, and the processing center.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 716,
+    "endFrame": 904,
+    "text": "Below sits the shared infrastructure: Postgres, Redis, Keycloak, Vault, and Temporal.",
+    "prefix": "Below sits the shared infrastructure: Postgres, Redis, Keycloak, Vault, and Temporal.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 903,
+    "endFrame": 1013,
+    "text": "Part zero brings that infrastructure up with a single command.",
+    "prefix": "Part zero brings that infrastructure up with a single command.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1012,
+    "endFrame": 1220,
+    "text": "Part one builds the merchants: sign-up, email codes, two-admin approval, and API credentials.",
+    "prefix": "Part one builds the merchants: sign-up, email codes, two-admin approval, and API credentials.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1219,
+    "endFrame": 1375,
+    "text": "Part two adds the money rules: the commission, and the terminals we debit through.",
+    "prefix": "Part two adds the money rules: the commission, and the terminals we debit through.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1374,
+    "endFrame": 1590,
+    "text": "Part three handles cards: a fake processing center, the adapters, and a vault that stores only tokens.",
+    "prefix": "Part three handles cards: a fake processing center, the adapters, and a vault that stores only tokens.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1589,
+    "endFrame": 1766,
+    "text": "Part four builds the payment itself, and it comes last because it needs everything before it.",
+    "prefix": "Part four builds the payment itself, and it comes last because it needs everything before it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1765,
+    "endFrame": 1919,
+    "text": "Part five moves the card vault into its own service, to show why clean boundaries matter.",
+    "prefix": "Part five moves the card vault into its own service, to show why clean boundaries matter.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1918,
+    "endFrame": 2081,
+    "text": "Next, we set up the project and bring the whole world up with one command.",
+    "prefix": "Next, we set up the project and bring the whole world up with one command.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

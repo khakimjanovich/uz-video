@@ -1,0 +1,48 @@
+1
+00:00:00,050 --> 00:00:04,083
+What does it take to build a bank's e-commerce acquiring system from scratch?
+
+2
+00:00:04,083 --> 00:00:09,928
+In this series we build one, part by part, and this map is where we track every step.
+
+3
+00:00:09,928 --> 00:00:18,547
+On top are the three users: the merchant's server, the buyer, and the bank admin. Inside is one modular monolith with five modules.
+
+4
+00:00:18,547 --> 00:00:23,880
+At the edges, two ports talk to the outside world: email, and the processing center.
+
+5
+00:00:23,880 --> 00:00:30,119
+Below sits the shared infrastructure: Postgres, Redis, Keycloak, Vault, and Temporal.
+
+6
+00:00:30,119 --> 00:00:33,750
+Part zero brings that infrastructure up with a single command.
+
+7
+00:00:33,750 --> 00:00:40,642
+Part one builds the merchants: sign-up, email codes, two-admin approval, and API credentials.
+
+8
+00:00:40,642 --> 00:00:45,833
+Part two adds the money rules: the commission, and the terminals we debit through.
+
+9
+00:00:45,833 --> 00:00:52,976
+Part three handles cards: a fake processing center, the adapters, and a vault that stores only tokens.
+
+10
+00:00:52,976 --> 00:00:58,857
+Part four builds the payment itself, and it comes last because it needs everything before it.
+
+11
+00:00:58,857 --> 00:01:03,940
+Part five moves the card vault into its own service, to show why clean boundaries matter.
+
+12
+00:01:03,940 --> 00:01:08,345
+Next, we set up the project and bring the whole world up with one command.
+
