@@ -1,0 +1,101 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 147,
+    "text": "How does the bank know a payment request really came from the shop, and only once?",
+    "prefix": "How does the bank know a payment request really came from the shop, and only once?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 146,
+    "endFrame": 301,
+    "text": "The shop's server asks for a payment with an amount, an order number, and a return address.",
+    "prefix": "The shop's server asks for a payment with an amount, an order number, and a return address.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 300,
+    "endFrame": 497,
+    "text": "A stolen token alone should not be enough to create payments, so every request is also signed.",
+    "prefix": "A stolen token alone should not be enough to create payments, so every request is also signed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 496,
+    "endFrame": 760,
+    "text": "The server signs the method, path, timestamp, nonce, and body with HMAC-SHA256 and the shop's secret.",
+    "prefix": "The server signs the method, path, timestamp, nonce, and body with HMAC-SHA256 and the shop's secret.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 759,
+    "endFrame": 919,
+    "text": "That secret lives in Vault under the merchants' path, so the app can read it but nobody types it.",
+    "prefix": "That secret lives in Vault under the merchants' path, so the app can read it but nobody types it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 918,
+    "endFrame": 1100,
+    "text": "A timestamp outside the configured window is rejected, and a nonce can be used only once.",
+    "prefix": "A timestamp outside the configured window is rejected, and a nonce can be used only once.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1099,
+    "endFrame": 1293,
+    "text": "A network retry must never create a second payment, so each request carries an idempotency key.",
+    "prefix": "A network retry must never create a second payment, so each request carries an idempotency key.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1292,
+    "endFrame": 1489,
+    "text": "The same key with the same body returns the stored response, and the same key with a different body is refused.",
+    "prefix": "The same key with the same body returns the stored response, and the same key with a different body is refused.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1488,
+    "endFrame": 1699,
+    "text": "Before saving anything, the payment module checks that the sales point is active, and refuses if it cannot tell.",
+    "prefix": "Before saving anything, the payment module checks that the sales point is active, and refuses if it cannot tell.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1698,
+    "endFrame": 1823,
+    "text": "The response carries a one-time link to the bank's own payment page.",
+    "prefix": "The response carries a one-time link to the bank's own payment page.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1822,
+    "endFrame": 1959,
+    "text": "Next, the buyer opens that page and enters their card.",
+    "prefix": "Next, the buyer opens that page and enters their card.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

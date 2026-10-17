@@ -1,0 +1,36 @@
+1
+00:00:00,050 --> 00:00:04,226
+Where does the buyer type their card number: on the shop's site, or on ours?
+
+2
+00:00:04,226 --> 00:00:11,154
+If shops collected cards, every shop would need PCI DSS, and every shop breach would leak cards.
+
+3
+00:00:11,154 --> 00:00:15,464
+So the buyer opens the bank's own payment page through a one-time session link.
+
+4
+00:00:15,464 --> 00:00:20,690
+The session token is stored only as a hash, and expires after the configured time.
+
+5
+00:00:20,690 --> 00:00:24,654
+The buyer types the card, and the vault swaps it for a token at once.
+
+6
+00:00:24,654 --> 00:00:29,750
+A one-time code goes to the card owner's phone, through the scheme or by SMS.
+
+7
+00:00:29,750 --> 00:00:34,154
+Only one operation runs at a time per payment, thanks to a lock in Redis.
+
+8
+00:00:34,154 --> 00:00:37,654
+Too many wrong codes or card attempts close the session.
+
+9
+00:00:37,654 --> 00:00:40,904
+Next, the moment the money actually moves: the debit.
+

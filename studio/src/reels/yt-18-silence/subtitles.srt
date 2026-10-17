@@ -1,0 +1,36 @@
+1
+00:00:00,050 --> 00:00:04,107
+The processing center never answered: was the money taken or not?
+
+2
+00:00:04,107 --> 00:00:08,642
+A timeout does not mean failure, because the debit may have gone through.
+
+3
+00:00:08,642 --> 00:00:11,785
+Retrying blindly could charge the buyer twice.
+
+4
+00:00:11,785 --> 00:00:16,273
+So the payment is marked unknown, and a durable workflow takes over.
+
+5
+00:00:16,273 --> 00:00:21,988
+Temporal asks the processing center for the status, with backoff, and survives restarts.
+
+6
+00:00:21,988 --> 00:00:27,309
+If the debit went through, the payment is captured, and if not, it is reversed.
+
+7
+00:00:27,309 --> 00:00:31,583
+If the answer never comes, the payment lands in a manual review queue.
+
+8
+00:00:31,583 --> 00:00:35,083
+A sweep checks every minute for payments stuck for too long.
+
+9
+00:00:35,083 --> 00:00:37,761
+Next, telling the rest of the world what happened.
+

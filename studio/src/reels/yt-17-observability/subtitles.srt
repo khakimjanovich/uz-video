@@ -1,0 +1,32 @@
+1
+00:00:00,050 --> 00:00:03,488
+When a payment is slow or stuck, how would you even know?
+
+2
+00:00:03,488 --> 00:00:09,202
+One payment crosses five modules and a processing center, and plain logs cannot follow it.
+
+3
+00:00:09,202 --> 00:00:16,297
+Micrometer counts payments by status and times every processing call, and Prometheus collects those numbers.
+
+4
+00:00:16,297 --> 00:00:20,559
+Grafana turns them into a dashboard, with alerts on timeouts.
+
+5
+00:00:20,559 --> 00:00:25,571
+OpenTelemetry gives every payment a trace that follows it from module to module.
+
+6
+00:00:25,571 --> 00:00:30,607
+The logs carry the same trace ID, and go to Loki, right next to the dashboards.
+
+7
+00:00:30,607 --> 00:00:36,250
+Now a stuck payment shows up as a spike, and its trace shows exactly where it waits.
+
+8
+00:00:36,250 --> 00:00:40,928
+Next, what to do when the processing center goes completely silent.
+

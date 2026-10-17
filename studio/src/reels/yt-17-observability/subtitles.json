@@ -1,0 +1,74 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 105,
+    "text": "When a payment is slow or stuck, how would you even know?",
+    "prefix": "When a payment is slow or stuck, how would you even know?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 104,
+    "endFrame": 277,
+    "text": "One payment crosses five modules and a processing center, and plain logs cannot follow it.",
+    "prefix": "One payment crosses five modules and a processing center, and plain logs cannot follow it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 276,
+    "endFrame": 489,
+    "text": "Micrometer counts payments by status and times every processing call, and Prometheus collects those numbers.",
+    "prefix": "Micrometer counts payments by status and times every processing call, and Prometheus collects those numbers.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 488,
+    "endFrame": 617,
+    "text": "Grafana turns them into a dashboard, with alerts on timeouts.",
+    "prefix": "Grafana turns them into a dashboard, with alerts on timeouts.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 616,
+    "endFrame": 768,
+    "text": "OpenTelemetry gives every payment a trace that follows it from module to module.",
+    "prefix": "OpenTelemetry gives every payment a trace that follows it from module to module.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 767,
+    "endFrame": 919,
+    "text": "The logs carry the same trace ID, and go to Loki, right next to the dashboards.",
+    "prefix": "The logs carry the same trace ID, and go to Loki, right next to the dashboards.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 918,
+    "endFrame": 1088,
+    "text": "Now a stuck payment shows up as a spike, and its trace shows exactly where it waits.",
+    "prefix": "Now a stuck payment shows up as a spike, and its trace shows exactly where it waits.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1087,
+    "endFrame": 1258,
+    "text": "Next, what to do when the processing center goes completely silent.",
+    "prefix": "Next, what to do when the processing center goes completely silent.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

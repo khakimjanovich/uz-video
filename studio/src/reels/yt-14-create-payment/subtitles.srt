@@ -1,0 +1,44 @@
+1
+00:00:00,050 --> 00:00:04,892
+How does the bank know a payment request really came from the shop, and only once?
+
+2
+00:00:04,892 --> 00:00:10,011
+The shop's server asks for a payment with an amount, an order number, and a return address.
+
+3
+00:00:10,011 --> 00:00:16,547
+A stolen token alone should not be enough to create payments, so every request is also signed.
+
+4
+00:00:16,547 --> 00:00:25,309
+The server signs the method, path, timestamp, nonce, and body with HMAC-SHA256 and the shop's secret.
+
+5
+00:00:25,309 --> 00:00:30,619
+That secret lives in Vault under the merchants' path, so the app can read it but nobody types it.
+
+6
+00:00:30,619 --> 00:00:36,642
+A timestamp outside the configured window is rejected, and a nonce can be used only once.
+
+7
+00:00:36,642 --> 00:00:43,095
+A network retry must never create a second payment, so each request carries an idempotency key.
+
+8
+00:00:43,095 --> 00:00:49,619
+The same key with the same body returns the stored response, and the same key with a different body is refused.
+
+9
+00:00:49,619 --> 00:00:56,630
+Before saving anything, the payment module checks that the sales point is active, and refuses if it cannot tell.
+
+10
+00:00:56,630 --> 00:01:00,738
+The response carries a one-time link to the bank's own payment page.
+
+11
+00:01:00,738 --> 00:01:04,297
+Next, the buyer opens that page and enters their card.
+

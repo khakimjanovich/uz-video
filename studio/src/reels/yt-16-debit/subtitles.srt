@@ -1,0 +1,40 @@
+1
+00:00:00,050 --> 00:00:03,380
+What stops two clicks on the pay button from charging the card twice?
+
+2
+00:00:03,380 --> 00:00:07,309
+Two confirms arrive at the same moment, and both try to debit.
+
+3
+00:00:07,309 --> 00:00:12,940
+An atomic update moves the payment from open to authorizing, and only one caller can win it.
+
+4
+00:00:12,940 --> 00:00:17,130
+The winner resolves the terminal, and freezes the commission for this payment.
+
+5
+00:00:17,130 --> 00:00:21,571
+Every call to the processing center is written to an operation journal first.
+
+6
+00:00:21,571 --> 00:00:25,535
+Then the adapter authorizes, which places a hold on the card.
+
+7
+00:00:25,535 --> 00:00:28,154
+Then it captures, and the money really moves.
+
+8
+00:00:28,154 --> 00:00:33,535
+On approval, the payment becomes captured, with the scheme's reference number, the RRN.
+
+9
+00:00:33,535 --> 00:00:39,178
+A state machine allows only legal moves, so a captured payment can never go back to open.
+
+10
+00:00:39,178 --> 00:00:42,547
+Next, seeing inside the system when something is slow.
+

@@ -1,0 +1,83 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 124,
+    "text": "The processing center never answered: was the money taken or not?",
+    "prefix": "The processing center never answered: was the money taken or not?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 123,
+    "endFrame": 260,
+    "text": "A timeout does not mean failure, because the debit may have gone through.",
+    "prefix": "A timeout does not mean failure, because the debit may have gone through.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 259,
+    "endFrame": 354,
+    "text": "Retrying blindly could charge the buyer twice.",
+    "prefix": "Retrying blindly could charge the buyer twice.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 353,
+    "endFrame": 489,
+    "text": "So the payment is marked unknown, and a durable workflow takes over.",
+    "prefix": "So the payment is marked unknown, and a durable workflow takes over.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 488,
+    "endFrame": 660,
+    "text": "Temporal asks the processing center for the status, with backoff, and survives restarts.",
+    "prefix": "Temporal asks the processing center for the status, with backoff, and survives restarts.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 659,
+    "endFrame": 820,
+    "text": "If the debit went through, the payment is captured, and if not, it is reversed.",
+    "prefix": "If the debit went through, the payment is captured, and if not, it is reversed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 819,
+    "endFrame": 948,
+    "text": "If the answer never comes, the payment lands in a manual review queue.",
+    "prefix": "If the answer never comes, the payment lands in a manual review queue.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 947,
+    "endFrame": 1053,
+    "text": "A sweep checks every minute for payments stuck for too long.",
+    "prefix": "A sweep checks every minute for payments stuck for too long.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1052,
+    "endFrame": 1163,
+    "text": "Next, telling the rest of the world what happened.",
+    "prefix": "Next, telling the rest of the world what happened.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

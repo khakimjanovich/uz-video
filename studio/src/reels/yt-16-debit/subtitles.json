@@ -1,0 +1,92 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 102,
+    "text": "What stops two clicks on the pay button from charging the card twice?",
+    "prefix": "What stops two clicks on the pay button from charging the card twice?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 101,
+    "endFrame": 220,
+    "text": "Two confirms arrive at the same moment, and both try to debit.",
+    "prefix": "Two confirms arrive at the same moment, and both try to debit.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 219,
+    "endFrame": 389,
+    "text": "An atomic update moves the payment from open to authorizing, and only one caller can win it.",
+    "prefix": "An atomic update moves the payment from open to authorizing, and only one caller can win it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 388,
+    "endFrame": 514,
+    "text": "The winner resolves the terminal, and freezes the commission for this payment.",
+    "prefix": "The winner resolves the terminal, and freezes the commission for this payment.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 513,
+    "endFrame": 648,
+    "text": "Every call to the processing center is written to an operation journal first.",
+    "prefix": "Every call to the processing center is written to an operation journal first.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 647,
+    "endFrame": 767,
+    "text": "Then the adapter authorizes, which places a hold on the card.",
+    "prefix": "Then the adapter authorizes, which places a hold on the card.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 766,
+    "endFrame": 845,
+    "text": "Then it captures, and the money really moves.",
+    "prefix": "Then it captures, and the money really moves.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 844,
+    "endFrame": 1007,
+    "text": "On approval, the payment becomes captured, with the scheme's reference number, the RRN.",
+    "prefix": "On approval, the payment becomes captured, with the scheme's reference number, the RRN.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1006,
+    "endFrame": 1176,
+    "text": "A state machine allows only legal moves, so a captured payment can never go back to open.",
+    "prefix": "A state machine allows only legal moves, so a captured payment can never go back to open.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1175,
+    "endFrame": 1307,
+    "text": "Next, seeing inside the system when something is slow.",
+    "prefix": "Next, seeing inside the system when something is slow.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

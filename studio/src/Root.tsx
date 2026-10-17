@@ -31,6 +31,16 @@ import { Yt12AdaptersComposition } from "./reels/yt-12-adapters";
 
 import { Yt13CardVaultComposition } from "./reels/yt-13-card-vault";
 
+import { Yt14CreatePaymentComposition } from "./reels/yt-14-create-payment";
+
+import { Yt15HostedPageComposition } from "./reels/yt-15-hosted-page";
+
+import { Yt16DebitComposition } from "./reels/yt-16-debit";
+
+import { Yt17ObservabilityComposition } from "./reels/yt-17-observability";
+
+import { Yt18SilenceComposition } from "./reels/yt-18-silence";
+
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
   return (
@@ -52,6 +62,11 @@ export const RemotionRoot: React.FC = () => {
       <Yt11TerminalsComposition />
       <Yt12AdaptersComposition />
       <Yt13CardVaultComposition />
+      <Yt14CreatePaymentComposition />
+      <Yt15HostedPageComposition />
+      <Yt16DebitComposition />
+      <Yt17ObservabilityComposition />
+      <Yt18SilenceComposition />
     </>
   );
 };

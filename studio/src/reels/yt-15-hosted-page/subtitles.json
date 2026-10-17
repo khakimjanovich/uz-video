@@ -1,0 +1,83 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 127,
+    "text": "Where does the buyer type their card number: on the shop's site, or on ours?",
+    "prefix": "Where does the buyer type their card number: on the shop's site, or on ours?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 126,
+    "endFrame": 335,
+    "text": "If shops collected cards, every shop would need PCI DSS, and every shop breach would leak cards.",
+    "prefix": "If shops collected cards, every shop would need PCI DSS, and every shop breach would leak cards.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 334,
+    "endFrame": 464,
+    "text": "So the buyer opens the bank's own payment page through a one-time session link.",
+    "prefix": "So the buyer opens the bank's own payment page through a one-time session link.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 463,
+    "endFrame": 621,
+    "text": "The session token is stored only as a hash, and expires after the configured time.",
+    "prefix": "The session token is stored only as a hash, and expires after the configured time.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 620,
+    "endFrame": 740,
+    "text": "The buyer types the card, and the vault swaps it for a token at once.",
+    "prefix": "The buyer types the card, and the vault swaps it for a token at once.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 739,
+    "endFrame": 893,
+    "text": "A one-time code goes to the card owner's phone, through the scheme or by SMS.",
+    "prefix": "A one-time code goes to the card owner's phone, through the scheme or by SMS.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 892,
+    "endFrame": 1025,
+    "text": "Only one operation runs at a time per payment, thanks to a lock in Redis.",
+    "prefix": "Only one operation runs at a time per payment, thanks to a lock in Redis.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1024,
+    "endFrame": 1130,
+    "text": "Too many wrong codes or card attempts close the session.",
+    "prefix": "Too many wrong codes or card attempts close the session.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1129,
+    "endFrame": 1258,
+    "text": "Next, the moment the money actually moves: the debit.",
+    "prefix": "Next, the moment the money actually moves: the debit.",
+    "highlight": "",
+    "suffix": ""
+  }
+]
