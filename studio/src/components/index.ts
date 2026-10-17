@@ -8,3 +8,4 @@ export * from "./ReelScaffold";
 export * from "./MotionBox";
 export * from "./diagram";
 export * from "./BuildMap";
+export * from "./Episode";

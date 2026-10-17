@@ -6,6 +6,7 @@ export interface NodeDef {
   label: string;
   sublabel?: string;
   art?: ArtName; // line illustration drawn above the label
+  logo?: string; // official monochrome product logo (Simple Icons 24×24 path), drawn instead of art
 }
 
 // Fixed size so ArchDiagram can clip edges to the box border.
@@ -20,7 +21,7 @@ export interface ArchNodeProps {
 }
 
 export const ArchNode: React.FC<ArchNodeProps> = ({ def, variant = "default", badge, showLabel = true }) => {
-  const imageOnly = !showLabel && !!def.art;
+  const imageOnly = !showLabel && !!(def.art || def.logo);
   const stampRed = variant === "danger";
   return (
     <UiCard
@@ -28,7 +29,13 @@ export const ArchNode: React.FC<ArchNodeProps> = ({ def, variant = "default", ba
       className="relative flex flex-col items-center justify-center text-center px-4 font-mono uppercase"
       style={{ width: NODE_W, height: NODE_H }}
     >
-      {def.art ? (
+      {def.logo ? (
+        <div className={imageOnly ? "" : "mb-3"}>
+          <svg viewBox="0 0 24 24" width={imageOnly ? 120 : 90} height={imageOnly ? 120 : 90}>
+            <path d={def.logo} fill="currentColor" />
+          </svg>
+        </div>
+      ) : def.art ? (
         <div className={imageOnly ? "" : "mb-1"}>
           <NodeArt name={def.art} size={imageOnly ? 200 : 150} />
         </div>

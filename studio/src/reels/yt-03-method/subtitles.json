@@ -1,0 +1,92 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 139,
+    "text": "Where do you start designing a feature: the database, the API, or the code?",
+    "prefix": "Where do you start designing a feature: the database, the API, or the code?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 138,
+    "endFrame": 333,
+    "text": "We start with the domain: the things that exist, the states they move through, and the rules that never break.",
+    "prefix": "We start with the domain: the things that exist, the states they move through, and the rules that never break.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 332,
+    "endFrame": 525,
+    "text": "First comes a one-page sketch of the whole system: the main entities, and which module owns each one.",
+    "prefix": "First comes a one-page sketch of the whole system: the main entities, and which module owns each one.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 525,
+    "endFrame": 722,
+    "text": "Links between modules are only IDs, never foreign keys, so a module can move out on its own later.",
+    "prefix": "Links between modules are only IDs, never foreign keys, so a module can move out on its own later.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 721,
+    "endFrame": 925,
+    "text": "Second comes the contract: an OpenAPI spec that promises outsiders exactly what they can ask for.",
+    "prefix": "Second comes the contract: an OpenAPI spec that promises outsiders exactly what they can ask for.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 924,
+    "endFrame": 1178,
+    "text": "Gradle generates the API interfaces from it, and our controllers must implement them, so the code can never drift from the spec.",
+    "prefix": "Gradle generates the API interfaces from it, and our controllers must implement them, so the code can never drift from the spec.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1177,
+    "endFrame": 1327,
+    "text": "Third comes the database: a Liquibase migration in the module's own schema.",
+    "prefix": "Third comes the database: a Liquibase migration in the module's own schema.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1326,
+    "endFrame": 1485,
+    "text": "Then we write the smallest code that keeps the rule, and one test that fails if the rule breaks.",
+    "prefix": "Then we write the smallest code that keeps the rule, and one test that fails if the rule breaks.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1485,
+    "endFrame": 1677,
+    "text": "Domain, contract, database, code, and test: every episode follows this order.",
+    "prefix": "Domain, contract, database, code, and test: every episode follows this order.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1676,
+    "endFrame": 1860,
+    "text": "Next, the first real feature: a merchant signs up and proves they own their email.",
+    "prefix": "Next, the first real feature: a merchant signs up and proves they own their email.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

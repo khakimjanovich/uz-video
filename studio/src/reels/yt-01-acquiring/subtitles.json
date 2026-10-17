@@ -1,0 +1,101 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 162,
+    "text": "Before we write a single line of code, what actually happens when someone pays a shop online with a card?",
+    "prefix": "Before we write a single line of code, what actually happens when someone pays a shop online with a card?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 161,
+    "endFrame": 362,
+    "text": "Five players are involved: the buyer, the shop, the acquirer bank, the processing center, and the issuer bank.",
+    "prefix": "Five players are involved: the buyer, the shop, the acquirer bank, the processing center, and the issuer bank.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 361,
+    "endFrame": 537,
+    "text": "The acquirer is the shop's bank, the one we are building, and the issuer is the bank that gave the buyer their card.",
+    "prefix": "The acquirer is the shop's bank, the one we are building, and the issuer is the bank that gave the buyer their card.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 536,
+    "endFrame": 769,
+    "text": "Every shop gets a terminal at the acquirer, identified by a merchant ID and a terminal ID, the MID and TID.",
+    "prefix": "Every shop gets a terminal at the acquirer, identified by a merchant ID and a terminal ID, the MID and TID.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 768,
+    "endFrame": 946,
+    "text": "When the buyer pays, the acquirer sends an authorization through the processing center to the issuer.",
+    "prefix": "When the buyer pays, the acquirer sends an authorization through the processing center to the issuer.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 945,
+    "endFrame": 1118,
+    "text": "The issuer checks the balance and places a hold, so the money is reserved but not yet moved.",
+    "prefix": "The issuer checks the balance and places a hold, so the money is reserved but not yet moved.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1117,
+    "endFrame": 1243,
+    "text": "Then the acquirer captures the hold, and the payment becomes final.",
+    "prefix": "Then the acquirer captures the hold, and the payment becomes final.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1242,
+    "endFrame": 1408,
+    "text": "A reversal cancels a payment before settlement, and a refund sends money back after it.",
+    "prefix": "A reversal cancels a payment before settlement, and a refund sends money back after it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1407,
+    "endFrame": 1546,
+    "text": "At the end of the day, the processing center settles all payments with the acquirer.",
+    "prefix": "At the end of the day, the processing center settles all payments with the acquirer.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1545,
+    "endFrame": 1681,
+    "text": "The acquirer keeps its commission and pays the shop the rest by the next banking day.",
+    "prefix": "The acquirer keeps its commission and pays the shop the rest by the next banking day.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1680,
+    "endFrame": 1996,
+    "text": "These words, authorization, capture, MID, TID, and settlement, will name the classes we build in every episode that follows.",
+    "prefix": "These words, authorization, capture, MID, TID, and settlement, will name the classes we build in every episode that follows.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

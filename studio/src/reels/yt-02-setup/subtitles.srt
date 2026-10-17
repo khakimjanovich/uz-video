@@ -1,0 +1,44 @@
+1
+00:00:00,050 --> 00:00:03,321
+Where does a payment system start, if not with payments?
+
+2
+00:00:03,321 --> 00:00:08,238
+It starts with a project that builds, and an environment that runs with one command.
+
+3
+00:00:08,238 --> 00:00:14,452
+We use Java twenty-five and Spring Boot four, built by one Gradle build with a module for each part of the domain.
+
+4
+00:00:14,452 --> 00:00:22,250
+The app has five modules, partner, commission, terminal, card, and payment, and each one owns its own database schema.
+
+5
+00:00:22,250 --> 00:00:28,666
+A boundary test fails the build if one module reaches into another module's code or tables.
+
+6
+00:00:28,666 --> 00:00:34,500
+Every version is pinned in one catalog file, so the build is the same on every machine.
+
+7
+00:00:34,500 --> 00:00:40,380
+Docker Compose starts Postgres, Redis, and Keycloak, and nothing else yet.
+
+8
+00:00:40,380 --> 00:00:44,583
+Every other tool joins only in the episode whose problem needs it.
+
+9
+00:00:44,583 --> 00:00:49,523
+The app logs in JSON and reports its health, so we can see it from the very first minute.
+
+10
+00:00:49,523 --> 00:00:52,011
+One command, and the whole world is up.
+
+11
+00:00:52,011 --> 00:00:55,488
+Next, we design the domain before we write a single table.
+

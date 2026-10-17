@@ -7,7 +7,7 @@ import { ArchNode, NODE_H, NODE_W, NodeDef } from "./ArchNode";
 import { ArchEdge } from "./ArchEdge";
 import { Packet } from "./Packet";
 
-export type Slot = [col: number, row: number];
+export type Slot = readonly [col: number, row: number];
 
 export interface DiagramEdge<Id extends string> {
   from: Id;
@@ -37,30 +37,44 @@ export interface DiagramStep<Id extends string> {
   badges?: Partial<Record<Id, string>>;
 }
 
+export interface Zone {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  cols: number;
+  rows: number;
+}
+
 export interface ArchDiagramProps<Id extends string> {
   catalog: Record<Id, NodeDef>;
   steps: DiagramStep<Id>[];
+  zone?: Zone; // grid area; defaults to the 9:16 reel safe zone
+  scale?: number; // node size factor (16:9 uses smaller boxes)
 }
 
 // Safe zone between ReelHeader and SubtitleCard on the 1080x1920 canvas.
-const ZONE = { x: 60, y: 300, w: 960, h: 1120, cols: 3, rows: 5 };
+const REEL_ZONE: Zone = { x: 60, y: 300, w: 960, h: 1120, cols: 3, rows: 5 };
+
+// Geometry of one diagram: its grid zone and its box size.
+type Geo = { zone: Zone; nw: number; nh: number };
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 type Pt = { x: number; y: number };
 
-const toPx = ([col, row]: Slot): Pt => ({
-  x: ZONE.x + (col + 0.5) * (ZONE.w / ZONE.cols),
-  y: ZONE.y + (row + 0.5) * (ZONE.h / ZONE.rows),
+const toPx = (g: Geo, [col, row]: Slot): Pt => ({
+  x: g.zone.x + (col + 0.5) * (g.zone.w / g.zone.cols),
+  y: g.zone.y + (row + 0.5) * (g.zone.h / g.zone.rows),
 });
 
 // Visible part of the line between two node centres: trimmed to each box's border.
-const trim = (a: Pt, b: Pt): [Pt, Pt] => {
+const trim = (g: Geo, a: Pt, b: Pt): [Pt, Pt] => {
   const dx = b.x - a.x;
   const dy = b.y - a.y;
   if (!dx && !dy) return [a, { x: a.x, y: a.y + 1 }]; // nodes overlap mid-slide: keep a valid 1px path
   const t = Math.min(
-    dx ? (NODE_W / 2 + 10) / Math.abs(dx) : Infinity,
-    dy ? (NODE_H / 2 + 10) / Math.abs(dy) : Infinity,
+    dx ? (g.nw / 2 + 10) / Math.abs(dx) : Infinity,
+    dy ? (g.nh / 2 + 10) / Math.abs(dy) : Infinity,
   );
   return [
     { x: a.x + dx * t, y: a.y + dy * t },
@@ -68,15 +82,15 @@ const trim = (a: Pt, b: Pt): [Pt, Pt] => {
   ];
 };
 
-const edgePath = (a: Pt, b: Pt) => {
-  const [p, q] = trim(a, b);
+const edgePath = (g: Geo, a: Pt, b: Pt) => {
+  const [p, q] = trim(g, a, b);
   return `M ${p.x} ${p.y} L ${q.x} ${q.y}`;
 };
 
 // Labels sit beside the visible line, clear of packets: centred under mostly-horizontal edges
 // (packets are short, so 70px is enough), 30% along mostly-vertical ones (packets are wide).
-const labelPos = (a: Pt, b: Pt): Pt => {
-  const [p, q] = trim(a, b);
+const labelPos = (g: Geo, a: Pt, b: Pt): Pt => {
+  const [p, q] = trim(g, a, b);
   const dx = q.x - p.x;
   const dy = q.y - p.y;
   const len = Math.hypot(dx, dy) || 1;
@@ -101,7 +115,8 @@ const sameEdge = <Id extends string>(a: DiagramEdge<Id>, b: DiagramEdge<Id>) =>
  * cue. On a new step, kept nodes slide to their new slot, new nodes pop in,
  * removed nodes fade out, new edges draw on, and packets travel along edges.
  */
-export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramProps<Id>) {
+export function ArchDiagram<Id extends string>({ catalog, steps, zone = REEL_ZONE, scale = 1 }: ArchDiagramProps<Id>) {
+  const g: Geo = { zone, nw: NODE_W * scale, nh: NODE_H * scale };
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const { cueIndex, subtitles } = useSubtitlesContext();
@@ -125,8 +140,8 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
 
   const pos = {} as Record<Id, Pt>;
   for (const id of ids) {
-    const to = toPx(step.layout[id]!);
-    const from = prev?.layout[id] ? toPx(prev.layout[id]!) : to;
+    const to = toPx(g, step.layout[id]!);
+    const from = prev?.layout[id] ? toPx(g, prev.layout[id]!) : to;
     pos[id] = {
       x: interpolate(p, [0, 1], [from.x, to.x]),
       y: interpolate(p, [0, 1], [from.y, to.y]),
@@ -169,7 +184,7 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
           return (
             <ArchEdge
               key={`${e.from}>${e.to}`}
-              path={edgePath(pos[e.from], pos[e.to])}
+              path={edgePath(g, pos[e.from], pos[e.to])}
               progress={isNew ? drawIn : 1}
               broken={e.broken}
             />
@@ -179,7 +194,7 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
 
       {edges.map((e) => {
         if (!e.label && !e.broken) return null;
-        const at = labelPos(pos[e.from], pos[e.to]);
+        const at = labelPos(g, pos[e.from], pos[e.to]);
         return (
           <StatusBadge
             key={`label-${e.from}>${e.to}`}
@@ -199,12 +214,12 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
       })}
 
       {leaving.map((id) => {
-        const at = toPx(prev!.layout[id]!);
+        const at = toPx(g, prev!.layout[id]!);
         return (
           <div
             key={`leaving-${id}`}
             className="absolute"
-            style={{ left: at.x, top: at.y, translate: "-50% -50%", opacity: 1 - p }}
+            style={{ left: at.x, top: at.y, translate: "-50% -50%", scale, opacity: 1 - p }}
           >
             <ArchNode def={catalog[id]} showLabel={false} />
           </div>
@@ -231,7 +246,7 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
               left: pos[id].x,
               top: pos[id].y,
               translate: `calc(-50% + ${shake}px) -50%`,
-              scale: isNew ? interpolate(p, [0, 1], [0.6, 1]) : 1,
+              scale: (isNew ? interpolate(p, [0, 1], [0.6, 1]) : 1) * scale,
               opacity: isNew ? p : 1,
             }}
           >
@@ -259,7 +274,7 @@ export function ArchDiagram<Id extends string>({ catalog, steps }: ArchDiagramPr
         return (
           <Packet
             key={k}
-            path={edgePath(pos[pk.from], pos[pk.to])}
+            path={edgePath(g, pos[pk.from], pos[pk.to])}
             // A blocked packet hits the gate and bounces back a little before it settles.
             progress={
               stopAt < 1

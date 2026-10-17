@@ -14,12 +14,13 @@ export interface BuildMapStep {
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 // The Series B presentation: the system diagram on the left, the build progress on the right.
-export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; scale: number; panelX: number }> = ({
+export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; scale: number; panelX: number; showMap?: boolean }> = ({
   steps,
   x,
   y,
   scale,
   panelX,
+  showMap = true,
 }) => {
   const frame = useCurrentFrame();
   const { cueIndex, subtitles } = useSubtitlesContext();
@@ -31,6 +32,7 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
 
   return (
     <>
+      {showMap ? (
       <svg
         className="absolute font-mono"
         style={{ left: x, top: y }}
@@ -110,6 +112,7 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
           );
         })}
       </svg>
+      ) : null}
       <div className="absolute font-mono uppercase text-ink" style={{ left: panelX, top: y + 18, right: 84 }}>
         <div className="text-[20px] text-ink-muted tracking-wider mb-2">Build progress</div>
         {BUILD_PARTS.map((p) => {
