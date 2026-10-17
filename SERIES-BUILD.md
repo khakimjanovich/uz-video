@@ -29,8 +29,8 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 **Modular monolith outside, hexagonal at the edges inside.**
 
 - **One app, one deploy, one Postgres with a schema per module:** `partner`, `commission`, `terminal`, `card`, `payment`. The real repo's microservices become our module boundaries.
-- **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 25).
-- **Ports and adapters only at the edges that change or get faked:** processing center (Uzcard REST, Humo SOAP, simulator), Keycloak, Vault, email. One port, several adapters. Plain layered code (controller → service → repository) for simple CRUD.
+- **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 24).
+- **Ports and adapters only at the edges that talk to the outside world:** processing center (Uzcard REST, Humo SOAP), Keycloak, Vault, email. One port, several adapters. Plain layered code (controller → service → repository) for simple CRUD.
 - **Why:** a solo viewer runs one app instead of nine; boundaries stay honest; hexagonal pays only where there are real alternative implementations.
 
 ---
@@ -60,10 +60,10 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 | Postgres, Redis, Keycloak | 02 Setup | the first episodes need them immediately |
 | Structured JSON logs + Actuator health | 02 Setup | cheap, and nothing is debuggable without them |
 | Vault, app config (`secret/app`) | 07 Keycloak clients | the first real secret appears; `.env` until then |
-| Vault, merchant HMAC secrets (`secret/merchants`) | 15 Create payment | same Vault, second path. Not the card vault module |
-| Prometheus + Grafana, Tempo, Loki | 18 Observability | a stuck payment is invisible without metrics and traces; Loki instead of ELK (lighter on a laptop) |
-| Temporal | 19 Silent processing | unknown outcomes need durable retries |
-| Kafka | 20 Outbox + Kafka | events must reach other systems exactly once |
+| Vault, merchant HMAC secrets (`secret/merchants`) | 14 Create payment | same Vault, second path. Not the card vault module |
+| Prometheus + Grafana, Tempo, Loki | 17 Observability | a stuck payment is invisible without metrics and traces; Loki instead of ELK (lighter on a laptop) |
+| Temporal | 18 Silent processing | unknown outcomes need durable retries |
+| Kafka | 19 Outbox + Kafka | events must reach other systems exactly once |
 
 ## Versions
 
@@ -190,20 +190,14 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 ### Part 3: Cards (adapters + vault)
 
-**12 · A fake processing center**
-- Problem: viewers have no SVGate or Humo access, so nothing past this point could be tested.
-- Build: a small simulator service with Uzcard-like REST and Humo-like SOAP endpoints; configurable responses: approve, decline, timeout, "no answer".
-- Why: the series stays buildable outside the bank; failure cases become easy to trigger.
-- Demo: call "authorize" → approved; flip a switch → timeout.
-
-**13 · Card adapters**
+**12 · Card adapters**
 - Problem: two schemes, two protocols (REST and SOAP), one interface wanted.
 - Build: `uzcard-adapter` and `humo-adapter` behind one command interface: card OTP, authorize, capture, reverse, status.
 - Why: the payment service must not care which scheme a card belongs to.
-- Demo: same command, two schemes, both against the simulator.
+- Demo: the same command against Uzcard and Humo (test environments): card OTP, authorize, capture, reverse.
 - Real code: uzcard-adapter (SVGate), humo-adapter (spring-ws), `command/impl/{humo,uzcard}`.
 
-**14 · BIN registry + card vault**
+**13 · BIN registry + card vault**
 - Problem: we must know a card's scheme, and we must never store a card number in plain text.
 - Build: BIN lookup with scheduled sync; card-processor: AES-256-GCM encrypted PAN, a token returned instead; resolve/reveal/binding endpoints; `encryption-starter`.
 - Why: tokenization; a database leak exposes no card numbers (owner pitch, threat 4).
@@ -214,7 +208,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 ### Part 4: Payments (ecom-acquiring-service)
 
-**15 · Create a payment: HMAC + idempotency**
+**14 · Create a payment: HMAC + idempotency**
 - Problem: anyone can fake a request, replay it, or a retry can create a second payment.
 - Build: `POST /payments` with JWT + HMAC-SHA256 (method, path, timestamp, nonce, body hash), configured timestamp window, Redis nonces, merchant secret from Vault (second path: `secret/merchants`); `Idempotency-Key` with stored response replay; sales-point guard that fails closed.
 - Why: the three request threats from the owner pitch, in code.
@@ -222,7 +216,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Demo: valid request → 201; replayed → rejected; same key twice → same response, one payment.
 - Real code: `HmacAuthenticationFilter`, `IdempotencyService`, `SalesPointGuard`, `PaymentRegistrar`.
 
-**16 · Hosted page: card → OTP**
+**15 · Hosted page: card → OTP**
 - Problem: the card must be typed on the bank's page, never the store's.
 - Build: session token (hashed, configured TTL), submit card, OTP challenge (scheme OTP or SMS), one operation at a time per payment (Redis lock), attempt limit.
 - Tables: `payment_session`.
@@ -230,7 +224,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Demo: open the page → card → OTP → ready to debit.
 - Real code: `PaymentSessionServiceImpl`, `CardVerificationServiceImpl`, `OtpChallengeServiceImpl`.
 
-**17 · The debit**
+**16 · The debit**
 - Problem: two concurrent clicks must never charge twice.
 - Build: atomic claim SESSION_OPEN → AUTHORIZING (conditional update), terminal resolve, commission snapshot, authorize + capture through the adapter, operation journal, `PaymentStateMachine`.
 - Why: the heart of the system; double charge is the owners' biggest fear.
@@ -238,51 +232,51 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Demo: fire two confirms at once → exactly one debit.
 - Real code: `DebitClaim`, `ProcessorPaymentExecutionAdapter`, `statemachine/PaymentStateMachine`.
 
-**18 · Observability: metrics, traces, logs**
+**17 · Observability: metrics, traces, logs**
 - Problem: one payment crosses five modules and a processing center; when it's slow or stuck, nobody can see where.
 - Build: Prometheus + Grafana (Micrometer metrics: payments by status, processing latency, timeouts), OpenTelemetry tracing into Tempo, logs into Loki; a starter dashboard.
 - Why: the next episode (silent processing) is invisible without it. The real repo has no metrics or tracing yet.
 - Demo: run 20 payments, one timeout; follow that payment's trace across modules; see the timeout spike on the dashboard.
 
-**19 · When the processing center goes silent**
+**18 · When the processing center goes silent**
 - Problem: a timeout leaves the money state unknown.
 - Build: Temporal resolution workflow (status polling with backoff), sweep workflow, manual review queue, outbox events.
 - Why: never blind-retry a debit; resolve the truth first.
 - Tables: `manual_review_item`, `event_outbox`.
-- Demo: simulator in "no answer" mode → workflow resolves → CAPTURED or reversed.
+- Demo: force a processing timeout → the workflow asks for the status, then resolves to CAPTURED or reversed.
 - Real code: `PaymentResolutionWorkflowImpl`, `ResolutionSweepWorkflowImpl`, `AttemptLimitEscalator`.
 
-**20 · Events: transactional outbox + Kafka**
+**19 · Events: transactional outbox + Kafka**
 - Problem: other systems (merchant webhooks, notifications, antifraud) must learn about payment events, and a crash between "save" and "publish" must never lose or invent an event.
 - Build: transactional outbox (event row written in the same DB transaction), a relay that publishes to Kafka, a merchant webhook consumer with retries.
 - Why: the real repo writes `event_outbox` but nothing publishes it. Messaging, not event sourcing: Postgres stays the source of truth.
 - Tables: `event_outbox`. Topics: `payments.captured`, `payments.declined`.
 - Demo: kill the app between save and publish → the event still arrives exactly once after restart.
 
-**21 · Payment links**
+**20 · Payment links**
 - Problem: merchants selling in chats have no website checkout.
 - Build: link creation, claim, expiry sweep.
 - Tables: `payment_link`.
 - Real code: `PaymentLinkServiceImpl`, `PaymentLinkExpirySweep`.
 
-**22 · Refunds and reversals**
+**21 · Refunds and reversals**
 - Problem: money must go back: same day (reversal) or later (refund within the configured window).
 - Build: reverse vs refund operations, partial refunds, PARTIALLY_REFUNDED → REFUNDED.
 - Demo: refund 30% → PARTIALLY_REFUNDED.
 
-**23 · Billing and reports**
+**22 · Billing and reports**
 - Problem: partners pay for API usage; merchants need a daily report.
 - Build: billing counters flushed by a Spring Batch job; daily report export.
 - Real code: `BillingFlushJob`.
 
-**24 · Hardening (exercises from real gaps)**
+**23 · Hardening (exercises from real gaps)**
 - Problem: production needs more than happy paths.
 - Build, as viewer exercises: the HMAC nonce/timestamp window fix, KYB enforcement at activation, per-sales-point payment limits.
 - Why: honest engineering; shows how a real system grows.
 
 ### Part 5: Growing up
 
-**25 · Extract a module into a service**
+**24 · Extract a module into a service**
 - Problem: the card vault needs stricter security and its own deploy (PCI DSS scope).
 - Build: move the `card` module into its own Spring Boot service; replace the in-process `CardApi` with a REST adapter behind the same port; give it its own database.
 - Why: shows *why* microservices exist: clean boundaries made the move cheap. Mirrors the real card-processor-service.

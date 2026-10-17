@@ -32,7 +32,7 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   kafka: { label: "Kafka", x: 475, y: 310, w: 78, h: 64, logos: [siApachekafka.path] },
   observability: { label: "Observe", x: 562, y: 310, w: 78, h: 64, logos: [siPrometheus.path, siGrafana.path] },
   emailsvc: { label: "Email service", sub: "OTP codes", x: 56, y: 420, w: 220, h: 56 },
-  procsvc: { label: "Processing center", sub: "Uzcard, Humo, simulator", x: 404, y: 420, w: 220, h: 56 },
+  procsvc: { label: "Processing center", sub: "Uzcard, Humo", x: 404, y: 420, w: 220, h: 56 },
 };
 
 // Vertical arrows: [x, fromY, toY].
@@ -51,7 +51,7 @@ export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes:
   { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis", "keycloak"] },
   { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle", "Four-eyes", "Keycloak clients", "Sales points", "Extract the starters"], nodes: ["partner", "emailport", "emailsvc", "admin", "vault"] },
   { n: 2, title: "Money rules", episodes: ["Commission", "Terminals"], nodes: ["commission", "terminal"] },
-  { n: 3, title: "Cards", episodes: ["Fake processing center", "Card adapters", "BIN + card vault"], nodes: ["card", "procport", "procsvc"] },
+  { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "BIN + card vault"], nodes: ["card", "procport", "procsvc"] },
   { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Hosted page", "The debit", "Observability", "Silent processing", "Outbox + Kafka", "Links", "Refunds", "Billing", "Hardening"], nodes: ["payment", "merchant", "buyer", "observability", "temporal", "kafka"] },
   { n: 5, title: "Growing up", episodes: ["Extract the card vault"], nodes: ["card"] },
 ];
