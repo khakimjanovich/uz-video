@@ -1,0 +1,83 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 134,
+    "text": "How do we know whether a card is Uzcard or Humo, and where do we keep its number?",
+    "prefix": "How do we know whether a card is Uzcard or Humo, and where do we keep its number?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 133,
+    "endFrame": 236,
+    "text": "The first digits of a card, its BIN, tell us the scheme.",
+    "prefix": "The first digits of a card, its BIN, tell us the scheme.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 235,
+    "endFrame": 369,
+    "text": "A scheduled job keeps the BIN registry in sync with both schemes.",
+    "prefix": "A scheduled job keeps the BIN registry in sync with both schemes.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 368,
+    "endFrame": 491,
+    "text": "A plain card number in our database would be a disaster on the day of a breach.",
+    "prefix": "A plain card number in our database would be a disaster on the day of a breach.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 490,
+    "endFrame": 677,
+    "text": "So the card vault encrypts the number with AES-GCM, and gives everyone else a token instead.",
+    "prefix": "So the card vault encrypts the number with AES-GCM, and gives everyone else a token instead.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 676,
+    "endFrame": 841,
+    "text": "Only the vault can turn a token back into a card number, and only to send it to the processing center.",
+    "prefix": "Only the vault can turn a token back into a card number, and only to send it to the processing center.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 840,
+    "endFrame": 924,
+    "text": "Every reveal is written to an audit trail.",
+    "prefix": "Every reveal is written to an audit trail.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 923,
+    "endFrame": 1066,
+    "text": "A stolen database now holds nothing but ciphertext and meaningless tokens.",
+    "prefix": "A stolen database now holds nothing but ciphertext and meaningless tokens.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1065,
+    "endFrame": 1243,
+    "text": "Next, the payment itself, starting with a request nobody can forge.",
+    "prefix": "Next, the payment itself, starting with a request nobody can forge.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

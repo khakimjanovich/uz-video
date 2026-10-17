@@ -17,7 +17,11 @@ export const BUILD_CATALOG = {
   processing: { label: "Processing center", sublabel: "Uzcard · Humo", art: "processing" },
   mail: { label: "SMTP", sublabel: "Mailpit locally", art: "request" },
   tid: { label: "Terminal", sublabel: "MID · TID", art: "tray" },
+  uzcard: { label: "Uzcard", sublabel: "REST", art: "processing" },
+  humo: { label: "Humo", sublabel: "SOAP", art: "processing" },
   // our modules
+  port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
+  bin: { label: "BIN registry", art: "journal" },
   app: { label: "Acquiring app", sublabel: "Modular monolith", art: "salespoint" },
   partner: { label: "Partner module", sublabel: "Merchant registry", art: "journal" },
   commission: { label: "Commission module", art: "fee" },

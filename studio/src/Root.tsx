@@ -23,6 +23,14 @@ import { Yt08SalesPointsComposition } from "./reels/yt-08-sales-points";
 
 import { Yt09StartersComposition } from "./reels/yt-09-starters";
 
+import { Yt10CommissionComposition } from "./reels/yt-10-commission";
+
+import { Yt11TerminalsComposition } from "./reels/yt-11-terminals";
+
+import { Yt12AdaptersComposition } from "./reels/yt-12-adapters";
+
+import { Yt13CardVaultComposition } from "./reels/yt-13-card-vault";
+
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
   return (
@@ -40,6 +48,10 @@ export const RemotionRoot: React.FC = () => {
       <Yt07KeycloakComposition />
       <Yt08SalesPointsComposition />
       <Yt09StartersComposition />
+      <Yt10CommissionComposition />
+      <Yt11TerminalsComposition />
+      <Yt12AdaptersComposition />
+      <Yt13CardVaultComposition />
     </>
   );
 };

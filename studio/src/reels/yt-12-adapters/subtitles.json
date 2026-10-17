@@ -1,0 +1,83 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 139,
+    "text": "How does our system talk to Uzcard and Humo, when they speak different languages?",
+    "prefix": "How does our system talk to Uzcard and Humo, when they speak different languages?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 138,
+    "endFrame": 296,
+    "text": "Uzcard speaks REST, and Humo speaks SOAP, with different fields and different errors.",
+    "prefix": "Uzcard speaks REST, and Humo speaks SOAP, with different fields and different errors.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 295,
+    "endFrame": 454,
+    "text": "If the payment module knew both, every new scheme would mean touching payment code.",
+    "prefix": "If the payment module knew both, every new scheme would mean touching payment code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 453,
+    "endFrame": 718,
+    "text": "So we define one port, a card processor, with a few commands: one-time code, authorize, capture, reverse, and status.",
+    "prefix": "So we define one port, a card processor, with a few commands: one-time code, authorize, capture, reverse, and status.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 717,
+    "endFrame": 795,
+    "text": "Each scheme gets its own adapter behind that port.",
+    "prefix": "Each scheme gets its own adapter behind that port.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 795,
+    "endFrame": 910,
+    "text": "The payment module sends the same command, whatever the card.",
+    "prefix": "The payment module sends the same command, whatever the card.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 909,
+    "endFrame": 1110,
+    "text": "Each adapter translates the scheme's errors into our own codes, so a decline looks the same everywhere.",
+    "prefix": "Each adapter translates the scheme's errors into our own codes, so a decline looks the same everywhere.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1109,
+    "endFrame": 1225,
+    "text": "We demo every command against the schemes' test environments.",
+    "prefix": "We demo every command against the schemes' test environments.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1224,
+    "endFrame": 1374,
+    "text": "Next, knowing a card's scheme, and storing its number safely.",
+    "prefix": "Next, knowing a card's scheme, and storing its number safely.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

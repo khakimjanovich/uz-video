@@ -1,0 +1,32 @@
+1
+00:00:00,050 --> 00:00:04,440
+Which terminal does the processing center expect each debit to come through?
+
+2
+00:00:04,440 --> 00:00:07,916
+It only accepts debits from terminals it already knows.
+
+3
+00:00:07,916 --> 00:00:15,047
+So the terminal module keeps a registry: for each sales point and card scheme, one merchant ID and one terminal ID.
+
+4
+00:00:15,047 --> 00:00:19,357
+Uzcard and Humo payments can use different terminals for the very same shop.
+
+5
+00:00:19,357 --> 00:00:23,238
+Before every debit, the payment module resolves the terminal.
+
+6
+00:00:23,238 --> 00:00:27,702
+No active terminal means no debit, and the payment fails closed.
+
+7
+00:00:27,702 --> 00:00:32,571
+Every terminal change is logged, so an audit can see what was active, and when.
+
+8
+00:00:32,571 --> 00:00:36,821
+Next, the card schemes themselves: talking to Uzcard and Humo.
+

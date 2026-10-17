@@ -1,0 +1,40 @@
+1
+00:00:00,050 --> 00:00:03,500
+How much does the bank earn on each payment, and who decides it?
+
+2
+00:00:03,500 --> 00:00:07,928
+Fees can't be hardcoded, because every merchant negotiates its own.
+
+3
+00:00:07,928 --> 00:00:14,369
+So commission rules live in their own module, each with a scope, a card scheme, and a validity window.
+
+4
+00:00:14,369 --> 00:00:19,928
+A rule for one sales point beats a rule for the merchant, which beats a rule for the whole card scheme.
+
+5
+00:00:19,928 --> 00:00:23,369
+Within the same scope, a priority number breaks the tie.
+
+6
+00:00:23,369 --> 00:00:28,488
+The payment module asks only one question: what is the fee for this payment?
+
+7
+00:00:28,488 --> 00:00:32,154
+If the fee would eat the whole amount, the payment is refused.
+
+8
+00:00:32,154 --> 00:00:37,559
+Changing a fee is a maker-checker request, so nobody changes money rules alone.
+
+9
+00:00:37,559 --> 00:00:43,107
+Every change is kept in a history table, and old payments keep the fee they were charged.
+
+10
+00:00:43,107 --> 00:00:45,821
+Next, which terminal each payment goes through.
+

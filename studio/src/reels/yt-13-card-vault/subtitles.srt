@@ -1,0 +1,36 @@
+1
+00:00:00,050 --> 00:00:04,452
+How do we know whether a card is Uzcard or Humo, and where do we keep its number?
+
+2
+00:00:04,452 --> 00:00:07,857
+The first digits of a card, its BIN, tell us the scheme.
+
+3
+00:00:07,857 --> 00:00:12,273
+A scheduled job keeps the BIN registry in sync with both schemes.
+
+4
+00:00:12,273 --> 00:00:16,357
+A plain card number in our database would be a disaster on the day of a breach.
+
+5
+00:00:16,357 --> 00:00:22,547
+So the card vault encrypts the number with AES-GCM, and gives everyone else a token instead.
+
+6
+00:00:22,547 --> 00:00:28,011
+Only the vault can turn a token back into a card number, and only to send it to the processing center.
+
+7
+00:00:28,011 --> 00:00:30,785
+Every reveal is written to an audit trail.
+
+8
+00:00:30,785 --> 00:00:35,511
+A stolen database now holds nothing but ciphertext and meaningless tokens.
+
+9
+00:00:35,511 --> 00:00:40,416
+Next, the payment itself, starting with a request nobody can forge.
+

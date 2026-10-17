@@ -1,0 +1,36 @@
+1
+00:00:00,050 --> 00:00:04,619
+How does our system talk to Uzcard and Humo, when they speak different languages?
+
+2
+00:00:04,619 --> 00:00:09,845
+Uzcard speaks REST, and Humo speaks SOAP, with different fields and different errors.
+
+3
+00:00:09,845 --> 00:00:15,107
+If the payment module knew both, every new scheme would mean touching payment code.
+
+4
+00:00:15,107 --> 00:00:23,928
+So we define one port, a card processor, with a few commands: one-time code, authorize, capture, reverse, and status.
+
+5
+00:00:23,928 --> 00:00:26,500
+Each scheme gets its own adapter behind that port.
+
+6
+00:00:26,500 --> 00:00:30,309
+The payment module sends the same command, whatever the card.
+
+7
+00:00:30,309 --> 00:00:36,988
+Each adapter translates the scheme's errors into our own codes, so a decline looks the same everywhere.
+
+8
+00:00:36,988 --> 00:00:40,821
+We demo every command against the schemes' test environments.
+
+9
+00:00:40,821 --> 00:00:44,773
+Next, knowing a card's scheme, and storing its number safely.
+
