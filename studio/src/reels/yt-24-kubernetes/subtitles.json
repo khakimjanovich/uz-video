@@ -1,0 +1,74 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 92,
+    "text": "How does this laptop setup become a production system?",
+    "prefix": "How does this laptop setup become a production system?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 91,
+    "endFrame": 170,
+    "text": "First, we build a container image for the app.",
+    "prefix": "First, we build a container image for the app.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 169,
+    "endFrame": 333,
+    "text": "A Helm chart deploys it to Kubernetes, with three replicas behind one service.",
+    "prefix": "A Helm chart deploys it to Kubernetes, with three replicas behind one service.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 332,
+    "endFrame": 539,
+    "text": "Actuator's liveness and readiness probes tell Kubernetes when to restart a pod, and when to send it traffic.",
+    "prefix": "Actuator's liveness and readiness probes tell Kubernetes when to restart a pod, and when to send it traffic.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 538,
+    "endFrame": 645,
+    "text": "Secrets come from Vault at startup, and never from files.",
+    "prefix": "Secrets come from Vault at startup, and never from files.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 644,
+    "endFrame": 849,
+    "text": "With three replicas, every scheduled job would run three times, so ShedLock lets only one of them run.",
+    "prefix": "With three replicas, every scheduled job would run three times, so ShedLock lets only one of them run.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 848,
+    "endFrame": 1003,
+    "text": "Kill a pod in the middle of a payment, and the payment still resolves exactly once.",
+    "prefix": "Kill a pod in the middle of a payment, and the payment still resolves exactly once.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1002,
+    "endFrame": 1139,
+    "text": "Next, moving one module out into its own service.",
+    "prefix": "Next, moving one module out into its own service.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

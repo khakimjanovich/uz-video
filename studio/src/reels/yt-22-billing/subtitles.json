@@ -1,0 +1,56 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 141,
+    "text": "How does the bank charge partners for using the API, and how do shops match their books?",
+    "prefix": "How does the bank charge partners for using the API, and how do shops match their books?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 140,
+    "endFrame": 253,
+    "text": "Every API call increments a usage counter in Redis.",
+    "prefix": "Every API call increments a usage counter in Redis.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 252,
+    "endFrame": 388,
+    "text": "A Spring Batch job flushes those counters into billing records.",
+    "prefix": "A Spring Batch job flushes those counters into billing records.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 387,
+    "endFrame": 512,
+    "text": "Each shop gets a daily report of its payments, fees, and payouts.",
+    "prefix": "Each shop gets a daily report of its payments, fees, and payouts.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 511,
+    "endFrame": 635,
+    "text": "The report adds up to exactly the money that landed in its account.",
+    "prefix": "The report adds up to exactly the money that landed in its account.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 634,
+    "endFrame": 768,
+    "text": "Next, the gaps we still need to close before production.",
+    "prefix": "Next, the gaps we still need to close before production.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

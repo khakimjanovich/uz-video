@@ -1,0 +1,24 @@
+1
+00:00:00,050 --> 00:00:04,678
+How does the bank charge partners for using the API, and how do shops match their books?
+
+2
+00:00:04,678 --> 00:00:08,416
+Every API call increments a usage counter in Redis.
+
+3
+00:00:08,416 --> 00:00:12,904
+A Spring Batch job flushes those counters into billing records.
+
+4
+00:00:12,904 --> 00:00:17,047
+Each shop gets a daily report of its payments, fees, and payouts.
+
+5
+00:00:17,047 --> 00:00:21,154
+The report adds up to exactly the money that landed in its account.
+
+6
+00:00:21,154 --> 00:00:24,571
+Next, the gaps we still need to close before production.
+

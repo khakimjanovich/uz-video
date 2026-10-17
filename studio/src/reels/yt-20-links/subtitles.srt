@@ -1,0 +1,24 @@
+1
+00:00:00,050 --> 00:00:04,952
+How does a shop that sells in a chat take a card payment, without any website checkout?
+
+2
+00:00:04,952 --> 00:00:08,380
+The merchant creates a payment link with an amount and a description.
+
+3
+00:00:08,380 --> 00:00:13,940
+The link goes into any chat, and the buyer opens the same bank page as before.
+
+4
+00:00:13,940 --> 00:00:18,714
+A link can be claimed only once, so two buyers can never pay the same order.
+
+5
+00:00:18,714 --> 00:00:23,119
+Unused links expire after the configured time, and a sweep cleans them up.
+
+6
+00:00:23,119 --> 00:00:25,714
+Next, sending money back to the buyer.
+

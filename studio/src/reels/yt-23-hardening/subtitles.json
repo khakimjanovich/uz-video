@@ -1,0 +1,65 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 95,
+    "text": "What still needs fixing before this system goes to production?",
+    "prefix": "What still needs fixing before this system goes to production?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 94,
+    "endFrame": 296,
+    "text": "First, keep each nonce as long as its timestamp is accepted, so a signed request can never be replayed later.",
+    "prefix": "First, keep each nonce as long as its timestamp is accepted, so a signed request can never be replayed later.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 295,
+    "endFrame": 469,
+    "text": "Second, check the signature before spending the nonce, so nobody can burn other merchants' nonces.",
+    "prefix": "Second, check the signature before spending the nonce, so nobody can burn other merchants' nonces.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 468,
+    "endFrame": 626,
+    "text": "Third, require an approved KYB before any merchant can be activated.",
+    "prefix": "Third, require an approved KYB before any merchant can be activated.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 625,
+    "endFrame": 724,
+    "text": "Fourth, add payment limits for each sales point.",
+    "prefix": "Fourth, add payment limits for each sales point.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 723,
+    "endFrame": 874,
+    "text": "Each one is your exercise, with a failing test waiting for you to make it pass.",
+    "prefix": "Each one is your exercise, with a failing test waiting for you to make it pass.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 873,
+    "endFrame": 1004,
+    "text": "Next, taking the whole system to Kubernetes.",
+    "prefix": "Next, taking the whole system to Kubernetes.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

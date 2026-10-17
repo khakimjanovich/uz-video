@@ -1,0 +1,28 @@
+1
+00:00:00,050 --> 00:00:03,154
+What still needs fixing before this system goes to production?
+
+2
+00:00:03,154 --> 00:00:09,857
+First, keep each nonce as long as its timestamp is accepted, so a signed request can never be replayed later.
+
+3
+00:00:09,857 --> 00:00:15,619
+Second, check the signature before spending the nonce, so nobody can burn other merchants' nonces.
+
+4
+00:00:15,619 --> 00:00:20,857
+Third, require an approved KYB before any merchant can be activated.
+
+5
+00:00:20,857 --> 00:00:24,107
+Fourth, add payment limits for each sales point.
+
+6
+00:00:24,107 --> 00:00:29,107
+Each one is your exercise, with a failing test waiting for you to make it pass.
+
+7
+00:00:29,107 --> 00:00:32,464
+Next, taking the whole system to Kubernetes.
+

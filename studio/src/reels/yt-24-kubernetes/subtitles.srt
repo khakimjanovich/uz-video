@@ -1,0 +1,32 @@
+1
+00:00:00,050 --> 00:00:03,035
+How does this laptop setup become a production system?
+
+2
+00:00:03,035 --> 00:00:05,654
+First, we build a container image for the app.
+
+3
+00:00:05,654 --> 00:00:11,083
+A Helm chart deploys it to Kubernetes, with three replicas behind one service.
+
+4
+00:00:11,083 --> 00:00:17,940
+Actuator's liveness and readiness probes tell Kubernetes when to restart a pod, and when to send it traffic.
+
+5
+00:00:17,940 --> 00:00:21,488
+Secrets come from Vault at startup, and never from files.
+
+6
+00:00:21,488 --> 00:00:28,273
+With three replicas, every scheduled job would run three times, so ShedLock lets only one of them run.
+
+7
+00:00:28,273 --> 00:00:33,428
+Kill a pod in the middle of a payment, and the payment still resolves exactly once.
+
+8
+00:00:33,428 --> 00:00:36,964
+Next, moving one module out into its own service.
+

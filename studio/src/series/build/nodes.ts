@@ -22,7 +22,7 @@ export const BUILD_CATALOG = {
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
   bin: { label: "BIN registry", art: "journal" },
-  app: { label: "Acquiring app", sublabel: "Modular monolith", art: "salespoint" },
+  app: { label: "Acquiring app", sublabel: "Modular monolith", logo: siSpringboot.path },
   partner: { label: "Partner module", sublabel: "Merchant registry", art: "journal" },
   commission: { label: "Commission module", art: "fee" },
   terminal: { label: "Terminal module", sublabel: "MID / TID", art: "tray" },

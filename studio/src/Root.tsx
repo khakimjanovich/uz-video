@@ -41,6 +41,20 @@ import { Yt17ObservabilityComposition } from "./reels/yt-17-observability";
 
 import { Yt18SilenceComposition } from "./reels/yt-18-silence";
 
+import { Yt19EventsComposition } from "./reels/yt-19-events";
+
+import { Yt20LinksComposition } from "./reels/yt-20-links";
+
+import { Yt21RefundsComposition } from "./reels/yt-21-refunds";
+
+import { Yt22BillingComposition } from "./reels/yt-22-billing";
+
+import { Yt23HardeningComposition } from "./reels/yt-23-hardening";
+
+import { Yt24KubernetesComposition } from "./reels/yt-24-kubernetes";
+
+import { Yt25ExtractionComposition } from "./reels/yt-25-extraction";
+
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
   return (
@@ -67,6 +81,13 @@ export const RemotionRoot: React.FC = () => {
       <Yt16DebitComposition />
       <Yt17ObservabilityComposition />
       <Yt18SilenceComposition />
+      <Yt19EventsComposition />
+      <Yt20LinksComposition />
+      <Yt21RefundsComposition />
+      <Yt22BillingComposition />
+      <Yt23HardeningComposition />
+      <Yt24KubernetesComposition />
+      <Yt25ExtractionComposition />
     </>
   );
 };

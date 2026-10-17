@@ -1,0 +1,28 @@
+1
+00:00:00,050 --> 00:00:02,392
+When does a module deserve its own service?
+
+2
+00:00:02,392 --> 00:00:07,880
+The card vault holds card numbers, so it needs stricter security, and its own audit scope.
+
+3
+00:00:07,880 --> 00:00:12,333
+Because it only ever talked through its interface, we can move it out cleanly.
+
+4
+00:00:12,333 --> 00:00:16,369
+The in-process call becomes a REST call, behind the very same port.
+
+5
+00:00:16,369 --> 00:00:19,095
+It gets its own database, and its own deploy.
+
+6
+00:00:19,095 --> 00:00:24,178
+The payment flow works exactly as before, now across two services.
+
+7
+00:00:24,178 --> 00:00:27,535
+That is the whole system, built part by part, from one map.
+
