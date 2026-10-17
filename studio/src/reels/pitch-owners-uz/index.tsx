@@ -26,6 +26,8 @@ const TITLES = [
   "Kod, xolos",
   "Har kuni",
   "Ertasi kuni",
+  "Xulosa",
+  "To'xtatildi",
 ];
 
 const CATALOG = {
@@ -76,6 +78,7 @@ const UZ: Record<string, string> = {
   "word of mouth": "og'izdan og'izga",
   "new merchant": "yangi savdogar",
   "commission + deposit": "komissiya + depozit",
+  protected: "himoyalangan",
 };
 
 // Swap every English badge, edge and packet label for its Uzbek text; numbers pass through unchanged.
@@ -95,7 +98,7 @@ const PitchOwnersUz: React.FC<ReelProps> = ({ theme }) => (
     reelId="pitch-owners-uz"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · BANK EGALARI UCHUN"
+    series=""
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Bankingiz", value: "O'z ekvayringi" }}
   >

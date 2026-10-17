@@ -236,4 +236,32 @@ export const steps: DiagramStep<AcquiringNodeId>[] = [
     accent: ["feeacc", "storeacc"],
     badges: { storeacc: "at your bank" },
   },
+  // Summary, money: the bank in the middle keeps the commission and the deposits.
+  {
+    cue: 16,
+    layout: { feeacc: [0, 1.6], bank: [1, 1.6], storeacc: [2, 1.6] },
+    edges: [
+      { from: "bank", to: "feeacc" },
+      { from: "bank", to: "storeacc" },
+    ],
+    packets: [
+      { from: "bank", to: "feeacc", label: "commission", delay: 15 },
+      { from: "bank", to: "storeacc", label: "deposit", delay: 35 },
+    ],
+    accent: ["bank"],
+  },
+  // Summary, safety: the four threats return and are crossed out at the bank's door.
+  {
+    cue: 17,
+    layout: { attacker: [0, 0.2], fakesite: [2, 0.2], bank: [1, 1.95], payment: [0, 3.7], buyer: [2, 3.7] },
+    edges: [
+      { from: "fakesite", to: "bank", broken: true },
+      { from: "attacker", to: "bank", broken: true },
+      { from: "payment", to: "bank", broken: true },
+      { from: "buyer", to: "bank", broken: true },
+    ],
+    crossed: ["fakesite", "attacker", "payment", "buyer"],
+    accent: ["bank"],
+    badges: { bank: "protected" },
+  },
 ];

@@ -26,6 +26,8 @@ const TITLES = [
   "Nothing there",
   "Every day",
   "Next day",
+  "In short",
+  "All stopped",
 ];
 
 const PitchOwners: React.FC<ReelProps> = ({ theme }) => (
@@ -34,7 +36,7 @@ const PitchOwners: React.FC<ReelProps> = ({ theme }) => (
     reelId="pitch-owners"
     subtitles={subtitles}
     acts={acts}
-    series="HEEYPAY ACQ · FOR BANK OWNERS"
+    series=""
     title={(cue) => TITLES[cue] ?? TITLES[TITLES.length - 1]}
     footer={{ label: "Your bank", value: "Own acquiring" }}
   >
