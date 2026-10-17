@@ -32,6 +32,9 @@ export const ACQUIRING_NODES = {
   stage5: { label: "Status", sublabel: "Part 5", art: "receipt" },
   stage6: { label: "Payment links", sublabel: "Part 6", art: "link" },
   stage7: { label: "Settlement", sublabel: "Part 7", art: "wallet" },
+  // Owner pitch
+  fakesite: { label: "Fake website", sublabel: "Illegal goods", art: "salespoint" },
+  statuscheck: { label: "Store check", sublabel: "Is it active?", art: "processing" },
   // Deep-dive icons: first met in Tier 1 at the teaser, then the clue that opens each deep dive.
   dd1: { label: "Four-eyes", sublabel: "Deep dive 01", art: "foureyes" },
   dd2: { label: "Commission", sublabel: "Deep dive 02", art: "commission" },

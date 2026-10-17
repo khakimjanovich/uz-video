@@ -1,6 +1,7 @@
 import "./index.css";
 import React from "react";
 import { PlaygroundComposition } from "./reels/_playground";
+import { PitchOwnersComposition } from "./reels/pitch-owners";
 import { Ep01GatewayComposition } from "./reels/ep01-gateway";
 import { Ep02OnboardingComposition } from "./reels/ep02-onboarding";
 import { Ep03S2sComposition } from "./reels/ep03-s2s";
@@ -23,6 +24,7 @@ export const RemotionRoot: React.FC = () => {
   return (
     <>
       <PlaygroundComposition />
+      <PitchOwnersComposition />
       <Ep01GatewayComposition />
       <Ep02OnboardingComposition />
       <Ep03S2sComposition />
