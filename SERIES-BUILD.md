@@ -61,20 +61,24 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
   - [`ecom-infra`](https://github.com/khakimjanovich/ecom-infra): docker-compose (Postgres 17.6, Redis 8.2, Keycloak 26.4), later Helm and Kubernetes. The "one command" lives here.
   - [`ecom-k6-testing`](https://github.com/khakimjanovich/ecom-k6-testing): Grafana k6 load tests from day one, one folder per area, thresholds in every script; results join Grafana from episode 17.
   - Frontend: not covered.
-- **Tags:** each repo is tagged per episode (`ep-02`, `ep-03`, …) so a viewer can check out exactly what a video shows.
+- **Tags:** each repo is tagged per episode (`ep-02`, `ep-03`, …) so a viewer can check out exactly what a video shows. `ecom`'s `ep-02` is a side commit holding Episode 02's state, since 02 and 03 were built together.
+- **Clean codebase:** no convenience files (no Makefile), no episode mentions in code, generated code only in build output and published jars, only tests that guard a real rule.
 - **Database:** one Postgres, a schema per module, and a database user per module that can see only its own schema (isolation enforced by Postgres).
 - **Logging:** Spring Boot structured logging, one property (`logging.structured.format.console=ecs`), ECS JSON format.
 
 ## Build setup
 
-- **Java 25 + Spring Boot 4.1.** Plain Spring Boot starters (web, data-jpa, validation, actuator, security, mail); our own starters are extracted in episode 09.
-- **Contract-first.** Each module owns `src/main/openapi/<module>-v1.yaml`. The `org.openapi.generator` Gradle plugin generates the API interfaces and DTOs (`interfaceOnly`); controllers implement the generated interfaces. A spec change that the code doesn't follow breaks the build.
-- **One Gradle build, many modules.** `settings.gradle.kts` includes `app`, the five domain modules and (later) the starters. No publishing to `mavenLocal`: that is for separate repos and brings stale snapshots.
-- **Rebuild only what changed:**
-  - modules depend on each other with `implementation`, not `api`, so a change to a module's internals doesn't recompile its dependents (compile avoidance);
-  - `org.gradle.caching=true` and `org.gradle.configuration-cache=true` in `gradle.properties`;
-  - each module exposes only its `*Api` package; the boundary test from episode 02 enforces it.
-- **Versions** live in `gradle/libs.versions.toml` (see Versions).
+- **Java 25 + Spring Boot 4.1**, Lombok, Spring Modulith (boundary test).
+- **`platform/`** in `ecom`, each its own Gradle build, published to local Maven (`~/.m2`) before the app builds:
+  - `version-catalog`: the one `libs.versions.toml`, published as `uz.heeypay.ecom:version-catalog`;
+  - `openapi`: one project per module contract (`partner-api`, …): the spec in, generated Spring interfaces and models out. Generated code lives only in `build/` and the published jar; the jar also ships the spec for Swagger UI;
+  - `error-starter`: one error format for every module, RFC 9457 problem details plus a stable `code`, built on Spring's `ProblemDetail`.
+- **Contract-first:** controllers implement the generated `*Api`; Swagger UI shows the spec we wrote, not docs generated from code.
+- **House style (from the bank's repo, rewritten clean):** layer packages `controller`, `service` + `impl`, `repository`, `entity`, `mapper`, `constant`, `property`, `config`; literals in Lombok `@UtilityClass` `*ConstantUtils`, bean names in `*BeanNames`, error codes in `*ErrorCode`.
+- **Per-module persistence:** each module has its own datasource, Liquibase, entity manager and transaction manager, connecting as its own database user.
+- **Tests:** unit in `src/test` (`*Test`), integration on real Postgres via Testcontainers in `src/integrationTest` (`*IT`), `./gradlew check` runs both; load and smoke in `ecom-k6-testing`.
+- **Rebuild only what changed:** `implementation` dependencies (compile avoidance), build cache and configuration cache in `gradle.properties`.
+- **Local ports:** Postgres 5442, Redis 6389, Keycloak 8180 (5432/6379 are often taken on dev machines).
 
 ## Email
 
@@ -104,14 +108,14 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 ## Versions
 
 - Policy: the latest stable release on the day an episode is recorded, pinned exactly (no `latest` tags, no ranges).
-- Where: one Gradle version catalog (`gradle/libs.versions.toml`, as in the real repo) and image tags in `docker-compose.yml`.
+- Where: `platform/version-catalog/libs.versions.toml` (published to local Maven, as in the real repo) and image tags in `docker-compose.yml`.
 - Each episode's `git tag` freezes its versions, so a viewer can reproduce it later. Upgrades get their own short episode when needed.
 
 ## Database design
 
 - **Episode 03, once:** a one-page entity sketch for the whole system: entities per module, their owners and relations, no columns. Cross-module links are IDs only (`payment.sales_point_id` is a UUID, no foreign key across schemas), which keeps modules extractable.
 - **Every episode after:** detailed tables just in time, as Liquibase migrations in that module's own schema, designed with the method (domain → contract → database).
-- **Episode 02:** empty schemas only (`partner`, `commission`, `terminal`, `card`, `payment`).
+- **Episode 02:** empty schemas only (`partner`, `commission`, `terminal`, `card`, `payment`), each owned by its own database user.
 
 ## Video notes
 
@@ -140,9 +144,9 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **02 · Setup**
 - Problem: nothing runs yet.
-- Build: Gradle multi-module skeleton (`app` + `partner`, `commission`, `terminal`, `card`, `payment` modules, a schema each), a module-boundary test that fails if one module touches another's internals, `docker-compose.yml` with Postgres, Redis and Keycloak only (the rest arrives with its episode), structured JSON logs, Actuator health, the version catalog, a `make up` / `make down`.
+- Build: Gradle multi-module skeleton (`app` + five modules, a schema and database user each), the Spring Modulith boundary test, `platform/` (version catalog, openapi, error-starter) published to local Maven, the layer-package house style, `ecom-infra` docker-compose with Postgres, Redis and Keycloak only, ECS JSON logs, Actuator health, the test layout (unit, integration, k6).
 - Why: every later demo depends on one command bringing the world up.
-- Demo: `docker compose up` → all health checks green; an empty Spring app answers `/actuator/health`.
+- Demo: `docker compose up` → all health checks green; the app answers `/actuator/health`; the k6 smoke test passes.
 
 **03 · Domain → contract → database (the method)**
 - Problem: where do you start designing?

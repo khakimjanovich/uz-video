@@ -1,44 +1,64 @@
 1
-00:00:00,050 --> 00:00:02,964
+00:00:00,050 --> 00:00:03,035
 Where does a payment system start, if not with payments?
 
 2
-00:00:02,964 --> 00:00:07,714
+00:00:03,035 --> 00:00:07,666
 It starts with a project that builds, and an environment that runs with one command.
 
 3
-00:00:07,714 --> 00:00:14,011
+00:00:07,666 --> 00:00:13,976
 We use Java twenty-five and Spring Boot four, built by one Gradle build with a module for each part of the domain.
 
 4
-00:00:14,011 --> 00:00:23,726
+00:00:13,976 --> 00:00:23,845
 The app has five modules, partner, commission, terminal, card, and payment, and each one owns its own schema, with a database user that can see nothing else.
 
 5
-00:00:23,726 --> 00:00:30,333
+00:00:23,845 --> 00:00:30,071
 A boundary test fails the build if one module reaches into another module's code or tables.
 
 6
-00:00:30,333 --> 00:00:36,345
-Every version is pinned in one catalog file, so the build is the same on every machine.
+00:00:30,071 --> 00:00:36,369
+Shared pieces live in a platform folder, built once and published to the local Maven repository.
 
 7
-00:00:36,345 --> 00:00:44,773
-A separate infrastructure repository uses Docker Compose to start Postgres, Redis, and Keycloak, and nothing else yet.
+00:00:36,369 --> 00:00:42,095
+The version catalog pins every version, so the build is the same on every machine.
 
 8
-00:00:44,773 --> 00:00:48,880
-Every other tool joins only in the episode whose problem needs it.
+00:00:42,095 --> 00:00:48,047
+The error starter gives every module the same error format: a problem detail with a stable code.
 
 9
-00:00:48,880 --> 00:00:56,559
-With one setting, the app logs structured JSON in the community ECS format, and reports its health from the very first minute.
+00:00:48,047 --> 00:00:56,928
+API contracts are OpenAPI files, and the code generated from them lives only in the published jars, never in our source.
 
 10
-00:00:56,559 --> 00:01:00,904
-One command in the infrastructure repository, and the whole world is up.
+00:00:56,928 --> 00:01:05,571
+Every module follows the same layers, controller, service, repository, and entity, with its constants in one place.
 
 11
-00:01:00,904 --> 00:01:04,523
+00:01:05,571 --> 00:01:13,476
+A separate infrastructure repository uses Docker Compose to start Postgres, Redis, and Keycloak, and nothing else yet.
+
+12
+00:01:13,476 --> 00:01:16,619
+Every other tool joins only when a problem needs it.
+
+13
+00:01:16,619 --> 00:01:24,297
+With one setting, the app logs structured JSON in the community ECS format, and reports its health from the very first minute.
+
+14
+00:01:24,297 --> 00:01:28,821
+One command in the infrastructure repository, and the whole world is up.
+
+15
+00:01:28,821 --> 00:01:37,226
+Unit tests run in seconds, integration tests run against a real Postgres, and load tests live in their own k6 repository.
+
+16
+00:01:37,226 --> 00:01:40,690
 Next, we design the domain before we write a single table.
 
