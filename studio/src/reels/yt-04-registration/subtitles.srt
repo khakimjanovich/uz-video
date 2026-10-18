@@ -1,40 +1,52 @@
 1
-00:00:00,050 --> 00:00:03,321
+00:00:00,050 --> 00:00:03,119
 How do we know a new merchant really owns the email they typed?
 
 2
-00:00:03,321 --> 00:00:07,833
+00:00:03,119 --> 00:00:07,452
 Anyone can type any address, so a sign-up alone proves nothing.
 
 3
-00:00:07,833 --> 00:00:13,428
-So the partner module saves the merchant as pending, and sends a one-time code to that email.
+00:00:07,452 --> 00:00:13,369
+The contract adds three calls: register, verify the email, and resend the code.
 
 4
-00:00:13,428 --> 00:00:18,547
-The code lives in Redis with a configured lifetime, and disappears when it expires.
+00:00:13,369 --> 00:00:18,678
+Registering saves the merchant as pending, and refuses an email that is already taken.
 
 5
-00:00:18,547 --> 00:00:24,202
-The email goes out through the email port, and locally it lands in Mailpit, where we can open it.
+00:00:18,678 --> 00:00:24,678
+A one-time code then goes to that email, from a new OTP starter that any module can use.
 
 6
-00:00:24,202 --> 00:00:29,369
-The merchant types the code back, and only then is the email marked as verified.
+00:00:24,678 --> 00:00:31,488
+Redis keeps only a hash of the code, with a configured lifetime, so even a copy of Redis never reveals it.
 
 7
-00:00:29,369 --> 00:00:33,857
-Wrong codes count against a configured limit, and too many lock the attempt.
+00:00:31,488 --> 00:00:37,440
+The email goes out through the notification service, and locally it lands in Mailpit, where we can read it.
 
 8
-00:00:33,857 --> 00:00:37,452
-Resends are limited too, so nobody can flood an inbox.
+00:00:37,440 --> 00:00:42,178
+The merchant sends the code back, and only then is the email marked as verified.
 
 9
-00:00:37,452 --> 00:00:41,857
-Every failure returns a clear error with a code, never a stack trace.
+00:00:42,178 --> 00:00:46,392
+Wrong codes count against a configured limit, and too many lock the code.
 
 10
-00:00:41,857 --> 00:00:46,523
+00:00:46,392 --> 00:00:49,833
+Sends are limited too, so nobody can flood an inbox.
+
+11
+00:00:49,833 --> 00:00:56,857
+Every failure has its own stable code: email taken, code invalid, code expired, or too many attempts.
+
+12
+00:00:56,857 --> 00:01:02,773
+Under load, about five thousand merchants registered and verified their email in thirty seconds.
+
+13
+00:01:02,773 --> 00:01:07,226
 Next, the merchant moves through a lifecycle, from pending to active.
 

@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt04RegistrationComposition = createEpisode({
   id: "yt-04-registration",
@@ -9,7 +9,8 @@ export const Yt04RegistrationComposition = createEpisode({
   part: 1,
   footer: "Registration + email OTP",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Whose email?", "Proves nothing", "Pending + code", "Code in Redis", "Mailpit inbox", "Verified", "Attempt limit", "Resend limit", "Clean errors", "Next: lifecycle"],
+  titles: ["Whose email?", "Proves nothing", "The contract", "Pending", "OTP starter", "Only a hash", "Mailpit inbox", "Verified", "Attempt limit", "Send limit", "Stable codes", "Under load", "Next: lifecycle"],
   map,
   diagram,
+  code,
 });

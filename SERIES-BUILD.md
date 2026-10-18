@@ -159,7 +159,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **04 · Partner registration + email OTP**
 - Problem: anyone can type any email; we need proof they own it.
-- Build: register, send OTP, verify; Redis-backed OTP with lifespan, attempt and resend limits (configured); the `EmailSender` port with a Spring Mail adapter, Mailpit in docker-compose. First clean error responses.
+- Build: `POST /api/v1/registrations`, `/email-verification`, `/email-verification/resend`; `platform/otp-starter` (codes stored as SHA-256 hashes in Redis, configured ttl, max-attempts, max-sends per send-window); `NotificationService` over Spring Mail, Mailpit in docker-compose; stable error codes (`PARTNER_EMAIL_TAKEN`, `OTP_INVALID`, `OTP_EXPIRED`, `OTP_ATTEMPTS_EXCEEDED`, `OTP_SEND_LIMIT`).
 - Why: the first gate of trust. Introduces the `otp` and `error` starters' ideas in place.
 - Tables: `partner`, `contact_person`. Redis: `otp:*`.
 - Endpoints: `POST /auth/register`, `POST /auth/otp/verify`, `POST /auth/otp/resend`.
