@@ -53,6 +53,13 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 
 ---
 
+## Repositories and scope (decided 2026-10-19)
+
+- **Backend only.** Series B covers the Java/Spring system; the merchant portal, admin panel and hosted page UI are out of scope.
+- **Three repos:** `acquiring-backend` (the modular monolith), `acquiring-infra` (docker-compose, Helm, Kubernetes, Vault/Keycloak config), `acquiring-frontend` (not covered). The "one command" lives in the infra repo.
+- **Database:** one Postgres, a schema per module, and a database user per module that can see only its own schema (isolation enforced by Postgres).
+- **Logging:** Spring Boot structured logging, one property (`logging.structured.format.console=ecs`), ECS JSON format.
+
 ## Build setup
 
 - **Java 25 + Spring Boot 4.1.** Plain Spring Boot starters (web, data-jpa, validation, actuator, security, mail); our own starters are extracted in episode 09.

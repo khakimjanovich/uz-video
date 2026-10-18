@@ -1,44 +1,44 @@
 1
-00:00:00,050 --> 00:00:03,321
+00:00:00,050 --> 00:00:02,964
 Where does a payment system start, if not with payments?
 
 2
-00:00:03,321 --> 00:00:08,238
+00:00:02,964 --> 00:00:07,714
 It starts with a project that builds, and an environment that runs with one command.
 
 3
-00:00:08,238 --> 00:00:14,452
+00:00:07,714 --> 00:00:14,011
 We use Java twenty-five and Spring Boot four, built by one Gradle build with a module for each part of the domain.
 
 4
-00:00:14,452 --> 00:00:22,250
-The app has five modules, partner, commission, terminal, card, and payment, and each one owns its own database schema.
+00:00:14,011 --> 00:00:23,726
+The app has five modules, partner, commission, terminal, card, and payment, and each one owns its own schema, with a database user that can see nothing else.
 
 5
-00:00:22,250 --> 00:00:28,666
+00:00:23,726 --> 00:00:30,333
 A boundary test fails the build if one module reaches into another module's code or tables.
 
 6
-00:00:28,666 --> 00:00:34,500
+00:00:30,333 --> 00:00:36,345
 Every version is pinned in one catalog file, so the build is the same on every machine.
 
 7
-00:00:34,500 --> 00:00:40,380
-Docker Compose starts Postgres, Redis, and Keycloak, and nothing else yet.
+00:00:36,345 --> 00:00:44,773
+A separate infrastructure repository uses Docker Compose to start Postgres, Redis, and Keycloak, and nothing else yet.
 
 8
-00:00:40,380 --> 00:00:44,583
+00:00:44,773 --> 00:00:48,880
 Every other tool joins only in the episode whose problem needs it.
 
 9
-00:00:44,583 --> 00:00:49,523
-The app logs in JSON and reports its health, so we can see it from the very first minute.
+00:00:48,880 --> 00:00:56,559
+With one setting, the app logs structured JSON in the community ECS format, and reports its health from the very first minute.
 
 10
-00:00:49,523 --> 00:00:52,011
-One command, and the whole world is up.
+00:00:56,559 --> 00:01:00,904
+One command in the infrastructure repository, and the whole world is up.
 
 11
-00:00:52,011 --> 00:00:55,488
+00:01:00,904 --> 00:01:04,523
 Next, we design the domain before we write a single table.
 

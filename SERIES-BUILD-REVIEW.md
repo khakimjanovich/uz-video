@@ -11,7 +11,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 |---|---|---|---|
 | 00 | The map | 1:43 | Part list and order; Kafka/observability/Kubernetes placement |
 | 01 | Acquiring in 5 minutes | 1:11 | ✅ Reviewed 2026-10-19. Code: Uzcard single-step debit (`trans.pay.purpose`), Humo hold then immediate capture (SOAP `Payment` ×2), terminal per sales point + scheme. **Open: reversal vs refund rule per scheme (waiting for Uzcard/Humo docs)** |
-| 02 | Setup | 0:57 | Design: one Gradle build, five modules, schema per module, boundary test |
+| 02 | Setup | 1:06 | ✅ Reviewed 2026-10-19. Design (deliberate, not the real repo): Java 25 + Boot 4, modular monolith, schema + DB user per module, boundary test, separate infra repo, ECS JSON logs. Code: one shared version catalog |
 | 03 | Domain → contract → database | 1:02 | Design: the method; "IDs, not foreign keys" between modules |
 | 04 | Registration + email OTP | 0:48 | Code: OTP lifetime/attempts/resend configured. Design: Mailpit + Spring Mail (real code calls notification-manager). The error code `OTP_INVALID` is illustrative |
 | 05 | Partner lifecycle | 0:46 | Code: states and guard (PartnerStateGuard). Check: wording "pending, verified, waiting for a contract, approved, active" |
