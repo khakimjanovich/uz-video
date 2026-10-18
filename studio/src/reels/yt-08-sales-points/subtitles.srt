@@ -1,36 +1,40 @@
 1
-00:00:00,050 --> 00:00:04,761
+00:00:00,050 --> 00:00:04,607
 A merchant may run several websites, so which one is allowed to take payments?
 
 2
-00:00:04,761 --> 00:00:11,250
+00:00:04,607 --> 00:00:11,547
 A sales point is one website, with its own settings, card schemes, and allowed return addresses.
 
 3
-00:00:11,250 --> 00:00:14,369
-It starts as a draft, and cannot take payments yet.
+00:00:11,547 --> 00:00:18,404
+The deal also fixes how many days refunds are allowed, and a longer window needs a written reason, such as a warranty.
 
 4
-00:00:14,369 --> 00:00:19,178
-Two admins check the site: a real shop, real goods, and a legal business.
+00:00:18,404 --> 00:00:21,333
+It starts as a draft, and cannot take payments yet.
 
 5
-00:00:19,178 --> 00:00:23,285
-A failed check records its findings, and the sales point stays closed.
+00:00:21,333 --> 00:00:26,071
+Two admins check the site: a real shop, real goods, and a legal business.
 
 6
-00:00:23,285 --> 00:00:26,023
-A passed check lets the sales point go active.
+00:00:26,071 --> 00:00:30,166
+A failed check records its findings, and the sales point stays closed.
 
 7
-00:00:26,023 --> 00:00:30,678
-While it is active, the merchant cannot quietly change the website address.
+00:00:30,166 --> 00:00:33,047
+A passed check lets the sales point go active.
 
 8
-00:00:30,678 --> 00:00:36,595
-The payment module will ask one internal question on every request: is this sales point active?
+00:00:33,047 --> 00:00:37,607
+While it is active, the merchant cannot quietly change the website address.
 
 9
-00:00:36,595 --> 00:00:41,488
+00:00:37,607 --> 00:00:43,952
+The payment module will ask one internal question on every request: is this sales point active?
+
+10
+00:00:43,952 --> 00:00:49,059
 Next, a second module appears, and with it, copied code we must remove.
 

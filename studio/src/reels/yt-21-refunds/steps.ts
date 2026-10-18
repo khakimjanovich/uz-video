@@ -15,5 +15,5 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 2, layout: { ...FLOW }, edges: [{ from: "payment", to: "processing" }, { from: "processing", to: "buyer" }], packets: [{ from: "payment", to: "processing", label: "refund", delay: 8 }, { from: "processing", to: "buyer", label: "100 000", delay: 40 }], badges: { payment: "new operation" } },
   { cue: 3, layout: { record: [1.5, 1] }, accent: ["record"], badges: { record: "PARTIALLY_REFUNDED" } },
   { cue: 4, layout: { payment: [0.5, 1], record: [2.5, 1] }, edges: [{ from: "payment", to: "record", broken: true, label: "over captured" }], packets: [{ from: "payment", to: "record", label: "refund 120 000", delay: 15, stopAt: 0.5 }] },
-  { cue: 5, layout: { salespoint: [0.5, 1], payment: [2.5, 1] }, edges: [{ from: "salespoint", to: "payment", label: "refund window" }], badges: { salespoint: "configured days" } },
+  { cue: 5, layout: { salespoint: [0.5, 1], payment: [2.5, 1] }, edges: [{ from: "salespoint", to: "payment", label: "refund window" }], badges: { salespoint: "agreed in the deal" } },
 ];

@@ -17,7 +17,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 05 | Partner lifecycle | 0:46 | Code: states and guard (PartnerStateGuard). Check: wording "pending, verified, waiting for a contract, approved, active" |
 | 06 | Four-eyes | 0:45 | Code: maker-checker, no self-approval, expiry, sweep, unique pending request. Check: the sweep uses ShedLock |
 | 07 | Logins and API clients | 0:40 | Code: Keycloak portal + M2M clients, secret shown once, rotation. Design: app secrets in Vault `secret/app` |
-| 08 | Sales points + site check | 0:43 | **Check: video says two admins check the site; in code a site check is recorded by one admin** (two-admin is your stated process for KYB) |
+| 08 | Sales points + site check | 0:43 | **Check: video says two admins check the site; in code a site check is recorded by one admin** (two-admin is your stated process for KYB). Added 2026-10-19: refund window from the deal (code: `refundWindowDays`, `extendedRefundDays` + `extendedRefundReason`, capped) |
 | 09 | Extract the starters | 0:43 | Code: error/security/otp/redis starters exist |
 | 10 | Commission | 0:47 | Code: scope priority, tie by priority, fee ≥ amount refused, maker-checker, history, fee snapshot |
 | 11 | Terminals (MID/TID) | 0:38 | Code: EPOS per sales point and scheme, fail closed, audit log |
@@ -30,7 +30,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 18 | When processing goes silent | 0:39 | Code: Temporal resolution, backoff, manual review, sweep every minute |
 | 19 | Outbox + Kafka | 0:39 | Code: `event_outbox` is written. **Design: relay + Kafka + webhook consumer don't exist yet** |
 | 20 | Payment links | 0:27 | Code: link claim, expiry sweep |
-| 21 | Refunds and reversals | 0:32 | **Design: no refund/reversal code in the payment service yet.** Code groundwork only: refunds table, PARTIALLY_REFUNDED/REFUNDED states, DB check refunded ≤ captured, `refund_deadline_at` column (unused). Adapters expose Humo `ReturnPayment` (full only) and Uzcard `trans.reverse` (full). Partial refunds not wired |
+| 21 | Refunds and reversals | 0:32 | **Design: no refund/reversal code in the payment service yet.** Code groundwork only: refunds table, PARTIALLY_REFUNDED/REFUNDED states, DB check refunded ≤ captured, `refund_deadline_at` column (unused). Adapters expose Humo `ReturnPayment` (full only) and Uzcard `trans.reverse` (full). Partial refunds not wired. Refund window now points back to Ep 08; **not enforced in the payment service yet** (`refund_deadline_at` unused) |
 | 22 | Billing and reports | 0:26 | Code: billing flush (Spring Batch). **Check: usage counters in Redis; the daily report** (from the BRD, not seen in code) |
 | 23 | Hardening | 0:34 | Code gaps found in review: nonce/timestamp window, nonce before signature, KYB not required at activation, no payment limits |
 | 24 | Deploy to Kubernetes | 0:38 | Design: Helm, probes, Vault at startup, 3 replicas. ShedLock is real |
