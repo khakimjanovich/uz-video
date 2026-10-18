@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt10CommissionComposition = createEpisode({
   id: "yt-10-commission",
@@ -9,7 +9,8 @@ export const Yt10CommissionComposition = createEpisode({
   part: 2,
   footer: "Commission",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Who decides the fee?", "Not hardcoded", "Commission rules", "Most specific wins", "Priority", "One question", "Fee too high", "Maker-checker", "History", "Next: terminals"],
+  titles: ["Who decides the fee?", "Negotiated", "Fee rules", "Most specific wins", "The formula", "Fee ≥ amount", "Four eyes", "No overlaps", "Replacing a fee", "One question", "Own schema", "Tests", "Under load", "Next: terminals"],
   map,
   diagram,
+  code,
 });

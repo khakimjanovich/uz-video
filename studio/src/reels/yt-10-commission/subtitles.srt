@@ -1,40 +1,56 @@
 1
-00:00:00,050 --> 00:00:03,500
+00:00:00,050 --> 00:00:03,571
 How much does the bank earn on each payment, and who decides it?
 
 2
-00:00:03,500 --> 00:00:07,928
-Fees can't be hardcoded, because every merchant negotiates its own.
+00:00:03,571 --> 00:00:07,940
+Fees can't be hard-coded, because every merchant negotiates its own.
 
 3
-00:00:07,928 --> 00:00:14,369
-So commission rules live in their own module, each with a scope, a card scheme, and a validity window.
+00:00:07,940 --> 00:00:14,845
+So the commission module keeps fee rules, each for a website, a merchant, a card scheme, or the whole bank.
 
 4
-00:00:14,369 --> 00:00:19,928
-A rule for one sales point beats a rule for the merchant, which beats a rule for the whole card scheme.
+00:00:14,845 --> 00:00:23,107
+When several rules match, the most specific one wins: a website beats a merchant, which beats a card scheme, which beats the bank.
 
 5
-00:00:19,928 --> 00:00:23,369
-Within the same scope, a priority number breaks the tie.
+00:00:23,107 --> 00:00:30,273
+The fee is a percent, rounded once to whole tiyin, plus a fixed part, kept between a minimum and a maximum.
 
 6
-00:00:23,369 --> 00:00:28,488
-The payment module asks only one question: what is the fee for this payment?
+00:00:30,273 --> 00:00:32,952
+A fee that would take the whole amount is refused.
 
 7
-00:00:28,488 --> 00:00:32,154
-If the fee would eat the whole amount, the payment is refused.
+00:00:32,952 --> 00:00:39,654
+Rules are never edited: a change adds a rule or ends one, and a second admin must approve it.
 
 8
-00:00:32,154 --> 00:00:37,559
-Changing a fee is a maker-checker request, so nobody changes money rules alone.
+00:00:39,654 --> 00:00:46,023
+Two active rules for the same scope can never apply at the same moment, and the database itself refuses them.
 
 9
-00:00:37,559 --> 00:00:43,107
-Every change is kept in a history table, and old payments keep the fee they were charged.
+00:00:46,023 --> 00:00:51,583
+To change a fee, the old rule ends at a chosen moment and the new one starts there.
 
 10
-00:00:43,107 --> 00:00:45,821
-Next, which terminal each payment goes through.
+00:00:51,583 --> 00:00:58,416
+Other modules ask one question, what is the fee for this payment, and the payment keeps the rule and the amount.
+
+11
+00:00:58,416 --> 00:01:03,952
+The module has its own schema and database user, built by a new shared persistence library.
+
+12
+00:01:03,952 --> 00:01:10,297
+Unit tests cover the formula and the scope order, and integration tests run on a real Postgres.
+
+13
+00:01:10,297 --> 00:01:15,702
+Under load, more than thirty thousand fee quotes came back in under three milliseconds.
+
+14
+00:01:15,702 --> 00:01:18,535
+Next, the terminal each payment goes through.
 

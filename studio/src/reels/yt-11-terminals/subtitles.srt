@@ -1,32 +1,48 @@
 1
-00:00:00,050 --> 00:00:04,440
+00:00:00,050 --> 00:00:04,738
 Which terminal does the processing center expect each debit to come through?
 
 2
-00:00:04,440 --> 00:00:07,916
+00:00:04,738 --> 00:00:08,059
 It only accepts debits from terminals it already knows.
 
 3
-00:00:07,916 --> 00:00:15,047
-So the terminal module keeps a registry: for each sales point and card scheme, one merchant ID and one terminal ID.
+00:00:08,059 --> 00:00:15,511
+So the terminal module keeps a registry: for each website and card scheme, one merchant ID and one terminal ID.
 
 4
-00:00:15,047 --> 00:00:19,357
-Uzcard and Humo payments can use different terminals for the very same shop.
+00:00:15,511 --> 00:00:19,976
+Uzcard and Humo payments can use different terminals for the very same website.
 
 5
-00:00:19,357 --> 00:00:23,238
-Before every debit, the payment module resolves the terminal.
+00:00:19,976 --> 00:00:26,392
+A terminal is registered only for a website that exists and accepts that card, and the check fails closed.
 
 6
-00:00:23,238 --> 00:00:27,702
-No active terminal means no debit, and the payment fails closed.
+00:00:26,392 --> 00:00:34,226
+The database allows one live terminal per website and card, and a merchant and terminal ID pair is never issued twice.
 
 7
-00:00:27,702 --> 00:00:32,571
-Every terminal change is logged, so an audit can see what was active, and when.
+00:00:34,226 --> 00:00:38,726
+A terminal can be suspended and resumed, and a revoked one never comes back.
 
 8
-00:00:32,571 --> 00:00:36,821
+00:00:38,726 --> 00:00:42,535
+Every change is written to an audit log: who, what, and why.
+
+9
+00:00:42,535 --> 00:00:49,130
+Before every debit, the payment module asks for the live terminal, and no terminal means no debit.
+
+10
+00:00:49,130 --> 00:00:55,309
+Integration tests run on a real Postgres, with the partner module stubbed at its public interface.
+
+11
+00:00:55,309 --> 00:01:01,857
+Under load, about forty-five hundred terminals were registered, routed and revoked in thirty seconds.
+
+12
+00:01:01,857 --> 00:01:06,023
 Next, the card schemes themselves: talking to Uzcard and Humo.
 

@@ -215,21 +215,22 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 ### Part 2: Money rules (reference services)
 
 **10 · Commission service**
-- Problem: every payment needs a fee, and the fee depends on store, scheme and date.
-- Build: rules with scope priority (SALES_POINT > MERCHANT > CARD_SCHEME), validity window, history; resolve endpoint; changes through maker-checker (reuses episode 06's idea).
-- Why: money logic lives in one place; payments only ask "what's the fee?".
-- Tables: `commission_rule`, `commission_rule_history`, `commission_change_request`.
-- Endpoints: internal `POST /internal/commissions/resolve`.
-- Demo: three overlapping rules → the most specific one wins.
-- Real code: `CommissionResolutionUtils`, `CommissionChangeRequestServiceImpl`.
+- Problem: every payment needs a fee, and the fee depends on the website, the merchant, the card scheme and the date.
+- Build: fee rules scoped to any mix of sales point, partner and scheme (empty = any); the most specific active rule wins (sales point > partner > scheme > bank), so no priority field is needed; fee = percent rounded half up once to tiyin + fixed, kept between min and max; a fee that would take the whole amount is refused (the bank's code lacks this, ours enforces it); rules are never edited: CREATE and END change requests with four eyes (no self-approval, one pending per rule, database checks too); an exclusion constraint (btree_gist) keeps two active rules for the same scope from overlapping in time; `Commissions.quote(...)` returns the rule id and the fee for the payment to keep. `platform/persistence` (shared module persistence) and the `ecom.contract` build convention arrive here, with the second module.
+- Tables: `commission_rule`, `commission_change_request`.
+- Endpoints: `GET|POST /api/v1/admin/commissions`, `POST …/{ruleId}/end`, `POST /api/v1/admin/commissions/quote`, `GET /api/v1/admin/commission-requests`, `POST …/{id}/approve|reject`.
+- Tests: `CommissionRuleTest`, `CommissionServiceIT`; k6 `commission/rules-and-quotes.js` (quotes p95 2.75 ms).
+- Front: bank "Fees" page (rules, new rule, end, calculator); fee changes in Approvals.
+- Code: `ecom@ep-10`.
 
 **11 · Terminals (MID/TID)**
 - Problem: the processing center only accepts debits through a registered terminal.
-- Build: EPOS registry per sales point and scheme; resolve endpoint; audit log.
-- Tables: `epos_terminal`, `epos_audit_log`.
-- Endpoints: internal `GET /internal/epos/resolve?salesPointId&scheme`.
-- Demo: no ACTIVE terminal → resolve fails closed.
-- Real code: epos-reference-service, `TerminalResolver`.
+- Build: a terminal per website and card scheme (MID/TID from the processing center); registration fails closed unless the website exists and accepts that scheme (asked through the partner module's public `SalesPoints`); the database keeps MID/TID unique forever and one live terminal per website and scheme; suspend, resume, revoke (final); an audit log of every change with actor and reason; `Terminals.forPayment(...)` returns the live terminal or nothing.
+- Tables: `terminal`, `terminal_audit`.
+- Endpoints: `GET|POST /api/v1/admin/sales-points/{id}/terminals`, `GET …/terminals/route?scheme=`, `POST /api/v1/admin/terminals/{id}/suspend|resume|revoke`, `GET …/{id}/audit`.
+- Tests: `TerminalTest`, `TerminalServiceIT` (partner stubbed at its public interface); k6 `terminals/register-and-route.js`.
+- Front: terminals card on the bank's website page, with history.
+- Code: `ecom@ep-11`.
 
 ### Part 3: Cards (adapters + vault)
 

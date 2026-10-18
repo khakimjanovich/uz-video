@@ -19,8 +19,8 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 07 | Logins and API clients | 1:17 | ✅ Built and matched to `ecom@ep-07`: Keycloak realm, password only in Keycloak, partner role on email verification, route rules, admin name from token, M2M clients with rotation, full-app IT, k6 with tokens. Vault moved to 14 |
 | 08 | Sales points + site check | 1:23 | ✅ Built and matched to `ecom@ep-08`: one admin records a site check (code and video agree now), own-domain return addresses frozen once live, refund window with reason and configured cap, activation preconditions, `payable` check failing closed, two bugs caught by k6 |
 | 09 | Extract the platform libraries | 1:10 | ✅ Built and matched to `ecom@ep-09`: `platform/security` (rules as configuration) and `platform/keycloak` (admin client), partner delegates, library tests (fake tokens, real Keycloak), callers unchanged |
-| 10 | Commission | 0:47 | Code: scope priority, tie by priority, fee ≥ amount refused, maker-checker, history, fee snapshot |
-| 11 | Terminals (MID/TID) | 0:38 | Code: EPOS per sales point and scheme, fail closed, audit log |
+| 10 | Commission | 1:20 | ✅ Built and matched to `ecom@ep-10`: most specific rule wins (no priority field), fee ≥ amount refused (the bank code lacks it), four-eyes CREATE/END, exclusion constraint for overlaps, `quote` for payments, quotes p95 2.75 ms |
+| 11 | Terminals (MID/TID) | 1:07 | ✅ Built and matched to `ecom@ep-11`: one live terminal per website and card, MID/TID never reused, fail-closed registration and routing, audit log |
 | 12 | Uzcard + Humo adapters | 0:46 | Code: REST (SVGate) + SOAP (Humo), command pattern. Check: "errors translated to our own codes" |
 | 13 | BIN registry + card vault | 0:41 | Code: BIN sync job, AES-GCM, token, reveal only to processing, card audit trail |
 | 14 | HMAC + idempotency | 1:05 | Code: HMAC fields, timestamp window, nonce, idempotency semantics, fail closed. Design: Vault path `secret/merchants` (real: `HMAC_SECRET_<clientId>` provisioned by DevOps) |
