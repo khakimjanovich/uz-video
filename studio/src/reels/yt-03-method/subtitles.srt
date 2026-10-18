@@ -1,40 +1,44 @@
 1
-00:00:00,050 --> 00:00:04,607
+00:00:00,050 --> 00:00:04,928
 Where do you start designing a feature: the database, the API, or the code?
 
 2
-00:00:04,607 --> 00:00:11,095
+00:00:04,928 --> 00:00:11,500
 We start with the domain: the things that exist, the states they move through, and the rules that never break.
 
 3
-00:00:11,095 --> 00:00:17,500
+00:00:11,500 --> 00:00:17,797
 First comes a one-page sketch of the whole system: the main entities, and which module owns each one.
 
 4
-00:00:17,500 --> 00:00:24,035
+00:00:17,797 --> 00:00:24,119
 Links between modules are only IDs, never foreign keys, so a module can move out on its own later.
 
 5
-00:00:24,035 --> 00:00:30,821
+00:00:24,119 --> 00:00:30,880
 Second comes the contract: an OpenAPI spec that promises outsiders exactly what they can ask for.
 
 6
-00:00:30,821 --> 00:00:39,238
+00:00:30,880 --> 00:00:39,619
 Gradle generates the API interfaces from it, and our controllers must implement them, so the code can never drift from the spec.
 
 7
-00:00:39,238 --> 00:00:44,226
+00:00:39,619 --> 00:00:45,083
 Third comes the database: a Liquibase migration in the module's own schema.
 
 8
-00:00:44,226 --> 00:00:49,500
+00:00:45,083 --> 00:00:50,250
 Then we write the smallest code that keeps the rule, and one test that fails if the rule breaks.
 
 9
-00:00:49,500 --> 00:00:55,880
+00:00:50,250 --> 00:00:56,428
 Domain, contract, database, code, and test: every episode follows this order.
 
 10
-00:00:55,880 --> 00:01:00,988
+00:00:56,428 --> 00:01:04,154
+All of this code is in the ecom repository at the tag ep zero three, with a load test in its own repository next to it.
+
+11
+00:01:04,154 --> 00:01:09,071
 Next, the first real feature: a merchant signs up and proves they own their email.
 

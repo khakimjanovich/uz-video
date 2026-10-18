@@ -56,7 +56,12 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 ## Repositories and scope (decided 2026-10-19)
 
 - **Backend only.** Series B covers the Java/Spring system; the merchant portal, admin panel and hosted page UI are out of scope.
-- **Three repos:** `acquiring-backend` (the modular monolith), `acquiring-infra` (docker-compose, Helm, Kubernetes, Vault/Keycloak config), `acquiring-frontend` (not covered). The "one command" lives in the infra repo.
+- **Repos (companion code, local in `~/Documents/acquiring/`):**
+  - [`ecom`](https://github.com/khakimjanovich/ecom): the Java/Spring modular monolith (Gradle 9.8.1, Java 25, Spring Boot 4.1.1, Spring Modulith 2.1.1 for the boundary test, openapi-generator 7.14.0)
+  - [`ecom-infra`](https://github.com/khakimjanovich/ecom-infra): docker-compose (Postgres 17.6, Redis 8.2, Keycloak 26.4), later Helm and Kubernetes. The "one command" lives here.
+  - [`ecom-k6-testing`](https://github.com/khakimjanovich/ecom-k6-testing): Grafana k6 load tests from day one, one folder per area, thresholds in every script; results join Grafana from episode 17.
+  - Frontend: not covered.
+- **Tags:** each repo is tagged per episode (`ep-02`, `ep-03`, …) so a viewer can check out exactly what a video shows.
 - **Database:** one Postgres, a schema per module, and a database user per module that can see only its own schema (isolation enforced by Postgres).
 - **Logging:** Spring Boot structured logging, one property (`logging.structured.format.console=ecs`), ECS JSON format.
 

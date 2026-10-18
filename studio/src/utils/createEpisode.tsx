@@ -1,5 +1,5 @@
 import React from "react";
-import { Episode, ReelScaffold, SubtitleCue, BuildMapStep, DiagramStep } from "../components";
+import { Episode, ReelScaffold, SubtitleCue, BuildMapStep, DiagramStep, CodeStep } from "../components";
 import { ReelProps } from "../themes";
 import { BUILD_CATALOG, BuildId } from "../series/build/nodes";
 import { createReelComposition } from "./createReelComposition";
@@ -14,6 +14,7 @@ export function createEpisode({
   subtitles,
   map,
   diagram,
+  code,
 }: {
   id: string;
   number: number;
@@ -23,6 +24,7 @@ export function createEpisode({
   subtitles: SubtitleCue[];
   map: BuildMapStep[];
   diagram: DiagramStep<BuildId>[];
+  code?: CodeStep[];
 }) {
   const Component: React.FC<ReelProps> = ({ theme }) => (
     <ReelScaffold
@@ -34,7 +36,7 @@ export function createEpisode({
       footer={{ label: "Series B", value: footer }}
       captionStyle={{ left: 1150, right: 84, bottom: 140 }}
     >
-      <Episode part={part} map={map} catalog={BUILD_CATALOG} diagram={diagram} />
+      <Episode part={part} map={map} catalog={BUILD_CATALOG} diagram={diagram} code={code} />
     </ReelScaffold>
   );
   return createReelComposition({ id, component: Component, subtitles, width: 1920, height: 1080 });
