@@ -70,9 +70,9 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 
 - **Java 25 + Spring Boot 4.1**, Lombok, Spring Modulith (boundary test).
 - **`platform/`** in `ecom`, each its own Gradle build, published to local Maven (`~/.m2`) before the app builds:
-  - `version-catalog`: the one `libs.versions.toml`, published as `uz.heeypay.ecom:version-catalog`;
+  - `versioning`: the one `libs.versions.toml`, published as `uz.heeypay.ecom:versioning`;
   - `openapi`: one project per module contract (`partner-api`, …): the spec in, generated Spring interfaces and models out. Generated code lives only in `build/` and the published jar; the jar also ships the spec for Swagger UI;
-  - `error-starter`: one error format for every module, RFC 9457 problem details plus a stable `code`, built on Spring's `ProblemDetail`.
+  - `error`: one error format for every module, RFC 9457 problem details plus a stable `code`, built on Spring's `ProblemDetail`.
 - **Contract-first:** controllers implement the generated `*Api`; Swagger UI shows the spec we wrote, not docs generated from code.
 - **House style (from the bank's repo, rewritten clean):** layer packages `controller`, `service` + `impl`, `repository`, `entity`, `mapper`, `constant`, `property`, `config`; literals in Lombok `@UtilityClass` `*ConstantUtils`, bean names in `*BeanNames`, error codes in `*ErrorCode`.
 - **Per-module persistence:** each module has its own datasource, Liquibase, entity manager and transaction manager, connecting as its own database user.
@@ -108,7 +108,7 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 ## Versions
 
 - Policy: the latest stable release on the day an episode is recorded, pinned exactly (no `latest` tags, no ranges).
-- Where: `platform/version-catalog/libs.versions.toml` (published to local Maven, as in the real repo) and image tags in `docker-compose.yml`.
+- Where: `platform/versioning/libs.versions.toml` (published to local Maven, as in the real repo) and image tags in `docker-compose.yml`.
 - Each episode's `git tag` freezes its versions, so a viewer can reproduce it later. Upgrades get their own short episode when needed.
 
 ## Database design
@@ -144,7 +144,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **02 · Setup**
 - Problem: nothing runs yet.
-- Build: Gradle multi-module skeleton (`app` + five modules, a schema and database user each), the Spring Modulith boundary test, `platform/` (version catalog, openapi, error-starter) published to local Maven, the layer-package house style, `ecom-infra` docker-compose with Postgres and Redis only, ECS JSON logs, Actuator health, the test layout (unit, integration, k6).
+- Build: Gradle multi-module skeleton (`app` + five modules, a schema and database user each), the Spring Modulith boundary test, `platform/` (versioning, openapi, error) published to local Maven, the layer-package house style, `ecom-infra` docker-compose with Postgres and Redis only, ECS JSON logs, Actuator health, the test layout (unit, integration, k6).
 - Why: every later demo depends on one command bringing the world up.
 - Demo: `docker compose up` → all health checks green; the app answers `/actuator/health`; the k6 smoke test passes.
 
@@ -159,7 +159,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **04 · Partner registration + email OTP**
 - Problem: anyone can type any email; we need proof they own it.
-- Build: `POST /api/v1/registrations`, `/email-verification`, `/email-verification/resend`; `platform/otp-starter` (codes stored as SHA-256 hashes in Redis, configured ttl, max-attempts, max-sends per send-window); `NotificationService` over Spring Mail, Mailpit in docker-compose; stable error codes (`PARTNER_EMAIL_TAKEN`, `OTP_INVALID`, `OTP_EXPIRED`, `OTP_ATTEMPTS_EXCEEDED`, `OTP_SEND_LIMIT`).
+- Build: `POST /api/v1/registrations`, `/email-verification`, `/email-verification/resend`; `platform/otp` (codes stored as SHA-256 hashes in Redis, configured ttl, max-attempts, max-sends per send-window); `NotificationService` over Spring Mail, Mailpit in docker-compose; stable error codes (`PARTNER_EMAIL_TAKEN`, `OTP_INVALID`, `OTP_EXPIRED`, `OTP_ATTEMPTS_EXCEEDED`, `OTP_SEND_LIMIT`).
 - Why: the first gate of trust. Introduces the `otp` and `error` starters' ideas in place.
 - Tables: `partner`, `contact_person`. Redis: `otp:*`.
 - Endpoints: `POST /auth/register`, `POST /auth/otp/verify`, `POST /auth/otp/resend`.
@@ -205,7 +205,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **09 · Extract the starters**
 - Problem: the second service is about to copy error handling, security and Redis config.
-- Build: `error-starter`, `security-starter`, `redis-starter`, `otp-starter` as Spring Boot auto-configurations; the partner service now depends on them.
+- Build: `platform/security` (resource server, Keycloak roles, 401/403 as problem details) and `platform/keycloak` (admin API client) extracted from the app and the partner module as Spring Boot auto-configurations, beside `error` and `otp`; the partner module now depends on them.
 - Why: refactoring with a reason. Duplication appears now, not in episode 02.
 - Demo: same behaviour, half the code; a new empty service gets errors and security for free.
 - Real code: `*-starter/*-autoconfigure`.
