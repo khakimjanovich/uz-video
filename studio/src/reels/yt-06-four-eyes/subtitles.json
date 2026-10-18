@@ -2,7 +2,7 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 97,
+    "endFrame": 103,
     "text": "What stops one admin from switching on a fraudulent shop?",
     "prefix": "What stops one admin from switching on a fraudulent shop?",
     "highlight": "",
@@ -10,73 +10,118 @@
   },
   {
     "index": 2,
-    "startFrame": 96,
-    "endFrame": 225,
-    "text": "If one person can do it, one mistake or one bribe is enough.",
-    "prefix": "If one person can do it, one mistake or one bribe is enough.",
+    "startFrame": 102,
+    "endFrame": 245,
+    "text": "Right now one person can, so one mistake or one bribe is enough.",
+    "prefix": "Right now one person can, so one mistake or one bribe is enough.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 3,
-    "startFrame": 224,
-    "endFrame": 389,
-    "text": "So activation becomes a request: a maker creates it, and nothing changes yet.",
-    "prefix": "So activation becomes a request: a maker creates it, and nothing changes yet.",
+    "startFrame": 244,
+    "endFrame": 450,
+    "text": "So activation becomes a request: one admin, the maker, asks, and nothing changes yet.",
+    "prefix": "So activation becomes a request: one admin, the maker, asks, and nothing changes yet.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 4,
-    "startFrame": 388,
-    "endFrame": 558,
+    "startFrame": 450,
+    "endFrame": 593,
+    "text": "The single-admin activate call is gone, and three new calls take its place.",
+    "prefix": "The single-admin activate call is gone, and three new calls take its place.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 592,
+    "endFrame": 767,
     "text": "A different admin, the checker, approves it, and only then does the merchant become active.",
     "prefix": "A different admin, the checker, approves it, and only then does the merchant become active.",
     "highlight": "",
     "suffix": ""
   },
   {
-    "index": 5,
-    "startFrame": 557,
-    "endFrame": 635,
-    "text": "The maker can never approve their own request.",
-    "prefix": "The maker can never approve their own request.",
-    "highlight": "",
-    "suffix": ""
-  },
-  {
     "index": 6,
-    "startFrame": 634,
-    "endFrame": 780,
-    "text": "A request that waits too long expires after the configured time.",
-    "prefix": "A request that waits too long expires after the configured time.",
+    "startFrame": 766,
+    "endFrame": 966,
+    "text": "A request is decided once: it must still be pending, not expired, and the checker can't be the maker.",
+    "prefix": "A request is decided once: it must still be pending, not expired, and the checker can't be the maker.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 7,
-    "startFrame": 779,
-    "endFrame": 959,
-    "text": "A scheduled sweep marks old requests as expired, and a lock makes sure it runs only once.",
-    "prefix": "A scheduled sweep marks old requests as expired, and a lock makes sure it runs only once.",
+    "startFrame": 965,
+    "endFrame": 1087,
+    "text": "Self-approval answers four oh nine, with its own error code.",
+    "prefix": "Self-approval answers four oh nine, with its own error code.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 8,
-    "startFrame": 958,
-    "endFrame": 1154,
-    "text": "Only one pending request per merchant can exist, enforced by a unique index in the database.",
-    "prefix": "Only one pending request per merchant can exist, enforced by a unique index in the database.",
+    "startFrame": 1086,
+    "endFrame": 1220,
+    "text": "The checker's name goes into the status history, with the maker in the reason.",
+    "prefix": "The checker's name goes into the status history, with the maker in the reason.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 9,
-    "startFrame": 1153,
-    "endFrame": 1345,
-    "text": "Next, logins and API keys, without storing a single password ourselves.",
-    "prefix": "Next, logins and API keys, without storing a single password ourselves.",
+    "startFrame": 1219,
+    "endFrame": 1346,
+    "text": "Requests expire after a configured time, twenty-four hours here.",
+    "prefix": "Requests expire after a configured time, twenty-four hours here.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1345,
+    "endFrame": 1546,
+    "text": "A scheduled sweep marks overdue requests as expired, and ShedLock makes sure only one instance runs it.",
+    "prefix": "A scheduled sweep marks overdue requests as expired, and ShedLock makes sure only one instance runs it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1545,
+    "endFrame": 1755,
+    "text": "Only one pending request per merchant can exist, and a partial unique index in the database enforces it.",
+    "prefix": "Only one pending request per merchant can exist, and a partial unique index in the database enforces it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1754,
+    "endFrame": 1923,
+    "text": "Integration tests on a real Postgres prove the approval, the index, and the sweep.",
+    "prefix": "Integration tests on a real Postgres prove the approval, the index, and the sweep.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1922,
+    "endFrame": 2169,
+    "text": "Under load, almost three thousand merchants were activated by two admins in thirty seconds, and every self-approval was refused.",
+    "prefix": "Under load, almost three thousand merchants were activated by two admins in thirty seconds, and every self-approval was refused.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 2168,
+    "endFrame": 2345,
+    "text": "Next, real logins, so an admin's name comes from a token instead of a header.",
+    "prefix": "Next, real logins, so an admin's name comes from a token instead of a header.",
     "highlight": "",
     "suffix": ""
   }

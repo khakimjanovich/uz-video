@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt05LifecycleComposition = createEpisode({
   id: "yt-05-lifecycle",
@@ -9,7 +9,8 @@ export const Yt05LifecycleComposition = createEpisode({
   part: 1,
   footer: "Partner lifecycle",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Straight to active?", "No rules", "Fixed states", "The guard", "Verify + contract", "Status history", "Suspend + terminate", "Is it active?", "Next: four-eyes"],
+  titles: ["Straight to active?", "No rules", "Fixed states", "One table", "The guard", "Email first", "The contract", "Status history", "Never updated", "Suspend + terminate", "Own starting state", "Admin header", "Tests", "Under load", "Next: four-eyes"],
   map,
   diagram,
+  code,
 });

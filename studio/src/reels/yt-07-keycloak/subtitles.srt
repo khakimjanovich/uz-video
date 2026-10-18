@@ -1,32 +1,56 @@
 1
-00:00:00,050 --> 00:00:04,035
-Where do merchants' passwords and API keys actually live?
+00:00:00,050 --> 00:00:02,845
+Who is calling our API, and how do we know?
 
 2
-00:00:04,035 --> 00:00:08,940
-Storing passwords yourself is a risk you don't need: one leak exposes them all.
+00:00:02,845 --> 00:00:07,952
+Until now, an admin was just a name in a header, and anyone can type a header.
 
 3
-00:00:08,940 --> 00:00:14,857
-Keycloak holds the identities: a portal login for the merchant, and a machine client for their server.
+00:00:07,952 --> 00:00:14,047
+Keycloak now holds every login: the bank's admins, the merchants, and the merchants' servers.
 
 4
-00:00:14,857 --> 00:00:19,250
-Each sales point gets its own client, and its token carries the merchant's ID.
+00:00:14,047 --> 00:00:20,238
+The realm defines two roles, admin and partner, and a client the backend uses for itself.
 
 5
-00:00:19,250 --> 00:00:24,654
-The client secret is shown only once, and the merchant can rotate it at any time.
+00:00:20,238 --> 00:00:26,369
+Signing up now takes a password, which goes straight to Keycloak and never into our database.
 
 6
-00:00:24,654 --> 00:00:30,702
-Our own secrets, like Keycloak's admin password, move out of environment files and into Vault.
+00:00:26,369 --> 00:00:31,523
+The new login can do nothing until the email is verified, and then it gets the partner role.
 
 7
-00:00:30,702 --> 00:00:35,357
-Every endpoint now checks the token before any business code runs.
+00:00:31,523 --> 00:00:37,488
+Every request now carries a token, and the app checks it before any business code runs.
 
 8
-00:00:35,357 --> 00:00:38,654
+00:00:37,488 --> 00:00:43,738
+Admin routes need the admin role, partner routes need the partner role, and anything not listed is refused.
+
+9
+00:00:43,738 --> 00:00:48,476
+The admin's name now comes from the token, so the history shows who really acted.
+
+10
+00:00:48,476 --> 00:00:54,892
+An active merchant creates API clients for its servers, and each secret is shown only once.
+
+11
+00:00:54,892 --> 00:00:59,869
+Rotating issues a new secret, and the old one stops working at once.
+
+12
+00:00:59,869 --> 00:01:06,678
+One integration test runs the whole onboarding on a real Postgres, Redis, Mailpit, and Keycloak.
+
+13
+00:01:06,678 --> 00:01:12,738
+Under load, every scenario passed with real tokens, from sign-ups to secret rotation.
+
+14
+00:01:12,738 --> 00:01:15,904
 Next, the websites that will actually take the payments.
 

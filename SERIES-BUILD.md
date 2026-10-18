@@ -58,7 +58,7 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 - **Backend only.** Series B covers the Java/Spring system; the merchant portal, admin panel and hosted page UI are out of scope.
 - **Repos (companion code, local in `~/Documents/acquiring/`):**
   - [`ecom`](https://github.com/khakimjanovich/ecom): the Java/Spring modular monolith (Gradle 9.8.1, Java 25, Spring Boot 4.1.1, Spring Modulith 2.1.1 for the boundary test, openapi-generator 7.14.0)
-  - [`ecom-infra`](https://github.com/khakimjanovich/ecom-infra): docker-compose (Postgres 17.6, Redis 8.2, Keycloak 26.4), later Helm and Kubernetes. The "one command" lives here.
+  - [`ecom-infra`](https://github.com/khakimjanovich/ecom-infra): docker-compose (Postgres 17.6, Redis 8.2, Mailpit from episode 04, Keycloak 26.4 from episode 07), later Helm and Kubernetes. The "one command" lives here.
   - [`ecom-k6-testing`](https://github.com/khakimjanovich/ecom-k6-testing): Grafana k6 load tests from day one, one folder per area, thresholds in every script; results join Grafana from episode 17.
   - Frontend: not covered.
 - **Tags:** each repo is tagged per episode (`ep-02`, `ep-03`, …) so a viewer can check out exactly what a video shows. `ecom`'s `ep-02` is a side commit holding Episode 02's state, since 02 and 03 were built together.
@@ -78,7 +78,7 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 - **Per-module persistence:** each module has its own datasource, Liquibase, entity manager and transaction manager, connecting as its own database user.
 - **Tests:** unit in `src/test` (`*Test`), integration on real Postgres via Testcontainers in `src/integrationTest` (`*IT`), `./gradlew check` runs both; load and smoke in `ecom-k6-testing`.
 - **Rebuild only what changed:** `implementation` dependencies (compile avoidance), build cache and configuration cache in `gradle.properties`.
-- **Local ports:** Postgres 5442, Redis 6389, Keycloak 8180 (5432/6379 are often taken on dev machines).
+- **Local ports:** Postgres 5442, Redis 6389, Mailpit 1025/8025, Keycloak 8180 (5432/6379 are often taken on dev machines).
 
 ## Email
 
@@ -95,11 +95,11 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 
 | Tool | Episode | The problem that brings it |
 |---|---|---|
-| Postgres, Redis, Keycloak | 02 Setup | the first episodes need them immediately |
+| Postgres, Redis | 02 Setup | the first episodes need them immediately |
 | Mailpit + Spring Mail | 04 Registration | the first OTP email |
 | Structured JSON logs + Actuator health | 02 Setup | cheap, and nothing is debuggable without them |
-| Vault, app config (`secret/app`) | 07 Keycloak clients | the first real secret appears; `.env` until then |
-| Vault, merchant HMAC secrets (`secret/merchants`) | 14 Create payment | same Vault, second path. Not the card vault module |
+| Keycloak (realm `ecom`, roles, service client) | 07 Logins and API clients | an admin named in a header can be faked; logins and roles need a real identity provider |
+| Vault, merchant HMAC secrets (`secret/merchants`) | 14 Create payment | the first secret the app must read per request; until then local secrets are configuration with local-only defaults. Not the card vault module |
 | Prometheus + Grafana, Tempo, Loki | 17 Observability | a stuck payment is invisible without metrics and traces; Loki instead of ELK (lighter on a laptop) |
 | Temporal | 18 Silent processing | unknown outcomes need durable retries |
 | Kafka | 19 Outbox + Kafka | events must reach other systems exactly once |
@@ -144,7 +144,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **02 · Setup**
 - Problem: nothing runs yet.
-- Build: Gradle multi-module skeleton (`app` + five modules, a schema and database user each), the Spring Modulith boundary test, `platform/` (version catalog, openapi, error-starter) published to local Maven, the layer-package house style, `ecom-infra` docker-compose with Postgres, Redis and Keycloak only, ECS JSON logs, Actuator health, the test layout (unit, integration, k6).
+- Build: Gradle multi-module skeleton (`app` + five modules, a schema and database user each), the Spring Modulith boundary test, `platform/` (version catalog, openapi, error-starter) published to local Maven, the layer-package house style, `ecom-infra` docker-compose with Postgres and Redis only, ECS JSON logs, Actuator health, the test layout (unit, integration, k6).
 - Why: every later demo depends on one command bringing the world up.
 - Demo: `docker compose up` → all health checks green; the app answers `/actuator/health`; the k6 smoke test passes.
 
@@ -168,30 +168,31 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **05 · Partner lifecycle (state machine)**
 - Problem: a partner can't jump from "registered" to "taking payments".
-- Build: states PENDING_VERIFICATION → VERIFIED → WAITING_CONTRACT → APPROVED → ACTIVE ⇄ SUSPENDED → TERMINATED; a guard that rejects illegal transitions; KYB status, documents, contract.
+- Build: states PENDING_VERIFICATION → VERIFIED → WAITING_CONTRACT → APPROVED → ACTIVE ⇄ SUSPENDED → TERMINATED, plus REJECTED from the early states; the allowed moves as one `EnumMap` in `PartnerStatus`, refused moves → 409 `PARTNER_INVALID_TRANSITION`; verify needs a verified email (`PARTNER_EMAIL_NOT_VERIFIED`); the contract number is unique in the database (`PARTNER_CONTRACT_TAKEN`); activate and restore each only from their own starting state; every change written to `partner_status_history` in the same transaction. Until episode 07 the admin is named in an `X-Admin-Id` header.
 - Why: the state machine is the backbone; every later check asks "is this partner ACTIVE?".
-- Tables: `partner` (status), `partner_document`, `contract`, `partner_status_history`.
-- Endpoints: admin `POST /partners/{id}/verify`, `/contract`, `/suspend`, `/terminate`, `/restore`.
-- Demo: try an illegal jump → 409 with a clear error; legal path → APPROVED.
-- Real code: `PartnerLifecycleServiceImpl`, `PartnerStateGuard`.
+- Tables: `partner` (status, contract_number), `partner_status_history`.
+- Endpoints: `POST /api/v1/admin/partners/{id}/verify|reject|contract|activate|suspend|restore|terminate`, `GET …/history`.
+- Tests: `PartnerStatusTest` (the whole transition table), `PartnerTest`, `PartnerAdminServiceIT` (real Postgres). k6: `lifecycle/partner-lifecycle.js`.
+- Code: `ecom@ep-05`.
 
 **06 · Four-eyes (maker-checker)**
 - Problem: one admin alone can switch on a fraudulent store.
-- Build: dual-control requests: maker initiates, a different checker approves; no self-approval; configured expiry; a ShedLock sweep that expires stale requests.
+- Build: the single-admin `activate` call is removed; an activation request instead: the maker asks, a different checker approves or rejects; a request is decided once, before it expires (409 `ACTIVATION_REQUEST_DECIDED`, 410 `ACTIVATION_REQUEST_EXPIRED`, 409 `SELF_APPROVAL`); the checker is recorded in the status history with the maker in the reason; configured `ttl` (24h) and `sweep-delay` (1m); a `@Scheduled` sweep with ShedLock (lock table in the module's own schema); one pending request per partner via a partial unique index.
 - Why: the single most important control for owners (see the owner pitch); reused later by commission.
-- Tables: `dual_control_request` (unique index: one PENDING per subject).
-- Endpoints: `POST /dual-control`, `POST /dual-control/{id}/approve|reject`.
-- Demo: maker approves own request → rejected; second admin approves → partner ACTIVE.
-- Real code: `DualControlServiceImpl`, `DualControlExpirySweepJob`.
+- Tables: `activation_request` (partial unique index on PENDING), `shedlock`.
+- Endpoints: `POST /api/v1/admin/partners/{id}/activation-requests`, `POST /api/v1/admin/activation-requests/{id}/approve|reject`.
+- Tests: `ActivationRequestTest`, `ActivationRequestServiceIT` (approval, index, sweep). k6: the lifecycle scenario activates with four eyes.
+- Code: `ecom@ep-06`.
 
 **07 · Logins and API clients (Keycloak)**
-- Problem: partners need a portal login and their servers need machine credentials.
-- Build: Vault joins docker-compose (app config secrets under `secret/app`, replacing `.env`); Keycloak realm; portal user on registration; M2M client per sales point with `partner_id` claim; secret shown once; rotation. Resource-server security on every endpoint.
+- Problem: an admin named in a header can be faked, partners need a login, and their servers need machine credentials.
+- Build: Keycloak joins docker-compose with a realm import (realm `ecom`: roles `admin`, `partner`; admins `aziz`, `malika`; `ecom-backend` service client; `ecom-portal` login client); registration takes a password and creates the Keycloak user (the password never touches our database); email verification marks the email verified and grants the `partner` role; resource-server security (sign-up and docs public, `/api/v1/admin/**` needs `admin`, `/api/v1/partner/**` needs `partner`, everything else refused); the admin's name comes from the token; an active partner creates M2M clients, the secret shown once, rotation kills the old secret. Keycloak's admin API is called with Spring's `RestClient` and an OAuth2 client-credentials interceptor.
 - Why: identity is separate from business data; never store passwords yourself.
-- Tables: `partner_client`, `keycloak_audit_log`.
-- Endpoints: `POST /portal/clients`, `POST /portal/clients/{id}/rotate`.
-- Demo: get a client-credentials token; call a protected endpoint with and without it.
-- Real code: `KeycloakAdminServiceImpl`, `PartnerClientServiceImpl`.
+- Tables: `partner` (+ user_id), `partner_client` (ids only, never a secret).
+- Endpoints: `GET /api/v1/partner/me`, `GET|POST /api/v1/partner/clients`, `POST /api/v1/partner/clients/{clientId}/secret`.
+- Tests: `KeycloakJwtConverterTest`; `PartnerOnboardingIT` runs the whole onboarding on real Postgres, Redis, Mailpit and Keycloak. k6: every scenario logs in; `partner/api-client.js` creates and rotates secrets.
+- Not here: Vault. It joins in episode 14 with the merchants' HMAC secrets.
+- Code: `ecom@ep-07`.
 
 **08 · Sales points + site check**
 - Problem: a partner may run several websites, and a fake one must not take payments.
@@ -250,7 +251,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **14 · Create a payment: HMAC + idempotency**
 - Problem: anyone can fake a request, replay it, or a retry can create a second payment.
-- Build: `POST /payments` with JWT + HMAC-SHA256 (method, path, timestamp, nonce, body hash), configured timestamp window, Redis nonces, merchant secret from Vault (second path: `secret/merchants`); `Idempotency-Key` with stored response replay; sales-point guard that fails closed.
+- Build: `POST /payments` with JWT + HMAC-SHA256 (method, path, timestamp, nonce, body hash), configured timestamp window, Redis nonces, Vault joins docker-compose, merchant secret from `secret/merchants`; `Idempotency-Key` with stored response replay; sales-point guard that fails closed.
 - Why: the three request threats from the owner pitch, in code.
 - Tables: `payment`, `idempotency_key`. Redis: `ecom:hmac:nonce:*`.
 - Demo: valid request → 201; replayed → rejected; same key twice → same response, one payment.

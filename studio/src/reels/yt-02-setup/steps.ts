@@ -10,11 +10,10 @@ export const map: BuildMapStep[] = [
 ];
 
 const STACK = { java: [0.5, 1], spring: [1.5, 1], gradle: [2.5, 1] } as const;
-const INFRA = { docker: [0, 0.5], postgres: [1, 0.5], redis: [2, 0.5], keycloak: [3, 0.5] } as const;
+const INFRA = { docker: [0.5, 0.5], postgres: [1.5, 0.5], redis: [2.5, 0.5] } as const;
 const UP = [
   { from: "docker", to: "postgres" },
   { from: "postgres", to: "redis" },
-  { from: "redis", to: "keycloak" },
 ] as const;
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -31,9 +30,9 @@ export const diagram: DiagramStep<BuildId>[] = [
   },
   {
     cue: 11,
-    layout: { ...INFRA, vault: [1, 2], temporal: [2, 2], kafka: [3, 2] },
+    layout: { ...INFRA, keycloak: [0.5, 2], vault: [1.5, 2], kafka: [2.5, 2] },
     edges: [...UP],
-    badges: { vault: "later", temporal: "later", kafka: "later" },
+    badges: { keycloak: "later", vault: "later", kafka: "later" },
   },
   {
     cue: 13,
@@ -42,9 +41,8 @@ export const diagram: DiagramStep<BuildId>[] = [
     packets: [
       { from: "docker", to: "postgres", label: "up", delay: 8, duration: 18 },
       { from: "postgres", to: "redis", label: "up", delay: 28, duration: 18 },
-      { from: "redis", to: "keycloak", label: "up", delay: 48, duration: 18 },
     ],
-    accent: ["postgres", "redis", "keycloak"],
+    accent: ["postgres", "redis"],
   },
 ];
 
@@ -175,10 +173,9 @@ export const code: CodeStep[] = [
       '    ports: ["5442:5432"]',
       "  redis:",
       "    image: redis:8.2-alpine",
-      "  keycloak:",
-      "    image: quay.io/keycloak/keycloak:26.4.0",
+      '    ports: ["6389:6379"]',
     ],
-    highlight: [4, 7, 9],
+    highlight: [4, 7],
   },
   {
     cue: 12,

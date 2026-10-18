@@ -51,11 +51,11 @@ export const BUILD_ARROWS: [number, number, number][] = [
 export const APP_BOX = { x: 40, y: 100, w: 600, h: 190, label: "Acquiring app · modular monolith" };
 
 export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes: BuildNodeId[] }[] = [
-  { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis", "keycloak"] },
-  { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle", "Four-eyes", "Keycloak clients", "Sales points", "Extract the starters"], nodes: ["partner", "emailport", "emailsvc", "admin", "vault"] },
+  { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis"] },
+  { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle", "Four-eyes", "Keycloak clients", "Sales points", "Extract the starters"], nodes: ["partner", "emailport", "emailsvc", "admin", "keycloak"] },
   { n: 2, title: "Money rules", episodes: ["Commission", "Terminals"], nodes: ["commission", "terminal"] },
   { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "BIN + card vault"], nodes: ["card", "procport", "procsvc"] },
-  { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Hosted page", "The debit", "Observability", "Silent processing", "Outbox + Kafka", "Links", "Refunds", "Billing", "Hardening"], nodes: ["payment", "merchant", "buyer", "observability", "temporal", "kafka"] },
+  { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Hosted page", "The debit", "Observability", "Silent processing", "Outbox + Kafka", "Links", "Refunds", "Billing", "Hardening"], nodes: ["payment", "merchant", "buyer", "vault", "observability", "temporal", "kafka"] },
   { n: 5, title: "Growing up", episodes: ["Deploy to Kubernetes", "Extract the card vault"], nodes: ["kubernetes", "card"] },
 ];
 

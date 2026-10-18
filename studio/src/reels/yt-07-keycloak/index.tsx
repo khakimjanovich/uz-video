@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt07KeycloakComposition = createEpisode({
   id: "yt-07-keycloak",
@@ -9,7 +9,8 @@ export const Yt07KeycloakComposition = createEpisode({
   part: 1,
   footer: "Logins and API clients",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Where do secrets live?", "Our own passwords?", "Keycloak", "A client per site", "Shown once", "Vault for config", "Every endpoint", "Next: sales points"],
+  titles: ["Who is calling?", "Just a header", "Keycloak", "The realm", "Password to Keycloak", "Partner role", "Every request", "Route rules", "Name from token", "API clients", "Rotation", "One full test", "Under load", "Next: sales points"],
   map,
   diagram,
+  code,
 });

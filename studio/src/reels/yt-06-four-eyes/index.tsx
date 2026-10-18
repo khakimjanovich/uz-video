@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt06FourEyesComposition = createEpisode({
   id: "yt-06-four-eyes",
@@ -9,7 +9,8 @@ export const Yt06FourEyesComposition = createEpisode({
   part: 1,
   footer: "Four-eyes",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["One admin?", "One mistake", "A request", "The checker", "No self-approval", "Expiry", "Sweep + lock", "One pending", "Next: logins"],
+  titles: ["One admin?", "One mistake", "A request", "New calls", "The checker", "Decided once", "No self-approval", "Who approved", "Configured expiry", "Sweep + lock", "One pending", "Tests", "Under load", "Next: logins"],
   map,
   diagram,
+  code,
 });
