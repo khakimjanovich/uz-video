@@ -205,12 +205,12 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Front: merchant "Websites" page; bank website page with the check form, terms and actions.
 - Code: `ecom@ep-08`.
 
-**09 · Extract the starters**
-- Problem: the second service is about to copy error handling, security and Redis config.
-- Build: `platform/security` (resource server, Keycloak roles, 401/403 as problem details) and `platform/keycloak` (admin API client) extracted from the app and the partner module as Spring Boot auto-configurations, beside `error` and `otp`; the partner module now depends on them.
-- Why: refactoring with a reason. Duplication appears now, not in episode 02.
-- Demo: same behaviour, half the code; a new empty service gets errors and security for free.
-- Real code: `*-starter/*-autoconfigure`.
+**09 · Extract the platform libraries**
+- Problem: the next modules need the same security and the same Keycloak calls; copies mean every fix is made twice.
+- Build: `platform/security` (stateless resource server, Keycloak realm roles, route rules from `ecom.security.public-routes` and `ecom.security.roles`, anything unlisted refused, 401/403 as problem details; runs before Boot's default chains and steps aside for an app's own `SecurityFilterChain`) and `platform/keycloak` (`KeycloakAdmin`: users, realm roles, confidential clients, secret rotation; logs in with its own client credentials from `ecom.keycloak.*`). The app's `SecurityConfig` and the partner module's Keycloak code are deleted; the partner keeps its `IdentityService` port and delegates.
+- Why: refactoring with a reason, right before the second module (commission) arrives.
+- Tests: `SecurityAutoConfigurationTest` (route rules with fake tokens), `KeycloakAdminIT` (real Keycloak); the full-app IT, the web app's end-to-end journey and k6 pass unchanged.
+- Code: `ecom@ep-09`.
 
 ### Part 2: Money rules (reference services)
 

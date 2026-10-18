@@ -18,7 +18,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 06 | Four-eyes | 1:18 | ✅ Built and matched to `ecom@ep-06`: activation request, decided once, no self-approval, configured expiry, ShedLock sweep, partial unique index, tests, k6 (2,838 activations in 30 s) |
 | 07 | Logins and API clients | 1:17 | ✅ Built and matched to `ecom@ep-07`: Keycloak realm, password only in Keycloak, partner role on email verification, route rules, admin name from token, M2M clients with rotation, full-app IT, k6 with tokens. Vault moved to 14 |
 | 08 | Sales points + site check | 1:23 | ✅ Built and matched to `ecom@ep-08`: one admin records a site check (code and video agree now), own-domain return addresses frozen once live, refund window with reason and configured cap, activation preconditions, `payable` check failing closed, two bugs caught by k6 |
-| 09 | Extract the starters | 0:43 | Code: error/security/otp/redis starters exist |
+| 09 | Extract the platform libraries | 1:10 | ✅ Built and matched to `ecom@ep-09`: `platform/security` (rules as configuration) and `platform/keycloak` (admin client), partner delegates, library tests (fake tokens, real Keycloak), callers unchanged |
 | 10 | Commission | 0:47 | Code: scope priority, tie by priority, fee ≥ amount refused, maker-checker, history, fee snapshot |
 | 11 | Terminals (MID/TID) | 0:38 | Code: EPOS per sales point and scheme, fail closed, audit log |
 | 12 | Uzcard + Humo adapters | 0:46 | Code: REST (SVGate) + SOAP (Humo), command pattern. Check: "errors translated to our own codes" |

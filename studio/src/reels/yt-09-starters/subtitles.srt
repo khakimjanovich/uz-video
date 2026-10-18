@@ -1,36 +1,48 @@
 1
-00:00:00,050 --> 00:00:05,571
-What happens when a second module needs the same error handling and security as the first?
+00:00:00,050 --> 00:00:06,000
+What happens when the next module needs the same security and the same Keycloak calls as the first?
 
 2
-00:00:05,571 --> 00:00:09,226
-We copy it, and now every fix must be made twice.
+00:00:06,000 --> 00:00:11,940
+Right now the security rules live in the app, and the Keycloak calls live inside the partner module.
 
 3
-00:00:09,226 --> 00:00:13,761
-So we extract the shared parts into our own Spring Boot starters.
+00:00:11,940 --> 00:00:16,464
+Copy them into a second module, and every fix must be made twice.
 
 4
-00:00:13,761 --> 00:00:18,142
-The error starter turns every failure into the same clean response.
+00:00:16,464 --> 00:00:22,166
+So both become platform libraries, published like the error and OTP libraries before them.
 
 5
-00:00:18,142 --> 00:00:22,559
-The security starter protects every endpoint in exactly the same way.
+00:00:22,166 --> 00:00:29,940
+The security library secures any app: access tokens, realm roles, and refusals as problem details.
 
 6
-00:00:22,559 --> 00:00:28,869
-The OTP and Redis starters give any module one-time codes and caching with a single dependency.
+00:00:29,940 --> 00:00:35,142
+The route rules move into configuration, and anything not listed is still refused.
 
 7
-00:00:28,869 --> 00:00:33,357
-Each starter configures itself, so a new module gets all of it for free.
+00:00:35,142 --> 00:00:40,571
+It configures itself before Spring Boot's own defaults, and an app can still replace it.
 
 8
-00:00:33,357 --> 00:00:38,321
-Same behavior, half the code, and every fix now lands in one place.
+00:00:40,571 --> 00:00:47,095
+The Keycloak library is a small admin client that logs in as its own client and refreshes its token.
 
 9
-00:00:38,321 --> 00:00:42,261
+00:00:47,095 --> 00:00:52,000
+The partner module keeps its own identity port, and now simply delegates.
+
+10
+00:00:52,000 --> 00:00:58,797
+Each library has its own tests: route rules with fake tokens, and the admin client against a real Keycloak.
+
+11
+00:00:58,797 --> 00:01:04,500
+Nothing changed for callers: the full onboarding test and the load tests pass unchanged.
+
+12
+00:01:04,500 --> 00:01:08,797
 Next, the money rules begin, with the commission on every payment.
 
