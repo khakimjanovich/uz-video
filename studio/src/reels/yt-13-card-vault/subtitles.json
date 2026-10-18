@@ -11,70 +11,133 @@
   {
     "index": 2,
     "startFrame": 133,
-    "endFrame": 236,
-    "text": "The first digits of a card, its BIN, tell us the scheme.",
-    "prefix": "The first digits of a card, its BIN, tell us the scheme.",
+    "endFrame": 229,
+    "text": "A card's first digits, its BIN, name the scheme.",
+    "prefix": "A card's first digits, its BIN, name the scheme.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 3,
-    "startFrame": 235,
-    "endFrame": 369,
-    "text": "A scheduled job keeps the BIN registry in sync with both schemes.",
-    "prefix": "A scheduled job keeps the BIN registry in sync with both schemes.",
+    "startFrame": 228,
+    "endFrame": 443,
+    "text": "Both schemes publish their BIN lists, so the card module syncs them into a registry, at startup and every night.",
+    "prefix": "Both schemes publish their BIN lists, so the card module syncs them into a registry, at startup and every night.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 4,
-    "startFrame": 368,
-    "endFrame": 491,
+    "startFrame": 442,
+    "endFrame": 656,
+    "text": "The sync is idempotent, and a scheme that doesn't answer, or answers with nothing, keeps its old list.",
+    "prefix": "The sync is idempotent, and a scheme that doesn't answer, or answers with nothing, keeps its old list.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 655,
+    "endFrame": 843,
+    "text": "The longest matching prefix wins, so a bank's eight digit range beats the scheme's six digit one.",
+    "prefix": "The longest matching prefix wins, so a bank's eight digit range beats the scheme's six digit one.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 842,
+    "endFrame": 1072,
+    "text": "Before any of that, the Luhn check digit catches a mistyped number, and it caught some sandbox test cards that were never valid card numbers.",
+    "prefix": "Before any of that, the Luhn check digit catches a mistyped number, and it caught some sandbox test cards that were never valid card numbers.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1071,
+    "endFrame": 1198,
     "text": "A plain card number in our database would be a disaster on the day of a breach.",
     "prefix": "A plain card number in our database would be a disaster on the day of a breach.",
     "highlight": "",
     "suffix": ""
   },
   {
-    "index": 5,
-    "startFrame": 490,
-    "endFrame": 677,
-    "text": "So the card vault encrypts the number with AES-GCM, and gives everyone else a token instead.",
-    "prefix": "So the card vault encrypts the number with AES-GCM, and gives everyone else a token instead.",
-    "highlight": "",
-    "suffix": ""
-  },
-  {
-    "index": 6,
-    "startFrame": 676,
-    "endFrame": 841,
-    "text": "Only the vault can turn a token back into a card number, and only to send it to the processing center.",
-    "prefix": "Only the vault can turn a token back into a card number, and only to send it to the processing center.",
-    "highlight": "",
-    "suffix": ""
-  },
-  {
-    "index": 7,
-    "startFrame": 840,
-    "endFrame": 924,
-    "text": "Every reveal is written to an audit trail.",
-    "prefix": "Every reveal is written to an audit trail.",
-    "highlight": "",
-    "suffix": ""
-  },
-  {
     "index": 8,
-    "startFrame": 923,
-    "endFrame": 1066,
-    "text": "A stolen database now holds nothing but ciphertext and meaningless tokens.",
-    "prefix": "A stolen database now holds nothing but ciphertext and meaningless tokens.",
+    "startFrame": 1197,
+    "endFrame": 1523,
+    "text": "So a new platform library, crypto, seals the number with AES two fifty six GCM: a fresh nonce every time, and the key id is authenticated with it.",
+    "prefix": "So a new platform library, crypto, seals the number with AES two fifty six GCM: a fresh nonce every time, and the key id is authenticated with it.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 9,
-    "startFrame": 1065,
-    "endFrame": 1243,
+    "startFrame": 1522,
+    "endFrame": 1674,
+    "text": "Each value names its key, so a new key can take over while older data still reads.",
+    "prefix": "Each value names its key, so a new key can take over while older data still reads.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1673,
+    "endFrame": 1838,
+    "text": "Other modules get a card token instead, and the same card always gets the same token.",
+    "prefix": "Other modules get a card token instead, and the same card always gets the same token.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1837,
+    "endFrame": 2035,
+    "text": "To find a card without decrypting anything, we also store a keyed hash of its number, a blind index.",
+    "prefix": "To find a card without decrypting anything, we also store a keyed hash of its number, a blind index.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 2034,
+    "endFrame": 2159,
+    "text": "The database itself refuses a card number stored in plain text.",
+    "prefix": "The database itself refuses a card number stored in plain text.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 2158,
+    "endFrame": 2353,
+    "text": "A number is decrypted only to hand it to the card's scheme, and every use is written to an audit trail.",
+    "prefix": "A number is decrypted only to hand it to the card's scheme, and every use is written to an audit trail.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 2352,
+    "endFrame": 2483,
+    "text": "Integration tests read the stored row back and find no card number in it.",
+    "prefix": "Integration tests read the stored row back and find no card number in it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 2482,
+    "endFrame": 2654,
+    "text": "The bank's console shows the registry and finds a card by its number, without ever showing that number.",
+    "prefix": "The bank's console shows the registry and finds a card by its number, without ever showing that number.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2653,
+    "endFrame": 2833,
     "text": "Next, the payment itself, starting with a request nobody can forge.",
     "prefix": "Next, the payment itself, starting with a request nobody can forge.",
     "highlight": "",

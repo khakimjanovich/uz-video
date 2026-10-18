@@ -3,34 +3,62 @@
 How do we know whether a card is Uzcard or Humo, and where do we keep its number?
 
 2
-00:00:04,452 --> 00:00:07,857
-The first digits of a card, its BIN, tell us the scheme.
+00:00:04,452 --> 00:00:07,619
+A card's first digits, its BIN, name the scheme.
 
 3
-00:00:07,857 --> 00:00:12,273
-A scheduled job keeps the BIN registry in sync with both schemes.
+00:00:07,619 --> 00:00:14,738
+Both schemes publish their BIN lists, so the card module syncs them into a registry, at startup and every night.
 
 4
-00:00:12,273 --> 00:00:16,357
-A plain card number in our database would be a disaster on the day of a breach.
+00:00:14,738 --> 00:00:21,845
+The sync is idempotent, and a scheme that doesn't answer, or answers with nothing, keeps its old list.
 
 5
-00:00:16,357 --> 00:00:22,547
-So the card vault encrypts the number with AES-GCM, and gives everyone else a token instead.
+00:00:21,845 --> 00:00:28,083
+The longest matching prefix wins, so a bank's eight digit range beats the scheme's six digit one.
 
 6
-00:00:22,547 --> 00:00:28,011
-Only the vault can turn a token back into a card number, and only to send it to the processing center.
+00:00:28,083 --> 00:00:35,726
+Before any of that, the Luhn check digit catches a mistyped number, and it caught some sandbox test cards that were never valid card numbers.
 
 7
-00:00:28,011 --> 00:00:30,785
-Every reveal is written to an audit trail.
+00:00:35,726 --> 00:00:39,904
+A plain card number in our database would be a disaster on the day of a breach.
 
 8
-00:00:30,785 --> 00:00:35,511
-A stolen database now holds nothing but ciphertext and meaningless tokens.
+00:00:39,904 --> 00:00:50,761
+So a new platform library, crypto, seals the number with AES two fifty six GCM: a fresh nonce every time, and the key id is authenticated with it.
 
 9
-00:00:35,511 --> 00:00:40,416
+00:00:50,761 --> 00:00:55,773
+Each value names its key, so a new key can take over while older data still reads.
+
+10
+00:00:55,773 --> 00:01:01,261
+Other modules get a card token instead, and the same card always gets the same token.
+
+11
+00:01:01,261 --> 00:01:07,833
+To find a card without decrypting anything, we also store a keyed hash of its number, a blind index.
+
+12
+00:01:07,833 --> 00:01:11,964
+The database itself refuses a card number stored in plain text.
+
+13
+00:01:11,964 --> 00:01:18,404
+A number is decrypted only to hand it to the card's scheme, and every use is written to an audit trail.
+
+14
+00:01:18,404 --> 00:01:22,738
+Integration tests read the stored row back and find no card number in it.
+
+15
+00:01:22,738 --> 00:01:28,452
+The bank's console shows the registry and finds a card by its number, without ever showing that number.
+
+16
+00:01:28,452 --> 00:01:33,404
 Next, the payment itself, starting with a request nobody can forge.
 

@@ -244,12 +244,13 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **13 · BIN registry + card vault**
 - Problem: we must know a card's scheme, and we must never store a card number in plain text.
-- Build: BIN lookup with scheduled sync; card-processor: AES-256-GCM encrypted PAN, a token returned instead; resolve/reveal/binding endpoints; `encryption-starter`.
-- Why: tokenization; a database leak exposes no card numbers (owner pitch, threat 4).
-- Tables: `bin_range`, `card_token`, `card_audit`.
-- Endpoints: internal `POST /internal/cards/binding/confirm`, `/resolve`, `/reveal`.
-- Demo: store a card → the table holds only ciphertext + token.
-- Real code: card-processor-service (`CardTokenCodec`, `CardDataProtectionService`), bin-reference-service (`BinRegistrySync`).
+- Build: `platform/crypto` (AES-256-GCM, a fresh 12-byte nonce per value, the key id authenticated as AAD, envelope `v1:<key id>:…`, rewrap for rotation, HMAC-SHA256 blind index); the card module's vault: Luhn and a known BIN before any scheme call, number/expiry/scheme token/binding session stored only encrypted (a database check refuses anything else), one row and one token (`ctk_…`) per card via the blind index, every use audited; public `Cards` API (start/confirm binding, find, debit by token); BIN registry synced from both schemes at startup and nightly (idempotent, a silent or empty scheme keeps its old list), longest prefix wins.
+- Why: tokenization; a database leak exposes no card numbers.
+- Tables: `bin_range`, `card`, `card_audit`.
+- Endpoints: `GET /api/v1/admin/bins`, `POST …/bins/sync`, `GET …/bins/lookup?digits=`, `POST /api/v1/admin/cards/search`, `GET …/cards/{cardToken}`, `GET …/cards/{cardToken}/audit`.
+- Tests: `CryptoTest`, `PanUtilsTest`, `CardVaultIT` (reads the stored row back: no number); k6 `cards/bins-and-vault.js` (BIN lookups p95 3.4 ms). Binding over HTTP waits for the hosted page (15). The Luhn check caught sandbox test cards that were never valid numbers; they were replaced.
+- Front: bank "Cards" page (BIN registry, live scheme lookup, vault search with the card's audit trail).
+- Code: `ecom@ep-13`.
 
 ### Part 4: Payments (ecom-acquiring-service)
 

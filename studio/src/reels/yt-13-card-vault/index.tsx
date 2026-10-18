@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt13CardVaultComposition = createEpisode({
   id: "yt-13-card-vault",
@@ -9,7 +9,8 @@ export const Yt13CardVaultComposition = createEpisode({
   part: 3,
   footer: "BIN registry + card vault",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Which scheme?", "The BIN", "Synced registry", "Plain numbers?", "Encrypt + token", "Only the vault reveals", "Audit trail", "Nothing to steal", "Next: payments"],
+  titles: ["Which scheme? Where?", "The BIN", "Synced registry", "Idempotent sync", "Longest prefix wins", "Luhn first", "Plain numbers?", "AES-256-GCM", "Key rotation", "A token instead", "Blind index", "The database refuses", "Decrypt only to pay", "Tests read the row", "The bank's console", "Next: payments"],
   map,
   diagram,
+  code,
 });
