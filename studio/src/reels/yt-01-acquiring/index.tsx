@@ -9,7 +9,7 @@ export const Yt01AcquiringComposition = createEpisode({
   part: 0,
   footer: "Acquiring in 5 minutes",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Card payments?", "Five players", "Acquirer + issuer", "MID + TID", "Authorization", "Hold", "Capture", "Reversal + refund", "Settlement", "Commission + T+1", "Your vocabulary"],
+  titles: ["Card payments?", "Five players", "Acquirer + issuer", "MID + TID", "Authorization", "Hold or debit", "Capture", "Reversal + refund", "Settlement", "Commission + T+1", "Your vocabulary"],
   map,
   diagram,
 });

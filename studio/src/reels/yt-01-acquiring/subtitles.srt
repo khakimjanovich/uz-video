@@ -1,44 +1,44 @@
 1
-00:00:00,050 --> 00:00:05,369
+00:00:00,050 --> 00:00:05,488
 Before we write a single line of code, what actually happens when someone pays a shop online with a card?
 
 2
-00:00:05,369 --> 00:00:12,059
+00:00:05,488 --> 00:00:11,976
 Five players are involved: the buyer, the shop, the acquirer bank, the processing center, and the issuer bank.
 
 3
-00:00:12,059 --> 00:00:17,880
+00:00:11,976 --> 00:00:17,952
 The acquirer is the shop's bank, the one we are building, and the issuer is the bank that gave the buyer their card.
 
 4
-00:00:17,880 --> 00:00:25,607
-Every shop gets a terminal at the acquirer, identified by a merchant ID and a terminal ID, the MID and TID.
+00:00:17,952 --> 00:00:26,785
+Every shop's website gets a terminal for each card scheme, identified by a merchant ID and a terminal ID, the MID and TID.
 
 5
-00:00:25,607 --> 00:00:31,511
+00:00:26,785 --> 00:00:32,607
 When the buyer pays, the acquirer sends an authorization through the processing center to the issuer.
 
 6
-00:00:31,511 --> 00:00:37,261
-The issuer checks the balance and places a hold, so the money is reserved but not yet moved.
+00:00:32,607 --> 00:00:39,607
+For Humo, the issuer first places a hold on the money, and for Uzcard, the money is debited in a single step.
 
 7
-00:00:37,261 --> 00:00:41,428
-Then the acquirer captures the hold, and the payment becomes final.
+00:00:39,607 --> 00:00:46,119
+For Humo, the acquirer then captures the hold at once, and the payment becomes final.
 
 8
-00:00:41,428 --> 00:00:46,904
+00:00:46,119 --> 00:00:51,690
 A reversal cancels a payment before settlement, and a refund sends money back after it.
 
 9
-00:00:46,904 --> 00:00:51,523
+00:00:51,690 --> 00:00:56,357
 At the end of the day, the processing center settles all payments with the acquirer.
 
 10
-00:00:51,523 --> 00:00:56,023
+00:00:56,357 --> 00:01:00,952
 The acquirer keeps its commission and pays the shop the rest by the next banking day.
 
 11
-00:00:56,023 --> 00:01:05,523
+00:01:00,952 --> 00:01:10,083
 These words, authorization, capture, MID, TID, and settlement, will name the classes we build in every episode that follows.
 

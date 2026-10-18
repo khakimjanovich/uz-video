@@ -10,7 +10,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | Ep | Title | Length | What to check |
 |---|---|---|---|
 | 00 | The map | 1:43 | Part list and order; Kafka/observability/Kubernetes placement |
-| 01 | Acquiring in 5 minutes | 1:07 | Check: settlement "at the end of the day" and payout "next banking day" for both Uzcard and Humo |
+| 01 | Acquiring in 5 minutes | 1:11 | ✅ Reviewed 2026-10-19. Code: Uzcard single-step debit (`trans.pay.purpose`), Humo hold then immediate capture (SOAP `Payment` ×2), terminal per sales point + scheme. **Open: reversal vs refund rule per scheme (waiting for Uzcard/Humo docs)** |
 | 02 | Setup | 0:57 | Design: one Gradle build, five modules, schema per module, boundary test |
 | 03 | Domain → contract → database | 1:02 | Design: the method; "IDs, not foreign keys" between modules |
 | 04 | Registration + email OTP | 0:48 | Code: OTP lifetime/attempts/resend configured. Design: Mailpit + Spring Mail (real code calls notification-manager). The error code `OTP_INVALID` is illustrative |
@@ -30,11 +30,15 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 18 | When processing goes silent | 0:39 | Code: Temporal resolution, backoff, manual review, sweep every minute |
 | 19 | Outbox + Kafka | 0:39 | Code: `event_outbox` is written. **Design: relay + Kafka + webhook consumer don't exist yet** |
 | 20 | Payment links | 0:27 | Code: link claim, expiry sweep |
-| 21 | Refunds and reversals | 0:32 | Code: partial refunds, refund window per sales point. Check: "never more than captured" is enforced |
+| 21 | Refunds and reversals | 0:32 | **Design: no refund/reversal code in the payment service yet.** Code groundwork only: refunds table, PARTIALLY_REFUNDED/REFUNDED states, DB check refunded ≤ captured, `refund_deadline_at` column (unused). Adapters expose Humo `ReturnPayment` (full only) and Uzcard `trans.reverse` (full). Partial refunds not wired |
 | 22 | Billing and reports | 0:26 | Code: billing flush (Spring Batch). **Check: usage counters in Redis; the daily report** (from the BRD, not seen in code) |
 | 23 | Hardening | 0:34 | Code gaps found in review: nonce/timestamp window, nonce before signature, KYB not required at activation, no payment limits |
 | 24 | Deploy to Kubernetes | 0:38 | Design: Helm, probes, Vault at startup, 3 replicas. ShedLock is real |
 | 25 | Extract a module | 0:29 | Code: mirrors the real card-processor-service |
+
+## Facts learned in review
+- Card-processor service only binds cards and reveals numbers; debits live in the payment service and the two adapters.
+- `CaptureMode.MANUAL` exists in the schema but is rejected; only automatic capture is built (it matters only for Humo).
 
 ## Known rough edges (visual)
 - Diagram text is small at 16:9 (boxes are scaled to 62%); fine full-screen, small in a thumbnail.
