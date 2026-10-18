@@ -235,11 +235,12 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 ### Part 3: Cards (adapters + vault)
 
 **12 · Card adapters**
-- Problem: two schemes, two protocols (REST and SOAP), one interface wanted.
-- Build: `uzcard-adapter` and `humo-adapter` behind one command interface: card OTP, authorize, capture, reverse, status.
-- Why: the payment service must not care which scheme a card belongs to.
-- Demo: the same command against Uzcard and Humo (test environments): card OTP, authorize, capture, reverse.
-- Real code: uzcard-adapter (SVGate), humo-adapter (spring-ws), `command/impl/{humo,uzcard}`.
+- Problem: two schemes, two protocols (Uzcard JSON-RPC, Humo SOAP), one interface wanted.
+- Build: a new `card` module with one port, `CardProcessor` (send binding code, confirm binding, debit, reverse, status), and an adapter per scheme: `UzcardProcessor` (one-step debit by token, our payment id as the external reference; a duplicate is looked up with `status`) and `HumoProcessor` (hold, then capture right away; card OTP through the middleware). Every answer becomes APPROVED, DECLINED with our own code, or UNKNOWN; a timeout is UNKNOWN, never a decline. JDK HttpClient (HTTP/1.1) with configured timeouts; the SOAP parser refuses external entities.
+- Why: the payment module must not care which scheme a card belongs to.
+- Infra: `processing-sandbox` (WireMock) in docker-compose stands in for both schemes, with a Luhn-valid test card for every outcome.
+- Tests: `UzcardProcessorIT`, `HumoProcessorIT` (real HTTP to the sandbox, including a payment that never answers). k6 waits for Episode 15, when the hosted page gives cards an HTTP path.
+- Code: `ecom@ep-12`.
 
 **13 · BIN registry + card vault**
 - Problem: we must know a card's scheme, and we must never store a card number in plain text.

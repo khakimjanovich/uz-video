@@ -1,36 +1,52 @@
 1
-00:00:00,050 --> 00:00:04,619
+00:00:00,050 --> 00:00:04,845
 How does our system talk to Uzcard and Humo, when they speak different languages?
 
 2
-00:00:04,619 --> 00:00:09,845
-Uzcard speaks REST, and Humo speaks SOAP, with different fields and different errors.
+00:00:04,845 --> 00:00:11,297
+Uzcard speaks JSON-RPC, and Humo speaks SOAP, with different fields and different errors.
 
 3
-00:00:09,845 --> 00:00:15,107
-If the payment module knew both, every new scheme would mean touching payment code.
+00:00:11,297 --> 00:00:16,357
+If the payment code knew both, every new scheme would mean touching payment code.
 
 4
-00:00:15,107 --> 00:00:23,928
-So we define one port, a card processor, with a few commands: one-time code, authorize, capture, reverse, and status.
+00:00:16,357 --> 00:00:23,345
+So the card module defines one port, a card processor: bind a card, debit, reverse, and status.
 
 5
-00:00:23,928 --> 00:00:26,500
+00:00:23,345 --> 00:00:25,821
 Each scheme gets its own adapter behind that port.
 
 6
-00:00:26,500 --> 00:00:30,309
-The payment module sends the same command, whatever the card.
+00:00:25,821 --> 00:00:32,154
+Uzcard debits in one step, by the card's token, with our payment id as the external reference.
 
 7
-00:00:30,309 --> 00:00:36,988
-Each adapter translates the scheme's errors into our own codes, so a decline looks the same everywhere.
+00:00:32,154 --> 00:00:36,238
+Humo holds the money first, then captures the hold right away.
 
 8
-00:00:36,988 --> 00:00:40,821
-We demo every command against the schemes' test environments.
+00:00:36,238 --> 00:00:41,833
+Every answer becomes one of three outcomes: approved, declined with our own code, or unknown.
 
 9
-00:00:40,821 --> 00:00:44,773
+00:00:41,833 --> 00:00:47,095
+A timeout is unknown and never a decline, because the money may already have moved.
+
+10
+00:00:47,095 --> 00:00:52,702
+If we retry a payment the scheme already has, we look it up instead of paying twice.
+
+11
+00:00:52,702 --> 00:00:59,857
+A processing sandbox in the infrastructure repository stands in for both schemes, with a test card for every outcome.
+
+12
+00:00:59,857 --> 00:01:06,916
+Integration tests send real HTTP to that sandbox, including a payment that never answers.
+
+13
+00:01:06,916 --> 00:01:10,702
 Next, knowing a card's scheme, and storing its number safely.
 
