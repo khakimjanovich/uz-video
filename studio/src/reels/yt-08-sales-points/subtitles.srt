@@ -1,40 +1,60 @@
 1
-00:00:00,050 --> 00:00:04,607
+00:00:00,050 --> 00:00:04,559
 A merchant may run several websites, so which one is allowed to take payments?
 
 2
-00:00:04,607 --> 00:00:11,547
-A sales point is one website, with its own settings, card schemes, and allowed return addresses.
+00:00:04,559 --> 00:00:09,654
+A sales point is one website, with the return addresses where buyers come back after paying.
 
 3
-00:00:11,547 --> 00:00:18,404
-The deal also fixes how many days refunds are allowed, and a longer window needs a written reason, such as a warranty.
+00:00:09,654 --> 00:00:17,357
+Every return address must be an https page on the website's own domain, so a payment can never send a buyer somewhere else.
 
 4
-00:00:18,404 --> 00:00:21,333
-It starts as a draft, and cannot take payments yet.
+00:00:17,357 --> 00:00:21,142
+A new sales point starts as a draft, and can't take payments yet.
 
 5
-00:00:21,333 --> 00:00:26,071
-Two admins check the site: a real shop, real goods, and a legal business.
+00:00:21,142 --> 00:00:24,011
+An admin checks the website and records the result.
 
 6
-00:00:26,071 --> 00:00:30,166
-A failed check records its findings, and the sales point stays closed.
+00:00:24,011 --> 00:00:27,821
+A failed check must list what is wrong, and every check is kept.
 
 7
-00:00:30,166 --> 00:00:33,047
-A passed check lets the sales point go active.
+00:00:27,821 --> 00:00:36,071
+The deal sets the card schemes and the refund window, and a longer window needs a reason and stays under a configured maximum.
 
 8
-00:00:33,047 --> 00:00:37,607
-While it is active, the merchant cannot quietly change the website address.
+00:00:36,071 --> 00:00:41,166
+Switching it on needs an active merchant, a passed latest check, and at least one card scheme.
 
 9
-00:00:37,607 --> 00:00:43,952
-The payment module will ask one internal question on every request: is this sales point active?
+00:00:41,166 --> 00:00:44,369
+Once it is live, the return addresses are frozen.
 
 10
-00:00:43,952 --> 00:00:49,059
-Next, a second module appears, and with it, copied code we must remove.
+00:00:44,369 --> 00:00:49,345
+A live website can be suspended and restored, and a closed one stays closed.
+
+11
+00:00:49,345 --> 00:00:55,666
+Other modules ask one question: may this sales point take a payment right now, and the answer fails closed.
+
+12
+00:00:55,666 --> 00:01:01,797
+Unit tests cover every rule, and integration tests run the whole path on a real Postgres.
+
+13
+00:01:01,797 --> 00:01:06,988
+Under load, about sixteen hundred websites were checked and switched on in thirty seconds.
+
+14
+00:01:06,988 --> 00:01:15,797
+Load testing also caught two real bugs: a validator that crashed on web addresses, and a pattern that refused every https link.
+
+15
+00:01:15,797 --> 00:01:21,547
+Next, the security setup and the Keycloak client move into shared platform libraries.
 

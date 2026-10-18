@@ -55,12 +55,13 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 
 ## Repositories and scope (decided 2026-10-19)
 
-- **Backend only.** Series B covers the Java/Spring system; the merchant portal, admin panel and hosted page UI are out of scope.
+- **Backend first, with a matching web app.** Series B videos cover the Java/Spring system; each episode's screens are built in `ecom-front` (merchant portal + bank console, React + Mantine) and tested end to end, without their own video beats.
+- **Languages:** English, Russian and Uzbek in the API's error details and emails (`Accept-Language`), the web app, and the Keycloak login pages.
 - **Repos (companion code, local in `~/Documents/acquiring/`):**
   - [`ecom`](https://github.com/khakimjanovich/ecom): the Java/Spring modular monolith (Gradle 9.8.1, Java 25, Spring Boot 4.1.1, Spring Modulith 2.1.1 for the boundary test, openapi-generator 7.14.0)
   - [`ecom-infra`](https://github.com/khakimjanovich/ecom-infra): docker-compose (Postgres 17.6, Redis 8.2, Mailpit from episode 04, Keycloak 26.4 from episode 07), later Helm and Kubernetes. The "one command" lives here.
   - [`ecom-k6-testing`](https://github.com/khakimjanovich/ecom-k6-testing): Grafana k6 load tests from day one, one folder per area, thresholds in every script; results join Grafana from episode 17.
-  - Frontend: not covered.
+  - [`ecom-front`](https://github.com/khakimjanovich/ecom-front): the web app; its API types are generated from the same OpenAPI contract, and Playwright runs the whole journey on the real stack.
 - **Tags:** each repo is tagged per episode (`ep-02`, `ep-03`, …) so a viewer can check out exactly what a video shows. `ecom`'s `ep-02` is a side commit holding Episode 02's state, since 02 and 03 were built together.
 - **Clean codebase:** no convenience files (no Makefile), no episode mentions in code, generated code only in build output and published jars, only tests that guard a real rule.
 - **Database:** one Postgres, a schema per module, and a database user per module that can see only its own schema (isolation enforced by Postgres).
@@ -196,12 +197,13 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **08 · Sales points + site check**
 - Problem: a partner may run several websites, and a fake one must not take payments.
-- Build: sales point with acquiring settings (DRAFT → ACTIVE → SUSPENDED → CLOSED), return-URL allowlist, allowed schemes, refund window; site check (PASSED/FAILED with findings); internal "is this sales point active?" API.
-- Why: the unit that actually takes payments; the payment service will ask about it on every request.
-- Tables: `client_acquiring_settings`, `site_check`, `sales_point_change_request`.
-- Endpoints: admin `POST /partners/{id}/sales-points`, `POST /site-checks`; internal `GET /internal/sales-points/{id}`.
-- Demo: create → site check FAILED → cannot activate; PASSED → ACTIVE.
-- Real code: `SalesPointInternalServiceImpl`, `SiteCheckServiceImpl`.
+- Build: a sales point per website (DRAFT → ACTIVE ⇄ SUSPENDED → CLOSED, guarded by a transition table); return addresses must be https pages on the website's own domain and freeze once live; an admin records site checks (PASSED/FAILED, a failed one must list findings; every check kept); the deal's terms: card schemes (Uzcard, Humo) and a refund window, a longer one needs a reason and stays under a configured maximum (`ecom.partner.refund.max-days`); switching on needs an active partner, a passed latest check and at least one scheme; `SalesPoints.payable(id)` for other modules, failing closed.
+- Why: the unit that actually takes payments; the payment module asks about it on every request.
+- Tables: `sales_point` (text[] return URLs and schemes), `site_check`.
+- Endpoints: merchant `GET|POST /api/v1/partner/sales-points`, `PUT …/{id}/return-urls`; admin `GET /api/v1/admin/partners/{id}/sales-points`, `GET /api/v1/admin/sales-points/{id}`, `GET|POST …/site-checks`, `PUT …/settings`, `POST …/activate|suspend|restore|close`.
+- Tests: `SalesPointTest`, `SalesPointServiceIT`, the full-app IT over HTTP; k6 `sales-points/site-check-and-activate.js` (it caught two real bugs in the contract: `format: uri` with `pattern`, and a pattern that must match the whole string).
+- Front: merchant "Websites" page; bank website page with the check form, terms and actions.
+- Code: `ecom@ep-08`.
 
 **09 · Extract the starters**
 - Problem: the second service is about to copy error handling, security and Redis config.
