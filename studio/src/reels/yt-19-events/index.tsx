@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt19EventsComposition = createEpisode({
   id: "yt-19-events",
@@ -9,7 +9,8 @@ export const Yt19EventsComposition = createEpisode({
   part: 4,
   footer: "Outbox + Kafka",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Who else needs to know?", "Lost in between", "Same transaction", "The relay", "Crash-safe", "Merchant webhook", "Truth vs news", "Next: payment links"],
+  titles: ["Who tells the shop?", "Lost in between", "Same transaction", "The payment raises it", "Into the outbox", "Skip locked", "Keyed by payment", "Drop repeats", "One webhook per site", "Signed like requests", "Retry, then wait longer", "Dead-letter topic", "Every attempt logged", "Truth vs news", "Next: payment links"],
   map,
   diagram,
+  code,
 });

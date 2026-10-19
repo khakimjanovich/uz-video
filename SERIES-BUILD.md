@@ -293,11 +293,13 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Code: `ecom@ep-18`.
 
 **19 · Events: transactional outbox + Kafka**
-- Problem: other systems (merchant webhooks, notifications, antifraud) must learn about payment events, and a crash between "save" and "publish" must never lose or invent an event.
-- Build: transactional outbox (event row written in the same DB transaction), a relay that publishes to Kafka, a merchant webhook consumer with retries.
-- Why: the real repo writes `event_outbox` but nothing publishes it. Messaging, not event sourcing: Postgres stays the source of truth.
-- Tables: `event_outbox`. Topics: `payments.captured`, `payments.declined`.
-- Demo: kill the app between save and publish → the event still arrives exactly once after restart.
+- Problem: the merchant's server must learn how each payment ended without polling, and a crash between "save" and "publish" must never lose the news or announce a payment that didn't commit.
+- Build: reaching PAID, DECLINED, FAILED or MANUAL_REVIEW raises `PaymentFinished` on the payment (Spring Data `@DomainEvents`); a listener writes it to `payment_event` while the payment is saved, in the same transaction. A relay (`relay-delay` 1 s, `relay-batch` 100) locks the oldest unpublished rows with `FOR UPDATE SKIP LOCKED`, publishes them to Kafka `payments.events` keyed by payment id (`acks: all`) and marks them published only after Kafka has them: at least once, each event with its own id. Each website has one webhook URL (HTTPS on its own domain or a subdomain; listed test hosts allowed; empty stops it). A `@KafkaListener` POSTs the event there, signed with the API client's key exactly like merchant requests (`X-Event-Id`, `X-Timestamp`, `X-Signature`); timeouts 5 s, no redirects; anything but 2xx is retried (`retries` 5, `first-retry` 1 s doubling to `max-retry` 30 s), then parked on `payments.events.DLT` on the same partition; every attempt is logged. Kafka 4.3 (KRaft) joins ecom-infra; `ecom.payment.events.enabled` switches the relay and listener.
+- Tables: `payment_event`, `webhook_delivery`; partner `sales_point.webhook_url`.
+- Endpoints: `PUT /api/v1/partner/sales-points/{id}/webhook`.
+- Tests: `SalesPointTest` (own domain over HTTPS only), `PaymentEventsIT` (real Postgres + Kafka + a merchant server: status and event commit together, a 500 is retried, the signature verifies); k6 `payments/webhooks.js` (the sandbox plays the merchant; signed webhooks for paid and declined, foreign URL refused). k6 now runs inside the stack's Docker network.
+- Front: the merchant's website card shows and edits the webhook URL.
+- Code: `ecom@ep-19`, `ecom-infra@ep-19`.
 
 **20 · Payment links**
 - Problem: merchants selling in chats have no website checkout.
