@@ -159,7 +159,7 @@ export const code: CodeStep[] = [
       "├── repository/      Spring Data JPA",
       "├── entity/          tables and their rules",
       "├── mapper/          entity ↔ API models",
-      "├── constant/        *ConstantUtils, *ExceptionStatus, bean names",
+      "├── constant/        *Constants, *ExceptionStatus, bean names",
       "├── property/        typed configuration",
       "└── config/          the module's own datasource",
     ],

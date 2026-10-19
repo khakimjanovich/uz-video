@@ -60,8 +60,8 @@ export const code: CodeStep[] = [
     file: "modules/partner/…/entity/Partner.java",
     lines: [
       "@Entity",
-      "@Table(schema = PartnerConstantUtils.SCHEMA,",
-      "       name = PartnerConstantUtils.TABLE)",
+      "@Table(schema = PartnerConstants.SCHEMA,",
+      "       name = PartnerConstants.TABLE)",
       "public class Partner {",
       "  @Id private UUID id;",
       "  @Enumerated(EnumType.STRING)",
