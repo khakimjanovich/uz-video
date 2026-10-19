@@ -1,24 +1,44 @@
 1
-00:00:00,050 --> 00:00:04,678
-How does the bank charge partners for using the API, and how do shops match their books?
+00:00:00,050 --> 00:00:04,583
+At the end of the day, a merchant asks one question: how much do I get?
 
 2
-00:00:04,678 --> 00:00:08,416
-Every API call increments a usage counter in Redis.
+00:00:04,583 --> 00:00:12,273
+Every night the bank adds up the day before, for each website: what was paid, the fee, what was refunded, and the payout.
 
 3
-00:00:08,416 --> 00:00:12,904
-A Spring Batch job flushes those counters into billing records.
+00:00:12,273 --> 00:00:20,869
+A business day runs from midnight to midnight in the settlement time zone, the same day that decides reversal or refund, so the two never disagree.
 
 4
-00:00:12,904 --> 00:00:17,047
-Each shop gets a daily report of its payments, fees, and payouts.
+00:00:20,869 --> 00:00:27,988
+Paid counts payments paid that day and not reversed; refunded counts refunds made that day, whenever the payment was.
 
 5
-00:00:17,047 --> 00:00:21,154
-The report adds up to exactly the money that landed in its account.
+00:00:27,988 --> 00:00:34,119
+The payout is the net of what was paid, less what was refunded: the bank keeps its fee on a refund.
 
 6
-00:00:21,154 --> 00:00:24,571
-Next, the gaps we still need to close before production.
+00:00:34,119 --> 00:00:38,238
+Building a day again replaces its rows, and never adds to them.
+
+7
+00:00:38,238 --> 00:00:46,690
+So every instance may run the job, and each night it rebuilds the last three days: a night the app was down is caught up.
+
+8
+00:00:46,690 --> 00:00:55,345
+Behind each day is a CSV: every payment and refund, with its fee, card and RRN, and a refund as a negative line.
+
+9
+00:00:55,345 --> 00:00:59,583
+Every cell is quoted, because a website's name may hold a comma.
+
+10
+00:00:59,583 --> 00:01:08,559
+In the portal, the merchant sees each day and downloads its CSV; a day where refunds outweigh payments shows a negative payout.
+
+11
+00:01:08,559 --> 00:01:12,261
+Next, hardening: limits on what one website may take.
 

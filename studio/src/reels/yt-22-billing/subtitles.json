@@ -2,54 +2,99 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 141,
-    "text": "How does the bank charge partners for using the API, and how do shops match their books?",
-    "prefix": "How does the bank charge partners for using the API, and how do shops match their books?",
+    "endFrame": 138,
+    "text": "At the end of the day, a merchant asks one question: how much do I get?",
+    "prefix": "At the end of the day, a merchant asks one question: how much do I get?",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 2,
-    "startFrame": 140,
-    "endFrame": 253,
-    "text": "Every API call increments a usage counter in Redis.",
-    "prefix": "Every API call increments a usage counter in Redis.",
+    "startFrame": 137,
+    "endFrame": 369,
+    "text": "Every night the bank adds up the day before, for each website: what was paid, the fee, what was refunded, and the payout.",
+    "prefix": "Every night the bank adds up the day before, for each website: what was paid, the fee, what was refunded, and the payout.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 3,
-    "startFrame": 252,
-    "endFrame": 388,
-    "text": "A Spring Batch job flushes those counters into billing records.",
-    "prefix": "A Spring Batch job flushes those counters into billing records.",
+    "startFrame": 368,
+    "endFrame": 627,
+    "text": "A business day runs from midnight to midnight in the settlement time zone, the same day that decides reversal or refund, so the two never disagree.",
+    "prefix": "A business day runs from midnight to midnight in the settlement time zone, the same day that decides reversal or refund, so the two never disagree.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 4,
-    "startFrame": 387,
-    "endFrame": 512,
-    "text": "Each shop gets a daily report of its payments, fees, and payouts.",
-    "prefix": "Each shop gets a daily report of its payments, fees, and payouts.",
+    "startFrame": 626,
+    "endFrame": 840,
+    "text": "Paid counts payments paid that day and not reversed; refunded counts refunds made that day, whenever the payment was.",
+    "prefix": "Paid counts payments paid that day and not reversed; refunded counts refunds made that day, whenever the payment was.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 5,
-    "startFrame": 511,
-    "endFrame": 635,
-    "text": "The report adds up to exactly the money that landed in its account.",
-    "prefix": "The report adds up to exactly the money that landed in its account.",
+    "startFrame": 839,
+    "endFrame": 1024,
+    "text": "The payout is the net of what was paid, less what was refunded: the bank keeps its fee on a refund.",
+    "prefix": "The payout is the net of what was paid, less what was refunded: the bank keeps its fee on a refund.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 6,
-    "startFrame": 634,
-    "endFrame": 768,
-    "text": "Next, the gaps we still need to close before production.",
-    "prefix": "Next, the gaps we still need to close before production.",
+    "startFrame": 1023,
+    "endFrame": 1148,
+    "text": "Building a day again replaces its rows, and never adds to them.",
+    "prefix": "Building a day again replaces its rows, and never adds to them.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1147,
+    "endFrame": 1401,
+    "text": "So every instance may run the job, and each night it rebuilds the last three days: a night the app was down is caught up.",
+    "prefix": "So every instance may run the job, and each night it rebuilds the last three days: a night the app was down is caught up.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1400,
+    "endFrame": 1661,
+    "text": "Behind each day is a CSV: every payment and refund, with its fee, card and RRN, and a refund as a negative line.",
+    "prefix": "Behind each day is a CSV: every payment and refund, with its fee, card and RRN, and a refund as a negative line.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1660,
+    "endFrame": 1788,
+    "text": "Every cell is quoted, because a website's name may hold a comma.",
+    "prefix": "Every cell is quoted, because a website's name may hold a comma.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1787,
+    "endFrame": 2057,
+    "text": "In the portal, the merchant sees each day and downloads its CSV; a day where refunds outweigh payments shows a negative payout.",
+    "prefix": "In the portal, the merchant sees each day and downloads its CSV; a day where refunds outweigh payments shows a negative payout.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 2056,
+    "endFrame": 2198,
+    "text": "Next, hardening: limits on what one website may take.",
+    "prefix": "Next, hardening: limits on what one website may take.",
     "highlight": "",
     "suffix": ""
   }

@@ -319,10 +319,15 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Front: **Give back** on paid payment links; the payment page shows money returned.
 - Code: `ecom@ep-21`, `ecom-infra@ep-21` (sandbox `ReturnPayment`).
 
-**22 · Billing and reports**
-- Problem: partners pay for API usage; merchants need a daily report.
-- Build: billing counters flushed by a Spring Batch job; daily report export.
-- Real code: `BillingFlushJob`.
+**22 · Daily reports**
+- Problem: at the end of each day a merchant needs to know what it gets, and why.
+- Build: `daily_report`, one row per website and business day (midnight to midnight in `settlement-zone`, the same day that decides reversal or refund). One SQL statement adds up the day: payments paid that day and not reversed (count, amount, fee, net) and refunds made that day (count, amount); payout = net − refunded (the bank keeps its fee on a refund). `ON CONFLICT … DO UPDATE` replaces a rebuilt day, so a nightly job (`report-cron` 00:30, rebuilding `report-days` 3) runs on every instance and catches up missed nights. The CSV behind a day lists every payment and refund (a refund as a negative line), every cell quoted.
+- Why not API-usage billing: the bank earns its fee per payment (episode 10); the merchant's question is the payout.
+- Tables: `daily_report`.
+- Endpoints: `GET /api/v1/partner/reports`, `GET /api/v1/partner/reports/{day}/payments.csv`.
+- Tests: `PaymentPageIT` (a fixed day: reversed excluded, refund counted on its own day, payout, rebuild replaces, CSV lines, others see nothing); k6 `payments/reports.js`.
+- Front: the merchant's **Reports** page with a CSV per day.
+- Code: `ecom@ep-22`.
 
 **23 · Hardening (exercises from real gaps)**
 - Problem: production needs more than happy paths.
