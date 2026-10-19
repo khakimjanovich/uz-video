@@ -9,12 +9,6 @@ export const map: BuildMapStep[] = [
   { cue: 15, part: 0, current: BUILD_PARTS[0].nodes },
 ];
 
-const INFRA = { docker: [0.5, 0.5], postgres: [1.5, 0.5], redis: [2.5, 0.5] } as const;
-const UP = [
-  { from: "docker", to: "postgres" },
-  { from: "postgres", to: "redis" },
-] as const;
-
 export const diagram: DiagramStep<BuildId>[] = [
   { cue: 1, layout: { java: [0.5, 1], spring: [1.5, 1], gradle: [2.5, 1] }, accent: ["java", "spring", "gradle"], badges: { java: "25", spring: "4.1", gradle: "9.8 · Groovy" } },
   {
@@ -28,20 +22,21 @@ export const diagram: DiagramStep<BuildId>[] = [
     badges: { app: "no generated code in source" },
   },
   {
-    cue: 11,
-    layout: { ...INFRA, keycloak: [0.5, 2], vault: [1.5, 2], kafka: [2.5, 2] },
-    edges: [...UP],
-    badges: { keycloak: "later", vault: "later", kafka: "later" },
-  },
-  {
     cue: 13,
-    layout: { ...INFRA },
-    edges: [...UP],
+    layout: {
+      docker: [0, 1],
+      postgres: [1, 0], redis: [2, 0], mail: [3, 0],
+      bucket: [1, 0.67], keycloak: [2, 0.67], processing: [3, 0.67],
+      vault: [1, 1.33], otel: [2, 1.33], temporal: [3, 1.33],
+      kafka: [2, 2],
+    },
+    edges: [{ from: "docker", to: "postgres" }, { from: "docker", to: "bucket" }, { from: "docker", to: "vault" }, { from: "docker", to: "kafka" }],
     packets: [
-      { from: "docker", to: "postgres", label: "up", delay: 8, duration: 18 },
-      { from: "postgres", to: "redis", label: "up", delay: 28, duration: 18 },
+      { from: "docker", to: "postgres", label: "up", delay: 6, duration: 16 },
+      { from: "docker", to: "bucket", label: "up", delay: 12, duration: 16 },
+      { from: "docker", to: "vault", label: "up", delay: 18, duration: 16 },
     ],
-    accent: ["postgres", "redis"],
+    accent: ["postgres", "redis", "mail", "bucket", "keycloak", "processing", "vault", "otel", "temporal", "kafka"],
   },
 ];
 
@@ -183,18 +178,21 @@ export const code: CodeStep[] = [
   },
   {
     cue: 11,
-    file: "ecom-infra/docker-compose.yml",
+    file: "ecom-infra/docker-compose.yml · first used",
     lines: [
-      "name: ecom",
-      "services:",
-      "  postgres:",
-      "    image: postgres:17.6-alpine",
-      '    ports: ["5442:5432"]',
-      "  redis:",
-      "    image: redis:8.2-alpine",
-      '    ports: ["6389:6379"]',
+      "postgres            postgres:17.6-alpine        → 03",
+      "redis               redis:8.2-alpine            → 04",
+      "mailpit             axllent/mailpit:v1.31.5     → 04",
+      "file-store          chrislusf/seaweedfs:3.97    → 05",
+      "keycloak            keycloak:26.4.0             → 07",
+      "processing-sandbox  wiremock/wiremock:3.13.1    → 12",
+      "vault               hashicorp/vault:1.20.4      → 14",
+      "observability       grafana/otel-lgtm:0.30.0    → 17",
+      "otel-agent          …/autoinstrumentation-java  → 17",
+      "temporal            temporalio/temporal:1.9.1   → 18",
+      "kafka               apache/kafka:4.3.1          → 19",
     ],
-    highlight: [4, 7],
+    highlight: [1, 2],
   },
   {
     cue: 12,

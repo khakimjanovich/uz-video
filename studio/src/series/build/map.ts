@@ -58,11 +58,11 @@ export const BUILD_ARROWS: [number, number, number][] = [
 export const APP_BOX = { x: 40, y: 100, w: 600, h: 190, label: "Acquiring app · modular monolith" };
 
 export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes: BuildNodeId[] }[] = [
-  { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis"] },
-  { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle + documents", "Four-eyes", "Keycloak clients", "Sales points", "Platform libraries"], nodes: ["partner", "emailport", "emailsvc", "filesvc", "s3", "admin", "keycloak"] },
+  { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis", "emailsvc", "s3", "keycloak", "vault", "observability", "temporal", "kafka"] },
+  { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle + documents", "Four-eyes", "Keycloak clients", "Sales points", "Platform libraries"], nodes: ["partner", "emailport", "filesvc", "admin"] },
   { n: 2, title: "Money rules", episodes: ["Commission", "Terminals"], nodes: ["commission", "terminal"] },
   { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "BIN + card vault"], nodes: ["bin", "card", "procport", "procsvc"] },
-  { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Payment page", "The debit", "Observability", "When processing goes silent", "Outbox + Kafka", "Links", "Refunds", "Daily reports", "Hardening"], nodes: ["payment", "merchant", "buyer", "vault", "observability", "temporal", "kafka"] },
+  { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Payment page", "The debit", "Observability", "When processing goes silent", "Outbox + Kafka", "Links", "Refunds", "Daily reports", "Hardening"], nodes: ["payment", "merchant", "buyer"] },
   { n: 5, title: "Growing up", episodes: ["Deploy to Kubernetes", "Extract the card vault"], nodes: ["kubernetes", "card"] },
 ];
 
