@@ -176,13 +176,13 @@ export const code: CodeStep[] = [
     file: "GET /api/v1/partners/0000… · 404 application/problem+json",
     lines: [
       "{",
-      '  "status": 404,',
-      '  "title": "partner-not-found",',
       '  "detail": "No merchant found for 00000000-0000-….",',
       '  "instance": "/api/v1/partners/00000000-0000-…",',
+      '  "status": 404,',
+      '  "title": "partner-not-found",',
       '  "code": "PARTNER_NOT_FOUND"',
       "}",
     ],
-    highlight: [6],
+    highlight: [2, 6],
   },
 ];
