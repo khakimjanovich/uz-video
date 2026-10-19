@@ -342,3 +342,4 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 1. **Companion repo:** a new public teaching repo (simplified) vs excerpts from the real one. Recommended: new repo; the real one stays private.
 2. **Length:** Part 0 short (3–6 min each); build episodes 8–15 min with code on screen.
 3. **Language:** English first; Uzbek copies on request (as with the owner pitch).
+4. **Split into repositories (decided 2026-10-19: later).** Finish, clean and test the whole system in today's layout first. Then decide on `ecom-platform` plus one repo per service (each service owning its contract and client). Before any split: one published `build-logic` so OpenAPI generation is identical in every repo, and Keycloak client-credentials in front of the adapters, because other projects will call them and must be identified.
