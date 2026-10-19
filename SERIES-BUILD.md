@@ -329,10 +329,14 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Front: the merchant's **Reports** page with a CSV per day.
 - Code: `ecom@ep-22`.
 
-**23 · Hardening (exercises from real gaps)**
-- Problem: production needs more than happy paths.
-- Build, as viewer exercises: the HMAC nonce/timestamp window fix, KYB enforcement at activation, per-sales-point payment limits.
-- Why: honest engineering; shows how a real system grows.
+**23 · Hardening: limits**
+- Problem: a live website could take any amount in one payment, or in one day; and five buyers paying at once must not slip past a daily limit together.
+- Build: the bank sets `maxPaymentAmount` and `dailyLimit` per website (optional; daily ≥ one payment, checked by the entity and a database constraint). One payment over its limit is refused when created (API and links, `SalesPointView.allowsAmount`). The daily total lives in `payment.daily_volume` per website and business day (settlement time zone): each debit reserves its amount with one `INSERT … ON CONFLICT DO UPDATE … WHERE total ≤ limit`, in the same transaction as the journal, before the scheme is asked; what doesn't fit fails (`PAYMENT_DAILY_LIMIT_REACHED`, no money moves). A decline (now or after resolution) and a same-day reversal release the share; an unknown debit keeps it.
+- Why: the earlier hardening list (nonce spent after the signature, KYB at verify and activation) is already in episodes 06 and 14.
+- Tables: `partner.sales_point` (+ limits), `payment.daily_volume`.
+- Tests: `SalesPointTest` (limits valid), `PaymentPageIT` (over-limit refused, four racing debits: two fit, declined and reversed released); k6 `payments/limits.js` (20 buyers racing, the day ends exactly at its limit).
+- Front: limits on the bank's website settings and on the website card; the payment page's closed text no longer blames attempts.
+- Code: `ecom@ep-23`.
 
 ### Part 5: Growing up
 

@@ -1,15 +1,16 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt23HardeningComposition = createEpisode({
   id: "yt-23-hardening",
   number: 23,
   part: 4,
-  footer: "Hardening",
+  footer: "Hardening: limits",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Before production", "Nonce window", "Signature first", "KYB required", "Payment limits", "Your exercises", "Next: Kubernetes"],
+  titles: ["Before production", "Two limits", "Valid limits", "One payment", "The race", "One statement", "The row lock", "Reserve before the call", "Give it back", "The business day", "In the portal", "Next: Kubernetes"],
   map,
   diagram,
+  code,
 });

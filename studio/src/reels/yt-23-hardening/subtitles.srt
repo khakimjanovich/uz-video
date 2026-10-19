@@ -1,28 +1,48 @@
 1
-00:00:00,050 --> 00:00:03,154
-What still needs fixing before this system goes to production?
+00:00:00,050 --> 00:00:06,785
+A website is live and taking payments: what stops it from taking a fortune in one payment, or in one day?
 
 2
-00:00:03,154 --> 00:00:09,857
-First, keep each nonce as long as its timestamp is accepted, so a signed request can never be replayed later.
+00:00:06,785 --> 00:00:14,452
+The bank sets two limits per website: the most one payment may be, and the most the website may take in one business day.
 
 3
-00:00:09,857 --> 00:00:15,619
-Second, check the signature before spending the nonce, so nobody can burn other merchants' nonces.
+00:00:14,452 --> 00:00:21,488
+Both are optional, and a daily limit below one payment's limit is refused, by the entity and by the database.
 
 4
-00:00:15,619 --> 00:00:20,857
-Third, require an approved KYB before any merchant can be activated.
+00:00:21,488 --> 00:00:27,130
+One payment over its limit is refused when it is created, before a buyer ever sees a page.
 
 5
-00:00:20,857 --> 00:00:24,107
-Fourth, add payment limits for each sales point.
+00:00:27,130 --> 00:00:32,857
+The daily limit is harder: five buyers pay at the same moment, and each of them alone would fit.
 
 6
-00:00:24,107 --> 00:00:29,107
-Each one is your exercise, with a failing test waiting for you to make it pass.
+00:00:32,857 --> 00:00:39,892
+So each debit reserves its amount with one statement: add it to the day only if the total stays within the limit.
 
 7
-00:00:29,107 --> 00:00:32,464
-Next, taking the whole system to Kubernetes.
+00:00:39,892 --> 00:00:45,119
+The row's lock makes racing debits wait their turn, and whatever doesn't fit gets nothing.
+
+8
+00:00:45,119 --> 00:00:53,238
+The reservation commits together with the journal, before the scheme is asked: a debit that doesn't fit fails, and no money moves.
+
+9
+00:00:53,238 --> 00:01:01,095
+A decline gives its share back, and so does a same-day reversal; an unknown debit keeps it, since the money may have moved.
+
+10
+00:01:01,095 --> 00:01:06,416
+The day is the business day in the settlement time zone, the same day the reports add up.
+
+11
+00:01:06,416 --> 00:01:11,095
+The bank edits both limits on the website's page, and the merchant sees them.
+
+12
+00:01:11,095 --> 00:01:14,059
+Next, leaving the laptop: Kubernetes.
 
