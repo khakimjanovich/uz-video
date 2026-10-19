@@ -27,7 +27,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 15 | The payment page | 1:38 | ✅ Built and matched to `ecom@ep-15`: token as credential (hash, expiry), read-only page, scheme checked first, a code per binding, every attempt counted and committed first, page closes, Redis lock |
 | 16 | The debit | 1:22 | ✅ Built and matched to `ecom@ep-16`: one conditional claim, route and fee fixed, journal first with one debit per payment, paid/declined/unknown, status table |
 | 17 | Observability | 1:39 | ✅ Built and matched to `ecom@ep-17`: OpenTelemetry agent from infra, one trace across services, logs with trace ids, debit metrics, OTLP stack, payments dashboard (not rendered) |
-| 18 | When processing goes silent | 0:39 | Code: Temporal resolution, backoff, manual review, sweep every minute |
+| 18 | When processing goes silent | 1:20 | ✅ Built and matched to `ecom@ep-18`: Temporal resolution workflow with growing waits, same reference, manual review, one workflow per payment, sweep (not rendered) |
 | 19 | Outbox + Kafka | 0:39 | Code: `event_outbox` is written. **Design: relay + Kafka + webhook consumer don't exist yet** |
 | 20 | Payment links | 0:27 | Code: link claim, expiry sweep |
 | 21 | Refunds and reversals | 0:32 | **Design: no refund/reversal code in the payment service yet.** Code groundwork only: refunds table, PARTIALLY_REFUNDED/REFUNDED states, DB check refunded ≤ captured, `refund_deadline_at` column (unused). Adapters expose Humo `ReturnPayment` (full only) and Uzcard `trans.reverse` (full). Partial refunds not wired. Refund window now points back to Ep 08; **not enforced in the payment service yet** (`refund_deadline_at` unused) |

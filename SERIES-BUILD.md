@@ -287,12 +287,10 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Code: `ecom@ep-17`, `ecom-infra@ep-17`.
 
 **18 · When the processing center goes silent**
-- Problem: a timeout leaves the money state unknown.
-- Build: Temporal resolution workflow (status polling with backoff), sweep workflow, manual review queue, outbox events.
-- Why: never blind-retry a debit; resolve the truth first.
-- Tables: `manual_review_item`, `event_outbox`.
-- Demo: force a processing timeout → the workflow asks for the status, then resolves to CAPTURED or reversed.
-- Real code: `PaymentResolutionWorkflowImpl`, `ResolutionSweepWorkflowImpl`, `AttemptLimitEscalator`.
+- Problem: a debit with no answer may have moved money; it can be neither declined nor sent again, and someone has to find out, even across restarts.
+- Build: Temporal (dev server in ecom-infra, plain SDK 1.40 in the payment module, a worker in the app). Each UNKNOWN debit gets `PaymentResolutionWorkflow` (id = the payment's, so starting twice keeps the first): it waits (`first-wait` 30 s, doubling up to `max-wait` 10 m), asks the scheme by our payment id (`Cards.status` → Uzcard `trans.ext`, Humo `GetPayment`), and settles PAID or DECLINED with the journal finished; after `give-up-after` 24 h → MANUAL_REVIEW. A sweep (`sweep-delay` 1 m) starts it for UNKNOWN debits and for DEBITING ones stuck mid-call longer than `stuck-after`; if Temporal is down, the debit still ends UNKNOWN and the sweep starts it later. Resolutions are counted on the dashboard; the payment page refreshes while the bank checks.
+- Tests: `PaymentResolutionWorkflowTest` (time-skipping: waits double, give up → review), `PaymentPageIT` (an unknown debit settled by asking later, the sweep finds stuck debits); k6 `payments/silent-scheme.js` (unknown, then PAID, through the real Temporal).
+- Code: `ecom@ep-18`.
 
 **19 · Events: transactional outbox + Kafka**
 - Problem: other systems (merchant webhooks, notifications, antifraud) must learn about payment events, and a crash between "save" and "publish" must never lose or invent an event.

@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt18SilenceComposition = createEpisode({
   id: "yt-18-silence",
@@ -9,7 +9,8 @@ export const Yt18SilenceComposition = createEpisode({
   part: 4,
   footer: "When processing goes silent",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Taken or not?", "Timeout ≠ failure", "No blind retry", "Unknown + workflow", "Ask, with backoff", "Capture or reverse", "Manual review", "Sweep", "Next: events"],
+  titles: ["Total silence", "Unknown, not declined", "Ask again, later", "A workflow", "Waits that grow", "Same reference", "Settled", "Manual review", "One per payment", "The sweep", "If Temporal is down", "The page keeps checking", "On the dashboard", "Next: outbox + Kafka"],
   map,
   diagram,
+  code,
 });
