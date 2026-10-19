@@ -1,6 +1,7 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
+import { tableStep } from "../../series/build/tables";
 
 // Episode 08: sales points and site checks.
 // Code beats quote github.com/khakimjanovich/ecom (main).
@@ -20,7 +21,6 @@ export const diagram: DiagramStep<BuildId>[] = [
     packets: [{ from: "salespoint", to: "partner", label: "PNG", delay: 10 }, { from: "partner", to: "filesvc", label: "PNG", delay: 30 }, { from: "filesvc", to: "bucket", label: "PNG", delay: 50 }],
     accent: ["bucket"],
   },
-  { cue: 5, layout: { partner: [0.5, 1], salespoint: [2.5, 1] }, edges: [{ from: "partner", to: "salespoint" }], badges: { salespoint: "DRAFT" } },
   {
     cue: 6,
     layout: { ...CHECK },
@@ -105,7 +105,8 @@ export const code: CodeStep[] = [
       "        || extendedRefundReason.isBlank())) {",
       "  throw … SALES_POINT_EXTENSION_REASON_REQUIRED;",
       "}",
-      "if (refundWindowDays + extendedDays > maxRefundDays) {",
+      "if (refundWindowDays + (extendedRefundDays == null ? 0",
+      "    : extendedRefundDays) > maxRefundDays) {",
       "  throw … SALES_POINT_REFUND_WINDOW_TOO_LONG;",
       "}",
       "",
@@ -114,7 +115,7 @@ export const code: CodeStep[] = [
       "  default-days: 14",
       "  max-days: 180",
     ],
-    highlight: [1, 6, 13],
+    highlight: [1, 6, 14],
   },
   {
     cue: 9,
@@ -169,5 +170,6 @@ export const code: CodeStep[] = [
       "}",
     ],
     highlight: [7, 8, 9],
-  }
+  },
+  tableStep(5, "partner.sales_point", 8),
 ];

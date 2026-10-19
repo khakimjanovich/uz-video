@@ -122,6 +122,8 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 
 - Format: YouTube 16:9 (1920×1080). Every episode opens on the build map (`series/build/map.ts`, `BuildMap`) with its part lit.
 - Videos explain the finished design only, as if it was built right the first time: no test, k6, sandbox or "a bug we caught" beats. Code beats quote `main`. When the code changes, re-cut every episode it touches and update the map.
+- Narration describes the system as it exists, in present tense; never "we build", "we add" or "next we".
+- A table is shown whole, as it is on `main` (`tableStep` from `series/build/tables.ts`): the episode's own columns highlighted, columns explained later marked "→ Ep NN", and the narration names those episodes. `TABLES` must match the database.
 - Infrastructure appears on the map as its official monochrome logo (Simple Icons). Video description must include: "All product names and logos are trademarks of their respective owners."
 
 ---
@@ -347,9 +349,9 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Verified: k6 `payments/hosted-page.js` through the cluster while an app pod is deleted: 0 failed checks; the autoscaler adds a replica under load.
 - Code: `ecom-infra@ep-24`.
 
-**25 · Extract a module into a service**
+**25 · Extract a module into a service** (paused; not built)
 - Problem: the card vault needs stricter security and its own deploy (PCI DSS scope).
-- Build: move the `card` module into its own Spring Boot service; replace the in-process `CardApi` with a REST adapter behind the same port; give it its own database.
+- Build: move the `card` module into its own Spring Boot service; replace the in-process `Cards` with a REST adapter behind the same port; give it its own database.
 - Why: shows *why* microservices exist: clean boundaries made the move cheap. Mirrors the real card-processor-service.
 - Demo: same payment flow, now across two services on the same cluster.
 

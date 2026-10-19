@@ -1,48 +1,48 @@
 1
-00:00:00,050 --> 00:00:02,833
-Who is calling our API, and how do we know?
+00:00:00,050 --> 00:00:03,023
+Who is calling the API, and how does the bank know?
 
 2
-00:00:02,833 --> 00:00:07,964
+00:00:03,023 --> 00:00:08,059
 A name typed into a request header proves nothing, because anyone can type a header.
 
 3
-00:00:07,964 --> 00:00:13,857
+00:00:08,059 --> 00:00:14,380
 So Keycloak holds every login: the bank's admins, the merchants, and the merchants' servers.
 
 4
-00:00:13,857 --> 00:00:21,642
+00:00:14,380 --> 00:00:22,059
 The realm defines three roles: admin for bank staff, partner for a merchant's people, and merchant for a merchant's servers.
 
 5
-00:00:21,642 --> 00:00:27,023
+00:00:22,059 --> 00:00:27,488
 Signing up takes a password, which goes straight to Keycloak and never into our database.
 
 6
-00:00:27,023 --> 00:00:32,071
+00:00:27,488 --> 00:00:32,666
 The new login can do nothing until the email is verified, and then it gets the partner role.
 
 7
-00:00:32,071 --> 00:00:37,202
+00:00:32,666 --> 00:00:37,857
 Every request carries a token, and the app checks it before any business code runs.
 
 8
-00:00:37,202 --> 00:00:43,404
+00:00:37,857 --> 00:00:43,976
 The route rules live in configuration: each path needs its role, and anything not listed is refused.
 
 9
-00:00:43,404 --> 00:00:47,595
+00:00:43,976 --> 00:00:48,190
 The admin's name comes from the token, so the history shows who really acted.
 
 10
-00:00:47,595 --> 00:00:55,595
+00:00:48,190 --> 00:00:55,904
 An active merchant creates API clients for its servers; each one gets the merchant role, and its secret is shown only once.
 
 11
-00:00:55,595 --> 00:01:04,464
+00:00:55,904 --> 00:01:04,535
 Rotating issues a new secret, and the old one stops working at once; our database keeps the client ids, never a secret.
 
 12
-00:01:04,464 --> 00:01:07,642
+00:01:04,535 --> 00:01:07,976
 Next, the websites that will actually take the payments.
 

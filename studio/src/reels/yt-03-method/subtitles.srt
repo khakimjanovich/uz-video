@@ -1,52 +1,52 @@
 1
-00:00:00,050 --> 00:00:04,928
+00:00:00,050 --> 00:00:04,869
 Where do you start designing a feature: the database, the API, or the code?
 
 2
-00:00:04,928 --> 00:00:11,654
-We start with the domain: the things that exist, the states they move through, and the rules that never break.
+00:00:04,869 --> 00:00:11,583
+It starts with the domain: the things that exist, the states they move through, and the rules that never break.
 
 3
-00:00:11,654 --> 00:00:17,976
+00:00:11,583 --> 00:00:18,202
 First comes a one-page sketch of the whole system: the main entities, and which module owns each one.
 
 4
-00:00:17,976 --> 00:00:24,154
+00:00:18,202 --> 00:00:24,559
 Links between modules are only IDs, never foreign keys, so a module can move out on its own later.
 
 5
-00:00:24,154 --> 00:00:31,690
+00:00:24,559 --> 00:00:32,476
 Second comes the contract: an OpenAPI spec in the platform folder, which promises clients exactly what they can ask for.
 
 6
-00:00:31,690 --> 00:00:39,571
+00:00:32,476 --> 00:00:39,916
 Gradle turns it into a partner API jar, and our controller must implement it, so the code can never drift from the spec.
 
 7
-00:00:39,571 --> 00:00:44,559
-Third comes the database: a Liquibase migration in the partner's own schema.
+00:00:39,916 --> 00:00:51,821
+Third comes the database: a Liquibase migration creates the partner table in its own schema; its verified email, contract number and login are explained in episodes four, five and seven.
 
 8
-00:00:44,559 --> 00:00:52,869
+00:00:51,821 --> 00:01:00,047
 The partner module has its own data source, built by the shared persistence library, and connects as a user that sees nothing but its own schema.
 
 9
-00:00:52,869 --> 00:01:01,142
+00:01:00,047 --> 00:01:08,428
 Then the code: the controller calls the service, the service calls the repository, and a mapper turns the entity into the contract's model.
 
 10
-00:01:01,142 --> 00:01:09,785
+00:01:08,428 --> 00:01:16,916
 A missing partner is not a crash: the service throws partner not found, and the error library answers with a problem detail, in the caller's language.
 
 11
-00:01:09,785 --> 00:01:15,000
-Swagger UI shows the exact spec we wrote, not documentation guessed from the code.
+00:01:16,916 --> 00:01:22,595
+Swagger UI shows the exact spec as it is written, not documentation guessed from the code.
 
 12
-00:01:15,000 --> 00:01:20,702
+00:01:22,595 --> 00:01:28,035
 Domain, contract, database, then code: every episode follows this order.
 
 13
-00:01:20,702 --> 00:01:25,916
+00:01:28,035 --> 00:01:33,202
 Next, the first real feature: a merchant signs up and proves they own their email.
 

@@ -1,60 +1,60 @@
 1
-00:00:00,050 --> 00:00:04,297
+00:00:00,050 --> 00:00:04,261
 Where does the buyer type their card number: on the shop's site, or on ours?
 
 2
-00:00:04,297 --> 00:00:11,404
+00:00:04,261 --> 00:00:11,392
 If shops collected card numbers, every shop would need PCI DSS, and one shop's breach would leak cards.
 
 3
-00:00:11,404 --> 00:00:17,547
+00:00:11,392 --> 00:00:17,702
 So the merchant sends the buyer to the bank's own payment page, through the one-time link it got when it created the payment.
 
 4
-00:00:17,547 --> 00:00:25,738
+00:00:17,702 --> 00:00:25,928
 The link's token is the only credential: the database keeps only its hash, and after the configured time the link works no more.
 
 5
-00:00:25,738 --> 00:00:33,726
+00:00:25,928 --> 00:00:34,083
 Reading the page changes nothing: it shows the website's name and logo, the amount, the order, and the cards the website accepts.
 
 6
-00:00:33,726 --> 00:00:41,476
+00:00:34,083 --> 00:00:42,000
 The buyer types the card, and the BIN module names its scheme and bank first, so a card the website doesn't accept never gets a code.
 
 7
-00:00:41,476 --> 00:00:51,107
+00:00:42,000 --> 00:00:51,250
 The card module checks the Luhn digit, stores the number encrypted, and asks the card's scheme, through its adapter, to send a one-time code to the cardholder's phone.
 
 8
-00:00:51,107 --> 00:00:57,142
+00:00:51,250 --> 00:00:56,952
 Each code gets its own binding, so two payments with the same card never overwrite each other's code.
 
 9
-00:00:57,142 --> 00:01:02,511
-The page now shows the bank, the scheme and the card's last four digits, and waits for the code.
+00:00:56,952 --> 00:01:04,095
+The page now shows the bank, the scheme and the card's last four digits, kept in the payment's card columns, and waits for the code.
 
 10
-00:01:02,511 --> 00:01:07,511
+00:01:04,095 --> 00:01:09,285
 The right code confirms the card through the same scheme, and the payment is ready to debit.
 
 11
-00:01:07,511 --> 00:01:14,011
+00:01:09,285 --> 00:01:15,642
 Every attempt is counted, and committed before the scheme is asked, so a failed attempt still counts.
 
 12
-00:01:14,011 --> 00:01:19,857
+00:01:15,642 --> 00:01:21,571
 Three cards, and three codes for each card, are allowed, and both numbers are configuration.
 
 13
-00:01:19,857 --> 00:01:23,095
+00:01:21,571 --> 00:01:24,976
 When the last attempt fails, the page closes for good.
 
 14
-00:01:23,095 --> 00:01:33,726
+00:01:24,976 --> 00:01:35,488
 One step runs at a time: a second click while the scheme is still answering is refused by a lock in Redis, which only its holder releases, and which outlives the slowest scheme call.
 
 15
-00:01:33,726 --> 00:01:37,369
+00:01:35,488 --> 00:01:39,154
 Next, the moment the money actually moves: the debit.
 

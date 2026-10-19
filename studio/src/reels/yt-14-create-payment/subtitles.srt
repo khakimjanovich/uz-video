@@ -1,56 +1,56 @@
 1
-00:00:00,050 --> 00:00:04,642
+00:00:00,050 --> 00:00:04,690
 How does the bank know a payment request really came from the shop, and only once?
 
 2
-00:00:04,642 --> 00:00:11,607
+00:00:04,690 --> 00:00:11,988
 The shop's server asks for a payment: a website, an order number, an amount in tiyin, and a return address.
 
 3
-00:00:11,607 --> 00:00:16,261
+00:00:11,988 --> 00:00:16,857
 Its access token comes from its API client, which carries the merchant role.
 
 4
-00:00:16,261 --> 00:00:22,678
+00:00:16,857 --> 00:00:23,440
 But a stolen token alone must not be enough to create payments, so every request is also signed.
 
 5
-00:00:22,678 --> 00:00:30,630
+00:00:23,440 --> 00:00:31,440
 The server signs the method, the path, a timestamp, a nonce and the body's hash with HMAC SHA two fifty six.
 
 6
-00:00:30,630 --> 00:00:39,011
+00:00:31,440 --> 00:00:39,666
 Each API client has its own signing key, which the bank puts straight into Vault; our app never generates it, and only reads it.
 
 7
-00:00:39,011 --> 00:00:45,964
+00:00:39,666 --> 00:00:46,571
 A timestamp outside the configured window is refused, and a nonce works only once, remembered in Redis.
 
 8
-00:00:45,964 --> 00:00:52,214
+00:00:46,571 --> 00:00:53,023
 The signature is checked before the nonce is spent, so a forged request can't burn the merchant's nonces.
 
 9
-00:00:52,214 --> 00:00:58,833
+00:00:53,023 --> 00:00:59,500
 A network retry must never create a second payment, so each request carries an idempotency key.
 
 10
-00:00:58,833 --> 00:01:05,154
+00:00:59,500 --> 00:01:05,714
 The same key with the same body returns the stored response, and the same key with a different body is refused.
 
 11
-00:01:05,154 --> 00:01:12,261
+00:01:05,714 --> 00:01:12,595
 Two retries at the same moment meet at the database's unique keys, and the loser replays the winner's answer.
 
 12
-00:01:12,261 --> 00:01:19,845
+00:01:12,595 --> 00:01:20,452
 Only the merchant's own live website, with one of its return addresses, can take a payment, and anything else is refused before saving.
 
 13
-00:01:19,845 --> 00:01:26,333
-The response carries a one-time link to the bank's payment page, and the database keeps only its hash.
+00:01:20,452 --> 00:01:35,357
+The response carries a one-time link to the bank's payment page, and the database keeps only its hash; the payment's other columns, the card, the debit, its source and its return, are explained in episodes fifteen, sixteen, twenty and twenty-one.
 
 14
-00:01:26,333 --> 00:01:29,857
+00:01:35,357 --> 00:01:38,654
 Next, the buyer opens that page and enters their card.
 

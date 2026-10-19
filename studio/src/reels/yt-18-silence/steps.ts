@@ -97,7 +97,7 @@ export const code: CodeStep[] = [
       "switch (result.outcome()) {",
       "  case APPROVED -> settled.paid(result.processorRef(),",
       "      result.rrn());",
-      "  case DECLINED -> settled.declined(result.declineCode());",
+      "  case DECLINED -> { settled.declined(result.declineCode()); … }",
       "  case UNKNOWN -> {",
       "    return settled.getStatus().name(); // ask again later",
       "  }",

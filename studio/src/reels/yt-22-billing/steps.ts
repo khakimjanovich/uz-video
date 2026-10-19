@@ -1,6 +1,7 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
+import { tableStep } from "../../series/build/tables";
 
 // Episode 22: daily reports, built each night per website and business day.
 // Code beats quote github.com/khakimjanovich/ecom (main).
@@ -11,13 +12,6 @@ export const map: BuildMapStep[] = [
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
-  {
-    cue: 1,
-    layout: { payment: [0, 1], postgres: [1.5, 1], merchant: [3, 1] },
-    edges: [{ from: "payment", to: "postgres", label: "00:30 · yesterday" }, { from: "postgres", to: "merchant", label: "daily_report" }],
-    packets: [{ from: "payment", to: "postgres", label: "add up", delay: 8 }, { from: "postgres", to: "merchant", label: "payout", delay: 36 }],
-    badges: { merchant: "how much do I get?" },
-  },
   {
     cue: 9,
     layout: { merchant: [0.5, 1], payment: [2.5, 1] },
@@ -153,4 +147,5 @@ export const code: CodeStep[] = [
     ],
     highlight: [5, 9],
   },
+  tableStep(1, "payment.daily_report", 22),
 ];

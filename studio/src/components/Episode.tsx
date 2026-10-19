@@ -23,7 +23,7 @@ export function Episode<Id extends string>({
   const { cueIndex } = useSubtitlesContext();
   const lastMap = Math.max(-1, ...map.filter((s) => s.cue <= cueIndex).map((s) => s.cue));
   const lastDiagram = Math.max(-1, ...diagram.filter((s) => s.cue <= cueIndex).map((s) => s.cue));
-  const codeNow = [...code].reverse().find((s) => s.cue <= cueIndex);
+  const codeNow = [...code].sort((a, b) => b.cue - a.cue).find((s) => s.cue <= cueIndex);
   const lastCode = codeNow?.cue ?? -1;
   const onMap = lastMap >= lastDiagram && lastMap >= lastCode;
   const panelOnly: BuildMapStep[] = [{ cue: 0, part }];

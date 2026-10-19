@@ -8,6 +8,7 @@ export interface CodeStep {
   file: string; // path inside the repo, e.g. modules/partner/src/main/openapi/partner-v1.yaml
   lines: string[];
   highlight?: number[]; // 1-based line numbers to mark
+  columns?: 2; // a long list (a whole table's columns) flows into two columns
 }
 
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -22,7 +23,10 @@ export const CodeCard: React.FC<{ step: CodeStep; x: number; y: number; w: numbe
       <div className="px-6 py-3 text-[20px] tracking-wider uppercase border-b-[2px] border-dotted" style={{ color: "var(--marker)", borderColor: "var(--ink-muted)" }}>
         {step.file}
       </div>
-      <div className="px-6 py-4 text-[25px] leading-[1.45] whitespace-pre">
+      <div
+        className={`px-6 py-4 whitespace-pre ${step.columns === 2 ? "text-[19px] leading-[1.4]" : "text-[25px] leading-[1.45]"}`}
+        style={step.columns === 2 ? { columnCount: 2, columnGap: 28, columnFill: "auto", height: h - 70 } : undefined}
+      >
         {step.lines.map((line, i) => {
           const marked = step.highlight?.includes(i + 1);
           return (
@@ -33,6 +37,7 @@ export const CodeCard: React.FC<{ step: CodeStep; x: number; y: number; w: numbe
                 background: marked ? "rgba(255, 214, 0, 0.18)" : undefined,
                 borderLeft: marked ? "5px solid var(--marker)" : "5px solid transparent",
                 paddingLeft: 12,
+                breakInside: "avoid",
               }}
             >
               <span style={{ color: "var(--ink-muted)", marginRight: 20 }}>{String(i + 1).padStart(2, " ")}</span>

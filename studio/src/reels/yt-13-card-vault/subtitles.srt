@@ -1,64 +1,64 @@
 1
-00:00:00,050 --> 00:00:05,833
-How do we know whether a card is Uzcard or Humo, which bank issued it, and where do we keep its number?
+00:00:00,050 --> 00:00:06,309
+How does the bank know whether a card is Uzcard or Humo, which bank issued it, and where is its number kept?
 
 2
-00:00:05,833 --> 00:00:10,083
+00:00:06,309 --> 00:00:10,404
 A card's first digits, its BIN, name the scheme and the bank.
 
 3
-00:00:10,083 --> 00:00:17,988
+00:00:10,404 --> 00:00:18,130
 Both schemes publish their BIN lists, so the BIN module syncs them through the adapters into its own schema, at startup and every night.
 
 4
-00:00:17,988 --> 00:00:24,666
+00:00:18,130 --> 00:00:24,940
 The sync is idempotent, and a scheme that doesn't answer, or answers with nothing, keeps its old list.
 
 5
-00:00:24,666 --> 00:00:35,500
+00:00:24,940 --> 00:00:36,238
 Lookups never touch the database: an in-memory index cuts the digits, even a full card number, from the longest known BIN length down to the shortest, and the first match wins.
 
 6
-00:00:35,500 --> 00:00:41,833
+00:00:36,238 --> 00:00:42,773
 A bank directory in the configuration names the issuing bank in English, Russian and Uzbek.
 
 7
-00:00:41,833 --> 00:00:48,238
+00:00:42,773 --> 00:00:49,416
 Before any scheme is asked, the card module checks the Luhn digit, then asks the BIN module for the scheme.
 
 8
-00:00:48,238 --> 00:00:52,607
+00:00:49,416 --> 00:00:53,488
 A plain card number in our database would be a disaster on the day of a breach.
 
 9
-00:00:52,607 --> 00:01:02,619
+00:00:53,488 --> 00:01:03,809
 So the crypto platform library seals the number with AES two fifty six GCM: a fresh nonce every time, and the key id is authenticated with it.
 
 10
-00:01:02,619 --> 00:01:07,845
+00:01:03,809 --> 00:01:09,035
 Each value names its key, so a new key can take over while older data still reads.
 
 11
-00:01:07,845 --> 00:01:13,119
+00:01:09,035 --> 00:01:14,547
 Other modules get a card token instead, and the same card always gets the same token.
 
 12
-00:01:13,119 --> 00:01:19,726
-To find a card without decrypting anything, we also store a keyed hash of its number, a blind index.
+00:01:14,547 --> 00:01:21,226
+To find a card without decrypting anything, the vault also stores a keyed hash of its number, a blind index.
 
 13
-00:01:19,726 --> 00:01:23,821
+00:01:21,226 --> 00:01:25,238
 The database itself refuses a card number stored in plain text.
 
 14
-00:01:23,821 --> 00:01:30,476
+00:01:25,238 --> 00:01:31,630
 A number is decrypted only to hand it to the card's scheme, and every use is written to an audit trail.
 
 15
-00:01:30,476 --> 00:01:37,047
+00:01:31,630 --> 00:01:38,011
 The bank's console shows each range with its bank, and finds a card by its number without ever showing that number.
 
 16
-00:01:37,047 --> 00:01:41,940
+00:01:38,011 --> 00:01:42,797
 Next, the payment itself, starting with a request nobody can forge.
 

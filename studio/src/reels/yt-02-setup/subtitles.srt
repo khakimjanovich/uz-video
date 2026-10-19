@@ -1,64 +1,64 @@
 1
-00:00:00,050 --> 00:00:03,000
+00:00:00,050 --> 00:00:02,988
 Where does a payment system start, if not with payments?
 
 2
-00:00:03,000 --> 00:00:07,488
+00:00:02,988 --> 00:00:07,690
 It starts with a project that builds, and an environment that runs with one command.
 
 3
-00:00:07,488 --> 00:00:14,226
-We use Java twenty-five and Spring Boot four, with Gradle builds written in Groovy, the way the bank writes its own.
+00:00:07,690 --> 00:00:15,166
+The system uses Java twenty-five and Spring Boot four, with Gradle builds written in Groovy, the way the bank writes its own.
 
 4
-00:00:14,226 --> 00:00:24,750
+00:00:15,166 --> 00:00:25,630
 The app has six modules, partner, commission, terminal, BIN, card, and payment, and each one owns its own schema, with a database user that can see nothing else.
 
 5
-00:00:24,750 --> 00:00:32,035
+00:00:25,630 --> 00:00:32,988
 A module talks to another only through the public interface in its root package, and the build fails if it reaches any further.
 
 6
-00:00:32,035 --> 00:00:38,488
+00:00:32,988 --> 00:00:39,607
 Shared pieces live in a platform folder, each its own build, published to the local Maven repository.
 
 7
-00:00:38,488 --> 00:00:44,416
+00:00:39,607 --> 00:00:45,083
 The version catalog pins every version, so the build is the same on every machine.
 
 8
-00:00:44,416 --> 00:00:55,678
+00:00:45,083 --> 00:00:56,559
 Errors follow one format: each module lists its errors in an enum, and a YAML file gives each one its HTTP status and its message in English, Russian and Uzbek.
 
 9
-00:00:55,678 --> 00:01:04,714
+00:00:56,559 --> 00:01:05,261
 API contracts are OpenAPI files, and the code generated from them lives only in the published jars, never in our source.
 
 10
-00:01:04,714 --> 00:01:13,190
+00:01:05,261 --> 00:01:13,714
 Every module follows the same layers, controller, service, repository, and entity, with its constants in one place.
 
 11
-00:01:13,190 --> 00:01:21,500
+00:01:13,714 --> 00:01:22,416
 Services that do one job live outside the app, each with its own contract and client: the card scheme adapters, and the file service.
 
 12
-00:01:21,500 --> 00:01:30,559
+00:01:22,416 --> 00:01:31,785
 A separate infrastructure repository uses Docker Compose to start Postgres and Redis, and every other tool joins only when a problem needs it.
 
 13
-00:01:30,559 --> 00:01:38,297
+00:01:31,785 --> 00:01:39,559
 With one setting, the app logs structured JSON in the community ECS format, and reports its health from the very first minute.
 
 14
-00:01:38,297 --> 00:01:42,964
+00:01:39,559 --> 00:01:44,071
 One command in the infrastructure repository, and the whole world is up.
 
 15
-00:01:42,964 --> 00:01:48,869
+00:01:44,071 --> 00:01:49,726
 The code, the infrastructure, the load tests, and the web app each live in their own repository.
 
 16
-00:01:48,869 --> 00:01:52,178
-Next, we design the domain before we write a single table.
+00:01:49,726 --> 00:01:53,119
+Next, the domain, which comes before a single table.
 

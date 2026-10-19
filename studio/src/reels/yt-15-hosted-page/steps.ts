@@ -1,6 +1,7 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
+import { tableStep } from "../../series/build/tables";
 
 // Episode 15: the payment page.
 // Code beats quote github.com/khakimjanovich/ecom (main).
@@ -30,7 +31,6 @@ export const diagram: DiagramStep<BuildId>[] = [
     ],
     badges: { card: "encrypted" },
   },
-  { cue: 8, layout: { buyer: [0.5, 1], payment: [2.5, 1] }, edges: [{ from: "payment", to: "buyer" }], packets: [{ from: "payment", to: "buyer", label: "Asaka Bank · Uzcard ••7890", delay: 12 }], badges: { payment: "AWAITING_CODE" } },
   {
     cue: 12,
     layout: { buyer: [0, 1], payment: [2.2, 1] },
@@ -50,8 +50,7 @@ export const code: CodeStep[] = [
       " *  works no more. */",
       "private Payment open(String token) {",
       "  var payment = payments",
-      "      .findByPageTokenHash(SignatureUtils.sha256Hex(",
-      "          token.getBytes(StandardCharsets.US_ASCII)))",
+      "      .findByPageTokenHash(PageTokenUtils.hash(token))",
       "      .orElseThrow(() -> new GeneralException(",
       "          PAYMENT_PAGE_NOT_FOUND));",
       "  if (payment.isExpired(Instant.now())) {",
@@ -60,7 +59,7 @@ export const code: CodeStep[] = [
       "  return payment;",
       "}",
     ],
-    highlight: [5, 9],
+    highlight: [5, 8],
   },
   {
     cue: 4,
@@ -195,4 +194,5 @@ export const code: CodeStep[] = [
     ],
     highlight: [4, 5, 14],
   },
+  tableStep(8, "payment.payment", 15),
 ];

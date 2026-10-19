@@ -1,6 +1,7 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
+import { tableStep } from "../../series/build/tables";
 
 // Episode 14: signed payment requests and idempotency.
 // Code beats quote github.com/khakimjanovich/ecom (main).
@@ -18,7 +19,6 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 6, layout: { ...PAIR, attacker: [0, 2], redis: [3, 2] }, edges: [{ from: "merchant", to: "payment" }, { from: "attacker", to: "payment", broken: true, label: "replay" }, { from: "payment", to: "redis", label: "nonce" }], packets: [{ from: "attacker", to: "payment", label: "same request", delay: 15, stopAt: 0.55 }], danger: ["attacker"] },
   { cue: 8, layout: { ...PAIR, record: [3.0, 1] }, edges: [{ from: "merchant", to: "payment", label: "Idempotency-Key" }, { from: "payment", to: "record" }], packets: [{ from: "merchant", to: "payment", label: "key A", delay: 8 }, { from: "merchant", to: "payment", label: "key A (retry)", delay: 40 }], badges: { record: "one payment" } },
   { cue: 11, layout: { payment: [0.5, 1], salespoint: [2.5, 1] }, edges: [{ from: "payment", to: "salespoint", label: "payable + yours?" }], packets: [{ from: "payment", to: "salespoint", label: "check", delay: 15 }], badges: { payment: "no → refuse" } },
-  { cue: 12, layout: { ...PAIR }, edges: [{ from: "payment", to: "merchant" }], packets: [{ from: "payment", to: "merchant", label: "paymentUrl", delay: 15 }], accent: ["payment"], badges: { payment: "hash only" } },
 ];
 
 export const code: CodeStep[] = [
@@ -70,8 +70,8 @@ export const code: CodeStep[] = [
       "if (!fresh(timestamp))",
       "  throw unauthorized(PAYMENT_TIMESTAMP_OUT_OF_WINDOW);",
       "",
-      "var signed = signedText(method, path, timestamp, nonce,",
-      "    sha256Hex(request.body()));",
+      "var signed = signedText(request.getMethod(), path,",
+      "    timestamp, nonce, bodyHash);",
       "var key = apiClients.signingKey(clientId)",
       "    .orElseThrow(() ->",
       "        unauthorized(PAYMENT_SIGNATURE_INVALID));",
@@ -122,4 +122,5 @@ export const code: CodeStep[] = [
     ],
     highlight: [3, 4, 7],
   },
+  tableStep(12, "payment.payment", 14),
 ];

@@ -1,6 +1,7 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
+import { tableStep } from "../../series/build/tables";
 
 // Episode 16: the debit.
 // Code beats quote github.com/khakimjanovich/ecom (main).
@@ -38,16 +39,6 @@ export const diagram: DiagramStep<BuildId>[] = [
     edges: [{ from: "payment", to: "uzcard", broken: true, label: "no answer" }],
     packets: [{ from: "payment", to: "uzcard", label: "debit", delay: 10, stopAt: 0.5 }],
     badges: { payment: "UNKNOWN" },
-  },
-  {
-    cue: 13,
-    layout: { buyer: [0, 0], payment: [1.5, 1], admin: [3, 0] },
-    edges: [{ from: "payment", to: "buyer", label: "Paid · RRN" }, { from: "payment", to: "admin", label: "fee · MID/TID · RRN" }],
-    packets: [
-      { from: "payment", to: "buyer", label: "PAID", delay: 10 },
-      { from: "payment", to: "admin", label: "1 251 so'm", delay: 26 },
-    ],
-    accent: ["payment"],
   },
 ];
 
@@ -122,8 +113,8 @@ export const code: CodeStep[] = [
     cue: 6,
     file: "modules/payment/…/service/impl/PaymentDebitServiceImpl.java",
     lines: [
-      "/** Without a terminal or a fee rule the payment fails here,",
-      " *  and no money moves. */",
+      "/** Without a terminal, a fee rule or room in the daily",
+      " *  limit the payment fails here, and no money moves. */",
       "private PaymentOperation start(Payment payment) {",
       "  try {",
       "    … terminal, fee, journal …",
@@ -135,24 +126,6 @@ export const code: CodeStep[] = [
       "}",
     ],
     highlight: [1, 8],
-  },
-  {
-    cue: 7,
-    file: "modules/payment/…/db/changelog/payment.yaml",
-    lines: [
-      "# Every call to a scheme, written before it is made.",
-      "- createTable:",
-      "    tableName: payment_operation",
-      "    columns: id · payment_id · kind · status",
-      "             merchant_id · terminal_id · amount",
-      "             processor_ref · rrn · decline_code",
-      "             started_at · finished_at",
-      "# One debit per payment, enforced by the database.",
-      "- addUniqueConstraint:",
-      "    columnNames: payment_id, kind",
-      "    constraintName: uq_payment_operation_kind",
-    ],
-    highlight: [1, 10],
   },
   {
     cue: 9,
@@ -168,7 +141,7 @@ export const code: CodeStep[] = [
       "switch (result.outcome()) {",
       "  case APPROVED -> settled.paid(",
       "      result.processorRef(), result.rrn());",
-      "  case DECLINED -> settled.declined(result.declineCode());",
+      "  case DECLINED -> { settled.declined(result.declineCode()); … }",
       "  case UNKNOWN -> settled.unknown();",
       "}",
     ],
@@ -181,7 +154,7 @@ export const code: CodeStep[] = [
       "switch (result.outcome()) {",
       "  case APPROVED -> settled.paid(",
       "      result.processorRef(), result.rrn());",
-      "  case DECLINED -> settled.declined(result.declineCode());",
+      "  case DECLINED -> { settled.declined(result.declineCode()); … }",
       "  case UNKNOWN -> settled.unknown();",
       "}",
       "",
@@ -195,13 +168,15 @@ export const code: CodeStep[] = [
     file: "modules/payment/…/constant/PaymentStatus.java",
     lines: [
       "NEXT.put(CARD_CONFIRMED, EnumSet.of(DEBITING));",
-      "NEXT.put(DEBITING,",
-      "    EnumSet.of(PAID, DECLINED, UNKNOWN, FAILED));",
-      "NEXT.put(UNKNOWN, EnumSet.of(PAID, DECLINED));",
-      "NEXT.put(PAID, EnumSet.noneOf(PaymentStatus.class));",
+      "NEXT.put(DEBITING, EnumSet.of(PAID, DECLINED, UNKNOWN,",
+      "    FAILED, MANUAL_REVIEW));            // review → 18",
+      "NEXT.put(UNKNOWN, EnumSet.of(PAID, DECLINED, MANUAL_REVIEW));",
+      "NEXT.put(PAID, EnumSet.of(RETURNING));  // money back → 21",
       "NEXT.put(DECLINED, EnumSet.noneOf(PaymentStatus.class));",
       "NEXT.put(FAILED, EnumSet.noneOf(PaymentStatus.class));",
     ],
-    highlight: [4, 5],
+    highlight: [5, 6],
   },
+  tableStep(7, "payment.payment_operation", 16),
+  tableStep(13, "payment.payment", 16),
 ];

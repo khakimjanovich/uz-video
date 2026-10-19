@@ -110,7 +110,7 @@ export const code: CodeStep[] = [
     cue: 6,
     file: "modules/payment/…/service/impl/PaymentEventRelay.java",
     lines: [
-      "var batch = events.lockUnpublished(batchSize);",
+      "var batch = events.lockUnpublished(properties.relayBatch());",
       "for (var event : batch) {",
       "  sends.add(kafka.send(topic,",
       "      event.getPaymentId().toString(),  // the key",

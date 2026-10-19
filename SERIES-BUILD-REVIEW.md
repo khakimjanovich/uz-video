@@ -1,6 +1,6 @@
-# Series B — review checklist (drafts made 2026-10-18 night)
+# Series B — review checklist
 
-All 25 episodes are first drafts: script → map + diagram steps → voice (Andrew) → stills checked → rendered to `out/yt-NN-*-dark.mp4`. Nothing is pushed.
+Episodes 00–24 are built in the ecom repos (tag `ep-NN`) and matched to them: script → map, diagram and code steps quoted from `main` → voice → stills checked. Episodes 17–24 are not rendered. Episode 25 is still a plan. A consistency pass on 2026-10-20 checked every code beat against `main`, every reel's cues against its titles and steps, and the docs.
 
 For each episode: watch it, tick what matches reality, and note anything to change. Legend:
 - **Code** = taken from the real repo (`asakabank/open_banking`).
@@ -34,7 +34,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 22 | Daily reports | 1:15 | ✅ Built and matched to `ecom@ep-22`: business day in the settlement time zone, paid (not reversed) and refunded that day, payout = net − refunded (fee kept on refunds), rebuilt rows replaced, nightly job rebuilds the last days, CSV per day with quoted cells, portal page (not rendered). Replaces the planned API-usage billing |
 | 23 | Hardening: limits | 1:20 | ✅ Built and matched to `ecom@ep-23`: per-website limits set by the bank (one payment, one business day), checked by entity and database, one payment refused at creation, daily total reserved in one conditional upsert before the scheme call, released on decline or reversal, kept on unknown (not rendered). Earlier planned gaps (nonce order, KYB at activation) were already closed in episodes 06 and 14 |
 | 24 | Deploy to Kubernetes | 1:20 | ✅ Built and matched to `ecom-infra@ep-24`: Kustomize base (3 app replicas, 2 per service), one Dockerfile, Boot probes, rolling update + preStop + 60 s grace, ConfigMap + Secret from Vault, jobs safe on every replica, HPA 3–6 and PDB; local k3s overlay; verified by deleting a pod under k6 load with 0 failed checks (not rendered). Kustomize instead of Helm |
-| 25 | Extract a module | 0:29 | Code: mirrors the real card-processor-service |
+| 25 | Extract the card vault | 0:29 | ⏸ Not built: paused (work in progress kept as a git stash in ecom: card contract with internal paths, card-client, problems forwarded unchanged). The draft video is the old plan |
 
 ## Facts learned in review
 - Card-processor service only binds cards and reveals numbers; debits live in the payment service and the two adapters.

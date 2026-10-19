@@ -1,6 +1,7 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
+import { tableStep } from "../../series/build/tables";
 
 // Episode 23: hardening, per-website limits that racing debits can't cross.
 // Code beats quote github.com/khakimjanovich/ecom (main).
@@ -11,14 +12,6 @@ export const map: BuildMapStep[] = [
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
-  {
-    cue: 1,
-    layout: { admin: [0.5, 1], salespoint: [2.5, 1] },
-    edges: [{ from: "admin", to: "salespoint", label: "settings" }],
-    packets: [{ from: "admin", to: "salespoint", label: "limits", delay: 10 }],
-    badges: { salespoint: "50 000 a payment · 100 000 a day" },
-    accent: ["salespoint"],
-  },
   {
     cue: 4,
     layout: { buyer: [0, 1], payment: [2, 1], postgres: [3.2, 1] },
@@ -154,4 +147,5 @@ export const code: CodeStep[] = [
     ],
     highlight: [5, 9],
   },
+  tableStep(1, "partner.sales_point", 23),
 ];

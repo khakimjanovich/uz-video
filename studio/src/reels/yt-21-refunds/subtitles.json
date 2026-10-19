@@ -2,7 +2,7 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 106,
+    "endFrame": 107,
     "text": "The buyer changed their mind: how does the money go back to the card?",
     "prefix": "The buyer changed their mind: how does the money go back to the card?",
     "highlight": "",
@@ -10,8 +10,8 @@
   },
   {
     "index": 2,
-    "startFrame": 105,
-    "endFrame": 286,
+    "startFrame": 106,
+    "endFrame": 285,
     "text": "There are two ways, and the day decides: before the scheme settles the day's payments, or after.",
     "prefix": "There are two ways, and the day decides: before the scheme settles the day's payments, or after.",
     "highlight": "",
@@ -29,7 +29,7 @@
   {
     "index": 4,
     "startFrame": 532,
-    "endFrame": 705,
+    "endFrame": 708,
     "text": "Later, it is refunded: Uzcard reverses it all the same, and Humo returns the payment.",
     "prefix": "Later, it is refunded: Uzcard reverses it all the same, and Humo returns the payment.",
     "highlight": "",
@@ -37,8 +37,8 @@
   },
   {
     "index": 5,
-    "startFrame": 705,
-    "endFrame": 862,
+    "startFrame": 707,
+    "endFrame": 866,
     "text": "Which day it is, is read in the settlement time zone, Tashkent, from configuration.",
     "prefix": "Which day it is, is read in the settlement time zone, Tashkent, from configuration.",
     "highlight": "",
@@ -46,8 +46,8 @@
   },
   {
     "index": 6,
-    "startFrame": 861,
-    "endFrame": 1032,
+    "startFrame": 865,
+    "endFrame": 1036,
     "text": "A refund is allowed only within the website's refund window, set when the bank switched it on.",
     "prefix": "A refund is allowed only within the website's refund window, set when the bank switched it on.",
     "highlight": "",
@@ -55,8 +55,8 @@
   },
   {
     "index": 7,
-    "startFrame": 1031,
-    "endFrame": 1178,
+    "startFrame": 1035,
+    "endFrame": 1186,
     "text": "Both schemes give back the whole payment, so the whole amount goes back, never a part.",
     "prefix": "Both schemes give back the whole payment, so the whole amount goes back, never a part.",
     "highlight": "",
@@ -64,8 +64,8 @@
   },
   {
     "index": 8,
-    "startFrame": 1177,
-    "endFrame": 1358,
+    "startFrame": 1185,
+    "endFrame": 1368,
     "text": "One conditional update claims it: paid becomes returning, and only one caller wins.",
     "prefix": "One conditional update claims it: paid becomes returning, and only one caller wins.",
     "highlight": "",
@@ -73,8 +73,8 @@
   },
   {
     "index": 9,
-    "startFrame": 1357,
-    "endFrame": 1541,
+    "startFrame": 1367,
+    "endFrame": 1554,
     "text": "The operation is written to the journal before the scheme is asked, with the scheme's own id for the debit.",
     "prefix": "The operation is written to the journal before the scheme is asked, with the scheme's own id for the debit.",
     "highlight": "",
@@ -82,8 +82,8 @@
   },
   {
     "index": 10,
-    "startFrame": 1540,
-    "endFrame": 1813,
+    "startFrame": 1553,
+    "endFrame": 1825,
     "text": "Approved is final, reversed or refunded; refused leaves it paid; and no answer leaves it returning for a person, never sent twice.",
     "prefix": "Approved is final, reversed or refunded; refused leaves it paid; and no answer leaves it returning for a person, never sent twice.",
     "highlight": "",
@@ -91,8 +91,8 @@
   },
   {
     "index": 11,
-    "startFrame": 1812,
-    "endFrame": 1955,
+    "startFrame": 1824,
+    "endFrame": 1968,
     "text": "Like every ending, it raises an event, so the merchant's webhook hears about it.",
     "prefix": "Like every ending, it raises an event, so the merchant's webhook hears about it.",
     "highlight": "",
@@ -100,8 +100,8 @@
   },
   {
     "index": 12,
-    "startFrame": 1954,
-    "endFrame": 2164,
+    "startFrame": 1967,
+    "endFrame": 2181,
     "text": "The merchant's server asks with a signed request; for a payment link, the merchant's user presses give back in the portal.",
     "prefix": "The merchant's server asks with a signed request; for a payment link, the merchant's user presses give back in the portal.",
     "highlight": "",
@@ -109,10 +109,10 @@
   },
   {
     "index": 13,
-    "startFrame": 2163,
-    "endFrame": 2303,
-    "text": "Next, the bank's own side of the money: billing and reports.",
-    "prefix": "Next, the bank's own side of the money: billing and reports.",
+    "startFrame": 2180,
+    "endFrame": 2323,
+    "text": "Next, what the merchant gets each day: daily reports.",
+    "prefix": "Next, what the merchant gets each day: daily reports.",
     "highlight": "",
     "suffix": ""
   }

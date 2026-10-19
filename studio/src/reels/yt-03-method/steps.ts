@@ -1,6 +1,7 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { BUILD_PARTS } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
+import { tableStep } from "../../series/build/tables";
 
 // Episode 03: the method (domain → contract → database → code), shown once on reading a partner.
 // Code beats quote github.com/khakimjanovich/ecom (main).
@@ -114,24 +115,6 @@ export const code: CodeStep[] = [
     highlight: [3, 7],
   },
   {
-    cue: 6,
-    file: "modules/partner/src/main/resources/db/changelog/partner.yaml",
-    lines: [
-      "- changeSet:",
-      "    id: 001-create-partner",
-      "    changes:",
-      "      - createTable:",
-      "          schemaName: partner",
-      "          tableName: partner",
-      "          columns:",
-      "            - id: uuid, primary key",
-      "            - company_name: varchar(255)",
-      "            - email: varchar(320), unique",
-      "            - status: varchar(32)",
-    ],
-    highlight: [5],
-  },
-  {
     cue: 7,
     file: "modules/partner/…/config/PartnerPersistenceConfig.java",
     lines: [
@@ -185,4 +168,5 @@ export const code: CodeStep[] = [
     ],
     highlight: [2, 6],
   },
+  tableStep(6, "partner.partner", 3),
 ];
