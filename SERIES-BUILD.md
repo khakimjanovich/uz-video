@@ -311,9 +311,13 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Code: `ecom@ep-20`.
 
 **21 · Refunds and reversals**
-- Problem: money must go back: same day (reversal) or later (refund within the configured window).
-- Build: reverse vs refund operations, partial refunds, PARTIALLY_REFUNDED → REFUNDED.
-- Demo: refund 30% → PARTIALLY_REFUNDED.
+- Problem: money must go back: before the scheme settles the day (reversal) or later (refund, within the website's refund window).
+- Build: the whole amount only (both schemes give back whole payments). The day decides, read in `settlement-zone` (Asia/Tashkent): paid today → REVERSED (Uzcard `trans.reverse`, Humo `CancelRequest`); later, within `refundWindowDays` → REFUNDED (Uzcard `trans.reverse`, Humo `ReturnPayment`, new in the Humo adapter); after the window → refused. One conditional update claims it (PAID → RETURNING), the REVERSAL/REFUND operation is journaled first with the scheme's id; approved is final and raises its event (webhook); refused returns it to PAID; no answer leaves it RETURNING for a person, never sent twice.
+- Tables: `payment` (+ `returned_at`; statuses RETURNING, REVERSED, REFUNDED), `payment_operation` (kinds REVERSAL, REFUND).
+- Endpoints: `POST /api/v1/payments/{id}/refund` (signed), `POST /api/v1/partner/payment-links/{id}/refund` (portal).
+- Tests: `PaymentPageIT` (reversed once, refunded within the window, closed window, refused stays paid, unknown stays returning, unpaid refused), `HumoAdapterIT` (ReturnPayment); k6 `payments/returns.js`.
+- Front: **Give back** on paid payment links; the payment page shows money returned.
+- Code: `ecom@ep-21`, `ecom-infra@ep-21` (sandbox `ReturnPayment`).
 
 **22 · Billing and reports**
 - Problem: partners pay for API usage; merchants need a daily report.

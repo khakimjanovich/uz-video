@@ -1,19 +1,180 @@
-import { BuildMapStep, DiagramStep } from "../../components";
+import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
-// Episode 21: reversal vs refund (PaymentStateMachine: CAPTURED → PARTIALLY_REFUNDED → REFUNDED; refund window per sales point).
+// Episode 21: giving money back, reversed before settlement or refunded after it.
+// Code beats quote github.com/khakimjanovich/ecom (main).
 const B = [...builtBefore(4), "observability", "temporal", "kafka"] as const;
 export const map: BuildMapStep[] = [
   { cue: 0, part: 4, current: ["payment", "buyer"], built: [...B] },
-  { cue: 6, part: 4, current: ["payment", "partner"], built: [...B] },
+  { cue: 12, part: 4, current: ["payment", "admin"], built: [...B] },
 ];
 
-const FLOW = { payment: [0, 1], processing: [1.5, 1], buyer: [3, 1] } as const;
+const BACK = { payment: [0.5, 1], uzcard: [2.5, 0.3], humo: [2.5, 1.7] } as const;
+
 export const diagram: DiagramStep<BuildId>[] = [
-  { cue: 1, layout: { ...FLOW }, edges: [{ from: "payment", to: "processing" }, { from: "processing", to: "buyer" }], packets: [{ from: "payment", to: "processing", label: "reversal", delay: 10 }], badges: { buyer: "hold released" } },
-  { cue: 2, layout: { ...FLOW }, edges: [{ from: "payment", to: "processing" }, { from: "processing", to: "buyer" }], packets: [{ from: "payment", to: "processing", label: "refund", delay: 8 }, { from: "processing", to: "buyer", label: "100 000", delay: 40 }], badges: { payment: "new operation" } },
-  { cue: 3, layout: { record: [1.5, 1] }, accent: ["record"], badges: { record: "PARTIALLY_REFUNDED" } },
-  { cue: 4, layout: { payment: [0.5, 1], record: [2.5, 1] }, edges: [{ from: "payment", to: "record", broken: true, label: "over captured" }], packets: [{ from: "payment", to: "record", label: "refund 120 000", delay: 15, stopAt: 0.5 }] },
-  { cue: 5, layout: { salespoint: [0.5, 1], payment: [2.5, 1] }, edges: [{ from: "salespoint", to: "payment", label: "refund window" }], badges: { salespoint: "agreed in the deal" } },
+  {
+    cue: 1,
+    layout: { buyer: [0, 1], payment: [1.5, 1], processing: [3, 1] },
+    edges: [{ from: "payment", to: "processing", label: "settles overnight" }, { from: "payment", to: "buyer", label: "money back" }],
+    packets: [{ from: "payment", to: "buyer", label: "40 000", delay: 12 }],
+    badges: { payment: "today or later?" },
+  },
+  {
+    cue: 2,
+    layout: { ...BACK },
+    edges: [{ from: "payment", to: "uzcard", label: "trans.reverse" }, { from: "payment", to: "humo", label: "CancelRequest" }],
+    packets: [{ from: "payment", to: "uzcard", label: "reverse", delay: 8 }, { from: "payment", to: "humo", label: "cancel", delay: 30 }],
+    badges: { payment: "REVERSED" },
+  },
+  {
+    cue: 3,
+    layout: { ...BACK },
+    edges: [{ from: "payment", to: "uzcard", label: "trans.reverse" }, { from: "payment", to: "humo", label: "ReturnPayment" }],
+    packets: [{ from: "payment", to: "uzcard", label: "reverse", delay: 8 }, { from: "payment", to: "humo", label: "return", delay: 30 }],
+    badges: { payment: "REFUNDED" },
+    accent: ["humo"],
+  },
+];
+
+export const code: CodeStep[] = [
+  {
+    cue: 4,
+    file: "app/src/main/resources/application.yaml",
+    lines: [
+      "ecom:",
+      "  payment:",
+      "    # Uzcard and Humo settle each day's payments",
+      "    # overnight: giving money back on the day it was",
+      "    # paid, in this time zone, is a reversal; later",
+      "    # it is a refund, within the website's refund window.",
+      "    settlement-zone: Asia/Tashkent",
+    ],
+    highlight: [7],
+  },
+  {
+    cue: 5,
+    file: "modules/payment/…/service/impl/PaymentReturnServiceImpl.java",
+    lines: [
+      "private PaymentStatus how(Payment payment) {",
+      "  if (payment.getStatus() != PaymentStatus.PAID)",
+      "    throw refusal(payment.getStatus());",
+      "  var zone = properties.settlementZone();",
+      "  if (LocalDate.ofInstant(payment.getPaidAt(), zone)",
+      "      .equals(LocalDate.now(zone))) {",
+      "    return PaymentStatus.REVERSED;",
+      "  }",
+      "  var window = salesPoints.find(…).refundWindowDays();",
+      "  if (now.isAfter(paidAt.plus(Duration.ofDays(window))))",
+      "    throw new GeneralException(",
+      "        PAYMENT_REFUND_WINDOW_CLOSED, window);",
+      "  return PaymentStatus.REFUNDED;",
+      "}",
+    ],
+    highlight: [5, 7, 9, 12],
+  },
+  {
+    cue: 6,
+    file: "modules/card/…/service/impl/HumoProcessor.java",
+    lines: [
+      "public Result reverse(String paymentRef, String processorRef) {",
+      "  return giveBack(() -> humo.cancelPayment(",
+      "      new PaymentIdRequest(processorRef)), processorRef);",
+      "}",
+      "",
+      "/** After settlement Humo returns the payment instead",
+      " *  (ReturnPayment). */",
+      "public Result refund(String paymentRef, String processorRef) {",
+      "  return giveBack(() -> humo.returnPayment(",
+      "      new PaymentIdRequest(processorRef)), processorRef);",
+      "}",
+      "",
+      "// UzcardProcessor.refund → trans.reverse: one call for both",
+    ],
+    highlight: [2, 9, 13],
+  },
+  {
+    cue: 7,
+    file: "modules/payment/…/repository/PaymentRepository.java",
+    lines: [
+      "/** Giving the money back: of any number of callers,",
+      " *  exactly one moves a PAID payment. */",
+      "@Modifying",
+      "@Query(\"UPDATE Payment p SET p.status = RETURNING\"",
+      "    + \" WHERE p.id = :id AND p.status = PAID\")",
+      "int claimReturn(UUID id);",
+      "",
+      "if (transaction.execute(",
+      "    status -> payments.claimReturn(paymentId)) != 1) {",
+      "  throw refusal(…);   // in progress, or already returned",
+      "}",
+    ],
+    highlight: [4, 5, 10],
+  },
+  {
+    cue: 8,
+    file: "modules/payment/…/entity/PaymentOperation.java",
+    lines: [
+      "/** Giving a paid debit back: REVERSAL or REFUND,",
+      " *  through the terminal that took it. */",
+      "public static PaymentOperation giveBack(Payment payment,",
+      "    String kind) {",
+      "  var operation = debit(payment);",
+      "  operation.kind = kind;",
+      "  operation.processorRef = payment.getProcessorRef();",
+      "  return operation;",
+      "}",
+      "",
+      "// unique (payment_id, kind): one of each per payment",
+    ],
+    highlight: [6, 7, 11],
+  },
+  {
+    cue: 9,
+    file: "modules/payment/…/service/impl/PaymentReturnServiceImpl.java",
+    lines: [
+      "operation.finish(result);",
+      "switch (result.outcome()) {",
+      "  case APPROVED -> returned.returned(how);",
+      "  case DECLINED -> returned.returnRefused();  // PAID",
+      "  case UNKNOWN -> {}   // RETURNING: a person checks",
+      "}",
+      "",
+      "// PaymentStatus",
+      "NEXT.put(PAID, EnumSet.of(RETURNING));",
+      "NEXT.put(RETURNING, EnumSet.of(PAID, REVERSED, REFUNDED));",
+    ],
+    highlight: [3, 4, 5],
+  },
+  {
+    cue: 10,
+    file: "modules/payment/…/entity/Payment.java",
+    lines: [
+      "/** The scheme gave the money back: REVERSED before its",
+      " *  settlement, REFUNDED after it. Like any ending, it",
+      " *  raises its event. */",
+      "public void returned(PaymentStatus how) {",
+      "  requireNext(how);",
+      "  status = how;",
+      "  returnedAt = Instant.now();",
+      "  finished();          // the outbox, then the webhook",
+      "}",
+    ],
+    highlight: [8],
+  },
+  {
+    cue: 11,
+    file: "platform/openapi/payment-api/…/payment-v1.yaml",
+    lines: [
+      "/api/v1/payments/{paymentId}/refund:",
+      "  post: refundPayment          # signed, by the server",
+      "",
+      "/api/v1/partner/payment-links/{paymentId}/refund:",
+      "  post: refundPaymentLink      # the portal",
+      "",
+      "PaymentStatus:",
+      "  … RETURNING · REVERSED · REFUNDED",
+    ],
+    highlight: [2, 5],
+  },
 ];
