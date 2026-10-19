@@ -23,7 +23,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 11 | Terminals (MID/TID) | 1:07 | ✅ Built and matched to `ecom@ep-11`: one live terminal per website and card, MID/TID never reused, fail-closed registration and routing, audit log |
 | 12 | Uzcard + Humo adapters | 1:12 | ✅ Built and matched to `ecom@ep-12`: one `CardProcessor` port, Uzcard JSON-RPC and Humo SOAP adapters, three outcomes (timeout = unknown, never a decline), duplicate looked up instead of paid twice, processing sandbox with test cards, ITs over real HTTP |
 | 13 | BIN registry + card vault | 1:34 | ✅ Built and matched to `ecom@ep-13`: BIN sync (idempotent, keeps old list on outage), longest prefix, Luhn, `platform/crypto` AES-256-GCM + key ids + blind index, DB check against plain numbers, token per card, decrypt only to pay, audit trail, console page |
-| 14 | HMAC + idempotency | 1:05 | Code: HMAC fields, timestamp window, nonce, idempotency semantics, fail closed. Design: Vault path `secret/merchants` (real: `HMAC_SECRET_<clientId>` provisioned by DevOps) |
+| 14 | HMAC + idempotency | 1:31 | ✅ Built and matched to `ecom@ep-14`: merchant role, HMAC over method/path/timestamp/nonce/body hash, signing key in Vault shown once, window → signature → nonce, idempotency replay/refuse, concurrent retries, own live website only, link stored as hash, k6 |
 | 15 | Hosted page: card → OTP | 0:42 | Code: hashed session token + TTL, OTP by scheme or SMS, Redis lock, attempt limits (card attempts are hardcoded to 3 in code) |
 | 16 | The debit | 0:44 | Code: atomic claim, terminal, fee snapshot, journal, authorize + capture, RRN, state machine |
 | 17 | Observability | 0:42 | **Design: no metrics/tracing in the real repo today** |

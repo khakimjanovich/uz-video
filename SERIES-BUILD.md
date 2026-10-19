@@ -256,11 +256,12 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **14 · Create a payment: HMAC + idempotency**
 - Problem: anyone can fake a request, replay it, or a retry can create a second payment.
-- Build: `POST /payments` with JWT + HMAC-SHA256 (method, path, timestamp, nonce, body hash), configured timestamp window, Redis nonces, Vault joins docker-compose, merchant secret from `secret/merchants`; `Idempotency-Key` with stored response replay; sales-point guard that fails closed.
-- Why: the three request threats from the owner pitch, in code.
-- Tables: `payment`, `idempotency_key`. Redis: `ecom:hmac:nonce:*`.
-- Demo: valid request → 201; replayed → rejected; same key twice → same response, one payment.
-- Real code: `HmacAuthenticationFilter`, `IdempotencyService`, `SalesPointGuard`, `PaymentRegistrar`.
+- Build: `POST /api/v1/payments` for merchants' servers: a Keycloak client-credentials token (API clients now get the `merchant` role) plus an HMAC-SHA256 signature over method, path, timestamp, nonce and body hash; Vault joins docker-compose (new `platform/vault`), each API client's signing key lives under `secret/merchants/<client id>` and is shown once; `HmacAuthenticationFilter` checks the timestamp window (configured), then the signature, then spends the nonce in Redis (`ecom:hmac:nonce:*`), so forgeries can't burn nonces; `Idempotency-Key` per client with the stored response replayed (`Idempotent-Replayed: true`), a different body refused, concurrent retries meet at unique keys; only the merchant's own live website and its return addresses; one payment per order and website; the payment page link stored only as a hash.
+- Tables: `payment`, `idempotency_record`.
+- Endpoints: `POST /api/v1/payments`, `GET /api/v1/payments/{id}` (signed), `GET /api/v1/admin/payments`.
+- Tests: `SignatureUtilsTest` (vector from Python's hmac), `HmacAuthenticationFilterIT` (real Redis), `PaymentServiceIT` (incl. 6 concurrent retries → one payment), `VaultSecretsIT`, the full-app IT signs a payment over HTTP; k6 `payments/create-payment.js` (28,728 checks at 100%, create p95 6.82 ms).
+- Front: the signing key shown once beside the client secret; bank "Payments" page.
+- Code: `ecom@ep-14`.
 
 **15 · Hosted page: card → OTP**
 - Problem: the card must be typed on the bank's page, never the store's.

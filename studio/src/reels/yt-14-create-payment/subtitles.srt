@@ -1,44 +1,60 @@
 1
-00:00:00,050 --> 00:00:04,892
+00:00:00,050 --> 00:00:04,797
 How does the bank know a payment request really came from the shop, and only once?
 
 2
-00:00:04,892 --> 00:00:10,011
-The shop's server asks for a payment with an amount, an order number, and a return address.
+00:00:04,797 --> 00:00:11,857
+The shop's server asks for a payment: a website, an order number, an amount in tiyin, and a return address.
 
 3
-00:00:10,011 --> 00:00:16,547
-A stolen token alone should not be enough to create payments, so every request is also signed.
+00:00:11,857 --> 00:00:16,690
+Its access token comes from its API client, which now carries the merchant role.
 
 4
-00:00:16,547 --> 00:00:25,309
-The server signs the method, path, timestamp, nonce, and body with HMAC-SHA256 and the shop's secret.
+00:00:16,690 --> 00:00:23,273
+But a stolen token alone must not be enough to create payments, so every request is also signed.
 
 5
-00:00:25,309 --> 00:00:30,619
-That secret lives in Vault under the merchants' path, so the app can read it but nobody types it.
+00:00:23,273 --> 00:00:31,309
+The server signs the method, the path, a timestamp, a nonce and the body's hash with HMAC SHA two fifty six.
 
 6
-00:00:30,619 --> 00:00:36,642
-A timestamp outside the configured window is rejected, and a nonce can be used only once.
+00:00:31,309 --> 00:00:38,904
+Each API client gets its own signing key: Vault joins docker compose and keeps it, and the merchant sees it once.
 
 7
-00:00:36,642 --> 00:00:43,095
-A network retry must never create a second payment, so each request carries an idempotency key.
+00:00:38,904 --> 00:00:45,880
+A timestamp outside the configured window is refused, and a nonce works only once, remembered in Redis.
 
 8
-00:00:43,095 --> 00:00:49,619
-The same key with the same body returns the stored response, and the same key with a different body is refused.
+00:00:45,880 --> 00:00:52,238
+The signature is checked before the nonce is spent, so a forged request can't burn the merchant's nonces.
 
 9
-00:00:49,619 --> 00:00:56,630
-Before saving anything, the payment module checks that the sales point is active, and refuses if it cannot tell.
+00:00:52,238 --> 00:00:58,797
+A network retry must never create a second payment, so each request carries an idempotency key.
 
 10
-00:00:56,630 --> 00:01:00,738
-The response carries a one-time link to the bank's own payment page.
+00:00:58,797 --> 00:01:05,345
+The same key with the same body returns the stored response, and the same key with a different body is refused.
 
 11
-00:01:00,738 --> 00:01:04,297
+00:01:05,345 --> 00:01:12,285
+Two retries at the same moment meet at the database's unique keys, and the loser replays the winner's answer.
+
+12
+00:01:12,285 --> 00:01:19,952
+Only the merchant's own live website, with one of its return addresses, can take a payment, and anything else is refused before saving.
+
+13
+00:01:19,952 --> 00:01:26,619
+The response carries a one-time link to the bank's payment page, and the database keeps only its hash.
+
+14
+00:01:26,619 --> 00:01:33,380
+In k6, five servers created over four thousand payments in thirty seconds, and every check passed.
+
+15
+00:01:33,380 --> 00:01:36,976
 Next, the buyer opens that page and enters their card.
 
