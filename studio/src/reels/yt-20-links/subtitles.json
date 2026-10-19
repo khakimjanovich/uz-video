@@ -2,54 +2,117 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 149,
-    "text": "How does a shop that sells in a chat take a card payment, without any website checkout?",
-    "prefix": "How does a shop that sells in a chat take a card payment, without any website checkout?",
+    "endFrame": 123,
+    "text": "A seller on Instagram has no checkout: how do they take a card?",
+    "prefix": "A seller on Instagram has no checkout: how do they take a card?",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 2,
-    "startFrame": 148,
-    "endFrame": 252,
-    "text": "The merchant creates a payment link with an amount and a description.",
-    "prefix": "The merchant creates a payment link with an amount and a description.",
+    "startFrame": 122,
+    "endFrame": 290,
+    "text": "With a payment link: the merchant's user makes it in the portal, and sends it to the buyer in any chat.",
+    "prefix": "With a payment link: the merchant's user makes it in the portal, and sends it to the buyer in any chat.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 3,
-    "startFrame": 251,
-    "endFrame": 419,
-    "text": "The link goes into any chat, and the buyer opens the same bank page as before.",
-    "prefix": "The link goes into any chat, and the buyer opens the same bank page as before.",
+    "startFrame": 289,
+    "endFrame": 472,
+    "text": "Behind the link is an ordinary payment, with the same bank page, the same code, and the same debit.",
+    "prefix": "Behind the link is an ordinary payment, with the same bank page, the same code, and the same debit.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 4,
-    "startFrame": 418,
-    "endFrame": 562,
-    "text": "A link can be claimed only once, so two buyers can never pay the same order.",
-    "prefix": "A link can be claimed only once, so two buyers can never pay the same order.",
+    "startFrame": 471,
+    "endFrame": 665,
+    "text": "It has no API client and no return address, and its order number is made up, starting with link.",
+    "prefix": "It has no API client and no return address, and its order number is made up, starting with link.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 5,
-    "startFrame": 561,
-    "endFrame": 694,
-    "text": "Unused links expire after the configured time, and a sweep cleans them up.",
-    "prefix": "Unused links expire after the configured time, and a sweep cleans them up.",
+    "startFrame": 664,
+    "endFrame": 843,
+    "text": "Only the owner makes one, and only for a live website: anything else gets the same refusal.",
+    "prefix": "Only the owner makes one, and only for a live website: anything else gets the same refusal.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 6,
-    "startFrame": 693,
-    "endFrame": 802,
-    "text": "Next, sending money back to the buyer.",
-    "prefix": "Next, sending money back to the buyer.",
+    "startFrame": 842,
+    "endFrame": 1005,
+    "text": "The merchant chooses how long it works, up to the bank's configured limit, seven days.",
+    "prefix": "The merchant chooses how long it works, up to the bank's configured limit, seven days.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1004,
+    "endFrame": 1223,
+    "text": "The link carries a random token, shown once, and the bank keeps only its hash, so a leaked table opens no page.",
+    "prefix": "The link carries a random token, shown once, and the bank keeps only its hash, so a leaked table opens no page.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1222,
+    "endFrame": 1407,
+    "text": "The buyer opens it, enters the card and the code, and the page says paid, with no shop to go back to.",
+    "prefix": "The buyer opens it, enters the card and the code, and the page says paid, with no shop to go back to.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1406,
+    "endFrame": 1585,
+    "text": "Pages nobody pays in time, links and checkouts alike, are closed by a sweep every minute.",
+    "prefix": "Pages nobody pays in time, links and checkouts alike, are closed by a sweep every minute.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1584,
+    "endFrame": 1780,
+    "text": "It locks expired rows with skip locked, so each one closes once, however many instances run it.",
+    "prefix": "It locks expired rows with skip locked, so each one closes once, however many instances run it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1779,
+    "endFrame": 1987,
+    "text": "Expired is final, and like every ending it raises an event, so a website with a webhook hears about it.",
+    "prefix": "Expired is final, and like every ending it raises an event, so a website with a webhook hears about it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1986,
+    "endFrame": 2167,
+    "text": "In the portal, the merchant sees each link's status: waiting, paid, or expired.",
+    "prefix": "In the portal, the merchant sees each link's status: waiting, paid, or expired.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 2166,
+    "endFrame": 2307,
+    "text": "Next, sending money back: refunds and reversals.",
+    "prefix": "Next, sending money back: refunds and reversals.",
     "highlight": "",
     "suffix": ""
   }

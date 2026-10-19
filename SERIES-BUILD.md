@@ -303,9 +303,12 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **20 · Payment links**
 - Problem: merchants selling in chats have no website checkout.
-- Build: link creation, claim, expiry sweep.
-- Tables: `payment_link`.
-- Real code: `PaymentLinkServiceImpl`, `PaymentLinkExpirySweep`.
+- Build: a payment link is an ordinary payment made from the portal (`source = LINK`): no API client, no return address, an order number `link-…`; only for one of the user's own live websites (`SalesPoints.ownedBy`), otherwise the same refusal; it works for `validForHours`, at most `link-max-ttl` (7 d); the page token is random, shown once, stored as a hash (`PageTokenUtils`). The buyer pays on the same page with the same debit. A sweep (`expiry-sweep-delay` 1 m) locks unpaid pages past their time with `SKIP LOCKED` and closes them: EXPIRED, final, with its event (webhook for API payments).
+- Tables: `payment` (+ `source`; client and return address optional for links; status EXPIRED).
+- Endpoints: `POST /api/v1/partner/payment-links`, `GET /api/v1/partner/payment-links`.
+- Tests: `PaymentPageIT` (a link pays with no return address, only the owner, capped length, the sweep closes an expired page once); k6 `payments/links.js`.
+- Front: the merchant's **Payment links** page: make a link, copy it once, see each link's status; the bank's Payments page marks link payments.
+- Code: `ecom@ep-20`.
 
 **21 · Refunds and reversals**
 - Problem: money must go back: same day (reversal) or later (refund within the configured window).
