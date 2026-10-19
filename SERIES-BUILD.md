@@ -263,13 +263,14 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Front: the signing key shown once beside the client secret; bank "Payments" page.
 - Code: `ecom@ep-14`.
 
-**15 · Hosted page: card → OTP**
-- Problem: the card must be typed on the bank's page, never the store's.
-- Build: session token (hashed, configured TTL), submit card, OTP challenge (scheme OTP or SMS), one operation at a time per payment (Redis lock), attempt limit.
-- Tables: `payment_session`.
-- Endpoints: `GET /sessions/{token}`, `POST /sessions/{token}/card`, `POST /sessions/{token}/otp`.
-- Demo: open the page → card → OTP → ready to debit.
-- Real code: `PaymentSessionServiceImpl`, `CardVerificationServiceImpl`, `OtpChallengeServiceImpl`.
+**15 · The payment page**
+- Problem: the card must be typed on the bank's page, never the shop's.
+- Build: public `/api/v1/pay/{token}` (page, logo, card, code); the link's token is the only credential, stored only as a hash, expiring after `page-ttl`; reading the page changes nothing; the BIN module names the card's scheme and bank before any code is sent, and a scheme the website doesn't accept is refused; the card module sends a code through the scheme's adapter, one binding (and session) per code so two payments with one card never collide; every card and code attempt is counted and committed before the scheme is asked (`card-attempts`, `code-attempts`), and the last failed one closes the page (FAILED); one step at a time per payment with a Redis lock only its holder releases (`page-lock-ttl` above the slowest scheme call). Statuses CREATED → AWAITING_CODE → CARD_CONFIRMED, or FAILED.
+- Tables: `payment` (+ attempts, card token/binding/mask/scheme/BIN, failure), `card.card_binding`.
+- Endpoints: `GET /api/v1/pay/{token}`, `GET …/logo`, `POST …/card`, `POST …/code`.
+- Tests: `PaymentPageIT` (real Postgres + Redis: failed attempts count, page closes, scheme checked first, one step at a time, expiry), `CardVaultIT` (two bindings of one card); k6 `payments/hosted-page.js`; the web journey pays on the page.
+- Front: `/pay/:token`, outside the merchant and bank areas, in en/ru/uz.
+- Code: `ecom@ep-15`.
 
 **16 · The debit**
 - Problem: two concurrent clicks must never charge twice.
