@@ -1,40 +1,60 @@
 1
-00:00:00,050 --> 00:00:03,380
+00:00:00,050 --> 00:00:03,726
 What stops two clicks on the pay button from charging the card twice?
 
 2
-00:00:03,380 --> 00:00:07,309
-Two confirms arrive at the same moment, and both try to debit.
+00:00:03,726 --> 00:00:09,297
+Two requests to confirm the same payment can arrive at the same moment, and both would try to debit.
 
 3
-00:00:07,309 --> 00:00:12,940
-An atomic update moves the payment from open to authorizing, and only one caller can win it.
+00:00:09,297 --> 00:00:15,071
+One conditional update moves the payment from confirmed to debiting, and only one caller can win it.
 
 4
-00:00:12,940 --> 00:00:17,130
-The winner resolves the terminal, and freezes the commission for this payment.
+00:00:15,071 --> 00:00:19,226
+Anyone who loses the claim simply gets the payment as it stands.
 
 5
-00:00:17,130 --> 00:00:21,571
-Every call to the processing center is written to an operation journal first.
+00:00:19,226 --> 00:00:25,761
+The winner fixes the route: the website's live terminal for the card's scheme, with its MID and TID.
 
 6
-00:00:21,571 --> 00:00:25,535
-Then the adapter authorizes, which places a hold on the card.
+00:00:25,761 --> 00:00:32,392
+It fixes the fee too: the most specific commission rule, the fee and the merchant's net, kept on the payment.
 
 7
-00:00:25,535 --> 00:00:28,154
-Then it captures, and the money really moves.
+00:00:32,392 --> 00:00:38,380
+With no terminal or no fee rule, the payment fails right there, before any money moves.
 
 8
-00:00:28,154 --> 00:00:33,535
-On approval, the payment becomes captured, with the scheme's reference number, the RRN.
+00:00:38,380 --> 00:00:45,785
+Every call to the scheme is written to an operation journal first, and the database allows only one debit per payment.
 
 9
-00:00:33,535 --> 00:00:39,178
-A state machine allows only legal moves, so a captured payment can never go back to open.
+00:00:45,785 --> 00:00:54,202
+Then the card module asks the scheme through its adapter, with our payment id as the reference, so a retry is never paid twice.
 
 10
-00:00:39,178 --> 00:00:42,547
+00:00:54,202 --> 00:00:59,095
+An approval makes the payment paid, with the scheme's reference number, the RRN.
+
+11
+00:00:59,095 --> 00:01:02,154
+A decline is final, with our own code for why.
+
+12
+00:01:02,154 --> 00:01:07,238
+No answer leaves it unknown, never declined, because the money may already have moved.
+
+13
+00:01:07,238 --> 00:01:11,619
+Every move goes through the status table, so a paid payment can never go back.
+
+14
+00:01:11,619 --> 00:01:17,440
+The buyer sees the result on the page, and the bank sees the fee, the terminal and the RRN.
+
+15
+00:01:17,440 --> 00:01:20,976
 Next, seeing inside the system when something is slow.
 

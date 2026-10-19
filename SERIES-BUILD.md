@@ -274,11 +274,11 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **16 · The debit**
 - Problem: two concurrent clicks must never charge twice.
-- Build: atomic claim SESSION_OPEN → AUTHORIZING (conditional update), terminal resolve, commission snapshot, authorize + capture through the adapter, operation journal, `PaymentStateMachine`.
-- Why: the heart of the system; double charge is the owners' biggest fear.
-- Tables: `payment_operation`.
-- Demo: fire two confirms at once → exactly one debit.
-- Real code: `DebitClaim`, `ProcessorPaymentExecutionAdapter`, `statemachine/PaymentStateMachine`.
+- Build: the code step ends with the debit: one conditional update claims it (CARD_CONFIRMED → DEBITING, exactly one caller wins); the winner fixes the route (`Terminals.forPayment`: MID/TID) and the fee (`Commissions.quote`: rule, fee, net, with a database check `fee + net = amount`); no terminal or no fee rule fails the payment before any money moves (the card step already refuses a scheme with no live terminal); the operation is journaled before the scheme is asked (`payment_operation`, one debit per payment by a unique key); the card module asks the scheme through its adapter with our payment id as the reference; APPROVED → PAID with the RRN, DECLINED → DECLINED with our code, no answer → UNKNOWN, never declined; every move goes through the status table.
+- Tables: `payment` (+ route, fee, RRN, decline code), `payment_operation`.
+- Tests: `PaymentPageIT` (four concurrent debits charge once, route and fee fixed and journaled, decline vs unknown, no route means no code); k6 `payments/hosted-page.js` pays, checks the fee and a declined card; the web journey pays and the bank sees the fee and RRN.
+- Front: the page shows paid, declined (with why) or still checking; the bank's Payments page shows card, MID/TID, fee and RRN.
+- Code: `ecom@ep-16`.
 
 **17 · Observability: metrics, traces, logs**
 - Problem: one payment crosses five modules and a processing center; when it's slow or stuck, nobody can see where.

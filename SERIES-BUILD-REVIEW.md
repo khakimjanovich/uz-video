@@ -25,7 +25,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 13 | BIN registry + card vault | 1:26 | ✅ Re-cut 2026-10-19: BIN sync through the adapters; no Luhn-sandbox, IT or k6 beats |
 | 14 | HMAC + idempotency | 1:31 | ✅ Re-cut 2026-10-19: the bank puts signing keys straight into Vault; the app only reads them; no k6 |
 | 15 | The payment page | 1:38 | ✅ Built and matched to `ecom@ep-15`: token as credential (hash, expiry), read-only page, scheme checked first, a code per binding, every attempt counted and committed first, page closes, Redis lock |
-| 16 | The debit | 0:44 | Code: atomic claim, terminal, fee snapshot, journal, authorize + capture, RRN, state machine |
+| 16 | The debit | 1:22 | ✅ Built and matched to `ecom@ep-16`: one conditional claim, route and fee fixed, journal first with one debit per payment, paid/declined/unknown, status table |
 | 17 | Observability | 0:42 | **Design: no metrics/tracing in the real repo today** |
 | 18 | When processing goes silent | 0:39 | Code: Temporal resolution, backoff, manual review, sweep every minute |
 | 19 | Outbox + Kafka | 0:39 | Code: `event_outbox` is written. **Design: relay + Kafka + webhook consumer don't exist yet** |
