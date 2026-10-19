@@ -9,7 +9,7 @@ export const Yt02SetupComposition = createEpisode({
   part: 0,
   footer: "Setup",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Where to start?", "Builds + runs", "The stack", "Five modules", "Module boundaries", "Platform", "Version catalog", "One error format", "Contracts", "Same layers", "Separate services", "Infra repo", "ECS logs + health", "One command", "Four repositories", "Next: the domain"],
+  titles: ["Where to start?", "Builds + runs", "The stack", "Six modules", "Module boundaries", "Platform", "Version catalog", "One error format", "Contracts", "Same layers", "Separate services", "Infra repo", "ECS logs + health", "One command", "Four repositories", "Next: the domain"],
   map,
   diagram,
   code,

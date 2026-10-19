@@ -5,7 +5,7 @@ import { siApachekafka, siGrafana, siKeycloak, siKubernetes, siPostgresql, siPro
 
 export type BuildNodeId =
   | "merchant" | "buyer" | "admin"
-  | "partner" | "commission" | "terminal" | "card" | "payment"
+  | "partner" | "commission" | "terminal" | "bin" | "card" | "payment"
   | "emailport" | "procport"
   | "postgres" | "redis" | "keycloak" | "vault" | "s3" | "temporal" | "kafka" | "observability"
   | "emailsvc" | "filesvc" | "procsvc"
@@ -17,13 +17,15 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   merchant: { label: "Merchant server", x: 60, y: 30, w: 160, h: 44 },
   buyer: { label: "Buyer", x: 260, y: 30, w: 160, h: 44 },
   admin: { label: "Bank admin", x: 460, y: 30, w: 160, h: 44 },
-  partner: { label: "Partner", sub: "Merchants", x: 56, y: 140, w: 104, h: 56 },
-  commission: { label: "Commission", sub: "Fees", x: 172, y: 140, w: 104, h: 56 },
-  terminal: { label: "Terminal", sub: "MID / TID", x: 288, y: 140, w: 104, h: 56 },
-  card: { label: "Card vault", sub: "Tokens", x: 404, y: 140, w: 104, h: 56 },
-  payment: { label: "Payment", sub: "Debits", x: 520, y: 140, w: 104, h: 56 },
+  // Six modules, 96px apart.
+  partner: { label: "Partner", sub: "Merchants", x: 56, y: 140, w: 88, h: 56 },
+  commission: { label: "Commission", sub: "Fees", x: 152, y: 140, w: 88, h: 56 },
+  terminal: { label: "Terminal", sub: "MID / TID", x: 248, y: 140, w: 88, h: 56 },
+  bin: { label: "BIN", sub: "Banks", x: 344, y: 140, w: 88, h: 56 },
+  card: { label: "Card vault", sub: "Tokens", x: 440, y: 140, w: 88, h: 56 },
+  payment: { label: "Payment", sub: "Debits", x: 536, y: 140, w: 88, h: 56 },
   emailport: { label: "Email + file clients", x: 56, y: 230, w: 220, h: 44 },
-  procport: { label: "Adapter clients", x: 404, y: 230, w: 220, h: 44 },
+  procport: { label: "Adapter clients", x: 344, y: 230, w: 280, h: 44 },
   // One row of eight, 76px apart; the client arrows run down the gaps at x=113, x=189 and x=493.
   postgres: { label: "Postgres", x: 40, y: 310, w: 70, h: 64, logos: [siPostgresql.path] },
   redis: { label: "Redis", x: 116, y: 310, w: 70, h: 64, logos: [siRedis.path] },
@@ -43,9 +45,10 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
 
 // Vertical arrows: [x, fromY, toY].
 export const BUILD_ARROWS: [number, number, number][] = [
-  [108, 196, 230],
-  [456, 196, 230],
-  [572, 196, 230],
+  [100, 196, 230],
+  [388, 196, 230],
+  [484, 196, 230],
+  [580, 196, 230],
   [113, 274, 420],
   [189, 274, 420],
   [493, 274, 420],
@@ -58,7 +61,7 @@ export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes:
   { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis"] },
   { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle + documents", "Four-eyes", "Keycloak clients", "Sales points", "Platform libraries"], nodes: ["partner", "emailport", "emailsvc", "filesvc", "s3", "admin", "keycloak"] },
   { n: 2, title: "Money rules", episodes: ["Commission", "Terminals"], nodes: ["commission", "terminal"] },
-  { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "BIN + card vault"], nodes: ["card", "procport", "procsvc"] },
+  { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "BIN + card vault"], nodes: ["bin", "card", "procport", "procsvc"] },
   { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Hosted page", "The debit", "Observability", "Silent processing", "Outbox + Kafka", "Links", "Refunds", "Billing", "Hardening"], nodes: ["payment", "merchant", "buyer", "vault", "observability", "temporal", "kafka"] },
   { n: 5, title: "Growing up", episodes: ["Deploy to Kubernetes", "Extract the card vault"], nodes: ["kubernetes", "card"] },
 ];

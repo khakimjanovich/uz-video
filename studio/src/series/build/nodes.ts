@@ -21,7 +21,7 @@ export const BUILD_CATALOG = {
   humo: { label: "Humo", sublabel: "SOAP", art: "processing" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
-  bin: { label: "BIN registry", art: "journal" },
+  bin: { label: "BIN module", sublabel: "Schemes · banks", art: "journal" },
   app: { label: "Acquiring app", sublabel: "Modular monolith", logo: siSpringboot.path },
   partner: { label: "Partner module", sublabel: "Merchant registry", art: "journal" },
   commission: { label: "Commission module", art: "fee" },

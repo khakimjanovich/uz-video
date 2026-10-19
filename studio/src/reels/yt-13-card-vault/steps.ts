@@ -2,83 +2,106 @@ import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
-// Episode 13: the BIN registry and the card vault.
+// Episode 13: the BIN module and the card vault.
 // Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 3, current: ["card"], built: [...builtBefore(3), "procport", "procsvc"] },
-  { cue: 14, part: 4, current: ["payment", "merchant"], built: builtBefore(4) },
+  { cue: 0, part: 3, current: ["bin", "card"], built: [...builtBefore(3), "procport", "procsvc"] },
+  { cue: 15, part: 4, current: ["payment", "merchant"], built: builtBefore(4) },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
-  { cue: 1, layout: { buyer: [0.5, 1], bin: [2.5, 1] }, edges: [{ from: "buyer", to: "bin", label: "first digits" }], packets: [{ from: "buyer", to: "bin", label: "860014…", delay: 15 }], badges: { bin: "Uzcard" } },
+  { cue: 1, layout: { buyer: [0.5, 1], bin: [2.5, 1] }, edges: [{ from: "buyer", to: "bin", label: "first digits" }], packets: [{ from: "buyer", to: "bin", label: "860014…", delay: 15 }], badges: { bin: "Uzcard · Asaka Bank" } },
   {
     cue: 2,
     layout: { sweep: [0, 1], bin: [1.5, 1], uzcardsvc: [3, 0], humosvc: [3, 2] },
     edges: [{ from: "sweep", to: "bin", label: "startup + nightly" }, { from: "uzcardsvc", to: "bin", label: "/v1/cards/bin-list" }, { from: "humosvc", to: "bin", label: "/v2/pm/bins" }],
     packets: [{ from: "uzcardsvc", to: "bin", label: "BIN ranges", delay: 20 }, { from: "humosvc", to: "bin", label: "BIN ranges", delay: 30 }],
   },
-  { cue: 6, layout: { card: [0.5, 1], postgres: [2.5, 1] }, edges: [{ from: "card", to: "postgres" }], danger: ["postgres"], badges: { postgres: "8600 1402 3456 7890" } },
-  { cue: 13, layout: { admin: [0.5, 1], card: [2.5, 1] }, edges: [{ from: "admin", to: "card", label: "search by number" }], packets: [{ from: "card", to: "admin", label: "860014******7890", delay: 20 }], accent: ["card"], badges: { card: "audited" } },
+  { cue: 7, layout: { card: [0.5, 1], postgres: [2.5, 1] }, edges: [{ from: "card", to: "postgres" }], danger: ["postgres"], badges: { postgres: "8600 1402 3456 7890" } },
+  { cue: 14, layout: { admin: [0.5, 1], card: [2.5, 1] }, edges: [{ from: "admin", to: "card", label: "search by number" }], packets: [{ from: "card", to: "admin", label: "860014******7890", delay: 20 }], accent: ["card"], badges: { card: "audited" } },
 ];
 
 export const code: CodeStep[] = [
   {
     cue: 3,
-    file: "modules/card/…/service/impl/BinServiceImpl.java",
+    file: "modules/bin/…/service/impl/BinServiceImpl.java",
     lines: [
       "try {",
-      "  var fresh = processor.bins(); // outside the transaction",
+      "  var fresh = fetch.get(); // outside the transaction",
       "  updated = transaction.execute(s -> replace(scheme, fresh));",
-      "} catch (RestClientException e) {",
-      '  log.warn("BIN list from {} not available, keeping the old one: {}",',
-      "      scheme, e.getMessage());",
+      "} catch (RuntimeException e) {",
+      '  log.warn("BIN list from {} not available, keeping the old one",',
+      "      scheme, e.toString());",
       "}",
       "",
       "private boolean replace(String scheme, List<Bin> fresh) {",
       "  if (fresh.isEmpty()) return false; // keep the old list",
-      "  bins.saveAll(fresh.stream().map(...).toList());",
+      "  bins.saveAll(…);",
       "  bins.deleteBySchemeAndPrefixNotIn(scheme, prefixes);",
       "  return true;",
       "}",
+      "// then: index.set(BinIndex.of(bins.findAll()))",
     ],
-    highlight: [4, 10, 11, 12],
+    highlight: [4, 10, 15],
   },
   {
     cue: 4,
-    file: "modules/card/…/repository/BinRangeRepository.java",
+    file: "modules/bin/…/model/BinIndex.java",
     lines: [
-      "/** The longest prefix wins: a bank's 8-digit range",
-      "    beats the scheme's 6-digit one. */",
-      "@Query(nativeQuery = true, value = \"\"\"",
-      "    SELECT * FROM card.bin_range",
-      "     WHERE :digits LIKE prefix || '%'",
-      "     ORDER BY length(prefix) DESC",
-      "     LIMIT 1\"\"\")",
-      "Optional<BinRange> longestMatch(String digits);",
+      "/** Cuts the digits from the longest known BIN length",
+      " *  down to the shortest; the first prefix it knows wins. */",
+      "public Optional<BinRange> resolve(String digits) {",
+      "  for (var length = Math.min(longest, digits.length());",
+      "      length >= shortest && length > 0; length--) {",
+      "    var range = byPrefix.get(digits.substring(0, length));",
+      "    if (range != null) return Optional.of(range);",
+      "  }",
+      "  return Optional.empty();",
+      "}",
+      "",
+      "// 8600140234567890 → 86001402? 8600140? 860014 ✓",
+    ],
+    highlight: [4, 6, 12],
+  },
+  {
+    cue: 5,
+    file: "modules/bin/…/properties/bin-banks.yaml",
+    lines: [
+      "ecom:",
+      "  bin:",
+      "    banks:",
+      "      uzcard:",
+      '        "[9013]":',
+      '          name-en: "Asaka Bank"',
+      '          name-ru: "Асака банк"',
+      '          name-uz: "Asaka bank"',
+      "      humo:",
+      '        "[09]":',
+      '          name-en: "Asia Alliance Bank"',
+      "        # … one entry per issuer code",
     ],
     highlight: [5, 6],
   },
   {
-    cue: 5,
-    file: "modules/card/…/util/PanUtils.java",
+    cue: 6,
+    file: "modules/card/…/service/impl/CardServiceImpl.java",
     lines: [
-      "/** The Luhn check digit: catches a mistyped digit",
-      "    and most swapped neighbours. */",
-      "public static boolean isValid(String number) {",
-      '  if (!number.matches("\\\\d{16}")) return false;',
-      "  var sum = 0;",
-      "  for (var i = 0; i < number.length(); i++) {",
-      "    var digit = number.charAt(number.length() - 1 - i) - '0';",
-      "    if (i % 2 == 1) { digit *= 2; if (digit > 9) digit -= 9; }",
-      "    sum += digit;",
+      "public Binding startBinding(String number, String expiry) {",
+      "  if (!PanUtils.isValid(number)) {   // Luhn",
+      "    throw new GeneralException(CARD_NUMBER_INVALID);",
       "  }",
-      "  return sum % 10 == 0;",
-      "}",
+      "  …",
+      "  var scheme = bins.resolve(number)  // the BIN module",
+      "      .orElseThrow(() -> new GeneralException(",
+      "          CARD_SCHEME_UNKNOWN, number.substring(0, SHOWN_FIRST)))",
+      "      .scheme();",
+      "  var session = processors.of(CardScheme.valueOf(scheme))",
+      "      .sendBindingCode(number, expiry);",
     ],
-    highlight: [8, 11],
+    highlight: [2, 6],
   },
   {
-    cue: 7,
+    cue: 8,
     file: "platform/crypto/…/Crypto.java",
     lines: [
       "public String encrypt(String plain) {",
@@ -100,7 +123,7 @@ export const code: CodeStep[] = [
     highlight: [2, 7, 13],
   },
   {
-    cue: 8,
+    cue: 9,
     file: "app/…/application.yaml · Crypto.java",
     lines: [
       "ecom.crypto:",
@@ -118,7 +141,7 @@ export const code: CodeStep[] = [
     highlight: [2, 4, 9, 10],
   },
   {
-    cue: 9,
+    cue: 10,
     file: "modules/card/…/Cards.java",
     lines: [
       "/** Other modules hold only a card token (ctk_…). */",
@@ -135,7 +158,7 @@ export const code: CodeStep[] = [
     highlight: [1, 4, 8],
   },
   {
-    cue: 10,
+    cue: 11,
     file: "modules/card/…/service/impl/CardServiceImpl.java",
     lines: [
       "/** The blind index finds the card; no stored number",
@@ -153,7 +176,7 @@ export const code: CodeStep[] = [
     highlight: [5, 8, 11],
   },
   {
-    cue: 11,
+    cue: 12,
     file: "modules/card/…/db/changelog/card.yaml",
     lines: [
       "# The database itself refuses a card number, an expiry",
@@ -171,7 +194,7 @@ export const code: CodeStep[] = [
     highlight: [5, 6, 11],
   },
   {
-    cue: 12,
+    cue: 13,
     file: "modules/card/…/service/impl/CardServiceImpl.java",
     lines: [
       "public Result debit(String cardToken, String paymentRef, …) {",

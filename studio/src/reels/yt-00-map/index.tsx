@@ -15,6 +15,7 @@ const TITLES = [
   "Partner",
   "Commission",
   "Terminal",
+  "BIN",
   "Card vault",
   "Payment",
   "Separate services",
