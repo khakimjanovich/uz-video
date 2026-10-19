@@ -341,10 +341,11 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 ### Part 5: Growing up
 
 **24 · Deploy to Kubernetes**
-- Problem: production needs more than one process on one laptop: several replicas, health checks, rolling updates, secrets that never touch a file.
-- Build: container image, a Helm chart, liveness and readiness probes from Actuator, secrets injected from Vault, three replicas behind a Service, an autoscaler.
-- Why: with three replicas every scheduled job would run three times; ShedLock (already in the code) is what keeps it to one. The cluster also makes the next episode's split concrete.
-- Demo: scale to three replicas, kill a pod mid-payment → traffic moves, the payment still resolves once; the expiry sweep runs exactly once.
+- Problem: production needs more than one process on one laptop: replicas, health checks, rolling updates, secrets that never touch git.
+- Build (all in ecom-infra, the code is unchanged): `k8s/Dockerfile` (the jar on the plain JRE, non-root; heap from the limit); `k8s/base` (Kustomize): the app × 3 and each adapter and the file service × 2, Spring Boot's liveness and readiness probes, `maxUnavailable: 0` rolling updates, `preStop` pause and a 60 s grace period, addresses in a ConfigMap and secrets from the `ecom-secrets` Secret (from Vault, never in git), an autoscaler (3–6 on CPU) and a PodDisruptionBudget. Every scheduled job is already safe on every replica (SKIP LOCKED, one workflow per payment, ShedLock), and Kafka shares partitions between replicas. `k8s/local`: a one-node k3s in Docker on the stack's network, Services that point at the compose containers (`dependencies.sh`), local-only secrets, smaller sizes, the app on :30085.
+- Why Kustomize, not Helm: plain manifests plus one overlay per place; nothing to template yet.
+- Verified: k6 `payments/hosted-page.js` through the cluster while an app pod is deleted: 0 failed checks; the autoscaler adds a replica under load.
+- Code: `ecom-infra@ep-24`.
 
 **25 · Extract a module into a service**
 - Problem: the card vault needs stricter security and its own deploy (PCI DSS scope).

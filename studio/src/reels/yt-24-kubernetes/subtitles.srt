@@ -1,32 +1,48 @@
 1
-00:00:00,050 --> 00:00:03,035
-How does this laptop setup become a production system?
+00:00:00,050 --> 00:00:04,321
+Everything runs on one laptop: what does production need instead?
 
 2
-00:00:03,035 --> 00:00:05,654
-First, we build a container image for the app.
+00:00:04,321 --> 00:00:12,809
+Kubernetes runs each deployable as replicas behind a Service: the app three times, each adapter and the file service twice.
 
 3
-00:00:05,654 --> 00:00:11,083
-A Helm chart deploys it to Kubernetes, with three replicas behind one service.
+00:00:12,809 --> 00:00:21,785
+Every image is the same Gradle-built jar on the plain JRE, as a user without root rights; the limits and JVM options come from the cluster.
 
 4
-00:00:11,083 --> 00:00:17,940
-Actuator's liveness and readiness probes tell Kubernetes when to restart a pod, and when to send it traffic.
+00:00:21,785 --> 00:00:27,059
+Spring Boot's own probes tell the cluster when a pod is alive, and when it takes traffic.
 
 5
-00:00:17,940 --> 00:00:21,488
-Secrets come from Vault at startup, and never from files.
+00:00:27,059 --> 00:00:35,285
+A rolling update starts a new pod before it stops an old one, and a short pause before shutdown lets the Service stop sending requests first.
 
 6
-00:00:21,488 --> 00:00:28,273
-With three replicas, every scheduled job would run three times, so ShedLock lets only one of them run.
+00:00:35,285 --> 00:00:41,309
+The app then finishes what it is doing, for up to sixty seconds, longer than the slowest scheme call.
 
 7
-00:00:28,273 --> 00:00:33,428
-Kill a pod in the middle of a payment, and the payment still resolves exactly once.
+00:00:41,309 --> 00:00:48,000
+Addresses live in a ConfigMap; secrets come from a Secret the bank creates from Vault, never from git.
 
 8
-00:00:33,428 --> 00:00:36,964
-Next, moving one module out into its own service.
+00:00:48,000 --> 00:00:58,726
+Three replicas run every scheduled job three times, and that is safe: skip locked, one workflow per payment, ShedLock, and Kafka shares its partitions between them.
+
+9
+00:00:58,726 --> 00:01:06,011
+An autoscaler adds replicas when the CPU is busy, and a disruption budget never lets a drain take more than one.
+
+10
+00:01:06,011 --> 00:01:12,452
+Deleting a pod in the middle of payments loses nothing: the others take the traffic, and a new one starts.
+
+11
+00:01:12,452 --> 00:01:19,404
+On a laptop, the same manifests run in a one-node k3s, with Services that point at the compose stack.
+
+12
+00:01:19,404 --> 00:01:23,630
+Next, the last step: moving the card vault into its own service.
 
