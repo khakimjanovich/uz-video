@@ -9,21 +9,21 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 
 | Ep | Title | Length | What to check |
 |---|---|---|---|
-| 00 | The map | 1:43 | Part list and order; Kafka/observability/Kubernetes placement. Updated: Keycloak arrives in Part 1, Vault in Part 4 |
+| 00 | The map | 1:51 | ✅ Re-cut 2026-10-19: separate services row (file service, adapters), S3 on the map |
 | 01 | Acquiring in 5 minutes | 1:11 | ✅ Reviewed 2026-10-19. Code: Uzcard single-step debit (`trans.pay.purpose`), Humo hold then immediate capture (SOAP `Payment` ×2), terminal per sales point + scheme. **Open: reversal vs refund rule per scheme (waiting for Uzcard/Humo docs)** |
-| 02 | Setup | 1:42 | ✅ Reviewed 2026-10-19, updated to match `ecom@ep-02`: platform libraries (version catalog, openapi, error-starter), layer packages and constants, database user per module, three test kinds, code beats from the real files |
-| 03 | Domain → contract → database | 1:45 | ✅ Updated 2026-10-19 to match `ecom@ep-03`: entity rule, one-page sketch, spec in platform/openapi, generated jar, migration, own data source, layers, PARTNER_NOT_FOUND problem detail, unit + integration tests, Swagger UI, k6 numbers |
-| 04 | Registration + email OTP | 1:08 | ✅ Built and matched to `ecom@ep-04`: register / verify / resend contract, otp-starter (hashed codes in Redis, ttl, attempt and send limits), notification service over Spring Mail + Mailpit, stable error codes, k6 registration scenario (4,931 flows in 30 s) |
-| 05 | Partner lifecycle | 1:22 | ✅ Built and matched to `ecom@ep-05`: transition table in `PartnerStatus`, email before verify, unique contract number, status history, activate/restore from their own state, admin header until 07, tests, k6 (3,095 lifecycles in 30 s) |
-| 06 | Four-eyes | 1:18 | ✅ Built and matched to `ecom@ep-06`: activation request, decided once, no self-approval, configured expiry, ShedLock sweep, partial unique index, tests, k6 (2,838 activations in 30 s) |
-| 07 | Logins and API clients | 1:17 | ✅ Built and matched to `ecom@ep-07`: Keycloak realm, password only in Keycloak, partner role on email verification, route rules, admin name from token, M2M clients with rotation, full-app IT, k6 with tokens. Vault moved to 14 |
-| 08 | Sales points + site check | 1:23 | ✅ Built and matched to `ecom@ep-08`: one admin records a site check (code and video agree now), own-domain return addresses frozen once live, refund window with reason and configured cap, activation preconditions, `payable` check failing closed, two bugs caught by k6 |
-| 09 | Extract the platform libraries | 1:10 | ✅ Built and matched to `ecom@ep-09`: `platform/security` (rules as configuration) and `platform/keycloak` (admin client), partner delegates, library tests (fake tokens, real Keycloak), callers unchanged |
-| 10 | Commission | 1:20 | ✅ Built and matched to `ecom@ep-10`: most specific rule wins (no priority field), fee ≥ amount refused (the bank code lacks it), four-eyes CREATE/END, exclusion constraint for overlaps, `quote` for payments, quotes p95 2.75 ms |
-| 11 | Terminals (MID/TID) | 1:07 | ✅ Built and matched to `ecom@ep-11`: one live terminal per website and card, MID/TID never reused, fail-closed registration and routing, audit log |
-| 12 | Uzcard + Humo adapters | 1:12 | ✅ Built and matched to `ecom@ep-12`: one `CardProcessor` port, Uzcard JSON-RPC and Humo SOAP adapters, three outcomes (timeout = unknown, never a decline), duplicate looked up instead of paid twice, processing sandbox with test cards, ITs over real HTTP |
-| 13 | BIN registry + card vault | 1:34 | ✅ Built and matched to `ecom@ep-13`: BIN sync (idempotent, keeps old list on outage), longest prefix, Luhn, `platform/crypto` AES-256-GCM + key ids + blind index, DB check against plain numbers, token per card, decrypt only to pay, audit trail, console page |
-| 14 | HMAC + idempotency | 1:31 | ✅ Built and matched to `ecom@ep-14`: merchant role, HMAC over method/path/timestamp/nonce/body hash, signing key in Vault shown once, window → signature → nonce, idempotency replay/refuse, concurrent retries, own live website only, link stored as hash, k6 |
+| 02 | Setup | 1:52 | ✅ Re-cut 2026-10-19 to the final design: Groovy build, platform, version catalog, one error format, contracts, separate services, infra repo |
+| 03 | Domain → contract → database | 1:27 | ✅ Re-cut 2026-10-19: no test or k6 beats; current error format |
+| 04 | Registration + email OTP | 1:07 | ✅ Re-cut 2026-10-19: OTP library, `otp-exception.yaml`; no k6 beat |
+| 05 | Lifecycle + documents | 1:38 | ✅ Re-cut 2026-10-19 as "Lifecycle + documents": KYB uploads to the file service (S3), document review, verify needs the required documents |
+| 06 | Four-eyes | 1:13 | ✅ Re-cut 2026-10-19: request/list/approve/reject calls, KYB checked again on open and approve; no tests/k6 |
+| 07 | Logins and API clients | 1:09 | ✅ Re-cut 2026-10-19: three realm roles (admin, partner, merchant), route rules in config, name from token, secrets never stored |
+| 08 | Sales points + site check | 1:17 | ✅ Re-cut 2026-10-19: sales point logo in its own bucket; no tests/k6/bug beats |
+| 09 | Platform libraries | 1:04 | ✅ Re-cut 2026-10-19 as "Platform libraries": security + keycloak libraries, version catalog; no refactor or test beats |
+| 10 | Commission | 1:18 | ✅ Re-cut 2026-10-19: filters, levels and history added; no tests/k6 |
+| 11 | Terminals (MID/TID) | 1:05 | ✅ Re-cut 2026-10-19: terminal search (filters, MID/TID search, history); no tests/k6 |
+| 12 | Uzcard + Humo adapters | 1:29 | ✅ Re-cut 2026-10-19: adapters as separate services with their own contracts, envelope, commands, status YAML, card module over the clients; no sandbox/tests |
+| 13 | BIN registry + card vault | 1:26 | ✅ Re-cut 2026-10-19: BIN sync through the adapters; no Luhn-sandbox, IT or k6 beats |
+| 14 | HMAC + idempotency | 1:31 | ✅ Re-cut 2026-10-19: the bank puts signing keys straight into Vault; the app only reads them; no k6 |
 | 15 | Hosted page: card → OTP | 0:42 | Code: hashed session token + TTL, OTP by scheme or SMS, Redis lock, attempt limits (card attempts are hardcoded to 3 in code) |
 | 16 | The debit | 0:44 | Code: atomic claim, terminal, fee snapshot, journal, authorize + capture, RRN, state machine |
 | 17 | Observability | 0:42 | **Design: no metrics/tracing in the real repo today** |

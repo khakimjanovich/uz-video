@@ -1,60 +1,56 @@
 1
-00:00:00,050 --> 00:00:04,559
+00:00:00,050 --> 00:00:04,702
 A merchant may run several websites, so which one is allowed to take payments?
 
 2
-00:00:04,559 --> 00:00:09,654
+00:00:04,702 --> 00:00:09,797
 A sales point is one website, with the return addresses where buyers come back after paying.
 
 3
-00:00:09,654 --> 00:00:17,357
+00:00:09,797 --> 00:00:17,238
 Every return address must be an https page on the website's own domain, so a payment can never send a buyer somewhere else.
 
 4
-00:00:17,357 --> 00:00:21,142
-A new sales point starts as a draft, and can't take payments yet.
+00:00:17,238 --> 00:00:22,285
+Each sales point can carry the website's logo, which buyers see on the payment page.
 
 5
-00:00:21,142 --> 00:00:24,011
-An admin checks the website and records the result.
+00:00:22,285 --> 00:00:31,869
+The logo goes to the same file service, in its own bucket: PNG or JPEG, up to one megabyte, and a new logo replaces the old file.
 
 6
-00:00:24,011 --> 00:00:27,821
-A failed check must list what is wrong, and every check is kept.
+00:00:31,869 --> 00:00:35,773
+A new sales point starts as a draft, and can't take payments yet.
 
 7
-00:00:27,821 --> 00:00:36,071
-The deal sets the card schemes and the refund window, and a longer window needs a reason and stays under a configured maximum.
+00:00:35,773 --> 00:00:38,714
+An admin checks the website and records the result.
 
 8
-00:00:36,071 --> 00:00:41,166
-Switching it on needs an active merchant, a passed latest check, and at least one card scheme.
+00:00:38,714 --> 00:00:42,476
+A failed check must list what is wrong, and every check is kept.
 
 9
-00:00:41,166 --> 00:00:44,369
-Once it is live, the return addresses are frozen.
+00:00:42,476 --> 00:00:51,202
+The deal sets the card schemes and the refund window, and a longer window needs a reason and stays under a configured maximum.
 
 10
-00:00:44,369 --> 00:00:49,345
-A live website can be suspended and restored, and a closed one stays closed.
+00:00:51,202 --> 00:00:56,642
+Switching it on needs an active merchant, a passed latest check, and at least one card scheme.
 
 11
-00:00:49,345 --> 00:00:55,666
-Other modules ask one question: may this sales point take a payment right now, and the answer fails closed.
+00:00:56,642 --> 00:00:59,821
+Once it is live, the return addresses are frozen.
 
 12
-00:00:55,666 --> 00:01:01,797
-Unit tests cover every rule, and integration tests run the whole path on a real Postgres.
+00:00:59,821 --> 00:01:04,642
+A live website can be suspended and restored, and a closed one stays closed.
 
 13
-00:01:01,797 --> 00:01:06,988
-Under load, about sixteen hundred websites were checked and switched on in thirty seconds.
+00:01:04,642 --> 00:01:11,095
+Other modules ask one question: may this sales point take a payment right now, and the answer fails closed.
 
 14
-00:01:06,988 --> 00:01:15,797
-Load testing also caught two real bugs: a validator that crashed on web addresses, and a pattern that refused every https link.
-
-15
-00:01:15,797 --> 00:01:21,547
-Next, the security setup and the Keycloak client move into shared platform libraries.
+00:01:11,095 --> 00:01:15,583
+Next, the platform libraries that every module and service shares.
 

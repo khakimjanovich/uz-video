@@ -3,17 +3,17 @@ import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
 // Episode 09: security and the Keycloak admin client become platform libraries.
-// Code beats quote github.com/khakimjanovich/ecom at tag ep-09.
+// Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 1, current: ["partner", "keycloak"], built: builtBefore(1) },
-  { cue: 11, part: 2, current: ["commission"], built: builtBefore(2) },
+  { cue: 10, part: 2, current: ["commission"], built: builtBefore(2) },
 ];
 
 const TWO = { app: [0.5, 1], partner: [2.5, 1] } as const;
 const HUB = { partner: [0, 0], commission: [0, 2], spring: [1.5, 1], keycloak: [3, 1] } as const;
 
 export const diagram: DiagramStep<BuildId>[] = [
-  { cue: 1, layout: { ...TWO, keycloak: [2.5, 2.2] }, edges: [{ from: "partner", to: "keycloak", label: "admin calls" }], badges: { app: "security rules", partner: "Keycloak client" } },
+  { cue: 1, layout: { ...TWO, keycloak: [2.5, 2.2] }, edges: [{ from: "partner", to: "keycloak", label: "admin calls" }], badges: { app: "security rules", partner: "Keycloak calls" } },
   { cue: 2, layout: { partner: [0.5, 1], commission: [2.5, 1] }, badges: { partner: "security · Keycloak", commission: "a copy" }, danger: ["commission"] },
   {
     cue: 3,
@@ -33,7 +33,7 @@ export const code: CodeStep[] = [
       "    .sessionManagement(… STATELESS)",
       "    .authorizeHttpRequests(routes -> {",
       "      properties.publicRoutes()",
-      "          .forEach(route -> matcher(routes, route).permitAll());",
+      "          .forEach(r -> matcher(routes, r).permitAll());",
       "      properties.roles()",
       "          .forEach((route, role) -> matcher(routes, route)",
       "              .hasRole(role));",
@@ -95,13 +95,14 @@ export const code: CodeStep[] = [
       "    .tokenUri(keycloak.url() + TOKEN_PATH …)",
       "    .build();",
       "var login = new OAuth2ClientHttpRequestInterceptor(",
-      "    new AuthorizedClientServiceOAuth2AuthorizedClientManager(…));",
+      "    new AuthorizedClientServiceOAuth2AuthorizedClientManager(",
+      "        …));",
       "return new KeycloakAdmin(RestClient.builder()",
       "    .baseUrl(keycloak.url() + ADMIN_PATH …)",
       "    .requestInterceptor(login)",
       "    .build());",
     ],
-    highlight: [5, 12],
+    highlight: [5, 13],
   },
   {
     cue: 8,
@@ -113,7 +114,7 @@ export const code: CodeStep[] = [
       "  try {",
       "    return keycloak.createUser(email, email, password, false);",
       "  } catch (KeycloakConflictException e) {",
-      "    throw new ApiException(CONFLICT, EMAIL_TAKEN, email);",
+      "    throw new GeneralException(PARTNER_EMAIL_TAKEN, email);",
       "  }",
       "}",
       "",
@@ -126,33 +127,21 @@ export const code: CodeStep[] = [
   },
   {
     cue: 9,
-    file: "platform/security · platform/keycloak tests",
+    file: "platform/versioning/libs.versions.toml",
     lines: [
-      "// unit · SecurityAutoConfigurationTest (fake tokens)",
-      "@Test void publicRoutesNeedNoTokenAndMayBeLimitedToOneMethod()",
-      "@Test void eachRouteNeedsItsRole()",
-      "@Test void noOrBadTokenIsA401Problem()",
-      "@Test void anythingNotListedIsRefused()",
+      "[versions]",
+      'ecom-platform = "0.1.0"',
       "",
-      "// integration · KeycloakAdminIT (real Keycloak 26.4)",
-      "@Test void aUserGetsAVerifiedEmailAndARoleAndCanLogIn()",
-      "@Test void aClientSecretWorksUntilItIsRotated()",
+      "[libraries]",
+      'ecom-error = { module = "uz.heeypay.ecom:error", … }',
+      'ecom-otp = { module = "uz.heeypay.ecom:otp", … }',
+      'ecom-security = { module = "uz.heeypay.ecom:security", … }',
+      'ecom-keycloak = { module = "uz.heeypay.ecom:keycloak", … }',
+      "",
+      "// modules/partner/build.gradle",
+      "implementation libs.ecom.security",
+      "implementation libs.ecom.keycloak",
     ],
-    highlight: [5, 9],
-  },
-  {
-    cue: 10,
-    file: "unchanged for callers",
-    lines: [
-      "PartnerOnboardingIT (real Postgres, Redis, Mailpit,",
-      "  Keycloak) ................................ passed",
-      "",
-      "k6 · lifecycle/partner-lifecycle.js",
-      "  checks ......................... 100.00%  24 810",
-      "  iterations ..................... 1 654   55/s",
-      "",
-      "web app end to end (Playwright) ............ passed",
-    ],
-    highlight: [2, 5, 8],
+    highlight: [2, 15, 16],
   },
 ];

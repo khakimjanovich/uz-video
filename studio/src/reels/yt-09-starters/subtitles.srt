@@ -1,48 +1,44 @@
 1
-00:00:00,050 --> 00:00:06,000
-What happens when the next module needs the same security and the same Keycloak calls as the first?
+00:00:00,050 --> 00:00:02,761
+Where does code go when more than one module needs it?
 
 2
-00:00:06,000 --> 00:00:11,940
-Right now the security rules live in the app, and the Keycloak calls live inside the partner module.
+00:00:02,761 --> 00:00:10,261
+Security rules and Keycloak calls are needed by every module that takes requests, not only by the partner module.
 
 3
-00:00:11,940 --> 00:00:16,464
-Copy them into a second module, and every fix must be made twice.
+00:00:10,261 --> 00:00:14,488
+Copied into each module, every fix would have to be made twice.
 
 4
-00:00:16,464 --> 00:00:22,166
-So both become platform libraries, published like the error and OTP libraries before them.
+00:00:14,488 --> 00:00:21,690
+So shared code lives in platform libraries, versioned and published, next to the error and OTP libraries.
 
 5
-00:00:22,166 --> 00:00:29,940
+00:00:21,690 --> 00:00:29,511
 The security library secures any app: access tokens, realm roles, and refusals as problem details.
 
 6
-00:00:29,940 --> 00:00:35,142
-The route rules move into configuration, and anything not listed is still refused.
+00:00:29,511 --> 00:00:34,119
+Its route rules are configuration, and anything not listed is refused.
 
 7
-00:00:35,142 --> 00:00:40,571
+00:00:34,119 --> 00:00:39,511
 It configures itself before Spring Boot's own defaults, and an app can still replace it.
 
 8
-00:00:40,571 --> 00:00:47,095
+00:00:39,511 --> 00:00:46,166
 The Keycloak library is a small admin client that logs in as its own client and refreshes its token.
 
 9
-00:00:47,095 --> 00:00:52,000
-The partner module keeps its own identity port, and now simply delegates.
+00:00:46,166 --> 00:00:53,047
+The partner module keeps its own identity port, and its Keycloak adapter simply delegates to that client.
 
 10
-00:00:52,000 --> 00:00:58,797
-Each library has its own tests: route rules with fake tokens, and the admin client against a real Keycloak.
+00:00:53,047 --> 00:00:59,142
+A module asks the version catalog for a library by name, and gets one tested, versioned jar.
 
 11
-00:00:58,797 --> 00:01:04,500
-Nothing changed for callers: the full onboarding test and the load tests pass unchanged.
-
-12
-00:01:04,500 --> 00:01:08,797
+00:00:59,142 --> 00:01:03,059
 Next, the money rules begin, with the commission on every payment.
 

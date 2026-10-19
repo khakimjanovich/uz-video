@@ -39,6 +39,12 @@ export const BUILD_CATALOG = {
   wallet: { label: "Store account", art: "wallet" },
   feeacc: { label: "Bank fee", art: "fee" },
   spec: { label: "OpenAPI spec", logo: siOpenapiinitiative.path },
+  // separate services (each its own deployment, contract and client)
+  filesvc: { label: "File service", sublabel: "Own service", art: "tray" },
+  bucket: { label: "S3 bucket", sublabel: "SeaweedFS locally", art: "vault" },
+  docs: { label: "Documents", sublabel: "Charter · passport", art: "receipt" },
+  uzcardsvc: { label: "Uzcard adapter", sublabel: "Own service", art: "processing" },
+  humosvc: { label: "Humo adapter", sublabel: "Own service", art: "processing" },
   // lifecycle states (label-only boxes)
   stPending: { label: "Pending" },
   stVerified: { label: "Verified" },

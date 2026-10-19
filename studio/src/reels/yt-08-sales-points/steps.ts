@@ -3,27 +3,33 @@ import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
 // Episode 08: sales points and site checks.
-// Code beats quote github.com/khakimjanovich/ecom and ecom-k6-testing at tag ep-08.
+// Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 1, current: ["partner"], built: builtBefore(1) },
-  { cue: 14, part: 1, current: ["partner", "keycloak"], built: builtBefore(1) },
+  { cue: 13, part: 1, current: ["partner", "filesvc", "s3"], built: builtBefore(1) },
 ];
 
 const CHECK = { admin: [0, 0.5], salespoint: [2, 0.2], fakesite: [2, 1.8] } as const;
 
 export const diagram: DiagramStep<BuildId>[] = [
   { cue: 1, layout: { partner: [0.5, 1], salespoint: [2.5, 1] }, edges: [{ from: "partner", to: "salespoint", label: "owns" }], badges: { salespoint: "return addresses" } },
-  { cue: 3, layout: { partner: [0.5, 1], salespoint: [2.5, 1] }, edges: [{ from: "partner", to: "salespoint" }], badges: { salespoint: "DRAFT" } },
   {
-    cue: 4,
+    cue: 3,
+    layout: { salespoint: [0, 1], partner: [1.3, 1], filesvc: [2.6, 1], bucket: [2.6, 2.2] },
+    edges: [{ from: "salespoint", to: "partner", label: "logo" }, { from: "partner", to: "filesvc" }, { from: "filesvc", to: "bucket", label: "sales-point-logos" }],
+    packets: [{ from: "salespoint", to: "partner", label: "PNG", delay: 10 }, { from: "partner", to: "filesvc", label: "PNG", delay: 30 }, { from: "filesvc", to: "bucket", label: "PNG", delay: 50 }],
+    accent: ["bucket"],
+  },
+  { cue: 5, layout: { partner: [0.5, 1], salespoint: [2.5, 1] }, edges: [{ from: "partner", to: "salespoint" }], badges: { salespoint: "DRAFT" } },
+  {
+    cue: 6,
     layout: { ...CHECK },
     edges: [{ from: "admin", to: "salespoint", label: "check" }, { from: "admin", to: "fakesite", label: "check" }],
     packets: [{ from: "admin", to: "salespoint", label: "PASSED", delay: 10 }, { from: "admin", to: "fakesite", label: "FAILED", delay: 30 }],
     danger: ["fakesite"],
     badges: { fakesite: "findings" },
   },
-  { cue: 8, layout: { shop: [0, 1], salespoint: [2, 1] }, edges: [{ from: "shop", to: "salespoint", broken: true, label: "new address" }], packets: [{ from: "shop", to: "salespoint", label: "change", delay: 15, stopAt: 0.5 }], badges: { salespoint: "ACTIVE · frozen" } },
-  { cue: 10, layout: { payment: [0.5, 1], salespoint: [2.5, 1] }, edges: [{ from: "payment", to: "salespoint", label: "payable?" }], packets: [{ from: "payment", to: "salespoint", label: "ask", delay: 15 }], accent: ["salespoint"] },
+  { cue: 10, layout: { shop: [0, 1], salespoint: [2, 1] }, edges: [{ from: "shop", to: "salespoint", broken: true, label: "new address" }], packets: [{ from: "shop", to: "salespoint", label: "change", delay: 15, stopAt: 0.5 }], badges: { salespoint: "ACTIVE · frozen" } },
 ];
 
 export const code: CodeStep[] = [
@@ -33,15 +39,15 @@ export const code: CodeStep[] = [
     lines: [
       "public void replaceReturnUrls(List<String> urls) {",
       "  if (status != SalesPointStatus.DRAFT) {",
-      "    throw new ApiException(HttpStatus.CONFLICT,",
-      "        PartnerErrorCode.SALES_POINT_NOT_DRAFT, status);",
+      "    throw new GeneralException(",
+      "        SALES_POINT_NOT_DRAFT, status);",
       "  }",
       "  var host = hostOf(websiteUrl);",
       "  for (var url : urls) {",
       "    var returnHost = hostOf(url);",
       "    if (!returnHost.equals(host)",
       '        && !returnHost.endsWith("." + host)) {',
-      "      throw new ApiException(HttpStatus.BAD_REQUEST,",
+      "      throw new GeneralException(",
       "          SALES_POINT_RETURN_URL_FOREIGN, url, host);",
       "    }",
       "  }",
@@ -49,7 +55,30 @@ export const code: CodeStep[] = [
     highlight: [9, 10],
   },
   {
-    cue: 5,
+    cue: 4,
+    file: "modules/partner/…/service/impl/SalesPointServiceImpl.java",
+    lines: [
+      "/** The file is stored first, outside the transaction,",
+      " *  so no connection waits on the upload. */",
+      "public SalesPointResponse uploadLogo(String email,",
+      "    UUID salesPointId, MultipartFile file) {",
+      "  transaction.execute(status -> mine(email, salesPointId));",
+      "  var stored = fileStore.store(LOGOS_BUCKET, file);",
+      "  var old = transaction.execute(status ->",
+      "      salesPoint(salesPointId).replaceLogo(stored.getId()));",
+      "  if (old != null) fileStore.delete(LOGOS_BUCKET, old);",
+      "  return get(salesPointId);",
+      "}",
+      "",
+      "# file-service · application.yaml",
+      "sales-point-logos:",
+      "  allowed-types: [image/png, image/jpeg]",
+      "  max-size: 1MB",
+    ],
+    highlight: [6, 9, 18],
+  },
+  {
+    cue: 7,
     file: "modules/partner/…/entity/SiteCheck.java",
     lines: [
       "/** What an admin found on a sales point's website.",
@@ -59,8 +88,8 @@ export const code: CodeStep[] = [
       "    String checkedBy) {",
       "  if (result == SiteCheckResult.FAILED",
       "      && findings.isEmpty()) {",
-      "    throw new ApiException(HttpStatus.BAD_REQUEST,",
-      "        PartnerErrorCode.SITE_CHECK_FINDINGS_REQUIRED);",
+      "    throw new GeneralException(",
+      "        SITE_CHECK_FINDINGS_REQUIRED);",
       "  }",
       "  …",
       "}",
@@ -68,7 +97,7 @@ export const code: CodeStep[] = [
     highlight: [6, 7],
   },
   {
-    cue: 6,
+    cue: 8,
     file: "modules/partner/…/entity/SalesPoint.java",
     lines: [
       "if (extendedRefundDays != null",
@@ -88,7 +117,7 @@ export const code: CodeStep[] = [
     highlight: [1, 6, 13],
   },
   {
-    cue: 7,
+    cue: 9,
     file: "modules/partner/…/entity/SalesPoint.java",
     lines: [
       "public void activate(boolean partnerActive,",
@@ -109,7 +138,7 @@ export const code: CodeStep[] = [
     highlight: [4, 7, 11],
   },
   {
-    cue: 9,
+    cue: 11,
     file: "modules/partner/…/constant/SalesPointStatus.java",
     lines: [
       "public enum SalesPointStatus {",
@@ -125,7 +154,7 @@ export const code: CodeStep[] = [
     highlight: [7, 8],
   },
   {
-    cue: 10,
+    cue: 12,
     file: "modules/partner/…/SalesPoints.java",
     lines: [
       "/** What other modules may ask the partner module",
@@ -140,56 +169,5 @@ export const code: CodeStep[] = [
       "}",
     ],
     highlight: [7, 8, 9],
-  },
-  {
-    cue: 11,
-    file: "modules/partner/src/test · src/integrationTest",
-    lines: [
-      "// unit · SalesPointTest",
-      "@Test void returnUrlsMustBeOnTheSitesOwnDomain()",
-      "@Test void aLongerRefundWindowNeedsAReasonAndIsCapped()",
-      "@Test void activationNeedsAnActivePartnerAPassedCheck…()",
-      "@Test void afterActivationReturnUrlsAreFrozen()",
-      "@Test void aFailedSiteCheckMustSayWhy()",
-      "",
-      "// integration · SalesPointServiceIT · real Postgres",
-      "@Test void aWebsiteTakesPaymentsOnlyAfterACheck…()",
-      "@Test void aSuspendedPartnersWebsitesStopTakingPayments()",
-      "@Test void aMerchantCantTouchAnotherMerchantsWebsite()",
-    ],
-    highlight: [2, 10],
-  },
-  {
-    cue: 12,
-    file: "k6 · sales-points/site-check-and-activate.js",
-    lines: [
-      "✓ foreign return URL refused (400)",
-      "✓ draft created (201)",
-      "✓ no activation after a failed check (409)",
-      "✓ active · suspended · restored",
-      "",
-      "http_req_duration{name:sales-points} p(95)=3.74ms",
-      "iterations .................. 1 650   39/s",
-      "checks ...................... 99.97%  11 532 / 11 535",
-      "# the 3 misses: Docker Desktop dial timeouts on the laptop",
-    ],
-    highlight: [7, 8],
-  },
-  {
-    cue: 13,
-    file: "platform/openapi/partner-api/…/partner-v1.yaml",
-    lines: [
-      "# before: 500 on every request",
-      "websiteUrl: { type: string, format: uri,",
-      '              pattern: "^https://" }',
-      "#   format: uri → java.net.URI, and @Pattern",
-      "#   has no validator for URI",
-      "#   @Pattern must match the whole string,",
-      '#   so "^https://" only accepts "https://"',
-      "",
-      "# after",
-      'websiteUrl: { type: string, pattern: "^https://.+" }',
-    ],
-    highlight: [2, 3, 10],
-  },
+  }
 ];

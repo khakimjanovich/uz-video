@@ -1,56 +1,48 @@
 1
-00:00:00,050 --> 00:00:02,845
+00:00:00,050 --> 00:00:02,833
 Who is calling our API, and how do we know?
 
 2
-00:00:02,845 --> 00:00:07,952
-Until now, an admin was just a name in a header, and anyone can type a header.
+00:00:02,833 --> 00:00:07,964
+A name typed into a request header proves nothing, because anyone can type a header.
 
 3
-00:00:07,952 --> 00:00:14,047
-Keycloak now holds every login: the bank's admins, the merchants, and the merchants' servers.
+00:00:07,964 --> 00:00:13,857
+So Keycloak holds every login: the bank's admins, the merchants, and the merchants' servers.
 
 4
-00:00:14,047 --> 00:00:20,238
-The realm defines two roles, admin and partner, and a client the backend uses for itself.
+00:00:13,857 --> 00:00:21,642
+The realm defines three roles: admin for bank staff, partner for a merchant's people, and merchant for a merchant's servers.
 
 5
-00:00:20,238 --> 00:00:26,369
-Signing up now takes a password, which goes straight to Keycloak and never into our database.
+00:00:21,642 --> 00:00:27,023
+Signing up takes a password, which goes straight to Keycloak and never into our database.
 
 6
-00:00:26,369 --> 00:00:31,523
+00:00:27,023 --> 00:00:32,071
 The new login can do nothing until the email is verified, and then it gets the partner role.
 
 7
-00:00:31,523 --> 00:00:37,488
-Every request now carries a token, and the app checks it before any business code runs.
+00:00:32,071 --> 00:00:37,202
+Every request carries a token, and the app checks it before any business code runs.
 
 8
-00:00:37,488 --> 00:00:43,738
-Admin routes need the admin role, partner routes need the partner role, and anything not listed is refused.
+00:00:37,202 --> 00:00:43,404
+The route rules live in configuration: each path needs its role, and anything not listed is refused.
 
 9
-00:00:43,738 --> 00:00:48,476
-The admin's name now comes from the token, so the history shows who really acted.
+00:00:43,404 --> 00:00:47,595
+The admin's name comes from the token, so the history shows who really acted.
 
 10
-00:00:48,476 --> 00:00:54,892
-An active merchant creates API clients for its servers, and each secret is shown only once.
+00:00:47,595 --> 00:00:55,595
+An active merchant creates API clients for its servers; each one gets the merchant role, and its secret is shown only once.
 
 11
-00:00:54,892 --> 00:00:59,869
-Rotating issues a new secret, and the old one stops working at once.
+00:00:55,595 --> 00:01:04,464
+Rotating issues a new secret, and the old one stops working at once; our database keeps the client ids, never a secret.
 
 12
-00:00:59,869 --> 00:01:06,678
-One integration test runs the whole onboarding on a real Postgres, Redis, Mailpit, and Keycloak.
-
-13
-00:01:06,678 --> 00:01:12,738
-Under load, every scenario passed with real tokens, from sign-ups to secret rotation.
-
-14
-00:01:12,738 --> 00:01:15,904
+00:01:04,464 --> 00:01:07,642
 Next, the websites that will actually take the payments.
 

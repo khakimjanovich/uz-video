@@ -9,7 +9,7 @@ export const Yt14CreatePaymentComposition = createEpisode({
   part: 4,
   footer: "HMAC + idempotency",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Really the shop?", "Create a payment", "The merchant role", "A token is not enough", "HMAC signature", "Signing key in Vault", "Window + nonce", "Signature first", "Retries", "Same key, same answer", "Two at once", "Fail closed", "One-time link", "k6", "Next: hosted page"],
+  titles: ["Really the shop?", "Create a payment", "The merchant role", "A token is not enough", "HMAC signature", "Signing key in Vault", "Window + nonce", "Signature first", "Retries", "Same key, same answer", "Two at once", "Fail closed", "One-time link", "Next: hosted page"],
   map,
   diagram,
   code,

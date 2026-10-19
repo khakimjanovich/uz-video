@@ -1,48 +1,44 @@
 1
-00:00:00,050 --> 00:00:04,738
+00:00:00,050 --> 00:00:04,452
 Which terminal does the processing center expect each debit to come through?
 
 2
-00:00:04,738 --> 00:00:08,059
+00:00:04,452 --> 00:00:07,654
 It only accepts debits from terminals it already knows.
 
 3
-00:00:08,059 --> 00:00:15,511
+00:00:07,654 --> 00:00:14,892
 So the terminal module keeps a registry: for each website and card scheme, one merchant ID and one terminal ID.
 
 4
-00:00:15,511 --> 00:00:19,976
+00:00:14,892 --> 00:00:19,392
 Uzcard and Humo payments can use different terminals for the very same website.
 
 5
-00:00:19,976 --> 00:00:26,392
+00:00:19,392 --> 00:00:25,714
 A terminal is registered only for a website that exists and accepts that card, and the check fails closed.
 
 6
-00:00:26,392 --> 00:00:34,226
+00:00:25,714 --> 00:00:33,738
 The database allows one live terminal per website and card, and a merchant and terminal ID pair is never issued twice.
 
 7
-00:00:34,226 --> 00:00:38,726
+00:00:33,738 --> 00:00:38,369
 A terminal can be suspended and resumed, and a revoked one never comes back.
 
 8
-00:00:38,726 --> 00:00:42,535
+00:00:38,369 --> 00:00:42,761
 Every change is written to an audit log: who, what, and why.
 
 9
-00:00:42,535 --> 00:00:49,130
+00:00:42,761 --> 00:00:49,297
 Before every debit, the payment module asks for the live terminal, and no terminal means no debit.
 
 10
-00:00:49,130 --> 00:00:55,309
-Integration tests run on a real Postgres, with the partner module stubbed at its public interface.
+00:00:49,297 --> 00:00:59,547
+Admins find any terminal by merchant, website, card scheme, or status, or by part of its merchant or terminal ID, and open it to see its history and act on it.
 
 11
-00:00:55,309 --> 00:01:01,857
-Under load, about forty-five hundred terminals were registered, routed and revoked in thirty seconds.
-
-12
-00:01:01,857 --> 00:01:06,023
+00:00:59,547 --> 00:01:03,714
 Next, the card schemes themselves: talking to Uzcard and Humo.
 

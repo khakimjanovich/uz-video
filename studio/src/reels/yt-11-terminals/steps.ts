@@ -3,10 +3,10 @@ import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
 // Episode 11: the terminal registry.
-// Code beats quote github.com/khakimjanovich/ecom and ecom-k6-testing at tag ep-11.
+// Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 2, current: ["terminal"], built: [...builtBefore(2), "commission"] },
-  { cue: 11, part: 3, current: ["procport", "procsvc"], built: builtBefore(3) },
+  { cue: 10, part: 3, current: ["procport", "procsvc"], built: builtBefore(3) },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -24,10 +24,10 @@ export const code: CodeStep[] = [
       "/** Fails closed: an unknown website, or one that",
       " *  doesn't take this card scheme, gets no terminal. */",
       "var salesPoint = salesPoints.find(salesPointId)",
-      "    .orElseThrow(() -> new ApiException(NOT_FOUND,",
+      "    .orElseThrow(() -> new GeneralException(",
       "        TERMINAL_SALES_POINT_NOT_FOUND, salesPointId));",
       "if (!salesPoint.schemes().contains(scheme)) {",
-      "  throw new ApiException(CONFLICT,",
+      "  throw new GeneralException(",
       "      TERMINAL_SCHEME_NOT_ALLOWED, scheme);",
       "}",
       "",
@@ -68,7 +68,9 @@ export const code: CodeStep[] = [
       "",
       "/** Revoked is final: a revoked MID/TID never comes back. */",
       "public void revoke() {",
-      "  if (status == TerminalStatus.REVOKED) throw invalid(…);",
+      "  if (status == TerminalStatus.REVOKED) {",
+      "    throw invalid(TerminalStatus.REVOKED);",
+      "  }",
       "  status = TerminalStatus.REVOKED;",
       "}",
     ],
@@ -91,35 +93,20 @@ export const code: CodeStep[] = [
   },
   {
     cue: 9,
-    file: "modules/terminal/…/service/impl/TerminalServiceIT.java",
+    file: "platform/openapi/terminal-api/…/terminal-v1.yaml",
     lines: [
-      "/** The partner module, as far as terminals care:",
-      " *  two websites, and nothing else exists. */",
-      "@Bean",
-      "SalesPoints salesPoints() { … }",
+      "/api/v1/admin/terminals:",
+      "  get: searchTerminals",
+      "    parameters:",
+      "      - salesPointId",
+      "      - scheme",
+      "      - status",
+      "      - q      # Part of a MID or TID",
+      "      - page, size",
       "",
-      "@Test void aPaymentGoesThroughTheLiveTerminalOrNowhere()",
-      "@Test void oneLiveTerminalPerWebsiteAndScheme()",
-      "@Test void aMidTidPairIsIssuedOnce()",
-      "@Test void anUnknownWebsiteOrAnUnacceptedCardGetsNoTerminal()",
+      "/api/v1/admin/terminals/{terminalId}:        get",
+      "/api/v1/admin/terminals/{terminalId}/audit:  get",
     ],
-    highlight: [4, 6],
-  },
-  {
-    cue: 10,
-    file: "k6 · terminals/register-and-route.js",
-    lines: [
-      "✓ terminal registered (201)",
-      "✓ one live route (409)",
-      "✓ payments route to it",
-      "✓ no route while suspended (404)",
-      "✓ MID/TID issued once (409)",
-      "✓ four audit entries",
-      "",
-      "http_req_duration{name:terminals} p(95)=3.67ms",
-      "iterations ...................... 4 499   147/s",
-      "checks .......................... 100.00%  40 491",
-    ],
-    highlight: [9, 10],
+    highlight: [7, 15],
   },
 ];

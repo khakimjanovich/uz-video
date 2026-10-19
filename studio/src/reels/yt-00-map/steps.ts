@@ -1,7 +1,7 @@
 import { BuildMapStep } from "../../components";
 import { BUILD_PARTS, builtBefore } from "../../series/build/map";
 
-// Episode 00: walk the map (users → app → ports → infrastructure), then the six parts in build order.
+// Episode 00: walk the map (users → app → separate services → infrastructure), then the six parts in build order.
 const part = (n: number, cue: number): BuildMapStep => ({ cue, part: n, current: BUILD_PARTS[n].nodes, built: builtBefore(n) });
 
 export const steps: BuildMapStep[] = [
@@ -14,8 +14,8 @@ export const steps: BuildMapStep[] = [
   { cue: 5, current: ["terminal"] },
   { cue: 6, current: ["card"] },
   { cue: 7, current: ["payment"] },
-  { cue: 8, current: ["emailport", "procport", "emailsvc", "procsvc"] },
-  { cue: 9, current: ["postgres", "redis", "keycloak", "vault", "temporal", "kafka", "observability"] },
+  { cue: 8, current: ["emailport", "procport", "emailsvc", "filesvc", "procsvc"] },
+  { cue: 9, current: ["postgres", "redis", "keycloak", "vault", "s3", "temporal", "kafka", "observability"] },
   part(0, 10),
   part(1, 11),
   part(2, 12),

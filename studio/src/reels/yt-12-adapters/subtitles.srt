@@ -1,52 +1,52 @@
 1
-00:00:00,050 --> 00:00:04,845
+00:00:00,050 --> 00:00:05,107
 How does our system talk to Uzcard and Humo, when they speak different languages?
 
 2
-00:00:04,845 --> 00:00:11,297
+00:00:05,107 --> 00:00:11,369
 Uzcard speaks JSON-RPC, and Humo speaks SOAP, with different fields and different errors.
 
 3
-00:00:11,297 --> 00:00:16,357
-If the payment code knew both, every new scheme would mean touching payment code.
+00:00:11,369 --> 00:00:18,880
+If the payment code knew both, every new scheme would mean touching payment code, and no other project could reuse the work.
 
 4
-00:00:16,357 --> 00:00:23,345
-So the card module defines one port, a card processor: bind a card, debit, reverse, and status.
+00:00:18,880 --> 00:00:27,380
+So each scheme gets its own adapter: a separate Spring Boot service with its own OpenAPI contract, that any service or project may call.
 
 5
-00:00:23,345 --> 00:00:25,821
-Each scheme gets its own adapter behind that port.
+00:00:27,380 --> 00:00:34,678
+Every adapter answers plain REST with one envelope: a request id, the scheme's decision, and the data.
 
 6
-00:00:25,821 --> 00:00:32,154
-Uzcard debits in one step, by the card's token, with our payment id as the external reference.
+00:00:34,678 --> 00:00:41,440
+Inside, every scheme method is one command, picked by its type from a factory, the same way in both adapters.
 
 7
-00:00:32,154 --> 00:00:36,238
-Humo holds the money first, then captures the hold right away.
+00:00:41,440 --> 00:00:47,619
+What a scheme's codes mean lives in a status file: which codes approve, and which declines they stand for.
 
 8
-00:00:36,238 --> 00:00:41,833
-Every answer becomes one of three outcomes: approved, declined with our own code, or unknown.
+00:00:47,619 --> 00:00:58,761
+Uzcard debits in one step, by the card's token, with our payment id as the external reference; if that reference was sent before, the adapter looks the payment up instead of paying twice.
 
 9
-00:00:41,833 --> 00:00:47,095
-A timeout is unknown and never a decline, because the money may already have moved.
+00:00:58,761 --> 00:01:03,226
+Humo holds the money first, and the card module captures the hold right away.
 
 10
-00:00:47,095 --> 00:00:52,702
-If we retry a payment the scheme already has, we look it up instead of paying twice.
+00:01:03,226 --> 00:01:10,202
+The card module needs only the published client library and one port, a card processor, with one processor per scheme.
 
 11
-00:00:52,702 --> 00:00:59,857
-A processing sandbox in the infrastructure repository stands in for both schemes, with a test card for every outcome.
+00:01:10,202 --> 00:01:16,047
+Every answer becomes one of three outcomes: approved, declined with our own code, or unknown.
 
 12
-00:00:59,857 --> 00:01:06,916
-Integration tests send real HTTP to that sandbox, including a payment that never answers.
+00:01:16,047 --> 00:01:24,130
+A timeout answers five oh four, and the card module reads it as unknown, never a decline, because the money may already have moved.
 
 13
-00:01:06,916 --> 00:01:10,702
+00:01:24,130 --> 00:01:28,130
 Next, knowing a card's scheme, and storing its number safely.
 

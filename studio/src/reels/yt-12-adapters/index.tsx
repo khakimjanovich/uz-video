@@ -9,7 +9,7 @@ export const Yt12AdaptersComposition = createEpisode({
   part: 3,
   footer: "Uzcard + Humo adapters",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Two languages", "JSON-RPC + SOAP", "Knows both?", "One port", "Two adapters", "Uzcard: one step", "Humo: hold + capture", "Three outcomes", "Timeout ≠ decline", "Never pay twice", "The sandbox", "Real HTTP tests", "Next: the card vault"],
+  titles: ["Two languages", "JSON-RPC + SOAP", "Knows both?", "Separate services", "One envelope", "Commands", "Status file", "Uzcard: one step", "Humo: hold + capture", "One port", "Three outcomes", "Timeout ≠ decline", "Next: the card vault"],
   map,
   diagram,
   code,

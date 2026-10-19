@@ -3,22 +3,22 @@ import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
 // Episode 13: the BIN registry and the card vault.
-// Code beats quote github.com/khakimjanovich/ecom at tag ep-13.
+// Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 3, current: ["card"], built: [...builtBefore(3), "procport", "procsvc"] },
-  { cue: 15, part: 4, current: ["payment", "merchant"], built: builtBefore(4) },
+  { cue: 14, part: 4, current: ["payment", "merchant"], built: builtBefore(4) },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
   { cue: 1, layout: { buyer: [0.5, 1], bin: [2.5, 1] }, edges: [{ from: "buyer", to: "bin", label: "first digits" }], packets: [{ from: "buyer", to: "bin", label: "860014…", delay: 15 }], badges: { bin: "Uzcard" } },
   {
     cue: 2,
-    layout: { sweep: [0, 1], bin: [1.5, 1], uzcard: [3, 0], humo: [3, 2] },
-    edges: [{ from: "sweep", to: "bin", label: "startup + nightly" }, { from: "uzcard", to: "bin", label: "get.bin.list" }, { from: "humo", to: "bin", label: "/v2/pm/bins" }],
-    packets: [{ from: "uzcard", to: "bin", label: "4 ranges", delay: 20 }, { from: "humo", to: "bin", label: "3 ranges", delay: 30 }],
+    layout: { sweep: [0, 1], bin: [1.5, 1], uzcardsvc: [3, 0], humosvc: [3, 2] },
+    edges: [{ from: "sweep", to: "bin", label: "startup + nightly" }, { from: "uzcardsvc", to: "bin", label: "/v1/cards/bin-list" }, { from: "humosvc", to: "bin", label: "/v2/pm/bins" }],
+    packets: [{ from: "uzcardsvc", to: "bin", label: "BIN ranges", delay: 20 }, { from: "humosvc", to: "bin", label: "BIN ranges", delay: 30 }],
   },
   { cue: 6, layout: { card: [0.5, 1], postgres: [2.5, 1] }, edges: [{ from: "card", to: "postgres" }], danger: ["postgres"], badges: { postgres: "8600 1402 3456 7890" } },
-  { cue: 14, layout: { admin: [0.5, 1], card: [2.5, 1] }, edges: [{ from: "admin", to: "card", label: "search by number" }], packets: [{ from: "card", to: "admin", label: "860014******7890", delay: 20 }], accent: ["card"], badges: { card: "audited" } },
+  { cue: 13, layout: { admin: [0.5, 1], card: [2.5, 1] }, edges: [{ from: "admin", to: "card", label: "search by number" }], packets: [{ from: "card", to: "admin", label: "860014******7890", delay: 20 }], accent: ["card"], badges: { card: "audited" } },
 ];
 
 export const code: CodeStep[] = [
@@ -27,10 +27,11 @@ export const code: CodeStep[] = [
     file: "modules/card/…/service/impl/BinServiceImpl.java",
     lines: [
       "try {",
-      "  var fresh = processor.bins(); // no transaction while we wait",
+      "  var fresh = processor.bins(); // outside the transaction",
       "  updated = transaction.execute(s -> replace(scheme, fresh));",
-      "} catch (ProcessorUnavailableException | SchemeErrorException e) {",
-      '  log.warn("BIN list from {} not available, keeping the old one");',
+      "} catch (RestClientException e) {",
+      '  log.warn("BIN list from {} not available, keeping the old one: {}",',
+      "      scheme, e.getMessage());",
       "}",
       "",
       "private boolean replace(String scheme, List<Bin> fresh) {",
@@ -40,7 +41,7 @@ export const code: CodeStep[] = [
       "  return true;",
       "}",
     ],
-    highlight: [4, 9, 10, 11],
+    highlight: [4, 10, 11, 12],
   },
   {
     cue: 4,
@@ -73,9 +74,8 @@ export const code: CodeStep[] = [
       "  }",
       "  return sum % 10 == 0;",
       "}",
-      "// sandbox: 8600 1402 0000 0002 → 0082 (now Luhn-valid)",
     ],
-    highlight: [8, 11, 13],
+    highlight: [8, 11],
   },
   {
     cue: 7,
@@ -143,7 +143,7 @@ export const code: CodeStep[] = [
       "public CardResponse search(String number, String admin) {",
       "  var card = cards",
       "      .findByNumberIndex(crypto.blindIndex(number))",
-      "      .orElseThrow(() -> new ApiException(NOT_FOUND,",
+      "      .orElseThrow(() -> new GeneralException(",
       "          CARD_NOT_FOUND));",
       "  audit(card, LOOKED_UP, admin, null);",
       "  return mapper.toResponse(card);",
@@ -162,11 +162,13 @@ export const code: CodeStep[] = [
       "  CHECK (",
       "    number_encrypted LIKE 'v1:%'",
       "    AND expiry_encrypted LIKE 'v1:%'",
+      "    AND (binding_session_encrypted IS NULL",
+      "         OR binding_session_encrypted LIKE 'v1:%')",
       "    AND (processor_token_encrypted IS NULL",
       "         OR processor_token_encrypted LIKE 'v1:%')",
       "    AND masked_number ~ '^[0-9]{6}\\*{6}[0-9]{4}$')",
     ],
-    highlight: [5, 6, 9],
+    highlight: [5, 6, 11],
   },
   {
     cue: 12,
@@ -174,7 +176,8 @@ export const code: CodeStep[] = [
     lines: [
       "public Result debit(String cardToken, String paymentRef, …) {",
       "  var card = card(cardToken);",
-      "  if (card.getStatus() != ACTIVE) throw … CARD_NOT_BOUND;",
+      "  if (card.getStatus() != ACTIVE)",
+      "    throw new GeneralException(CARD_NOT_BOUND);",
       "  audit(card, DEBITED, PAYMENT, paymentRef);",
       "  return processor(card).debit(new Debit(",
       "      paymentRef,",
@@ -184,25 +187,6 @@ export const code: CodeStep[] = [
       "      amount, merchantId, terminalId));",
       "}",
     ],
-    highlight: [4, 7, 8, 9],
-  },
-  {
-    cue: 13,
-    file: "modules/card/src/integrationTest · CardVaultIT",
-    lines: [
-      "var row = jdbc.queryForObject(",
-      '    "SELECT row_to_json(c)::text FROM card.card c …");',
-      "assertThat(row).doesNotContain(\"8600140234567890\")",
-      "    .doesNotContain(\"uztok-\");",
-      "",
-      "@Test void theBinSyncIsIdempotentAndTheLongestPrefixWins()",
-      "@Test void aSchemeThatDoesNotAnswerKeepsItsOldList()",
-      "@Test void theDatabaseRefusesAPlainCardNumber()",
-      "@Test void bothSchemesBindAndDebitThroughTheToken()",
-      "@Test void badNumbersNeverReachTheScheme()",
-      "",
-      "// k6: BIN lookups p95 3.4 ms, 10,315 checks",
-    ],
-    highlight: [3, 4, 12],
+    highlight: [5, 8, 9, 10],
   },
 ];

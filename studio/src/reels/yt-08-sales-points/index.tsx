@@ -9,7 +9,7 @@ export const Yt08SalesPointsComposition = createEpisode({
   part: 1,
   footer: "Sales points + site check",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Which website?", "A sales point", "Own domain only", "Draft", "The check", "Findings", "Deal terms", "Switching on", "Frozen", "Suspend + close", "Payable?", "Tests", "Under load", "Two real bugs", "Next: platform libs"],
+  titles: ["Which website?", "A sales point", "Own domain only", "The logo", "Logo bucket", "Draft", "The check", "Findings", "Deal terms", "Switching on", "Frozen", "Suspend + close", "Payable?", "Next: platform libs"],
   map,
   diagram,
   code,

@@ -1,52 +1,48 @@
 1
-00:00:00,050 --> 00:00:03,119
+00:00:00,050 --> 00:00:03,071
 How do we know a new merchant really owns the email they typed?
 
 2
-00:00:03,119 --> 00:00:07,452
+00:00:03,071 --> 00:00:07,642
 Anyone can type any address, so a sign-up alone proves nothing.
 
 3
-00:00:07,452 --> 00:00:13,369
+00:00:07,642 --> 00:00:13,702
 The contract adds three calls: register, verify the email, and resend the code.
 
 4
-00:00:13,369 --> 00:00:18,678
+00:00:13,702 --> 00:00:19,047
 Registering saves the merchant as pending, and refuses an email that is already taken.
 
 5
-00:00:18,678 --> 00:00:24,678
-A one-time code then goes to that email, from a new OTP starter that any module can use.
+00:00:19,047 --> 00:00:25,178
+A one-time code then goes to that email, from the OTP library that any module can use.
 
 6
-00:00:24,678 --> 00:00:31,488
-Redis keeps only a hash of the code, with a configured lifetime, so even a copy of Redis never reveals it.
+00:00:25,178 --> 00:00:33,523
+Redis keeps only a keyed hash of the code with a configured lifetime, and one script counts the sends and stores the code in a single step.
 
 7
-00:00:31,488 --> 00:00:37,440
-The email goes out through the notification service, and locally it lands in Mailpit, where we can read it.
+00:00:33,523 --> 00:00:38,416
+The email goes out through the notification service, and locally it lands in Mailpit.
 
 8
-00:00:37,440 --> 00:00:42,178
+00:00:38,416 --> 00:00:43,226
 The merchant sends the code back, and only then is the email marked as verified.
 
 9
-00:00:42,178 --> 00:00:46,392
+00:00:43,226 --> 00:00:47,309
 Wrong codes count against a configured limit, and too many lock the code.
 
 10
-00:00:46,392 --> 00:00:49,833
+00:00:47,309 --> 00:00:50,690
 Sends are limited too, so nobody can flood an inbox.
 
 11
-00:00:49,833 --> 00:00:56,857
-Every failure has its own stable code: email taken, code invalid, code expired, or too many attempts.
+00:00:50,690 --> 00:01:01,250
+Every failure has its own stable code, and its message in English, Russian and Uzbek: email taken, code invalid, code expired, or too many attempts.
 
 12
-00:00:56,857 --> 00:01:02,773
-Under load, about five thousand merchants registered and verified their email in thirty seconds.
-
-13
-00:01:02,773 --> 00:01:07,226
+00:01:01,250 --> 00:01:05,726
 Next, the merchant moves through a lifecycle, from pending to active.
 

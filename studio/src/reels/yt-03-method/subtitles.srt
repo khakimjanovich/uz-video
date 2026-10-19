@@ -1,64 +1,52 @@
 1
-00:00:00,050 --> 00:00:04,845
+00:00:00,050 --> 00:00:04,928
 Where do you start designing a feature: the database, the API, or the code?
 
 2
-00:00:04,845 --> 00:00:11,345
+00:00:04,928 --> 00:00:11,654
 We start with the domain: the things that exist, the states they move through, and the rules that never break.
 
 3
-00:00:11,345 --> 00:00:18,023
+00:00:11,654 --> 00:00:17,976
 First comes a one-page sketch of the whole system: the main entities, and which module owns each one.
 
 4
-00:00:18,023 --> 00:00:24,357
+00:00:17,976 --> 00:00:24,154
 Links between modules are only IDs, never foreign keys, so a module can move out on its own later.
 
 5
-00:00:24,357 --> 00:00:31,952
+00:00:24,154 --> 00:00:31,690
 Second comes the contract: an OpenAPI spec in the platform folder, which promises clients exactly what they can ask for.
 
 6
-00:00:31,952 --> 00:00:40,011
+00:00:31,690 --> 00:00:39,571
 Gradle turns it into a partner API jar, and our controller must implement it, so the code can never drift from the spec.
 
 7
-00:00:40,011 --> 00:00:44,904
+00:00:39,571 --> 00:00:44,559
 Third comes the database: a Liquibase migration in the partner's own schema.
 
 8
-00:00:44,904 --> 00:00:52,011
-The partner module has its own data source, and connects as a database user that sees nothing but its own schema.
+00:00:44,559 --> 00:00:52,869
+The partner module has its own data source, built by the shared persistence library, and connects as a user that sees nothing but its own schema.
 
 9
-00:00:52,011 --> 00:01:00,511
+00:00:52,869 --> 00:01:01,142
 Then the code: the controller calls the service, the service calls the repository, and a mapper turns the entity into the contract's model.
 
 10
-00:01:00,511 --> 00:01:06,571
-A missing partner is not a crash: the error starter returns a problem detail with the code partner not found.
+00:01:01,142 --> 00:01:09,785
+A missing partner is not a crash: the service throws partner not found, and the error library answers with a problem detail, in the caller's language.
 
 11
-00:01:06,571 --> 00:01:14,535
-A unit test guards the rule, and an integration test on a real Postgres proves the partner user cannot touch the payment schema.
-
-12
-00:01:14,535 --> 00:01:19,761
+00:01:09,785 --> 00:01:15,000
 Swagger UI shows the exact spec we wrote, not documentation guessed from the code.
 
+12
+00:01:15,000 --> 00:01:20,702
+Domain, contract, database, then code: every episode follows this order.
+
 13
-00:01:19,761 --> 00:01:28,142
-A k6 load test reads partners at about two thousand four hundred requests per second, with a p95 of three milliseconds.
-
-14
-00:01:28,142 --> 00:01:34,547
-Domain, contract, database, code, and test: every episode follows this order.
-
-15
-00:01:34,547 --> 00:01:39,369
-All of this code is in the ecom repository at the tag ep zero three.
-
-16
-00:01:39,369 --> 00:01:44,416
+00:01:20,702 --> 00:01:25,916
 Next, the first real feature: a merchant signs up and proves they own their email.
 

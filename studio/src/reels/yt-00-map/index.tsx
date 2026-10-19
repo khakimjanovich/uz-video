@@ -17,7 +17,7 @@ const TITLES = [
   "Terminal",
   "Card vault",
   "Payment",
-  "Two ports",
+  "Separate services",
   "Infrastructure",
   "Part 0 · Foundations",
   "Part 1 · Merchants",

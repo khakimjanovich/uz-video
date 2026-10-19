@@ -3,10 +3,10 @@ import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
 // Episode 04: registration and email one-time codes.
-// Code beats quote github.com/khakimjanovich/ecom at tag ep-04.
+// Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 1, current: ["partner", "emailport", "emailsvc"], built: builtBefore(1) },
-  { cue: 12, part: 1, current: ["partner", "admin"], built: builtBefore(1) },
+  { cue: 11, part: 1, current: ["partner", "admin"], built: builtBefore(1) },
 ];
 
 const FLOW = { shop: [0, 1], partner: [1.5, 1], redis: [1.5, 2.2], mail: [3, 1] } as const;
@@ -16,7 +16,7 @@ export const diagram: DiagramStep<BuildId>[] = [
   {
     cue: 4,
     layout: { ...FLOW },
-    edges: [{ from: "shop", to: "partner" }, { from: "partner", to: "mail" }, { from: "partner", to: "redis", label: "otp-starter" }],
+    edges: [{ from: "shop", to: "partner" }, { from: "partner", to: "mail" }, { from: "partner", to: "redis", label: "otp library" }],
     packets: [{ from: "partner", to: "mail", label: "one-time code", delay: 20 }],
     accent: ["redis"],
   },
@@ -63,11 +63,11 @@ export const code: CodeStep[] = [
     lines: [
       "public PartnerResponse register(RegistrationRequest req) {",
       "  if (partnerRepository.existsByEmail(req.getEmail())) {",
-      "    throw new ApiException(HttpStatus.CONFLICT,",
-      "        PartnerErrorCode.EMAIL_TAKEN, …);",
+      "    throw new GeneralException(",
+      "        PartnerExceptionStatus.PARTNER_EMAIL_TAKEN, req.getEmail());",
       "  }",
       "  var partner = partnerRepository.save(",
-      "      Partner.register(req.getCompanyName(), req.getEmail()));",
+      "      Partner.register(req.getCompanyName(), req.getEmail(), …));",
       "  sendCode(partner.getEmail());",
       "  return partnerMapper.toResponse(partner);",
       "}",
@@ -76,19 +76,22 @@ export const code: CodeStep[] = [
   },
   {
     cue: 5,
-    file: "platform/otp-starter/…/OtpService.java",
+    file: "platform/otp/…/OtpService.java",
     lines: [
       "public String issue(String flow, String subject) {",
-      "  // … send counter, capped by max-sends per send-window",
       "  var code = randomDigits(properties.length());",
-      "  redis.opsForValue().set(",
-      "      key(flow, subject, KEY_CODE),",
-      "      hash(code),          // SHA-256, never the code",
-      "      properties.ttl());",
+      "  // One Lua script: count the send, then store the code.",
+      "  var sends = redis.execute(ISSUE, keys(flow, subject, …),",
+      "      String.valueOf(properties.maxSends()),",
+      "      String.valueOf(properties.sendWindow().toMillis()),",
+      "      hash(code),            // HMAC-SHA256, never the code",
+      "      String.valueOf(properties.ttl().toMillis()));",
+      "  if (sends == null || sends < 0)",
+      "    throw new GeneralException(OtpExceptionStatus.OTP_SEND_LIMIT);",
       "  return code;",
       "}",
     ],
-    highlight: [6, 7],
+    highlight: [3, 7],
   },
   {
     cue: 6,
@@ -130,14 +133,14 @@ export const code: CodeStep[] = [
   },
   {
     cue: 10,
-    file: "application/problem+json · one stable code per failure",
+    file: "platform/otp/…/properties/otp-exception.yaml",
     lines: [
-      '409  "code": "PARTNER_EMAIL_TAKEN"',
-      '400  "code": "OTP_INVALID"',
-      '410  "code": "OTP_EXPIRED"',
-      '429  "code": "OTP_ATTEMPTS_EXCEEDED"',
-      '429  "code": "OTP_SEND_LIMIT"',
-      '409  "code": "PARTNER_EMAIL_ALREADY_VERIFIED"',
+      "OTP_INVALID:",
+      "  http-code: 400",
+      '  message-en: "The code is wrong."',
+      "OTP_EXPIRED:            http-code: 410",
+      "OTP_ATTEMPTS_EXCEEDED:  http-code: 429",
+      "OTP_SEND_LIMIT:         http-code: 429",
       "",
       "# application.yaml",
       "ecom.otp:",
@@ -146,21 +149,6 @@ export const code: CodeStep[] = [
       "  max-sends: 3",
       "  send-window: 15m",
     ],
-    highlight: [10, 11, 12, 13],
-  },
-  {
-    cue: 11,
-    file: "k6 · registration/register-and-verify.js",
-    lines: [
-      "✓ registered (201)",
-      "✓ code arrived by email",
-      "✓ email verified (200)",
-      "",
-      "http_req_duration{name:register} . p(95)=25.04ms",
-      "http_req_duration{name:verify} ... p(95)=7.27ms",
-      "iterations ....................... 4 931   164/s",
-      "checks ........................... 100.00%",
-    ],
-    highlight: [7],
+    highlight: [1, 2, 11, 12, 13],
   },
 ];

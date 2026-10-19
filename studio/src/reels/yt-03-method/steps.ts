@@ -2,11 +2,11 @@ import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { BUILD_PARTS } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
-// Episode 03: the method (domain → contract → database → code → test), shown once on reading a partner.
-// Code beats quote github.com/khakimjanovich/ecom at tag ep-03.
+// Episode 03: the method (domain → contract → database → code), shown once on reading a partner.
+// Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 0, current: BUILD_PARTS[0].nodes },
-  { cue: 15, part: 1, current: ["partner", "emailport", "emailsvc"], built: BUILD_PARTS[0].nodes },
+  { cue: 12, part: 1, current: ["partner", "emailport", "emailsvc"], built: BUILD_PARTS[0].nodes },
 ];
 
 const SKETCH = { partner: [0, 0.5], salespoint: [1, 0.5], record: [2, 0.5], card: [3, 0.5], commission: [1, 2] } as const;
@@ -36,21 +36,21 @@ export const diagram: DiagramStep<BuildId>[] = [
     badges: { record: "ID only, no FK" },
   },
   {
-    cue: 11,
+    cue: 10,
     layout: { spec: [0.5, 1], app: [2.5, 1] },
     edges: [{ from: "spec", to: "app", label: "in the jar" }],
     accent: ["app"],
     badges: { app: "/swagger-ui" },
   },
   {
-    cue: 13,
+    cue: 11,
     layout: { ...ORDER },
     edges: [
       { from: "record", to: "spec" },
       { from: "spec", to: "postgres" },
       { from: "postgres", to: "payment" },
     ],
-    badges: { record: "1 domain", spec: "2 contract", postgres: "3 database", payment: "4 code + test" },
+    badges: { record: "1 domain", spec: "2 contract", postgres: "3 database", payment: "4 code" },
   },
 ];
 
@@ -67,15 +67,15 @@ export const code: CodeStep[] = [
       "  @Enumerated(EnumType.STRING)",
       "  private PartnerStatus status;",
       "",
-      "  public void verify() {",
-      "    if (status != PartnerStatus.PENDING_VERIFICATION) {",
-      "      throw new ApiException(HttpStatus.CONFLICT,",
-      "          PartnerErrorCode.INVALID_TRANSITION, …);",
+      "  /** Only the moves PartnerStatus allows. */",
+      "  public PartnerStatus moveTo(PartnerStatus target) {",
+      "    if (!status.canMoveTo(target)) {",
+      "      throw new GeneralException(",
+      "          PARTNER_INVALID_TRANSITION, status, target);",
       "    }",
-      "    status = PartnerStatus.VERIFIED;",
-      "  }",
+      "    …",
     ],
-    highlight: [9, 10, 11, 14],
+    highlight: [10, 11, 12],
   },
   {
     cue: 4,
@@ -135,20 +135,21 @@ export const code: CodeStep[] = [
     cue: 7,
     file: "modules/partner/…/config/PartnerPersistenceConfig.java",
     lines: [
+      "@Bean",
+      "@ConfigurationProperties(\"ecom.db.partner\")  // partner_user",
+      "ModuleDatabaseProperties partnerDatabase() { … }",
+      "",
       "@Bean(PartnerBeanNames.DATA_SOURCE)",
-      "HikariDataSource partnerDataSource(PartnerDbProperties db) {",
-      "  var pool = new HikariDataSource();",
-      "  pool.setUsername(db.username());   // partner_user",
-      "  pool.setSchema(PartnerConstantUtils.SCHEMA);",
-      "  return pool;",
+      "HikariDataSource partnerDataSource(ModuleDatabaseProperties db) {",
+      "  return ModulePersistence.dataSource(SCHEMA, db);",
       "}",
       "",
       "@Bean(PartnerBeanNames.LIQUIBASE)",
-      "SpringLiquibase partnerLiquibase(…) {",
-      "  liquibase.setDefaultSchema(PartnerConstantUtils.SCHEMA);",
+      "SpringLiquibase partnerLiquibase(… DataSource dataSource) {",
+      "  return ModulePersistence.liquibase(SCHEMA, CHANGELOG, dataSource);",
       "}",
     ],
-    highlight: [4, 5],
+    highlight: [2, 7, 12],
   },
   {
     cue: 8,
@@ -163,11 +164,12 @@ export const code: CodeStep[] = [
       "  public PartnerResponse getPartner(UUID id) {",
       "    return partnerRepository.findById(id)",
       "        .map(partnerMapper::toResponse)",
-      "        .orElseThrow(() -> new ApiException(NOT_FOUND, …));",
+      "        .orElseThrow(() -> new GeneralException(",
+      "            PartnerExceptionStatus.PARTNER_NOT_FOUND, id));",
       "  }",
       "}",
     ],
-    highlight: [8, 9, 10],
+    highlight: [8, 10, 11],
   },
   {
     cue: 9,
@@ -175,63 +177,12 @@ export const code: CodeStep[] = [
     lines: [
       "{",
       '  "status": 404,',
-      '  "title": "Not Found",',
-      '  "detail": "No partner 00000000-0000-…",',
+      '  "title": "partner-not-found",',
+      '  "detail": "No merchant found for 00000000-0000-….",',
       '  "instance": "/api/v1/partners/00000000-0000-…",',
       '  "code": "PARTNER_NOT_FOUND"',
       "}",
     ],
     highlight: [6],
-  },
-  {
-    cue: 10,
-    file: "modules/partner/src/integrationTest/…/PartnerPersistenceIT.java",
-    lines: [
-      "@SpringBootTest(classes = PartnerPersistenceConfig.class)",
-      "@Testcontainers",
-      "class PartnerPersistenceIT {",
-      "",
-      "  @Test",
-      "  void cannotTouchAnotherModulesSchema() {",
-      '    assertThatThrownBy(() -> jdbc.execute(',
-      '        "create table payment.sneaky (id int)"))',
-      "      .rootCause()",
-      "      .hasMessageContaining(",
-      '          "permission denied for schema payment");',
-      "  }",
-      "}",
-    ],
-    highlight: [6, 10, 11],
-  },
-  {
-    cue: 12,
-    file: "ecom-k6-testing · ./run.sh partner/get-partner.js",
-    lines: [
-      "✓ checks rate>0.99 ............ 100.00%",
-      "✓ http_req_duration p(95)<150 .. p(95)=3.3ms",
-      "✓ http_req_duration p(99)<300 .. p(99)=4.01ms",
-      "",
-      "iterations ........ 200 994   2 432/s",
-      "http_req_duration . avg=2.01ms  max=20.7ms",
-      "no server errors .. 100%",
-    ],
-    highlight: [2, 5],
-  },
-  {
-    cue: 14,
-    file: "github.com/khakimjanovich · tag ep-03",
-    lines: [
-      "ecom/",
-      "├── platform/openapi/partner-api/     the contract",
-      "├── platform/error-starter/           one error format",
-      "└── modules/partner/                  ← this episode",
-      "    ├── controller/ service/ repository/",
-      "    ├── entity/ mapper/ constant/ property/ config/",
-      "    └── src/integrationTest/",
-      "",
-      "ecom-infra/          Postgres · Redis · Keycloak",
-      "ecom-k6-testing/     partner/get-partner.js",
-    ],
-    highlight: [2, 4],
   },
 ];

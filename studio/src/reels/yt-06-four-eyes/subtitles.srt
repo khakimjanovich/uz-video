@@ -1,56 +1,52 @@
 1
-00:00:00,050 --> 00:00:03,404
+00:00:00,050 --> 00:00:03,226
 What stops one admin from switching on a fraudulent shop?
 
 2
-00:00:03,404 --> 00:00:08,142
-Right now one person can, so one mistake or one bribe is enough.
+00:00:03,226 --> 00:00:07,273
+If one person could do it, one mistake or one bribe would be enough.
 
 3
-00:00:08,142 --> 00:00:15,000
-So activation becomes a request: one admin, the maker, asks, and nothing changes yet.
+00:00:07,273 --> 00:00:14,000
+So activation is a request: one admin, the maker, asks, and nothing changes yet.
 
 4
-00:00:15,000 --> 00:00:19,738
-The single-admin activate call is gone, and three new calls take its place.
+00:00:14,000 --> 00:00:21,738
+There is no single-admin activate call: one call opens a request, and others list, approve, and reject requests.
 
 5
-00:00:19,738 --> 00:00:25,535
+00:00:21,738 --> 00:00:27,595
 A different admin, the checker, approves it, and only then does the merchant become active.
 
 6
-00:00:25,535 --> 00:00:32,178
+00:00:27,595 --> 00:00:34,178
 A request is decided once: it must still be pending, not expired, and the checker can't be the maker.
 
 7
-00:00:32,178 --> 00:00:36,202
+00:00:34,178 --> 00:00:38,250
 Self-approval answers four oh nine, with its own error code.
 
 8
-00:00:36,202 --> 00:00:40,654
-The checker's name goes into the status history, with the maker in the reason.
+00:00:38,250 --> 00:00:44,226
+Both opening and approving a request check again that every required company document is verified.
 
 9
-00:00:40,654 --> 00:00:44,845
-Requests expire after a configured time, twenty-four hours here.
+00:00:44,226 --> 00:00:48,440
+The checker's name goes into the status history, with the maker in the reason.
 
 10
-00:00:44,845 --> 00:00:51,511
-A scheduled sweep marks overdue requests as expired, and ShedLock makes sure only one instance runs it.
+00:00:48,440 --> 00:00:52,488
+Requests expire after a configured time, twenty-four hours here.
 
 11
-00:00:51,511 --> 00:00:58,488
-Only one pending request per merchant can exist, and a partial unique index in the database enforces it.
+00:00:52,488 --> 00:00:59,321
+A scheduled sweep marks overdue requests as expired, and ShedLock makes sure only one instance runs it.
 
 12
-00:00:58,488 --> 00:01:04,083
-Integration tests on a real Postgres prove the approval, the index, and the sweep.
+00:00:59,321 --> 00:01:06,119
+Only one pending request per merchant can exist, and a partial unique index in the database enforces it.
 
 13
-00:01:04,083 --> 00:01:12,285
-Under load, almost three thousand merchants were activated by two admins in thirty seconds, and every self-approval was refused.
-
-14
-00:01:12,285 --> 00:01:17,142
-Next, real logins, so an admin's name comes from a token instead of a header.
+00:01:06,119 --> 00:01:11,928
+Next, real logins with Keycloak, so every admin action carries a verified name.
 

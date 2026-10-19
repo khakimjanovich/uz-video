@@ -121,6 +121,7 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 ## Video notes
 
 - Format: YouTube 16:9 (1920×1080). Every episode opens on the build map (`series/build/map.ts`, `BuildMap`) with its part lit.
+- Videos explain the finished design only, as if it was built right the first time: no test, k6, sandbox or "a bug we caught" beats. Code beats quote `main`. When the code changes, re-cut every episode it touches and update the map.
 - Infrastructure appears on the map as its official monochrome logo (Simple Icons). Video description must include: "All product names and logos are trademarks of their respective owners."
 
 ---
@@ -167,18 +168,18 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Demo: register → the OTP email arrives in Mailpit → verified; wrong code ×N → blocked.
 - Real code: `PartnerAuthServiceImpl`, `PartnerOtpServiceImpl`, `NotificationServiceImpl`.
 
-**05 · Partner lifecycle (state machine)**
+**05 · Partner lifecycle + documents**
 - Problem: a partner can't jump from "registered" to "taking payments".
-- Build: states PENDING_VERIFICATION → VERIFIED → WAITING_CONTRACT → APPROVED → ACTIVE ⇄ SUSPENDED → TERMINATED, plus REJECTED from the early states; the allowed moves as one `EnumMap` in `PartnerStatus`, refused moves → 409 `PARTNER_INVALID_TRANSITION`; verify needs a verified email (`PARTNER_EMAIL_NOT_VERIFIED`); the contract number is unique in the database (`PARTNER_CONTRACT_TAKEN`); activate and restore each only from their own starting state; every change written to `partner_status_history` in the same transaction. Until episode 07 the admin is named in an `X-Admin-Id` header.
+- Build: states PENDING_VERIFICATION → VERIFIED → WAITING_CONTRACT → APPROVED → ACTIVE ⇄ SUSPENDED → TERMINATED, plus REJECTED from the early states; the allowed moves as one `EnumMap` in `PartnerStatus`, refused moves → 409 `PARTNER_INVALID_TRANSITION`; verify needs a verified email (`PARTNER_EMAIL_NOT_VERIFIED`); the contract number is unique in the database (`PARTNER_CONTRACT_TAKEN`); activate and restore each only from their own starting state; every change written to `partner_status_history` in the same transaction. KYB documents (charter, passport; required list in `ecom.partner.kyb.required-documents`) go to the separate file service (`services/file-service`, SeaweedFS S3 bucket `partner-documents`: type read from the bytes, size limit, SHA-256); the partner module keeps only file id, type, size and checksum, an older upload of the same type is kept as REPLACED; an admin verifies or rejects each document with a reason; verify needs every required document verified (409 `PARTNER_KYB_INCOMPLETE`).
 - Why: the state machine is the backbone; every later check asks "is this partner ACTIVE?".
-- Tables: `partner` (status, contract_number), `partner_status_history`.
+- Tables: `partner` (status, contract_number), `partner_status_history`, `partner_document`.
 - Endpoints: `POST /api/v1/admin/partners/{id}/verify|reject|contract|activate|suspend|restore|terminate`, `GET …/history`.
 - Tests: `PartnerStatusTest` (the whole transition table), `PartnerTest`, `PartnerAdminServiceIT` (real Postgres). k6: `lifecycle/partner-lifecycle.js`.
 - Code: `ecom@ep-05`.
 
 **06 · Four-eyes (maker-checker)**
 - Problem: one admin alone can switch on a fraudulent store.
-- Build: the single-admin `activate` call is removed; an activation request instead: the maker asks, a different checker approves or rejects; a request is decided once, before it expires (409 `ACTIVATION_REQUEST_DECIDED`, 410 `ACTIVATION_REQUEST_EXPIRED`, 409 `SELF_APPROVAL`); the checker is recorded in the status history with the maker in the reason; configured `ttl` (24h) and `sweep-delay` (1m); a `@Scheduled` sweep with ShedLock (lock table in the module's own schema); one pending request per partner via a partial unique index.
+- Build: no single-admin activate call; an activation request instead: the maker asks, a different checker approves or rejects; a request is decided once, before it expires (409 `ACTIVATION_REQUEST_DECIDED`, 410 `ACTIVATION_REQUEST_EXPIRED`, 409 `SELF_APPROVAL`); opening and approving both require the KYB documents verified; the checker is recorded in the status history with the maker in the reason; configured `ttl` (24h) and `sweep-delay` (1m); a `@Scheduled` sweep with ShedLock (lock table in the module's own schema); one pending request per partner via a partial unique index.
 - Why: the single most important control for owners (see the owner pitch); reused later by commission.
 - Tables: `activation_request` (partial unique index on PENDING), `shedlock`.
 - Endpoints: `POST /api/v1/admin/partners/{id}/activation-requests`, `POST /api/v1/admin/activation-requests/{id}/approve|reject`.
@@ -187,68 +188,67 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **07 · Logins and API clients (Keycloak)**
 - Problem: an admin named in a header can be faked, partners need a login, and their servers need machine credentials.
-- Build: Keycloak joins docker-compose with a realm import (realm `ecom`: roles `admin`, `partner`; admins `aziz`, `malika`; `ecom-backend` service client; `ecom-portal` login client); registration takes a password and creates the Keycloak user (the password never touches our database); email verification marks the email verified and grants the `partner` role; resource-server security (sign-up and docs public, `/api/v1/admin/**` needs `admin`, `/api/v1/partner/**` needs `partner`, everything else refused); the admin's name comes from the token; an active partner creates M2M clients, the secret shown once, rotation kills the old secret. Keycloak's admin API is called with Spring's `RestClient` and an OAuth2 client-credentials interceptor.
+- Build: Keycloak joins docker-compose with a realm import (realm `ecom`: roles `admin`, `partner`, `merchant` for API clients; admins `aziz`, `malika`; `ecom-backend` service client; `ecom-portal` login client); registration takes a password and creates the Keycloak user (the password never touches our database); email verification marks the email verified and grants the `partner` role; resource-server security from `platform/security`, route rules in `ecom.security` (sign-up and docs public, `/api/v1/admin/**` needs `admin`, `/api/v1/partner/**` needs `partner`, `/api/v1/payments/**` needs `merchant`, everything else refused); the admin's name comes from the token; an active partner creates M2M clients, the secret shown once, rotation kills the old secret. Keycloak's admin API is called with Spring's `RestClient` and an OAuth2 client-credentials interceptor.
 - Why: identity is separate from business data; never store passwords yourself.
 - Tables: `partner` (+ user_id), `partner_client` (ids only, never a secret).
 - Endpoints: `GET /api/v1/partner/me`, `GET|POST /api/v1/partner/clients`, `POST /api/v1/partner/clients/{clientId}/secret`.
 - Tests: `KeycloakJwtConverterTest`; `PartnerOnboardingIT` runs the whole onboarding on real Postgres, Redis, Mailpit and Keycloak. k6: every scenario logs in; `partner/api-client.js` creates and rotates secrets.
-- Not here: Vault. It joins in episode 14 with the merchants' HMAC secrets.
 - Code: `ecom@ep-07`.
 
 **08 · Sales points + site check**
 - Problem: a partner may run several websites, and a fake one must not take payments.
-- Build: a sales point per website (DRAFT → ACTIVE ⇄ SUSPENDED → CLOSED, guarded by a transition table); return addresses must be https pages on the website's own domain and freeze once live; an admin records site checks (PASSED/FAILED, a failed one must list findings; every check kept); the deal's terms: card schemes (Uzcard, Humo) and a refund window, a longer one needs a reason and stays under a configured maximum (`ecom.partner.refund.max-days`); switching on needs an active partner, a passed latest check and at least one scheme; `SalesPoints.payable(id)` for other modules, failing closed.
+- Build: a sales point per website (DRAFT → ACTIVE ⇄ SUSPENDED → CLOSED, guarded by a transition table); return addresses must be https pages on the website's own domain and freeze once live; an admin records site checks (PASSED/FAILED, a failed one must list findings; every check kept); the deal's terms: card schemes (Uzcard, Humo) and a refund window, a longer one needs a reason and stays under a configured maximum (`ecom.partner.refund.max-days`); switching on needs an active partner, a passed latest check and at least one scheme; `SalesPoints.payable(id)` for other modules, failing closed; a logo per sales point in the file service's `sales-point-logos` bucket (PNG/JPEG, 1 MB, a new logo replaces the old file).
 - Why: the unit that actually takes payments; the payment module asks about it on every request.
 - Tables: `sales_point` (text[] return URLs and schemes), `site_check`.
 - Endpoints: merchant `GET|POST /api/v1/partner/sales-points`, `PUT …/{id}/return-urls`; admin `GET /api/v1/admin/partners/{id}/sales-points`, `GET /api/v1/admin/sales-points/{id}`, `GET|POST …/site-checks`, `PUT …/settings`, `POST …/activate|suspend|restore|close`.
-- Tests: `SalesPointTest`, `SalesPointServiceIT`, the full-app IT over HTTP; k6 `sales-points/site-check-and-activate.js` (it caught two real bugs in the contract: `format: uri` with `pattern`, and a pattern that must match the whole string).
+- Tests: `SalesPointTest`, `SalesPointServiceIT`, the full-app IT over HTTP; k6 `sales-points/site-check-and-activate.js`.
 - Front: merchant "Websites" page; bank website page with the check form, terms and actions.
 - Code: `ecom@ep-08`.
 
-**09 · Extract the platform libraries**
-- Problem: the next modules need the same security and the same Keycloak calls; copies mean every fix is made twice.
-- Build: `platform/security` (stateless resource server, Keycloak realm roles, route rules from `ecom.security.public-routes` and `ecom.security.roles`, anything unlisted refused, 401/403 as problem details; runs before Boot's default chains and steps aside for an app's own `SecurityFilterChain`) and `platform/keycloak` (`KeycloakAdmin`: users, realm roles, confidential clients, secret rotation; logs in with its own client credentials from `ecom.keycloak.*`). The app's `SecurityConfig` and the partner module's Keycloak code are deleted; the partner keeps its `IdentityService` port and delegates.
-- Why: refactoring with a reason, right before the second module (commission) arrives.
-- Tests: `SecurityAutoConfigurationTest` (route rules with fake tokens), `KeycloakAdminIT` (real Keycloak); the full-app IT, the web app's end-to-end journey and k6 pass unchanged.
+**09 · Platform libraries**
+- Problem: every module that takes requests needs the same security and the same Keycloak calls; copies mean every fix is made twice.
+- Build: `platform/security` (stateless resource server, Keycloak realm roles, route rules from `ecom.security.public-routes` and `ecom.security.roles`, anything unlisted refused, 401/403 as problem details; runs before Boot's default chains and steps aside for an app's own `SecurityFilterChain`) and `platform/keycloak` (`KeycloakAdmin`: users, realm roles, confidential clients, secret rotation; logs in with its own client credentials from `ecom.keycloak.*`). The partner module keeps its `IdentityService` port and delegates; modules take libraries by name from the version catalog.
+- Why: shared code lives once, versioned and published, right before the second module (commission) arrives.
+- Tests: `SecurityAutoConfigurationTest` (route rules with fake tokens), `KeycloakAdminIT` (real Keycloak).
 - Code: `ecom@ep-09`.
 
 ### Part 2: Money rules (reference services)
 
 **10 · Commission service**
 - Problem: every payment needs a fee, and the fee depends on the website, the merchant, the card scheme and the date.
-- Build: fee rules scoped to any mix of sales point, partner and scheme (empty = any); the most specific active rule wins (sales point > partner > scheme > bank), so no priority field is needed; fee = percent rounded half up once to tiyin + fixed, kept between min and max; a fee that would take the whole amount is refused (the bank's code lacks this, ours enforces it); rules are never edited: CREATE and END change requests with four eyes (no self-approval, one pending per rule, database checks too); an exclusion constraint (btree_gist) keeps two active rules for the same scope from overlapping in time; `Commissions.quote(...)` returns the rule id and the fee for the payment to keep. `platform/persistence` (shared module persistence) and the `ecom.contract` build convention arrive here, with the second module.
+- Build: fee rules scoped to any mix of sales point, partner and scheme (empty = any); the most specific active rule wins (sales point > partner > scheme > bank), so no priority field is needed; fee = percent rounded half up once to tiyin + fixed, kept between min and max; a fee that would take the whole amount is refused (the bank's code lacks this, ours enforces it); rules are never edited: CREATE and END change requests with four eyes (no self-approval, one pending per rule, database checks too); an exclusion constraint (btree_gist) keeps two active rules for the same scope from overlapping in time; `Commissions.quote(...)` returns the rule id and the fee for the payment to keep; admins filter rules (partner, sales point, scheme, status, active at) a page at a time, each rule shows its level (`RuleLevel`) and its change history. `platform/persistence` (shared module persistence) and the `ecom.contract` build convention arrive here, with the second module.
 - Tables: `commission_rule`, `commission_change_request`.
-- Endpoints: `GET|POST /api/v1/admin/commissions`, `POST …/{ruleId}/end`, `POST /api/v1/admin/commissions/quote`, `GET /api/v1/admin/commission-requests`, `POST …/{id}/approve|reject`.
+- Endpoints: `GET|POST /api/v1/admin/commissions`, `GET …/{ruleId}`, `GET …/{ruleId}/history`, `POST …/{ruleId}/end`, `POST /api/v1/admin/commissions/quote`, `GET /api/v1/admin/commission-requests`, `POST …/{id}/approve|reject`.
 - Tests: `CommissionRuleTest`, `CommissionServiceIT`; k6 `commission/rules-and-quotes.js` (quotes p95 2.75 ms).
 - Front: bank "Fees" page (rules, new rule, end, calculator); fee changes in Approvals.
 - Code: `ecom@ep-10`.
 
 **11 · Terminals (MID/TID)**
 - Problem: the processing center only accepts debits through a registered terminal.
-- Build: a terminal per website and card scheme (MID/TID from the processing center); registration fails closed unless the website exists and accepts that scheme (asked through the partner module's public `SalesPoints`); the database keeps MID/TID unique forever and one live terminal per website and scheme; suspend, resume, revoke (final); an audit log of every change with actor and reason; `Terminals.forPayment(...)` returns the live terminal or nothing.
+- Build: a terminal per website and card scheme (MID/TID from the processing center); registration fails closed unless the website exists and accepts that scheme (asked through the partner module's public `SalesPoints`); the database keeps MID/TID unique forever and one live terminal per website and scheme; suspend, resume, revoke (final); an audit log of every change with actor and reason; `Terminals.forPayment(...)` returns the live terminal or nothing; admins search every terminal (sales point, scheme, status, part of a MID/TID) a page at a time.
 - Tables: `terminal`, `terminal_audit`.
-- Endpoints: `GET|POST /api/v1/admin/sales-points/{id}/terminals`, `GET …/terminals/route?scheme=`, `POST /api/v1/admin/terminals/{id}/suspend|resume|revoke`, `GET …/{id}/audit`.
+- Endpoints: `GET|POST /api/v1/admin/sales-points/{id}/terminals`, `GET …/terminals/route?scheme=`, `GET /api/v1/admin/terminals`, `GET …/{id}`, `POST /api/v1/admin/terminals/{id}/suspend|resume|revoke`, `GET …/{id}/audit`.
 - Tests: `TerminalTest`, `TerminalServiceIT` (partner stubbed at its public interface); k6 `terminals/register-and-route.js`.
-- Front: terminals card on the bank's website page, with history.
+- Front: bank "Terminals" page (filters, search, drawer with history and actions); terminals card on the bank's website page.
 - Code: `ecom@ep-11`.
 
 ### Part 3: Cards (adapters + vault)
 
 **12 · Card adapters**
 - Problem: two schemes, two protocols (Uzcard JSON-RPC, Humo SOAP), one interface wanted.
-- Build: a new `card` module with one port, `CardProcessor` (send binding code, confirm binding, debit, reverse, status), and an adapter per scheme: `UzcardProcessor` (one-step debit by token, our payment id as the external reference; a duplicate is looked up with `status`) and `HumoProcessor` (hold, then capture right away; card OTP through the middleware). Every answer becomes APPROVED, DECLINED with our own code, or UNKNOWN; a timeout is UNKNOWN, never a decline. JDK HttpClient (HTTP/1.1) with configured timeouts; the SOAP parser refuses external entities.
-- Why: the payment module must not care which scheme a card belongs to.
-- Infra: `processing-sandbox` (WireMock) in docker-compose stands in for both schemes, with a Luhn-valid test card for every outcome.
-- Tests: `UzcardProcessorIT`, `HumoProcessorIT` (real HTTP to the sandbox, including a payment that never answers). k6 waits for Episode 15, when the hosted page gives cards an HTTP path.
+- Build: each scheme gets its own adapter service (`adapters/uzcard-adapter` :8091, `adapters/humo-adapter` :8092), separate Spring Boot builds with their own OpenAPI contracts (`platform/openapi/*-adapter-api`) and published `@HttpExchange` clients, callable by any service or project. Every answer is an envelope `{requestId, status, data}`; 502 scheme error, 504 no answer. Inside, one command per scheme method from a factory (`ESVGateType`, `EHumoType`); what the scheme's codes mean lives in a status YAML. Uzcard debits in one step by token with our payment id as `ext` (a duplicate, -207, is looked up with `trans.ext`); Humo holds, and the card module captures right away. The `card` module keeps one port, `CardProcessor`, with a processor per scheme over the clients; every answer becomes APPROVED, DECLINED with our own code, or UNKNOWN; a timeout is UNKNOWN, never a decline.
+- Why: the payment module must not care which scheme a card belongs to, and the adapters are reusable outside this project.
+- Infra: `processing-sandbox` (WireMock) in docker-compose stands in for both schemes locally (not a video beat).
+- Tests: adapter command and status tests, `UzcardProcessorTest`, `HumoProcessorTest` (clients mocked).
 - Code: `ecom@ep-12`.
 
 **13 · BIN registry + card vault**
 - Problem: we must know a card's scheme, and we must never store a card number in plain text.
-- Build: `platform/crypto` (AES-256-GCM, a fresh 12-byte nonce per value, the key id authenticated as AAD, envelope `v1:<key id>:…`, rewrap for rotation, HMAC-SHA256 blind index); the card module's vault: Luhn and a known BIN before any scheme call, number/expiry/scheme token/binding session stored only encrypted (a database check refuses anything else), one row and one token (`ctk_…`) per card via the blind index, every use audited; public `Cards` API (start/confirm binding, find, debit by token); BIN registry synced from both schemes at startup and nightly (idempotent, a silent or empty scheme keeps its old list), longest prefix wins.
+- Build: `platform/crypto` (AES-256-GCM, a fresh 12-byte nonce per value, the key id authenticated as AAD, envelope `v1:<key id>:…`, rewrap for rotation, HMAC-SHA256 blind index); the card module's vault: Luhn and a known BIN before any scheme call, number/expiry/scheme token/binding session stored only encrypted (a database check refuses anything else), one row and one token (`ctk_…`) per card via the blind index, every use audited; public `Cards` API (start/confirm binding, find, debit by token); BIN registry synced from both schemes through the adapters at startup and nightly (idempotent, a silent or empty scheme keeps its old list), longest prefix wins.
 - Why: tokenization; a database leak exposes no card numbers.
 - Tables: `bin_range`, `card`, `card_audit`.
 - Endpoints: `GET /api/v1/admin/bins`, `POST …/bins/sync`, `GET …/bins/lookup?digits=`, `POST /api/v1/admin/cards/search`, `GET …/cards/{cardToken}`, `GET …/cards/{cardToken}/audit`.
-- Tests: `CryptoTest`, `PanUtilsTest`, `CardVaultIT` (reads the stored row back: no number); k6 `cards/bins-and-vault.js` (BIN lookups p95 3.4 ms). Binding over HTTP waits for the hosted page (15). The Luhn check caught sandbox test cards that were never valid numbers; they were replaced.
+- Tests: `CryptoTest`, `PanUtilsTest`, `CardVaultIT` (reads the stored row back: no number); k6 `cards/bins-and-vault.js` (BIN lookups p95 3.4 ms).
 - Front: bank "Cards" page (BIN registry, live scheme lookup, vault search with the card's audit trail).
 - Code: `ecom@ep-13`.
 
@@ -256,7 +256,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **14 · Create a payment: HMAC + idempotency**
 - Problem: anyone can fake a request, replay it, or a retry can create a second payment.
-- Build: `POST /api/v1/payments` for merchants' servers: a Keycloak client-credentials token (API clients now get the `merchant` role) plus an HMAC-SHA256 signature over method, path, timestamp, nonce and body hash; Vault joins docker-compose (new `platform/vault`), each API client's signing key lives under `secret/merchants/<client id>` and is shown once; `HmacAuthenticationFilter` checks the timestamp window (configured), then the signature, then spends the nonce in Redis (`ecom:hmac:nonce:*`), so forgeries can't burn nonces; `Idempotency-Key` per client with the stored response replayed (`Idempotent-Replayed: true`), a different body refused, concurrent retries meet at unique keys; only the merchant's own live website and its return addresses; one payment per order and website; the payment page link stored only as a hash.
+- Build: `POST /api/v1/payments` for merchants' servers: a Keycloak client-credentials token (API clients now get the `merchant` role) plus an HMAC-SHA256 signature over method, path, timestamp, nonce and body hash; Vault joins docker-compose (`platform/vault`); each API client's signing key is put into Vault under `secret/merchants/<client id>` by the bank directly (never generated by the app or the website); the app only reads it, and if Vault is down nothing passes; `HmacAuthenticationFilter` checks the timestamp window (configured), then the signature, then spends the nonce in Redis (`ecom:hmac:nonce:*`), so forgeries can't burn nonces; `Idempotency-Key` per client with the stored response replayed (`Idempotent-Replayed: true`), a different body refused, concurrent retries meet at unique keys; only the merchant's own live website and its return addresses; one payment per order and website; the payment page link stored only as a hash.
 - Tables: `payment`, `idempotency_record`.
 - Endpoints: `POST /api/v1/payments`, `GET /api/v1/payments/{id}` (signed), `GET /api/v1/admin/payments`.
 - Tests: `SignatureUtilsTest` (vector from Python's hmac), `HmacAuthenticationFilterIT` (real Redis), `PaymentServiceIT` (incl. 6 concurrent retries → one payment), `VaultSecretsIT`, the full-app IT signs a payment over HTTP; k6 `payments/create-payment.js` (28,728 checks at 100%, create p95 6.82 ms).

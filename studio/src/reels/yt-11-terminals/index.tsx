@@ -9,7 +9,7 @@ export const Yt11TerminalsComposition = createEpisode({
   part: 2,
   footer: "Terminals (MID/TID)",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Which terminal?", "Unknown terminal", "The registry", "Per card", "Fail closed", "Kept by the database", "Suspend + revoke", "Audit log", "No terminal, no debit", "Tests", "Under load", "Next: card schemes"],
+  titles: ["Which terminal?", "Unknown terminal", "The registry", "Per card", "Fail closed", "Kept by the database", "Suspend + revoke", "Audit log", "No terminal, no debit", "Find a terminal", "Next: card schemes"],
   map,
   diagram,
   code,

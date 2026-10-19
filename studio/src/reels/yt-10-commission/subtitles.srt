@@ -1,56 +1,52 @@
 1
-00:00:00,050 --> 00:00:03,571
+00:00:00,050 --> 00:00:03,476
 How much does the bank earn on each payment, and who decides it?
 
 2
-00:00:03,571 --> 00:00:07,940
+00:00:03,476 --> 00:00:07,880
 Fees can't be hard-coded, because every merchant negotiates its own.
 
 3
-00:00:07,940 --> 00:00:14,845
+00:00:07,880 --> 00:00:14,642
 So the commission module keeps fee rules, each for a website, a merchant, a card scheme, or the whole bank.
 
 4
-00:00:14,845 --> 00:00:23,107
+00:00:14,642 --> 00:00:22,880
 When several rules match, the most specific one wins: a website beats a merchant, which beats a card scheme, which beats the bank.
 
 5
-00:00:23,107 --> 00:00:30,273
+00:00:22,880 --> 00:00:30,035
 The fee is a percent, rounded once to whole tiyin, plus a fixed part, kept between a minimum and a maximum.
 
 6
-00:00:30,273 --> 00:00:32,952
+00:00:30,035 --> 00:00:32,488
 A fee that would take the whole amount is refused.
 
 7
-00:00:32,952 --> 00:00:39,654
+00:00:32,488 --> 00:00:38,857
 Rules are never edited: a change adds a rule or ends one, and a second admin must approve it.
 
 8
-00:00:39,654 --> 00:00:46,023
+00:00:38,857 --> 00:00:45,297
 Two active rules for the same scope can never apply at the same moment, and the database itself refuses them.
 
 9
-00:00:46,023 --> 00:00:51,583
+00:00:45,297 --> 00:00:50,821
 To change a fee, the old rule ends at a chosen moment and the new one starts there.
 
 10
-00:00:51,583 --> 00:00:58,416
-Other modules ask one question, what is the fee for this payment, and the payment keeps the rule and the amount.
+00:00:50,821 --> 00:01:02,011
+Admins find rules by merchant, website, card scheme, status, or the moment they apply, one page at a time, and each rule shows its level and every change ever asked for it.
 
 11
-00:00:58,416 --> 00:01:03,952
-The module has its own schema and database user, built by a new shared persistence library.
+00:01:02,011 --> 00:01:08,797
+Other modules ask one question, what is the fee for this payment, and the payment keeps the rule and the amount.
 
 12
-00:01:03,952 --> 00:01:10,297
-Unit tests cover the formula and the scope order, and integration tests run on a real Postgres.
+00:01:08,797 --> 00:01:14,166
+The module has its own schema and database user, built by the shared persistence library.
 
 13
-00:01:10,297 --> 00:01:15,702
-Under load, more than thirty thousand fee quotes came back in under three milliseconds.
-
-14
-00:01:15,702 --> 00:01:18,535
+00:01:14,166 --> 00:01:16,916
 Next, the terminal each payment goes through.
 
