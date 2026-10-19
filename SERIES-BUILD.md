@@ -281,10 +281,10 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Code: `ecom@ep-16`.
 
 **17 · Observability: metrics, traces, logs**
-- Problem: one payment crosses five modules and a processing center; when it's slow or stuck, nobody can see where.
-- Build: Prometheus + Grafana (Micrometer metrics: payments by status, processing latency, timeouts), OpenTelemetry tracing into Tempo, logs into Loki; a starter dashboard.
-- Why: the next episode (silent processing) is invisible without it. The real repo has no metrics or tracing yet.
-- Demo: run 20 payments, one timeout; follow that payment's trace across modules; see the timeout spike on the dashboard.
+- Problem: one payment crosses the app, an adapter and a scheme; when it's slow or stuck, nobody can see where.
+- Build: every service runs with the OpenTelemetry Java agent, attached by the infrastructure (`ecom-infra/observability/agent.env`, the pinned agent copied by `otel-agent`), no tracing code: HTTP in and out, JDBC and Redis traced, the trace handed on to the adapters; logs carry the trace id; JVM, HTTP and pool metrics. The app adds only business metrics with Micrometer: `ecom.payments.debits` by scheme and outcome, and `ecom.payments.debit.duration` with fixed buckets up to the scheme's 40 s limit. Everything goes over OTLP to `grafana/otel-lgtm` (Prometheus, Tempo, Loki, Grafana on :3030) with the provisioned **ecom · payments** dashboard. Locally every trace is kept; production samples; the load stack runs without the agent.
+- Tests: `PaymentPageIT` checks the metric names and tags the dashboard reads; verified with k6 traffic and a scheme timeout: one unknown debit, the adapter's 504, and the warning linked to its trace.
+- Code: `ecom@ep-17`, `ecom-infra@ep-17`.
 
 **18 · When the processing center goes silent**
 - Problem: a timeout leaves the money state unknown.

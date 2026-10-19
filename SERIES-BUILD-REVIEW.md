@@ -26,7 +26,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 14 | HMAC + idempotency | 1:31 | ✅ Re-cut 2026-10-19: the bank puts signing keys straight into Vault; the app only reads them; no k6 |
 | 15 | The payment page | 1:38 | ✅ Built and matched to `ecom@ep-15`: token as credential (hash, expiry), read-only page, scheme checked first, a code per binding, every attempt counted and committed first, page closes, Redis lock |
 | 16 | The debit | 1:22 | ✅ Built and matched to `ecom@ep-16`: one conditional claim, route and fee fixed, journal first with one debit per payment, paid/declined/unknown, status table |
-| 17 | Observability | 0:42 | **Design: no metrics/tracing in the real repo today** |
+| 17 | Observability | 1:39 | ✅ Built and matched to `ecom@ep-17`: OpenTelemetry agent from infra, one trace across services, logs with trace ids, debit metrics, OTLP stack, payments dashboard (not rendered) |
 | 18 | When processing goes silent | 0:39 | Code: Temporal resolution, backoff, manual review, sweep every minute |
 | 19 | Outbox + Kafka | 0:39 | Code: `event_outbox` is written. **Design: relay + Kafka + webhook consumer don't exist yet** |
 | 20 | Payment links | 0:27 | Code: link claim, expiry sweep |

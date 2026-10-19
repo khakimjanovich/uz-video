@@ -1,7 +1,7 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { code, diagram, map } from "./steps";
 
 export const Yt17ObservabilityComposition = createEpisode({
   id: "yt-17-observability",
@@ -9,7 +9,8 @@ export const Yt17ObservabilityComposition = createEpisode({
   part: 4,
   footer: "Observability",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["How would you know?", "Logs aren't enough", "Metrics", "Dashboards", "Traces", "Logs in Loki", "Find the stuck one", "Next: silence"],
+  titles: ["How would you know?", "Logs can't follow", "The agent", "Traced for free", "One trace", "Logs with trace ids", "Metrics", "Debit outcomes", "Scheme answer time", "One stack", "The dashboard", "When it went silent", "Sampling + load", "Next: silence"],
   map,
   diagram,
+  code,
 });

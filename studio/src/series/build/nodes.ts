@@ -1,4 +1,4 @@
-import { siApachekafka, siGrafana, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk } from "simple-icons";
+import { siApachekafka, siGrafana, siOpentelemetry, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk } from "simple-icons";
 import { NodeDef } from "../../components/diagram";
 
 // Boxes for the Series B story diagrams. Our own actors and modules use ink drawings;
@@ -63,6 +63,9 @@ export const BUILD_CATALOG = {
   kafka: { label: "Kafka", logo: siApachekafka.path },
   prometheus: { label: "Prometheus", logo: siPrometheus.path },
   grafana: { label: "Grafana", logo: siGrafana.path },
+  otel: { label: "OpenTelemetry", sublabel: "Agent · OTLP", logo: siOpentelemetry.path },
+  tempo: { label: "Tempo", sublabel: "Traces", art: "journal" },
+  loki: { label: "Loki", sublabel: "Logs", art: "receipt" },
   kubernetes: { label: "Kubernetes", logo: siKubernetes.path },
   docker: { label: "Docker Compose", logo: siDocker.path },
   gradle: { label: "Gradle", logo: siGradle.path },

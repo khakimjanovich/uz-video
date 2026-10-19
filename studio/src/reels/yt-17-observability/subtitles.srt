@@ -1,32 +1,56 @@
 1
-00:00:00,050 --> 00:00:03,488
-When a payment is slow or stuck, how would you even know?
+00:00:00,050 --> 00:00:03,452
+When a payment is slow or stuck, how would anyone know?
 
 2
-00:00:03,488 --> 00:00:09,202
-One payment crosses five modules and a processing center, and plain logs cannot follow it.
+00:00:03,452 --> 00:00:09,654
+One payment crosses the app, an adapter and a scheme, and the logs on each machine can't follow it.
 
 3
-00:00:09,202 --> 00:00:16,297
-Micrometer counts payments by status and times every processing call, and Prometheus collects those numbers.
+00:00:09,654 --> 00:00:16,595
+So every service runs with the OpenTelemetry Java agent, attached by the infrastructure, with no change to the code.
 
 4
-00:00:16,297 --> 00:00:20,559
-Grafana turns them into a dashboard, with alerts on timeouts.
+00:00:16,595 --> 00:00:25,285
+It traces every HTTP call in and out, every database query and every Redis command, and hands the trace on to the next service.
 
 5
-00:00:20,559 --> 00:00:25,571
-OpenTelemetry gives every payment a trace that follows it from module to module.
+00:00:25,285 --> 00:00:32,202
+One trace follows a payment from the payment page, through the app's modules, into the Uzcard adapter and out to the scheme.
 
 6
-00:00:25,571 --> 00:00:30,607
-The logs carry the same trace ID, and go to Loki, right next to the dashboards.
+00:00:32,202 --> 00:00:37,511
+The logs carry the same trace id, so a warning links straight to the trace it belongs to.
 
 7
-00:00:30,607 --> 00:00:36,250
-Now a stuck payment shows up as a spike, and its trace shows exactly where it waits.
+00:00:37,511 --> 00:00:46,583
+The agent also exports JVM, HTTP and database pool metrics, and the app adds only what the agent can't know: how payments end.
 
 8
-00:00:36,250 --> 00:00:40,928
+00:00:46,583 --> 00:00:53,809
+Every debit is counted by card scheme and outcome: approved, declined, unknown, or failed before any money moved.
+
+9
+00:00:53,809 --> 00:00:58,952
+And the scheme's answer time is measured, with fixed buckets up to its forty second limit.
+
+10
+00:00:58,952 --> 00:01:07,845
+Everything goes over OTLP to one stack: Prometheus for metrics, Tempo for traces, Loki for logs, and Grafana on top.
+
+11
+00:01:07,845 --> 00:01:16,619
+The payments dashboard puts it together: debits by outcome, unknown debits in red, answer times, errors per service, and pool waits.
+
+12
+00:01:16,619 --> 00:01:24,976
+When the scheme went silent, the dashboard showed one unknown debit and a gateway timeout in the adapter, and the warning linked to its trace.
+
+13
+00:01:24,976 --> 00:01:33,726
+Locally every trace is kept; production samples them, and the load stack runs without the agent, so k6 still measures the code alone.
+
+14
+00:01:33,726 --> 00:01:38,071
 Next, what to do when the processing center goes completely silent.
 
