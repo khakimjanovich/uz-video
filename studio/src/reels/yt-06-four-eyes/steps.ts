@@ -135,7 +135,7 @@ export const code: CodeStep[] = [
       "  }",
       "}",
       "",
-      "# db/changelog/partner.yaml · 006-create-shedlock",
+      "# db/changelog/partner.yaml · 004-create-shedlock",
     ],
     highlight: [1, 2],
   },
@@ -144,7 +144,7 @@ export const code: CodeStep[] = [
     file: "modules/partner/…/db/changelog/partner.yaml",
     lines: [
       "- changeSet:",
-      "    id: 005-create-activation-request",
+      "    id: 003-create-activation-request",
       "    changes:",
       "      - createTable:",
       "          tableName: activation_request",

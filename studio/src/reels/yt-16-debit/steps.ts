@@ -110,7 +110,7 @@ export const code: CodeStep[] = [
       "    fee.getFee(),",
       "    fee.getNet());",
       "",
-      "# payment.yaml · 005-add-debit",
+      "# payment.yaml · 001-create-payment",
       "CHECK (fee IS NULL OR (fee >= 0 AND fee + net = amount))",
     ],
     highlight: [1, 11, 16],

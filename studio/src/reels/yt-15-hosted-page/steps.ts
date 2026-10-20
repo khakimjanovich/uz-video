@@ -118,7 +118,7 @@ export const code: CodeStep[] = [
       "  private Instant createdAt;",
       "  private Instant confirmedAt;",
       "",
-      "# card.yaml · 005-create-card-binding",
+      "# card.yaml · 003-create-card-binding",
       "CHECK (session_encrypted LIKE 'v1:%')",
     ],
     highlight: [3, 8, 13],

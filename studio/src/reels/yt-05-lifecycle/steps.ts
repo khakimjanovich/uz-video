@@ -173,7 +173,7 @@ export const code: CodeStep[] = [
       "      PARTNER_CONTRACT_TAKEN, contractNumber);",
       "}",
       "",
-      "# db/changelog/partner.yaml · 003-add-contract-number",
+      "# db/changelog/partner.yaml · 001-create-partner",
       "- column: { name: contract_number, type: varchar(64),",
       "    constraints: { unique: true } }",
     ],
