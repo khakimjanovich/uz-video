@@ -9,7 +9,7 @@ export const Yt10CommissionComposition = createEpisode({
   part: 2,
   footer: "Commission",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Who decides the fee?", "Negotiated", "Fee rules", "Most specific wins", "The formula", "Fee ≥ amount", "Four eyes", "No overlaps", "Replacing a fee", "Find + history", "One question", "Own schema", "Next: terminals"],
+  titles: ["Who decides the fee?", "Negotiated", "Fee rules", "Most specific wins", "The formula", "Fee ≥ amount", "Four eyes", "No overlaps", "Replacing a fee", "Find + history", "One question", "Own schema", "Next: e-POS terminals"],
   map,
   diagram,
   code,

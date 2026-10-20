@@ -6,7 +6,7 @@ import { BuildId } from "../../series/build/nodes";
 // Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 2, current: ["commission"], built: builtBefore(2) },
-  { cue: 12, part: 2, current: ["terminal"], built: [...builtBefore(2), "commission"] },
+  { cue: 12, part: 2, current: ["epos"], built: [...builtBefore(2), "commission"] },
 ];
 
 const SCOPE = { salespoint: [0, 0], shop: [0, 1], processing: [0, 2], commission: [2, 1] } as const;

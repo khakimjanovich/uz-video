@@ -7,11 +7,11 @@ const part = (n: number, cue: number): BuildMapStep => ({ cue, part: n, current:
 export const steps: BuildMapStep[] = [
   { cue: 0 },
   { cue: 1 },
-  { cue: 2, current: ["merchant", "buyer", "admin", "partner", "commission", "terminal", "bin", "card", "payment"] },
+  { cue: 2, current: ["merchant", "buyer", "admin", "partner", "commission", "epos", "bin", "card", "payment"] },
   // One beat per module: what it owns.
   { cue: 3, current: ["partner"] },
   { cue: 4, current: ["commission"] },
-  { cue: 5, current: ["terminal"] },
+  { cue: 5, current: ["epos"] },
   { cue: 6, current: ["bin"] },
   { cue: 7, current: ["card"] },
   { cue: 8, current: ["payment"] },

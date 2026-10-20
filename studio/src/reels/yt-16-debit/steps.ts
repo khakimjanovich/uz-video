@@ -7,7 +7,7 @@ import { tableStep } from "../../series/build/tables";
 // Code beats quote github.com/khakimjanovich/ecom (main).
 const B4 = builtBefore(4);
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 4, current: ["payment", "terminal", "commission", "card"], built: B4 },
+  { cue: 0, part: 4, current: ["payment", "epos", "commission", "card"], built: B4 },
   { cue: 14, part: 4, current: ["observability"], built: B4 },
 ];
 
@@ -78,16 +78,16 @@ export const code: CodeStep[] = [
     cue: 4,
     file: "modules/payment/…/service/impl/PaymentDebitServiceImpl.java",
     lines: [
-      "var terminal = terminals",
+      "var epos = eposRegistry",
       "    .forPayment(payment.getSalesPointId(),",
       "        payment.getCardScheme())",
       "    .orElseThrow(() -> new GeneralException(",
       "        PAYMENT_NO_ROUTE, payment.getCardScheme()));",
       "",
-      "// the terminal module's public API",
-      "Optional<TerminalView> forPayment(UUID salesPointId,",
+      "// the e-POS module's public API",
+      "Optional<EposView> forPayment(UUID salesPointId,",
       "    String scheme);",
-      "record TerminalView(UUID id, String merchantId,",
+      "record EposView(UUID id, String merchantId,",
       "    String terminalId) {}",
     ],
     highlight: [2, 10],
@@ -100,7 +100,7 @@ export const code: CodeStep[] = [
       "    payment.getSalesPointId(), payment.getCardScheme(),",
       "    payment.getAmount(), Instant.now());",
       "…",
-      "started.startDebit(terminal.merchantId(),",
+      "started.startDebit(epos.merchantId(),",
       "    terminal.terminalId(), fee.ruleId(),",
       "    fee.fee(), fee.net());",
       "",
@@ -113,11 +113,11 @@ export const code: CodeStep[] = [
     cue: 6,
     file: "modules/payment/…/service/impl/PaymentDebitServiceImpl.java",
     lines: [
-      "/** Without a terminal, a fee rule or room in the daily",
-      " *  limit the payment fails here, and no money moves. */",
+      "/** Without an e-POS terminal, a fee rule or room in the",
+      " *  daily limit the payment fails here, and no money moves. */",
       "private PaymentOperation start(Payment payment) {",
       "  try {",
-      "    … terminal, fee, journal …",
+      "    … e-POS terminal, fee, journal …",
       "  } catch (GeneralException e) {",
       "    change(payment.getId(),",
       "        failed -> failed.fail(e.getStatus().getType()));",

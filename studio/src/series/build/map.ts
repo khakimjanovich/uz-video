@@ -5,7 +5,7 @@ import { siApachekafka, siGrafana, siKeycloak, siKubernetes, siPostgresql, siPro
 
 export type BuildNodeId =
   | "merchant" | "buyer" | "admin"
-  | "partner" | "commission" | "terminal" | "bin" | "card" | "payment"
+  | "partner" | "commission" | "epos" | "bin" | "card" | "payment"
   | "emailport" | "procport"
   | "postgres" | "redis" | "keycloak" | "vault" | "s3" | "temporal" | "kafka" | "observability"
   | "emailsvc" | "filesvc" | "procsvc"
@@ -20,7 +20,7 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   // Six modules, 96px apart.
   partner: { label: "Partner", sub: "Merchants", x: 56, y: 140, w: 88, h: 56 },
   commission: { label: "Commission", sub: "Fees", x: 152, y: 140, w: 88, h: 56 },
-  terminal: { label: "Terminal", sub: "MID / TID", x: 248, y: 140, w: 88, h: 56 },
+  epos: { label: "e-POS", sub: "MID / TID", x: 248, y: 140, w: 88, h: 56 },
   bin: { label: "BIN", sub: "Banks", x: 344, y: 140, w: 88, h: 56 },
   card: { label: "Card vault", sub: "Tokens", x: 440, y: 140, w: 88, h: 56 },
   payment: { label: "Payment", sub: "Debits", x: 536, y: 140, w: 88, h: 56 },
@@ -60,7 +60,7 @@ export const APP_BOX = { x: 40, y: 100, w: 600, h: 190, label: "Acquiring app ·
 export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes: BuildNodeId[] }[] = [
   { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis", "emailsvc", "s3", "keycloak", "vault", "observability", "temporal", "kafka"] },
   { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle + documents", "Four-eyes", "Keycloak clients", "Sales points", "Platform libraries"], nodes: ["partner", "emailport", "filesvc", "admin"] },
-  { n: 2, title: "Money rules", episodes: ["Commission", "Terminals"], nodes: ["commission", "terminal"] },
+  { n: 2, title: "Money rules", episodes: ["Commission", "e-POS terminals"], nodes: ["commission", "epos"] },
   { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "BIN + card vault"], nodes: ["bin", "card", "procport", "procsvc"] },
   { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Payment page", "The debit", "Observability", "When processing goes silent", "Outbox + Kafka", "Links", "Refunds", "Daily reports", "Hardening"], nodes: ["payment", "merchant", "buyer"] },
   { n: 5, title: "Growing up", episodes: ["Deploy to Kubernetes", "Extract the card vault"], nodes: ["kubernetes", "card"] },

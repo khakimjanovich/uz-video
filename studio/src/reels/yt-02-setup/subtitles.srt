@@ -1,64 +1,71 @@
 1
-00:00:00,050 --> 00:00:03,023
+00:00:00,050 --> 00:00:03,024
 Where does a payment system start, if not with payments?
 
 2
-00:00:03,023 --> 00:00:07,690
-It starts with a project that builds, and an environment that runs with one command.
+00:00:03,074 --> 00:00:07,560
+With a stack, a build, and an environment that runs with one command.
 
 3
-00:00:07,690 --> 00:00:15,035
-The system uses Java twenty-five and Spring Boot four, with Gradle builds written in Groovy, the way the bank writes its own.
+00:00:07,610 --> 00:00:14,976
+We chose Java twenty-five and Spring Boot four: long-term support, and the most widely used stack for Java services.
 
 4
-00:00:15,035 --> 00:00:25,726
-The app has six modules, partner, commission, terminal, BIN, card, and payment, and each one owns its own schema, with a database user that can see nothing else.
+00:00:15,026 --> 00:00:27,384
+We chose Gradle, with builds in Groovy, because the build is the pipeline: it generates code from the contracts, checks the style, runs the tests, and publishes, the same way on every machine.
 
 5
-00:00:25,726 --> 00:00:32,988
-A module talks to another only through the public interface in its root package, and the build fails if it reaches any further.
+00:00:27,434 --> 00:00:38,160
+The app is one modular monolith with six modules, partner, commission, e POS, BIN, card, and payment: one deploy today, and clean seams for tomorrow.
 
 6
-00:00:32,988 --> 00:00:39,464
-Shared pieces live in a platform folder, each its own build, published to the local Maven repository.
+00:00:38,210 --> 00:00:46,128
+Each module owns its own schema in one database, and connects as its own user, which can see that schema and nothing else.
 
 7
-00:00:39,464 --> 00:00:45,000
-The version catalog pins every version, so the build is the same on every machine.
+00:00:46,178 --> 00:00:53,304
+A module talks to another only through the public interface in its root package, and the build fails if it reaches any further.
 
 8
-00:00:45,000 --> 00:00:56,357
-Errors follow one format: each module lists its errors in an enum, and a YAML file gives each one its HTTP status and its message in English, Russian and Uzbek.
+00:00:53,354 --> 00:01:03,408
+Inside, every module uses the one layout every Spring developer knows: layered, with a controller, a service, a repository, and an entity.
 
 9
-00:00:56,357 --> 00:01:05,261
-API contracts are OpenAPI files, and the code generated from them lives only in the published jars, never in our source.
+00:01:03,458 --> 00:01:15,792
+We chose contract first: an OpenAPI file comes before any code, Gradle generates the interfaces and models, and the code must implement them, so it never drifts from what clients were promised.
 
 10
-00:01:05,261 --> 00:01:13,678
-Every module follows the same layers, controller, service, repository, and entity, with its constants in one place.
+00:01:15,842 --> 00:01:22,800
+The same contract generates a client too, so a caller in another service uses exactly the same interface and models.
 
 11
-00:01:13,678 --> 00:01:22,321
-Services that do one job live outside the app, each with its own contract and client: the card scheme adapters, and the file service.
+00:01:22,850 --> 00:01:32,160
+Shared pieces, the error format, security, persistence, crypto, and every contract, live in the platform folder, each with its own build.
 
 12
-00:01:22,321 --> 00:01:39,154
-A separate infrastructure repository starts the whole infrastructure with Docker Compose: Postgres and Redis, Mailpit, an S3 store, Keycloak, a processing sandbox, Vault, monitoring, Temporal and Kafka, and each one is explained in the episode that first uses it.
+00:01:32,210 --> 00:01:43,488
+Gradle publishes each one to a Maven repository, and the app imports it by version, like any other library; the day the platform moves to its own repository, nothing else changes.
 
 13
-00:01:39,154 --> 00:01:46,702
-With one setting, the app logs structured JSON in the community ECS format, and reports its health from the very first minute.
+00:01:43,538 --> 00:01:50,544
+A version catalog, published the same way, pins every version, so every build uses the same ones.
 
 14
-00:01:46,702 --> 00:01:51,154
-One command in the infrastructure repository, and the whole world is up.
+00:01:50,594 --> 00:02:00,648
+Errors follow one format: each module lists its errors once, and the client gets a problem detail with a stable code, in English, Russian or Uzbek.
 
 15
-00:01:51,154 --> 00:01:57,357
-The code, the infrastructure, the load tests, and the web app each live in their own repository.
+00:02:00,698 --> 00:02:09,336
+Services that do one job live outside the app, each with its own contract and client: the card scheme adapters, and the file service.
 
 16
-00:01:57,357 --> 00:02:00,595
-Next, the domain, which comes before a single table.
+00:02:09,386 --> 00:02:25,488
+A separate infrastructure repository starts the whole infrastructure with Docker Compose: Postgres and Redis, Mailpit, an S3 store, Keycloak, a processing sandbox, Vault, monitoring, Temporal and Kafka, and each one is explained in the episode that first uses it.
 
+17
+00:02:25,538 --> 00:02:33,864
+One command, and the whole world is up; the code, the infrastructure, the load tests, and the web app each live in their own repository.
+
+18
+00:02:33,914 --> 00:02:37,392
+Next, the domain, which comes before a single table.

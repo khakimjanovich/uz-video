@@ -1,4 +1,4 @@
-import { siApachekafka, siGrafana, siOpentelemetry, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk } from "simple-icons";
+import { siApachekafka, siApachemaven, siGrafana, siOpentelemetry, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk } from "simple-icons";
 import { NodeDef } from "../../components/diagram";
 
 // Boxes for the Series B story diagrams. Our own actors and modules use ink drawings;
@@ -16,7 +16,7 @@ export const BUILD_CATALOG = {
   acquirer: { label: "Acquirer bank", sublabel: "Our bank", art: "bank" },
   processing: { label: "Processing center", sublabel: "Uzcard · Humo", art: "processing" },
   mail: { label: "SMTP", sublabel: "Mailpit locally", art: "request" },
-  tid: { label: "Terminal", sublabel: "MID · TID", art: "tray" },
+  tid: { label: "e-POS terminal", sublabel: "MID · TID", art: "tray" },
   uzcard: { label: "Uzcard", sublabel: "REST", art: "processing" },
   humo: { label: "Humo", sublabel: "SOAP", art: "processing" },
   // our modules
@@ -25,7 +25,7 @@ export const BUILD_CATALOG = {
   app: { label: "Acquiring app", sublabel: "Modular monolith", logo: siSpringboot.path },
   partner: { label: "Partner module", sublabel: "Merchant registry", art: "journal" },
   commission: { label: "Commission module", art: "fee" },
-  terminal: { label: "Terminal module", sublabel: "MID / TID", art: "tray" },
+  epos: { label: "e-POS module", sublabel: "MID / TID", art: "tray" },
   card: { label: "Card vault", sublabel: "Tokens", art: "vault" },
   payment: { label: "Payment module", art: "receipt" },
   salespoint: { label: "Sales point", sublabel: "Website", art: "salespoint" },
@@ -69,6 +69,14 @@ export const BUILD_CATALOG = {
   kubernetes: { label: "Kubernetes", logo: siKubernetes.path },
   docker: { label: "Docker Compose", logo: siDocker.path },
   gradle: { label: "Gradle", logo: siGradle.path },
+  maven: { label: "Maven repository", sublabel: "~/.m2 locally", logo: siApachemaven.path },
+  platform: { label: "Platform libraries", sublabel: "error · security · …", art: "tray" },
+  versions: { label: "Version catalog", sublabel: "every version", art: "journal" },
+  client: { label: "Generated client", sublabel: "Same interface", art: "request" },
+  controller: { label: "controller", sublabel: "HTTP in", art: "request" },
+  service: { label: "service", sublabel: "Business rules", art: "workflow" },
+  repository: { label: "repository", sublabel: "Spring Data", art: "journal" },
+  entity: { label: "entity", sublabel: "Table row", art: "receipt" },
   spring: { label: "Spring Boot", logo: siSpringboot.path },
   java: { label: "Java 25", logo: siOpenjdk.path },
 } satisfies Record<string, NodeDef>;

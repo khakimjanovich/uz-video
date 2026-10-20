@@ -52,7 +52,14 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
 
   return (
     <SubtitlesContext.Provider value={subState}>
-      <AbsoluteFill data-theme={theme} className="overflow-hidden" style={{ fontFamily: fonts.mono }}>
+      <AbsoluteFill
+        data-theme={theme}
+        className="overflow-hidden"
+        style={{
+          fontFamily: fonts.mono,
+          translate: "-3px 0px"
+        }}
+      >
         {reelId ? (
           <Audio src={staticFile(`reels/${reelId}/voiceover.mp3`)} premountFor={audioPremountFor ?? fps} />
         ) : null}

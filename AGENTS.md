@@ -180,3 +180,4 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `9998` | to'qqiz ming to'qqiz yuz to'qson sakkiz |
 | `tok_uz_…` | token |
 | `API` | ey-pi-ay |
+| `e-POS` | e POS (the hyphen makes the voice service hang) |

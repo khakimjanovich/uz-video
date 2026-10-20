@@ -193,6 +193,24 @@ def sync_subtitles_json(reel_name: str, cues=None):
     return updated_cues
 
 
+def srt_time(seconds: float) -> str:
+    ms = int(round(seconds * 1000))
+    return f"{ms // 3600000:02d}:{ms // 60000 % 60:02d}:{ms // 1000 % 60:02d},{ms % 1000:03d}"
+
+
+def speak(text: str, dest: Path, voice: str, rate: str):
+    """One sentence to MP3. The voice service sometimes never answers and edge-tts has no
+    timeout: each try gets a minute, three tries in all."""
+    cmd = [get_edge_tts_bin(), "--voice", voice, "--rate", rate, "--text", text, "--write-media", str(dest)]
+    for attempt in range(1, 4):
+        try:
+            subprocess.run(cmd, check=True, timeout=60, capture_output=True)
+            return
+        except (subprocess.TimeoutExpired, subprocess.CalledProcessError):
+            print(f"   no answer for: {text[:50]}… (try {attempt} of 3)")
+    sys.exit("Error: the voice service didn't answer.")
+
+
 def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
     voice = resolve_voice(voice_raw)
     reel_dir = REELS_SRC_DIR / reel_name
@@ -210,18 +228,27 @@ def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
     dest_mp3 = dest_audio_dir / "voiceover.mp3"
     dest_srt = reel_dir / "subtitles.srt"
 
-    edge_tts = get_edge_tts_bin()
-    cmd = [
-        edge_tts,
-        "--voice", voice,
-        "--rate", rate,
-        "--file", str(script_file),
-        "--write-media", str(dest_mp3),
-        "--write-subtitles", str(dest_srt),
-    ]
-
     print(f"🎙️ Generating voice for '{reel_name}' (voice: {voice}, rate: {rate})...")
-    subprocess.run(cmd, check=True)
+    # One request per sentence, joined afterwards: the voice service drops long requests, and
+    # each sentence is one subtitle cue anyway.
+    sentences = [x for x in re.split(r"(?<=[.?!])\s+", script_file.read_text(encoding="utf-8").strip()) if x]
+    work = dest_audio_dir / "parts"
+    shutil.rmtree(work, ignore_errors=True)
+    work.mkdir()
+    srt_blocks, offset = [], 0.0
+    for i, sentence in enumerate(sentences, 1):
+        part = work / f"{i:03d}.mp3"
+        speak(sentence, part, voice, rate)
+        duration = float(subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(part)],
+            check=True, capture_output=True, text=True).stdout.strip())
+        srt_blocks.append(f"{i}\n{srt_time(offset + 0.05)} --> {srt_time(offset + duration)}\n{sentence}\n")
+        offset += duration
+    (work / "list.txt").write_text("".join(f"file '{p.name}'\n" for p in sorted(work.glob("*.mp3"))))
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(work / "list.txt"),
+                    "-c", "copy", str(dest_mp3)], check=True)
+    shutil.rmtree(work)
+    dest_srt.write_text("\n".join(srt_blocks), encoding="utf-8")
 
     cues = parse_srt_file(dest_srt)
     sync_subtitles_json(reel_name, cues)

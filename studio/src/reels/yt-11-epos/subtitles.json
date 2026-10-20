@@ -1,0 +1,101 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 170,
+    "text": "Which e POS terminal does the processing center expect each debit to come through?",
+    "prefix": "Which e POS terminal does the processing center expect each debit to come through?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 169,
+    "endFrame": 365,
+    "text": "It only accepts debits from e POS terminals it already knows: a MID and a TID it issued.",
+    "prefix": "It only accepts debits from e POS terminals it already knows: a MID and a TID it issued.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 364,
+    "endFrame": 586,
+    "text": "So the e POS module keeps a registry: for each website and card scheme, one merchant ID and one terminal ID.",
+    "prefix": "So the e POS module keeps a registry: for each website and card scheme, one merchant ID and one terminal ID.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 585,
+    "endFrame": 749,
+    "text": "Uzcard and Humo payments can use different e POS terminals for the very same website.",
+    "prefix": "Uzcard and Humo payments can use different e POS terminals for the very same website.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 748,
+    "endFrame": 952,
+    "text": "An e POS terminal is registered only for a website that exists and accepts that card, and the check fails closed.",
+    "prefix": "An e POS terminal is registered only for a website that exists and accepts that card, and the check fails closed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 951,
+    "endFrame": 1214,
+    "text": "The database allows one live e POS terminal per website and card, and a merchant and terminal ID pair is never issued twice.",
+    "prefix": "The database allows one live e POS terminal per website and card, and a merchant and terminal ID pair is never issued twice.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1213,
+    "endFrame": 1364,
+    "text": "An e POS terminal can be suspended and resumed, and a revoked one never comes back.",
+    "prefix": "An e POS terminal can be suspended and resumed, and a revoked one never comes back.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1363,
+    "endFrame": 1470,
+    "text": "Every change is written to an audit log: who, what, and why.",
+    "prefix": "Every change is written to an audit log: who, what, and why.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1469,
+    "endFrame": 1706,
+    "text": "Before every debit, the payment module asks for the live e POS terminal, and no e POS terminal means no debit.",
+    "prefix": "Before every debit, the payment module asks for the live e POS terminal, and no e POS terminal means no debit.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1705,
+    "endFrame": 2032,
+    "text": "Admins find any e POS terminal by merchant, website, card scheme, or status, or by part of its merchant or terminal ID, and open it to see its history and act on it.",
+    "prefix": "Admins find any e POS terminal by merchant, website, card scheme, or status, or by part of its merchant or terminal ID, and open it to see its history and act on it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 2031,
+    "endFrame": 2180,
+    "text": "Next, the card schemes themselves: talking to Uzcard and Humo.",
+    "prefix": "Next, the card schemes themselves: talking to Uzcard and Humo.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

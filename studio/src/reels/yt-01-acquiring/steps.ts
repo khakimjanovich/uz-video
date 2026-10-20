@@ -46,14 +46,14 @@ export const diagram: DiagramStep<BuildId>[] = [
     layout: { ...PLAYERS, tid: [1, 0] },
     edges: [{ from: "buyer", to: "shop" }, ...CHAIN, { from: "tid", to: "acquirer" }],
     accent: ["issuer"],
-    badges: { issuer: "Humo: hold · Uzcard: debit" },
+    badges: { issuer: "debit, or hold" },
   },
   {
     cue: 6,
     layout: { ...PLAYERS, tid: [1, 0] },
     edges: [{ from: "buyer", to: "shop" }, ...CHAIN, { from: "tid", to: "acquirer" }],
     packets: [
-      { from: "acquirer", to: "processing", label: "Humo capture", delay: 10, duration: 25 },
+      { from: "acquirer", to: "processing", label: "capture the hold", delay: 10, duration: 25 },
       { from: "processing", to: "issuer", label: "capture", delay: 38, duration: 25 },
     ],
     badges: { issuer: "final" },

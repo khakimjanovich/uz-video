@@ -8,7 +8,7 @@ import { tableStep } from "../../series/build/tables";
 const B4 = builtBefore(4);
 export const map: BuildMapStep[] = [
   { cue: 0, part: 4, current: ["payment", "buyer", "bin", "card"], built: B4 },
-  { cue: 14, part: 4, current: ["payment", "terminal", "procport", "procsvc"], built: B4 },
+  { cue: 14, part: 4, current: ["payment", "epos", "procport", "procsvc"], built: B4 },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

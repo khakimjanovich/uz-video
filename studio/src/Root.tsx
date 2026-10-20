@@ -25,7 +25,7 @@ import { Yt09StartersComposition } from "./reels/yt-09-starters";
 
 import { Yt10CommissionComposition } from "./reels/yt-10-commission";
 
-import { Yt11TerminalsComposition } from "./reels/yt-11-terminals";
+import { Yt11EposComposition } from "./reels/yt-11-epos";
 
 import { Yt12AdaptersComposition } from "./reels/yt-12-adapters";
 
@@ -73,7 +73,7 @@ export const RemotionRoot: React.FC = () => {
       <Yt08SalesPointsComposition />
       <Yt09StartersComposition />
       <Yt10CommissionComposition />
-      <Yt11TerminalsComposition />
+      <Yt11EposComposition />
       <Yt12AdaptersComposition />
       <Yt13CardVaultComposition />
       <Yt14CreatePaymentComposition />

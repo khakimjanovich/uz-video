@@ -1,44 +1,44 @@
 1
-00:00:00,050 --> 00:00:04,333
+00:00:00,050 --> 00:00:04,404
 Before any code, what actually happens when someone pays a shop online with a card?
 
 2
-00:00:04,333 --> 00:00:10,845
+00:00:04,404 --> 00:00:10,916
 Five players are involved: the buyer, the shop, the acquirer bank, the processing center, and the issuer bank.
 
 3
-00:00:10,845 --> 00:00:17,571
+00:00:10,916 --> 00:00:17,535
 The acquirer is the shop's bank, the one this series describes, and the issuer is the bank that gave the buyer their card.
 
 4
-00:00:17,571 --> 00:00:26,690
-Every shop's website gets a terminal for each card scheme, identified by a merchant ID and a terminal ID, the MID and TID.
+00:00:17,535 --> 00:00:28,666
+Every shop's website gets an e POS terminal for each card scheme, a virtual POS terminal identified by a merchant ID and a terminal ID, the MID and TID.
 
 5
-00:00:26,690 --> 00:00:32,761
+00:00:28,666 --> 00:00:34,440
 When the buyer pays, the acquirer sends an authorization through the processing center to the issuer.
 
 6
-00:00:32,761 --> 00:00:39,964
-For Humo, the issuer first places a hold on the money, and for Uzcard, the money is debited in a single step.
+00:00:34,440 --> 00:00:40,869
+Depending on the card scheme, the issuer either debits the money in a single step, or first places a hold on it.
 
 7
-00:00:39,964 --> 00:00:46,154
-For Humo, the acquirer then captures the hold at once, and the payment becomes final.
+00:00:40,869 --> 00:00:51,321
+A hold is then captured, and only then is the payment final; every scheme, Uzcard and Humo today, Visa or Mastercard later, follows one of these two ways.
 
 8
-00:00:46,154 --> 00:00:51,428
+00:00:51,321 --> 00:00:56,702
 A reversal cancels a payment before settlement, and a refund sends money back after it.
 
 9
-00:00:51,428 --> 00:00:56,047
+00:00:56,702 --> 00:01:01,166
 At the end of the day, the processing center settles all payments with the acquirer.
 
 10
-00:00:56,047 --> 00:01:00,523
+00:01:01,166 --> 00:01:05,773
 The acquirer keeps its commission and pays the shop the rest by the next banking day.
 
 11
-00:01:00,523 --> 00:01:09,702
+00:01:05,773 --> 00:01:14,392
 These words, authorization, capture, MID, TID, and settlement, name the classes in every episode that follows.
 

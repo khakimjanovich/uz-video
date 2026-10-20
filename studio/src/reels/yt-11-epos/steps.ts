@@ -2,33 +2,33 @@ import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
-// Episode 11: the terminal registry.
+// Episode 11: the e-POS terminal registry.
 // Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 2, current: ["terminal"], built: [...builtBefore(2), "commission"] },
+  { cue: 0, part: 2, current: ["epos"], built: [...builtBefore(2), "commission"] },
   { cue: 10, part: 3, current: ["procport", "procsvc"], built: builtBefore(3) },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
-  { cue: 1, layout: { payment: [0.5, 1], processing: [2.5, 1] }, edges: [{ from: "payment", to: "processing", broken: true, label: "unknown terminal" }], packets: [{ from: "payment", to: "processing", label: "debit", delay: 15, stopAt: 0.5 }] },
-  { cue: 2, layout: { salespoint: [0.5, 1], terminal: [2.5, 1] }, edges: [{ from: "salespoint", to: "terminal", label: "registered" }], accent: ["terminal"], badges: { terminal: "MID · TID" } },
+  { cue: 1, layout: { payment: [0.5, 1], processing: [2.5, 1] }, edges: [{ from: "payment", to: "processing", broken: true, label: "unknown MID/TID" }], packets: [{ from: "payment", to: "processing", label: "debit", delay: 15, stopAt: 0.5 }] },
+  { cue: 2, layout: { salespoint: [0.5, 1], epos: [2.5, 1] }, edges: [{ from: "salespoint", to: "epos", label: "registered" }], accent: ["epos"], badges: { epos: "MID · TID" } },
   { cue: 3, layout: { salespoint: [0, 1], uzcard: [2.5, 0], humo: [2.5, 2] }, edges: [{ from: "salespoint", to: "uzcard", label: "TID 1" }, { from: "salespoint", to: "humo", label: "TID 2" }] },
-  { cue: 8, layout: { payment: [0.5, 1], terminal: [2.5, 1] }, edges: [{ from: "payment", to: "terminal", label: "forPayment" }, { from: "terminal", to: "payment" }], packets: [{ from: "payment", to: "terminal", label: "website + Uzcard", delay: 10 }, { from: "terminal", to: "payment", label: "MID · TID or none", delay: 45 }] },
+  { cue: 8, layout: { payment: [0.5, 1], epos: [2.5, 1] }, edges: [{ from: "payment", to: "epos", label: "forPayment" }, { from: "epos", to: "payment" }], packets: [{ from: "payment", to: "epos", label: "website + Uzcard", delay: 10 }, { from: "epos", to: "payment", label: "MID · TID or none", delay: 45 }] },
 ];
 
 export const code: CodeStep[] = [
   {
     cue: 4,
-    file: "modules/terminal/…/service/impl/TerminalServiceImpl.java",
+    file: "modules/epos/…/service/impl/EposServiceImpl.java",
     lines: [
       "/** Fails closed: an unknown website, or one that",
-      " *  doesn't take this card scheme, gets no terminal. */",
+      " *  doesn't take this card scheme, gets no e-POS terminal. */",
       "var salesPoint = salesPoints.find(salesPointId)",
       "    .orElseThrow(() -> new GeneralException(",
-      "        TERMINAL_SALES_POINT_NOT_FOUND, salesPointId));",
+      "        EPOS_SALES_POINT_NOT_FOUND, salesPointId));",
       "if (!salesPoint.schemes().contains(scheme)) {",
       "  throw new GeneralException(",
-      "      TERMINAL_SCHEME_NOT_ALLOWED, scheme);",
+      "      EPOS_SCHEME_NOT_ALLOWED, scheme);",
       "}",
       "",
       "// salesPoints: the partner module's public API,",
@@ -38,47 +38,47 @@ export const code: CodeStep[] = [
   },
   {
     cue: 5,
-    file: "modules/terminal/…/db/changelog/terminal.yaml",
+    file: "modules/epos/…/db/changelog/epos.yaml",
     lines: [
-      "# A MID/TID pair is issued once, even if the",
+      "# A MID/TID pair is issued once, even if the e-POS",
       "# terminal is revoked later.",
       "- addUniqueConstraint:",
       "    columnNames: scheme, merchant_id, terminal_id",
-      "    constraintName: uq_terminal_credentials",
+      "    constraintName: uq_epos_credentials",
       "",
-      "# At most one live terminal per website and card,",
+      "# At most one live e-POS terminal per website and card,",
       "# so a payment's route is never ambiguous.",
-      "- sql: CREATE UNIQUE INDEX uq_terminal_active_route",
-      "       ON terminal.terminal (sales_point_id, scheme)",
+      "- sql: CREATE UNIQUE INDEX uq_epos_active_route",
+      "       ON epos.epos (sales_point_id, scheme)",
       "       WHERE status = 'ACTIVE'",
     ],
     highlight: [4, 9, 11],
   },
   {
     cue: 6,
-    file: "modules/terminal/…/entity/Terminal.java",
+    file: "modules/epos/…/entity/Epos.java",
     lines: [
       "public void suspend() {",
-      "  move(TerminalStatus.ACTIVE, TerminalStatus.SUSPENDED);",
+      "  move(EposStatus.ACTIVE, EposStatus.SUSPENDED);",
       "}",
       "",
       "public void resume() {",
-      "  move(TerminalStatus.SUSPENDED, TerminalStatus.ACTIVE);",
+      "  move(EposStatus.SUSPENDED, EposStatus.ACTIVE);",
       "}",
       "",
       "/** Revoked is final: a revoked MID/TID never comes back. */",
       "public void revoke() {",
-      "  if (status == TerminalStatus.REVOKED) {",
-      "    throw invalid(TerminalStatus.REVOKED);",
+      "  if (status == EposStatus.REVOKED) {",
+      "    throw invalid(EposStatus.REVOKED);",
       "  }",
-      "  status = TerminalStatus.REVOKED;",
+      "  status = EposStatus.REVOKED;",
       "}",
     ],
     highlight: [9, 11],
   },
   {
     cue: 7,
-    file: "GET /api/v1/admin/terminals/{id}/audit",
+    file: "GET /api/v1/admin/epos/{eposId}/audit",
     lines: [
       "[",
       '  { "action": "REGISTERED", "actor": "aziz" },',
@@ -93,10 +93,10 @@ export const code: CodeStep[] = [
   },
   {
     cue: 9,
-    file: "platform/openapi/terminal-api/…/terminal-v1.yaml",
+    file: "platform/openapi/epos-api/…/epos-v1.yaml",
     lines: [
-      "/api/v1/admin/terminals:",
-      "  get: searchTerminals",
+      "/api/v1/admin/epos:",
+      "  get: searchEpos",
       "    parameters:",
       "      - salesPointId",
       "      - scheme",
@@ -104,9 +104,9 @@ export const code: CodeStep[] = [
       "      - q      # Part of a MID or TID",
       "      - page, size",
       "",
-      "/api/v1/admin/terminals/{terminalId}:        get",
-      "/api/v1/admin/terminals/{terminalId}/audit:  get",
+      "/api/v1/admin/epos/{eposId}:        get",
+      "/api/v1/admin/epos/{eposId}/audit:  get",
     ],
-    highlight: [7, 15],
+    highlight: [7, 10],
   },
 ];

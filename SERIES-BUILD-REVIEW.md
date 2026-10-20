@@ -20,7 +20,7 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 | 08 | Sales points + site check | 1:17 | ✅ Re-cut 2026-10-19: sales point logo in its own bucket; no tests/k6/bug beats |
 | 09 | Platform libraries | 1:04 | ✅ Re-cut 2026-10-19 as "Platform libraries": security + keycloak libraries, version catalog; no refactor or test beats |
 | 10 | Commission | 1:18 | ✅ Re-cut 2026-10-19: filters, levels and history added; no tests/k6 |
-| 11 | Terminals (MID/TID) | 1:05 | ✅ Re-cut 2026-10-19: terminal search (filters, MID/TID search, history); no tests/k6 |
+| 11 | e-POS terminals (MID/TID) | 1:05 | ✅ Re-cut 2026-10-19: e-POS terminal search (filters, MID/TID search, history); no tests/k6 |
 | 12 | Uzcard + Humo adapters | 1:29 | ✅ Re-cut 2026-10-19: adapters as separate services with their own contracts, envelope, commands, status YAML, card module over the clients; no sandbox/tests |
 | 13 | BIN registry + card vault | 1:26 | ✅ Re-cut 2026-10-19: BIN sync through the adapters; no Luhn-sandbox, IT or k6 beats |
 | 14 | HMAC + idempotency | 1:31 | ✅ Re-cut 2026-10-19: the bank puts signing keys straight into Vault; the app only reads them; no k6 |

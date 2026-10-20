@@ -36,7 +36,7 @@ export const TABLES: Record<string, Column[]> = {
     ["valid_from", "timestamptz", 10], ["valid_to", "timestamptz", 10], ["status", "varchar(16)", 10],
     ["proposed_by", "varchar(64)", 10], ["approved_by", "varchar(64)", 10], ["created_at", "timestamptz", 10],
   ],
-  "terminal.terminal": [
+  "epos.epos": [
     ["id", "uuid", 11], ["sales_point_id", "uuid", 11], ["scheme", "varchar(16)", 11], ["merchant_id", "varchar(30)", 11],
     ["terminal_id", "varchar(30)", 11], ["status", "varchar(16)", 11], ["registered_by", "varchar(64)", 11],
     ["created_at", "timestamptz", 11],

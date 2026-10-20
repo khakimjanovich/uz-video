@@ -117,7 +117,7 @@ export const code: CodeStep[] = [
     file: "modules/payment/…/entity/PaymentOperation.java",
     lines: [
       "/** Giving a paid debit back: REVERSAL or REFUND,",
-      " *  through the terminal that took it. */",
+      " *  through the e-POS terminal that took it. */",
       "public static PaymentOperation giveBack(Payment payment,",
       "    String kind) {",
       "  var operation = debit(payment);",

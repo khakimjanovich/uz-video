@@ -28,7 +28,7 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 
 **Modular monolith outside, hexagonal at the edges inside.**
 
-- **One app, one deploy, one Postgres with a schema per module:** `partner`, `commission`, `terminal`, `card`, `payment`. The real repo's microservices become our module boundaries.
+- **One app, one deploy, one Postgres with a schema per module:** `partner`, `commission`, `epos`, `bin`, `card`, `payment`. The real repo's microservices become our module boundaries.
 - **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 25).
 - **Ports and adapters only at the edges that talk to the outside world:** processing center (Uzcard REST, Humo SOAP), Keycloak, Vault, email. One port, several adapters. Plain layered code (controller → service → repository) for simple CRUD.
 - **Why:** a solo viewer runs one app instead of nine; boundaries stay honest; hexagonal pays only where there are real alternative implementations.
@@ -116,7 +116,8 @@ Rule: a tool joins `docker-compose.yml` in the episode whose problem needs it, n
 
 - **Episode 03, once:** a one-page entity sketch for the whole system: entities per module, their owners and relations, no columns. Cross-module links are IDs only (`payment.sales_point_id` is a UUID, no foreign key across schemas), which keeps modules extractable.
 - **Every episode after:** detailed tables just in time, as Liquibase migrations in that module's own schema, designed with the method (domain → contract → database).
-- **Episode 02:** empty schemas only (`partner`, `commission`, `terminal`, `card`, `payment`), each owned by its own database user.
+- **Episode 02:** empty schemas only (`partner`, `commission`, `epos`, `bin`, `card`, `payment`), each owned by its own database user.
+- The module once named `terminal` is `epos` (2026-10-20): a MID and a TID identify an e-POS terminal, a virtual POS terminal. Schema, API (`/api/v1/admin/epos`), UI and videos use the new name; `terminal_id` still means the TID.
 
 ## Video notes
 
@@ -225,13 +226,13 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 - Front: bank "Fees" page (rules, new rule, end, calculator); fee changes in Approvals.
 - Code: `ecom@ep-10`.
 
-**11 · Terminals (MID/TID)**
-- Problem: the processing center only accepts debits through a registered terminal.
-- Build: a terminal per website and card scheme (MID/TID from the processing center); registration fails closed unless the website exists and accepts that scheme (asked through the partner module's public `SalesPoints`); the database keeps MID/TID unique forever and one live terminal per website and scheme; suspend, resume, revoke (final); an audit log of every change with actor and reason; `Terminals.forPayment(...)` returns the live terminal or nothing; admins search every terminal (sales point, scheme, status, part of a MID/TID) a page at a time.
-- Tables: `terminal`, `terminal_audit`.
-- Endpoints: `GET|POST /api/v1/admin/sales-points/{id}/terminals`, `GET …/terminals/route?scheme=`, `GET /api/v1/admin/terminals`, `GET …/{id}`, `POST /api/v1/admin/terminals/{id}/suspend|resume|revoke`, `GET …/{id}/audit`.
-- Tests: `TerminalTest`, `TerminalServiceIT` (partner stubbed at its public interface); k6 `terminals/register-and-route.js`.
-- Front: bank "Terminals" page (filters, search, drawer with history and actions); terminals card on the bank's website page.
+**11 · e-POS terminals (MID/TID)**
+- Problem: the processing center only accepts debits through a registered e-POS terminal (a MID and a TID it issued).
+- Build: an e-POS terminal per website and card scheme (MID/TID from the processing center); registration fails closed unless the website exists and accepts that scheme (asked through the partner module's public `SalesPoints`); the database keeps MID/TID unique forever and one live terminal per website and scheme; suspend, resume, revoke (final); an audit log of every change with actor and reason; `Terminals.forPayment(...)` returns the live terminal or nothing; admins search every terminal (sales point, scheme, status, part of a MID/TID) a page at a time.
+- Tables: `epos.epos`, `epos.epos_audit`.
+- Endpoints: `GET|POST /api/v1/admin/sales-points/{id}/epos`, `GET …/epos/route?scheme=`, `GET /api/v1/admin/epos`, `GET …/{id}`, `POST /api/v1/admin/epos/{id}/suspend|resume|revoke`, `GET …/{id}/audit`.
+- Tests: `EposTest`, `EposServiceIT` (partner stubbed at its public interface); k6 `epos/register-and-route.js`.
+- Front: bank "e-POS terminals" page (filters, search, drawer with history and actions); e-POS card on the bank's website page.
 - Code: `ecom@ep-11`.
 
 ### Part 3: Cards (adapters + vault)

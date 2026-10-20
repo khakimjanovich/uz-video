@@ -14,7 +14,7 @@ const TITLES = [
   "Users + one app",
   "Partner",
   "Commission",
-  "Terminal",
+  "e-POS",
   "BIN",
   "Card vault",
   "Payment",
