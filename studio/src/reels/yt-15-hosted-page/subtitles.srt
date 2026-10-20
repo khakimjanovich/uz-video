@@ -23,37 +23,37 @@ Reading the page changes nothing: it shows the website's name and logo, the amou
 The buyer types the card, and the BIN module names its scheme and bank first, so a card the website doesn't accept never gets a code.
 
 7
-00:00:41,498 --> 00:00:50,880
-The card module checks the Luhn digit, stores the number encrypted, and asks the card's scheme, through its adapter, to send a one-time code to the cardholder's phone.
+00:00:41,498 --> 00:00:54,864
+The card module checks the Luhn digit, stores the number encrypted, and asks the card's scheme, through its adapter, to send a one-time code; Humo reads the card first, and sends it only to an active card's mobile banking phone.
 
 8
-00:00:50,930 --> 00:00:57,096
+00:00:54,914 --> 00:01:01,080
 Each code gets its own binding, so two payments with the same card never overwrite each other's code.
 
 9
-00:00:57,146 --> 00:01:04,344
+00:01:01,130 --> 00:01:08,328
 The page now shows the bank, the scheme and the card's last four digits, kept in the payment's card columns, and waits for the code.
 
 10
-00:01:04,394 --> 00:01:09,288
-The right code confirms the card through the same scheme, and the payment is ready to debit.
+00:01:08,378 --> 00:01:17,064
+The right code confirms the card through the same scheme, a card the scheme reports as blocked or expired is never bound, and the payment is ready to debit.
 
 11
-00:01:09,338 --> 00:01:15,816
+00:01:17,114 --> 00:01:23,592
 Every attempt is counted, and committed before the scheme is asked, so a failed attempt still counts.
 
 12
-00:01:15,866 --> 00:01:21,504
+00:01:23,642 --> 00:01:29,280
 Three cards, and three codes for each card, are allowed, and both numbers are configuration.
 
 13
-00:01:21,554 --> 00:01:24,960
+00:01:29,330 --> 00:01:32,736
 When the last attempt fails, the page closes for good.
 
 14
-00:01:25,010 --> 00:01:35,904
+00:01:32,786 --> 00:01:43,680
 One step runs at a time: a second click while the scheme is still answering is refused by a lock in Redis, which only its holder releases, and which outlives the slowest scheme call.
 
 15
-00:01:35,954 --> 00:01:39,648
+00:01:43,730 --> 00:01:47,424
 Next, the moment the money actually moves: the debit.

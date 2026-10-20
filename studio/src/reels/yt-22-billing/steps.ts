@@ -8,12 +8,23 @@ import { tableStep } from "../../series/build/tables";
 const B = [...builtBefore(4), "observability", "temporal", "kafka"] as const;
 export const map: BuildMapStep[] = [
   { cue: 0, part: 4, current: ["payment", "merchant"], built: [...B] },
-  { cue: 10, part: 4, current: ["payment", "admin"], built: [...B] },
+  { cue: 12, part: 4, current: ["payment", "admin"], built: [...B] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
   {
-    cue: 9,
+    cue: 7,
+    layout: { card: [0, 1], humosvc: [1.5, 1], humo: [3, 1] },
+    edges: [{ from: "card", to: "humosvc", label: "per terminal" }, { from: "humosvc", to: "humo", label: "SOAP_RECO" }],
+    packets: [
+      { from: "card", to: "humosvc", label: "TID 1", delay: 8, duration: 18 },
+      { from: "card", to: "humosvc", label: "TID 2", delay: 24, duration: 18 },
+      { from: "humosvc", to: "humo", label: "reconcile", delay: 40, duration: 18 },
+    ],
+    badges: { card: "8:15 11:15 14:15 23:50", humo: "returns paid back" },
+  },
+  {
+    cue: 11,
     layout: { merchant: [0.5, 1], payment: [2.5, 1] },
     edges: [{ from: "payment", to: "merchant", label: "reports · CSV" }],
     packets: [{ from: "payment", to: "merchant", label: "payments-2026-01-15.csv", delay: 10 }],
@@ -114,7 +125,7 @@ export const code: CodeStep[] = [
     highlight: [1, 6, 12],
   },
   {
-    cue: 7,
+    cue: 9,
     file: "modules/payment/…/service/impl/PaymentReportServiceImpl.java",
     lines: [
       "/** A payment paid that day, or a refund made that day:",
@@ -132,7 +143,7 @@ export const code: CodeStep[] = [
     highlight: [4, 6, 8],
   },
   {
-    cue: 8,
+    cue: 10,
     file: "modules/payment/…/service/impl/PaymentReportServiceImpl.java",
     lines: [
       "/** Every cell quoted, quotes doubled: a website's",
@@ -148,4 +159,5 @@ export const code: CodeStep[] = [
     highlight: [5, 9],
   },
   tableStep(1, "payment.daily_report", 22),
+  tableStep(8, "card.humo_reconciliation", 22),
 ];

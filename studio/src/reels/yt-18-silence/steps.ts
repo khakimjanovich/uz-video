@@ -88,6 +88,7 @@ export const code: CodeStep[] = [
       "    payment.getCardToken(), paymentId);",
       "",
       "// card module → adapter: Uzcard trans.ext, Humo GetPayment",
+      "// (a Humo hold still waiting is captured now)",
     ],
     highlight: [4],
   },

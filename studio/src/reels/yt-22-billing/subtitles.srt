@@ -1,44 +1,51 @@
 1
-00:00:00,050 --> 00:00:04,583
+00:00:00,050 --> 00:00:04,560
 At the end of the day, a merchant asks one question: how much do I get?
 
 2
-00:00:04,583 --> 00:00:12,273
+00:00:04,610 --> 00:00:12,576
 Every night the bank adds up the day before, for each website: what was paid, the fee, what was refunded, and the payout.
 
 3
-00:00:12,273 --> 00:00:20,869
+00:00:12,626 --> 00:00:21,288
 A business day runs from midnight to midnight in the settlement time zone, the same day that decides reversal or refund, so the two never disagree.
 
 4
-00:00:20,869 --> 00:00:27,988
+00:00:21,338 --> 00:00:28,512
 Paid counts payments paid that day and not reversed; refunded counts refunds made that day, whenever the payment was.
 
 5
-00:00:27,988 --> 00:00:34,119
+00:00:28,562 --> 00:00:34,944
 The payout is the net of what was paid, less what was refunded: the bank keeps its fee on a refund.
 
 6
-00:00:34,119 --> 00:00:38,238
+00:00:34,994 --> 00:00:39,264
 Building a day again replaces its rows, and never adds to them.
 
 7
-00:00:38,238 --> 00:00:46,690
+00:00:39,314 --> 00:00:47,472
 So every instance may run the job, and each night it rebuilds the last three days: a night the app was down is caught up.
 
 8
-00:00:46,690 --> 00:00:55,345
-Behind each day is a CSV: every payment and refund, with its fee, card and RRN, and a refund as a negative line.
+00:00:47,522 --> 00:00:56,184
+On the scheme's side, Humo finalises an e POS terminal's payments, and pays its returns back, only after the terminal is reconciled.
 
 9
-00:00:55,345 --> 00:00:59,583
-Every cell is quoted, because a website's name may hold a comma.
+00:00:56,234 --> 00:01:10,080
+So the card module reconciles every Humo e POS terminal fifteen minutes before each clearing session, and once between eleven forty-five and midnight; a unique row per terminal and slot lets only the first instance run it.
 
 10
-00:00:59,583 --> 00:01:08,559
-In the portal, the merchant sees each day and downloads its CSV; a day where refunds outweigh payments shows a negative payout.
+00:01:10,130 --> 00:01:19,056
+Behind each day is a CSV: every payment and refund, with its fee, card and RRN, and a refund as a negative line.
 
 11
-00:01:08,559 --> 00:01:12,261
-Next, hardening: limits on what one website may take.
+00:01:19,106 --> 00:01:23,280
+Every cell is quoted, because a website's name may hold a comma.
 
+12
+00:01:23,330 --> 00:01:31,968
+In the portal, the merchant sees each day and downloads its CSV; a day where refunds outweigh payments shows a negative payout.
+
+13
+00:01:32,018 --> 00:01:35,832
+Next, hardening: limits on what one website may take.

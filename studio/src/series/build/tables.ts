@@ -47,6 +47,13 @@ export const TABLES: Record<string, Column[]> = {
     ["processor_token_encrypted", "text", 13], ["status", "varchar(16)", 13], ["created_at", "timestamptz", 13],
     ["bound_at", "timestamptz", 13],
   ],
+  "card.humo_reconciliation": [
+    ["id", "uuid", 22], ["terminal_id", "varchar(8)", 22], ["slot", "varchar(12)", 22], ["payment_ref", "varchar(64)", 22],
+    ["status", "varchar(16)", 22], ["debits_number", "bigint", 22], ["debits_amount", "bigint", 22],
+    ["credits_reversal_number", "bigint", 22], ["credits_reversal_amount", "bigint", 22],
+    ["reconcile_info", "varchar(32)", 22], ["error", "varchar(255)", 22], ["started_at", "timestamptz", 22],
+    ["finished_at", "timestamptz", 22],
+  ],
   "payment.payment": [
     ["id", "uuid", 14], ["partner_id", "uuid", 14], ["sales_point_id", "uuid", 14], ["client_id", "varchar(64)", 14],
     ["order_id", "varchar(64)", 14], ["amount", "bigint", 14], ["description", "varchar(255)", 14],

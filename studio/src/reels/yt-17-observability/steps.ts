@@ -51,10 +51,10 @@ export const diagram: DiagramStep<BuildId>[] = [
   {
     cue: 11,
     layout: { payment: [0, 1], uzcardsvc: [1.5, 1], uzcard: [3, 1], grafana: [1.5, 2.4] },
-    edges: [{ from: "payment", to: "uzcardsvc", label: "504" }, { from: "uzcardsvc", to: "uzcard", broken: true, label: "no answer" }, { from: "payment", to: "grafana" }],
+    edges: [{ from: "payment", to: "uzcardsvc", label: "502" }, { from: "uzcardsvc", to: "uzcard", broken: true, label: "no answer" }, { from: "payment", to: "grafana" }],
     packets: [{ from: "uzcardsvc", to: "uzcard", label: "debit", delay: 8, stopAt: 0.5 }],
     danger: ["uzcard"],
-    badges: { grafana: "1 unknown · 504" },
+    badges: { grafana: "1 unknown · 502" },
   },
 ];
 
@@ -99,11 +99,11 @@ export const code: CodeStep[] = [
   },
   {
     cue: 5,
-    file: "Loki · {service_name=\"ecom\"} |= \"has no answer\"",
+    file: "Loki · {service_name=\"ecom\"} |= \"has no final answer\"",
     lines: [
-      "WARN  Debit e76589a0-… has no answer:",
-      "      HttpServerErrorException$GatewayTimeout: 504",
-      '      "code":"UZCARD_ADAPTER_TIMEOUT"',
+      "WARN  Debit e76589a0-… has no final answer:",
+      "      HttpServerErrorException$BadGateway: 502",
+      '      "code":"UZCARD_ADAPTER_SV_GATE_CLIENT_ERROR"',
       "",
       "trace_id = 99dad7bd13440fe7150eb89a8d459f73   → Tempo",
     ],
