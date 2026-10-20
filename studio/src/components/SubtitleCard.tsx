@@ -1,4 +1,5 @@
 import React from "react";
+import { useVideoConfig } from "remotion";
 
 export interface SubtitleCue {
   index?: number;
@@ -19,15 +20,44 @@ export interface SubtitleCardProps {
   style?: React.CSSProperties; // position override, e.g. a side column in 16:9
 }
 
+// IBM Plex Mono advance is 0.6em, so line wrapping is predictable from the text alone.
+const SIZES = [32, 30, 28, 26];
+const LINE_HEIGHT = 1.35;
+const MAX_HEIGHT = 5 * 32 * LINE_HEIGHT; // the tape never grows past five 32px lines
+const PAD_X = 36;
+
+const countLines = (text: string, perLine: number) => {
+  let lines = 1;
+  let used = 0;
+  for (const word of text.split(/\s+/).filter(Boolean)) {
+    if (used === 0) used = word.length;
+    else if (used + 1 + word.length <= perLine) used += 1 + word.length;
+    else {
+      lines += 1;
+      used = word.length;
+    }
+  }
+  return lines;
+};
+
+// Largest step that keeps the caption inside its slot; long cues shrink instead of covering the panel above.
+const fitFontSize = (text: string, width: number) =>
+  SIZES.find((size) => countLines(text, Math.floor(width / (size * 0.6))) * size * LINE_HEIGHT <= MAX_HEIGHT) ??
+  SIZES[SIZES.length - 1];
+
 // Caption printed on black tape; the highlight is marker yellow (stamp red during the break act).
 export const SubtitleCard: React.FC<SubtitleCardProps> = ({ currentSubtitle, danger = false, style }) => {
   const prefix = currentSubtitle.prefix ?? currentSubtitle.text ?? "";
   const highlight = currentSubtitle.highlight ?? "";
   const suffix = currentSubtitle.suffix ?? "";
+  const { width } = useVideoConfig();
+  const left = typeof style?.left === "number" ? style.left : 84;
+  const right = typeof style?.right === "number" ? style.right : 84;
+  const fontSize = fitFontSize(prefix + highlight + suffix, width - left - right - 2 * PAD_X);
 
   return (
     <div className="absolute bottom-[150px] left-[84px] right-[84px] z-20 bg-ink px-9 py-7" style={style}>
-      <div className="font-mono text-[32px] font-semibold leading-[1.35] text-paper">
+      <div className="font-mono font-semibold leading-[1.35] text-paper break-words" style={{ fontSize }}>
         {prefix}
         {highlight ? (
           <span

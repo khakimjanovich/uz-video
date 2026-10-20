@@ -137,16 +137,16 @@
   {
     "index": 16,
     "startFrame": 4023,
-    "endFrame": 4507,
-    "text": "A separate infrastructure repository starts the whole infrastructure with Docker Compose: Postgres and Redis, Mailpit, an S3 store, Keycloak, a processing sandbox, Vault, monitoring, Temporal and Kafka, and each one is explained in the episode that first uses it.",
-    "prefix": "A separate infrastructure repository starts the whole infrastructure with Docker Compose: Postgres and Redis, Mailpit, an S3 store, Keycloak, a processing sandbox, Vault, monitoring, Temporal and Kafka, and each one is explained in the episode that first uses it.",
+    "endFrame": 4264,
+    "text": "One infrastructure repository starts all of it with Docker Compose, and each piece is explained in the episode that first uses it.",
+    "prefix": "One infrastructure repository starts all of it with Docker Compose, and each piece is explained in the episode that first uses it.",
     "highlight": "",
     "suffix": ""
   },
   {
     "index": 17,
-    "startFrame": 4507,
-    "endFrame": 4758,
+    "startFrame": 4265,
+    "endFrame": 4516,
     "text": "One command, and the whole world is up; the code, the infrastructure, the load tests, and the web app each live in their own repository.",
     "prefix": "One command, and the whole world is up; the code, the infrastructure, the load tests, and the web app each live in their own repository.",
     "highlight": "",
@@ -154,8 +154,8 @@
   },
   {
     "index": 18,
-    "startFrame": 4759,
-    "endFrame": 4894,
+    "startFrame": 4516,
+    "endFrame": 4651,
     "text": "Next, the domain, which comes before a single table.",
     "prefix": "Next, the domain, which comes before a single table.",
     "highlight": "",

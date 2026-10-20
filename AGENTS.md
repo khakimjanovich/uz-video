@@ -181,3 +181,4 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `tok_uz_…` | token |
 | `API` | ey-pi-ay |
 | `e-POS` | e POS (the hyphen makes the voice service hang) |
+| `RFC 9421` | R F C ninety-four twenty-one |

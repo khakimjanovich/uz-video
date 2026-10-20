@@ -2,7 +2,7 @@ import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
 
-// Episode 19: the transactional outbox, Kafka, and signed merchant webhooks.
+// Episode 19: the transactional outbox, Kafka, and merchant webhooks signed the Standard Webhooks way.
 // Code beats quote github.com/khakimjanovich/ecom (main).
 const B = [...builtBefore(4), "observability", "temporal"] as const;
 export const map: BuildMapStep[] = [
@@ -40,6 +40,19 @@ export const diagram: DiagramStep<BuildId>[] = [
       { from: "kafka", to: "webhook", label: "event 7f3a", delay: 34 },
     ],
     badges: { webhook: "seen: drop" },
+  },
+  {
+    cue: 9,
+    layout: { kafka: [0, 0.4], payment: [1, 0.4], vault: [1, 1.8], hmac: [2, 1.1], webhook: [3, 1.1] },
+    edges: [
+      { from: "kafka", to: "payment", label: "event" },
+      { from: "payment", to: "hmac", label: "body" },
+      { from: "vault", to: "hmac", label: "client key" },
+      { from: "hmac", to: "webhook", label: "POST" },
+    ],
+    packets: [{ from: "hmac", to: "webhook", label: "webhook-id · webhook-timestamp · v1,…", delay: 14, duration: 30 }],
+    accent: ["hmac"],
+    badges: { webhook: "Standard Webhooks" },
   },
   {
     cue: 13,
@@ -144,26 +157,6 @@ export const code: CodeStep[] = [
       "}",
     ],
     highlight: [8, 9, 12],
-  },
-  {
-    cue: 9,
-    file: "modules/payment/…/service/impl/PaymentWebhookListener.java",
-    lines: [
-      "@KafkaListener(topics = EVENTS_TOPIC, groupId = WEBHOOK_GROUP)",
-      "void deliver(ConsumerRecord<String, String> record) {",
-      "  …",
-      "  var signedText = SignatureUtils.signedText(",
-      "      \"POST\", path, timestamp, eventId,",
-      "      SignatureUtils.sha256Hex(body));",
-      "  webhookClient.post().uri(target)",
-      "      .header(\"X-Event-Id\", eventId)",
-      "      .header(\"X-Timestamp\", timestamp)",
-      "      .header(\"X-Signature\",",
-      "          SignatureUtils.sign(key, signedText))",
-      "      .body(body).retrieve().toBodilessEntity();",
-      "}",
-    ],
-    highlight: [1, 5, 11],
   },
   {
     cue: 10,

@@ -1,56 +1,59 @@
 1
-00:00:00,050 --> 00:00:04,690
+00:00:00,050 --> 00:00:04,776
 How does the bank know a payment request really came from the shop, and only once?
 
 2
-00:00:04,690 --> 00:00:11,988
-The shop's server asks for a payment: a website, an order number, an amount in tiyin, and a return address.
+00:00:04,826 --> 00:00:17,520
+First, a setup chain: the merchant signs up by email code, two admins approve it, its sales point goes live, it gets an e POS terminal, a commission rule, an API client, and a signing key in Vault.
 
 3
-00:00:11,988 --> 00:00:16,857
-Its access token comes from its API client, which carries the merchant role.
+00:00:17,570 --> 00:00:24,576
+The shop's server asks for a payment: a website, an order number, an amount in tiyin, and a return address.
 
 4
-00:00:16,857 --> 00:00:23,440
-But a stolen token alone must not be enough to create payments, so every request is also signed.
+00:00:24,626 --> 00:00:29,232
+Its access token comes from its API client, which carries the merchant role.
 
 5
-00:00:23,440 --> 00:00:31,440
-The server signs the method, the path, a timestamp, a nonce and the body's hash with HMAC SHA two fifty six.
+00:00:29,282 --> 00:00:35,904
+But a stolen token alone must not be enough to create payments, so every request is also signed.
 
 6
-00:00:31,440 --> 00:00:39,666
-Each API client has its own signing key, which the bank puts straight into Vault; our app never generates it, and only reads it.
+00:00:35,954 --> 00:00:51,264
+It follows R F C ninety-four twenty-one, HTTP Message Signatures: the server signs the method, the full address, its token, the body's digest, a creation time and a nonce, with HMAC SHA two fifty six.
 
 7
-00:00:39,666 --> 00:00:46,571
-A timestamp outside the configured window is refused, and a nonce works only once, remembered in Redis.
+00:00:51,314 --> 00:00:59,568
+Each API client has its own signing key, which the bank puts straight into Vault; our app never generates it, and only reads it.
 
 8
-00:00:46,571 --> 00:00:53,023
-The signature is checked before the nonce is spent, so a forged request can't burn the merchant's nonces.
+00:00:59,618 --> 00:01:07,224
+A signature created outside the configured window is refused, and a nonce works only once, remembered in Redis.
 
 9
-00:00:53,023 --> 00:00:59,500
-A network retry must never create a second payment, so each request carries an idempotency key.
+00:01:07,274 --> 00:01:13,632
+The signature is checked before the nonce is spent, so a forged request can't burn the merchant's nonces.
 
 10
-00:00:59,500 --> 00:01:05,714
-The same key with the same body returns the stored response, and the same key with a different body is refused.
+00:01:13,682 --> 00:01:20,232
+A network retry must never create a second payment, so each request carries an idempotency key.
 
 11
-00:01:05,714 --> 00:01:12,595
-Two retries at the same moment meet at the database's unique keys, and the loser replays the winner's answer.
+00:01:20,282 --> 00:01:26,592
+The same key with the same body returns the stored response, and the same key with a different body is refused.
 
 12
-00:01:12,595 --> 00:01:20,452
-Only the merchant's own live website, with one of its return addresses, can take a payment, and anything else is refused before saving.
+00:01:26,642 --> 00:01:33,600
+Two retries at the same moment meet at the database's unique keys, and the loser replays the winner's answer.
 
 13
-00:01:20,452 --> 00:01:35,357
-The response carries a one-time link to the bank's payment page, and the database keeps only its hash; the payment's other columns, the card, the debit, its source and its return, are explained in episodes fifteen, sixteen, twenty and twenty-one.
+00:01:33,650 --> 00:01:41,352
+Only the merchant's own live website, with one of its return addresses, can take a payment, and anything else is refused before saving.
 
 14
-00:01:35,357 --> 00:01:38,654
-Next, the buyer opens that page and enters their card.
+00:01:41,402 --> 00:01:52,656
+The response carries a one-time link to the bank's payment page, and the database keeps only its hash; the payment's other columns come in episodes fifteen, sixteen, twenty and twenty-one.
 
+15
+00:01:52,706 --> 00:01:56,184
+Next, the buyer opens that page and enters their card.

@@ -59,13 +59,13 @@ Errors follow one format: each module lists its errors once, and the client gets
 Services that do one job live outside the app, each with its own contract and client: the card scheme adapters.
 
 16
-00:02:14,114 --> 00:02:30,216
-A separate infrastructure repository starts the whole infrastructure with Docker Compose: Postgres and Redis, Mailpit, an S3 store, Keycloak, a processing sandbox, Vault, monitoring, Temporal and Kafka, and each one is explained in the episode that first uses it.
+00:02:14,114 --> 00:02:22,128
+One infrastructure repository starts all of it with Docker Compose, and each piece is explained in the episode that first uses it.
 
 17
-00:02:30,266 --> 00:02:38,592
+00:02:22,178 --> 00:02:30,504
 One command, and the whole world is up; the code, the infrastructure, the load tests, and the web app each live in their own repository.
 
 18
-00:02:38,642 --> 00:02:42,120
+00:02:30,554 --> 00:02:34,032
 Next, the domain, which comes before a single table.
