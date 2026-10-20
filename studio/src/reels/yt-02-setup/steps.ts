@@ -63,8 +63,8 @@ export const diagram: DiagramStep<BuildId>[] = [
     cue: 6,
     layout: { payment: [0.3, 1], epos: [2.6, 0.3], partner: [2.6, 1.7] },
     edges: [
-      { from: "payment", to: "epos", label: "public interface" },
-      { from: "payment", to: "partner", broken: true, label: "an inner class" },
+      { from: "payment", to: "epos", label: "its contract" },
+      { from: "payment", to: "partner", broken: true, label: "its code" },
     ],
     badges: { partner: "build fails" },
   },
@@ -85,7 +85,7 @@ export const diagram: DiagramStep<BuildId>[] = [
   {
     cue: 9,
     layout: { spec: [0, 1], client: [2, 0.2], app: [2, 1.8] },
-    edges: [{ from: "spec", to: "client" }, { from: "spec", to: "app" }, { from: "client", to: "app", label: "HTTP" }],
+    edges: [{ from: "spec", to: "client" }, { from: "spec", to: "app" }, { from: "client", to: "app", label: "in-process · HTTP later" }],
     accent: ["client"],
     badges: { client: "same interface" },
   },
@@ -121,9 +121,9 @@ export const diagram: DiagramStep<BuildId>[] = [
   },
   {
     cue: 14,
-    layout: { app: [0.3, 1], uzcardsvc: [2.3, 0], humosvc: [2.3, 1], filesvc: [2.3, 2] },
-    edges: [{ from: "app", to: "uzcardsvc" }, { from: "app", to: "humosvc" }, { from: "app", to: "filesvc" }],
-    badges: { uzcardsvc: "own contract", humosvc: "own contract", filesvc: "own contract" },
+    layout: { app: [0.3, 1], uzcardsvc: [2.3, 0.4], humosvc: [2.3, 1.6] },
+    edges: [{ from: "app", to: "uzcardsvc" }, { from: "app", to: "humosvc" }],
+    badges: { uzcardsvc: "own contract", humosvc: "own contract" },
   },
   {
     cue: 15,

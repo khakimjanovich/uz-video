@@ -12,10 +12,10 @@ export const map: BuildMapStep[] = [
 export const diagram: DiagramStep<BuildId>[] = [
   {
     cue: 1,
-    layout: { kubernetes: [0, 1], app: [1.7, 0.2], uzcardsvc: [1.7, 1.2], humosvc: [3, 1.2], filesvc: [3, 0.2] },
+    layout: { kubernetes: [0, 1], app: [1.7, 0.2], uzcardsvc: [1.7, 1.6], humosvc: [3, 1.6] },
     edges: [{ from: "kubernetes", to: "app" }, { from: "kubernetes", to: "uzcardsvc" }],
     accent: ["kubernetes"],
-    badges: { app: "× 3", uzcardsvc: "× 2", humosvc: "× 2", filesvc: "× 2" },
+    badges: { app: "× 3", uzcardsvc: "× 2", humosvc: "× 2" },
   },
   {
     cue: 7,

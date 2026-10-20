@@ -40,7 +40,7 @@ export const BUILD_CATALOG = {
   feeacc: { label: "Bank fee", art: "fee" },
   spec: { label: "OpenAPI spec", logo: siOpenapiinitiative.path },
   // separate services (each its own deployment, contract and client)
-  filesvc: { label: "File service", sublabel: "Own service", art: "tray" },
+  filesvc: { label: "File store", sublabel: "Platform library", art: "tray" },
   bucket: { label: "S3 bucket", sublabel: "SeaweedFS locally", art: "vault" },
   docs: { label: "Documents", sublabel: "Charter · passport", art: "receipt" },
   uzcardsvc: { label: "Uzcard adapter", sublabel: "Own service", art: "processing" },

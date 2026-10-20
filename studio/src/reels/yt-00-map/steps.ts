@@ -15,7 +15,7 @@ export const steps: BuildMapStep[] = [
   { cue: 6, current: ["bin"] },
   { cue: 7, current: ["card"] },
   { cue: 8, current: ["payment"] },
-  { cue: 9, current: ["emailport", "procport", "emailsvc", "filesvc", "procsvc"] },
+  { cue: 9, current: ["emailport", "procport", "emailsvc", "procsvc"] },
   { cue: 10, current: ["postgres", "redis", "keycloak", "vault", "s3", "temporal", "kafka", "observability"] },
   part(0, 11),
   part(1, 12),

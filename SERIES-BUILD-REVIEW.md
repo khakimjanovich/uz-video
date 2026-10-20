@@ -9,12 +9,12 @@ For each episode: watch it, tick what matches reality, and note anything to chan
 
 | Ep | Title | Length | What to check |
 |---|---|---|---|
-| 00 | The map | 1:51 | ✅ Re-cut 2026-10-19: separate services row (file service, adapters), S3 on the map |
+| 00 | The map | 1:51 | ✅ Re-cut 2026-10-19: separate services row (email, adapters), S3 on the map; 2026-10-20 the file service is a platform library |
 | 01 | Acquiring in 5 minutes | 1:11 | ✅ Reviewed 2026-10-19. Code: Uzcard single-step debit (`trans.pay.purpose`), Humo hold then immediate capture (SOAP `Payment` ×2), terminal per sales point + scheme. **Open: reversal vs refund rule per scheme (waiting for Uzcard/Humo docs)** |
 | 02 | Setup | 1:52 | ✅ Re-cut 2026-10-19 to the final design: Groovy build, platform, version catalog, one error format, contracts, separate services, infra repo |
 | 03 | Domain → contract → database | 1:27 | ✅ Re-cut 2026-10-19: no test or k6 beats; current error format |
 | 04 | Registration + email OTP | 1:07 | ✅ Re-cut 2026-10-19: OTP library, `otp-exception.yaml`; no k6 beat |
-| 05 | Lifecycle + documents | 1:38 | ✅ Re-cut 2026-10-19 as "Lifecycle + documents": KYB uploads to the file service (S3), document review, verify needs the required documents |
+| 05 | Lifecycle + documents | 1:38 | ✅ Re-cut 2026-10-19 as "Lifecycle + documents": KYB uploads to the file store (platform library, S3), document review, verify needs the required documents |
 | 06 | Four-eyes | 1:13 | ✅ Re-cut 2026-10-19: request/list/approve/reject calls, KYB checked again on open and approve; no tests/k6 |
 | 07 | Logins and API clients | 1:09 | ✅ Re-cut 2026-10-19: three realm roles (admin, partner, merchant), route rules in config, name from token, secrets never stored |
 | 08 | Sales points + site check | 1:17 | ✅ Re-cut 2026-10-19: sales point logo in its own bucket; no tests/k6/bug beats |

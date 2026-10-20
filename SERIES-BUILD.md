@@ -29,7 +29,7 @@ Video beats per episode (from the owner pitch lessons): **worry → relief**. Sh
 **Modular monolith outside, hexagonal at the edges inside.**
 
 - **One app, one deploy, one Postgres with a schema per module:** `partner`, `commission`, `epos`, `bin`, `card`, `payment`. The real repo's microservices become our module boundaries.
-- **Modules talk only through public interfaces** (a `*Api` Java interface per module), never through each other's tables or internal classes. A module can later be extracted into a service with little change (episode 25).
+- **Modules talk only through their contracts** (decided 2026-10-20): what one module needs from another is an `/internal/v1/…` operation in that module's OpenAPI file (tag `<Module>Internal`, visible in Swagger UI), generated as an `@HttpExchange` interface with the contract's models. The owning module serves it as a `@RestController`; other modules inject the same interface and call it in-process. A calling module depends only on the other module's contract jar, never its code, and `/internal` is never routed from outside. No hand-written module-to-module Java interfaces or records. A module becomes a service by registering an HTTP client for the same interface (episode 25). Merchants' signing keys are read from Vault by each module that needs them (`platform/vault` `SigningKeys`), never passed between modules. File storage is the platform library `platform/file-store` (S3), not a service.
 - **Ports and adapters only at the edges that talk to the outside world:** processing center (Uzcard REST, Humo SOAP), Keycloak, Vault, email. One port, several adapters. Plain layered code (controller → service → repository) for simple CRUD.
 - **Why:** a solo viewer runs one app instead of nine; boundaries stay honest; hexagonal pays only where there are real alternative implementations.
 
@@ -228,10 +228,10 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **11 · e-POS terminals (MID/TID)**
 - Problem: the processing center only accepts debits through a registered e-POS terminal (a MID and a TID it issued).
-- Build: an e-POS terminal per website and card scheme (MID/TID from the processing center); registration fails closed unless the website exists and accepts that scheme (asked through the partner module's public `SalesPoints`); the database keeps MID/TID unique forever and one live terminal per website and scheme; suspend, resume, revoke (final); an audit log of every change with actor and reason; `Terminals.forPayment(...)` returns the live terminal or nothing; admins search every terminal (sales point, scheme, status, part of a MID/TID) a page at a time.
+- Build: an e-POS terminal per website and card scheme (MID/TID from the processing center); registration fails closed unless the website exists and accepts that scheme (asked through the partner contract's internal operation `findSalesPoint`); the database keeps MID/TID unique forever and one live terminal per website and scheme; suspend, resume, revoke (final); an audit log of every change with actor and reason; `Terminals.forPayment(...)` returns the live terminal or nothing; admins search every terminal (sales point, scheme, status, part of a MID/TID) a page at a time.
 - Tables: `epos.epos`, `epos.epos_audit`.
 - Endpoints: `GET|POST /api/v1/admin/sales-points/{id}/epos`, `GET …/epos/route?scheme=`, `GET /api/v1/admin/epos`, `GET …/{id}`, `POST /api/v1/admin/epos/{id}/suspend|resume|revoke`, `GET …/{id}/audit`.
-- Tests: `EposTest`, `EposServiceIT` (partner stubbed at its public interface); k6 `epos/register-and-route.js`.
+- Tests: `EposTest`, `EposServiceIT` (the partner contract's interface stubbed); k6 `epos/register-and-route.js`.
 - Front: bank "e-POS terminals" page (filters, search, drawer with history and actions); e-POS card on the bank's website page.
 - Code: `ecom@ep-11`.
 
@@ -277,7 +277,7 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **16 · The debit**
 - Problem: two concurrent clicks must never charge twice.
-- Build: the code step ends with the debit: one conditional update claims it (CARD_CONFIRMED → DEBITING, exactly one caller wins); the winner fixes the route (`Terminals.forPayment`: MID/TID) and the fee (`Commissions.quote`: rule, fee, net, with a database check `fee + net = amount`); no terminal or no fee rule fails the payment before any money moves (the card step already refuses a scheme with no live terminal); the operation is journaled before the scheme is asked (`payment_operation`, one debit per payment by a unique key); the card module asks the scheme through its adapter with our payment id as the reference; APPROVED → PAID with the RRN, DECLINED → DECLINED with our code, no answer → UNKNOWN, never declined; every move goes through the status table.
+- Build: the code step ends with the debit: one conditional update claims it (CARD_CONFIRMED → DEBITING, exactly one caller wins); the winner fixes the route (`EposInternalApi.findLiveEpos`: MID/TID) and the fee (`CommissionInternalApi.quoteFee`: rule, fee, net, with a database check `fee + net = amount`); no terminal or no fee rule fails the payment before any money moves (the card step already refuses a scheme with no live terminal); the operation is journaled before the scheme is asked (`payment_operation`, one debit per payment by a unique key); the card module asks the scheme through its adapter with our payment id as the reference; APPROVED → PAID with the RRN, DECLINED → DECLINED with our code, no answer → UNKNOWN, never declined; every move goes through the status table.
 - Tables: `payment` (+ route, fee, RRN, decline code), `payment_operation`.
 - Tests: `PaymentPageIT` (four concurrent debits charge once, route and fee fixed and journaled, decline vs unknown, no route means no code); k6 `payments/hosted-page.js` pays, checks the fee and a declined card; the web journey pays and the bank sees the fee and RRN.
 - Front: the page shows paid, declined (with why) or still checking; the bank's Payments page shows card, MID/TID, fee and RRN.
@@ -345,14 +345,14 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 **24 · Deploy to Kubernetes**
 - Problem: production needs more than one process on one laptop: replicas, health checks, rolling updates, secrets that never touch git.
-- Build (all in ecom-infra, the code is unchanged): `k8s/Dockerfile` (the jar on the plain JRE, non-root; heap from the limit); `k8s/base` (Kustomize): the app × 3 and each adapter and the file service × 2, Spring Boot's liveness and readiness probes, `maxUnavailable: 0` rolling updates, `preStop` pause and a 60 s grace period, addresses in a ConfigMap and secrets from the `ecom-secrets` Secret (from Vault, never in git), an autoscaler (3–6 on CPU) and a PodDisruptionBudget. Every scheduled job is already safe on every replica (SKIP LOCKED, one workflow per payment, ShedLock), and Kafka shares partitions between replicas. `k8s/local`: a one-node k3s in Docker on the stack's network, Services that point at the compose containers (`dependencies.sh`), local-only secrets, smaller sizes, the app on :30085.
+- Build (all in ecom-infra, the code is unchanged): `k8s/Dockerfile` (the jar on the plain JRE, non-root; heap from the limit); `k8s/base` (Kustomize): the app × 3 and each adapter × 2, Spring Boot's liveness and readiness probes, `maxUnavailable: 0` rolling updates, `preStop` pause and a 60 s grace period, addresses in a ConfigMap and secrets from the `ecom-secrets` Secret (from Vault, never in git), an autoscaler (3–6 on CPU) and a PodDisruptionBudget. Every scheduled job is already safe on every replica (SKIP LOCKED, one workflow per payment, ShedLock), and Kafka shares partitions between replicas. `k8s/local`: a one-node k3s in Docker on the stack's network, Services that point at the compose containers (`dependencies.sh`), local-only secrets, smaller sizes, the app on :30085.
 - Why Kustomize, not Helm: plain manifests plus one overlay per place; nothing to template yet.
 - Verified: k6 `payments/hosted-page.js` through the cluster while an app pod is deleted: 0 failed checks; the autoscaler adds a replica under load.
 - Code: `ecom-infra@ep-24`.
 
 **25 · Extract a module into a service** (paused; not built)
 - Problem: the card vault needs stricter security and its own deploy (PCI DSS scope).
-- Build: move the `card` module into its own Spring Boot service; replace the in-process `Cards` with a REST adapter behind the same port; give it its own database.
+- Build: move the `card` module into its own Spring Boot service; register an HTTP client for the same `CardInternalApi` the payment module already injects; give it its own database.
 - Why: shows *why* microservices exist: clean boundaries made the move cheap. Mirrors the real card-processor-service.
 - Demo: same payment flow, now across two services on the same cluster.
 

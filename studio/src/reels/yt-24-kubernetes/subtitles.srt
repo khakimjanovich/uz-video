@@ -1,48 +1,47 @@
 1
-00:00:00,050 --> 00:00:04,321
+00:00:00,050 --> 00:00:04,152
 Everything runs on one laptop: what does production need instead?
 
 2
-00:00:04,321 --> 00:00:12,809
-Kubernetes runs each deployable as replicas behind a Service: the app three times, each adapter and the file service twice.
+00:00:04,202 --> 00:00:11,736
+Kubernetes runs each deployable as replicas behind a Service: the app three times, each adapter twice.
 
 3
-00:00:12,809 --> 00:00:21,785
+00:00:11,786 --> 00:00:20,688
 Every image is the same Gradle-built jar on the plain JRE, as a user without root rights; the limits and JVM options come from the cluster.
 
 4
-00:00:21,785 --> 00:00:27,059
+00:00:20,738 --> 00:00:25,920
 Spring Boot's own probes tell the cluster when a pod is alive, and when it takes traffic.
 
 5
-00:00:27,059 --> 00:00:35,285
+00:00:25,970 --> 00:00:34,224
 A rolling update starts a new pod before it stops an old one, and a short pause before shutdown lets the Service stop sending requests first.
 
 6
-00:00:35,285 --> 00:00:41,309
+00:00:34,274 --> 00:00:40,344
 The app then finishes what it is doing, for up to sixty seconds, longer than the slowest scheme call.
 
 7
-00:00:41,309 --> 00:00:48,000
+00:00:40,394 --> 00:00:47,112
 Addresses live in a ConfigMap; secrets come from a Secret the bank creates from Vault, never from git.
 
 8
-00:00:48,000 --> 00:00:58,726
+00:00:47,162 --> 00:00:57,696
 Three replicas run every scheduled job three times, and that is safe: skip locked, one workflow per payment, ShedLock, and Kafka shares its partitions between them.
 
 9
-00:00:58,726 --> 00:01:06,011
+00:00:57,746 --> 00:01:04,728
 An autoscaler adds replicas when the CPU is busy, and a disruption budget never lets a drain take more than one.
 
 10
-00:01:06,011 --> 00:01:12,452
+00:01:04,778 --> 00:01:11,184
 Deleting a pod in the middle of payments loses nothing: the others take the traffic, and a new one starts.
 
 11
-00:01:12,452 --> 00:01:19,404
+00:01:11,234 --> 00:01:18,600
 On a laptop, the same manifests run in a one-node k3s, with Services that point at the compose stack.
 
 12
-00:01:19,404 --> 00:01:23,630
+00:01:18,650 --> 00:01:23,016
 Next, the last step: moving the card vault into its own service.
-

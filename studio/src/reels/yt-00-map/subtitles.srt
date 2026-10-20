@@ -1,72 +1,71 @@
 1
-00:00:00,050 --> 00:00:04,107
+00:00:00,050 --> 00:00:04,200
 What does it take to build a bank's e-commerce acquiring system from scratch?
 
 2
-00:00:04,107 --> 00:00:09,511
+00:00:04,250 --> 00:00:09,576
 This series walks through one, part by part, and this map shows where each part sits.
 
 3
-00:00:09,511 --> 00:00:18,000
-On top are the three users: the merchant's server, the buyer, and the bank admin. Inside is one modular monolith with six modules.
+00:00:09,626 --> 00:00:18,792
+On top are the three users: the merchant's server, the buyer, and the bank admin; inside is one modular monolith with six modules.
 
 4
-00:00:18,000 --> 00:00:23,916
+00:00:18,842 --> 00:00:24,696
 Partner owns the merchants: who they are, their company documents, and whether they may sell.
 
 5
-00:00:23,916 --> 00:00:27,011
+00:00:24,746 --> 00:00:27,840
 Commission decides the fee on every payment.
 
 6
-00:00:27,011 --> 00:00:34,226
+00:00:27,890 --> 00:00:35,064
 The e POS module knows which e POS terminal, a MID and a TID, each payment goes through.
 
 7
-00:00:34,226 --> 00:00:39,940
+00:00:35,114 --> 00:00:40,512
 The BIN module knows which scheme and which bank issued a card, from its first digits.
 
 8
-00:00:39,940 --> 00:00:44,166
+00:00:40,562 --> 00:00:44,808
 The card vault keeps card numbers encrypted, and hands out tokens instead.
 
 9
-00:00:44,166 --> 00:00:48,595
+00:00:44,858 --> 00:00:49,248
 Payment creates every payment, debits the card, and resolves the outcome.
 
 10
-00:00:48,595 --> 00:00:58,488
-Below the app, separate services do one job each: email, a file service for documents, and an adapter for each card scheme, Uzcard and Humo.
+00:00:49,298 --> 00:00:57,168
+Below the app, separate services do one job each: email, and an adapter for each card scheme, Uzcard and Humo.
 
 11
-00:00:58,488 --> 00:01:09,154
+00:00:57,218 --> 00:01:07,704
 The shared infrastructure is Postgres, Redis, Keycloak, Vault, an S3 file store, Temporal, Kafka, and monitoring with Prometheus and Grafana.
 
 12
-00:01:09,154 --> 00:01:23,559
+00:01:07,754 --> 00:01:22,584
 Part zero brings up the whole infrastructure with one command: Postgres and Redis, Mailpit, the S3 store, Keycloak, the processing sandbox, Vault, monitoring, Temporal and Kafka, each explained in the episode that first uses it.
 
 13
-00:01:23,559 --> 00:01:32,571
+00:01:22,634 --> 00:01:31,680
 Part one covers the merchants: sign-up, email codes, company documents, two-admin approval, and logins and API clients in Keycloak.
 
 14
-00:01:32,571 --> 00:01:38,630
+00:01:31,730 --> 00:01:37,728
 Part two holds the money rules: the commission, and the e POS terminals every debit goes through.
 
 15
-00:01:38,630 --> 00:01:47,976
+00:01:37,778 --> 00:01:47,232
 Part three handles cards: the Uzcard and Humo adapters as their own services, the BIN module with its bank directory, and a vault that stores only tokens.
 
 16
-00:01:47,976 --> 00:01:55,773
+00:01:47,282 --> 00:01:55,080
 Part four is the payment, last, with monitoring, durable retries, and Kafka events, because it needs everything else.
 
 17
-00:01:55,773 --> 00:02:03,428
+00:01:55,130 --> 00:02:03,000
 Part five deploys everything to Kubernetes, then moves the card vault into its own service, to show why clean boundaries matter.
 
 18
-00:02:03,428 --> 00:02:07,702
+00:02:03,050 --> 00:02:07,440
 Next, the project setup, which brings the whole world up with one command.
-
