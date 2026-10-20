@@ -103,7 +103,7 @@ export const code: CodeStep[] = [
     lines: [
       "WARN  Debit e76589a0-… has no answer:",
       "      HttpServerErrorException$GatewayTimeout: 504",
-      '      "code":"UZCARD_ADAPTER_SV_GATE_TIMEOUT"',
+      '      "code":"UZCARD_ADAPTER_TIMEOUT"',
       "",
       "trace_id = 99dad7bd13440fe7150eb89a8d459f73   → Tempo",
     ],
