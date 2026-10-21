@@ -9,7 +9,7 @@ export const Yt02SetupComposition = createEpisode({
   part: 0,
   footer: "Setup",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Where to start?", "Stack, build, one command", "Java + Spring Boot", "Gradle is the pipeline", "Six modules", "A user per schema", "Module boundaries", "Layered", "Contract first", "Same interface, two sides", "Platform", "Publish, then import", "Version catalog", "One error format", "Separate services", "Full infrastructure", "One command", "Next: the domain"],
+  titles: ["Where to start?", "Stack, build, one command", "Java + Spring Boot", "Gradle is the pipeline", "Six modules", "A user per schema", "Module boundaries", "Layered", "Contract first", "Same interface, two sides", "Platform", "Composite build", "Version catalog", "One error format", "Separate services", "One command", "Secrets from Vault", "Next: the domain"],
   map,
   diagram,
 });

@@ -3,69 +3,69 @@
 Where does a payment system start, if not with payments?
 
 2
-00:00:03,074 --> 00:00:07,560
+00:00:03,074 --> 00:00:07,200
 With a stack, a build, and an environment that runs with one command.
 
 3
-00:00:07,610 --> 00:00:14,976
+00:00:07,250 --> 00:00:14,736
 We chose Java twenty-five and Spring Boot four: long-term support, and the most widely used stack for Java services.
 
 4
-00:00:15,026 --> 00:00:27,384
-We chose Gradle, with builds in Groovy, because the build is the pipeline: it generates code from the contracts, checks the style, runs the tests, and publishes, the same way on every machine.
+00:00:14,786 --> 00:00:25,752
+We chose Gradle, with builds in Groovy, because the build is the pipeline: it generates code from the contracts, checks the style, and runs the tests, the same way on every machine.
 
 5
-00:00:27,434 --> 00:00:38,160
+00:00:25,802 --> 00:00:36,072
 The app is one modular monolith with six modules, partner, commission, e POS, BIN, card, and payment: one deploy today, and clean seams for tomorrow.
 
 6
-00:00:38,210 --> 00:00:46,128
+00:00:36,122 --> 00:00:44,280
 Each module owns its own schema in one database, and connects as its own user, which can see that schema and nothing else.
 
 7
-00:00:46,178 --> 00:00:55,608
+00:00:44,330 --> 00:00:53,784
 A module asks another only through that module's contract, the internal operations in its OpenAPI file, and the build fails if it reaches any further.
 
 8
-00:00:55,658 --> 00:01:05,712
+00:00:53,834 --> 00:01:03,720
 Inside, every module uses the one layout every Spring developer knows: layered, with a controller, a service, a repository, and an entity.
 
 9
-00:01:05,762 --> 00:01:18,096
+00:01:03,770 --> 00:01:15,576
 We chose contract first: an OpenAPI file comes before any code, Gradle generates the interfaces and models, and the code must implement them, so it never drifts from what clients were promised.
 
 10
-00:01:18,146 --> 00:01:28,608
+00:01:15,626 --> 00:01:26,448
 The same contract generates a client interface too: one module calls another through it inside the app today, and over HTTP the day that module becomes its own service.
 
 11
-00:01:28,658 --> 00:01:37,968
-Shared pieces, the error format, security, persistence, crypto, and every contract, live in the platform folder, each with its own build.
+00:01:26,498 --> 00:01:38,280
+Shared pieces, the error format, security, persistence, crypto, Vault, observability, and every contract, live in the platform folder, as one Gradle build of libraries.
 
 12
-00:01:38,018 --> 00:01:49,296
-Gradle publishes each one to a Maven repository, and the app imports it by version, like any other library; the day the platform moves to its own repository, nothing else changes.
+00:01:38,330 --> 00:01:46,272
+The app and each adapter include that build, a Gradle composite build, so the libraries are built from source and nothing is published.
 
 13
-00:01:49,346 --> 00:01:56,352
-A version catalog, published the same way, pins every version, so every build uses the same ones.
+00:01:46,322 --> 00:01:53,160
+One version catalog in the platform pins every version, and the app and both adapters read that same file.
 
 14
-00:01:56,402 --> 00:02:06,456
-Errors follow one format: each module lists its errors once, and the client gets a problem detail with a stable code, in English, Russian or Uzbek.
+00:01:53,210 --> 00:02:08,112
+Errors follow one format, R F C ninety-four fifty-seven problem details: each module lists its errors once, and every failure answers with a stable code, the request's id, and a message in English, Russian or Uzbek.
 
 15
-00:02:06,506 --> 00:02:14,064
+00:02:08,162 --> 00:02:15,504
 Services that do one job live outside the app, each with its own contract and client: the card scheme adapters.
 
 16
-00:02:14,114 --> 00:02:22,128
-One infrastructure repository starts all of it with Docker Compose, and each piece is explained in the episode that first uses it.
+00:02:15,554 --> 00:02:23,904
+One infrastructure repository starts all of it with one Docker Compose command, and each piece is explained in the episode that first uses it.
 
 17
-00:02:22,178 --> 00:02:30,504
-One command, and the whole world is up; the code, the infrastructure, the load tests, and the web app each live in their own repository.
+00:02:23,954 --> 00:02:32,064
+Every secret, from each module's database password to the card keys, comes from Vault at startup, and the app does not start without it.
 
 18
-00:02:30,554 --> 00:02:34,032
+00:02:32,114 --> 00:02:35,544
 Next, the domain, which comes before a single table.
