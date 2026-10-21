@@ -9,7 +9,7 @@ export const Yt04RegistrationComposition = createEpisode({
   part: 1,
   footer: "Registration + email OTP",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Whose email?", "Proves nothing", "The contract", "Pending", "OTP library", "Only a hash", "Mailpit inbox", "Verified", "Attempt limit", "Send limit", "Stable codes", "Next: lifecycle"],
+  titles: ["Whose email?", "Proves nothing", "The contract", "Pending", "OTP library", "Only hashes", "Mailpit inbox", "Verified", "Window lockout", "Send limit", "Retry-After", "Fail closed", "Stable codes", "Library defaults", "Next: lifecycle"],
   map,
   diagram,
   code,

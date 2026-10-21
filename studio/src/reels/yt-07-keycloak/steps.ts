@@ -6,7 +6,7 @@ import { BuildId } from "../../series/build/nodes";
 // Code beats quote github.com/khakimjanovich/ecom and ecom-infra (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 1, current: ["keycloak"], built: builtBefore(1) },
-  { cue: 11, part: 1, current: ["partner"], built: builtBefore(1) },
+  { cue: 12, part: 1, current: ["partner"], built: builtBefore(1) },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -29,7 +29,7 @@ export const diagram: DiagramStep<BuildId>[] = [
     danger: ["attacker"],
   },
   {
-    cue: 9,
+    cue: 10,
     layout: { merchant: [0, 1], keycloak: [1.5, 1], partner: [3, 1] },
     edges: [{ from: "partner", to: "keycloak", label: "create client" }, { from: "keycloak", to: "merchant" }],
     packets: [{ from: "keycloak", to: "merchant", label: "secret", delay: 20 }],
@@ -65,7 +65,8 @@ export const code: CodeStep[] = [
       "public String createUser(String email, String password) {",
       "  try {",
       "    return keycloak.createUser(email, email, password, false);",
-      "  } catch (KeycloakConflictException e) {",
+      "  } catch (GeneralException e) {",
+      "    if (e.getStatus() != KEYCLOAK_CONFLICT) throw e;",
       "    throw new GeneralException(PARTNER_EMAIL_TAKEN, email);",
       "  }",
       "}",
@@ -77,7 +78,7 @@ export const code: CodeStep[] = [
       "        VALUE, password, TEMPORARY, false)));",
       "keycloak.post().uri(USERS).body(user).retrieve() …;",
     ],
-    highlight: [3, 12],
+    highlight: [3, 13],
   },
   {
     cue: 5,
@@ -92,7 +93,24 @@ export const code: CodeStep[] = [
   },
   {
     cue: 7,
-    file: "app/src/main/resources/application.yaml",
+    file: "app/…/properties/platform/security.yaml",
+    lines: [
+      "spring.security.oauth2.resourceserver.jwt:",
+      "  issuer-uri: ${ecom.keycloak.url}/realms/…",
+      "  # Only tokens issued for this API: the realm",
+      "  # puts ecom-api in every token's audience.",
+      "  audiences: ecom-api",
+      "",
+      "// ecom-infra · keycloak/ecom-realm.json",
+      '{ "name": "default-roles-ecom", "composites":',
+      '  { "client": { "ecom-api": ["caller"] } } }',
+      '{ "clientId": "ecom-api", "bearerOnly": true }',
+    ],
+    highlight: [5, 9],
+  },
+  {
+    cue: 8,
+    file: "app/…/properties/platform/security.yaml",
     lines: [
       "ecom.security:",
       "  public-routes:",
@@ -100,24 +118,28 @@ export const code: CodeStep[] = [
       "    - /actuator/health/**",
       "  roles:",
       '    "[/api/v1/admin/**]": ADMIN',
-      '    "[/api/v1/partners/**]": ADMIN',
       '    "[/api/v1/partner/**]": PARTNER',
       '    "[/api/v1/payments/**]": MERCHANT',
       "",
-      "// platform/security · SecurityAutoConfiguration",
-      "properties.roles().forEach((route, role) ->",
-      "    matcher(routes, route).hasRole(role));",
+      "// platform/security · PublicRouteTokenResolver",
+      "return publicRoutes.matches(request)",
+      "    ? null : tokens.resolve(request);",
+      "// SecurityAutoConfiguration",
+      ".forEach((route, role) -> routes",
+      "    .requestMatchers(route(route)).hasRole(role));",
       "routes.anyRequest().denyAll();",
     ],
-    highlight: [6, 9, 14],
+    highlight: [2, 11, 16],
   },
   {
-    cue: 8,
+    cue: 9,
     file: "platform/security/…/CurrentUser.java",
     lines: [
-      "public static String name() {",
-      "  return SecurityContextHolder.getContext()",
-      "      .getAuthentication().getName();",
+      "public static @Nullable String name() {",
+      "  var authentication = SecurityContextHolder",
+      "      .getContext().getAuthentication();",
+      "  return authentication == null ? null",
+      "      : authentication.getName();",
       "}",
       "",
       "// KeycloakJwtConverter: realm_access.roles → ROLE_*,",
@@ -127,10 +149,10 @@ export const code: CodeStep[] = [
       '"VERIFIED by aziz"',
       '"ACTIVE by malika"',
     ],
-    highlight: [3, 11],
+    highlight: [5, 13],
   },
   {
-    cue: 10,
+    cue: 11,
     file: "modules/partner/…/service/impl/PartnerSelfServiceImpl.java",
     lines: [
       "public ApiClientSecretResponse rotateSecret(String email,",

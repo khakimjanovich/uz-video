@@ -9,7 +9,7 @@ export const Yt09StartersComposition = createEpisode({
   part: 1,
   footer: "Platform libraries",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Shared code?", "Every module", "Copies", "Platform libraries", "security", "Rules as config", "Before Boot", "keycloak", "Delegate", "Version catalog", "Next: commission"],
+  titles: ["Shared code?", "Every module", "Copies", "Platform libraries", "security", "Rules as config", "Before Boot", "Module filters", "keycloak", "Timeouts + retry", "Delegate", "Own defaults", "Version catalog", "Next: commission"],
   map,
   diagram,
   code,

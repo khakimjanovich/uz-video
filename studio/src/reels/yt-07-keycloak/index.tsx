@@ -9,7 +9,7 @@ export const Yt07KeycloakComposition = createEpisode({
   part: 1,
   footer: "Logins and API clients",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Who is calling?", "Just a header", "Keycloak", "Three roles", "Password to Keycloak", "Partner role", "Every request", "Route rules", "Name from token", "API clients", "Rotation", "Next: sales points"],
+  titles: ["Who is calling?", "Just a header", "Keycloak", "Three roles", "Password to Keycloak", "Partner role", "Every request", "Our API only","Route rules", "Name from token", "API clients", "Rotation", "Next: sales points"],
   map,
   diagram,
   code,

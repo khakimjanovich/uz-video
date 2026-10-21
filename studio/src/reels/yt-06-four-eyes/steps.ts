@@ -109,7 +109,7 @@ export const code: CodeStep[] = [
   },
   {
     cue: 9,
-    file: "app/src/main/resources/application.yaml",
+    file: "modules/partner/…/properties/partner.yaml",
     lines: [
       "ecom:",
       "  # Four eyes: how long the second admin has,",

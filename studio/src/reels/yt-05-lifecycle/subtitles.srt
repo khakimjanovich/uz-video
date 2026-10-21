@@ -1,63 +1,67 @@
 1
-00:00:00,050 --> 00:00:03,744
+00:00:00,050 --> 00:00:03,888
 Can a merchant jump straight from signing up to taking payments?
 
 2
-00:00:03,794 --> 00:00:08,064
+00:00:03,938 --> 00:00:08,184
 Without rules, one wrong update could switch on a shop nobody ever checked.
 
 3
-00:00:08,114 --> 00:00:15,144
+00:00:08,234 --> 00:00:15,456
 So a partner moves through fixed states: pending, verified, waiting for a contract, approved, and active.
 
 4
-00:00:15,194 --> 00:00:21,960
+00:00:15,506 --> 00:00:22,008
 The allowed moves live in one table inside the status enum, and every other move is refused.
 
 5
-00:00:22,010 --> 00:00:27,816
+00:00:22,058 --> 00:00:27,864
 An illegal jump, like pending straight to active, answers four oh nine with a stable error code.
 
 6
-00:00:27,866 --> 00:00:34,872
+00:00:27,914 --> 00:00:34,872
 Before the bank approves a company, the merchant uploads its company documents: the charter and the director's passport.
 
 7
-00:00:34,922 --> 00:00:44,016
-The files go to the file store, a platform library, which reads each file's type from its own bytes, checks its size, and stores it in an S3 bucket.
+00:00:34,922 --> 00:00:45,768
+The files go to the file store, a platform library, which reads each file's type from its own bytes, checks its size, and stores it in an S3 bucket that the infrastructure creates.
 
 8
-00:00:44,066 --> 00:00:52,128
+00:00:45,818 --> 00:00:53,784
 The partner module keeps only the file id, type, size and checksum, and an older upload of the same type is kept as replaced.
 
 9
-00:00:52,178 --> 00:00:57,984
-An admin opens each document and verifies it, or rejects it with a reason the merchant can read.
+00:00:53,834 --> 00:00:58,824
+Every file read back must still match its checksum, or the store refuses it as corrupt.
 
 10
-00:00:58,034 --> 00:01:06,840
-The admin approves the company only after its email is verified and every required document is verified; the configuration lists which ones.
+00:00:58,874 --> 00:01:04,704
+An admin opens each document and verifies it, or rejects it with a reason the merchant can read.
 
 11
-00:01:06,890 --> 00:01:13,056
-Signing the contract approves the partner, and the database keeps every contract number unique.
+00:01:04,754 --> 00:01:13,608
+The admin approves the company only after its email is verified and every required document is verified; the configuration lists which ones.
 
 12
-00:01:13,106 --> 00:01:19,392
-Every change writes a row to the status history: from where, to where, who, and why.
+00:01:13,658 --> 00:01:19,944
+Signing the contract approves the partner, and the database keeps every contract number unique.
 
 13
-00:01:19,442 --> 00:01:24,048
-Each row is saved in the same transaction as the change, and is never updated.
+00:01:19,994 --> 00:01:25,680
+Every change writes a row to the status history: from where, to where, who, and why.
 
 14
-00:01:24,098 --> 00:01:28,512
-An active merchant can be suspended and restored, or terminated for good.
+00:01:25,730 --> 00:01:30,672
+Each row is saved in the same transaction as the change, and is never updated.
 
 15
-00:01:28,562 --> 00:01:35,328
-Activating and restoring both end in active, so each one is allowed only from its own starting state.
+00:01:30,722 --> 00:01:35,088
+An active merchant can be suspended and restored, or terminated for good.
 
 16
-00:01:35,378 --> 00:01:38,904
+00:01:35,138 --> 00:01:41,928
+Activating and restoring both end in active, so each one is allowed only from its own starting state.
+
+17
+00:01:41,978 --> 00:01:45,600
 Next, why no single admin can switch a merchant on alone.
