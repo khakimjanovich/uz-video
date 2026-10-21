@@ -1,52 +1,55 @@
 1
-00:00:00,050 --> 00:00:03,547
+00:00:00,050 --> 00:00:03,504
 The buyer changed their mind: how does the money go back to the card?
 
 2
-00:00:03,547 --> 00:00:09,500
+00:00:03,554 --> 00:00:09,744
 There are two ways, and the day decides: before the scheme settles the day's payments, or after.
 
 3
-00:00:09,500 --> 00:00:17,738
-On the day it was paid, the debit is reversed: Uzcard reverses the transaction, and Humo cancels it, as if it never happened.
+00:00:09,794 --> 00:00:16,584
+On the day it was paid, it is a reversal; later, it is a refund, and the payment's status says which.
 
 4
-00:00:17,738 --> 00:00:23,595
-Later, it is refunded: Uzcard reverses it all the same, and Humo returns the payment.
+00:00:16,634 --> 00:00:21,552
+Uzcard has one call for both: it reverses the transaction by its reference number.
 
 5
-00:00:23,595 --> 00:00:28,845
-Which day it is, is read in the settlement time zone, Tashkent, from configuration.
+00:00:21,602 --> 00:00:28,512
+Humo is asked about the payment first: a hold still waiting is cancelled, and a captured payment is returned.
 
 6
-00:00:28,845 --> 00:00:34,523
-A refund is allowed only within the website's refund window, set when the bank switched it on.
+00:00:28,562 --> 00:00:33,816
+Which day it is, is read in the settlement time zone, Tashkent, from configuration.
 
 7
-00:00:34,523 --> 00:00:39,523
-Both schemes give back the whole payment, so the whole amount goes back, never a part.
+00:00:33,866 --> 00:00:39,600
+A refund is allowed only within the website's refund window, set when the bank switched it on.
 
 8
-00:00:39,523 --> 00:00:45,583
-One conditional update claims it: paid becomes returning, and only one caller wins.
+00:00:39,650 --> 00:00:42,624
+The whole amount always goes back, never a part.
 
 9
-00:00:45,583 --> 00:00:51,797
-The operation is written to the journal before the scheme is asked, with the scheme's own id for the debit.
+00:00:42,674 --> 00:00:48,624
+One conditional update claims it: paid becomes returning, and only one caller wins.
 
 10
-00:00:51,797 --> 00:01:00,833
-Approved is final, reversed or refunded; refused leaves it paid; and no answer leaves it returning for a person, never sent twice.
+00:00:48,674 --> 00:00:55,128
+The operation is written to the journal before the scheme is asked, with the scheme's own id for the debit.
 
 11
-00:01:00,833 --> 00:01:05,595
-Like every ending, it raises an event, so the merchant's webhook hears about it.
+00:00:55,178 --> 00:01:04,536
+Approved is final, reversed or refunded; refused leaves it paid; and no answer leaves it returning for a person, never sent twice.
 
 12
-00:01:05,595 --> 00:01:12,678
-The merchant's server asks with a signed request; for a payment link, the merchant's user presses give back in the portal.
+00:01:04,586 --> 00:01:09,360
+Like every ending, it raises an event, so the merchant's webhook hears about it.
 
 13
-00:01:12,678 --> 00:01:16,428
-Next, what the merchant gets each day: daily reports.
+00:01:09,410 --> 00:01:16,152
+The merchant's server asks with a signed request; for a payment link, the merchant's user presses give back in the portal.
 
+14
+00:01:16,202 --> 00:01:19,824
+Next, what the merchant gets each day: daily reports.

@@ -6,7 +6,7 @@ import { BuildId } from "../../series/build/nodes";
 // Code beats quote github.com/khakimjanovich/ecom-infra (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 5, current: ["kubernetes"], built: builtBefore(5) },
-  { cue: 11, part: 5, current: ["card"], built: [...builtBefore(5), "kubernetes"] },
+  { cue: 12, part: 5, current: ["card"], built: [...builtBefore(5), "kubernetes"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -18,13 +18,24 @@ export const diagram: DiagramStep<BuildId>[] = [
     badges: { app: "× 3", uzcardsvc: "× 2", humosvc: "× 2" },
   },
   {
-    cue: 7,
+    cue: 4,
+    layout: { app: [0, 1], filesvc: [1.8, 0.2], vault: [1.8, 1], keycloak: [1.8, 1.8], uzcardsvc: [3.4, 1] },
+    edges: [
+      { from: "app", to: "filesvc", label: "readiness" },
+      { from: "app", to: "vault", label: "readiness" },
+      { from: "app", to: "keycloak", label: "readiness" },
+      { from: "app", to: "uzcardsvc", label: "health only" },
+    ],
+    badges: { app: "ready" },
+  },
+  {
+    cue: 8,
     layout: { app: [0, 1], postgres: [1.6, 0.2], temporal: [1.6, 1.8], kafka: [3.2, 1] },
     edges: [{ from: "app", to: "postgres", label: "SKIP LOCKED · ShedLock" }, { from: "app", to: "temporal", label: "one workflow" }, { from: "app", to: "kafka", label: "partitions" }],
     badges: { app: "× 3 replicas" },
   },
   {
-    cue: 9,
+    cue: 10,
     layout: { buyer: [0, 1], kubernetes: [1.5, 1], app: [3, 0.3], payment: [3, 1.7] },
     edges: [{ from: "buyer", to: "kubernetes", label: "payments" }, { from: "kubernetes", to: "app" }, { from: "kubernetes", to: "payment", label: "new pod" }],
     packets: [0, 1, 2].map((k) => ({ from: "buyer" as const, to: "kubernetes" as const, label: "pay", delay: 6 + k * 14, duration: 12 })),
@@ -68,6 +79,26 @@ export const code: CodeStep[] = [
   },
   {
     cue: 4,
+    file: "app/src/main/resources/application.yaml",
+    lines: [
+      "management:",
+      "  endpoint:",
+      "    health:",
+      "      # /actuator/health/readiness: only what this app",
+      "      # cannot work without. The adapters are in",
+      "      # /actuator/health only, so one scheme down does",
+      "      # not take the other out of rotation.",
+      "      probes:",
+      "        enabled: true",
+      "      group:",
+      "        readiness:",
+      "          include: readinessState,fileStore,",
+      "            vault,vaultToken,keycloak",
+    ],
+    highlight: [12, 13],
+  },
+  {
+    cue: 5,
     file: "ecom-infra/k8s/base/app.yaml",
     lines: [
       "replicas: 3",
@@ -82,7 +113,7 @@ export const code: CodeStep[] = [
     highlight: [3, 8],
   },
   {
-    cue: 5,
+    cue: 6,
     file: "ecom-infra/k8s/base/app.yaml",
     lines: [
       "spec:",
@@ -95,26 +126,30 @@ export const code: CodeStep[] = [
     highlight: [3],
   },
   {
-    cue: 6,
+    cue: 7,
     file: "ecom-infra/k8s/base/config.yaml",
     lines: [
-      "# Secrets are not here: the app reads them from the",
-      "# ecom-secrets Secret, which the bank creates in the",
-      "# cluster (from Vault) and which never lives in git.",
+      "# Secrets are not here: the app reads them from",
+      "# Vault (secret/ecom, required: startup fails if",
+      "# Vault can't be read), signing in with what the",
+      "# ecom-secrets Secret holds.",
       "kind: ConfigMap",
       "data:",
       "  DB_URL: jdbc:postgresql://postgres:5432/acquiring",
+      "  VAULT_URL: http://vault:8200",
       "  KAFKA_BOOTSTRAP: kafka:9092",
-      "  UZCARD_ADAPTER_URL: http://uzcard-adapter:8091",
       "",
       "envFrom:",
       "  - configMapRef: { name: ecom-config }",
       "  - secretRef: { name: ecom-secrets }",
+      "",
+      "# ecom app · properties/platform/vault.yaml",
+      "import: ${VAULT_IMPORT:vault://secret/ecom}",
     ],
-    highlight: [2, 12],
+    highlight: [2, 8, 16],
   },
   {
-    cue: 8,
+    cue: 9,
     file: "ecom-infra/k8s/base/app.yaml",
     lines: [
       "kind: HorizontalPodAutoscaler",
@@ -131,7 +166,7 @@ export const code: CodeStep[] = [
     highlight: [6, 10],
   },
   {
-    cue: 10,
+    cue: 11,
     file: "ecom-infra/k8s/local/dependencies.sh",
     lines: [
       "# The compose containers the cluster calls, as Services",

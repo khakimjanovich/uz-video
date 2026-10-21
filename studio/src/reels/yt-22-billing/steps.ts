@@ -107,7 +107,7 @@ export const code: CodeStep[] = [
       "  }",
       "}",
       "",
-      "# application.yaml · ecom.payment",
+      "# payment.yaml · ecom.payment",
       "report-cron: \"0 30 0 * * *\"",
       "report-days: 3",
     ],

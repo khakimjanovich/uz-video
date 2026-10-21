@@ -9,7 +9,7 @@ export const Yt18SilenceComposition = createEpisode({
   part: 4,
   footer: "When processing goes silent",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Total silence", "Unknown, not declined", "Ask again, later", "A workflow", "Waits that grow", "Same reference", "Settled", "Manual review", "One per payment", "The sweep", "If Temporal is down", "The page keeps checking", "On the dashboard", "Next: outbox + Kafka"],
+  titles: ["Total silence", "Unknown, not declined", "Ask again, later", "A workflow", "Waits that grow", "Same reference", "Humo: capture on ask", "Settled", "Manual review", "One per payment", "The sweep", "If Temporal is down", "The page keeps checking", "On the dashboard", "Stuck → alert", "Next: outbox + Kafka"],
   map,
   diagram,
   code,

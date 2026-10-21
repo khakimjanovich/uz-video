@@ -1,5 +1,6 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
+import { tableStep } from "../../series/build/tables";
 import { BuildId } from "../../series/build/nodes";
 
 // Episode 19: the transactional outbox, Kafka, and merchant webhooks signed the Standard Webhooks way.
@@ -23,13 +24,6 @@ export const diagram: DiagramStep<BuildId>[] = [
     edges: [{ from: "payment", to: "kafka", broken: true, label: "crash" }],
     packets: [{ from: "payment", to: "kafka", label: "paid", delay: 12, stopAt: 0.5 }],
     danger: ["kafka"],
-  },
-  {
-    cue: 2,
-    layout: { payment: [0.5, 0.6], outbox: [2.5, 0.6], postgres: [1.5, 1.9] },
-    edges: [{ from: "payment", to: "postgres", label: "status" }, { from: "outbox", to: "postgres", label: "event" }],
-    accent: ["outbox"],
-    badges: { postgres: "one transaction" },
   },
   {
     cue: 7,
@@ -63,6 +57,7 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const code: CodeStep[] = [
+  tableStep(2, "payment.payment_event", 19),
   {
     cue: 3,
     file: "modules/payment/…/entity/Payment.java",
@@ -113,7 +108,7 @@ export const code: CodeStep[] = [
       "LIMIT :limit",
       "FOR UPDATE SKIP LOCKED",
       "",
-      "# application.yaml · ecom.payment.events",
+      "# properties/payment.yaml · ecom.payment.events",
       "relay-delay: 1s",
       "relay-batch: 100",
     ],
@@ -192,21 +187,5 @@ export const code: CodeStep[] = [
     ],
     highlight: [4],
   },
-  {
-    cue: 12,
-    file: "modules/payment/…/db/changelog/payment.yaml",
-    lines: [
-      "# 004-create-payment-event",
-      "createTable: payment_event",
-      "  id · payment_id · type · payload",
-      "  created_at · published_at",
-      "",
-      "# 005-create-webhook-delivery: every attempt",
-      "# to deliver a webhook, and the answer.",
-      "createTable: webhook_delivery",
-      "  event_id · payment_id · url · attempt",
-      "  http_status · error · attempted_at",
-    ],
-    highlight: [8, 9, 10],
-  },
+  tableStep(12, "payment.webhook_delivery", 19),
 ];
