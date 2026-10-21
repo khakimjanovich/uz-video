@@ -1,52 +1,51 @@
 1
-00:00:00,050 --> 00:00:03,476
+00:00:00,050 --> 00:00:03,624
 How much does the bank earn on each payment, and who decides it?
 
 2
-00:00:03,476 --> 00:00:07,833
+00:00:03,674 --> 00:00:07,896
 Fees can't be hard-coded, because every merchant negotiates its own.
 
 3
-00:00:07,833 --> 00:00:14,976
+00:00:07,946 --> 00:00:15,240
 So the commission module keeps fee rules, each for a website, a merchant, a card scheme, or the whole bank.
 
 4
-00:00:14,976 --> 00:00:23,238
+00:00:15,290 --> 00:00:23,376
 When several rules match, the most specific one wins: a website beats a merchant, which beats a card scheme, which beats the bank.
 
 5
-00:00:23,238 --> 00:00:30,285
+00:00:23,426 --> 00:00:30,576
 The fee is a percent, rounded once to whole tiyin, plus a fixed part, kept between a minimum and a maximum.
 
 6
-00:00:30,285 --> 00:00:33,000
+00:00:30,626 --> 00:00:33,384
 A fee that would take the whole amount is refused.
 
 7
-00:00:33,000 --> 00:00:39,428
+00:00:33,434 --> 00:00:40,032
 Rules are never edited: a change adds a rule or ends one, and a second admin must approve it.
 
 8
-00:00:39,428 --> 00:00:45,892
+00:00:40,082 --> 00:00:46,488
 Two active rules for the same scope can never apply at the same moment, and the database itself refuses them.
 
 9
-00:00:45,892 --> 00:00:51,309
+00:00:46,538 --> 00:00:51,768
 To change a fee, the old rule ends at a chosen moment and the new one starts there.
 
 10
-00:00:51,309 --> 00:01:02,595
+00:00:51,818 --> 00:01:02,736
 Admins find rules by merchant, website, card scheme, status, or the moment they apply, one page at a time, and each rule shows its level and every change ever asked for it.
 
 11
-00:01:02,595 --> 00:01:09,511
+00:01:02,786 --> 00:01:09,528
 Other modules ask one question, what is the fee for this payment, and the payment keeps the rule and the amount.
 
 12
-00:01:09,511 --> 00:01:14,690
-The module has its own schema and database user, built by the shared persistence library.
+00:01:09,578 --> 00:01:17,160
+The module has its own schema, database user and pool, built by the shared persistence library, with its password from Vault.
 
 13
-00:01:14,690 --> 00:01:18,226
+00:01:17,210 --> 00:01:20,760
 Next, the e POS terminal each payment goes through.
-

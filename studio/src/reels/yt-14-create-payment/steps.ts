@@ -8,7 +8,7 @@ import { tableStep } from "../../series/build/tables";
 const B4 = builtBefore(4);
 export const map: BuildMapStep[] = [
   { cue: 0, part: 4, current: ["payment", "merchant", "vault"], built: B4 },
-  { cue: 14, part: 4, current: ["payment", "buyer", "card"], built: B4 },
+  { cue: 15, part: 4, current: ["payment", "buyer", "card"], built: B4 },
 ];
 
 const PAIR = { merchant: [0, 1], payment: [2, 1] } as const;
@@ -66,9 +66,9 @@ export const diagram: DiagramStep<BuildId>[] = [
     packets: [{ from: "acquirer", to: "vault", label: "key", delay: 80, duration: 25 }, { from: "vault", to: "payment", label: "key", delay: 190, duration: 25 }],
     badges: { vault: "one key per API client", merchant: "same key" },
   },
-  { cue: 7, layout: { ...PAIR, attacker: [0, 2], redis: [3, 2] }, edges: [{ from: "merchant", to: "payment" }, { from: "attacker", to: "payment", broken: true, label: "replay" }, { from: "payment", to: "redis", label: "nonce" }], packets: [{ from: "attacker", to: "payment", label: "same request", delay: 15, stopAt: 0.55 }], danger: ["attacker"] },
+  { cue: 8, layout: { ...PAIR, attacker: [0, 2], redis: [3, 2] }, edges: [{ from: "merchant", to: "payment" }, { from: "attacker", to: "payment", broken: true, label: "replay" }, { from: "payment", to: "redis", label: "nonce" }], packets: [{ from: "attacker", to: "payment", label: "same request", delay: 15, stopAt: 0.55 }], danger: ["attacker"] },
   {
-    cue: 8,
+    cue: 9,
     layout: { vault: [1.5, 0], merchant: [0, 1], attacker: [0, 2], payment: [1.5, 1], redis: [3, 1] },
     edges: [{ from: "vault", to: "payment", label: "key" }, { from: "merchant", to: "payment" }, { from: "attacker", to: "payment", broken: true }, { from: "payment", to: "redis", label: "spend nonce" }],
     packets: [
@@ -79,13 +79,36 @@ export const diagram: DiagramStep<BuildId>[] = [
     danger: ["attacker"],
     badges: { payment: "same HMAC?", redis: "only after a match" },
   },
-  { cue: 9, layout: { ...PAIR, record: [3.0, 1] }, edges: [{ from: "merchant", to: "payment", label: "Idempotency-Key" }, { from: "payment", to: "record" }], packets: [{ from: "merchant", to: "payment", label: "key A", delay: 8 }, { from: "merchant", to: "payment", label: "key A (retry)", delay: 40 }], badges: { record: "one payment" } },
-  { cue: 12, layout: { payment: [0.5, 1], salespoint: [2.5, 1] }, edges: [{ from: "payment", to: "salespoint", label: "payable + yours?" }], packets: [{ from: "payment", to: "salespoint", label: "check", delay: 15 }], badges: { payment: "no → refuse" } },
+  { cue: 10, layout: { ...PAIR, record: [3.0, 1] }, edges: [{ from: "merchant", to: "payment", label: "Idempotency-Key" }, { from: "payment", to: "record" }], packets: [{ from: "merchant", to: "payment", label: "key A", delay: 8 }, { from: "merchant", to: "payment", label: "key A (retry)", delay: 40 }], badges: { record: "one payment" } },
+  { cue: 13, layout: { payment: [0.5, 1], salespoint: [2.5, 1] }, edges: [{ from: "payment", to: "salespoint", label: "payable + yours?" }], packets: [{ from: "payment", to: "salespoint", label: "check", delay: 15 }], badges: { payment: "no → refuse" } },
 ];
 
 export const code: CodeStep[] = [
   {
-    cue: 10,
+    cue: 7,
+    file: "platform/vault/…/SigningKeys.java · HmacAuthenticationFilter",
+    lines: [
+      "public Optional<byte[]> find(String clientId) {",
+      "  …",
+      "  var cached = cache.get(clientId);",
+      "  if (cached != null && now.isBefore(cached.until()))",
+      "    return Optional.of(cached.key().clone());",
+      "  cache.remove(clientId);",
+      "  var key = vault.get(path.formatted(clientId))",
+      "      .map(secret -> secret.get(SIGNING_KEY))",
+      "      .map(Base64.getDecoder()::decode);",
+      "  key.ifPresent(bytes -> cache.put(clientId,",
+      "      new Cached(bytes.clone(), now.plus(ttl))));",
+      "  return key;",
+      "}",
+      "} catch (VaultUnavailableException e) {   // 503",
+      "  throw new GeneralException(",
+      "      PAYMENT_SIGNING_KEYS_UNAVAILABLE);",
+    ],
+    highlight: [4, 11, 14],
+  },
+  {
+    cue: 11,
     file: "modules/payment/…/service/impl/PaymentServiceImpl.java",
     lines: [
       "var earlier = idempotency.findById(key); // (client, key)",
@@ -103,7 +126,7 @@ export const code: CodeStep[] = [
     highlight: [3, 7, 10],
   },
   {
-    cue: 11,
+    cue: 12,
     file: "modules/payment/…/service/impl/PaymentServiceImpl.java",
     lines: [
       "try {",
@@ -124,5 +147,5 @@ export const code: CodeStep[] = [
     ],
     highlight: [4, 5, 9],
   },
-  tableStep(13, "payment.payment", 14),
+  tableStep(14, "payment.payment", 14),
 ];

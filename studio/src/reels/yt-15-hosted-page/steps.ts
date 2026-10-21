@@ -8,7 +8,7 @@ import { tableStep } from "../../series/build/tables";
 const B4 = builtBefore(4);
 export const map: BuildMapStep[] = [
   { cue: 0, part: 4, current: ["payment", "buyer", "bin", "card"], built: B4 },
-  { cue: 14, part: 4, current: ["payment", "epos", "procport", "procsvc"], built: B4 },
+  { cue: 16, part: 4, current: ["payment", "epos", "procport", "procsvc"], built: B4 },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -21,7 +21,7 @@ export const diagram: DiagramStep<BuildId>[] = [
     accent: ["payment"],
   },
   {
-    cue: 6,
+    cue: 7,
     layout: { payment: [0, 0.4], card: [1.5, 0.4], uzcardsvc: [3, 0.4], buyer: [3, 2] },
     edges: [{ from: "payment", to: "card", label: "bind" }, { from: "card", to: "uzcardsvc", label: "new.otp" }, { from: "uzcardsvc", to: "buyer", label: "SMS code" }],
     packets: [
@@ -32,7 +32,7 @@ export const diagram: DiagramStep<BuildId>[] = [
     badges: { card: "encrypted" },
   },
   {
-    cue: 12,
+    cue: 14,
     layout: { buyer: [0, 1], payment: [2.2, 1] },
     edges: [{ from: "buyer", to: "payment", broken: true, label: "wrong code" }],
     packets: [0, 1, 2].map((k) => ({ from: "buyer" as const, to: "payment" as const, label: "code", delay: 6 + k * 16, duration: 16, stopAt: 0.85 })),
@@ -104,7 +104,52 @@ export const code: CodeStep[] = [
     highlight: [4, 9, 14],
   },
   {
-    cue: 7,
+    cue: 6,
+    file: "payment-v1.yaml · card/…/CardServiceImpl.java",
+    lines: [
+      "PaymentCardRequest:",
+      "  required: [number, expiry]",
+      "  properties:",
+      "    number: { type: string, pattern: \"^[0-9]{16}$\" }",
+      "    expiry: { type: string, pattern: \"^[0-9]{4}$\",",
+      "              description: YYMM }",
+      "",
+      "// CardConstants",
+      "EXPIRY_PATTERN = \"\\\\d{2}(0[1-9]|1[0-2])\";",
+      "// startBinding",
+      "if (expiry == null",
+      "    || !expiry.matches(CardConstants.EXPIRY_PATTERN)) {",
+      "  throw new GeneralException(",
+      "      CardExceptionStatus.CARD_EXPIRY_INVALID);",
+      "}",
+    ],
+    highlight: [6, 9, 14],
+  },
+  {
+    cue: 8,
+    file: "card/…/HumoProcessor.java · UzcardProcessor.java",
+    lines: [
+      "// Humo: sendBindingCode",
+      "var card = … humoMiddleware",
+      "    .iiacsCard(new IiacsCardRequest(pan).mbFlag(true))",
+      "    .getBody().getData();",
+      "var phone = card.getMb() == null ? null",
+      "    : card.getMb().getPhone();",
+      "if (statuses.stream().anyMatch(s ->",
+      "        !HUMO_APPROVED.contains(s.getActionCode()))",
+      "    || phone == null) {",
+      "  throw new GeneralException(CARD_DECLINED);",
+      "}",
+      "// Uzcard: confirmBinding",
+      "if (!Objects.equals(card.getStatus(),",
+      "    CardConstants.UZCARD_VALID_CARD)) {",
+      "  throw new GeneralException(CARD_DECLINED);",
+      "}",
+    ],
+    highlight: [8, 9, 14],
+  },
+  {
+    cue: 9,
     file: "modules/card/…/entity/CardBinding.java",
     lines: [
       "/** One code sent to the cardholder, with the scheme's",
@@ -124,7 +169,7 @@ export const code: CodeStep[] = [
     highlight: [3, 8, 13],
   },
   {
-    cue: 9,
+    cue: 11,
     file: "modules/payment/…/service/impl/PaymentPageServiceImpl.java",
     lines: [
       "var counted = step(token, payment ->",
@@ -142,7 +187,7 @@ export const code: CodeStep[] = [
     highlight: [7, 10],
   },
   {
-    cue: 10,
+    cue: 12,
     file: "modules/payment/…/service/impl/PaymentPageServiceImpl.java",
     lines: [
       "/** One change to the payment, committed on its own. */",
@@ -163,8 +208,8 @@ export const code: CodeStep[] = [
     highlight: [3, 14],
   },
   {
-    cue: 11,
-    file: "app/src/main/resources/application.yaml",
+    cue: 13,
+    file: "modules/payment/…/properties/payment.yaml",
     lines: [
       "ecom:",
       "  payment:",
@@ -180,7 +225,7 @@ export const code: CodeStep[] = [
     highlight: [8, 9],
   },
   {
-    cue: 13,
+    cue: 15,
     file: "modules/payment/…/service/impl/PaymentPageLock.java",
     lines: [
       "var key = PAGE_LOCK_KEY.formatted(paymentId);",
@@ -202,5 +247,5 @@ export const code: CodeStep[] = [
     ],
     highlight: [5, 6, 15],
   },
-  tableStep(8, "payment.payment", 15),
+  tableStep(10, "payment.payment", 15),
 ];

@@ -1,12 +1,13 @@
 import { BuildMapStep, CodeStep, DiagramStep } from "../../components";
 import { builtBefore } from "../../series/build/map";
 import { BuildId } from "../../series/build/nodes";
+import { tableStep } from "../../series/build/tables";
 
 // Episode 13: the BIN module and the card vault.
 // Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 3, current: ["bin", "card"], built: [...builtBefore(3), "procport", "procsvc"] },
-  { cue: 15, part: 4, current: ["payment", "merchant"], built: builtBefore(4) },
+  { cue: 17, part: 4, current: ["payment", "merchant"], built: builtBefore(4) },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -17,8 +18,8 @@ export const diagram: DiagramStep<BuildId>[] = [
     edges: [{ from: "sweep", to: "bin", label: "startup + nightly" }, { from: "uzcardsvc", to: "bin", label: "/v1/cards/bin-list" }, { from: "humosvc", to: "bin", label: "/v2/pm/bins" }],
     packets: [{ from: "uzcardsvc", to: "bin", label: "BIN ranges", delay: 20 }, { from: "humosvc", to: "bin", label: "BIN ranges", delay: 30 }],
   },
-  { cue: 7, layout: { card: [0.5, 1], postgres: [2.5, 1] }, edges: [{ from: "card", to: "postgres" }], danger: ["postgres"], badges: { postgres: "8600 1402 3456 7890" } },
-  { cue: 14, layout: { admin: [0.5, 1], card: [2.5, 1] }, edges: [{ from: "admin", to: "card", label: "search by number" }], packets: [{ from: "card", to: "admin", label: "860014******7890", delay: 20 }], accent: ["card"], badges: { card: "audited" } },
+  { cue: 8, layout: { card: [0.5, 1], postgres: [2.5, 1] }, edges: [{ from: "card", to: "postgres" }], danger: ["postgres"], badges: { postgres: "8600 1402 3456 7890" } },
+  { cue: 16, layout: { admin: [0.5, 1], card: [2.5, 1] }, edges: [{ from: "admin", to: "card", label: "search by number" }], packets: [{ from: "card", to: "admin", label: "860014******7890", delay: 20 }], accent: ["card"], badges: { card: "audited" } },
 ];
 
 export const code: CodeStep[] = [
@@ -38,15 +39,16 @@ export const code: CodeStep[] = [
       "private boolean replace(String scheme, List<Bin> fresh) {",
       "  if (fresh.isEmpty()) { …; return false; } // the old one",
       "  bins.saveAll(…);",
-      "  bins.deleteBySchemeAndPrefixNotIn(scheme, …);",
+      "  bins.deleteBySchemeAndManualFalseAndPrefixNotIn(",
+      "      scheme, …);   // a range added by hand stays",
       "  return true;",
       "}",
-      "// then: index.set(BinIndex.of(bins.findAll()))",
     ],
-    highlight: [5, 11, 13],
+    highlight: [5, 11, 13, 14],
   },
+  tableStep(4, "bin.bin_range", 13),
   {
-    cue: 4,
+    cue: 5,
     file: "modules/bin/…/model/BinIndex.java",
     lines: [
       "/** The longest known prefix of a card number or of its",
@@ -65,7 +67,7 @@ export const code: CodeStep[] = [
     highlight: [4, 6, 12],
   },
   {
-    cue: 5,
+    cue: 6,
     file: "modules/bin/…/properties/bin-banks.yaml",
     lines: [
       "ecom:",
@@ -84,7 +86,7 @@ export const code: CodeStep[] = [
     highlight: [5, 6],
   },
   {
-    cue: 6,
+    cue: 7,
     file: "modules/card/…/service/impl/CardServiceImpl.java",
     lines: [
       "public BindingResponse startBinding(",
@@ -107,47 +109,71 @@ export const code: CodeStep[] = [
     highlight: [4, 9, 10],
   },
   {
-    cue: 8,
+    cue: 9,
     file: "platform/crypto/…/Crypto.java",
     lines: [
       "public String encrypt(String plain) {",
-      "  var nonce = new byte[NONCE_BYTES]; // 12, fresh each time",
+      "  return seal(plain, VERSION, null);       // v1",
+      "}",
+      "private String seal(String plain, String version,",
+      "    @Nullable String context) {",
+      "  var nonce = new byte[NONCE_BYTES]; // 12, fresh",
       "  RANDOM.nextBytes(nonce);",
-      "  var sealed = cipher(ENCRYPT_MODE, activeKeyId, nonce)",
-      "      .doFinal(plain.getBytes(UTF_8));",
-      "  return String.join(\":\", VERSION, activeKeyId,",
-      "      base64(nonce + sealed));         // v1:<key id>:…",
+      "  var cipher = cipher(Cipher.ENCRYPT_MODE,",
+      "      activeKeyId, nonce, context);",
+      "  var sealed = cipher.doFinal(plain.getBytes(UTF_8));",
+      "  …",
+      "  return String.join(SEPARATOR, version,",
+      "      activeKeyId, base64(nonce + sealed)); // v1:…",
       "}",
-      "private Cipher cipher(int mode, String keyId, byte[] nonce) {",
-      "  var cipher = Cipher.getInstance(CIPHER); // AES/GCM",
-      "  cipher.init(mode, keys.get(keyId),",
-      "      new GCMParameterSpec(TAG_BITS, nonce));",
-      "  cipher.updateAAD(keyId.getBytes(UTF_8)); // AAD",
-      "  return cipher;",
-      "}",
+      "// cipher(): cipher.updateAAD(keyId.getBytes(UTF_8));",
     ],
-    highlight: [2, 7, 13],
+    highlight: [6, 13, 15],
   },
   {
-    cue: 9,
-    file: "app/…/application.yaml · Crypto.java",
+    cue: 10,
+    file: "platform/crypto/…/Crypto.java",
     lines: [
-      "ecom.crypto:",
-      "  active-key-id: ${CARD_ACTIVE_KEY_ID:local1}",
-      "  keys:",
-      "    local1: ${CARD_KEY_LOCAL1:…}   # 32 bytes, base64",
-      "  blind-index-key: ${CARD_BLIND_INDEX_KEY:…}",
+      "/** Whether the value was sealed with a key other",
+      " *  than the active one, and should be rewrapped. */",
+      "public boolean isStale(String envelope) {",
+      "  var parts = envelope.split(SEPARATOR, 3);",
+      "  return parts.length != 3",
+      "      || !activeKeyId.equals(parts[1]);",
+      "}",
       "",
-      "/** Re-encrypts under the active key, for key rotation. */",
+      "/** Re-encrypts a v1 value under the active key,",
+      " *  for key rotation. */",
       "public String rewrap(String envelope) {",
+      "  …",
       "  return isStale(envelope)",
       "      ? encrypt(decrypt(envelope)) : envelope;",
       "}",
     ],
-    highlight: [2, 4, 9, 10],
+    highlight: [6, 13, 14],
   },
   {
-    cue: 10,
+    cue: 11,
+    file: "app/…/properties/platform/vault.yaml · CryptoProperties.java",
+    lines: [
+      "spring:",
+      "  config:",
+      "    # Every secret the app needs (card keys, …)",
+      "    # is a property at secret/ecom. A Vault that",
+      "    # can't be read stops startup.",
+      "    import: ${VAULT_IMPORT:vault://secret/ecom}",
+      "",
+      "@Validated",
+      "@ConfigurationProperties(PROPERTIES_PREFIX)",
+      "public record CryptoProperties(",
+      "    @NotEmpty Map<String, String> keys,",
+      "    @NotBlank String activeKeyId,",
+      "    @NotBlank String blindIndexKey) {}",
+    ],
+    highlight: [3, 6, 11, 12, 13],
+  },
+  {
+    cue: 12,
     file: "platform/openapi/card-api/…/card-v1.yaml",
     lines: [
       "paths:",
@@ -169,7 +195,7 @@ export const code: CodeStep[] = [
     highlight: [4, 6, 15],
   },
   {
-    cue: 11,
+    cue: 13,
     file: "modules/card/…/service/impl/CardServiceImpl.java",
     lines: [
       "/** The blind index finds the card; no stored number",
@@ -187,7 +213,7 @@ export const code: CodeStep[] = [
     highlight: [5, 8, 11],
   },
   {
-    cue: 12,
+    cue: 14,
     file: "modules/card/…/db/changelog/card.yaml",
     lines: [
       "# The database itself refuses a card number, an expiry",
@@ -205,7 +231,7 @@ export const code: CodeStep[] = [
     highlight: [5, 6, 9, 11],
   },
   {
-    cue: 13,
+    cue: 15,
     file: "modules/card/…/service/impl/CardServiceImpl.java",
     lines: [
       "public OperationResult debit(String cardToken,",
