@@ -24,8 +24,8 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   bin: { label: "BIN", sub: "Banks", x: 344, y: 140, w: 88, h: 56 },
   card: { label: "Card vault", sub: "Tokens", x: 440, y: 140, w: 88, h: 56 },
   payment: { label: "Payment", sub: "Debits", x: 536, y: 140, w: 88, h: 56 },
-  emailport: { label: "Email client + file store", x: 56, y: 230, w: 220, h: 44 },
-  procport: { label: "Adapter clients", x: 344, y: 230, w: 280, h: 44 },
+  emailport: { label: "Email + file store", x: 56, y: 230, w: 184, h: 44 },
+  procport: { label: "Adapter clients", x: 248, y: 230, w: 376, h: 44 },
   // One row of eight, 76px apart; the client arrows run down the gaps at x=113 and x=493.
   postgres: { label: "Postgres", x: 40, y: 310, w: 70, h: 64, logos: [siPostgresql.path] },
   redis: { label: "Redis", x: 116, y: 310, w: 70, h: 64, logos: [siRedis.path] },
@@ -36,7 +36,7 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   kafka: { label: "Kafka", x: 496, y: 310, w: 70, h: 64, logos: [siApachekafka.path] },
   observability: { label: "Observe", x: 572, y: 310, w: 70, h: 64, logos: [siPrometheus.path, siGrafana.path] },
   // Separate services, outside the app: each its own deployment, contract and client.
-  emailsvc: { label: "SMTP", sub: "Mailpit locally", x: 56, y: 420, w: 104, h: 56 },
+  emailsvc: { label: "SMTP", sub: "Mailpit locally", x: 48, y: 420, w: 128, h: 56 },
   procsvc: { label: "Uzcard + Humo adapters", sub: "→ SV-Gate · Payment Server", x: 404, y: 420, w: 220, h: 56 },
   // Not a box: the cluster boundary around the app and its infrastructure (drawn by BuildMap as a dashed frame).
   kubernetes: { label: "Kubernetes", x: 28, y: 90, w: 624, h: 306, logos: [siKubernetes.path] },
@@ -45,9 +45,9 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
 // Vertical arrows: [x, fromY, toY].
 export const BUILD_ARROWS: [number, number, number][] = [
   [100, 196, 230],
+  [292, 196, 230],
   [388, 196, 230],
   [484, 196, 230],
-  [580, 196, 230],
   [113, 274, 420],
   [493, 274, 420],
 ];

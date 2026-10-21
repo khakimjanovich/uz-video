@@ -23,7 +23,7 @@ export const diagram: DiagramStep<BuildId>[] = [
     layout: { ...PLAYERS },
     edges: [{ from: "buyer", to: "shop" }, ...CHAIN],
     accent: ["acquirer"],
-    badges: { acquirer: "we build this", issuer: "card's bank" },
+    badges: { acquirer: "this series", issuer: "card's bank" },
   },
   {
     cue: 3,
