@@ -9,7 +9,7 @@ export const Yt11EposComposition = createEpisode({
   part: 2,
   footer: "e-POS terminals (MID/TID)",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Which e-POS terminal?", "Unknown MID/TID", "The registry", "Per card", "Fail closed", "Kept by the database", "Suspend + revoke", "Audit log", "No e-POS, no debit", "Find an e-POS terminal", "Next: card schemes"],
+  titles: ["Which e-POS terminal?", "Unknown MID/TID", "The registry", "Per card", "Fail closed", "Kept by the database", "Registered at Uzcard", "Suspend stays ours", "Revoke at Uzcard", "Check at Uzcard", "Audit log", "No e-POS, no debit", "Terminals to reconcile", "Find an e-POS terminal", "Next: card schemes"],
   map,
   diagram,
   code,

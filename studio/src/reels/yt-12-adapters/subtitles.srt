@@ -1,52 +1,63 @@
 1
-00:00:00,050 --> 00:00:05,107
+00:00:00,050 --> 00:00:04,944
 How does our system talk to Uzcard and Humo, when they speak different languages?
 
 2
-00:00:05,107 --> 00:00:11,369
-Uzcard speaks JSON-RPC, and Humo speaks SOAP, with different fields and different errors.
+00:00:04,994 --> 00:00:13,704
+Uzcard's SV-Gate speaks JSON-RPC, and Humo speaks SOAP for payments and REST for cards, each with its own fields and codes.
 
 3
-00:00:11,369 --> 00:00:18,880
+00:00:13,754 --> 00:00:21,000
 If the payment code knew both, every new scheme would mean touching payment code, and no other project could reuse the work.
 
 4
-00:00:18,880 --> 00:00:27,380
+00:00:21,050 --> 00:00:29,496
 So each scheme gets its own adapter: a separate Spring Boot service with its own OpenAPI contract, that any service or project may call.
 
 5
-00:00:27,380 --> 00:00:34,678
-Every adapter answers plain REST with one envelope: a request id, the scheme's decision, and the data.
+00:00:29,546 --> 00:00:38,904
+Every adapter answers plain REST with one envelope: a request id, the scheme's own status, and its data in the scheme's own field names.
 
 6
-00:00:34,678 --> 00:00:41,440
-Inside, every scheme method is one command, picked by its type from a factory, the same way in both adapters.
+00:00:38,954 --> 00:00:48,768
+Inside, every scheme method is one command, picked by its type from a factory, calling the scheme through typed models and one HTTP interface client per area.
 
 7
-00:00:41,440 --> 00:00:47,619
-What a scheme's codes mean lives in a status file: which codes approve, and which declines they stand for.
+00:00:48,818 --> 00:00:57,144
+What each scheme code means lives in a status table: success, error, pending, not found, unavailable, or manual review.
 
 8
-00:00:47,619 --> 00:00:58,761
-Uzcard debits in one step, by the card's token, with our payment id as the external reference; if that reference was sent before, the adapter looks the payment up instead of paying twice.
+00:00:57,194 --> 00:01:04,992
+The card module turns a scheme's decline code into its own: insufficient funds, expired card, or limit exceeded.
 
 9
-00:00:58,761 --> 00:01:03,226
-Humo holds the money first, and the card module captures the hold right away.
+00:01:05,042 --> 00:01:11,280
+Uzcard debits in one step, by the card's token, with our payment id as the external reference.
 
 10
-00:01:03,226 --> 00:01:10,202
-The card module needs only the published client library and one port, a card processor, with one processor per scheme.
+00:01:11,330 --> 00:01:19,656
+If that reference was sent before, SV-Gate refuses it as a duplicate, the adapter answers pending, and a lookup by the reference tells the outcome.
 
 11
-00:01:10,202 --> 00:01:16,047
-Every answer becomes one of three outcomes: approved, declined with our own code, or unknown.
+00:01:19,706 --> 00:01:27,864
+Humo holds the money first, and the card module captures it right away; a hold whose capture got no answer is captured when its status is asked.
 
 12
-00:01:16,047 --> 00:01:24,130
-A timeout answers five oh four, and the card module reads it as unknown, never a decline, because the money may already have moved.
+00:01:27,914 --> 00:01:36,984
+Humo settles a terminal's payments only after reconciliation, so the card module reconciles every Humo e POS terminal before each clearing session.
 
 13
-00:01:24,130 --> 00:01:28,130
-Next, knowing a card's scheme, and storing its number safely.
+00:01:37,034 --> 00:01:47,088
+The app wires each adapter's generated clients as one HTTP service group, and the card module sees only one port, a card processor, per scheme.
 
+14
+00:01:47,138 --> 00:01:53,352
+Every answer becomes one of three outcomes: approved, declined with our own code, or unknown.
+
+15
+00:01:53,402 --> 00:02:05,376
+A timeout, a redirect, or an answer it cannot read is the adapter's client error, a five oh two, and the card module reads it as unknown, never a decline, because the money may already have moved.
+
+16
+00:02:05,426 --> 00:02:09,288
+Next, knowing a card's scheme, and storing its number safely.

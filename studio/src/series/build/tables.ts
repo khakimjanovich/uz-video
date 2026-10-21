@@ -41,6 +41,10 @@ export const TABLES: Record<string, Column[]> = {
     ["terminal_id", "varchar(30)", 11], ["status", "varchar(16)", 11], ["registered_by", "varchar(64)", 11],
     ["created_at", "timestamptz", 11],
   ],
+  "bin.bin_range": [
+    ["prefix", "varchar(11)", 13], ["scheme", "varchar(16)", 13], ["issuer", "varchar(16)", 13],
+    ["synced_at", "timestamptz", 13], ["manual", "boolean", 13],
+  ],
   "card.card": [
     ["id", "uuid", 13], ["token", "varchar(40)", 13], ["scheme", "varchar(16)", 13], ["masked_number", "varchar(19)", 13],
     ["number_index", "varchar(64)", 13], ["number_encrypted", "text", 13], ["expiry_encrypted", "text", 13],
@@ -67,7 +71,7 @@ export const TABLES: Record<string, Column[]> = {
   ],
   "payment.payment_event": [
     ["id", "uuid", 19], ["payment_id", "uuid", 19], ["type", "varchar(32)", 19], ["payload", "text", 19],
-    ["created_at", "timestamptz", 19], ["published_at", "timestamptz", 19],
+    ["created_at", "timestamptz", 19], ["published_at", "timestamptz", 19], ["traceparent", "varchar(55)", 19],
   ],
   "payment.webhook_delivery": [
     ["id", "uuid", 19], ["event_id", "uuid", 19], ["payment_id", "uuid", 19], ["url", "varchar(2048)", 19],
