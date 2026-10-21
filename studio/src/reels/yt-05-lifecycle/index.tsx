@@ -9,7 +9,7 @@ export const Yt05LifecycleComposition = createEpisode({
   part: 1,
   footer: "Lifecycle + documents",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Straight to active?", "No rules", "Fixed states", "One table", "The guard", "Company documents", "File store", "File id only", "Review each file", "Documents first", "The contract", "Status history", "Never updated", "Suspend + terminate", "Own starting state", "Next: four-eyes"],
+  titles: ["Straight to active?", "No rules", "Fixed states", "One table", "The guard", "Company documents", "File store", "File id only", "Checksum on read","Review each file", "Documents first", "The contract", "Status history", "Never updated", "Suspend + terminate", "Own starting state", "Next: four-eyes"],
   map,
   diagram,
   code,

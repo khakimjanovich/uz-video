@@ -1,48 +1,51 @@
 1
-00:00:00,050 --> 00:00:03,023
+00:00:00,050 --> 00:00:03,144
 Who is calling the API, and how does the bank know?
 
 2
-00:00:03,023 --> 00:00:08,059
+00:00:03,194 --> 00:00:08,160
 A name typed into a request header proves nothing, because anyone can type a header.
 
 3
-00:00:08,059 --> 00:00:14,380
+00:00:08,210 --> 00:00:14,232
 So Keycloak holds every login: the bank's admins, the merchants, and the merchants' servers.
 
 4
-00:00:14,380 --> 00:00:22,059
+00:00:14,282 --> 00:00:21,936
 The realm defines three roles: admin for bank staff, partner for a merchant's people, and merchant for a merchant's servers.
 
 5
-00:00:22,059 --> 00:00:27,488
+00:00:21,986 --> 00:00:27,432
 Signing up takes a password, which goes straight to Keycloak and never into our database.
 
 6
-00:00:27,488 --> 00:00:32,666
+00:00:27,482 --> 00:00:32,712
 The new login can do nothing until the email is verified, and then it gets the partner role.
 
 7
-00:00:32,666 --> 00:00:37,857
+00:00:32,762 --> 00:00:37,968
 Every request carries a token, and the app checks it before any business code runs.
 
 8
-00:00:37,857 --> 00:00:43,976
-The route rules live in configuration: each path needs its role, and anything not listed is refused.
+00:00:38,018 --> 00:00:44,736
+The realm puts this API in every token's audience, and a token issued for anything else is refused.
 
 9
-00:00:43,976 --> 00:00:48,190
-The admin's name comes from the token, so the history shows who really acted.
+00:00:44,786 --> 00:00:53,904
+The route rules live in configuration: public routes ignore any token, each listed path needs its role, and anything else is refused.
 
 10
-00:00:48,190 --> 00:00:55,904
-An active merchant creates API clients for its servers; each one gets the merchant role, and its secret is shown only once.
+00:00:53,954 --> 00:00:58,392
+The admin's name comes from the token, so the history shows who really acted.
 
 11
-00:00:55,904 --> 00:01:04,535
-Rotating issues a new secret, and the old one stops working at once; our database keeps the client ids, never a secret.
+00:00:58,442 --> 00:01:06,192
+An active merchant creates API clients for its servers; each one gets the merchant role, and its secret is shown only once.
 
 12
-00:01:04,535 --> 00:01:07,976
-Next, the websites that will actually take the payments.
+00:01:06,242 --> 00:01:14,736
+Rotating issues a new secret, and the old one stops working at once; our database keeps the client ids, never a secret.
 
+13
+00:01:14,786 --> 00:01:17,856
+Next, the websites that will actually take the payments.

@@ -6,7 +6,7 @@ import { BuildId } from "../../series/build/nodes";
 // Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
   { cue: 0, part: 1, current: ["partner"], built: builtBefore(1) },
-  { cue: 15, part: 1, current: ["partner", "admin"], built: builtBefore(1) },
+  { cue: 16, part: 1, current: ["partner", "admin"], built: builtBefore(1) },
 ];
 
 const STATES = { stPending: [0, 0], stVerified: [1, 0], stContract: [2, 0], stApproved: [3, 0], stActive: [3, 1.2] } as const;
@@ -27,9 +27,9 @@ export const diagram: DiagramStep<BuildId>[] = [
     packets: [{ from: "shop", to: "partner", label: "PDF", delay: 10 }, { from: "partner", to: "filesvc", label: "PDF", delay: 30 }, { from: "filesvc", to: "bucket", label: "PDF", delay: 50 }],
     accent: ["filesvc", "bucket"],
   },
-  { cue: 11, layout: { ...STATES, journal: [1, 1.2] }, edges: [...CHAIN, { from: "stActive", to: "journal", label: "from · to · who · why" }], accent: ["journal"] },
+  { cue: 12, layout: { ...STATES, journal: [1, 1.2] }, edges: [...CHAIN, { from: "stActive", to: "journal", label: "from · to · who · why" }], accent: ["journal"] },
   {
-    cue: 13,
+    cue: 14,
     layout: { stActive: [0.5, 1], stSuspended: [2, 1], stTerminated: [3, 2] },
     edges: [{ from: "stActive", to: "stSuspended", label: "suspend · restore" }, { from: "stSuspended", to: "stTerminated", label: "terminate" }],
     crossed: ["stTerminated"],
@@ -116,6 +116,28 @@ export const code: CodeStep[] = [
   },
   {
     cue: 8,
+    file: "platform/file-store/…/filestore/FileStore.java",
+    lines: [
+      "public FileContent read(String bucket, UUID fileId) {",
+      "  …",
+      "  var bytes = object.asByteArray();",
+      "  var checksum = metadata.get(SHA256_METADATA);",
+      "  // Bytes that no longer match are not this file.",
+      "  if (… || !sha256(bytes).equals(checksum)) {",
+      "    log.error(LOG_CORRUPT, fileId, bucket);",
+      "    throw new GeneralException(",
+      "        FILE_STORE_FILE_CORRUPT, fileId);",
+      "  }",
+      "  …",
+      "}",
+      "",
+      "// At startup: each configured bucket must exist.",
+      "s3.headBucket(head -> head.bucket(name));",
+    ],
+    highlight: [6, 9, 15],
+  },
+  {
+    cue: 9,
     file: "modules/partner/…/entity/PartnerDocument.java",
     lines: [
       "public void verify(String admin) {",
@@ -138,7 +160,7 @@ export const code: CodeStep[] = [
     highlight: [9, 13],
   },
   {
-    cue: 9,
+    cue: 10,
     file: "modules/partner/…/service/impl/PartnerAdminServiceImpl.java",
     lines: [
       "public PartnerResponse verify(UUID id, String admin) {",
@@ -153,14 +175,14 @@ export const code: CodeStep[] = [
       "  return partnerMapper.toResponse(partner);",
       "}",
       "",
-      "# application.yaml",
+      "# modules/partner · properties/partner.yaml",
       "ecom.partner.kyb:",
       "  required-documents: [CHARTER, PASSPORT]",
     ],
     highlight: [3, 7, 15],
   },
   {
-    cue: 10,
+    cue: 11,
     file: "modules/partner/…/service/impl/PartnerAdminServiceImpl.java",
     lines: [
       "var partner = find(id);",
@@ -180,7 +202,7 @@ export const code: CodeStep[] = [
     highlight: [8, 13],
   },
   {
-    cue: 12,
+    cue: 13,
     file: "modules/partner/…/entity/PartnerStatusChange.java",
     lines: [
       "@Entity",
@@ -199,7 +221,7 @@ export const code: CodeStep[] = [
     highlight: [3],
   },
   {
-    cue: 14,
+    cue: 15,
     file: "modules/partner/…/service/impl/PartnerAdminServiceImpl.java",
     lines: [
       "public PartnerResponse activate(UUID id, String admin,",

@@ -1,48 +1,59 @@
 1
-00:00:00,050 --> 00:00:03,940
+00:00:00,050 --> 00:00:04,008
 How does the bank know a new merchant really owns the email they typed?
 
 2
-00:00:03,940 --> 00:00:08,511
+00:00:04,058 --> 00:00:08,616
 Anyone can type any address, so a sign-up alone proves nothing.
 
 3
-00:00:08,511 --> 00:00:14,619
+00:00:08,666 --> 00:00:14,688
 The contract adds three calls: register, verify the email, and resend the code.
 
 4
-00:00:14,619 --> 00:00:20,071
+00:00:14,738 --> 00:00:19,968
 Registering saves the merchant as pending, and refuses an email that is already taken.
 
 5
-00:00:20,071 --> 00:00:26,107
+00:00:20,018 --> 00:00:26,088
 A one-time code then goes to that email, from the OTP library that any module can use.
 
 6
-00:00:26,107 --> 00:00:34,357
-Redis keeps only a keyed hash of the code with a configured lifetime, and one script counts the sends and stores the code in a single step.
+00:00:26,138 --> 00:00:34,200
+Redis keeps only keyed hashes of the code and the email, and one script checks every limit and stores the code in a single step.
 
 7
-00:00:34,357 --> 00:00:39,619
+00:00:34,250 --> 00:00:39,552
 The email goes out through the notification service, and locally it lands in Mailpit.
 
 8
-00:00:39,619 --> 00:00:44,428
+00:00:39,602 --> 00:00:45,000
 The merchant sends the code back, and only then is the email marked as verified.
 
 9
-00:00:44,428 --> 00:00:48,523
-Wrong codes count against a configured limit, and too many lock the code.
+00:00:45,050 --> 00:00:52,080
+Wrong codes count across the whole send window, so a lockout lasts until the window ends, even for a new code.
 
 10
-00:00:48,523 --> 00:00:51,857
-Sends are limited too, so nobody can flood an inbox.
+00:00:52,130 --> 00:00:59,976
+Sends are limited per window, and a new code waits a configured pause after the last one, so nobody can flood an inbox.
 
 11
-00:00:51,857 --> 00:01:02,321
-Every failure has its own stable code, and its message in English, Russian and Uzbek: email taken, code invalid, code expired, or too many attempts.
+00:01:00,026 --> 00:01:05,328
+Every refusal that lifts by itself carries a Retry-After header that says when.
 
 12
-00:01:02,321 --> 00:01:06,916
-Next, the merchant moves through a lifecycle, from pending to active.
+00:01:05,378 --> 00:01:11,616
+Without Redis, no code is sent or accepted: the library fails closed with a five oh three.
 
+13
+00:01:11,666 --> 00:01:22,704
+Every failure has its own stable code, and its message in English, Russian and Uzbek: email taken, code invalid, code expired, too many attempts, or too early.
+
+14
+00:01:22,754 --> 00:01:28,536
+The limits are the library's own defaults, and the app supplies only the secret, from Vault.
+
+15
+00:01:28,586 --> 00:01:33,240
+Next, the merchant moves through a lifecycle, from pending to active.
