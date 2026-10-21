@@ -147,7 +147,7 @@ export const code: CodeStep[] = [
       "      properties.settlementZone());",
       "}",
       "",
-      "# application.yaml · ecom.payment",
+      "# payment.yaml · ecom.payment",
       "settlement-zone: Asia/Tashkent",
     ],
     highlight: [6, 10],

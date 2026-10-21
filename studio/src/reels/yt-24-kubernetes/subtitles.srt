@@ -1,47 +1,51 @@
 1
-00:00:00,050 --> 00:00:04,152
+00:00:00,050 --> 00:00:04,128
 Everything runs on one laptop: what does production need instead?
 
 2
-00:00:04,202 --> 00:00:11,736
+00:00:04,178 --> 00:00:11,640
 Kubernetes runs each deployable as replicas behind a Service: the app three times, each adapter twice.
 
 3
-00:00:11,786 --> 00:00:20,688
+00:00:11,690 --> 00:00:20,352
 Every image is the same Gradle-built jar on the plain JRE, as a user without root rights; the limits and JVM options come from the cluster.
 
 4
-00:00:20,738 --> 00:00:25,920
+00:00:20,402 --> 00:00:25,512
 Spring Boot's own probes tell the cluster when a pod is alive, and when it takes traffic.
 
 5
-00:00:25,970 --> 00:00:34,224
-A rolling update starts a new pod before it stops an old one, and a short pause before shutdown lets the Service stop sending requests first.
+00:00:25,562 --> 00:00:34,344
+Readiness counts only what the app cannot work without, the file store, Vault and Keycloak, so one card scheme down never takes the app out of rotation.
 
 6
-00:00:34,274 --> 00:00:40,344
-The app then finishes what it is doing, for up to sixty seconds, longer than the slowest scheme call.
+00:00:34,394 --> 00:00:42,720
+A rolling update starts a new pod before it stops an old one, and a short pause before shutdown lets the Service stop sending requests first.
 
 7
-00:00:40,394 --> 00:00:47,112
-Addresses live in a ConfigMap; secrets come from a Secret the bank creates from Vault, never from git.
+00:00:42,770 --> 00:00:48,864
+The app then finishes what it is doing, for up to sixty seconds, longer than the slowest scheme call.
 
 8
-00:00:47,162 --> 00:00:57,696
-Three replicas run every scheduled job three times, and that is safe: skip locked, one workflow per payment, ShedLock, and Kafka shares its partitions between them.
+00:00:48,914 --> 00:00:56,304
+Addresses live in a ConfigMap; secrets are read from Vault at startup, and the only Secret holds what signs in to Vault.
 
 9
-00:00:57,746 --> 00:01:04,728
-An autoscaler adds replicas when the CPU is busy, and a disruption budget never lets a drain take more than one.
+00:00:56,354 --> 00:01:06,720
+Three replicas run every scheduled job three times, and that is safe: skip locked, one workflow per payment, ShedLock, and Kafka shares its partitions between them.
 
 10
-00:01:04,778 --> 00:01:11,184
-Deleting a pod in the middle of payments loses nothing: the others take the traffic, and a new one starts.
+00:01:06,770 --> 00:01:13,584
+An autoscaler adds replicas when the CPU is busy, and a disruption budget never lets a drain take more than one.
 
 11
-00:01:11,234 --> 00:01:18,600
-On a laptop, the same manifests run in a one-node k3s, with Services that point at the compose stack.
+00:01:13,634 --> 00:01:19,872
+Deleting a pod in the middle of payments loses nothing: the others take the traffic, and a new one starts.
 
 12
-00:01:18,650 --> 00:01:23,016
+00:01:19,922 --> 00:01:26,976
+On a laptop, the same manifests run in a one-node k3s, with Services that point at the compose stack.
+
+13
+00:01:27,026 --> 00:01:31,272
 Next, the last step: moving the card vault into its own service.

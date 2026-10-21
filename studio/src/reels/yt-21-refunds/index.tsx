@@ -9,7 +9,7 @@ export const Yt21RefundsComposition = createEpisode({
   part: 4,
   footer: "Refunds and reversals",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Money back", "The day decides", "Reversal", "Refund", "Settlement time zone", "The refund window", "Always the whole amount", "One claim wins", "Journal first", "Three outcomes", "An event, a webhook", "Server or portal", "Next: daily reports"],
+  titles: ["Money back", "The day decides", "Reversal or refund", "Uzcard: one call", "Humo: hold or captured", "Settlement time zone", "The refund window", "Always the whole amount", "One claim wins", "Journal first", "Three outcomes", "An event, a webhook", "Server or portal", "Next: daily reports"],
   map,
   diagram,
   code,

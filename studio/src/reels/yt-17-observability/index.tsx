@@ -9,7 +9,7 @@ export const Yt17ObservabilityComposition = createEpisode({
   part: 4,
   footer: "Observability",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["How would you know?", "Logs can't follow", "The agent", "Traced for free", "One trace", "Logs with trace ids", "Metrics", "Debit outcomes", "Scheme answer time", "One stack", "The dashboard", "When it went silent", "Sampling + load", "Next: silence"],
+  titles: ["How would you know?", "Logs can't follow", "One library", "Traced everywhere", "One trace", "X-Request-Id", "Logs with trace ids", "Masked everywhere", "Metrics", "Debit outcomes", "Scheme answer time", "Health as a gauge", "One stack", "The dashboard", "Alerts as code", "When it goes silent", "Next: silence"],
   map,
   diagram,
   code,

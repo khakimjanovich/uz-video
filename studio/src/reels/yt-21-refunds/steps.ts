@@ -7,10 +7,8 @@ import { BuildId } from "../../series/build/nodes";
 const B = [...builtBefore(4), "observability", "temporal", "kafka"] as const;
 export const map: BuildMapStep[] = [
   { cue: 0, part: 4, current: ["payment", "buyer"], built: [...B] },
-  { cue: 12, part: 4, current: ["payment", "admin"], built: [...B] },
+  { cue: 13, part: 4, current: ["payment", "admin"], built: [...B] },
 ];
-
-const BACK = { payment: [0.5, 1], uzcard: [2.5, 0.3], humo: [2.5, 1.7] } as const;
 
 export const diagram: DiagramStep<BuildId>[] = [
   {
@@ -22,25 +20,76 @@ export const diagram: DiagramStep<BuildId>[] = [
   },
   {
     cue: 2,
-    layout: { ...BACK },
-    edges: [{ from: "payment", to: "uzcard", label: "trans.reverse" }, { from: "payment", to: "humo", label: "CancelRequest" }],
-    packets: [{ from: "payment", to: "uzcard", label: "reverse", delay: 8 }, { from: "payment", to: "humo", label: "cancel", delay: 30 }],
-    badges: { payment: "REVERSED" },
+    layout: { buyer: [0, 1], payment: [1.5, 1], processing: [3, 1] },
+    edges: [{ from: "payment", to: "processing", label: "settles overnight" }, { from: "payment", to: "buyer", label: "money back" }],
+    badges: { payment: "REVERSED · REFUNDED" },
   },
   {
     cue: 3,
-    layout: { ...BACK },
-    edges: [{ from: "payment", to: "uzcard", label: "trans.reverse" }, { from: "payment", to: "humo", label: "ReturnPayment" }],
-    packets: [{ from: "payment", to: "uzcard", label: "reverse", delay: 8 }, { from: "payment", to: "humo", label: "return", delay: 30 }],
-    badges: { payment: "REFUNDED" },
+    layout: { payment: [0.5, 1], uzcard: [2.5, 1] },
+    edges: [{ from: "payment", to: "uzcard", label: "trans.reverse · refNum" }],
+    packets: [{ from: "payment", to: "uzcard", label: "reverse", delay: 10 }],
+    badges: { uzcard: "one call for both" },
+  },
+  {
+    cue: 4,
+    layout: { payment: [0.5, 1], humo: [2.5, 1] },
+    edges: [{ from: "payment", to: "humo", label: "status first" }],
+    packets: [{ from: "payment", to: "humo", label: "cancel", delay: 8 }, { from: "payment", to: "humo", label: "return", delay: 34 }],
+    badges: { humo: "hold: cancel · captured: return" },
     accent: ["humo"],
   },
 ];
 
 export const code: CodeStep[] = [
   {
+    cue: 3,
+    file: "modules/card/…/service/impl/UzcardProcessor.java",
+    lines: [
+      "public OperationResult reverse(String paymentRef,",
+      "    String processorRef) {   // Uzcard's refNum",
+      "  var reversed = uzcardTransactions.transReverse(",
+      "      new TransReverseRequest(processorRef))",
+      "      .getBody();",
+      "  return switch (reversed.getStatus()) {",
+      "    case REVERSE_SUCCESS -> approved(processorRef, …);",
+      "    case REVERSE_ERROR, ERROR -> declined(…);",
+      "    default -> CardProcessor.unknown();",
+      "  };",
+      "}",
+      "",
+      "public OperationResult refund(String paymentRef,",
+      "    String processorRef) {",
+      "  return reverse(paymentRef, processorRef);",
+      "}",
+    ],
+    highlight: [3, 15],
+  },
+  {
     cue: 4,
-    file: "app/src/main/resources/application.yaml",
+    file: "modules/card/…/service/impl/HumoProcessor.java",
+    lines: [
+      "public OperationResult reverse(String paymentRef,",
+      "    String processorRef) {",
+      "  var payment = payment(paymentRef);",
+      "  if (payment.getStatus() == AUTHORIZED) {",
+      "    humoPayments.cancelPayment(…);   // a hold",
+      "  } else {",
+      "    humoPayments.refundPayment(…);   // ReturnPayment",
+      "  }",
+      "  return CardProcessor.approved(processorRef, null);",
+      "}",
+      "",
+      "public OperationResult refund(String paymentRef,",
+      "    String processorRef) {",
+      "  return reverse(paymentRef, processorRef);",
+      "}",
+    ],
+    highlight: [3, 5, 7],
+  },
+  {
+    cue: 5,
+    file: "modules/payment/…/properties/payment.yaml",
     lines: [
       "ecom:",
       "  payment:",
@@ -53,7 +102,7 @@ export const code: CodeStep[] = [
     highlight: [7],
   },
   {
-    cue: 5,
+    cue: 6,
     file: "modules/payment/…/service/impl/PaymentReturnServiceImpl.java",
     lines: [
       "private PaymentStatus how(Payment payment) {",
@@ -76,29 +125,26 @@ export const code: CodeStep[] = [
     highlight: [5, 7, 9, 14],
   },
   {
-    cue: 6,
-    file: "modules/card/…/service/impl/HumoProcessor.java",
+    cue: 7,
+    file: "modules/payment/…/service/impl/PaymentReturnServiceImpl.java",
     lines: [
-      "public OperationResult reverse(String paymentRef,",
-      "    String processorRef) {",
-      "  return giveBack(() -> humo.cancelPayment(",
-      "      new PaymentIdRequest(processorRef)), processorRef);",
-      "}",
-      "",
-      "/** After settlement Humo returns the payment instead",
-      " *  (ReturnPayment). */",
-      "public OperationResult refund(String paymentRef,",
-      "    String processorRef) {",
-      "  return giveBack(() -> humo.returnPayment(",
-      "      new PaymentIdRequest(processorRef)), processorRef);",
-      "}",
-      "",
-      "// UzcardProcessor.refund → trans.reverse: one call for both",
+      "// The payment and the scheme's id: no amount,",
+      "// so the scheme gives back the whole payment.",
+      "var result =",
+      "    how == PaymentStatus.REVERSED",
+      "        ? cards.reverseCardPayment(",
+      "            payment.getCardToken(),",
+      "            new ReturnRequest(paymentId.toString(),",
+      "                payment.getProcessorRef()))",
+      "        : cards.refundCardPayment(",
+      "            payment.getCardToken(),",
+      "            new ReturnRequest(paymentId.toString(),",
+      "                payment.getProcessorRef()));",
     ],
-    highlight: [3, 11, 15],
+    highlight: [7, 11],
   },
   {
-    cue: 7,
+    cue: 8,
     file: "modules/payment/…/repository/PaymentRepository.java",
     lines: [
       "/** Giving the money back: of any number of callers,",
@@ -116,7 +162,7 @@ export const code: CodeStep[] = [
     highlight: [4, 5, 10],
   },
   {
-    cue: 8,
+    cue: 9,
     file: "modules/payment/…/entity/PaymentOperation.java",
     lines: [
       "/** Giving a paid debit back: REVERSAL or REFUND,",
@@ -134,7 +180,7 @@ export const code: CodeStep[] = [
     highlight: [6, 7, 11],
   },
   {
-    cue: 9,
+    cue: 10,
     file: "modules/payment/…/service/impl/PaymentReturnServiceImpl.java",
     lines: [
       "operation.finish(result);",
@@ -155,7 +201,7 @@ export const code: CodeStep[] = [
     highlight: [3, 4, 5],
   },
   {
-    cue: 10,
+    cue: 11,
     file: "modules/payment/…/entity/Payment.java",
     lines: [
       "/** The scheme gave the money back: REVERSED before its",
@@ -171,7 +217,7 @@ export const code: CodeStep[] = [
     highlight: [8],
   },
   {
-    cue: 11,
+    cue: 12,
     file: "platform/openapi/payment-api/…/payment-v1.yaml",
     lines: [
       "/api/v1/payments/{paymentId}/refund:",

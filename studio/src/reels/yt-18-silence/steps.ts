@@ -7,7 +7,7 @@ import { BuildId } from "../../series/build/nodes";
 const B4 = builtBefore(4);
 export const map: BuildMapStep[] = [
   { cue: 0, part: 4, current: ["temporal", "payment"], built: [...B4, "observability"] },
-  { cue: 13, part: 4, current: ["kafka", "merchant"], built: [...B4, "observability", "temporal"] },
+  { cue: 15, part: 4, current: ["kafka", "merchant"], built: [...B4, "observability", "temporal"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -26,7 +26,7 @@ export const diagram: DiagramStep<BuildId>[] = [
     badges: { payment: "app restarts?" },
   },
   {
-    cue: 11,
+    cue: 12,
     layout: { buyer: [0, 1], payment: [1.5, 1], temporal: [3, 1] },
     edges: [{ from: "buyer", to: "payment", label: "every 5 s" }, { from: "temporal", to: "payment", label: "PAID" }],
     packets: [
@@ -93,6 +93,25 @@ export const code: CodeStep[] = [
   },
   {
     cue: 6,
+    file: "modules/card/…/service/impl/HumoProcessor.java",
+    lines: [
+      "/** Captured is paid; a hold still waiting is",
+      " *  captured now, as the debit meant. */",
+      "@Override",
+      "public OperationResult status(String paymentRef) {",
+      "  var payment = payment(paymentRef);  // GetPayment",
+      "  if (payment.getStatus() == PaymentStatus.NOT_FOUND)",
+      "    return notFound();",
+      "  …",
+      "  return payment.getStatus() == PaymentStatus.CAPTURED",
+      "      ? CardProcessor.approved(paymentId, rrn)",
+      "      : capture(paymentRef, paymentId, rrn);",
+      "}",
+    ],
+    highlight: [9, 11],
+  },
+  {
+    cue: 7,
     file: "modules/payment/…/workflow/PaymentResolutionActivitiesImpl.java",
     lines: [
       "switch (result.getOutcome()) {",
@@ -111,8 +130,8 @@ export const code: CodeStep[] = [
     highlight: [2, 5, 11],
   },
   {
-    cue: 7,
-    file: "app/src/main/resources/application.yaml",
+    cue: 8,
+    file: "modules/payment/…/properties/payment.yaml",
     lines: [
       "ecom.payment.resolution:",
       "  temporal-target: ${TEMPORAL_TARGET:localhost:7233}",
@@ -128,7 +147,7 @@ export const code: CodeStep[] = [
     highlight: [6, 10],
   },
   {
-    cue: 8,
+    cue: 9,
     file: "modules/payment/…/service/impl/TemporalPaymentResolutionService.java",
     lines: [
       "/** One workflow per payment: its id is the payment's,",
@@ -144,7 +163,7 @@ export const code: CodeStep[] = [
     highlight: [5, 8],
   },
   {
-    cue: 9,
+    cue: 10,
     file: "modules/payment/…/repository/PaymentRepository.java",
     lines: [
       "SELECT p.id FROM Payment p",
@@ -160,7 +179,7 @@ export const code: CodeStep[] = [
     highlight: [2, 3],
   },
   {
-    cue: 10,
+    cue: 11,
     file: "modules/payment/…/service/impl/PaymentDebitServiceImpl.java",
     lines: [
       "/** The scheme didn't answer: a workflow asks it again later.",
@@ -178,7 +197,7 @@ export const code: CodeStep[] = [
     highlight: [2, 8],
   },
   {
-    cue: 12,
+    cue: 13,
     file: "ecom-infra/observability/dashboards/payments.json",
     lines: [
       "Unknown debits resolved, by how they ended",
@@ -187,5 +206,26 @@ export const code: CodeStep[] = [
       "  approved · declined · manual_review",
     ],
     highlight: [2],
+  },
+  {
+    cue: 14,
+    file: "modules/payment/…/service/impl/PaymentStuckMetrics.java",
+    lines: [
+      "for (var status : new PaymentStatus[] {",
+      "    PaymentStatus.UNKNOWN,",
+      "    PaymentStatus.MANUAL_REVIEW}) {",
+      "  Gauge.builder(STUCK_METRIC,  // ecom.payments.stuck",
+      "          () -> payments.countByStatus(status))",
+      "      .tag(STATUS_TAG, status.name())",
+      "      .register(meters);",
+      "}",
+      "",
+      "# ecom-infra · observability/alerting/rules.yaml",
+      "- title: Payments stuck",
+      "  expr: sum(max by (status) (ecom_payments_stuck))",
+      "  for: 10m",
+      "  # above 0 → email",
+    ],
+    highlight: [4, 13],
   },
 ];

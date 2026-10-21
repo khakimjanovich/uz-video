@@ -9,7 +9,7 @@ export const Yt24KubernetesComposition = createEpisode({
   part: 5,
   footer: "Deploy to Kubernetes",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Laptop to production", "Replicas", "The image", "Probes", "Rolling update", "Graceful shutdown", "Config and secrets", "Jobs on every replica", "Autoscaling", "Lose a pod", "A local cluster", "Next: extraction"],
+  titles: ["Laptop to production", "Replicas", "The image", "Probes", "Readiness", "Rolling update", "Graceful shutdown", "Config and Vault", "Jobs on every replica", "Autoscaling", "Lose a pod", "A local cluster", "Next: extraction"],
   map,
   diagram,
   code,
