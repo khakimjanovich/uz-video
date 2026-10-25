@@ -1,60 +1,59 @@
 1
-00:00:00,050 --> 00:00:03,619
+00:00:00,050 --> 00:00:03,672
 What stops two clicks on the pay button from charging the card twice?
 
 2
-00:00:03,619 --> 00:00:09,404
+00:00:03,722 --> 00:00:09,240
 Two requests to confirm the same payment can arrive at the same moment, and both would try to debit.
 
 3
-00:00:09,404 --> 00:00:15,107
+00:00:09,290 --> 00:00:15,048
 One conditional update moves the payment from confirmed to debiting, and only one caller can win it.
 
 4
-00:00:15,107 --> 00:00:19,035
+00:00:15,098 --> 00:00:18,960
 Anyone who loses the claim simply gets the payment as it stands.
 
 5
-00:00:19,035 --> 00:00:26,345
+00:00:19,010 --> 00:00:26,472
 The winner fixes the route: the website's live e POS terminal for the card's scheme, with its MID and TID.
 
 6
-00:00:26,345 --> 00:00:32,880
+00:00:26,522 --> 00:00:33,024
 It fixes the fee too: the most specific commission rule, the fee and the merchant's net, kept on the payment.
 
 7
-00:00:32,880 --> 00:00:39,226
+00:00:33,074 --> 00:00:39,528
 With no e POS terminal or no fee rule, the payment fails right there, before any money moves.
 
 8
-00:00:39,226 --> 00:00:46,654
+00:00:39,578 --> 00:00:47,496
 Every call to the scheme is written to an operation journal first, and the database allows only one debit per payment.
 
 9
-00:00:46,654 --> 00:00:54,761
+00:00:47,546 --> 00:00:55,752
 Then the card module asks the scheme through its adapter, with our payment id as the reference, so a retry is never paid twice.
 
 10
-00:00:54,761 --> 00:00:59,523
+00:00:55,802 --> 00:01:00,528
 An approval makes the payment paid, with the scheme's reference number, the RRN.
 
 11
-00:00:59,523 --> 00:01:02,559
+00:01:00,578 --> 00:01:03,528
 A decline is final, with our own code for why.
 
 12
-00:01:02,559 --> 00:01:07,619
-No answer leaves it unknown, never declined, because the money may already have moved.
+00:01:03,578 --> 00:01:10,272
+No answer within two seconds leaves it unknown, never declined, because the money may already have moved.
 
 13
-00:01:07,619 --> 00:01:17,392
+00:01:10,322 --> 00:01:20,208
 Every move goes through the status table, so a paid payment never becomes unpaid; it only moves on when its money goes back, which episode twenty-one explains.
 
 14
-00:01:17,392 --> 00:01:23,761
-The buyer sees the result on the page, and the bank sees the fee, the e POS terminal and the RRN.
+00:01:20,258 --> 00:01:30,072
+The page asks for the result every second for five seconds, then tells the buyer not to pay again; the bank sees the fee, the e POS terminal and the RRN.
 
 15
-00:01:23,761 --> 00:01:27,273
+00:01:30,122 --> 00:01:33,456
 Next, seeing inside the system when something is slow.
-
