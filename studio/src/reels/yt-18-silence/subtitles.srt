@@ -15,49 +15,69 @@ Someone has to ask the scheme later, and keep asking, even if the app restarts i
 So each unknown debit gets a Temporal workflow, and Temporal keeps its waits durable.
 
 5
-00:00:22,178 --> 00:00:30,144
-The workflow waits, asks the scheme, and waits longer each time: thirty seconds, then one minute, two, and up to ten.
+00:00:22,178 --> 00:00:31,176
+The workflow only asks for the debit's status, and waits longer each time: one second, then two, four, up to a minute, eight times at most.
 
 6
-00:00:30,194 --> 00:00:36,912
+00:00:31,226 --> 00:00:37,944
 It asks with the same reference the debit carried, our payment id, so the answer is about this debit and nothing else.
 
 7
-00:00:36,962 --> 00:00:42,768
-A Humo hold whose capture got no answer is captured when its status is asked, as the debit meant.
+00:00:37,994 --> 00:00:44,112
+A Humo hold still waiting is captured as its own step, and only then is the payment paid.
 
 8
-00:00:42,818 --> 00:00:48,720
-Approved makes the payment paid, declined makes it declined, and the journal records the answer.
+00:00:44,162 --> 00:00:49,800
+Found makes the payment paid, not found makes it declined, and the journal records the answer.
 
 9
-00:00:48,770 --> 00:00:54,720
-After twenty four hours with no answer, a person decides: the payment goes to manual review.
+00:00:49,850 --> 00:00:56,232
+Not found counts only after the debit call's time limit, because until then the scheme may simply not have it yet.
 
 10
-00:00:54,770 --> 00:00:59,808
-The workflow's id is the payment's, so starting it twice keeps the first.
+00:00:56,282 --> 00:01:02,184
+Found after the buyer's page has closed, the order is over, so the money goes back with a reversal.
 
 11
-00:00:59,858 --> 00:01:06,336
-A sweep every minute starts it for anything left unknown, and for debits the app stopped in the middle of.
+00:01:02,234 --> 00:01:09,024
+The checks always end before the scheme's next clearing cut-off, less a margin, while a reversal is still possible.
 
 12
-00:01:06,386 --> 00:01:13,200
-If Temporal itself is down, the debit still ends unknown, and the next sweep starts the workflow.
+00:01:09,074 --> 00:01:16,344
+Still no answer, and a person decides: the payment goes to manual review, and the merchant hears nothing yet.
 
 13
-00:01:13,250 --> 00:01:18,192
-The buyer's page keeps checking, and turns paid when the scheme finally answers.
+00:01:16,394 --> 00:01:24,792
+In the bank's console, staff see every payment left without an answer, check it with the scheme, and record debited or not, with a required note.
 
 14
-00:01:18,242 --> 00:01:21,456
-The dashboard counts how unknown debits ended.
+00:01:24,842 --> 00:01:35,184
+Their decision follows the same rule: not debited is declined, debited is paid, or given back if the page has closed, and each one is audited with who made it.
 
 15
-00:01:21,506 --> 00:01:29,544
-A gauge counts the payments still waiting, unknown or in manual review, and an alert emails when they wait longer than the configured time.
+00:01:35,234 --> 00:01:40,272
+The workflow's id is the payment's, so starting it twice keeps the first.
 
 16
-00:01:29,594 --> 00:01:34,584
+00:01:40,322 --> 00:01:46,800
+A sweep every minute starts it for anything left unknown, and for debits the app stopped in the middle of.
+
+17
+00:01:46,850 --> 00:01:53,664
+If Temporal itself is down, the debit still ends unknown, and the next sweep starts the workflow.
+
+18
+00:01:53,714 --> 00:01:59,688
+When the page stops waiting, the payment records that the buyer is owed the result by SMS.
+
+19
+00:01:59,738 --> 00:02:02,952
+The dashboard counts how unknown debits ended.
+
+20
+00:02:03,002 --> 00:02:11,040
+A gauge counts the payments still waiting, unknown or in manual review, and an alert emails when they wait longer than the configured time.
+
+21
+00:02:11,090 --> 00:02:16,080
 Next, telling the merchant what happened, reliably: the outbox and Kafka.

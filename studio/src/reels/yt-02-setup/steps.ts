@@ -93,7 +93,7 @@ export const diagram: DiagramStep<BuildId>[] = [
     layout: { platform: [0.6, 1], app: [2.6, 1] },
     edges: [{ from: "platform", to: "app", label: "libraries" }],
     accent: ["platform"],
-    badges: { platform: "one build" },
+    badges: { platform: "own repository" },
   },
   {
     cue: 11,

@@ -62,6 +62,11 @@ export const TABLES: Record<string, Column[]> = {
     ["commission_rule_id", "uuid", 16], ["fee", "bigint", 16], ["net", "bigint", 16], ["processor_ref", "varchar(64)", 16],
     ["rrn", "varchar(32)", 16], ["decline_code", "varchar(64)", 16], ["paid_at", "timestamptz", 16],
     ["source", "varchar(8)", 20], ["returned_at", "timestamptz", 21],
+    ["payer_sms_due", "boolean", 18],
+  ],
+  "payment.payment_audit": [
+    ["id", "uuid", 18], ["payment_id", "uuid", 18], ["action", "varchar(32)", 18], ["actor", "varchar(64)", 18],
+    ["note", "varchar(500)", 18], ["scheme_reference", "varchar(64)", 18], ["occurred_at", "timestamptz", 18],
   ],
   "payment.payment_operation": [
     ["id", "uuid", 16], ["payment_id", "uuid", 16], ["kind", "varchar(16)", 16], ["status", "varchar(16)", 16],
