@@ -1,0 +1,43 @@
+1
+00:00:00,050 --> 00:00:03,240
+How do you know which network a card belongs to before you ask anyone?
+
+2
+00:00:03,290 --> 00:00:07,944
+A phone number's first digits tell you the country, without telling you who you are calling.
+
+3
+00:00:07,994 --> 00:00:12,984
+A card's first digits, its BIN, tell you the card network and the bank that issued the card.
+
+4
+00:00:13,034 --> 00:00:15,456
+Each network publishes its list of BINs.
+
+5
+00:00:15,506 --> 00:00:19,848
+The card zone copies those lists in, and refreshes them on a schedule.
+
+6
+00:00:19,898 --> 00:00:24,024
+If a network does not answer, it keeps its old list rather than lose it.
+
+7
+00:00:24,074 --> 00:00:28,440
+A lookup works like a phone code: the longest matching prefix wins.
+
+8
+00:00:28,490 --> 00:00:34,728
+Before any network is asked to send a code to a buyer's phone, the card zone checks the card's network this way.
+
+9
+00:00:34,778 --> 00:00:39,696
+So a card the shop does not accept is refused early, and no network is bothered.
+
+10
+00:00:39,746 --> 00:00:44,616
+And this lookup only ever sees the first eight digits, never the whole number.
+
+11
+00:00:44,666 --> 00:00:48,816
+Next: how the card form protects itself in the buyer's browser.
