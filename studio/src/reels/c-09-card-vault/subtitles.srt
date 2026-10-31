@@ -1,0 +1,47 @@
+1
+00:00:00,050 --> 00:00:04,296
+How do you keep a card number so that even a stolen database is useless?
+
+2
+00:00:04,346 --> 00:00:10,992
+Inside the locked room, every coat goes into a sealed bag, and only one machine can open the bags.
+
+3
+00:00:11,042 --> 00:00:13,560
+In the card zone, that machine is Vault.
+
+4
+00:00:13,610 --> 00:00:19,848
+The card vault hands Vault the card number and keeps only the sealed value, and the key never leaves Vault.
+
+5
+00:00:19,898 --> 00:00:25,392
+Each seal is tied to its own card, so a sealed value copied into another row will not open.
+
+6
+00:00:25,442 --> 00:00:33,864
+To find a card again without opening any bag, Vault stamps each one with a fingerprint, the same for the same number: a blind index.
+
+7
+00:00:33,914 --> 00:00:37,584
+The database itself refuses anything that is not sealed.
+
+8
+00:00:37,634 --> 00:00:42,624
+If Vault is down, the card vault stops instead of guessing: it fails closed.
+
+9
+00:00:42,674 --> 00:00:48,936
+A number is opened only to hand it to the card's network, and every use of card data is written down.
+
+10
+00:00:48,986 --> 00:00:52,752
+And a card nobody has used for the bank's chosen time is removed.
+
+11
+00:00:52,802 --> 00:00:56,040
+So a stolen copy of the database is just noise.
+
+12
+00:00:56,090 --> 00:00:58,704
+Next: what a card's first digits tell you.
