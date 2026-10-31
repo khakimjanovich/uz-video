@@ -1,0 +1,43 @@
+1
+00:00:00,050 --> 00:00:04,392
+How do thieves steal card numbers without breaking into any database?
+
+2
+00:00:04,442 --> 00:00:10,128
+They add one line of script to a payment page, and copy every number as the buyer types it.
+
+3
+00:00:10,178 --> 00:00:12,000
+That is web skimming.
+
+4
+00:00:12,050 --> 00:00:17,856
+Our card frame is the bank's card reader on the shop's counter, and like a real reader, it has seals.
+
+5
+00:00:17,906 --> 00:00:21,096
+Only the page its session names may hold the frame.
+
+6
+00:00:21,146 --> 00:00:27,672
+The frame runs nothing but its own two files: its security policy forbids every other script.
+
+7
+00:00:27,722 --> 00:00:31,800
+Each file carries its own fingerprint, so a changed file simply does not run.
+
+8
+00:00:31,850 --> 00:00:37,056
+The frame hands back only the token and the masked number, and only to that one page.
+
+9
+00:00:37,106 --> 00:00:42,048
+When the browser blocks something, it reports it, so a tampering attempt is seen.
+
+10
+00:00:42,098 --> 00:00:47,616
+And the shop's page around the frame is watched too, because a skimmer there could still trick the buyer.
+
+11
+00:00:47,666 --> 00:00:50,232
+Next: the two doors into the locked room.
