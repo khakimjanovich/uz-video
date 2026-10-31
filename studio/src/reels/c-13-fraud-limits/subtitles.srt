@@ -1,103 +1,103 @@
 1
-00:00:00,050 --> 00:00:04,615
+00:00:00,050 --> 00:00:03,216
 How do you stop someone testing stolen cards on your payment page?
 
 2
-00:00:04,665 --> 00:00:07,692
+00:00:03,266 --> 00:00:05,448
 Picture a thief with a bag of keys.
 
 3
-00:00:07,742 --> 00:00:13,461
+00:00:05,498 --> 00:00:09,336
 They try key after key in a shop's lock, to find the ones that fit.
 
 4
-00:00:13,511 --> 00:00:20,000
+00:00:09,386 --> 00:00:14,688
 Locking the door after three wrong keys does not help: they just walk to the next door.
 
 5
-00:00:20,050 --> 00:00:25,000
+00:00:14,738 --> 00:00:18,888
 Here the keys are stolen card numbers, and the doors are payment sessions.
 
 6
-00:00:25,050 --> 00:00:33,461
+00:00:18,938 --> 00:00:25,488
 A thief with ten thousand stolen numbers tries them on a small shop's payment page, to find the ones that still work.
 
 7
-00:00:33,511 --> 00:00:35,000
+00:00:25,538 --> 00:00:27,360
 That is card testing.
 
 8
-00:00:35,050 --> 00:00:41,538
+00:00:27,410 --> 00:00:32,376
 Every try reaches a card network, and it may text a code to a real person's phone.
 
 9
-00:00:41,588 --> 00:00:45,769
-Each session allows only a few tries, as lesson eleven showed.
+00:00:32,426 --> 00:00:36,528
+Each session allows only a few tries, as Lesson 11 showed.
 
 10
-00:00:45,819 --> 00:00:48,846
+00:00:36,578 --> 00:00:39,192
 But the thief just opens a new session.
 
 11
-00:00:48,896 --> 00:00:53,846
+00:00:39,242 --> 00:00:43,776
 So the card zone writes down every attempt before any network is asked.
 
 12
-00:00:53,896 --> 00:01:00,000
+00:00:43,826 --> 00:00:48,768
 It keeps the attempt by the card's fingerprint and its first digits, never by its number.
 
 13
-00:01:00,050 --> 00:01:03,461
+00:00:48,818 --> 00:00:51,456
 And it notes the payer's address and the shop.
 
 14
-00:01:03,511 --> 00:01:08,846
+00:00:51,506 --> 00:00:56,760
 That gives four counters: the card, the first digits, the address, and the shop.
 
 15
-00:01:08,896 --> 00:01:13,461
+00:00:56,810 --> 00:01:01,248
 A velocity limit allows only so many attempts within a time window.
 
 16
-00:01:13,511 --> 00:01:21,153
+00:01:01,298 --> 00:01:07,944
 Past the limit, for any one of the four counters, a new try is refused before any network is asked.
 
 17
-00:01:21,203 --> 00:01:26,923
+00:01:07,994 --> 00:01:12,888
 Only refusals that say something about the card count against it, like a wrong code.
 
 18
-00:01:26,973 --> 00:01:31,538
+00:01:12,938 --> 00:01:16,608
 Our own failures never count, like a card network that is down.
 
 19
-00:01:31,588 --> 00:01:36,538
-Each refusal is counted, and an alert email goes out to the team.
+00:01:16,658 --> 00:01:22,440
+Each refusal is counted, and when refusals pile up, an alert email goes out to the team.
 
 20
-00:01:36,588 --> 00:01:40,000
+00:01:22,490 --> 00:01:24,864
 Now read the rules in the card zone's code.
 
 21
-00:01:40,050 --> 00:01:47,692
+00:01:24,914 --> 00:01:30,984
 The note at the top says what is counted: per card, per first digits, per payer address, and per shop.
 
 22
-00:01:47,742 --> 00:01:53,076
+00:01:31,034 --> 00:01:35,904
 Past the limit, a new try is refused before any card network is asked.
 
 23
-00:01:53,126 --> 00:01:59,615
-Below it, one short list names what is never counted: our own state, and our own unavailability.
+00:01:35,954 --> 00:01:43,008
+Further down, one short list names what is never counted: our own state, and our own unavailability.
 
 24
-00:01:59,665 --> 00:02:05,384
+00:01:43,058 --> 00:01:47,376
 And a new session for a shop past its limit is refused before it opens.
 
 25
-00:02:05,434 --> 00:02:11,153
+00:01:47,426 --> 00:01:52,704
 Count the keys, not the doors: the thief is stopped before any network is asked.
 
 26
-00:02:11,203 --> 00:02:16,153
+00:01:52,754 --> 00:01:57,768
 Next, the shop itself: ecom, starting with how its project is set up.
