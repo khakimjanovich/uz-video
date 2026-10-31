@@ -145,7 +145,7 @@ The current act is available to any component via `useSubtitlesContext().act`.
 `reels/<reel-id>/index.tsx` is data only:
 
 ```tsx
-<ReelScaffold reelId="pitch-owners" subtitles={subtitles} acts={acts} title={(cue) => TITLES[cue]} footer={{ label: "Your bank", value: "Own acquiring" }}>
+<ReelScaffold reelId="my-lesson" subtitles={subtitles} acts={acts} title={(cue) => TITLES[cue]} footer={{ label: "Your bank", value: "Own acquiring" }}>
   <ArchDiagram catalog={ACQUIRING_NODES} steps={steps} />
 </ReelScaffold>
 ```
