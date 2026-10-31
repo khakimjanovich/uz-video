@@ -38,6 +38,8 @@ export const BUILD_CATALOG = {
   backCode: { label: "Code on the back", sublabel: "Never kept", art: "receipt" },
   masked: { label: "123456******7890", sublabel: "Masked number", art: "receipt" },
   token: { label: "ctk_…", sublabel: "Card token", art: "receipt" },
+  shopStaff: { label: "Shop's owner and staff", sublabel: "The portal", art: "store" },
+  bankStaff: { label: "The bank's staff", sublabel: "Approve shops · set fees", art: "admin" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
