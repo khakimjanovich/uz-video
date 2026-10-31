@@ -1,0 +1,43 @@
+1
+00:00:00,050 --> 00:00:03,096
+Why should one person never switch a merchant on alone?
+
+2
+00:00:03,146 --> 00:00:08,304
+Some company cheques need two signatures, so one person alone cannot spend the money.
+
+3
+00:00:08,354 --> 00:00:11,856
+Switching a merchant on works the same way: four eyes.
+
+4
+00:00:11,906 --> 00:00:15,528
+One bank admin, the maker, opens a request.
+
+5
+00:00:15,578 --> 00:00:17,400
+Nothing changes yet.
+
+6
+00:00:17,450 --> 00:00:22,872
+A different admin, the checker, approves it, and only then is the merchant active.
+
+7
+00:00:22,922 --> 00:00:29,064
+The maker cannot approve their own request: the screen does not offer it, and the server refuses it anyway.
+
+8
+00:00:29,114 --> 00:00:32,568
+A request that nobody decides in time expires.
+
+9
+00:00:32,618 --> 00:00:37,560
+On approval, the documents are checked again, in case something changed meanwhile.
+
+10
+00:00:37,610 --> 00:00:42,144
+And the history names both people, the one who asked and the one who approved.
+
+11
+00:00:42,194 --> 00:00:44,928
+Next: how a merchant's server logs in.

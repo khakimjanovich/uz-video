@@ -1,0 +1,39 @@
+1
+00:00:00,050 --> 00:00:02,088
+What should a merchant's server log in with?
+
+2
+00:00:02,138 --> 00:00:04,512
+You never give a cleaner your own house keys.
+
+3
+00:00:04,562 --> 00:00:08,616
+You give them a key of their own, which you can change without changing yours.
+
+4
+00:00:08,666 --> 00:00:13,824
+A merchant's server gets the same: an API client, a login for a machine.
+
+5
+00:00:13,874 --> 00:00:16,128
+Only an active merchant can create one.
+
+6
+00:00:16,178 --> 00:00:20,520
+Its secret is shown exactly once, and ecom never keeps it.
+
+7
+00:00:20,570 --> 00:00:27,072
+The server trades its id and secret for a short-lived token, and only that token reaches the payments API.
+
+8
+00:00:27,122 --> 00:00:35,136
+When a secret may have leaked, the merchant rotates it: a new secret is issued, and the old one stops working at once.
+
+9
+00:00:35,186 --> 00:00:37,584
+The owner's own login is never touched.
+
+10
+00:00:37,634 --> 00:00:39,912
+Next: the people on the merchant's team.

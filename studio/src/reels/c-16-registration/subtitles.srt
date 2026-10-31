@@ -1,0 +1,43 @@
+1
+00:00:00,050 --> 00:00:03,504
+How do you know the person signing up really owns that email address?
+
+2
+00:00:03,554 --> 00:00:07,128
+Anyone can type anyone's email into a sign-up form.
+
+3
+00:00:07,178 --> 00:00:12,432
+So the bank does what a postcard with a code does: it sends a one-time code to that address.
+
+4
+00:00:12,482 --> 00:00:15,264
+Only someone who can read that inbox can type it back.
+
+5
+00:00:15,314 --> 00:00:17,208
+That is email verification.
+
+6
+00:00:17,258 --> 00:00:20,184
+The code works for a short time and for one sign-up.
+
+7
+00:00:20,234 --> 00:00:26,832
+Too many wrong codes, and the sign-up is locked until the window ends, even if a new code is asked for.
+
+8
+00:00:26,882 --> 00:00:32,688
+The password never touches ecom's own database: it goes straight to the login server.
+
+9
+00:00:32,738 --> 00:00:37,512
+And if the store that keeps the codes is down, nothing is sent and nothing is accepted.
+
+10
+00:00:37,562 --> 00:00:41,976
+The right code creates the merchant, and makes the person who signed up its first admin.
+
+11
+00:00:42,026 --> 00:00:45,456
+Next: how a merchant earns the right to take money.
