@@ -44,7 +44,7 @@ export const diagram: DiagramStep<BuildId>[] = [
 export const map: BuildMapStep[] = [{ cue: 25, part: 8, units: { ecom: "the shop", cards: "locked room" } }];
 
 // The guide as shipped: its first lines, then sections 11 and 12 (cells quoted, "…" where cut;
-// row 4 is left out: it names a processing centre).
+// row 4 is left out: it names a processing centre; gaps shown are those that stay after the open fixes).
 export const code: CodeStep[] = [
   {
     cue: 19,
@@ -84,7 +84,6 @@ export const code: CodeStep[] = [
         ["1 Network", "Publishes only its two doors …", "The NSCs and segmentation around the host …", "Section 2's flow table … (1.2.5)"],
         ["3 Stored data", "Card numbers sealed with Vault Transit keys … (3.5.1)", "Keyholder selection … cryptoperiods (3.6.1, 3.7.4)", "Dual control and split knowledge (3.7.6) …"],
         ["9 Physical", "Nothing", "All of it, including backup media (9.4.1)", "—"],
-        ["10 Logging", "Vault's audit device … Postgres logs connections …", "Collecting the trails into the SIEM … daily review (10.4.1) …", "The product keeps trails only on the host … (gap 3)"],
       ],
     },
     small: true,
@@ -96,9 +95,8 @@ export const code: CodeStep[] = [
     table: {
       columns: ["#", "Gap", "Touches", "Until fixed, the bank"],
       rows: [
-        ["3", "The audit log is never rotated, and no trail is shipped off the host", "10.3.3, 10.5.1", "collects the audit volume and container logs into its SIEM …"],
-        ["5", "The public certificate is renewed by hand, with no expiry alert", "4.2.1", "tracks the expiry date"],
-        ["8", "The consoles use shared admin accounts without MFA …", "8.2.2, 8.4.2", "limits and records who holds those passwords; MFA at the jump host"],
+        ["1", "No auto-unseal: after every Vault start three keyholders must come (section 8)", "availability", "keeps three keyholders reachable"],
+        ["7", "Migrations only go forward: rolling back across a schema change means restoring a dump (section 7)", "—", "plans a maintenance window for upgrades"],
       ],
     },
     small: true,
