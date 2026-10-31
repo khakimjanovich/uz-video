@@ -1,0 +1,99 @@
+1
+00:00:00,050 --> 00:00:03,076
+What should a merchant's server log in with?
+
+2
+00:00:03,126 --> 00:00:08,846
+Picture a merchant's developer who is told: use your portal password in the server's settings.
+
+3
+00:00:08,896 --> 00:00:11,923
+The password ends up in a git repository.
+
+4
+00:00:11,973 --> 00:00:15,769
+When the developer leaves, the owner's login has to change.
+
+5
+00:00:15,819 --> 00:00:20,384
+And every request the server made looks like the owner clicking buttons.
+
+6
+00:00:20,434 --> 00:00:24,230
+You would never give a cleaner your own house keys.
+
+7
+00:00:24,280 --> 00:00:30,000
+You give them a key of their own, which you can change without changing yours.
+
+8
+00:00:30,050 --> 00:00:36,923
+A merchant's server gets the same: an API client, a login for a machine, with the merchant role.
+
+9
+00:00:36,973 --> 00:00:39,615
+Only an active merchant can create one.
+
+10
+00:00:39,665 --> 00:00:45,384
+Its client secret is the password of that login, and it is shown exactly once.
+
+11
+00:00:45,434 --> 00:00:48,846
+ecom keeps the client's id, and never the secret.
+
+12
+00:00:48,896 --> 00:00:52,692
+The server trades its id and secret for a token.
+
+13
+00:00:52,742 --> 00:00:56,153
+And only the merchant role reaches the payments API.
+
+14
+00:00:56,203 --> 00:01:00,000
+When a secret may have leaked, the merchant rotates it.
+
+15
+00:01:00,050 --> 00:01:05,000
+Rotation gives a new secret, and the old one stops working at once.
+
+16
+00:01:05,050 --> 00:01:07,307
+Now look at what ecom keeps.
+
+17
+00:01:07,357 --> 00:01:15,000
+The table of API clients has the client's id and the login server's id, and no column for a secret.
+
+18
+00:01:15,050 --> 00:01:20,769
+The portal says it plainly: this is the only time you will see this secret.
+
+19
+00:01:20,819 --> 00:01:25,769
+And before a rotation, it warns that the current secret stops working immediately.
+
+20
+00:01:25,819 --> 00:01:28,076
+Now check it on your laptop.
+
+21
+00:01:28,126 --> 00:01:36,153
+With the client's id and secret, the server asks the login server for a token, and gets a bearer token back.
+
+22
+00:01:36,203 --> 00:01:41,153
+Rotate the secret in the portal, and ask again with the old one.
+
+23
+00:01:41,203 --> 00:01:43,846
+The login server refuses: invalid client credentials.
+
+24
+00:01:43,896 --> 00:01:49,230
+Like the cleaner's key: changed in one click, and the owner's login never touched.
+
+25
+00:01:49,280 --> 00:01:52,307
+Next: the people who use the merchant's portal.

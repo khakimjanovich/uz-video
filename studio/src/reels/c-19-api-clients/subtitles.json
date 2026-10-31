@@ -1,0 +1,227 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 93,
+    "text": "What should a merchant's server log in with?",
+    "prefix": "What should a merchant's server log in with?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 93,
+    "endFrame": 266,
+    "text": "Picture a merchant's developer who is told: use your portal password in the server's settings.",
+    "prefix": "Picture a merchant's developer who is told: use your portal password in the server's settings.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 266,
+    "endFrame": 358,
+    "text": "The password ends up in a git repository.",
+    "prefix": "The password ends up in a git repository.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 359,
+    "endFrame": 474,
+    "text": "When the developer leaves, the owner's login has to change.",
+    "prefix": "When the developer leaves, the owner's login has to change.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 474,
+    "endFrame": 612,
+    "text": "And every request the server made looks like the owner clicking buttons.",
+    "prefix": "And every request the server made looks like the owner clicking buttons.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 613,
+    "endFrame": 727,
+    "text": "You would never give a cleaner your own house keys.",
+    "prefix": "You would never give a cleaner your own house keys.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 728,
+    "endFrame": 900,
+    "text": "You give them a key of their own, which you can change without changing yours.",
+    "prefix": "You give them a key of their own, which you can change without changing yours.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 901,
+    "endFrame": 1108,
+    "text": "A merchant's server gets the same: an API client, a login for a machine, with the merchant role.",
+    "prefix": "A merchant's server gets the same: an API client, a login for a machine, with the merchant role.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1109,
+    "endFrame": 1189,
+    "text": "Only an active merchant can create one.",
+    "prefix": "Only an active merchant can create one.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1189,
+    "endFrame": 1362,
+    "text": "Its client secret is the password of that login, and it is shown exactly once.",
+    "prefix": "Its client secret is the password of that login, and it is shown exactly once.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1363,
+    "endFrame": 1466,
+    "text": "ecom keeps the client's id, and never the secret.",
+    "prefix": "ecom keeps the client's id, and never the secret.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1466,
+    "endFrame": 1581,
+    "text": "The server trades its id and secret for a token.",
+    "prefix": "The server trades its id and secret for a token.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1582,
+    "endFrame": 1685,
+    "text": "And only the merchant role reaches the payments API.",
+    "prefix": "And only the merchant role reaches the payments API.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1686,
+    "endFrame": 1800,
+    "text": "When a secret may have leaked, the merchant rotates it.",
+    "prefix": "When a secret may have leaked, the merchant rotates it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 1801,
+    "endFrame": 1950,
+    "text": "Rotation gives a new secret, and the old one stops working at once.",
+    "prefix": "Rotation gives a new secret, and the old one stops working at once.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 1951,
+    "endFrame": 2020,
+    "text": "Now look at what ecom keeps.",
+    "prefix": "Now look at what ecom keeps.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2020,
+    "endFrame": 2250,
+    "text": "The table of API clients has the client's id and the login server's id, and no column for a secret.",
+    "prefix": "The table of API clients has the client's id and the login server's id, and no column for a secret.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2251,
+    "endFrame": 2424,
+    "text": "The portal says it plainly: this is the only time you will see this secret.",
+    "prefix": "The portal says it plainly: this is the only time you will see this secret.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2424,
+    "endFrame": 2574,
+    "text": "And before a rotation, it warns that the current secret stops working immediately.",
+    "prefix": "And before a rotation, it warns that the current secret stops working immediately.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2574,
+    "endFrame": 2643,
+    "text": "Now check it on your laptop.",
+    "prefix": "Now check it on your laptop.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 2643,
+    "endFrame": 2885,
+    "text": "With the client's id and secret, the server asks the login server for a token, and gets a bearer token back.",
+    "prefix": "With the client's id and secret, the server asks the login server for a token, and gets a bearer token back.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 2886,
+    "endFrame": 3035,
+    "text": "Rotate the secret in the portal, and ask again with the old one.",
+    "prefix": "Rotate the secret in the portal, and ask again with the old one.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 3036,
+    "endFrame": 3116,
+    "text": "The login server refuses: invalid client credentials.",
+    "prefix": "The login server refuses: invalid client credentials.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 24,
+    "startFrame": 3116,
+    "endFrame": 3277,
+    "text": "Like the cleaner's key: changed in one click, and the owner's login never touched.",
+    "prefix": "Like the cleaner's key: changed in one click, and the owner's login never touched.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 25,
+    "startFrame": 3278,
+    "endFrame": 3400,
+    "text": "Next: the people who use the merchant's portal.",
+    "prefix": "Next: the people who use the merchant's portal.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

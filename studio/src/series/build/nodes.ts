@@ -61,6 +61,13 @@ export const BUILD_CATALOG = {
   cs1: { label: "001-create-partner", sublabel: "Changeset", art: "receipt" },
   cs2: { label: "002-…", sublabel: "Changeset", art: "receipt" },
   problem: { label: "Problem detail", sublabel: "404 · PARTNER_NOT_FOUND", art: "receipt" },
+  config: { label: "Server settings", sublabel: "Portal password inside", art: "receipt" },
+  repo: { label: "Git repository", art: "journal" },
+  ownerKey: { label: "Owner's key" },
+  cleanerKey: { label: "Cleaner's key" },
+  apiClient: { label: "API client", sublabel: "A login for a machine", art: "workflow" },
+  secret: { label: "Client secret", sublabel: "Shown once", art: "receipt" },
+  secret2: { label: "New secret", sublabel: "Shown once", art: "receipt" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
