@@ -19,35 +19,35 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   buyer: { label: "Buyer", x: 260, y: 16, w: 160, h: 40 },
   admin: { label: "Bank admin", x: 460, y: 16, w: 160, h: 40 },
   // ecom: five modules, 114px apart.
-  partner: { label: "Partner", sub: "Merchants", x: 52, y: 108, w: 104, h: 52 },
-  commission: { label: "Commission", sub: "Fees", x: 166, y: 108, w: 104, h: 52 },
-  epos: { label: "e-POS", sub: "MID / TID", x: 280, y: 108, w: 104, h: 52 },
-  payment: { label: "Payment", sub: "Debits", x: 394, y: 108, w: 104, h: 52 },
-  reconciliation: { label: "Reconcile", sub: "Vs scheme", x: 508, y: 108, w: 104, h: 52 },
-  emailport: { label: "Email + file store", x: 52, y: 172, w: 218, h: 36 },
-  procport: { label: "Cards client", sub: "mTLS + token", x: 280, y: 172, w: 332, h: 36 },
+  partner: { label: "Merchants", sub: "Who they are", x: 52, y: 108, w: 104, h: 52 },
+  commission: { label: "Fees", sub: "The bank's cut", x: 166, y: 108, w: 104, h: 52 },
+  epos: { label: "Terminals", sub: "One per card", x: 280, y: 108, w: 104, h: 52 },
+  payment: { label: "Payments", sub: "Charge, refund", x: 394, y: 108, w: 104, h: 52 },
+  reconciliation: { label: "Books", sub: "Checked daily", x: 508, y: 108, w: 104, h: 52 },
+  emailport: { label: "Email and files", x: 52, y: 172, w: 218, h: 36 },
+  procport: { label: "Card zone link", sub: "Two proofs", x: 280, y: 172, w: 332, h: 36 },
   // ecom's own infrastructure; the arrows run down the gaps at x=194 and x=389.
-  postgres: { label: "Postgres", x: 52, y: 220, w: 58, h: 52, logos: [siPostgresql.path] },
-  redis: { label: "Redis", x: 114, y: 220, w: 58, h: 52, logos: [siRedis.path] },
-  keycloak: { label: "Keycloak", x: 204, y: 220, w: 58, h: 52, logos: [siKeycloak.path] },
-  vault: { label: "Vault", x: 266, y: 220, w: 58, h: 52, logos: [siVault.path] },
-  s3: { label: "S3", x: 328, y: 220, w: 58, h: 52 },
-  temporal: { label: "Temporal", x: 394, y: 220, w: 58, h: 52, logos: [siTemporal.path] },
-  kafka: { label: "Kafka", x: 456, y: 220, w: 58, h: 52, logos: [siApachekafka.path] },
-  observability: { label: "Observe", x: 518, y: 220, w: 58, h: 52, logos: [siPrometheus.path, siGrafana.path] },
+  postgres: { label: "Database", x: 52, y: 220, w: 76, h: 52, logos: [siPostgresql.path] },
+  redis: { label: "Cache", x: 134, y: 220, w: 54, h: 52, logos: [siRedis.path] },
+  keycloak: { label: "Logins", x: 200, y: 220, w: 58, h: 52, logos: [siKeycloak.path] },
+  vault: { label: "Secrets", x: 264, y: 220, w: 62, h: 52, logos: [siVault.path] },
+  s3: { label: "Files", x: 332, y: 220, w: 50, h: 52 },
+  temporal: { label: "Workflows", x: 395, y: 220, w: 80, h: 52, logos: [siTemporal.path] },
+  kafka: { label: "Events", x: 481, y: 220, w: 56, h: 52, logos: [siApachekafka.path] },
+  observability: { label: "Monitoring", x: 543, y: 220, w: 84, h: 52, logos: [siPrometheus.path, siGrafana.path] },
   // The cards unit: the card zone, with its own infrastructure.
   // card-vault is one service with two modules: card and BIN.
-  frame: { label: "Frame", sub: "Card entry", x: 216, y: 344, w: 76, h: 56 },
-  card: { label: "Card vault", sub: "Tokens", x: 298, y: 344, w: 96, h: 56 },
-  bin: { label: "BIN", sub: "Issuers", x: 400, y: 344, w: 56, h: 56 },
-  adapters: { label: "Adapters", sub: "Per centre", x: 462, y: 344, w: 92, h: 56 },
-  cardsinfra: { label: "Own infra", x: 560, y: 344, w: 70, h: 56, logos: [siPostgresql.path, siVault.path, siKeycloak.path] },
+  frame: { label: "Card form", sub: "In the page", x: 216, y: 344, w: 86, h: 56 },
+  card: { label: "Card vault", sub: "Sealed", x: 308, y: 344, w: 90, h: 56 },
+  bin: { label: "First digits", sub: "Network", x: 404, y: 344, w: 106, h: 56 },
+  adapters: { label: "Adapters", sub: "Per centre", x: 516, y: 344, w: 80, h: 56 },
+  cardsinfra: { label: "Own", x: 602, y: 344, w: 56, h: 56, logos: [siPostgresql.path, siVault.path, siKeycloak.path] },
   // Outside both units.
-  emailsvc: { label: "SMTP", sub: "Mailpit locally", x: 52, y: 440, w: 160, h: 48 },
+  emailsvc: { label: "Email server", sub: "Outside both", x: 52, y: 440, w: 160, h: 48 },
   procsvc: { label: "Card processing centres", sub: "One protocol each", x: 400, y: 440, w: 230, h: 48 },
   // Not a box: the delivery frame around both units, each a Docker Compose install (drawn by BuildMap as a dashed frame).
   // The id stays "kubernetes" so earlier episodes' steps keep pointing at part 5.
-  kubernetes: { label: "Compose × 2", x: 28, y: 66, w: 624, h: 354, logos: [siDocker.path] },
+  kubernetes: { label: "Two installs", x: 28, y: 66, w: 648, h: 354, logos: [siDocker.path] },
 };
 
 // Vertical arrows: [x, fromY, toY].
@@ -58,13 +58,13 @@ export const BUILD_ARROWS: [number, number, number][] = [
   [560, 160, 172],
   [194, 208, 440],
   [389, 208, 344],
-  [517, 400, 440],
+  [556, 400, 440],
 ];
 
 // The unit boundaries: ecom (modular monolith) and the cards unit (the card zone).
 export const UNIT_BOXES = [
-  { id: "ecom", x: 40, y: 78, w: 600, h: 204, label: "ecom · modular monolith" },
-  { id: "cards", x: 206, y: 312, w: 434, h: 100, label: "cards unit" },
+  { id: "ecom", x: 40, y: 78, w: 600, h: 204, label: "ecom · the shop's side" },
+  { id: "cards", x: 206, y: 312, w: 462, h: 100, label: "card zone · the locked room" },
 ] as const;
 
 export type UnitId = (typeof UNIT_BOXES)[number]["id"];
