@@ -1,111 +1,111 @@
 1
-00:00:00,050 --> 00:00:04,230
+00:00:00,050 --> 00:00:03,048
 How do you make sure a card is charged exactly once?
 
 2
-00:00:04,280 --> 00:00:11,538
+00:00:03,098 --> 00:00:09,552
 The buyer clicks pay twice, or the page retries, or two copies of the app handle the same confirmation.
 
 3
-00:00:11,588 --> 00:00:14,230
+00:00:09,602 --> 00:00:11,328
 Each of them would charge the card.
 
 4
-00:00:14,280 --> 00:00:21,538
+00:00:11,378 --> 00:00:17,376
 And if the app crashes after asking the network, but before saving the answer, nobody knows whether money moved.
 
 5
-00:00:21,588 --> 00:00:24,230
+00:00:17,426 --> 00:00:20,016
 A bank's cash desk solves both problems.
 
 6
-00:00:24,280 --> 00:00:27,307
+00:00:20,066 --> 00:00:22,872
 Only one cashier can hold the withdrawal slip.
 
 7
-00:00:27,357 --> 00:00:31,923
+00:00:22,922 --> 00:00:26,856
 And the cashier writes it in the logbook before opening the drawer.
 
 8
-00:00:31,973 --> 00:00:34,230
+00:00:26,906 --> 00:00:28,728
 The debit works the same way.
 
 9
-00:00:34,280 --> 00:00:39,999
+00:00:28,778 --> 00:00:34,176
 First comes the claim: one conditional update moves the payment from card confirmed to debiting.
 
 10
-00:00:40,049 --> 00:00:44,230
+00:00:34,226 --> 00:00:38,904
 Only one caller's update can match, so exactly one caller wins.
 
 11
-00:00:44,280 --> 00:00:48,076
+00:00:38,954 --> 00:00:41,856
 The winner finds the live terminal and the bank's fee.
 
 12
-00:00:48,126 --> 00:00:51,538
+00:00:41,906 --> 00:00:45,600
 Without either, the payment fails, and nothing is charged.
 
 13
-00:00:51,588 --> 00:00:56,923
+00:00:45,650 --> 00:00:49,872
 Then it writes a row in the operation journal, before the network is asked.
 
 14
-00:00:56,973 --> 00:01:01,538
+00:00:49,922 --> 00:00:54,312
 The journal holds one debit per payment, and the database enforces it.
 
 15
-00:01:01,588 --> 00:01:06,153
+00:00:54,362 --> 00:00:57,456
 ecom asks the card zone to charge the card by its token.
 
 16
-00:01:06,203 --> 00:01:12,307
+00:00:57,506 --> 00:01:02,136
 The call carries an id that makes it happen once, even if it is sent twice.
 
 17
-00:01:12,357 --> 00:01:15,769
+00:01:02,186 --> 00:01:05,088
 Some card networks only hold the money at first.
 
 18
-00:01:15,819 --> 00:01:21,153
+00:01:05,138 --> 00:01:09,168
 For those, the card zone takes it at once, and that is a capture.
 
 19
-00:01:21,203 --> 00:01:24,230
+00:01:09,218 --> 00:01:12,960
 Approved means paid, with the network's reference number.
 
 20
-00:01:24,280 --> 00:01:25,730
+00:01:13,010 --> 00:01:14,832
 Declined is final.
 
 21
-00:01:25,780 --> 00:01:31,115
-And no answer in time is unknown, never declined: lesson twenty-seven picks it up.
+00:01:14,882 --> 00:01:20,856
+And no answer in time is unknown, never declined: Lesson 27 picks it up.
 
 22
-00:01:31,165 --> 00:01:33,423
+00:01:20,906 --> 00:01:22,728
 Now read it in the code.
 
 23
-00:01:33,473 --> 00:01:39,192
+00:01:22,778 --> 00:01:27,960
 The claim is a single update: set debiting, where the payment is still card confirmed.
 
 24
-00:01:39,242 --> 00:01:44,961
+00:01:28,010 --> 00:01:32,808
 Of any number of callers, exactly one changes the row, and gets a one back.
 
 25
-00:01:45,011 --> 00:01:51,115
+00:01:32,858 --> 00:01:38,064
 The journal table is written before every call to a network, and finished with the answer.
 
 26
-00:01:51,165 --> 00:01:55,346
+00:01:38,114 --> 00:01:42,504
 And one unique constraint allows just one debit for each payment.
 
 27
-00:01:55,396 --> 00:02:00,730
+00:01:42,554 --> 00:01:47,688
 Like the cash desk: one slip, written in the logbook first, and one charge.
 
 28
-00:02:00,780 --> 00:02:03,807
+00:01:47,738 --> 00:01:50,784
 Next: what happens when the network goes silent.

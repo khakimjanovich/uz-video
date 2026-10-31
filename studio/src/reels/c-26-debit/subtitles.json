@@ -2,253 +2,1864 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 127,
+    "endFrame": 92,
     "text": "How do you make sure a card is charged exactly once?",
     "prefix": "How do you make sure a card is charged exactly once?",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2,
+        "words": [
+          {
+            "text": "How",
+            "startFrame": 2
+          },
+          {
+            "text": "do",
+            "startFrame": 4
+          },
+          {
+            "text": "you",
+            "startFrame": 6
+          },
+          {
+            "text": "make",
+            "startFrame": 7
+          },
+          {
+            "text": "sure",
+            "startFrame": 12
+          },
+          {
+            "text": "a",
+            "startFrame": 16
+          },
+          {
+            "text": "card",
+            "startFrame": 17
+          },
+          {
+            "text": "is",
+            "startFrame": 28
+          }
+        ]
+      },
+      {
+        "startFrame": 32,
+        "words": [
+          {
+            "text": "charged",
+            "startFrame": 32
+          },
+          {
+            "text": "exactly",
+            "startFrame": 49
+          },
+          {
+            "text": "once?",
+            "startFrame": 64
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 2,
-    "startFrame": 128,
-    "endFrame": 347,
+    "startFrame": 92,
+    "endFrame": 287,
     "text": "The buyer clicks pay twice, or the page retries, or two copies of the app handle the same confirmation.",
     "prefix": "The buyer clicks pay twice, or the page retries, or two copies of the app handle the same confirmation.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 94,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 94
+          },
+          {
+            "text": "buyer",
+            "startFrame": 96
+          },
+          {
+            "text": "clicks",
+            "startFrame": 107
+          },
+          {
+            "text": "pay",
+            "startFrame": 115
+          },
+          {
+            "text": "twice,",
+            "startFrame": 121
+          }
+        ]
+      },
+      {
+        "startFrame": 152,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 152
+          },
+          {
+            "text": "the",
+            "startFrame": 155
+          },
+          {
+            "text": "page",
+            "startFrame": 158
+          },
+          {
+            "text": "retries,",
+            "startFrame": 168
+          }
+        ]
+      },
+      {
+        "startFrame": 202,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 202
+          },
+          {
+            "text": "two",
+            "startFrame": 207
+          },
+          {
+            "text": "copies",
+            "startFrame": 213
+          },
+          {
+            "text": "of",
+            "startFrame": 226
+          },
+          {
+            "text": "the",
+            "startFrame": 227
+          },
+          {
+            "text": "app",
+            "startFrame": 230
+          },
+          {
+            "text": "handle",
+            "startFrame": 236
+          }
+        ]
+      },
+      {
+        "startFrame": 244,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 244
+          },
+          {
+            "text": "same",
+            "startFrame": 246
+          },
+          {
+            "text": "confirmation.",
+            "startFrame": 255
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 3,
-    "startFrame": 347,
-    "endFrame": 427,
+    "startFrame": 288,
+    "endFrame": 340,
     "text": "Each of them would charge the card.",
     "prefix": "Each of them would charge the card.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 289,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 289
+          },
+          {
+            "text": "of",
+            "startFrame": 294
+          },
+          {
+            "text": "them",
+            "startFrame": 296
+          },
+          {
+            "text": "would",
+            "startFrame": 301
+          },
+          {
+            "text": "charge",
+            "startFrame": 305
+          },
+          {
+            "text": "the",
+            "startFrame": 316
+          },
+          {
+            "text": "card.",
+            "startFrame": 318
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 4,
-    "startFrame": 428,
-    "endFrame": 647,
+    "startFrame": 341,
+    "endFrame": 522,
     "text": "And if the app crashes after asking the network, but before saving the answer, nobody knows whether money moved.",
     "prefix": "And if the app crashes after asking the network, but before saving the answer, nobody knows whether money moved.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 342,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 342
+          },
+          {
+            "text": "if",
+            "startFrame": 344
+          },
+          {
+            "text": "the",
+            "startFrame": 346
+          },
+          {
+            "text": "app",
+            "startFrame": 352
+          },
+          {
+            "text": "crashes",
+            "startFrame": 358
+          },
+          {
+            "text": "after",
+            "startFrame": 373
+          },
+          {
+            "text": "asking",
+            "startFrame": 381
+          }
+        ]
+      },
+      {
+        "startFrame": 391,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 391
+          },
+          {
+            "text": "network,",
+            "startFrame": 394
+          },
+          {
+            "text": "but",
+            "startFrame": 409
+          },
+          {
+            "text": "before",
+            "startFrame": 412
+          },
+          {
+            "text": "saving",
+            "startFrame": 421
+          },
+          {
+            "text": "the",
+            "startFrame": 432
+          },
+          {
+            "text": "answer,",
+            "startFrame": 434
+          }
+        ]
+      },
+      {
+        "startFrame": 461,
+        "words": [
+          {
+            "text": "nobody",
+            "startFrame": 461
+          },
+          {
+            "text": "knows",
+            "startFrame": 474
+          },
+          {
+            "text": "whether",
+            "startFrame": 484
+          },
+          {
+            "text": "money",
+            "startFrame": 491
+          },
+          {
+            "text": "moved.",
+            "startFrame": 497
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 5,
-    "startFrame": 647,
-    "endFrame": 727,
+    "startFrame": 522,
+    "endFrame": 601,
     "text": "A bank's cash desk solves both problems.",
     "prefix": "A bank's cash desk solves both problems.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 523,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 523
+          },
+          {
+            "text": "bank's",
+            "startFrame": 524
+          },
+          {
+            "text": "cash",
+            "startFrame": 532
+          },
+          {
+            "text": "desk",
+            "startFrame": 542
+          },
+          {
+            "text": "solves",
+            "startFrame": 553
+          },
+          {
+            "text": "both",
+            "startFrame": 561
+          },
+          {
+            "text": "problems.",
+            "startFrame": 570
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 6,
-    "startFrame": 728,
-    "endFrame": 820,
+    "startFrame": 601,
+    "endFrame": 687,
     "text": "Only one cashier can hold the withdrawal slip.",
     "prefix": "Only one cashier can hold the withdrawal slip.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 603,
+        "words": [
+          {
+            "text": "Only",
+            "startFrame": 603
+          },
+          {
+            "text": "one",
+            "startFrame": 609
+          },
+          {
+            "text": "cashier",
+            "startFrame": 615
+          },
+          {
+            "text": "can",
+            "startFrame": 635
+          },
+          {
+            "text": "hold",
+            "startFrame": 639
+          },
+          {
+            "text": "the",
+            "startFrame": 649
+          },
+          {
+            "text": "withdrawal",
+            "startFrame": 651
+          },
+          {
+            "text": "slip.",
+            "startFrame": 662
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 7,
-    "startFrame": 820,
-    "endFrame": 958,
+    "startFrame": 687,
+    "endFrame": 806,
     "text": "And the cashier writes it in the logbook before opening the drawer.",
     "prefix": "And the cashier writes it in the logbook before opening the drawer.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 688,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 688
+          },
+          {
+            "text": "the",
+            "startFrame": 690
+          },
+          {
+            "text": "cashier",
+            "startFrame": 692
+          },
+          {
+            "text": "writes",
+            "startFrame": 717
+          },
+          {
+            "text": "it",
+            "startFrame": 728
+          },
+          {
+            "text": "in",
+            "startFrame": 736
+          },
+          {
+            "text": "the",
+            "startFrame": 738
+          },
+          {
+            "text": "logbook",
+            "startFrame": 740
+          }
+        ]
+      },
+      {
+        "startFrame": 760,
+        "words": [
+          {
+            "text": "before",
+            "startFrame": 760
+          },
+          {
+            "text": "opening",
+            "startFrame": 771
+          },
+          {
+            "text": "the",
+            "startFrame": 780
+          },
+          {
+            "text": "drawer.",
+            "startFrame": 781
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 8,
-    "startFrame": 959,
-    "endFrame": 1027,
+    "startFrame": 807,
+    "endFrame": 862,
     "text": "The debit works the same way.",
     "prefix": "The debit works the same way.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 808,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 808
+          },
+          {
+            "text": "debit",
+            "startFrame": 810
+          },
+          {
+            "text": "works",
+            "startFrame": 821
+          },
+          {
+            "text": "the",
+            "startFrame": 829
+          },
+          {
+            "text": "same",
+            "startFrame": 832
+          },
+          {
+            "text": "way.",
+            "startFrame": 841
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 9,
-    "startFrame": 1028,
-    "endFrame": 1200,
+    "startFrame": 863,
+    "endFrame": 1026,
     "text": "First comes the claim: one conditional update moves the payment from card confirmed to debiting.",
     "prefix": "First comes the claim: one conditional update moves the payment from card confirmed to debiting.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 865,
+        "words": [
+          {
+            "text": "First",
+            "startFrame": 865
+          },
+          {
+            "text": "comes",
+            "startFrame": 874
+          },
+          {
+            "text": "the",
+            "startFrame": 883
+          },
+          {
+            "text": "claim:",
+            "startFrame": 885
+          }
+        ]
+      },
+      {
+        "startFrame": 913,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 913
+          },
+          {
+            "text": "conditional",
+            "startFrame": 919
+          },
+          {
+            "text": "update",
+            "startFrame": 934
+          },
+          {
+            "text": "moves",
+            "startFrame": 951
+          },
+          {
+            "text": "the",
+            "startFrame": 960
+          },
+          {
+            "text": "payment",
+            "startFrame": 962
+          },
+          {
+            "text": "from",
+            "startFrame": 972
+          },
+          {
+            "text": "card",
+            "startFrame": 977
+          }
+        ]
+      },
+      {
+        "startFrame": 987,
+        "words": [
+          {
+            "text": "confirmed",
+            "startFrame": 987
+          },
+          {
+            "text": "to",
+            "startFrame": 1000
+          },
+          {
+            "text": "debiting.",
+            "startFrame": 1002
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 10,
-    "startFrame": 1201,
-    "endFrame": 1327,
+    "startFrame": 1026,
+    "endFrame": 1168,
     "text": "Only one caller's update can match, so exactly one caller wins.",
     "prefix": "Only one caller's update can match, so exactly one caller wins.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1028,
+        "words": [
+          {
+            "text": "Only",
+            "startFrame": 1028
+          },
+          {
+            "text": "one",
+            "startFrame": 1034
+          },
+          {
+            "text": "caller's",
+            "startFrame": 1042
+          },
+          {
+            "text": "update",
+            "startFrame": 1056
+          },
+          {
+            "text": "can",
+            "startFrame": 1069
+          },
+          {
+            "text": "match,",
+            "startFrame": 1074
+          }
+        ]
+      },
+      {
+        "startFrame": 1098,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 1098
+          },
+          {
+            "text": "exactly",
+            "startFrame": 1103
+          },
+          {
+            "text": "one",
+            "startFrame": 1120
+          },
+          {
+            "text": "caller",
+            "startFrame": 1131
+          },
+          {
+            "text": "wins.",
+            "startFrame": 1142
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 11,
-    "startFrame": 1328,
-    "endFrame": 1443,
+    "startFrame": 1168,
+    "endFrame": 1256,
     "text": "The winner finds the live terminal and the bank's fee.",
     "prefix": "The winner finds the live terminal and the bank's fee.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1170,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1170
+          },
+          {
+            "text": "winner",
+            "startFrame": 1171
+          },
+          {
+            "text": "finds",
+            "startFrame": 1177
+          },
+          {
+            "text": "the",
+            "startFrame": 1186
+          },
+          {
+            "text": "live",
+            "startFrame": 1189
+          },
+          {
+            "text": "terminal",
+            "startFrame": 1200
+          },
+          {
+            "text": "and",
+            "startFrame": 1221
+          }
+        ]
+      },
+      {
+        "startFrame": 1222,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1222
+          },
+          {
+            "text": "bank's",
+            "startFrame": 1225
+          },
+          {
+            "text": "fee.",
+            "startFrame": 1236
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 12,
-    "startFrame": 1443,
-    "endFrame": 1547,
+    "startFrame": 1257,
+    "endFrame": 1368,
     "text": "Without either, the payment fails, and nothing is charged.",
     "prefix": "Without either, the payment fails, and nothing is charged.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1259,
+        "words": [
+          {
+            "text": "Without",
+            "startFrame": 1259
+          },
+          {
+            "text": "either,",
+            "startFrame": 1268
+          },
+          {
+            "text": "the",
+            "startFrame": 1287
+          },
+          {
+            "text": "payment",
+            "startFrame": 1290
+          },
+          {
+            "text": "fails,",
+            "startFrame": 1299
+          }
+        ]
+      },
+      {
+        "startFrame": 1321,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1321
+          },
+          {
+            "text": "nothing",
+            "startFrame": 1325
+          },
+          {
+            "text": "is",
+            "startFrame": 1336
+          },
+          {
+            "text": "charged.",
+            "startFrame": 1339
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 13,
-    "startFrame": 1547,
-    "endFrame": 1708,
+    "startFrame": 1369,
+    "endFrame": 1497,
     "text": "Then it writes a row in the operation journal, before the network is asked.",
     "prefix": "Then it writes a row in the operation journal, before the network is asked.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1370,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 1370
+          },
+          {
+            "text": "it",
+            "startFrame": 1373
+          },
+          {
+            "text": "writes",
+            "startFrame": 1377
+          },
+          {
+            "text": "a",
+            "startFrame": 1385
+          },
+          {
+            "text": "row",
+            "startFrame": 1386
+          },
+          {
+            "text": "in",
+            "startFrame": 1400
+          },
+          {
+            "text": "the",
+            "startFrame": 1402
+          },
+          {
+            "text": "operation",
+            "startFrame": 1406
+          }
+        ]
+      },
+      {
+        "startFrame": 1422,
+        "words": [
+          {
+            "text": "journal,",
+            "startFrame": 1422
+          },
+          {
+            "text": "before",
+            "startFrame": 1438
+          },
+          {
+            "text": "the",
+            "startFrame": 1447
+          },
+          {
+            "text": "network",
+            "startFrame": 1449
+          },
+          {
+            "text": "is",
+            "startFrame": 1465
+          },
+          {
+            "text": "asked.",
+            "startFrame": 1468
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 14,
-    "startFrame": 1709,
-    "endFrame": 1847,
+    "startFrame": 1497,
+    "endFrame": 1630,
     "text": "The journal holds one debit per payment, and the database enforces it.",
     "prefix": "The journal holds one debit per payment, and the database enforces it.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1499,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1499
+          },
+          {
+            "text": "journal",
+            "startFrame": 1501
+          },
+          {
+            "text": "holds",
+            "startFrame": 1511
+          },
+          {
+            "text": "one",
+            "startFrame": 1528
+          },
+          {
+            "text": "debit",
+            "startFrame": 1539
+          },
+          {
+            "text": "per",
+            "startFrame": 1547
+          },
+          {
+            "text": "payment,",
+            "startFrame": 1551
+          }
+        ]
+      },
+      {
+        "startFrame": 1577,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1577
+          },
+          {
+            "text": "the",
+            "startFrame": 1579
+          },
+          {
+            "text": "database",
+            "startFrame": 1581
+          },
+          {
+            "text": "enforces",
+            "startFrame": 1596
+          },
+          {
+            "text": "it.",
+            "startFrame": 1612
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 15,
-    "startFrame": 1847,
-    "endFrame": 1985,
+    "startFrame": 1630,
+    "endFrame": 1724,
     "text": "ecom asks the card zone to charge the card by its token.",
     "prefix": "ecom asks the card zone to charge the card by its token.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1631,
+        "words": [
+          {
+            "text": "ecom",
+            "startFrame": 1631
+          },
+          {
+            "text": "asks",
+            "startFrame": 1641
+          },
+          {
+            "text": "the",
+            "startFrame": 1650
+          },
+          {
+            "text": "card",
+            "startFrame": 1653
+          },
+          {
+            "text": "zone",
+            "startFrame": 1661
+          },
+          {
+            "text": "to",
+            "startFrame": 1670
+          },
+          {
+            "text": "charge",
+            "startFrame": 1671
+          }
+        ]
+      },
+      {
+        "startFrame": 1683,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1683
+          },
+          {
+            "text": "card",
+            "startFrame": 1685
+          },
+          {
+            "text": "by",
+            "startFrame": 1694
+          },
+          {
+            "text": "its",
+            "startFrame": 1697
+          },
+          {
+            "text": "token.",
+            "startFrame": 1701
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 16,
-    "startFrame": 1986,
-    "endFrame": 2170,
+    "startFrame": 1725,
+    "endFrame": 1865,
     "text": "The call carries an id that makes it happen once, even if it is sent twice.",
     "prefix": "The call carries an id that makes it happen once, even if it is sent twice.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1726,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1726
+          },
+          {
+            "text": "call",
+            "startFrame": 1728
+          },
+          {
+            "text": "carries",
+            "startFrame": 1737
+          },
+          {
+            "text": "an",
+            "startFrame": 1747
+          },
+          {
+            "text": "id",
+            "startFrame": 1750
+          },
+          {
+            "text": "that",
+            "startFrame": 1764
+          },
+          {
+            "text": "makes",
+            "startFrame": 1768
+          },
+          {
+            "text": "it",
+            "startFrame": 1775
+          }
+        ]
+      },
+      {
+        "startFrame": 1776,
+        "words": [
+          {
+            "text": "happen",
+            "startFrame": 1776
+          },
+          {
+            "text": "once,",
+            "startFrame": 1787
+          },
+          {
+            "text": "even",
+            "startFrame": 1814
+          },
+          {
+            "text": "if",
+            "startFrame": 1819
+          },
+          {
+            "text": "it",
+            "startFrame": 1822
+          },
+          {
+            "text": "is",
+            "startFrame": 1824
+          },
+          {
+            "text": "sent",
+            "startFrame": 1826
+          },
+          {
+            "text": "twice.",
+            "startFrame": 1834
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 17,
-    "startFrame": 2170,
-    "endFrame": 2274,
+    "startFrame": 1865,
+    "endFrame": 1953,
     "text": "Some card networks only hold the money at first.",
     "prefix": "Some card networks only hold the money at first.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1866,
+        "words": [
+          {
+            "text": "Some",
+            "startFrame": 1866
+          },
+          {
+            "text": "card",
+            "startFrame": 1873
+          },
+          {
+            "text": "networks",
+            "startFrame": 1880
+          },
+          {
+            "text": "only",
+            "startFrame": 1898
+          },
+          {
+            "text": "hold",
+            "startFrame": 1904
+          },
+          {
+            "text": "the",
+            "startFrame": 1912
+          },
+          {
+            "text": "money",
+            "startFrame": 1914
+          },
+          {
+            "text": "at",
+            "startFrame": 1923
+          },
+          {
+            "text": "first.",
+            "startFrame": 1925
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 18,
-    "startFrame": 2274,
-    "endFrame": 2435,
+    "startFrame": 1954,
+    "endFrame": 2076,
     "text": "For those, the card zone takes it at once, and that is a capture.",
     "prefix": "For those, the card zone takes it at once, and that is a capture.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1956,
+        "words": [
+          {
+            "text": "For",
+            "startFrame": 1956
+          },
+          {
+            "text": "those,",
+            "startFrame": 1959
+          },
+          {
+            "text": "the",
+            "startFrame": 1979
+          },
+          {
+            "text": "card",
+            "startFrame": 1982
+          },
+          {
+            "text": "zone",
+            "startFrame": 1990
+          },
+          {
+            "text": "takes",
+            "startFrame": 1997
+          },
+          {
+            "text": "it",
+            "startFrame": 2005
+          },
+          {
+            "text": "at",
+            "startFrame": 2006
+          }
+        ]
+      },
+      {
+        "startFrame": 2008,
+        "words": [
+          {
+            "text": "once,",
+            "startFrame": 2008
+          },
+          {
+            "text": "and",
+            "startFrame": 2035
+          },
+          {
+            "text": "that",
+            "startFrame": 2037
+          },
+          {
+            "text": "is",
+            "startFrame": 2041
+          },
+          {
+            "text": "a",
+            "startFrame": 2044
+          },
+          {
+            "text": "capture.",
+            "startFrame": 2045
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 19,
-    "startFrame": 2436,
-    "endFrame": 2527,
+    "startFrame": 2076,
+    "endFrame": 2189,
     "text": "Approved means paid, with the network's reference number.",
     "prefix": "Approved means paid, with the network's reference number.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2077,
+        "words": [
+          {
+            "text": "Approved",
+            "startFrame": 2077
+          },
+          {
+            "text": "means",
+            "startFrame": 2097
+          },
+          {
+            "text": "paid,",
+            "startFrame": 2110
+          }
+        ]
+      },
+      {
+        "startFrame": 2136,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 2136
+          },
+          {
+            "text": "the",
+            "startFrame": 2138
+          },
+          {
+            "text": "network's",
+            "startFrame": 2141
+          },
+          {
+            "text": "reference",
+            "startFrame": 2155
+          },
+          {
+            "text": "number.",
+            "startFrame": 2167
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 20,
-    "startFrame": 2528,
-    "endFrame": 2572,
+    "startFrame": 2190,
+    "endFrame": 2245,
     "text": "Declined is final.",
     "prefix": "Declined is final.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2190,
+        "words": [
+          {
+            "text": "Declined",
+            "startFrame": 2190
+          },
+          {
+            "text": "is",
+            "startFrame": 2210
+          },
+          {
+            "text": "final.",
+            "startFrame": 2214
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 21,
-    "startFrame": 2573,
-    "endFrame": 2734,
-    "text": "And no answer in time is unknown, never declined: lesson twenty-seven picks it up.",
-    "prefix": "And no answer in time is unknown, never declined: lesson twenty-seven picks it up.",
+    "startFrame": 2246,
+    "endFrame": 2426,
+    "text": "And no answer in time is unknown, never declined: Lesson 27 picks it up.",
+    "prefix": "And no answer in time is unknown, never declined: Lesson 27 picks it up.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2247,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 2247
+          },
+          {
+            "text": "no",
+            "startFrame": 2251
+          },
+          {
+            "text": "answer",
+            "startFrame": 2258
+          },
+          {
+            "text": "in",
+            "startFrame": 2268
+          },
+          {
+            "text": "time",
+            "startFrame": 2271
+          },
+          {
+            "text": "is",
+            "startFrame": 2291
+          },
+          {
+            "text": "unknown,",
+            "startFrame": 2301
+          }
+        ]
+      },
+      {
+        "startFrame": 2327,
+        "words": [
+          {
+            "text": "never",
+            "startFrame": 2327
+          },
+          {
+            "text": "declined:",
+            "startFrame": 2333
+          },
+          {
+            "text": "Lesson 27",
+            "startFrame": 2366
+          },
+          {
+            "text": "picks",
+            "startFrame": 2397
+          },
+          {
+            "text": "it",
+            "startFrame": 2406
+          },
+          {
+            "text": "up.",
+            "startFrame": 2408
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 22,
-    "startFrame": 2734,
-    "endFrame": 2803,
+    "startFrame": 2427,
+    "endFrame": 2482,
     "text": "Now read it in the code.",
     "prefix": "Now read it in the code.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2428,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2428
+          },
+          {
+            "text": "read",
+            "startFrame": 2432
+          },
+          {
+            "text": "it",
+            "startFrame": 2438
+          },
+          {
+            "text": "in",
+            "startFrame": 2440
+          },
+          {
+            "text": "the",
+            "startFrame": 2442
+          },
+          {
+            "text": "code.",
+            "startFrame": 2444
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 23,
-    "startFrame": 2804,
-    "endFrame": 2976,
+    "startFrame": 2483,
+    "endFrame": 2639,
     "text": "The claim is a single update: set debiting, where the payment is still card confirmed.",
     "prefix": "The claim is a single update: set debiting, where the payment is still card confirmed.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2485,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2485
+          },
+          {
+            "text": "claim",
+            "startFrame": 2486
+          },
+          {
+            "text": "is",
+            "startFrame": 2501
+          },
+          {
+            "text": "a",
+            "startFrame": 2504
+          },
+          {
+            "text": "single",
+            "startFrame": 2506
+          },
+          {
+            "text": "update:",
+            "startFrame": 2517
+          }
+        ]
+      },
+      {
+        "startFrame": 2540,
+        "words": [
+          {
+            "text": "set",
+            "startFrame": 2540
+          },
+          {
+            "text": "debiting,",
+            "startFrame": 2550
+          },
+          {
+            "text": "where",
+            "startFrame": 2569
+          },
+          {
+            "text": "the",
+            "startFrame": 2572
+          },
+          {
+            "text": "payment",
+            "startFrame": 2575
+          },
+          {
+            "text": "is",
+            "startFrame": 2590
+          },
+          {
+            "text": "still",
+            "startFrame": 2593
+          },
+          {
+            "text": "card",
+            "startFrame": 2606
+          },
+          {
+            "text": "confirmed.",
+            "startFrame": 2613
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 24,
-    "startFrame": 2977,
-    "endFrame": 3149,
+    "startFrame": 2640,
+    "endFrame": 2785,
     "text": "Of any number of callers, exactly one changes the row, and gets a one back.",
     "prefix": "Of any number of callers, exactly one changes the row, and gets a one back.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2641,
+        "words": [
+          {
+            "text": "Of",
+            "startFrame": 2641
+          },
+          {
+            "text": "any",
+            "startFrame": 2646
+          },
+          {
+            "text": "number",
+            "startFrame": 2650
+          },
+          {
+            "text": "of",
+            "startFrame": 2657
+          },
+          {
+            "text": "callers,",
+            "startFrame": 2659
+          }
+        ]
+      },
+      {
+        "startFrame": 2683,
+        "words": [
+          {
+            "text": "exactly",
+            "startFrame": 2683
+          },
+          {
+            "text": "one",
+            "startFrame": 2699
+          },
+          {
+            "text": "changes",
+            "startFrame": 2710
+          },
+          {
+            "text": "the",
+            "startFrame": 2721
+          },
+          {
+            "text": "row,",
+            "startFrame": 2724
+          }
+        ]
+      },
+      {
+        "startFrame": 2746,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2746
+          },
+          {
+            "text": "gets",
+            "startFrame": 2748
+          },
+          {
+            "text": "a",
+            "startFrame": 2753
+          },
+          {
+            "text": "one",
+            "startFrame": 2754
+          },
+          {
+            "text": "back.",
+            "startFrame": 2761
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 25,
-    "startFrame": 3150,
-    "endFrame": 3334,
+    "startFrame": 2785,
+    "endFrame": 2942,
     "text": "The journal table is written before every call to a network, and finished with the answer.",
     "prefix": "The journal table is written before every call to a network, and finished with the answer.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2787,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2787
+          },
+          {
+            "text": "journal",
+            "startFrame": 2789
+          },
+          {
+            "text": "table",
+            "startFrame": 2798
+          },
+          {
+            "text": "is",
+            "startFrame": 2810
+          },
+          {
+            "text": "written",
+            "startFrame": 2814
+          },
+          {
+            "text": "before",
+            "startFrame": 2824
+          },
+          {
+            "text": "every",
+            "startFrame": 2844
+          },
+          {
+            "text": "call",
+            "startFrame": 2852
+          }
+        ]
+      },
+      {
+        "startFrame": 2861,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 2861
+          },
+          {
+            "text": "a",
+            "startFrame": 2865
+          },
+          {
+            "text": "network,",
+            "startFrame": 2867
+          }
+        ]
+      },
+      {
+        "startFrame": 2894,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2894
+          },
+          {
+            "text": "finished",
+            "startFrame": 2897
+          },
+          {
+            "text": "with",
+            "startFrame": 2911
+          },
+          {
+            "text": "the",
+            "startFrame": 2914
+          },
+          {
+            "text": "answer.",
+            "startFrame": 2917
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 26,
-    "startFrame": 3334,
-    "endFrame": 3461,
+    "startFrame": 2943,
+    "endFrame": 3076,
     "text": "And one unique constraint allows just one debit for each payment.",
     "prefix": "And one unique constraint allows just one debit for each payment.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2944,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 2944
+          },
+          {
+            "text": "one",
+            "startFrame": 2949
+          },
+          {
+            "text": "unique",
+            "startFrame": 2955
+          },
+          {
+            "text": "constraint",
+            "startFrame": 2967
+          },
+          {
+            "text": "allows",
+            "startFrame": 2984
+          },
+          {
+            "text": "just",
+            "startFrame": 3005
+          },
+          {
+            "text": "one",
+            "startFrame": 3013
+          },
+          {
+            "text": "debit",
+            "startFrame": 3022
+          }
+        ]
+      },
+      {
+        "startFrame": 3037,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 3037
+          },
+          {
+            "text": "each",
+            "startFrame": 3043
+          },
+          {
+            "text": "payment.",
+            "startFrame": 3050
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 27,
-    "startFrame": 3461,
-    "endFrame": 3622,
+    "startFrame": 3076,
+    "endFrame": 3231,
     "text": "Like the cash desk: one slip, written in the logbook first, and one charge.",
     "prefix": "Like the cash desk: one slip, written in the logbook first, and one charge.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3077,
+        "words": [
+          {
+            "text": "Like",
+            "startFrame": 3077
+          },
+          {
+            "text": "the",
+            "startFrame": 3080
+          },
+          {
+            "text": "cash",
+            "startFrame": 3082
+          },
+          {
+            "text": "desk:",
+            "startFrame": 3092
+          }
+        ]
+      },
+      {
+        "startFrame": 3117,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 3117
+          },
+          {
+            "text": "slip,",
+            "startFrame": 3125
+          },
+          {
+            "text": "written",
+            "startFrame": 3145
+          },
+          {
+            "text": "in",
+            "startFrame": 3153
+          },
+          {
+            "text": "the",
+            "startFrame": 3155
+          },
+          {
+            "text": "logbook",
+            "startFrame": 3157
+          },
+          {
+            "text": "first,",
+            "startFrame": 3170
+          }
+        ]
+      },
+      {
+        "startFrame": 3192,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3192
+          },
+          {
+            "text": "one",
+            "startFrame": 3196
+          },
+          {
+            "text": "charge.",
+            "startFrame": 3203
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 28,
-    "startFrame": 3623,
-    "endFrame": 3745,
+    "startFrame": 3232,
+    "endFrame": 3354,
     "text": "Next: what happens when the network goes silent.",
     "prefix": "Next: what happens when the network goes silent.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3233,
+        "words": [
+          {
+            "text": "Next:",
+            "startFrame": 3233
+          },
+          {
+            "text": "what",
+            "startFrame": 3259
+          },
+          {
+            "text": "happens",
+            "startFrame": 3262
+          },
+          {
+            "text": "when",
+            "startFrame": 3272
+          },
+          {
+            "text": "the",
+            "startFrame": 3274
+          },
+          {
+            "text": "network",
+            "startFrame": 3276
+          },
+          {
+            "text": "goes",
+            "startFrame": 3290
+          },
+          {
+            "text": "silent.",
+            "startFrame": 3297
+          }
+        ]
+      }
+    ]
   }
 ]
