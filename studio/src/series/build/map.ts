@@ -40,11 +40,11 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   frame: { label: "Frame", sub: "Card entry", x: 216, y: 344, w: 76, h: 56 },
   card: { label: "Card vault", sub: "Tokens", x: 298, y: 344, w: 96, h: 56 },
   bin: { label: "BIN", sub: "Issuers", x: 400, y: 344, w: 56, h: 56 },
-  adapters: { label: "Adapters", sub: "Uzcard, Humo", x: 462, y: 344, w: 92, h: 56 },
+  adapters: { label: "Adapters", sub: "Per centre", x: 462, y: 344, w: 92, h: 56 },
   cardsinfra: { label: "Own infra", x: 560, y: 344, w: 70, h: 56, logos: [siPostgresql.path, siVault.path, siKeycloak.path] },
   // Outside both units.
   emailsvc: { label: "SMTP", sub: "Mailpit locally", x: 52, y: 440, w: 160, h: 48 },
-  procsvc: { label: "Uzcard + Humo", sub: "SV-Gate · Payment Server", x: 400, y: 440, w: 230, h: 48 },
+  procsvc: { label: "Card processing centres", sub: "One protocol each", x: 400, y: 440, w: 230, h: 48 },
   // Not a box: the cluster boundary around the ecom unit (drawn by BuildMap as a dashed frame).
   kubernetes: { label: "Kubernetes", x: 32, y: 70, w: 616, h: 220, logos: [siKubernetes.path] },
 };
@@ -70,7 +70,7 @@ export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes:
   { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis", "emailsvc", "s3", "keycloak", "vault", "observability", "temporal", "kafka"] },
   { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle + documents", "Four-eyes", "Keycloak clients", "Merchant users", "Sales points", "Platform libraries"], nodes: ["partner", "emailport", "admin"] },
   { n: 2, title: "Money rules", episodes: ["Commission", "e-POS terminals"], nodes: ["commission", "epos"] },
-  { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "Card vault + BIN"], nodes: ["card", "bin", "adapters", "cardsinfra", "procport", "procsvc"] },
+  { n: 3, title: "Cards", episodes: ["Processing adapters", "Card vault + BIN"], nodes: ["card", "bin", "adapters", "cardsinfra", "procport", "procsvc"] },
   { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Payment page", "The debit", "Observability", "When processing goes silent", "Outbox + Kafka", "Links", "Refunds", "Daily reports", "Hardening", "Disputes", "Reconciliation"], nodes: ["payment", "frame", "reconciliation", "merchant", "buyer"] },
   { n: 5, title: "Growing up", episodes: ["Delivery", "The cards unit"], nodes: ["kubernetes"] },
 ];
