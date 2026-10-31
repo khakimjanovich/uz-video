@@ -2,262 +2,2151 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 70,
+    "endFrame": 57,
     "text": "Where should a new feature start?",
     "prefix": "Where should a new feature start?",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2,
+        "words": [
+          {
+            "text": "Where",
+            "startFrame": 2
+          },
+          {
+            "text": "should",
+            "startFrame": 4
+          },
+          {
+            "text": "a",
+            "startFrame": 8
+          },
+          {
+            "text": "new",
+            "startFrame": 9
+          },
+          {
+            "text": "feature",
+            "startFrame": 16
+          },
+          {
+            "text": "start?",
+            "startFrame": 28
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 2,
-    "startFrame": 70,
-    "endFrame": 254,
+    "startFrame": 57,
+    "endFrame": 209,
     "text": "Picture a developer who starts with the table, because the table is what they can see.",
     "prefix": "Picture a developer who starts with the table, because the table is what they can see.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 59,
+        "words": [
+          {
+            "text": "Picture",
+            "startFrame": 59
+          },
+          {
+            "text": "a",
+            "startFrame": 68
+          },
+          {
+            "text": "developer",
+            "startFrame": 70
+          },
+          {
+            "text": "who",
+            "startFrame": 95
+          },
+          {
+            "text": "starts",
+            "startFrame": 101
+          },
+          {
+            "text": "with",
+            "startFrame": 113
+          },
+          {
+            "text": "the",
+            "startFrame": 116
+          },
+          {
+            "text": "table,",
+            "startFrame": 118
+          }
+        ]
+      },
+      {
+        "startFrame": 136,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 136
+          },
+          {
+            "text": "the",
+            "startFrame": 147
+          },
+          {
+            "text": "table",
+            "startFrame": 151
+          },
+          {
+            "text": "is",
+            "startFrame": 168
+          },
+          {
+            "text": "what",
+            "startFrame": 171
+          },
+          {
+            "text": "they",
+            "startFrame": 176
+          },
+          {
+            "text": "can",
+            "startFrame": 180
+          },
+          {
+            "text": "see.",
+            "startFrame": 185
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 3,
-    "startFrame": 255,
-    "endFrame": 393,
+    "startFrame": 210,
+    "endFrame": 355,
     "text": "The API mirrors the table, and the status column takes any string.",
     "prefix": "The API mirrors the table, and the status column takes any string.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 211,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 211
+          },
+          {
+            "text": "API",
+            "startFrame": 217
+          },
+          {
+            "text": "mirrors",
+            "startFrame": 234
+          },
+          {
+            "text": "the",
+            "startFrame": 253
+          },
+          {
+            "text": "table,",
+            "startFrame": 255
+          }
+        ]
+      },
+      {
+        "startFrame": 281,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 281
+          },
+          {
+            "text": "the",
+            "startFrame": 282
+          },
+          {
+            "text": "status",
+            "startFrame": 284
+          },
+          {
+            "text": "column",
+            "startFrame": 296
+          },
+          {
+            "text": "takes",
+            "startFrame": 312
+          },
+          {
+            "text": "any",
+            "startFrame": 327
+          },
+          {
+            "text": "string.",
+            "startFrame": 331
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 4,
-    "startFrame": 393,
-    "endFrame": 577,
+    "startFrame": 355,
+    "endFrame": 538,
     "text": "Six months later, suspended merchants are taking payments, because nobody wrote down which moves are allowed.",
     "prefix": "Six months later, suspended merchants are taking payments, because nobody wrote down which moves are allowed.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 357,
+        "words": [
+          {
+            "text": "Six",
+            "startFrame": 357
+          },
+          {
+            "text": "months",
+            "startFrame": 362
+          },
+          {
+            "text": "later,",
+            "startFrame": 369
+          }
+        ]
+      },
+      {
+        "startFrame": 391,
+        "words": [
+          {
+            "text": "suspended",
+            "startFrame": 391
+          },
+          {
+            "text": "merchants",
+            "startFrame": 406
+          },
+          {
+            "text": "are",
+            "startFrame": 418
+          },
+          {
+            "text": "taking",
+            "startFrame": 420
+          },
+          {
+            "text": "payments,",
+            "startFrame": 430
+          }
+        ]
+      },
+      {
+        "startFrame": 453,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 453
+          },
+          {
+            "text": "nobody",
+            "startFrame": 463
+          },
+          {
+            "text": "wrote",
+            "startFrame": 475
+          },
+          {
+            "text": "down",
+            "startFrame": 484
+          },
+          {
+            "text": "which",
+            "startFrame": 493
+          },
+          {
+            "text": "moves",
+            "startFrame": 500
+          },
+          {
+            "text": "are",
+            "startFrame": 510
+          },
+          {
+            "text": "allowed.",
+            "startFrame": 513
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 5,
-    "startFrame": 578,
-    "endFrame": 681,
+    "startFrame": 539,
+    "endFrame": 618,
     "text": "A board game is designed the other way round.",
     "prefix": "A board game is designed the other way round.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 539,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 539
+          },
+          {
+            "text": "board",
+            "startFrame": 541
+          },
+          {
+            "text": "game",
+            "startFrame": 549
+          },
+          {
+            "text": "is",
+            "startFrame": 564
+          },
+          {
+            "text": "designed",
+            "startFrame": 567
+          },
+          {
+            "text": "the",
+            "startFrame": 579
+          },
+          {
+            "text": "other",
+            "startFrame": 582
+          },
+          {
+            "text": "way",
+            "startFrame": 588
+          },
+          {
+            "text": "round.",
+            "startFrame": 593
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 6,
-    "startFrame": 682,
-    "endFrame": 774,
+    "startFrame": 618,
+    "endFrame": 706,
     "text": "The rules come first: which moves are legal.",
     "prefix": "The rules come first: which moves are legal.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 619,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 619
+          },
+          {
+            "text": "rules",
+            "startFrame": 621
+          },
+          {
+            "text": "come",
+            "startFrame": 628
+          },
+          {
+            "text": "first:",
+            "startFrame": 635
+          }
+        ]
+      },
+      {
+        "startFrame": 665,
+        "words": [
+          {
+            "text": "which",
+            "startFrame": 665
+          },
+          {
+            "text": "moves",
+            "startFrame": 670
+          },
+          {
+            "text": "are",
+            "startFrame": 677
+          },
+          {
+            "text": "legal.",
+            "startFrame": 680
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 7,
-    "startFrame": 774,
-    "endFrame": 924,
+    "startFrame": 707,
+    "endFrame": 815,
     "text": "Then the printed rulebook, which is hard to change once players have it.",
     "prefix": "Then the printed rulebook, which is hard to change once players have it.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 708,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 708
+          },
+          {
+            "text": "the",
+            "startFrame": 712
+          },
+          {
+            "text": "printed",
+            "startFrame": 715
+          },
+          {
+            "text": "rulebook,",
+            "startFrame": 727
+          }
+        ]
+      },
+      {
+        "startFrame": 748,
+        "words": [
+          {
+            "text": "which",
+            "startFrame": 748
+          },
+          {
+            "text": "is",
+            "startFrame": 752
+          },
+          {
+            "text": "hard",
+            "startFrame": 755
+          },
+          {
+            "text": "to",
+            "startFrame": 761
+          },
+          {
+            "text": "change",
+            "startFrame": 762
+          },
+          {
+            "text": "once",
+            "startFrame": 775
+          },
+          {
+            "text": "players",
+            "startFrame": 782
+          },
+          {
+            "text": "have",
+            "startFrame": 792
+          },
+          {
+            "text": "it.",
+            "startFrame": 799
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 8,
-    "startFrame": 924,
-    "endFrame": 1004,
+    "startFrame": 815,
+    "endFrame": 890,
     "text": "Then the board, and only then, play.",
     "prefix": "Then the board, and only then, play.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 817,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 817
+          },
+          {
+            "text": "the",
+            "startFrame": 820
+          },
+          {
+            "text": "board,",
+            "startFrame": 822
+          }
+        ]
+      },
+      {
+        "startFrame": 843,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 843
+          },
+          {
+            "text": "only",
+            "startFrame": 850
+          },
+          {
+            "text": "then,",
+            "startFrame": 858
+          },
+          {
+            "text": "play.",
+            "startFrame": 866
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 9,
-    "startFrame": 1005,
-    "endFrame": 1131,
+    "startFrame": 891,
+    "endFrame": 1000,
     "text": "Every feature in this system is built in the same order.",
     "prefix": "Every feature in this system is built in the same order.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 892,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 892
+          },
+          {
+            "text": "feature",
+            "startFrame": 899
+          },
+          {
+            "text": "in",
+            "startFrame": 911
+          },
+          {
+            "text": "this",
+            "startFrame": 915
+          },
+          {
+            "text": "system",
+            "startFrame": 920
+          },
+          {
+            "text": "is",
+            "startFrame": 944
+          },
+          {
+            "text": "built",
+            "startFrame": 948
+          }
+        ]
+      },
+      {
+        "startFrame": 962,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 962
+          },
+          {
+            "text": "the",
+            "startFrame": 964
+          },
+          {
+            "text": "same",
+            "startFrame": 966
+          },
+          {
+            "text": "order.",
+            "startFrame": 977
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 10,
-    "startFrame": 1132,
-    "endFrame": 1235,
+    "startFrame": 1000,
+    "endFrame": 1104,
     "text": "First the rules: a partner, and its state machine.",
     "prefix": "First the rules: a partner, and its state machine.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1004,
+        "words": [
+          {
+            "text": "First",
+            "startFrame": 1004
+          },
+          {
+            "text": "the",
+            "startFrame": 1009
+          },
+          {
+            "text": "rules:",
+            "startFrame": 1011
+          }
+        ]
+      },
+      {
+        "startFrame": 1037,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 1037
+          },
+          {
+            "text": "partner,",
+            "startFrame": 1039
+          },
+          {
+            "text": "and",
+            "startFrame": 1066
+          },
+          {
+            "text": "its",
+            "startFrame": 1068
+          },
+          {
+            "text": "state",
+            "startFrame": 1072
+          },
+          {
+            "text": "machine.",
+            "startFrame": 1079
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 11,
-    "startFrame": 1236,
-    "endFrame": 1408,
+    "startFrame": 1104,
+    "endFrame": 1265,
     "text": "A state machine is the list of allowed moves, and any other move is refused.",
     "prefix": "A state machine is the list of allowed moves, and any other move is refused.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1105,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1105
+          },
+          {
+            "text": "state",
+            "startFrame": 1106
+          },
+          {
+            "text": "machine",
+            "startFrame": 1114
+          },
+          {
+            "text": "is",
+            "startFrame": 1129
+          },
+          {
+            "text": "the",
+            "startFrame": 1132
+          },
+          {
+            "text": "list",
+            "startFrame": 1135
+          },
+          {
+            "text": "of",
+            "startFrame": 1147
+          },
+          {
+            "text": "allowed",
+            "startFrame": 1149
+          }
+        ]
+      },
+      {
+        "startFrame": 1161,
+        "words": [
+          {
+            "text": "moves,",
+            "startFrame": 1161
+          },
+          {
+            "text": "and",
+            "startFrame": 1187
+          },
+          {
+            "text": "any",
+            "startFrame": 1201
+          },
+          {
+            "text": "other",
+            "startFrame": 1208
+          },
+          {
+            "text": "move",
+            "startFrame": 1214
+          },
+          {
+            "text": "is",
+            "startFrame": 1230
+          },
+          {
+            "text": "refused.",
+            "startFrame": 1234
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 12,
-    "startFrame": 1409,
-    "endFrame": 1616,
+    "startFrame": 1265,
+    "endFrame": 1463,
     "text": "A new partner is verified, then waits for a contract, then for approval, and only then goes live.",
     "prefix": "A new partner is verified, then waits for a contract, then for approval, and only then goes live.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1266,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1266
+          },
+          {
+            "text": "new",
+            "startFrame": 1268
+          },
+          {
+            "text": "partner",
+            "startFrame": 1273
+          },
+          {
+            "text": "is",
+            "startFrame": 1286
+          },
+          {
+            "text": "verified,",
+            "startFrame": 1290
+          }
+        ]
+      },
+      {
+        "startFrame": 1320,
+        "words": [
+          {
+            "text": "then",
+            "startFrame": 1320
+          },
+          {
+            "text": "waits",
+            "startFrame": 1325
+          },
+          {
+            "text": "for",
+            "startFrame": 1334
+          },
+          {
+            "text": "a",
+            "startFrame": 1338
+          },
+          {
+            "text": "contract,",
+            "startFrame": 1340
+          }
+        ]
+      },
+      {
+        "startFrame": 1370,
+        "words": [
+          {
+            "text": "then",
+            "startFrame": 1370
+          },
+          {
+            "text": "for",
+            "startFrame": 1378
+          },
+          {
+            "text": "approval,",
+            "startFrame": 1384
+          }
+        ]
+      },
+      {
+        "startFrame": 1414,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1414
+          },
+          {
+            "text": "only",
+            "startFrame": 1416
+          },
+          {
+            "text": "then",
+            "startFrame": 1423
+          },
+          {
+            "text": "goes",
+            "startFrame": 1429
+          },
+          {
+            "text": "live.",
+            "startFrame": 1437
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 13,
-    "startFrame": 1616,
-    "endFrame": 1789,
+    "startFrame": 1463,
+    "endFrame": 1604,
     "text": "A live partner can be suspended and brought back, and a closed one stays closed.",
     "prefix": "A live partner can be suspended and brought back, and a closed one stays closed.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1464,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1464
+          },
+          {
+            "text": "live",
+            "startFrame": 1466
+          },
+          {
+            "text": "partner",
+            "startFrame": 1475
+          },
+          {
+            "text": "can",
+            "startFrame": 1485
+          },
+          {
+            "text": "be",
+            "startFrame": 1488
+          },
+          {
+            "text": "suspended",
+            "startFrame": 1492
+          },
+          {
+            "text": "and",
+            "startFrame": 1509
+          },
+          {
+            "text": "brought",
+            "startFrame": 1511
+          }
+        ]
+      },
+      {
+        "startFrame": 1522,
+        "words": [
+          {
+            "text": "back,",
+            "startFrame": 1522
+          },
+          {
+            "text": "and",
+            "startFrame": 1546
+          },
+          {
+            "text": "a",
+            "startFrame": 1548
+          },
+          {
+            "text": "closed",
+            "startFrame": 1549
+          },
+          {
+            "text": "one",
+            "startFrame": 1562
+          },
+          {
+            "text": "stays",
+            "startFrame": 1568
+          },
+          {
+            "text": "closed.",
+            "startFrame": 1576
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 14,
-    "startFrame": 1789,
-    "endFrame": 1974,
+    "startFrame": 1604,
+    "endFrame": 1769,
     "text": "Second, the rulebook: the contract, which says what callers may ask, and what they get back.",
     "prefix": "Second, the rulebook: the contract, which says what callers may ask, and what they get back.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1606,
+        "words": [
+          {
+            "text": "Second,",
+            "startFrame": 1606
+          },
+          {
+            "text": "the",
+            "startFrame": 1630
+          },
+          {
+            "text": "rulebook:",
+            "startFrame": 1632
+          }
+        ]
+      },
+      {
+        "startFrame": 1659,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1659
+          },
+          {
+            "text": "contract,",
+            "startFrame": 1662
+          },
+          {
+            "text": "which",
+            "startFrame": 1680
+          },
+          {
+            "text": "says",
+            "startFrame": 1685
+          },
+          {
+            "text": "what",
+            "startFrame": 1692
+          },
+          {
+            "text": "callers",
+            "startFrame": 1696
+          },
+          {
+            "text": "may",
+            "startFrame": 1708
+          },
+          {
+            "text": "ask,",
+            "startFrame": 1714
+          }
+        ]
+      },
+      {
+        "startFrame": 1733,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1733
+          },
+          {
+            "text": "what",
+            "startFrame": 1734
+          },
+          {
+            "text": "they",
+            "startFrame": 1738
+          },
+          {
+            "text": "get",
+            "startFrame": 1741
+          },
+          {
+            "text": "back.",
+            "startFrame": 1746
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 15,
-    "startFrame": 1974,
-    "endFrame": 2158,
+    "startFrame": 1769,
+    "endFrame": 1951,
     "text": "The controller implements an interface generated from it, so the code cannot drift from the contract.",
     "prefix": "The controller implements an interface generated from it, so the code cannot drift from the contract.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1771,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1771
+          },
+          {
+            "text": "controller",
+            "startFrame": 1772
+          },
+          {
+            "text": "implements",
+            "startFrame": 1787
+          },
+          {
+            "text": "an",
+            "startFrame": 1808
+          },
+          {
+            "text": "interface",
+            "startFrame": 1814
+          },
+          {
+            "text": "generated",
+            "startFrame": 1832
+          }
+        ]
+      },
+      {
+        "startFrame": 1847,
+        "words": [
+          {
+            "text": "from",
+            "startFrame": 1847
+          },
+          {
+            "text": "it,",
+            "startFrame": 1854
+          },
+          {
+            "text": "so",
+            "startFrame": 1869
+          },
+          {
+            "text": "the",
+            "startFrame": 1873
+          },
+          {
+            "text": "code",
+            "startFrame": 1876
+          },
+          {
+            "text": "cannot",
+            "startFrame": 1886
+          },
+          {
+            "text": "drift",
+            "startFrame": 1903
+          },
+          {
+            "text": "from",
+            "startFrame": 1915
+          },
+          {
+            "text": "the",
+            "startFrame": 1919
+          },
+          {
+            "text": "contract.",
+            "startFrame": 1920
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 16,
-    "startFrame": 2159,
-    "endFrame": 2377,
+    "startFrame": 1951,
+    "endFrame": 2177,
     "text": "Third, the board: the module's own schema in the database, reached by its own user, which sees nothing else.",
     "prefix": "Third, the board: the module's own schema in the database, reached by its own user, which sees nothing else.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1954,
+        "words": [
+          {
+            "text": "Third,",
+            "startFrame": 1954
+          },
+          {
+            "text": "the",
+            "startFrame": 1977
+          },
+          {
+            "text": "board:",
+            "startFrame": 1979
+          }
+        ]
+      },
+      {
+        "startFrame": 2003,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2003
+          },
+          {
+            "text": "module's",
+            "startFrame": 2004
+          },
+          {
+            "text": "own",
+            "startFrame": 2021
+          },
+          {
+            "text": "schema",
+            "startFrame": 2029
+          },
+          {
+            "text": "in",
+            "startFrame": 2042
+          },
+          {
+            "text": "the",
+            "startFrame": 2046
+          },
+          {
+            "text": "database,",
+            "startFrame": 2048
+          }
+        ]
+      },
+      {
+        "startFrame": 2079,
+        "words": [
+          {
+            "text": "reached",
+            "startFrame": 2079
+          },
+          {
+            "text": "by",
+            "startFrame": 2086
+          },
+          {
+            "text": "its",
+            "startFrame": 2090
+          },
+          {
+            "text": "own",
+            "startFrame": 2097
+          },
+          {
+            "text": "user,",
+            "startFrame": 2104
+          }
+        ]
+      },
+      {
+        "startFrame": 2129,
+        "words": [
+          {
+            "text": "which",
+            "startFrame": 2129
+          },
+          {
+            "text": "sees",
+            "startFrame": 2134
+          },
+          {
+            "text": "nothing",
+            "startFrame": 2143
+          },
+          {
+            "text": "else.",
+            "startFrame": 2151
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 17,
-    "startFrame": 2378,
-    "endFrame": 2562,
+    "startFrame": 2178,
+    "endFrame": 2330,
     "text": "Each change to the schema is a changeset: it runs once, and it is never edited.",
     "prefix": "Each change to the schema is a changeset: it runs once, and it is never edited.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2179,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 2179
+          },
+          {
+            "text": "change",
+            "startFrame": 2184
+          },
+          {
+            "text": "to",
+            "startFrame": 2193
+          },
+          {
+            "text": "the",
+            "startFrame": 2195
+          },
+          {
+            "text": "schema",
+            "startFrame": 2197
+          },
+          {
+            "text": "is",
+            "startFrame": 2216
+          },
+          {
+            "text": "a",
+            "startFrame": 2220
+          },
+          {
+            "text": "changeset:",
+            "startFrame": 2221
+          }
+        ]
+      },
+      {
+        "startFrame": 2255,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 2255
+          },
+          {
+            "text": "runs",
+            "startFrame": 2257
+          },
+          {
+            "text": "once,",
+            "startFrame": 2265
+          }
+        ]
+      },
+      {
+        "startFrame": 2291,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2291
+          },
+          {
+            "text": "it",
+            "startFrame": 2294
+          },
+          {
+            "text": "is",
+            "startFrame": 2296
+          },
+          {
+            "text": "never",
+            "startFrame": 2299
+          },
+          {
+            "text": "edited.",
+            "startFrame": 2308
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 18,
-    "startFrame": 2563,
-    "endFrame": 2677,
+    "startFrame": 2331,
+    "endFrame": 2429,
     "text": "A new change is always a new changeset on top.",
     "prefix": "A new change is always a new changeset on top.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2332,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2332
+          },
+          {
+            "text": "new",
+            "startFrame": 2333
+          },
+          {
+            "text": "change",
+            "startFrame": 2339
+          },
+          {
+            "text": "is",
+            "startFrame": 2363
+          },
+          {
+            "text": "always",
+            "startFrame": 2368
+          },
+          {
+            "text": "a",
+            "startFrame": 2377
+          },
+          {
+            "text": "new",
+            "startFrame": 2378
+          },
+          {
+            "text": "changeset",
+            "startFrame": 2386
+          },
+          {
+            "text": "on",
+            "startFrame": 2402
+          },
+          {
+            "text": "top.",
+            "startFrame": 2407
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 19,
-    "startFrame": 2678,
-    "endFrame": 2931,
+    "startFrame": 2430,
+    "endFrame": 2624,
     "text": "And other modules keep only a partner's id, never a link into its table, so the module can move out one day.",
     "prefix": "And other modules keep only a partner's id, never a link into its table, so the module can move out one day.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2431,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 2431
+          },
+          {
+            "text": "other",
+            "startFrame": 2435
+          },
+          {
+            "text": "modules",
+            "startFrame": 2441
+          },
+          {
+            "text": "keep",
+            "startFrame": 2455
+          },
+          {
+            "text": "only",
+            "startFrame": 2464
+          },
+          {
+            "text": "a",
+            "startFrame": 2472
+          },
+          {
+            "text": "partner's",
+            "startFrame": 2474
+          },
+          {
+            "text": "id,",
+            "startFrame": 2486
+          }
+        ]
+      },
+      {
+        "startFrame": 2513,
+        "words": [
+          {
+            "text": "never",
+            "startFrame": 2513
+          },
+          {
+            "text": "a",
+            "startFrame": 2521
+          },
+          {
+            "text": "link",
+            "startFrame": 2523
+          },
+          {
+            "text": "into",
+            "startFrame": 2533
+          },
+          {
+            "text": "its",
+            "startFrame": 2540
+          },
+          {
+            "text": "table,",
+            "startFrame": 2543
+          }
+        ]
+      },
+      {
+        "startFrame": 2565,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 2565
+          },
+          {
+            "text": "the",
+            "startFrame": 2568
+          },
+          {
+            "text": "module",
+            "startFrame": 2571
+          },
+          {
+            "text": "can",
+            "startFrame": 2584
+          },
+          {
+            "text": "move",
+            "startFrame": 2588
+          },
+          {
+            "text": "out",
+            "startFrame": 2593
+          },
+          {
+            "text": "one",
+            "startFrame": 2598
+          },
+          {
+            "text": "day.",
+            "startFrame": 2603
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 20,
-    "startFrame": 2932,
-    "endFrame": 3047,
+    "startFrame": 2625,
+    "endFrame": 2726,
     "text": "Last, play: the smallest code that makes it all work.",
     "prefix": "Last, play: the smallest code that makes it all work.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2626,
+        "words": [
+          {
+            "text": "Last,",
+            "startFrame": 2626
+          },
+          {
+            "text": "play:",
+            "startFrame": 2640
+          },
+          {
+            "text": "the",
+            "startFrame": 2662
+          },
+          {
+            "text": "smallest",
+            "startFrame": 2665
+          },
+          {
+            "text": "code",
+            "startFrame": 2679
+          },
+          {
+            "text": "that",
+            "startFrame": 2687
+          },
+          {
+            "text": "makes",
+            "startFrame": 2690
+          },
+          {
+            "text": "it",
+            "startFrame": 2696
+          },
+          {
+            "text": "all",
+            "startFrame": 2697
+          },
+          {
+            "text": "work.",
+            "startFrame": 2704
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 21,
-    "startFrame": 3047,
-    "endFrame": 3116,
+    "startFrame": 2727,
+    "endFrame": 2788,
     "text": "Even an error follows the rulebook.",
     "prefix": "Even an error follows the rulebook.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2728,
+        "words": [
+          {
+            "text": "Even",
+            "startFrame": 2728
+          },
+          {
+            "text": "an",
+            "startFrame": 2733
+          },
+          {
+            "text": "error",
+            "startFrame": 2736
+          },
+          {
+            "text": "follows",
+            "startFrame": 2746
+          },
+          {
+            "text": "the",
+            "startFrame": 2758
+          },
+          {
+            "text": "rulebook.",
+            "startFrame": 2760
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 22,
-    "startFrame": 3116,
-    "endFrame": 3289,
+    "startFrame": 2789,
+    "endFrame": 2932,
     "text": "Ask for a partner that does not exist, and the answer is a problem detail.",
     "prefix": "Ask for a partner that does not exist, and the answer is a problem detail.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2790,
+        "words": [
+          {
+            "text": "Ask",
+            "startFrame": 2790
+          },
+          {
+            "text": "for",
+            "startFrame": 2797
+          },
+          {
+            "text": "a",
+            "startFrame": 2800
+          },
+          {
+            "text": "partner",
+            "startFrame": 2802
+          },
+          {
+            "text": "that",
+            "startFrame": 2814
+          },
+          {
+            "text": "does",
+            "startFrame": 2818
+          },
+          {
+            "text": "not",
+            "startFrame": 2823
+          },
+          {
+            "text": "exist,",
+            "startFrame": 2831
+          }
+        ]
+      },
+      {
+        "startFrame": 2866,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2866
+          },
+          {
+            "text": "the",
+            "startFrame": 2867
+          },
+          {
+            "text": "answer",
+            "startFrame": 2869
+          },
+          {
+            "text": "is",
+            "startFrame": 2888
+          },
+          {
+            "text": "a",
+            "startFrame": 2891
+          },
+          {
+            "text": "problem",
+            "startFrame": 2893
+          },
+          {
+            "text": "detail.",
+            "startFrame": 2905
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 23,
-    "startFrame": 3289,
-    "endFrame": 3508,
+    "startFrame": 2932,
+    "endFrame": 3118,
     "text": "A problem detail is a standard error answer, with a stable code, and a message in the caller's language.",
     "prefix": "A problem detail is a standard error answer, with a stable code, and a message in the caller's language.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2933,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2933
+          },
+          {
+            "text": "problem",
+            "startFrame": 2934
+          },
+          {
+            "text": "detail",
+            "startFrame": 2946
+          },
+          {
+            "text": "is",
+            "startFrame": 2966
+          },
+          {
+            "text": "a",
+            "startFrame": 2968
+          },
+          {
+            "text": "standard",
+            "startFrame": 2970
+          },
+          {
+            "text": "error",
+            "startFrame": 2986
+          },
+          {
+            "text": "answer,",
+            "startFrame": 2993
+          }
+        ]
+      },
+      {
+        "startFrame": 3014,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 3014
+          },
+          {
+            "text": "a",
+            "startFrame": 3018
+          },
+          {
+            "text": "stable",
+            "startFrame": 3019
+          },
+          {
+            "text": "code,",
+            "startFrame": 3032
+          }
+        ]
+      },
+      {
+        "startFrame": 3054,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3054
+          },
+          {
+            "text": "a",
+            "startFrame": 3058
+          },
+          {
+            "text": "message",
+            "startFrame": 3058
+          },
+          {
+            "text": "in",
+            "startFrame": 3075
+          },
+          {
+            "text": "the",
+            "startFrame": 3077
+          },
+          {
+            "text": "caller's",
+            "startFrame": 3080
+          },
+          {
+            "text": "language.",
+            "startFrame": 3091
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 24,
-    "startFrame": 3509,
-    "endFrame": 3589,
+    "startFrame": 3119,
+    "endFrame": 3170,
     "text": "Now read the rules in the code.",
     "prefix": "Now read the rules in the code.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3120,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 3120
+          },
+          {
+            "text": "read",
+            "startFrame": 3125
+          },
+          {
+            "text": "the",
+            "startFrame": 3130
+          },
+          {
+            "text": "rules",
+            "startFrame": 3132
+          },
+          {
+            "text": "in",
+            "startFrame": 3145
+          },
+          {
+            "text": "the",
+            "startFrame": 3146
+          },
+          {
+            "text": "code.",
+            "startFrame": 3148
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 25,
-    "startFrame": 3589,
-    "endFrame": 3762,
+    "startFrame": 3170,
+    "endFrame": 3315,
     "text": "The partner's states are listed once, and one method says where each may move next.",
     "prefix": "The partner's states are listed once, and one method says where each may move next.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3172,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3172
+          },
+          {
+            "text": "partner's",
+            "startFrame": 3174
+          },
+          {
+            "text": "states",
+            "startFrame": 3184
+          },
+          {
+            "text": "are",
+            "startFrame": 3195
+          },
+          {
+            "text": "listed",
+            "startFrame": 3200
+          },
+          {
+            "text": "once,",
+            "startFrame": 3210
+          }
+        ]
+      },
+      {
+        "startFrame": 3236,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3236
+          },
+          {
+            "text": "one",
+            "startFrame": 3240
+          },
+          {
+            "text": "method",
+            "startFrame": 3247
+          },
+          {
+            "text": "says",
+            "startFrame": 3256
+          },
+          {
+            "text": "where",
+            "startFrame": 3264
+          },
+          {
+            "text": "each",
+            "startFrame": 3271
+          },
+          {
+            "text": "may",
+            "startFrame": 3278
+          },
+          {
+            "text": "move",
+            "startFrame": 3281
+          },
+          {
+            "text": "next.",
+            "startFrame": 3288
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 26,
-    "startFrame": 3763,
-    "endFrame": 3854,
+    "startFrame": 3315,
+    "endFrame": 3419,
     "text": "A terminated or rejected partner can move nowhere.",
     "prefix": "A terminated or rejected partner can move nowhere.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3316,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 3316
+          },
+          {
+            "text": "terminated",
+            "startFrame": 3318
+          },
+          {
+            "text": "or",
+            "startFrame": 3339
+          },
+          {
+            "text": "rejected",
+            "startFrame": 3344
+          },
+          {
+            "text": "partner",
+            "startFrame": 3360
+          },
+          {
+            "text": "can",
+            "startFrame": 3380
+          },
+          {
+            "text": "move",
+            "startFrame": 3384
+          },
+          {
+            "text": "nowhere.",
+            "startFrame": 3390
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 27,
-    "startFrame": 3855,
-    "endFrame": 4143,
-    "text": "And the missing partner is one entry in a short file: four oh four, a stable code, and the message in English, Russian and Uzbek.",
-    "prefix": "And the missing partner is one entry in a short file: four oh four, a stable code, and the message in English, Russian and Uzbek.",
+    "startFrame": 3420,
+    "endFrame": 3689,
+    "text": "And the missing partner is one entry in a short file: 404, a stable code, and the message in English, Russian and Uzbek.",
+    "prefix": "And the missing partner is one entry in a short file: 404, a stable code, and the message in English, Russian and Uzbek.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3421,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 3421
+          },
+          {
+            "text": "the",
+            "startFrame": 3422
+          },
+          {
+            "text": "missing",
+            "startFrame": 3424
+          },
+          {
+            "text": "partner",
+            "startFrame": 3432
+          },
+          {
+            "text": "is",
+            "startFrame": 3444
+          },
+          {
+            "text": "one",
+            "startFrame": 3450
+          },
+          {
+            "text": "entry",
+            "startFrame": 3461
+          }
+        ]
+      },
+      {
+        "startFrame": 3475,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 3475
+          },
+          {
+            "text": "a",
+            "startFrame": 3478
+          },
+          {
+            "text": "short",
+            "startFrame": 3479
+          },
+          {
+            "text": "file:",
+            "startFrame": 3488
+          }
+        ]
+      },
+      {
+        "startFrame": 3516,
+        "words": [
+          {
+            "text": "404,",
+            "startFrame": 3516
+          },
+          {
+            "text": "a",
+            "startFrame": 3559
+          },
+          {
+            "text": "stable",
+            "startFrame": 3561
+          },
+          {
+            "text": "code,",
+            "startFrame": 3572
+          }
+        ]
+      },
+      {
+        "startFrame": 3596,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3596
+          },
+          {
+            "text": "the",
+            "startFrame": 3597
+          },
+          {
+            "text": "message",
+            "startFrame": 3599
+          },
+          {
+            "text": "in",
+            "startFrame": 3611
+          },
+          {
+            "text": "English,",
+            "startFrame": 3616
+          }
+        ]
+      },
+      {
+        "startFrame": 3640,
+        "words": [
+          {
+            "text": "Russian",
+            "startFrame": 3640
+          },
+          {
+            "text": "and",
+            "startFrame": 3657
+          },
+          {
+            "text": "Uzbek.",
+            "startFrame": 3661
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 28,
-    "startFrame": 4143,
-    "endFrame": 4281,
+    "startFrame": 3690,
+    "endFrame": 3853,
     "text": "Rules, rulebook, board, then play: the order of every lesson from here.",
     "prefix": "Rules, rulebook, board, then play: the order of every lesson from here.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3691,
+        "words": [
+          {
+            "text": "Rules,",
+            "startFrame": 3691
+          },
+          {
+            "text": "rulebook,",
+            "startFrame": 3712
+          },
+          {
+            "text": "board,",
+            "startFrame": 3735
+          }
+        ]
+      },
+      {
+        "startFrame": 3759,
+        "words": [
+          {
+            "text": "then",
+            "startFrame": 3759
+          },
+          {
+            "text": "play:",
+            "startFrame": 3765
+          },
+          {
+            "text": "the",
+            "startFrame": 3791
+          },
+          {
+            "text": "order",
+            "startFrame": 3793
+          },
+          {
+            "text": "of",
+            "startFrame": 3802
+          },
+          {
+            "text": "every",
+            "startFrame": 3810
+          },
+          {
+            "text": "lesson",
+            "startFrame": 3818
+          },
+          {
+            "text": "from",
+            "startFrame": 3828
+          },
+          {
+            "text": "here.",
+            "startFrame": 3832
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 29,
-    "startFrame": 4282,
-    "endFrame": 4427,
+    "startFrame": 3854,
+    "endFrame": 3981,
     "text": "Next module: the merchants, starting with how they sign up.",
     "prefix": "Next module: the merchants, starting with how they sign up.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3855,
+        "words": [
+          {
+            "text": "Next",
+            "startFrame": 3855
+          },
+          {
+            "text": "module:",
+            "startFrame": 3860
+          },
+          {
+            "text": "the",
+            "startFrame": 3887
+          },
+          {
+            "text": "merchants,",
+            "startFrame": 3889
+          }
+        ]
+      },
+      {
+        "startFrame": 3905,
+        "words": [
+          {
+            "text": "starting",
+            "startFrame": 3905
+          },
+          {
+            "text": "with",
+            "startFrame": 3913
+          },
+          {
+            "text": "how",
+            "startFrame": 3916
+          },
+          {
+            "text": "they",
+            "startFrame": 3919
+          },
+          {
+            "text": "sign",
+            "startFrame": 3923
+          },
+          {
+            "text": "up.",
+            "startFrame": 3933
+          }
+        ]
+      }
+    ]
   }
 ]
