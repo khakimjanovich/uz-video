@@ -1,0 +1,254 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 127,
+    "text": "How do you keep one app from turning into a tangle?",
+    "prefix": "How do you keep one app from turning into a tangle?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 128,
+    "endFrame": 254,
+    "text": "Picture a payments product that starts as one Spring Boot app.",
+    "prefix": "Picture a payments product that starts as one Spring Boot app.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 255,
+    "endFrame": 427,
+    "text": "Within a year, the payment code reads the merchant table directly, because it was quicker.",
+    "prefix": "Within a year, the payment code reads the merchant table directly, because it was quicker.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 428,
+    "endFrame": 497,
+    "text": "Then a fee change breaks refunds.",
+    "prefix": "Then a fee change breaks refunds.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 497,
+    "endFrame": 727,
+    "text": "Splitting into many small services on day one costs a network hop, a deploy and a database for every feature.",
+    "prefix": "Splitting into many small services on day one costs a network hop, a deploy and a database for every feature.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 728,
+    "endFrame": 820,
+    "text": "There is a middle way: an apartment building.",
+    "prefix": "There is a middle way: an apartment building.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 820,
+    "endFrame": 958,
+    "text": "One building, with walled flats, front doors, and plumbing shared by all.",
+    "prefix": "One building, with walled flats, front doors, and plumbing shared by all.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 959,
+    "endFrame": 1131,
+    "text": "ecom is a modular monolith: one Spring Boot app, deployed once, built from five modules.",
+    "prefix": "ecom is a modular monolith: one Spring Boot app, deployed once, built from five modules.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1132,
+    "endFrame": 1212,
+    "text": "Each module is a flat with walls.",
+    "prefix": "Each module is a flat with walls.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1213,
+    "endFrame": 1374,
+    "text": "A module cannot use another module's code, and if it tries, the build fails.",
+    "prefix": "A module cannot use another module's code, and if it tries, the build fails.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1374,
+    "endFrame": 1466,
+    "text": "Instead, it knocks on the other module's door.",
+    "prefix": "Instead, it knocks on the other module's door.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1466,
+    "endFrame": 1650,
+    "text": "That door is an internal contract: the few operations a module lets its neighbours ask for.",
+    "prefix": "That door is an internal contract: the few operations a module lets its neighbours ask for.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1651,
+    "endFrame": 1777,
+    "text": "Inside one app, the door is answered in the same process.",
+    "prefix": "Inside one app, the door is answered in the same process.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1778,
+    "endFrame": 2008,
+    "text": "If a module ever moves out, the same door is answered over HTTP, and the caller's code does not change.",
+    "prefix": "If a module ever moves out, the same door is answered over HTTP, and the caller's code does not change.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 2009,
+    "endFrame": 2193,
+    "text": "Each contract is written by hand first, and the code is generated from it, never edited.",
+    "prefix": "Each contract is written by hand first, and the code is generated from it, never edited.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2193,
+    "endFrame": 2331,
+    "text": "And every service needs the same plumbing: errors, settings, security, the database.",
+    "prefix": "And every service needs the same plumbing: errors, settings, security, the database.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2332,
+    "endFrame": 2481,
+    "text": "That is the platform library set, written once, and pinned in one line.",
+    "prefix": "That is the platform library set, written once, and pinned in one line.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2482,
+    "endFrame": 2574,
+    "text": "Now see the wall in the build files.",
+    "prefix": "Now see the wall in the build files.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2574,
+    "endFrame": 2712,
+    "text": "The payment module's build lists only other modules' contracts, never their code.",
+    "prefix": "The payment module's build lists only other modules' contracts, never their code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2713,
+    "endFrame": 2804,
+    "text": "And two architecture rules run with every build.",
+    "prefix": "And two architecture rules run with every build.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 2805,
+    "endFrame": 2908,
+    "text": "One checks that modules stay inside their own walls.",
+    "prefix": "One checks that modules stay inside their own walls.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 2909,
+    "endFrame": 3000,
+    "text": "The other checks that controllers call only services.",
+    "prefix": "The other checks that controllers call only services.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 3001,
+    "endFrame": 3070,
+    "text": "Now break the wall on purpose.",
+    "prefix": "Now break the wall on purpose.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 24,
+    "startFrame": 3070,
+    "endFrame": 3174,
+    "text": "Make the payment module import the partner module's repository.",
+    "prefix": "Make the payment module import the partner module's repository.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 25,
+    "startFrame": 3174,
+    "endFrame": 3358,
+    "text": "Run the build, and it fails at once: the payment module cannot even see that package.",
+    "prefix": "Run the build, and it fails at once: the payment module cannot even see that package.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 26,
+    "startFrame": 3359,
+    "endFrame": 3474,
+    "text": "Put the file back, and the wall is whole again.",
+    "prefix": "Put the file back, and the wall is whole again.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 27,
+    "startFrame": 3474,
+    "endFrame": 3589,
+    "text": "One building, walled flats, and one shared set of pipes.",
+    "prefix": "One building, walled flats, and one shared set of pipes.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 28,
+    "startFrame": 3589,
+    "endFrame": 3746,
+    "text": "Next: how one feature goes from rules, to contract, to database.",
+    "prefix": "Next: how one feature goes from rules, to contract, to database.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

@@ -51,6 +51,9 @@ export const BUILD_CATALOG = {
   ctBin: { label: "Per first digits" },
   ctAddress: { label: "Per address" },
   ctShop: { label: "Per shop" },
+  partnerTable: { label: "Merchant table", sublabel: "Partner's own", art: "journal" },
+  door: { label: "Internal contract", sublabel: "/internal operations", art: "transit" },
+  generated: { label: "Generated code", sublabel: "build/ · never edited", art: "workflow" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },

@@ -1,0 +1,111 @@
+1
+00:00:00,050 --> 00:00:04,230
+How do you keep one app from turning into a tangle?
+
+2
+00:00:04,280 --> 00:00:08,461
+Picture a payments product that starts as one Spring Boot app.
+
+3
+00:00:08,511 --> 00:00:14,230
+Within a year, the payment code reads the merchant table directly, because it was quicker.
+
+4
+00:00:14,280 --> 00:00:16,538
+Then a fee change breaks refunds.
+
+5
+00:00:16,588 --> 00:00:24,230
+Splitting into many small services on day one costs a network hop, a deploy and a database for every feature.
+
+6
+00:00:24,280 --> 00:00:27,307
+There is a middle way: an apartment building.
+
+7
+00:00:27,357 --> 00:00:31,923
+One building, with walled flats, front doors, and plumbing shared by all.
+
+8
+00:00:31,973 --> 00:00:37,692
+ecom is a modular monolith: one Spring Boot app, deployed once, built from five modules.
+
+9
+00:00:37,742 --> 00:00:40,384
+Each module is a flat with walls.
+
+10
+00:00:40,434 --> 00:00:45,769
+A module cannot use another module's code, and if it tries, the build fails.
+
+11
+00:00:45,819 --> 00:00:48,846
+Instead, it knocks on the other module's door.
+
+12
+00:00:48,896 --> 00:00:54,999
+That door is an internal contract: the few operations a module lets its neighbours ask for.
+
+13
+00:00:55,049 --> 00:00:59,230
+Inside one app, the door is answered in the same process.
+
+14
+00:00:59,280 --> 00:01:06,923
+If a module ever moves out, the same door is answered over HTTP, and the caller's code does not change.
+
+15
+00:01:06,973 --> 00:01:13,076
+Each contract is written by hand first, and the code is generated from it, never edited.
+
+16
+00:01:13,126 --> 00:01:17,692
+And every service needs the same plumbing: errors, settings, security, the database.
+
+17
+00:01:17,742 --> 00:01:22,692
+That is the platform library set, written once, and pinned in one line.
+
+18
+00:01:22,742 --> 00:01:25,769
+Now see the wall in the build files.
+
+19
+00:01:25,819 --> 00:01:30,384
+The payment module's build lists only other modules' contracts, never their code.
+
+20
+00:01:30,434 --> 00:01:33,461
+And two architecture rules run with every build.
+
+21
+00:01:33,511 --> 00:01:36,923
+One checks that modules stay inside their own walls.
+
+22
+00:01:36,973 --> 00:01:40,000
+The other checks that controllers call only services.
+
+23
+00:01:40,050 --> 00:01:42,307
+Now break the wall on purpose.
+
+24
+00:01:42,357 --> 00:01:45,769
+Make the payment module import the partner module's repository.
+
+25
+00:01:45,819 --> 00:01:51,923
+Run the build, and it fails at once: the payment module cannot even see that package.
+
+26
+00:01:51,973 --> 00:01:55,769
+Put the file back, and the wall is whole again.
+
+27
+00:01:55,819 --> 00:01:59,615
+One building, walled flats, and one shared set of pipes.
+
+28
+00:01:59,665 --> 00:02:03,846
+Next: how one feature goes from rules, to contract, to database.
