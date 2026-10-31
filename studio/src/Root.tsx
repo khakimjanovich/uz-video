@@ -53,7 +53,7 @@ import { Yt23HardeningComposition } from "./reels/yt-23-hardening";
 
 import { Yt24DeliveryComposition } from "./reels/yt-24-delivery";
 
-import { Yt25ExtractionComposition } from "./reels/yt-25-extraction";
+import { Yt25CardsUnitComposition } from "./reels/yt-25-cards-unit";
 
 // Register reels here, e.g. <MyReelComposition /> from "./reels/my-reel".
 export const RemotionRoot: React.FC = () => {
@@ -87,7 +87,7 @@ export const RemotionRoot: React.FC = () => {
       <Yt22BillingComposition />
       <Yt23HardeningComposition />
       <Yt24DeliveryComposition />
-      <Yt25ExtractionComposition />
+      <Yt25CardsUnitComposition />
     </>
   );
 };

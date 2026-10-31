@@ -52,6 +52,10 @@ export const BUILD_CATALOG = {
   reconciliation: { label: "Reconciliation", sublabel: "Ours vs scheme", art: "journal" },
   cardsKeycloak: { label: "Keycloak", sublabel: "Cards unit", logo: siKeycloak.path },
   cardsVault: { label: "Vault", sublabel: "Transit · PKI", logo: siVault.path },
+  cardsPostgres: { label: "Postgres", sublabel: "Cards unit", logo: siPostgresql.path },
+  ingress: { label: "Payer door", sublabel: "cards-ingress", art: "tray" },
+  partnerdoor: { label: "Partner door", sublabel: "cards-partner", art: "transit" },
+  mobile: { label: "Mobile backend", sublabel: "Another caller", art: "workflow" },
   // delivery: who opens Vault, who owns an environment
   keyholders: { label: "Keyholders", sublabel: "5 shares · any 3", art: "checker" },
   bankteam: { label: "Bank's team", sublabel: "Its Git · change control", art: "bank" },

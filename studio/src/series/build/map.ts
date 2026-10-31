@@ -8,7 +8,7 @@ export type BuildNodeId =
   | "partner" | "commission" | "epos" | "payment" | "reconciliation"
   | "emailport" | "procport"
   | "postgres" | "redis" | "keycloak" | "vault" | "s3" | "temporal" | "kafka" | "observability"
-  | "frame" | "card" | "adapters" | "cardsinfra"
+  | "frame" | "card" | "bin" | "adapters" | "cardsinfra"
   | "emailsvc" | "procsvc"
   | "kubernetes";
 
@@ -36,13 +36,15 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   kafka: { label: "Kafka", x: 456, y: 220, w: 58, h: 52, logos: [siApachekafka.path] },
   observability: { label: "Observe", x: 518, y: 220, w: 58, h: 52, logos: [siPrometheus.path, siGrafana.path] },
   // The cards unit: the card zone, with its own infrastructure.
-  frame: { label: "Card frame", sub: "Payer door", x: 246, y: 344, w: 90, h: 56 },
-  card: { label: "Card vault", sub: "Tokens", x: 344, y: 344, w: 90, h: 56 },
-  adapters: { label: "Adapters", sub: "Uzcard, Humo", x: 442, y: 344, w: 90, h: 56 },
-  cardsinfra: { label: "Own infra", x: 540, y: 344, w: 90, h: 56, logos: [siPostgresql.path, siVault.path, siKeycloak.path] },
+  // card-vault is one service with two modules: card and BIN.
+  frame: { label: "Frame", sub: "Card entry", x: 216, y: 344, w: 76, h: 56 },
+  card: { label: "Card vault", sub: "Tokens", x: 298, y: 344, w: 96, h: 56 },
+  bin: { label: "BIN", sub: "Issuers", x: 400, y: 344, w: 56, h: 56 },
+  adapters: { label: "Adapters", sub: "Per centre", x: 462, y: 344, w: 92, h: 56 },
+  cardsinfra: { label: "Own infra", x: 560, y: 344, w: 70, h: 56, logos: [siPostgresql.path, siVault.path, siKeycloak.path] },
   // Outside both units.
   emailsvc: { label: "SMTP", sub: "Mailpit locally", x: 52, y: 440, w: 160, h: 48 },
-  procsvc: { label: "Uzcard + Humo", sub: "SV-Gate · Payment Server", x: 400, y: 440, w: 230, h: 48 },
+  procsvc: { label: "Card processing centres", sub: "One protocol each", x: 400, y: 440, w: 230, h: 48 },
   // Not a box: the delivery frame around both units, each a Docker Compose install (drawn by BuildMap as a dashed frame).
   // The id stays "kubernetes" so earlier episodes' steps keep pointing at part 5.
   kubernetes: { label: "Compose × 2", x: 28, y: 66, w: 624, h: 354, logos: [siDocker.path] },
@@ -56,20 +58,20 @@ export const BUILD_ARROWS: [number, number, number][] = [
   [560, 160, 172],
   [194, 208, 440],
   [389, 208, 344],
-  [487, 400, 440],
+  [517, 400, 440],
 ];
 
 // The unit boundaries: ecom (modular monolith) and the cards unit (the card zone).
 export const UNIT_BOXES = [
   { x: 40, y: 78, w: 600, h: 204, label: "ecom · modular monolith" },
-  { x: 236, y: 312, w: 404, h: 100, label: "cards unit" },
+  { x: 206, y: 312, w: 434, h: 100, label: "cards unit" },
 ];
 
 export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes: BuildNodeId[] }[] = [
   { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis", "emailsvc", "s3", "keycloak", "vault", "observability", "temporal", "kafka"] },
   { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle + documents", "Four-eyes", "Keycloak clients", "Merchant users", "Sales points", "Platform libraries"], nodes: ["partner", "emailport", "admin"] },
   { n: 2, title: "Money rules", episodes: ["Commission", "e-POS terminals"], nodes: ["commission", "epos"] },
-  { n: 3, title: "Cards", episodes: ["Uzcard + Humo adapters", "Card vault + BIN"], nodes: ["card", "adapters", "cardsinfra", "procport", "procsvc"] },
+  { n: 3, title: "Cards", episodes: ["Processing adapters", "Card vault + BIN"], nodes: ["card", "bin", "adapters", "cardsinfra", "procport", "procsvc"] },
   { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Payment page", "The debit", "Observability", "When processing goes silent", "Outbox + Kafka", "Links", "Refunds", "Daily reports", "Hardening", "Disputes", "Reconciliation"], nodes: ["payment", "frame", "reconciliation", "merchant", "buyer"] },
   { n: 5, title: "Growing up", episodes: ["Delivery", "The cards unit"], nodes: ["kubernetes"] },
 ];

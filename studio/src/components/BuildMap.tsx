@@ -93,12 +93,13 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
                 strokeDasharray={isCurrent || isBuilt ? undefined : "4 4"}
               />
               {n.logos?.map((d, k) => {
-                const size = 24;
+                // Logos are 24-unit icons; shrink them when a narrow box can't hold them all.
                 const gap = 6;
+                const size = Math.min(24, (n.w - 12 - (n.logos!.length - 1) * gap) / n.logos!.length);
                 const total = n.logos!.length * size + (n.logos!.length - 1) * gap;
                 const lx = cx - total / 2 + k * (size + gap);
                 return (
-                  <path key={k} d={d} transform={`translate(${lx} ${n.y + 9})`}
+                  <path key={k} d={d} transform={`translate(${lx} ${n.y + 9}) scale(${size / 24})`}
                     fill={isCurrent ? "var(--paper)" : isBuilt ? "var(--ink)" : "var(--ink-muted)"} />
                 );
               })}

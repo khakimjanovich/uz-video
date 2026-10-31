@@ -1,67 +1,79 @@
 1
-00:00:00,050 --> 00:00:04,320
+00:00:00,050 --> 00:00:04,368
 Where does the buyer type their card number: on the shop's site, or on the bank's?
 
 2
-00:00:04,370 --> 00:00:11,184
+00:00:04,418 --> 00:00:11,544
 If shops collected card numbers, every shop would need PCI DSS, and one shop's breach would leak cards.
 
 3
-00:00:11,234 --> 00:00:17,712
+00:00:11,594 --> 00:00:17,928
 So the merchant sends the buyer to the bank's own payment page, through the one-time link it got when it created the payment.
 
 4
-00:00:17,762 --> 00:00:26,376
+00:00:17,978 --> 00:00:25,848
 The link's token is the only credential: the database keeps only its hash, and after the configured time the link works no more.
 
 5
-00:00:26,426 --> 00:00:34,368
-Reading the page changes nothing: it shows the website's name and logo, the amount, the order, and the cards the website accepts.
+00:00:25,898 --> 00:00:33,840
+Reading the page shows the website, the amount and the order, and opens a card-entry session in card-vault, the cards unit's own service.
 
 6
-00:00:34,418 --> 00:00:42,312
-The buyer types the card, and the BIN module names its scheme and bank first, so a card the website doesn't accept never gets a code.
+00:00:33,890 --> 00:00:43,992
+The session lists only the schemes the website accepts that have a live e POS terminal right now, speaks the buyer's language, and carries the sales point as its risk reference.
 
 7
-00:00:42,362 --> 00:00:49,032
-The page asks for the expiry as printed on the card, month then year, and names that format when the month is wrong.
+00:00:44,042 --> 00:00:50,712
+The buyer types the card and the code into card-vault's frame inside the page, so ecom never sees a card number.
 
 8
-00:00:49,082 --> 00:00:58,560
-The card module checks the Luhn digit, stores the number encrypted, and asks the card's scheme, through its adapter, to send a one-time code to the cardholder's phone.
+00:00:50,762 --> 00:01:01,632
+The frame answers to one parent page only, through frame-ancestors, and its content security policy and subresource integrity let nothing run but its own two files.
 
 9
-00:00:58,610 --> 00:01:07,416
-A Humo card gets a code only when it is active and has a mobile banking phone, and a card Uzcard reports as blocked, lost or expired is never bound.
+00:01:01,682 --> 00:01:09,648
+Those two files are the whole script inventory that PCI DSS asks for, and every load the browser blocks is reported back and logged.
 
 10
-00:01:07,466 --> 00:01:13,488
-Each code gets its own binding, so two payments with the same card never overwrite each other's code.
+00:01:09,698 --> 00:01:14,616
+A card of a scheme the website doesn't accept is refused before any code is sent.
 
 11
-00:01:13,538 --> 00:01:20,880
-The page now shows the bank, the scheme and the card's last four digits, kept in the payment's card columns, and waits for the code.
+00:01:14,666 --> 00:01:23,832
+When the code is right, the frame posts the card token, the masked number, the expiry, the scheme and the issuing bank to the page, and nothing more.
 
 12
-00:01:20,930 --> 00:01:26,064
-The right code confirms the card through the same scheme, and the payment is ready to debit.
+00:01:23,882 --> 00:01:30,864
+That token travels through the buyer's browser, so ecom asks card-vault whether this payment's session is bound with that same token.
 
 13
-00:01:26,114 --> 00:01:32,712
-Every attempt is counted, and committed before the scheme is asked, so a failed attempt still counts.
+00:01:30,914 --> 00:01:37,320
+Only then the payment keeps the card, by token, mask, scheme and bank, and the debit starts in the same call.
 
 14
-00:01:32,762 --> 00:01:38,592
-Three cards, and three codes for each card, are allowed, and both numbers are configuration.
+00:01:37,370 --> 00:01:44,160
+Attempts belong to the session, and how many cards and codes one session allows is the caller's configured setting.
 
 15
-00:01:38,642 --> 00:01:41,976
-When the last attempt fails, the page closes for good.
+00:01:44,210 --> 00:01:52,824
+Each attempt is claimed by one atomic update before the scheme is asked, so parallel posts can't pass the limit, and a refused card still counts.
 
 16
-00:01:42,026 --> 00:01:52,680
-One step runs at a time: a second click while the scheme is still answering is refused by a lock in Redis, which only its holder releases, and which outlives the slowest scheme call.
+00:01:52,874 --> 00:02:03,120
+The last refusal ends the session, the frame tells the page so, and the page opens a fresh session, up to the configured number; past it, the payment fails.
 
 17
-00:01:52,730 --> 00:01:56,016
+00:02:03,170 --> 00:02:12,240
+Card-vault also holds fraud limits against card testing: refused cards and codes are counted per card, per BIN, per payer address and per risk reference.
+
+18
+00:02:12,290 --> 00:02:20,808
+Past a limit, a new card, code or session is refused before any scheme is asked, and the page says card entry is limited for now.
+
+19
+00:02:20,858 --> 00:02:28,752
+One step runs at a time: a second click while the first is still running is refused by a lock in Redis, which only its holder releases.
+
+20
+00:02:28,802 --> 00:02:32,568
 Next, the moment the money actually moves: the debit.
