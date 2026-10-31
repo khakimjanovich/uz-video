@@ -11,14 +11,18 @@ const subtitles = subtitlesJson as SubtitleCue[];
 const TITLES = [
   "Build it yourself",
   "The map",
-  "Users + one app",
+  "Three users",
+  "ecom · five modules",
   "Partner",
   "Commission",
   "e-POS",
-  "BIN",
-  "Card vault",
   "Payment",
-  "Separate services",
+  "Reconciliation",
+  "The cards unit",
+  "Card frame",
+  "Card vault",
+  "BIN",
+  "Adapters",
   "Infrastructure",
   "Part 0 · Foundations",
   "Part 1 · Merchants",
@@ -26,7 +30,7 @@ const TITLES = [
   "Part 3 · Cards",
   "Part 4 · Payments",
   "Part 5 · Growing up",
-  "Next: setup",
+  "Next: acquiring",
 ];
 
 const Yt00Map: React.FC<ReelProps> = ({ theme }) => (

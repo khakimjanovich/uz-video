@@ -6,7 +6,7 @@ import { tableStep } from "../../series/build/tables";
 // Episode 13: the BIN module and the card vault, in the cards unit.
 // Code beats quote the cards and contracts repositories (main).
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 3, current: ["card"], built: [...builtBefore(3), "adapters", "cardsinfra", "procport", "procsvc"] },
+  { cue: 0, part: 3, current: ["card", "bin"], built: [...builtBefore(3), "adapters", "cardsinfra", "procport", "procsvc"] },
   { cue: 19, part: 4, current: ["payment", "merchant"], built: builtBefore(4) },
 ];
 
