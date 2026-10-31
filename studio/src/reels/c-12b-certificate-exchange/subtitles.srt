@@ -1,0 +1,51 @@
+1
+00:00:00,050 --> 00:00:04,872
+How does ecom get a certificate from the card zone without handing over its secret key?
+
+2
+00:00:04,922 --> 00:00:08,136
+To get a passport, you send an application with your photo.
+
+3
+00:00:08,186 --> 00:00:10,704
+The passport office checks it and stamps it.
+
+4
+00:00:10,754 --> 00:00:13,488
+It never needs your face, only the photo.
+
+5
+00:00:13,538 --> 00:00:15,360
+A caller does the same.
+
+6
+00:00:15,410 --> 00:00:19,272
+It makes its private key in its own Vault, where the key stays.
+
+7
+00:00:19,322 --> 00:00:23,664
+It sends only an application: a certificate signing request.
+
+8
+00:00:23,714 --> 00:00:30,504
+The card zone's certificate authority, its passport office, checks that the caller is on its list, and signs it for a limited time.
+
+9
+00:00:30,554 --> 00:00:41,376
+One folder comes back: the certificate, the office's own seal so the caller can recognise the real card zone, a secret for the login server, and the addresses to call.
+
+10
+00:00:41,426 --> 00:00:43,920
+The caller stores the folder in its own Vault.
+
+11
+00:00:43,970 --> 00:00:47,496
+No private key ever crosses between the two products.
+
+12
+00:00:47,546 --> 00:00:52,800
+And every certificate is watched, so a warning goes out well before it expires.
+
+13
+00:00:52,850 --> 00:00:57,168
+Next: how the card zone stops a thief testing stolen cards.
