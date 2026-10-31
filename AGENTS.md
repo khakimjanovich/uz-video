@@ -188,3 +188,12 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `CSR` | C S R |
 | `mTLS` | mutual T L S |
 | `ctk_…` | card token |
+| `CDE` | C D E |
+| `NSC` | N S C |
+| `QSA` | Q S A |
+| `CSP` | C S P |
+| `v4.0.1` | version four point zero point one |
+| `127.0.0.1` | one two seven, zero, zero, one |
+| `404` | four oh four |
+| `nginx` | engine X |
+| `cards-ingress`, `cards-partner` | cards ingress, cards partner (no hyphen) |

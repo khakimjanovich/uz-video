@@ -1,0 +1,470 @@
+[
+  {
+    "index": 1,
+    "startFrame": 0,
+    "endFrame": 178,
+    "text": "Where may a card number live in your system, and what does that one choice decide?",
+    "prefix": "Where may a card number live in your system, and what does that one choice decide?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 178,
+    "endFrame": 334,
+    "text": "Take a shop whose checkout keeps card numbers in its orders table, for refunds.",
+    "prefix": "Take a shop whose checkout keeps card numbers in its orders table, for refunds.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 334,
+    "endFrame": 556,
+    "text": "Reporting reads that table, a backup copies it every night, and every service and every developer's laptop can reach it.",
+    "prefix": "Reporting reads that table, a backup copies it every night, and every service and every developer's laptop can reach it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 556,
+    "endFrame": 723,
+    "text": "Ask where the card numbers are, and the honest answer is: everywhere the orders go.",
+    "prefix": "Ask where the card numbers are, and the honest answer is: everywhere the orders go.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 723,
+    "endFrame": 990,
+    "text": "Every one of those systems now needs its network rules listed, its logins named, its logs kept for a year, and its changes controlled.",
+    "prefix": "Every one of those systems now needs its network rules listed, its logins named, its logs kept for a year, and its changes controlled.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 990,
+    "endFrame": 1168,
+    "text": "A fee change waits for a card data review, and one weak laptop leaks every card.",
+    "prefix": "A fee change waits for a card data review, and one weak laptop leaks every card.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1168,
+    "endFrame": 1401,
+    "text": "The standard itself gives the way out: keep card data in as few places as possible, and wall those places off.",
+    "prefix": "The standard itself gives the way out: keep card data in as few places as possible, and wall those places off.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1401,
+    "endFrame": 1645,
+    "text": "Then most of the system meets fewer requirements, and the part that meets all of them is small enough to get right.",
+    "prefix": "Then most of the system meets fewer requirements, and the part that meets all of them is small enough to get right.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1645,
+    "endFrame": 1989,
+    "text": "P C I D S S is the card schemes' security standard for anyone who stores, processes or transmits account data, and this course follows version four point zero point one.",
+    "prefix": "P C I D S S is the card schemes' security standard for anyone who stores, processes or transmits account data, and this course follows version four point zero point one.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1989,
+    "endFrame": 2222,
+    "text": "Its scope starts with the cardholder data environment, the C D E: every system that stores, processes or transmits that data.",
+    "prefix": "Its scope starts with the cardholder data environment, the C D E: every system that stores, processes or transmits that data.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 2222,
+    "endFrame": 2389,
+    "text": "Any system with unrestricted connectivity to those systems belongs to the C D E too.",
+    "prefix": "Any system with unrestricted connectivity to those systems belongs to the C D E too.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 2389,
+    "endFrame": 2600,
+    "text": "Systems that could impact its security are in scope as well: authentication servers, key stores, logging, and name resolution.",
+    "prefix": "Systems that could impact its security are in scope as well: authentication servers, key stores, logging, and name resolution.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 2600,
+    "endFrame": 2678,
+    "text": "Without segmentation, that is the whole network.",
+    "prefix": "Without segmentation, that is the whole network.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 2678,
+    "endFrame": 2934,
+    "text": "Segmentation isolates the C D E behind network security controls, N S Cs, such as firewalls that allow only the flows it needs.",
+    "prefix": "Segmentation isolates the C D E behind network security controls, N S Cs, such as firewalls that allow only the flows it needs.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 2934,
+    "endFrame": 3078,
+    "text": "The standard does not require it, but it reduces scope, cost and risk.",
+    "prefix": "The standard does not require it, but it reduces scope, cost and risk.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 3078,
+    "endFrame": 3334,
+    "text": "To be out of scope, a system must be isolated so well that, even if it is compromised, it cannot impact card data.",
+    "prefix": "To be out of scope, a system must be isolated so well that, even if it is compromised, it cannot impact card data.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 3334,
+    "endFrame": 3612,
+    "text": "In this system, the C D E is the cards unit: the card frame, the card vault, the BIN module, the adapters, and their infrastructure.",
+    "prefix": "In this system, the C D E is the cards unit: the card frame, the card vault, the BIN module, the adapters, and their infrastructure.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 3612,
+    "endFrame": 3690,
+    "text": "This course calls it the card zone.",
+    "prefix": "This course calls it the card zone.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 3690,
+    "endFrame": 3879,
+    "text": "The card zone shares nothing: it runs its own Postgres, Vault, Keycloak and observability, separate from ecom's.",
+    "prefix": "The card zone shares nothing: it runs its own Postgres, Vault, Keycloak and observability, separate from ecom's.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 3879,
+    "endFrame": 3968,
+    "text": "Anything it shared would be in scope too.",
+    "prefix": "Anything it shared would be in scope too.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 3968,
+    "endFrame": 4028,
+    "text": "Only two doors are open.",
+    "prefix": "Only two doors are open.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 4028,
+    "endFrame": 4172,
+    "text": "Cards ingress is the door for payers' browsers, which load the card frame.",
+    "prefix": "Cards ingress is the door for payers' browsers, which load the card frame.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 4172,
+    "endFrame": 4316,
+    "text": "Cards partner is the door for callers in other units, such as ecom.",
+    "prefix": "Cards partner is the door for callers in other units, such as ecom.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 24,
+    "startFrame": 4316,
+    "endFrame": 4516,
+    "text": "The card database is reachable from nowhere outside the unit, and lesson twelve covers both doors in detail.",
+    "prefix": "The card database is reachable from nowhere outside the unit, and lesson twelve covers both doors in detail.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 25,
+    "startFrame": 4516,
+    "endFrame": 4716,
+    "text": "ecom never stores, processes or transmits a card number, so it is not in the C D E.",
+    "prefix": "ecom never stores, processes or transmits a card number, so it is not in the C D E.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 26,
+    "startFrame": 4716,
+    "endFrame": 5005,
+    "text": "It is still in scope, as a connected-to system and a security-impacting one: it calls the card zone, and its payment page embeds the card frame.",
+    "prefix": "It is still in scope, as a connected-to system and a security-impacting one: it calls the card zone, and its payment page embeds the card frame.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 27,
+    "startFrame": 5005,
+    "endFrame": 5172,
+    "text": "The card zone shrinks ecom's scope without removing it, and lesson five draws that line.",
+    "prefix": "The card zone shrinks ecom's scope without removing it, and lesson five draws that line.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 28,
+    "startFrame": 5172,
+    "endFrame": 5261,
+    "text": "The standard groups twelve requirements under six goals.",
+    "prefix": "The standard groups twelve requirements under six goals.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 29,
+    "startFrame": 5261,
+    "endFrame": 5350,
+    "text": "Every later lesson names the requirements it meets.",
+    "prefix": "Every later lesson names the requirements it meets.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 30,
+    "startFrame": 5350,
+    "endFrame": 5428,
+    "text": "Who meets them is split three ways.",
+    "prefix": "Who meets them is split three ways.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 31,
+    "startFrame": 5428,
+    "endFrame": 5617,
+    "text": "The product meets some in code: card numbers are sealed by Vault Transit before they reach Postgres.",
+    "prefix": "The product meets some in code: card numbers are sealed by Vault Transit before they reach Postgres.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 32,
+    "startFrame": 5617,
+    "endFrame": 5828,
+    "text": "The bank meets others with its own zone, such as the physical security of the host and its media.",
+    "prefix": "The bank meets others with its own zone, such as the physical security of the host and its media.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 33,
+    "startFrame": 5828,
+    "endFrame": 6050,
+    "text": "Some are shared: Vault opens with three of five unseal shares, and the bank makes sure no one holds two.",
+    "prefix": "Some are shared: Vault opens with three of five unseal shares, and the bank makes sure no one holds two.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 34,
+    "startFrame": 6050,
+    "endFrame": 6339,
+    "text": "The bank's Qualified Security Assessor, a Q S A, judges all of it inside the bank's assessment, and from here on this course says the assessor.",
+    "prefix": "The bank's Qualified Security Assessor, a Q S A, judges all of it inside the bank's assessment, and from here on this course says the assessor.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 35,
+    "startFrame": 6339,
+    "endFrame": 6506,
+    "text": "The product claims no certificate of its own, and lesson thirty-eight walks the full matrix.",
+    "prefix": "The product claims no certificate of its own, and lesson thirty-eight walks the full matrix.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 36,
+    "startFrame": 6506,
+    "endFrame": 6595,
+    "text": "Now check the boundary on your own laptop.",
+    "prefix": "Now check the boundary on your own laptop.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 37,
+    "startFrame": 6595,
+    "endFrame": 6795,
+    "text": "The implementation guide lists every flow the unit needs, and the unit uses nothing else, in or out.",
+    "prefix": "The implementation guide lists every flow the unit needs, and the unit uses nothing else, in or out.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 38,
+    "startFrame": 6795,
+    "endFrame": 6995,
+    "text": "In: payers' browsers on the public port, callers' hosts on the door port, and the bank's jump host.",
+    "prefix": "In: payers' browsers on the public port, callers' hosts on the door port, and the bank's jump host.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 39,
+    "startFrame": 6995,
+    "endFrame": 7151,
+    "text": "Out: the card processing centres, the image registries, the mail relay, and the repository.",
+    "prefix": "Out: the card processing centres, the image registries, the mail relay, and the repository.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 40,
+    "startFrame": 7151,
+    "endFrame": 7384,
+    "text": "Docker Compose publishes exactly those two doors, each on the address the environment names, and stops if the value is missing.",
+    "prefix": "Docker Compose publishes exactly those two doors, each on the address the environment names, and stops if the value is missing.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 41,
+    "startFrame": 7384,
+    "endFrame": 7551,
+    "text": "The consoles, Keycloak, Mailpit and Grafana, listen on one two seven, zero, zero, one only.",
+    "prefix": "The consoles, Keycloak, Mailpit and Grafana, listen on one two seven, zero, zero, one only.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 42,
+    "startFrame": 7551,
+    "endFrame": 7718,
+    "text": "Postgres publishes no port at all: card data is read through the card vault only.",
+    "prefix": "Postgres publishes no port at all: card data is read through the card vault only.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 43,
+    "startFrame": 7718,
+    "endFrame": 7951,
+    "text": "Behind the payers' door, engine X passes six routes to the card vault and answers four oh four to everything else.",
+    "prefix": "Behind the payers' door, engine X passes six routes to the card vault and answers four oh four to everything else.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 44,
+    "startFrame": 7951,
+    "endFrame": 8262,
+    "text": "They are the entry page, the frame's script and style sheet, the C S P report, and the card and code steps, and lesson twelve explains each one.",
+    "prefix": "They are the entry page, the frame's script and style sheet, the C S P report, and the card and code steps, and lesson twelve explains each one.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 45,
+    "startFrame": 8262,
+    "endFrame": 8395,
+    "text": "With both units running from lesson one, list what each service publishes.",
+    "prefix": "With both units running from lesson one, list what each service publishes.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 46,
+    "startFrame": 8395,
+    "endFrame": 8695,
+    "text": "Two doors on the loopback address, eight four four three and nine four four three, the consoles on loopback too, and Postgres with only its container port.",
+    "prefix": "Two doors on the loopback address, eight four four three and nine four four three, the consoles on loopback too, and Postgres with only its container port.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 47,
+    "startFrame": 8695,
+    "endFrame": 8839,
+    "text": "Then ask the payers' door for the frame script, and for anything else.",
+    "prefix": "Then ask the payers' door for the frame script, and for anything else.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 48,
+    "startFrame": 8839,
+    "endFrame": 9061,
+    "text": "The frame answers two hundred, and the health endpoint answers four oh four, because the door does not pass it.",
+    "prefix": "The frame answers two hundred, and the health endpoint answers four oh four, because the door does not pass it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 49,
+    "startFrame": 9061,
+    "endFrame": 9205,
+    "text": "The installer's check command runs the same two probes, plus every service's health.",
+    "prefix": "The installer's check command runs the same two probes, plus every service's health.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 50,
+    "startFrame": 9205,
+    "endFrame": 9472,
+    "text": "Last, the guide's own table sorts every requirement into product, bank and shared, and rows three and nine hold the examples you just heard.",
+    "prefix": "Last, the guide's own table sorts every requirement into product, bank and shared, and rows three and nine hold the examples you just heard.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 51,
+    "startFrame": 9472,
+    "endFrame": 9705,
+    "text": "You now have a card zone you have checked yourself: two doors, six routes, and a database nobody outside can reach.",
+    "prefix": "You now have a card zone you have checked yourself: two doors, six routes, and a database nobody outside can reach.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 52,
+    "startFrame": 9705,
+    "endFrame": 9805,
+    "text": "Next: the two units, and the contract between them.",
+    "prefix": "Next: the two units, and the contract between them.",
+    "highlight": "",
+    "suffix": ""
+  }
+]
