@@ -17,7 +17,7 @@ export function createEpisode({
   code,
 }: {
   id: string;
-  number: number;
+  number: number | string; // "12b" for a split lesson
   part: number; // the course module (0–8), lit in the panel
   titles: string[];
   footer: string; // right side of the totals line
