@@ -1,0 +1,39 @@
+1
+00:00:00,050 --> 00:00:02,664
+Through which machine does an online payment go?
+
+2
+00:00:02,714 --> 00:00:09,240
+A taxi cannot take fares without a licence plate, and a plate is issued once and never reused.
+
+3
+00:00:09,290 --> 00:00:19,776
+Each online payment goes through a virtual card machine, an e-POS terminal, and its plate is a pair of numbers the card network's centre issues: the merchant id and the terminal id.
+
+4
+00:00:19,826 --> 00:00:23,976
+A bank admin registers the pair for one website and one card.
+
+5
+00:00:24,026 --> 00:00:30,120
+There is only one live terminal per website and card, and a pair is never registered twice.
+
+6
+00:00:30,170 --> 00:00:37,320
+Where a centre requires it, the terminal is registered with the centre too, and kept only if the centre accepts it.
+
+7
+00:00:37,370 --> 00:00:39,696
+Every change is written down.
+
+8
+00:00:39,746 --> 00:00:43,752
+And before every charge, the payment asks for the live terminal.
+
+9
+00:00:43,802 --> 00:00:47,400
+No terminal, no charge, and no money moves.
+
+10
+00:00:47,450 --> 00:00:51,624
+Next: how the bank knows a request really comes from the merchant.

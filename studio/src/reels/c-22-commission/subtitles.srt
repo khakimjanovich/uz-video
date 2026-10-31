@@ -1,0 +1,47 @@
+1
+00:00:00,050 --> 00:00:02,184
+Who decides the bank's fee on a payment?
+
+2
+00:00:02,234 --> 00:00:08,232
+In a supermarket, the tag on the item beats the sign on the aisle, which beats the offer for the whole store.
+
+3
+00:00:08,282 --> 00:00:10,320
+The most specific price wins.
+
+4
+00:00:10,370 --> 00:00:12,528
+The bank's fee works the same way.
+
+5
+00:00:12,578 --> 00:00:19,656
+A fee rule can apply to one website, one merchant, one card, or the whole bank, and the most specific one wins.
+
+6
+00:00:19,706 --> 00:00:25,152
+The fee is a percent of the amount, plus a fixed part, kept between a minimum and a maximum.
+
+7
+00:00:25,202 --> 00:00:30,456
+Money is counted in whole cents, never in fractions, so the percent is rounded once.
+
+8
+00:00:30,506 --> 00:00:32,832
+Rules are never edited in place.
+
+9
+00:00:32,882 --> 00:00:36,408
+A change is proposed, and a second admin approves it.
+
+10
+00:00:36,458 --> 00:00:40,056
+Two rules for the same thing can never apply at the same moment.
+
+11
+00:00:40,106 --> 00:00:48,000
+And every payment keeps the rule it used, its fee, and what the merchant receives, so last month's payments can always be explained.
+
+12
+00:00:48,050 --> 00:00:51,816
+Next: the virtual card machine each payment goes through.
