@@ -1,0 +1,39 @@
+1
+00:00:00,050 --> 00:00:03,288
+How does the bank know a request was really written by the merchant?
+
+2
+00:00:03,338 --> 00:00:06,888
+A token says who you are, not that you wrote this request.
+
+3
+00:00:06,938 --> 00:00:13,584
+So the merchant's server seals every request, like a letter with a wax seal, a date, and a serial number.
+
+4
+00:00:13,634 --> 00:00:21,720
+The seal covers the method, the full address, the token, and the body, and it is made with a signing key only the bank and the merchant hold.
+
+5
+00:00:21,770 --> 00:00:27,720
+The bank checks that the date is fresh, that the body matches the seal, and that the seal is right.
+
+6
+00:00:27,770 --> 00:00:34,464
+Then it spends the serial number, so the same sealed request, recorded and sent again tomorrow, is refused.
+
+7
+00:00:34,514 --> 00:00:36,480
+A changed amount breaks the seal.
+
+8
+00:00:36,530 --> 00:00:38,760
+An old request is too late.
+
+9
+00:00:38,810 --> 00:00:41,136
+A copied request was already used.
+
+10
+00:00:41,186 --> 00:00:45,552
+Next: what happens when the same request arrives twice on purpose.
