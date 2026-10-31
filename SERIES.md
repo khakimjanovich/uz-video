@@ -7,10 +7,9 @@ English first (TTS voice); an Uzbek copy only when asked. Videos never end on a 
 
 | Product | Audience | Goal | Status |
 |---|---|---|---|
-| **Owner pitch**: `pitch-owners`, `pitch-owners-uz` | bank owners | buy or invest | final |
-| **Series B, build it yourself**: plan in [`SERIES-BUILD.md`](SERIES-BUILD.md) | backend programmers | build a working acquiring system | planning |
+| **Series B, build an acquiring system**: [`SERIES-BUILD.md`](SERIES-BUILD.md) | backend developers new to payments | build a working acquiring system | producing |
 
-Retired on 2026-10-18: Tier 1 (`ep01`–`ep07`) and Tier 2 (`t2-00`–`t2-08`). They mixed both audiences; the owner pitch and Series B replace them. Restore from commit `67f4751` if ever needed.
+Retired on 2026-10-18: Tier 1 (`ep01`–`ep07`) and Tier 2 (`t2-00`–`t2-08`). The owner pitch was retired on 2026-11-01 (tag `owner-pitch`). Restore from commit `67f4751` if ever needed.
 
 ## Rules for every video
 
@@ -22,11 +21,6 @@ Retired on 2026-10-18: Tier 1 (`ep01`–`ep07`) and Tier 2 (`t2-00`–`t2-08`). 
 - **Signposting:** name a list once, then number each item as it arrives, with the same name and look.
 - **Terms:** widely known industry names (replay attack, HMAC, nonce, idempotency key, maker-checker), never invented ones.
 - **Sources:** the story comes from the BRD; precision comes from the code. Never mention build status ("planned", "not live"). Settings in the code are "the configured time / role / limit", never their default number.
-
-## Owner pitch (final)
-
-Aziza, a toy-figure shop owner, is the hero. Feeling journey: regret → hope → worry/relief → good greed.
-Opening (Aziza, money skips the bank) → commission + deposits → alert ("four threats") → 1 fake shop, 2 forged payment, 3 double charge, 4 card theft (each worry → relief) → money flow → summary.
 
 ## Later MVPs (BRD only)
 
