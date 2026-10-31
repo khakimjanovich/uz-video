@@ -1,0 +1,39 @@
+1
+00:00:00,050 --> 00:00:03,744
+How do you make sure no single person can open the bank's secrets?
+
+2
+00:00:03,794 --> 00:00:08,328
+Tear a treasure map into five pieces, and give them to five people.
+
+3
+00:00:08,378 --> 00:00:11,976
+Any three can put it together, but no one alone can.
+
+4
+00:00:12,026 --> 00:00:14,136
+Vault is opened the same way.
+
+5
+00:00:14,186 --> 00:00:19,416
+At install, it is split into five key shares, and any three open it.
+
+6
+00:00:19,466 --> 00:00:25,104
+Each keyholder keeps their own share, and nothing of the ceremony is written down anywhere.
+
+7
+00:00:25,154 --> 00:00:31,080
+After every restart, Vault is sealed again, and three keyholders must unseal it.
+
+8
+00:00:31,130 --> 00:00:36,504
+A master key for setup is made only for that session, and always revoked at the end.
+
+9
+00:00:36,554 --> 00:00:42,432
+And because the database backups are unreadable without that Vault, the two are always backed up together.
+
+10
+00:00:42,482 --> 00:00:44,808
+Next: one install, everywhere.
