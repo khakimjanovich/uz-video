@@ -35,6 +35,15 @@ export interface DiagramStep<Id extends string> {
   crossed?: Id[]; // hand-drawn cross-out
   shake?: Partial<Record<Id, number>>; // when each node shakes, as a fraction of the cue (sync to the word that names it)
   badges?: Partial<Record<Id, string>>;
+  frames?: DiagramFrame[]; // labelled boundaries drawn around grid slots (a scope, a network, a wall)
+}
+
+// A boundary around the boxes between two slots (inclusive). "wall" = solid and thick (a network security control).
+export interface DiagramFrame {
+  label: string;
+  from: Slot;
+  to: Slot;
+  tone?: "wall" | "danger";
 }
 
 export interface Zone {
@@ -179,6 +188,23 @@ export function ArchDiagram<Id extends string>({ catalog, steps, zone = REEL_ZON
             </marker>
           ))}
         </defs>
+        {(step.frames ?? []).map((f) => {
+          const a = toPx(g, f.from);
+          const b = toPx(g, f.to);
+          const pad = 34;
+          const isNew = !prev?.frames?.some((pf) => pf.label === f.label);
+          const color = f.tone === "danger" ? "var(--stamp-red)" : f.tone === "wall" ? "var(--ink)" : "var(--ink-muted)";
+          return (
+            <g key={`frame-${f.label}`} opacity={isNew ? drawIn : 1}>
+              <rect x={a.x - g.nw / 2 - pad} y={a.y - g.nh / 2 - pad} width={b.x - a.x + g.nw + 2 * pad} height={b.y - a.y + g.nh + 2 * pad}
+                rx={18} fill="none" stroke={color} strokeWidth={f.tone === "wall" ? 8 : 3} strokeDasharray={f.tone === "wall" ? undefined : "14 10"} />
+              <text x={a.x - g.nw / 2 - pad + 20} y={a.y - g.nh / 2 - pad - 14} fontSize={24} fontWeight={700} fill={color}
+                style={{ textTransform: "uppercase", letterSpacing: 1, fontFamily: "var(--font-mono)" }}>
+                {f.label}
+              </text>
+            </g>
+          );
+        })}
         {edges.map((e) => {
           const isNew = !prev?.edges?.some((pe) => sameEdge(pe, e));
           return (
