@@ -9,7 +9,7 @@ export const Yt13CardVaultComposition = createEpisode({
   part: 3,
   footer: "BIN module + card vault",
   subtitles: subtitlesJson as SubtitleCue[],
-  titles: ["Which scheme? Which bank?", "The BIN", "BIN module", "Idempotent sync", "Added by hand", "From memory", "Bank directory", "Luhn, then BIN", "Plain numbers?", "AES-256-GCM", "Key rotation", "Keys from Vault", "A token instead", "Blind index", "The database refuses", "Decrypt only to pay", "The bank's console", "Next: payments"],
+  titles: ["Where is the number?", "The BIN", "BIN module", "Idempotent sync", "Added by hand", "From memory", "Bank directory", "Luhn, then BIN", "Plain numbers?", "The cards unit", "A token, a role", "Vault Transit", "Key context", "Key rotation", "Blind index", "Fails closed", "The database refuses", "Decrypt only to pay", "Admins: API only", "Next: payments"],
   map,
   diagram,
   code,

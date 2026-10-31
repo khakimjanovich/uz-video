@@ -1,71 +1,79 @@
 1
-00:00:00,050 --> 00:00:06,672
-How does the bank know whether a card is Uzcard or Humo, which bank issued it, and where is its number kept?
+00:00:00,050 --> 00:00:07,440
+How does a bank name a card's scheme and issuer from its first digits, and keep the number itself out of every other system?
 
 2
-00:00:06,722 --> 00:00:10,968
-A card's first digits, its BIN, name the scheme and the bank.
+00:00:07,490 --> 00:00:12,456
+A card's first digits, its BIN, name the scheme and the issuing bank.
 
 3
-00:00:11,018 --> 00:00:18,936
-Both schemes publish their BIN lists, so the BIN module syncs them through the adapters into its own schema, at startup and every night.
+00:00:12,506 --> 00:00:20,904
+Both schemes publish their BIN lists, so the BIN module in card-vault syncs them through the adapters into its own schema, at startup and every night.
 
 4
-00:00:18,986 --> 00:00:25,872
+00:00:20,954 --> 00:00:28,032
 The sync is idempotent, and a scheme that doesn't answer, or answers with nothing, keeps its old list.
 
 5
-00:00:25,922 --> 00:00:31,368
+00:00:28,082 --> 00:00:33,624
 A range the schemes' lists don't carry yet can be added by hand, and no sync removes it.
 
 6
-00:00:31,418 --> 00:00:41,304
+00:00:33,674 --> 00:00:43,608
 Lookups never touch the database: an in-memory index cuts a card's first digits from the longest known BIN length down to the shortest, and the first match wins.
 
 7
-00:00:41,354 --> 00:00:47,640
-A bank directory in the configuration names the issuing bank in English, Russian and Uzbek.
+00:00:43,658 --> 00:00:51,720
+A bank directory in the configuration names each issuer in English, Russian and Uzbek, and without it card-vault doesn't start.
 
 8
-00:00:47,690 --> 00:00:56,640
+00:00:51,770 --> 00:01:01,032
 Before any scheme is asked, the card module checks the Luhn digit, then asks the BIN module for the scheme, sending only the first eight digits.
 
 9
-00:00:56,690 --> 00:01:00,912
-A plain card number in our database would be a disaster on the day of a breach.
+00:01:01,082 --> 00:01:05,064
+A plain card number in a database would be a disaster on the day of a breach.
 
 10
-00:01:00,962 --> 00:01:11,088
-So the crypto platform library seals the number with AES two fifty six GCM: a fresh nonce every time, and the key id is authenticated with it.
+00:01:05,114 --> 00:01:09,912
+So card numbers live in one place only: card-vault, in the cards unit.
 
 11
-00:01:11,138 --> 00:01:16,248
-Each value names its key, so a new key can take over while older data still reads.
+00:01:09,962 --> 00:01:21,192
+Other units hold a card token instead and call card-vault over mutual T L S, where each operation needs its own role: bind, read, debit, reports or admin.
 
 12
-00:01:16,298 --> 00:01:20,304
-The keys themselves come from Vault, never from a configuration file.
+00:01:21,242 --> 00:01:29,568
+Card data is sealed by Vault Transit: card-vault sends a value in and keeps only the ciphertext, so the keys never leave Vault.
 
 13
-00:01:20,354 --> 00:01:26,064
-Other modules get a card token instead, and the same card always gets the same token.
+00:01:29,618 --> 00:01:36,984
+Each value is sealed with a context naming its column and its card, so a ciphertext copied to another row doesn't open.
 
 14
-00:01:26,114 --> 00:01:33,000
-To find a card without decrypting anything, the vault also stores a keyed hash of its number, a blind index.
+00:01:37,034 --> 00:01:44,688
+Rotation is Vault's own: new values take the new key version, older ones still open, and a rewrap moves them forward.
 
 15
-00:01:33,050 --> 00:01:37,296
-The database itself refuses a card number stored in plain text.
+00:01:44,738 --> 00:01:56,232
+To find a card without decrypting anything, the vault keeps a blind index, a Transit HMAC of the number, pinned to one key version so the same number always gives the same index.
 
 16
-00:01:37,346 --> 00:01:43,704
-A number is decrypted only to hand it to the card's scheme, and every use is written to an audit trail.
+00:01:56,282 --> 00:02:03,624
+When Vault is down or refuses, card-vault fails closed with card processor unavailable, and never guesses.
 
 17
-00:01:43,754 --> 00:01:50,328
-The bank's console shows each range with its bank, and finds a card by its number without ever showing that number.
+00:02:03,674 --> 00:02:08,616
+The database itself refuses any card value that isn't a Vault ciphertext.
 
 18
-00:01:50,378 --> 00:01:55,344
+00:02:08,666 --> 00:02:15,744
+A number is decrypted only to hand it to the card's scheme, and every use of card data is written to an audit trail.
+
+19
+00:02:15,794 --> 00:02:24,864
+Bank admins reach cards and the BIN directory only through the API, with the cards admin role, and a search by number answers only the masked number.
+
+20
+00:02:24,914 --> 00:02:29,808
 Next, the payment itself, starting with a request nobody can forge.
