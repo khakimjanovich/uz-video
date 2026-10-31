@@ -5,14 +5,15 @@ import { code, diagram, map } from "./steps";
 
 // One headline per cue (sentence); a repeated title holds while the beat continues.
 const TITLES = [
-  "Where cards live", "A flat network", "A flat network", "Everywhere", "The cost", "The cost", "The way out", "The way out",
-  "PCI DSS", "The CDE", "Connected = inside", "Security-impacting", "All in scope", "Segmentation", "Smaller scope", "Out of scope",
-  "The card zone", "The card zone", "Shares nothing", "Shares nothing", "Two doors", "Payers' door", "Callers' door", "No way in",
-  "ecom: not the CDE", "ecom: still in scope", "ecom: still in scope", "Twelve requirements", "Twelve requirements",
-  "Who does what", "Product", "The bank", "Shared", "The assessor", "No certificate",
-  "Check it", "The flow list", "Flows in", "Flows out", "Two doors published", "Consoles on loopback", "No database port",
-  "Six routes", "Six routes", "What is published", "What is published", "Ask the door", "200 and 404", "Install check",
-  "Who does what", "Checked", "Next: two units",
+  "Where cards live", "A shop's orders", "A shop's orders", "The numbers spread", "The numbers spread", "The numbers spread",
+  "The numbers spread", "Everything checked", "Everything checked", "One weak laptop", "One weak laptop",
+  "The rulebook", "PCI DSS", "Less to check",
+  "A coat check", "A coat check", "A coat check", "A coat check", "Tickets, not cards", "Only the room",
+  "The card zone", "Shares nothing", "Shares nothing", "Two doors", "Payers' door", "Partner door", "Straight in", "No way in",
+  "ecom holds tickets", "ecom holds tickets", "ecom holds tickets", "ecom holds tickets",
+  "The honest part", "A smaller check", "A smaller check", "Smaller, not none", "Smaller, not none",
+  "Check it", "Check it", "Check it", "Two doors open",
+  "One place", "The bank's building", "Room and building", "Next: two units",
 ];
 
 export const C04PciDssComposition = createEpisode({

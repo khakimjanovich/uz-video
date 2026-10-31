@@ -19,19 +19,15 @@ export const BUILD_CATALOG = {
   tid: { label: "e-POS terminal", sublabel: "MID · TID", art: "tray" },
   uzcard: { label: "Uzcard", sublabel: "SV-Gate · JSON-RPC", art: "processing" },
   humo: { label: "Humo", sublabel: "SOAP · REST", art: "processing" },
-  // the standard's ideas (generic systems, no product names)
+  // story boxes (generic systems, no product names)
   chd: { label: "Cardholder data", sublabel: "PAN · expiry", art: "receipt" },
-  sad: { label: "Sensitive auth data", sublabel: "CVV2 · PIN · track", art: "receipt" },
   orders: { label: "Orders table", sublabel: "Card numbers inside", art: "journal" },
   reporting: { label: "Reporting", art: "journal" },
   backup: { label: "Nightly backup", art: "vault" },
   laptop: { label: "Developer laptop", art: "admin" },
-  stores: { label: "Stores", sublabel: "Card data", art: "vault" },
-  processes: { label: "Processes", sublabel: "Card data", art: "workflow" },
-  transmits: { label: "Transmits", sublabel: "Card data", art: "transit" },
-  connected: { label: "Any system", sublabel: "Unrestricted connectivity", art: "workflow" },
-  dns: { label: "DNS", sublabel: "Name resolution", art: "journal" },
-  assessor: { label: "Assessor", sublabel: "QSA", art: "checker" },
+  assessor: { label: "Assessor", sublabel: "Checks the room", art: "checker" },
+  lockedRoom: { label: "Card numbers", sublabel: "One locked room", art: "vault" },
+  bank: { label: "The bank", sublabel: "Network · guards", art: "bank" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
   bin: { label: "BIN directory", sublabel: "In card-vault", art: "journal" },
