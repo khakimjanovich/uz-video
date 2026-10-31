@@ -1,4 +1,4 @@
-import { siApachekafka, siApachemaven, siGrafana, siOpentelemetry, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk } from "simple-icons";
+import { siApachekafka, siGrafana, siOpentelemetry, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk } from "simple-icons";
 import { NodeDef } from "../../components/diagram";
 
 // Boxes for the Series B story diagrams. Our own actors and modules use ink drawings;
@@ -21,12 +21,12 @@ export const BUILD_CATALOG = {
   humo: { label: "Humo", sublabel: "SOAP · REST", art: "processing" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
-  bin: { label: "BIN module", sublabel: "Schemes · banks", art: "journal" },
+  bin: { label: "BIN directory", sublabel: "In card-vault", art: "journal" },
   app: { label: "Acquiring app", sublabel: "Modular monolith", logo: siSpringboot.path },
   partner: { label: "Partner module", sublabel: "Merchant registry", art: "journal" },
   commission: { label: "Commission module", art: "fee" },
   epos: { label: "e-POS module", sublabel: "MID / TID", art: "tray" },
-  card: { label: "Card vault", sublabel: "Tokens", art: "vault" },
+  card: { label: "Card vault", sublabel: "Cards unit · tokens", art: "vault" },
   payment: { label: "Payment module", art: "receipt" },
   salespoint: { label: "Sales point", sublabel: "Website", art: "salespoint" },
   fakesite: { label: "Fake site", art: "salespoint" },
@@ -46,8 +46,12 @@ export const BUILD_CATALOG = {
   filesvc: { label: "File store", sublabel: "Platform library", art: "tray" },
   bucket: { label: "S3 bucket", sublabel: "SeaweedFS locally", art: "vault" },
   docs: { label: "Documents", sublabel: "Charter · passport", art: "receipt" },
-  uzcardsvc: { label: "Uzcard adapter", sublabel: "Own service", art: "processing" },
-  humosvc: { label: "Humo adapter", sublabel: "Own service", art: "processing" },
+  uzcardsvc: { label: "Uzcard adapter", sublabel: "Cards unit", art: "processing" },
+  humosvc: { label: "Humo adapter", sublabel: "Cards unit", art: "processing" },
+  frame: { label: "Card frame", sublabel: "Payer door", art: "request" },
+  reconciliation: { label: "Reconciliation", sublabel: "Ours vs scheme", art: "journal" },
+  cardsKeycloak: { label: "Keycloak", sublabel: "Cards unit", logo: siKeycloak.path },
+  cardsVault: { label: "Vault", sublabel: "Transit · PKI", logo: siVault.path },
   // lifecycle states (label-only boxes)
   stPending: { label: "Pending" },
   stVerified: { label: "Verified" },
@@ -72,9 +76,9 @@ export const BUILD_CATALOG = {
   kubernetes: { label: "Kubernetes", logo: siKubernetes.path },
   docker: { label: "Docker Compose", logo: siDocker.path },
   gradle: { label: "Gradle", logo: siGradle.path },
-  maven: { label: "Maven repository", sublabel: "~/.m2 locally", logo: siApachemaven.path },
   platform: { label: "Platform libraries", sublabel: "error · security · …", art: "tray" },
-  versions: { label: "Version catalog", sublabel: "every version", art: "journal" },
+  versions: { label: "Version catalog", sublabel: "GitHub Packages", art: "journal" },
+  contracts: { label: "Contracts", sublabel: "OpenAPI → jars", logo: siOpenapiinitiative.path },
   client: { label: "Generated client", sublabel: "Same interface", art: "request" },
   controller: { label: "controller", sublabel: "HTTP in", art: "request" },
   service: { label: "service", sublabel: "Business rules", art: "workflow" },

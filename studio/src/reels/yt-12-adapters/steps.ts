@@ -5,8 +5,8 @@ import { BuildId } from "../../series/build/nodes";
 // Episode 12: one port, two adapters.
 // Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 3, current: ["procport", "procsvc"], built: builtBefore(3) },
-  { cue: 15, part: 3, current: ["card"], built: [...builtBefore(3), "procport", "procsvc"] },
+  { cue: 0, part: 3, current: ["adapters", "procsvc"], built: builtBefore(3) },
+  { cue: 15, part: 3, current: ["card"], built: [...builtBefore(3), "adapters", "cardsinfra", "procport", "procsvc"] },
 ];
 
 
