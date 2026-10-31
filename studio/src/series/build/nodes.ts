@@ -1,5 +1,10 @@
 import { siApachekafka, siGrafana, siOpentelemetry, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk, siOpentofu } from "simple-icons";
 import { NodeDef } from "../../components/diagram";
+import { M01_NODES } from "./nodes-m01";
+import { M2_NODES } from "./nodes-m2";
+import { M45_NODES } from "./nodes-m45";
+import { M6_NODES } from "./nodes-m6";
+import { M78_NODES } from "./nodes-m78";
 
 // Boxes for the Series B story diagrams. Our own actors and modules use ink drawings;
 // third-party tools use their official monochrome logo (Simple Icons).
@@ -76,8 +81,8 @@ export const BUILD_CATALOG = {
   cardsVault: { label: "Vault", sublabel: "Transit · PKI", logo: siVault.path },
   cardsPostgres: { label: "Postgres", sublabel: "Cards unit", logo: siPostgresql.path },
   cardsObserve: { label: "Observability", sublabel: "Cards unit", logo: siGrafana.path },
-  ingress: { label: "Payer door", sublabel: "cards-ingress", art: "tray" },
-  partnerdoor: { label: "Partner door", sublabel: "cards-partner", art: "transit" },
+  ingress: { label: "Payers' door", sublabel: "For browsers", art: "tray" },
+  partnerdoor: { label: "Callers' door", sublabel: "For other units", art: "transit" },
   mobile: { label: "Mobile backend", sublabel: "Another caller", art: "workflow" },
   // delivery: who opens Vault, who owns an environment
   keyholders: { label: "Keyholders", sublabel: "5 shares · any 3", art: "checker" },
@@ -118,6 +123,12 @@ export const BUILD_CATALOG = {
   entity: { label: "entity", sublabel: "Table row", art: "receipt" },
   spring: { label: "Spring Boot", logo: siSpringboot.path },
   java: { label: "Java 25", logo: siOpenjdk.path },
+  // Each module's own boxes.
+  ...M01_NODES,
+  ...M2_NODES,
+  ...M45_NODES,
+  ...M6_NODES,
+  ...M78_NODES,
 } satisfies Record<string, NodeDef>;
 
 export type BuildId = keyof typeof BUILD_CATALOG;
