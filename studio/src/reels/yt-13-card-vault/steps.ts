@@ -6,7 +6,7 @@ import { tableStep } from "../../series/build/tables";
 // Episode 13: the BIN module and the card vault.
 // Code beats quote github.com/khakimjanovich/ecom (main).
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 3, current: ["bin", "card"], built: [...builtBefore(3), "procport", "procsvc"] },
+  { cue: 0, part: 3, current: ["card"], built: [...builtBefore(3), "adapters", "cardsinfra", "procport", "procsvc"] },
   { cue: 17, part: 4, current: ["payment", "merchant"], built: builtBefore(4) },
 ];
 

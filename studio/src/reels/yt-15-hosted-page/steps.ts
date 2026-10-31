@@ -7,7 +7,7 @@ import { tableStep } from "../../series/build/tables";
 // Code beats quote github.com/khakimjanovich/ecom (main).
 const B4 = builtBefore(4);
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 4, current: ["payment", "buyer", "bin", "card"], built: B4 },
+  { cue: 0, part: 4, current: ["payment", "buyer", "frame", "card"], built: B4 },
   { cue: 16, part: 4, current: ["payment", "epos", "procport", "procsvc"], built: B4 },
 ];
 

@@ -183,3 +183,8 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `e-POS` | e POS (the hyphen makes the voice service hang) |
 | `RFC 9421` | R F C ninety-four twenty-one |
 | `RFC 9457` | R F C ninety-four fifty-seven |
+| `PCI DSS` (English scripts) | P C I D S S |
+| `SNI` | S N I |
+| `CSR` | C S R |
+| `mTLS` | mutual T L S |
+| `ctk_…` | card token |

@@ -1,7 +1,7 @@
 import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 import { useSubtitlesContext } from "../hooks";
-import { APP_BOX, BUILD_ARROWS, BUILD_NODES, BUILD_PARTS, BuildNodeId } from "../series/build/map";
+import { BUILD_ARROWS, BUILD_NODES, BUILD_PARTS, BuildNodeId, UNIT_BOXES } from "../series/build/map";
 
 // One state of the map, keyed to the subtitle cue where it starts.
 export interface BuildMapStep {
@@ -40,10 +40,14 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
         height={500 * scale}
         viewBox="0 0 680 500"
       >
-        <rect x={APP_BOX.x} y={APP_BOX.y} width={APP_BOX.w} height={APP_BOX.h} rx={16} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} strokeDasharray="6 6" />
-        <text x={APP_BOX.x + 20} y={APP_BOX.y + 22} fontSize={12} fill="var(--ink-muted)" style={{ textTransform: "uppercase", letterSpacing: 1 }}>
-          {APP_BOX.label}
-        </text>
+        {UNIT_BOXES.map((u) => (
+          <g key={u.label}>
+            <rect x={u.x} y={u.y} width={u.w} height={u.h} rx={16} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} strokeDasharray="6 6" />
+            <text x={u.x + 20} y={u.y + 22} fontSize={12} fill="var(--ink-muted)" style={{ textTransform: "uppercase", letterSpacing: 1 }}>
+              {u.label}
+            </text>
+          </g>
+        ))}
         {BUILD_ARROWS.map(([ax, y1, y2]) => (
           <path key={`${ax}-${y1}`} d={`M ${ax} ${y1} V ${y2 - 4} M ${ax - 5} ${y2 - 10} L ${ax} ${y2 - 3} L ${ax + 5} ${y2 - 10}`} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} />
         ))}
@@ -53,7 +57,7 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
           const on = step.current?.includes("kubernetes");
           const built = !on && step.built?.includes("kubernetes");
           const color = on ? "var(--ink)" : built ? "var(--stamp-green)" : "var(--ink-muted)";
-          const tabX = 380;
+          const tabX = 500;
           const tabY = k.y + k.h;
           return (
             <g>
