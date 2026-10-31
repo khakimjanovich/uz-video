@@ -34,8 +34,8 @@ export function createEpisode({
       series={`Build an acquiring system · Lesson ${String(number).padStart(2, "0")}`}
       title={(cue) => titles[cue] ?? titles[titles.length - 1]}
       footer={{ label: "Series B", value: footer }}
-      // No burned-in narration: the voice carries the words; subtitles.srt ships as optional closed captions.
-      captions={false}
+      // Captions follow the voice a short phrase at a time, in written form (subtitles.json phrases).
+      captionStyle={{ left: 1150, right: 84, bottom: 140 }}
     >
       <Episode part={part} map={map} catalog={BUILD_CATALOG} diagram={diagram} code={code} />
     </ReelScaffold>

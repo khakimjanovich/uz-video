@@ -1,5 +1,5 @@
 import React from "react";
-import { useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig } from "remotion";
 
 export interface SubtitleCue {
   index?: number;
@@ -12,6 +12,13 @@ export interface SubtitleCue {
   suffix?: string;
   highlightColor?: string;
   highlightBg?: string;
+  phrases?: CaptionPhrase[]; // from the voice's word boundaries: the caption follows the voice a phrase at a time
+}
+
+// A few words of what is being said, in written form, each with the frame it is spoken.
+export interface CaptionPhrase {
+  startFrame: number;
+  words: { text: string; startFrame: number }[];
 }
 
 export interface SubtitleCardProps {
@@ -47,10 +54,14 @@ const fitFontSize = (text: string, width: number) =>
 
 // Caption printed on black tape; the highlight is marker yellow (stamp red during the break act).
 export const SubtitleCard: React.FC<SubtitleCardProps> = ({ currentSubtitle, danger = false, style }) => {
-  const prefix = currentSubtitle.prefix ?? currentSubtitle.text ?? "";
-  const highlight = currentSubtitle.highlight ?? "";
-  const suffix = currentSubtitle.suffix ?? "";
+  const frame = useCurrentFrame();
   const { width } = useVideoConfig();
+  const phrases = currentSubtitle.phrases;
+  const phrase = phrases?.filter((p) => p.startFrame <= frame).pop() ?? phrases?.[0];
+  const spoken = phrase?.words.filter((w) => w.startFrame <= frame).length ?? 0;
+  const prefix = phrase ? phrase.words.slice(0, Math.max(0, spoken - 1)).map((w) => w.text + " ").join("") : currentSubtitle.prefix ?? currentSubtitle.text ?? "";
+  const highlight = phrase ? phrase.words[spoken - 1]?.text ?? "" : currentSubtitle.highlight ?? "";
+  const suffix = phrase ? phrase.words.slice(spoken).map((w) => " " + w.text).join("") : currentSubtitle.suffix ?? "";
   const left = typeof style?.left === "number" ? style.left : 84;
   const right = typeof style?.right === "number" ? style.right : 84;
   const fontSize = fitFontSize(prefix + highlight + suffix, width - left - right - 2 * PAD_X);

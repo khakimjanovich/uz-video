@@ -172,28 +172,35 @@ Each step lists the **full** diagram state (not a diff). Copy the previous step 
 ### D. Pronunciation glossary
 On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it correctly. Add every new term here before writing a script.
 
-| On screen | In `script.txt` |
-|-----------|-----------------|
-| `T+1` | T plyus bir |
-| `PCI-DSS` | pi-si-ay di-es-es |
-| `OFD` | o-ef-de |
-| `9998` | to'qqiz ming to'qqiz yuz to'qson sakkiz |
-| `tok_uz_…` | token |
-| `API` | ey-pi-ay |
-| `e-POS` | e POS (the hyphen makes the voice service hang) |
-| `RFC 9421` | R F C ninety-four twenty-one |
-| `RFC 9457` | R F C ninety-four fifty-seven |
-| `PCI DSS` (English scripts) | P C I D S S |
-| `SNI` | S N I |
-| `CSR` | C S R |
-| `mTLS` | mutual T L S |
-| `ctk_…` | card token |
-| `CDE` | C D E |
-| `NSC` | N S C |
-| `QSA` | Q S A |
-| `CSP` | C S P |
-| `v4.0.1` | version four point zero point one |
-| `127.0.0.1` | one two seven, zero, zero, one |
-| `404` | four oh four |
-| `nginx` | engine X |
-| `cards-ingress`, `cards-partner` | cards ingress, cards partner (no hyphen) |
+`manage_reels.py voice` reads this table: wherever the voice says a spoken form from a row marked **Caption: yes**, the caption shows the on-screen form (`P C I D S S` → `PCI DSS`). Rows marked **no** keep the spoken words in captions (`card token` stays `card token`). "lesson three" is captioned "Lesson 3" by rule. Keep one pair per row, the spoken form exactly as written in scripts. The hyphen in `e-POS` made the voice service hang, so its spoken form is `e POS`.
+
+| On screen | In `script.txt` | Caption |
+|-----------|-----------------|---------|
+| `T+1` | T plyus bir | yes |
+| `PCI-DSS` | pi-si-ay di-es-es | yes |
+| `OFD` | o-ef-de | yes |
+| `9998` | to'qqiz ming to'qqiz yuz to'qson sakkiz | yes |
+| `tok_uz_…` | token | no |
+| `API` | ey-pi-ay | yes |
+| `e-POS` | e POS | yes |
+| `RFC 9421` | R F C ninety-four twenty-one | yes |
+| `RFC 9457` | R F C ninety-four fifty-seven | yes |
+| `PCI DSS` | P C I D S S | yes |
+| `SNI` | S N I | yes |
+| `CSR` | C S R | yes |
+| `TLS` | T L S | yes |
+| `mTLS` | mutual T L S | yes |
+| `ctk_…` | card token | no |
+| `CDE` | C D E | yes |
+| `NSC` | N S C | yes |
+| `QSA` | Q S A | yes |
+| `CSP` | C S P | yes |
+| `v4.0.1` | version four point zero point one | yes |
+| `127.0.0.1` | one two seven, zero, zero, one | yes |
+| `404` | four oh four | yes |
+| `200` | two hundred | yes |
+| `8443` | eight four four three | yes |
+| `9443` | nine four four three | yes |
+| `nginx` | engine X | yes |
+| `cards-ingress` | cards ingress | yes |
+| `cards-partner` | cards partner | yes |
