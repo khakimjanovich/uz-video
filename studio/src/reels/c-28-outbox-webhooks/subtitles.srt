@@ -1,91 +1,91 @@
 1
-00:00:00,050 --> 00:00:06,538
+00:00:00,050 --> 00:00:04,776
 How do you tell a shop about a payment without ever losing the news, or inventing it?
 
 2
-00:00:06,588 --> 00:00:11,923
+00:00:04,826 --> 00:00:08,856
 Picture an app that saves a payment as paid, and then tells the shop.
 
 3
-00:00:11,973 --> 00:00:16,538
+00:00:08,906 --> 00:00:13,200
 If it crashes in between, the shop never hears, and ships nothing.
 
 4
-00:00:16,588 --> 00:00:23,846
+00:00:13,250 --> 00:00:19,392
 Swap the order, and a crash announces a payment that was never saved: the shop ships goods for free.
 
 5
-00:00:23,896 --> 00:00:26,923
+00:00:19,442 --> 00:00:21,960
 An office solves this with an outbox tray.
 
 6
-00:00:26,973 --> 00:00:35,000
+00:00:22,010 --> 00:00:28,224
 You close the file and drop the letter in the tray in one motion, and the postman collects from the tray.
 
 7
-00:00:35,050 --> 00:00:38,461
+00:00:28,274 --> 00:00:31,056
 Here, the tray is a table called the outbox.
 
 8
-00:00:38,511 --> 00:00:45,769
+00:00:31,106 --> 00:00:37,224
 When a payment ends, its event is written to the outbox in the same transaction as the final state.
 
 9
-00:00:45,819 --> 00:00:48,076
+00:00:37,274 --> 00:00:39,528
 Both are saved, or neither is.
 
 10
-00:00:48,126 --> 00:00:52,307
+00:00:39,578 --> 00:00:44,160
 A relay is the postman: it collects the oldest unsent rows.
 
 11
-00:00:52,357 --> 00:00:56,153
+00:00:44,210 --> 00:00:47,256
 Two copies of the relay never pick the same row.
 
 12
-00:00:56,203 --> 00:01:02,692
+00:00:47,306 --> 00:00:53,352
 It publishes each event to Kafka, keyed by its payment, so one payment's events stay in order.
 
 13
-00:01:02,742 --> 00:01:06,538
+00:00:53,402 --> 00:00:56,544
 It marks a row sent only after Kafka has it.
 
 14
-00:01:06,588 --> 00:01:12,307
+00:00:56,594 --> 00:01:01,536
 So a crash in between can send an event twice, and that is at-least-once delivery.
 
 15
-00:01:12,357 --> 00:01:17,307
+00:01:01,586 --> 00:01:06,240
 Every event has its own id, so a repeat is easy to drop.
 
 16
-00:01:17,357 --> 00:01:21,538
+00:01:06,290 --> 00:01:10,824
 The database stays the truth, and Kafka only carries the news.
 
 17
-00:01:21,588 --> 00:01:23,846
+00:01:10,874 --> 00:01:12,696
 Now read it in the code.
 
 18
-00:01:23,896 --> 00:01:28,846
+00:01:12,746 --> 00:01:17,784
 The outbox writer runs while the payment is saved, inside the same transaction.
 
 19
-00:01:28,896 --> 00:01:33,846
+00:01:17,834 --> 00:01:22,344
 It saves one event row, with its own id, for each finished payment.
 
 20
-00:01:33,896 --> 00:01:39,615
+00:01:22,394 --> 00:01:29,232
 The relay takes the oldest unpublished rows, and skips any row another relay has locked.
 
 21
-00:01:39,665 --> 00:01:43,461
+00:01:29,282 --> 00:01:31,944
 And it marks them published only after they are sent.
 
 22
-00:01:43,511 --> 00:01:51,153
+00:01:31,994 --> 00:01:39,384
 Like the outbox tray: decided and posted in one motion, so the postman may knock twice, but never zero times.
 
 23
-00:01:51,203 --> 00:01:54,230
+00:01:39,434 --> 00:01:42,576
 Next: delivering the news to the merchant's server.
