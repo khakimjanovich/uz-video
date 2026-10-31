@@ -92,6 +92,12 @@ export const BUILD_CATALOG = {
   postman: { label: "Postman", art: "transit" },
   relay: { label: "Relay", sublabel: "Collects unsent rows", art: "transit" },
   relay2: { label: "Relay", sublabel: "Another copy", art: "transit" },
+  logLine: { label: "Log line", art: "receipt" },
+  wristband: { label: "Wristband" },
+  chart1: { label: "Chart · ward 1" },
+  chart2: { label: "Chart · ward 2" },
+  chart3: { label: "Chart · ward 3" },
+  grafana2: { label: "Grafana", sublabel: "The card zone's own", logo: siGrafana.path },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },

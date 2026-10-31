@@ -1,0 +1,209 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 116,
+    "text": "How do you follow one payment through the whole system?",
+    "prefix": "How do you follow one payment through the whole system?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 116,
+    "endFrame": 254,
+    "text": "A merchant calls: my customer's payment has been spinning for a minute.",
+    "prefix": "A merchant calls: my customer's payment has been spinning for a minute.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 255,
+    "endFrame": 485,
+    "text": "The payment crossed the payment page, three modules, the card vault, an adapter and a card network, on four machines.",
+    "prefix": "The payment crossed the payment page, three modules, the card vault, an adapter and a card network, on four machines.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 486,
+    "endFrame": 624,
+    "text": "Without one number to follow, someone searches four log files and guesses.",
+    "prefix": "Without one number to follow, someone searches four log files and guesses.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 624,
+    "endFrame": 820,
+    "text": "And the log lines that would help are the ones most likely to hold a card number.",
+    "prefix": "And the log lines that would help are the ones most likely to hold a card number.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 820,
+    "endFrame": 970,
+    "text": "In a hospital, your wristband number is on every chart, in every department.",
+    "prefix": "In a hospital, your wristband number is on every chart, in every department.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 970,
+    "endFrame": 1085,
+    "text": "Anyone can follow your whole stay by that one number.",
+    "prefix": "Anyone can follow your whole stay by that one number.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1086,
+    "endFrame": 1281,
+    "text": "Here, every request gets one trace, and its trace id travels on every call, across both units.",
+    "prefix": "Here, every request gets one trace, and its trace id travels on every call, across both units.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1282,
+    "endFrame": 1500,
+    "text": "Every response names that id in a header called X request ID, even when the answer is a refusal.",
+    "prefix": "Every response names that id in a header called X request ID, even when the answer is a refusal.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1501,
+    "endFrame": 1593,
+    "text": "So a caller can quote it to support.",
+    "prefix": "So a caller can quote it to support.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1593,
+    "endFrame": 1766,
+    "text": "Every log line carries the same id, so a warning links straight to its trace.",
+    "prefix": "Every log line carries the same id, so a warning links straight to its trace.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1766,
+    "endFrame": 1881,
+    "text": "And log masking cleans every line before it is written.",
+    "prefix": "And log masking cleans every line before it is written.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1882,
+    "endFrame": 2100,
+    "text": "Card numbers keep only their first six and last four digits, tokens their last four, and secrets are hidden.",
+    "prefix": "Card numbers keep only their first six and last four digits, tokens their last four, and secrets are hidden.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 2101,
+    "endFrame": 2297,
+    "text": "Each unit sends all of this to its own Grafana, and the card zone runs its own.",
+    "prefix": "Each unit sends all of this to its own Grafana, and the card zone runs its own.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 2297,
+    "endFrame": 2424,
+    "text": "A dashboard shows how payments end, and which are still unknown.",
+    "prefix": "A dashboard shows how payments end, and which are still unknown.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2424,
+    "endFrame": 2597,
+    "text": "And alert rules, written as code, send an email when payments stay unknown too long.",
+    "prefix": "And alert rules, written as code, send an email when payments stay unknown too long.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2597,
+    "endFrame": 2666,
+    "text": "Now read it in the code.",
+    "prefix": "Now read it in the code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2666,
+    "endFrame": 2827,
+    "text": "One small filter runs before security, so even a refused request carries its id.",
+    "prefix": "One small filter runs before security, so even a refused request carries its id.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2828,
+    "endFrame": 2966,
+    "text": "It takes the current trace, and writes its id into the response.",
+    "prefix": "It takes the current trace, and writes its id into the response.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2966,
+    "endFrame": 3150,
+    "text": "The masking keeps the first six digits, stars out the middle, and keeps the last four.",
+    "prefix": "The masking keeps the first six digits, stars out the middle, and keeps the last four.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 3151,
+    "endFrame": 3347,
+    "text": "And any run of thirteen to nineteen digits is treated as a card number, wherever it appears.",
+    "prefix": "And any run of thirteen to nineteen digits is treated as a card number, wherever it appears.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 3347,
+    "endFrame": 3520,
+    "text": "Like a hospital wristband: one number on every chart, and no secrets written on it.",
+    "prefix": "Like a hospital wristband: one number on every chart, and no secrets written on it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 3520,
+    "endFrame": 3630,
+    "text": "Next: what the merchant gets each day.",
+    "prefix": "Next: what the merchant gets each day.",
+    "highlight": "",
+    "suffix": ""
+  }
+]
