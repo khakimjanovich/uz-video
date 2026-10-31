@@ -2,298 +2,2351 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 116,
+    "endFrame": 78,
     "text": "How many ways into the locked room should there be?",
     "prefix": "How many ways into the locked room should there be?",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3,
+        "words": [
+          {
+            "text": "How",
+            "startFrame": 3
+          },
+          {
+            "text": "many",
+            "startFrame": 5
+          },
+          {
+            "text": "ways",
+            "startFrame": 10
+          },
+          {
+            "text": "into",
+            "startFrame": 20
+          },
+          {
+            "text": "the",
+            "startFrame": 23
+          },
+          {
+            "text": "locked",
+            "startFrame": 26
+          },
+          {
+            "text": "room",
+            "startFrame": 37
+          },
+          {
+            "text": "should",
+            "startFrame": 49
+          },
+          {
+            "text": "there",
+            "startFrame": 54
+          },
+          {
+            "text": "be?",
+            "startFrame": 58
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 2,
-    "startFrame": 116,
-    "endFrame": 197,
+    "startFrame": 78,
+    "endFrame": 152,
     "text": "The room has two kinds of visitor.",
     "prefix": "The room has two kinds of visitor.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 79,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 79
+          },
+          {
+            "text": "room",
+            "startFrame": 81
+          },
+          {
+            "text": "has",
+            "startFrame": 94
+          },
+          {
+            "text": "two",
+            "startFrame": 101
+          },
+          {
+            "text": "kinds",
+            "startFrame": 117
+          },
+          {
+            "text": "of",
+            "startFrame": 125
+          },
+          {
+            "text": "visitor.",
+            "startFrame": 127
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 3,
-    "startFrame": 197,
-    "endFrame": 358,
+    "startFrame": 153,
+    "endFrame": 278,
     "text": "Buyers' browsers come from the internet, to type a card into the card frame.",
     "prefix": "Buyers' browsers come from the internet, to type a card into the card frame.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 154,
+        "words": [
+          {
+            "text": "Buyers'",
+            "startFrame": 154
+          },
+          {
+            "text": "browsers",
+            "startFrame": 166
+          },
+          {
+            "text": "come",
+            "startFrame": 182
+          },
+          {
+            "text": "from",
+            "startFrame": 189
+          },
+          {
+            "text": "the",
+            "startFrame": 193
+          },
+          {
+            "text": "internet,",
+            "startFrame": 195
+          }
+        ]
+      },
+      {
+        "startFrame": 215,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 215
+          },
+          {
+            "text": "type",
+            "startFrame": 218
+          },
+          {
+            "text": "a",
+            "startFrame": 224
+          },
+          {
+            "text": "card",
+            "startFrame": 226
+          },
+          {
+            "text": "into",
+            "startFrame": 240
+          },
+          {
+            "text": "the",
+            "startFrame": 244
+          },
+          {
+            "text": "card",
+            "startFrame": 246
+          },
+          {
+            "text": "frame.",
+            "startFrame": 255
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 4,
-    "startFrame": 359,
-    "endFrame": 497,
+    "startFrame": 278,
+    "endFrame": 412,
     "text": "And services from other units, like ecom, come from their own servers.",
     "prefix": "And services from other units, like ecom, come from their own servers.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 280,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 280
+          },
+          {
+            "text": "services",
+            "startFrame": 283
+          },
+          {
+            "text": "from",
+            "startFrame": 300
+          },
+          {
+            "text": "other",
+            "startFrame": 304
+          },
+          {
+            "text": "units,",
+            "startFrame": 311
+          }
+        ]
+      },
+      {
+        "startFrame": 332,
+        "words": [
+          {
+            "text": "like",
+            "startFrame": 332
+          },
+          {
+            "text": "ecom,",
+            "startFrame": 343
+          },
+          {
+            "text": "come",
+            "startFrame": 365
+          },
+          {
+            "text": "from",
+            "startFrame": 369
+          },
+          {
+            "text": "their",
+            "startFrame": 372
+          },
+          {
+            "text": "own",
+            "startFrame": 376
+          },
+          {
+            "text": "servers.",
+            "startFrame": 381
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 5,
-    "startFrame": 497,
-    "endFrame": 670,
+    "startFrame": 412,
+    "endFrame": 585,
     "text": "One big proxy that opened every connection would see every caller's traffic in clear text.",
     "prefix": "One big proxy that opened every connection would see every caller's traffic in clear text.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 414,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 414
+          },
+          {
+            "text": "big",
+            "startFrame": 423
+          },
+          {
+            "text": "proxy",
+            "startFrame": 428
+          },
+          {
+            "text": "that",
+            "startFrame": 443
+          },
+          {
+            "text": "opened",
+            "startFrame": 448
+          },
+          {
+            "text": "every",
+            "startFrame": 463
+          },
+          {
+            "text": "connection",
+            "startFrame": 470
+          },
+          {
+            "text": "would",
+            "startFrame": 485
+          }
+        ]
+      },
+      {
+        "startFrame": 489,
+        "words": [
+          {
+            "text": "see",
+            "startFrame": 489
+          },
+          {
+            "text": "every",
+            "startFrame": 505
+          },
+          {
+            "text": "caller's",
+            "startFrame": 515
+          },
+          {
+            "text": "traffic",
+            "startFrame": 527
+          },
+          {
+            "text": "in",
+            "startFrame": 545
+          },
+          {
+            "text": "clear",
+            "startFrame": 548
+          },
+          {
+            "text": "text.",
+            "startFrame": 558
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 6,
-    "startFrame": 670,
-    "endFrame": 797,
+    "startFrame": 586,
+    "endFrame": 673,
     "text": "That box would be the most valuable box in the bank.",
     "prefix": "That box would be the most valuable box in the bank.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 587,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 587
+          },
+          {
+            "text": "box",
+            "startFrame": 592
+          },
+          {
+            "text": "would",
+            "startFrame": 600
+          },
+          {
+            "text": "be",
+            "startFrame": 603
+          },
+          {
+            "text": "the",
+            "startFrame": 605
+          },
+          {
+            "text": "most",
+            "startFrame": 607
+          },
+          {
+            "text": "valuable",
+            "startFrame": 615
+          },
+          {
+            "text": "box",
+            "startFrame": 631
+          }
+        ]
+      },
+      {
+        "startFrame": 646,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 646
+          },
+          {
+            "text": "the",
+            "startFrame": 648
+          },
+          {
+            "text": "bank.",
+            "startFrame": 649
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 7,
-    "startFrame": 797,
-    "endFrame": 924,
+    "startFrame": 673,
+    "endFrame": 782,
     "text": "So the room has two narrow doors, and nothing else listens.",
     "prefix": "So the room has two narrow doors, and nothing else listens.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 675,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 675
+          },
+          {
+            "text": "the",
+            "startFrame": 678
+          },
+          {
+            "text": "room",
+            "startFrame": 680
+          },
+          {
+            "text": "has",
+            "startFrame": 688
+          },
+          {
+            "text": "two",
+            "startFrame": 694
+          },
+          {
+            "text": "narrow",
+            "startFrame": 702
+          },
+          {
+            "text": "doors,",
+            "startFrame": 709
+          }
+        ]
+      },
+      {
+        "startFrame": 733,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 733
+          },
+          {
+            "text": "nothing",
+            "startFrame": 738
+          },
+          {
+            "text": "else",
+            "startFrame": 748
+          },
+          {
+            "text": "listens.",
+            "startFrame": 754
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 8,
-    "startFrame": 924,
-    "endFrame": 1027,
+    "startFrame": 783,
+    "endFrame": 858,
     "text": "Think of a bank counter and a mail slot.",
     "prefix": "Think of a bank counter and a mail slot.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 785,
+        "words": [
+          {
+            "text": "Think",
+            "startFrame": 785
+          },
+          {
+            "text": "of",
+            "startFrame": 788
+          },
+          {
+            "text": "a",
+            "startFrame": 789
+          },
+          {
+            "text": "bank",
+            "startFrame": 792
+          },
+          {
+            "text": "counter",
+            "startFrame": 801
+          },
+          {
+            "text": "and",
+            "startFrame": 818
+          },
+          {
+            "text": "a",
+            "startFrame": 819
+          },
+          {
+            "text": "mail",
+            "startFrame": 821
+          },
+          {
+            "text": "slot.",
+            "startFrame": 831
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 9,
-    "startFrame": 1028,
-    "endFrame": 1224,
+    "startFrame": 859,
+    "endFrame": 1036,
     "text": "The counter serves the public: it opens your envelope, and handles only a few kinds of request.",
     "prefix": "The counter serves the public: it opens your envelope, and handles only a few kinds of request.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 861,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 861
+          },
+          {
+            "text": "counter",
+            "startFrame": 863
+          },
+          {
+            "text": "serves",
+            "startFrame": 873
+          },
+          {
+            "text": "the",
+            "startFrame": 884
+          },
+          {
+            "text": "public:",
+            "startFrame": 887
+          }
+        ]
+      },
+      {
+        "startFrame": 913,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 913
+          },
+          {
+            "text": "opens",
+            "startFrame": 916
+          },
+          {
+            "text": "your",
+            "startFrame": 927
+          },
+          {
+            "text": "envelope,",
+            "startFrame": 931
+          }
+        ]
+      },
+      {
+        "startFrame": 959,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 959
+          },
+          {
+            "text": "handles",
+            "startFrame": 961
+          },
+          {
+            "text": "only",
+            "startFrame": 973
+          },
+          {
+            "text": "a",
+            "startFrame": 980
+          },
+          {
+            "text": "few",
+            "startFrame": 982
+          },
+          {
+            "text": "kinds",
+            "startFrame": 996
+          },
+          {
+            "text": "of",
+            "startFrame": 1004
+          },
+          {
+            "text": "request.",
+            "startFrame": 1006
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 10,
-    "startFrame": 1224,
-    "endFrame": 1489,
+    "startFrame": 1036,
+    "endFrame": 1286,
     "text": "The mail slot serves partners: it reads only the address on a sealed envelope, and drops it, still sealed, into the right box.",
     "prefix": "The mail slot serves partners: it reads only the address on a sealed envelope, and drops it, still sealed, into the right box.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1038,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1038
+          },
+          {
+            "text": "mail",
+            "startFrame": 1040
+          },
+          {
+            "text": "slot",
+            "startFrame": 1048
+          },
+          {
+            "text": "serves",
+            "startFrame": 1062
+          },
+          {
+            "text": "partners:",
+            "startFrame": 1074
+          }
+        ]
+      },
+      {
+        "startFrame": 1103,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 1103
+          },
+          {
+            "text": "reads",
+            "startFrame": 1108
+          },
+          {
+            "text": "only",
+            "startFrame": 1120
+          },
+          {
+            "text": "the",
+            "startFrame": 1129
+          },
+          {
+            "text": "address",
+            "startFrame": 1133
+          },
+          {
+            "text": "on",
+            "startFrame": 1147
+          },
+          {
+            "text": "a",
+            "startFrame": 1150
+          },
+          {
+            "text": "sealed",
+            "startFrame": 1151
+          }
+        ]
+      },
+      {
+        "startFrame": 1166,
+        "words": [
+          {
+            "text": "envelope,",
+            "startFrame": 1166
+          },
+          {
+            "text": "and",
+            "startFrame": 1187
+          },
+          {
+            "text": "drops",
+            "startFrame": 1189
+          },
+          {
+            "text": "it,",
+            "startFrame": 1201
+          }
+        ]
+      },
+      {
+        "startFrame": 1212,
+        "words": [
+          {
+            "text": "still",
+            "startFrame": 1212
+          },
+          {
+            "text": "sealed,",
+            "startFrame": 1222
+          },
+          {
+            "text": "into",
+            "startFrame": 1246
+          },
+          {
+            "text": "the",
+            "startFrame": 1250
+          },
+          {
+            "text": "right",
+            "startFrame": 1253
+          },
+          {
+            "text": "box.",
+            "startFrame": 1260
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 11,
-    "startFrame": 1489,
-    "endFrame": 1627,
+    "startFrame": 1287,
+    "endFrame": 1404,
     "text": "The first door is the payers' door, and it is the counter.",
     "prefix": "The first door is the payers' door, and it is the counter.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1289,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1289
+          },
+          {
+            "text": "first",
+            "startFrame": 1291
+          },
+          {
+            "text": "door",
+            "startFrame": 1299
+          },
+          {
+            "text": "is",
+            "startFrame": 1319
+          },
+          {
+            "text": "the",
+            "startFrame": 1322
+          },
+          {
+            "text": "payers'",
+            "startFrame": 1324
+          },
+          {
+            "text": "door,",
+            "startFrame": 1339
+          }
+        ]
+      },
+      {
+        "startFrame": 1364,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1364
+          },
+          {
+            "text": "it",
+            "startFrame": 1371
+          },
+          {
+            "text": "is",
+            "startFrame": 1373
+          },
+          {
+            "text": "the",
+            "startFrame": 1376
+          },
+          {
+            "text": "counter.",
+            "startFrame": 1378
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 12,
-    "startFrame": 1628,
-    "endFrame": 1766,
+    "startFrame": 1405,
+    "endFrame": 1564,
     "text": "It opens the browser's encrypted connection, with a certificate that browsers trust.",
     "prefix": "It opens the browser's encrypted connection, with a certificate that browsers trust.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1406,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1406
+          },
+          {
+            "text": "opens",
+            "startFrame": 1408
+          },
+          {
+            "text": "the",
+            "startFrame": 1418
+          },
+          {
+            "text": "browser's",
+            "startFrame": 1421
+          },
+          {
+            "text": "encrypted",
+            "startFrame": 1440
+          },
+          {
+            "text": "connection,",
+            "startFrame": 1458
+          }
+        ]
+      },
+      {
+        "startFrame": 1485,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 1485
+          },
+          {
+            "text": "a",
+            "startFrame": 1489
+          },
+          {
+            "text": "certificate",
+            "startFrame": 1491
+          },
+          {
+            "text": "that",
+            "startFrame": 1514
+          },
+          {
+            "text": "browsers",
+            "startFrame": 1518
+          },
+          {
+            "text": "trust.",
+            "startFrame": 1534
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 13,
-    "startFrame": 1766,
-    "endFrame": 1870,
+    "startFrame": 1564,
+    "endFrame": 1652,
     "text": "It passes on only the card frame's few paths.",
     "prefix": "It passes on only the card frame's few paths.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1565,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1565
+          },
+          {
+            "text": "passes",
+            "startFrame": 1568
+          },
+          {
+            "text": "on",
+            "startFrame": 1580
+          },
+          {
+            "text": "only",
+            "startFrame": 1588
+          },
+          {
+            "text": "the",
+            "startFrame": 1595
+          },
+          {
+            "text": "card",
+            "startFrame": 1598
+          },
+          {
+            "text": "frame's",
+            "startFrame": 1607
+          },
+          {
+            "text": "few",
+            "startFrame": 1618
+          },
+          {
+            "text": "paths.",
+            "startFrame": 1623
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 14,
-    "startFrame": 1870,
-    "endFrame": 1939,
+    "startFrame": 1653,
+    "endFrame": 1715,
     "text": "Every other path gets not found.",
     "prefix": "Every other path gets not found.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1654,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 1654
+          },
+          {
+            "text": "other",
+            "startFrame": 1660
+          },
+          {
+            "text": "path",
+            "startFrame": 1665
+          },
+          {
+            "text": "gets",
+            "startFrame": 1678
+          },
+          {
+            "text": "not",
+            "startFrame": 1684
+          },
+          {
+            "text": "found.",
+            "startFrame": 1690
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 15,
-    "startFrame": 1939,
-    "endFrame": 2147,
+    "startFrame": 1715,
+    "endFrame": 1883,
     "text": "It also limits how fast one payer can submit a card, but never how fast a page loads.",
     "prefix": "It also limits how fast one payer can submit a card, but never how fast a page loads.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1717,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1717
+          },
+          {
+            "text": "also",
+            "startFrame": 1718
+          },
+          {
+            "text": "limits",
+            "startFrame": 1726
+          },
+          {
+            "text": "how",
+            "startFrame": 1735
+          },
+          {
+            "text": "fast",
+            "startFrame": 1747
+          },
+          {
+            "text": "one",
+            "startFrame": 1761
+          },
+          {
+            "text": "payer",
+            "startFrame": 1766
+          },
+          {
+            "text": "can",
+            "startFrame": 1777
+          }
+        ]
+      },
+      {
+        "startFrame": 1780,
+        "words": [
+          {
+            "text": "submit",
+            "startFrame": 1780
+          },
+          {
+            "text": "a",
+            "startFrame": 1789
+          },
+          {
+            "text": "card,",
+            "startFrame": 1790
+          }
+        ]
+      },
+      {
+        "startFrame": 1813,
+        "words": [
+          {
+            "text": "but",
+            "startFrame": 1813
+          },
+          {
+            "text": "never",
+            "startFrame": 1817
+          },
+          {
+            "text": "how",
+            "startFrame": 1826
+          },
+          {
+            "text": "fast",
+            "startFrame": 1833
+          },
+          {
+            "text": "a",
+            "startFrame": 1846
+          },
+          {
+            "text": "page",
+            "startFrame": 1847
+          },
+          {
+            "text": "loads.",
+            "startFrame": 1856
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 16,
-    "startFrame": 2147,
-    "endFrame": 2227,
-    "text": "Lesson thirteen comes back to that limit.",
-    "prefix": "Lesson thirteen comes back to that limit.",
+    "startFrame": 1884,
+    "endFrame": 1961,
+    "text": "Lesson 13 comes back to that limit.",
+    "prefix": "Lesson 13 comes back to that limit.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1885,
+        "words": [
+          {
+            "text": "Lesson 13",
+            "startFrame": 1885
+          },
+          {
+            "text": "comes",
+            "startFrame": 1917
+          },
+          {
+            "text": "back",
+            "startFrame": 1923
+          },
+          {
+            "text": "to",
+            "startFrame": 1931
+          },
+          {
+            "text": "that",
+            "startFrame": 1934
+          },
+          {
+            "text": "limit.",
+            "startFrame": 1940
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 17,
-    "startFrame": 2228,
-    "endFrame": 2377,
+    "startFrame": 1962,
+    "endFrame": 2073,
     "text": "The second door is the callers' door, and it is the mail slot.",
     "prefix": "The second door is the callers' door, and it is the mail slot.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1963,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1963
+          },
+          {
+            "text": "second",
+            "startFrame": 1965
+          },
+          {
+            "text": "door",
+            "startFrame": 1976
+          },
+          {
+            "text": "is",
+            "startFrame": 1991
+          },
+          {
+            "text": "the",
+            "startFrame": 1994
+          },
+          {
+            "text": "callers'",
+            "startFrame": 1996
+          },
+          {
+            "text": "door,",
+            "startFrame": 2009
+          }
+        ]
+      },
+      {
+        "startFrame": 2026,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2026
+          },
+          {
+            "text": "it",
+            "startFrame": 2028
+          },
+          {
+            "text": "is",
+            "startFrame": 2030
+          },
+          {
+            "text": "the",
+            "startFrame": 2032
+          },
+          {
+            "text": "mail",
+            "startFrame": 2035
+          },
+          {
+            "text": "slot.",
+            "startFrame": 2047
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 18,
-    "startFrame": 2378,
-    "endFrame": 2574,
+    "startFrame": 2073,
+    "endFrame": 2256,
     "text": "A caller's connection arrives encrypted, with the name of the service it wants written on the outside.",
     "prefix": "A caller's connection arrives encrypted, with the name of the service it wants written on the outside.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2075,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2075
+          },
+          {
+            "text": "caller's",
+            "startFrame": 2076
+          },
+          {
+            "text": "connection",
+            "startFrame": 2088
+          },
+          {
+            "text": "arrives",
+            "startFrame": 2110
+          },
+          {
+            "text": "encrypted,",
+            "startFrame": 2128
+          }
+        ]
+      },
+      {
+        "startFrame": 2162,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 2162
+          },
+          {
+            "text": "the",
+            "startFrame": 2166
+          },
+          {
+            "text": "name",
+            "startFrame": 2168
+          },
+          {
+            "text": "of",
+            "startFrame": 2175
+          },
+          {
+            "text": "the",
+            "startFrame": 2177
+          },
+          {
+            "text": "service",
+            "startFrame": 2178
+          },
+          {
+            "text": "it",
+            "startFrame": 2191
+          },
+          {
+            "text": "wants",
+            "startFrame": 2194
+          }
+        ]
+      },
+      {
+        "startFrame": 2201,
+        "words": [
+          {
+            "text": "written",
+            "startFrame": 2201
+          },
+          {
+            "text": "on",
+            "startFrame": 2218
+          },
+          {
+            "text": "the",
+            "startFrame": 2222
+          },
+          {
+            "text": "outside.",
+            "startFrame": 2224
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 19,
-    "startFrame": 2574,
-    "endFrame": 2724,
+    "startFrame": 2256,
+    "endFrame": 2402,
     "text": "The door reads only that name, and passes the connection on, still sealed.",
     "prefix": "The door reads only that name, and passes the connection on, still sealed.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2257,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2257
+          },
+          {
+            "text": "door",
+            "startFrame": 2261
+          },
+          {
+            "text": "reads",
+            "startFrame": 2269
+          },
+          {
+            "text": "only",
+            "startFrame": 2284
+          },
+          {
+            "text": "that",
+            "startFrame": 2293
+          },
+          {
+            "text": "name,",
+            "startFrame": 2300
+          }
+        ]
+      },
+      {
+        "startFrame": 2321,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2321
+          },
+          {
+            "text": "passes",
+            "startFrame": 2323
+          },
+          {
+            "text": "the",
+            "startFrame": 2336
+          },
+          {
+            "text": "connection",
+            "startFrame": 2338
+          },
+          {
+            "text": "on,",
+            "startFrame": 2351
+          },
+          {
+            "text": "still",
+            "startFrame": 2366
+          },
+          {
+            "text": "sealed.",
+            "startFrame": 2376
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 20,
-    "startFrame": 2724,
-    "endFrame": 2839,
+    "startFrame": 2402,
+    "endFrame": 2508,
     "text": "That is pass-through: the door never opens what it carries.",
     "prefix": "That is pass-through: the door never opens what it carries.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2403,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 2403
+          },
+          {
+            "text": "is",
+            "startFrame": 2405
+          },
+          {
+            "text": "pass-through:",
+            "startFrame": 2409
+          }
+        ]
+      },
+      {
+        "startFrame": 2443,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2443
+          },
+          {
+            "text": "door",
+            "startFrame": 2446
+          },
+          {
+            "text": "never",
+            "startFrame": 2454
+          },
+          {
+            "text": "opens",
+            "startFrame": 2466
+          },
+          {
+            "text": "what",
+            "startFrame": 2475
+          },
+          {
+            "text": "it",
+            "startFrame": 2477
+          },
+          {
+            "text": "carries.",
+            "startFrame": 2480
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 21,
-    "startFrame": 2839,
-    "endFrame": 3012,
-    "text": "The service behind it checks the caller's certificate and token itself, as lesson seven showed.",
-    "prefix": "The service behind it checks the caller's certificate and token itself, as lesson seven showed.",
+    "startFrame": 2509,
+    "endFrame": 2682,
+    "text": "The service behind it checks the caller's certificate and token itself, as Lesson 7 showed.",
+    "prefix": "The service behind it checks the caller's certificate and token itself, as Lesson 7 showed.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2510,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2510
+          },
+          {
+            "text": "service",
+            "startFrame": 2512
+          },
+          {
+            "text": "behind",
+            "startFrame": 2523
+          },
+          {
+            "text": "it",
+            "startFrame": 2534
+          },
+          {
+            "text": "checks",
+            "startFrame": 2537
+          },
+          {
+            "text": "the",
+            "startFrame": 2545
+          },
+          {
+            "text": "caller's",
+            "startFrame": 2548
+          },
+          {
+            "text": "certificate",
+            "startFrame": 2560
+          }
+        ]
+      },
+      {
+        "startFrame": 2584,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2584
+          },
+          {
+            "text": "token",
+            "startFrame": 2592
+          },
+          {
+            "text": "itself,",
+            "startFrame": 2602
+          }
+        ]
+      },
+      {
+        "startFrame": 2634,
+        "words": [
+          {
+            "text": "as",
+            "startFrame": 2634
+          },
+          {
+            "text": "Lesson 7",
+            "startFrame": 2638
+          },
+          {
+            "text": "showed.",
+            "startFrame": 2658
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 22,
-    "startFrame": 3013,
-    "endFrame": 3185,
+    "startFrame": 2683,
+    "endFrame": 2852,
     "text": "Only four names pass: the card vault, the two adapters, and the room's login server.",
     "prefix": "Only four names pass: the card vault, the two adapters, and the room's login server.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2684,
+        "words": [
+          {
+            "text": "Only",
+            "startFrame": 2684
+          },
+          {
+            "text": "four",
+            "startFrame": 2690
+          },
+          {
+            "text": "names",
+            "startFrame": 2698
+          },
+          {
+            "text": "pass:",
+            "startFrame": 2705
+          }
+        ]
+      },
+      {
+        "startFrame": 2733,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2733
+          },
+          {
+            "text": "card",
+            "startFrame": 2736
+          },
+          {
+            "text": "vault,",
+            "startFrame": 2744
+          }
+        ]
+      },
+      {
+        "startFrame": 2761,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2761
+          },
+          {
+            "text": "two",
+            "startFrame": 2764
+          },
+          {
+            "text": "adapters,",
+            "startFrame": 2771
+          }
+        ]
+      },
+      {
+        "startFrame": 2799,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2799
+          },
+          {
+            "text": "the",
+            "startFrame": 2802
+          },
+          {
+            "text": "room's",
+            "startFrame": 2803
+          },
+          {
+            "text": "login",
+            "startFrame": 2815
+          },
+          {
+            "text": "server.",
+            "startFrame": 2826
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 23,
-    "startFrame": 3186,
-    "endFrame": 3300,
+    "startFrame": 2852,
+    "endFrame": 2960,
     "text": "Any other name, or no name at all, is refused.",
     "prefix": "Any other name, or no name at all, is refused.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2854,
+        "words": [
+          {
+            "text": "Any",
+            "startFrame": 2854
+          },
+          {
+            "text": "other",
+            "startFrame": 2859
+          },
+          {
+            "text": "name,",
+            "startFrame": 2864
+          }
+        ]
+      },
+      {
+        "startFrame": 2888,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 2888
+          },
+          {
+            "text": "no",
+            "startFrame": 2890
+          },
+          {
+            "text": "name",
+            "startFrame": 2896
+          },
+          {
+            "text": "at",
+            "startFrame": 2902
+          },
+          {
+            "text": "all,",
+            "startFrame": 2903
+          },
+          {
+            "text": "is",
+            "startFrame": 2926
+          },
+          {
+            "text": "refused.",
+            "startFrame": 2929
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 24,
-    "startFrame": 3301,
-    "endFrame": 3427,
+    "startFrame": 2960,
+    "endFrame": 3095,
     "text": "So no door ever holds every caller's traffic in clear text.",
     "prefix": "So no door ever holds every caller's traffic in clear text.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2962,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 2962
+          },
+          {
+            "text": "no",
+            "startFrame": 2967
+          },
+          {
+            "text": "door",
+            "startFrame": 2974
+          },
+          {
+            "text": "ever",
+            "startFrame": 2991
+          },
+          {
+            "text": "holds",
+            "startFrame": 2998
+          },
+          {
+            "text": "every",
+            "startFrame": 3013
+          },
+          {
+            "text": "caller's",
+            "startFrame": 3022
+          },
+          {
+            "text": "traffic",
+            "startFrame": 3033
+          }
+        ]
+      },
+      {
+        "startFrame": 3055,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 3055
+          },
+          {
+            "text": "clear",
+            "startFrame": 3059
+          },
+          {
+            "text": "text.",
+            "startFrame": 3068
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 25,
-    "startFrame": 3428,
-    "endFrame": 3508,
+    "startFrame": 3096,
+    "endFrame": 3156,
     "text": "Now look at the mail slot's rules.",
     "prefix": "Now look at the mail slot's rules.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3097,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 3097
+          },
+          {
+            "text": "look",
+            "startFrame": 3101
+          },
+          {
+            "text": "at",
+            "startFrame": 3104
+          },
+          {
+            "text": "the",
+            "startFrame": 3106
+          },
+          {
+            "text": "mail",
+            "startFrame": 3108
+          },
+          {
+            "text": "slot's",
+            "startFrame": 3120
+          },
+          {
+            "text": "rules.",
+            "startFrame": 3132
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 26,
-    "startFrame": 3509,
-    "endFrame": 3681,
+    "startFrame": 3157,
+    "endFrame": 3294,
     "text": "It reads the name before anything else, and looks it up in one short list.",
     "prefix": "It reads the name before anything else, and looks it up in one short list.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3158,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 3158
+          },
+          {
+            "text": "reads",
+            "startFrame": 3163
+          },
+          {
+            "text": "the",
+            "startFrame": 3169
+          },
+          {
+            "text": "name",
+            "startFrame": 3172
+          },
+          {
+            "text": "before",
+            "startFrame": 3181
+          },
+          {
+            "text": "anything",
+            "startFrame": 3195
+          },
+          {
+            "text": "else,",
+            "startFrame": 3205
+          }
+        ]
+      },
+      {
+        "startFrame": 3230,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3230
+          },
+          {
+            "text": "looks",
+            "startFrame": 3234
+          },
+          {
+            "text": "it",
+            "startFrame": 3239
+          },
+          {
+            "text": "up",
+            "startFrame": 3241
+          },
+          {
+            "text": "in",
+            "startFrame": 3250
+          },
+          {
+            "text": "one",
+            "startFrame": 3254
+          },
+          {
+            "text": "short",
+            "startFrame": 3261
+          },
+          {
+            "text": "list.",
+            "startFrame": 3270
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 27,
-    "startFrame": 3682,
-    "endFrame": 3889,
+    "startFrame": 3294,
+    "endFrame": 3497,
     "text": "Each name points to one service, and the last line sends everything else nowhere, because nothing listens there.",
     "prefix": "Each name points to one service, and the last line sends everything else nowhere, because nothing listens there.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3295,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 3295
+          },
+          {
+            "text": "name",
+            "startFrame": 3301
+          },
+          {
+            "text": "points",
+            "startFrame": 3310
+          },
+          {
+            "text": "to",
+            "startFrame": 3321
+          },
+          {
+            "text": "one",
+            "startFrame": 3325
+          },
+          {
+            "text": "service,",
+            "startFrame": 3336
+          }
+        ]
+      },
+      {
+        "startFrame": 3365,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3365
+          },
+          {
+            "text": "the",
+            "startFrame": 3366
+          },
+          {
+            "text": "last",
+            "startFrame": 3368
+          },
+          {
+            "text": "line",
+            "startFrame": 3379
+          },
+          {
+            "text": "sends",
+            "startFrame": 3390
+          },
+          {
+            "text": "everything",
+            "startFrame": 3400
+          },
+          {
+            "text": "else",
+            "startFrame": 3411
+          },
+          {
+            "text": "nowhere,",
+            "startFrame": 3417
+          }
+        ]
+      },
+      {
+        "startFrame": 3438,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 3438
+          },
+          {
+            "text": "nothing",
+            "startFrame": 3450
+          },
+          {
+            "text": "listens",
+            "startFrame": 3465
+          },
+          {
+            "text": "there.",
+            "startFrame": 3475
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 28,
-    "startFrame": 3889,
-    "endFrame": 3970,
+    "startFrame": 3497,
+    "endFrame": 3559,
     "text": "Now check the counter on your laptop.",
     "prefix": "Now check the counter on your laptop.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3499,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 3499
+          },
+          {
+            "text": "check",
+            "startFrame": 3510
+          },
+          {
+            "text": "the",
+            "startFrame": 3516
+          },
+          {
+            "text": "counter",
+            "startFrame": 3518
+          },
+          {
+            "text": "on",
+            "startFrame": 3527
+          },
+          {
+            "text": "your",
+            "startFrame": 3529
+          },
+          {
+            "text": "laptop.",
+            "startFrame": 3532
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 29,
-    "startFrame": 3970,
-    "endFrame": 4131,
-    "text": "Ask the payers' door for the card frame's script, and it answers two hundred.",
-    "prefix": "Ask the payers' door for the card frame's script, and it answers two hundred.",
+    "startFrame": 3559,
+    "endFrame": 3686,
+    "text": "Ask the payers' door for the card frame's script, and it answers 200.",
+    "prefix": "Ask the payers' door for the card frame's script, and it answers 200.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3561,
+        "words": [
+          {
+            "text": "Ask",
+            "startFrame": 3561
+          },
+          {
+            "text": "the",
+            "startFrame": 3568
+          },
+          {
+            "text": "payers'",
+            "startFrame": 3570
+          },
+          {
+            "text": "door",
+            "startFrame": 3582
+          },
+          {
+            "text": "for",
+            "startFrame": 3591
+          },
+          {
+            "text": "the",
+            "startFrame": 3593
+          },
+          {
+            "text": "card",
+            "startFrame": 3596
+          },
+          {
+            "text": "frame's",
+            "startFrame": 3603
+          }
+        ]
+      },
+      {
+        "startFrame": 3612,
+        "words": [
+          {
+            "text": "script,",
+            "startFrame": 3612
+          },
+          {
+            "text": "and",
+            "startFrame": 3636
+          },
+          {
+            "text": "it",
+            "startFrame": 3638
+          },
+          {
+            "text": "answers",
+            "startFrame": 3642
+          },
+          {
+            "text": "200.",
+            "startFrame": 3655
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 30,
-    "startFrame": 4132,
-    "endFrame": 4304,
-    "text": "Ask it for a path inside the card vault, and it answers four oh four.",
-    "prefix": "Ask it for a path inside the card vault, and it answers four oh four.",
+    "startFrame": 3687,
+    "endFrame": 3817,
+    "text": "Ask it for a path inside the card vault, and it answers 404.",
+    "prefix": "Ask it for a path inside the card vault, and it answers 404.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3688,
+        "words": [
+          {
+            "text": "Ask",
+            "startFrame": 3688
+          },
+          {
+            "text": "it",
+            "startFrame": 3694
+          },
+          {
+            "text": "for",
+            "startFrame": 3696
+          },
+          {
+            "text": "a",
+            "startFrame": 3701
+          },
+          {
+            "text": "path",
+            "startFrame": 3702
+          },
+          {
+            "text": "inside",
+            "startFrame": 3718
+          },
+          {
+            "text": "the",
+            "startFrame": 3732
+          },
+          {
+            "text": "card",
+            "startFrame": 3733
+          }
+        ]
+      },
+      {
+        "startFrame": 3742,
+        "words": [
+          {
+            "text": "vault,",
+            "startFrame": 3742
+          },
+          {
+            "text": "and",
+            "startFrame": 3763
+          },
+          {
+            "text": "it",
+            "startFrame": 3765
+          },
+          {
+            "text": "answers",
+            "startFrame": 3768
+          },
+          {
+            "text": "404.",
+            "startFrame": 3780
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 31,
-    "startFrame": 4305,
-    "endFrame": 4547,
-    "text": "On the laptop the door listens on port eight four four three; a server uses the usual port, four four three.",
-    "prefix": "On the laptop the door listens on port eight four four three; a server uses the usual port, four four three.",
+    "startFrame": 3818,
+    "endFrame": 4023,
+    "text": "On the laptop the door listens on port 8443; a server uses the usual port, 443.",
+    "prefix": "On the laptop the door listens on port 8443; a server uses the usual port, 443.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3818,
+        "words": [
+          {
+            "text": "On",
+            "startFrame": 3818
+          },
+          {
+            "text": "the",
+            "startFrame": 3821
+          },
+          {
+            "text": "laptop",
+            "startFrame": 3822
+          },
+          {
+            "text": "the",
+            "startFrame": 3837
+          },
+          {
+            "text": "door",
+            "startFrame": 3842
+          },
+          {
+            "text": "listens",
+            "startFrame": 3849
+          },
+          {
+            "text": "on",
+            "startFrame": 3860
+          },
+          {
+            "text": "port",
+            "startFrame": 3868
+          }
+        ]
+      },
+      {
+        "startFrame": 3882,
+        "words": [
+          {
+            "text": "8443;",
+            "startFrame": 3882
+          },
+          {
+            "text": "a",
+            "startFrame": 3930
+          },
+          {
+            "text": "server",
+            "startFrame": 3932
+          },
+          {
+            "text": "uses",
+            "startFrame": 3942
+          },
+          {
+            "text": "the",
+            "startFrame": 3952
+          },
+          {
+            "text": "usual",
+            "startFrame": 3953
+          },
+          {
+            "text": "port,",
+            "startFrame": 3967
+          },
+          {
+            "text": "443.",
+            "startFrame": 3986
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 32,
-    "startFrame": 4547,
-    "endFrame": 4731,
+    "startFrame": 4024,
+    "endFrame": 4184,
     "text": "A counter that handles only the frame, and a mail slot that never opens the post.",
     "prefix": "A counter that handles only the frame, and a mail slot that never opens the post.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4025,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 4025
+          },
+          {
+            "text": "counter",
+            "startFrame": 4027
+          },
+          {
+            "text": "that",
+            "startFrame": 4037
+          },
+          {
+            "text": "handles",
+            "startFrame": 4041
+          },
+          {
+            "text": "only",
+            "startFrame": 4059
+          },
+          {
+            "text": "the",
+            "startFrame": 4067
+          },
+          {
+            "text": "frame,",
+            "startFrame": 4070
+          }
+        ]
+      },
+      {
+        "startFrame": 4098,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4098
+          },
+          {
+            "text": "a",
+            "startFrame": 4099
+          },
+          {
+            "text": "mail",
+            "startFrame": 4100
+          },
+          {
+            "text": "slot",
+            "startFrame": 4112
+          },
+          {
+            "text": "that",
+            "startFrame": 4131
+          },
+          {
+            "text": "never",
+            "startFrame": 4136
+          },
+          {
+            "text": "opens",
+            "startFrame": 4148
+          },
+          {
+            "text": "the",
+            "startFrame": 4156
+          },
+          {
+            "text": "post.",
+            "startFrame": 4158
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 33,
-    "startFrame": 4732,
-    "endFrame": 4911,
+    "startFrame": 4185,
+    "endFrame": 4353,
     "text": "Next: how a caller gets its certificate without ever handing over its key.",
     "prefix": "Next: how a caller gets its certificate without ever handing over its key.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4186,
+        "words": [
+          {
+            "text": "Next:",
+            "startFrame": 4186
+          },
+          {
+            "text": "how",
+            "startFrame": 4213
+          },
+          {
+            "text": "a",
+            "startFrame": 4216
+          },
+          {
+            "text": "caller",
+            "startFrame": 4217
+          },
+          {
+            "text": "gets",
+            "startFrame": 4227
+          },
+          {
+            "text": "its",
+            "startFrame": 4232
+          },
+          {
+            "text": "certificate",
+            "startFrame": 4236
+          },
+          {
+            "text": "without",
+            "startFrame": 4257
+          }
+        ]
+      },
+      {
+        "startFrame": 4273,
+        "words": [
+          {
+            "text": "ever",
+            "startFrame": 4273
+          },
+          {
+            "text": "handing",
+            "startFrame": 4279
+          },
+          {
+            "text": "over",
+            "startFrame": 4292
+          },
+          {
+            "text": "its",
+            "startFrame": 4297
+          },
+          {
+            "text": "key.",
+            "startFrame": 4301
+          }
+        ]
+      }
+    ]
   }
 ]
