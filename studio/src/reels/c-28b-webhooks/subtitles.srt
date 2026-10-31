@@ -1,0 +1,31 @@
+1
+00:00:00,050 --> 00:00:02,976
+How does the merchant's server learn that a payment is paid?
+
+2
+00:00:03,026 --> 00:00:10,512
+A registered letter is sealed, goes only to a real street address, and if nobody is home, the postman comes back.
+
+3
+00:00:10,562 --> 00:00:16,512
+A webhook is that letter: the bank posts each payment event to the website's webhook address.
+
+4
+00:00:16,562 --> 00:00:20,256
+It is signed, so the shop can tell a real event from a forged one.
+
+5
+00:00:20,306 --> 00:00:28,704
+The address must lead to the public internet only, and it is checked again at the moment of connecting, so a webhook can never be turned against the bank's own network.
+
+6
+00:00:28,754 --> 00:00:34,968
+A failed delivery is tried again, waiting longer each time, and after a while it is marked undelivered.
+
+7
+00:00:35,018 --> 00:00:37,128
+The merchant can then ask for it again.
+
+8
+00:00:37,178 --> 00:00:39,552
+Next: payments without a website.
