@@ -1,0 +1,115 @@
+1
+00:00:00,050 --> 00:00:02,692
+What may you keep about a card?
+
+2
+00:00:02,742 --> 00:00:08,076
+When your bank calls you, they say: your card ending seven eight nine zero.
+
+3
+00:00:08,126 --> 00:00:11,923
+They never ask for the three digits on the back.
+
+4
+00:00:11,973 --> 00:00:19,615
+Now picture a support engineer who pastes a whole card number into a ticket, to check it with the bank.
+
+5
+00:00:19,665 --> 00:00:26,538
+The number now lives in the ticket's backups, in its search index, and with everyone who reads tickets.
+
+6
+00:00:26,588 --> 00:00:29,615
+One pasted number lives everywhere the ticket goes.
+
+7
+00:00:29,665 --> 00:00:33,461
+Systems should talk about cards the way your bank does.
+
+8
+00:00:33,511 --> 00:00:40,384
+The long number on the front of the card is the P A N, the card's own number.
+
+9
+00:00:40,434 --> 00:00:45,769
+It lives in one place only, the card vault, and lesson four shows why.
+
+10
+00:00:45,819 --> 00:00:51,538
+The code on the back is never kept by anyone once a payment is approved.
+
+11
+00:00:51,588 --> 00:00:54,615
+And this system never even asks for it.
+
+12
+00:00:54,665 --> 00:01:01,923
+Screens and logs may show the masked number: the first six digits and the last four, with nothing between.
+
+13
+00:01:01,973 --> 00:01:05,769
+That is your bank's card ending seven eight nine zero.
+
+14
+00:01:05,819 --> 00:01:11,538
+The first digits only tell which bank issued the card, and lesson ten reads them.
+
+15
+00:01:11,588 --> 00:01:13,846
+Other systems keep a card token.
+
+16
+00:01:13,896 --> 00:01:18,846
+A card token is a random name the card vault gives the card.
+
+17
+00:01:18,896 --> 00:01:25,384
+Nothing in it comes from the number, so the token tells a thief nothing about the card.
+
+18
+00:01:25,434 --> 00:01:28,846
+In lesson four, the token becomes a coat-check ticket.
+
+19
+00:01:28,896 --> 00:01:31,153
+Now back to the support ticket.
+
+20
+00:01:31,203 --> 00:01:36,923
+It should have held the masked number or the token, never the P A N.
+
+21
+00:01:36,973 --> 00:01:40,384
+Now make both yourself, the way the code does.
+
+22
+00:01:40,434 --> 00:01:45,769
+The card vault keeps two numbers: six digits shown first, and four shown last.
+
+23
+00:01:45,819 --> 00:01:50,769
+A token is a short prefix plus sixteen random bytes, written in hex.
+
+24
+00:01:50,819 --> 00:01:55,769
+Open J shell, which comes with Java, and take a made-up card number.
+
+25
+00:01:55,819 --> 00:02:00,769
+Keep the first six and the last four, and star out the rest.
+
+26
+00:02:00,819 --> 00:02:05,000
+Then draw sixteen random bytes, and write them after the prefix.
+
+27
+00:02:05,050 --> 00:02:11,153
+Run it again, and you get a different token, with nothing from the number in either.
+
+28
+00:02:11,203 --> 00:02:21,538
+Your bank never asks for the code on the back, and our systems never hold the P A N: they hold the masked number and the token.
+
+29
+00:02:21,588 --> 00:02:24,230
+Next: where a card number may live.

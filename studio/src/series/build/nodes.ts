@@ -31,6 +31,13 @@ export const BUILD_CATALOG = {
   ticket: { label: "Ticket", sublabel: "Add a fee to card payments", art: "request" },
   tabBook: { label: "Tab book", sublabel: "One line per sale", art: "journal" },
   network: { label: "Card network", sublabel: "Between the banks", art: "processing" },
+  supportTicket: { label: "Support ticket", sublabel: "Card number pasted in", art: "request" },
+  searchIndex: { label: "Search index", art: "journal" },
+  readers: { label: "Everyone who reads tickets", art: "admin" },
+  pan: { label: "PAN", sublabel: "The card's own number", art: "receipt" },
+  backCode: { label: "Code on the back", sublabel: "Never kept", art: "receipt" },
+  masked: { label: "123456******7890", sublabel: "Masked number", art: "receipt" },
+  token: { label: "ctk_…", sublabel: "Card token", art: "receipt" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
