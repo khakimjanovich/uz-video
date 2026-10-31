@@ -1,0 +1,63 @@
+1
+00:00:00,050 --> 00:00:02,568
+How many ways into the locked room should there be?
+
+2
+00:00:02,618 --> 00:00:05,064
+The room has two kinds of visitor.
+
+3
+00:00:05,114 --> 00:00:08,904
+Buyers' browsers come from the internet, to type a card into the frame.
+
+4
+00:00:08,954 --> 00:00:13,368
+And services from other units, like ecom, come from their own servers.
+
+5
+00:00:13,418 --> 00:00:21,240
+One big entrance that opened every visitor's traffic would see everything in clear text, and would be the most valuable box in the bank.
+
+6
+00:00:21,290 --> 00:00:24,888
+So the room has two narrow doors, and nothing else listens.
+
+7
+00:00:24,938 --> 00:00:27,408
+Think of a bank counter and a mail slot.
+
+8
+00:00:27,458 --> 00:00:29,640
+The payers' door is the counter.
+
+9
+00:00:29,690 --> 00:00:37,944
+It opens the browser's encrypted connection, passes on only the card frame's few requests, and answers not found to everything else.
+
+10
+00:00:37,994 --> 00:00:41,688
+It also limits how fast one buyer can submit cards.
+
+11
+00:00:41,738 --> 00:00:44,064
+The callers' door is the mail slot.
+
+12
+00:00:44,114 --> 00:00:49,296
+A caller's connection arrives sealed, with the name of the service it wants written on the outside.
+
+13
+00:00:49,346 --> 00:00:55,104
+The door reads only that name and passes the envelope on, still sealed: pass-through.
+
+14
+00:00:55,154 --> 00:00:59,736
+Only a few names pass, and the service behind the door checks the caller itself.
+
+15
+00:00:59,786 --> 00:01:04,248
+So no door ever holds every caller's traffic in clear text.
+
+16
+00:01:04,298 --> 00:01:06,888
+Next: how a caller gets its certificate.
