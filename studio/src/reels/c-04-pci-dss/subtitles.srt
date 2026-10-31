@@ -1,207 +1,179 @@
 1
-00:00:00,050 --> 00:00:04,440
-Where may a card number live in your system, and what does that one choice decide?
+00:00:00,050 --> 00:00:02,016
+Where may a card number live in your system?
 
 2
-00:00:04,490 --> 00:00:09,000
-Take a shop whose checkout keeps card numbers in its orders table, for refunds.
+00:00:02,066 --> 00:00:07,296
+Picture a shop that keeps card numbers in its orders table, just in case it needs them for refunds.
 
 3
-00:00:09,050 --> 00:00:17,352
-Reporting reads that table, a backup copies it every night, and every service and every developer's laptop can reach it.
+00:00:07,346 --> 00:00:12,048
+A card number is dangerous to keep, because anyone who has one can try to pay with it.
 
 4
-00:00:17,402 --> 00:00:22,176
-Ask where the card numbers are, and the honest answer is: everywhere the orders go.
+00:00:12,098 --> 00:00:13,920
+Then the numbers spread.
 
 5
-00:00:22,226 --> 00:00:29,544
-Every one of those systems now needs its network rules listed, its logins named, its logs kept for a year, and its changes controlled.
+00:00:13,970 --> 00:00:16,968
+A report reads the orders table every morning.
 
 6
-00:00:29,594 --> 00:00:35,256
-A fee change waits for a card data review, and one weak laptop leaks every card.
+00:00:17,018 --> 00:00:19,344
+A backup copies it every night.
 
 7
-00:00:35,306 --> 00:00:42,648
-The standard itself gives the way out: keep card data in as few places as possible, and wall those places off.
+00:00:19,394 --> 00:00:22,056
+And every developer's laptop can reach it.
 
 8
-00:00:42,698 --> 00:00:49,200
-Then most of the system meets fewer requirements, and the part that meets all of them is small enough to get right.
+00:00:22,106 --> 00:00:29,688
+Now each of those systems holds card numbers, so each of them has to be checked: its network, its logins, its logs and its changes.
 
 9
-00:00:49,250 --> 00:00:59,952
-P C I D S S is the card schemes' security standard for anyone who stores, processes or transmits account data, and this course follows version four point zero point one.
+00:00:29,738 --> 00:00:33,624
+Even a simple fee change now waits for a card data review.
 
 10
-00:01:00,002 --> 00:01:07,704
-Its scope starts with the cardholder data environment, the C D E: every system that stores, processes or transmits that data.
+00:00:33,674 --> 00:00:38,472
+And it only takes one weak laptop to leak every card the shop has ever seen.
 
 11
-00:01:07,754 --> 00:01:13,440
-Any system with unrestricted connectivity to those systems belongs to the C D E too.
+00:00:38,522 --> 00:00:43,536
+Every new copy is one more place to protect, and one more place to forget.
 
 12
-00:01:13,490 --> 00:01:21,936
-Systems that could impact its security are in scope as well: authentication servers, key stores, logging, and name resolution.
+00:00:43,586 --> 00:00:45,648
+Those checks come from one rulebook.
 
 13
-00:01:21,986 --> 00:01:24,888
-Without segmentation, that is the whole network.
+00:00:45,698 --> 00:00:53,664
+P C I D S S is the card industry's security rulebook, and it checks every system that touches a card number, or can reach one.
 
 14
-00:01:24,938 --> 00:01:34,632
-Segmentation isolates the C D E behind network security controls, N S Cs, such as firewalls that allow only the flows it needs.
+00:00:53,714 --> 00:00:57,600
+So the way out is not to check everything, but to have less to check.
 
 15
-00:01:34,682 --> 00:01:39,480
-The standard does not require it, but it reduces scope, cost and risk.
+00:00:57,650 --> 00:00:59,472
+Think of a coat check.
 
 16
-00:01:39,530 --> 00:01:47,232
-To be out of scope, a system must be isolated so well that, even if it is compromised, it cannot impact card data.
+00:00:59,522 --> 00:01:03,432
+Coats go into one locked room, and everyone else gets a ticket.
 
 17
-00:01:47,282 --> 00:01:56,088
-In this system, the C D E is the cards unit: the card frame, the card vault, the BIN module, the adapters, and their infrastructure.
+00:01:03,482 --> 00:01:08,712
+With the ticket you can get your coat back, but the ticket itself is worth nothing to a thief.
 
 18
-00:01:56,138 --> 00:01:57,816
-This course calls it the card zone.
+00:01:08,762 --> 00:01:11,448
+Only the attendant ever touches the coats.
 
 19
-00:01:57,866 --> 00:02:04,992
-The card zone shares nothing: it runs its own Postgres, Vault, Keycloak and observability, separate from ecom's.
+00:01:11,498 --> 00:01:20,664
+Card numbers work the same way: they go into one locked room, and every other system gets a ticket, the card token from lesson three, never the card number.
 
 20
-00:02:05,042 --> 00:02:07,080
-Anything it shared would be in scope too.
+00:01:20,714 --> 00:01:23,280
+Now only the room needs the full check.
 
 21
-00:02:07,130 --> 00:02:08,952
-Only two doors are open.
+00:01:23,330 --> 00:01:28,704
+In this system, the locked room is the cards unit, and this course calls it the card zone.
 
 22
-00:02:09,002 --> 00:02:13,536
-Cards ingress is the door for payers' browsers, which load the card frame.
+00:01:28,754 --> 00:01:33,192
+The card zone has its own database, its own keys, and its own logins.
 
 23
-00:02:13,586 --> 00:02:17,832
-Cards partner is the door for callers in other units, such as ecom.
+00:01:33,242 --> 00:01:38,136
+It shares none of them with ecom, because anything the room shared would need the full check too.
 
 24
-00:02:17,882 --> 00:02:24,600
-The card database is reachable from nowhere outside the unit, and lesson twelve covers both doors in detail.
+00:01:38,186 --> 00:01:40,224
+The room has only two doors.
 
 25
-00:02:24,650 --> 00:02:30,912
-ecom never stores, processes or transmits a card number, so it is not in the C D E.
+00:01:40,274 --> 00:01:43,584
+One is for payers' browsers, which load the card form.
 
 26
-00:02:30,962 --> 00:02:39,648
-It is still in scope, as a connected-to system and a security-impacting one: it calls the card zone, and its payment page embeds the card frame.
+00:01:43,634 --> 00:01:46,656
+The other is for partner systems, like ecom.
 
 27
-00:02:39,698 --> 00:02:45,312
-The card zone shrinks ecom's scope without removing it, and lesson five draws that line.
+00:01:46,706 --> 00:01:52,176
+When a payer types a card, it goes straight through the first door into the room, never through ecom.
 
 28
-00:02:45,362 --> 00:02:48,984
-The standard groups twelve requirements under six goals.
+00:01:52,226 --> 00:01:57,216
+Nothing else gets in, and the database inside cannot be reached from outside at all.
 
 29
-00:02:49,034 --> 00:02:52,272
-Every later lesson names the requirements it meets.
+00:01:57,266 --> 00:01:59,496
+ecom only ever holds tickets.
 
 30
-00:02:52,322 --> 00:02:54,696
-Who meets them is split three ways.
+00:01:59,546 --> 00:02:04,632
+It asks the card zone to charge a card by its token, and the card number never leaves the room.
 
 31
-00:02:54,746 --> 00:03:00,600
-The product meets some in code: card numbers are sealed by Vault Transit before they reach Postgres.
+00:02:04,682 --> 00:02:11,160
+ecom's database, reports, backups and laptops hold tickets too, so a leak there leaks no card.
 
 32
-00:03:00,650 --> 00:03:06,744
-The bank meets others with its own zone, such as the physical security of the host and its media.
+00:02:11,210 --> 00:02:17,184
+Even ecom's developers can follow a payment from end to end without ever seeing a card number.
 
 33
-00:03:06,794 --> 00:03:14,232
-Some are shared: Vault opens with three of five unseal shares, and the bank makes sure no one holds two.
+00:02:17,234 --> 00:02:19,032
+Here is the honest part.
 
 34
-00:03:14,282 --> 00:03:23,280
-The bank's Qualified Security Assessor, a Q S A, judges all of it inside the bank's assessment, and from here on this course says the assessor.
+00:02:19,082 --> 00:02:21,744
+ecom still gets a check, just a smaller one.
 
 35
-00:03:23,330 --> 00:03:29,064
-The product claims no certificate of its own, and lesson thirty-eight walks the full matrix.
+00:02:21,794 --> 00:02:28,512
+It shows the card form on its payment page, and it takes payments with tickets, so the rulebook still cares about it.
 
 36
-00:03:29,114 --> 00:03:31,560
-Now check the boundary on your own laptop.
+00:02:28,562 --> 00:02:30,192
+Smaller, not none.
 
 37
-00:03:31,610 --> 00:03:38,448
-The implementation guide lists every flow the unit needs, and the unit uses nothing else, in or out.
+00:02:30,242 --> 00:02:36,768
+Lesson five draws that line exactly: what ecom may hold, and what it may ask the card zone for.
 
 38
-00:03:38,498 --> 00:03:44,352
-In: payers' browsers on the public port, callers' hosts on the door port, and the bank's jump host.
+00:02:36,818 --> 00:02:38,904
+Now check the room on your own laptop.
 
 39
-00:03:44,402 --> 00:03:50,856
-Out: the card processing centres, the image registries, the mail relay, and the repository.
+00:02:38,954 --> 00:02:44,256
+With both units running from lesson one, ask Docker Compose what the card zone publishes.
 
 40
-00:03:50,906 --> 00:03:58,848
-Docker Compose publishes exactly those two doors, each on the address the environment names, and stops if the value is missing.
+00:02:44,306 --> 00:02:47,856
+The command lists each service with the ports it opens on your machine.
 
 41
-00:03:58,898 --> 00:04:05,832
-The consoles, Keycloak, Mailpit and Grafana, listen on one two seven, zero, zero, one only.
+00:02:47,906 --> 00:02:54,000
+Two doors are open, cards ingress and cards partner, and Postgres has no port on the outside at all.
 
 42
-00:04:05,882 --> 00:04:11,136
-Postgres publishes no port at all: card data is read through the card vault only.
+00:02:54,050 --> 00:02:59,736
+So card numbers live in one place, everything else holds tokens, and the check shrinks to fit.
 
 43
-00:04:11,186 --> 00:04:18,048
-Behind the payers' door, engine X passes six routes to the card vault and answers four oh four to everything else.
+00:02:59,786 --> 00:03:07,152
+In a bank, the card zone runs inside the bank's own secured network, with the bank's guards, firewalls and checks around it.
 
 44
-00:04:18,098 --> 00:04:26,952
-They are the entry page, the frame's script and style sheet, the C S P report, and the card and code steps, and lesson twelve explains each one.
+00:03:07,202 --> 00:03:10,464
+We deliver the locked room; the bank owns the building.
 
 45
-00:04:27,002 --> 00:04:31,440
-With both units running from lesson one, list what each service publishes.
-
-46
-00:04:31,490 --> 00:04:40,536
-Two doors on the loopback address, eight four four three and nine four four three, the consoles on loopback too, and Postgres with only its container port.
-
-47
-00:04:40,586 --> 00:04:44,424
-Then ask the payers' door for the frame script, and for anything else.
-
-48
-00:04:44,474 --> 00:04:50,640
-The frame answers two hundred, and the health endpoint answers four oh four, because the door does not pass it.
-
-49
-00:04:50,690 --> 00:04:56,496
-The installer's check command runs the same two probes, plus every service's health.
-
-50
-00:04:56,546 --> 00:05:05,088
-Last, the guide's own table sorts every requirement into product, bank and shared, and rows three and nine hold the examples you just heard.
-
-51
-00:05:05,138 --> 00:05:11,904
-You now have a card zone you have checked yourself: two doors, six routes, and a database nobody outside can reach.
-
-52
-00:05:11,954 --> 00:05:15,552
+00:03:10,514 --> 00:03:14,112
 Next: the two units, and the contract between them.
