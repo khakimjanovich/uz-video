@@ -1,0 +1,236 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 139,
+    "text": "How do you stop someone testing stolen cards on your payment page?",
+    "prefix": "How do you stop someone testing stolen cards on your payment page?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 139,
+    "endFrame": 231,
+    "text": "Picture a thief with a bag of keys.",
+    "prefix": "Picture a thief with a bag of keys.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 232,
+    "endFrame": 404,
+    "text": "They try key after key in a shop's lock, to find the ones that fit.",
+    "prefix": "They try key after key in a shop's lock, to find the ones that fit.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 405,
+    "endFrame": 600,
+    "text": "Locking the door after three wrong keys does not help: they just walk to the next door.",
+    "prefix": "Locking the door after three wrong keys does not help: they just walk to the next door.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 601,
+    "endFrame": 750,
+    "text": "Here the keys are stolen card numbers, and the doors are payment sessions.",
+    "prefix": "Here the keys are stolen card numbers, and the doors are payment sessions.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 751,
+    "endFrame": 1004,
+    "text": "A thief with ten thousand stolen numbers tries them on a small shop's payment page, to find the ones that still work.",
+    "prefix": "A thief with ten thousand stolen numbers tries them on a small shop's payment page, to find the ones that still work.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1005,
+    "endFrame": 1050,
+    "text": "That is card testing.",
+    "prefix": "That is card testing.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1051,
+    "endFrame": 1247,
+    "text": "Every try reaches a card network, and it may text a code to a real person's phone.",
+    "prefix": "Every try reaches a card network, and it may text a code to a real person's phone.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1247,
+    "endFrame": 1374,
+    "text": "Each session allows only a few tries, as lesson eleven showed.",
+    "prefix": "Each session allows only a few tries, as lesson eleven showed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1374,
+    "endFrame": 1466,
+    "text": "But the thief just opens a new session.",
+    "prefix": "But the thief just opens a new session.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1466,
+    "endFrame": 1616,
+    "text": "So the card zone writes down every attempt before any network is asked.",
+    "prefix": "So the card zone writes down every attempt before any network is asked.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1616,
+    "endFrame": 1800,
+    "text": "It keeps the attempt by the card's fingerprint and its first digits, never by its number.",
+    "prefix": "It keeps the attempt by the card's fingerprint and its first digits, never by its number.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1801,
+    "endFrame": 1904,
+    "text": "And it notes the payer's address and the shop.",
+    "prefix": "And it notes the payer's address and the shop.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1905,
+    "endFrame": 2066,
+    "text": "That gives four counters: the card, the first digits, the address, and the shop.",
+    "prefix": "That gives four counters: the card, the first digits, the address, and the shop.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 2066,
+    "endFrame": 2204,
+    "text": "A velocity limit allows only so many attempts within a time window.",
+    "prefix": "A velocity limit allows only so many attempts within a time window.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2205,
+    "endFrame": 2435,
+    "text": "Past the limit, for any one of the four counters, a new try is refused before any network is asked.",
+    "prefix": "Past the limit, for any one of the four counters, a new try is refused before any network is asked.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2436,
+    "endFrame": 2608,
+    "text": "Only refusals that say something about the card count against it, like a wrong code.",
+    "prefix": "Only refusals that say something about the card count against it, like a wrong code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2609,
+    "endFrame": 2747,
+    "text": "Our own failures never count, like a card network that is down.",
+    "prefix": "Our own failures never count, like a card network that is down.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2747,
+    "endFrame": 2897,
+    "text": "Each refusal is counted, and an alert email goes out to the team.",
+    "prefix": "Each refusal is counted, and an alert email goes out to the team.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2897,
+    "endFrame": 3000,
+    "text": "Now read the rules in the card zone's code.",
+    "prefix": "Now read the rules in the card zone's code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 3001,
+    "endFrame": 3231,
+    "text": "The note at the top says what is counted: per card, per first digits, per payer address, and per shop.",
+    "prefix": "The note at the top says what is counted: per card, per first digits, per payer address, and per shop.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 3232,
+    "endFrame": 3393,
+    "text": "Past the limit, a new try is refused before any card network is asked.",
+    "prefix": "Past the limit, a new try is refused before any card network is asked.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 3393,
+    "endFrame": 3589,
+    "text": "Below it, one short list names what is never counted: our own state, and our own unavailability.",
+    "prefix": "Below it, one short list names what is never counted: our own state, and our own unavailability.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 24,
+    "startFrame": 3589,
+    "endFrame": 3762,
+    "text": "And a new session for a shop past its limit is refused before it opens.",
+    "prefix": "And a new session for a shop past its limit is refused before it opens.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 25,
+    "startFrame": 3763,
+    "endFrame": 3935,
+    "text": "Count the keys, not the doors: the thief is stopped before any network is asked.",
+    "prefix": "Count the keys, not the doors: the thief is stopped before any network is asked.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 26,
+    "startFrame": 3936,
+    "endFrame": 4115,
+    "text": "Next, the shop itself: ecom, starting with how its project is set up.",
+    "prefix": "Next, the shop itself: ecom, starting with how its project is set up.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

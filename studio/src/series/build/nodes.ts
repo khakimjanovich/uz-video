@@ -44,6 +44,13 @@ export const BUILD_CATALOG = {
   bigProxy: { label: "One big proxy", sublabel: "Opens everything", art: "transit" },
   adapterA: { label: "Adapter", sublabel: "Card network A", art: "processing" },
   adapterB: { label: "Adapter", sublabel: "Card network B", art: "processing" },
+  session: { label: "Payment session", sublabel: "A few tries", art: "request" },
+  session2: { label: "New session", sublabel: "A few more tries", art: "request" },
+  attempts: { label: "Attempts", sublabel: "Written down first", art: "journal" },
+  ctCard: { label: "Per card" },
+  ctBin: { label: "Per first digits" },
+  ctAddress: { label: "Per address" },
+  ctShop: { label: "Per shop" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },

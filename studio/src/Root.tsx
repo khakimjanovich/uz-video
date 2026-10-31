@@ -7,6 +7,7 @@ import { C02CardPaymentComposition } from "./reels/c-02-card-payment";
 import { C03CardDataWordsComposition } from "./reels/c-03-card-data-words";
 import { C04PciDssComposition } from "./reels/c-04-pci-dss";
 import { C12TwoDoorsComposition } from "./reels/c-12-two-doors";
+import { C13FraudLimitsComposition } from "./reels/c-13-fraud-limits";
 import { PitchOwnersComposition } from "./reels/pitch-owners";
 import { PitchOwnersUzComposition } from "./reels/pitch-owners-uz";
 
@@ -21,6 +22,7 @@ export const RemotionRoot: React.FC = () => {
       <C03CardDataWordsComposition />
       <C04PciDssComposition />
       <C12TwoDoorsComposition />
+      <C13FraudLimitsComposition />
       <PitchOwnersComposition />
       <PitchOwnersUzComposition />
     </>
