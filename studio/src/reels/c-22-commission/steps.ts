@@ -59,6 +59,7 @@ export const code: CodeStep[] = [
   {
     cue: 19,
     file: "ecom/modules/commission/…/commission/entity/CommissionRule.java",
+    blur: ["tiyin"], // no currency name on screen
     lines: [
       "  /**",
       "   * percent of the amount, rounded half up to whole tiyin once, plus the fixed fee,",
