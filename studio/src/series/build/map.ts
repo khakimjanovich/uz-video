@@ -63,18 +63,24 @@ export const BUILD_ARROWS: [number, number, number][] = [
 
 // The unit boundaries: ecom (modular monolith) and the cards unit (the card zone).
 export const UNIT_BOXES = [
-  { x: 40, y: 78, w: 600, h: 204, label: "ecom · modular monolith" },
-  { x: 206, y: 312, w: 434, h: 100, label: "cards unit" },
+  { id: "ecom", x: 40, y: 78, w: 600, h: 204, label: "ecom · modular monolith" },
+  { id: "cards", x: 206, y: 312, w: 434, h: 100, label: "cards unit" },
+] as const;
+
+export type UnitId = (typeof UNIT_BOXES)[number]["id"];
+
+// The course's nine modules, in build order; `nodes` are the boxes a module puts in place.
+export const BUILD_PARTS: { n: number; title: string; lessons: number; nodes: BuildNodeId[] }[] = [
+  { n: 0, title: "Orientation", lessons: 3, nodes: [] },
+  { n: 1, title: "Security and configuration", lessons: 4, nodes: ["vault", "keycloak"] },
+  { n: 2, title: "The card zone", lessons: 6, nodes: ["frame", "card", "bin", "adapters", "cardsinfra", "procsvc"] },
+  { n: 3, title: "ecom foundations", lessons: 2, nodes: ["postgres", "redis", "s3", "temporal", "kafka"] },
+  { n: 4, title: "Merchants", lessons: 6, nodes: ["partner", "emailport", "emailsvc", "admin", "merchant"] },
+  { n: 5, title: "Money rules", lessons: 2, nodes: ["commission", "epos"] },
+  { n: 6, title: "Payments", lessons: 7, nodes: ["payment", "procport", "buyer"] },
+  { n: 7, title: "Operations", lessons: 5, nodes: ["observability", "reconciliation"] },
+  { n: 8, title: "Delivery", lessons: 3, nodes: ["kubernetes"] },
 ];
 
-export const BUILD_PARTS: { n: number; title: string; episodes: string[]; nodes: BuildNodeId[] }[] = [
-  { n: 0, title: "Foundations", episodes: ["The map", "Acquiring in 5 minutes", "Setup", "Domain → contract → database"], nodes: ["postgres", "redis", "emailsvc", "s3", "keycloak", "vault", "observability", "temporal", "kafka"] },
-  { n: 1, title: "Merchants", episodes: ["Registration + email OTP", "Lifecycle + documents", "Four-eyes", "Keycloak clients", "Merchant users", "Sales points", "Platform libraries"], nodes: ["partner", "emailport", "admin"] },
-  { n: 2, title: "Money rules", episodes: ["Commission", "e-POS terminals"], nodes: ["commission", "epos"] },
-  { n: 3, title: "Cards", episodes: ["Processing adapters", "Card vault + BIN"], nodes: ["card", "bin", "adapters", "cardsinfra", "procport", "procsvc"] },
-  { n: 4, title: "Payments", episodes: ["HMAC + idempotency", "Payment page", "The debit", "Observability", "When processing goes silent", "Outbox + Kafka", "Links", "Refunds", "Daily reports", "Hardening", "Disputes", "Reconciliation"], nodes: ["payment", "frame", "reconciliation", "merchant", "buyer"] },
-  { n: 5, title: "Growing up", episodes: ["Delivery", "The cards unit"], nodes: ["kubernetes"] },
-];
-
-/** Every node built by the parts before `part`. */
+/** Every node built by the modules before `part`. */
 export const builtBefore = (part: number): BuildNodeId[] => BUILD_PARTS.filter((p) => p.n < part).flatMap((p) => p.nodes);

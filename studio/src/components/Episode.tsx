@@ -5,7 +5,7 @@ import { ArchDiagram, DiagramStep, NodeDef, Zone } from "./diagram";
 
 // 16:9 Series B layout: the build map on map beats, the evolving diagram on story beats,
 // the build-progress panel always on the right so the viewer knows where they are.
-const DIAGRAM_ZONE: Zone = { x: 60, y: 250, w: 1060, h: 700, cols: 4, rows: 3 };
+const DIAGRAM_ZONE: Zone = { x: 60, y: 300, w: 1040, h: 650, cols: 4, rows: 3 };
 
 export function Episode<Id extends string>({
   part,

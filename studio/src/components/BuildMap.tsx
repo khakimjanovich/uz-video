@@ -1,14 +1,15 @@
 import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 import { useSubtitlesContext } from "../hooks";
-import { BUILD_ARROWS, BUILD_NODES, BUILD_PARTS, BuildNodeId, UNIT_BOXES } from "../series/build/map";
+import { BUILD_ARROWS, BUILD_NODES, BUILD_PARTS, BuildNodeId, UNIT_BOXES, UnitId } from "../series/build/map";
 
 // One state of the map, keyed to the subtitle cue where it starts.
 export interface BuildMapStep {
   cue: number;
   current?: BuildNodeId[]; // filled ink: what this sentence is about
   built?: BuildNodeId[]; // green outline: already in place
-  part?: number; // highlighted row in the progress panel
+  part?: number; // highlighted row in the progress panel (the course module)
+  units?: Partial<Record<UnitId, string>>; // unit boxes drawn solid, with a stamp (e.g. cards: "CDE")
 }
 
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -40,14 +41,26 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
         height={500 * scale}
         viewBox="0 0 680 500"
       >
-        {UNIT_BOXES.map((u) => (
-          <g key={u.label}>
-            <rect x={u.x} y={u.y} width={u.w} height={u.h} rx={16} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} strokeDasharray="6 6" />
-            <text x={u.x + 20} y={u.y + 22} fontSize={12} fill="var(--ink-muted)" style={{ textTransform: "uppercase", letterSpacing: 1 }}>
-              {u.label}
-            </text>
-          </g>
-        ))}
+        {UNIT_BOXES.map((u) => {
+          const stamp = step.units?.[u.id];
+          return (
+            <g key={u.id}>
+              <rect x={u.x} y={u.y} width={u.w} height={u.h} rx={16} fill="none" stroke={stamp ? "var(--ink)" : "var(--ink-muted)"}
+                strokeWidth={stamp ? 4 : 1.5} strokeDasharray={stamp ? undefined : "6 6"} />
+              <text x={u.x + 20} y={u.y + 22} fontSize={12} fill={stamp ? "var(--ink)" : "var(--ink-muted)"} fontWeight={stamp ? 700 : 400}
+                style={{ textTransform: "uppercase", letterSpacing: 1 }}>
+                {u.label}
+              </text>
+              {stamp ? (
+                <g transform={`translate(${u.x + u.w - 10} ${u.y + 4}) rotate(4)`} opacity={pop * 10 - 9}>
+                  <rect x={-stamp.length * 9.6 - 20} y={-16} width={stamp.length * 9.6 + 20} height={30} fill="var(--paper)" stroke="var(--stamp-green)" strokeWidth={3} />
+                  <text x={-10} y={0} textAnchor="end" dominantBaseline="central" fontSize={16} fontWeight={700} fill="var(--stamp-green)"
+                    style={{ textTransform: "uppercase" }}>{stamp}</text>
+                </g>
+              ) : null}
+            </g>
+          );
+        })}
         {BUILD_ARROWS.map(([ax, y1, y2]) => (
           <path key={`${ax}-${y1}`} d={`M ${ax} ${y1} V ${y2 - 4} M ${ax - 5} ${y2 - 10} L ${ax} ${y2 - 3} L ${ax + 5} ${y2 - 10}`} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} />
         ))}
@@ -119,17 +132,17 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
       </svg>
       ) : null}
       <div className="absolute font-mono uppercase text-ink" style={{ left: panelX, top: y + 18, right: 84 }}>
-        <div className="text-[20px] text-ink-muted tracking-wider mb-2">Build progress</div>
+        <div className="text-[20px] text-ink-muted tracking-wider mb-2">Course modules</div>
         {BUILD_PARTS.map((p) => {
           const active = p.n === step.part;
           const done = step.part !== undefined && p.n < step.part;
           return (
-            <div key={p.n} className={`flex items-baseline gap-4 py-[6px] border-b-[3px] border-dotted border-ink-muted ${active ? "text-ink" : done ? "text-ink" : "text-ink-muted"}`}>
-              <span className={`inline-flex w-[40px] h-[40px] items-center justify-center text-[22px] font-bold ${active ? "bg-ink text-paper" : done ? "border-[3px] border-stamp-green" : "border-[3px] border-dashed border-ink-muted"}`}>
+            <div key={p.n} className={`flex items-center gap-4 py-[2px] border-b-[2px] border-dotted border-ink-muted ${active ? "text-ink" : done ? "text-ink" : "text-ink-muted"}`}>
+              <span className={`inline-flex w-[28px] h-[28px] items-center justify-center text-[18px] font-bold ${active ? "bg-ink text-paper" : done ? "border-[3px] border-stamp-green" : "border-[3px] border-dashed border-ink-muted"}`}>
                 {p.n}
               </span>
-              <span className={`text-[26px] ${active ? "font-bold" : ""}`}>{p.title}</span>
-              <span className="ml-auto text-[20px] text-ink-muted">{p.episodes.length} ep</span>
+              <span className={`text-[20px] ${active ? "font-bold" : ""}`}>{p.title}</span>
+              <span className="ml-auto text-[18px] text-ink-muted">{p.lessons}</span>
             </div>
           );
         })}

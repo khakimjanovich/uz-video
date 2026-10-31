@@ -4,7 +4,7 @@ import { ReelProps } from "../themes";
 import { BUILD_CATALOG, BuildId } from "../series/build/nodes";
 import { createReelComposition } from "./createReelComposition";
 
-// One Series B episode: 16:9, opens on the build map, tells its story on a diagram.
+// One course lesson: 16:9, the build map, an evolving diagram and code cards.
 export function createEpisode({
   id,
   number,
@@ -18,7 +18,7 @@ export function createEpisode({
 }: {
   id: string;
   number: number;
-  part: number;
+  part: number; // the course module (0–8), lit in the panel
   titles: string[];
   footer: string; // right side of the totals line
   subtitles: SubtitleCue[];
@@ -31,7 +31,7 @@ export function createEpisode({
       theme={theme}
       reelId={id}
       subtitles={subtitles}
-      series={`Build an acquiring system · Episode ${String(number).padStart(2, "0")}`}
+      series={`Build an acquiring system · Lesson ${String(number).padStart(2, "0")}`}
       title={(cue) => titles[cue] ?? titles[titles.length - 1]}
       footer={{ label: "Series B", value: footer }}
       captionStyle={{ left: 1150, right: 84, bottom: 140 }}
