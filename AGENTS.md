@@ -201,6 +201,7 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `200` | two hundred | yes |
 | `8443` | eight four four three | yes |
 | `9443` | nine four four three | yes |
+| `443` | four four three | yes |
 | `nginx` | engine X | yes |
 | `cards-ingress` | cards ingress | yes |
 | `cards-partner` | cards partner | yes |

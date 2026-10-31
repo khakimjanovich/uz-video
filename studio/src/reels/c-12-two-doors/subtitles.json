@@ -1,0 +1,299 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 116,
+    "text": "How many ways into the locked room should there be?",
+    "prefix": "How many ways into the locked room should there be?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 116,
+    "endFrame": 197,
+    "text": "The room has two kinds of visitor.",
+    "prefix": "The room has two kinds of visitor.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 197,
+    "endFrame": 358,
+    "text": "Buyers' browsers come from the internet, to type a card into the card frame.",
+    "prefix": "Buyers' browsers come from the internet, to type a card into the card frame.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 359,
+    "endFrame": 497,
+    "text": "And services from other units, like ecom, come from their own servers.",
+    "prefix": "And services from other units, like ecom, come from their own servers.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 497,
+    "endFrame": 670,
+    "text": "One big proxy that opened every connection would see every caller's traffic in clear text.",
+    "prefix": "One big proxy that opened every connection would see every caller's traffic in clear text.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 670,
+    "endFrame": 797,
+    "text": "That box would be the most valuable box in the bank.",
+    "prefix": "That box would be the most valuable box in the bank.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 797,
+    "endFrame": 924,
+    "text": "So the room has two narrow doors, and nothing else listens.",
+    "prefix": "So the room has two narrow doors, and nothing else listens.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 924,
+    "endFrame": 1027,
+    "text": "Think of a bank counter and a mail slot.",
+    "prefix": "Think of a bank counter and a mail slot.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1028,
+    "endFrame": 1224,
+    "text": "The counter serves the public: it opens your envelope, and handles only a few kinds of request.",
+    "prefix": "The counter serves the public: it opens your envelope, and handles only a few kinds of request.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1224,
+    "endFrame": 1489,
+    "text": "The mail slot serves partners: it reads only the address on a sealed envelope, and drops it, still sealed, into the right box.",
+    "prefix": "The mail slot serves partners: it reads only the address on a sealed envelope, and drops it, still sealed, into the right box.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1489,
+    "endFrame": 1627,
+    "text": "The first door is the payers' door, and it is the counter.",
+    "prefix": "The first door is the payers' door, and it is the counter.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1628,
+    "endFrame": 1766,
+    "text": "It opens the browser's encrypted connection, with a certificate that browsers trust.",
+    "prefix": "It opens the browser's encrypted connection, with a certificate that browsers trust.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1766,
+    "endFrame": 1870,
+    "text": "It passes on only the card frame's few paths.",
+    "prefix": "It passes on only the card frame's few paths.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1870,
+    "endFrame": 1939,
+    "text": "Every other path gets not found.",
+    "prefix": "Every other path gets not found.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 1939,
+    "endFrame": 2147,
+    "text": "It also limits how fast one payer can submit a card, but never how fast a page loads.",
+    "prefix": "It also limits how fast one payer can submit a card, but never how fast a page loads.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2147,
+    "endFrame": 2227,
+    "text": "Lesson thirteen comes back to that limit.",
+    "prefix": "Lesson thirteen comes back to that limit.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2228,
+    "endFrame": 2377,
+    "text": "The second door is the callers' door, and it is the mail slot.",
+    "prefix": "The second door is the callers' door, and it is the mail slot.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2378,
+    "endFrame": 2574,
+    "text": "A caller's connection arrives encrypted, with the name of the service it wants written on the outside.",
+    "prefix": "A caller's connection arrives encrypted, with the name of the service it wants written on the outside.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2574,
+    "endFrame": 2724,
+    "text": "The door reads only that name, and passes the connection on, still sealed.",
+    "prefix": "The door reads only that name, and passes the connection on, still sealed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2724,
+    "endFrame": 2839,
+    "text": "That is pass-through: the door never opens what it carries.",
+    "prefix": "That is pass-through: the door never opens what it carries.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 2839,
+    "endFrame": 3012,
+    "text": "The service behind it checks the caller's certificate and token itself, as lesson seven showed.",
+    "prefix": "The service behind it checks the caller's certificate and token itself, as lesson seven showed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 3013,
+    "endFrame": 3185,
+    "text": "Only four names pass: the card vault, the two adapters, and the room's login server.",
+    "prefix": "Only four names pass: the card vault, the two adapters, and the room's login server.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 3186,
+    "endFrame": 3300,
+    "text": "Any other name, or no name at all, is refused.",
+    "prefix": "Any other name, or no name at all, is refused.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 24,
+    "startFrame": 3301,
+    "endFrame": 3427,
+    "text": "So no door ever holds every caller's traffic in clear text.",
+    "prefix": "So no door ever holds every caller's traffic in clear text.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 25,
+    "startFrame": 3428,
+    "endFrame": 3508,
+    "text": "Now look at the mail slot's rules.",
+    "prefix": "Now look at the mail slot's rules.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 26,
+    "startFrame": 3509,
+    "endFrame": 3681,
+    "text": "It reads the name before anything else, and looks it up in one short list.",
+    "prefix": "It reads the name before anything else, and looks it up in one short list.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 27,
+    "startFrame": 3682,
+    "endFrame": 3889,
+    "text": "Each name points to one service, and the last line sends everything else nowhere, because nothing listens there.",
+    "prefix": "Each name points to one service, and the last line sends everything else nowhere, because nothing listens there.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 28,
+    "startFrame": 3889,
+    "endFrame": 3970,
+    "text": "Now check the counter on your laptop.",
+    "prefix": "Now check the counter on your laptop.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 29,
+    "startFrame": 3970,
+    "endFrame": 4131,
+    "text": "Ask the payers' door for the card frame's script, and it answers two hundred.",
+    "prefix": "Ask the payers' door for the card frame's script, and it answers two hundred.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 30,
+    "startFrame": 4132,
+    "endFrame": 4304,
+    "text": "Ask it for a path inside the card vault, and it answers four oh four.",
+    "prefix": "Ask it for a path inside the card vault, and it answers four oh four.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 31,
+    "startFrame": 4305,
+    "endFrame": 4547,
+    "text": "On the laptop the door listens on port eight four four three; a server uses the usual port, four four three.",
+    "prefix": "On the laptop the door listens on port eight four four three; a server uses the usual port, four four three.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 32,
+    "startFrame": 4547,
+    "endFrame": 4731,
+    "text": "A counter that handles only the frame, and a mail slot that never opens the post.",
+    "prefix": "A counter that handles only the frame, and a mail slot that never opens the post.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 33,
+    "startFrame": 4732,
+    "endFrame": 4911,
+    "text": "Next: how a caller gets its certificate without ever handing over its key.",
+    "prefix": "Next: how a caller gets its certificate without ever handing over its key.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

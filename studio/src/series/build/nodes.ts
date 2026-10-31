@@ -38,6 +38,12 @@ export const BUILD_CATALOG = {
   backCode: { label: "Code on the back", sublabel: "Never kept", art: "receipt" },
   masked: { label: "123456******7890", sublabel: "Masked number", art: "receipt" },
   token: { label: "ctk_…", sublabel: "Card token", art: "receipt" },
+  payerDoor: { label: "Payers' door", sublabel: "cards-ingress", art: "tray" },
+  callerDoor: { label: "Callers' door", sublabel: "cards-partner", art: "transit" },
+  caller: { label: "Caller", sublabel: "Another unit's service", art: "store" },
+  bigProxy: { label: "One big proxy", sublabel: "Opens everything", art: "transit" },
+  adapterA: { label: "Adapter", sublabel: "Card network A", art: "processing" },
+  adapterB: { label: "Adapter", sublabel: "Card network B", art: "processing" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },

@@ -1,0 +1,131 @@
+1
+00:00:00,050 --> 00:00:03,846
+How many ways into the locked room should there be?
+
+2
+00:00:03,896 --> 00:00:06,538
+The room has two kinds of visitor.
+
+3
+00:00:06,588 --> 00:00:11,923
+Buyers' browsers come from the internet, to type a card into the card frame.
+
+4
+00:00:11,973 --> 00:00:16,538
+And services from other units, like ecom, come from their own servers.
+
+5
+00:00:16,588 --> 00:00:22,307
+One big proxy that opened every connection would see every caller's traffic in clear text.
+
+6
+00:00:22,357 --> 00:00:26,538
+That box would be the most valuable box in the bank.
+
+7
+00:00:26,588 --> 00:00:30,769
+So the room has two narrow doors, and nothing else listens.
+
+8
+00:00:30,819 --> 00:00:34,230
+Think of a bank counter and a mail slot.
+
+9
+00:00:34,280 --> 00:00:40,769
+The counter serves the public: it opens your envelope, and handles only a few kinds of request.
+
+10
+00:00:40,819 --> 00:00:49,615
+The mail slot serves partners: it reads only the address on a sealed envelope, and drops it, still sealed, into the right box.
+
+11
+00:00:49,665 --> 00:00:54,230
+The first door is the payers' door, and it is the counter.
+
+12
+00:00:54,280 --> 00:00:58,846
+It opens the browser's encrypted connection, with a certificate that browsers trust.
+
+13
+00:00:58,896 --> 00:01:02,307
+It passes on only the card frame's few paths.
+
+14
+00:01:02,357 --> 00:01:04,615
+Every other path gets not found.
+
+15
+00:01:04,665 --> 00:01:11,538
+It also limits how fast one payer can submit a card, but never how fast a page loads.
+
+16
+00:01:11,588 --> 00:01:14,230
+Lesson thirteen comes back to that limit.
+
+17
+00:01:14,280 --> 00:01:19,230
+The second door is the callers' door, and it is the mail slot.
+
+18
+00:01:19,280 --> 00:01:25,769
+A caller's connection arrives encrypted, with the name of the service it wants written on the outside.
+
+19
+00:01:25,819 --> 00:01:30,769
+The door reads only that name, and passes the connection on, still sealed.
+
+20
+00:01:30,819 --> 00:01:34,615
+That is pass-through: the door never opens what it carries.
+
+21
+00:01:34,665 --> 00:01:40,384
+The service behind it checks the caller's certificate and token itself, as lesson seven showed.
+
+22
+00:01:40,434 --> 00:01:46,153
+Only four names pass: the card vault, the two adapters, and the room's login server.
+
+23
+00:01:46,203 --> 00:01:49,999
+Any other name, or no name at all, is refused.
+
+24
+00:01:50,049 --> 00:01:54,230
+So no door ever holds every caller's traffic in clear text.
+
+25
+00:01:54,280 --> 00:01:56,923
+Now look at the mail slot's rules.
+
+26
+00:01:56,973 --> 00:02:02,692
+It reads the name before anything else, and looks it up in one short list.
+
+27
+00:02:02,742 --> 00:02:09,615
+Each name points to one service, and the last line sends everything else nowhere, because nothing listens there.
+
+28
+00:02:09,665 --> 00:02:12,307
+Now check the counter on your laptop.
+
+29
+00:02:12,357 --> 00:02:17,692
+Ask the payers' door for the card frame's script, and it answers two hundred.
+
+30
+00:02:17,742 --> 00:02:23,461
+Ask it for a path inside the card vault, and it answers four oh four.
+
+31
+00:02:23,511 --> 00:02:31,538
+On the laptop the door listens on port eight four four three; a server uses the usual port, four four three.
+
+32
+00:02:31,588 --> 00:02:37,692
+A counter that handles only the frame, and a mail slot that never opens the post.
+
+33
+00:02:37,742 --> 00:02:42,692
+Next: how a caller gets its certificate without ever handing over its key.
