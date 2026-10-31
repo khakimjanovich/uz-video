@@ -2,235 +2,2045 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 174,
-    "text": "Can a payments product be P C I D S S compliant on its own?",
-    "prefix": "Can a payments product be P C I D S S compliant on its own?",
+    "endFrame": 188,
+    "text": "Can a payments product be PCI DSS compliant on its own?",
+    "prefix": "Can a payments product be PCI DSS compliant on its own?",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2,
+        "words": [
+          {
+            "text": "Can",
+            "startFrame": 2
+          },
+          {
+            "text": "a",
+            "startFrame": 5
+          },
+          {
+            "text": "payments",
+            "startFrame": 7
+          },
+          {
+            "text": "product",
+            "startFrame": 18
+          },
+          {
+            "text": "be",
+            "startFrame": 39
+          },
+          {
+            "text": "PCI DSS",
+            "startFrame": 54
+          },
+          {
+            "text": "compliant",
+            "startFrame": 141
+          }
+        ]
+      },
+      {
+        "startFrame": 162,
+        "words": [
+          {
+            "text": "on",
+            "startFrame": 162
+          },
+          {
+            "text": "its",
+            "startFrame": 165
+          },
+          {
+            "text": "own?",
+            "startFrame": 169
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 2,
-    "startFrame": 174,
-    "endFrame": 300,
+    "startFrame": 188,
+    "endFrame": 314,
     "text": "Picture a bank that buys a product whose brochure says compliant.",
     "prefix": "Picture a bank that buys a product whose brochure says compliant.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 189,
+        "words": [
+          {
+            "text": "Picture",
+            "startFrame": 189
+          },
+          {
+            "text": "a",
+            "startFrame": 197
+          },
+          {
+            "text": "bank",
+            "startFrame": 200
+          },
+          {
+            "text": "that",
+            "startFrame": 212
+          },
+          {
+            "text": "buys",
+            "startFrame": 217
+          },
+          {
+            "text": "a",
+            "startFrame": 225
+          },
+          {
+            "text": "product",
+            "startFrame": 227
+          },
+          {
+            "text": "whose",
+            "startFrame": 246
+          }
+        ]
+      },
+      {
+        "startFrame": 252,
+        "words": [
+          {
+            "text": "brochure",
+            "startFrame": 252
+          },
+          {
+            "text": "says",
+            "startFrame": 278
+          },
+          {
+            "text": "compliant.",
+            "startFrame": 284
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 3,
-    "startFrame": 301,
-    "endFrame": 577,
+    "startFrame": 314,
+    "endFrame": 533,
     "text": "The assessor asks for the firewall rules, the login logs, the people who hold the keys, and the camera footage of the server room.",
     "prefix": "The assessor asks for the firewall rules, the login logs, the people who hold the keys, and the camera footage of the server room.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 316,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 316
+          },
+          {
+            "text": "assessor",
+            "startFrame": 318
+          },
+          {
+            "text": "asks",
+            "startFrame": 334
+          },
+          {
+            "text": "for",
+            "startFrame": 342
+          },
+          {
+            "text": "the",
+            "startFrame": 344
+          },
+          {
+            "text": "firewall",
+            "startFrame": 346
+          },
+          {
+            "text": "rules,",
+            "startFrame": 365
+          }
+        ]
+      },
+      {
+        "startFrame": 388,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 388
+          },
+          {
+            "text": "login",
+            "startFrame": 391
+          },
+          {
+            "text": "logs,",
+            "startFrame": 403
+          }
+        ]
+      },
+      {
+        "startFrame": 423,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 423
+          },
+          {
+            "text": "people",
+            "startFrame": 427
+          },
+          {
+            "text": "who",
+            "startFrame": 436
+          },
+          {
+            "text": "hold",
+            "startFrame": 439
+          },
+          {
+            "text": "the",
+            "startFrame": 446
+          },
+          {
+            "text": "keys,",
+            "startFrame": 448
+          }
+        ]
+      },
+      {
+        "startFrame": 474,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 474
+          },
+          {
+            "text": "the",
+            "startFrame": 478
+          },
+          {
+            "text": "camera",
+            "startFrame": 480
+          },
+          {
+            "text": "footage",
+            "startFrame": 492
+          },
+          {
+            "text": "of",
+            "startFrame": 500
+          },
+          {
+            "text": "the",
+            "startFrame": 502
+          },
+          {
+            "text": "server",
+            "startFrame": 504
+          },
+          {
+            "text": "room.",
+            "startFrame": 513
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 4,
-    "startFrame": 578,
-    "endFrame": 785,
+    "startFrame": 533,
+    "endFrame": 693,
     "text": "The vendor has none of them, because those belong to the bank's whole building, not to one room.",
     "prefix": "The vendor has none of them, because those belong to the bank's whole building, not to one room.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 534,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 534
+          },
+          {
+            "text": "vendor",
+            "startFrame": 537
+          },
+          {
+            "text": "has",
+            "startFrame": 547
+          },
+          {
+            "text": "none",
+            "startFrame": 552
+          },
+          {
+            "text": "of",
+            "startFrame": 562
+          },
+          {
+            "text": "them,",
+            "startFrame": 565
+          }
+        ]
+      },
+      {
+        "startFrame": 577,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 577
+          },
+          {
+            "text": "those",
+            "startFrame": 588
+          },
+          {
+            "text": "belong",
+            "startFrame": 595
+          },
+          {
+            "text": "to",
+            "startFrame": 607
+          },
+          {
+            "text": "the",
+            "startFrame": 609
+          },
+          {
+            "text": "bank's",
+            "startFrame": 613
+          },
+          {
+            "text": "whole",
+            "startFrame": 623
+          },
+          {
+            "text": "building,",
+            "startFrame": 630
+          }
+        ]
+      },
+      {
+        "startFrame": 657,
+        "words": [
+          {
+            "text": "not",
+            "startFrame": 657
+          },
+          {
+            "text": "to",
+            "startFrame": 662
+          },
+          {
+            "text": "one",
+            "startFrame": 665
+          },
+          {
+            "text": "room.",
+            "startFrame": 673
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 5,
-    "startFrame": 786,
-    "endFrame": 993,
+    "startFrame": 694,
+    "endFrame": 863,
     "text": "Worse, nobody wrote down which jobs are the product's and which are the bank's, so some fall between.",
     "prefix": "Worse, nobody wrote down which jobs are the product's and which are the bank's, so some fall between.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 695,
+        "words": [
+          {
+            "text": "Worse,",
+            "startFrame": 695
+          },
+          {
+            "text": "nobody",
+            "startFrame": 719
+          },
+          {
+            "text": "wrote",
+            "startFrame": 728
+          },
+          {
+            "text": "down",
+            "startFrame": 736
+          },
+          {
+            "text": "which",
+            "startFrame": 744
+          },
+          {
+            "text": "jobs",
+            "startFrame": 750
+          },
+          {
+            "text": "are",
+            "startFrame": 762
+          }
+        ]
+      },
+      {
+        "startFrame": 764,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 764
+          },
+          {
+            "text": "product's",
+            "startFrame": 766
+          },
+          {
+            "text": "and",
+            "startFrame": 780
+          },
+          {
+            "text": "which",
+            "startFrame": 785
+          },
+          {
+            "text": "are",
+            "startFrame": 789
+          },
+          {
+            "text": "the",
+            "startFrame": 791
+          },
+          {
+            "text": "bank's,",
+            "startFrame": 793
+          }
+        ]
+      },
+      {
+        "startFrame": 815,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 815
+          },
+          {
+            "text": "some",
+            "startFrame": 825
+          },
+          {
+            "text": "fall",
+            "startFrame": 830
+          },
+          {
+            "text": "between.",
+            "startFrame": 839
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 6,
-    "startFrame": 993,
-    "endFrame": 1177,
-    "text": "Lesson four gave the answer: we deliver the locked room, and the bank owns the building.",
-    "prefix": "Lesson four gave the answer: we deliver the locked room, and the bank owns the building.",
+    "startFrame": 864,
+    "endFrame": 1023,
+    "text": "Lesson 4 gave the answer: we deliver the locked room, and the bank owns the building.",
+    "prefix": "Lesson 4 gave the answer: we deliver the locked room, and the bank owns the building.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 865,
+        "words": [
+          {
+            "text": "Lesson 4",
+            "startFrame": 865
+          },
+          {
+            "text": "gave",
+            "startFrame": 881
+          },
+          {
+            "text": "the",
+            "startFrame": 888
+          },
+          {
+            "text": "answer:",
+            "startFrame": 891
+          }
+        ]
+      },
+      {
+        "startFrame": 918,
+        "words": [
+          {
+            "text": "we",
+            "startFrame": 918
+          },
+          {
+            "text": "deliver",
+            "startFrame": 922
+          },
+          {
+            "text": "the",
+            "startFrame": 930
+          },
+          {
+            "text": "locked",
+            "startFrame": 933
+          },
+          {
+            "text": "room,",
+            "startFrame": 943
+          }
+        ]
+      },
+      {
+        "startFrame": 963,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 963
+          },
+          {
+            "text": "the",
+            "startFrame": 966
+          },
+          {
+            "text": "bank",
+            "startFrame": 968
+          },
+          {
+            "text": "owns",
+            "startFrame": 989
+          },
+          {
+            "text": "the",
+            "startFrame": 996
+          },
+          {
+            "text": "building.",
+            "startFrame": 999
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 7,
-    "startFrame": 1178,
-    "endFrame": 1247,
+    "startFrame": 1023,
+    "endFrame": 1078,
     "text": "So each unit ships a guide.",
     "prefix": "So each unit ships a guide.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1025,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 1025
+          },
+          {
+            "text": "each",
+            "startFrame": 1031
+          },
+          {
+            "text": "unit",
+            "startFrame": 1037
+          },
+          {
+            "text": "ships",
+            "startFrame": 1044
+          },
+          {
+            "text": "a",
+            "startFrame": 1054
+          },
+          {
+            "text": "guide.",
+            "startFrame": 1056
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 8,
-    "startFrame": 1247,
-    "endFrame": 1443,
+    "startFrame": 1079,
+    "endFrame": 1227,
     "text": "It says what the bank's building must provide, how to install the room, and who does what.",
     "prefix": "It says what the bank's building must provide, how to install the room, and who does what.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1080,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1080
+          },
+          {
+            "text": "says",
+            "startFrame": 1083
+          },
+          {
+            "text": "what",
+            "startFrame": 1089
+          },
+          {
+            "text": "the",
+            "startFrame": 1092
+          },
+          {
+            "text": "bank's",
+            "startFrame": 1095
+          },
+          {
+            "text": "building",
+            "startFrame": 1104
+          },
+          {
+            "text": "must",
+            "startFrame": 1114
+          },
+          {
+            "text": "provide,",
+            "startFrame": 1119
+          }
+        ]
+      },
+      {
+        "startFrame": 1147,
+        "words": [
+          {
+            "text": "how",
+            "startFrame": 1147
+          },
+          {
+            "text": "to",
+            "startFrame": 1149
+          },
+          {
+            "text": "install",
+            "startFrame": 1154
+          },
+          {
+            "text": "the",
+            "startFrame": 1165
+          },
+          {
+            "text": "room,",
+            "startFrame": 1167
+          }
+        ]
+      },
+      {
+        "startFrame": 1191,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1191
+          },
+          {
+            "text": "who",
+            "startFrame": 1193
+          },
+          {
+            "text": "does",
+            "startFrame": 1196
+          },
+          {
+            "text": "what.",
+            "startFrame": 1205
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 9,
-    "startFrame": 1443,
-    "endFrame": 1524,
+    "startFrame": 1227,
+    "endFrame": 1297,
     "text": "Who does what is a responsibility matrix.",
     "prefix": "Who does what is a responsibility matrix.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1229,
+        "words": [
+          {
+            "text": "Who",
+            "startFrame": 1229
+          },
+          {
+            "text": "does",
+            "startFrame": 1230
+          },
+          {
+            "text": "what",
+            "startFrame": 1235
+          },
+          {
+            "text": "is",
+            "startFrame": 1238
+          },
+          {
+            "text": "a",
+            "startFrame": 1241
+          },
+          {
+            "text": "responsibility",
+            "startFrame": 1242
+          },
+          {
+            "text": "matrix.",
+            "startFrame": 1265
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 10,
-    "startFrame": 1524,
-    "endFrame": 1835,
-    "text": "For each of the twelve requirements in P C I D S S, it lists what the product does, what is the bank's, and what is shared.",
-    "prefix": "For each of the twelve requirements in P C I D S S, it lists what the product does, what is the bank's, and what is shared.",
+    "startFrame": 1298,
+    "endFrame": 1536,
+    "text": "For each of the twelve requirements in PCI DSS, it lists what the product does, what is the bank's, and what is shared.",
+    "prefix": "For each of the twelve requirements in PCI DSS, it lists what the product does, what is the bank's, and what is shared.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1300,
+        "words": [
+          {
+            "text": "For",
+            "startFrame": 1300
+          },
+          {
+            "text": "each",
+            "startFrame": 1305
+          },
+          {
+            "text": "of",
+            "startFrame": 1309
+          },
+          {
+            "text": "the",
+            "startFrame": 1311
+          },
+          {
+            "text": "twelve",
+            "startFrame": 1313
+          },
+          {
+            "text": "requirements",
+            "startFrame": 1321
+          },
+          {
+            "text": "in",
+            "startFrame": 1339
+          },
+          {
+            "text": "PCI DSS,",
+            "startFrame": 1345
+          }
+        ]
+      },
+      {
+        "startFrame": 1419,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 1419
+          },
+          {
+            "text": "lists",
+            "startFrame": 1423
+          },
+          {
+            "text": "what",
+            "startFrame": 1431
+          },
+          {
+            "text": "the",
+            "startFrame": 1433
+          },
+          {
+            "text": "product",
+            "startFrame": 1435
+          },
+          {
+            "text": "does,",
+            "startFrame": 1446
+          }
+        ]
+      },
+      {
+        "startFrame": 1466,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 1466
+          },
+          {
+            "text": "is",
+            "startFrame": 1471
+          },
+          {
+            "text": "the",
+            "startFrame": 1474
+          },
+          {
+            "text": "bank's,",
+            "startFrame": 1477
+          }
+        ]
+      },
+      {
+        "startFrame": 1501,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1501
+          },
+          {
+            "text": "what",
+            "startFrame": 1504
+          },
+          {
+            "text": "is",
+            "startFrame": 1509
+          },
+          {
+            "text": "shared.",
+            "startFrame": 1511
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 11,
-    "startFrame": 1836,
-    "endFrame": 2008,
+    "startFrame": 1537,
+    "endFrame": 1666,
     "text": "A product row says what the code does; it is not a claim of compliance.",
     "prefix": "A product row says what the code does; it is not a claim of compliance.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1538,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1538
+          },
+          {
+            "text": "product",
+            "startFrame": 1540
+          },
+          {
+            "text": "row",
+            "startFrame": 1552
+          },
+          {
+            "text": "says",
+            "startFrame": 1560
+          },
+          {
+            "text": "what",
+            "startFrame": 1574
+          },
+          {
+            "text": "the",
+            "startFrame": 1577
+          },
+          {
+            "text": "code",
+            "startFrame": 1580
+          },
+          {
+            "text": "does;",
+            "startFrame": 1587
+          }
+        ]
+      },
+      {
+        "startFrame": 1611,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 1611
+          },
+          {
+            "text": "is",
+            "startFrame": 1613
+          },
+          {
+            "text": "not",
+            "startFrame": 1616
+          },
+          {
+            "text": "a",
+            "startFrame": 1621
+          },
+          {
+            "text": "claim",
+            "startFrame": 1622
+          },
+          {
+            "text": "of",
+            "startFrame": 1631
+          },
+          {
+            "text": "compliance.",
+            "startFrame": 1633
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 12,
-    "startFrame": 2009,
-    "endFrame": 2262,
+    "startFrame": 1666,
+    "endFrame": 1899,
     "text": "Take the network: the product opens only two doors, the bank builds the firewalls, and the list of allowed connections is shared.",
     "prefix": "Take the network: the product opens only two doors, the bank builds the firewalls, and the list of allowed connections is shared.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1668,
+        "words": [
+          {
+            "text": "Take",
+            "startFrame": 1668
+          },
+          {
+            "text": "the",
+            "startFrame": 1672
+          },
+          {
+            "text": "network:",
+            "startFrame": 1674
+          }
+        ]
+      },
+      {
+        "startFrame": 1700,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1700
+          },
+          {
+            "text": "product",
+            "startFrame": 1702
+          },
+          {
+            "text": "opens",
+            "startFrame": 1714
+          },
+          {
+            "text": "only",
+            "startFrame": 1728
+          },
+          {
+            "text": "two",
+            "startFrame": 1737
+          },
+          {
+            "text": "doors,",
+            "startFrame": 1746
+          }
+        ]
+      },
+      {
+        "startFrame": 1768,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1768
+          },
+          {
+            "text": "bank",
+            "startFrame": 1772
+          },
+          {
+            "text": "builds",
+            "startFrame": 1785
+          },
+          {
+            "text": "the",
+            "startFrame": 1795
+          },
+          {
+            "text": "firewalls,",
+            "startFrame": 1797
+          }
+        ]
+      },
+      {
+        "startFrame": 1828,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1828
+          },
+          {
+            "text": "the",
+            "startFrame": 1831
+          },
+          {
+            "text": "list",
+            "startFrame": 1834
+          },
+          {
+            "text": "of",
+            "startFrame": 1844
+          },
+          {
+            "text": "allowed",
+            "startFrame": 1845
+          },
+          {
+            "text": "connections",
+            "startFrame": 1855
+          },
+          {
+            "text": "is",
+            "startFrame": 1871
+          },
+          {
+            "text": "shared.",
+            "startFrame": 1873
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 13,
-    "startFrame": 2263,
-    "endFrame": 2470,
+    "startFrame": 1900,
+    "endFrame": 2110,
     "text": "Take logging: the product keeps audit trails, and collecting and reviewing them every day is the bank's job.",
     "prefix": "Take logging: the product keeps audit trails, and collecting and reviewing them every day is the bank's job.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1901,
+        "words": [
+          {
+            "text": "Take",
+            "startFrame": 1901
+          },
+          {
+            "text": "logging:",
+            "startFrame": 1907
+          },
+          {
+            "text": "the",
+            "startFrame": 1932
+          },
+          {
+            "text": "product",
+            "startFrame": 1934
+          },
+          {
+            "text": "keeps",
+            "startFrame": 1947
+          },
+          {
+            "text": "audit",
+            "startFrame": 1959
+          },
+          {
+            "text": "trails,",
+            "startFrame": 1967
+          }
+        ]
+      },
+      {
+        "startFrame": 1991,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1991
+          },
+          {
+            "text": "collecting",
+            "startFrame": 2002
+          },
+          {
+            "text": "and",
+            "startFrame": 2021
+          },
+          {
+            "text": "reviewing",
+            "startFrame": 2025
+          },
+          {
+            "text": "them",
+            "startFrame": 2036
+          },
+          {
+            "text": "every",
+            "startFrame": 2045
+          },
+          {
+            "text": "day",
+            "startFrame": 2053
+          },
+          {
+            "text": "is",
+            "startFrame": 2072
+          }
+        ]
+      },
+      {
+        "startFrame": 2075,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2075
+          },
+          {
+            "text": "bank's",
+            "startFrame": 2078
+          },
+          {
+            "text": "job.",
+            "startFrame": 2087
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 14,
-    "startFrame": 2470,
-    "endFrame": 2689,
-    "text": "ecom has its own matrix, because it holds no card number, and gets the smaller check from lesson four.",
-    "prefix": "ecom has its own matrix, because it holds no card number, and gets the smaller check from lesson four.",
+    "startFrame": 2111,
+    "endFrame": 2281,
+    "text": "ecom has its own matrix, because it holds no card number, and gets the smaller check from Lesson 4.",
+    "prefix": "ecom has its own matrix, because it holds no card number, and gets the smaller check from Lesson 4.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2112,
+        "words": [
+          {
+            "text": "ecom",
+            "startFrame": 2112
+          },
+          {
+            "text": "has",
+            "startFrame": 2122
+          },
+          {
+            "text": "its",
+            "startFrame": 2127
+          },
+          {
+            "text": "own",
+            "startFrame": 2131
+          },
+          {
+            "text": "matrix,",
+            "startFrame": 2136
+          }
+        ]
+      },
+      {
+        "startFrame": 2160,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 2160
+          },
+          {
+            "text": "it",
+            "startFrame": 2168
+          },
+          {
+            "text": "holds",
+            "startFrame": 2169
+          },
+          {
+            "text": "no",
+            "startFrame": 2180
+          },
+          {
+            "text": "card",
+            "startFrame": 2189
+          },
+          {
+            "text": "number,",
+            "startFrame": 2198
+          }
+        ]
+      },
+      {
+        "startFrame": 2216,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2216
+          },
+          {
+            "text": "gets",
+            "startFrame": 2218
+          },
+          {
+            "text": "the",
+            "startFrame": 2224
+          },
+          {
+            "text": "smaller",
+            "startFrame": 2227
+          },
+          {
+            "text": "check",
+            "startFrame": 2240
+          },
+          {
+            "text": "from",
+            "startFrame": 2247
+          },
+          {
+            "text": "Lesson 4.",
+            "startFrame": 2251
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 15,
-    "startFrame": 2689,
-    "endFrame": 2850,
+    "startFrame": 2282,
+    "endFrame": 2424,
     "text": "Then come the known gaps: where the product still falls short at this release.",
     "prefix": "Then come the known gaps: where the product still falls short at this release.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2283,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 2283
+          },
+          {
+            "text": "come",
+            "startFrame": 2294
+          },
+          {
+            "text": "the",
+            "startFrame": 2299
+          },
+          {
+            "text": "known",
+            "startFrame": 2300
+          },
+          {
+            "text": "gaps:",
+            "startFrame": 2309
+          }
+        ]
+      },
+      {
+        "startFrame": 2339,
+        "words": [
+          {
+            "text": "where",
+            "startFrame": 2339
+          },
+          {
+            "text": "the",
+            "startFrame": 2341
+          },
+          {
+            "text": "product",
+            "startFrame": 2343
+          },
+          {
+            "text": "still",
+            "startFrame": 2353
+          },
+          {
+            "text": "falls",
+            "startFrame": 2365
+          },
+          {
+            "text": "short",
+            "startFrame": 2374
+          },
+          {
+            "text": "at",
+            "startFrame": 2388
+          },
+          {
+            "text": "this",
+            "startFrame": 2390
+          },
+          {
+            "text": "release.",
+            "startFrame": 2396
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 16,
-    "startFrame": 2851,
-    "endFrame": 2977,
+    "startFrame": 2425,
+    "endFrame": 2519,
     "text": "Each gap names what the bank does until it is fixed.",
     "prefix": "Each gap names what the bank does until it is fixed.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2426,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 2426
+          },
+          {
+            "text": "gap",
+            "startFrame": 2430
+          },
+          {
+            "text": "names",
+            "startFrame": 2437
+          },
+          {
+            "text": "what",
+            "startFrame": 2446
+          },
+          {
+            "text": "the",
+            "startFrame": 2449
+          },
+          {
+            "text": "bank",
+            "startFrame": 2452
+          },
+          {
+            "text": "does",
+            "startFrame": 2472
+          },
+          {
+            "text": "until",
+            "startFrame": 2479
+          }
+        ]
+      },
+      {
+        "startFrame": 2487,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 2487
+          },
+          {
+            "text": "is",
+            "startFrame": 2488
+          },
+          {
+            "text": "fixed.",
+            "startFrame": 2491
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 17,
-    "startFrame": 2978,
-    "endFrame": 3035,
+    "startFrame": 2520,
+    "endFrame": 2580,
     "text": "The product is not certified.",
     "prefix": "The product is not certified.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2521,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2521
+          },
+          {
+            "text": "product",
+            "startFrame": 2523
+          },
+          {
+            "text": "is",
+            "startFrame": 2539
+          },
+          {
+            "text": "not",
+            "startFrame": 2542
+          },
+          {
+            "text": "certified.",
+            "startFrame": 2550
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 18,
-    "startFrame": 3036,
-    "endFrame": 3231,
+    "startFrame": 2581,
+    "endFrame": 2750,
     "text": "The assessor is the person who judges the whole building, with the guide as the product's evidence.",
     "prefix": "The assessor is the person who judges the whole building, with the guide as the product's evidence.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2582,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2582
+          },
+          {
+            "text": "assessor",
+            "startFrame": 2585
+          },
+          {
+            "text": "is",
+            "startFrame": 2610
+          },
+          {
+            "text": "the",
+            "startFrame": 2614
+          },
+          {
+            "text": "person",
+            "startFrame": 2616
+          },
+          {
+            "text": "who",
+            "startFrame": 2631
+          },
+          {
+            "text": "judges",
+            "startFrame": 2635
+          }
+        ]
+      },
+      {
+        "startFrame": 2650,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2650
+          },
+          {
+            "text": "whole",
+            "startFrame": 2652
+          },
+          {
+            "text": "building,",
+            "startFrame": 2661
+          }
+        ]
+      },
+      {
+        "startFrame": 2684,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 2684
+          },
+          {
+            "text": "the",
+            "startFrame": 2686
+          },
+          {
+            "text": "guide",
+            "startFrame": 2690
+          },
+          {
+            "text": "as",
+            "startFrame": 2705
+          },
+          {
+            "text": "the",
+            "startFrame": 2708
+          },
+          {
+            "text": "product's",
+            "startFrame": 2710
+          },
+          {
+            "text": "evidence.",
+            "startFrame": 2722
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 19,
-    "startFrame": 3232,
-    "endFrame": 3277,
+    "startFrame": 2751,
+    "endFrame": 2806,
     "text": "Now read the guide.",
     "prefix": "Now read the guide.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2752,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2752
+          },
+          {
+            "text": "read",
+            "startFrame": 2758
+          },
+          {
+            "text": "the",
+            "startFrame": 2763
+          },
+          {
+            "text": "guide.",
+            "startFrame": 2765
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 20,
-    "startFrame": 3278,
-    "endFrame": 3462,
+    "startFrame": 2807,
+    "endFrame": 2955,
     "text": "Its first lines say the zone is the bank's, and that the guide claims no compliance.",
     "prefix": "Its first lines say the zone is the bank's, and that the guide claims no compliance.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2808,
+        "words": [
+          {
+            "text": "Its",
+            "startFrame": 2808
+          },
+          {
+            "text": "first",
+            "startFrame": 2812
+          },
+          {
+            "text": "lines",
+            "startFrame": 2821
+          },
+          {
+            "text": "say",
+            "startFrame": 2830
+          },
+          {
+            "text": "the",
+            "startFrame": 2835
+          },
+          {
+            "text": "zone",
+            "startFrame": 2837
+          },
+          {
+            "text": "is",
+            "startFrame": 2852
+          }
+        ]
+      },
+      {
+        "startFrame": 2856,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2856
+          },
+          {
+            "text": "bank's,",
+            "startFrame": 2859
+          },
+          {
+            "text": "and",
+            "startFrame": 2886
+          },
+          {
+            "text": "that",
+            "startFrame": 2888
+          },
+          {
+            "text": "the",
+            "startFrame": 2891
+          },
+          {
+            "text": "guide",
+            "startFrame": 2894
+          },
+          {
+            "text": "claims",
+            "startFrame": 2905
+          },
+          {
+            "text": "no",
+            "startFrame": 2916
+          },
+          {
+            "text": "compliance.",
+            "startFrame": 2922
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 21,
-    "startFrame": 3463,
-    "endFrame": 3600,
+    "startFrame": 2956,
+    "endFrame": 3109,
     "text": "Section eleven is the matrix: product, bank and shared, row by row.",
     "prefix": "Section eleven is the matrix: product, bank and shared, row by row.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2957,
+        "words": [
+          {
+            "text": "Section",
+            "startFrame": 2957
+          },
+          {
+            "text": "eleven",
+            "startFrame": 2967
+          },
+          {
+            "text": "is",
+            "startFrame": 2980
+          },
+          {
+            "text": "the",
+            "startFrame": 2983
+          },
+          {
+            "text": "matrix:",
+            "startFrame": 2985
+          }
+        ]
+      },
+      {
+        "startFrame": 3014,
+        "words": [
+          {
+            "text": "product,",
+            "startFrame": 3014
+          },
+          {
+            "text": "bank",
+            "startFrame": 3029
+          },
+          {
+            "text": "and",
+            "startFrame": 3047
+          },
+          {
+            "text": "shared,",
+            "startFrame": 3050
+          }
+        ]
+      },
+      {
+        "startFrame": 3078,
+        "words": [
+          {
+            "text": "row",
+            "startFrame": 3078
+          },
+          {
+            "text": "by",
+            "startFrame": 3082
+          },
+          {
+            "text": "row.",
+            "startFrame": 3087
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 22,
-    "startFrame": 3601,
-    "endFrame": 3762,
+    "startFrame": 3110,
+    "endFrame": 3271,
     "text": "Physical security is all the bank's, and the dual control of keys is shared.",
     "prefix": "Physical security is all the bank's, and the dual control of keys is shared.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3113,
+        "words": [
+          {
+            "text": "Physical",
+            "startFrame": 3113
+          },
+          {
+            "text": "security",
+            "startFrame": 3124
+          },
+          {
+            "text": "is",
+            "startFrame": 3150
+          },
+          {
+            "text": "all",
+            "startFrame": 3159
+          },
+          {
+            "text": "the",
+            "startFrame": 3167
+          },
+          {
+            "text": "bank's,",
+            "startFrame": 3169
+          }
+        ]
+      },
+      {
+        "startFrame": 3192,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3192
+          },
+          {
+            "text": "the",
+            "startFrame": 3195
+          },
+          {
+            "text": "dual",
+            "startFrame": 3198
+          },
+          {
+            "text": "control",
+            "startFrame": 3206
+          },
+          {
+            "text": "of",
+            "startFrame": 3218
+          },
+          {
+            "text": "keys",
+            "startFrame": 3221
+          },
+          {
+            "text": "is",
+            "startFrame": 3242
+          },
+          {
+            "text": "shared.",
+            "startFrame": 3245
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 23,
-    "startFrame": 3763,
-    "endFrame": 3935,
+    "startFrame": 3272,
+    "endFrame": 3431,
     "text": "Section twelve lists the known gaps, each with the bank's control until it is fixed.",
     "prefix": "Section twelve lists the known gaps, each with the bank's control until it is fixed.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3273,
+        "words": [
+          {
+            "text": "Section",
+            "startFrame": 3273
+          },
+          {
+            "text": "twelve",
+            "startFrame": 3288
+          },
+          {
+            "text": "lists",
+            "startFrame": 3301
+          },
+          {
+            "text": "the",
+            "startFrame": 3311
+          },
+          {
+            "text": "known",
+            "startFrame": 3314
+          },
+          {
+            "text": "gaps,",
+            "startFrame": 3324
+          }
+        ]
+      },
+      {
+        "startFrame": 3352,
+        "words": [
+          {
+            "text": "each",
+            "startFrame": 3352
+          },
+          {
+            "text": "with",
+            "startFrame": 3358
+          },
+          {
+            "text": "the",
+            "startFrame": 3361
+          },
+          {
+            "text": "bank's",
+            "startFrame": 3364
+          },
+          {
+            "text": "control",
+            "startFrame": 3373
+          },
+          {
+            "text": "until",
+            "startFrame": 3394
+          },
+          {
+            "text": "it",
+            "startFrame": 3400
+          },
+          {
+            "text": "is",
+            "startFrame": 3402
+          },
+          {
+            "text": "fixed.",
+            "startFrame": 3405
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 24,
-    "startFrame": 3936,
-    "endFrame": 4016,
+    "startFrame": 3432,
+    "endFrame": 3508,
     "text": "And the guide ships with every release.",
     "prefix": "And the guide ships with every release.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3433,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 3433
+          },
+          {
+            "text": "the",
+            "startFrame": 3435
+          },
+          {
+            "text": "guide",
+            "startFrame": 3437
+          },
+          {
+            "text": "ships",
+            "startFrame": 3445
+          },
+          {
+            "text": "with",
+            "startFrame": 3460
+          },
+          {
+            "text": "every",
+            "startFrame": 3470
+          },
+          {
+            "text": "release.",
+            "startFrame": 3478
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 25,
-    "startFrame": 4016,
-    "endFrame": 4131,
+    "startFrame": 3508,
+    "endFrame": 3607,
     "text": "We deliver the locked room; the bank owns the building.",
     "prefix": "We deliver the locked room; the bank owns the building.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3509,
+        "words": [
+          {
+            "text": "We",
+            "startFrame": 3509
+          },
+          {
+            "text": "deliver",
+            "startFrame": 3511
+          },
+          {
+            "text": "the",
+            "startFrame": 3521
+          },
+          {
+            "text": "locked",
+            "startFrame": 3523
+          },
+          {
+            "text": "room;",
+            "startFrame": 3533
+          }
+        ]
+      },
+      {
+        "startFrame": 3553,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3553
+          },
+          {
+            "text": "bank",
+            "startFrame": 3556
+          },
+          {
+            "text": "owns",
+            "startFrame": 3573
+          },
+          {
+            "text": "the",
+            "startFrame": 3581
+          },
+          {
+            "text": "building.",
+            "startFrame": 3583
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 26,
-    "startFrame": 4132,
-    "endFrame": 4346,
+    "startFrame": 3607,
+    "endFrame": 3798,
     "text": "That is the whole course: the shop, the locked room, and the building around them both.",
     "prefix": "That is the whole course: the shop, the locked room, and the building around them both.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3608,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 3608
+          },
+          {
+            "text": "is",
+            "startFrame": 3611
+          },
+          {
+            "text": "the",
+            "startFrame": 3614
+          },
+          {
+            "text": "whole",
+            "startFrame": 3617
+          },
+          {
+            "text": "course:",
+            "startFrame": 3631
+          }
+        ]
+      },
+      {
+        "startFrame": 3661,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3661
+          },
+          {
+            "text": "shop,",
+            "startFrame": 3664
+          },
+          {
+            "text": "the",
+            "startFrame": 3687
+          },
+          {
+            "text": "locked",
+            "startFrame": 3690
+          },
+          {
+            "text": "room,",
+            "startFrame": 3700
+          }
+        ]
+      },
+      {
+        "startFrame": 3721,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3721
+          },
+          {
+            "text": "the",
+            "startFrame": 3722
+          },
+          {
+            "text": "building",
+            "startFrame": 3725
+          },
+          {
+            "text": "around",
+            "startFrame": 3734
+          },
+          {
+            "text": "them",
+            "startFrame": 3741
+          },
+          {
+            "text": "both.",
+            "startFrame": 3743
+          }
+        ]
+      }
+    ]
   }
 ]
