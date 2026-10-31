@@ -67,9 +67,9 @@ Cards, the passport office, stamps it with its seal and hands back three things:
 Each allowed caller has its own roles, its own origins whose pages may embed the frame, and its own session limits.
 
 18
-00:02:09,290 --> 00:02:17,568
-Fraud limits count refused cards and codes per card, per BIN and per payer address, each within the configured limit and window.
+00:02:09,290 --> 00:02:18,720
+Fraud limits count refused cards and codes per card, per BIN, per payer address and per risk reference, each within the configured limit and window.
 
 19
-00:02:17,618 --> 00:02:23,760
+00:02:18,770 --> 00:02:24,912
 Card numbers stay in one unit, behind two narrow doors, and every caller is only an input.
