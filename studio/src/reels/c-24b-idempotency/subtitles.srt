@@ -1,79 +1,79 @@
 1
-00:00:00,050 --> 00:00:04,615
+00:00:00,050 --> 00:00:03,696
 What happens when a merchant's server asks for the same payment twice?
 
 2
-00:00:04,665 --> 00:00:09,615
+00:00:03,746 --> 00:00:08,400
 The server sends create payment, the network hiccups, and no answer comes back.
 
 3
-00:00:09,665 --> 00:00:12,307
+00:00:08,450 --> 00:00:10,440
 So it sends the same request again.
 
 4
-00:00:12,357 --> 00:00:19,230
+00:00:10,490 --> 00:00:16,032
 Without a way to tie the two together, the buyer gets two payment pages, and may pay twice.
 
 5
-00:00:19,280 --> 00:00:21,153
+00:00:16,082 --> 00:00:17,904
 Think of a lift button.
 
 6
-00:00:21,203 --> 00:00:25,000
+00:00:17,954 --> 00:00:21,048
 Press it once or ten times, and one lift comes.
 
 7
-00:00:25,050 --> 00:00:30,384
+00:00:21,098 --> 00:00:26,904
 So each create carries an idempotency key: the merchant's own name for this attempt.
 
 8
-00:00:30,434 --> 00:00:35,384
+00:00:26,954 --> 00:00:30,960
 The same key with the same body gets the first answer back, unchanged.
 
 9
-00:00:35,434 --> 00:00:40,384
+00:00:31,010 --> 00:00:35,448
 That is an idempotent replay, and the answer says so in a header.
 
 10
-00:00:40,434 --> 00:00:47,692
+00:00:35,498 --> 00:00:41,472
 The same key with a different body is refused, because it is a different request under an old name.
 
 11
-00:00:47,742 --> 00:00:51,538
+00:00:41,522 --> 00:00:45,024
 And two retries can arrive at the very same moment.
 
 12
-00:00:51,588 --> 00:00:57,692
+00:00:45,074 --> 00:00:50,904
 They meet at the database's unique key: one wins, and the other gets the winner's answer.
 
 13
-00:00:57,742 --> 00:01:00,000
+00:00:50,954 --> 00:00:52,776
 Now read it in the code.
 
 14
-00:01:00,050 --> 00:01:06,923
+00:00:52,826 --> 00:00:59,928
 Each idempotency record keeps the merchant's client, the key, a fingerprint of the request, and the first answer.
 
 15
-00:01:06,973 --> 00:01:14,230
+00:00:59,978 --> 00:01:06,216
 The client and the key together are the primary key, so the same pair can never be stored twice.
 
 16
-00:01:14,280 --> 00:01:19,230
+00:01:06,266 --> 00:01:10,752
 Before creating anything, the service looks for an earlier record with that key.
 
 17
-00:01:19,280 --> 00:01:25,769
+00:01:10,802 --> 00:01:17,184
 A different fingerprint is refused, and the same one returns the stored answer, marked as a replay.
 
 18
-00:01:25,819 --> 00:01:32,692
+00:01:17,234 --> 00:01:24,288
 And if a racing request wins the insert, the service simply runs again, and replays the winner's answer.
 
 19
-00:01:32,742 --> 00:01:38,076
+00:01:24,338 --> 00:01:28,632
 Like a lift button: press as often as you like, and one payment comes.
 
 20
-00:01:38,126 --> 00:01:40,384
+00:01:28,682 --> 00:01:31,200
 Next: the page the buyer opens.
