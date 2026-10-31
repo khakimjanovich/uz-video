@@ -1,0 +1,39 @@
+1
+00:00:00,050 --> 00:00:03,168
+How do you stop a website taking more money than it is allowed?
+
+2
+00:00:03,218 --> 00:00:08,208
+A concert hall can never sell its last seat twice, even with two clerks at the counter.
+
+3
+00:00:08,258 --> 00:00:13,968
+A website's payment limits work the same way: the most it may take per payment, and the most per day.
+
+4
+00:00:14,018 --> 00:00:18,144
+A payment over the per-payment limit is refused the moment it is created.
+
+5
+00:00:18,194 --> 00:00:22,080
+The daily limit is harder, because five buyers can pay at once.
+
+6
+00:00:22,130 --> 00:00:27,888
+So each charge reserves its amount on the day in one step, and only if the total still fits.
+
+7
+00:00:27,938 --> 00:00:30,192
+Racing charges wait their turn.
+
+8
+00:00:30,242 --> 00:00:34,080
+A charge that does not fit fails before any money moves.
+
+9
+00:00:34,130 --> 00:00:40,200
+And in front of it all, the edge accepts only modern encrypted connections and modest request sizes.
+
+10
+00:00:40,250 --> 00:00:44,064
+Next: how the system is installed, starting with its keys.
