@@ -54,6 +54,13 @@ export const BUILD_CATALOG = {
   partnerTable: { label: "Merchant table", sublabel: "Partner's own", art: "journal" },
   door: { label: "Internal contract", sublabel: "/internal operations", art: "transit" },
   generated: { label: "Generated code", sublabel: "build/ · never edited", art: "workflow" },
+  gRules: { label: "Rules" },
+  gRulebook: { label: "Rulebook" },
+  gBoard: { label: "Board" },
+  gPlay: { label: "Play" },
+  cs1: { label: "001-create-partner", sublabel: "Changeset", art: "receipt" },
+  cs2: { label: "002-…", sublabel: "Changeset", art: "receipt" },
+  problem: { label: "Problem detail", sublabel: "404 · PARTNER_NOT_FOUND", art: "receipt" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
@@ -105,6 +112,7 @@ export const BUILD_CATALOG = {
   stActive: { label: "Active" },
   stSuspended: { label: "Suspended" },
   stTerminated: { label: "Terminated" },
+  stRejected: { label: "Rejected" },
   sweep: { label: "Sweep job", sublabel: "Scheduled", art: "workflow" },
   // tools
   postgres: { label: "Postgres", logo: siPostgresql.path },

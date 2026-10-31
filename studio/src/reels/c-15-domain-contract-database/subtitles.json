@@ -1,0 +1,263 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 70,
+    "text": "Where should a new feature start?",
+    "prefix": "Where should a new feature start?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 70,
+    "endFrame": 254,
+    "text": "Picture a developer who starts with the table, because the table is what they can see.",
+    "prefix": "Picture a developer who starts with the table, because the table is what they can see.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 255,
+    "endFrame": 393,
+    "text": "The API mirrors the table, and the status column takes any string.",
+    "prefix": "The API mirrors the table, and the status column takes any string.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 393,
+    "endFrame": 577,
+    "text": "Six months later, suspended merchants are taking payments, because nobody wrote down which moves are allowed.",
+    "prefix": "Six months later, suspended merchants are taking payments, because nobody wrote down which moves are allowed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 578,
+    "endFrame": 681,
+    "text": "A board game is designed the other way round.",
+    "prefix": "A board game is designed the other way round.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 682,
+    "endFrame": 774,
+    "text": "The rules come first: which moves are legal.",
+    "prefix": "The rules come first: which moves are legal.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 774,
+    "endFrame": 924,
+    "text": "Then the printed rulebook, which is hard to change once players have it.",
+    "prefix": "Then the printed rulebook, which is hard to change once players have it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 924,
+    "endFrame": 1004,
+    "text": "Then the board, and only then, play.",
+    "prefix": "Then the board, and only then, play.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1005,
+    "endFrame": 1131,
+    "text": "Every feature in this system is built in the same order.",
+    "prefix": "Every feature in this system is built in the same order.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1132,
+    "endFrame": 1235,
+    "text": "First the rules: a partner, and its state machine.",
+    "prefix": "First the rules: a partner, and its state machine.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1236,
+    "endFrame": 1408,
+    "text": "A state machine is the list of allowed moves, and any other move is refused.",
+    "prefix": "A state machine is the list of allowed moves, and any other move is refused.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1409,
+    "endFrame": 1616,
+    "text": "A new partner is verified, then waits for a contract, then for approval, and only then goes live.",
+    "prefix": "A new partner is verified, then waits for a contract, then for approval, and only then goes live.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1616,
+    "endFrame": 1789,
+    "text": "A live partner can be suspended and brought back, and a closed one stays closed.",
+    "prefix": "A live partner can be suspended and brought back, and a closed one stays closed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1789,
+    "endFrame": 1974,
+    "text": "Second, the rulebook: the contract, which says what callers may ask, and what they get back.",
+    "prefix": "Second, the rulebook: the contract, which says what callers may ask, and what they get back.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 1974,
+    "endFrame": 2158,
+    "text": "The controller implements an interface generated from it, so the code cannot drift from the contract.",
+    "prefix": "The controller implements an interface generated from it, so the code cannot drift from the contract.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2159,
+    "endFrame": 2377,
+    "text": "Third, the board: the module's own schema in the database, reached by its own user, which sees nothing else.",
+    "prefix": "Third, the board: the module's own schema in the database, reached by its own user, which sees nothing else.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2378,
+    "endFrame": 2562,
+    "text": "Each change to the schema is a changeset: it runs once, and it is never edited.",
+    "prefix": "Each change to the schema is a changeset: it runs once, and it is never edited.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2563,
+    "endFrame": 2677,
+    "text": "A new change is always a new changeset on top.",
+    "prefix": "A new change is always a new changeset on top.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2678,
+    "endFrame": 2931,
+    "text": "And other modules keep only a partner's id, never a link into its table, so the module can move out one day.",
+    "prefix": "And other modules keep only a partner's id, never a link into its table, so the module can move out one day.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2932,
+    "endFrame": 3047,
+    "text": "Last, play: the smallest code that makes it all work.",
+    "prefix": "Last, play: the smallest code that makes it all work.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 3047,
+    "endFrame": 3116,
+    "text": "Even an error follows the rulebook.",
+    "prefix": "Even an error follows the rulebook.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 3116,
+    "endFrame": 3289,
+    "text": "Ask for a partner that does not exist, and the answer is a problem detail.",
+    "prefix": "Ask for a partner that does not exist, and the answer is a problem detail.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 3289,
+    "endFrame": 3508,
+    "text": "A problem detail is a standard error answer, with a stable code, and a message in the caller's language.",
+    "prefix": "A problem detail is a standard error answer, with a stable code, and a message in the caller's language.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 24,
+    "startFrame": 3509,
+    "endFrame": 3589,
+    "text": "Now read the rules in the code.",
+    "prefix": "Now read the rules in the code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 25,
+    "startFrame": 3589,
+    "endFrame": 3762,
+    "text": "The partner's states are listed once, and one method says where each may move next.",
+    "prefix": "The partner's states are listed once, and one method says where each may move next.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 26,
+    "startFrame": 3763,
+    "endFrame": 3854,
+    "text": "A terminated or rejected partner can move nowhere.",
+    "prefix": "A terminated or rejected partner can move nowhere.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 27,
+    "startFrame": 3855,
+    "endFrame": 4143,
+    "text": "And the missing partner is one entry in a short file: four oh four, a stable code, and the message in English, Russian and Uzbek.",
+    "prefix": "And the missing partner is one entry in a short file: four oh four, a stable code, and the message in English, Russian and Uzbek.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 28,
+    "startFrame": 4143,
+    "endFrame": 4281,
+    "text": "Rules, rulebook, board, then play: the order of every lesson from here.",
+    "prefix": "Rules, rulebook, board, then play: the order of every lesson from here.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 29,
+    "startFrame": 4282,
+    "endFrame": 4427,
+    "text": "Next module: the merchants, starting with how they sign up.",
+    "prefix": "Next module: the merchants, starting with how they sign up.",
+    "highlight": "",
+    "suffix": ""
+  }
+]

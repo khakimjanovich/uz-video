@@ -1,0 +1,115 @@
+1
+00:00:00,050 --> 00:00:02,307
+Where should a new feature start?
+
+2
+00:00:02,357 --> 00:00:08,461
+Picture a developer who starts with the table, because the table is what they can see.
+
+3
+00:00:08,511 --> 00:00:13,076
+The API mirrors the table, and the status column takes any string.
+
+4
+00:00:13,126 --> 00:00:19,230
+Six months later, suspended merchants are taking payments, because nobody wrote down which moves are allowed.
+
+5
+00:00:19,280 --> 00:00:22,692
+A board game is designed the other way round.
+
+6
+00:00:22,742 --> 00:00:25,769
+The rules come first: which moves are legal.
+
+7
+00:00:25,819 --> 00:00:30,769
+Then the printed rulebook, which is hard to change once players have it.
+
+8
+00:00:30,819 --> 00:00:33,461
+Then the board, and only then, play.
+
+9
+00:00:33,511 --> 00:00:37,692
+Every feature in this system is built in the same order.
+
+10
+00:00:37,742 --> 00:00:41,153
+First the rules: a partner, and its state machine.
+
+11
+00:00:41,203 --> 00:00:46,923
+A state machine is the list of allowed moves, and any other move is refused.
+
+12
+00:00:46,973 --> 00:00:53,846
+A new partner is verified, then waits for a contract, then for approval, and only then goes live.
+
+13
+00:00:53,896 --> 00:00:59,615
+A live partner can be suspended and brought back, and a closed one stays closed.
+
+14
+00:00:59,665 --> 00:01:05,769
+Second, the rulebook: the contract, which says what callers may ask, and what they get back.
+
+15
+00:01:05,819 --> 00:01:11,923
+The controller implements an interface generated from it, so the code cannot drift from the contract.
+
+16
+00:01:11,973 --> 00:01:19,230
+Third, the board: the module's own schema in the database, reached by its own user, which sees nothing else.
+
+17
+00:01:19,280 --> 00:01:25,384
+Each change to the schema is a changeset: it runs once, and it is never edited.
+
+18
+00:01:25,434 --> 00:01:29,230
+A new change is always a new changeset on top.
+
+19
+00:01:29,280 --> 00:01:37,692
+And other modules keep only a partner's id, never a link into its table, so the module can move out one day.
+
+20
+00:01:37,742 --> 00:01:41,538
+Last, play: the smallest code that makes it all work.
+
+21
+00:01:41,588 --> 00:01:43,846
+Even an error follows the rulebook.
+
+22
+00:01:43,896 --> 00:01:49,615
+Ask for a partner that does not exist, and the answer is a problem detail.
+
+23
+00:01:49,665 --> 00:01:56,923
+A problem detail is a standard error answer, with a stable code, and a message in the caller's language.
+
+24
+00:01:56,973 --> 00:01:59,615
+Now read the rules in the code.
+
+25
+00:01:59,665 --> 00:02:05,384
+The partner's states are listed once, and one method says where each may move next.
+
+26
+00:02:05,434 --> 00:02:08,461
+A terminated or rejected partner can move nowhere.
+
+27
+00:02:08,511 --> 00:02:18,076
+And the missing partner is one entry in a short file: four oh four, a stable code, and the message in English, Russian and Uzbek.
+
+28
+00:02:18,126 --> 00:02:22,692
+Rules, rulebook, board, then play: the order of every lesson from here.
+
+29
+00:02:22,742 --> 00:02:26,538
+Next module: the merchants, starting with how they sign up.
