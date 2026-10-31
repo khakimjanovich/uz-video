@@ -98,6 +98,13 @@ export const BUILD_CATALOG = {
   chart2: { label: "Chart · ward 2" },
   chart3: { label: "Chart · ward 3" },
   grafana2: { label: "Grafana", sublabel: "The card zone's own", logo: siGrafana.path },
+  brochure: { label: "Brochure", sublabel: "\"Compliant\"", art: "receipt" },
+  gapJob: { label: "Nobody's job", art: "request" },
+  guide: { label: "Guide", sublabel: "Ships with every release", art: "journal" },
+  colProduct: { label: "Product" },
+  colBank: { label: "The bank" },
+  colShared: { label: "Shared" },
+  gaps: { label: "Known gaps", sublabel: "At this release", art: "journal" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
