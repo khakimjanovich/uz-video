@@ -11,6 +11,11 @@ const subtitles: SubtitleCue[] = ["Code lines", "More lines", "Marker moves", "T
   endFrame: (i + 1) * 90,
   text,
 }));
+// A voiced cue's caption: written forms, one short phrase at a time, the spoken word marked.
+subtitles[3].phrases = [
+  { startFrame: 270, words: ["The", "door", "answers", "404"].map((text, k) => ({ text, startFrame: 270 + k * 8 })) },
+  { startFrame: 310, words: ["to", "everything", "else."].map((text, k) => ({ text, startFrame: 310 + k * 8 })) },
+];
 
 const STEPS: CodeStep[] = [
   {

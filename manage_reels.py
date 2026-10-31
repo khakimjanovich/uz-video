@@ -178,6 +178,10 @@ def sync_subtitles_json(reel_name: str, cues=None):
             "highlight": highlight,
             "suffix": suffix,
         }
+        # Phrases come from the voice; a plain subtitles sync keeps them while the text is unchanged.
+        cue_phrases = cue.get("phrases") or (prev.get("phrases") if prev.get("text") == text else None)
+        if cue_phrases:
+            cue_obj["phrases"] = cue_phrases
         if highlight_color:
             cue_obj["highlightColor"] = highlight_color
         if highlight_bg:
@@ -198,17 +202,125 @@ def srt_time(seconds: float) -> str:
     return f"{ms // 3600000:02d}:{ms // 60000 % 60:02d}:{ms // 1000 % 60:02d},{ms % 1000:03d}"
 
 
+# Runs under edge-tts's own Python: writes the audio and prints the word boundaries as [[seconds, word], ...].
+SPEAK_PY = """
+import asyncio, json, sys, edge_tts
+async def main(text, voice, rate, dest):
+    words = []
+    c = edge_tts.Communicate(text, voice, rate=rate, boundary="WordBoundary")
+    with open(dest, "wb") as f:
+        async for ch in c.stream():
+            if ch["type"] == "audio":
+                f.write(ch["data"])
+            elif ch["type"] == "WordBoundary":
+                words.append([ch["offset"] / 1e7, ch["text"]])
+    print(json.dumps(words))
+asyncio.run(main(*sys.argv[1:]))
+"""
+
+
 def speak(text: str, dest: Path, voice: str, rate: str):
-    """One sentence to MP3. The voice service sometimes never answers and edge-tts has no
-    timeout: each try gets a minute, three tries in all."""
-    cmd = [get_edge_tts_bin(), "--voice", voice, "--rate", rate, "--text", text, "--write-media", str(dest)]
+    """One sentence to MP3; returns its word boundaries. The voice service sometimes never answers
+    and edge-tts has no timeout: each try gets a minute, three tries in all."""
+    python = Path(get_edge_tts_bin()).read_text(encoding="utf-8").splitlines()[0].removeprefix("#!").strip()
+    cmd = [python, "-c", SPEAK_PY, text, voice, rate, str(dest)]
     for attempt in range(1, 4):
         try:
-            subprocess.run(cmd, check=True, timeout=60, capture_output=True)
-            return
+            return json.loads(subprocess.run(cmd, check=True, timeout=60, capture_output=True, text=True).stdout)
         except (subprocess.TimeoutExpired, subprocess.CalledProcessError):
             print(f"   no answer for: {text[:50]}… (try {attempt} of 3)")
     sys.exit("Error: the voice service didn't answer.")
+
+
+# Captions show what is said in its written form, a short phrase at a time, timed by the voice's word boundaries.
+NUMBERS = {w: n for n, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen "
+                                      "fourteen fifteen sixteen seventeen eighteen nineteen".split())}
+NUMBERS.update({"twenty": 20, "thirty": 30, "forty": 40})
+PHRASE_MIN, PHRASE_MAX, PHRASE_CHARS = 4, 8, 48
+LITTLE_WORDS = {"a", "an", "the", "to", "of", "and", "or", "in", "on", "by", "for", "its", "with"}
+
+
+def norm(text: str):
+    return re.findall(r"\w+(?:'\w+)*", text.lower())
+
+
+def caption_glossary():
+    """Spoken → written pairs from AGENTS.md's pronunciation glossary (rows marked Caption: yes), longest first."""
+    section = (ROOT_DIR / "AGENTS.md").read_text(encoding="utf-8").split("### D. Pronunciation glossary", 1)[1]
+    pairs = [(norm(m.group(2)), m.group(1))
+             for m in re.finditer(r"^\|\s*`([^`]+)`\s*\|\s*(.+?)\s*\|\s*yes\s*\|", section, re.M)]
+    return sorted(pairs, key=lambda p: -len(p[0]))
+
+
+def caption_tokens(sentence: str, boundaries, glossary):
+    """The sentence's words with start times, spoken forms replaced by written ones."""
+    words = sentence.split()
+    flat = [(n, i) for i, w in enumerate(words) for n in norm(w)]
+    starts = [None] * len(words)
+    k = 0
+    for t, said in boundaries:
+        for n in norm(said):
+            j = next((j for j in range(k, min(k + 6, len(flat))) if flat[j][0] == n), None)
+            if j is None:
+                continue
+            if starts[flat[j][1]] is None:
+                starts[flat[j][1]] = t
+            k = j + 1
+    for i in range(len(words)):  # a word the boundaries missed starts with the one before it
+        starts[i] = starts[i] if starts[i] is not None else (starts[i - 1] if i else 0.0)
+
+    tokens, i = [], 0
+    while i < len(words):
+        rest = [n for w in words[i:] for n in norm(w)]
+        hit = None
+        for spoken, written in glossary:
+            if rest[:len(spoken)] == spoken:
+                # the match must end on a word edge
+                count, used = 0, 0
+                while used < len(spoken):
+                    used += len(norm(words[i + count]))
+                    count += 1
+                if used == len(spoken):
+                    hit = (written, count)
+                    break
+        if hit is None and rest and rest[0] == "lesson" and len(rest) > 1 and rest[1] in NUMBERS:
+            n, count = NUMBERS[rest[1]], 2
+            if len(rest) > 2 and rest[2] in NUMBERS and NUMBERS[rest[1]] >= 20 and NUMBERS[rest[2]] < 10:
+                n += NUMBERS[rest[2]]
+                count = 2 if "-" in words[i + 1] else 3
+            hit = (f"Lesson {n}", count)
+        if hit:
+            written, count = hit
+            punct = re.search(r"[^\w']*$", words[i + count - 1]).group()
+            tokens.append({"text": written + punct, "start": starts[i]})
+            i += count
+        else:
+            tokens.append({"text": words[i], "start": starts[i]})
+            i += 1
+    return tokens
+
+
+def caption_phrases(tokens, fps=30):
+    """Short phrases (up to 8 words, split after punctuation once 3 words are in), each with its words' start frames."""
+    phrases, cur = [], []
+    for t in tokens:
+        cur.append(t)
+        chars = len(" ".join(x["text"] for x in cur))
+        if len(cur) >= 3 and t["text"][-1] in ",;:.?!":
+            phrases.append(cur)
+            cur = []
+        elif len(cur) >= PHRASE_MAX or chars >= PHRASE_CHARS:
+            # never end a phrase on a little word ("a", "the"): it starts the next one
+            carry = [cur.pop()] if cur[-1]["text"].lower() in LITTLE_WORDS and len(cur) > PHRASE_MIN else []
+            phrases.append(cur)
+            cur = carry
+    if cur:
+        if phrases and len(cur) < 3 and len(phrases[-1]) + len(cur) <= PHRASE_MAX + 2:
+            phrases[-1] += cur
+        else:
+            phrases.append(cur)
+    return [{"startFrame": math.floor(p[0]["start"] * fps),
+             "words": [{"text": t["text"], "startFrame": math.floor(t["start"] * fps)} for t in p]} for p in phrases]
 
 
 def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
@@ -235,14 +347,18 @@ def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
     work = dest_audio_dir / "parts"
     shutil.rmtree(work, ignore_errors=True)
     work.mkdir()
-    srt_blocks, offset = [], 0.0
+    glossary = caption_glossary()
+    srt_blocks, phrases, offset = [], [], 0.0
     for i, sentence in enumerate(sentences, 1):
         part = work / f"{i:03d}.mp3"
-        speak(sentence, part, voice, rate)
+        boundaries = speak(sentence, part, voice, rate)
         duration = float(subprocess.run(
             ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(part)],
             check=True, capture_output=True, text=True).stdout.strip())
-        srt_blocks.append(f"{i}\n{srt_time(offset + 0.05)} --> {srt_time(offset + duration)}\n{sentence}\n")
+        tokens = caption_tokens(sentence, [(offset + t, w) for t, w in boundaries], glossary)
+        written = " ".join(t["text"] for t in tokens)
+        srt_blocks.append(f"{i}\n{srt_time(offset + 0.05)} --> {srt_time(offset + duration)}\n{written}\n")
+        phrases.append(caption_phrases(tokens))
         offset += duration
     (work / "list.txt").write_text("".join(f"file '{p.name}'\n" for p in sorted(work.glob("*.mp3"))))
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(work / "list.txt"),
@@ -251,6 +367,8 @@ def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
     dest_srt.write_text("\n".join(srt_blocks), encoding="utf-8")
 
     cues = parse_srt_file(dest_srt)
+    for cue, cue_phrases in zip(cues, phrases):
+        cue["phrases"] = cue_phrases
     sync_subtitles_json(reel_name, cues)
     last_end = max(c["end"] for c in cues) if cues else 0.0
     total_frames = math.ceil((last_end + 1.0) * 30)
