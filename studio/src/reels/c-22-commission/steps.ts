@@ -29,7 +29,7 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 10, layout: RULES, accent: ["ruleSite"], badges: SCORES },
   // The formula, in minor units.
   { cue: 11, layout: FEE, edges: [...FEE_EDGES], badges: { feeacc: "% + fixed, min…max" } },
-  { cue: 12, layout: FEE, edges: [...FEE_EDGES], badges: { feeacc: "whole tiyin", wallet: "whole tiyin" } },
+  { cue: 12, layout: FEE, edges: [...FEE_EDGES], badges: { feeacc: "whole cents", wallet: "whole cents" } },
   { cue: 13, layout: FEE, edges: [...FEE_EDGES], badges: { feeacc: "rounded once" } },
   // Never edited, never overlapping, always explained.
   { cue: 14, layout: { ruleA: [1.5, 1] }, badges: { ruleA: "never edited" } },
