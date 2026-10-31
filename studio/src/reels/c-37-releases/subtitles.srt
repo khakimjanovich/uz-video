@@ -1,0 +1,35 @@
+1
+00:00:00,050 --> 00:00:02,376
+How do you know exactly what is running in a bank?
+
+2
+00:00:02,426 --> 00:00:08,256
+A book's second edition never changes once it is printed, and you always say which edition you read.
+
+3
+00:00:08,306 --> 00:00:10,176
+Releases work the same way.
+
+4
+00:00:10,226 --> 00:00:16,560
+Each part of the system numbers its versions, so the number says breaking change, addition, or fix.
+
+5
+00:00:16,610 --> 00:00:23,592
+A release is fixed once it is made, and everything is built from it, each with a list of every component inside.
+
+6
+00:00:23,642 --> 00:00:30,336
+Every install pins the versions it runs, and every environment runs real releases, the laptop too.
+
+7
+00:00:30,386 --> 00:00:35,352
+An upgrade is: back up, change the version, deploy, and check.
+
+8
+00:00:35,402 --> 00:00:38,208
+And the database only ever moves forward.
+
+9
+00:00:38,258 --> 00:00:40,704
+Next: who is responsible for what.
