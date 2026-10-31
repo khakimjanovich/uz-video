@@ -1,0 +1,173 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 122,
+    "text": "Where does a card number live, when the payments product must never see one?",
+    "prefix": "Where does a card number live, when the payments product must never see one?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 123,
+    "endFrame": 330,
+    "text": "Everything that touches a card number is in P C I D S S scope, the strictest audit in payments.",
+    "prefix": "Everything that touches a card number is in P C I D S S scope, the strictest audit in payments.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 330,
+    "endFrame": 540,
+    "text": "So all of it lives in one unit, cards: the card vault, the card frame, and the Uzcard and Humo adapters.",
+    "prefix": "So all of it lives in one unit, cards: the card vault, the card frame, and the Uzcard and Humo adapters.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 540,
+    "endFrame": 789,
+    "text": "ecom, the payments product, holds only card tokens and masked numbers, so ecom and any future caller stay out of that scope.",
+    "prefix": "ecom, the payments product, holds only card tokens and masked numbers, so ecom and any future caller stay out of that scope.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 789,
+    "endFrame": 1014,
+    "text": "The two units share nothing: each has its own database, its own Vault, its own Keycloak and its own monitoring.",
+    "prefix": "The two units share nothing: each has its own database, its own Vault, its own Keycloak and its own monitoring.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 1015,
+    "endFrame": 1286,
+    "text": "Cards never knows its callers: a caller is only a name in cards' inputs, plus a client certificate that cards' own certificate authority signed.",
+    "prefix": "Cards never knows its callers: a caller is only a name in cards' inputs, plus a client certificate that cards' own certificate authority signed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1287,
+    "endFrame": 1487,
+    "text": "Another caller, a mobile backend for example, changes cards' inputs, never its code or its deployment.",
+    "prefix": "Another caller, a mobile backend for example, changes cards' inputs, never its code or its deployment.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1487,
+    "endFrame": 1754,
+    "text": "ecom knows cards only by inputs too: the cards URLs, cards' certificate authority, its own client certificate, and one secret.",
+    "prefix": "ecom knows cards only by inputs too: the cards URLs, cards' certificate authority, its own client certificate, and one secret.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1755,
+    "endFrame": 2011,
+    "text": "Every call between services is mutual T L S, and it carries a token from cards' own Keycloak with the role the operation needs.",
+    "prefix": "Every call between services is mutual T L S, and it carries a token from cards' own Keycloak with the role the operation needs.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 2011,
+    "endFrame": 2128,
+    "text": "Cards has two doors, and each lets through only what it must.",
+    "prefix": "Cards has two doors, and each lets through only what it must.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 2129,
+    "endFrame": 2370,
+    "text": "The payer door serves only the card frame: the payer's browser loads it and posts the card, and every other path answers four oh four.",
+    "prefix": "The payer door serves only the card frame: the payer's browser loads it and posts the card, and every other path answers four oh four.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 2371,
+    "endFrame": 2660,
+    "text": "Think of a T L S connection as a sealed envelope: S N I is the address written on it, and a certificate is the key that opens it.",
+    "prefix": "Think of a T L S connection as a sealed envelope: S N I is the address written on it, and a certificate is the key that opens it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 2661,
+    "endFrame": 2955,
+    "text": "The partner door reads only the address, passes the envelope on unopened to the card vault, an adapter or Keycloak, and refuses any address it doesn't know.",
+    "prefix": "The partner door reads only the address, passes the envelope on unopened to the card vault, an adapter or Keycloak, and refuses any address it doesn't know.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 2956,
+    "endFrame": 3083,
+    "text": "ecom gets its certificate the way a person gets a passport.",
+    "prefix": "ecom gets its certificate the way a person gets a passport.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 3083,
+    "endFrame": 3278,
+    "text": "ecom fills in the application, a C S R, with its own private key, which never leaves ecom.",
+    "prefix": "ecom fills in the application, a C S R, with its own private key, which never leaves ecom.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 3278,
+    "endFrame": 3647,
+    "text": "Cards, the passport office, stamps it with its seal and hands back three things: the certificate, cards' own certificate authority to recognise the real cards, and one secret for cards' Keycloak.",
+    "prefix": "Cards, the passport office, stamps it with its seal and hands back three things: the certificate, cards' own certificate authority to recognise the real cards, and one secret for cards' Keycloak.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 3648,
+    "endFrame": 3878,
+    "text": "Each allowed caller has its own roles, its own origins whose pages may embed the frame, and its own session limits.",
+    "prefix": "Each allowed caller has its own roles, its own origins whose pages may embed the frame, and its own session limits.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 3878,
+    "endFrame": 4162,
+    "text": "Fraud limits count refused cards and codes per card, per BIN, per payer address and per risk reference, each within the configured limit and window.",
+    "prefix": "Fraud limits count refused cards and codes per card, per BIN, per payer address and per risk reference, each within the configured limit and window.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 4163,
+    "endFrame": 4378,
+    "text": "Card numbers stay in one unit, behind two narrow doors, and every caller is only an input.",
+    "prefix": "Card numbers stay in one unit, behind two narrow doors, and every caller is only an input.",
+    "highlight": "",
+    "suffix": ""
+  }
+]
