@@ -11,6 +11,7 @@ import { C13FraudLimitsComposition } from "./reels/c-13-fraud-limits";
 import { C14ProjectSetupComposition } from "./reels/c-14-project-setup";
 import { C15DomainContractDatabaseComposition } from "./reels/c-15-domain-contract-database";
 import { C19ApiClientsComposition } from "./reels/c-19-api-clients";
+import { C22CommissionComposition } from "./reels/c-22-commission";
 import { PitchOwnersComposition } from "./reels/pitch-owners";
 import { PitchOwnersUzComposition } from "./reels/pitch-owners-uz";
 
@@ -29,6 +30,7 @@ export const RemotionRoot: React.FC = () => {
       <C14ProjectSetupComposition />
       <C15DomainContractDatabaseComposition />
       <C19ApiClientsComposition />
+      <C22CommissionComposition />
       <PitchOwnersComposition />
       <PitchOwnersUzComposition />
     </>

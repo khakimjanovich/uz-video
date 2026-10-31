@@ -1,0 +1,115 @@
+1
+00:00:00,050 --> 00:00:03,076
+Who decides the bank's fee on a payment?
+
+2
+00:00:03,126 --> 00:00:09,615
+Picture a fee that starts as one number in the payment code: one and a half percent.
+
+3
+00:00:09,665 --> 00:00:17,307
+Then one merchant agrees a lower rate, one website gets a special offer, and one card costs the bank more.
+
+4
+00:00:17,357 --> 00:00:22,692
+The number turns into a tangle of if statements that nobody dares to touch.
+
+5
+00:00:22,742 --> 00:00:28,846
+Worse, someone edits a rate in place, and last month's payments can no longer be explained.
+
+6
+00:00:28,896 --> 00:00:31,538
+A supermarket solves this with price tags.
+
+7
+00:00:31,588 --> 00:00:38,846
+The tag on the item beats the sign on the aisle, which beats the offer for the whole store.
+
+8
+00:00:38,896 --> 00:00:40,769
+The most specific price wins.
+
+9
+00:00:40,819 --> 00:00:43,461
+Here, each price is a fee rule.
+
+10
+00:00:43,511 --> 00:00:49,615
+A fee rule can apply to one website, one merchant, one card, or the whole bank.
+
+11
+00:00:49,665 --> 00:00:53,461
+When several match a payment, the most specific one wins.
+
+12
+00:00:53,511 --> 00:01:00,769
+The fee is a percent of the amount, plus a fixed part, kept between a minimum and a maximum.
+
+13
+00:01:00,819 --> 00:01:05,769
+Money is counted in minor units, like tiyin or cents, never in decimals.
+
+14
+00:01:05,819 --> 00:01:09,615
+So the percent is rounded once, to whole minor units.
+
+15
+00:01:09,665 --> 00:01:11,923
+Rules are never edited in place.
+
+16
+00:01:11,973 --> 00:01:17,307
+A change is proposed, and a second admin approves it, as lesson eighteen showed.
+
+17
+00:01:17,357 --> 00:01:23,846
+Two rules for the same thing can never apply at the same moment: the database refuses it.
+
+18
+00:01:23,896 --> 00:01:30,000
+And each payment keeps the rule it used, its fee, and the rest the merchant receives.
+
+19
+00:01:30,050 --> 00:01:33,076
+So last month's payments can always be explained.
+
+20
+00:01:33,126 --> 00:01:35,769
+Now read the price in the code.
+
+21
+00:01:35,819 --> 00:01:44,615
+The fee is the percent, rounded half up to whole tiyin, plus the fixed part, then kept between the minimum and the maximum.
+
+22
+00:01:44,665 --> 00:01:50,769
+And the most specific rule scores highest: a website four, a merchant two, a card one.
+
+23
+00:01:50,819 --> 00:01:53,846
+Now try the formula yourself, in J shell.
+
+24
+00:01:53,896 --> 00:02:01,153
+Take an amount in tiyin, and a rule of one and a half percent, plus a fixed five hundred.
+
+25
+00:02:01,203 --> 00:02:10,000
+The percent comes to eighteen thousand five hundred and eighteen and a half, which rounds up to eighteen thousand five hundred and nineteen.
+
+26
+00:02:10,050 --> 00:02:15,000
+Add the fixed part, and the fee is nineteen thousand and nineteen tiyin.
+
+27
+00:02:15,050 --> 00:02:16,923
+The merchant receives the rest.
+
+28
+00:02:16,973 --> 00:02:21,923
+Like price tags: the most specific wins, and nobody repaints the old ones.
+
+29
+00:02:21,973 --> 00:02:25,384
+Next: the virtual card machine each payment goes through.

@@ -1,0 +1,263 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 93,
+    "text": "Who decides the bank's fee on a payment?",
+    "prefix": "Who decides the bank's fee on a payment?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 93,
+    "endFrame": 289,
+    "text": "Picture a fee that starts as one number in the payment code: one and a half percent.",
+    "prefix": "Picture a fee that starts as one number in the payment code: one and a half percent.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 289,
+    "endFrame": 520,
+    "text": "Then one merchant agrees a lower rate, one website gets a special offer, and one card costs the bank more.",
+    "prefix": "Then one merchant agrees a lower rate, one website gets a special offer, and one card costs the bank more.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 520,
+    "endFrame": 681,
+    "text": "The number turns into a tangle of if statements that nobody dares to touch.",
+    "prefix": "The number turns into a tangle of if statements that nobody dares to touch.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 682,
+    "endFrame": 866,
+    "text": "Worse, someone edits a rate in place, and last month's payments can no longer be explained.",
+    "prefix": "Worse, someone edits a rate in place, and last month's payments can no longer be explained.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 866,
+    "endFrame": 947,
+    "text": "A supermarket solves this with price tags.",
+    "prefix": "A supermarket solves this with price tags.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 947,
+    "endFrame": 1166,
+    "text": "The tag on the item beats the sign on the aisle, which beats the offer for the whole store.",
+    "prefix": "The tag on the item beats the sign on the aisle, which beats the offer for the whole store.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1166,
+    "endFrame": 1224,
+    "text": "The most specific price wins.",
+    "prefix": "The most specific price wins.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1224,
+    "endFrame": 1304,
+    "text": "Here, each price is a fee rule.",
+    "prefix": "Here, each price is a fee rule.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1305,
+    "endFrame": 1489,
+    "text": "A fee rule can apply to one website, one merchant, one card, or the whole bank.",
+    "prefix": "A fee rule can apply to one website, one merchant, one card, or the whole bank.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1489,
+    "endFrame": 1604,
+    "text": "When several match a payment, the most specific one wins.",
+    "prefix": "When several match a payment, the most specific one wins.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1605,
+    "endFrame": 1824,
+    "text": "The fee is a percent of the amount, plus a fixed part, kept between a minimum and a maximum.",
+    "prefix": "The fee is a percent of the amount, plus a fixed part, kept between a minimum and a maximum.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1824,
+    "endFrame": 1974,
+    "text": "Money is counted in minor units, like tiyin or cents, never in decimals.",
+    "prefix": "Money is counted in minor units, like tiyin or cents, never in decimals.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1974,
+    "endFrame": 2089,
+    "text": "So the percent is rounded once, to whole minor units.",
+    "prefix": "So the percent is rounded once, to whole minor units.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 2089,
+    "endFrame": 2158,
+    "text": "Rules are never edited in place.",
+    "prefix": "Rules are never edited in place.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2159,
+    "endFrame": 2320,
+    "text": "A change is proposed, and a second admin approves it, as lesson eighteen showed.",
+    "prefix": "A change is proposed, and a second admin approves it, as lesson eighteen showed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2320,
+    "endFrame": 2516,
+    "text": "Two rules for the same thing can never apply at the same moment: the database refuses it.",
+    "prefix": "Two rules for the same thing can never apply at the same moment: the database refuses it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2516,
+    "endFrame": 2700,
+    "text": "And each payment keeps the rule it used, its fee, and the rest the merchant receives.",
+    "prefix": "And each payment keeps the rule it used, its fee, and the rest the merchant receives.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2701,
+    "endFrame": 2793,
+    "text": "So last month's payments can always be explained.",
+    "prefix": "So last month's payments can always be explained.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2793,
+    "endFrame": 2874,
+    "text": "Now read the price in the code.",
+    "prefix": "Now read the price in the code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 2874,
+    "endFrame": 3139,
+    "text": "The fee is the percent, rounded half up to whole tiyin, plus the fixed part, then kept between the minimum and the maximum.",
+    "prefix": "The fee is the percent, rounded half up to whole tiyin, plus the fixed part, then kept between the minimum and the maximum.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 3139,
+    "endFrame": 3324,
+    "text": "And the most specific rule scores highest: a website four, a merchant two, a card one.",
+    "prefix": "And the most specific rule scores highest: a website four, a merchant two, a card one.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 3324,
+    "endFrame": 3416,
+    "text": "Now try the formula yourself, in J shell.",
+    "prefix": "Now try the formula yourself, in J shell.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 24,
+    "startFrame": 3416,
+    "endFrame": 3635,
+    "text": "Take an amount in tiyin, and a rule of one and a half percent, plus a fixed five hundred.",
+    "prefix": "Take an amount in tiyin, and a rule of one and a half percent, plus a fixed five hundred.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 25,
+    "startFrame": 3636,
+    "endFrame": 3900,
+    "text": "The percent comes to eighteen thousand five hundred and eighteen and a half, which rounds up to eighteen thousand five hundred and nineteen.",
+    "prefix": "The percent comes to eighteen thousand five hundred and eighteen and a half, which rounds up to eighteen thousand five hundred and nineteen.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 26,
+    "startFrame": 3901,
+    "endFrame": 4050,
+    "text": "Add the fixed part, and the fee is nineteen thousand and nineteen tiyin.",
+    "prefix": "Add the fixed part, and the fee is nineteen thousand and nineteen tiyin.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 27,
+    "startFrame": 4051,
+    "endFrame": 4108,
+    "text": "The merchant receives the rest.",
+    "prefix": "The merchant receives the rest.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 28,
+    "startFrame": 4109,
+    "endFrame": 4258,
+    "text": "Like price tags: the most specific wins, and nobody repaints the old ones.",
+    "prefix": "Like price tags: the most specific wins, and nobody repaints the old ones.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 29,
+    "startFrame": 4259,
+    "endFrame": 4392,
+    "text": "Next: the virtual card machine each payment goes through.",
+    "prefix": "Next: the virtual card machine each payment goes through.",
+    "highlight": "",
+    "suffix": ""
+  }
+]
