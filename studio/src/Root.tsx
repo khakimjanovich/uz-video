@@ -14,6 +14,7 @@ import { C19ApiClientsComposition } from "./reels/c-19-api-clients";
 import { C22CommissionComposition } from "./reels/c-22-commission";
 import { C24bIdempotencyComposition } from "./reels/c-24b-idempotency";
 import { C26DebitComposition } from "./reels/c-26-debit";
+import { C28OutboxWebhooksComposition } from "./reels/c-28-outbox-webhooks";
 import { PitchOwnersComposition } from "./reels/pitch-owners";
 import { PitchOwnersUzComposition } from "./reels/pitch-owners-uz";
 
@@ -35,6 +36,7 @@ export const RemotionRoot: React.FC = () => {
       <C22CommissionComposition />
       <C24bIdempotencyComposition />
       <C26DebitComposition />
+      <C28OutboxWebhooksComposition />
       <PitchOwnersComposition />
       <PitchOwnersUzComposition />
     </>

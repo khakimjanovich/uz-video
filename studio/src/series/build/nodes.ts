@@ -87,6 +87,11 @@ export const BUILD_CATALOG = {
   slip: { label: "Withdrawal slip", art: "receipt" },
   logbook: { label: "Logbook", art: "journal" },
   drawer: { label: "Drawer", art: "wallet" },
+  deskFile: { label: "File closed", art: "journal" },
+  tray: { label: "Outbox tray", art: "tray" },
+  postman: { label: "Postman", art: "transit" },
+  relay: { label: "Relay", sublabel: "Collects unsent rows", art: "transit" },
+  relay2: { label: "Relay", sublabel: "Another copy", art: "transit" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },

@@ -1,0 +1,209 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 197,
+    "text": "How do you tell a shop about a payment without ever losing the news, or inventing it?",
+    "prefix": "How do you tell a shop about a payment without ever losing the news, or inventing it?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 197,
+    "endFrame": 358,
+    "text": "Picture an app that saves a payment as paid, and then tells the shop.",
+    "prefix": "Picture an app that saves a payment as paid, and then tells the shop.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 359,
+    "endFrame": 497,
+    "text": "If it crashes in between, the shop never hears, and ships nothing.",
+    "prefix": "If it crashes in between, the shop never hears, and ships nothing.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 497,
+    "endFrame": 716,
+    "text": "Swap the order, and a crash announces a payment that was never saved: the shop ships goods for free.",
+    "prefix": "Swap the order, and a crash announces a payment that was never saved: the shop ships goods for free.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 716,
+    "endFrame": 808,
+    "text": "An office solves this with an outbox tray.",
+    "prefix": "An office solves this with an outbox tray.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 809,
+    "endFrame": 1050,
+    "text": "You close the file and drop the letter in the tray in one motion, and the postman collects from the tray.",
+    "prefix": "You close the file and drop the letter in the tray in one motion, and the postman collects from the tray.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 1051,
+    "endFrame": 1154,
+    "text": "Here, the tray is a table called the outbox.",
+    "prefix": "Here, the tray is a table called the outbox.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 1155,
+    "endFrame": 1374,
+    "text": "When a payment ends, its event is written to the outbox in the same transaction as the final state.",
+    "prefix": "When a payment ends, its event is written to the outbox in the same transaction as the final state.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1374,
+    "endFrame": 1443,
+    "text": "Both are saved, or neither is.",
+    "prefix": "Both are saved, or neither is.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1443,
+    "endFrame": 1570,
+    "text": "A relay is the postman: it collects the oldest unsent rows.",
+    "prefix": "A relay is the postman: it collects the oldest unsent rows.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1570,
+    "endFrame": 1685,
+    "text": "Two copies of the relay never pick the same row.",
+    "prefix": "Two copies of the relay never pick the same row.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1686,
+    "endFrame": 1881,
+    "text": "It publishes each event to Kafka, keyed by its payment, so one payment's events stay in order.",
+    "prefix": "It publishes each event to Kafka, keyed by its payment, so one payment's events stay in order.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1882,
+    "endFrame": 1997,
+    "text": "It marks a row sent only after Kafka has it.",
+    "prefix": "It marks a row sent only after Kafka has it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1997,
+    "endFrame": 2170,
+    "text": "So a crash in between can send an event twice, and that is at-least-once delivery.",
+    "prefix": "So a crash in between can send an event twice, and that is at-least-once delivery.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 2170,
+    "endFrame": 2320,
+    "text": "Every event has its own id, so a repeat is easy to drop.",
+    "prefix": "Every event has its own id, so a repeat is easy to drop.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2320,
+    "endFrame": 2447,
+    "text": "The database stays the truth, and Kafka only carries the news.",
+    "prefix": "The database stays the truth, and Kafka only carries the news.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2447,
+    "endFrame": 2516,
+    "text": "Now read it in the code.",
+    "prefix": "Now read it in the code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2516,
+    "endFrame": 2666,
+    "text": "The outbox writer runs while the payment is saved, inside the same transaction.",
+    "prefix": "The outbox writer runs while the payment is saved, inside the same transaction.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2666,
+    "endFrame": 2816,
+    "text": "It saves one event row, with its own id, for each finished payment.",
+    "prefix": "It saves one event row, with its own id, for each finished payment.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2816,
+    "endFrame": 2989,
+    "text": "The relay takes the oldest unpublished rows, and skips any row another relay has locked.",
+    "prefix": "The relay takes the oldest unpublished rows, and skips any row another relay has locked.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 2989,
+    "endFrame": 3104,
+    "text": "And it marks them published only after they are sent.",
+    "prefix": "And it marks them published only after they are sent.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 3105,
+    "endFrame": 3335,
+    "text": "Like the outbox tray: decided and posted in one motion, so the postman may knock twice, but never zero times.",
+    "prefix": "Like the outbox tray: decided and posted in one motion, so the postman may knock twice, but never zero times.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 3336,
+    "endFrame": 3457,
+    "text": "Next: delivering the news to the merchant's server.",
+    "prefix": "Next: delivering the news to the merchant's server.",
+    "highlight": "",
+    "suffix": ""
+  }
+]
