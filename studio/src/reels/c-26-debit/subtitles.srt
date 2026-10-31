@@ -1,0 +1,51 @@
+1
+00:00:00,050 --> 00:00:03,048
+How do you make sure a card is charged exactly once?
+
+2
+00:00:03,098 --> 00:00:10,848
+At a bank's cash desk, only one cashier can hold the withdrawal slip, and the cashier writes it in the logbook before opening the drawer.
+
+3
+00:00:10,898 --> 00:00:12,720
+The charge works the same way.
+
+4
+00:00:12,770 --> 00:00:19,080
+First, one claim lets exactly one caller win, however many clicks or retries arrive.
+
+5
+00:00:19,130 --> 00:00:21,720
+The winner finds the live terminal and the fee.
+
+6
+00:00:21,770 --> 00:00:25,464
+Without either, the payment fails, and nothing is charged.
+
+7
+00:00:25,514 --> 00:00:29,784
+Then it writes the charge in the logbook, before any network is asked.
+
+8
+00:00:29,834 --> 00:00:37,416
+ecom asks the card zone to charge the card by its token, with an id that makes the charge happen once, even if it is sent twice.
+
+9
+00:00:37,466 --> 00:00:43,080
+Some networks only hold the money at first; for those, the card zone takes it at once.
+
+10
+00:00:43,130 --> 00:00:44,952
+Approved means paid.
+
+11
+00:00:45,002 --> 00:00:46,824
+Declined is final.
+
+12
+00:00:46,874 --> 00:00:50,424
+And no answer in time is unknown, never declined.
+
+13
+00:00:50,474 --> 00:00:53,520
+Next: what happens when the network goes silent.
