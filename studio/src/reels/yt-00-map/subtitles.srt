@@ -1,71 +1,87 @@
 1
-00:00:00,050 --> 00:00:04,200
+00:00:00,050 --> 00:00:04,296
 What does it take to build a bank's e-commerce acquiring system from scratch?
 
 2
-00:00:04,250 --> 00:00:09,576
+00:00:04,346 --> 00:00:09,888
 This series walks through one, part by part, and this map shows where each part sits.
 
 3
-00:00:09,626 --> 00:00:18,792
-On top are the three users: the merchant's server, the buyer, and the bank admin; inside is one modular monolith with six modules.
+00:00:09,938 --> 00:00:15,312
+On top are the three users: the merchant's server, the buyer, and the bank admin.
 
 4
-00:00:18,842 --> 00:00:24,696
-Partner owns the merchants: who they are, their company documents, and whether they may sell.
+00:00:15,362 --> 00:00:23,232
+The system is two units, and the first, ecom, is the payments product: one modular monolith with five modules.
 
 5
-00:00:24,746 --> 00:00:27,840
-Commission decides the fee on every payment.
+00:00:23,282 --> 00:00:29,160
+Partner owns the merchants: who they are, their company documents, and whether they may sell.
 
 6
-00:00:27,890 --> 00:00:35,064
-The e POS module knows which e POS terminal, a MID and a TID, each payment goes through.
+00:00:29,210 --> 00:00:32,352
+Commission decides the fee on every payment.
 
 7
-00:00:35,114 --> 00:00:40,512
-The BIN module knows which scheme and which bank issued a card, from its first digits.
+00:00:32,402 --> 00:00:39,336
+The e POS module knows which e POS terminal, a MID and a TID, each payment goes through.
 
 8
-00:00:40,562 --> 00:00:44,808
-The card vault keeps card numbers encrypted, and hands out tokens instead.
+00:00:39,386 --> 00:00:44,640
+Payment creates every payment, debits the card by its token, and resolves the outcome.
 
 9
-00:00:44,858 --> 00:00:49,248
-Payment creates every payment, debits the card, and resolves the outcome.
+00:00:44,690 --> 00:00:53,784
+Reconciliation compares every day's debits, reversals and refunds with what Uzcard and Humo report, and gives each one a match state and a reason.
 
 10
-00:00:49,298 --> 00:00:57,168
-Below the app, separate services do one job each: email, and an adapter for each card scheme, Uzcard and Humo.
+00:00:53,834 --> 00:01:00,192
+ecom never sees a card number: everything that touches one lives in the second unit, the cards unit.
 
 11
-00:00:57,218 --> 00:01:07,704
-The shared infrastructure is Postgres, Redis, Keycloak, Vault, an S3 file store, Temporal, Kafka, and monitoring with Prometheus and Grafana.
+00:01:00,242 --> 00:01:04,800
+The buyer types the card into the card frame, which sits inside the payment page.
 
 12
-00:01:07,754 --> 00:01:22,584
-Part zero brings up the whole infrastructure with one command: Postgres and Redis, Mailpit, the S3 store, Keycloak, the processing sandbox, Vault, monitoring, Temporal and Kafka, each explained in the episode that first uses it.
+00:01:04,850 --> 00:01:09,240
+The card vault keeps card numbers encrypted, and hands out tokens instead.
 
 13
-00:01:22,634 --> 00:01:31,680
-Part one covers the merchants: sign-up, email codes, company documents, two-admin approval, and logins and API clients in Keycloak.
+00:01:09,290 --> 00:01:14,712
+Its BIN module knows which scheme and which bank issued a card, from its first digits.
 
 14
-00:01:31,730 --> 00:01:37,728
-Part two holds the money rules: the commission, and the e POS terminals every debit goes through.
+00:01:14,762 --> 00:01:22,344
+The Uzcard and Humo adapters speak to each scheme's processing, for the card vault and for ecom, over mutual T L S.
 
 15
-00:01:37,778 --> 00:01:47,232
-Part three handles cards: the Uzcard and Humo adapters as their own services, the BIN module with its bank directory, and a vault that stores only tokens.
+00:01:22,394 --> 00:01:38,232
+Each unit has its own infrastructure: ecom runs Postgres, Redis, Keycloak, Vault, an S3 file store, Temporal, Kafka, and monitoring with Prometheus and Grafana, and the cards unit runs its own Postgres, Vault and Keycloak.
 
 16
-00:01:47,282 --> 00:01:55,080
-Part four is the payment, last, with monitoring, durable retries, and Kafka events, because it needs everything else.
+00:01:38,282 --> 00:01:46,488
+Part zero lays the foundations: what acquiring is, the project setup, and how a domain becomes a contract and a database.
 
 17
-00:01:55,130 --> 00:02:03,000
-Part five deploys everything to Kubernetes, then moves the card vault into its own service, to show why clean boundaries matter.
+00:01:46,538 --> 00:01:57,816
+Part one covers the merchants: sign-up, email codes, company documents, two-admin approval, Keycloak clients, merchant users, sales points, and the shared platform libraries.
 
 18
-00:02:03,050 --> 00:02:07,440
-Next, the project setup, which brings the whole world up with one command.
+00:01:57,866 --> 00:02:04,200
+Part two holds the money rules: the commission, and the e POS terminals every debit goes through.
+
+19
+00:02:04,250 --> 00:02:10,440
+Part three handles cards: the Uzcard and Humo adapters, then the card vault with its BIN module.
+
+20
+00:02:10,490 --> 00:02:21,216
+Part four is the payment, last, because it needs everything else: from signed requests and the payment page to refunds, daily reports, disputes and reconciliation.
+
+21
+00:02:21,266 --> 00:02:27,192
+Part five is how it grows up: delivery onto a bank's own servers, and the cards unit up close.
+
+22
+00:02:27,242 --> 00:02:29,976
+Next, what acquiring is, in five minutes.
