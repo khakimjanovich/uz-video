@@ -28,6 +28,8 @@ export const BUILD_CATALOG = {
   assessor: { label: "Assessor", sublabel: "Checks the room", art: "checker" },
   lockedRoom: { label: "Card numbers", sublabel: "One locked room", art: "vault" },
   bank: { label: "The bank", sublabel: "Network · guards", art: "bank" },
+  ticket: { label: "Ticket", sublabel: "Add a fee to card payments", art: "request" },
+  monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
   bin: { label: "BIN directory", sublabel: "In card-vault", art: "journal" },

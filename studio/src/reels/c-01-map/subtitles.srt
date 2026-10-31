@@ -1,0 +1,135 @@
+1
+00:00:00,050 --> 00:00:02,592
+What does a fee change have to do with card numbers?
+
+2
+00:00:02,642 --> 00:00:07,104
+Picture your first ticket on a payments team: add a fee to card payments.
+
+3
+00:00:07,154 --> 00:00:12,168
+You open the code and find card numbers, fees and merchants in one big service.
+
+4
+00:00:12,218 --> 00:00:17,520
+So a simple fee change touches the card code, and it waits for a card security review.
+
+5
+00:00:17,570 --> 00:00:20,064
+This system splits that service in two.
+
+6
+00:00:20,114 --> 00:00:26,136
+Each part is a unit: a separate product with its own code, its own install and its own data.
+
+7
+00:00:26,186 --> 00:00:28,752
+The big unit is ecom, the shop.
+
+8
+00:00:28,802 --> 00:00:32,544
+The small unit is the cards unit, a locked room next door.
+
+9
+00:00:32,594 --> 00:00:34,872
+Three kinds of people use the system.
+
+10
+00:00:34,922 --> 00:00:37,344
+The merchant's server asks for payments.
+
+11
+00:00:37,394 --> 00:00:39,432
+The buyer pays on the payment page.
+
+12
+00:00:39,482 --> 00:00:41,952
+And the bank's staff look after the merchants.
+
+13
+00:00:42,002 --> 00:00:46,608
+ecom is one app built in five parts, and each part is a module.
+
+14
+00:00:46,658 --> 00:00:52,608
+The modules hold the merchants, the fees, the terminals, the payments, and the checking of the books.
+
+15
+00:00:52,658 --> 00:00:56,112
+The cards unit is the only place a card number lives.
+
+16
+00:00:56,162 --> 00:01:01,968
+It is where the buyer types the card, where the number is kept, and where the lines go out to the card networks.
+
+17
+00:01:02,018 --> 00:01:06,600
+Each unit has its own database, its own keys and its own logins.
+
+18
+00:01:06,650 --> 00:01:10,440
+They share nothing, so nothing in the shop can open the locked room.
+
+19
+00:01:10,490 --> 00:01:12,312
+One line joins them.
+
+20
+00:01:12,362 --> 00:01:16,272
+ecom calls the cards unit, and the cards unit never calls ecom.
+
+21
+00:01:16,322 --> 00:01:20,112
+So the cards unit is installed first, and ecom second.
+
+22
+00:01:20,162 --> 00:01:21,984
+Now back to the ticket.
+
+23
+00:01:22,034 --> 00:01:27,504
+The fee change lives in the shop alone, in one module, and it never goes near the locked room.
+
+24
+00:01:27,554 --> 00:01:30,768
+This course builds the locked room first, then the shop.
+
+25
+00:01:30,818 --> 00:01:33,072
+Now get both units running on your laptop.
+
+26
+00:01:33,122 --> 00:01:36,360
+Clone the seven repositories into one folder.
+
+27
+00:01:36,410 --> 00:01:39,936
+Run the cards installer first, then the ecom installer.
+
+28
+00:01:39,986 --> 00:01:43,440
+Each installer gets its own lesson near the end of the course.
+
+29
+00:01:43,490 --> 00:01:46,344
+Then ask Docker Compose what each unit runs.
+
+30
+00:01:46,394 --> 00:01:51,624
+The cards unit lists its own Postgres, its own Keycloak and its card services.
+
+31
+00:01:51,674 --> 00:01:55,944
+ecom lists its own Postgres, its own Keycloak and its own app.
+
+32
+00:01:55,994 --> 00:01:59,520
+Two lists, two copies of everything, nothing shared.
+
+33
+00:01:59,570 --> 00:02:02,880
+Two units, running: the shop and the locked room.
+
+34
+00:02:02,930 --> 00:02:05,208
+Next: how a card payment works.
