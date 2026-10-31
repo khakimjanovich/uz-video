@@ -1,0 +1,39 @@
+1
+00:00:00,050 --> 00:00:04,872
+How do you tell the world about a payment without ever losing the news, or inventing it?
+
+2
+00:00:04,922 --> 00:00:08,952
+Picture an app that saves a payment as paid, and then tells the shop.
+
+3
+00:00:09,002 --> 00:00:12,192
+If it crashes in between, the shop never hears.
+
+4
+00:00:12,242 --> 00:00:16,392
+Swap the order, and a crash announces a payment that was never saved.
+
+5
+00:00:16,442 --> 00:00:24,672
+An office solves this with an outbox tray: you close the file and drop the letter in the tray in one motion, and the postman collects from the tray.
+
+6
+00:00:24,722 --> 00:00:31,680
+When a payment ends, its news is written to the outbox in the same moment as its final state: both or neither.
+
+7
+00:00:31,730 --> 00:00:39,936
+A relay is the postman: it collects the oldest unsent news and passes it on, one payment's news always in order.
+
+8
+00:00:39,986 --> 00:00:46,680
+It marks a letter sent only after it is delivered, so a crash can send one twice, never zero times.
+
+9
+00:00:46,730 --> 00:00:51,528
+Every piece of news has its own id, so a repeat is easy to drop.
+
+10
+00:00:51,578 --> 00:00:54,720
+Next: delivering the news to the merchant's server.
