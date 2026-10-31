@@ -1,0 +1,119 @@
+1
+00:00:00,050 --> 00:00:03,480
+When a payment page says paid, has any money moved?
+
+2
+00:00:03,530 --> 00:00:05,592
+Picture a corner shop with a tab book.
+
+3
+00:00:05,642 --> 00:00:09,240
+You take your bread, and the shopkeeper writes a line in the book.
+
+4
+00:00:09,290 --> 00:00:11,784
+The money changes hands at the end of the week.
+
+5
+00:00:11,834 --> 00:00:13,848
+A card payment works the same way.
+
+6
+00:00:13,898 --> 00:00:17,952
+The page says paid in two seconds, but no money has moved yet.
+
+7
+00:00:18,002 --> 00:00:19,344
+Two banks take part.
+
+8
+00:00:19,394 --> 00:00:23,544
+The shop's bank is the acquirer, and this course builds its system.
+
+9
+00:00:23,594 --> 00:00:27,528
+The buyer's bank is the issuer: it gave the buyer the card.
+
+10
+00:00:27,578 --> 00:00:33,528
+When the buyer pays, the acquirer asks the issuer, through the card network, whether the payment is OK.
+
+11
+00:00:33,578 --> 00:00:38,952
+The issuer checks the card and the money on the account, and says yes or no, in seconds.
+
+12
+00:00:39,002 --> 00:00:41,664
+That yes is a line in the tab book, not money.
+
+13
+00:00:41,714 --> 00:00:47,592
+The money moves later, in one batch for many payments, and that batch is called settlement.
+
+14
+00:00:47,642 --> 00:00:51,288
+The acquirer keeps its fee and pays the shop the rest.
+
+15
+00:00:51,338 --> 00:00:55,968
+Lesson 22 works out the fee, and Lesson 32 counts the day.
+
+16
+00:00:56,018 --> 00:00:58,200
+Giving money back depends on timing.
+
+17
+00:00:58,250 --> 00:01:03,168
+Before settlement, the line is simply crossed out, as if it never happened.
+
+18
+00:01:03,218 --> 00:01:06,048
+No money has moved, so none has to move back.
+
+19
+00:01:06,098 --> 00:01:11,520
+After settlement, the money has moved, so it has to be sent back, and that is a refund.
+
+20
+00:01:11,570 --> 00:01:15,504
+Code that mixes the two loses money, or pays twice.
+
+21
+00:01:15,554 --> 00:01:17,472
+So keep two pairs apart.
+
+22
+00:01:17,522 --> 00:01:19,104
+Approved is not paid out.
+
+23
+00:01:19,154 --> 00:01:21,192
+And cancelled is not refunded.
+
+24
+00:01:21,242 --> 00:01:23,040
+Now find the tab book in the code.
+
+25
+00:01:23,090 --> 00:01:27,840
+In the ecom repository, search the payment statuses for the words given back.
+
+26
+00:01:27,890 --> 00:01:29,712
+Two statuses come back.
+
+27
+00:01:29,762 --> 00:01:35,616
+The first is given back before settlement, as if it never happened, and its name is reversed.
+
+28
+00:01:35,666 --> 00:01:40,344
+The second is given back after settlement, and its name is refunded.
+
+29
+00:01:40,394 --> 00:01:45,768
+Approved is not paid out, and cancel is not refund: the tab book is in the code.
+
+30
+00:01:45,818 --> 00:01:48,096
+Next: what you may keep about a card.

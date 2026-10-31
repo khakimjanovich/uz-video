@@ -29,6 +29,8 @@ export const BUILD_CATALOG = {
   lockedRoom: { label: "Card numbers", sublabel: "One locked room", art: "vault" },
   bank: { label: "The bank", sublabel: "Network · guards", art: "bank" },
   ticket: { label: "Ticket", sublabel: "Add a fee to card payments", art: "request" },
+  tabBook: { label: "Tab book", sublabel: "One line per sale", art: "journal" },
+  network: { label: "Card network", sublabel: "Between the banks", art: "processing" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },
