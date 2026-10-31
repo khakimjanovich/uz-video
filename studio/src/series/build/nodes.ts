@@ -78,6 +78,12 @@ export const BUILD_CATALOG = {
   ruleA: { label: "Rule A", sublabel: "Until 31 Oct", art: "fee" },
   ruleB: { label: "Rule B", sublabel: "From 1 Nov", art: "fee" },
   ruleC: { label: "Rule C", sublabel: "Overlaps A", art: "fee" },
+  payPage: { label: "Payment page", art: "salespoint" },
+  payPage2: { label: "Payment page", sublabel: "A second one", art: "salespoint" },
+  liftButton: { label: "Lift button" },
+  lift: { label: "One lift", art: "transit" },
+  retry1: { label: "Retry", sublabel: "Same key", art: "request" },
+  retry2: { label: "Retry", sublabel: "Same key", art: "request" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },

@@ -1,0 +1,182 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 139,
+    "text": "What happens when a merchant's server asks for the same payment twice?",
+    "prefix": "What happens when a merchant's server asks for the same payment twice?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 139,
+    "endFrame": 289,
+    "text": "The server sends create payment, the network hiccups, and no answer comes back.",
+    "prefix": "The server sends create payment, the network hiccups, and no answer comes back.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 289,
+    "endFrame": 370,
+    "text": "So it sends the same request again.",
+    "prefix": "So it sends the same request again.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 370,
+    "endFrame": 577,
+    "text": "Without a way to tie the two together, the buyer gets two payment pages, and may pay twice.",
+    "prefix": "Without a way to tie the two together, the buyer gets two payment pages, and may pay twice.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 578,
+    "endFrame": 635,
+    "text": "Think of a lift button.",
+    "prefix": "Think of a lift button.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 636,
+    "endFrame": 750,
+    "text": "Press it once or ten times, and one lift comes.",
+    "prefix": "Press it once or ten times, and one lift comes.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 751,
+    "endFrame": 912,
+    "text": "So each create carries an idempotency key: the merchant's own name for this attempt.",
+    "prefix": "So each create carries an idempotency key: the merchant's own name for this attempt.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 913,
+    "endFrame": 1062,
+    "text": "The same key with the same body gets the first answer back, unchanged.",
+    "prefix": "The same key with the same body gets the first answer back, unchanged.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1063,
+    "endFrame": 1212,
+    "text": "That is an idempotent replay, and the answer says so in a header.",
+    "prefix": "That is an idempotent replay, and the answer says so in a header.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1213,
+    "endFrame": 1431,
+    "text": "The same key with a different body is refused, because it is a different request under an old name.",
+    "prefix": "The same key with a different body is refused, because it is a different request under an old name.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1432,
+    "endFrame": 1547,
+    "text": "And two retries can arrive at the very same moment.",
+    "prefix": "And two retries can arrive at the very same moment.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1547,
+    "endFrame": 1731,
+    "text": "They meet at the database's unique key: one wins, and the other gets the winner's answer.",
+    "prefix": "They meet at the database's unique key: one wins, and the other gets the winner's answer.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1732,
+    "endFrame": 1800,
+    "text": "Now read it in the code.",
+    "prefix": "Now read it in the code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1801,
+    "endFrame": 2008,
+    "text": "Each idempotency record keeps the merchant's client, the key, a fingerprint of the request, and the first answer.",
+    "prefix": "Each idempotency record keeps the merchant's client, the key, a fingerprint of the request, and the first answer.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 2009,
+    "endFrame": 2227,
+    "text": "The client and the key together are the primary key, so the same pair can never be stored twice.",
+    "prefix": "The client and the key together are the primary key, so the same pair can never be stored twice.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 2228,
+    "endFrame": 2377,
+    "text": "Before creating anything, the service looks for an earlier record with that key.",
+    "prefix": "Before creating anything, the service looks for an earlier record with that key.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2378,
+    "endFrame": 2574,
+    "text": "A different fingerprint is refused, and the same one returns the stored answer, marked as a replay.",
+    "prefix": "A different fingerprint is refused, and the same one returns the stored answer, marked as a replay.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2574,
+    "endFrame": 2781,
+    "text": "And if a racing request wins the insert, the service simply runs again, and replays the winner's answer.",
+    "prefix": "And if a racing request wins the insert, the service simply runs again, and replays the winner's answer.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2782,
+    "endFrame": 2943,
+    "text": "Like a lift button: press as often as you like, and one payment comes.",
+    "prefix": "Like a lift button: press as often as you like, and one payment comes.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2943,
+    "endFrame": 3042,
+    "text": "Next: the page the buyer opens.",
+    "prefix": "Next: the page the buyer opens.",
+    "highlight": "",
+    "suffix": ""
+  }
+]
