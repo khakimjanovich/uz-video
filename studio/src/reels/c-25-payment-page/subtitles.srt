@@ -1,0 +1,43 @@
+1
+00:00:00,050 --> 00:00:03,816
+How does a buyer reach the bank's payment page, and nobody else?
+
+2
+00:00:03,866 --> 00:00:10,656
+A hotel key card opens one room, only for the guest who holds it, and only until checkout.
+
+3
+00:00:10,706 --> 00:00:12,672
+The payment page works the same way.
+
+4
+00:00:12,722 --> 00:00:15,984
+The merchant sends the buyer a link with a one-time key.
+
+5
+00:00:16,034 --> 00:00:20,232
+The bank keeps only a fingerprint of that key, and the link expires.
+
+6
+00:00:20,282 --> 00:00:24,384
+The page shows the website, the amount, and the cards it accepts.
+
+7
+00:00:24,434 --> 00:00:28,944
+It opens a card-entry session with the card zone and puts the card frame inside.
+
+8
+00:00:28,994 --> 00:00:33,504
+The page listens only to the frame, and accepts only a token from it.
+
+9
+00:00:33,554 --> 00:00:38,040
+ecom checks the card belongs to this payment, and then the charge starts.
+
+10
+00:00:38,090 --> 00:00:43,296
+And a double click never runs twice: one lock lets only one step through at a time.
+
+11
+00:00:43,346 --> 00:00:45,408
+Next: the charge itself.
