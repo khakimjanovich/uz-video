@@ -1,4 +1,76 @@
+import { siPostgresql, siVault } from "simple-icons";
 import { NodeDef } from "../../components/diagram";
 
 // Diagram boxes added by this module's lessons (ids prefixed "m2", generic names only).
-export const M2_NODES = {} satisfies Record<string, NodeDef>;
+export const M2_NODES = {
+  // Lesson 8: one plug for every socket
+  m2Laptop: { label: "Your laptop", sublabel: "One plug", art: "admin" },
+  m2PlugA: { label: "Plug adapter", art: "transit" },
+  m2PlugB: { label: "Plug adapter", art: "transit" },
+  m2SocketA: { label: "Socket", sublabel: "Country A", art: "tray" },
+  m2SocketB: { label: "Socket", sublabel: "Country B", art: "tray" },
+  m2CentreA: { label: "Centre A", sublabel: "Its own protocol", art: "processing" },
+  m2CentreB: { label: "Centre B", sublabel: "Its own protocol", art: "processing" },
+  m2CentreC: { label: "Centre C", sublabel: "A new one", art: "processing" },
+  m2AdapterA: { label: "Adapter A", sublabel: "Speaks A", art: "transit" },
+  m2AdapterB: { label: "Adapter B", sublabel: "Speaks B", art: "transit" },
+  m2AdapterC: { label: "Adapter C", sublabel: "Speaks C", art: "transit" },
+  m2Approved: { label: "Approved" },
+  m2Declined: { label: "Declined" },
+  m2Unknown: { label: "Unknown" },
+  // Lesson 9: sealed bags in the locked room
+  m2Coat: { label: "Card number", sublabel: "The coat", art: "receipt" },
+  m2ZoneVault: { label: "Vault", sublabel: "The only opener", logo: siVault.path },
+  m2Db: { label: "Database", sublabel: "The card zone's", logo: siPostgresql.path },
+  m2Bag: { label: "Sealed bag", art: "vault" },
+  m2Machine: { label: "One machine", sublabel: "Opens the bags", art: "workflow" },
+  m2OtherRow: { label: "Another row", art: "receipt" },
+  m2Fingerprint: { label: "Blind index", sublabel: "Same number, same stamp", art: "checker" },
+  m2UsageLog: { label: "Usage log", sublabel: "Every use written down", art: "journal" },
+  m2OldCard: { label: "Unused card", art: "receipt" },
+  // Lesson 10: what the first digits tell you
+  m2Card: { label: "1234 5678 ····", sublabel: "A card", art: "receipt" },
+  m2Phone: { label: "Phone number", sublabel: "First digits", art: "request" },
+  m2Country: { label: "The country", art: "bank" },
+  m2NetworkA: { label: "Network A", art: "processing" },
+  m2NetworkB: { label: "Network B", art: "processing" },
+  m2Bin: { label: "First digits", sublabel: "Network · issuing bank", art: "journal" },
+  m2Short: { label: "12…", sublabel: "Network A" },
+  m2Long: { label: "1234…", sublabel: "Network B" },
+  m2First8: { label: "12345678", sublabel: "Only the first eight", art: "receipt" },
+  // Lesson 11: seals on the card reader
+  m2Page: { label: "Payment page", sublabel: "The shop's", art: "salespoint" },
+  m2OtherPage: { label: "Any other page", art: "salespoint" },
+  m2Skimmer: { label: "Skimmer", sublabel: "One added line", art: "attacker" },
+  m2Frame: { label: "Card frame", sublabel: "The bank's card reader", art: "request" },
+  m2Files: { label: "Its two files", sublabel: "Fingerprinted", art: "receipt" },
+  m2Changed: { label: "Changed file", art: "receipt" },
+  m2Browser: { label: "Browser", art: "salespoint" },
+  m2Report: { label: "Reports", sublabel: "What was blocked", art: "journal" },
+  m2Watch: { label: "Page watch", art: "checker" },
+  // Lesson 12: a counter and a mail slot
+  m2Ecom: { label: "ecom", sublabel: "Another unit", art: "workflow" },
+  m2BigDoor: { label: "One big entrance", sublabel: "Opens everything", art: "tray" },
+  // Lesson 12b: the passport office
+  m2Applicant: { label: "You", art: "buyer" },
+  m2Photo: { label: "Application", sublabel: "With your photo", art: "receipt" },
+  m2PassportOffice: { label: "Passport office", art: "bank" },
+  m2EcomVault: { label: "Vault", sublabel: "The caller's own", logo: siVault.path },
+  m2Csr: { label: "Signing request", sublabel: "The application", art: "request" },
+  m2Office: { label: "Certificate authority", sublabel: "The passport office", art: "checker" },
+  m2Folder: { label: "One folder", sublabel: "Certificate · seal · secret · addresses", art: "tray" },
+  m2Expiry: { label: "Expiry watch", art: "checker" },
+  // Lesson 13: counting the keys, not the doors
+  m2Lock: { label: "Shop's lock", art: "vault" },
+  m2DoorA: { label: "Door" },
+  m2DoorB: { label: "Door" },
+  m2DoorC: { label: "Door" },
+  m2Keys: { label: "Stolen card numbers", sublabel: "The keys", art: "receipt" },
+  m2SessionA: { label: "Payment session" },
+  m2SessionB: { label: "Payment session" },
+  m2SessionC: { label: "Payment session" },
+  m2SmallShop: { label: "Small shop's page", art: "salespoint" },
+  m2Person: { label: "A real person", sublabel: "Gets a code", art: "buyer" },
+  m2Counter: { label: "Attempt counter", sublabel: "Card · digits · address · shop", art: "journal" },
+  m2Team: { label: "The team", art: "admin" },
+} satisfies Record<string, NodeDef>;

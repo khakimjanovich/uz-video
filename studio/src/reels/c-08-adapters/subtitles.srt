@@ -1,0 +1,47 @@
+1
+00:00:00,050 --> 00:00:04,536
+How does one system talk to card networks that each speak a different language?
+
+2
+00:00:04,586 --> 00:00:07,008
+Abroad, you carry a plug adapter.
+
+3
+00:00:07,058 --> 00:00:11,424
+Every country's socket is different, but your laptop's plug never changes.
+
+4
+00:00:11,474 --> 00:00:17,544
+Each card processing centre has its own protocol, its own error codes and its own way of saying yes.
+
+5
+00:00:17,594 --> 00:00:25,584
+So the card zone has one adapter per centre: a small service that speaks the centre's language on one side, and one plain language on the other.
+
+6
+00:00:25,634 --> 00:00:29,688
+Inside the card zone there is one plug shape for every centre.
+
+7
+00:00:29,738 --> 00:00:34,992
+Charge, refund, check status: the same questions, whichever centre answers.
+
+8
+00:00:35,042 --> 00:00:40,488
+And every answer becomes one of three outcomes: approved, declined, or unknown.
+
+9
+00:00:40,538 --> 00:00:45,672
+A timeout is unknown, never declined, because the money may already have moved.
+
+10
+00:00:45,722 --> 00:00:51,936
+So every charge carries our own payment id, and later we can ask the centre exactly what happened to it.
+
+11
+00:00:51,986 --> 00:00:55,536
+A new centre means a new adapter, and nothing else changes.
+
+12
+00:00:55,586 --> 00:00:58,992
+Next: how the card zone keeps a card number safe.
