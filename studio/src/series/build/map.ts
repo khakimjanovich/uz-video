@@ -1,7 +1,7 @@
 // The Series B build map (two units: ecom and the cards unit): one source of truth for the presentation diagram and the progress panel.
 // Coordinates are in a 680×500 design space; BuildMap scales them to fit.
 // Infrastructure boxes show the product's official monochrome logo (Simple Icons) above its name.
-import { siApachekafka, siGrafana, siKeycloak, siKubernetes, siPostgresql, siPrometheus, siRedis, siTemporal, siVault } from "simple-icons";
+import { siApachekafka, siGrafana, siDocker, siKeycloak, siPostgresql, siPrometheus, siRedis, siTemporal, siVault } from "simple-icons";
 
 export type BuildNodeId =
   | "merchant" | "buyer" | "admin"
@@ -43,8 +43,9 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   // Outside both units.
   emailsvc: { label: "SMTP", sub: "Mailpit locally", x: 52, y: 440, w: 160, h: 48 },
   procsvc: { label: "Uzcard + Humo", sub: "SV-Gate · Payment Server", x: 400, y: 440, w: 230, h: 48 },
-  // Not a box: the cluster boundary around the ecom unit (drawn by BuildMap as a dashed frame).
-  kubernetes: { label: "Kubernetes", x: 32, y: 70, w: 616, h: 220, logos: [siKubernetes.path] },
+  // Not a box: the delivery frame around both units, each a Docker Compose install (drawn by BuildMap as a dashed frame).
+  // The id stays "kubernetes" so earlier episodes' steps keep pointing at part 5.
+  kubernetes: { label: "Compose × 2", x: 28, y: 66, w: 624, h: 354, logos: [siDocker.path] },
 };
 
 // Vertical arrows: [x, fromY, toY].

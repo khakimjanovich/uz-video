@@ -52,12 +52,12 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
           <path key={`${ax}-${y1}`} d={`M ${ax} ${y1} V ${y2 - 4} M ${ax - 5} ${y2 - 10} L ${ax} ${y2 - 3} L ${ax + 5} ${y2 - 10}`} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} />
         ))}
         {(() => {
-          // The cluster is a frame, not a box: dashed until its part, then solid; its tab sits on the bottom edge.
+          // The delivery frame is a frame, not a box: dashed until its part, then solid; its tab sits on the bottom edge.
           const k = BUILD_NODES.kubernetes;
           const on = step.current?.includes("kubernetes");
           const built = !on && step.built?.includes("kubernetes");
           const color = on ? "var(--ink)" : built ? "var(--stamp-green)" : "var(--ink-muted)";
-          const tabX = 500;
+          const tabX = k.x + 16;
           const tabY = k.y + k.h;
           return (
             <g>

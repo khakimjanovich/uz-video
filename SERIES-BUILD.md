@@ -343,12 +343,10 @@ Columns: **Problem** · **Build** · **Why** · **Tables** · **Endpoints** · *
 
 ### Part 5: Growing up
 
-**24 · Deploy to Kubernetes**
-- Problem: production needs more than one process on one laptop: replicas, health checks, rolling updates, secrets that never touch git.
-- Build (all in ecom-infra, the code is unchanged): `k8s/Dockerfile` (the jar on the plain JRE, non-root; heap from the limit); `k8s/base` (Kustomize): the app × 3 and each adapter × 2, Spring Boot's liveness and readiness probes, `maxUnavailable: 0` rolling updates, `preStop` pause and a 60 s grace period, readiness only on what the app cannot work without (file store, Vault, Keycloak; adapters only in `/actuator/health`), addresses in a ConfigMap, secrets read from Vault at startup with only the Vault sign-in in the `ecom-secrets` Secret (never in git), an autoscaler (3–6 on CPU) and a PodDisruptionBudget. Every scheduled job is already safe on every replica (SKIP LOCKED, one workflow per payment, ShedLock), and Kafka shares partitions between replicas. `k8s/local`: a one-node k3s in Docker on the stack's network, Services that point at the compose containers (`dependencies.sh`), local-only secrets, smaller sizes, the app on :30085.
-- Why Kustomize, not Helm: plain manifests plus one overlay per place; nothing to template yet.
-- Verified: k6 `payments/hosted-page.js` through the cluster while an app pod is deleted: 0 failed checks; the autoscaler adds a replica under load.
-- Code: `ecom-infra@ep-24`.
+**24 · Delivery**
+- Problem: a bank installs the system on its own servers, inside its own card zone: no setting at a default, no secret typed into a file, nothing it can't audit.
+- Story (ecom-infra and cards-infra, `v1.0.0`): two units installed separately, cards first; one Docker Compose install per unit is the reference (Kubernetes manifests parked); every setting in Vault, rendered to environment variables, no defaults; the Vault ceremony stays human (5 shares, any 3, the root token only for setup, then revoked); OpenTofu creates Vault's setup and every service's settings and generates passwords, keys and certificates (state encrypted); one procedure from laptop to production, only the environment's own values typed in, checked by OpenTofu; at least two first bank admins from one input, each sets their own password and authenticator; releases are tags with pinned multi-arch images, SBOM and provenance; no deploy repo of ours, the environment's state is the bank's; each unit ships an implementation guide with a PCI DSS responsibility matrix ("the safe, not the vault room").
+- Code: `ecom-infra@v1.0.0`, `cards-infra@v1.0.0`.
 
 **25 · Extract a module into a service** (paused; not built)
 - Problem: the card vault needs stricter security and its own deploy (PCI DSS scope).

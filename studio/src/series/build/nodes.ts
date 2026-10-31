@@ -1,4 +1,4 @@
-import { siApachekafka, siGrafana, siOpentelemetry, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk } from "simple-icons";
+import { siApachekafka, siGrafana, siOpentelemetry, siKeycloak, siKubernetes, siOpenapiinitiative, siPostgresql, siPrometheus, siRedis, siTemporal, siVault, siDocker, siGradle, siSpringboot, siOpenjdk, siOpentofu } from "simple-icons";
 import { NodeDef } from "../../components/diagram";
 
 // Boxes for the Series B story diagrams. Our own actors and modules use ink drawings;
@@ -52,6 +52,10 @@ export const BUILD_CATALOG = {
   reconciliation: { label: "Reconciliation", sublabel: "Ours vs scheme", art: "journal" },
   cardsKeycloak: { label: "Keycloak", sublabel: "Cards unit", logo: siKeycloak.path },
   cardsVault: { label: "Vault", sublabel: "Transit · PKI", logo: siVault.path },
+  // delivery: who opens Vault, who owns an environment
+  keyholders: { label: "Keyholders", sublabel: "5 shares · any 3", art: "checker" },
+  bankteam: { label: "Bank's team", sublabel: "Its Git · change control", art: "bank" },
+  zone: { label: "Card zone", sublabel: "The bank's vault room", art: "bank" },
   // lifecycle states (label-only boxes)
   stPending: { label: "Pending" },
   stVerified: { label: "Verified" },
@@ -75,6 +79,7 @@ export const BUILD_CATALOG = {
   loki: { label: "Loki", sublabel: "Logs", art: "receipt" },
   kubernetes: { label: "Kubernetes", logo: siKubernetes.path },
   docker: { label: "Docker Compose", logo: siDocker.path },
+  tofu: { label: "OpenTofu", sublabel: "Vault as code", logo: siOpentofu.path },
   gradle: { label: "Gradle", logo: siGradle.path },
   platform: { label: "Platform libraries", sublabel: "error · security · …", art: "tray" },
   versions: { label: "Version catalog", sublabel: "GitHub Packages", art: "journal" },
