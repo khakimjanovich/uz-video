@@ -2,253 +2,1862 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 127,
+    "endFrame": 79,
     "text": "How do you keep one app from turning into a tangle?",
     "prefix": "How do you keep one app from turning into a tangle?",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2,
+        "words": [
+          {
+            "text": "How",
+            "startFrame": 2
+          },
+          {
+            "text": "do",
+            "startFrame": 4
+          },
+          {
+            "text": "you",
+            "startFrame": 6
+          },
+          {
+            "text": "keep",
+            "startFrame": 9
+          },
+          {
+            "text": "one",
+            "startFrame": 16
+          },
+          {
+            "text": "app",
+            "startFrame": 24
+          },
+          {
+            "text": "from",
+            "startFrame": 31
+          },
+          {
+            "text": "turning",
+            "startFrame": 37
+          }
+        ]
+      },
+      {
+        "startFrame": 47,
+        "words": [
+          {
+            "text": "into",
+            "startFrame": 47
+          },
+          {
+            "text": "a",
+            "startFrame": 52
+          },
+          {
+            "text": "tangle?",
+            "startFrame": 53
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 2,
-    "startFrame": 128,
-    "endFrame": 254,
+    "startFrame": 79,
+    "endFrame": 197,
     "text": "Picture a payments product that starts as one Spring Boot app.",
     "prefix": "Picture a payments product that starts as one Spring Boot app.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 81,
+        "words": [
+          {
+            "text": "Picture",
+            "startFrame": 81
+          },
+          {
+            "text": "a",
+            "startFrame": 88
+          },
+          {
+            "text": "payments",
+            "startFrame": 89
+          },
+          {
+            "text": "product",
+            "startFrame": 99
+          },
+          {
+            "text": "that",
+            "startFrame": 117
+          },
+          {
+            "text": "starts",
+            "startFrame": 122
+          },
+          {
+            "text": "as",
+            "startFrame": 146
+          },
+          {
+            "text": "one",
+            "startFrame": 150
+          }
+        ]
+      },
+      {
+        "startFrame": 160,
+        "words": [
+          {
+            "text": "Spring",
+            "startFrame": 160
+          },
+          {
+            "text": "Boot",
+            "startFrame": 170
+          },
+          {
+            "text": "app.",
+            "startFrame": 177
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 3,
-    "startFrame": 255,
-    "endFrame": 427,
+    "startFrame": 198,
+    "endFrame": 368,
     "text": "Within a year, the payment code reads the merchant table directly, because it was quicker.",
     "prefix": "Within a year, the payment code reads the merchant table directly, because it was quicker.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 199,
+        "words": [
+          {
+            "text": "Within",
+            "startFrame": 199
+          },
+          {
+            "text": "a",
+            "startFrame": 205
+          },
+          {
+            "text": "year,",
+            "startFrame": 206
+          }
+        ]
+      },
+      {
+        "startFrame": 226,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 226
+          },
+          {
+            "text": "payment",
+            "startFrame": 229
+          },
+          {
+            "text": "code",
+            "startFrame": 241
+          },
+          {
+            "text": "reads",
+            "startFrame": 265
+          },
+          {
+            "text": "the",
+            "startFrame": 274
+          },
+          {
+            "text": "merchant",
+            "startFrame": 277
+          },
+          {
+            "text": "table",
+            "startFrame": 291
+          },
+          {
+            "text": "directly,",
+            "startFrame": 299
+          }
+        ]
+      },
+      {
+        "startFrame": 323,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 323
+          },
+          {
+            "text": "it",
+            "startFrame": 332
+          },
+          {
+            "text": "was",
+            "startFrame": 335
+          },
+          {
+            "text": "quicker.",
+            "startFrame": 339
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 4,
-    "startFrame": 428,
-    "endFrame": 497,
+    "startFrame": 368,
+    "endFrame": 440,
     "text": "Then a fee change breaks refunds.",
     "prefix": "Then a fee change breaks refunds.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 370,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 370
+          },
+          {
+            "text": "a",
+            "startFrame": 372
+          },
+          {
+            "text": "fee",
+            "startFrame": 373
+          },
+          {
+            "text": "change",
+            "startFrame": 381
+          },
+          {
+            "text": "breaks",
+            "startFrame": 397
+          },
+          {
+            "text": "refunds.",
+            "startFrame": 408
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 5,
-    "startFrame": 497,
-    "endFrame": 727,
+    "startFrame": 441,
+    "endFrame": 650,
     "text": "Splitting into many small services on day one costs a network hop, a deploy and a database for every feature.",
     "prefix": "Splitting into many small services on day one costs a network hop, a deploy and a database for every feature.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 442,
+        "words": [
+          {
+            "text": "Splitting",
+            "startFrame": 442
+          },
+          {
+            "text": "into",
+            "startFrame": 454
+          },
+          {
+            "text": "many",
+            "startFrame": 460
+          },
+          {
+            "text": "small",
+            "startFrame": 473
+          },
+          {
+            "text": "services",
+            "startFrame": 482
+          },
+          {
+            "text": "on",
+            "startFrame": 496
+          },
+          {
+            "text": "day",
+            "startFrame": 501
+          },
+          {
+            "text": "one",
+            "startFrame": 509
+          }
+        ]
+      },
+      {
+        "startFrame": 519,
+        "words": [
+          {
+            "text": "costs",
+            "startFrame": 519
+          },
+          {
+            "text": "a",
+            "startFrame": 533
+          },
+          {
+            "text": "network",
+            "startFrame": 534
+          },
+          {
+            "text": "hop,",
+            "startFrame": 548
+          }
+        ]
+      },
+      {
+        "startFrame": 571,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 571
+          },
+          {
+            "text": "deploy",
+            "startFrame": 572
+          },
+          {
+            "text": "and",
+            "startFrame": 587
+          },
+          {
+            "text": "a",
+            "startFrame": 589
+          },
+          {
+            "text": "database",
+            "startFrame": 590
+          },
+          {
+            "text": "for",
+            "startFrame": 606
+          },
+          {
+            "text": "every",
+            "startFrame": 617
+          },
+          {
+            "text": "feature.",
+            "startFrame": 624
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 6,
-    "startFrame": 728,
-    "endFrame": 820,
+    "startFrame": 650,
+    "endFrame": 730,
     "text": "There is a middle way: an apartment building.",
     "prefix": "There is a middle way: an apartment building.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 652,
+        "words": [
+          {
+            "text": "There",
+            "startFrame": 652
+          },
+          {
+            "text": "is",
+            "startFrame": 656
+          },
+          {
+            "text": "a",
+            "startFrame": 659
+          },
+          {
+            "text": "middle",
+            "startFrame": 660
+          },
+          {
+            "text": "way:",
+            "startFrame": 670
+          }
+        ]
+      },
+      {
+        "startFrame": 694,
+        "words": [
+          {
+            "text": "an",
+            "startFrame": 694
+          },
+          {
+            "text": "apartment",
+            "startFrame": 695
+          },
+          {
+            "text": "building.",
+            "startFrame": 706
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 7,
-    "startFrame": 820,
-    "endFrame": 958,
+    "startFrame": 730,
+    "endFrame": 863,
     "text": "One building, with walled flats, front doors, and plumbing shared by all.",
     "prefix": "One building, with walled flats, front doors, and plumbing shared by all.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 732,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 732
+          },
+          {
+            "text": "building,",
+            "startFrame": 738
+          },
+          {
+            "text": "with",
+            "startFrame": 756
+          },
+          {
+            "text": "walled",
+            "startFrame": 760
+          },
+          {
+            "text": "flats,",
+            "startFrame": 769
+          }
+        ]
+      },
+      {
+        "startFrame": 789,
+        "words": [
+          {
+            "text": "front",
+            "startFrame": 789
+          },
+          {
+            "text": "doors,",
+            "startFrame": 797
+          },
+          {
+            "text": "and",
+            "startFrame": 817
+          },
+          {
+            "text": "plumbing",
+            "startFrame": 820
+          },
+          {
+            "text": "shared",
+            "startFrame": 829
+          },
+          {
+            "text": "by",
+            "startFrame": 838
+          },
+          {
+            "text": "all.",
+            "startFrame": 843
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 8,
-    "startFrame": 959,
-    "endFrame": 1131,
+    "startFrame": 864,
+    "endFrame": 1057,
     "text": "ecom is a modular monolith: one Spring Boot app, deployed once, built from five modules.",
     "prefix": "ecom is a modular monolith: one Spring Boot app, deployed once, built from five modules.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 864,
+        "words": [
+          {
+            "text": "ecom",
+            "startFrame": 864
+          },
+          {
+            "text": "is",
+            "startFrame": 876
+          },
+          {
+            "text": "a",
+            "startFrame": 879
+          },
+          {
+            "text": "modular",
+            "startFrame": 880
+          },
+          {
+            "text": "monolith:",
+            "startFrame": 898
+          }
+        ]
+      },
+      {
+        "startFrame": 929,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 929
+          },
+          {
+            "text": "Spring",
+            "startFrame": 935
+          },
+          {
+            "text": "Boot",
+            "startFrame": 945
+          },
+          {
+            "text": "app,",
+            "startFrame": 953
+          }
+        ]
+      },
+      {
+        "startFrame": 967,
+        "words": [
+          {
+            "text": "deployed",
+            "startFrame": 967
+          },
+          {
+            "text": "once,",
+            "startFrame": 981
+          },
+          {
+            "text": "built",
+            "startFrame": 1006
+          },
+          {
+            "text": "from",
+            "startFrame": 1013
+          },
+          {
+            "text": "five",
+            "startFrame": 1017
+          },
+          {
+            "text": "modules.",
+            "startFrame": 1027
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 9,
-    "startFrame": 1132,
-    "endFrame": 1212,
+    "startFrame": 1057,
+    "endFrame": 1133,
     "text": "Each module is a flat with walls.",
     "prefix": "Each module is a flat with walls.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1058,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 1058
+          },
+          {
+            "text": "module",
+            "startFrame": 1064
+          },
+          {
+            "text": "is",
+            "startFrame": 1084
+          },
+          {
+            "text": "a",
+            "startFrame": 1087
+          },
+          {
+            "text": "flat",
+            "startFrame": 1089
+          },
+          {
+            "text": "with",
+            "startFrame": 1100
+          },
+          {
+            "text": "walls.",
+            "startFrame": 1104
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 10,
-    "startFrame": 1213,
-    "endFrame": 1374,
+    "startFrame": 1134,
+    "endFrame": 1313,
     "text": "A module cannot use another module's code, and if it tries, the build fails.",
     "prefix": "A module cannot use another module's code, and if it tries, the build fails.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1133,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1133
+          },
+          {
+            "text": "module",
+            "startFrame": 1136
+          },
+          {
+            "text": "cannot",
+            "startFrame": 1149
+          },
+          {
+            "text": "use",
+            "startFrame": 1165
+          },
+          {
+            "text": "another",
+            "startFrame": 1174
+          },
+          {
+            "text": "module's",
+            "startFrame": 1185
+          },
+          {
+            "text": "code,",
+            "startFrame": 1198
+          }
+        ]
+      },
+      {
+        "startFrame": 1222,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1222
+          },
+          {
+            "text": "if",
+            "startFrame": 1241
+          },
+          {
+            "text": "it",
+            "startFrame": 1243
+          },
+          {
+            "text": "tries,",
+            "startFrame": 1246
+          }
+        ]
+      },
+      {
+        "startFrame": 1272,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1272
+          },
+          {
+            "text": "build",
+            "startFrame": 1276
+          },
+          {
+            "text": "fails.",
+            "startFrame": 1285
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 11,
-    "startFrame": 1374,
-    "endFrame": 1466,
+    "startFrame": 1314,
+    "endFrame": 1394,
     "text": "Instead, it knocks on the other module's door.",
     "prefix": "Instead, it knocks on the other module's door.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1315,
+        "words": [
+          {
+            "text": "Instead,",
+            "startFrame": 1315
+          },
+          {
+            "text": "it",
+            "startFrame": 1336
+          },
+          {
+            "text": "knocks",
+            "startFrame": 1339
+          },
+          {
+            "text": "on",
+            "startFrame": 1348
+          },
+          {
+            "text": "the",
+            "startFrame": 1350
+          },
+          {
+            "text": "other",
+            "startFrame": 1352
+          },
+          {
+            "text": "module's",
+            "startFrame": 1358
+          },
+          {
+            "text": "door.",
+            "startFrame": 1371
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 12,
-    "startFrame": 1466,
-    "endFrame": 1650,
+    "startFrame": 1394,
+    "endFrame": 1564,
     "text": "That door is an internal contract: the few operations a module lets its neighbours ask for.",
     "prefix": "That door is an internal contract: the few operations a module lets its neighbours ask for.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1396,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 1396
+          },
+          {
+            "text": "door",
+            "startFrame": 1403
+          },
+          {
+            "text": "is",
+            "startFrame": 1415
+          },
+          {
+            "text": "an",
+            "startFrame": 1418
+          },
+          {
+            "text": "internal",
+            "startFrame": 1420
+          },
+          {
+            "text": "contract:",
+            "startFrame": 1432
+          }
+        ]
+      },
+      {
+        "startFrame": 1464,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1464
+          },
+          {
+            "text": "few",
+            "startFrame": 1466
+          },
+          {
+            "text": "operations",
+            "startFrame": 1474
+          },
+          {
+            "text": "a",
+            "startFrame": 1491
+          },
+          {
+            "text": "module",
+            "startFrame": 1492
+          },
+          {
+            "text": "lets",
+            "startFrame": 1513
+          },
+          {
+            "text": "its",
+            "startFrame": 1518
+          },
+          {
+            "text": "neighbours",
+            "startFrame": 1522
+          },
+          {
+            "text": "ask",
+            "startFrame": 1532
+          },
+          {
+            "text": "for.",
+            "startFrame": 1540
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 13,
-    "startFrame": 1651,
-    "endFrame": 1777,
+    "startFrame": 1564,
+    "endFrame": 1683,
     "text": "Inside one app, the door is answered in the same process.",
     "prefix": "Inside one app, the door is answered in the same process.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1565,
+        "words": [
+          {
+            "text": "Inside",
+            "startFrame": 1565
+          },
+          {
+            "text": "one",
+            "startFrame": 1578
+          },
+          {
+            "text": "app,",
+            "startFrame": 1583
+          }
+        ]
+      },
+      {
+        "startFrame": 1602,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1602
+          },
+          {
+            "text": "door",
+            "startFrame": 1605
+          },
+          {
+            "text": "is",
+            "startFrame": 1623
+          },
+          {
+            "text": "answered",
+            "startFrame": 1628
+          },
+          {
+            "text": "in",
+            "startFrame": 1639
+          },
+          {
+            "text": "the",
+            "startFrame": 1641
+          },
+          {
+            "text": "same",
+            "startFrame": 1643
+          },
+          {
+            "text": "process.",
+            "startFrame": 1650
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 14,
-    "startFrame": 1778,
-    "endFrame": 2008,
+    "startFrame": 1684,
+    "endFrame": 1891,
     "text": "If a module ever moves out, the same door is answered over HTTP, and the caller's code does not change.",
     "prefix": "If a module ever moves out, the same door is answered over HTTP, and the caller's code does not change.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1685,
+        "words": [
+          {
+            "text": "If",
+            "startFrame": 1685
+          },
+          {
+            "text": "a",
+            "startFrame": 1687
+          },
+          {
+            "text": "module",
+            "startFrame": 1688
+          },
+          {
+            "text": "ever",
+            "startFrame": 1706
+          },
+          {
+            "text": "moves",
+            "startFrame": 1712
+          },
+          {
+            "text": "out,",
+            "startFrame": 1721
+          }
+        ]
+      },
+      {
+        "startFrame": 1737,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1737
+          },
+          {
+            "text": "same",
+            "startFrame": 1740
+          },
+          {
+            "text": "door",
+            "startFrame": 1749
+          },
+          {
+            "text": "is",
+            "startFrame": 1757
+          },
+          {
+            "text": "answered",
+            "startFrame": 1761
+          },
+          {
+            "text": "over",
+            "startFrame": 1774
+          },
+          {
+            "text": "HTTP,",
+            "startFrame": 1781
+          }
+        ]
+      },
+      {
+        "startFrame": 1822,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1822
+          },
+          {
+            "text": "the",
+            "startFrame": 1824
+          },
+          {
+            "text": "caller's",
+            "startFrame": 1826
+          },
+          {
+            "text": "code",
+            "startFrame": 1838
+          },
+          {
+            "text": "does",
+            "startFrame": 1851
+          },
+          {
+            "text": "not",
+            "startFrame": 1856
+          },
+          {
+            "text": "change.",
+            "startFrame": 1863
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 15,
-    "startFrame": 2009,
-    "endFrame": 2193,
+    "startFrame": 1892,
+    "endFrame": 2068,
     "text": "Each contract is written by hand first, and the code is generated from it, never edited.",
     "prefix": "Each contract is written by hand first, and the code is generated from it, never edited.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1893,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 1893
+          },
+          {
+            "text": "contract",
+            "startFrame": 1898
+          },
+          {
+            "text": "is",
+            "startFrame": 1922
+          },
+          {
+            "text": "written",
+            "startFrame": 1927
+          },
+          {
+            "text": "by",
+            "startFrame": 1937
+          },
+          {
+            "text": "hand",
+            "startFrame": 1941
+          },
+          {
+            "text": "first,",
+            "startFrame": 1953
+          }
+        ]
+      },
+      {
+        "startFrame": 1983,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1983
+          },
+          {
+            "text": "the",
+            "startFrame": 1985
+          },
+          {
+            "text": "code",
+            "startFrame": 1988
+          },
+          {
+            "text": "is",
+            "startFrame": 1999
+          },
+          {
+            "text": "generated",
+            "startFrame": 2004
+          },
+          {
+            "text": "from",
+            "startFrame": 2019
+          },
+          {
+            "text": "it,",
+            "startFrame": 2025
+          },
+          {
+            "text": "never",
+            "startFrame": 2036
+          },
+          {
+            "text": "edited.",
+            "startFrame": 2044
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 16,
-    "startFrame": 2193,
-    "endFrame": 2331,
+    "startFrame": 2068,
+    "endFrame": 2251,
     "text": "And every service needs the same plumbing: errors, settings, security, the database.",
     "prefix": "And every service needs the same plumbing: errors, settings, security, the database.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2069,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 2069
+          },
+          {
+            "text": "every",
+            "startFrame": 2074
+          },
+          {
+            "text": "service",
+            "startFrame": 2083
+          },
+          {
+            "text": "needs",
+            "startFrame": 2095
+          },
+          {
+            "text": "the",
+            "startFrame": 2102
+          },
+          {
+            "text": "same",
+            "startFrame": 2104
+          },
+          {
+            "text": "plumbing:",
+            "startFrame": 2119
+          }
+        ]
+      },
+      {
+        "startFrame": 2148,
+        "words": [
+          {
+            "text": "errors,",
+            "startFrame": 2148
+          },
+          {
+            "text": "settings,",
+            "startFrame": 2168
+          },
+          {
+            "text": "security,",
+            "startFrame": 2191
+          },
+          {
+            "text": "the",
+            "startFrame": 2217
+          },
+          {
+            "text": "database.",
+            "startFrame": 2219
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 17,
-    "startFrame": 2332,
-    "endFrame": 2481,
+    "startFrame": 2252,
+    "endFrame": 2397,
     "text": "That is the platform library set, written once, and pinned in one line.",
     "prefix": "That is the platform library set, written once, and pinned in one line.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2253,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 2253
+          },
+          {
+            "text": "is",
+            "startFrame": 2255
+          },
+          {
+            "text": "the",
+            "startFrame": 2257
+          },
+          {
+            "text": "platform",
+            "startFrame": 2260
+          },
+          {
+            "text": "library",
+            "startFrame": 2277
+          },
+          {
+            "text": "set,",
+            "startFrame": 2291
+          }
+        ]
+      },
+      {
+        "startFrame": 2313,
+        "words": [
+          {
+            "text": "written",
+            "startFrame": 2313
+          },
+          {
+            "text": "once,",
+            "startFrame": 2323
+          },
+          {
+            "text": "and",
+            "startFrame": 2347
+          },
+          {
+            "text": "pinned",
+            "startFrame": 2352
+          },
+          {
+            "text": "in",
+            "startFrame": 2366
+          },
+          {
+            "text": "one",
+            "startFrame": 2370
+          },
+          {
+            "text": "line.",
+            "startFrame": 2376
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 18,
-    "startFrame": 2482,
-    "endFrame": 2574,
+    "startFrame": 2398,
+    "endFrame": 2464,
     "text": "Now see the wall in the build files.",
     "prefix": "Now see the wall in the build files.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2399,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2399
+          },
+          {
+            "text": "see",
+            "startFrame": 2404
+          },
+          {
+            "text": "the",
+            "startFrame": 2408
+          },
+          {
+            "text": "wall",
+            "startFrame": 2410
+          },
+          {
+            "text": "in",
+            "startFrame": 2420
+          },
+          {
+            "text": "the",
+            "startFrame": 2422
+          },
+          {
+            "text": "build",
+            "startFrame": 2425
+          },
+          {
+            "text": "files.",
+            "startFrame": 2434
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 19,
-    "startFrame": 2574,
-    "endFrame": 2712,
+    "startFrame": 2464,
+    "endFrame": 2608,
     "text": "The payment module's build lists only other modules' contracts, never their code.",
     "prefix": "The payment module's build lists only other modules' contracts, never their code.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2466,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2466
+          },
+          {
+            "text": "payment",
+            "startFrame": 2468
+          },
+          {
+            "text": "module's",
+            "startFrame": 2476
+          },
+          {
+            "text": "build",
+            "startFrame": 2492
+          },
+          {
+            "text": "lists",
+            "startFrame": 2502
+          },
+          {
+            "text": "only",
+            "startFrame": 2517
+          },
+          {
+            "text": "other",
+            "startFrame": 2527
+          },
+          {
+            "text": "modules'",
+            "startFrame": 2534
+          }
+        ]
+      },
+      {
+        "startFrame": 2548,
+        "words": [
+          {
+            "text": "contracts,",
+            "startFrame": 2548
+          },
+          {
+            "text": "never",
+            "startFrame": 2575
+          },
+          {
+            "text": "their",
+            "startFrame": 2582
+          },
+          {
+            "text": "code.",
+            "startFrame": 2586
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 20,
-    "startFrame": 2713,
-    "endFrame": 2804,
+    "startFrame": 2609,
+    "endFrame": 2701,
     "text": "And two architecture rules run with every build.",
     "prefix": "And two architecture rules run with every build.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2610,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 2610
+          },
+          {
+            "text": "two",
+            "startFrame": 2613
+          },
+          {
+            "text": "architecture",
+            "startFrame": 2620
+          },
+          {
+            "text": "rules",
+            "startFrame": 2638
+          },
+          {
+            "text": "run",
+            "startFrame": 2649
+          },
+          {
+            "text": "with",
+            "startFrame": 2666
+          },
+          {
+            "text": "every",
+            "startFrame": 2672
+          },
+          {
+            "text": "build.",
+            "startFrame": 2678
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 21,
-    "startFrame": 2805,
-    "endFrame": 2908,
+    "startFrame": 2702,
+    "endFrame": 2793,
     "text": "One checks that modules stay inside their own walls.",
     "prefix": "One checks that modules stay inside their own walls.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2703,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 2703
+          },
+          {
+            "text": "checks",
+            "startFrame": 2708
+          },
+          {
+            "text": "that",
+            "startFrame": 2716
+          },
+          {
+            "text": "modules",
+            "startFrame": 2720
+          },
+          {
+            "text": "stay",
+            "startFrame": 2738
+          },
+          {
+            "text": "inside",
+            "startFrame": 2745
+          },
+          {
+            "text": "their",
+            "startFrame": 2757
+          },
+          {
+            "text": "own",
+            "startFrame": 2761
+          },
+          {
+            "text": "walls.",
+            "startFrame": 2766
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 22,
-    "startFrame": 2909,
-    "endFrame": 3000,
+    "startFrame": 2794,
+    "endFrame": 2890,
     "text": "The other checks that controllers call only services.",
     "prefix": "The other checks that controllers call only services.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2795,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2795
+          },
+          {
+            "text": "other",
+            "startFrame": 2798
+          },
+          {
+            "text": "checks",
+            "startFrame": 2806
+          },
+          {
+            "text": "that",
+            "startFrame": 2818
+          },
+          {
+            "text": "controllers",
+            "startFrame": 2822
+          },
+          {
+            "text": "call",
+            "startFrame": 2840
+          },
+          {
+            "text": "only",
+            "startFrame": 2850
+          },
+          {
+            "text": "services.",
+            "startFrame": 2857
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 23,
-    "startFrame": 3001,
-    "endFrame": 3070,
+    "startFrame": 2890,
+    "endFrame": 2947,
     "text": "Now break the wall on purpose.",
     "prefix": "Now break the wall on purpose.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2891,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2891
+          },
+          {
+            "text": "break",
+            "startFrame": 2895
+          },
+          {
+            "text": "the",
+            "startFrame": 2904
+          },
+          {
+            "text": "wall",
+            "startFrame": 2907
+          },
+          {
+            "text": "on",
+            "startFrame": 2914
+          },
+          {
+            "text": "purpose.",
+            "startFrame": 2917
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 24,
-    "startFrame": 3070,
-    "endFrame": 3174,
+    "startFrame": 2947,
+    "endFrame": 3068,
     "text": "Make the payment module import the partner module's repository.",
     "prefix": "Make the payment module import the partner module's repository.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2948,
+        "words": [
+          {
+            "text": "Make",
+            "startFrame": 2948
+          },
+          {
+            "text": "the",
+            "startFrame": 2952
+          },
+          {
+            "text": "payment",
+            "startFrame": 2955
+          },
+          {
+            "text": "module",
+            "startFrame": 2966
+          },
+          {
+            "text": "import",
+            "startFrame": 2981
+          },
+          {
+            "text": "the",
+            "startFrame": 3003
+          },
+          {
+            "text": "partner",
+            "startFrame": 3006
+          },
+          {
+            "text": "module's",
+            "startFrame": 3017
+          },
+          {
+            "text": "repository.",
+            "startFrame": 3033
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 25,
-    "startFrame": 3174,
-    "endFrame": 3358,
+    "startFrame": 3069,
+    "endFrame": 3243,
     "text": "Run the build, and it fails at once: the payment module cannot even see that package.",
     "prefix": "Run the build, and it fails at once: the payment module cannot even see that package.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3070,
+        "words": [
+          {
+            "text": "Run",
+            "startFrame": 3070
+          },
+          {
+            "text": "the",
+            "startFrame": 3079
+          },
+          {
+            "text": "build,",
+            "startFrame": 3082
+          }
+        ]
+      },
+      {
+        "startFrame": 3102,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3102
+          },
+          {
+            "text": "it",
+            "startFrame": 3105
+          },
+          {
+            "text": "fails",
+            "startFrame": 3107
+          },
+          {
+            "text": "at",
+            "startFrame": 3120
+          },
+          {
+            "text": "once:",
+            "startFrame": 3122
+          }
+        ]
+      },
+      {
+        "startFrame": 3148,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3148
+          },
+          {
+            "text": "payment",
+            "startFrame": 3151
+          },
+          {
+            "text": "module",
+            "startFrame": 3162
+          },
+          {
+            "text": "cannot",
+            "startFrame": 3177
+          },
+          {
+            "text": "even",
+            "startFrame": 3191
+          },
+          {
+            "text": "see",
+            "startFrame": 3197
+          },
+          {
+            "text": "that",
+            "startFrame": 3208
+          },
+          {
+            "text": "package.",
+            "startFrame": 3214
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 26,
-    "startFrame": 3359,
-    "endFrame": 3474,
+    "startFrame": 3244,
+    "endFrame": 3326,
     "text": "Put the file back, and the wall is whole again.",
     "prefix": "Put the file back, and the wall is whole again.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3245,
+        "words": [
+          {
+            "text": "Put",
+            "startFrame": 3245
+          },
+          {
+            "text": "the",
+            "startFrame": 3248
+          },
+          {
+            "text": "file",
+            "startFrame": 3251
+          },
+          {
+            "text": "back,",
+            "startFrame": 3260
+          }
+        ]
+      },
+      {
+        "startFrame": 3279,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3279
+          },
+          {
+            "text": "the",
+            "startFrame": 3281
+          },
+          {
+            "text": "wall",
+            "startFrame": 3283
+          },
+          {
+            "text": "is",
+            "startFrame": 3294
+          },
+          {
+            "text": "whole",
+            "startFrame": 3297
+          },
+          {
+            "text": "again.",
+            "startFrame": 3305
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 27,
-    "startFrame": 3474,
-    "endFrame": 3589,
+    "startFrame": 3327,
+    "endFrame": 3444,
     "text": "One building, walled flats, and one shared set of pipes.",
     "prefix": "One building, walled flats, and one shared set of pipes.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3328,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 3328
+          },
+          {
+            "text": "building,",
+            "startFrame": 3336
+          },
+          {
+            "text": "walled",
+            "startFrame": 3356
+          },
+          {
+            "text": "flats,",
+            "startFrame": 3363
+          }
+        ]
+      },
+      {
+        "startFrame": 3387,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3387
+          },
+          {
+            "text": "one",
+            "startFrame": 3393
+          },
+          {
+            "text": "shared",
+            "startFrame": 3400
+          },
+          {
+            "text": "set",
+            "startFrame": 3409
+          },
+          {
+            "text": "of",
+            "startFrame": 3414
+          },
+          {
+            "text": "pipes.",
+            "startFrame": 3416
+          }
+        ]
+      }
+    ]
   },
   {
     "index": 28,
-    "startFrame": 3589,
-    "endFrame": 3746,
+    "startFrame": 3445,
+    "endFrame": 3633,
     "text": "Next: how one feature goes from rules, to contract, to database.",
     "prefix": "Next: how one feature goes from rules, to contract, to database.",
     "highlight": "",
-    "suffix": ""
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3446,
+        "words": [
+          {
+            "text": "Next:",
+            "startFrame": 3446
+          },
+          {
+            "text": "how",
+            "startFrame": 3472
+          },
+          {
+            "text": "one",
+            "startFrame": 3476
+          },
+          {
+            "text": "feature",
+            "startFrame": 3485
+          },
+          {
+            "text": "goes",
+            "startFrame": 3501
+          },
+          {
+            "text": "from",
+            "startFrame": 3510
+          },
+          {
+            "text": "rules,",
+            "startFrame": 3516
+          }
+        ]
+      },
+      {
+        "startFrame": 3536,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 3536
+          },
+          {
+            "text": "contract,",
+            "startFrame": 3539
+          },
+          {
+            "text": "to",
+            "startFrame": 3565
+          },
+          {
+            "text": "database.",
+            "startFrame": 3568
+          }
+        ]
+      }
+    ]
   }
 ]
