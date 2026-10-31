@@ -84,6 +84,9 @@ export const BUILD_CATALOG = {
   lift: { label: "One lift", art: "transit" },
   retry1: { label: "Retry", sublabel: "Same key", art: "request" },
   retry2: { label: "Retry", sublabel: "Same key", art: "request" },
+  slip: { label: "Withdrawal slip", art: "receipt" },
+  logbook: { label: "Logbook", art: "journal" },
+  drawer: { label: "Drawer", art: "wallet" },
   monolith: { label: "One big service", sublabel: "Cards · fees · merchants", art: "workflow" },
   // our modules
   port: { label: "CardProcessor", sublabel: "Port", art: "workflow" },

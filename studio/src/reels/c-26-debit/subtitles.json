@@ -1,0 +1,254 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 127,
+    "text": "How do you make sure a card is charged exactly once?",
+    "prefix": "How do you make sure a card is charged exactly once?",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 2,
+    "startFrame": 128,
+    "endFrame": 347,
+    "text": "The buyer clicks pay twice, or the page retries, or two copies of the app handle the same confirmation.",
+    "prefix": "The buyer clicks pay twice, or the page retries, or two copies of the app handle the same confirmation.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 3,
+    "startFrame": 347,
+    "endFrame": 427,
+    "text": "Each of them would charge the card.",
+    "prefix": "Each of them would charge the card.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 4,
+    "startFrame": 428,
+    "endFrame": 647,
+    "text": "And if the app crashes after asking the network, but before saving the answer, nobody knows whether money moved.",
+    "prefix": "And if the app crashes after asking the network, but before saving the answer, nobody knows whether money moved.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 5,
+    "startFrame": 647,
+    "endFrame": 727,
+    "text": "A bank's cash desk solves both problems.",
+    "prefix": "A bank's cash desk solves both problems.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 6,
+    "startFrame": 728,
+    "endFrame": 820,
+    "text": "Only one cashier can hold the withdrawal slip.",
+    "prefix": "Only one cashier can hold the withdrawal slip.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 7,
+    "startFrame": 820,
+    "endFrame": 958,
+    "text": "And the cashier writes it in the logbook before opening the drawer.",
+    "prefix": "And the cashier writes it in the logbook before opening the drawer.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 8,
+    "startFrame": 959,
+    "endFrame": 1027,
+    "text": "The debit works the same way.",
+    "prefix": "The debit works the same way.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 9,
+    "startFrame": 1028,
+    "endFrame": 1200,
+    "text": "First comes the claim: one conditional update moves the payment from card confirmed to debiting.",
+    "prefix": "First comes the claim: one conditional update moves the payment from card confirmed to debiting.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 10,
+    "startFrame": 1201,
+    "endFrame": 1327,
+    "text": "Only one caller's update can match, so exactly one caller wins.",
+    "prefix": "Only one caller's update can match, so exactly one caller wins.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 11,
+    "startFrame": 1328,
+    "endFrame": 1443,
+    "text": "The winner finds the live terminal and the bank's fee.",
+    "prefix": "The winner finds the live terminal and the bank's fee.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 12,
+    "startFrame": 1443,
+    "endFrame": 1547,
+    "text": "Without either, the payment fails, and nothing is charged.",
+    "prefix": "Without either, the payment fails, and nothing is charged.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 13,
+    "startFrame": 1547,
+    "endFrame": 1708,
+    "text": "Then it writes a row in the operation journal, before the network is asked.",
+    "prefix": "Then it writes a row in the operation journal, before the network is asked.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 14,
+    "startFrame": 1709,
+    "endFrame": 1847,
+    "text": "The journal holds one debit per payment, and the database enforces it.",
+    "prefix": "The journal holds one debit per payment, and the database enforces it.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 15,
+    "startFrame": 1847,
+    "endFrame": 1985,
+    "text": "ecom asks the card zone to charge the card by its token.",
+    "prefix": "ecom asks the card zone to charge the card by its token.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 16,
+    "startFrame": 1986,
+    "endFrame": 2170,
+    "text": "The call carries an id that makes it happen once, even if it is sent twice.",
+    "prefix": "The call carries an id that makes it happen once, even if it is sent twice.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 17,
+    "startFrame": 2170,
+    "endFrame": 2274,
+    "text": "Some card networks only hold the money at first.",
+    "prefix": "Some card networks only hold the money at first.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 18,
+    "startFrame": 2274,
+    "endFrame": 2435,
+    "text": "For those, the card zone takes it at once, and that is a capture.",
+    "prefix": "For those, the card zone takes it at once, and that is a capture.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 19,
+    "startFrame": 2436,
+    "endFrame": 2527,
+    "text": "Approved means paid, with the network's reference number.",
+    "prefix": "Approved means paid, with the network's reference number.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 20,
+    "startFrame": 2528,
+    "endFrame": 2572,
+    "text": "Declined is final.",
+    "prefix": "Declined is final.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 21,
+    "startFrame": 2573,
+    "endFrame": 2734,
+    "text": "And no answer in time is unknown, never declined: lesson twenty-seven picks it up.",
+    "prefix": "And no answer in time is unknown, never declined: lesson twenty-seven picks it up.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 22,
+    "startFrame": 2734,
+    "endFrame": 2803,
+    "text": "Now read it in the code.",
+    "prefix": "Now read it in the code.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 23,
+    "startFrame": 2804,
+    "endFrame": 2976,
+    "text": "The claim is a single update: set debiting, where the payment is still card confirmed.",
+    "prefix": "The claim is a single update: set debiting, where the payment is still card confirmed.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 24,
+    "startFrame": 2977,
+    "endFrame": 3149,
+    "text": "Of any number of callers, exactly one changes the row, and gets a one back.",
+    "prefix": "Of any number of callers, exactly one changes the row, and gets a one back.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 25,
+    "startFrame": 3150,
+    "endFrame": 3334,
+    "text": "The journal table is written before every call to a network, and finished with the answer.",
+    "prefix": "The journal table is written before every call to a network, and finished with the answer.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 26,
+    "startFrame": 3334,
+    "endFrame": 3461,
+    "text": "And one unique constraint allows just one debit for each payment.",
+    "prefix": "And one unique constraint allows just one debit for each payment.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 27,
+    "startFrame": 3461,
+    "endFrame": 3622,
+    "text": "Like the cash desk: one slip, written in the logbook first, and one charge.",
+    "prefix": "Like the cash desk: one slip, written in the logbook first, and one charge.",
+    "highlight": "",
+    "suffix": ""
+  },
+  {
+    "index": 28,
+    "startFrame": 3623,
+    "endFrame": 3745,
+    "text": "Next: what happens when the network goes silent.",
+    "prefix": "Next: what happens when the network goes silent.",
+    "highlight": "",
+    "suffix": ""
+  }
+]
