@@ -3,41 +3,245 @@
 How do you know which network a card belongs to before you ask anyone?
 
 2
-00:00:03,290 --> 00:00:07,944
-A phone number's first digits tell you the country, without telling you who you are calling.
+00:00:03,290 --> 00:00:05,112
+Think of a phone number.
 
 3
-00:00:07,994 --> 00:00:12,984
-A card's first digits, its BIN, tell you the card network and the bank that issued the card.
+00:00:05,162 --> 00:00:07,416
+Its first digits tell you the country.
 
 4
-00:00:13,034 --> 00:00:15,456
-Each network publishes its list of BINs.
+00:00:07,466 --> 00:00:09,888
+They tell you that before anyone answers.
 
 5
-00:00:15,506 --> 00:00:19,848
-The card zone copies those lists in, and refreshes them on a schedule.
+00:00:09,938 --> 00:00:11,832
+They never tell you who you are calling.
 
 6
-00:00:19,898 --> 00:00:24,024
-If a network does not answer, it keeps its old list rather than lose it.
+00:00:11,882 --> 00:00:15,408
+And a longer code is more exact than a shorter one.
 
 7
-00:00:24,074 --> 00:00:28,440
-A lookup works like a phone code: the longest matching prefix wins.
+00:00:15,458 --> 00:00:17,280
+A card number works the same way.
 
 8
-00:00:28,490 --> 00:00:34,728
-Before any network is asked to send a code to a buyer's phone, the card zone checks the card's network this way.
+00:00:17,330 --> 00:00:21,192
+Its first digits name the card network and the bank that issued the card.
 
 9
-00:00:34,778 --> 00:00:39,696
-So a card the shop does not accept is refused early, and no network is bothered.
+00:00:21,242 --> 00:00:25,512
+Those first digits are called the BIN, short for bank identification number.
 
 10
-00:00:39,746 --> 00:00:44,616
-And this lookup only ever sees the first eight digits, never the whole number.
+00:00:25,562 --> 00:00:30,816
+Each network publishes its own list of BINs: which first digits belong to which bank.
 
 11
-00:00:44,666 --> 00:00:48,816
+00:00:30,866 --> 00:00:32,688
+That is the network's BIN list.
+
+12
+00:00:32,738 --> 00:00:36,264
+The card zone copies those lists in through the adapters.
+
+13
+00:00:36,314 --> 00:00:40,488
+It copies them when it starts, and again on the bank's chosen schedule.
+
+14
+00:00:40,538 --> 00:00:44,688
+Sometimes a network does not answer, or answers with an empty list.
+
+15
+00:00:44,738 --> 00:00:47,136
+Then the card zone keeps its old list.
+
+16
+00:00:47,186 --> 00:00:49,488
+An old list is better than no list.
+
+17
+00:00:49,538 --> 00:00:51,360
+A lookup works like a phone code.
+
+18
+00:00:51,410 --> 00:00:54,024
+The card zone takes the first eight digits.
+
+19
+00:00:54,074 --> 00:00:57,264
+It tries all eight, then seven, then six.
+
+20
+00:00:57,314 --> 00:01:00,816
+The longest match wins, because it is the most exact.
+
+21
+00:01:00,866 --> 00:01:05,904
+The lookup runs in memory, so it is fast and never touches the database.
+
+22
+00:01:05,954 --> 00:01:10,656
+And the part that knows BINs only ever sees those first eight digits.
+
+23
+00:01:10,706 --> 00:01:12,480
+It never sees the whole number.
+
+24
+00:01:12,530 --> 00:01:14,448
+An unknown BIN is not an error.
+
+25
+00:01:14,498 --> 00:01:16,632
+The answer is simply an empty list.
+
+26
+00:01:16,682 --> 00:01:18,504
+Why does this matter?
+
+27
+00:01:18,554 --> 00:01:24,792
+Before any network is asked to send a code to a buyer's phone, the card zone checks the card's network this way.
+
+28
+00:01:24,842 --> 00:01:27,168
+A shop may accept only some networks.
+
+29
+00:01:27,218 --> 00:01:32,256
+If the card belongs to a network the shop does not take, the card is refused right there.
+
+30
+00:01:32,306 --> 00:01:34,248
+No network is bothered.
+
+31
+00:01:34,298 --> 00:01:36,120
+No phone buzzes.
+
+32
+00:01:36,170 --> 00:01:37,992
+Now watch the product.
+
+33
+00:01:38,042 --> 00:01:40,416
+The buyer opens the bank's payment page.
+
+34
+00:01:40,466 --> 00:01:44,568
+Above the card form, the page shows the networks this shop accepts.
+
+35
+00:01:44,618 --> 00:01:48,384
+The buyer types a card from another network and presses "Send code".
+
+36
+00:01:48,434 --> 00:01:52,032
+The form answers at once: "This shop doesn't accept this card.
+
+37
+00:01:52,082 --> 00:01:54,648
+Use another card." No code is sent.
+
+38
+00:01:54,698 --> 00:01:56,520
+Nobody's phone lights up.
+
+39
+00:01:56,570 --> 00:02:01,464
+Next, the buyer types a card whose first digits no network has listed.
+
+40
+00:02:01,514 --> 00:02:05,520
+The form says that no network issues cards starting with those digits.
+
+41
+00:02:05,570 --> 00:02:07,392
+Again, nothing is sent.
+
+42
+00:02:07,442 --> 00:02:10,104
+Then the buyer types a card the shop accepts.
+
+43
+00:02:10,154 --> 00:02:11,976
+A code arrives on the buyer's phone.
+
+44
+00:02:12,026 --> 00:02:14,184
+The buyer types it and confirms.
+
+45
+00:02:14,234 --> 00:02:16,056
+The form says "Card accepted".
+
+46
+00:02:16,106 --> 00:02:21,336
+The payment page now shows the masked number, the card's network, and the name of the bank that issued it.
+
+47
+00:02:21,386 --> 00:02:23,952
+That bank name came from the first digits alone.
+
+48
+00:02:24,002 --> 00:02:26,904
+On the bank's side, nothing alarming happens.
+
+49
+00:02:26,954 --> 00:02:30,864
+A wrong-network card is a normal refusal, not an incident.
+
+50
+00:02:30,914 --> 00:02:34,080
+The team only hears about it if the lists stop arriving.
+
+51
+00:02:34,130 --> 00:02:35,952
+What does this protect?
+
+52
+00:02:36,002 --> 00:02:39,888
+Without the check, the card zone would ask the wrong centre to send a code.
+
+53
+00:02:39,938 --> 00:02:43,632
+A real person's phone would buzz for a payment that can never work.
+
+54
+00:02:43,682 --> 00:02:46,776
+The network would carry a request it should never see.
+
+55
+00:02:46,826 --> 00:02:50,112
+With the check, a wrong card stops at its first digits.
+
+56
+00:02:50,162 --> 00:02:52,536
+It also protects the number itself.
+
+57
+00:02:52,586 --> 00:02:57,384
+The part that names networks needs only the first eight digits, so that is all it gets.
+
+58
+00:02:57,434 --> 00:02:58,104
+Back to the phone.
+
+59
+00:02:58,154 --> 00:03:03,360
+A country code tells you where a call goes, before anyone answers, and never who picks up.
+
+60
+00:03:03,410 --> 00:03:05,640
+A card's first digits do the same.
+
+61
+00:03:05,690 --> 00:03:08,976
+They name the network and the bank, never the person.
+
+62
+00:03:09,026 --> 00:03:13,176
 Next: how the card form protects itself in the buyer's browser.
