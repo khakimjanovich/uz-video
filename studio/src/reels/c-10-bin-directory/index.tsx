@@ -21,7 +21,7 @@ const TITLES = [
 export const C10BinDirectoryComposition = createEpisode({
   id: "c-10-bin-directory",
   number: 10,
-  part: 2,
+  part: 3,
   footer: "First digits",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

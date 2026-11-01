@@ -21,8 +21,8 @@ const TITLES = [
 
 export const C30RefundsComposition = createEpisode({
   id: "c-30-refunds",
-  number: 30,
-  part: 6,
+  number: 32,
+  part: 5,
   footer: "Refunds",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

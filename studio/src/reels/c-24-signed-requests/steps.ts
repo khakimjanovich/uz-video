@@ -132,8 +132,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 6, current: ["merchant", "payment"], units: { ecom: "who wrote it?" } },
-  { cue: 63, part: 6, current: ["merchant", "payment"], units: { ecom: "same payment twice" } },
+  { cue: 0, part: 5, current: ["merchant", "payment"], units: { ecom: "who wrote it?" } },
+  { cue: 63, part: 5, current: ["merchant", "payment"], units: { ecom: "same payment twice" } },
 ];
 
 const LIST = "screens/c-24-signed-requests/payments-one.png";

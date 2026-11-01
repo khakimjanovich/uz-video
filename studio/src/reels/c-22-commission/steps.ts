@@ -68,8 +68,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 10, part: 5, current: ["commission", "admin", "payment"], units: { ecom: "fee rules" } },
-  { cue: 52, part: 5, current: ["epos"], units: { ecom: "next: e-POS" } },
+  { cue: 10, part: 4, current: ["commission", "admin", "payment"], units: { ecom: "fee rules" } },
+  { cue: 52, part: 4, current: ["epos"], units: { ecom: "next: e-POS" } },
 ];
 
 const DIR = "screens/c-22-commission";

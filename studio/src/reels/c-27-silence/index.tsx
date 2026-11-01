@@ -20,8 +20,8 @@ const TITLES = [
 
 export const C27SilenceComposition = createEpisode({
   id: "c-27-silence",
-  number: 27,
-  part: 6,
+  number: 28,
+  part: 5,
   footer: "Silence",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

@@ -66,8 +66,8 @@ const TITLES = [
 
 export const C36InstallingComposition = createEpisode({
   id: "c-36-installing",
-  number: 36,
-  part: 8,
+  number: 38,
+  part: 7,
   footer: "Keyholders",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

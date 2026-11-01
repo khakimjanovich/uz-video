@@ -128,8 +128,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 6, current: ["merchant", "payment"], units: { ecom: "twice?" } },
-  { cue: 61, part: 6, current: ["buyer", "payment"], units: { ecom: "payment page next" } },
+  { cue: 0, part: 5, current: ["merchant", "payment"], units: { ecom: "twice?" } },
+  { cue: 61, part: 5, current: ["buyer", "payment"], units: { ecom: "payment page next" } },
 ];
 
 const LIST = "screens/c-24b-idempotency/payments-one.png";

@@ -61,8 +61,8 @@ const TITLES = [
 
 export const C38ResponsibilityComposition = createEpisode({
   id: "c-38-responsibility",
-  number: 38,
-  part: 8,
+  number: 41,
+  part: 7,
   footer: "Room and building",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

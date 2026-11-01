@@ -124,6 +124,6 @@ export const screens: ScreenStep[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 8, part: 0, current: ["payment"], units: { ecom: "the acquirer" } },
-  { cue: 57, part: 0, current: ["card", "frame"], units: { cards: "card data" } },
+  { cue: 8, part: 1, current: ["payment"], units: { ecom: "the acquirer" } },
+  { cue: 57, part: 1, current: ["card", "frame"], units: { cards: "card data" } },
 ];

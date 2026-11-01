@@ -25,8 +25,8 @@ const PAIR = { zone: [0.4, 1], m78Ecom: [2.6, 1] } as const;
 const PAIR_EDGE = [{ from: "m78Ecom", to: "zone", label: "certificate request" }] as const;
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 8, current: ["kubernetes"] },
-  { cue: 57, part: 8, current: ["kubernetes"], units: { ecom: "release", cards: "release" } },
+  { cue: 0, part: 7, current: ["kubernetes"] },
+  { cue: 57, part: 7, current: ["kubernetes"], units: { ecom: "release", cards: "release" } },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

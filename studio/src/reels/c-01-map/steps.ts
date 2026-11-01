@@ -14,24 +14,24 @@ const PEOPLE = { buyer: [0.2, 1], shopStaff: [1.5, 1], bankStaff: [2.8, 1] } as 
 
 export const map: BuildMapStep[] = [
   // One payment, step by step.
-  { cue: 0, part: 0 },
-  { cue: 1, part: 0, current: ["buyer"] },
-  { cue: 3, part: 0, current: ["merchant", "payment"] },
-  { cue: 4, part: 0, current: ["payment", "buyer"] },
-  { cue: 6, part: 0, current: ["frame"], units: { cards: "card zone" } },
-  { cue: 7, part: 0, current: ["buyer", "frame", "card"], units: { cards: "card zone" } },
-  { cue: 8, part: 0, current: ["card"], units: { cards: "token out" } },
-  { cue: 9, part: 0, current: ["payment", "procport", "card"] },
-  { cue: 12, part: 0, current: ["buyer", "merchant", "payment"] },
-  { cue: 13, part: 0, current: ["payment", "commission"] },
-  { cue: 14, part: 0, current: ["reconciliation", "procsvc"] },
+  { cue: 0, part: 1 },
+  { cue: 1, part: 1, current: ["buyer"] },
+  { cue: 3, part: 1, current: ["merchant", "payment"] },
+  { cue: 4, part: 1, current: ["payment", "buyer"] },
+  { cue: 6, part: 1, current: ["frame"], units: { cards: "card zone" } },
+  { cue: 7, part: 1, current: ["buyer", "frame", "card"], units: { cards: "card zone" } },
+  { cue: 8, part: 1, current: ["card"], units: { cards: "token out" } },
+  { cue: 9, part: 1, current: ["payment", "procport", "card"] },
+  { cue: 12, part: 1, current: ["buyer", "merchant", "payment"] },
+  { cue: 13, part: 1, current: ["payment", "commission"] },
+  { cue: 14, part: 1, current: ["reconciliation", "procsvc"] },
   // Two products, and what each keeps.
-  { cue: 19, part: 0, units: { ecom: "product", cards: "product" } },
-  { cue: 20, part: 0, current: [...MODULES], units: { ecom: "the shop's side" } },
-  { cue: 21, part: 0, current: [...CARD_ZONE], units: UNITS },
-  { cue: 22, part: 0, current: [...INFRA], units: UNITS },
-  { cue: 23, part: 0, current: [...CARD_ZONE], units: { cards: "first", ecom: "then" } },
-  { cue: 24, part: 0, units: UNITS },
+  { cue: 19, part: 1, units: { ecom: "product", cards: "product" } },
+  { cue: 20, part: 1, current: [...MODULES], units: { ecom: "the shop's side" } },
+  { cue: 21, part: 1, current: [...CARD_ZONE], units: UNITS },
+  { cue: 22, part: 1, current: [...INFRA], units: UNITS },
+  { cue: 23, part: 1, current: [...CARD_ZONE], units: { cards: "first", ecom: "then" } },
+  { cue: 24, part: 1, units: UNITS },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

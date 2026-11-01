@@ -21,7 +21,7 @@ const TITLES = [
 export const C24SignedRequestsComposition = createEpisode({
   id: "c-24-signed-requests",
   number: 24,
-  part: 6,
+  part: 5,
   footer: "Signed requests",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

@@ -97,8 +97,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 6, current: ["payment", "card", "adapters", "procsvc"], units: { cards: "no answer" } },
-  { cue: 57, part: 6, current: ["payment", "kafka"], units: { ecom: "the news next" } },
+  { cue: 0, part: 5, current: ["payment", "card", "adapters", "procsvc"], units: { cards: "no answer" } },
+  { cue: 57, part: 5, current: ["payment", "kafka"], units: { ecom: "the news next" } },
 ];
 
 const SHOT = (name: string) => `screens/c-27-silence/${name}.png`;

@@ -19,7 +19,7 @@ const TITLES = [
   "Every night",
   "The clear day",
   "A business day",
-  "Lesson 30",
+  "Lesson 32",
   "Never disagree",
   "The count",
   "Four numbers",
@@ -69,8 +69,8 @@ const TITLES = [
 
 export const C32DailyReportsComposition = createEpisode({
   id: "c-32-daily-reports",
-  number: 32,
-  part: 7,
+  number: 34,
+  part: 6,
   footer: "The merchant's day",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

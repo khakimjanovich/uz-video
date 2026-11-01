@@ -31,8 +31,8 @@ const UP_EDGES = [{ from: "m78Pins", to: "m78Services", label: "deploy" }, { fro
 const SHELF = { m78Book: [0, 1], m78Release: [1.5, 1], m78Bom: [3, 1] } as const;
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 8, current: ["kubernetes"], units: { ecom: "which version?", cards: "which version?" } },
-  { cue: 59, part: 8, current: ["kubernetes"] },
+  { cue: 0, part: 7, current: ["kubernetes"], units: { ecom: "which version?", cards: "which version?" } },
+  { cue: 59, part: 7, current: ["kubernetes"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

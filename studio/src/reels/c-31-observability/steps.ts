@@ -30,9 +30,9 @@ const CHARTS = [
 ] as const;
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 7, current: ["observability"] },
-  { cue: 29, part: 7, current: ["observability", "cardsinfra"], units: { ecom: "own monitoring", cards: "own monitoring" } },
-  { cue: 59, part: 7, current: ["merchant", "reconciliation"] },
+  { cue: 0, part: 6, current: ["observability"] },
+  { cue: 29, part: 6, current: ["observability", "cardsinfra"], units: { ecom: "own monitoring", cards: "own monitoring" } },
+  { cue: 59, part: 6, current: ["merchant", "reconciliation"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

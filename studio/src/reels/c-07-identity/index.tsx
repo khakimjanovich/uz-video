@@ -24,7 +24,7 @@ const TITLES = [
 export const C07IdentityComposition = createEpisode({
   id: "c-07-identity",
   number: 7,
-  part: 1,
+  part: 2,
   footer: "Two proofs",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

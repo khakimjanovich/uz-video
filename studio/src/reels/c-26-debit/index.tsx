@@ -20,8 +20,8 @@ const TITLES = [
 
 export const C26DebitComposition = createEpisode({
   id: "c-26-debit",
-  number: 26,
-  part: 6,
+  number: 27,
+  part: 5,
   footer: "The charge",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

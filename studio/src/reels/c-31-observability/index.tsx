@@ -69,8 +69,8 @@ const TITLES = [
 
 export const C31ObservabilityComposition = createEpisode({
   id: "c-31-observability",
-  number: 31,
-  part: 7,
+  number: 33,
+  part: 6,
   footer: "One trace number",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

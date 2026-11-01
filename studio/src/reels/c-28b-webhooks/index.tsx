@@ -19,8 +19,8 @@ const TITLES = [
 
 export const C28bWebhooksComposition = createEpisode({
   id: "c-28b-webhooks",
-  number: "28b",
-  part: 6,
+  number: 30,
+  part: 5,
   footer: "Webhooks",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

@@ -22,8 +22,8 @@ const EDGE_EDGES = [{ from: "buyer", to: "m78EdgeDoor" }, { from: "m78EdgeDoor",
 const GUARDS = { acquirer: [0, 1], shop: [1.5, 1], buyer: [3, 1] } as const;
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 7, current: ["payment", "partner"] },
-  { cue: 53, part: 8, current: ["vault", "cardsinfra"] },
+  { cue: 0, part: 6, current: ["payment", "partner"] },
+  { cue: 53, part: 7, current: ["vault", "cardsinfra"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

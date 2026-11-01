@@ -46,7 +46,7 @@ export const BUILD_NODES: Record<BuildNodeId, Box> = {
   emailsvc: { label: "Email server", sub: "Outside both", x: 52, y: 440, w: 160, h: 48 },
   procsvc: { label: "Card processing centres", sub: "One protocol each", x: 400, y: 440, w: 230, h: 48 },
   // Not a box: the delivery frame around both units, each a Docker Compose install (drawn by BuildMap as a dashed frame).
-  // The id stays "kubernetes" so earlier episodes' steps keep pointing at part 5.
+  // The id stays "kubernetes" so earlier episodes' steps keep pointing at the delivery module.
   kubernetes: { label: "Two installs", x: 28, y: 66, w: 648, h: 354, logos: [siDocker.path] },
 };
 
@@ -69,17 +69,16 @@ export const UNIT_BOXES = [
 
 export type UnitId = (typeof UNIT_BOXES)[number]["id"];
 
-// The course's nine modules, in build order; `nodes` are the boxes a module puts in place.
+// The course's modules, in build order; `nodes` are the boxes a module puts in place.
+// The ecom foundation boxes ride with the card zone: phase 2 teaches them as code.
 export const BUILD_PARTS: { n: number; title: string; lessons: number; nodes: BuildNodeId[] }[] = [
-  { n: 0, title: "Orientation", lessons: 3, nodes: [] },
-  { n: 1, title: "Security and configuration", lessons: 4, nodes: ["vault", "keycloak"] },
-  { n: 2, title: "The card zone", lessons: 6, nodes: ["frame", "card", "bin", "adapters", "cardsinfra", "procsvc"] },
-  { n: 3, title: "ecom foundations", lessons: 2, nodes: ["postgres", "redis", "s3", "temporal", "kafka"] },
-  { n: 4, title: "Merchants", lessons: 6, nodes: ["partner", "emailport", "emailsvc", "admin", "merchant"] },
-  { n: 5, title: "Money rules", lessons: 2, nodes: ["commission", "epos"] },
-  { n: 6, title: "Payments", lessons: 7, nodes: ["payment", "procport", "buyer"] },
-  { n: 7, title: "Operations", lessons: 5, nodes: ["observability", "reconciliation"] },
-  { n: 8, title: "Delivery", lessons: 3, nodes: ["kubernetes"] },
+  { n: 1, title: "Orientation", lessons: 3, nodes: [] },
+  { n: 2, title: "Security and configuration", lessons: 4, nodes: ["vault", "keycloak"] },
+  { n: 3, title: "The card zone", lessons: 8, nodes: ["frame", "card", "bin", "adapters", "cardsinfra", "procsvc", "postgres", "redis", "s3", "temporal", "kafka"] },
+  { n: 4, title: "Merchants and money rules", lessons: 8, nodes: ["partner", "emailport", "emailsvc", "admin", "merchant", "commission", "epos"] },
+  { n: 5, title: "Payments", lessons: 9, nodes: ["payment", "procport", "buyer"] },
+  { n: 6, title: "Operations", lessons: 5, nodes: ["observability", "reconciliation"] },
+  { n: 7, title: "Delivery", lessons: 4, nodes: ["kubernetes"] },
 ];
 
 /** Every node built by the modules before `part`. */

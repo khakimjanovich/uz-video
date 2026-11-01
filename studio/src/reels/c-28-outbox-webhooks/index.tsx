@@ -20,8 +20,8 @@ const TITLES = [
 
 export const C28OutboxWebhooksComposition = createEpisode({
   id: "c-28-outbox-webhooks",
-  number: 28,
-  part: 6,
+  number: 29,
+  part: 5,
   footer: "The outbox",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

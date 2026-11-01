@@ -125,9 +125,9 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 6, part: 2, current: ["card", "frame", "bin", "adapters"], units: { cards: "locked room" } },
-  { cue: 10, part: 2, current: ["card", "cardsinfra"], units: { cards: "Vault seals" } },
-  { cue: 64, part: 2, current: ["bin"], units: { cards: "first digits" } },
+  { cue: 6, part: 3, current: ["card", "frame", "bin", "adapters"], units: { cards: "locked room" } },
+  { cue: 10, part: 3, current: ["card", "cardsinfra"], units: { cards: "Vault seals" } },
+  { cue: 64, part: 3, current: ["bin"], units: { cards: "first digits" } },
 ];
 
 // What each side sees: the frame's "Card accepted", the masked line, a refusal while Vault is down.

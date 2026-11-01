@@ -21,7 +21,7 @@ const TITLES = [
 export const C02CardPaymentComposition = createEpisode({
   id: "c-02-card-payment",
   number: 2,
-  part: 0,
+  part: 1,
   footer: "Approved ≠ paid out",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

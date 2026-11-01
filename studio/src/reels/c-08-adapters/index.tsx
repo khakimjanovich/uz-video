@@ -21,7 +21,7 @@ const TITLES = [
 export const C08AdaptersComposition = createEpisode({
   id: "c-08-adapters",
   number: 8,
-  part: 2,
+  part: 3,
   footer: "Adapters",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

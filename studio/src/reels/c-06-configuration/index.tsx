@@ -24,7 +24,7 @@ const TITLES = [
 export const C06ConfigurationComposition = createEpisode({
   id: "c-06-configuration",
   number: 6,
-  part: 1,
+  part: 2,
   footer: "No defaults",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

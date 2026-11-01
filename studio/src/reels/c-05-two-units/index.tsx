@@ -24,7 +24,7 @@ const TITLES = [
 export const C05TwoUnitsComposition = createEpisode({
   id: "c-05-two-units",
   number: 5,
-  part: 1,
+  part: 2,
   footer: "The bank's card reader",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

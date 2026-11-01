@@ -63,8 +63,8 @@ const TITLES = [
 
 export const C35HardeningComposition = createEpisode({
   id: "c-35-hardening",
-  number: 35,
-  part: 7,
+  number: 37,
+  part: 6,
   footer: "Limits and the edge",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

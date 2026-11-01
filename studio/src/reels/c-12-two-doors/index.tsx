@@ -21,7 +21,7 @@ const TITLES = [
 export const C12TwoDoorsComposition = createEpisode({
   id: "c-12-two-doors",
   number: 12,
-  part: 2,
+  part: 3,
   footer: "Two doors",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

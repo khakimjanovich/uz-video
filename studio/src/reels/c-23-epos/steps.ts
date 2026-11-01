@@ -64,8 +64,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 7, part: 5, current: ["epos", "payment", "procport", "procsvc"], units: { ecom: "e-POS" } },
-  { cue: 48, part: 5, current: ["merchant", "payment"], units: { ecom: "next: signed requests" } },
+  { cue: 7, part: 4, current: ["epos", "payment", "procport", "procsvc"], units: { ecom: "e-POS" } },
+  { cue: 48, part: 4, current: ["merchant", "payment"], units: { ecom: "next: signed requests" } },
 ];
 
 const DIR = "screens/c-23-epos";

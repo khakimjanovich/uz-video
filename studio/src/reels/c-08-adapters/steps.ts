@@ -166,9 +166,9 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 6, part: 2, current: ["card"], units: { cards: "card zone" } },
-  { cue: 7, part: 2, current: ["card", "adapters", "procsvc"], units: { cards: "adapters" } },
-  { cue: 62, part: 2, current: ["card", "cardsinfra"], units: { cards: "keep it safe" } },
+  { cue: 6, part: 3, current: ["card"], units: { cards: "card zone" } },
+  { cue: 7, part: 3, current: ["card", "adapters", "procsvc"], units: { cards: "adapters" } },
+  { cue: 62, part: 3, current: ["card", "cardsinfra"], units: { cards: "keep it safe" } },
 ];
 
 // The pay page while the adapter talks to its centre, and the three outcomes as the buyer reads them.

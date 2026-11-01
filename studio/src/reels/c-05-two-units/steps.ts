@@ -129,7 +129,7 @@ export const screens: ScreenStep[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 49, part: 1, current: [...CARD_ZONE], units: { cards: "full check" } },
-  { cue: 52, part: 1, current: ["payment", "procport"], units: { ecom: "smaller check", cards: "full check" } },
-  { cue: 56, part: 1, current: ["vault"], units: { ecom: "settings", cards: "settings" } },
+  { cue: 49, part: 2, current: [...CARD_ZONE], units: { cards: "full check" } },
+  { cue: 52, part: 2, current: ["payment", "procport"], units: { ecom: "smaller check", cards: "full check" } },
+  { cue: 56, part: 2, current: ["vault"], units: { ecom: "settings", cards: "settings" } },
 ];
