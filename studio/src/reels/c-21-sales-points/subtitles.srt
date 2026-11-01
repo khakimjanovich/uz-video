@@ -3,33 +3,193 @@
 May every website of an approved merchant take payments?
 
 2
-00:00:03,554 --> 00:00:08,232
-A market licenses the company, but every stall is still inspected on its own.
+00:00:03,554 --> 00:00:10,152
+Picture a merchant with an approved company that adds a second website: a copy of a famous brand's shop.
 
 3
-00:00:08,282 --> 00:00:14,064
-Each of a merchant's websites is a sales point, and it starts as a draft that cannot take money.
+00:00:10,202 --> 00:00:16,152
+If every website could take payments the moment it was typed in, all the bank's checks on the company would mean nothing.
 
 4
-00:00:14,114 --> 00:00:20,472
-Its return addresses must be secure and on its own site, so a payment can never send the buyer somewhere else.
+00:00:16,202 --> 00:00:20,880
+A market licenses the company, but every stall is still inspected on its own.
 
 5
-00:00:20,522 --> 00:00:23,832
-A bank admin checks the site and records the result.
+00:00:20,930 --> 00:00:23,376
+A merchant's websites work the same way.
 
 6
-00:00:23,882 --> 00:00:28,776
-The deal says which cards the website takes, and how much it may take per payment and per day.
+00:00:23,426 --> 00:00:25,248
+Here is how it works.
 
 7
-00:00:28,826 --> 00:00:34,152
-Only with an active merchant, a passed check and at least one card can the website be switched on.
+00:00:25,298 --> 00:00:29,184
+Each website is a sales point: one place where buyers pay.
 
 8
-00:00:34,202 --> 00:00:41,040
-And before taking any money, every part of the system asks one question: may this website take a payment right now?
+00:00:29,234 --> 00:00:32,328
+It starts as a draft, and a draft cannot take money.
 
 9
-00:00:41,090 --> 00:00:43,992
+00:00:32,378 --> 00:00:35,688
+When a payment ends, the buyer is sent back to the shop.
+
+10
+00:00:35,738 --> 00:00:37,728
+Where they go is a return address.
+
+11
+00:00:37,778 --> 00:00:41,880
+Every return address must be secure, and on the website's own site.
+
+12
+00:00:41,930 --> 00:00:46,392
+So a payment can never send a buyer somewhere else, like a fake thank-you page.
+
+13
+00:00:46,442 --> 00:00:50,760
+Return addresses can change only while the website is still a draft.
+
+14
+00:00:50,810 --> 00:00:56,736
+Next, a bank admin checks the site, and records a site check: passed or failed.
+
+15
+00:00:56,786 --> 00:00:58,920
+A failed check must say what is wrong.
+
+16
+00:00:58,970 --> 00:01:00,792
+Then the deal.
+
+17
+00:01:00,842 --> 00:01:03,048
+It says which cards the website takes.
+
+18
+00:01:03,098 --> 00:01:06,432
+It can also say how much it may take per payment, and per day.
+
+19
+00:01:06,482 --> 00:01:11,808
+Only with an active merchant, a passed check and at least one card can the website be switched on.
+
+20
+00:01:11,858 --> 00:01:16,560
+Each card still needs its own terminal and its own fee before its payments go through.
+
+21
+00:01:16,610 --> 00:01:23,448
+And before taking any money, every part of the system asks one question: may this website take a payment right now?
+
+22
+00:01:23,498 --> 00:01:27,672
+The answer is yes only when the website and its merchant are both active.
+
+23
+00:01:27,722 --> 00:01:29,544
+Now watch the product.
+
+24
+00:01:29,594 --> 00:01:33,504
+The viewer signs in as the merchant and opens Websites.
+
+25
+00:01:33,554 --> 00:01:38,400
+The page says each website that takes payments is checked and switched on by the bank.
+
+26
+00:01:38,450 --> 00:01:39,864
+They click Add website.
+
+27
+00:01:39,914 --> 00:01:46,512
+They give it a name, the website's address, and return addresses on that same site, pressing Enter after each one.
+
+28
+00:01:46,562 --> 00:01:49,320
+Saved, the page says the bank will check it.
+
+29
+00:01:49,370 --> 00:01:52,632
+Now the viewer tries a return address on somebody else's site.
+
+30
+00:01:52,682 --> 00:01:55,608
+The server refuses it, and the screen shows why.
+
+31
+00:01:55,658 --> 00:01:57,792
+Next, the bank admin portal.
+
+32
+00:01:57,842 --> 00:02:00,576
+The admin opens the merchant and this website.
+
+33
+00:02:00,626 --> 00:02:06,120
+A card at the top says "Before it takes payments", with a list of steps and how many are left.
+
+34
+00:02:06,170 --> 00:02:08,064
+The Switch on button is grey.
+
+35
+00:02:08,114 --> 00:02:13,728
+A line explains: switching on needs an active merchant, a passed check and chosen cards.
+
+36
+00:02:13,778 --> 00:02:17,880
+The admin clicks Record a check, chooses Passed, and saves.
+
+37
+00:02:17,930 --> 00:02:19,752
+Then Deal terms.
+
+38
+00:02:19,802 --> 00:02:21,624
+They tick one card.
+
+39
+00:02:21,674 --> 00:02:27,072
+The boxes "Most per payment" and "Most per day" can stay empty, which means no limit.
+
+40
+00:02:27,122 --> 00:02:30,816
+Three steps now show done, and the Switch on button lights up.
+
+41
+00:02:30,866 --> 00:02:32,688
+One click.
+
+42
+00:02:32,738 --> 00:02:39,360
+A warning appears: some cards still have no terminal or fee, and their payments are refused until they do.
+
+43
+00:02:39,410 --> 00:02:41,232
+What does this protect?
+
+44
+00:02:41,282 --> 00:02:46,344
+Without a check on each website, a copycat shop could ride on an approved company.
+
+45
+00:02:46,394 --> 00:02:53,040
+Without strict return addresses, a fraudster could use the bank's own payment page to send buyers to a fake page.
+
+46
+00:02:53,090 --> 00:02:55,944
+The site check protects buyers and the bank's name.
+
+47
+00:02:55,994 --> 00:03:03,072
+The single question asked before any money moves means a suspended website or merchant stops at once, everywhere.
+
+48
+00:03:03,122 --> 00:03:09,432
+So, like a market stall: the company is licensed, and every website is still inspected on its own.
+
+49
+00:03:09,482 --> 00:03:12,384
 Next: how the bank's fee is decided.
