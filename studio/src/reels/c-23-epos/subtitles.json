@@ -50,9 +50,9 @@
   {
     "index": 2,
     "startFrame": 81,
-    "endFrame": 278,
-    "text": "A taxi cannot take fares without a licence plate, and a plate is issued once and never reused.",
-    "prefix": "A taxi cannot take fares without a licence plate, and a plate is issued once and never reused.",
+    "endFrame": 162,
+    "text": "In a shop, you pay at a card machine on the counter.",
+    "prefix": "In a shop, you pay at a card machine on the counter.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -60,86 +60,57 @@
         "startFrame": 82,
         "words": [
           {
-            "text": "A",
+            "text": "In",
             "startFrame": 82
           },
           {
-            "text": "taxi",
+            "text": "a",
             "startFrame": 84
           },
           {
-            "text": "cannot",
-            "startFrame": 97
+            "text": "shop,",
+            "startFrame": 85
+          }
+        ]
+      },
+      {
+        "startFrame": 103,
+        "words": [
+          {
+            "text": "you",
+            "startFrame": 103
           },
           {
-            "text": "take",
-            "startFrame": 109
+            "text": "pay",
+            "startFrame": 107
           },
           {
-            "text": "fares",
-            "startFrame": 115
-          },
-          {
-            "text": "without",
-            "startFrame": 127
+            "text": "at",
+            "startFrame": 114
           },
           {
             "text": "a",
-            "startFrame": 136
+            "startFrame": 116
           },
           {
-            "text": "licence",
+            "text": "card",
+            "startFrame": 117
+          },
+          {
+            "text": "machine",
+            "startFrame": 125
+          },
+          {
+            "text": "on",
+            "startFrame": 134
+          },
+          {
+            "text": "the",
+            "startFrame": 137
+          },
+          {
+            "text": "counter.",
             "startFrame": 138
-          }
-        ]
-      },
-      {
-        "startFrame": 151,
-        "words": [
-          {
-            "text": "plate,",
-            "startFrame": 151
-          },
-          {
-            "text": "and",
-            "startFrame": 174
-          },
-          {
-            "text": "a",
-            "startFrame": 175
-          },
-          {
-            "text": "plate",
-            "startFrame": 177
-          },
-          {
-            "text": "is",
-            "startFrame": 194
-          },
-          {
-            "text": "issued",
-            "startFrame": 199
-          },
-          {
-            "text": "once",
-            "startFrame": 212
-          }
-        ]
-      },
-      {
-        "startFrame": 234,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 234
-          },
-          {
-            "text": "never",
-            "startFrame": 240
-          },
-          {
-            "text": "reused.",
-            "startFrame": 249
           }
         ]
       }
@@ -147,163 +118,97 @@
   },
   {
     "index": 3,
-    "startFrame": 278,
-    "endFrame": 594,
-    "text": "Each online payment goes through a virtual card machine, an e-POS terminal, and its plate is a pair of numbers the card network's centre issues: the merchant id and the terminal id.",
-    "prefix": "Each online payment goes through a virtual card machine, an e-POS terminal, and its plate is a pair of numbers the card network's centre issues: the merchant id and the terminal id.",
+    "startFrame": 163,
+    "endFrame": 349,
+    "text": "Online there is no counter, but the processing centre still wants to know which machine sent each charge.",
+    "prefix": "Online there is no counter, but the processing centre still wants to know which machine sent each charge.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 280,
+        "startFrame": 164,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 280
+            "text": "Online",
+            "startFrame": 164
           },
           {
-            "text": "online",
-            "startFrame": 285
-          },
-          {
-            "text": "payment",
-            "startFrame": 296
-          },
-          {
-            "text": "goes",
-            "startFrame": 309
-          },
-          {
-            "text": "through",
-            "startFrame": 318
-          },
-          {
-            "text": "a",
-            "startFrame": 322
-          },
-          {
-            "text": "virtual",
-            "startFrame": 323
-          },
-          {
-            "text": "card",
-            "startFrame": 335
-          }
-        ]
-      },
-      {
-        "startFrame": 342,
-        "words": [
-          {
-            "text": "machine,",
-            "startFrame": 342
-          },
-          {
-            "text": "an",
-            "startFrame": 368
-          },
-          {
-            "text": "e-POS",
-            "startFrame": 375
-          },
-          {
-            "text": "terminal,",
-            "startFrame": 394
-          }
-        ]
-      },
-      {
-        "startFrame": 418,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 418
-          },
-          {
-            "text": "its",
-            "startFrame": 420
-          },
-          {
-            "text": "plate",
-            "startFrame": 422
+            "text": "there",
+            "startFrame": 178
           },
           {
             "text": "is",
-            "startFrame": 435
+            "startFrame": 181
           },
           {
-            "text": "a",
-            "startFrame": 437
+            "text": "no",
+            "startFrame": 184
           },
           {
-            "text": "pair",
-            "startFrame": 439
-          },
-          {
-            "text": "of",
-            "startFrame": 447
-          },
-          {
-            "text": "numbers",
-            "startFrame": 450
+            "text": "counter,",
+            "startFrame": 192
           }
         ]
       },
       {
-        "startFrame": 459,
+        "startFrame": 214,
         "words": [
           {
+            "text": "but",
+            "startFrame": 214
+          },
+          {
             "text": "the",
-            "startFrame": 459
+            "startFrame": 218
           },
           {
-            "text": "card",
-            "startFrame": 461
-          },
-          {
-            "text": "network's",
-            "startFrame": 470
+            "text": "processing",
+            "startFrame": 220
           },
           {
             "text": "centre",
-            "startFrame": 482
+            "startFrame": 238
           },
           {
-            "text": "issues:",
-            "startFrame": 492
+            "text": "still",
+            "startFrame": 249
+          },
+          {
+            "text": "wants",
+            "startFrame": 261
+          },
+          {
+            "text": "to",
+            "startFrame": 268
+          },
+          {
+            "text": "know",
+            "startFrame": 270
           }
         ]
       },
       {
-        "startFrame": 520,
+        "startFrame": 281,
         "words": [
           {
-            "text": "the",
-            "startFrame": 520
+            "text": "which",
+            "startFrame": 281
           },
           {
-            "text": "merchant",
-            "startFrame": 522
+            "text": "machine",
+            "startFrame": 287
           },
           {
-            "text": "id",
-            "startFrame": 532
+            "text": "sent",
+            "startFrame": 301
           },
           {
-            "text": "and",
-            "startFrame": 552
+            "text": "each",
+            "startFrame": 315
           },
           {
-            "text": "the",
-            "startFrame": 557
-          },
-          {
-            "text": "terminal",
-            "startFrame": 559
-          },
-          {
-            "text": "id.",
-            "startFrame": 571
+            "text": "charge.",
+            "startFrame": 320
           }
         ]
       }
@@ -311,68 +216,51 @@
   },
   {
     "index": 4,
-    "startFrame": 594,
-    "endFrame": 720,
-    "text": "A bank admin registers the pair for one website and one card.",
-    "prefix": "A bank admin registers the pair for one website and one card.",
+    "startFrame": 349,
+    "endFrame": 456,
+    "text": "It accepts charges only from machines it has issued.",
+    "prefix": "It accepts charges only from machines it has issued.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 595,
+        "startFrame": 351,
         "words": [
           {
-            "text": "A",
-            "startFrame": 595
+            "text": "It",
+            "startFrame": 351
           },
           {
-            "text": "bank",
-            "startFrame": 597
+            "text": "accepts",
+            "startFrame": 352
           },
           {
-            "text": "admin",
-            "startFrame": 608
+            "text": "charges",
+            "startFrame": 363
           },
           {
-            "text": "registers",
-            "startFrame": 617
+            "text": "only",
+            "startFrame": 382
           },
           {
-            "text": "the",
-            "startFrame": 630
+            "text": "from",
+            "startFrame": 391
           },
           {
-            "text": "pair",
-            "startFrame": 632
+            "text": "machines",
+            "startFrame": 395
           },
           {
-            "text": "for",
-            "startFrame": 649
+            "text": "it",
+            "startFrame": 420
           },
           {
-            "text": "one",
-            "startFrame": 655
-          }
-        ]
-      },
-      {
-        "startFrame": 663,
-        "words": [
-          {
-            "text": "website",
-            "startFrame": 663
+            "text": "has",
+            "startFrame": 422
           },
           {
-            "text": "and",
-            "startFrame": 685
-          },
-          {
-            "text": "one",
-            "startFrame": 689
-          },
-          {
-            "text": "card.",
-            "startFrame": 697
+            "text": "issued.",
+            "startFrame": 430
           }
         ]
       }
@@ -380,88 +268,97 @@
   },
   {
     "index": 5,
-    "startFrame": 720,
-    "endFrame": 904,
-    "text": "There is only one live terminal per website and card, and a pair is never registered twice.",
-    "prefix": "There is only one live terminal per website and card, and a pair is never registered twice.",
+    "startFrame": 457,
+    "endFrame": 648,
+    "text": "Send a charge with the wrong numbers, and the money is refused, or worse, booked to another merchant.",
+    "prefix": "Send a charge with the wrong numbers, and the money is refused, or worse, booked to another merchant.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 722,
+        "startFrame": 457,
         "words": [
           {
-            "text": "There",
-            "startFrame": 722
+            "text": "Send",
+            "startFrame": 457
           },
           {
-            "text": "is",
-            "startFrame": 724
+            "text": "a",
+            "startFrame": 462
           },
           {
-            "text": "only",
-            "startFrame": 728
+            "text": "charge",
+            "startFrame": 463
           },
           {
-            "text": "one",
-            "startFrame": 738
+            "text": "with",
+            "startFrame": 476
           },
           {
-            "text": "live",
-            "startFrame": 747
+            "text": "the",
+            "startFrame": 478
           },
           {
-            "text": "terminal",
-            "startFrame": 759
+            "text": "wrong",
+            "startFrame": 481
           },
           {
-            "text": "per",
-            "startFrame": 770
-          },
-          {
-            "text": "website",
-            "startFrame": 774
+            "text": "numbers,",
+            "startFrame": 491
           }
         ]
       },
       {
-        "startFrame": 792,
+        "startFrame": 518,
         "words": [
           {
             "text": "and",
-            "startFrame": 792
+            "startFrame": 518
           },
           {
-            "text": "card,",
-            "startFrame": 796
+            "text": "the",
+            "startFrame": 520
           },
           {
-            "text": "and",
-            "startFrame": 821
-          },
-          {
-            "text": "a",
-            "startFrame": 823
-          },
-          {
-            "text": "pair",
-            "startFrame": 825
+            "text": "money",
+            "startFrame": 522
           },
           {
             "text": "is",
-            "startFrame": 847
+            "startFrame": 532
           },
           {
-            "text": "never",
-            "startFrame": 851
+            "text": "refused,",
+            "startFrame": 535
+          }
+        ]
+      },
+      {
+        "startFrame": 571,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 571
           },
           {
-            "text": "registered",
-            "startFrame": 862
+            "text": "worse,",
+            "startFrame": 576
           },
           {
-            "text": "twice.",
-            "startFrame": 874
+            "text": "booked",
+            "startFrame": 606
+          },
+          {
+            "text": "to",
+            "startFrame": 613
+          },
+          {
+            "text": "another",
+            "startFrame": 616
+          },
+          {
+            "text": "merchant.",
+            "startFrame": 623
           }
         ]
       }
@@ -469,109 +366,51 @@
   },
   {
     "index": 6,
-    "startFrame": 905,
-    "endFrame": 1120,
-    "text": "Where a centre requires it, the terminal is registered with the centre too, and kept only if the centre accepts it.",
-    "prefix": "Where a centre requires it, the terminal is registered with the centre too, and kept only if the centre accepts it.",
+    "startFrame": 648,
+    "endFrame": 741,
+    "text": "A taxi cannot take fares without a licence plate.",
+    "prefix": "A taxi cannot take fares without a licence plate.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 906,
+        "startFrame": 649,
         "words": [
           {
-            "text": "Where",
-            "startFrame": 906
+            "text": "A",
+            "startFrame": 649
+          },
+          {
+            "text": "taxi",
+            "startFrame": 651
+          },
+          {
+            "text": "cannot",
+            "startFrame": 665
+          },
+          {
+            "text": "take",
+            "startFrame": 676
+          },
+          {
+            "text": "fares",
+            "startFrame": 682
+          },
+          {
+            "text": "without",
+            "startFrame": 695
           },
           {
             "text": "a",
-            "startFrame": 910
+            "startFrame": 706
           },
           {
-            "text": "centre",
-            "startFrame": 911
+            "text": "licence",
+            "startFrame": 707
           },
           {
-            "text": "requires",
-            "startFrame": 923
-          },
-          {
-            "text": "it,",
-            "startFrame": 940
-          }
-        ]
-      },
-      {
-        "startFrame": 956,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 956
-          },
-          {
-            "text": "terminal",
-            "startFrame": 959
-          },
-          {
-            "text": "is",
-            "startFrame": 973
-          },
-          {
-            "text": "registered",
-            "startFrame": 977
-          },
-          {
-            "text": "with",
-            "startFrame": 996
-          },
-          {
-            "text": "the",
-            "startFrame": 998
-          },
-          {
-            "text": "centre",
-            "startFrame": 1001
-          },
-          {
-            "text": "too,",
-            "startFrame": 1010
-          }
-        ]
-      },
-      {
-        "startFrame": 1033,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 1033
-          },
-          {
-            "text": "kept",
-            "startFrame": 1055
-          },
-          {
-            "text": "only",
-            "startFrame": 1064
-          },
-          {
-            "text": "if",
-            "startFrame": 1075
-          },
-          {
-            "text": "the",
-            "startFrame": 1078
-          },
-          {
-            "text": "centre",
-            "startFrame": 1080
-          },
-          {
-            "text": "accepts",
-            "startFrame": 1090
-          },
-          {
-            "text": "it.",
-            "startFrame": 1104
+            "text": "plate.",
+            "startFrame": 719
           }
         ]
       }
@@ -579,35 +418,98 @@
   },
   {
     "index": 7,
-    "startFrame": 1121,
-    "endFrame": 1191,
-    "text": "Every change is written down.",
-    "prefix": "Every change is written down.",
+    "startFrame": 741,
+    "endFrame": 925,
+    "text": "A plate is issued once, one per car, and never reused, even after the car is scrapped.",
+    "prefix": "A plate is issued once, one per car, and never reused, even after the car is scrapped.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1122,
+        "startFrame": 742,
         "words": [
           {
-            "text": "Every",
-            "startFrame": 1122
+            "text": "A",
+            "startFrame": 742
           },
           {
-            "text": "change",
-            "startFrame": 1129
+            "text": "plate",
+            "startFrame": 744
           },
           {
             "text": "is",
-            "startFrame": 1156
+            "startFrame": 752
           },
           {
-            "text": "written",
-            "startFrame": 1161
+            "text": "issued",
+            "startFrame": 758
           },
           {
-            "text": "down.",
-            "startFrame": 1168
+            "text": "once,",
+            "startFrame": 771
+          }
+        ]
+      },
+      {
+        "startFrame": 799,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 799
+          },
+          {
+            "text": "per",
+            "startFrame": 806
+          },
+          {
+            "text": "car,",
+            "startFrame": 810
+          }
+        ]
+      },
+      {
+        "startFrame": 831,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 831
+          },
+          {
+            "text": "never",
+            "startFrame": 835
+          },
+          {
+            "text": "reused,",
+            "startFrame": 845
+          }
+        ]
+      },
+      {
+        "startFrame": 875,
+        "words": [
+          {
+            "text": "even",
+            "startFrame": 875
+          },
+          {
+            "text": "after",
+            "startFrame": 881
+          },
+          {
+            "text": "the",
+            "startFrame": 887
+          },
+          {
+            "text": "car",
+            "startFrame": 889
+          },
+          {
+            "text": "is",
+            "startFrame": 896
+          },
+          {
+            "text": "scrapped.",
+            "startFrame": 899
           }
         ]
       }
@@ -615,64 +517,35 @@
   },
   {
     "index": 8,
-    "startFrame": 1192,
-    "endFrame": 1313,
-    "text": "And before every charge, the payment asks for the live terminal.",
-    "prefix": "And before every charge, the payment asks for the live terminal.",
+    "startFrame": 925,
+    "endFrame": 981,
+    "text": "Here is how it works.",
+    "prefix": "Here is how it works.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1193,
+        "startFrame": 927,
         "words": [
           {
-            "text": "And",
-            "startFrame": 1193
+            "text": "Here",
+            "startFrame": 927
           },
           {
-            "text": "before",
-            "startFrame": 1196
+            "text": "is",
+            "startFrame": 935
           },
           {
-            "text": "every",
-            "startFrame": 1215
+            "text": "how",
+            "startFrame": 938
           },
           {
-            "text": "charge,",
-            "startFrame": 1223
-          }
-        ]
-      },
-      {
-        "startFrame": 1249,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 1249
+            "text": "it",
+            "startFrame": 943
           },
           {
-            "text": "payment",
-            "startFrame": 1252
-          },
-          {
-            "text": "asks",
-            "startFrame": 1263
-          },
-          {
-            "text": "for",
-            "startFrame": 1272
-          },
-          {
-            "text": "the",
-            "startFrame": 1274
-          },
-          {
-            "text": "live",
-            "startFrame": 1276
-          },
-          {
-            "text": "terminal.",
-            "startFrame": 1288
+            "text": "works.",
+            "startFrame": 944
           }
         ]
       }
@@ -680,52 +553,68 @@
   },
   {
     "index": 9,
-    "startFrame": 1314,
-    "endFrame": 1422,
-    "text": "No terminal, no charge, and no money moves.",
-    "prefix": "No terminal, no charge, and no money moves.",
+    "startFrame": 982,
+    "endFrame": 1134,
+    "text": "Each online payment goes through a virtual card machine: an e-POS terminal.",
+    "prefix": "Each online payment goes through a virtual card machine: an e-POS terminal.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1315,
+        "startFrame": 983,
         "words": [
           {
-            "text": "No",
-            "startFrame": 1315
+            "text": "Each",
+            "startFrame": 983
           },
           {
-            "text": "terminal,",
-            "startFrame": 1319
+            "text": "online",
+            "startFrame": 988
           },
           {
-            "text": "no",
-            "startFrame": 1345
+            "text": "payment",
+            "startFrame": 1000
           },
           {
-            "text": "charge,",
-            "startFrame": 1355
+            "text": "goes",
+            "startFrame": 1015
+          },
+          {
+            "text": "through",
+            "startFrame": 1027
+          },
+          {
+            "text": "a",
+            "startFrame": 1033
+          },
+          {
+            "text": "virtual",
+            "startFrame": 1034
+          },
+          {
+            "text": "card",
+            "startFrame": 1049
           }
         ]
       },
       {
-        "startFrame": 1381,
+        "startFrame": 1057,
         "words": [
           {
-            "text": "and",
-            "startFrame": 1381
+            "text": "machine:",
+            "startFrame": 1057
           },
           {
-            "text": "no",
-            "startFrame": 1385
+            "text": "an",
+            "startFrame": 1084
           },
           {
-            "text": "money",
-            "startFrame": 1389
+            "text": "e-POS",
+            "startFrame": 1090
           },
           {
-            "text": "moves.",
-            "startFrame": 1395
+            "text": "terminal.",
+            "startFrame": 1109
           }
         ]
       }
@@ -733,68 +622,2642 @@
   },
   {
     "index": 10,
-    "startFrame": 1423,
-    "endFrame": 1579,
+    "startFrame": 1134,
+    "endFrame": 1312,
+    "text": "Its plate is a pair of numbers that the processing centre issues: a merchant number and a terminal number.",
+    "prefix": "Its plate is a pair of numbers that the processing centre issues: a merchant number and a terminal number.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1135,
+        "words": [
+          {
+            "text": "Its",
+            "startFrame": 1135
+          },
+          {
+            "text": "plate",
+            "startFrame": 1138
+          },
+          {
+            "text": "is",
+            "startFrame": 1152
+          },
+          {
+            "text": "a",
+            "startFrame": 1155
+          },
+          {
+            "text": "pair",
+            "startFrame": 1157
+          },
+          {
+            "text": "of",
+            "startFrame": 1165
+          },
+          {
+            "text": "numbers",
+            "startFrame": 1167
+          },
+          {
+            "text": "that",
+            "startFrame": 1179
+          }
+        ]
+      },
+      {
+        "startFrame": 1182,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1182
+          },
+          {
+            "text": "processing",
+            "startFrame": 1184
+          },
+          {
+            "text": "centre",
+            "startFrame": 1205
+          },
+          {
+            "text": "issues:",
+            "startFrame": 1216
+          }
+        ]
+      },
+      {
+        "startFrame": 1244,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 1244
+          },
+          {
+            "text": "merchant",
+            "startFrame": 1246
+          },
+          {
+            "text": "number",
+            "startFrame": 1258
+          },
+          {
+            "text": "and",
+            "startFrame": 1275
+          },
+          {
+            "text": "a",
+            "startFrame": 1276
+          },
+          {
+            "text": "terminal",
+            "startFrame": 1278
+          },
+          {
+            "text": "number.",
+            "startFrame": 1289
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "startFrame": 1312,
+    "endFrame": 1406,
+    "text": "On screen they are called the MID and the TID.",
+    "prefix": "On screen they are called the MID and the TID.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1313,
+        "words": [
+          {
+            "text": "On",
+            "startFrame": 1313
+          },
+          {
+            "text": "screen",
+            "startFrame": 1317
+          },
+          {
+            "text": "they",
+            "startFrame": 1325
+          },
+          {
+            "text": "are",
+            "startFrame": 1328
+          },
+          {
+            "text": "called",
+            "startFrame": 1330
+          },
+          {
+            "text": "the",
+            "startFrame": 1337
+          },
+          {
+            "text": "MID",
+            "startFrame": 1340
+          }
+        ]
+      },
+      {
+        "startFrame": 1366,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1366
+          },
+          {
+            "text": "the",
+            "startFrame": 1371
+          },
+          {
+            "text": "TID.",
+            "startFrame": 1373
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 1406,
+    "endFrame": 1532,
+    "text": "A bank admin registers the pair for one website and one card.",
+    "prefix": "A bank admin registers the pair for one website and one card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1407,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1407
+          },
+          {
+            "text": "bank",
+            "startFrame": 1409
+          },
+          {
+            "text": "admin",
+            "startFrame": 1420
+          },
+          {
+            "text": "registers",
+            "startFrame": 1429
+          },
+          {
+            "text": "the",
+            "startFrame": 1442
+          },
+          {
+            "text": "pair",
+            "startFrame": 1445
+          },
+          {
+            "text": "for",
+            "startFrame": 1461
+          },
+          {
+            "text": "one",
+            "startFrame": 1467
+          }
+        ]
+      },
+      {
+        "startFrame": 1475,
+        "words": [
+          {
+            "text": "website",
+            "startFrame": 1475
+          },
+          {
+            "text": "and",
+            "startFrame": 1497
+          },
+          {
+            "text": "one",
+            "startFrame": 1501
+          },
+          {
+            "text": "card.",
+            "startFrame": 1509
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1532,
+    "endFrame": 1635,
+    "text": "There is only one live terminal per website and card.",
+    "prefix": "There is only one live terminal per website and card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1534,
+        "words": [
+          {
+            "text": "There",
+            "startFrame": 1534
+          },
+          {
+            "text": "is",
+            "startFrame": 1536
+          },
+          {
+            "text": "only",
+            "startFrame": 1541
+          },
+          {
+            "text": "one",
+            "startFrame": 1550
+          },
+          {
+            "text": "live",
+            "startFrame": 1561
+          },
+          {
+            "text": "terminal",
+            "startFrame": 1572
+          },
+          {
+            "text": "per",
+            "startFrame": 1583
+          },
+          {
+            "text": "website",
+            "startFrame": 1588
+          },
+          {
+            "text": "and",
+            "startFrame": 1609
+          },
+          {
+            "text": "card.",
+            "startFrame": 1611
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 1635,
+    "endFrame": 1775,
+    "text": "And a pair is never registered twice, not even after its terminal is closed.",
+    "prefix": "And a pair is never registered twice, not even after its terminal is closed.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1636,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 1636
+          },
+          {
+            "text": "a",
+            "startFrame": 1639
+          },
+          {
+            "text": "pair",
+            "startFrame": 1640
+          },
+          {
+            "text": "is",
+            "startFrame": 1649
+          },
+          {
+            "text": "never",
+            "startFrame": 1654
+          },
+          {
+            "text": "registered",
+            "startFrame": 1667
+          },
+          {
+            "text": "twice,",
+            "startFrame": 1681
+          }
+        ]
+      },
+      {
+        "startFrame": 1710,
+        "words": [
+          {
+            "text": "not",
+            "startFrame": 1710
+          },
+          {
+            "text": "even",
+            "startFrame": 1716
+          },
+          {
+            "text": "after",
+            "startFrame": 1722
+          },
+          {
+            "text": "its",
+            "startFrame": 1730
+          },
+          {
+            "text": "terminal",
+            "startFrame": 1733
+          },
+          {
+            "text": "is",
+            "startFrame": 1744
+          },
+          {
+            "text": "closed.",
+            "startFrame": 1746
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "startFrame": 1775,
+    "endFrame": 1911,
+    "text": "Where a processing centre requires it, the terminal is registered with the centre too.",
+    "prefix": "Where a processing centre requires it, the terminal is registered with the centre too.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1776,
+        "words": [
+          {
+            "text": "Where",
+            "startFrame": 1776
+          },
+          {
+            "text": "a",
+            "startFrame": 1779
+          },
+          {
+            "text": "processing",
+            "startFrame": 1781
+          },
+          {
+            "text": "centre",
+            "startFrame": 1800
+          },
+          {
+            "text": "requires",
+            "startFrame": 1809
+          },
+          {
+            "text": "it,",
+            "startFrame": 1824
+          }
+        ]
+      },
+      {
+        "startFrame": 1835,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1835
+          },
+          {
+            "text": "terminal",
+            "startFrame": 1838
+          },
+          {
+            "text": "is",
+            "startFrame": 1851
+          },
+          {
+            "text": "registered",
+            "startFrame": 1856
+          },
+          {
+            "text": "with",
+            "startFrame": 1874
+          },
+          {
+            "text": "the",
+            "startFrame": 1877
+          },
+          {
+            "text": "centre",
+            "startFrame": 1879
+          },
+          {
+            "text": "too.",
+            "startFrame": 1889
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "startFrame": 1911,
+    "endFrame": 1980,
+    "text": "It is kept only if the centre accepts it.",
+    "prefix": "It is kept only if the centre accepts it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1913,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1913
+          },
+          {
+            "text": "is",
+            "startFrame": 1914
+          },
+          {
+            "text": "kept",
+            "startFrame": 1917
+          },
+          {
+            "text": "only",
+            "startFrame": 1925
+          },
+          {
+            "text": "if",
+            "startFrame": 1933
+          },
+          {
+            "text": "the",
+            "startFrame": 1936
+          },
+          {
+            "text": "centre",
+            "startFrame": 1939
+          },
+          {
+            "text": "accepts",
+            "startFrame": 1950
+          },
+          {
+            "text": "it.",
+            "startFrame": 1963
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "startFrame": 1981,
+    "endFrame": 2114,
+    "text": "If the centre refuses, or does not answer, nothing is saved.",
+    "prefix": "If the centre refuses, or does not answer, nothing is saved.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1982,
+        "words": [
+          {
+            "text": "If",
+            "startFrame": 1982
+          },
+          {
+            "text": "the",
+            "startFrame": 1985
+          },
+          {
+            "text": "centre",
+            "startFrame": 1987
+          },
+          {
+            "text": "refuses,",
+            "startFrame": 1996
+          }
+        ]
+      },
+      {
+        "startFrame": 2024,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 2024
+          },
+          {
+            "text": "does",
+            "startFrame": 2034
+          },
+          {
+            "text": "not",
+            "startFrame": 2038
+          },
+          {
+            "text": "answer,",
+            "startFrame": 2046
+          }
+        ]
+      },
+      {
+        "startFrame": 2074,
+        "words": [
+          {
+            "text": "nothing",
+            "startFrame": 2074
+          },
+          {
+            "text": "is",
+            "startFrame": 2085
+          },
+          {
+            "text": "saved.",
+            "startFrame": 2088
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "startFrame": 2114,
+    "endFrame": 2172,
+    "text": "An admin can suspend a terminal.",
+    "prefix": "An admin can suspend a terminal.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2115,
+        "words": [
+          {
+            "text": "An",
+            "startFrame": 2115
+          },
+          {
+            "text": "admin",
+            "startFrame": 2119
+          },
+          {
+            "text": "can",
+            "startFrame": 2131
+          },
+          {
+            "text": "suspend",
+            "startFrame": 2136
+          },
+          {
+            "text": "a",
+            "startFrame": 2146
+          },
+          {
+            "text": "terminal.",
+            "startFrame": 2147
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "startFrame": 2173,
+    "endFrame": 2286,
+    "text": "That stops its payments on the bank's side alone, and it can be resumed.",
+    "prefix": "That stops its payments on the bank's side alone, and it can be resumed.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2174,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 2174
+          },
+          {
+            "text": "stops",
+            "startFrame": 2176
+          },
+          {
+            "text": "its",
+            "startFrame": 2186
+          },
+          {
+            "text": "payments",
+            "startFrame": 2190
+          },
+          {
+            "text": "on",
+            "startFrame": 2201
+          },
+          {
+            "text": "the",
+            "startFrame": 2202
+          },
+          {
+            "text": "bank's",
+            "startFrame": 2205
+          },
+          {
+            "text": "side",
+            "startFrame": 2214
+          }
+        ]
+      },
+      {
+        "startFrame": 2222,
+        "words": [
+          {
+            "text": "alone,",
+            "startFrame": 2222
+          },
+          {
+            "text": "and",
+            "startFrame": 2246
+          },
+          {
+            "text": "it",
+            "startFrame": 2249
+          },
+          {
+            "text": "can",
+            "startFrame": 2251
+          },
+          {
+            "text": "be",
+            "startFrame": 2254
+          },
+          {
+            "text": "resumed.",
+            "startFrame": 2258
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "startFrame": 2286,
+    "endFrame": 2342,
+    "text": "Revoking is final.",
+    "prefix": "Revoking is final.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2287,
+        "words": [
+          {
+            "text": "Revoking",
+            "startFrame": 2287
+          },
+          {
+            "text": "is",
+            "startFrame": 2308
+          },
+          {
+            "text": "final.",
+            "startFrame": 2311
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "startFrame": 2342,
+    "endFrame": 2453,
+    "text": "Every change is written down: who, what, and why.",
+    "prefix": "Every change is written down: who, what, and why.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2344,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 2344
+          },
+          {
+            "text": "change",
+            "startFrame": 2350
+          },
+          {
+            "text": "is",
+            "startFrame": 2362
+          },
+          {
+            "text": "written",
+            "startFrame": 2367
+          },
+          {
+            "text": "down:",
+            "startFrame": 2373
+          }
+        ]
+      },
+      {
+        "startFrame": 2399,
+        "words": [
+          {
+            "text": "who,",
+            "startFrame": 2399
+          },
+          {
+            "text": "what,",
+            "startFrame": 2409
+          },
+          {
+            "text": "and",
+            "startFrame": 2426
+          },
+          {
+            "text": "why.",
+            "startFrame": 2429
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "startFrame": 2453,
+    "endFrame": 2619,
+    "text": "And before every charge, the payment asks for the live terminal of its website and card.",
+    "prefix": "And before every charge, the payment asks for the live terminal of its website and card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2455,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 2455
+          },
+          {
+            "text": "before",
+            "startFrame": 2457
+          },
+          {
+            "text": "every",
+            "startFrame": 2476
+          },
+          {
+            "text": "charge,",
+            "startFrame": 2484
+          }
+        ]
+      },
+      {
+        "startFrame": 2510,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2510
+          },
+          {
+            "text": "payment",
+            "startFrame": 2514
+          },
+          {
+            "text": "asks",
+            "startFrame": 2523
+          },
+          {
+            "text": "for",
+            "startFrame": 2532
+          },
+          {
+            "text": "the",
+            "startFrame": 2534
+          },
+          {
+            "text": "live",
+            "startFrame": 2537
+          },
+          {
+            "text": "terminal",
+            "startFrame": 2549
+          }
+        ]
+      },
+      {
+        "startFrame": 2564,
+        "words": [
+          {
+            "text": "of",
+            "startFrame": 2564
+          },
+          {
+            "text": "its",
+            "startFrame": 2567
+          },
+          {
+            "text": "website",
+            "startFrame": 2570
+          },
+          {
+            "text": "and",
+            "startFrame": 2592
+          },
+          {
+            "text": "card.",
+            "startFrame": 2595
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "startFrame": 2620,
+    "endFrame": 2729,
+    "text": "No terminal, no charge, and no money moves.",
+    "prefix": "No terminal, no charge, and no money moves.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2621,
+        "words": [
+          {
+            "text": "No",
+            "startFrame": 2621
+          },
+          {
+            "text": "terminal,",
+            "startFrame": 2625
+          },
+          {
+            "text": "no",
+            "startFrame": 2651
+          },
+          {
+            "text": "charge,",
+            "startFrame": 2661
+          }
+        ]
+      },
+      {
+        "startFrame": 2687,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2687
+          },
+          {
+            "text": "no",
+            "startFrame": 2691
+          },
+          {
+            "text": "money",
+            "startFrame": 2695
+          },
+          {
+            "text": "moves.",
+            "startFrame": 2701
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "startFrame": 2729,
+    "endFrame": 2785,
+    "text": "Now watch the product.",
+    "prefix": "Now watch the product.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2730,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2730
+          },
+          {
+            "text": "watch",
+            "startFrame": 2735
+          },
+          {
+            "text": "the",
+            "startFrame": 2743
+          },
+          {
+            "text": "product.",
+            "startFrame": 2745
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "startFrame": 2785,
+    "endFrame": 2875,
+    "text": "The viewer is a bank admin on the website's page.",
+    "prefix": "The viewer is a bank admin on the website's page.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2787,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2787
+          },
+          {
+            "text": "viewer",
+            "startFrame": 2788
+          },
+          {
+            "text": "is",
+            "startFrame": 2797
+          },
+          {
+            "text": "a",
+            "startFrame": 2800
+          },
+          {
+            "text": "bank",
+            "startFrame": 2802
+          },
+          {
+            "text": "admin",
+            "startFrame": 2814
+          },
+          {
+            "text": "on",
+            "startFrame": 2830
+          }
+        ]
+      },
+      {
+        "startFrame": 2832,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2832
+          },
+          {
+            "text": "website's",
+            "startFrame": 2834
+          },
+          {
+            "text": "page.",
+            "startFrame": 2849
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "startFrame": 2875,
+    "endFrame": 3137,
+    "text": "There is a section called e-POS terminals, with a hint: each card needs one live terminal from the processing centre, or its payments are refused.",
+    "prefix": "There is a section called e-POS terminals, with a hint: each card needs one live terminal from the processing centre, or its payments are refused.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2877,
+        "words": [
+          {
+            "text": "There",
+            "startFrame": 2877
+          },
+          {
+            "text": "is",
+            "startFrame": 2881
+          },
+          {
+            "text": "a",
+            "startFrame": 2883
+          },
+          {
+            "text": "section",
+            "startFrame": 2886
+          },
+          {
+            "text": "called",
+            "startFrame": 2900
+          },
+          {
+            "text": "e-POS",
+            "startFrame": 2914
+          },
+          {
+            "text": "terminals,",
+            "startFrame": 2933
+          }
+        ]
+      },
+      {
+        "startFrame": 2956,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 2956
+          },
+          {
+            "text": "a",
+            "startFrame": 2961
+          },
+          {
+            "text": "hint:",
+            "startFrame": 2962
+          }
+        ]
+      },
+      {
+        "startFrame": 2990,
+        "words": [
+          {
+            "text": "each",
+            "startFrame": 2990
+          },
+          {
+            "text": "card",
+            "startFrame": 2994
+          },
+          {
+            "text": "needs",
+            "startFrame": 3003
+          },
+          {
+            "text": "one",
+            "startFrame": 3009
+          },
+          {
+            "text": "live",
+            "startFrame": 3019
+          },
+          {
+            "text": "terminal",
+            "startFrame": 3030
+          },
+          {
+            "text": "from",
+            "startFrame": 3042
+          }
+        ]
+      },
+      {
+        "startFrame": 3045,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3045
+          },
+          {
+            "text": "processing",
+            "startFrame": 3047
+          },
+          {
+            "text": "centre,",
+            "startFrame": 3064
+          }
+        ]
+      },
+      {
+        "startFrame": 3088,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 3088
+          },
+          {
+            "text": "its",
+            "startFrame": 3091
+          },
+          {
+            "text": "payments",
+            "startFrame": 3094
+          },
+          {
+            "text": "are",
+            "startFrame": 3106
+          },
+          {
+            "text": "refused.",
+            "startFrame": 3109
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "startFrame": 3137,
+    "endFrame": 3306,
+    "text": "On a website with no cards chosen yet, the \"Register e-POS terminal\" button is grey.",
+    "prefix": "On a website with no cards chosen yet, the \"Register e-POS terminal\" button is grey.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3138,
+        "words": [
+          {
+            "text": "On",
+            "startFrame": 3138
+          },
+          {
+            "text": "a",
+            "startFrame": 3141
+          },
+          {
+            "text": "website",
+            "startFrame": 3143
+          },
+          {
+            "text": "with",
+            "startFrame": 3158
+          },
+          {
+            "text": "no",
+            "startFrame": 3163
+          },
+          {
+            "text": "cards",
+            "startFrame": 3173
+          },
+          {
+            "text": "chosen",
+            "startFrame": 3184
+          },
+          {
+            "text": "yet,",
+            "startFrame": 3195
+          }
+        ]
+      },
+      {
+        "startFrame": 3212,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3212
+          },
+          {
+            "text": "\"Register",
+            "startFrame": 3215
+          },
+          {
+            "text": "e-POS",
+            "startFrame": 3237
+          },
+          {
+            "text": "terminal\"",
+            "startFrame": 3254
+          },
+          {
+            "text": "button",
+            "startFrame": 3270
+          },
+          {
+            "text": "is",
+            "startFrame": 3279
+          },
+          {
+            "text": "grey.",
+            "startFrame": 3282
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "startFrame": 3307,
+    "endFrame": 3425,
+    "text": "Here the website already takes one card, so the button is live.",
+    "prefix": "Here the website already takes one card, so the button is live.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3308,
+        "words": [
+          {
+            "text": "Here",
+            "startFrame": 3308
+          },
+          {
+            "text": "the",
+            "startFrame": 3311
+          },
+          {
+            "text": "website",
+            "startFrame": 3313
+          },
+          {
+            "text": "already",
+            "startFrame": 3329
+          },
+          {
+            "text": "takes",
+            "startFrame": 3338
+          },
+          {
+            "text": "one",
+            "startFrame": 3347
+          },
+          {
+            "text": "card,",
+            "startFrame": 3354
+          }
+        ]
+      },
+      {
+        "startFrame": 3376,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 3376
+          },
+          {
+            "text": "the",
+            "startFrame": 3379
+          },
+          {
+            "text": "button",
+            "startFrame": 3382
+          },
+          {
+            "text": "is",
+            "startFrame": 3392
+          },
+          {
+            "text": "live.",
+            "startFrame": 3396
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "startFrame": 3425,
+    "endFrame": 3481,
+    "text": "The viewer clicks it.",
+    "prefix": "The viewer clicks it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3427,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3427
+          },
+          {
+            "text": "viewer",
+            "startFrame": 3428
+          },
+          {
+            "text": "clicks",
+            "startFrame": 3439
+          },
+          {
+            "text": "it.",
+            "startFrame": 3449
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "startFrame": 3481,
+    "endFrame": 3599,
+    "text": "A form asks for the MID, the TID and the card.",
+    "prefix": "A form asks for the MID, the TID and the card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3483,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 3483
+          },
+          {
+            "text": "form",
+            "startFrame": 3485
+          },
+          {
+            "text": "asks",
+            "startFrame": 3493
+          },
+          {
+            "text": "for",
+            "startFrame": 3502
+          },
+          {
+            "text": "the",
+            "startFrame": 3505
+          },
+          {
+            "text": "MID,",
+            "startFrame": 3506
+          }
+        ]
+      },
+      {
+        "startFrame": 3536,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3536
+          },
+          {
+            "text": "TID",
+            "startFrame": 3539
+          },
+          {
+            "text": "and",
+            "startFrame": 3569
+          },
+          {
+            "text": "the",
+            "startFrame": 3573
+          },
+          {
+            "text": "card.",
+            "startFrame": 3575
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "startFrame": 3600,
+    "endFrame": 3690,
+    "text": "They type the pair the centre issued and choose the card.",
+    "prefix": "They type the pair the centre issued and choose the card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3601,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 3601
+          },
+          {
+            "text": "type",
+            "startFrame": 3603
+          },
+          {
+            "text": "the",
+            "startFrame": 3609
+          },
+          {
+            "text": "pair",
+            "startFrame": 3612
+          },
+          {
+            "text": "the",
+            "startFrame": 3619
+          },
+          {
+            "text": "centre",
+            "startFrame": 3621
+          },
+          {
+            "text": "issued",
+            "startFrame": 3631
+          }
+        ]
+      },
+      {
+        "startFrame": 3651,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3651
+          },
+          {
+            "text": "choose",
+            "startFrame": 3656
+          },
+          {
+            "text": "the",
+            "startFrame": 3666
+          },
+          {
+            "text": "card.",
+            "startFrame": 3667
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "startFrame": 3690,
+    "endFrame": 3768,
+    "text": "The page says the terminal is registered.",
+    "prefix": "The page says the terminal is registered.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3692,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3692
+          },
+          {
+            "text": "page",
+            "startFrame": 3694
+          },
+          {
+            "text": "says",
+            "startFrame": 3710
+          },
+          {
+            "text": "the",
+            "startFrame": 3716
+          },
+          {
+            "text": "terminal",
+            "startFrame": 3719
+          },
+          {
+            "text": "is",
+            "startFrame": 3737
+          },
+          {
+            "text": "registered.",
+            "startFrame": 3740
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "startFrame": 3768,
+    "endFrame": 3877,
+    "text": "It appears in the list as Live, with who registered it.",
+    "prefix": "It appears in the list as Live, with who registered it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3769,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 3769
+          },
+          {
+            "text": "appears",
+            "startFrame": 3770
+          },
+          {
+            "text": "in",
+            "startFrame": 3784
+          },
+          {
+            "text": "the",
+            "startFrame": 3785
+          },
+          {
+            "text": "list",
+            "startFrame": 3788
+          },
+          {
+            "text": "as",
+            "startFrame": 3808
+          },
+          {
+            "text": "Live,",
+            "startFrame": 3814
+          }
+        ]
+      },
+      {
+        "startFrame": 3840,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 3840
+          },
+          {
+            "text": "who",
+            "startFrame": 3843
+          },
+          {
+            "text": "registered",
+            "startFrame": 3847
+          },
+          {
+            "text": "it.",
+            "startFrame": 3860
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "startFrame": 3877,
+    "endFrame": 4012,
+    "text": "Next to it are three buttons: Suspend, Resume and Revoke.",
+    "prefix": "Next to it are three buttons: Suspend, Resume and Revoke.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3878,
+        "words": [
+          {
+            "text": "Next",
+            "startFrame": 3878
+          },
+          {
+            "text": "to",
+            "startFrame": 3883
+          },
+          {
+            "text": "it",
+            "startFrame": 3886
+          },
+          {
+            "text": "are",
+            "startFrame": 3887
+          },
+          {
+            "text": "three",
+            "startFrame": 3891
+          },
+          {
+            "text": "buttons:",
+            "startFrame": 3908
+          }
+        ]
+      },
+      {
+        "startFrame": 3934,
+        "words": [
+          {
+            "text": "Suspend,",
+            "startFrame": 3934
+          },
+          {
+            "text": "Resume",
+            "startFrame": 3961
+          },
+          {
+            "text": "and",
+            "startFrame": 3983
+          },
+          {
+            "text": "Revoke.",
+            "startFrame": 3987
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "startFrame": 4013,
+    "endFrame": 4092,
+    "text": "The viewer opens Revoke, just to read it.",
+    "prefix": "The viewer opens Revoke, just to read it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4014,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4014
+          },
+          {
+            "text": "viewer",
+            "startFrame": 4016
+          },
+          {
+            "text": "opens",
+            "startFrame": 4028
+          },
+          {
+            "text": "Revoke,",
+            "startFrame": 4038
+          }
+        ]
+      },
+      {
+        "startFrame": 4063,
+        "words": [
+          {
+            "text": "just",
+            "startFrame": 4063
+          },
+          {
+            "text": "to",
+            "startFrame": 4067
+          },
+          {
+            "text": "read",
+            "startFrame": 4069
+          },
+          {
+            "text": "it.",
+            "startFrame": 4076
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "startFrame": 4092,
+    "endFrame": 4258,
+    "text": "The window warns that a revoked pair never comes back, and asks why, for the record.",
+    "prefix": "The window warns that a revoked pair never comes back, and asks why, for the record.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4093,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4093
+          },
+          {
+            "text": "window",
+            "startFrame": 4096
+          },
+          {
+            "text": "warns",
+            "startFrame": 4106
+          },
+          {
+            "text": "that",
+            "startFrame": 4114
+          },
+          {
+            "text": "a",
+            "startFrame": 4117
+          },
+          {
+            "text": "revoked",
+            "startFrame": 4118
+          },
+          {
+            "text": "pair",
+            "startFrame": 4132
+          },
+          {
+            "text": "never",
+            "startFrame": 4153
+          }
+        ]
+      },
+      {
+        "startFrame": 4163,
+        "words": [
+          {
+            "text": "comes",
+            "startFrame": 4163
+          },
+          {
+            "text": "back,",
+            "startFrame": 4171
+          },
+          {
+            "text": "and",
+            "startFrame": 4196
+          },
+          {
+            "text": "asks",
+            "startFrame": 4200
+          },
+          {
+            "text": "why,",
+            "startFrame": 4210
+          }
+        ]
+      },
+      {
+        "startFrame": 4230,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 4230
+          },
+          {
+            "text": "the",
+            "startFrame": 4233
+          },
+          {
+            "text": "record.",
+            "startFrame": 4235
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "startFrame": 4258,
+    "endFrame": 4315,
+    "text": "They close it without revoking.",
+    "prefix": "They close it without revoking.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4260,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 4260
+          },
+          {
+            "text": "close",
+            "startFrame": 4260
+          },
+          {
+            "text": "it",
+            "startFrame": 4273
+          },
+          {
+            "text": "without",
+            "startFrame": 4277
+          },
+          {
+            "text": "revoking.",
+            "startFrame": 4288
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "startFrame": 4316,
+    "endFrame": 4408,
+    "text": "Now the card at the top, \"Before it takes payments\".",
+    "prefix": "Now the card at the top, \"Before it takes payments\".",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4317,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 4317
+          },
+          {
+            "text": "the",
+            "startFrame": 4331
+          },
+          {
+            "text": "card",
+            "startFrame": 4333
+          },
+          {
+            "text": "at",
+            "startFrame": 4341
+          },
+          {
+            "text": "the",
+            "startFrame": 4342
+          },
+          {
+            "text": "top,",
+            "startFrame": 4344
+          }
+        ]
+      },
+      {
+        "startFrame": 4362,
+        "words": [
+          {
+            "text": "\"Before",
+            "startFrame": 4362
+          },
+          {
+            "text": "it",
+            "startFrame": 4371
+          },
+          {
+            "text": "takes",
+            "startFrame": 4373
+          },
+          {
+            "text": "payments\".",
+            "startFrame": 4379
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "startFrame": 4409,
+    "endFrame": 4552,
+    "text": "The terminal step is ticked: every card has a live e-POS terminal.",
+    "prefix": "The terminal step is ticked: every card has a live e-POS terminal.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4410,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4410
+          },
+          {
+            "text": "terminal",
+            "startFrame": 4412
+          },
+          {
+            "text": "step",
+            "startFrame": 4422
+          },
+          {
+            "text": "is",
+            "startFrame": 4437
+          },
+          {
+            "text": "ticked:",
+            "startFrame": 4442
+          }
+        ]
+      },
+      {
+        "startFrame": 4467,
+        "words": [
+          {
+            "text": "every",
+            "startFrame": 4467
+          },
+          {
+            "text": "card",
+            "startFrame": 4475
+          },
+          {
+            "text": "has",
+            "startFrame": 4483
+          },
+          {
+            "text": "a",
+            "startFrame": 4488
+          },
+          {
+            "text": "live",
+            "startFrame": 4489
+          },
+          {
+            "text": "e-POS",
+            "startFrame": 4511
+          },
+          {
+            "text": "terminal.",
+            "startFrame": 4528
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "startFrame": 4553,
+    "endFrame": 4655,
+    "text": "With the fee from the last lesson, every step is done.",
+    "prefix": "With the fee from the last lesson, every step is done.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4554,
+        "words": [
+          {
+            "text": "With",
+            "startFrame": 4554
+          },
+          {
+            "text": "the",
+            "startFrame": 4557
+          },
+          {
+            "text": "fee",
+            "startFrame": 4560
+          },
+          {
+            "text": "from",
+            "startFrame": 4567
+          },
+          {
+            "text": "the",
+            "startFrame": 4571
+          },
+          {
+            "text": "last",
+            "startFrame": 4573
+          },
+          {
+            "text": "lesson,",
+            "startFrame": 4583
+          }
+        ]
+      },
+      {
+        "startFrame": 4606,
+        "words": [
+          {
+            "text": "every",
+            "startFrame": 4606
+          },
+          {
+            "text": "step",
+            "startFrame": 4615
+          },
+          {
+            "text": "is",
+            "startFrame": 4629
+          },
+          {
+            "text": "done.",
+            "startFrame": 4633
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "startFrame": 4656,
+    "endFrame": 4776,
+    "text": "The card turns green and says \"Ready: taking payments\".",
+    "prefix": "The card turns green and says \"Ready: taking payments\".",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4658,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4658
+          },
+          {
+            "text": "card",
+            "startFrame": 4659
+          },
+          {
+            "text": "turns",
+            "startFrame": 4667
+          },
+          {
+            "text": "green",
+            "startFrame": 4674
+          },
+          {
+            "text": "and",
+            "startFrame": 4693
+          },
+          {
+            "text": "says",
+            "startFrame": 4696
+          },
+          {
+            "text": "\"Ready:",
+            "startFrame": 4716
+          },
+          {
+            "text": "taking",
+            "startFrame": 4737
+          },
+          {
+            "text": "payments\".",
+            "startFrame": 4746
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "startFrame": 4776,
+    "endFrame": 4832,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4777,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 4777
+          },
+          {
+            "text": "does",
+            "startFrame": 4779
+          },
+          {
+            "text": "this",
+            "startFrame": 4782
+          },
+          {
+            "text": "protect?",
+            "startFrame": 4786
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "startFrame": 4832,
+    "endFrame": 4953,
+    "text": "A charge with the wrong pair can lose money, or book it to someone else.",
+    "prefix": "A charge with the wrong pair can lose money, or book it to someone else.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4833,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 4833
+          },
+          {
+            "text": "charge",
+            "startFrame": 4835
+          },
+          {
+            "text": "with",
+            "startFrame": 4844
+          },
+          {
+            "text": "the",
+            "startFrame": 4847
+          },
+          {
+            "text": "wrong",
+            "startFrame": 4849
+          },
+          {
+            "text": "pair",
+            "startFrame": 4860
+          },
+          {
+            "text": "can",
+            "startFrame": 4870
+          },
+          {
+            "text": "lose",
+            "startFrame": 4876
+          }
+        ]
+      },
+      {
+        "startFrame": 4885,
+        "words": [
+          {
+            "text": "money,",
+            "startFrame": 4885
+          },
+          {
+            "text": "or",
+            "startFrame": 4908
+          },
+          {
+            "text": "book",
+            "startFrame": 4912
+          },
+          {
+            "text": "it",
+            "startFrame": 4917
+          },
+          {
+            "text": "to",
+            "startFrame": 4919
+          },
+          {
+            "text": "someone",
+            "startFrame": 4921
+          },
+          {
+            "text": "else.",
+            "startFrame": 4929
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "startFrame": 4953,
+    "endFrame": 5082,
+    "text": "A pair used twice mixes two merchants' histories forever.",
+    "prefix": "A pair used twice mixes two merchants' histories forever.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4954,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 4954
+          },
+          {
+            "text": "pair",
+            "startFrame": 4956
+          },
+          {
+            "text": "used",
+            "startFrame": 4965
+          },
+          {
+            "text": "twice",
+            "startFrame": 4973
+          },
+          {
+            "text": "mixes",
+            "startFrame": 4992
+          },
+          {
+            "text": "two",
+            "startFrame": 5006
+          },
+          {
+            "text": "merchants'",
+            "startFrame": 5015
+          },
+          {
+            "text": "histories",
+            "startFrame": 5030
+          },
+          {
+            "text": "forever.",
+            "startFrame": 5052
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "startFrame": 5082,
+    "endFrame": 5238,
+    "text": "One live terminal per website and card means each payment has exactly one way out.",
+    "prefix": "One live terminal per website and card means each payment has exactly one way out.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5083,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 5083
+          },
+          {
+            "text": "live",
+            "startFrame": 5090
+          },
+          {
+            "text": "terminal",
+            "startFrame": 5096
+          },
+          {
+            "text": "per",
+            "startFrame": 5105
+          },
+          {
+            "text": "website",
+            "startFrame": 5109
+          },
+          {
+            "text": "and",
+            "startFrame": 5137
+          },
+          {
+            "text": "card",
+            "startFrame": 5142
+          },
+          {
+            "text": "means",
+            "startFrame": 5150
+          }
+        ]
+      },
+      {
+        "startFrame": 5164,
+        "words": [
+          {
+            "text": "each",
+            "startFrame": 5164
+          },
+          {
+            "text": "payment",
+            "startFrame": 5170
+          },
+          {
+            "text": "has",
+            "startFrame": 5182
+          },
+          {
+            "text": "exactly",
+            "startFrame": 5186
+          },
+          {
+            "text": "one",
+            "startFrame": 5202
+          },
+          {
+            "text": "way",
+            "startFrame": 5210
+          },
+          {
+            "text": "out.",
+            "startFrame": 5217
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "startFrame": 5238,
+    "endFrame": 5432,
+    "text": "Asking for the live terminal before every charge means a suspended or missing terminal stops money before it moves.",
+    "prefix": "Asking for the live terminal before every charge means a suspended or missing terminal stops money before it moves.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5240,
+        "words": [
+          {
+            "text": "Asking",
+            "startFrame": 5240
+          },
+          {
+            "text": "for",
+            "startFrame": 5250
+          },
+          {
+            "text": "the",
+            "startFrame": 5252
+          },
+          {
+            "text": "live",
+            "startFrame": 5254
+          },
+          {
+            "text": "terminal",
+            "startFrame": 5264
+          },
+          {
+            "text": "before",
+            "startFrame": 5274
+          },
+          {
+            "text": "every",
+            "startFrame": 5294
+          },
+          {
+            "text": "charge",
+            "startFrame": 5302
+          }
+        ]
+      },
+      {
+        "startFrame": 5315,
+        "words": [
+          {
+            "text": "means",
+            "startFrame": 5315
+          },
+          {
+            "text": "a",
+            "startFrame": 5322
+          },
+          {
+            "text": "suspended",
+            "startFrame": 5323
+          },
+          {
+            "text": "or",
+            "startFrame": 5346
+          },
+          {
+            "text": "missing",
+            "startFrame": 5349
+          },
+          {
+            "text": "terminal",
+            "startFrame": 5362
+          },
+          {
+            "text": "stops",
+            "startFrame": 5374
+          },
+          {
+            "text": "money",
+            "startFrame": 5385
+          }
+        ]
+      },
+      {
+        "startFrame": 5394,
+        "words": [
+          {
+            "text": "before",
+            "startFrame": 5394
+          },
+          {
+            "text": "it",
+            "startFrame": 5404
+          },
+          {
+            "text": "moves.",
+            "startFrame": 5405
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "startFrame": 5433,
+    "endFrame": 5602,
+    "text": "This protects the merchant's money, the buyer's charge, and the bank's books with the processing centre.",
+    "prefix": "This protects the merchant's money, the buyer's charge, and the bank's books with the processing centre.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5434,
+        "words": [
+          {
+            "text": "This",
+            "startFrame": 5434
+          },
+          {
+            "text": "protects",
+            "startFrame": 5438
+          },
+          {
+            "text": "the",
+            "startFrame": 5452
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 5455
+          },
+          {
+            "text": "money,",
+            "startFrame": 5470
+          }
+        ]
+      },
+      {
+        "startFrame": 5490,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5490
+          },
+          {
+            "text": "buyer's",
+            "startFrame": 5493
+          },
+          {
+            "text": "charge,",
+            "startFrame": 5504
+          }
+        ]
+      },
+      {
+        "startFrame": 5530,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5530
+          },
+          {
+            "text": "the",
+            "startFrame": 5533
+          },
+          {
+            "text": "bank's",
+            "startFrame": 5535
+          },
+          {
+            "text": "books",
+            "startFrame": 5546
+          },
+          {
+            "text": "with",
+            "startFrame": 5554
+          },
+          {
+            "text": "the",
+            "startFrame": 5557
+          },
+          {
+            "text": "processing",
+            "startFrame": 5559
+          },
+          {
+            "text": "centre.",
+            "startFrame": 5578
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "startFrame": 5603,
+    "endFrame": 5785,
+    "text": "So, like a taxi's licence plate: one per car, never reused, and no plate, no fares.",
+    "prefix": "So, like a taxi's licence plate: one per car, never reused, and no plate, no fares.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5604,
+        "words": [
+          {
+            "text": "So,",
+            "startFrame": 5604
+          },
+          {
+            "text": "like",
+            "startFrame": 5609
+          },
+          {
+            "text": "a",
+            "startFrame": 5613
+          },
+          {
+            "text": "taxi's",
+            "startFrame": 5614
+          },
+          {
+            "text": "licence",
+            "startFrame": 5627
+          },
+          {
+            "text": "plate:",
+            "startFrame": 5638
+          }
+        ]
+      },
+      {
+        "startFrame": 5661,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 5661
+          },
+          {
+            "text": "per",
+            "startFrame": 5666
+          },
+          {
+            "text": "car,",
+            "startFrame": 5671
+          }
+        ]
+      },
+      {
+        "startFrame": 5691,
+        "words": [
+          {
+            "text": "never",
+            "startFrame": 5691
+          },
+          {
+            "text": "reused,",
+            "startFrame": 5700
+          },
+          {
+            "text": "and",
+            "startFrame": 5720
+          },
+          {
+            "text": "no",
+            "startFrame": 5725
+          },
+          {
+            "text": "plate,",
+            "startFrame": 5729
+          },
+          {
+            "text": "no",
+            "startFrame": 5748
+          },
+          {
+            "text": "fares.",
+            "startFrame": 5754
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "startFrame": 5785,
+    "endFrame": 5942,
     "text": "Next: how the bank knows a request really comes from the merchant.",
     "prefix": "Next: how the bank knows a request really comes from the merchant.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1424,
+        "startFrame": 5786,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 1424
+            "startFrame": 5786
           },
           {
             "text": "how",
-            "startFrame": 1450
+            "startFrame": 5812
           },
           {
             "text": "the",
-            "startFrame": 1453
+            "startFrame": 5815
           },
           {
             "text": "bank",
-            "startFrame": 1456
+            "startFrame": 5819
           },
           {
             "text": "knows",
-            "startFrame": 1468
+            "startFrame": 5830
           },
           {
             "text": "a",
-            "startFrame": 1476
+            "startFrame": 5839
           },
           {
             "text": "request",
-            "startFrame": 1478
+            "startFrame": 5840
           },
           {
             "text": "really",
-            "startFrame": 1501
+            "startFrame": 5863
           }
         ]
       },
       {
-        "startFrame": 1511,
+        "startFrame": 5874,
         "words": [
           {
             "text": "comes",
-            "startFrame": 1511
+            "startFrame": 5874
           },
           {
             "text": "from",
-            "startFrame": 1520
+            "startFrame": 5882
           },
           {
             "text": "the",
-            "startFrame": 1524
+            "startFrame": 5886
           },
           {
             "text": "merchant.",
-            "startFrame": 1525
+            "startFrame": 5888
           }
         ]
       }
