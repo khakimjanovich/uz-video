@@ -221,7 +221,7 @@ export async function shoot(shots: Shot[], outDir: string) {
         };
         const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
         for (let node = walker.nextNode(); node; node = walker.nextNode()) node.nodeValue = swap(node.nodeValue ?? "");
-        for (const field of document.querySelectorAll("input")) field.value = swap(field.value);
+        for (const field of document.querySelectorAll<HTMLInputElement>("input:not([type=file])")) field.value = swap(field.value);
       }, PAGE_TEXT);
       const file = join(outDir, `${shot.name}.png`);
       mkdirSync(dirname(file), { recursive: true });
