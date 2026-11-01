@@ -2,9 +2,9 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 72,
-    "text": "How do you know exactly what is running in a bank?",
-    "prefix": "How do you know exactly what is running in a bank?",
+    "endFrame": 93,
+    "text": "How do you know exactly what is running inside a bank?",
+    "prefix": "How do you know exactly what is running inside a bank?",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -29,36 +29,36 @@
           },
           {
             "text": "exactly",
-            "startFrame": 11
+            "startFrame": 12
           },
           {
             "text": "what",
-            "startFrame": 29
+            "startFrame": 40
           },
           {
             "text": "is",
-            "startFrame": 33
+            "startFrame": 44
           },
           {
             "text": "running",
-            "startFrame": 36
+            "startFrame": 48
           }
         ]
       },
       {
-        "startFrame": 45,
+        "startFrame": 57,
         "words": [
           {
-            "text": "in",
-            "startFrame": 45
+            "text": "inside",
+            "startFrame": 57
           },
           {
             "text": "a",
-            "startFrame": 47
+            "startFrame": 68
           },
           {
             "text": "bank?",
-            "startFrame": 48
+            "startFrame": 68
           }
         ]
       }
@@ -66,92 +66,51 @@
   },
   {
     "index": 2,
-    "startFrame": 72,
-    "endFrame": 248,
-    "text": "A book's second edition never changes once it is printed, and you always say which edition you read.",
-    "prefix": "A book's second edition never changes once it is printed, and you always say which edition you read.",
+    "startFrame": 93,
+    "endFrame": 199,
+    "text": "Picture a product that always runs whatever is newest.",
+    "prefix": "Picture a product that always runs whatever is newest.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 73,
+        "startFrame": 95,
         "words": [
           {
-            "text": "A",
-            "startFrame": 73
+            "text": "Picture",
+            "startFrame": 95
           },
           {
-            "text": "book's",
-            "startFrame": 75
+            "text": "a",
+            "startFrame": 102
           },
           {
-            "text": "second",
-            "startFrame": 83
+            "text": "product",
+            "startFrame": 103
           },
           {
-            "text": "edition",
-            "startFrame": 91
-          },
-          {
-            "text": "never",
-            "startFrame": 111
-          },
-          {
-            "text": "changes",
-            "startFrame": 121
-          },
-          {
-            "text": "once",
-            "startFrame": 136
-          },
-          {
-            "text": "it",
-            "startFrame": 146
-          }
-        ]
-      },
-      {
-        "startFrame": 148,
-        "words": [
-          {
-            "text": "is",
-            "startFrame": 148
-          },
-          {
-            "text": "printed,",
-            "startFrame": 151
-          },
-          {
-            "text": "and",
-            "startFrame": 176
-          },
-          {
-            "text": "you",
-            "startFrame": 180
+            "text": "that",
+            "startFrame": 126
           },
           {
             "text": "always",
-            "startFrame": 185
+            "startFrame": 131
           },
           {
-            "text": "say",
-            "startFrame": 197
+            "text": "runs",
+            "startFrame": 143
           },
           {
-            "text": "which",
-            "startFrame": 207
+            "text": "whatever",
+            "startFrame": 158
           },
           {
-            "text": "edition",
-            "startFrame": 212
+            "text": "is",
+            "startFrame": 169
           },
           {
-            "text": "you",
-            "startFrame": 224
-          },
-          {
-            "text": "read.",
-            "startFrame": 227
+            "text": "newest.",
+            "startFrame": 172
           }
         ]
       }
@@ -159,35 +118,64 @@
   },
   {
     "index": 3,
-    "startFrame": 249,
-    "endFrame": 306,
-    "text": "Releases work the same way.",
-    "prefix": "Releases work the same way.",
+    "startFrame": 200,
+    "endFrame": 341,
+    "text": "On Tuesday, a rebuild quietly pulls a newer version nobody tested.",
+    "prefix": "On Tuesday, a rebuild quietly pulls a newer version nobody tested.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 250,
+        "startFrame": 201,
         "words": [
           {
-            "text": "Releases",
-            "startFrame": 250
+            "text": "On",
+            "startFrame": 201
           },
           {
-            "text": "work",
-            "startFrame": 264
+            "text": "Tuesday,",
+            "startFrame": 205
           },
           {
-            "text": "the",
-            "startFrame": 272
+            "text": "a",
+            "startFrame": 237
           },
           {
-            "text": "same",
-            "startFrame": 274
+            "text": "rebuild",
+            "startFrame": 241
           },
           {
-            "text": "way.",
-            "startFrame": 284
+            "text": "quietly",
+            "startFrame": 261
+          },
+          {
+            "text": "pulls",
+            "startFrame": 278
+          },
+          {
+            "text": "a",
+            "startFrame": 285
+          },
+          {
+            "text": "newer",
+            "startFrame": 286
+          }
+        ]
+      },
+      {
+        "startFrame": 298,
+        "words": [
+          {
+            "text": "version",
+            "startFrame": 298
+          },
+          {
+            "text": "nobody",
+            "startFrame": 308
+          },
+          {
+            "text": "tested.",
+            "startFrame": 316
           }
         ]
       }
@@ -195,93 +183,85 @@
   },
   {
     "index": 4,
-    "startFrame": 306,
-    "endFrame": 497,
-    "text": "Each part of the system numbers its versions, so the number says breaking change, addition, or fix.",
-    "prefix": "Each part of the system numbers its versions, so the number says breaking change, addition, or fix.",
+    "startFrame": 342,
+    "endFrame": 502,
+    "text": "On Wednesday, someone rolls back, pulls the newest again, and gets the same broken build.",
+    "prefix": "On Wednesday, someone rolls back, pulls the newest again, and gets the same broken build.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 308,
+        "startFrame": 343,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 308
+            "text": "On",
+            "startFrame": 343
           },
           {
-            "text": "part",
-            "startFrame": 312
+            "text": "Wednesday,",
+            "startFrame": 347
           },
           {
-            "text": "of",
-            "startFrame": 318
+            "text": "someone",
+            "startFrame": 371
           },
           {
-            "text": "the",
-            "startFrame": 320
+            "text": "rolls",
+            "startFrame": 380
           },
           {
-            "text": "system",
-            "startFrame": 322
-          },
-          {
-            "text": "numbers",
-            "startFrame": 340
-          },
-          {
-            "text": "its",
-            "startFrame": 353
-          },
-          {
-            "text": "versions,",
-            "startFrame": 356
-          }
-        ]
-      },
-      {
-        "startFrame": 384,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 384
-          },
-          {
-            "text": "the",
-            "startFrame": 387
-          },
-          {
-            "text": "number",
+            "text": "back,",
             "startFrame": 389
-          },
-          {
-            "text": "says",
-            "startFrame": 398
-          },
-          {
-            "text": "breaking",
-            "startFrame": 405
-          },
-          {
-            "text": "change,",
-            "startFrame": 418
           }
         ]
       },
       {
-        "startFrame": 443,
+        "startFrame": 403,
         "words": [
           {
-            "text": "addition,",
-            "startFrame": 443
+            "text": "pulls",
+            "startFrame": 403
           },
           {
-            "text": "or",
-            "startFrame": 465
+            "text": "the",
+            "startFrame": 412
           },
           {
-            "text": "fix.",
-            "startFrame": 468
+            "text": "newest",
+            "startFrame": 414
+          },
+          {
+            "text": "again,",
+            "startFrame": 428
+          }
+        ]
+      },
+      {
+        "startFrame": 450,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 450
+          },
+          {
+            "text": "gets",
+            "startFrame": 453
+          },
+          {
+            "text": "the",
+            "startFrame": 458
+          },
+          {
+            "text": "same",
+            "startFrame": 460
+          },
+          {
+            "text": "broken",
+            "startFrame": 470
+          },
+          {
+            "text": "build.",
+            "startFrame": 480
           }
         ]
       }
@@ -289,113 +269,93 @@
   },
   {
     "index": 5,
-    "startFrame": 498,
-    "endFrame": 708,
-    "text": "A release is fixed once it is made, and everything is built from it, each with a list of every component inside.",
-    "prefix": "A release is fixed once it is made, and everything is built from it, each with a list of every component inside.",
+    "startFrame": 502,
+    "endFrame": 664,
+    "text": "Then the bank's assessor asks: what exactly runs in your card zone, and what is inside it?",
+    "prefix": "Then the bank's assessor asks: what exactly runs in your card zone, and what is inside it?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 499,
+        "startFrame": 503,
         "words": [
           {
-            "text": "A",
-            "startFrame": 499
+            "text": "Then",
+            "startFrame": 503
           },
           {
-            "text": "release",
-            "startFrame": 501
+            "text": "the",
+            "startFrame": 506
           },
           {
-            "text": "is",
-            "startFrame": 516
+            "text": "bank's",
+            "startFrame": 508
           },
           {
-            "text": "fixed",
-            "startFrame": 521
+            "text": "assessor",
+            "startFrame": 518
           },
           {
-            "text": "once",
-            "startFrame": 538
-          },
-          {
-            "text": "it",
-            "startFrame": 547
-          },
-          {
-            "text": "is",
-            "startFrame": 550
-          },
-          {
-            "text": "made,",
-            "startFrame": 553
+            "text": "asks:",
+            "startFrame": 532
           }
         ]
       },
       {
-        "startFrame": 578,
+        "startFrame": 563,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 563
+          },
+          {
+            "text": "exactly",
+            "startFrame": 567
+          },
+          {
+            "text": "runs",
+            "startFrame": 582
+          },
+          {
+            "text": "in",
+            "startFrame": 590
+          },
+          {
+            "text": "your",
+            "startFrame": 592
+          },
+          {
+            "text": "card",
+            "startFrame": 595
+          },
+          {
+            "text": "zone,",
+            "startFrame": 603
+          }
+        ]
+      },
+      {
+        "startFrame": 624,
         "words": [
           {
             "text": "and",
-            "startFrame": 578
+            "startFrame": 624
           },
           {
-            "text": "everything",
-            "startFrame": 586
+            "text": "what",
+            "startFrame": 627
           },
           {
             "text": "is",
-            "startFrame": 598
+            "startFrame": 630
           },
           {
-            "text": "built",
-            "startFrame": 601
+            "text": "inside",
+            "startFrame": 633
           },
           {
-            "text": "from",
-            "startFrame": 608
-          },
-          {
-            "text": "it,",
-            "startFrame": 615
-          }
-        ]
-      },
-      {
-        "startFrame": 632,
-        "words": [
-          {
-            "text": "each",
-            "startFrame": 632
-          },
-          {
-            "text": "with",
-            "startFrame": 637
-          },
-          {
-            "text": "a",
-            "startFrame": 641
-          },
-          {
-            "text": "list",
-            "startFrame": 642
-          },
-          {
-            "text": "of",
-            "startFrame": 654
-          },
-          {
-            "text": "every",
-            "startFrame": 662
-          },
-          {
-            "text": "component",
-            "startFrame": 669
-          },
-          {
-            "text": "inside.",
-            "startFrame": 682
+            "text": "it?",
+            "startFrame": 647
           }
         ]
       }
@@ -403,89 +363,27 @@
   },
   {
     "index": 6,
-    "startFrame": 709,
-    "endFrame": 911,
-    "text": "Every install pins the versions it runs, and every environment runs real releases, the laptop too.",
-    "prefix": "Every install pins the versions it runs, and every environment runs real releases, the laptop too.",
+    "startFrame": 664,
+    "endFrame": 720,
+    "text": "Nobody can answer.",
+    "prefix": "Nobody can answer.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 710,
+        "startFrame": 665,
         "words": [
           {
-            "text": "Every",
-            "startFrame": 710
+            "text": "Nobody",
+            "startFrame": 665
           },
           {
-            "text": "install",
-            "startFrame": 718
+            "text": "can",
+            "startFrame": 673
           },
           {
-            "text": "pins",
-            "startFrame": 738
-          },
-          {
-            "text": "the",
-            "startFrame": 750
-          },
-          {
-            "text": "versions",
-            "startFrame": 753
-          },
-          {
-            "text": "it",
-            "startFrame": 765
-          },
-          {
-            "text": "runs,",
-            "startFrame": 769
-          }
-        ]
-      },
-      {
-        "startFrame": 791,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 791
-          },
-          {
-            "text": "every",
-            "startFrame": 799
-          },
-          {
-            "text": "environment",
-            "startFrame": 806
-          },
-          {
-            "text": "runs",
-            "startFrame": 823
-          },
-          {
-            "text": "real",
-            "startFrame": 836
-          },
-          {
-            "text": "releases,",
-            "startFrame": 846
-          }
-        ]
-      },
-      {
-        "startFrame": 872,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 872
-          },
-          {
-            "text": "laptop",
-            "startFrame": 875
-          },
-          {
-            "text": "too.",
-            "startFrame": 890
+            "text": "answer.",
+            "startFrame": 677
           }
         ]
       }
@@ -493,69 +391,47 @@
   },
   {
     "index": 7,
-    "startFrame": 911,
-    "endFrame": 1061,
-    "text": "An upgrade is: back up, change the version, deploy, and check.",
-    "prefix": "An upgrade is: back up, change the version, deploy, and check.",
+    "startFrame": 720,
+    "endFrame": 792,
+    "text": "A moving name can never say what runs.",
+    "prefix": "A moving name can never say what runs.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 912,
+        "startFrame": 721,
         "words": [
           {
-            "text": "An",
-            "startFrame": 912
+            "text": "A",
+            "startFrame": 721
           },
           {
-            "text": "upgrade",
-            "startFrame": 915
+            "text": "moving",
+            "startFrame": 723
           },
           {
-            "text": "is:",
-            "startFrame": 929
-          }
-        ]
-      },
-      {
-        "startFrame": 946,
-        "words": [
-          {
-            "text": "back",
-            "startFrame": 946
+            "text": "name",
+            "startFrame": 732
           },
           {
-            "text": "up,",
-            "startFrame": 954
+            "text": "can",
+            "startFrame": 742
           },
           {
-            "text": "change",
-            "startFrame": 971
+            "text": "never",
+            "startFrame": 746
           },
           {
-            "text": "the",
-            "startFrame": 981
+            "text": "say",
+            "startFrame": 752
           },
           {
-            "text": "version,",
-            "startFrame": 983
-          }
-        ]
-      },
-      {
-        "startFrame": 1004,
-        "words": [
-          {
-            "text": "deploy,",
-            "startFrame": 1004
+            "text": "what",
+            "startFrame": 760
           },
           {
-            "text": "and",
-            "startFrame": 1033
-          },
-          {
-            "text": "check.",
-            "startFrame": 1036
+            "text": "runs.",
+            "startFrame": 767
           }
         ]
       }
@@ -563,43 +439,31 @@
   },
   {
     "index": 8,
-    "startFrame": 1062,
-    "endFrame": 1147,
-    "text": "And the database only ever moves forward.",
-    "prefix": "And the database only ever moves forward.",
+    "startFrame": 793,
+    "endFrame": 849,
+    "text": "Think of a book.",
+    "prefix": "Think of a book.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1063,
+        "startFrame": 795,
         "words": [
           {
-            "text": "And",
-            "startFrame": 1063
+            "text": "Think",
+            "startFrame": 795
           },
           {
-            "text": "the",
-            "startFrame": 1064
+            "text": "of",
+            "startFrame": 799
           },
           {
-            "text": "database",
-            "startFrame": 1067
+            "text": "a",
+            "startFrame": 800
           },
           {
-            "text": "only",
-            "startFrame": 1091
-          },
-          {
-            "text": "ever",
-            "startFrame": 1100
-          },
-          {
-            "text": "moves",
-            "startFrame": 1108
-          },
-          {
-            "text": "forward.",
-            "startFrame": 1119
+            "text": "book.",
+            "startFrame": 802
           }
         ]
       }
@@ -607,39 +471,3097 @@
   },
   {
     "index": 9,
-    "startFrame": 1147,
-    "endFrame": 1252,
+    "startFrame": 849,
+    "endFrame": 944,
+    "text": "Its second edition never changes once it is printed.",
+    "prefix": "Its second edition never changes once it is printed.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 850,
+        "words": [
+          {
+            "text": "Its",
+            "startFrame": 850
+          },
+          {
+            "text": "second",
+            "startFrame": 853
+          },
+          {
+            "text": "edition",
+            "startFrame": 861
+          },
+          {
+            "text": "never",
+            "startFrame": 881
+          },
+          {
+            "text": "changes",
+            "startFrame": 890
+          },
+          {
+            "text": "once",
+            "startFrame": 906
+          },
+          {
+            "text": "it",
+            "startFrame": 914
+          },
+          {
+            "text": "is",
+            "startFrame": 916
+          },
+          {
+            "text": "printed.",
+            "startFrame": 919
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "startFrame": 944,
+    "endFrame": 1102,
+    "text": "When you quote it, you say which edition you read, and anyone can find the same page.",
+    "prefix": "When you quote it, you say which edition you read, and anyone can find the same page.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 946,
+        "words": [
+          {
+            "text": "When",
+            "startFrame": 946
+          },
+          {
+            "text": "you",
+            "startFrame": 948
+          },
+          {
+            "text": "quote",
+            "startFrame": 950
+          },
+          {
+            "text": "it,",
+            "startFrame": 959
+          }
+        ]
+      },
+      {
+        "startFrame": 970,
+        "words": [
+          {
+            "text": "you",
+            "startFrame": 970
+          },
+          {
+            "text": "say",
+            "startFrame": 975
+          },
+          {
+            "text": "which",
+            "startFrame": 983
+          },
+          {
+            "text": "edition",
+            "startFrame": 989
+          },
+          {
+            "text": "you",
+            "startFrame": 1001
+          },
+          {
+            "text": "read,",
+            "startFrame": 1006
+          }
+        ]
+      },
+      {
+        "startFrame": 1028,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1028
+          },
+          {
+            "text": "anyone",
+            "startFrame": 1041
+          },
+          {
+            "text": "can",
+            "startFrame": 1054
+          },
+          {
+            "text": "find",
+            "startFrame": 1057
+          },
+          {
+            "text": "the",
+            "startFrame": 1065
+          },
+          {
+            "text": "same",
+            "startFrame": 1067
+          },
+          {
+            "text": "page.",
+            "startFrame": 1074
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "startFrame": 1103,
+    "endFrame": 1160,
+    "text": "Releases work the same way.",
+    "prefix": "Releases work the same way.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1104,
+        "words": [
+          {
+            "text": "Releases",
+            "startFrame": 1104
+          },
+          {
+            "text": "work",
+            "startFrame": 1118
+          },
+          {
+            "text": "the",
+            "startFrame": 1126
+          },
+          {
+            "text": "same",
+            "startFrame": 1128
+          },
+          {
+            "text": "way.",
+            "startFrame": 1138
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 1160,
+    "endFrame": 1272,
+    "text": "Each part of the system numbers its versions in three parts.",
+    "prefix": "Each part of the system numbers its versions in three parts.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1162,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 1162
+          },
+          {
+            "text": "part",
+            "startFrame": 1166
+          },
+          {
+            "text": "of",
+            "startFrame": 1171
+          },
+          {
+            "text": "the",
+            "startFrame": 1173
+          },
+          {
+            "text": "system",
+            "startFrame": 1175
+          },
+          {
+            "text": "numbers",
+            "startFrame": 1199
+          },
+          {
+            "text": "its",
+            "startFrame": 1209
+          },
+          {
+            "text": "versions",
+            "startFrame": 1213
+          }
+        ]
+      },
+      {
+        "startFrame": 1230,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 1230
+          },
+          {
+            "text": "three",
+            "startFrame": 1233
+          },
+          {
+            "text": "parts.",
+            "startFrame": 1244
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1273,
+    "endFrame": 1397,
+    "text": "The first number grows when a change breaks something callers rely on.",
+    "prefix": "The first number grows when a change breaks something callers rely on.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1274,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1274
+          },
+          {
+            "text": "first",
+            "startFrame": 1276
+          },
+          {
+            "text": "number",
+            "startFrame": 1287
+          },
+          {
+            "text": "grows",
+            "startFrame": 1295
+          },
+          {
+            "text": "when",
+            "startFrame": 1308
+          },
+          {
+            "text": "a",
+            "startFrame": 1311
+          },
+          {
+            "text": "change",
+            "startFrame": 1312
+          },
+          {
+            "text": "breaks",
+            "startFrame": 1326
+          }
+        ]
+      },
+      {
+        "startFrame": 1341,
+        "words": [
+          {
+            "text": "something",
+            "startFrame": 1341
+          },
+          {
+            "text": "callers",
+            "startFrame": 1355
+          },
+          {
+            "text": "rely",
+            "startFrame": 1368
+          },
+          {
+            "text": "on.",
+            "startFrame": 1379
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 1398,
+    "endFrame": 1466,
+    "text": "The second grows when something is added.",
+    "prefix": "The second grows when something is added.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1399,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1399
+          },
+          {
+            "text": "second",
+            "startFrame": 1401
+          },
+          {
+            "text": "grows",
+            "startFrame": 1411
+          },
+          {
+            "text": "when",
+            "startFrame": 1425
+          },
+          {
+            "text": "something",
+            "startFrame": 1428
+          },
+          {
+            "text": "is",
+            "startFrame": 1440
+          },
+          {
+            "text": "added.",
+            "startFrame": 1442
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "startFrame": 1466,
+    "endFrame": 1530,
+    "text": "The third grows for a fix.",
+    "prefix": "The third grows for a fix.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1467,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1467
+          },
+          {
+            "text": "third",
+            "startFrame": 1469
+          },
+          {
+            "text": "grows",
+            "startFrame": 1481
+          },
+          {
+            "text": "for",
+            "startFrame": 1495
+          },
+          {
+            "text": "a",
+            "startFrame": 1499
+          },
+          {
+            "text": "fix.",
+            "startFrame": 1501
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "startFrame": 1530,
+    "endFrame": 1615,
+    "text": "So the number alone tells you how careful to be.",
+    "prefix": "So the number alone tells you how careful to be.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1532,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 1532
+          },
+          {
+            "text": "the",
+            "startFrame": 1535
+          },
+          {
+            "text": "number",
+            "startFrame": 1537
+          },
+          {
+            "text": "alone",
+            "startFrame": 1545
+          },
+          {
+            "text": "tells",
+            "startFrame": 1562
+          },
+          {
+            "text": "you",
+            "startFrame": 1570
+          },
+          {
+            "text": "how",
+            "startFrame": 1573
+          },
+          {
+            "text": "careful",
+            "startFrame": 1579
+          },
+          {
+            "text": "to",
+            "startFrame": 1592
+          },
+          {
+            "text": "be.",
+            "startFrame": 1594
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "startFrame": 1616,
+    "endFrame": 1814,
+    "text": "A release is one numbered version, made once, from one exact state of the code, and never changed after.",
+    "prefix": "A release is one numbered version, made once, from one exact state of the code, and never changed after.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1617,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1617
+          },
+          {
+            "text": "release",
+            "startFrame": 1618
+          },
+          {
+            "text": "is",
+            "startFrame": 1637
+          },
+          {
+            "text": "one",
+            "startFrame": 1646
+          },
+          {
+            "text": "numbered",
+            "startFrame": 1656
+          },
+          {
+            "text": "version,",
+            "startFrame": 1664
+          }
+        ]
+      },
+      {
+        "startFrame": 1687,
+        "words": [
+          {
+            "text": "made",
+            "startFrame": 1687
+          },
+          {
+            "text": "once,",
+            "startFrame": 1695
+          },
+          {
+            "text": "from",
+            "startFrame": 1713
+          },
+          {
+            "text": "one",
+            "startFrame": 1718
+          },
+          {
+            "text": "exact",
+            "startFrame": 1723
+          },
+          {
+            "text": "state",
+            "startFrame": 1734
+          },
+          {
+            "text": "of",
+            "startFrame": 1742
+          }
+        ]
+      },
+      {
+        "startFrame": 1744,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1744
+          },
+          {
+            "text": "code,",
+            "startFrame": 1746
+          },
+          {
+            "text": "and",
+            "startFrame": 1771
+          },
+          {
+            "text": "never",
+            "startFrame": 1773
+          },
+          {
+            "text": "changed",
+            "startFrame": 1779
+          },
+          {
+            "text": "after.",
+            "startFrame": 1789
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "startFrame": 1815,
+    "endFrame": 1923,
+    "text": "Everything is built from it, and published under its number.",
+    "prefix": "Everything is built from it, and published under its number.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1816,
+        "words": [
+          {
+            "text": "Everything",
+            "startFrame": 1816
+          },
+          {
+            "text": "is",
+            "startFrame": 1830
+          },
+          {
+            "text": "built",
+            "startFrame": 1836
+          },
+          {
+            "text": "from",
+            "startFrame": 1844
+          },
+          {
+            "text": "it,",
+            "startFrame": 1852
+          }
+        ]
+      },
+      {
+        "startFrame": 1867,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1867
+          },
+          {
+            "text": "published",
+            "startFrame": 1870
+          },
+          {
+            "text": "under",
+            "startFrame": 1886
+          },
+          {
+            "text": "its",
+            "startFrame": 1894
+          },
+          {
+            "text": "number.",
+            "startFrame": 1898
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "startFrame": 1923,
+    "endFrame": 2126,
+    "text": "Each built piece carries a bill of materials: a list of every component inside it, each with its version.",
+    "prefix": "Each built piece carries a bill of materials: a list of every component inside it, each with its version.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1924,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 1924
+          },
+          {
+            "text": "built",
+            "startFrame": 1930
+          },
+          {
+            "text": "piece",
+            "startFrame": 1938
+          },
+          {
+            "text": "carries",
+            "startFrame": 1959
+          },
+          {
+            "text": "a",
+            "startFrame": 1969
+          },
+          {
+            "text": "bill",
+            "startFrame": 1971
+          },
+          {
+            "text": "of",
+            "startFrame": 1980
+          },
+          {
+            "text": "materials:",
+            "startFrame": 1983
+          }
+        ]
+      },
+      {
+        "startFrame": 2015,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 2015
+          },
+          {
+            "text": "list",
+            "startFrame": 2017
+          },
+          {
+            "text": "of",
+            "startFrame": 2027
+          },
+          {
+            "text": "every",
+            "startFrame": 2035
+          },
+          {
+            "text": "component",
+            "startFrame": 2043
+          },
+          {
+            "text": "inside",
+            "startFrame": 2057
+          },
+          {
+            "text": "it,",
+            "startFrame": 2070
+          }
+        ]
+      },
+      {
+        "startFrame": 2089,
+        "words": [
+          {
+            "text": "each",
+            "startFrame": 2089
+          },
+          {
+            "text": "with",
+            "startFrame": 2096
+          },
+          {
+            "text": "its",
+            "startFrame": 2101
+          },
+          {
+            "text": "version.",
+            "startFrame": 2103
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "startFrame": 2126,
+    "endFrame": 2199,
+    "text": "It also carries a record of how it was built.",
+    "prefix": "It also carries a record of how it was built.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2128,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 2128
+          },
+          {
+            "text": "also",
+            "startFrame": 2130
+          },
+          {
+            "text": "carries",
+            "startFrame": 2139
+          },
+          {
+            "text": "a",
+            "startFrame": 2149
+          },
+          {
+            "text": "record",
+            "startFrame": 2150
+          },
+          {
+            "text": "of",
+            "startFrame": 2162
+          },
+          {
+            "text": "how",
+            "startFrame": 2165
+          },
+          {
+            "text": "it",
+            "startFrame": 2171
+          },
+          {
+            "text": "was",
+            "startFrame": 2172
+          },
+          {
+            "text": "built.",
+            "startFrame": 2176
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "startFrame": 2200,
+    "endFrame": 2329,
+    "text": "So the assessor's question has an answer, written on the piece itself.",
+    "prefix": "So the assessor's question has an answer, written on the piece itself.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2201,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 2201
+          },
+          {
+            "text": "the",
+            "startFrame": 2205
+          },
+          {
+            "text": "assessor's",
+            "startFrame": 2208
+          },
+          {
+            "text": "question",
+            "startFrame": 2221
+          },
+          {
+            "text": "has",
+            "startFrame": 2234
+          },
+          {
+            "text": "an",
+            "startFrame": 2241
+          },
+          {
+            "text": "answer,",
+            "startFrame": 2244
+          }
+        ]
+      },
+      {
+        "startFrame": 2272,
+        "words": [
+          {
+            "text": "written",
+            "startFrame": 2272
+          },
+          {
+            "text": "on",
+            "startFrame": 2283
+          },
+          {
+            "text": "the",
+            "startFrame": 2287
+          },
+          {
+            "text": "piece",
+            "startFrame": 2289
+          },
+          {
+            "text": "itself.",
+            "startFrame": 2298
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "startFrame": 2329,
+    "endFrame": 2397,
+    "text": "Every install pins its versions.",
+    "prefix": "Every install pins its versions.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2330,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 2330
+          },
+          {
+            "text": "install",
+            "startFrame": 2337
+          },
+          {
+            "text": "pins",
+            "startFrame": 2353
+          },
+          {
+            "text": "its",
+            "startFrame": 2364
+          },
+          {
+            "text": "versions.",
+            "startFrame": 2368
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "startFrame": 2398,
+    "endFrame": 2526,
+    "text": "A pin is one line that names the exact release a product runs.",
+    "prefix": "A pin is one line that names the exact release a product runs.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2399,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2399
+          },
+          {
+            "text": "pin",
+            "startFrame": 2401
+          },
+          {
+            "text": "is",
+            "startFrame": 2407
+          },
+          {
+            "text": "one",
+            "startFrame": 2410
+          },
+          {
+            "text": "line",
+            "startFrame": 2418
+          },
+          {
+            "text": "that",
+            "startFrame": 2436
+          },
+          {
+            "text": "names",
+            "startFrame": 2441
+          }
+        ]
+      },
+      {
+        "startFrame": 2451,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2451
+          },
+          {
+            "text": "exact",
+            "startFrame": 2454
+          },
+          {
+            "text": "release",
+            "startFrame": 2468
+          },
+          {
+            "text": "a",
+            "startFrame": 2487
+          },
+          {
+            "text": "product",
+            "startFrame": 2488
+          },
+          {
+            "text": "runs.",
+            "startFrame": 2500
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "startFrame": 2526,
+    "endFrame": 2678,
+    "text": "There is one line for the card zone, one for ecom, and one for the portals.",
+    "prefix": "There is one line for the card zone, one for ecom, and one for the portals.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2527,
+        "words": [
+          {
+            "text": "There",
+            "startFrame": 2527
+          },
+          {
+            "text": "is",
+            "startFrame": 2530
+          },
+          {
+            "text": "one",
+            "startFrame": 2533
+          },
+          {
+            "text": "line",
+            "startFrame": 2541
+          },
+          {
+            "text": "for",
+            "startFrame": 2551
+          },
+          {
+            "text": "the",
+            "startFrame": 2553
+          },
+          {
+            "text": "card",
+            "startFrame": 2555
+          },
+          {
+            "text": "zone,",
+            "startFrame": 2564
+          }
+        ]
+      },
+      {
+        "startFrame": 2588,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 2588
+          },
+          {
+            "text": "for",
+            "startFrame": 2597
+          },
+          {
+            "text": "ecom,",
+            "startFrame": 2606
+          }
+        ]
+      },
+      {
+        "startFrame": 2632,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2632
+          },
+          {
+            "text": "one",
+            "startFrame": 2636
+          },
+          {
+            "text": "for",
+            "startFrame": 2645
+          },
+          {
+            "text": "the",
+            "startFrame": 2648
+          },
+          {
+            "text": "portals.",
+            "startFrame": 2650
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "startFrame": 2679,
+    "endFrame": 2792,
+    "text": "Every environment runs real releases, the laptop too.",
+    "prefix": "Every environment runs real releases, the laptop too.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2680,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 2680
+          },
+          {
+            "text": "environment",
+            "startFrame": 2686
+          },
+          {
+            "text": "runs",
+            "startFrame": 2703
+          },
+          {
+            "text": "real",
+            "startFrame": 2715
+          },
+          {
+            "text": "releases,",
+            "startFrame": 2724
+          }
+        ]
+      },
+      {
+        "startFrame": 2751,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2751
+          },
+          {
+            "text": "laptop",
+            "startFrame": 2754
+          },
+          {
+            "text": "too.",
+            "startFrame": 2770
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "startFrame": 2792,
+    "endFrame": 2888,
+    "text": "So what a builder tests is exactly what the bank runs.",
+    "prefix": "So what a builder tests is exactly what the bank runs.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2794,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 2794
+          },
+          {
+            "text": "what",
+            "startFrame": 2798
+          },
+          {
+            "text": "a",
+            "startFrame": 2801
+          },
+          {
+            "text": "builder",
+            "startFrame": 2802
+          },
+          {
+            "text": "tests",
+            "startFrame": 2810
+          },
+          {
+            "text": "is",
+            "startFrame": 2825
+          },
+          {
+            "text": "exactly",
+            "startFrame": 2830
+          },
+          {
+            "text": "what",
+            "startFrame": 2849
+          }
+        ]
+      },
+      {
+        "startFrame": 2852,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2852
+          },
+          {
+            "text": "bank",
+            "startFrame": 2853
+          },
+          {
+            "text": "runs.",
+            "startFrame": 2863
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "startFrame": 2889,
+    "endFrame": 2958,
+    "text": "An upgrade is four steps.",
+    "prefix": "An upgrade is four steps.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2890,
+        "words": [
+          {
+            "text": "An",
+            "startFrame": 2890
+          },
+          {
+            "text": "upgrade",
+            "startFrame": 2893
+          },
+          {
+            "text": "is",
+            "startFrame": 2915
+          },
+          {
+            "text": "four",
+            "startFrame": 2918
+          },
+          {
+            "text": "steps.",
+            "startFrame": 2929
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "startFrame": 2958,
+    "endFrame": 2983,
+    "text": "Back up.",
+    "prefix": "Back up.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2959,
+        "words": [
+          {
+            "text": "Back",
+            "startFrame": 2959
+          },
+          {
+            "text": "up.",
+            "startFrame": 2965
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "startFrame": 2984,
+    "endFrame": 3040,
+    "text": "Change the pinned line.",
+    "prefix": "Change the pinned line.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2985,
+        "words": [
+          {
+            "text": "Change",
+            "startFrame": 2985
+          },
+          {
+            "text": "the",
+            "startFrame": 2993
+          },
+          {
+            "text": "pinned",
+            "startFrame": 2995
+          },
+          {
+            "text": "line.",
+            "startFrame": 3003
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "startFrame": 3040,
+    "endFrame": 3064,
+    "text": "Deploy.",
+    "prefix": "Deploy.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3041,
+        "words": [
+          {
+            "text": "Deploy.",
+            "startFrame": 3041
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "startFrame": 3065,
+    "endFrame": 3088,
+    "text": "Check.",
+    "prefix": "Check.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3066,
+        "words": [
+          {
+            "text": "Check.",
+            "startFrame": 3066
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "startFrame": 3088,
+    "endFrame": 3197,
+    "text": "The card zone goes first, before ecom, which depends on it.",
+    "prefix": "The card zone goes first, before ecom, which depends on it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3090,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3090
+          },
+          {
+            "text": "card",
+            "startFrame": 3091
+          },
+          {
+            "text": "zone",
+            "startFrame": 3098
+          },
+          {
+            "text": "goes",
+            "startFrame": 3104
+          },
+          {
+            "text": "first,",
+            "startFrame": 3113
+          }
+        ]
+      },
+      {
+        "startFrame": 3131,
+        "words": [
+          {
+            "text": "before",
+            "startFrame": 3131
+          },
+          {
+            "text": "ecom,",
+            "startFrame": 3142
+          },
+          {
+            "text": "which",
+            "startFrame": 3163
+          },
+          {
+            "text": "depends",
+            "startFrame": 3166
+          },
+          {
+            "text": "on",
+            "startFrame": 3177
+          },
+          {
+            "text": "it.",
+            "startFrame": 3181
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "startFrame": 3198,
+    "endFrame": 3368,
+    "text": "The release notes are read before starting: they say what changed, and whether a new value is needed.",
+    "prefix": "The release notes are read before starting: they say what changed, and whether a new value is needed.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3199,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3199
+          },
+          {
+            "text": "release",
+            "startFrame": 3201
+          },
+          {
+            "text": "notes",
+            "startFrame": 3209
+          },
+          {
+            "text": "are",
+            "startFrame": 3216
+          },
+          {
+            "text": "read",
+            "startFrame": 3223
+          },
+          {
+            "text": "before",
+            "startFrame": 3232
+          },
+          {
+            "text": "starting:",
+            "startFrame": 3243
+          }
+        ]
+      },
+      {
+        "startFrame": 3270,
+        "words": [
+          {
+            "text": "they",
+            "startFrame": 3270
+          },
+          {
+            "text": "say",
+            "startFrame": 3273
+          },
+          {
+            "text": "what",
+            "startFrame": 3280
+          },
+          {
+            "text": "changed,",
+            "startFrame": 3285
+          }
+        ]
+      },
+      {
+        "startFrame": 3312,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3312
+          },
+          {
+            "text": "whether",
+            "startFrame": 3315
+          },
+          {
+            "text": "a",
+            "startFrame": 3322
+          },
+          {
+            "text": "new",
+            "startFrame": 3323
+          },
+          {
+            "text": "value",
+            "startFrame": 3330
+          },
+          {
+            "text": "is",
+            "startFrame": 3342
+          },
+          {
+            "text": "needed.",
+            "startFrame": 3345
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "startFrame": 3368,
+    "endFrame": 3445,
+    "text": "And the database only moves forward.",
+    "prefix": "And the database only moves forward.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3369,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 3369
+          },
+          {
+            "text": "the",
+            "startFrame": 3371
+          },
+          {
+            "text": "database",
+            "startFrame": 3374
+          },
+          {
+            "text": "only",
+            "startFrame": 3397
+          },
+          {
+            "text": "moves",
+            "startFrame": 3405
+          },
+          {
+            "text": "forward.",
+            "startFrame": 3418
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "startFrame": 3445,
+    "endFrame": 3568,
+    "text": "A release can change the shape of the database, but never steps it back.",
+    "prefix": "A release can change the shape of the database, but never steps it back.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3447,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 3447
+          },
+          {
+            "text": "release",
+            "startFrame": 3448
+          },
+          {
+            "text": "can",
+            "startFrame": 3460
+          },
+          {
+            "text": "change",
+            "startFrame": 3466
+          },
+          {
+            "text": "the",
+            "startFrame": 3479
+          },
+          {
+            "text": "shape",
+            "startFrame": 3481
+          },
+          {
+            "text": "of",
+            "startFrame": 3490
+          }
+        ]
+      },
+      {
+        "startFrame": 3491,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3491
+          },
+          {
+            "text": "database,",
+            "startFrame": 3494
+          },
+          {
+            "text": "but",
+            "startFrame": 3521
+          },
+          {
+            "text": "never",
+            "startFrame": 3525
+          },
+          {
+            "text": "steps",
+            "startFrame": 3534
+          },
+          {
+            "text": "it",
+            "startFrame": 3542
+          },
+          {
+            "text": "back.",
+            "startFrame": 3544
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "startFrame": 3569,
+    "endFrame": 3729,
+    "text": "So rolling back across such a change means restoring the backup taken just before.",
+    "prefix": "So rolling back across such a change means restoring the backup taken just before.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3570,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 3570
+          },
+          {
+            "text": "rolling",
+            "startFrame": 3576
+          },
+          {
+            "text": "back",
+            "startFrame": 3585
+          },
+          {
+            "text": "across",
+            "startFrame": 3592
+          },
+          {
+            "text": "such",
+            "startFrame": 3610
+          },
+          {
+            "text": "a",
+            "startFrame": 3616
+          },
+          {
+            "text": "change",
+            "startFrame": 3617
+          },
+          {
+            "text": "means",
+            "startFrame": 3641
+          }
+        ]
+      },
+      {
+        "startFrame": 3648,
+        "words": [
+          {
+            "text": "restoring",
+            "startFrame": 3648
+          },
+          {
+            "text": "the",
+            "startFrame": 3663
+          },
+          {
+            "text": "backup",
+            "startFrame": 3665
+          },
+          {
+            "text": "taken",
+            "startFrame": 3678
+          },
+          {
+            "text": "just",
+            "startFrame": 3698
+          },
+          {
+            "text": "before.",
+            "startFrame": 3703
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "startFrame": 3730,
+    "endFrame": 3802,
+    "text": "That is why the backup is always step one.",
+    "prefix": "That is why the backup is always step one.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3731,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 3731
+          },
+          {
+            "text": "is",
+            "startFrame": 3734
+          },
+          {
+            "text": "why",
+            "startFrame": 3736
+          },
+          {
+            "text": "the",
+            "startFrame": 3741
+          },
+          {
+            "text": "backup",
+            "startFrame": 3743
+          },
+          {
+            "text": "is",
+            "startFrame": 3761
+          },
+          {
+            "text": "always",
+            "startFrame": 3765
+          },
+          {
+            "text": "step",
+            "startFrame": 3774
+          },
+          {
+            "text": "one.",
+            "startFrame": 3782
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "startFrame": 3803,
+    "endFrame": 3858,
+    "text": "Let's watch the product.",
+    "prefix": "Let's watch the product.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3804,
+        "words": [
+          {
+            "text": "Let's",
+            "startFrame": 3804
+          },
+          {
+            "text": "watch",
+            "startFrame": 3807
+          },
+          {
+            "text": "the",
+            "startFrame": 3813
+          },
+          {
+            "text": "product.",
+            "startFrame": 3815
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "startFrame": 3859,
+    "endFrame": 3912,
+    "text": "An operator plans an upgrade.",
+    "prefix": "An operator plans an upgrade.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3860,
+        "words": [
+          {
+            "text": "An",
+            "startFrame": 3860
+          },
+          {
+            "text": "operator",
+            "startFrame": 3863
+          },
+          {
+            "text": "plans",
+            "startFrame": 3875
+          },
+          {
+            "text": "an",
+            "startFrame": 3885
+          },
+          {
+            "text": "upgrade.",
+            "startFrame": 3887
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "startFrame": 3913,
+    "endFrame": 3968,
+    "text": "They look at the list of releases.",
+    "prefix": "They look at the list of releases.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3914,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 3914
+          },
+          {
+            "text": "look",
+            "startFrame": 3916
+          },
+          {
+            "text": "at",
+            "startFrame": 3920
+          },
+          {
+            "text": "the",
+            "startFrame": 3922
+          },
+          {
+            "text": "list",
+            "startFrame": 3924
+          },
+          {
+            "text": "of",
+            "startFrame": 3935
+          },
+          {
+            "text": "releases.",
+            "startFrame": 3937
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "startFrame": 3969,
+    "endFrame": 4035,
+    "text": "Each has a plain number and its notes.",
+    "prefix": "Each has a plain number and its notes.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3970,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 3970
+          },
+          {
+            "text": "has",
+            "startFrame": 3973
+          },
+          {
+            "text": "a",
+            "startFrame": 3976
+          },
+          {
+            "text": "plain",
+            "startFrame": 3978
+          },
+          {
+            "text": "number",
+            "startFrame": 3987
+          },
+          {
+            "text": "and",
+            "startFrame": 4001
+          },
+          {
+            "text": "its",
+            "startFrame": 4002
+          },
+          {
+            "text": "notes.",
+            "startFrame": 4006
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "startFrame": 4035,
+    "endFrame": 4125,
+    "text": "They choose the newest, and read its notes first.",
+    "prefix": "They choose the newest, and read its notes first.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4037,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 4037
+          },
+          {
+            "text": "choose",
+            "startFrame": 4039
+          },
+          {
+            "text": "the",
+            "startFrame": 4048
+          },
+          {
+            "text": "newest,",
+            "startFrame": 4049
+          }
+        ]
+      },
+      {
+        "startFrame": 4074,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4074
+          },
+          {
+            "text": "read",
+            "startFrame": 4079
+          },
+          {
+            "text": "its",
+            "startFrame": 4084
+          },
+          {
+            "text": "notes",
+            "startFrame": 4088
+          },
+          {
+            "text": "first.",
+            "startFrame": 4096
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "startFrame": 4125,
+    "endFrame": 4286,
+    "text": "The notes say whether a breaking change is inside, and whether the installer will ask for a new value.",
+    "prefix": "The notes say whether a breaking change is inside, and whether the installer will ask for a new value.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4127,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4127
+          },
+          {
+            "text": "notes",
+            "startFrame": 4128
+          },
+          {
+            "text": "say",
+            "startFrame": 4135
+          },
+          {
+            "text": "whether",
+            "startFrame": 4143
+          },
+          {
+            "text": "a",
+            "startFrame": 4152
+          },
+          {
+            "text": "breaking",
+            "startFrame": 4153
+          },
+          {
+            "text": "change",
+            "startFrame": 4164
+          },
+          {
+            "text": "is",
+            "startFrame": 4178
+          }
+        ]
+      },
+      {
+        "startFrame": 4182,
+        "words": [
+          {
+            "text": "inside,",
+            "startFrame": 4182
+          },
+          {
+            "text": "and",
+            "startFrame": 4213
+          },
+          {
+            "text": "whether",
+            "startFrame": 4216
+          },
+          {
+            "text": "the",
+            "startFrame": 4222
+          },
+          {
+            "text": "installer",
+            "startFrame": 4224
+          },
+          {
+            "text": "will",
+            "startFrame": 4240
+          },
+          {
+            "text": "ask",
+            "startFrame": 4244
+          }
+        ]
+      },
+      {
+        "startFrame": 4253,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 4253
+          },
+          {
+            "text": "a",
+            "startFrame": 4257
+          },
+          {
+            "text": "new",
+            "startFrame": 4257
+          },
+          {
+            "text": "value.",
+            "startFrame": 4262
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "startFrame": 4286,
+    "endFrame": 4371,
+    "text": "On the server, the operator takes the backup.",
+    "prefix": "On the server, the operator takes the backup.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4287,
+        "words": [
+          {
+            "text": "On",
+            "startFrame": 4287
+          },
+          {
+            "text": "the",
+            "startFrame": 4290
+          },
+          {
+            "text": "server,",
+            "startFrame": 4292
+          }
+        ]
+      },
+      {
+        "startFrame": 4317,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 4317
+          },
+          {
+            "text": "operator",
+            "startFrame": 4320
+          },
+          {
+            "text": "takes",
+            "startFrame": 4335
+          },
+          {
+            "text": "the",
+            "startFrame": 4342
+          },
+          {
+            "text": "backup.",
+            "startFrame": 4345
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "startFrame": 4371,
+    "endFrame": 4530,
+    "text": "Then they change one line: the card zone's pinned release, from the old number to the new one.",
+    "prefix": "Then they change one line: the card zone's pinned release, from the old number to the new one.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4373,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 4373
+          },
+          {
+            "text": "they",
+            "startFrame": 4376
+          },
+          {
+            "text": "change",
+            "startFrame": 4378
+          },
+          {
+            "text": "one",
+            "startFrame": 4391
+          },
+          {
+            "text": "line:",
+            "startFrame": 4398
+          }
+        ]
+      },
+      {
+        "startFrame": 4421,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 4421
+          },
+          {
+            "text": "card",
+            "startFrame": 4424
+          },
+          {
+            "text": "zone's",
+            "startFrame": 4433
+          },
+          {
+            "text": "pinned",
+            "startFrame": 4446
+          },
+          {
+            "text": "release,",
+            "startFrame": 4455
+          }
+        ]
+      },
+      {
+        "startFrame": 4480,
+        "words": [
+          {
+            "text": "from",
+            "startFrame": 4480
+          },
+          {
+            "text": "the",
+            "startFrame": 4483
+          },
+          {
+            "text": "old",
+            "startFrame": 4485
+          },
+          {
+            "text": "number",
+            "startFrame": 4492
+          },
+          {
+            "text": "to",
+            "startFrame": 4500
+          },
+          {
+            "text": "the",
+            "startFrame": 4503
+          },
+          {
+            "text": "new",
+            "startFrame": 4505
+          },
+          {
+            "text": "one.",
+            "startFrame": 4511
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "startFrame": 4531,
+    "endFrame": 4586,
+    "text": "They deploy.",
+    "prefix": "They deploy.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4532,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 4532
+          },
+          {
+            "text": "deploy.",
+            "startFrame": 4533
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "startFrame": 4587,
+    "endFrame": 4687,
+    "text": "The services restart on the new release, in order.",
+    "prefix": "The services restart on the new release, in order.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4588,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4588
+          },
+          {
+            "text": "services",
+            "startFrame": 4589
+          },
+          {
+            "text": "restart",
+            "startFrame": 4605
+          },
+          {
+            "text": "on",
+            "startFrame": 4625
+          },
+          {
+            "text": "the",
+            "startFrame": 4628
+          },
+          {
+            "text": "new",
+            "startFrame": 4629
+          },
+          {
+            "text": "release,",
+            "startFrame": 4637
+          },
+          {
+            "text": "in",
+            "startFrame": 4660
+          },
+          {
+            "text": "order.",
+            "startFrame": 4664
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "startFrame": 4687,
+    "endFrame": 4770,
+    "text": "The health check runs: every service healthy.",
+    "prefix": "The health check runs: every service healthy.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4689,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4689
+          },
+          {
+            "text": "health",
+            "startFrame": 4690
+          },
+          {
+            "text": "check",
+            "startFrame": 4696
+          },
+          {
+            "text": "runs:",
+            "startFrame": 4704
+          }
+        ]
+      },
+      {
+        "startFrame": 4727,
+        "words": [
+          {
+            "text": "every",
+            "startFrame": 4727
+          },
+          {
+            "text": "service",
+            "startFrame": 4735
+          },
+          {
+            "text": "healthy.",
+            "startFrame": 4746
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "startFrame": 4771,
+    "endFrame": 4850,
+    "text": "Only then do they do the same for ecom.",
+    "prefix": "Only then do they do the same for ecom.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4772,
+        "words": [
+          {
+            "text": "Only",
+            "startFrame": 4772
+          },
+          {
+            "text": "then",
+            "startFrame": 4777
+          },
+          {
+            "text": "do",
+            "startFrame": 4783
+          },
+          {
+            "text": "they",
+            "startFrame": 4787
+          },
+          {
+            "text": "do",
+            "startFrame": 4791
+          },
+          {
+            "text": "the",
+            "startFrame": 4797
+          },
+          {
+            "text": "same",
+            "startFrame": 4799
+          },
+          {
+            "text": "for",
+            "startFrame": 4816
+          },
+          {
+            "text": "ecom.",
+            "startFrame": 4825
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 50,
+    "startFrame": 4851,
+    "endFrame": 4975,
+    "text": "Later, the assessor asks again: what is inside the card zone?",
+    "prefix": "Later, the assessor asks again: what is inside the card zone?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4852,
+        "words": [
+          {
+            "text": "Later,",
+            "startFrame": 4852
+          },
+          {
+            "text": "the",
+            "startFrame": 4869
+          },
+          {
+            "text": "assessor",
+            "startFrame": 4872
+          },
+          {
+            "text": "asks",
+            "startFrame": 4888
+          },
+          {
+            "text": "again:",
+            "startFrame": 4897
+          }
+        ]
+      },
+      {
+        "startFrame": 4920,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 4920
+          },
+          {
+            "text": "is",
+            "startFrame": 4923
+          },
+          {
+            "text": "inside",
+            "startFrame": 4925
+          },
+          {
+            "text": "the",
+            "startFrame": 4943
+          },
+          {
+            "text": "card",
+            "startFrame": 4944
+          },
+          {
+            "text": "zone?",
+            "startFrame": 4953
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 51,
+    "startFrame": 4975,
+    "endFrame": 5087,
+    "text": "The operator opens the bill of materials of one of its pieces.",
+    "prefix": "The operator opens the bill of materials of one of its pieces.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4976,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4976
+          },
+          {
+            "text": "operator",
+            "startFrame": 4979
+          },
+          {
+            "text": "opens",
+            "startFrame": 4998
+          },
+          {
+            "text": "the",
+            "startFrame": 5007
+          },
+          {
+            "text": "bill",
+            "startFrame": 5010
+          },
+          {
+            "text": "of",
+            "startFrame": 5018
+          },
+          {
+            "text": "materials",
+            "startFrame": 5019
+          }
+        ]
+      },
+      {
+        "startFrame": 5044,
+        "words": [
+          {
+            "text": "of",
+            "startFrame": 5044
+          },
+          {
+            "text": "one",
+            "startFrame": 5048
+          },
+          {
+            "text": "of",
+            "startFrame": 5053
+          },
+          {
+            "text": "its",
+            "startFrame": 5054
+          },
+          {
+            "text": "pieces.",
+            "startFrame": 5058
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 52,
+    "startFrame": 5088,
+    "endFrame": 5300,
+    "text": "It lists every component inside, each with its version, and the count sits at the bottom: the answer to the question.",
+    "prefix": "It lists every component inside, each with its version, and the count sits at the bottom: the answer to the question.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5089,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5089
+          },
+          {
+            "text": "lists",
+            "startFrame": 5093
+          },
+          {
+            "text": "every",
+            "startFrame": 5108
+          },
+          {
+            "text": "component",
+            "startFrame": 5116
+          },
+          {
+            "text": "inside,",
+            "startFrame": 5130
+          }
+        ]
+      },
+      {
+        "startFrame": 5161,
+        "words": [
+          {
+            "text": "each",
+            "startFrame": 5161
+          },
+          {
+            "text": "with",
+            "startFrame": 5168
+          },
+          {
+            "text": "its",
+            "startFrame": 5173
+          },
+          {
+            "text": "version,",
+            "startFrame": 5176
+          }
+        ]
+      },
+      {
+        "startFrame": 5202,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5202
+          },
+          {
+            "text": "the",
+            "startFrame": 5203
+          },
+          {
+            "text": "count",
+            "startFrame": 5206
+          },
+          {
+            "text": "sits",
+            "startFrame": 5216
+          },
+          {
+            "text": "at",
+            "startFrame": 5229
+          },
+          {
+            "text": "the",
+            "startFrame": 5231
+          },
+          {
+            "text": "bottom:",
+            "startFrame": 5234
+          }
+        ]
+      },
+      {
+        "startFrame": 5258,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5258
+          },
+          {
+            "text": "answer",
+            "startFrame": 5261
+          },
+          {
+            "text": "to",
+            "startFrame": 5270
+          },
+          {
+            "text": "the",
+            "startFrame": 5272
+          },
+          {
+            "text": "question.",
+            "startFrame": 5273
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 53,
+    "startFrame": 5300,
+    "endFrame": 5356,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5301,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 5301
+          },
+          {
+            "text": "does",
+            "startFrame": 5303
+          },
+          {
+            "text": "this",
+            "startFrame": 5306
+          },
+          {
+            "text": "protect?",
+            "startFrame": 5310
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 54,
+    "startFrame": 5356,
+    "endFrame": 5522,
+    "text": "It protects the bank from surprises: nothing changes unless someone changes a pinned line.",
+    "prefix": "It protects the bank from surprises: nothing changes unless someone changes a pinned line.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5358,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5358
+          },
+          {
+            "text": "protects",
+            "startFrame": 5360
+          },
+          {
+            "text": "the",
+            "startFrame": 5372
+          },
+          {
+            "text": "bank",
+            "startFrame": 5376
+          },
+          {
+            "text": "from",
+            "startFrame": 5387
+          },
+          {
+            "text": "surprises:",
+            "startFrame": 5392
+          }
+        ]
+      },
+      {
+        "startFrame": 5430,
+        "words": [
+          {
+            "text": "nothing",
+            "startFrame": 5430
+          },
+          {
+            "text": "changes",
+            "startFrame": 5439
+          },
+          {
+            "text": "unless",
+            "startFrame": 5462
+          },
+          {
+            "text": "someone",
+            "startFrame": 5471
+          },
+          {
+            "text": "changes",
+            "startFrame": 5480
+          },
+          {
+            "text": "a",
+            "startFrame": 5491
+          },
+          {
+            "text": "pinned",
+            "startFrame": 5492
+          },
+          {
+            "text": "line.",
+            "startFrame": 5501
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "startFrame": 5523,
+    "endFrame": 5650,
+    "text": "It protects a rollback, because an old release is still exactly what it was.",
+    "prefix": "It protects a rollback, because an old release is still exactly what it was.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5524,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5524
+          },
+          {
+            "text": "protects",
+            "startFrame": 5525
+          },
+          {
+            "text": "a",
+            "startFrame": 5536
+          },
+          {
+            "text": "rollback,",
+            "startFrame": 5537
+          }
+        ]
+      },
+      {
+        "startFrame": 5555,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 5555
+          },
+          {
+            "text": "an",
+            "startFrame": 5565
+          },
+          {
+            "text": "old",
+            "startFrame": 5568
+          },
+          {
+            "text": "release",
+            "startFrame": 5575
+          },
+          {
+            "text": "is",
+            "startFrame": 5591
+          },
+          {
+            "text": "still",
+            "startFrame": 5594
+          },
+          {
+            "text": "exactly",
+            "startFrame": 5604
+          },
+          {
+            "text": "what",
+            "startFrame": 5620
+          },
+          {
+            "text": "it",
+            "startFrame": 5624
+          },
+          {
+            "text": "was.",
+            "startFrame": 5626
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 56,
+    "startFrame": 5650,
+    "endFrame": 5797,
+    "text": "It protects the assessor's trust, because every piece can say what it contains.",
+    "prefix": "It protects the assessor's trust, because every piece can say what it contains.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5651,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5651
+          },
+          {
+            "text": "protects",
+            "startFrame": 5653
+          },
+          {
+            "text": "the",
+            "startFrame": 5666
+          },
+          {
+            "text": "assessor's",
+            "startFrame": 5669
+          },
+          {
+            "text": "trust,",
+            "startFrame": 5685
+          }
+        ]
+      },
+      {
+        "startFrame": 5710,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 5710
+          },
+          {
+            "text": "every",
+            "startFrame": 5720
+          },
+          {
+            "text": "piece",
+            "startFrame": 5729
+          },
+          {
+            "text": "can",
+            "startFrame": 5740
+          },
+          {
+            "text": "say",
+            "startFrame": 5744
+          },
+          {
+            "text": "what",
+            "startFrame": 5757
+          },
+          {
+            "text": "it",
+            "startFrame": 5761
+          },
+          {
+            "text": "contains.",
+            "startFrame": 5763
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "startFrame": 5798,
+    "endFrame": 5935,
+    "text": "And it protects the data, because the backup always comes before the change.",
+    "prefix": "And it protects the data, because the backup always comes before the change.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5799,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 5799
+          },
+          {
+            "text": "it",
+            "startFrame": 5802
+          },
+          {
+            "text": "protects",
+            "startFrame": 5804
+          },
+          {
+            "text": "the",
+            "startFrame": 5819
+          },
+          {
+            "text": "data,",
+            "startFrame": 5822
+          }
+        ]
+      },
+      {
+        "startFrame": 5843,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 5843
+          },
+          {
+            "text": "the",
+            "startFrame": 5853
+          },
+          {
+            "text": "backup",
+            "startFrame": 5856
+          },
+          {
+            "text": "always",
+            "startFrame": 5872
+          },
+          {
+            "text": "comes",
+            "startFrame": 5884
+          },
+          {
+            "text": "before",
+            "startFrame": 5893
+          },
+          {
+            "text": "the",
+            "startFrame": 5904
+          },
+          {
+            "text": "change.",
+            "startFrame": 5906
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 58,
+    "startFrame": 5936,
+    "endFrame": 5992,
+    "text": "Back to the bookshelf.",
+    "prefix": "Back to the bookshelf.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5938,
+        "words": [
+          {
+            "text": "Back",
+            "startFrame": 5938
+          },
+          {
+            "text": "to",
+            "startFrame": 5943
+          },
+          {
+            "text": "the",
+            "startFrame": 5945
+          },
+          {
+            "text": "bookshelf.",
+            "startFrame": 5947
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 59,
+    "startFrame": 5992,
+    "endFrame": 6190,
+    "text": "Every edition named by its number, none ever changed after printing, and each with its contents listed.",
+    "prefix": "Every edition named by its number, none ever changed after printing, and each with its contents listed.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5993,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 5993
+          },
+          {
+            "text": "edition",
+            "startFrame": 6002
+          },
+          {
+            "text": "named",
+            "startFrame": 6024
+          },
+          {
+            "text": "by",
+            "startFrame": 6034
+          },
+          {
+            "text": "its",
+            "startFrame": 6039
+          },
+          {
+            "text": "number,",
+            "startFrame": 6043
+          }
+        ]
+      },
+      {
+        "startFrame": 6068,
+        "words": [
+          {
+            "text": "none",
+            "startFrame": 6068
+          },
+          {
+            "text": "ever",
+            "startFrame": 6082
+          },
+          {
+            "text": "changed",
+            "startFrame": 6088
+          },
+          {
+            "text": "after",
+            "startFrame": 6100
+          },
+          {
+            "text": "printing,",
+            "startFrame": 6107
+          }
+        ]
+      },
+      {
+        "startFrame": 6128,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6128
+          },
+          {
+            "text": "each",
+            "startFrame": 6137
+          },
+          {
+            "text": "with",
+            "startFrame": 6142
+          },
+          {
+            "text": "its",
+            "startFrame": 6147
+          },
+          {
+            "text": "contents",
+            "startFrame": 6150
+          },
+          {
+            "text": "listed.",
+            "startFrame": 6166
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "startFrame": 6190,
+    "endFrame": 6294,
     "text": "Next: who is responsible for what.",
     "prefix": "Next: who is responsible for what.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1149,
+        "startFrame": 6191,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 1149
+            "startFrame": 6191
           },
           {
             "text": "who",
-            "startFrame": 1174
+            "startFrame": 6216
           },
           {
             "text": "is",
-            "startFrame": 1176
+            "startFrame": 6219
           },
           {
             "text": "responsible",
-            "startFrame": 1179
+            "startFrame": 6221
           },
           {
             "text": "for",
-            "startFrame": 1196
+            "startFrame": 6239
           },
           {
             "text": "what.",
-            "startFrame": 1200
+            "startFrame": 6243
           }
         ]
       }
