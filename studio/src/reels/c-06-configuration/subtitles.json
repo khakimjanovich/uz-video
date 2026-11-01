@@ -1,0 +1,944 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 84,
+    "text": "What should a service do when a setting is missing?",
+    "prefix": "What should a service do when a setting is missing?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 2
+          },
+          {
+            "text": "should",
+            "startFrame": 4
+          },
+          {
+            "text": "a",
+            "startFrame": 9
+          },
+          {
+            "text": "service",
+            "startFrame": 11
+          },
+          {
+            "text": "do",
+            "startFrame": 25
+          },
+          {
+            "text": "when",
+            "startFrame": 43
+          },
+          {
+            "text": "a",
+            "startFrame": 46
+          },
+          {
+            "text": "setting",
+            "startFrame": 47
+          },
+          {
+            "text": "is",
+            "startFrame": 58
+          },
+          {
+            "text": "missing?",
+            "startFrame": 61
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "startFrame": 85,
+    "endFrame": 211,
+    "text": "A good cook won't start a dish with an ingredient missing, and won't guess a pinch.",
+    "prefix": "A good cook won't start a dish with an ingredient missing, and won't guess a pinch.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 86,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 86
+          },
+          {
+            "text": "good",
+            "startFrame": 87
+          },
+          {
+            "text": "cook",
+            "startFrame": 93
+          },
+          {
+            "text": "won't",
+            "startFrame": 100
+          },
+          {
+            "text": "start",
+            "startFrame": 106
+          },
+          {
+            "text": "a",
+            "startFrame": 114
+          },
+          {
+            "text": "dish",
+            "startFrame": 116
+          }
+        ]
+      },
+      {
+        "startFrame": 126,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 126
+          },
+          {
+            "text": "an",
+            "startFrame": 130
+          },
+          {
+            "text": "ingredient",
+            "startFrame": 132
+          },
+          {
+            "text": "missing,",
+            "startFrame": 148
+          }
+        ]
+      },
+      {
+        "startFrame": 167,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 167
+          },
+          {
+            "text": "won't",
+            "startFrame": 171
+          },
+          {
+            "text": "guess",
+            "startFrame": 178
+          },
+          {
+            "text": "a",
+            "startFrame": 184
+          },
+          {
+            "text": "pinch.",
+            "startFrame": 185
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "startFrame": 212,
+    "endFrame": 268,
+    "text": "Our services are the same.",
+    "prefix": "Our services are the same.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 213,
+        "words": [
+          {
+            "text": "Our",
+            "startFrame": 213
+          },
+          {
+            "text": "services",
+            "startFrame": 216
+          },
+          {
+            "text": "are",
+            "startFrame": 232
+          },
+          {
+            "text": "the",
+            "startFrame": 234
+          },
+          {
+            "text": "same.",
+            "startFrame": 237
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "startFrame": 268,
+    "endFrame": 330,
+    "text": "No setting has a default value.",
+    "prefix": "No setting has a default value.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 269,
+        "words": [
+          {
+            "text": "No",
+            "startFrame": 269
+          },
+          {
+            "text": "setting",
+            "startFrame": 277
+          },
+          {
+            "text": "has",
+            "startFrame": 286
+          },
+          {
+            "text": "a",
+            "startFrame": 290
+          },
+          {
+            "text": "default",
+            "startFrame": 292
+          },
+          {
+            "text": "value.",
+            "startFrame": 305
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "startFrame": 330,
+    "endFrame": 555,
+    "text": "A guessed timeout or a forgotten password that quietly falls back to a test value is how a system goes wrong in production.",
+    "prefix": "A guessed timeout or a forgotten password that quietly falls back to a test value is how a system goes wrong in production.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 331,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 331
+          },
+          {
+            "text": "guessed",
+            "startFrame": 333
+          },
+          {
+            "text": "timeout",
+            "startFrame": 341
+          },
+          {
+            "text": "or",
+            "startFrame": 361
+          },
+          {
+            "text": "a",
+            "startFrame": 364
+          },
+          {
+            "text": "forgotten",
+            "startFrame": 365
+          },
+          {
+            "text": "password",
+            "startFrame": 378
+          },
+          {
+            "text": "that",
+            "startFrame": 405
+          }
+        ]
+      },
+      {
+        "startFrame": 407,
+        "words": [
+          {
+            "text": "quietly",
+            "startFrame": 407
+          },
+          {
+            "text": "falls",
+            "startFrame": 422
+          },
+          {
+            "text": "back",
+            "startFrame": 432
+          },
+          {
+            "text": "to",
+            "startFrame": 440
+          },
+          {
+            "text": "a",
+            "startFrame": 444
+          },
+          {
+            "text": "test",
+            "startFrame": 446
+          },
+          {
+            "text": "value",
+            "startFrame": 456
+          },
+          {
+            "text": "is",
+            "startFrame": 478
+          }
+        ]
+      },
+      {
+        "startFrame": 481,
+        "words": [
+          {
+            "text": "how",
+            "startFrame": 481
+          },
+          {
+            "text": "a",
+            "startFrame": 488
+          },
+          {
+            "text": "system",
+            "startFrame": 490
+          },
+          {
+            "text": "goes",
+            "startFrame": 505
+          },
+          {
+            "text": "wrong",
+            "startFrame": 515
+          },
+          {
+            "text": "in",
+            "startFrame": 526
+          },
+          {
+            "text": "production.",
+            "startFrame": 528
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "startFrame": 555,
+    "endFrame": 638,
+    "text": "So every setting comes from one locked store, Vault.",
+    "prefix": "So every setting comes from one locked store, Vault.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 557,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 557
+          },
+          {
+            "text": "every",
+            "startFrame": 564
+          },
+          {
+            "text": "setting",
+            "startFrame": 571
+          },
+          {
+            "text": "comes",
+            "startFrame": 580
+          },
+          {
+            "text": "from",
+            "startFrame": 588
+          },
+          {
+            "text": "one",
+            "startFrame": 592
+          },
+          {
+            "text": "locked",
+            "startFrame": 600
+          },
+          {
+            "text": "store,",
+            "startFrame": 607
+          },
+          {
+            "text": "Vault.",
+            "startFrame": 616
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "startFrame": 639,
+    "endFrame": 772,
+    "text": "What only this environment knows, like its addresses, is typed in once.",
+    "prefix": "What only this environment knows, like its addresses, is typed in once.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 640,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 640
+          },
+          {
+            "text": "only",
+            "startFrame": 644
+          },
+          {
+            "text": "this",
+            "startFrame": 651
+          },
+          {
+            "text": "environment",
+            "startFrame": 657
+          },
+          {
+            "text": "knows,",
+            "startFrame": 675
+          }
+        ]
+      },
+      {
+        "startFrame": 686,
+        "words": [
+          {
+            "text": "like",
+            "startFrame": 686
+          },
+          {
+            "text": "its",
+            "startFrame": 691
+          },
+          {
+            "text": "addresses,",
+            "startFrame": 695
+          }
+        ]
+      },
+      {
+        "startFrame": 723,
+        "words": [
+          {
+            "text": "is",
+            "startFrame": 723
+          },
+          {
+            "text": "typed",
+            "startFrame": 728
+          },
+          {
+            "text": "in",
+            "startFrame": 739
+          },
+          {
+            "text": "once.",
+            "startFrame": 743
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "startFrame": 772,
+    "endFrame": 911,
+    "text": "Every password and key is generated there, never typed into a file.",
+    "prefix": "Every password and key is generated there, never typed into a file.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 773,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 773
+          },
+          {
+            "text": "password",
+            "startFrame": 780
+          },
+          {
+            "text": "and",
+            "startFrame": 799
+          },
+          {
+            "text": "key",
+            "startFrame": 805
+          },
+          {
+            "text": "is",
+            "startFrame": 822
+          },
+          {
+            "text": "generated",
+            "startFrame": 828
+          },
+          {
+            "text": "there,",
+            "startFrame": 843
+          }
+        ]
+      },
+      {
+        "startFrame": 861,
+        "words": [
+          {
+            "text": "never",
+            "startFrame": 861
+          },
+          {
+            "text": "typed",
+            "startFrame": 867
+          },
+          {
+            "text": "into",
+            "startFrame": 878
+          },
+          {
+            "text": "a",
+            "startFrame": 883
+          },
+          {
+            "text": "file.",
+            "startFrame": 885
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "startFrame": 911,
+    "endFrame": 1042,
+    "text": "Before a service starts, it is handed exactly its own settings.",
+    "prefix": "Before a service starts, it is handed exactly its own settings.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 912,
+        "words": [
+          {
+            "text": "Before",
+            "startFrame": 912
+          },
+          {
+            "text": "a",
+            "startFrame": 922
+          },
+          {
+            "text": "service",
+            "startFrame": 924
+          },
+          {
+            "text": "starts,",
+            "startFrame": 935
+          }
+        ]
+      },
+      {
+        "startFrame": 959,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 959
+          },
+          {
+            "text": "is",
+            "startFrame": 960
+          },
+          {
+            "text": "handed",
+            "startFrame": 963
+          },
+          {
+            "text": "exactly",
+            "startFrame": 975
+          },
+          {
+            "text": "its",
+            "startFrame": 1000
+          },
+          {
+            "text": "own",
+            "startFrame": 1004
+          },
+          {
+            "text": "settings.",
+            "startFrame": 1011
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "startFrame": 1043,
+    "endFrame": 1204,
+    "text": "If even one is missing, it refuses to start, and names every missing one at once.",
+    "prefix": "If even one is missing, it refuses to start, and names every missing one at once.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1044,
+        "words": [
+          {
+            "text": "If",
+            "startFrame": 1044
+          },
+          {
+            "text": "even",
+            "startFrame": 1047
+          },
+          {
+            "text": "one",
+            "startFrame": 1053
+          },
+          {
+            "text": "is",
+            "startFrame": 1058
+          },
+          {
+            "text": "missing,",
+            "startFrame": 1061
+          }
+        ]
+      },
+      {
+        "startFrame": 1085,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 1085
+          },
+          {
+            "text": "refuses",
+            "startFrame": 1087
+          },
+          {
+            "text": "to",
+            "startFrame": 1103
+          },
+          {
+            "text": "start,",
+            "startFrame": 1106
+          }
+        ]
+      },
+      {
+        "startFrame": 1133,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1133
+          },
+          {
+            "text": "names",
+            "startFrame": 1137
+          },
+          {
+            "text": "every",
+            "startFrame": 1154
+          },
+          {
+            "text": "missing",
+            "startFrame": 1161
+          },
+          {
+            "text": "one",
+            "startFrame": 1171
+          },
+          {
+            "text": "at",
+            "startFrame": 1175
+          },
+          {
+            "text": "once.",
+            "startFrame": 1177
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "startFrame": 1204,
+    "endFrame": 1320,
+    "text": "That is fail fast: a wrong guess can never reach production.",
+    "prefix": "That is fail fast: a wrong guess can never reach production.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1205,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 1205
+          },
+          {
+            "text": "is",
+            "startFrame": 1208
+          },
+          {
+            "text": "fail",
+            "startFrame": 1212
+          },
+          {
+            "text": "fast:",
+            "startFrame": 1221
+          }
+        ]
+      },
+      {
+        "startFrame": 1251,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 1251
+          },
+          {
+            "text": "wrong",
+            "startFrame": 1253
+          },
+          {
+            "text": "guess",
+            "startFrame": 1265
+          },
+          {
+            "text": "can",
+            "startFrame": 1277
+          },
+          {
+            "text": "never",
+            "startFrame": 1281
+          },
+          {
+            "text": "reach",
+            "startFrame": 1289
+          },
+          {
+            "text": "production.",
+            "startFrame": 1293
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 1320,
+    "endFrame": 1572,
+    "text": "And rates, limits and waiting times are the bank's decisions, so each one is a setting the bank chooses, never a number hidden in the product.",
+    "prefix": "And rates, limits and waiting times are the bank's decisions, so each one is a setting the bank chooses, never a number hidden in the product.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1321,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 1321
+          },
+          {
+            "text": "rates,",
+            "startFrame": 1325
+          },
+          {
+            "text": "limits",
+            "startFrame": 1347
+          },
+          {
+            "text": "and",
+            "startFrame": 1362
+          },
+          {
+            "text": "waiting",
+            "startFrame": 1368
+          },
+          {
+            "text": "times",
+            "startFrame": 1380
+          },
+          {
+            "text": "are",
+            "startFrame": 1391
+          }
+        ]
+      },
+      {
+        "startFrame": 1394,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1394
+          },
+          {
+            "text": "bank's",
+            "startFrame": 1397
+          },
+          {
+            "text": "decisions,",
+            "startFrame": 1405
+          }
+        ]
+      },
+      {
+        "startFrame": 1435,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 1435
+          },
+          {
+            "text": "each",
+            "startFrame": 1444
+          },
+          {
+            "text": "one",
+            "startFrame": 1450
+          },
+          {
+            "text": "is",
+            "startFrame": 1458
+          },
+          {
+            "text": "a",
+            "startFrame": 1461
+          },
+          {
+            "text": "setting",
+            "startFrame": 1462
+          },
+          {
+            "text": "the",
+            "startFrame": 1473
+          },
+          {
+            "text": "bank",
+            "startFrame": 1476
+          }
+        ]
+      },
+      {
+        "startFrame": 1485,
+        "words": [
+          {
+            "text": "chooses,",
+            "startFrame": 1485
+          },
+          {
+            "text": "never",
+            "startFrame": 1513
+          },
+          {
+            "text": "a",
+            "startFrame": 1522
+          },
+          {
+            "text": "number",
+            "startFrame": 1524
+          },
+          {
+            "text": "hidden",
+            "startFrame": 1535
+          },
+          {
+            "text": "in",
+            "startFrame": 1544
+          },
+          {
+            "text": "the",
+            "startFrame": 1545
+          },
+          {
+            "text": "product.",
+            "startFrame": 1547
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1572,
+    "endFrame": 1697,
+    "text": "Next: how every call proves who it comes from.",
+    "prefix": "Next: how every call proves who it comes from.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1573,
+        "words": [
+          {
+            "text": "Next:",
+            "startFrame": 1573
+          },
+          {
+            "text": "how",
+            "startFrame": 1599
+          },
+          {
+            "text": "every",
+            "startFrame": 1603
+          },
+          {
+            "text": "call",
+            "startFrame": 1612
+          },
+          {
+            "text": "proves",
+            "startFrame": 1626
+          },
+          {
+            "text": "who",
+            "startFrame": 1637
+          },
+          {
+            "text": "it",
+            "startFrame": 1639
+          },
+          {
+            "text": "comes",
+            "startFrame": 1641
+          },
+          {
+            "text": "from.",
+            "startFrame": 1649
+          }
+        ]
+      }
+    ]
+  }
+]

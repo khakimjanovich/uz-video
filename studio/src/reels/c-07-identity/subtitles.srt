@@ -1,0 +1,43 @@
+1
+00:00:00,050 --> 00:00:02,832
+How does the card zone know a call really comes from ecom?
+
+2
+00:00:02,882 --> 00:00:11,400
+Entering an office building, you show an ID card from the building's own pass office, and reception gives you a day pass that lists the floors you may visit.
+
+3
+00:00:11,450 --> 00:00:14,280
+The card zone does the same for every call.
+
+4
+00:00:14,330 --> 00:00:18,960
+The first proof is a certificate signed by the card zone's own pass office.
+
+5
+00:00:19,010 --> 00:00:24,192
+Both sides show one, so each knows who is on the other end: mutual TLS.
+
+6
+00:00:24,242 --> 00:00:28,752
+The second proof is an access token from the card zone's own login server.
+
+7
+00:00:28,802 --> 00:00:32,256
+Inside the token are roles: the floors you may visit.
+
+8
+00:00:32,306 --> 00:00:40,488
+Each operation needs its own role, so even the real ecom can only do what its roles allow: bind a card, read it, or charge it.
+
+9
+00:00:40,538 --> 00:00:43,056
+Steal one proof, and you still get nothing.
+
+10
+00:00:43,106 --> 00:00:50,976
+The card zone keeps its own pass office and its own login server, separate from ecom's, so nothing outside the room can hand out its passes.
+
+11
+00:00:51,026 --> 00:00:54,432
+Next: how the card zone talks to every card network.

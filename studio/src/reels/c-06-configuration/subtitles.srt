@@ -1,0 +1,51 @@
+1
+00:00:00,050 --> 00:00:02,784
+What should a service do when a setting is missing?
+
+2
+00:00:02,834 --> 00:00:07,032
+A good cook won't start a dish with an ingredient missing, and won't guess a pinch.
+
+3
+00:00:07,082 --> 00:00:08,904
+Our services are the same.
+
+4
+00:00:08,954 --> 00:00:10,968
+No setting has a default value.
+
+5
+00:00:11,018 --> 00:00:18,480
+A guessed timeout or a forgotten password that quietly falls back to a test value is how a system goes wrong in production.
+
+6
+00:00:18,530 --> 00:00:21,264
+So every setting comes from one locked store, Vault.
+
+7
+00:00:21,314 --> 00:00:25,704
+What only this environment knows, like its addresses, is typed in once.
+
+8
+00:00:25,754 --> 00:00:30,336
+Every password and key is generated there, never typed into a file.
+
+9
+00:00:30,386 --> 00:00:34,728
+Before a service starts, it is handed exactly its own settings.
+
+10
+00:00:34,778 --> 00:00:40,104
+If even one is missing, it refuses to start, and names every missing one at once.
+
+11
+00:00:40,154 --> 00:00:43,968
+That is fail fast: a wrong guess can never reach production.
+
+12
+00:00:44,018 --> 00:00:52,368
+And rates, limits and waiting times are the bank's decisions, so each one is a setting the bank chooses, never a number hidden in the product.
+
+13
+00:00:52,418 --> 00:00:55,560
+Next: how every call proves who it comes from.

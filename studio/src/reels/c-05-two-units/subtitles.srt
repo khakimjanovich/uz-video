@@ -1,0 +1,55 @@
+1
+00:00:00,050 --> 00:00:03,720
+How can ecom take a card payment without ever seeing the card?
+
+2
+00:00:03,770 --> 00:00:07,488
+In a real shop, the card reader on the counter belongs to the bank.
+
+3
+00:00:07,538 --> 00:00:10,680
+You type your PIN into it, and the shop only gets a receipt.
+
+4
+00:00:10,730 --> 00:00:13,008
+Our payment page works the same way.
+
+5
+00:00:13,058 --> 00:00:20,856
+When a buyer opens the page, ecom asks the card zone for a card-entry session: a short-lived place to type one card for one payment.
+
+6
+00:00:20,906 --> 00:00:23,136
+The card zone answers with an address.
+
+7
+00:00:23,186 --> 00:00:28,800
+The page shows that address inside a frame: the bank's card reader, on ecom's counter.
+
+8
+00:00:28,850 --> 00:00:33,216
+The buyer types the card into the frame, and the card goes straight to the card zone.
+
+9
+00:00:33,266 --> 00:00:36,408
+The page gets back only the token and the masked number.
+
+10
+00:00:36,458 --> 00:00:43,248
+Then ecom asks the card zone to charge the card by its token, and checks that the token really came from this payment's session.
+
+11
+00:00:43,298 --> 00:00:49,704
+The two products agree on every question they may ask each other, written down once: a contract.
+
+12
+00:00:49,754 --> 00:00:52,464
+ecom can only ask what the contract allows.
+
+13
+00:00:52,514 --> 00:00:58,200
+And that token can spend money, so ecom still guards it, like a ticket that can fetch a coat.
+
+14
+00:00:58,250 --> 00:01:01,224
+Next: how every service gets its settings.
