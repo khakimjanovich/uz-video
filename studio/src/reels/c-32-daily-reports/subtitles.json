@@ -2,42 +2,46 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 57,
-    "text": "How much does the merchant get today?",
-    "prefix": "How much does the merchant get today?",
+    "endFrame": 67,
+    "text": "How much money does the merchant get today?",
+    "prefix": "How much money does the merchant get today?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2,
+        "startFrame": 3,
         "words": [
           {
             "text": "How",
-            "startFrame": 2
+            "startFrame": 3
           },
           {
             "text": "much",
-            "startFrame": 4
+            "startFrame": 6
+          },
+          {
+            "text": "money",
+            "startFrame": 11
           },
           {
             "text": "does",
-            "startFrame": 8
+            "startFrame": 24
           },
           {
             "text": "the",
-            "startFrame": 12
+            "startFrame": 28
           },
           {
             "text": "merchant",
-            "startFrame": 14
+            "startFrame": 31
           },
           {
             "text": "get",
-            "startFrame": 25
+            "startFrame": 41
           },
           {
             "text": "today?",
-            "startFrame": 30
+            "startFrame": 45
           }
         ]
       }
@@ -45,102 +49,101 @@
   },
   {
     "index": 2,
-    "startFrame": 57,
-    "endFrame": 240,
-    "text": "At closing time, a shop counts the till, and counting the same day again gives the same answer.",
-    "prefix": "At closing time, a shop counts the till, and counting the same day again gives the same answer.",
+    "startFrame": 67,
+    "endFrame": 246,
+    "text": "At the end of the month, a merchant's accountant puts the bank's payouts next to the shop's own orders.",
+    "prefix": "At the end of the month, a merchant's accountant puts the bank's payouts next to the shop's own orders.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 59,
+        "startFrame": 68,
         "words": [
           {
             "text": "At",
-            "startFrame": 59
+            "startFrame": 68
           },
           {
-            "text": "closing",
-            "startFrame": 61
+            "text": "the",
+            "startFrame": 70
           },
           {
-            "text": "time,",
-            "startFrame": 74
+            "text": "end",
+            "startFrame": 72
+          },
+          {
+            "text": "of",
+            "startFrame": 76
+          },
+          {
+            "text": "the",
+            "startFrame": 78
+          },
+          {
+            "text": "month,",
+            "startFrame": 80
           }
         ]
       },
       {
-        "startFrame": 94,
+        "startFrame": 105,
         "words": [
           {
             "text": "a",
-            "startFrame": 94
+            "startFrame": 105
           },
           {
-            "text": "shop",
-            "startFrame": 95
-          },
-          {
-            "text": "counts",
+            "text": "merchant's",
             "startFrame": 107
           },
           {
-            "text": "the",
-            "startFrame": 116
+            "text": "accountant",
+            "startFrame": 120
           },
           {
-            "text": "till,",
-            "startFrame": 119
+            "text": "puts",
+            "startFrame": 140
+          },
+          {
+            "text": "the",
+            "startFrame": 148
+          },
+          {
+            "text": "bank's",
+            "startFrame": 153
+          },
+          {
+            "text": "payouts",
+            "startFrame": 163
+          },
+          {
+            "text": "next",
+            "startFrame": 187
           }
         ]
       },
       {
-        "startFrame": 144,
+        "startFrame": 196,
         "words": [
           {
-            "text": "and",
-            "startFrame": 144
-          },
-          {
-            "text": "counting",
-            "startFrame": 157
-          },
-          {
-            "text": "the",
-            "startFrame": 165
-          },
-          {
-            "text": "same",
-            "startFrame": 167
-          },
-          {
-            "text": "day",
-            "startFrame": 175
-          },
-          {
-            "text": "again",
-            "startFrame": 181
-          },
-          {
-            "text": "gives",
+            "text": "to",
             "startFrame": 196
-          }
-        ]
-      },
-      {
-        "startFrame": 202,
-        "words": [
+          },
           {
             "text": "the",
-            "startFrame": 202
+            "startFrame": 198
           },
           {
-            "text": "same",
-            "startFrame": 205
+            "text": "shop's",
+            "startFrame": 200
           },
           {
-            "text": "answer.",
+            "text": "own",
             "startFrame": 215
+          },
+          {
+            "text": "orders.",
+            "startFrame": 220
           }
         ]
       }
@@ -148,51 +151,56 @@
   },
   {
     "index": 3,
-    "startFrame": 240,
-    "endFrame": 332,
-    "text": "Every night, the bank does that for each website.",
-    "prefix": "Every night, the bank does that for each website.",
+    "startFrame": 247,
+    "endFrame": 333,
+    "text": "One week is off, and nobody can say why.",
+    "prefix": "One week is off, and nobody can say why.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 241,
+        "startFrame": 248,
         "words": [
           {
-            "text": "Every",
-            "startFrame": 241
+            "text": "One",
+            "startFrame": 248
           },
           {
-            "text": "night,",
-            "startFrame": 247
+            "text": "week",
+            "startFrame": 252
           },
           {
-            "text": "the",
-            "startFrame": 264
+            "text": "is",
+            "startFrame": 258
           },
           {
-            "text": "bank",
-            "startFrame": 267
+            "text": "off,",
+            "startFrame": 261
+          }
+        ]
+      },
+      {
+        "startFrame": 281,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 281
           },
           {
-            "text": "does",
-            "startFrame": 276
+            "text": "nobody",
+            "startFrame": 284
           },
           {
-            "text": "that",
-            "startFrame": 283
+            "text": "can",
+            "startFrame": 294
           },
           {
-            "text": "for",
-            "startFrame": 289
+            "text": "say",
+            "startFrame": 298
           },
           {
-            "text": "each",
-            "startFrame": 296
-          },
-          {
-            "text": "website.",
-            "startFrame": 302
+            "text": "why.",
+            "startFrame": 309
           }
         ]
       }
@@ -200,134 +208,39 @@
   },
   {
     "index": 4,
-    "startFrame": 332,
-    "endFrame": 583,
-    "text": "A business day runs from midnight to midnight in the bank's time zone: the same day that decides reversal or refund, so the two never disagree.",
-    "prefix": "A business day runs from midnight to midnight in the bank's time zone: the same day that decides reversal or refund, so the two never disagree.",
+    "startFrame": 334,
+    "endFrame": 401,
+    "text": "Was last week's refund counted today?",
+    "prefix": "Was last week's refund counted today?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 333,
+        "startFrame": 335,
         "words": [
           {
-            "text": "A",
-            "startFrame": 333
+            "text": "Was",
+            "startFrame": 335
           },
           {
-            "text": "business",
-            "startFrame": 334
+            "text": "last",
+            "startFrame": 338
           },
           {
-            "text": "day",
+            "text": "week's",
             "startFrame": 345
           },
           {
-            "text": "runs",
-            "startFrame": 351
+            "text": "refund",
+            "startFrame": 352
           },
           {
-            "text": "from",
-            "startFrame": 360
+            "text": "counted",
+            "startFrame": 368
           },
           {
-            "text": "midnight",
-            "startFrame": 364
-          },
-          {
-            "text": "to",
+            "text": "today?",
             "startFrame": 377
-          },
-          {
-            "text": "midnight",
-            "startFrame": 381
-          }
-        ]
-      },
-      {
-        "startFrame": 401,
-        "words": [
-          {
-            "text": "in",
-            "startFrame": 401
-          },
-          {
-            "text": "the",
-            "startFrame": 403
-          },
-          {
-            "text": "bank's",
-            "startFrame": 405
-          },
-          {
-            "text": "time",
-            "startFrame": 414
-          },
-          {
-            "text": "zone:",
-            "startFrame": 422
-          }
-        ]
-      },
-      {
-        "startFrame": 444,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 444
-          },
-          {
-            "text": "same",
-            "startFrame": 447
-          },
-          {
-            "text": "day",
-            "startFrame": 455
-          },
-          {
-            "text": "that",
-            "startFrame": 464
-          },
-          {
-            "text": "decides",
-            "startFrame": 467
-          },
-          {
-            "text": "reversal",
-            "startFrame": 480
-          },
-          {
-            "text": "or",
-            "startFrame": 501
-          },
-          {
-            "text": "refund,",
-            "startFrame": 506
-          }
-        ]
-      },
-      {
-        "startFrame": 534,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 534
-          },
-          {
-            "text": "the",
-            "startFrame": 537
-          },
-          {
-            "text": "two",
-            "startFrame": 540
-          },
-          {
-            "text": "never",
-            "startFrame": 547
-          },
-          {
-            "text": "disagree.",
-            "startFrame": 556
           }
         ]
       }
@@ -335,81 +248,47 @@
   },
   {
     "index": 5,
-    "startFrame": 583,
-    "endFrame": 710,
-    "text": "It adds up what was paid, the fee, what was refunded, and the payout.",
-    "prefix": "It adds up what was paid, the fee, what was refunded, and the payout.",
+    "startFrame": 401,
+    "endFrame": 476,
+    "text": "Was a reversed payment counted as a sale?",
+    "prefix": "Was a reversed payment counted as a sale?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 585,
+        "startFrame": 403,
         "words": [
           {
-            "text": "It",
-            "startFrame": 585
+            "text": "Was",
+            "startFrame": 403
           },
           {
-            "text": "adds",
-            "startFrame": 587
+            "text": "a",
+            "startFrame": 406
           },
           {
-            "text": "up",
-            "startFrame": 594
+            "text": "reversed",
+            "startFrame": 407
           },
           {
-            "text": "what",
-            "startFrame": 597
+            "text": "payment",
+            "startFrame": 419
           },
           {
-            "text": "was",
-            "startFrame": 600
+            "text": "counted",
+            "startFrame": 429
           },
           {
-            "text": "paid,",
-            "startFrame": 603
-          }
-        ]
-      },
-      {
-        "startFrame": 624,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 624
+            "text": "as",
+            "startFrame": 446
           },
           {
-            "text": "fee,",
-            "startFrame": 627
+            "text": "a",
+            "startFrame": 450
           },
           {
-            "text": "what",
-            "startFrame": 657
-          },
-          {
-            "text": "was",
-            "startFrame": 659
-          },
-          {
-            "text": "refunded,",
-            "startFrame": 663
-          }
-        ]
-      },
-      {
-        "startFrame": 678,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 678
-          },
-          {
-            "text": "the",
-            "startFrame": 680
-          },
-          {
-            "text": "payout.",
-            "startFrame": 682
+            "text": "sale?",
+            "startFrame": 451
           }
         ]
       }
@@ -417,68 +296,39 @@
   },
   {
     "index": 6,
-    "startFrame": 710,
-    "endFrame": 852,
-    "text": "The payout can even be negative, when refunds outweigh the day's sales.",
-    "prefix": "The payout can even be negative, when refunds outweigh the day's sales.",
+    "startFrame": 476,
+    "endFrame": 537,
+    "text": "Did one night simply not run?",
+    "prefix": "Did one night simply not run?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 712,
+        "startFrame": 478,
         "words": [
           {
-            "text": "The",
-            "startFrame": 712
+            "text": "Did",
+            "startFrame": 478
           },
           {
-            "text": "payout",
-            "startFrame": 715
+            "text": "one",
+            "startFrame": 481
           },
           {
-            "text": "can",
-            "startFrame": 728
+            "text": "night",
+            "startFrame": 488
           },
           {
-            "text": "even",
-            "startFrame": 735
+            "text": "simply",
+            "startFrame": 502
           },
           {
-            "text": "be",
-            "startFrame": 741
+            "text": "not",
+            "startFrame": 511
           },
           {
-            "text": "negative,",
-            "startFrame": 744
-          }
-        ]
-      },
-      {
-        "startFrame": 769,
-        "words": [
-          {
-            "text": "when",
-            "startFrame": 769
-          },
-          {
-            "text": "refunds",
-            "startFrame": 776
-          },
-          {
-            "text": "outweigh",
-            "startFrame": 797
-          },
-          {
-            "text": "the",
-            "startFrame": 812
-          },
-          {
-            "text": "day's",
-            "startFrame": 815
-          },
-          {
-            "text": "sales.",
-            "startFrame": 823
+            "text": "run?",
+            "startFrame": 518
           }
         ]
       }
@@ -486,97 +336,55 @@
   },
   {
     "index": 7,
-    "startFrame": 852,
-    "endFrame": 1033,
-    "text": "Counting a day again replaces it, never adds to it, so a missed night is simply caught up.",
-    "prefix": "Counting a day again replaces it, never adds to it, so a missed night is simply caught up.",
+    "startFrame": 537,
+    "endFrame": 638,
+    "text": "A total that nobody can take apart cannot be trusted.",
+    "prefix": "A total that nobody can take apart cannot be trusted.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 853,
+        "startFrame": 539,
         "words": [
           {
-            "text": "Counting",
-            "startFrame": 853
+            "text": "A",
+            "startFrame": 539
           },
           {
-            "text": "a",
-            "startFrame": 860
+            "text": "total",
+            "startFrame": 541
           },
           {
-            "text": "day",
-            "startFrame": 862
+            "text": "that",
+            "startFrame": 551
           },
           {
-            "text": "again",
-            "startFrame": 870
+            "text": "nobody",
+            "startFrame": 556
           },
           {
-            "text": "replaces",
-            "startFrame": 878
+            "text": "can",
+            "startFrame": 572
           },
           {
-            "text": "it,",
-            "startFrame": 896
-          }
-        ]
-      },
-      {
-        "startFrame": 913,
-        "words": [
-          {
-            "text": "never",
-            "startFrame": 913
+            "text": "take",
+            "startFrame": 576
           },
           {
-            "text": "adds",
-            "startFrame": 923
+            "text": "apart",
+            "startFrame": 583
           },
           {
-            "text": "to",
-            "startFrame": 932
+            "text": "cannot",
+            "startFrame": 596
           },
           {
-            "text": "it,",
-            "startFrame": 938
-          }
-        ]
-      },
-      {
-        "startFrame": 954,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 954
+            "text": "be",
+            "startFrame": 608
           },
           {
-            "text": "a",
-            "startFrame": 961
-          },
-          {
-            "text": "missed",
-            "startFrame": 961
-          },
-          {
-            "text": "night",
-            "startFrame": 970
-          },
-          {
-            "text": "is",
-            "startFrame": 992
-          },
-          {
-            "text": "simply",
-            "startFrame": 995
-          },
-          {
-            "text": "caught",
-            "startFrame": 1008
-          },
-          {
-            "text": "up.",
-            "startFrame": 1015
+            "text": "trusted.",
+            "startFrame": 611
           }
         ]
       }
@@ -584,89 +392,43 @@
   },
   {
     "index": 8,
-    "startFrame": 1033,
-    "endFrame": 1211,
-    "text": "And behind every total is a list of every line, so any number can be explained.",
-    "prefix": "And behind every total is a list of every line, so any number can be explained.",
+    "startFrame": 638,
+    "endFrame": 697,
+    "text": "Think of a shop at closing time.",
+    "prefix": "Think of a shop at closing time.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1034,
+        "startFrame": 640,
         "words": [
           {
-            "text": "And",
-            "startFrame": 1034
+            "text": "Think",
+            "startFrame": 640
           },
           {
-            "text": "behind",
-            "startFrame": 1036
-          },
-          {
-            "text": "every",
-            "startFrame": 1059
-          },
-          {
-            "text": "total",
-            "startFrame": 1067
-          },
-          {
-            "text": "is",
-            "startFrame": 1083
+            "text": "of",
+            "startFrame": 643
           },
           {
             "text": "a",
-            "startFrame": 1086
+            "startFrame": 644
           },
           {
-            "text": "list",
-            "startFrame": 1088
-          }
-        ]
-      },
-      {
-        "startFrame": 1110,
-        "words": [
-          {
-            "text": "of",
-            "startFrame": 1110
+            "text": "shop",
+            "startFrame": 645
           },
           {
-            "text": "every",
-            "startFrame": 1123
+            "text": "at",
+            "startFrame": 662
           },
           {
-            "text": "line,",
-            "startFrame": 1130
-          }
-        ]
-      },
-      {
-        "startFrame": 1154,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 1154
+            "text": "closing",
+            "startFrame": 664
           },
           {
-            "text": "any",
-            "startFrame": 1162
-          },
-          {
-            "text": "number",
-            "startFrame": 1166
-          },
-          {
-            "text": "can",
-            "startFrame": 1175
-          },
-          {
-            "text": "be",
-            "startFrame": 1178
-          },
-          {
-            "text": "explained.",
-            "startFrame": 1182
+            "text": "time.",
+            "startFrame": 675
           }
         ]
       }
@@ -674,56 +436,3268 @@
   },
   {
     "index": 9,
-    "startFrame": 1211,
-    "endFrame": 1333,
+    "startFrame": 697,
+    "endFrame": 759,
+    "text": "The owner counts the till for the day.",
+    "prefix": "The owner counts the till for the day.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 699,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 699
+          },
+          {
+            "text": "owner",
+            "startFrame": 701
+          },
+          {
+            "text": "counts",
+            "startFrame": 710
+          },
+          {
+            "text": "the",
+            "startFrame": 720
+          },
+          {
+            "text": "till",
+            "startFrame": 723
+          },
+          {
+            "text": "for",
+            "startFrame": 732
+          },
+          {
+            "text": "the",
+            "startFrame": 735
+          },
+          {
+            "text": "day.",
+            "startFrame": 737
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "startFrame": 760,
+    "endFrame": 829,
+    "text": "Counting it again gives the same answer.",
+    "prefix": "Counting it again gives the same answer.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 761,
+        "words": [
+          {
+            "text": "Counting",
+            "startFrame": 761
+          },
+          {
+            "text": "it",
+            "startFrame": 768
+          },
+          {
+            "text": "again",
+            "startFrame": 770
+          },
+          {
+            "text": "gives",
+            "startFrame": 784
+          },
+          {
+            "text": "the",
+            "startFrame": 792
+          },
+          {
+            "text": "same",
+            "startFrame": 794
+          },
+          {
+            "text": "answer.",
+            "startFrame": 804
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "startFrame": 830,
+    "endFrame": 981,
+    "text": "Two things make that count trustworthy: a clear day, and a count you can repeat.",
+    "prefix": "Two things make that count trustworthy: a clear day, and a count you can repeat.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 831,
+        "words": [
+          {
+            "text": "Two",
+            "startFrame": 831
+          },
+          {
+            "text": "things",
+            "startFrame": 837
+          },
+          {
+            "text": "make",
+            "startFrame": 844
+          },
+          {
+            "text": "that",
+            "startFrame": 851
+          },
+          {
+            "text": "count",
+            "startFrame": 857
+          },
+          {
+            "text": "trustworthy:",
+            "startFrame": 866
+          }
+        ]
+      },
+      {
+        "startFrame": 900,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 900
+          },
+          {
+            "text": "clear",
+            "startFrame": 901
+          },
+          {
+            "text": "day,",
+            "startFrame": 911
+          }
+        ]
+      },
+      {
+        "startFrame": 935,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 935
+          },
+          {
+            "text": "a",
+            "startFrame": 937
+          },
+          {
+            "text": "count",
+            "startFrame": 939
+          },
+          {
+            "text": "you",
+            "startFrame": 949
+          },
+          {
+            "text": "can",
+            "startFrame": 952
+          },
+          {
+            "text": "repeat.",
+            "startFrame": 956
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 982,
+    "endFrame": 1100,
+    "text": "The bank does the same, every night, for each website.",
+    "prefix": "The bank does the same, every night, for each website.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 983,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 983
+          },
+          {
+            "text": "bank",
+            "startFrame": 985
+          },
+          {
+            "text": "does",
+            "startFrame": 994
+          },
+          {
+            "text": "the",
+            "startFrame": 1000
+          },
+          {
+            "text": "same,",
+            "startFrame": 1002
+          }
+        ]
+      },
+      {
+        "startFrame": 1029,
+        "words": [
+          {
+            "text": "every",
+            "startFrame": 1029
+          },
+          {
+            "text": "night,",
+            "startFrame": 1036
+          },
+          {
+            "text": "for",
+            "startFrame": 1057
+          },
+          {
+            "text": "each",
+            "startFrame": 1065
+          },
+          {
+            "text": "website.",
+            "startFrame": 1070
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1100,
+    "endFrame": 1152,
+    "text": "First, the clear day.",
+    "prefix": "First, the clear day.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1103,
+        "words": [
+          {
+            "text": "First,",
+            "startFrame": 1103
+          },
+          {
+            "text": "the",
+            "startFrame": 1121
+          },
+          {
+            "text": "clear",
+            "startFrame": 1124
+          },
+          {
+            "text": "day.",
+            "startFrame": 1131
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 1153,
+    "endFrame": 1278,
+    "text": "A business day runs from midnight to midnight, in the bank's own time zone.",
+    "prefix": "A business day runs from midnight to midnight, in the bank's own time zone.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1154,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1154
+          },
+          {
+            "text": "business",
+            "startFrame": 1155
+          },
+          {
+            "text": "day",
+            "startFrame": 1165
+          },
+          {
+            "text": "runs",
+            "startFrame": 1171
+          },
+          {
+            "text": "from",
+            "startFrame": 1180
+          },
+          {
+            "text": "midnight",
+            "startFrame": 1186
+          },
+          {
+            "text": "to",
+            "startFrame": 1199
+          },
+          {
+            "text": "midnight,",
+            "startFrame": 1202
+          }
+        ]
+      },
+      {
+        "startFrame": 1226,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 1226
+          },
+          {
+            "text": "the",
+            "startFrame": 1228
+          },
+          {
+            "text": "bank's",
+            "startFrame": 1230
+          },
+          {
+            "text": "own",
+            "startFrame": 1243
+          },
+          {
+            "text": "time",
+            "startFrame": 1248
+          },
+          {
+            "text": "zone.",
+            "startFrame": 1257
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "startFrame": 1279,
+    "endFrame": 1483,
+    "text": "It is the same day that decides, in Lesson 30, whether money goes back by reversal or by refund.",
+    "prefix": "It is the same day that decides, in Lesson 30, whether money goes back by reversal or by refund.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1280,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1280
+          },
+          {
+            "text": "is",
+            "startFrame": 1282
+          },
+          {
+            "text": "the",
+            "startFrame": 1285
+          },
+          {
+            "text": "same",
+            "startFrame": 1287
+          },
+          {
+            "text": "day",
+            "startFrame": 1299
+          },
+          {
+            "text": "that",
+            "startFrame": 1308
+          },
+          {
+            "text": "decides,",
+            "startFrame": 1312
+          }
+        ]
+      },
+      {
+        "startFrame": 1341,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 1341
+          },
+          {
+            "text": "Lesson 30,",
+            "startFrame": 1347
+          },
+          {
+            "text": "whether",
+            "startFrame": 1385
+          },
+          {
+            "text": "money",
+            "startFrame": 1391
+          },
+          {
+            "text": "goes",
+            "startFrame": 1399
+          },
+          {
+            "text": "back",
+            "startFrame": 1407
+          },
+          {
+            "text": "by",
+            "startFrame": 1418
+          },
+          {
+            "text": "reversal",
+            "startFrame": 1422
+          }
+        ]
+      },
+      {
+        "startFrame": 1447,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 1447
+          },
+          {
+            "text": "by",
+            "startFrame": 1450
+          },
+          {
+            "text": "refund.",
+            "startFrame": 1454
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "startFrame": 1483,
+    "endFrame": 1652,
+    "text": "So the reports and the refund rules never disagree about which day a payment belongs to.",
+    "prefix": "So the reports and the refund rules never disagree about which day a payment belongs to.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1485,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 1485
+          },
+          {
+            "text": "the",
+            "startFrame": 1488
+          },
+          {
+            "text": "reports",
+            "startFrame": 1491
+          },
+          {
+            "text": "and",
+            "startFrame": 1513
+          },
+          {
+            "text": "the",
+            "startFrame": 1516
+          },
+          {
+            "text": "refund",
+            "startFrame": 1519
+          },
+          {
+            "text": "rules",
+            "startFrame": 1535
+          },
+          {
+            "text": "never",
+            "startFrame": 1549
+          }
+        ]
+      },
+      {
+        "startFrame": 1559,
+        "words": [
+          {
+            "text": "disagree",
+            "startFrame": 1559
+          },
+          {
+            "text": "about",
+            "startFrame": 1577
+          },
+          {
+            "text": "which",
+            "startFrame": 1587
+          },
+          {
+            "text": "day",
+            "startFrame": 1596
+          },
+          {
+            "text": "a",
+            "startFrame": 1608
+          },
+          {
+            "text": "payment",
+            "startFrame": 1610
+          },
+          {
+            "text": "belongs",
+            "startFrame": 1619
+          },
+          {
+            "text": "to.",
+            "startFrame": 1632
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "startFrame": 1653,
+    "endFrame": 1708,
+    "text": "Then the count.",
+    "prefix": "Then the count.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1654,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 1654
+          },
+          {
+            "text": "the",
+            "startFrame": 1657
+          },
+          {
+            "text": "count.",
+            "startFrame": 1659
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "startFrame": 1709,
+    "endFrame": 1839,
+    "text": "Every night, the bank adds up each website's day in four numbers.",
+    "prefix": "Every night, the bank adds up each website's day in four numbers.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1709,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 1709
+          },
+          {
+            "text": "night,",
+            "startFrame": 1715
+          },
+          {
+            "text": "the",
+            "startFrame": 1732
+          },
+          {
+            "text": "bank",
+            "startFrame": 1735
+          },
+          {
+            "text": "adds",
+            "startFrame": 1747
+          },
+          {
+            "text": "up",
+            "startFrame": 1755
+          },
+          {
+            "text": "each",
+            "startFrame": 1763
+          },
+          {
+            "text": "website's",
+            "startFrame": 1768
+          }
+        ]
+      },
+      {
+        "startFrame": 1785,
+        "words": [
+          {
+            "text": "day",
+            "startFrame": 1785
+          },
+          {
+            "text": "in",
+            "startFrame": 1802
+          },
+          {
+            "text": "four",
+            "startFrame": 1806
+          },
+          {
+            "text": "numbers.",
+            "startFrame": 1813
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "startFrame": 1839,
+    "endFrame": 1944,
+    "text": "Paid is the payments made that day that were not reversed.",
+    "prefix": "Paid is the payments made that day that were not reversed.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1840,
+        "words": [
+          {
+            "text": "Paid",
+            "startFrame": 1840
+          },
+          {
+            "text": "is",
+            "startFrame": 1859
+          },
+          {
+            "text": "the",
+            "startFrame": 1861
+          },
+          {
+            "text": "payments",
+            "startFrame": 1864
+          },
+          {
+            "text": "made",
+            "startFrame": 1877
+          },
+          {
+            "text": "that",
+            "startFrame": 1884
+          },
+          {
+            "text": "day",
+            "startFrame": 1890
+          },
+          {
+            "text": "that",
+            "startFrame": 1903
+          }
+        ]
+      },
+      {
+        "startFrame": 1905,
+        "words": [
+          {
+            "text": "were",
+            "startFrame": 1905
+          },
+          {
+            "text": "not",
+            "startFrame": 1907
+          },
+          {
+            "text": "reversed.",
+            "startFrame": 1915
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "startFrame": 1945,
+    "endFrame": 2087,
+    "text": "Refunded is the refunds made that day, whenever the original payment was.",
+    "prefix": "Refunded is the refunds made that day, whenever the original payment was.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1946,
+        "words": [
+          {
+            "text": "Refunded",
+            "startFrame": 1946
+          },
+          {
+            "text": "is",
+            "startFrame": 1960
+          },
+          {
+            "text": "the",
+            "startFrame": 1963
+          },
+          {
+            "text": "refunds",
+            "startFrame": 1967
+          },
+          {
+            "text": "made",
+            "startFrame": 1994
+          },
+          {
+            "text": "that",
+            "startFrame": 2004
+          },
+          {
+            "text": "day,",
+            "startFrame": 2011
+          }
+        ]
+      },
+      {
+        "startFrame": 2030,
+        "words": [
+          {
+            "text": "whenever",
+            "startFrame": 2030
+          },
+          {
+            "text": "the",
+            "startFrame": 2039
+          },
+          {
+            "text": "original",
+            "startFrame": 2042
+          },
+          {
+            "text": "payment",
+            "startFrame": 2053
+          },
+          {
+            "text": "was.",
+            "startFrame": 2063
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "startFrame": 2088,
+    "endFrame": 2199,
+    "text": "The fee is the bank's share, from the fee rules of Lesson 22.",
+    "prefix": "The fee is the bank's share, from the fee rules of Lesson 22.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2089,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2089
+          },
+          {
+            "text": "fee",
+            "startFrame": 2091
+          },
+          {
+            "text": "is",
+            "startFrame": 2102
+          },
+          {
+            "text": "the",
+            "startFrame": 2105
+          },
+          {
+            "text": "bank's",
+            "startFrame": 2108
+          },
+          {
+            "text": "share,",
+            "startFrame": 2118
+          }
+        ]
+      },
+      {
+        "startFrame": 2141,
+        "words": [
+          {
+            "text": "from",
+            "startFrame": 2141
+          },
+          {
+            "text": "the",
+            "startFrame": 2144
+          },
+          {
+            "text": "fee",
+            "startFrame": 2146
+          },
+          {
+            "text": "rules",
+            "startFrame": 2155
+          },
+          {
+            "text": "of",
+            "startFrame": 2164
+          },
+          {
+            "text": "Lesson 22.",
+            "startFrame": 2166
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "startFrame": 2199,
+    "endFrame": 2396,
+    "text": "And the payout is what the merchant receives: what was paid, less what was refunded, each after its fee.",
+    "prefix": "And the payout is what the merchant receives: what was paid, less what was refunded, each after its fee.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2201,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 2201
+          },
+          {
+            "text": "the",
+            "startFrame": 2202
+          },
+          {
+            "text": "payout",
+            "startFrame": 2204
+          },
+          {
+            "text": "is",
+            "startFrame": 2223
+          },
+          {
+            "text": "what",
+            "startFrame": 2226
+          },
+          {
+            "text": "the",
+            "startFrame": 2230
+          },
+          {
+            "text": "merchant",
+            "startFrame": 2232
+          },
+          {
+            "text": "receives:",
+            "startFrame": 2248
+          }
+        ]
+      },
+      {
+        "startFrame": 2281,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 2281
+          },
+          {
+            "text": "was",
+            "startFrame": 2284
+          },
+          {
+            "text": "paid,",
+            "startFrame": 2288
+          }
+        ]
+      },
+      {
+        "startFrame": 2312,
+        "words": [
+          {
+            "text": "less",
+            "startFrame": 2312
+          },
+          {
+            "text": "what",
+            "startFrame": 2317
+          },
+          {
+            "text": "was",
+            "startFrame": 2319
+          },
+          {
+            "text": "refunded,",
+            "startFrame": 2324
+          }
+        ]
+      },
+      {
+        "startFrame": 2356,
+        "words": [
+          {
+            "text": "each",
+            "startFrame": 2356
+          },
+          {
+            "text": "after",
+            "startFrame": 2363
+          },
+          {
+            "text": "its",
+            "startFrame": 2372
+          },
+          {
+            "text": "fee.",
+            "startFrame": 2376
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "startFrame": 2396,
+    "endFrame": 2523,
+    "text": "A day with many refunds and few sales gives a negative payout.",
+    "prefix": "A day with many refunds and few sales gives a negative payout.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2398,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2398
+          },
+          {
+            "text": "day",
+            "startFrame": 2400
+          },
+          {
+            "text": "with",
+            "startFrame": 2405
+          },
+          {
+            "text": "many",
+            "startFrame": 2409
+          },
+          {
+            "text": "refunds",
+            "startFrame": 2420
+          },
+          {
+            "text": "and",
+            "startFrame": 2445
+          },
+          {
+            "text": "few",
+            "startFrame": 2449
+          },
+          {
+            "text": "sales",
+            "startFrame": 2460
+          }
+        ]
+      },
+      {
+        "startFrame": 2477,
+        "words": [
+          {
+            "text": "gives",
+            "startFrame": 2477
+          },
+          {
+            "text": "a",
+            "startFrame": 2481
+          },
+          {
+            "text": "negative",
+            "startFrame": 2482
+          },
+          {
+            "text": "payout.",
+            "startFrame": 2496
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "startFrame": 2524,
+    "endFrame": 2580,
+    "text": "That is not an error.",
+    "prefix": "That is not an error.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2526,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 2526
+          },
+          {
+            "text": "is",
+            "startFrame": 2528
+          },
+          {
+            "text": "not",
+            "startFrame": 2531
+          },
+          {
+            "text": "an",
+            "startFrame": 2536
+          },
+          {
+            "text": "error.",
+            "startFrame": 2539
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "startFrame": 2580,
+    "endFrame": 2641,
+    "text": "It is the honest answer for that day.",
+    "prefix": "It is the honest answer for that day.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2581,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 2581
+          },
+          {
+            "text": "is",
+            "startFrame": 2583
+          },
+          {
+            "text": "the",
+            "startFrame": 2585
+          },
+          {
+            "text": "honest",
+            "startFrame": 2589
+          },
+          {
+            "text": "answer",
+            "startFrame": 2602
+          },
+          {
+            "text": "for",
+            "startFrame": 2610
+          },
+          {
+            "text": "that",
+            "startFrame": 2613
+          },
+          {
+            "text": "day.",
+            "startFrame": 2619
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "startFrame": 2641,
+    "endFrame": 2693,
+    "text": "Now the part you can repeat.",
+    "prefix": "Now the part you can repeat.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2642,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2642
+          },
+          {
+            "text": "the",
+            "startFrame": 2650
+          },
+          {
+            "text": "part",
+            "startFrame": 2652
+          },
+          {
+            "text": "you",
+            "startFrame": 2659
+          },
+          {
+            "text": "can",
+            "startFrame": 2663
+          },
+          {
+            "text": "repeat.",
+            "startFrame": 2667
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "startFrame": 2693,
+    "endFrame": 2760,
+    "text": "Counting a day again is a rebuild.",
+    "prefix": "Counting a day again is a rebuild.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2694,
+        "words": [
+          {
+            "text": "Counting",
+            "startFrame": 2694
+          },
+          {
+            "text": "a",
+            "startFrame": 2701
+          },
+          {
+            "text": "day",
+            "startFrame": 2702
+          },
+          {
+            "text": "again",
+            "startFrame": 2709
+          },
+          {
+            "text": "is",
+            "startFrame": 2725
+          },
+          {
+            "text": "a",
+            "startFrame": 2728
+          },
+          {
+            "text": "rebuild.",
+            "startFrame": 2729
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "startFrame": 2760,
+    "endFrame": 2868,
+    "text": "A rebuild replaces the day's numbers; it never adds to them.",
+    "prefix": "A rebuild replaces the day's numbers; it never adds to them.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2761,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2761
+          },
+          {
+            "text": "rebuild",
+            "startFrame": 2763
+          },
+          {
+            "text": "replaces",
+            "startFrame": 2779
+          },
+          {
+            "text": "the",
+            "startFrame": 2795
+          },
+          {
+            "text": "day's",
+            "startFrame": 2798
+          },
+          {
+            "text": "numbers;",
+            "startFrame": 2806
+          }
+        ]
+      },
+      {
+        "startFrame": 2827,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 2827
+          },
+          {
+            "text": "never",
+            "startFrame": 2830
+          },
+          {
+            "text": "adds",
+            "startFrame": 2839
+          },
+          {
+            "text": "to",
+            "startFrame": 2847
+          },
+          {
+            "text": "them.",
+            "startFrame": 2850
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "startFrame": 2869,
+    "endFrame": 3027,
+    "text": "So each night, the bank counts not only yesterday, but a few days before it again.",
+    "prefix": "So each night, the bank counts not only yesterday, but a few days before it again.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2870,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 2870
+          },
+          {
+            "text": "each",
+            "startFrame": 2876
+          },
+          {
+            "text": "night,",
+            "startFrame": 2883
+          }
+        ]
+      },
+      {
+        "startFrame": 2900,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2900
+          },
+          {
+            "text": "bank",
+            "startFrame": 2903
+          },
+          {
+            "text": "counts",
+            "startFrame": 2912
+          },
+          {
+            "text": "not",
+            "startFrame": 2924
+          },
+          {
+            "text": "only",
+            "startFrame": 2935
+          },
+          {
+            "text": "yesterday,",
+            "startFrame": 2943
+          }
+        ]
+      },
+      {
+        "startFrame": 2968,
+        "words": [
+          {
+            "text": "but",
+            "startFrame": 2968
+          },
+          {
+            "text": "a",
+            "startFrame": 2972
+          },
+          {
+            "text": "few",
+            "startFrame": 2973
+          },
+          {
+            "text": "days",
+            "startFrame": 2984
+          },
+          {
+            "text": "before",
+            "startFrame": 2994
+          },
+          {
+            "text": "it",
+            "startFrame": 3004
+          },
+          {
+            "text": "again.",
+            "startFrame": 3005
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "startFrame": 3027,
+    "endFrame": 3138,
+    "text": "If one night is missed, the next night simply catches up.",
+    "prefix": "If one night is missed, the next night simply catches up.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3029,
+        "words": [
+          {
+            "text": "If",
+            "startFrame": 3029
+          },
+          {
+            "text": "one",
+            "startFrame": 3032
+          },
+          {
+            "text": "night",
+            "startFrame": 3037
+          },
+          {
+            "text": "is",
+            "startFrame": 3045
+          },
+          {
+            "text": "missed,",
+            "startFrame": 3049
+          }
+        ]
+      },
+      {
+        "startFrame": 3075,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3075
+          },
+          {
+            "text": "next",
+            "startFrame": 3077
+          },
+          {
+            "text": "night",
+            "startFrame": 3085
+          },
+          {
+            "text": "simply",
+            "startFrame": 3097
+          },
+          {
+            "text": "catches",
+            "startFrame": 3107
+          },
+          {
+            "text": "up.",
+            "startFrame": 3120
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "startFrame": 3139,
+    "endFrame": 3203,
+    "text": "Nothing is ever counted twice.",
+    "prefix": "Nothing is ever counted twice.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3140,
+        "words": [
+          {
+            "text": "Nothing",
+            "startFrame": 3140
+          },
+          {
+            "text": "is",
+            "startFrame": 3150
+          },
+          {
+            "text": "ever",
+            "startFrame": 3155
+          },
+          {
+            "text": "counted",
+            "startFrame": 3163
+          },
+          {
+            "text": "twice.",
+            "startFrame": 3172
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "startFrame": 3204,
+    "endFrame": 3438,
+    "text": "And behind every total sits a list of every line: each payment, and each refund as a negative line.",
+    "prefix": "And behind every total sits a list of every line: each payment, and each refund as a negative line.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3205,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 3205
+          },
+          {
+            "text": "behind",
+            "startFrame": 3207
+          },
+          {
+            "text": "every",
+            "startFrame": 3229
+          },
+          {
+            "text": "total",
+            "startFrame": 3238
+          },
+          {
+            "text": "sits",
+            "startFrame": 3258
+          },
+          {
+            "text": "a",
+            "startFrame": 3264
+          },
+          {
+            "text": "list",
+            "startFrame": 3266
+          }
+        ]
+      },
+      {
+        "startFrame": 3280,
+        "words": [
+          {
+            "text": "of",
+            "startFrame": 3280
+          },
+          {
+            "text": "every",
+            "startFrame": 3292
+          },
+          {
+            "text": "line:",
+            "startFrame": 3300
+          }
+        ]
+      },
+      {
+        "startFrame": 3328,
+        "words": [
+          {
+            "text": "each",
+            "startFrame": 3328
+          },
+          {
+            "text": "payment,",
+            "startFrame": 3333
+          },
+          {
+            "text": "and",
+            "startFrame": 3357
+          },
+          {
+            "text": "each",
+            "startFrame": 3366
+          },
+          {
+            "text": "refund",
+            "startFrame": 3372
+          },
+          {
+            "text": "as",
+            "startFrame": 3399
+          },
+          {
+            "text": "a",
+            "startFrame": 3402
+          },
+          {
+            "text": "negative",
+            "startFrame": 3403
+          },
+          {
+            "text": "line.",
+            "startFrame": 3416
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "startFrame": 3439,
+    "endFrame": 3534,
+    "text": "So any number can be explained, one line at a time.",
+    "prefix": "So any number can be explained, one line at a time.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3440,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 3440
+          },
+          {
+            "text": "any",
+            "startFrame": 3447
+          },
+          {
+            "text": "number",
+            "startFrame": 3452
+          },
+          {
+            "text": "can",
+            "startFrame": 3459
+          },
+          {
+            "text": "be",
+            "startFrame": 3462
+          },
+          {
+            "text": "explained,",
+            "startFrame": 3465
+          }
+        ]
+      },
+      {
+        "startFrame": 3492,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 3492
+          },
+          {
+            "text": "line",
+            "startFrame": 3500
+          },
+          {
+            "text": "at",
+            "startFrame": 3507
+          },
+          {
+            "text": "a",
+            "startFrame": 3510
+          },
+          {
+            "text": "time.",
+            "startFrame": 3511
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "startFrame": 3535,
+    "endFrame": 3590,
+    "text": "Let's watch the product.",
+    "prefix": "Let's watch the product.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3536,
+        "words": [
+          {
+            "text": "Let's",
+            "startFrame": 3536
+          },
+          {
+            "text": "watch",
+            "startFrame": 3539
+          },
+          {
+            "text": "the",
+            "startFrame": 3545
+          },
+          {
+            "text": "product.",
+            "startFrame": 3547
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "startFrame": 3591,
+    "endFrame": 3705,
+    "text": "The merchant's admin opens the portal and chooses Reports.",
+    "prefix": "The merchant's admin opens the portal and chooses Reports.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3592,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3592
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 3594
+          },
+          {
+            "text": "admin",
+            "startFrame": 3608
+          },
+          {
+            "text": "opens",
+            "startFrame": 3624
+          },
+          {
+            "text": "the",
+            "startFrame": 3634
+          },
+          {
+            "text": "portal",
+            "startFrame": 3637
+          },
+          {
+            "text": "and",
+            "startFrame": 3662
+          },
+          {
+            "text": "chooses",
+            "startFrame": 3664
+          },
+          {
+            "text": "Reports.",
+            "startFrame": 3675
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "startFrame": 3705,
+    "endFrame": 3775,
+    "text": "The page is called Daily reports.",
+    "prefix": "The page is called Daily reports.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3707,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3707
+          },
+          {
+            "text": "page",
+            "startFrame": 3709
+          },
+          {
+            "text": "is",
+            "startFrame": 3719
+          },
+          {
+            "text": "called",
+            "startFrame": 3722
+          },
+          {
+            "text": "Daily",
+            "startFrame": 3737
+          },
+          {
+            "text": "reports.",
+            "startFrame": 3745
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "startFrame": 3776,
+    "endFrame": 3935,
+    "text": "It explains that each night the bank adds up the day before for every website.",
+    "prefix": "It explains that each night the bank adds up the day before for every website.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3777,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 3777
+          },
+          {
+            "text": "explains",
+            "startFrame": 3779
+          },
+          {
+            "text": "that",
+            "startFrame": 3793
+          },
+          {
+            "text": "each",
+            "startFrame": 3802
+          },
+          {
+            "text": "night",
+            "startFrame": 3808
+          },
+          {
+            "text": "the",
+            "startFrame": 3818
+          },
+          {
+            "text": "bank",
+            "startFrame": 3821
+          },
+          {
+            "text": "adds",
+            "startFrame": 3841
+          }
+        ]
+      },
+      {
+        "startFrame": 3848,
+        "words": [
+          {
+            "text": "up",
+            "startFrame": 3848
+          },
+          {
+            "text": "the",
+            "startFrame": 3851
+          },
+          {
+            "text": "day",
+            "startFrame": 3854
+          },
+          {
+            "text": "before",
+            "startFrame": 3872
+          },
+          {
+            "text": "for",
+            "startFrame": 3885
+          },
+          {
+            "text": "every",
+            "startFrame": 3897
+          },
+          {
+            "text": "website.",
+            "startFrame": 3904
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "startFrame": 3935,
+    "endFrame": 4035,
+    "text": "There is one row for each website and business day.",
+    "prefix": "There is one row for each website and business day.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3936,
+        "words": [
+          {
+            "text": "There",
+            "startFrame": 3936
+          },
+          {
+            "text": "is",
+            "startFrame": 3940
+          },
+          {
+            "text": "one",
+            "startFrame": 3943
+          },
+          {
+            "text": "row",
+            "startFrame": 3951
+          },
+          {
+            "text": "for",
+            "startFrame": 3966
+          },
+          {
+            "text": "each",
+            "startFrame": 3975
+          },
+          {
+            "text": "website",
+            "startFrame": 3981
+          }
+        ]
+      },
+      {
+        "startFrame": 3999,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3999
+          },
+          {
+            "text": "business",
+            "startFrame": 4001
+          },
+          {
+            "text": "day.",
+            "startFrame": 4014
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "startFrame": 4035,
+    "endFrame": 4210,
+    "text": "The columns read Business day, Paid, Bank fee, Refunded, and You receive.",
+    "prefix": "The columns read Business day, Paid, Bank fee, Refunded, and You receive.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4037,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4037
+          },
+          {
+            "text": "columns",
+            "startFrame": 4039
+          },
+          {
+            "text": "read",
+            "startFrame": 4051
+          },
+          {
+            "text": "Business",
+            "startFrame": 4057
+          },
+          {
+            "text": "day,",
+            "startFrame": 4069
+          }
+        ]
+      },
+      {
+        "startFrame": 4090,
+        "words": [
+          {
+            "text": "Paid,",
+            "startFrame": 4090
+          },
+          {
+            "text": "Bank",
+            "startFrame": 4112
+          },
+          {
+            "text": "fee,",
+            "startFrame": 4119
+          }
+        ]
+      },
+      {
+        "startFrame": 4146,
+        "words": [
+          {
+            "text": "Refunded,",
+            "startFrame": 4146
+          },
+          {
+            "text": "and",
+            "startFrame": 4175
+          },
+          {
+            "text": "You",
+            "startFrame": 4179
+          },
+          {
+            "text": "receive.",
+            "startFrame": 4183
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "startFrame": 4211,
+    "endFrame": 4279,
+    "text": "One day shows a payment and a refund.",
+    "prefix": "One day shows a payment and a refund.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4212,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 4212
+          },
+          {
+            "text": "day",
+            "startFrame": 4218
+          },
+          {
+            "text": "shows",
+            "startFrame": 4223
+          },
+          {
+            "text": "a",
+            "startFrame": 4231
+          },
+          {
+            "text": "payment",
+            "startFrame": 4232
+          },
+          {
+            "text": "and",
+            "startFrame": 4249
+          },
+          {
+            "text": "a",
+            "startFrame": 4251
+          },
+          {
+            "text": "refund.",
+            "startFrame": 4252
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "startFrame": 4280,
+    "endFrame": 4336,
+    "text": "Paid shows the payment's amount.",
+    "prefix": "Paid shows the payment's amount.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4281,
+        "words": [
+          {
+            "text": "Paid",
+            "startFrame": 4281
+          },
+          {
+            "text": "shows",
+            "startFrame": 4289
+          },
+          {
+            "text": "the",
+            "startFrame": 4297
+          },
+          {
+            "text": "payment's",
+            "startFrame": 4300
+          },
+          {
+            "text": "amount.",
+            "startFrame": 4310
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "startFrame": 4336,
+    "endFrame": 4392,
+    "text": "Refunded shows the refund.",
+    "prefix": "Refunded shows the refund.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4337,
+        "words": [
+          {
+            "text": "Refunded",
+            "startFrame": 4337
+          },
+          {
+            "text": "shows",
+            "startFrame": 4350
+          },
+          {
+            "text": "the",
+            "startFrame": 4360
+          },
+          {
+            "text": "refund.",
+            "startFrame": 4362
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "startFrame": 4392,
+    "endFrame": 4470,
+    "text": "You receive shows what is left after the fee.",
+    "prefix": "You receive shows what is left after the fee.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4394,
+        "words": [
+          {
+            "text": "You",
+            "startFrame": 4394
+          },
+          {
+            "text": "receive",
+            "startFrame": 4396
+          },
+          {
+            "text": "shows",
+            "startFrame": 4406
+          },
+          {
+            "text": "what",
+            "startFrame": 4415
+          },
+          {
+            "text": "is",
+            "startFrame": 4418
+          },
+          {
+            "text": "left",
+            "startFrame": 4421
+          },
+          {
+            "text": "after",
+            "startFrame": 4439
+          },
+          {
+            "text": "the",
+            "startFrame": 4445
+          },
+          {
+            "text": "fee.",
+            "startFrame": 4447
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "startFrame": 4470,
+    "endFrame": 4630,
+    "text": "On another day, refunds outweigh sales, and You receive shows a minus.",
+    "prefix": "On another day, refunds outweigh sales, and You receive shows a minus.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4471,
+        "words": [
+          {
+            "text": "On",
+            "startFrame": 4471
+          },
+          {
+            "text": "another",
+            "startFrame": 4474
+          },
+          {
+            "text": "day,",
+            "startFrame": 4481
+          }
+        ]
+      },
+      {
+        "startFrame": 4500,
+        "words": [
+          {
+            "text": "refunds",
+            "startFrame": 4500
+          },
+          {
+            "text": "outweigh",
+            "startFrame": 4524
+          },
+          {
+            "text": "sales,",
+            "startFrame": 4535
+          }
+        ]
+      },
+      {
+        "startFrame": 4566,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4566
+          },
+          {
+            "text": "You",
+            "startFrame": 4571
+          },
+          {
+            "text": "receive",
+            "startFrame": 4576
+          },
+          {
+            "text": "shows",
+            "startFrame": 4592
+          },
+          {
+            "text": "a",
+            "startFrame": 4599
+          },
+          {
+            "text": "minus.",
+            "startFrame": 4600
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "startFrame": 4631,
+    "endFrame": 4701,
+    "text": "The admin downloads that day's lines.",
+    "prefix": "The admin downloads that day's lines.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4632,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4632
+          },
+          {
+            "text": "admin",
+            "startFrame": 4634
+          },
+          {
+            "text": "downloads",
+            "startFrame": 4642
+          },
+          {
+            "text": "that",
+            "startFrame": 4658
+          },
+          {
+            "text": "day's",
+            "startFrame": 4662
+          },
+          {
+            "text": "lines.",
+            "startFrame": 4670
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "startFrame": 4701,
+    "endFrame": 4765,
+    "text": "The file opens in a spreadsheet.",
+    "prefix": "The file opens in a spreadsheet.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4703,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4703
+          },
+          {
+            "text": "file",
+            "startFrame": 4705
+          },
+          {
+            "text": "opens",
+            "startFrame": 4715
+          },
+          {
+            "text": "in",
+            "startFrame": 4730
+          },
+          {
+            "text": "a",
+            "startFrame": 4734
+          },
+          {
+            "text": "spreadsheet.",
+            "startFrame": 4735
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "startFrame": 4766,
+    "endFrame": 4932,
+    "text": "The payment is there, with its order, its website, its amount, its fee and its time.",
+    "prefix": "The payment is there, with its order, its website, its amount, its fee and its time.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4767,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4767
+          },
+          {
+            "text": "payment",
+            "startFrame": 4770
+          },
+          {
+            "text": "is",
+            "startFrame": 4781
+          },
+          {
+            "text": "there,",
+            "startFrame": 4784
+          }
+        ]
+      },
+      {
+        "startFrame": 4802,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 4802
+          },
+          {
+            "text": "its",
+            "startFrame": 4806
+          },
+          {
+            "text": "order,",
+            "startFrame": 4810
+          }
+        ]
+      },
+      {
+        "startFrame": 4828,
+        "words": [
+          {
+            "text": "its",
+            "startFrame": 4828
+          },
+          {
+            "text": "website,",
+            "startFrame": 4831
+          },
+          {
+            "text": "its",
+            "startFrame": 4856
+          },
+          {
+            "text": "amount,",
+            "startFrame": 4858
+          }
+        ]
+      },
+      {
+        "startFrame": 4878,
+        "words": [
+          {
+            "text": "its",
+            "startFrame": 4878
+          },
+          {
+            "text": "fee",
+            "startFrame": 4883
+          },
+          {
+            "text": "and",
+            "startFrame": 4903
+          },
+          {
+            "text": "its",
+            "startFrame": 4906
+          },
+          {
+            "text": "time.",
+            "startFrame": 4910
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "startFrame": 4933,
+    "endFrame": 5025,
+    "text": "The refund is there too, as a negative line.",
+    "prefix": "The refund is there too, as a negative line.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4934,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4934
+          },
+          {
+            "text": "refund",
+            "startFrame": 4936
+          },
+          {
+            "text": "is",
+            "startFrame": 4950
+          },
+          {
+            "text": "there",
+            "startFrame": 4955
+          },
+          {
+            "text": "too,",
+            "startFrame": 4962
+          }
+        ]
+      },
+      {
+        "startFrame": 4984,
+        "words": [
+          {
+            "text": "as",
+            "startFrame": 4984
+          },
+          {
+            "text": "a",
+            "startFrame": 4988
+          },
+          {
+            "text": "negative",
+            "startFrame": 4989
+          },
+          {
+            "text": "line.",
+            "startFrame": 5004
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "startFrame": 5026,
+    "endFrame": 5151,
+    "text": "The card column shows only the first six and the last four digits.",
+    "prefix": "The card column shows only the first six and the last four digits.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5028,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 5028
+          },
+          {
+            "text": "card",
+            "startFrame": 5029
+          },
+          {
+            "text": "column",
+            "startFrame": 5036
+          },
+          {
+            "text": "shows",
+            "startFrame": 5045
+          },
+          {
+            "text": "only",
+            "startFrame": 5061
+          },
+          {
+            "text": "the",
+            "startFrame": 5069
+          },
+          {
+            "text": "first",
+            "startFrame": 5071
+          },
+          {
+            "text": "six",
+            "startFrame": 5082
+          }
+        ]
+      },
+      {
+        "startFrame": 5105,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5105
+          },
+          {
+            "text": "the",
+            "startFrame": 5107
+          },
+          {
+            "text": "last",
+            "startFrame": 5109
+          },
+          {
+            "text": "four",
+            "startFrame": 5118
+          },
+          {
+            "text": "digits.",
+            "startFrame": 5123
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 50,
+    "startFrame": 5151,
+    "endFrame": 5236,
+    "text": "Add up the lines, and you get the totals on the screen.",
+    "prefix": "Add up the lines, and you get the totals on the screen.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5152,
+        "words": [
+          {
+            "text": "Add",
+            "startFrame": 5152
+          },
+          {
+            "text": "up",
+            "startFrame": 5156
+          },
+          {
+            "text": "the",
+            "startFrame": 5160
+          },
+          {
+            "text": "lines,",
+            "startFrame": 5163
+          }
+        ]
+      },
+      {
+        "startFrame": 5187,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5187
+          },
+          {
+            "text": "you",
+            "startFrame": 5189
+          },
+          {
+            "text": "get",
+            "startFrame": 5192
+          },
+          {
+            "text": "the",
+            "startFrame": 5196
+          },
+          {
+            "text": "totals",
+            "startFrame": 5198
+          },
+          {
+            "text": "on",
+            "startFrame": 5209
+          },
+          {
+            "text": "the",
+            "startFrame": 5211
+          },
+          {
+            "text": "screen.",
+            "startFrame": 5213
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 51,
+    "startFrame": 5237,
+    "endFrame": 5345,
+    "text": "A shop with no payments yet sees an empty page instead.",
+    "prefix": "A shop with no payments yet sees an empty page instead.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5238,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 5238
+          },
+          {
+            "text": "shop",
+            "startFrame": 5239
+          },
+          {
+            "text": "with",
+            "startFrame": 5247
+          },
+          {
+            "text": "no",
+            "startFrame": 5251
+          },
+          {
+            "text": "payments",
+            "startFrame": 5256
+          },
+          {
+            "text": "yet",
+            "startFrame": 5276
+          },
+          {
+            "text": "sees",
+            "startFrame": 5281
+          }
+        ]
+      },
+      {
+        "startFrame": 5291,
+        "words": [
+          {
+            "text": "an",
+            "startFrame": 5291
+          },
+          {
+            "text": "empty",
+            "startFrame": 5298
+          },
+          {
+            "text": "page",
+            "startFrame": 5306
+          },
+          {
+            "text": "instead.",
+            "startFrame": 5318
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 52,
+    "startFrame": 5346,
+    "endFrame": 5467,
+    "text": "It says a report appears the morning after the first day with payments.",
+    "prefix": "It says a report appears the morning after the first day with payments.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5347,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5347
+          },
+          {
+            "text": "says",
+            "startFrame": 5349
+          },
+          {
+            "text": "a",
+            "startFrame": 5355
+          },
+          {
+            "text": "report",
+            "startFrame": 5356
+          },
+          {
+            "text": "appears",
+            "startFrame": 5373
+          },
+          {
+            "text": "the",
+            "startFrame": 5387
+          },
+          {
+            "text": "morning",
+            "startFrame": 5389
+          },
+          {
+            "text": "after",
+            "startFrame": 5409
+          }
+        ]
+      },
+      {
+        "startFrame": 5415,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5415
+          },
+          {
+            "text": "first",
+            "startFrame": 5417
+          },
+          {
+            "text": "day",
+            "startFrame": 5427
+          },
+          {
+            "text": "with",
+            "startFrame": 5434
+          },
+          {
+            "text": "payments.",
+            "startFrame": 5438
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 53,
+    "startFrame": 5467,
+    "endFrame": 5523,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5468,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 5468
+          },
+          {
+            "text": "does",
+            "startFrame": 5470
+          },
+          {
+            "text": "this",
+            "startFrame": 5473
+          },
+          {
+            "text": "protect?",
+            "startFrame": 5477
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 54,
+    "startFrame": 5523,
+    "endFrame": 5621,
+    "text": "It protects the merchant from a payout they cannot check.",
+    "prefix": "It protects the merchant from a payout they cannot check.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5525,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5525
+          },
+          {
+            "text": "protects",
+            "startFrame": 5527
+          },
+          {
+            "text": "the",
+            "startFrame": 5538
+          },
+          {
+            "text": "merchant",
+            "startFrame": 5540
+          },
+          {
+            "text": "from",
+            "startFrame": 5554
+          },
+          {
+            "text": "a",
+            "startFrame": 5559
+          },
+          {
+            "text": "payout",
+            "startFrame": 5560
+          },
+          {
+            "text": "they",
+            "startFrame": 5580
+          },
+          {
+            "text": "cannot",
+            "startFrame": 5583
+          },
+          {
+            "text": "check.",
+            "startFrame": 5596
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "startFrame": 5621,
+    "endFrame": 5779,
+    "text": "It protects the bank's support team from arguing about a number nobody can take apart.",
+    "prefix": "It protects the bank's support team from arguing about a number nobody can take apart.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5622,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5622
+          },
+          {
+            "text": "protects",
+            "startFrame": 5624
+          },
+          {
+            "text": "the",
+            "startFrame": 5639
+          },
+          {
+            "text": "bank's",
+            "startFrame": 5644
+          },
+          {
+            "text": "support",
+            "startFrame": 5655
+          },
+          {
+            "text": "team",
+            "startFrame": 5668
+          },
+          {
+            "text": "from",
+            "startFrame": 5677
+          },
+          {
+            "text": "arguing",
+            "startFrame": 5682
+          }
+        ]
+      },
+      {
+        "startFrame": 5703,
+        "words": [
+          {
+            "text": "about",
+            "startFrame": 5703
+          },
+          {
+            "text": "a",
+            "startFrame": 5710
+          },
+          {
+            "text": "number",
+            "startFrame": 5711
+          },
+          {
+            "text": "nobody",
+            "startFrame": 5724
+          },
+          {
+            "text": "can",
+            "startFrame": 5746
+          },
+          {
+            "text": "take",
+            "startFrame": 5749
+          },
+          {
+            "text": "apart.",
+            "startFrame": 5756
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 56,
+    "startFrame": 5780,
+    "endFrame": 5994,
+    "text": "And it protects both from the quietest mistake of all: a night that did not run, or a day counted twice.",
+    "prefix": "And it protects both from the quietest mistake of all: a night that did not run, or a day counted twice.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5781,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 5781
+          },
+          {
+            "text": "it",
+            "startFrame": 5783
+          },
+          {
+            "text": "protects",
+            "startFrame": 5785
+          },
+          {
+            "text": "both",
+            "startFrame": 5799
+          },
+          {
+            "text": "from",
+            "startFrame": 5808
+          },
+          {
+            "text": "the",
+            "startFrame": 5813
+          },
+          {
+            "text": "quietest",
+            "startFrame": 5815
+          },
+          {
+            "text": "mistake",
+            "startFrame": 5831
+          }
+        ]
+      },
+      {
+        "startFrame": 5844,
+        "words": [
+          {
+            "text": "of",
+            "startFrame": 5844
+          },
+          {
+            "text": "all:",
+            "startFrame": 5847
+          },
+          {
+            "text": "a",
+            "startFrame": 5870
+          },
+          {
+            "text": "night",
+            "startFrame": 5871
+          },
+          {
+            "text": "that",
+            "startFrame": 5889
+          },
+          {
+            "text": "did",
+            "startFrame": 5895
+          },
+          {
+            "text": "not",
+            "startFrame": 5900
+          },
+          {
+            "text": "run,",
+            "startFrame": 5910
+          }
+        ]
+      },
+      {
+        "startFrame": 5935,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 5935
+          },
+          {
+            "text": "a",
+            "startFrame": 5938
+          },
+          {
+            "text": "day",
+            "startFrame": 5942
+          },
+          {
+            "text": "counted",
+            "startFrame": 5954
+          },
+          {
+            "text": "twice.",
+            "startFrame": 5964
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "startFrame": 5994,
+    "endFrame": 6262,
+    "text": "With a clear day, a rebuild that replaces, and every line behind every total, the accountant's question finally has an answer.",
+    "prefix": "With a clear day, a rebuild that replaces, and every line behind every total, the accountant's question finally has an answer.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5996,
+        "words": [
+          {
+            "text": "With",
+            "startFrame": 5996
+          },
+          {
+            "text": "a",
+            "startFrame": 5998
+          },
+          {
+            "text": "clear",
+            "startFrame": 6000
+          },
+          {
+            "text": "day,",
+            "startFrame": 6009
+          }
+        ]
+      },
+      {
+        "startFrame": 6027,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 6027
+          },
+          {
+            "text": "rebuild",
+            "startFrame": 6032
+          },
+          {
+            "text": "that",
+            "startFrame": 6053
+          },
+          {
+            "text": "replaces,",
+            "startFrame": 6056
+          }
+        ]
+      },
+      {
+        "startFrame": 6089,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6089
+          },
+          {
+            "text": "every",
+            "startFrame": 6100
+          },
+          {
+            "text": "line",
+            "startFrame": 6108
+          },
+          {
+            "text": "behind",
+            "startFrame": 6120
+          },
+          {
+            "text": "every",
+            "startFrame": 6142
+          },
+          {
+            "text": "total,",
+            "startFrame": 6152
+          }
+        ]
+      },
+      {
+        "startFrame": 6177,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 6177
+          },
+          {
+            "text": "accountant's",
+            "startFrame": 6180
+          },
+          {
+            "text": "question",
+            "startFrame": 6195
+          },
+          {
+            "text": "finally",
+            "startFrame": 6215
+          },
+          {
+            "text": "has",
+            "startFrame": 6228
+          },
+          {
+            "text": "an",
+            "startFrame": 6234
+          },
+          {
+            "text": "answer.",
+            "startFrame": 6236
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 58,
+    "startFrame": 6263,
+    "endFrame": 6319,
+    "text": "Back to the till at closing time.",
+    "prefix": "Back to the till at closing time.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6264,
+        "words": [
+          {
+            "text": "Back",
+            "startFrame": 6264
+          },
+          {
+            "text": "to",
+            "startFrame": 6269
+          },
+          {
+            "text": "the",
+            "startFrame": 6271
+          },
+          {
+            "text": "till",
+            "startFrame": 6273
+          },
+          {
+            "text": "at",
+            "startFrame": 6283
+          },
+          {
+            "text": "closing",
+            "startFrame": 6286
+          },
+          {
+            "text": "time.",
+            "startFrame": 6297
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 59,
+    "startFrame": 6320,
+    "endFrame": 6494,
+    "text": "One clear day, counted the same way every time, and every coin accounted for.",
+    "prefix": "One clear day, counted the same way every time, and every coin accounted for.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6321,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 6321
+          },
+          {
+            "text": "clear",
+            "startFrame": 6332
+          },
+          {
+            "text": "day,",
+            "startFrame": 6342
+          }
+        ]
+      },
+      {
+        "startFrame": 6370,
+        "words": [
+          {
+            "text": "counted",
+            "startFrame": 6370
+          },
+          {
+            "text": "the",
+            "startFrame": 6377
+          },
+          {
+            "text": "same",
+            "startFrame": 6379
+          },
+          {
+            "text": "way",
+            "startFrame": 6389
+          },
+          {
+            "text": "every",
+            "startFrame": 6401
+          },
+          {
+            "text": "time,",
+            "startFrame": 6409
+          }
+        ]
+      },
+      {
+        "startFrame": 6437,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6437
+          },
+          {
+            "text": "every",
+            "startFrame": 6443
+          },
+          {
+            "text": "coin",
+            "startFrame": 6451
+          },
+          {
+            "text": "accounted",
+            "startFrame": 6460
+          },
+          {
+            "text": "for.",
+            "startFrame": 6471
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "startFrame": 6495,
+    "endFrame": 6616,
     "text": "Next: when a buyer says, I never bought this.",
     "prefix": "Next: when a buyer says, I never bought this.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1213,
+        "startFrame": 6496,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 1213
+            "startFrame": 6496
           },
           {
             "text": "when",
-            "startFrame": 1237
+            "startFrame": 6520
           },
           {
             "text": "a",
-            "startFrame": 1239
+            "startFrame": 6522
           },
           {
             "text": "buyer",
-            "startFrame": 1241
+            "startFrame": 6524
           },
           {
             "text": "says,",
-            "startFrame": 1249
+            "startFrame": 6533
           }
         ]
       },
       {
-        "startFrame": 1261,
+        "startFrame": 6544,
         "words": [
           {
             "text": "I",
-            "startFrame": 1261
+            "startFrame": 6544
           },
           {
             "text": "never",
-            "startFrame": 1262
+            "startFrame": 6545
           },
           {
             "text": "bought",
-            "startFrame": 1271
+            "startFrame": 6554
           },
           {
             "text": "this.",
-            "startFrame": 1278
+            "startFrame": 6562
           }
         ]
       }
