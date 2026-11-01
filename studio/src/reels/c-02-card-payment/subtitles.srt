@@ -7,69 +7,225 @@ When a payment page says paid, has any money moved?
 Picture a corner shop with a tab book.
 
 3
-00:00:05,642 --> 00:00:09,240
-You take your bread, and the shopkeeper writes a line in the book.
+00:00:05,642 --> 00:00:08,952
+You take your bread, and the shopkeeper writes one line in the book.
 
 4
-00:00:09,290 --> 00:00:11,784
-The money changes hands at the end of the week.
+00:00:09,002 --> 00:00:11,040
+No cash changes hands yet.
 
 5
-00:00:11,834 --> 00:00:13,848
-A card payment works the same way.
+00:00:11,090 --> 00:00:14,640
+At the end of the week, you settle up for every line at once.
 
 6
-00:00:13,898 --> 00:00:15,720
-Two banks take part.
+00:00:14,690 --> 00:00:16,704
+A card payment works the same way.
 
 7
-00:00:15,770 --> 00:00:19,920
-The shop's bank is the acquirer, and this course builds its system.
+00:00:16,754 --> 00:00:19,584
+Two banks take part in every card payment.
 
 8
-00:00:19,970 --> 00:00:23,904
-The buyer's bank is the issuer: it gave the buyer the card.
+00:00:19,634 --> 00:00:21,792
+The shop's bank is the acquirer.
 
 9
-00:00:23,954 --> 00:00:29,904
-When the buyer pays, the acquirer asks the issuer, through the card network, whether the payment is OK.
+00:00:21,842 --> 00:00:27,072
+It signs up shops, takes their payments and pays them out, and this course builds its system.
 
 10
-00:00:29,954 --> 00:00:35,328
-The issuer checks the card and the money on the account, and says yes or no, in seconds.
+00:00:27,122 --> 00:00:29,496
+The buyer's bank is the issuer.
 
 11
-00:00:35,378 --> 00:00:38,040
-That yes is a line in the tab book, not money.
+00:00:29,546 --> 00:00:32,592
+It gave the buyer the card, and it holds the buyer's money.
 
 12
-00:00:38,090 --> 00:00:43,968
-The money moves later, in one batch for many payments, and that batch is called settlement.
+00:00:32,642 --> 00:00:37,416
+Between them sits the card network, which carries messages from one bank to the other.
 
 13
-00:00:44,018 --> 00:00:47,664
-The acquirer keeps its fee and pays the shop the rest.
+00:00:37,466 --> 00:00:44,520
+When the buyer presses Pay, the acquirer sends a question through the card network to the issuer: may this card pay this amount?
 
 14
-00:00:47,714 --> 00:00:49,896
-Giving money back depends on timing.
+00:00:44,570 --> 00:00:47,688
+The issuer checks the card and the money on the account.
 
 15
-00:00:49,946 --> 00:00:56,328
-Before settlement, the line is simply crossed out, as if it never happened: a reversal.
+00:00:47,738 --> 00:00:51,192
+Then it answers yes or no, in a few seconds.
 
 16
-00:00:56,378 --> 00:01:01,584
-After settlement, the money has moved, so it has to be sent back: a refund.
+00:00:51,242 --> 00:00:53,616
+That yes is a promise, written down.
 
 17
-00:01:01,634 --> 00:01:06,024
-A system that mixes the two loses money, or pays twice.
+00:00:53,666 --> 00:00:56,136
+It is a line in the tab book, not money.
 
 18
-00:01:06,074 --> 00:01:12,216
-So two pairs stay apart: approved is not paid out, and a reversal is not a refund.
+00:00:56,186 --> 00:00:57,864
+The money moves later.
 
 19
-00:01:12,266 --> 00:01:14,544
+00:00:57,914 --> 00:01:03,984
+Many payments travel together, in one batch, from the issuer through the card network to the acquirer.
+
+20
+00:01:04,034 --> 00:01:05,928
+That batch is called settlement.
+
+21
+00:01:05,978 --> 00:01:09,456
+Then the acquirer keeps its fee and pays the shop the rest.
+
+22
+00:01:09,506 --> 00:01:14,304
+So a payment has two moments: the yes, in seconds, and the money, later.
+
+23
+00:01:14,354 --> 00:01:17,592
+Giving money back depends on which side of settlement you stand.
+
+24
+00:01:17,642 --> 00:01:20,664
+Before settlement, no money has moved yet.
+
+25
+00:01:20,714 --> 00:01:24,840
+So the line is simply crossed out, as if the payment never happened.
+
+26
+00:01:24,890 --> 00:01:26,712
+That is a reversal.
+
+27
+00:01:26,762 --> 00:01:29,520
+After settlement, the money has already moved.
+
+28
+00:01:29,570 --> 00:01:33,792
+Crossing out is too late, so the money must be sent back as a new movement.
+
+29
+00:01:33,842 --> 00:01:35,664
+That is a refund.
+
+30
+00:01:35,714 --> 00:01:37,536
+Now watch the product.
+
+31
+00:01:37,586 --> 00:01:41,616
+On the bank's payment page, the buyer types the card and presses Pay.
+
+32
+00:01:41,666 --> 00:01:46,104
+The page says "Taking the payment", and below it, "Your bank is being asked".
+
+33
+00:01:46,154 --> 00:01:49,992
+A few seconds later it says "Paid", with a reference number.
+
+34
+00:01:50,042 --> 00:01:51,864
+That is the issuer's yes.
+
+35
+00:01:51,914 --> 00:01:55,272
+Now open the merchant portal, where the shop's staff work.
+
+36
+00:01:55,322 --> 00:01:58,920
+The Payments page lists every payment on the shop's websites.
+
+37
+00:01:58,970 --> 00:02:00,792
+Open the paid one.
+
+38
+00:02:00,842 --> 00:02:05,400
+It shows the amount, the bank's fee, and every call to the card network.
+
+39
+00:02:05,450 --> 00:02:09,432
+It also shows "Refundable until" a date, and a "Give back" button.
+
+40
+00:02:09,482 --> 00:02:17,424
+Press it, and a dialog explains the rule in one line: on the day of payment the money is reversed; later it is refunded.
+
+41
+00:02:17,474 --> 00:02:25,080
+In the bank admin portal, on its own Payments page, a payment given back shows one of two different states: Reversed, or Refunded.
+
+42
+00:02:25,130 --> 00:02:26,952
+They never share one word.
+
+43
+00:02:27,002 --> 00:02:36,264
+And each morning, the merchant's Daily reports page adds up the day before: what was paid, the bank fee, what was refunded, and what the shop receives.
+
+44
+00:02:36,314 --> 00:02:38,136
+What does this protect?
+
+45
+00:02:38,186 --> 00:02:41,424
+Picture a system that treats the yes as money.
+
+46
+00:02:41,474 --> 00:02:47,496
+It pays the shop at once, then the batch never brings that payment, and the bank has paid out money it never got.
+
+47
+00:02:47,546 --> 00:02:51,168
+Now picture a system that mixes reversal and refund.
+
+48
+00:02:51,218 --> 00:02:56,184
+It crosses out a line that was already settled, and the buyer's money never comes back.
+
+49
+00:02:56,234 --> 00:03:01,872
+Or it sends a refund for a payment that was already crossed out, and the buyer is paid twice.
+
+50
+00:03:01,922 --> 00:03:06,744
+Either way, someone loses money: the bank, the shop or the buyer.
+
+51
+00:03:06,794 --> 00:03:09,096
+So two pairs always stay apart.
+
+52
+00:03:09,146 --> 00:03:10,968
+Approved is not paid out.
+
+53
+00:03:11,018 --> 00:03:13,080
+A reversal is not a refund.
+
+54
+00:03:13,130 --> 00:03:14,952
+Back to the tab book.
+
+55
+00:03:15,002 --> 00:03:16,992
+A line is written in seconds.
+
+56
+00:03:17,042 --> 00:03:18,984
+The money moves at the end of the week.
+
+57
+00:03:19,034 --> 00:03:23,496
+Before then, you cross a line out; after then, you hand the cash back.
+
+58
+00:03:23,546 --> 00:03:25,824
 Next: what you may keep about a card.
