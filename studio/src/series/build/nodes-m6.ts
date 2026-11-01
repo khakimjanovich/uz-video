@@ -47,7 +47,7 @@ export const M6_NODES = {
   m6Postman: { label: "Postman", art: "transit" },
   m6Relay: { label: "Relay", sublabel: "The postman", art: "transit" },
   m6Final: { label: "Payment", sublabel: "Final state", art: "receipt" },
-  m6Stream: { label: "Message stream", sublabel: "The bank's", art: "transit" },
+  m6Stream: { label: "Message stream", sublabel: "The bank's", art: "request" },
   m6Relay2: { label: "Another copy", sublabel: "Of the app", art: "transit" },
   // Lesson 28b: the registered letter
   m6Registered: { label: "Registered letter", sublabel: "Sealed", art: "request" },
