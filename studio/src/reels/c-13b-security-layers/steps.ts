@@ -143,7 +143,7 @@ export const screens: ScreenStep[] = [
     title: "Payment page",
     region: [440, 20, 560, 350],
     beats: [
-      { cue: 50, region: [440, 20, 560, 350], focus: [[520, 36, 230, 30]] },
+      { cue: 50, region: [440, 20, 560, 350], focus: [[505, 36, 250, 30]] },
       { cue: 51, region: [...FORM], focus: [[555, 375, 340, 40]] },
     ],
   },

@@ -132,10 +132,10 @@ export const screens: ScreenStep[] = [
     cue: 44,
     src: "screens/c-13-fraud-limits/ended.png",
     title: "Payment page · a fresh card form",
-    region: [470, 300, 500, 312],
+    region: [...FORM],
     beats: [
-      { cue: 45, region: [470, 300, 500, 312], focus: [[545, 325, 350, 70]] },
-      { cue: 46, region: [470, 300, 500, 312], focus: [[555, 420, 340, 140]] },
+      { cue: 45, region: [...FORM], focus: [[545, 316, 350, 76]] },
+      { cue: 46, region: [...FORM], focus: [[555, 435, 340, 150]] },
     ],
   },
   {
