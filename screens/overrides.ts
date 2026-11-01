@@ -91,6 +91,14 @@ export const OVERRIDES: [string, string][] = [
   ["Summa, soʻm", "Summa"],
   ["Kamida 1 UZS", "Kamida 1.00"],
   ["Soʻmda; summa", "Summa"],
+  // reconciliation: "missing at scheme" names the centre generically
+  ['"Missing at scheme"', '"Missing at the processing centre"'],
+  ['"Нет у системы"', '"Нет в процессинговом центре"'],
+  ['"Tizimda yoʻq"', '"Protsessing markazida yoʻq"'],
+  // pay page, unknown result: no SMS promise until the product sends one
+  ['"Don\'t pay again. You\'ll get the result by SMS within a few minutes."', '"We\'re confirming your payment. Don\'t pay again."'],
+  ['"Не платите повторно. Результат придёт по SMS в течение нескольких минут."', '"Мы подтверждаем ваш платёж. Не платите повторно."'],
+  ['"Qayta toʻlamang. Natija bir necha daqiqa ichida SMS orqali keladi."', '"Toʻlovingizni tasdiqlayapmiz. Qayta toʻlamang."'],
   // card schemes, every language (the enum labels)
   ['"Uzcard"', '"Card A"'],
   ['"Humo"', '"Card B"'],
