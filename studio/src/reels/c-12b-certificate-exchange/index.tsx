@@ -5,18 +5,16 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "Without the secret key", "Lesson 7: a certificate", "Lesson 12: callers' door", "This lesson: getting one", "The wrong way", "Emails it across", "Another product's inbox", "Pretend to be the caller",
-  "Never cross", "A passport office", "An application", "Checks and stamps", "Only the photo", "The caller does the same",
-  "Its own Vault", "The key stays", "An application form", "The public half", "Signing request", "Sends only that",
-  "The passport office", "Certificate authority", "Checks the form", "Well made?", "The right name?", "On the list?",
-  "Signs it", "Calling in only", "One folder", "Four things", "The signed certificate", "The office's seal",
-  "A login secret", "The addresses", "Checks the folder", "Stores it in Vault", "Deletes the secret file",
-  "Two proofs", "No private key crosses", "A warning", "Watch it happen", "Two operators", "One small form",
-  "Only that form", "Signs it", "A clear refusal", "A folder appears", "Carries it back", "A secure channel",
-  "Reads the folder", "Removes the secret file", "The first call", "Its end date", "Retires on time", "Nobody woken",
-  "What it protects", "Another's secret", "Expose both", "Its own key", "Who, how long", "Never touches",
-  "Sharing nothing", "One owner, one signer", "Back to the passport", "A stamped photo", "The face never does",
-  "Next: stolen cards",
+  "Friday afternoon", "A private key", "Email it?", "Never", "Lesson 12: the mail slot", "This lesson: the certificate",
+  "That email", "Another product's inbox", "Pretend to be the caller", "A key that travelled", "A passport application", "Only the photo",
+  "Its own Vault", "The key stays", "An application form", "The public half", "Signing request", "The only thing sent",
+  "Certificate authority", "Checks the form", "Well made?", "The right name?", "On the list?", "Signs it", "Calling in only",
+  "One folder", "The certificate", "The authority's seal", "A login secret", "The addresses",
+  "Stored in Vault", "Deletes the file", "Two proofs", "Watched",
+  "That Friday", "One small form", "Only that form", "Timur signs", "A clear refusal", "A folder for ecom",
+  "Carried back", "Separately", "Reads the folder", "Into ecom's Vault", "The first call",
+  "Months later", "Retires on time", "Nobody woken",
+  "Its own key", "No cross leak", "Who may call", "Never touched", "One owner, one signer", "Next: stolen cards",
 ];
 
 export const C12bCertificateExchangeComposition = createEpisode({
