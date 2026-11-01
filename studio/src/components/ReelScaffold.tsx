@@ -22,7 +22,7 @@ export interface ReelScaffoldProps {
   acts?: ActsMap;
   captionStyle?: React.CSSProperties; // move the caption tape (16:9 layouts)
   captions?: boolean; // false: voice only, no caption tape (the picture carries the idea)
-  series?: string; // small line above the title (e.g. the Studio playground)
+  series?: string; // small line above the title
   title: React.ReactNode | ((cueIndex: number) => React.ReactNode);
   footer: { label: string; value: string }; // receipt totals line, e.g. LAW .... ZRU-578
   audioPremountFor?: number;
