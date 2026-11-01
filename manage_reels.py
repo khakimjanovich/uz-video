@@ -366,14 +366,16 @@ def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
     sayings = spoken_glossary()
     srt_blocks, phrases, offset = [], [], 0.0
     for i, sentence in enumerate(sentences, 1):
-        # The voice says the spoken form ("P A N"); the captions turn it back into the written one ("PAN").
+        # The voice says the spoken form ("P A N"); the captions turn it back into the written one ("PAN"),
+        # using only the rows whose written form this sentence has ("mutual TLS" stays, never "mTLS").
+        mine = [(said, written) for said, written in glossary if written in sentence]
         sentence = spoken(sentence, sayings)
         part = work / f"{i:03d}.mp3"
         boundaries = speak(sentence, part, voice, rate)
         duration = float(subprocess.run(
             ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(part)],
             check=True, capture_output=True, text=True).stdout.strip())
-        tokens = caption_tokens(sentence, [(offset + t, w) for t, w in boundaries], glossary)
+        tokens = caption_tokens(sentence, [(offset + t, w) for t, w in boundaries], mine)
         written = " ".join(t["text"] for t in tokens)
         srt_blocks.append(f"{i}\n{srt_time(offset + 0.05)} --> {srt_time(offset + duration)}\n{written}\n")
         phrases.append(caption_phrases(tokens))
