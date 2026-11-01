@@ -1,267 +1,215 @@
 1
-00:00:00,050 --> 00:00:04,872
-How does ecom get a certificate from the card zone without handing over its secret key?
+00:00:00,050 --> 00:00:02,952
+The message reaches Timur on a Friday afternoon.
 
 2
-00:00:04,922 --> 00:00:10,608
-In Lesson 7, every caller showed a certificate from the card zone's own pass office.
+00:00:03,002 --> 00:00:08,712
+An engineer on the ecom side has made a private key for ecom's calls into the card zone.
 
 3
-00:00:10,658 --> 00:00:14,736
-In Lesson 12, that certificate let the caller through the callers' door.
+00:00:08,762 --> 00:00:10,944
+Shall I just email it over, he asks?
 
 4
-00:00:14,786 --> 00:00:20,064
-This lesson shows how a caller gets that certificate, while its secret key stays in its own Vault.
+00:00:10,994 --> 00:00:13,896
+Timur's reply is one word: never.
 
 5
-00:00:20,114 --> 00:00:21,936
-Start with the wrong way.
+00:00:13,946 --> 00:00:19,536
+In Lesson 12, a caller passed the mail slot only with a certificate from the card zone.
 
 6
-00:00:21,986 --> 00:00:26,448
-One team makes a private key for the caller, and emails it across.
+00:00:19,586 --> 00:00:24,480
+This lesson shows how a caller gets that certificate, while its secret key stays at home.
 
 7
-00:00:26,498 --> 00:00:30,456
-Now one product's secret sits in another product's inbox.
+00:00:24,530 --> 00:00:26,592
+Think about what that email would do.
 
 8
-00:00:30,506 --> 00:00:33,624
-Whoever holds that key can pretend to be the caller.
+00:00:26,642 --> 00:00:30,096
+One product's secret would sit in another product's inbox.
 
 9
-00:00:33,674 --> 00:00:35,592
-So the key must never cross.
+00:00:30,146 --> 00:00:33,264
+Whoever holds that key can pretend to be the caller.
 
 10
-00:00:35,642 --> 00:00:37,464
-Think of a passport office.
+00:00:33,314 --> 00:00:37,512
+I think a private key that has travelled is a key you no longer own.
 
 11
-00:00:37,514 --> 00:00:40,728
-To get a passport, you send an application with your photo.
+00:00:37,562 --> 00:00:40,392
+The right way works like a passport application.
 
 12
-00:00:40,778 --> 00:00:42,960
-The office checks it and stamps it.
+00:00:40,442 --> 00:00:44,736
+You send a photo, the office stamps it, and it never needs your face.
 
 13
-00:00:43,010 --> 00:00:45,744
-It never needs your face, only the photo.
+00:00:44,786 --> 00:00:48,696
+First, the caller makes its private key inside its own Vault.
 
 14
-00:00:45,794 --> 00:00:47,616
-A caller does the same.
-
-15
-00:00:47,666 --> 00:00:51,504
-First, it makes its private key inside its own Vault.
-
-16
-00:00:51,554 --> 00:00:53,832
+00:00:48,746 --> 00:00:51,024
 The key stays there, and never leaves.
 
-17
-00:00:53,882 --> 00:00:57,072
+15
+00:00:51,074 --> 00:00:54,264
 From that key, the caller makes an application form.
 
-18
-00:00:57,122 --> 00:01:00,504
+16
+00:00:54,314 --> 00:00:57,696
 The form carries the key's public half and the caller's name.
 
-19
-00:01:00,554 --> 00:01:03,768
+17
+00:00:57,746 --> 00:01:00,960
 That form is called a certificate signing request.
 
+18
+00:01:01,010 --> 00:01:03,120
+It is the only thing the caller sends.
+
+19
+00:01:03,170 --> 00:01:09,648
+On the other side sits the card zone's certificate authority: the one the card zone trusts to stamp certificates.
+
 20
-00:01:03,818 --> 00:01:05,640
-The caller sends only that.
-
-21
-00:01:05,690 --> 00:01:08,928
-On the other side sits the card zone's passport office.
-
-22
-00:01:08,978 --> 00:01:13,848
-It is the certificate authority: the one the card zone trusts to stamp certificates.
-
-23
-00:01:13,898 --> 00:01:15,720
+00:01:09,698 --> 00:01:11,520
 It checks the form.
 
-24
-00:01:15,770 --> 00:01:17,592
+21
+00:01:11,570 --> 00:01:13,392
 Is it well made?
 
-25
-00:01:17,642 --> 00:01:19,464
+22
+00:01:13,442 --> 00:01:15,264
 Does it carry the right name?
 
-26
-00:01:19,514 --> 00:01:22,632
+23
+00:01:15,314 --> 00:01:18,432
 Is that name on the card zone's list of callers?
 
-27
-00:01:22,682 --> 00:01:25,272
+24
+00:01:18,482 --> 00:01:21,072
 If so, it signs it, for a limited time.
 
-28
-00:01:25,322 --> 00:01:29,760
+25
+00:01:21,122 --> 00:01:25,560
 The signed certificate is good only for calling in, never for serving.
 
-29
-00:01:29,810 --> 00:01:32,544
-Then one folder goes back to the caller.
+26
+00:01:25,610 --> 00:01:29,280
+Then one folder goes back to the caller, with four things inside.
 
-30
-00:01:32,594 --> 00:01:34,416
-Inside are four things.
-
-31
-00:01:34,466 --> 00:01:36,288
+27
+00:01:29,330 --> 00:01:31,152
 The signed certificate.
 
-32
-00:01:36,338 --> 00:01:40,704
-The office's own seal, so the caller can recognise the real card zone.
+28
+00:01:31,202 --> 00:01:35,808
+The authority's own seal, so the caller can recognise the real card zone.
 
-33
-00:01:40,754 --> 00:01:45,168
+29
+00:01:35,858 --> 00:01:40,272
 A secret for the login server, which travels by its own secure channel.
 
-34
-00:01:45,218 --> 00:01:47,040
+30
+00:01:40,322 --> 00:01:42,144
 And the addresses to call.
 
-35
-00:01:47,090 --> 00:01:48,912
-The caller checks the folder.
+31
+00:01:42,194 --> 00:01:44,784
+The caller stores everything in its own Vault.
 
-36
-00:01:48,962 --> 00:01:51,336
-It stores everything in its own Vault.
-
-37
-00:01:51,386 --> 00:01:53,904
+32
+00:01:44,834 --> 00:01:47,352
 Then it deletes the loose secret file.
 
-38
-00:01:53,954 --> 00:02:00,432
+33
+00:01:47,402 --> 00:01:53,880
 From then on, every call it makes carries two proofs: the certificate, and a token from the login server.
 
-39
-00:02:00,482 --> 00:02:04,008
-No private key ever crosses between the two products.
-
-40
-00:02:04,058 --> 00:02:09,312
+34
+00:01:53,930 --> 00:01:59,184
 And every certificate is watched, so a warning goes out well before it expires.
 
+35
+00:01:59,234 --> 00:02:03,672
+There is no portal for this, so here is what the two operators did that Friday.
+
+36
+00:02:03,722 --> 00:02:08,184
+On the ecom side, the installer made the key and wrote out one small form.
+
+37
+00:02:08,234 --> 00:02:12,648
+The engineer carried that form, and only that form, to Timur.
+
+38
+00:02:12,698 --> 00:02:14,520
+Timur signed it.
+
+39
+00:02:14,570 --> 00:02:21,072
+Had the name not been a listed caller, the signing would have stopped with a clear refusal, and nothing would have been issued.
+
+40
+00:02:21,122 --> 00:02:26,808
+The name was listed, so a folder appeared, named for ecom, with the four things inside.
+
 41
-00:02:09,362 --> 00:02:11,184
-Now watch it happen.
+00:02:26,858 --> 00:02:29,040
+The engineer carried the folder back.
 
 42
-00:02:11,234 --> 00:02:15,576
-There is no portal for this, so watch the steps the bank's two operators see.
+00:02:29,090 --> 00:02:32,712
+The secret went separately, by a secure channel.
 
 43
-00:02:15,626 --> 00:02:20,040
-On the caller's side, the installer makes the key and writes out one small form.
+00:02:32,762 --> 00:02:36,096
+On the ecom side, the installer read the folder.
 
 44
-00:02:20,090 --> 00:02:25,008
-The operator carries that form, and only that form, to the card zone's operator.
+00:02:36,146 --> 00:02:40,608
+It wrote it all into ecom's Vault, and removed the secret file from disk.
 
 45
-00:02:25,058 --> 00:02:27,216
-The card zone's operator signs it.
+00:02:40,658 --> 00:02:44,064
+The first call went through the mail slot, and the card zone answered.
 
 46
-00:02:27,266 --> 00:02:33,432
-If the name on it is not a listed caller, the signing stops with a clear refusal, and nothing is issued.
+00:02:44,114 --> 00:02:50,064
+Months later, Timur's team sees a warning that the certificate is close to its end date.
 
 47
-00:02:33,482 --> 00:02:39,432
-If the name is listed, a folder appears, named for that caller, with the four things inside.
-
-48
-00:02:39,482 --> 00:02:41,544
-The operator carries the folder back.
-
-49
-00:02:41,594 --> 00:02:45,168
-The secret goes separately, by a secure channel.
-
-50
-00:02:45,218 --> 00:02:48,504
-On the caller's side, the installer reads the folder.
-
-51
-00:02:48,554 --> 00:02:52,872
-It writes it all into the caller's Vault, and removes the secret file from disk.
-
-52
-00:02:52,922 --> 00:02:56,712
-The first call then goes through the mail slot, and the card zone answers.
-
-53
-00:02:56,762 --> 00:03:01,752
-Months later, the team sees a warning that the certificate is close to its end date.
-
-54
-00:03:01,802 --> 00:03:05,856
+00:02:50,114 --> 00:02:54,168
 They repeat the same steps, and the old certificate retires on time.
 
-55
-00:03:05,906 --> 00:03:08,400
+48
+00:02:54,218 --> 00:02:56,712
 Nobody is woken by a sudden outage.
 
-56
-00:03:08,450 --> 00:03:10,272
-What does this protect?
+49
+00:02:56,762 --> 00:03:00,048
+Each product keeps its own key, in its own Vault.
 
-57
-00:03:10,322 --> 00:03:13,920
-Without this exchange, one product would hold another's secret.
+50
+00:03:00,098 --> 00:03:03,312
+A leak on one side never exposes the other.
 
-58
-00:03:13,970 --> 00:03:16,416
-A leak on either side would expose both.
-
-59
-00:03:16,466 --> 00:03:20,184
-With it, each product keeps its own key, in its own Vault.
-
-60
-00:03:20,234 --> 00:03:23,328
+51
+00:03:03,362 --> 00:03:06,456
 The card zone decides who may call, and for how long.
 
-61
-00:03:23,378 --> 00:03:26,472
+52
+00:03:06,506 --> 00:03:09,600
 The caller never touches the card zone's keys.
 
-62
-00:03:26,522 --> 00:03:30,240
-That keeps the two products truly separate, sharing nothing.
+53
+00:03:09,650 --> 00:03:15,168
+And for the bank's audit, every certificate has one owner, one signer, and one end date.
 
-63
-00:03:30,290 --> 00:03:36,984
-It also keeps the bank's audit simple: every certificate has one owner, one signer, and one end date.
-
-64
-00:03:37,034 --> 00:03:38,856
-Back to the passport.
-
-65
-00:03:38,906 --> 00:03:41,232
-A stamped photo goes through the post.
-
-66
-00:03:41,282 --> 00:03:43,104
-The face never does.
-
-67
-00:03:43,154 --> 00:03:47,472
+54
+00:03:15,218 --> 00:03:19,536
 Next: how the card zone stops a thief testing stolen cards.
