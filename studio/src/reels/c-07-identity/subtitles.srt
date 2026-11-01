@@ -1,243 +1,227 @@
 1
-00:00:00,050 --> 00:00:02,832
-How does the card zone know a call really comes from ecom?
+00:00:00,050 --> 00:00:01,872
+Friday, eleven at night.
 
 2
-00:00:02,882 --> 00:00:07,104
-In Lesson 5, ecom asked the card zone to charge a card by its token.
+00:00:01,922 --> 00:00:04,104
+A call reaches Timur's card zone.
 
 3
-00:00:07,154 --> 00:00:13,176
-In Lesson 6, every key came from Vault, and a service with a missing setting refused to start.
+00:00:04,154 --> 00:00:07,704
+Its header says: I am ecom, charge this card.
 
 4
-00:00:13,226 --> 00:00:19,488
-This lesson uses those keys to prove, on every call, that the caller really is ecom.
-
-5
-00:00:19,538 --> 00:00:24,240
-Picture a request that simply says, in its header: I am ecom.
-
-6
-00:00:24,290 --> 00:00:26,112
+00:00:07,754 --> 00:00:09,576
 Anyone can type that line.
 
+5
+00:00:09,626 --> 00:00:12,336
+A name you write yourself proves nothing.
+
+6
+00:00:12,386 --> 00:00:18,408
+In Lesson 6, every key came from Vault, and a service with a missing setting refused to start.
+
 7
-00:00:26,162 --> 00:00:30,864
-A name you write yourself is like a name badge made at home: it proves nothing.
+00:00:18,458 --> 00:00:24,720
+This lesson uses those keys to prove, on every call, that the caller really is ecom.
 
 8
-00:00:30,914 --> 00:00:33,840
-Now picture the staff entrance of an office building.
+00:00:24,770 --> 00:00:27,912
+Timur gets into the bank every morning the same way.
 
 9
-00:00:33,890 --> 00:00:37,920
-You show an ID card, issued by the building's own pass office.
+00:00:27,962 --> 00:00:31,392
+He shows an ID card from the building's own pass office.
 
 10
-00:00:37,970 --> 00:00:42,240
-Reception gives you a day pass, and the pass lists the floors you may visit.
+00:00:31,442 --> 00:00:37,728
+Reception gives him a day pass that lists the floors he may visit, and the lift goes only to those floors.
 
 11
-00:00:42,290 --> 00:00:44,688
-The lift goes only to those floors.
+00:00:37,778 --> 00:00:43,872
+The card zone checks every call like that: two proofs, from two places, and a list of floors.
 
 12
-00:00:44,738 --> 00:00:51,360
-The card zone works the same way for every call: two proofs, from two places, and a list of floors.
-
-13
-00:00:51,410 --> 00:00:57,672
+00:00:43,922 --> 00:00:50,184
 The first proof is a certificate: a digital ID card, signed by the card zone's own pass office.
 
-14
-00:00:57,722 --> 00:01:00,720
+13
+00:00:50,234 --> 00:00:53,232
 When a caller connects, it shows its certificate.
 
-15
-00:01:00,770 --> 00:01:03,456
+14
+00:00:53,282 --> 00:00:55,968
 The card zone shows its own certificate back.
 
-16
-00:01:03,506 --> 00:01:05,928
+15
+00:00:56,018 --> 00:00:58,440
 So each side knows who is on the other end.
 
-17
-00:01:05,978 --> 00:01:10,272
+16
+00:00:58,490 --> 00:01:02,784
 Because both sides show one, this is called mutual TLS.
 
-18
-00:01:10,322 --> 00:01:17,448
+17
+00:01:02,834 --> 00:01:09,960
 If a caller has no certificate from the card zone's pass office, the connection is refused before any request is even read.
 
+18
+00:01:10,010 --> 00:01:13,584
+The second proof is an access token: the day pass.
+
 19
-00:01:17,498 --> 00:01:20,064
-The second proof is an access token.
-
-20
-00:01:20,114 --> 00:01:22,992
-Here, an access token is a day pass.
-
-21
-00:01:23,042 --> 00:01:28,032
+00:01:13,634 --> 00:01:18,624
 The caller asks for it from the card zone's own login server, using its own secret.
 
-22
-00:01:28,082 --> 00:01:30,792
+20
+00:01:18,674 --> 00:01:21,384
 The card zone trusts only that login server.
 
-23
-00:01:30,842 --> 00:01:34,368
+21
+00:01:21,434 --> 00:01:24,960
 A pass from another product's login server is worth nothing here.
 
-24
-00:01:34,418 --> 00:01:38,160
+22
+00:01:25,010 --> 00:01:28,752
 Inside the access token is who it belongs to, and its roles.
 
-25
-00:01:38,210 --> 00:01:42,000
-A role is a floor you may visit: one kind of operation.
+23
+00:01:28,802 --> 00:01:31,920
+A role is a floor: one kind of operation.
 
-26
-00:01:42,050 --> 00:01:44,280
+24
+00:01:31,970 --> 00:01:34,200
 One role lets a caller bind a card.
 
-27
-00:01:44,330 --> 00:01:46,152
+25
+00:01:34,250 --> 00:01:36,072
 Another lets it read a card.
 
-28
-00:01:46,202 --> 00:01:48,024
+26
+00:01:36,122 --> 00:01:37,944
 Another lets it charge a card.
 
-29
-00:01:48,074 --> 00:01:52,848
+27
+00:01:37,994 --> 00:01:42,768
 Every operation needs its own role, and anything not listed is refused.
 
-30
-00:01:52,898 --> 00:01:56,232
+28
+00:01:42,818 --> 00:01:46,152
 So even the real ecom can only do what its roles allow.
 
-31
-00:01:56,282 --> 00:02:00,696
+29
+00:01:46,202 --> 00:01:50,616
 No caller at all holds the role for the card zone's admin operations.
 
+30
+00:01:50,666 --> 00:01:52,968
+Many teams stop at the first proof.
+
+31
+00:01:53,018 --> 00:01:57,624
+I think one proof is never enough: steal one file, and you are in.
+
 32
-00:02:00,746 --> 00:02:02,568
-Now watch the product.
+00:01:57,674 --> 00:02:02,112
+These checks have no screen, so read Timur's log for that Friday night.
 
 33
-00:02:02,618 --> 00:02:06,288
-These checks have no screen, so watch how the system behaves.
-
-34
-00:02:06,338 --> 00:02:09,312
+00:02:02,162 --> 00:02:05,136
 A caller with no certificate knocks on the partner door.
 
-35
-00:02:09,362 --> 00:02:11,304
+34
+00:02:05,186 --> 00:02:07,128
 The connection closes at once.
 
-36
-00:02:11,354 --> 00:02:14,160
+35
+00:02:07,178 --> 00:02:09,984
 No request is read, and nothing is answered.
 
-37
-00:02:14,210 --> 00:02:18,960
+36
+00:02:10,034 --> 00:02:14,784
 Next, a caller brings a valid certificate, but a pass from the wrong login server.
 
-38
-00:02:19,010 --> 00:02:21,696
+37
+00:02:14,834 --> 00:02:17,520
 The card zone answers: unauthorized.
 
-39
-00:02:21,746 --> 00:02:25,560
+38
+00:02:17,570 --> 00:02:21,384
 The pass did not come from its own login server, so it counts for nothing.
 
+39
+00:02:21,434 --> 00:02:24,384
+Then the real ecom calls, with both proofs.
+
 40
-00:02:25,610 --> 00:02:28,464
-Now the real ecom calls, with both proofs.
+00:02:24,434 --> 00:02:28,272
+It asks to charge a buyer's card by its token, for Malika's shop.
 
 41
-00:02:28,514 --> 00:02:30,768
-It asks to charge a card by its token.
-
-42
-00:02:30,818 --> 00:02:34,800
+00:02:28,322 --> 00:02:32,304
 Its pass carries the role to charge, so the call goes through.
 
-43
-00:02:34,850 --> 00:02:39,024
+42
+00:02:32,354 --> 00:02:36,528
 Then ecom asks for an admin operation, one that searches cards.
 
-44
-00:02:39,074 --> 00:02:40,896
+43
+00:02:36,578 --> 00:02:38,400
 Both proofs pass.
 
-45
-00:02:40,946 --> 00:02:45,600
+44
+00:02:38,450 --> 00:02:43,104
 But ecom's pass has no admin role, so the card zone answers: forbidden.
 
-46
-00:02:45,650 --> 00:02:48,600
+45
+00:02:43,154 --> 00:02:46,104
 Three refusals, for three different reasons.
 
-47
-00:02:48,650 --> 00:02:50,976
+46
+00:02:46,154 --> 00:02:48,480
 No certificate means no connection.
 
-48
-00:02:51,026 --> 00:02:53,352
+47
+00:02:48,530 --> 00:02:50,856
 A bad pass means unauthorized.
 
-49
-00:02:53,402 --> 00:02:55,344
+48
+00:02:50,906 --> 00:02:52,848
 A missing role means forbidden.
 
-50
-00:02:55,394 --> 00:02:59,736
-Each answer tells the operator exactly which check stopped the call.
+49
+00:02:52,898 --> 00:02:56,496
+Each answer tells Timur exactly which check stopped the call.
 
-51
-00:02:59,786 --> 00:03:03,744
+50
+00:02:56,546 --> 00:03:00,504
 The card zone keeps its own pass office and its own login server.
 
-52
-00:03:03,794 --> 00:03:08,808
+51
+00:03:00,554 --> 00:03:05,568
 Neither is shared with ecom, so nothing outside the room can hand out the room's passes.
 
+52
+00:03:05,618 --> 00:03:09,120
+So steal only the certificate, and you have no pass.
+
 53
-00:03:08,858 --> 00:03:10,680
-What does this protect?
-
-54
-00:03:10,730 --> 00:03:14,064
-Steal only the certificate, and you have no pass.
-
-55
-00:03:14,114 --> 00:03:17,568
+00:03:09,170 --> 00:03:12,624
 Steal only the pass, and you cannot even connect.
 
-56
-00:03:17,618 --> 00:03:23,352
+54
+00:03:12,674 --> 00:03:18,408
 Steal both from ecom, and you still reach only ecom's floors, never the admin floor.
 
-57
-00:03:23,402 --> 00:03:30,144
+55
+00:03:18,458 --> 00:03:25,200
 And a mistake inside ecom cannot give ecom more power, because only the card zone grants the roles.
 
-58
-00:03:30,194 --> 00:03:35,928
-This protects every card in the room, and the bank's trust that only its chosen callers can touch them.
+56
+00:03:25,250 --> 00:03:33,216
+Saturday morning, Timur reads the log: three refusals and one charge, and each says exactly where it stopped.
 
-59
-00:03:35,978 --> 00:03:37,800
-Back to the staff entrance.
-
-60
-00:03:37,850 --> 00:03:43,104
-An ID card from the building's own office, a day pass, and only your floors.
-
-61
-00:03:43,154 --> 00:03:46,560
+57
+00:03:33,266 --> 00:03:36,672
 Next: how the card zone talks to every card network.

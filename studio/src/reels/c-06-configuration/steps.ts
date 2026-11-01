@@ -1,11 +1,11 @@
 import { BuildMapStep, DiagramStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 
-// Lesson 6: every setting, and no guessing. The guessed timeout (cues 0–9), the cook (10–13), no defaults (14),
+// Lesson 6: every setting, and no guessing. One story carries it: Timur's install stops on one missing fraud limit.
+// The stopped install (cues 0–3), the bridge from lesson 5 (4–5), what a guessed default costs (6–14),
 // one locked store and three kinds of value (15–21), handed its own settings or refuse to start (22–26),
-// the bank's decisions and the card zone's own settings (27–34), how it behaves (35–48), what it protects (49–53),
-// back to the cook (54–56), next (57).
-const KITCHEN = { m01Cook: [0.5, 1], m01Ingredient: [2.5, 1] } as const;
+// the bank's decisions and the card zone's own settings (27–34), the install runs (35–37), one service with nothing set (38–44),
+// what it protects (45–47), one minute against years (48–49), next (50).
 const KINDS = { vault: [0.4, 1], m01KindSystem: [2.6, 0], m01KindSecret: [2.6, 1], m01KindBank: [2.6, 2] } as const;
 const KIND_EDGES = (["m01KindSystem", "m01KindSecret", "m01KindBank"] as const).map((from) => ({ from, to: "vault" as const }));
 const STORE = { m01Operator: [0.3, 1], vault: [2.7, 1] } as const;
@@ -29,33 +29,47 @@ const MESSAGE = { m01Service: [0.4, 1], m01Message: [2.6, 1] } as const;
 const MESSAGE_EDGE = [{ from: "m01Service", to: "m01Message" }] as const;
 
 export const diagram: DiagramStep<BuildId>[] = [
-  // A guessed default, and what it costs in production.
-  { cue: 0, layout: { m01Service: [1.5, 1] }, badges: { m01Service: "a setting missing?" } },
-  { cue: 4, layout: { m01Service: [0.4, 1], m01File: [2.6, 1] }, edges: [{ from: "m01File", to: "m01Service" }], badges: { m01File: "timeout: 30 seconds" } },
-  { cue: 5, layout: { m01File: [0.4, 1], m01Prod: [2.6, 1] }, edges: [{ from: "m01File", to: "m01Prod" }], packets: [{ from: "m01File", to: "m01Prod", label: "30 seconds" }], badges: { m01Prod: "nobody set it" } },
-  { cue: 6, layout: { m01Service: [0.4, 1], network: [2.6, 1] }, edges: [{ from: "m01Service", to: "network" }], badges: { network: "40 seconds" } },
+  // Thursday night: the install stops on one missing value.
+  { cue: 0, layout: INSTALL, edges: [...INSTALL_EDGES], packets: [{ from: "m01Operator", to: "vault", label: "install" }], badges: { m01Operator: "Timur · Thu night" } },
   {
-    cue: 7,
+    cue: 1,
+    layout: INSTALL,
+    edges: [...INSTALL_EDGES],
+    packets: [{ from: "vault", to: "m01CardZone", label: "install", stopAt: 0.6 }],
+    danger: ["m01CardZone"],
+    badges: { m01CardZone: "stops before running" },
+  },
+  { cue: 2, layout: INSTALL, edges: [...INSTALL_EDGES], danger: ["m01CardZone"], badges: { vault: "one fraud limit missing" } },
+  {
+    cue: 3,
+    layout: { m01CardZone: [0.4, 1], m01Message: [2.6, 1] },
+    edges: [{ from: "m01CardZone", to: "m01Message" }],
+    danger: ["m01CardZone"],
+    badges: { m01Message: "fraud limit · which caller" },
+  },
+  // What a guessed default costs.
+  { cue: 6, layout: { m01Operator: [0.5, 1], m01Default: [2.5, 1] }, badges: { m01Operator: "Timur", m01Default: "a default?" } },
+  { cue: 7, layout: { m01Default: [1.5, 1] }, badges: { m01Default: "what it costs" } },
+  { cue: 8, layout: { m01Service: [0.4, 1], m01File: [2.6, 1] }, edges: [{ from: "m01File", to: "m01Service" }], badges: { m01File: "timeout: 30 seconds" } },
+  { cue: 9, layout: { m01File: [0.4, 1], m01Prod: [2.6, 1] }, edges: [{ from: "m01File", to: "m01Prod" }], packets: [{ from: "m01File", to: "m01Prod", label: "30 seconds" }], badges: { m01Prod: "nobody set it" } },
+  { cue: 10, layout: { m01Service: [0.4, 1], network: [2.6, 1] }, edges: [{ from: "m01Service", to: "network" }], badges: { network: "40 seconds" } },
+  {
+    cue: 11,
     layout: { shop: [0, 1], m01Service: [1.5, 1], network: [3, 1] },
     edges: [{ from: "m01Service", to: "shop" }, { from: "m01Service", to: "network" }],
     packets: [{ from: "m01Service", to: "shop", label: "failed" }],
     danger: ["m01Service"],
-    badges: { m01Service: "gave up at 30" },
+    badges: { m01Service: "gave up at 30", shop: "Malika's site" },
   },
   {
-    cue: 8,
+    cue: 12,
     layout: { network: [0.4, 1], buyer: [2.6, 1] },
     edges: [{ from: "network", to: "buyer" }],
     packets: [{ from: "network", to: "buyer", label: "yes" }],
     danger: ["buyer"],
     badges: { buyer: "money gone" },
   },
-  { cue: 9, layout: { m01Default: [0.5, 1], m01Prod: [2.5, 1] }, edges: [{ from: "m01Default", to: "m01Prod" }], danger: ["m01Default"], badges: { m01Default: "looked safe" } },
-  // The cook.
-  { cue: 10, layout: { m01Cook: [1.5, 1] } },
-  { cue: 11, layout: KITCHEN, crossed: ["m01Ingredient"], badges: { m01Cook: "stops the dish" } },
-  { cue: 12, layout: KITCHEN, crossed: ["m01Ingredient"], badges: { m01Cook: "never guesses" } },
-  { cue: 13, layout: { m01Cook: [0.5, 1], m01Service: [2.5, 1] }, badges: { m01Cook: "never guesses", m01Service: "the same" } },
+  { cue: 13, layout: { m01Default: [0.5, 1], m01Prod: [2.5, 1] }, edges: [{ from: "m01Default", to: "m01Prod" }], danger: ["m01Default"], badges: { m01Default: "looked safe" } },
   // No defaults; one locked store.
   { cue: 14, layout: { m01Service: [0.5, 1], m01Default: [2.5, 1] }, crossed: ["m01Default"], badges: { m01Default: "none, ever" } },
   { cue: 15, layout: { vault: [1.5, 1] }, accent: ["vault"], badges: { vault: "settings and secrets" } },
@@ -64,7 +78,7 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 18, layout: KINDS, edges: KIND_EDGES, accent: ["m01KindSecret"], badges: { m01KindSecret: "passwords · keys" } },
   { cue: 19, layout: { m01File: [0.5, 1], vault: [2.5, 1] }, crossed: ["m01File"], badges: { m01File: "no password here", vault: "ships none" } },
   { cue: 20, layout: KINDS, edges: KIND_EDGES, accent: ["m01KindBank"], badges: { m01KindBank: "network address · login" } },
-  { cue: 21, layout: STORE, edges: [{ from: "m01Operator", to: "vault" }], packets: [{ from: "m01Operator", to: "vault", label: "typed once" }] },
+  { cue: 21, layout: STORE, edges: [{ from: "m01Operator", to: "vault" }], packets: [{ from: "m01Operator", to: "vault", label: "typed once" }], badges: { m01Operator: "Timur" } },
   // Handed its own settings, or refuse to start.
   { cue: 22, layout: HAND, edges: [...HAND_EDGE], packets: [{ from: "vault", to: "m01Service", label: "private file" }], badges: { m01Service: "only it can read" } },
   { cue: 23, layout: HAND, edges: [...HAND_EDGE], badges: { m01Service: "names, never values" } },
@@ -92,64 +106,37 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 32, layout: ZONE, frames: [CHOOSES], accent: ["m01FraudLimits"], badges: { m01FraudLimits: "card · address · shop" } },
   { cue: 33, layout: ZONE, frames: [CHOOSES], accent: ["m01CardKeep", "m01KeyChange"], badges: { m01CardKeep: "then deleted", m01KeyChange: "how often" } },
   { cue: 34, layout: ZONE, frames: [CHOOSES], accent: ["m01Cleanup"], badges: { m01Cleanup: "when it runs" } },
-  // How it behaves: the card zone's install.
-  { cue: 35, layout: { m01Operator: [0.4, 1], m01CardZone: [2.6, 1] }, edges: [{ from: "m01Operator", to: "m01CardZone" }] },
-  { cue: 36, layout: { m01Operator: [0.4, 1], m01CardZone: [2.6, 1] }, edges: [{ from: "m01Operator", to: "m01CardZone" }], badges: { m01CardZone: "no screen" } },
-  { cue: 37, layout: INSTALL, edges: [...INSTALL_EDGES], packets: [{ from: "m01Operator", to: "vault", label: "install" }] },
-  { cue: 38, layout: INSTALL, edges: [...INSTALL_EDGES], badges: { vault: "one fraud limit missing" } },
+  // Back to Thursday: the missing limit is typed in, and the install runs.
+  { cue: 35, layout: ZONE, frames: [CHOOSES], accent: ["m01FraudLimits"], badges: { m01FraudLimits: "a real decision" } },
   {
-    cue: 39,
-    layout: INSTALL,
-    edges: [...INSTALL_EDGES],
-    packets: [{ from: "vault", to: "m01CardZone", label: "install", stopAt: 0.6 }],
-    danger: ["m01CardZone"],
-    badges: { m01CardZone: "stops before running" },
-  },
-  {
-    cue: 40,
-    layout: { m01CardZone: [0.4, 1], m01Message: [2.6, 1] },
-    edges: [{ from: "m01CardZone", to: "m01Message" }],
-    danger: ["m01CardZone"],
-    badges: { m01Message: "fraud limit · which caller" },
-  },
-  {
-    cue: 41,
+    cue: 36,
     layout: INSTALL,
     edges: [...INSTALL_EDGES],
     packets: [{ from: "m01Operator", to: "vault", label: "fraud limit" }, { from: "vault", to: "m01CardZone", label: "install", delay: 60 }],
-    accent: ["m01CardZone"],
+    badges: { m01Operator: "Timur" },
   },
+  { cue: 37, layout: INSTALL, edges: [...INSTALL_EDGES], accent: ["m01CardZone"], badges: { m01CardZone: "runs" } },
   // One service started with nothing set.
-  { cue: 42, layout: HAND, edges: [{ from: "vault", to: "m01Service", broken: true }], badges: { m01Service: "nothing set" } },
-  { cue: 43, layout: HAND, edges: [{ from: "vault", to: "m01Service", broken: true }], danger: ["m01Service"], badges: { m01Service: "does not start" } },
-  { cue: 44, layout: MESSAGE, edges: [...MESSAGE_EDGE], danger: ["m01Service"], badges: { m01Message: "settings are missing" } },
-  { cue: 45, layout: MESSAGE, edges: [...MESSAGE_EDGE], danger: ["m01Service"], badges: { m01Message: "one line each, by name" } },
-  { cue: 46, layout: { m01Service: [1.5, 1] }, danger: ["m01Service"], badges: { m01Service: "nothing half-works" } },
-  { cue: 47, layout: { m01Service: [0.5, 1], m01Default: [2.5, 1] }, crossed: ["m01Default"], badges: { m01Default: "no guessed values" } },
-  { cue: 48, layout: HAND, edges: [...HAND_EDGE], packets: [{ from: "vault", to: "m01Service", label: "its settings" }], accent: ["m01Service"], badges: { m01Service: "starts" } },
+  { cue: 38, layout: HAND, edges: [{ from: "vault", to: "m01Service", broken: true }], badges: { m01Service: "nothing set" } },
+  { cue: 39, layout: HAND, edges: [{ from: "vault", to: "m01Service", broken: true }], danger: ["m01Service"], badges: { m01Service: "does not start" } },
+  { cue: 40, layout: MESSAGE, edges: [...MESSAGE_EDGE], danger: ["m01Service"], badges: { m01Message: "settings are missing" } },
+  { cue: 41, layout: MESSAGE, edges: [...MESSAGE_EDGE], danger: ["m01Service"], badges: { m01Message: "one line each, by name" } },
+  { cue: 42, layout: { m01Service: [1.5, 1] }, danger: ["m01Service"], badges: { m01Service: "nothing half works" } },
+  { cue: 43, layout: { m01Service: [0.5, 1], m01Default: [2.5, 1] }, crossed: ["m01Default"], badges: { m01Default: "no guessed values" } },
+  { cue: 44, layout: HAND, edges: [...HAND_EDGE], packets: [{ from: "vault", to: "m01Service", label: "its settings" }], accent: ["m01Service"], badges: { m01Service: "starts" } },
   // What it protects.
-  { cue: 49, layout: { vault: [1.5, 1] }, accent: ["vault"] },
-  { cue: 50, layout: { m01Default: [0.5, 1], m01Prod: [2.5, 1] }, edges: [{ from: "m01Default", to: "m01Prod", broken: true }], crossed: ["m01Default"], badges: { m01Prod: "no unchosen timeout" } },
-  { cue: 51, layout: { vault: [0.5, 1], m01Prod: [2.5, 1] }, edges: [{ from: "vault", to: "m01Prod" }], accent: ["vault"], badges: { m01Prod: "no test password" } },
-  { cue: 52, layout: BANK, edges: [...BANK_EDGES], accent: ["bank"], badges: { bank: "chose it · sees it" } },
-  { cue: 53, layout: { buyer: [0.5, 1], bank: [2.5, 1] }, accent: ["buyer", "bank"], badges: { buyer: "money safe", bank: "in control" } },
-  // Back to the cook.
-  { cue: 54, layout: { m01Cook: [1.5, 1] } },
-  { cue: 55, layout: KITCHEN, accent: ["m01Ingredient"], badges: { m01Cook: "or no dish" } },
-  {
-    cue: 56,
-    layout: { m01Cook: [0, 1], vault: [1.5, 1], m01Service: [3, 1] },
-    edges: [{ from: "vault", to: "m01Service" }],
-    packets: [{ from: "vault", to: "m01Service", label: "every value" }],
-    badges: { m01Service: "won't guess" },
-  },
+  { cue: 45, layout: { m01Default: [0.5, 1], m01Prod: [2.5, 1] }, edges: [{ from: "m01Default", to: "m01Prod", broken: true }], crossed: ["m01Default"], badges: { m01Prod: "no unchosen timeout" } },
+  { cue: 46, layout: { vault: [0.5, 1], m01Prod: [2.5, 1] }, edges: [{ from: "vault", to: "m01Prod" }], accent: ["vault"], badges: { m01Prod: "no test password" } },
+  { cue: 47, layout: BANK, edges: [...BANK_EDGES], accent: ["bank"], badges: { bank: "chose it · sees it" } },
+  // One minute now, against a quiet wrong value later.
+  { cue: 48, layout: INSTALL, edges: [...INSTALL_EDGES], accent: ["m01CardZone"], badges: { m01CardZone: "stopped one minute" } },
+  { cue: 49, layout: { m01Default: [0.5, 1], m01Prod: [2.5, 1] }, edges: [{ from: "m01Default", to: "m01Prod" }], danger: ["m01Prod"], badges: { m01Default: "a guessed limit", m01Prod: "wrong, quietly" } },
 ];
 
 export const map: BuildMapStep[] = [
-  // The bridge: what this lesson uses from the ones before.
-  { cue: 1, part: 2, current: ["payment", "card"] },
-  { cue: 2, part: 2, current: ["postgres", "vault", "keycloak", "cardsinfra"] },
-  { cue: 3, part: 2, current: ["vault", "cardsinfra"] },
+  // The bridge: what this lesson uses from the one before.
+  { cue: 4, part: 2, current: ["payment", "card"] },
+  { cue: 5, part: 2, current: ["vault", "cardsinfra"] },
   { cue: 29, part: 2, current: ["vault", "cardsinfra"], units: { cards: "the bank's settings" } },
-  { cue: 57, part: 2, current: ["keycloak", "cardsinfra"], units: { ecom: "caller", cards: "two proofs" } },
+  { cue: 50, part: 2, current: ["keycloak", "cardsinfra"], units: { ecom: "caller", cards: "two proofs" } },
 ];

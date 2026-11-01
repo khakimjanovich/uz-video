@@ -1,239 +1,223 @@
 1
-00:00:00,050 --> 00:00:03,720
-How can ecom take a card payment without ever seeing the card?
+00:00:00,050 --> 00:00:03,792
+Saturday morning, Malika sells flowers at a market stall.
 
 2
-00:00:03,770 --> 00:00:10,560
-In Lesson 4, card numbers went into one locked room, and ecom kept only tickets: card tokens.
+00:00:03,842 --> 00:00:05,664
+A buyer pays by card.
 
 3
-00:00:10,610 --> 00:00:15,696
-In Lesson 1, the buyer typed the card on the bank's payment page, straight into the card zone.
+00:00:05,714 --> 00:00:09,504
+The card reader on her table belongs to the bank, not to her.
 
 4
-00:00:15,746 --> 00:00:22,056
-This lesson shows how that page and the locked room work together, so ecom never sees the card.
+00:00:09,554 --> 00:00:15,096
+The buyer types a PIN into the bank's machine, and Malika only gets a receipt.
 
 5
-00:00:22,106 --> 00:00:23,928
-Think of a real shop.
+00:00:15,146 --> 00:00:21,216
+In Lesson 4, card numbers went into one locked room, and ecom kept only card tokens.
 
 6
-00:00:23,978 --> 00:00:27,720
-When you pay, the cashier turns the card reader towards you.
+00:00:21,266 --> 00:00:27,840
+This lesson shows how the bank puts that same card reader on its web payment page, so ecom never sees the card.
 
 7
-00:00:27,770 --> 00:00:30,672
-That reader belongs to the bank, not the shop.
+00:00:27,890 --> 00:00:30,600
+Most teams build the obvious design first.
 
 8
-00:00:30,722 --> 00:00:35,232
-You type your PIN into the bank's machine, and the shop only gets a receipt.
-
-9
-00:00:35,282 --> 00:00:37,344
-Now think of the obvious web design.
-
-10
-00:00:37,394 --> 00:00:42,720
+00:00:30,650 --> 00:00:35,976
 A form on ecom's page sends the card number to ecom's server, and ecom passes it on.
 
-11
-00:00:42,770 --> 00:00:45,816
+9
+00:00:36,026 --> 00:00:39,072
 That one hop puts every card number through ecom.
 
+10
+00:00:39,122 --> 00:00:42,912
+Then ecom's whole system needs the full check from Lesson 4.
+
+11
+00:00:42,962 --> 00:00:45,408
+So this system copies Malika's stall.
+
 12
-00:00:45,866 --> 00:00:50,040
-Then ecom's whole system would need the full check from the last lesson.
+00:00:45,458 --> 00:00:47,280
+Six steps make it work.
 
 13
-00:00:50,090 --> 00:00:55,824
-So this system does what the real shop does: it puts the bank's card reader on ecom's counter.
-
-14
-00:00:55,874 --> 00:00:58,128
-Here is how it works, step by step.
-
-15
-00:00:58,178 --> 00:01:02,088
+00:00:47,330 --> 00:00:51,240
 First, ecom and the card zone never just talk freely.
 
-16
-00:01:02,138 --> 00:01:08,064
+14
+00:00:51,290 --> 00:00:57,216
 They agree on every question they may ask each other, and every answer, written down once.
 
-17
-00:01:08,114 --> 00:01:10,176
+15
+00:00:57,266 --> 00:00:59,328
 That agreement is a contract.
 
-18
-00:01:10,226 --> 00:01:16,464
+16
+00:00:59,378 --> 00:01:05,616
 ecom can only ask what the contract allows, and the card zone answers only in the shape the contract says.
 
+17
+00:01:05,666 --> 00:01:11,496
+Second, when a buyer opens the payment page, ecom asks the card zone for a card entry session.
+
+18
+00:01:11,546 --> 00:01:16,488
+A card entry session is a short lived place to type one card, for one payment.
+
 19
-00:01:16,514 --> 00:01:22,464
-Second, when a buyer opens the payment page, ecom asks the card zone for a card-entry session.
-
-20
-00:01:22,514 --> 00:01:27,456
-A card-entry session is a short-lived place to type one card, for one payment.
-
-21
-00:01:27,506 --> 00:01:29,736
+00:01:16,538 --> 00:01:18,768
 The card zone answers with an address.
 
-22
-00:01:29,786 --> 00:01:33,480
+20
+00:01:18,818 --> 00:01:22,512
 Third, the payment page shows that address inside a frame.
 
-23
-00:01:33,530 --> 00:01:39,120
+21
+00:01:22,562 --> 00:01:28,152
 The frame is a small window inside the page, and it belongs to the card zone, not to ecom.
 
-24
-00:01:39,170 --> 00:01:42,936
+22
+00:01:28,202 --> 00:01:31,968
 That frame is the bank's card reader, standing on ecom's counter.
 
-25
-00:01:42,986 --> 00:01:45,912
+23
+00:01:32,018 --> 00:01:34,944
 Fourth, the buyer types the card into the frame.
 
-26
-00:01:45,962 --> 00:01:49,296
+24
+00:01:34,994 --> 00:01:38,328
 The card goes straight from the buyer's browser to the card zone.
 
-27
-00:01:49,346 --> 00:01:51,240
+25
+00:01:38,378 --> 00:01:40,272
 ecom's servers are not on the way.
 
-28
-00:01:51,290 --> 00:01:58,920
+26
+00:01:40,322 --> 00:01:47,952
 Fifth, the card zone locks the number away and hands the page a receipt: the card token, the masked number, and the buyer's bank.
 
-29
-00:01:58,970 --> 00:02:00,792
+27
+00:01:48,002 --> 00:01:49,824
 Never the number itself.
 
-30
-00:02:00,842 --> 00:02:04,824
+28
+00:01:49,874 --> 00:01:53,856
 Sixth, ecom asks the card zone to charge the card by its token.
 
-31
-00:02:04,874 --> 00:02:09,960
+29
+00:01:53,906 --> 00:01:58,992
 Before it does, ecom checks that this token really came from this payment's own session.
 
-32
-00:02:10,010 --> 00:02:11,832
-Now watch the product.
+30
+00:01:59,042 --> 00:02:04,608
+Sunday evening, a buyer orders roses on Malika's site and lands on the bank's payment page.
 
-33
-00:02:11,882 --> 00:02:15,000
-A buyer is sent from the shop to the bank's payment page.
-
-34
-00:02:15,050 --> 00:02:17,880
+31
+00:02:04,658 --> 00:02:07,488
 At the top it says "Secure payment page of the bank".
 
-35
-00:02:17,930 --> 00:02:20,184
+32
+00:02:07,538 --> 00:02:09,792
 It shows the order and the amount to pay.
 
-36
-00:02:20,234 --> 00:02:25,104
-Below sits a box called "Card details": that is the frame, the bank's reader.
+33
+00:02:09,842 --> 00:02:14,208
+Below sits a box called "Card details": the frame, the bank's reader.
 
-37
-00:02:25,154 --> 00:02:27,504
+34
+00:02:14,258 --> 00:02:16,608
 The buyer types the card number and the date.
 
-38
-00:02:27,554 --> 00:02:32,088
+35
+00:02:16,658 --> 00:02:21,192
 The box hands back one short line: the masked number and the buyer's bank.
 
-39
-00:02:32,138 --> 00:02:35,808
+36
+00:02:21,242 --> 00:02:24,912
 The buyer types the code sent to their phone and confirms.
 
-40
-00:02:35,858 --> 00:02:40,080
+37
+00:02:24,962 --> 00:02:29,184
 The page says "Taking the payment", then "Your bank is being asked".
 
-41
-00:02:40,130 --> 00:02:43,968
+38
+00:02:29,234 --> 00:02:33,072
 A few seconds later it says "Paid", with a reference number.
 
-42
-00:02:44,018 --> 00:02:45,840
-Now try it the wrong way.
+39
+00:02:33,122 --> 00:02:36,312
+Another buyer leaves the page open and goes to make tea.
 
-43
-00:02:45,890 --> 00:02:50,328
-Leave the page open too long, or get the card wrong too many times.
+40
+00:02:36,362 --> 00:02:39,264
+Or gets the card wrong too many times.
 
-44
-00:02:50,378 --> 00:02:56,160
+41
+00:02:39,314 --> 00:02:45,096
 The frame says the attempt ended, too many tries or the time ran out, and asks for the card again.
 
-45
-00:02:56,210 --> 00:02:58,584
-The session was short-lived on purpose.
+42
+00:02:45,146 --> 00:02:47,784
+The session was short lived on purpose.
 
-46
-00:02:58,634 --> 00:03:02,208
+43
+00:02:47,834 --> 00:02:51,408
 Each session binds one card only, and then it is used up.
 
-47
-00:03:02,258 --> 00:03:06,384
-In the bank admin portal, this payment's row shows a masked number.
+44
+00:02:51,458 --> 00:02:56,280
+In the bank admin portal, Dilnoza sees the roses payment with a masked number.
 
-48
-00:03:06,434 --> 00:03:12,288
+45
+00:02:56,330 --> 00:03:02,184
 That is all ecom ever holds: the token, the mask, the buyer's bank and the card network.
 
-49
-00:03:12,338 --> 00:03:14,160
-What does this protect?
+46
+00:03:02,234 --> 00:03:06,384
+So ecom's servers, logs and backups never hold a card number.
 
-50
-00:03:14,210 --> 00:03:21,120
-The buyer's card never passes through ecom, so ecom's servers, logs and backups never hold a card number.
-
-51
-00:03:21,170 --> 00:03:22,992
+47
+00:03:06,434 --> 00:03:08,256
 A leak there leaks no card.
 
-52
-00:03:23,042 --> 00:03:25,056
-The shop never touches the card either.
+48
+00:03:08,306 --> 00:03:10,560
+Malika never touches the card either.
 
-53
-00:03:25,106 --> 00:03:29,904
-And the bank keeps its full check on one small room, not on ecom's whole system.
+49
+00:03:10,610 --> 00:03:13,704
+And the bank keeps its full check on one small room.
 
-54
-00:03:29,954 --> 00:03:31,776
+50
+00:03:13,754 --> 00:03:15,576
 But the token still matters.
 
-55
-00:03:31,826 --> 00:03:36,048
-It can start a payment, so ecom guards it like a ticket that can fetch a coat.
+51
+00:03:15,626 --> 00:03:18,696
+It can start a payment, so ecom guards it with care.
 
-56
-00:03:36,098 --> 00:03:38,784
+52
+00:03:18,746 --> 00:03:21,432
 That is why ecom keeps its smaller check.
 
-57
-00:03:38,834 --> 00:03:40,656
-Back to the counter.
+53
+00:03:21,482 --> 00:03:24,696
+On Saturday, the reader sat on Malika's table.
 
-58
-00:03:40,706 --> 00:03:43,032
-The bank's reader faces the buyer.
+54
+00:03:24,746 --> 00:03:27,984
+On the web, it sits inside ecom's page.
 
-59
-00:03:43,082 --> 00:03:46,032
-The shop keeps receipts in its drawer, never cards.
+55
+00:03:28,034 --> 00:03:31,512
+Either way, the shop keeps receipts, never cards.
 
-60
-00:03:46,082 --> 00:03:49,056
+56
+00:03:31,562 --> 00:03:34,536
 Next: how every service gets its settings.
