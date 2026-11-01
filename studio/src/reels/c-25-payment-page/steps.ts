@@ -134,9 +134,10 @@ export const screens: ScreenStep[] = [
       { cue: 36, region: [...TOP], focus: [[528, 43, 218, 20]] },
       { cue: 37, region: [...TOP], focus: [[539, 110, 362, 130], [545, 288, 110, 28]] },
       { cue: 38, region: [...LOW], focus: [[539, 334, 362, 334], [535, 680, 171, 25]] },
-      { cue: 39, region: [...LOW], focus: [[550, 500, 340, 48]] },
     ],
   },
+  // The code step: "Confirm" is what the buyer double-clicks.
+  { cue: 39, src: SHOT("code"), title: TITLE, region: [400, 250, 640, 400], focus: [[555, 424, 330, 42]] },
   { cue: 41, src: SHOT("busy"), title: TITLE, region: [400, 400, 640, 400], focus: [[556, 701, 328, 43]] },
   { cue: 43, src: SHOT("ended"), title: TITLE, region: [400, 180, 640, 400], beats: [{ cue: 44, region: [400, 180, 640, 400], focus: [[556, 345, 328, 43]] }] },
   { cue: 45, src: SHOT("closed"), title: TITLE, region: [...DONE], focus: [[480, 395, 480, 95]] },

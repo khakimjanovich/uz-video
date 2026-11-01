@@ -31,6 +31,23 @@ await shoot(
       },
     },
     {
+      // The code step: the card sent, the code typed, "Confirm" next (what the buyer double-clicks).
+      name: "code",
+      path: PAGE,
+      fixtures: { ...payPage(), "POST /entry/v1/sessions/*/card": () => ({ body: { status: "CODE_SENT" } }) },
+      act: async (page) => {
+        await frameUp(page);
+        const frame = page.frameLocator("iframe").first();
+        await frame.locator("#pan").pressSequentially("1234561234567890");
+        await frame.locator("#expiry").pressSequentially("0929");
+        await frame.locator("button[type=submit]").first().click();
+        await frame.locator("#otp").waitFor();
+        await frame.locator("#otp").pressSequentially("482915");
+        const b = await frame.getByRole("button", { name: "Confirm" }).boundingBox();
+        console.log("  code · confirm:", b && [b.x, b.y, b.width, b.height].map(Math.round).join(", "));
+      },
+    },
+    {
       name: "busy",
       path: PAGE,
       fixtures: { ...payPage(), "POST /api/v1/pay/*/card": problem(409, "PAYMENT_PAGE_BUSY", "The previous step is still running. Wait a moment and try again.") },
