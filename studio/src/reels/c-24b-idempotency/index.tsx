@@ -21,8 +21,8 @@ const TITLES = [
 
 export const C24bIdempotencyComposition = createEpisode({
   id: "c-24b-idempotency",
-  number: "24b",
-  part: 6,
+  number: 25,
+  part: 5,
   footer: "Idempotency",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

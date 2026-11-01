@@ -20,8 +20,8 @@ const DECIDE = { admin: [0, 1], m78Exception: [1.5, 1], checker: [3, 1] } as con
 const DECIDE_EDGES = [{ from: "admin", to: "m78Exception", label: "asks" }, { from: "checker", to: "m78Exception", label: "decides" }] as const;
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 7, current: ["reconciliation", "procport", "adapters"] },
-  { cue: 59, part: 7, current: ["payment", "partner"] },
+  { cue: 0, part: 6, current: ["reconciliation", "procport", "adapters"] },
+  { cue: 59, part: 6, current: ["payment", "partner"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

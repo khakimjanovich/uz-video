@@ -21,8 +21,8 @@ const TITLES = [
 
 export const C12bCertificateExchangeComposition = createEpisode({
   id: "c-12b-certificate-exchange",
-  number: "12b",
-  part: 2,
+  number: 13,
+  part: 3,
   footer: "Certificate exchange",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

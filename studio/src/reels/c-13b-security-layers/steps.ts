@@ -130,7 +130,7 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 76, part: 2, current: ["partner", "merchant"], units: { ecom: "merchants" } },
+  { cue: 76, part: 3, current: ["partner", "merchant"], units: { ecom: "merchants" } },
 ];
 
 // One buyer's payment, every layer at work; then the card form while Vault waits for its keyholders.

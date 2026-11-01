@@ -20,8 +20,8 @@ const TITLES = [
 
 export const C13FraudLimitsComposition = createEpisode({
   id: "c-13-fraud-limits",
-  number: 13,
-  part: 2,
+  number: 14,
+  part: 3,
   footer: "Fraud limits",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

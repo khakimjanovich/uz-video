@@ -23,7 +23,7 @@ const TITLES = [
 export const C04PciDssComposition = createEpisode({
   id: "c-04-pci-dss",
   number: 4,
-  part: 1,
+  part: 2,
   footer: "PCI DSS scope",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

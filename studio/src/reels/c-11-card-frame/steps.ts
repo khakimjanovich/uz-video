@@ -102,7 +102,7 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 61, part: 2, current: ["frame", "card"], units: { cards: "two doors" } },
+  { cue: 61, part: 3, current: ["frame", "card"], units: { cards: "two doors" } },
 ];
 
 // The frame on the pay page: typing, the code, "Card accepted", the masked line; alone; in a look-alike site.

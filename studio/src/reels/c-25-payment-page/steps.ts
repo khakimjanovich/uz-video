@@ -115,8 +115,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 6, current: ["merchant", "buyer", "payment", "frame", "card"], units: { ecom: "payment page" } },
-  { cue: 57, part: 6, current: ["payment", "procport", "card"], units: { ecom: "the charge next" } },
+  { cue: 0, part: 5, current: ["merchant", "buyer", "payment", "frame", "card"], units: { ecom: "payment page" } },
+  { cue: 57, part: 5, current: ["payment", "procport", "card"], units: { ecom: "the charge next" } },
 ];
 
 const SHOT = (name: string) => `screens/c-25-payment-page/${name}.png`;

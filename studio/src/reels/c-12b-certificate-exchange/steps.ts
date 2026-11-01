@@ -136,10 +136,10 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 10, part: 2, current: ["procport", "vault", "cardsinfra"], units: { ecom: "caller", cards: "passport office" } },
-  { cue: 37, part: 2, current: ["procport", "cardsinfra"], units: { ecom: "operator", cards: "operator" } },
-  { cue: 52, part: 2, current: ["procport", "vault", "cardsinfra"], units: { ecom: "own key", cards: "own key" } },
-  { cue: 63, part: 2, current: ["frame"], units: { cards: "stolen cards" } },
+  { cue: 10, part: 3, current: ["procport", "vault", "cardsinfra"], units: { ecom: "caller", cards: "passport office" } },
+  { cue: 37, part: 3, current: ["procport", "cardsinfra"], units: { ecom: "operator", cards: "operator" } },
+  { cue: 52, part: 3, current: ["procport", "vault", "cardsinfra"], units: { ecom: "own key", cards: "own key" } },
+  { cue: 63, part: 3, current: ["frame"], units: { cards: "stolen cards" } },
 ];
 
 // No product screen: the exchange happens between two operators, drawn above.

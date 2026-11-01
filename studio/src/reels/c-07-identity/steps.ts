@@ -132,7 +132,7 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 47, part: 1, current: ["cardsinfra", "keycloak", "vault"], units: { cards: "own passes", ecom: "a caller" } },
-  { cue: 54, part: 1, current: ["card"], units: { cards: "every card" } },
-  { cue: 57, part: 1, current: ["adapters", "procsvc"], units: { cards: "card networks" } },
+  { cue: 47, part: 2, current: ["cardsinfra", "keycloak", "vault"], units: { cards: "own passes", ecom: "a caller" } },
+  { cue: 54, part: 2, current: ["card"], units: { cards: "every card" } },
+  { cue: 57, part: 2, current: ["adapters", "procsvc"], units: { cards: "card networks" } },
 ];

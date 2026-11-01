@@ -24,7 +24,7 @@ const TITLES = [
 export const C22CommissionComposition = createEpisode({
   id: "c-22-commission",
   number: 22,
-  part: 5,
+  part: 4,
   footer: "Price tags",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

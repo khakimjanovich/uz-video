@@ -113,8 +113,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 40, part: 2, current: ["frame", "card"], units: { cards: "card form" } },
-  { cue: 66, part: 2, current: ["frame", "card", "cardsinfra", "procport"], units: { cards: "all layers" } },
+  { cue: 40, part: 3, current: ["frame", "card"], units: { cards: "card form" } },
+  { cue: 66, part: 3, current: ["frame", "card", "cardsinfra", "procport"], units: { cards: "all layers" } },
 ];
 
 // The card form: a wrong code, a session out of tries, a velocity refusal.

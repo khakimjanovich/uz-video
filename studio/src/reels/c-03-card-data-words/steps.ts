@@ -119,6 +119,6 @@ export const screens: ScreenStep[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 13, part: 0, current: [...CARD_ZONE], units: { cards: "PAN only here" } },
-  { cue: 55, part: 0, current: [...CARD_ZONE], units: { cards: "card numbers" } },
+  { cue: 13, part: 1, current: [...CARD_ZONE], units: { cards: "PAN only here" } },
+  { cue: 55, part: 1, current: [...CARD_ZONE], units: { cards: "card numbers" } },
 ];

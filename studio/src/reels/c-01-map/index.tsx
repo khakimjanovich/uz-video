@@ -16,7 +16,7 @@ const TITLES = [
 export const C01MapComposition = createEpisode({
   id: "c-01-map",
   number: 1,
-  part: 0,
+  part: 1,
   footer: "Behind the Pay button",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

@@ -16,8 +16,8 @@ const REBUILD = { m78Night: [0.4, 1], m78Report: [2.6, 1] } as const;
 const SHEET = { m78Report: [0.4, 1], m78Sheet: [2.6, 1] } as const;
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 7, current: ["merchant", "reconciliation"] },
-  { cue: 59, part: 7, current: ["buyer", "admin"] },
+  { cue: 0, part: 6, current: ["merchant", "reconciliation"] },
+  { cue: 59, part: 6, current: ["buyer", "admin"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -37,7 +37,7 @@ export const diagram: DiagramStep<BuildId>[] = [
   // The business day.
   { cue: 12, layout: { m78Day: [1.5, 1] }, accent: ["m78Day"] },
   { cue: 13, layout: { m78Day: [1.5, 1] }, badges: { m78Day: "bank's time zone" }, accent: ["m78Day"] },
-  { cue: 14, layout: DAY, edges: [...DAY_EDGES], badges: { m78Day: "Lesson 30" } },
+  { cue: 14, layout: DAY, edges: [...DAY_EDGES], badges: { m78Day: "Lesson 32" } },
   { cue: 15, layout: DAY, edges: [...DAY_EDGES], badges: { m78Day: "one day for both" }, accent: ["m78Day"] },
   // The four numbers.
   { cue: 16, layout: NIGHT, edges: [...NIGHT_EDGES], badges: { m78Night: "the count" } },

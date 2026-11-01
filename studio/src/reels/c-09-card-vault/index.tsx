@@ -22,7 +22,7 @@ const TITLES = [
 export const C09CardVaultComposition = createEpisode({
   id: "c-09-card-vault",
   number: 9,
-  part: 2,
+  part: 3,
   footer: "Card vault",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

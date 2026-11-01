@@ -21,7 +21,7 @@ const TITLES = [
 export const C11CardFrameComposition = createEpisode({
   id: "c-11-card-frame",
   number: 11,
-  part: 2,
+  part: 3,
   footer: "Card frame",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

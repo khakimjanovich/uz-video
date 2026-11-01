@@ -24,7 +24,7 @@ const TITLES = [
 export const C03CardDataWordsComposition = createEpisode({
   id: "c-03-card-data-words",
   number: 3,
-  part: 0,
+  part: 1,
   footer: "PAN · masked · token",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

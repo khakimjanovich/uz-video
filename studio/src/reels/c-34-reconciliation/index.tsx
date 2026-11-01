@@ -69,8 +69,8 @@ const TITLES = [
 
 export const C34ReconciliationComposition = createEpisode({
   id: "c-34-reconciliation",
-  number: 34,
-  part: 7,
+  number: 36,
+  part: 6,
   footer: "Reconciliation",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

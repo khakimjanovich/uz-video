@@ -18,8 +18,8 @@ export function createEpisode({
   screens,
 }: {
   id: string;
-  number: number | string; // "12b" for a split lesson
-  part: number; // the course module (0–8), lit in the panel
+  number: number; // course order, 1–41
+  part: number; // the course module (1–7), lit in the panel
   titles: string[];
   footer: string; // right side of the totals line
   subtitles: SubtitleCue[];

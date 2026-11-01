@@ -20,8 +20,8 @@ const TITLES = [
 
 export const C25PaymentPageComposition = createEpisode({
   id: "c-25-payment-page",
-  number: 25,
-  part: 6,
+  number: 26,
+  part: 5,
   footer: "Payment page",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

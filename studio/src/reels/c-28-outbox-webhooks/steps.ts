@@ -89,8 +89,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 6, current: ["payment", "kafka"], units: { ecom: "the news" } },
-  { cue: 57, part: 6, current: ["payment", "kafka", "merchant"], units: { ecom: "webhooks next" } },
+  { cue: 0, part: 5, current: ["payment", "kafka"], units: { ecom: "the news" } },
+  { cue: 57, part: 5, current: ["payment", "kafka", "merchant"], units: { ecom: "webhooks next" } },
 ];
 
 const SHOT = "screens/c-28-outbox-webhooks/detail-webhook.png";

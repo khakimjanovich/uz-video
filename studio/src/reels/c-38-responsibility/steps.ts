@@ -25,8 +25,8 @@ const NETWORK_ROW = { m78ProductDoes: "two doors", m78BanksPart: "firewalls", m7
 const LOG_ROW = { m78ProductDoes: "keeps the trails", m78BanksPart: "collects · reviews daily" };
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 8, units: { ecom: "product", cards: "product" } },
-  { cue: 49, part: 8, units: { ecom: "the shop", cards: "locked room" } },
+  { cue: 0, part: 7, units: { ecom: "product", cards: "product" } },
+  { cue: 49, part: 7, units: { ecom: "the shop", cards: "locked room" } },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

@@ -146,6 +146,6 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 26, part: 1, current: ["vault", "cardsinfra"], units: { cards: "the bank's settings" } },
-  { cue: 54, part: 1, current: ["keycloak", "cardsinfra"], units: { ecom: "caller", cards: "two proofs" } },
+  { cue: 26, part: 2, current: ["vault", "cardsinfra"], units: { cards: "the bank's settings" } },
+  { cue: 54, part: 2, current: ["keycloak", "cardsinfra"], units: { ecom: "caller", cards: "two proofs" } },
 ];

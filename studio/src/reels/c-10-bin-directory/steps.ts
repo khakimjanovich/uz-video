@@ -133,8 +133,8 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 25, part: 2, current: ["frame", "bin"], units: { cards: "check first" } },
-  { cue: 61, part: 2, current: ["frame"], units: { cards: "card form" } },
+  { cue: 25, part: 3, current: ["frame", "bin"], units: { cards: "check first" } },
+  { cue: 61, part: 3, current: ["frame"], units: { cards: "card form" } },
 ];
 
 // The pay page: the networks above the card form, the refusals, the code, the masked line with its bank.

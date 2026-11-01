@@ -130,10 +130,10 @@ export const diagram: DiagramStep<BuildId>[] = [
 ];
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 2, current: ["frame", "card", "bin", "adapters"], units: { cards: "locked room" } },
-  { cue: 10, part: 2, current: ["frame"], units: { cards: "payers' door" } },
-  { cue: 19, part: 2, current: ["card", "adapters", "procport"], units: { cards: "callers' door" } },
-  { cue: 61, part: 2, current: ["procport"], units: { cards: "certificate" } },
+  { cue: 0, part: 3, current: ["frame", "card", "bin", "adapters"], units: { cards: "locked room" } },
+  { cue: 10, part: 3, current: ["frame"], units: { cards: "payers' door" } },
+  { cue: 19, part: 3, current: ["card", "adapters", "procport"], units: { cards: "callers' door" } },
+  { cue: 61, part: 3, current: ["procport"], units: { cards: "certificate" } },
 ];
 
 // The buyer at the payers' door: the frame, and its answer to sending too fast.

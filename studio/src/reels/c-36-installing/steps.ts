@@ -30,8 +30,8 @@ const RESTART_EDGES = [{ from: "admin", to: "m78InstallCheck", label: "runs" }, 
 const GUARDS = { m78Alone: [0, 1], card: [1.5, 1], backup: [3, 1] } as const;
 
 export const map: BuildMapStep[] = [
-  { cue: 0, part: 8, current: ["vault", "cardsinfra"] },
-  { cue: 56, part: 8, current: ["kubernetes"] },
+  { cue: 0, part: 7, current: ["vault", "cardsinfra"] },
+  { cue: 56, part: 7, current: ["kubernetes"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [

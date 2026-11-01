@@ -21,8 +21,8 @@ const TITLES = [
 
 export const C13bSecurityLayersComposition = createEpisode({
   id: "c-13b-security-layers",
-  number: "13b",
-  part: 2,
+  number: 15,
+  part: 3,
   footer: "Security layers",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,
