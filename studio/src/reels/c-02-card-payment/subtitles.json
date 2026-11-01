@@ -289,9 +289,9 @@
   {
     "index": 6,
     "startFrame": 416,
-    "endFrame": 539,
-    "text": "The page says paid in two seconds, but no money has moved yet.",
-    "prefix": "The page says paid in two seconds, but no money has moved yet.",
+    "endFrame": 472,
+    "text": "Two banks take part.",
+    "prefix": "Two banks take part.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -299,61 +299,20 @@
         "startFrame": 418,
         "words": [
           {
-            "text": "The",
+            "text": "Two",
             "startFrame": 418
           },
           {
-            "text": "page",
-            "startFrame": 420
+            "text": "banks",
+            "startFrame": 422
           },
           {
-            "text": "says",
-            "startFrame": 431
+            "text": "take",
+            "startFrame": 430
           },
           {
-            "text": "paid",
+            "text": "part.",
             "startFrame": 437
-          },
-          {
-            "text": "in",
-            "startFrame": 447
-          },
-          {
-            "text": "two",
-            "startFrame": 451
-          },
-          {
-            "text": "seconds,",
-            "startFrame": 458
-          }
-        ]
-      },
-      {
-        "startFrame": 484,
-        "words": [
-          {
-            "text": "but",
-            "startFrame": 484
-          },
-          {
-            "text": "no",
-            "startFrame": 490
-          },
-          {
-            "text": "money",
-            "startFrame": 496
-          },
-          {
-            "text": "has",
-            "startFrame": 506
-          },
-          {
-            "text": "moved",
-            "startFrame": 510
-          },
-          {
-            "text": "yet.",
-            "startFrame": 519
           }
         ]
       }
@@ -361,31 +320,68 @@
   },
   {
     "index": 7,
-    "startFrame": 540,
-    "endFrame": 581,
-    "text": "Two banks take part.",
-    "prefix": "Two banks take part.",
+    "startFrame": 473,
+    "endFrame": 598,
+    "text": "The shop's bank is the acquirer, and this course builds its system.",
+    "prefix": "The shop's bank is the acquirer, and this course builds its system.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 541,
+        "startFrame": 474,
         "words": [
           {
-            "text": "Two",
-            "startFrame": 541
+            "text": "The",
+            "startFrame": 474
           },
           {
-            "text": "banks",
-            "startFrame": 545
+            "text": "shop's",
+            "startFrame": 476
           },
           {
-            "text": "take",
-            "startFrame": 553
+            "text": "bank",
+            "startFrame": 486
           },
           {
-            "text": "part.",
+            "text": "is",
+            "startFrame": 504
+          },
+          {
+            "text": "the",
+            "startFrame": 508
+          },
+          {
+            "text": "acquirer,",
+            "startFrame": 511
+          }
+        ]
+      },
+      {
+        "startFrame": 542,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 542
+          },
+          {
+            "text": "this",
+            "startFrame": 544
+          },
+          {
+            "text": "course",
+            "startFrame": 549
+          },
+          {
+            "text": "builds",
             "startFrame": 560
+          },
+          {
+            "text": "its",
+            "startFrame": 569
+          },
+          {
+            "text": "system.",
+            "startFrame": 573
           }
         ]
       }
@@ -393,68 +389,68 @@
   },
   {
     "index": 8,
-    "startFrame": 581,
-    "endFrame": 707,
-    "text": "The shop's bank is the acquirer, and this course builds its system.",
-    "prefix": "The shop's bank is the acquirer, and this course builds its system.",
+    "startFrame": 599,
+    "endFrame": 718,
+    "text": "The buyer's bank is the issuer: it gave the buyer the card.",
+    "prefix": "The buyer's bank is the issuer: it gave the buyer the card.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 583,
+        "startFrame": 600,
         "words": [
           {
             "text": "The",
-            "startFrame": 583
+            "startFrame": 600
           },
           {
-            "text": "shop's",
-            "startFrame": 584
+            "text": "buyer's",
+            "startFrame": 602
           },
           {
             "text": "bank",
-            "startFrame": 595
+            "startFrame": 615
           },
           {
             "text": "is",
-            "startFrame": 612
+            "startFrame": 637
           },
           {
             "text": "the",
-            "startFrame": 616
+            "startFrame": 641
           },
           {
-            "text": "acquirer,",
-            "startFrame": 620
+            "text": "issuer:",
+            "startFrame": 646
           }
         ]
       },
       {
-        "startFrame": 651,
+        "startFrame": 675,
         "words": [
           {
-            "text": "and",
-            "startFrame": 651
+            "text": "it",
+            "startFrame": 675
           },
           {
-            "text": "this",
-            "startFrame": 653
+            "text": "gave",
+            "startFrame": 677
           },
           {
-            "text": "course",
-            "startFrame": 658
-          },
-          {
-            "text": "builds",
-            "startFrame": 669
-          },
-          {
-            "text": "its",
-            "startFrame": 678
-          },
-          {
-            "text": "system.",
+            "text": "the",
             "startFrame": 682
+          },
+          {
+            "text": "buyer",
+            "startFrame": 684
+          },
+          {
+            "text": "the",
+            "startFrame": 692
+          },
+          {
+            "text": "card.",
+            "startFrame": 694
           }
         ]
       }
@@ -462,68 +458,102 @@
   },
   {
     "index": 9,
-    "startFrame": 707,
-    "endFrame": 826,
-    "text": "The buyer's bank is the issuer: it gave the buyer the card.",
-    "prefix": "The buyer's bank is the issuer: it gave the buyer the card.",
+    "startFrame": 718,
+    "endFrame": 898,
+    "text": "When the buyer pays, the acquirer asks the issuer, through the card network, whether the payment is OK.",
+    "prefix": "When the buyer pays, the acquirer asks the issuer, through the card network, whether the payment is OK.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 709,
+        "startFrame": 719,
         "words": [
           {
-            "text": "The",
-            "startFrame": 709
-          },
-          {
-            "text": "buyer's",
-            "startFrame": 711
-          },
-          {
-            "text": "bank",
-            "startFrame": 723
-          },
-          {
-            "text": "is",
-            "startFrame": 746
+            "text": "When",
+            "startFrame": 719
           },
           {
             "text": "the",
-            "startFrame": 750
+            "startFrame": 722
           },
           {
-            "text": "issuer:",
-            "startFrame": 755
+            "text": "buyer",
+            "startFrame": 724
+          },
+          {
+            "text": "pays,",
+            "startFrame": 734
           }
         ]
       },
       {
-        "startFrame": 784,
+        "startFrame": 756,
         "words": [
           {
-            "text": "it",
-            "startFrame": 784
+            "text": "the",
+            "startFrame": 756
           },
           {
-            "text": "gave",
-            "startFrame": 785
+            "text": "acquirer",
+            "startFrame": 759
+          },
+          {
+            "text": "asks",
+            "startFrame": 778
           },
           {
             "text": "the",
+            "startFrame": 788
+          },
+          {
+            "text": "issuer,",
             "startFrame": 791
-          },
+          }
+        ]
+      },
+      {
+        "startFrame": 812,
+        "words": [
           {
-            "text": "buyer",
-            "startFrame": 793
+            "text": "through",
+            "startFrame": 812
           },
           {
             "text": "the",
-            "startFrame": 800
+            "startFrame": 816
           },
           {
-            "text": "card.",
-            "startFrame": 803
+            "text": "card",
+            "startFrame": 818
+          },
+          {
+            "text": "network,",
+            "startFrame": 827
+          }
+        ]
+      },
+      {
+        "startFrame": 846,
+        "words": [
+          {
+            "text": "whether",
+            "startFrame": 846
+          },
+          {
+            "text": "the",
+            "startFrame": 852
+          },
+          {
+            "text": "payment",
+            "startFrame": 855
+          },
+          {
+            "text": "is",
+            "startFrame": 866
+          },
+          {
+            "text": "OK.",
+            "startFrame": 870
           }
         ]
       }
@@ -531,102 +561,97 @@
   },
   {
     "index": 10,
-    "startFrame": 827,
-    "endFrame": 1006,
-    "text": "When the buyer pays, the acquirer asks the issuer, through the card network, whether the payment is OK.",
-    "prefix": "When the buyer pays, the acquirer asks the issuer, through the card network, whether the payment is OK.",
+    "startFrame": 898,
+    "endFrame": 1060,
+    "text": "The issuer checks the card and the money on the account, and says yes or no, in seconds.",
+    "prefix": "The issuer checks the card and the money on the account, and says yes or no, in seconds.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 828,
+        "startFrame": 899,
         "words": [
           {
-            "text": "When",
-            "startFrame": 828
-          },
-          {
-            "text": "the",
-            "startFrame": 831
-          },
-          {
-            "text": "buyer",
-            "startFrame": 833
-          },
-          {
-            "text": "pays,",
-            "startFrame": 842
-          }
-        ]
-      },
-      {
-        "startFrame": 865,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 865
-          },
-          {
-            "text": "acquirer",
-            "startFrame": 868
-          },
-          {
-            "text": "asks",
-            "startFrame": 886
-          },
-          {
-            "text": "the",
-            "startFrame": 896
-          },
-          {
-            "text": "issuer,",
+            "text": "The",
             "startFrame": 899
-          }
-        ]
-      },
-      {
-        "startFrame": 921,
-        "words": [
+          },
           {
-            "text": "through",
-            "startFrame": 921
+            "text": "issuer",
+            "startFrame": 901
+          },
+          {
+            "text": "checks",
+            "startFrame": 913
           },
           {
             "text": "the",
-            "startFrame": 925
+            "startFrame": 922
           },
           {
             "text": "card",
-            "startFrame": 927
+            "startFrame": 926
           },
           {
-            "text": "network,",
-            "startFrame": 935
+            "text": "and",
+            "startFrame": 940
+          },
+          {
+            "text": "the",
+            "startFrame": 942
+          },
+          {
+            "text": "money",
+            "startFrame": 944
           }
         ]
       },
       {
-        "startFrame": 955,
+        "startFrame": 954,
         "words": [
           {
-            "text": "whether",
-            "startFrame": 955
+            "text": "on",
+            "startFrame": 954
           },
           {
             "text": "the",
-            "startFrame": 961
+            "startFrame": 958
           },
           {
-            "text": "payment",
-            "startFrame": 964
+            "text": "account,",
+            "startFrame": 959
+          }
+        ]
+      },
+      {
+        "startFrame": 986,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 986
           },
           {
-            "text": "is",
-            "startFrame": 975
+            "text": "says",
+            "startFrame": 988
           },
           {
-            "text": "OK.",
-            "startFrame": 979
+            "text": "yes",
+            "startFrame": 997
+          },
+          {
+            "text": "or",
+            "startFrame": 1007
+          },
+          {
+            "text": "no,",
+            "startFrame": 1009
+          },
+          {
+            "text": "in",
+            "startFrame": 1028
+          },
+          {
+            "text": "seconds.",
+            "startFrame": 1032
           }
         ]
       }
@@ -634,97 +659,64 @@
   },
   {
     "index": 11,
-    "startFrame": 1007,
-    "endFrame": 1169,
-    "text": "The issuer checks the card and the money on the account, and says yes or no, in seconds.",
-    "prefix": "The issuer checks the card and the money on the account, and says yes or no, in seconds.",
+    "startFrame": 1061,
+    "endFrame": 1142,
+    "text": "That yes is a line in the tab book, not money.",
+    "prefix": "That yes is a line in the tab book, not money.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1008,
-        "words": [
-          {
-            "text": "The",
-            "startFrame": 1008
-          },
-          {
-            "text": "issuer",
-            "startFrame": 1010
-          },
-          {
-            "text": "checks",
-            "startFrame": 1022
-          },
-          {
-            "text": "the",
-            "startFrame": 1031
-          },
-          {
-            "text": "card",
-            "startFrame": 1034
-          },
-          {
-            "text": "and",
-            "startFrame": 1049
-          },
-          {
-            "text": "the",
-            "startFrame": 1051
-          },
-          {
-            "text": "money",
-            "startFrame": 1053
-          }
-        ]
-      },
-      {
         "startFrame": 1063,
         "words": [
           {
-            "text": "on",
+            "text": "That",
             "startFrame": 1063
           },
           {
-            "text": "the",
+            "text": "yes",
             "startFrame": 1066
           },
           {
-            "text": "account,",
-            "startFrame": 1068
+            "text": "is",
+            "startFrame": 1074
+          },
+          {
+            "text": "a",
+            "startFrame": 1076
+          },
+          {
+            "text": "line",
+            "startFrame": 1078
+          },
+          {
+            "text": "in",
+            "startFrame": 1087
+          },
+          {
+            "text": "the",
+            "startFrame": 1088
+          },
+          {
+            "text": "tab",
+            "startFrame": 1090
           }
         ]
       },
       {
-        "startFrame": 1095,
+        "startFrame": 1098,
         "words": [
           {
-            "text": "and",
-            "startFrame": 1095
+            "text": "book,",
+            "startFrame": 1098
           },
           {
-            "text": "says",
-            "startFrame": 1097
+            "text": "not",
+            "startFrame": 1113
           },
           {
-            "text": "yes",
-            "startFrame": 1106
-          },
-          {
-            "text": "or",
-            "startFrame": 1115
-          },
-          {
-            "text": "no,",
-            "startFrame": 1118
-          },
-          {
-            "text": "in",
-            "startFrame": 1137
-          },
-          {
-            "text": "seconds.",
-            "startFrame": 1140
+            "text": "money.",
+            "startFrame": 1119
           }
         ]
       }
@@ -732,64 +724,89 @@
   },
   {
     "index": 12,
-    "startFrame": 1170,
-    "endFrame": 1250,
-    "text": "That yes is a line in the tab book, not money.",
-    "prefix": "That yes is a line in the tab book, not money.",
+    "startFrame": 1142,
+    "endFrame": 1320,
+    "text": "The money moves later, in one batch for many payments, and that batch is called settlement.",
+    "prefix": "The money moves later, in one batch for many payments, and that batch is called settlement.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1171,
+        "startFrame": 1144,
         "words": [
           {
-            "text": "That",
-            "startFrame": 1171
+            "text": "The",
+            "startFrame": 1144
           },
           {
-            "text": "yes",
-            "startFrame": 1175
+            "text": "money",
+            "startFrame": 1146
           },
           {
-            "text": "is",
-            "startFrame": 1182
+            "text": "moves",
+            "startFrame": 1157
           },
           {
-            "text": "a",
-            "startFrame": 1185
-          },
-          {
-            "text": "line",
-            "startFrame": 1186
-          },
-          {
-            "text": "in",
-            "startFrame": 1196
-          },
-          {
-            "text": "the",
-            "startFrame": 1197
-          },
-          {
-            "text": "tab",
-            "startFrame": 1198
+            "text": "later,",
+            "startFrame": 1166
           }
         ]
       },
       {
-        "startFrame": 1206,
+        "startFrame": 1187,
         "words": [
           {
-            "text": "book,",
-            "startFrame": 1206
+            "text": "in",
+            "startFrame": 1187
           },
           {
-            "text": "not",
-            "startFrame": 1222
+            "text": "one",
+            "startFrame": 1192
           },
           {
-            "text": "money.",
-            "startFrame": 1227
+            "text": "batch",
+            "startFrame": 1200
+          },
+          {
+            "text": "for",
+            "startFrame": 1211
+          },
+          {
+            "text": "many",
+            "startFrame": 1216
+          },
+          {
+            "text": "payments,",
+            "startFrame": 1225
+          }
+        ]
+      },
+      {
+        "startFrame": 1253,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1253
+          },
+          {
+            "text": "that",
+            "startFrame": 1258
+          },
+          {
+            "text": "batch",
+            "startFrame": 1265
+          },
+          {
+            "text": "is",
+            "startFrame": 1281
+          },
+          {
+            "text": "called",
+            "startFrame": 1284
+          },
+          {
+            "text": "settlement.",
+            "startFrame": 1291
           }
         ]
       }
@@ -797,89 +814,64 @@
   },
   {
     "index": 13,
-    "startFrame": 1251,
-    "endFrame": 1428,
-    "text": "The money moves later, in one batch for many payments, and that batch is called settlement.",
-    "prefix": "The money moves later, in one batch for many payments, and that batch is called settlement.",
+    "startFrame": 1320,
+    "endFrame": 1430,
+    "text": "The acquirer keeps its fee and pays the shop the rest.",
+    "prefix": "The acquirer keeps its fee and pays the shop the rest.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1252,
+        "startFrame": 1321,
         "words": [
           {
             "text": "The",
-            "startFrame": 1252
+            "startFrame": 1321
           },
           {
-            "text": "money",
-            "startFrame": 1255
+            "text": "acquirer",
+            "startFrame": 1323
           },
           {
-            "text": "moves",
-            "startFrame": 1265
+            "text": "keeps",
+            "startFrame": 1344
           },
           {
-            "text": "later,",
-            "startFrame": 1275
-          }
-        ]
-      },
-      {
-        "startFrame": 1296,
-        "words": [
-          {
-            "text": "in",
-            "startFrame": 1296
+            "text": "its",
+            "startFrame": 1351
           },
           {
-            "text": "one",
-            "startFrame": 1300
+            "text": "fee",
+            "startFrame": 1355
           },
-          {
-            "text": "batch",
-            "startFrame": 1309
-          },
-          {
-            "text": "for",
-            "startFrame": 1320
-          },
-          {
-            "text": "many",
-            "startFrame": 1324
-          },
-          {
-            "text": "payments,",
-            "startFrame": 1333
-          }
-        ]
-      },
-      {
-        "startFrame": 1362,
-        "words": [
           {
             "text": "and",
-            "startFrame": 1362
+            "startFrame": 1375
           },
           {
-            "text": "that",
-            "startFrame": 1367
+            "text": "pays",
+            "startFrame": 1380
+          }
+        ]
+      },
+      {
+        "startFrame": 1391,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1391
           },
           {
-            "text": "batch",
-            "startFrame": 1374
+            "text": "shop",
+            "startFrame": 1392
           },
           {
-            "text": "is",
-            "startFrame": 1390
+            "text": "the",
+            "startFrame": 1402
           },
           {
-            "text": "called",
-            "startFrame": 1393
-          },
-          {
-            "text": "settlement.",
-            "startFrame": 1399
+            "text": "rest.",
+            "startFrame": 1404
           }
         ]
       }
@@ -887,64 +879,39 @@
   },
   {
     "index": 14,
-    "startFrame": 1429,
-    "endFrame": 1539,
-    "text": "The acquirer keeps its fee and pays the shop the rest.",
-    "prefix": "The acquirer keeps its fee and pays the shop the rest.",
+    "startFrame": 1431,
+    "endFrame": 1497,
+    "text": "Giving money back depends on timing.",
+    "prefix": "Giving money back depends on timing.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1430,
+        "startFrame": 1432,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1430
-          },
-          {
-            "text": "acquirer",
+            "text": "Giving",
             "startFrame": 1432
           },
           {
-            "text": "keeps",
-            "startFrame": 1452
+            "text": "money",
+            "startFrame": 1439
           },
           {
-            "text": "its",
-            "startFrame": 1460
+            "text": "back",
+            "startFrame": 1445
           },
           {
-            "text": "fee",
-            "startFrame": 1464
+            "text": "depends",
+            "startFrame": 1459
           },
           {
-            "text": "and",
-            "startFrame": 1483
+            "text": "on",
+            "startFrame": 1469
           },
           {
-            "text": "pays",
-            "startFrame": 1488
-          }
-        ]
-      },
-      {
-        "startFrame": 1499,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 1499
-          },
-          {
-            "text": "shop",
-            "startFrame": 1501
-          },
-          {
-            "text": "the",
-            "startFrame": 1511
-          },
-          {
-            "text": "rest.",
-            "startFrame": 1513
+            "text": "timing.",
+            "startFrame": 1473
           }
         ]
       }
@@ -952,60 +919,80 @@
   },
   {
     "index": 15,
-    "startFrame": 1540,
-    "endFrame": 1680,
-    "text": "Lesson 22 works out the fee, and Lesson 32 counts the day.",
-    "prefix": "Lesson 22 works out the fee, and Lesson 32 counts the day.",
+    "startFrame": 1498,
+    "endFrame": 1690,
+    "text": "Before settlement, the line is simply crossed out, as if it never happened: a reversal.",
+    "prefix": "Before settlement, the line is simply crossed out, as if it never happened: a reversal.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1541,
+        "startFrame": 1499,
         "words": [
           {
-            "text": "Lesson 22",
-            "startFrame": 1541
+            "text": "Before",
+            "startFrame": 1499
           },
           {
-            "text": "works",
-            "startFrame": 1562
-          },
-          {
-            "text": "out",
-            "startFrame": 1576
+            "text": "settlement,",
+            "startFrame": 1508
           },
           {
             "text": "the",
-            "startFrame": 1581
+            "startFrame": 1536
           },
           {
-            "text": "fee,",
-            "startFrame": 1582
+            "text": "line",
+            "startFrame": 1539
+          },
+          {
+            "text": "is",
+            "startFrame": 1549
+          },
+          {
+            "text": "simply",
+            "startFrame": 1552
+          },
+          {
+            "text": "crossed",
+            "startFrame": 1567
+          },
+          {
+            "text": "out,",
+            "startFrame": 1584
           }
         ]
       },
       {
-        "startFrame": 1607,
+        "startFrame": 1608,
         "words": [
           {
-            "text": "and",
-            "startFrame": 1607
+            "text": "as",
+            "startFrame": 1608
           },
           {
-            "text": "Lesson 32",
-            "startFrame": 1613
+            "text": "if",
+            "startFrame": 1612
           },
           {
-            "text": "counts",
-            "startFrame": 1646
+            "text": "it",
+            "startFrame": 1614
           },
           {
-            "text": "the",
-            "startFrame": 1656
+            "text": "never",
+            "startFrame": 1617
           },
           {
-            "text": "day.",
+            "text": "happened:",
+            "startFrame": 1630
+          },
+          {
+            "text": "a",
             "startFrame": 1658
+          },
+          {
+            "text": "reversal.",
+            "startFrame": 1659
           }
         ]
       }
@@ -1013,39 +1000,80 @@
   },
   {
     "index": 16,
-    "startFrame": 1680,
-    "endFrame": 1746,
-    "text": "Giving money back depends on timing.",
-    "prefix": "Giving money back depends on timing.",
+    "startFrame": 1691,
+    "endFrame": 1848,
+    "text": "After settlement, the money has moved, so it has to be sent back: a refund.",
+    "prefix": "After settlement, the money has moved, so it has to be sent back: a refund.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1681,
+        "startFrame": 1692,
         "words": [
           {
-            "text": "Giving",
-            "startFrame": 1681
+            "text": "After",
+            "startFrame": 1692
+          },
+          {
+            "text": "settlement,",
+            "startFrame": 1700
+          },
+          {
+            "text": "the",
+            "startFrame": 1723
           },
           {
             "text": "money",
-            "startFrame": 1688
+            "startFrame": 1726
           },
           {
-            "text": "back",
-            "startFrame": 1694
+            "text": "has",
+            "startFrame": 1735
           },
           {
-            "text": "depends",
-            "startFrame": 1708
+            "text": "moved,",
+            "startFrame": 1741
+          }
+        ]
+      },
+      {
+        "startFrame": 1768,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 1768
           },
           {
-            "text": "on",
-            "startFrame": 1719
+            "text": "it",
+            "startFrame": 1772
           },
           {
-            "text": "timing.",
-            "startFrame": 1722
+            "text": "has",
+            "startFrame": 1773
+          },
+          {
+            "text": "to",
+            "startFrame": 1779
+          },
+          {
+            "text": "be",
+            "startFrame": 1781
+          },
+          {
+            "text": "sent",
+            "startFrame": 1784
+          },
+          {
+            "text": "back:",
+            "startFrame": 1793
+          },
+          {
+            "text": "a",
+            "startFrame": 1817
+          },
+          {
+            "text": "refund.",
+            "startFrame": 1819
           }
         ]
       }
@@ -1053,72 +1081,64 @@
   },
   {
     "index": 17,
-    "startFrame": 1747,
-    "endFrame": 1896,
-    "text": "Before settlement, the line is simply crossed out, as if it never happened.",
-    "prefix": "Before settlement, the line is simply crossed out, as if it never happened.",
+    "startFrame": 1849,
+    "endFrame": 1981,
+    "text": "A system that mixes the two loses money, or pays twice.",
+    "prefix": "A system that mixes the two loses money, or pays twice.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1748,
+        "startFrame": 1850,
         "words": [
           {
-            "text": "Before",
-            "startFrame": 1748
+            "text": "A",
+            "startFrame": 1850
           },
           {
-            "text": "settlement,",
-            "startFrame": 1757
+            "text": "system",
+            "startFrame": 1852
+          },
+          {
+            "text": "that",
+            "startFrame": 1863
+          },
+          {
+            "text": "mixes",
+            "startFrame": 1867
           },
           {
             "text": "the",
-            "startFrame": 1779
+            "startFrame": 1881
           },
           {
-            "text": "line",
-            "startFrame": 1783
+            "text": "two",
+            "startFrame": 1884
           },
           {
-            "text": "is",
-            "startFrame": 1797
+            "text": "loses",
+            "startFrame": 1895
           },
           {
-            "text": "simply",
-            "startFrame": 1802
-          },
-          {
-            "text": "crossed",
-            "startFrame": 1815
-          },
-          {
-            "text": "out,",
-            "startFrame": 1830
+            "text": "money,",
+            "startFrame": 1908
           }
         ]
       },
       {
-        "startFrame": 1852,
+        "startFrame": 1935,
         "words": [
           {
-            "text": "as",
-            "startFrame": 1852
+            "text": "or",
+            "startFrame": 1935
           },
           {
-            "text": "if",
-            "startFrame": 1857
+            "text": "pays",
+            "startFrame": 1939
           },
           {
-            "text": "it",
-            "startFrame": 1860
-          },
-          {
-            "text": "never",
-            "startFrame": 1862
-          },
-          {
-            "text": "happened.",
-            "startFrame": 1871
+            "text": "twice.",
+            "startFrame": 1948
           }
         ]
       }
@@ -1126,60 +1146,93 @@
   },
   {
     "index": 18,
-    "startFrame": 1896,
-    "endFrame": 1982,
-    "text": "No money has moved, so none has to move back.",
-    "prefix": "No money has moved, so none has to move back.",
+    "startFrame": 1982,
+    "endFrame": 2167,
+    "text": "So two pairs stay apart: approved is not paid out, and a reversal is not a refund.",
+    "prefix": "So two pairs stay apart: approved is not paid out, and a reversal is not a refund.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1897,
+        "startFrame": 1983,
         "words": [
           {
-            "text": "No",
-            "startFrame": 1897
+            "text": "So",
+            "startFrame": 1983
           },
           {
-            "text": "money",
-            "startFrame": 1901
+            "text": "two",
+            "startFrame": 1991
           },
           {
-            "text": "has",
-            "startFrame": 1908
+            "text": "pairs",
+            "startFrame": 1998
           },
           {
-            "text": "moved,",
-            "startFrame": 1913
+            "text": "stay",
+            "startFrame": 2009
+          },
+          {
+            "text": "apart:",
+            "startFrame": 2015
           }
         ]
       },
       {
-        "startFrame": 1933,
+        "startFrame": 2042,
         "words": [
           {
-            "text": "so",
-            "startFrame": 1933
+            "text": "approved",
+            "startFrame": 2042
           },
           {
-            "text": "none",
-            "startFrame": 1936
+            "text": "is",
+            "startFrame": 2060
           },
           {
-            "text": "has",
-            "startFrame": 1944
+            "text": "not",
+            "startFrame": 2063
           },
           {
-            "text": "to",
-            "startFrame": 1950
+            "text": "paid",
+            "startFrame": 2072
           },
           {
-            "text": "move",
-            "startFrame": 1952
+            "text": "out,",
+            "startFrame": 2079
+          }
+        ]
+      },
+      {
+        "startFrame": 2103,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2103
           },
           {
-            "text": "back.",
-            "startFrame": 1957
+            "text": "a",
+            "startFrame": 2105
+          },
+          {
+            "text": "reversal",
+            "startFrame": 2106
+          },
+          {
+            "text": "is",
+            "startFrame": 2127
+          },
+          {
+            "text": "not",
+            "startFrame": 2131
+          },
+          {
+            "text": "a",
+            "startFrame": 2137
+          },
+          {
+            "text": "refund.",
+            "startFrame": 2138
           }
         ]
       }
@@ -1187,724 +1240,47 @@
   },
   {
     "index": 19,
-    "startFrame": 1982,
-    "endFrame": 2146,
-    "text": "After settlement, the money has moved, so it has to be sent back, and that is a refund.",
-    "prefix": "After settlement, the money has moved, so it has to be sent back, and that is a refund.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 1984,
-        "words": [
-          {
-            "text": "After",
-            "startFrame": 1984
-          },
-          {
-            "text": "settlement,",
-            "startFrame": 1991
-          },
-          {
-            "text": "the",
-            "startFrame": 2014
-          },
-          {
-            "text": "money",
-            "startFrame": 2017
-          },
-          {
-            "text": "has",
-            "startFrame": 2028
-          },
-          {
-            "text": "moved,",
-            "startFrame": 2035
-          }
-        ]
-      },
-      {
-        "startFrame": 2057,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 2057
-          },
-          {
-            "text": "it",
-            "startFrame": 2062
-          },
-          {
-            "text": "has",
-            "startFrame": 2063
-          },
-          {
-            "text": "to",
-            "startFrame": 2069
-          },
-          {
-            "text": "be",
-            "startFrame": 2070
-          },
-          {
-            "text": "sent",
-            "startFrame": 2073
-          },
-          {
-            "text": "back,",
-            "startFrame": 2082
-          }
-        ]
-      },
-      {
-        "startFrame": 2106,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 2106
-          },
-          {
-            "text": "that",
-            "startFrame": 2109
-          },
-          {
-            "text": "is",
-            "startFrame": 2113
-          },
-          {
-            "text": "a",
-            "startFrame": 2116
-          },
-          {
-            "text": "refund.",
-            "startFrame": 2117
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 20,
-    "startFrame": 2147,
-    "endFrame": 2266,
-    "text": "Code that mixes the two loses money, or pays twice.",
-    "prefix": "Code that mixes the two loses money, or pays twice.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2148,
-        "words": [
-          {
-            "text": "Code",
-            "startFrame": 2148
-          },
-          {
-            "text": "that",
-            "startFrame": 2155
-          },
-          {
-            "text": "mixes",
-            "startFrame": 2159
-          },
-          {
-            "text": "the",
-            "startFrame": 2172
-          },
-          {
-            "text": "two",
-            "startFrame": 2174
-          },
-          {
-            "text": "loses",
-            "startFrame": 2185
-          },
-          {
-            "text": "money,",
-            "startFrame": 2197
-          }
-        ]
-      },
-      {
-        "startFrame": 2220,
-        "words": [
-          {
-            "text": "or",
-            "startFrame": 2220
-          },
-          {
-            "text": "pays",
-            "startFrame": 2223
-          },
-          {
-            "text": "twice.",
-            "startFrame": 2232
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 21,
-    "startFrame": 2266,
-    "endFrame": 2325,
-    "text": "So keep two pairs apart.",
-    "prefix": "So keep two pairs apart.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2267,
-        "words": [
-          {
-            "text": "So",
-            "startFrame": 2267
-          },
-          {
-            "text": "keep",
-            "startFrame": 2277
-          },
-          {
-            "text": "two",
-            "startFrame": 2283
-          },
-          {
-            "text": "pairs",
-            "startFrame": 2292
-          },
-          {
-            "text": "apart.",
-            "startFrame": 2301
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 22,
-    "startFrame": 2325,
-    "endFrame": 2374,
-    "text": "Approved is not paid out.",
-    "prefix": "Approved is not paid out.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2326,
-        "words": [
-          {
-            "text": "Approved",
-            "startFrame": 2326
-          },
-          {
-            "text": "is",
-            "startFrame": 2337
-          },
-          {
-            "text": "not",
-            "startFrame": 2340
-          },
-          {
-            "text": "paid",
-            "startFrame": 2346
-          },
-          {
-            "text": "out.",
-            "startFrame": 2353
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 23,
-    "startFrame": 2374,
-    "endFrame": 2436,
-    "text": "And cancelled is not refunded.",
-    "prefix": "And cancelled is not refunded.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2375,
-        "words": [
-          {
-            "text": "And",
-            "startFrame": 2375
-          },
-          {
-            "text": "cancelled",
-            "startFrame": 2378
-          },
-          {
-            "text": "is",
-            "startFrame": 2397
-          },
-          {
-            "text": "not",
-            "startFrame": 2400
-          },
-          {
-            "text": "refunded.",
-            "startFrame": 2409
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 24,
-    "startFrame": 2437,
-    "endFrame": 2492,
-    "text": "Now find the tab book in the code.",
-    "prefix": "Now find the tab book in the code.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2438,
-        "words": [
-          {
-            "text": "Now",
-            "startFrame": 2438
-          },
-          {
-            "text": "find",
-            "startFrame": 2446
-          },
-          {
-            "text": "the",
-            "startFrame": 2452
-          },
-          {
-            "text": "tab",
-            "startFrame": 2453
-          },
-          {
-            "text": "book",
-            "startFrame": 2461
-          },
-          {
-            "text": "in",
-            "startFrame": 2467
-          },
-          {
-            "text": "the",
-            "startFrame": 2468
-          },
-          {
-            "text": "code.",
-            "startFrame": 2470
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 25,
-    "startFrame": 2492,
-    "endFrame": 2636,
-    "text": "In the ecom repository, search the payment statuses for the words given back.",
-    "prefix": "In the ecom repository, search the payment statuses for the words given back.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2493,
-        "words": [
-          {
-            "text": "In",
-            "startFrame": 2493
-          },
-          {
-            "text": "the",
-            "startFrame": 2495
-          },
-          {
-            "text": "ecom",
-            "startFrame": 2497
-          },
-          {
-            "text": "repository,",
-            "startFrame": 2509
-          }
-        ]
-      },
-      {
-        "startFrame": 2545,
-        "words": [
-          {
-            "text": "search",
-            "startFrame": 2545
-          },
-          {
-            "text": "the",
-            "startFrame": 2555
-          },
-          {
-            "text": "payment",
-            "startFrame": 2558
-          },
-          {
-            "text": "statuses",
-            "startFrame": 2567
-          },
-          {
-            "text": "for",
-            "startFrame": 2585
-          },
-          {
-            "text": "the",
-            "startFrame": 2589
-          },
-          {
-            "text": "words",
-            "startFrame": 2592
-          },
-          {
-            "text": "given",
-            "startFrame": 2602
-          },
-          {
-            "text": "back.",
-            "startFrame": 2610
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 26,
-    "startFrame": 2636,
-    "endFrame": 2692,
-    "text": "Two statuses come back.",
-    "prefix": "Two statuses come back.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2638,
-        "words": [
-          {
-            "text": "Two",
-            "startFrame": 2638
-          },
-          {
-            "text": "statuses",
-            "startFrame": 2641
-          },
-          {
-            "text": "come",
-            "startFrame": 2655
-          },
-          {
-            "text": "back.",
-            "startFrame": 2660
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 27,
-    "startFrame": 2692,
-    "endFrame": 2869,
-    "text": "The first is given back before settlement, as if it never happened, and its name is reversed.",
-    "prefix": "The first is given back before settlement, as if it never happened, and its name is reversed.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2694,
-        "words": [
-          {
-            "text": "The",
-            "startFrame": 2694
-          },
-          {
-            "text": "first",
-            "startFrame": 2696
-          },
-          {
-            "text": "is",
-            "startFrame": 2709
-          },
-          {
-            "text": "given",
-            "startFrame": 2713
-          },
-          {
-            "text": "back",
-            "startFrame": 2721
-          },
-          {
-            "text": "before",
-            "startFrame": 2734
-          },
-          {
-            "text": "settlement,",
-            "startFrame": 2746
-          }
-        ]
-      },
-      {
-        "startFrame": 2775,
-        "words": [
-          {
-            "text": "as",
-            "startFrame": 2775
-          },
-          {
-            "text": "if",
-            "startFrame": 2779
-          },
-          {
-            "text": "it",
-            "startFrame": 2783
-          },
-          {
-            "text": "never",
-            "startFrame": 2785
-          },
-          {
-            "text": "happened,",
-            "startFrame": 2796
-          }
-        ]
-      },
-      {
-        "startFrame": 2822,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 2822
-          },
-          {
-            "text": "its",
-            "startFrame": 2824
-          },
-          {
-            "text": "name",
-            "startFrame": 2828
-          },
-          {
-            "text": "is",
-            "startFrame": 2835
-          },
-          {
-            "text": "reversed.",
-            "startFrame": 2839
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 28,
-    "startFrame": 2869,
-    "endFrame": 3011,
-    "text": "The second is given back after settlement, and its name is refunded.",
-    "prefix": "The second is given back after settlement, and its name is refunded.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 2871,
-        "words": [
-          {
-            "text": "The",
-            "startFrame": 2871
-          },
-          {
-            "text": "second",
-            "startFrame": 2873
-          },
-          {
-            "text": "is",
-            "startFrame": 2891
-          },
-          {
-            "text": "given",
-            "startFrame": 2894
-          },
-          {
-            "text": "back",
-            "startFrame": 2904
-          },
-          {
-            "text": "after",
-            "startFrame": 2917
-          },
-          {
-            "text": "settlement,",
-            "startFrame": 2925
-          }
-        ]
-      },
-      {
-        "startFrame": 2951,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 2951
-          },
-          {
-            "text": "its",
-            "startFrame": 2953
-          },
-          {
-            "text": "name",
-            "startFrame": 2958
-          },
-          {
-            "text": "is",
-            "startFrame": 2980
-          },
-          {
-            "text": "refunded.",
-            "startFrame": 2984
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 29,
-    "startFrame": 3011,
-    "endFrame": 3174,
-    "text": "Approved is not paid out, and cancel is not refund: the tab book is in the code.",
-    "prefix": "Approved is not paid out, and cancel is not refund: the tab book is in the code.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 3013,
-        "words": [
-          {
-            "text": "Approved",
-            "startFrame": 3013
-          },
-          {
-            "text": "is",
-            "startFrame": 3027
-          },
-          {
-            "text": "not",
-            "startFrame": 3030
-          },
-          {
-            "text": "paid",
-            "startFrame": 3038
-          },
-          {
-            "text": "out,",
-            "startFrame": 3046
-          }
-        ]
-      },
-      {
-        "startFrame": 3069,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 3069
-          },
-          {
-            "text": "cancel",
-            "startFrame": 3072
-          },
-          {
-            "text": "is",
-            "startFrame": 3084
-          },
-          {
-            "text": "not",
-            "startFrame": 3087
-          },
-          {
-            "text": "refund:",
-            "startFrame": 3097
-          }
-        ]
-      },
-      {
-        "startFrame": 3125,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 3125
-          },
-          {
-            "text": "tab",
-            "startFrame": 3128
-          },
-          {
-            "text": "book",
-            "startFrame": 3136
-          },
-          {
-            "text": "is",
-            "startFrame": 3144
-          },
-          {
-            "text": "in",
-            "startFrame": 3148
-          },
-          {
-            "text": "the",
-            "startFrame": 3149
-          },
-          {
-            "text": "code.",
-            "startFrame": 3151
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 30,
-    "startFrame": 3174,
-    "endFrame": 3273,
+    "startFrame": 2167,
+    "endFrame": 2267,
     "text": "Next: what you may keep about a card.",
     "prefix": "Next: what you may keep about a card.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3175,
+        "startFrame": 2169,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 3175
+            "startFrame": 2169
           },
           {
             "text": "what",
-            "startFrame": 3200
+            "startFrame": 2194
           },
           {
             "text": "you",
-            "startFrame": 3203
+            "startFrame": 2197
           },
           {
             "text": "may",
-            "startFrame": 3205
+            "startFrame": 2198
           },
           {
             "text": "keep",
-            "startFrame": 3209
+            "startFrame": 2202
           },
           {
             "text": "about",
-            "startFrame": 3215
+            "startFrame": 2208
           },
           {
             "text": "a",
-            "startFrame": 3220
+            "startFrame": 2213
           },
           {
             "text": "card.",
-            "startFrame": 3221
+            "startFrame": 2214
           }
         ]
       }

@@ -11,105 +11,49 @@ When your bank calls you, they say: your card ending 7890.
 They never ask for the three digits on the back.
 
 4
-00:00:09,386 --> 00:00:15,576
-Now picture a support engineer who pastes a whole card number into a ticket, to check it with the bank.
+00:00:09,386 --> 00:00:13,920
+Now picture a support engineer who pastes a whole card number into a ticket.
 
 5
-00:00:15,626 --> 00:00:21,672
-The number now lives in the ticket's backups, in its search index, and with everyone who reads tickets.
+00:00:13,970 --> 00:00:19,536
+The number now lives in the ticket's backups, its search, and with everyone who reads tickets.
 
 6
-00:00:21,722 --> 00:00:25,056
-One pasted number lives everywhere the ticket goes.
-
-7
-00:00:25,106 --> 00:00:28,152
+00:00:19,586 --> 00:00:22,632
 Systems should talk about cards the way your bank does.
 
+7
+00:00:22,682 --> 00:00:26,112
+The long number on the front is the PAN, the card's own number.
+
 8
-00:00:28,202 --> 00:00:32,472
-The long number on the front of the card is the PAN, the card's own number.
+00:00:26,162 --> 00:00:29,856
+In this system it lives in one place only, the card zone.
 
 9
-00:00:32,522 --> 00:00:37,272
-It lives in one place only, the card vault, and Lesson 4 shows why.
+00:00:29,906 --> 00:00:35,808
+The code on the back must never be kept once a payment is approved, and this system never even asks for it.
 
 10
-00:00:37,322 --> 00:00:40,656
-The code on the back must never be kept once a payment is approved.
+00:00:35,858 --> 00:00:42,624
+Screens and reports may show the masked number: the first six digits and the last four, with nothing between.
 
 11
-00:00:40,706 --> 00:00:42,960
-And this system never even asks for it.
+00:00:42,674 --> 00:00:48,144
+Every other system keeps a card token: a random name the card zone gives the card.
 
 12
-00:00:43,010 --> 00:00:49,848
-Screens and logs may show the masked number: the first six digits and the last four, with nothing between.
+00:00:48,194 --> 00:00:51,984
+Nothing in it comes from the number, so a token tells a thief nothing.
 
 13
-00:00:49,898 --> 00:00:53,064
-That is your bank's card ending 7890.
+00:00:52,034 --> 00:00:56,592
+So the support ticket should have held the masked number or the token, never the PAN.
 
 14
-00:00:53,114 --> 00:00:58,080
-The first digits only tell which bank issued the card, and Lesson 10 reads them.
-
-15
-00:00:58,130 --> 00:01:00,072
-Other systems keep a card token.
-
-16
-00:01:00,122 --> 00:01:03,696
-A card token is a random name the card vault gives the card.
-
-17
-00:01:03,746 --> 00:01:08,568
-Nothing in it comes from the number, so the token tells a thief nothing about the card.
-
-18
-00:01:08,618 --> 00:01:11,928
-In Lesson 4, the token becomes a coat-check ticket.
-
-19
-00:01:11,978 --> 00:01:13,800
-Now back to the support ticket.
-
-20
-00:01:13,850 --> 00:01:17,712
-It should have held the masked number or the token, never the PAN.
-
-21
-00:01:17,762 --> 00:01:20,904
-Now make both yourself, the way the code does.
-
-22
-00:01:20,954 --> 00:01:26,040
-The card vault keeps two numbers: six digits shown first, and four shown last.
-
-23
-00:01:26,090 --> 00:01:31,128
-A token is a short prefix plus sixteen random bytes, written in hex.
-
-24
-00:01:31,178 --> 00:01:35,304
-Open jshell, which comes with Java, and take a made-up card number.
-
-25
-00:01:35,354 --> 00:01:38,952
-Keep the first six and the last four, and star out the rest.
-
-26
-00:01:39,002 --> 00:01:43,416
-Then draw sixteen random bytes, and write them after the prefix.
-
-27
-00:01:43,466 --> 00:01:48,024
-Run it again, and you get a different token, with nothing from the number in either.
-
-28
-00:01:48,074 --> 00:01:55,608
+00:00:56,642 --> 00:01:03,624
 Your bank never asks for the code on the back, and our systems never hold the PAN: they hold the masked number and the token.
 
-29
-00:01:55,658 --> 00:01:58,056
+15
+00:01:03,674 --> 00:01:06,072
 Next: where a card number may live.
