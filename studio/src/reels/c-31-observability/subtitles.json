@@ -63,9 +63,9 @@
   {
     "index": 2,
     "startFrame": 94,
-    "endFrame": 208,
-    "text": "A merchant calls: my customer's payment has been spinning for a minute.",
-    "prefix": "A merchant calls: my customer's payment has been spinning for a minute.",
+    "endFrame": 150,
+    "text": "A merchant calls the bank.",
+    "prefix": "A merchant calls the bank.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -81,49 +81,16 @@
             "startFrame": 96
           },
           {
-            "text": "calls:",
+            "text": "calls",
             "startFrame": 107
-          }
-        ]
-      },
-      {
-        "startFrame": 129,
-        "words": [
-          {
-            "text": "my",
-            "startFrame": 129
           },
           {
-            "text": "customer's",
-            "startFrame": 133
+            "text": "the",
+            "startFrame": 115
           },
           {
-            "text": "payment",
-            "startFrame": 146
-          },
-          {
-            "text": "has",
-            "startFrame": 158
-          },
-          {
-            "text": "been",
-            "startFrame": 162
-          },
-          {
-            "text": "spinning",
-            "startFrame": 166
-          },
-          {
-            "text": "for",
-            "startFrame": 180
-          },
-          {
-            "text": "a",
-            "startFrame": 185
-          },
-          {
-            "text": "minute.",
-            "startFrame": 186
+            "text": "bank.",
+            "startFrame": 117
           }
         ]
       }
@@ -131,89 +98,64 @@
   },
   {
     "index": 3,
-    "startFrame": 208,
-    "endFrame": 389,
-    "text": "The payment crossed the payment page, ecom, the card zone, an adapter and a card network.",
-    "prefix": "The payment crossed the payment page, ecom, the card zone, an adapter and a card network.",
+    "startFrame": 150,
+    "endFrame": 252,
+    "text": "My customer's payment has been spinning for a minute, they say.",
+    "prefix": "My customer's payment has been spinning for a minute, they say.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 210,
+        "startFrame": 151,
         "words": [
           {
-            "text": "The",
-            "startFrame": 210
+            "text": "My",
+            "startFrame": 151
+          },
+          {
+            "text": "customer's",
+            "startFrame": 154
           },
           {
             "text": "payment",
-            "startFrame": 213
+            "startFrame": 167
           },
           {
-            "text": "crossed",
-            "startFrame": 223
+            "text": "has",
+            "startFrame": 181
           },
           {
-            "text": "the",
-            "startFrame": 234
+            "text": "been",
+            "startFrame": 185
           },
           {
-            "text": "payment",
-            "startFrame": 236
+            "text": "spinning",
+            "startFrame": 189
           },
           {
-            "text": "page,",
-            "startFrame": 245
+            "text": "for",
+            "startFrame": 201
           }
         ]
       },
       {
-        "startFrame": 272,
+        "startFrame": 207,
         "words": [
-          {
-            "text": "ecom,",
-            "startFrame": 272
-          },
-          {
-            "text": "the",
-            "startFrame": 293
-          },
-          {
-            "text": "card",
-            "startFrame": 296
-          },
-          {
-            "text": "zone,",
-            "startFrame": 305
-          }
-        ]
-      },
-      {
-        "startFrame": 328,
-        "words": [
-          {
-            "text": "an",
-            "startFrame": 328
-          },
-          {
-            "text": "adapter",
-            "startFrame": 330
-          },
-          {
-            "text": "and",
-            "startFrame": 352
-          },
           {
             "text": "a",
-            "startFrame": 354
+            "startFrame": 207
           },
           {
-            "text": "card",
-            "startFrame": 355
+            "text": "minute,",
+            "startFrame": 208
           },
           {
-            "text": "network.",
-            "startFrame": 364
+            "text": "they",
+            "startFrame": 222
+          },
+          {
+            "text": "say.",
+            "startFrame": 226
           }
         ]
       }
@@ -221,64 +163,89 @@
   },
   {
     "index": 4,
-    "startFrame": 390,
-    "endFrame": 517,
-    "text": "Without one number to follow, someone searches four places and guesses.",
-    "prefix": "Without one number to follow, someone searches four places and guesses.",
+    "startFrame": 252,
+    "endFrame": 457,
+    "text": "That payment crossed the payment page, ecom, the card zone, an adapter and the processing centre.",
+    "prefix": "That payment crossed the payment page, ecom, the card zone, an adapter and the processing centre.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 392,
+        "startFrame": 254,
         "words": [
           {
-            "text": "Without",
-            "startFrame": 392
+            "text": "That",
+            "startFrame": 254
           },
           {
-            "text": "one",
-            "startFrame": 399
+            "text": "payment",
+            "startFrame": 259
           },
           {
-            "text": "number",
-            "startFrame": 405
+            "text": "crossed",
+            "startFrame": 273
           },
           {
-            "text": "to",
-            "startFrame": 411
+            "text": "the",
+            "startFrame": 285
           },
           {
-            "text": "follow,",
-            "startFrame": 412
+            "text": "payment",
+            "startFrame": 287
+          },
+          {
+            "text": "page,",
+            "startFrame": 297
           }
         ]
       },
       {
-        "startFrame": 437,
+        "startFrame": 323,
         "words": [
           {
-            "text": "someone",
-            "startFrame": 437
+            "text": "ecom,",
+            "startFrame": 323
           },
           {
-            "text": "searches",
-            "startFrame": 445
+            "text": "the",
+            "startFrame": 348
           },
           {
-            "text": "four",
-            "startFrame": 462
+            "text": "card",
+            "startFrame": 350
           },
           {
-            "text": "places",
-            "startFrame": 474
+            "text": "zone,",
+            "startFrame": 361
+          }
+        ]
+      },
+      {
+        "startFrame": 385,
+        "words": [
+          {
+            "text": "an",
+            "startFrame": 385
+          },
+          {
+            "text": "adapter",
+            "startFrame": 386
           },
           {
             "text": "and",
-            "startFrame": 487
+            "startFrame": 411
           },
           {
-            "text": "guesses.",
-            "startFrame": 489
+            "text": "the",
+            "startFrame": 413
+          },
+          {
+            "text": "processing",
+            "startFrame": 415
+          },
+          {
+            "text": "centre.",
+            "startFrame": 432
           }
         ]
       }
@@ -286,77 +253,68 @@
   },
   {
     "index": 5,
-    "startFrame": 517,
-    "endFrame": 681,
-    "text": "In a hospital, your wristband number is on every chart, in every department.",
-    "prefix": "In a hospital, your wristband number is on every chart, in every department.",
+    "startFrame": 457,
+    "endFrame": 590,
+    "text": "It touched four machines, and each machine writes its own log lines.",
+    "prefix": "It touched four machines, and each machine writes its own log lines.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 518,
+        "startFrame": 459,
         "words": [
           {
-            "text": "In",
-            "startFrame": 518
+            "text": "It",
+            "startFrame": 459
           },
           {
-            "text": "a",
-            "startFrame": 520
+            "text": "touched",
+            "startFrame": 461
           },
           {
-            "text": "hospital,",
-            "startFrame": 521
+            "text": "four",
+            "startFrame": 469
+          },
+          {
+            "text": "machines,",
+            "startFrame": 476
           }
         ]
       },
       {
-        "startFrame": 553,
+        "startFrame": 504,
         "words": [
           {
-            "text": "your",
-            "startFrame": 553
+            "text": "and",
+            "startFrame": 504
           },
           {
-            "text": "wristband",
-            "startFrame": 558
+            "text": "each",
+            "startFrame": 514
           },
           {
-            "text": "number",
-            "startFrame": 570
+            "text": "machine",
+            "startFrame": 519
           },
           {
-            "text": "is",
-            "startFrame": 588
+            "text": "writes",
+            "startFrame": 536
           },
           {
-            "text": "on",
-            "startFrame": 591
+            "text": "its",
+            "startFrame": 545
           },
           {
-            "text": "every",
-            "startFrame": 601
+            "text": "own",
+            "startFrame": 549
           },
           {
-            "text": "chart,",
-            "startFrame": 611
-          }
-        ]
-      },
-      {
-        "startFrame": 636,
-        "words": [
-          {
-            "text": "in",
-            "startFrame": 636
+            "text": "log",
+            "startFrame": 555
           },
           {
-            "text": "every",
-            "startFrame": 646
-          },
-          {
-            "text": "department.",
-            "startFrame": 652
+            "text": "lines.",
+            "startFrame": 562
           }
         ]
       }
@@ -364,138 +322,64 @@
   },
   {
     "index": 6,
-    "startFrame": 681,
-    "endFrame": 949,
-    "text": "Here, every request gets one trace number that travels with it across both products, and every answer names it, so a caller can quote it to support.",
-    "prefix": "Here, every request gets one trace number that travels with it across both products, and every answer names it, so a caller can quote it to support.",
+    "startFrame": 591,
+    "endFrame": 713,
+    "text": "Without one number to follow, someone searches four logs and guesses.",
+    "prefix": "Without one number to follow, someone searches four logs and guesses.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 683,
+        "startFrame": 592,
         "words": [
           {
-            "text": "Here,",
-            "startFrame": 683
-          },
-          {
-            "text": "every",
-            "startFrame": 706
-          },
-          {
-            "text": "request",
-            "startFrame": 713
-          },
-          {
-            "text": "gets",
-            "startFrame": 730
+            "text": "Without",
+            "startFrame": 592
           },
           {
             "text": "one",
-            "startFrame": 737
-          },
-          {
-            "text": "trace",
-            "startFrame": 747
+            "startFrame": 602
           },
           {
             "text": "number",
-            "startFrame": 759
-          },
-          {
-            "text": "that",
-            "startFrame": 766
-          }
-        ]
-      },
-      {
-        "startFrame": 770,
-        "words": [
-          {
-            "text": "travels",
-            "startFrame": 770
-          },
-          {
-            "text": "with",
-            "startFrame": 786
-          },
-          {
-            "text": "it",
-            "startFrame": 791
-          },
-          {
-            "text": "across",
-            "startFrame": 794
-          },
-          {
-            "text": "both",
-            "startFrame": 807
-          },
-          {
-            "text": "products,",
-            "startFrame": 816
-          }
-        ]
-      },
-      {
-        "startFrame": 840,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 840
-          },
-          {
-            "text": "every",
-            "startFrame": 851
-          },
-          {
-            "text": "answer",
-            "startFrame": 859
-          },
-          {
-            "text": "names",
-            "startFrame": 867
-          },
-          {
-            "text": "it,",
-            "startFrame": 876
-          }
-        ]
-      },
-      {
-        "startFrame": 891,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 891
-          },
-          {
-            "text": "a",
-            "startFrame": 896
-          },
-          {
-            "text": "caller",
-            "startFrame": 897
-          },
-          {
-            "text": "can",
-            "startFrame": 909
-          },
-          {
-            "text": "quote",
-            "startFrame": 912
-          },
-          {
-            "text": "it",
-            "startFrame": 919
+            "startFrame": 608
           },
           {
             "text": "to",
-            "startFrame": 921
+            "startFrame": 614
           },
           {
-            "text": "support.",
-            "startFrame": 923
+            "text": "follow,",
+            "startFrame": 615
+          }
+        ]
+      },
+      {
+        "startFrame": 642,
+        "words": [
+          {
+            "text": "someone",
+            "startFrame": 642
+          },
+          {
+            "text": "searches",
+            "startFrame": 650
+          },
+          {
+            "text": "four",
+            "startFrame": 663
+          },
+          {
+            "text": "logs",
+            "startFrame": 673
+          },
+          {
+            "text": "and",
+            "startFrame": 683
+          },
+          {
+            "text": "guesses.",
+            "startFrame": 685
           }
         ]
       }
@@ -503,97 +387,88 @@
   },
   {
     "index": 7,
-    "startFrame": 950,
-    "endFrame": 1119,
-    "text": "Every log line carries the same number, so a warning leads straight to the request that caused it.",
-    "prefix": "Every log line carries the same number, so a warning leads straight to the request that caused it.",
+    "startFrame": 714,
+    "endFrame": 841,
+    "text": "Worse, the lines that would help most are the ones most likely to hold a card number.",
+    "prefix": "Worse, the lines that would help most are the ones most likely to hold a card number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 951,
+        "startFrame": 715,
         "words": [
           {
-            "text": "Every",
-            "startFrame": 951
-          },
-          {
-            "text": "log",
-            "startFrame": 957
-          },
-          {
-            "text": "line",
-            "startFrame": 966
-          },
-          {
-            "text": "carries",
-            "startFrame": 978
+            "text": "Worse,",
+            "startFrame": 715
           },
           {
             "text": "the",
-            "startFrame": 988
+            "startFrame": 737
           },
           {
-            "text": "same",
-            "startFrame": 991
+            "text": "lines",
+            "startFrame": 740
           },
           {
-            "text": "number,",
-            "startFrame": 1000
+            "text": "that",
+            "startFrame": 749
+          },
+          {
+            "text": "would",
+            "startFrame": 751
+          },
+          {
+            "text": "help",
+            "startFrame": 754
+          },
+          {
+            "text": "most",
+            "startFrame": 760
+          },
+          {
+            "text": "are",
+            "startFrame": 772
           }
         ]
       },
       {
-        "startFrame": 1021,
+        "startFrame": 774,
         "words": [
           {
-            "text": "so",
-            "startFrame": 1021
+            "text": "the",
+            "startFrame": 774
           },
           {
-            "text": "a",
-            "startFrame": 1033
+            "text": "ones",
+            "startFrame": 777
           },
           {
-            "text": "warning",
-            "startFrame": 1034
+            "text": "most",
+            "startFrame": 784
           },
           {
-            "text": "leads",
-            "startFrame": 1046
-          },
-          {
-            "text": "straight",
-            "startFrame": 1053
+            "text": "likely",
+            "startFrame": 796
           },
           {
             "text": "to",
-            "startFrame": 1067
+            "startFrame": 804
           },
           {
-            "text": "the",
-            "startFrame": 1070
+            "text": "hold",
+            "startFrame": 805
           },
           {
-            "text": "request",
-            "startFrame": 1073
-          }
-        ]
-      },
-      {
-        "startFrame": 1088,
-        "words": [
-          {
-            "text": "that",
-            "startFrame": 1088
+            "text": "a",
+            "startFrame": 811
           },
           {
-            "text": "caused",
-            "startFrame": 1092
+            "text": "card",
+            "startFrame": 812
           },
           {
-            "text": "it.",
-            "startFrame": 1102
+            "text": "number.",
+            "startFrame": 820
           }
         ]
       }
@@ -601,130 +476,31 @@
   },
   {
     "index": 8,
-    "startFrame": 1120,
-    "endFrame": 1381,
-    "text": "And every line the running system writes is cleaned first: card numbers keep only their first six and last four digits, and secrets are hidden.",
-    "prefix": "And every line the running system writes is cleaned first: card numbers keep only their first six and last four digits, and secrets are hidden.",
+    "startFrame": 842,
+    "endFrame": 898,
+    "text": "Think of a hospital.",
+    "prefix": "Think of a hospital.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1121,
+        "startFrame": 844,
         "words": [
           {
-            "text": "And",
-            "startFrame": 1121
+            "text": "Think",
+            "startFrame": 844
           },
           {
-            "text": "every",
-            "startFrame": 1126
+            "text": "of",
+            "startFrame": 847
           },
           {
-            "text": "line",
-            "startFrame": 1133
+            "text": "a",
+            "startFrame": 848
           },
           {
-            "text": "the",
-            "startFrame": 1143
-          },
-          {
-            "text": "running",
-            "startFrame": 1145
-          },
-          {
-            "text": "system",
-            "startFrame": 1153
-          },
-          {
-            "text": "writes",
-            "startFrame": 1166
-          },
-          {
-            "text": "is",
-            "startFrame": 1182
-          }
-        ]
-      },
-      {
-        "startFrame": 1186,
-        "words": [
-          {
-            "text": "cleaned",
-            "startFrame": 1186
-          },
-          {
-            "text": "first:",
-            "startFrame": 1198
-          },
-          {
-            "text": "card",
-            "startFrame": 1228
-          },
-          {
-            "text": "numbers",
-            "startFrame": 1235
-          },
-          {
-            "text": "keep",
-            "startFrame": 1243
-          },
-          {
-            "text": "only",
-            "startFrame": 1253
-          },
-          {
-            "text": "their",
-            "startFrame": 1259
-          },
-          {
-            "text": "first",
-            "startFrame": 1264
-          }
-        ]
-      },
-      {
-        "startFrame": 1276,
-        "words": [
-          {
-            "text": "six",
-            "startFrame": 1276
-          },
-          {
-            "text": "and",
-            "startFrame": 1297
-          },
-          {
-            "text": "last",
-            "startFrame": 1302
-          },
-          {
-            "text": "four",
-            "startFrame": 1312
-          },
-          {
-            "text": "digits,",
-            "startFrame": 1318
-          }
-        ]
-      },
-      {
-        "startFrame": 1341,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 1341
-          },
-          {
-            "text": "secrets",
-            "startFrame": 1345
-          },
-          {
-            "text": "are",
-            "startFrame": 1360
-          },
-          {
-            "text": "hidden.",
-            "startFrame": 1362
+            "text": "hospital.",
+            "startFrame": 849
           }
         ]
       }
@@ -732,60 +508,60 @@
   },
   {
     "index": 9,
-    "startFrame": 1382,
-    "endFrame": 1476,
-    "text": "Each product sends all of this to its own monitoring.",
-    "prefix": "Each product sends all of this to its own monitoring.",
+    "startFrame": 898,
+    "endFrame": 990,
+    "text": "When you arrive, you get a wristband with one number.",
+    "prefix": "When you arrive, you get a wristband with one number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1383,
+        "startFrame": 899,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 1383
+            "text": "When",
+            "startFrame": 899
           },
           {
-            "text": "product",
-            "startFrame": 1388
+            "text": "you",
+            "startFrame": 902
           },
           {
-            "text": "sends",
-            "startFrame": 1400
-          },
-          {
-            "text": "all",
-            "startFrame": 1414
-          },
-          {
-            "text": "of",
-            "startFrame": 1422
-          },
-          {
-            "text": "this",
-            "startFrame": 1425
-          },
-          {
-            "text": "to",
-            "startFrame": 1434
+            "text": "arrive,",
+            "startFrame": 906
           }
         ]
       },
       {
-        "startFrame": 1439,
+        "startFrame": 932,
         "words": [
           {
-            "text": "its",
-            "startFrame": 1439
+            "text": "you",
+            "startFrame": 932
           },
           {
-            "text": "own",
-            "startFrame": 1443
+            "text": "get",
+            "startFrame": 935
           },
           {
-            "text": "monitoring.",
-            "startFrame": 1449
+            "text": "a",
+            "startFrame": 939
+          },
+          {
+            "text": "wristband",
+            "startFrame": 940
+          },
+          {
+            "text": "with",
+            "startFrame": 955
+          },
+          {
+            "text": "one",
+            "startFrame": 958
+          },
+          {
+            "text": "number.",
+            "startFrame": 966
           }
         ]
       }
@@ -793,89 +569,85 @@
   },
   {
     "index": 10,
-    "startFrame": 1477,
-    "endFrame": 1655,
-    "text": "Dashboards show how payments end, and alerts send an email when payments stay unknown too long.",
-    "prefix": "Dashboards show how payments end, and alerts send an email when payments stay unknown too long.",
+    "startFrame": 990,
+    "endFrame": 1166,
+    "text": "That number is on every chart, in every department: the lab, the scan, the ward.",
+    "prefix": "That number is on every chart, in every department: the lab, the scan, the ward.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1478,
+        "startFrame": 992,
         "words": [
           {
-            "text": "Dashboards",
-            "startFrame": 1478
+            "text": "That",
+            "startFrame": 992
           },
           {
-            "text": "show",
-            "startFrame": 1495
+            "text": "number",
+            "startFrame": 997
           },
           {
-            "text": "how",
-            "startFrame": 1503
+            "text": "is",
+            "startFrame": 1011
           },
           {
-            "text": "payments",
-            "startFrame": 1509
+            "text": "on",
+            "startFrame": 1014
           },
           {
-            "text": "end,",
-            "startFrame": 1523
+            "text": "every",
+            "startFrame": 1022
+          },
+          {
+            "text": "chart,",
+            "startFrame": 1032
           }
         ]
       },
       {
-        "startFrame": 1543,
+        "startFrame": 1052,
         "words": [
           {
-            "text": "and",
-            "startFrame": 1543
+            "text": "in",
+            "startFrame": 1052
           },
           {
-            "text": "alerts",
-            "startFrame": 1544
+            "text": "every",
+            "startFrame": 1062
           },
           {
-            "text": "send",
-            "startFrame": 1554
-          },
-          {
-            "text": "an",
-            "startFrame": 1561
-          },
-          {
-            "text": "email",
-            "startFrame": 1564
-          },
-          {
-            "text": "when",
-            "startFrame": 1583
-          },
-          {
-            "text": "payments",
-            "startFrame": 1588
-          },
-          {
-            "text": "stay",
-            "startFrame": 1601
+            "text": "department:",
+            "startFrame": 1069
           }
         ]
       },
       {
-        "startFrame": 1615,
+        "startFrame": 1096,
         "words": [
           {
-            "text": "unknown",
-            "startFrame": 1615
+            "text": "the",
+            "startFrame": 1096
           },
           {
-            "text": "too",
-            "startFrame": 1628
+            "text": "lab,",
+            "startFrame": 1098
           },
           {
-            "text": "long.",
-            "startFrame": 1633
+            "text": "the",
+            "startFrame": 1117
+          },
+          {
+            "text": "scan,",
+            "startFrame": 1120
+          },
+          {
+            "text": "the",
+            "startFrame": 1142
+          },
+          {
+            "text": "ward.",
+            "startFrame": 1144
           }
         ]
       }
@@ -883,43 +655,3110 @@
   },
   {
     "index": 11,
-    "startFrame": 1656,
-    "endFrame": 1761,
+    "startFrame": 1167,
+    "endFrame": 1261,
+    "text": "Anyone can follow your whole stay by that one number.",
+    "prefix": "Anyone can follow your whole stay by that one number.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1168,
+        "words": [
+          {
+            "text": "Anyone",
+            "startFrame": 1168
+          },
+          {
+            "text": "can",
+            "startFrame": 1179
+          },
+          {
+            "text": "follow",
+            "startFrame": 1183
+          },
+          {
+            "text": "your",
+            "startFrame": 1192
+          },
+          {
+            "text": "whole",
+            "startFrame": 1197
+          },
+          {
+            "text": "stay",
+            "startFrame": 1206
+          },
+          {
+            "text": "by",
+            "startFrame": 1219
+          },
+          {
+            "text": "that",
+            "startFrame": 1226
+          },
+          {
+            "text": "one",
+            "startFrame": 1232
+          },
+          {
+            "text": "number.",
+            "startFrame": 1237
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 1262,
+    "endFrame": 1367,
+    "text": "Here, every request gets the same kind of number.",
+    "prefix": "Here, every request gets the same kind of number.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1264,
+        "words": [
+          {
+            "text": "Here,",
+            "startFrame": 1264
+          },
+          {
+            "text": "every",
+            "startFrame": 1284
+          },
+          {
+            "text": "request",
+            "startFrame": 1290
+          },
+          {
+            "text": "gets",
+            "startFrame": 1312
+          },
+          {
+            "text": "the",
+            "startFrame": 1317
+          },
+          {
+            "text": "same",
+            "startFrame": 1320
+          },
+          {
+            "text": "kind",
+            "startFrame": 1335
+          },
+          {
+            "text": "of",
+            "startFrame": 1341
+          },
+          {
+            "text": "number.",
+            "startFrame": 1343
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1368,
+    "endFrame": 1546,
+    "text": "We call it a trace: one number that follows a request from the moment it arrives until its answer leaves.",
+    "prefix": "We call it a trace: one number that follows a request from the moment it arrives until its answer leaves.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1369,
+        "words": [
+          {
+            "text": "We",
+            "startFrame": 1369
+          },
+          {
+            "text": "call",
+            "startFrame": 1371
+          },
+          {
+            "text": "it",
+            "startFrame": 1379
+          },
+          {
+            "text": "a",
+            "startFrame": 1380
+          },
+          {
+            "text": "trace:",
+            "startFrame": 1382
+          }
+        ]
+      },
+      {
+        "startFrame": 1412,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 1412
+          },
+          {
+            "text": "number",
+            "startFrame": 1418
+          },
+          {
+            "text": "that",
+            "startFrame": 1426
+          },
+          {
+            "text": "follows",
+            "startFrame": 1430
+          },
+          {
+            "text": "a",
+            "startFrame": 1442
+          },
+          {
+            "text": "request",
+            "startFrame": 1444
+          },
+          {
+            "text": "from",
+            "startFrame": 1459
+          }
+        ]
+      },
+      {
+        "startFrame": 1462,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1462
+          },
+          {
+            "text": "moment",
+            "startFrame": 1464
+          },
+          {
+            "text": "it",
+            "startFrame": 1474
+          },
+          {
+            "text": "arrives",
+            "startFrame": 1476
+          },
+          {
+            "text": "until",
+            "startFrame": 1501
+          },
+          {
+            "text": "its",
+            "startFrame": 1509
+          },
+          {
+            "text": "answer",
+            "startFrame": 1511
+          },
+          {
+            "text": "leaves.",
+            "startFrame": 1520
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 1546,
+    "endFrame": 1647,
+    "text": "When ecom calls the card zone, the trace goes along.",
+    "prefix": "When ecom calls the card zone, the trace goes along.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1547,
+        "words": [
+          {
+            "text": "When",
+            "startFrame": 1547
+          },
+          {
+            "text": "ecom",
+            "startFrame": 1554
+          },
+          {
+            "text": "calls",
+            "startFrame": 1570
+          },
+          {
+            "text": "the",
+            "startFrame": 1577
+          },
+          {
+            "text": "card",
+            "startFrame": 1580
+          },
+          {
+            "text": "zone,",
+            "startFrame": 1588
+          }
+        ]
+      },
+      {
+        "startFrame": 1604,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1604
+          },
+          {
+            "text": "trace",
+            "startFrame": 1607
+          },
+          {
+            "text": "goes",
+            "startFrame": 1619
+          },
+          {
+            "text": "along.",
+            "startFrame": 1626
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "startFrame": 1648,
+    "endFrame": 1746,
+    "text": "When the card zone calls an adapter, it goes along again.",
+    "prefix": "When the card zone calls an adapter, it goes along again.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1649,
+        "words": [
+          {
+            "text": "When",
+            "startFrame": 1649
+          },
+          {
+            "text": "the",
+            "startFrame": 1651
+          },
+          {
+            "text": "card",
+            "startFrame": 1653
+          },
+          {
+            "text": "zone",
+            "startFrame": 1661
+          },
+          {
+            "text": "calls",
+            "startFrame": 1673
+          },
+          {
+            "text": "an",
+            "startFrame": 1680
+          },
+          {
+            "text": "adapter,",
+            "startFrame": 1681
+          }
+        ]
+      },
+      {
+        "startFrame": 1708,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 1708
+          },
+          {
+            "text": "goes",
+            "startFrame": 1709
+          },
+          {
+            "text": "along",
+            "startFrame": 1716
+          },
+          {
+            "text": "again.",
+            "startFrame": 1725
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "startFrame": 1747,
+    "endFrame": 1860,
+    "text": "So one request draws one line across both products.",
+    "prefix": "So one request draws one line across both products.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1748,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 1748
+          },
+          {
+            "text": "one",
+            "startFrame": 1754
+          },
+          {
+            "text": "request",
+            "startFrame": 1760
+          },
+          {
+            "text": "draws",
+            "startFrame": 1777
+          },
+          {
+            "text": "one",
+            "startFrame": 1789
+          },
+          {
+            "text": "line",
+            "startFrame": 1799
+          },
+          {
+            "text": "across",
+            "startFrame": 1807
+          },
+          {
+            "text": "both",
+            "startFrame": 1820
+          },
+          {
+            "text": "products.",
+            "startFrame": 1828
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "startFrame": 1860,
+    "endFrame": 1989,
+    "text": "Every answer names its trace too, even an answer that says no.",
+    "prefix": "Every answer names its trace too, even an answer that says no.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1861,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 1861
+          },
+          {
+            "text": "answer",
+            "startFrame": 1869
+          },
+          {
+            "text": "names",
+            "startFrame": 1880
+          },
+          {
+            "text": "its",
+            "startFrame": 1896
+          },
+          {
+            "text": "trace",
+            "startFrame": 1900
+          },
+          {
+            "text": "too,",
+            "startFrame": 1913
+          }
+        ]
+      },
+      {
+        "startFrame": 1938,
+        "words": [
+          {
+            "text": "even",
+            "startFrame": 1938
+          },
+          {
+            "text": "an",
+            "startFrame": 1944
+          },
+          {
+            "text": "answer",
+            "startFrame": 1946
+          },
+          {
+            "text": "that",
+            "startFrame": 1956
+          },
+          {
+            "text": "says",
+            "startFrame": 1959
+          },
+          {
+            "text": "no.",
+            "startFrame": 1967
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "startFrame": 1990,
+    "endFrame": 2160,
+    "text": "A merchant's server can quote that number to support, and support finds the whole story in seconds.",
+    "prefix": "A merchant's server can quote that number to support, and support finds the whole story in seconds.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1990,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1990
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 1992
+          },
+          {
+            "text": "server",
+            "startFrame": 2003
+          },
+          {
+            "text": "can",
+            "startFrame": 2013
+          },
+          {
+            "text": "quote",
+            "startFrame": 2019
+          },
+          {
+            "text": "that",
+            "startFrame": 2037
+          },
+          {
+            "text": "number",
+            "startFrame": 2043
+          }
+        ]
+      },
+      {
+        "startFrame": 2052,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 2052
+          },
+          {
+            "text": "support,",
+            "startFrame": 2054
+          },
+          {
+            "text": "and",
+            "startFrame": 2080
+          },
+          {
+            "text": "support",
+            "startFrame": 2082
+          },
+          {
+            "text": "finds",
+            "startFrame": 2094
+          },
+          {
+            "text": "the",
+            "startFrame": 2105
+          },
+          {
+            "text": "whole",
+            "startFrame": 2107
+          },
+          {
+            "text": "story",
+            "startFrame": 2117
+          },
+          {
+            "text": "in",
+            "startFrame": 2128
+          },
+          {
+            "text": "seconds.",
+            "startFrame": 2130
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "startFrame": 2160,
+    "endFrame": 2238,
+    "text": "Every log line carries the same number.",
+    "prefix": "Every log line carries the same number.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2161,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 2161
+          },
+          {
+            "text": "log",
+            "startFrame": 2167
+          },
+          {
+            "text": "line",
+            "startFrame": 2176
+          },
+          {
+            "text": "carries",
+            "startFrame": 2192
+          },
+          {
+            "text": "the",
+            "startFrame": 2203
+          },
+          {
+            "text": "same",
+            "startFrame": 2206
+          },
+          {
+            "text": "number.",
+            "startFrame": 2215
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "startFrame": 2239,
+    "endFrame": 2438,
+    "text": "So a warning in one log leads straight to the request that caused it, and to every other line about that request.",
+    "prefix": "So a warning in one log leads straight to the request that caused it, and to every other line about that request.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2240,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 2240
+          },
+          {
+            "text": "a",
+            "startFrame": 2246
+          },
+          {
+            "text": "warning",
+            "startFrame": 2248
+          },
+          {
+            "text": "in",
+            "startFrame": 2263
+          },
+          {
+            "text": "one",
+            "startFrame": 2267
+          },
+          {
+            "text": "log",
+            "startFrame": 2276
+          },
+          {
+            "text": "leads",
+            "startFrame": 2288
+          },
+          {
+            "text": "straight",
+            "startFrame": 2297
+          }
+        ]
+      },
+      {
+        "startFrame": 2311,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 2311
+          },
+          {
+            "text": "the",
+            "startFrame": 2314
+          },
+          {
+            "text": "request",
+            "startFrame": 2317
+          },
+          {
+            "text": "that",
+            "startFrame": 2333
+          },
+          {
+            "text": "caused",
+            "startFrame": 2337
+          },
+          {
+            "text": "it,",
+            "startFrame": 2349
+          }
+        ]
+      },
+      {
+        "startFrame": 2367,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2367
+          },
+          {
+            "text": "to",
+            "startFrame": 2369
+          },
+          {
+            "text": "every",
+            "startFrame": 2373
+          },
+          {
+            "text": "other",
+            "startFrame": 2384
+          },
+          {
+            "text": "line",
+            "startFrame": 2390
+          },
+          {
+            "text": "about",
+            "startFrame": 2399
+          },
+          {
+            "text": "that",
+            "startFrame": 2405
+          },
+          {
+            "text": "request.",
+            "startFrame": 2410
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "startFrame": 2439,
+    "endFrame": 2495,
+    "text": "Now the card numbers.",
+    "prefix": "Now the card numbers.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2440,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2440
+          },
+          {
+            "text": "the",
+            "startFrame": 2448
+          },
+          {
+            "text": "card",
+            "startFrame": 2450
+          },
+          {
+            "text": "numbers.",
+            "startFrame": 2457
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "startFrame": 2495,
+    "endFrame": 2579,
+    "text": "Before any line is written, it is cleaned.",
+    "prefix": "Before any line is written, it is cleaned.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2496,
+        "words": [
+          {
+            "text": "Before",
+            "startFrame": 2496
+          },
+          {
+            "text": "any",
+            "startFrame": 2505
+          },
+          {
+            "text": "line",
+            "startFrame": 2509
+          },
+          {
+            "text": "is",
+            "startFrame": 2519
+          },
+          {
+            "text": "written,",
+            "startFrame": 2523
+          }
+        ]
+      },
+      {
+        "startFrame": 2546,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 2546
+          },
+          {
+            "text": "is",
+            "startFrame": 2549
+          },
+          {
+            "text": "cleaned.",
+            "startFrame": 2552
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "startFrame": 2579,
+    "endFrame": 2624,
+    "text": "This is log masking.",
+    "prefix": "This is log masking.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2580,
+        "words": [
+          {
+            "text": "This",
+            "startFrame": 2580
+          },
+          {
+            "text": "is",
+            "startFrame": 2585
+          },
+          {
+            "text": "log",
+            "startFrame": 2588
+          },
+          {
+            "text": "masking.",
+            "startFrame": 2597
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "startFrame": 2625,
+    "endFrame": 2796,
+    "text": "A card number keeps only its first six and its last four digits; the middle becomes stars.",
+    "prefix": "A card number keeps only its first six and its last four digits; the middle becomes stars.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2626,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2626
+          },
+          {
+            "text": "card",
+            "startFrame": 2627
+          },
+          {
+            "text": "number",
+            "startFrame": 2635
+          },
+          {
+            "text": "keeps",
+            "startFrame": 2641
+          },
+          {
+            "text": "only",
+            "startFrame": 2652
+          },
+          {
+            "text": "its",
+            "startFrame": 2661
+          },
+          {
+            "text": "first",
+            "startFrame": 2665
+          },
+          {
+            "text": "six",
+            "startFrame": 2676
+          }
+        ]
+      },
+      {
+        "startFrame": 2696,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2696
+          },
+          {
+            "text": "its",
+            "startFrame": 2699
+          },
+          {
+            "text": "last",
+            "startFrame": 2703
+          },
+          {
+            "text": "four",
+            "startFrame": 2715
+          },
+          {
+            "text": "digits;",
+            "startFrame": 2720
+          }
+        ]
+      },
+      {
+        "startFrame": 2745,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2745
+          },
+          {
+            "text": "middle",
+            "startFrame": 2747
+          },
+          {
+            "text": "becomes",
+            "startFrame": 2755
+          },
+          {
+            "text": "stars.",
+            "startFrame": 2768
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "startFrame": 2797,
+    "endFrame": 2926,
+    "text": "Any long run of digits that could be a card number is treated as one.",
+    "prefix": "Any long run of digits that could be a card number is treated as one.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2797,
+        "words": [
+          {
+            "text": "Any",
+            "startFrame": 2797
+          },
+          {
+            "text": "long",
+            "startFrame": 2803
+          },
+          {
+            "text": "run",
+            "startFrame": 2816
+          },
+          {
+            "text": "of",
+            "startFrame": 2821
+          },
+          {
+            "text": "digits",
+            "startFrame": 2825
+          },
+          {
+            "text": "that",
+            "startFrame": 2837
+          },
+          {
+            "text": "could",
+            "startFrame": 2840
+          },
+          {
+            "text": "be",
+            "startFrame": 2842
+          }
+        ]
+      },
+      {
+        "startFrame": 2846,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 2846
+          },
+          {
+            "text": "card",
+            "startFrame": 2848
+          },
+          {
+            "text": "number",
+            "startFrame": 2857
+          },
+          {
+            "text": "is",
+            "startFrame": 2876
+          },
+          {
+            "text": "treated",
+            "startFrame": 2879
+          },
+          {
+            "text": "as",
+            "startFrame": 2897
+          },
+          {
+            "text": "one.",
+            "startFrame": 2901
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "startFrame": 2926,
+    "endFrame": 3020,
+    "text": "A token keeps only its last four characters.",
+    "prefix": "A token keeps only its last four characters.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2927,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2927
+          },
+          {
+            "text": "token",
+            "startFrame": 2929
+          },
+          {
+            "text": "keeps",
+            "startFrame": 2940
+          },
+          {
+            "text": "only",
+            "startFrame": 2958
+          },
+          {
+            "text": "its",
+            "startFrame": 2966
+          },
+          {
+            "text": "last",
+            "startFrame": 2969
+          },
+          {
+            "text": "four",
+            "startFrame": 2983
+          },
+          {
+            "text": "characters.",
+            "startFrame": 2989
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "startFrame": 3021,
+    "endFrame": 3109,
+    "text": "Passwords and secrets are hidden completely.",
+    "prefix": "Passwords and secrets are hidden completely.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3022,
+        "words": [
+          {
+            "text": "Passwords",
+            "startFrame": 3022
+          },
+          {
+            "text": "and",
+            "startFrame": 3037
+          },
+          {
+            "text": "secrets",
+            "startFrame": 3040
+          },
+          {
+            "text": "are",
+            "startFrame": 3059
+          },
+          {
+            "text": "hidden",
+            "startFrame": 3063
+          },
+          {
+            "text": "completely.",
+            "startFrame": 3076
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "startFrame": 3110,
+    "endFrame": 3214,
+    "text": "This happens on every line, wherever the line is sent.",
+    "prefix": "This happens on every line, wherever the line is sent.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3111,
+        "words": [
+          {
+            "text": "This",
+            "startFrame": 3111
+          },
+          {
+            "text": "happens",
+            "startFrame": 3115
+          },
+          {
+            "text": "on",
+            "startFrame": 3126
+          },
+          {
+            "text": "every",
+            "startFrame": 3135
+          },
+          {
+            "text": "line,",
+            "startFrame": 3143
+          }
+        ]
+      },
+      {
+        "startFrame": 3164,
+        "words": [
+          {
+            "text": "wherever",
+            "startFrame": 3164
+          },
+          {
+            "text": "the",
+            "startFrame": 3173
+          },
+          {
+            "text": "line",
+            "startFrame": 3175
+          },
+          {
+            "text": "is",
+            "startFrame": 3186
+          },
+          {
+            "text": "sent.",
+            "startFrame": 3188
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "startFrame": 3214,
+    "endFrame": 3308,
+    "text": "So nothing the running system writes can leak a card.",
+    "prefix": "So nothing the running system writes can leak a card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3216,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 3216
+          },
+          {
+            "text": "nothing",
+            "startFrame": 3219
+          },
+          {
+            "text": "the",
+            "startFrame": 3227
+          },
+          {
+            "text": "running",
+            "startFrame": 3229
+          },
+          {
+            "text": "system",
+            "startFrame": 3236
+          },
+          {
+            "text": "writes",
+            "startFrame": 3258
+          },
+          {
+            "text": "can",
+            "startFrame": 3274
+          },
+          {
+            "text": "leak",
+            "startFrame": 3280
+          },
+          {
+            "text": "a",
+            "startFrame": 3284
+          },
+          {
+            "text": "card.",
+            "startFrame": 3285
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "startFrame": 3309,
+    "endFrame": 3403,
+    "text": "Each product sends all of this to its own monitoring.",
+    "prefix": "Each product sends all of this to its own monitoring.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3310,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 3310
+          },
+          {
+            "text": "product",
+            "startFrame": 3314
+          },
+          {
+            "text": "sends",
+            "startFrame": 3327
+          },
+          {
+            "text": "all",
+            "startFrame": 3341
+          },
+          {
+            "text": "of",
+            "startFrame": 3349
+          },
+          {
+            "text": "this",
+            "startFrame": 3352
+          },
+          {
+            "text": "to",
+            "startFrame": 3361
+          }
+        ]
+      },
+      {
+        "startFrame": 3365,
+        "words": [
+          {
+            "text": "its",
+            "startFrame": 3365
+          },
+          {
+            "text": "own",
+            "startFrame": 3369
+          },
+          {
+            "text": "monitoring.",
+            "startFrame": 3375
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "startFrame": 3404,
+    "endFrame": 3524,
+    "text": "ecom has its own, and the card zone runs its own, separately.",
+    "prefix": "ecom has its own, and the card zone runs its own, separately.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3405,
+        "words": [
+          {
+            "text": "ecom",
+            "startFrame": 3405
+          },
+          {
+            "text": "has",
+            "startFrame": 3415
+          },
+          {
+            "text": "its",
+            "startFrame": 3421
+          },
+          {
+            "text": "own,",
+            "startFrame": 3425
+          }
+        ]
+      },
+      {
+        "startFrame": 3443,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3443
+          },
+          {
+            "text": "the",
+            "startFrame": 3444
+          },
+          {
+            "text": "card",
+            "startFrame": 3446
+          },
+          {
+            "text": "zone",
+            "startFrame": 3455
+          },
+          {
+            "text": "runs",
+            "startFrame": 3465
+          },
+          {
+            "text": "its",
+            "startFrame": 3473
+          },
+          {
+            "text": "own,",
+            "startFrame": 3477
+          },
+          {
+            "text": "separately.",
+            "startFrame": 3493
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "startFrame": 3525,
+    "endFrame": 3605,
+    "text": "They share nothing here either, just as on the map.",
+    "prefix": "They share nothing here either, just as on the map.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3526,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 3526
+          },
+          {
+            "text": "share",
+            "startFrame": 3529
+          },
+          {
+            "text": "nothing",
+            "startFrame": 3534
+          },
+          {
+            "text": "here",
+            "startFrame": 3544
+          },
+          {
+            "text": "either,",
+            "startFrame": 3551
+          }
+        ]
+      },
+      {
+        "startFrame": 3569,
+        "words": [
+          {
+            "text": "just",
+            "startFrame": 3569
+          },
+          {
+            "text": "as",
+            "startFrame": 3575
+          },
+          {
+            "text": "on",
+            "startFrame": 3578
+          },
+          {
+            "text": "the",
+            "startFrame": 3581
+          },
+          {
+            "text": "map.",
+            "startFrame": 3582
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "startFrame": 3605,
+    "endFrame": 3661,
+    "text": "Let's watch the product.",
+    "prefix": "Let's watch the product.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3606,
+        "words": [
+          {
+            "text": "Let's",
+            "startFrame": 3606
+          },
+          {
+            "text": "watch",
+            "startFrame": 3610
+          },
+          {
+            "text": "the",
+            "startFrame": 3615
+          },
+          {
+            "text": "product.",
+            "startFrame": 3617
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "startFrame": 3661,
+    "endFrame": 3757,
+    "text": "A support person opens ecom's monitoring.",
+    "prefix": "A support person opens ecom's monitoring.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3662,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 3662
+          },
+          {
+            "text": "support",
+            "startFrame": 3664
+          },
+          {
+            "text": "person",
+            "startFrame": 3676
+          },
+          {
+            "text": "opens",
+            "startFrame": 3688
+          },
+          {
+            "text": "ecom's",
+            "startFrame": 3709
+          },
+          {
+            "text": "monitoring.",
+            "startFrame": 3725
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "startFrame": 3757,
+    "endFrame": 3918,
+    "text": "The first dashboard shows payments by how they end: paid, declined, and unknown.",
+    "prefix": "The first dashboard shows payments by how they end: paid, declined, and unknown.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3759,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3759
+          },
+          {
+            "text": "first",
+            "startFrame": 3761
+          },
+          {
+            "text": "dashboard",
+            "startFrame": 3769
+          },
+          {
+            "text": "shows",
+            "startFrame": 3784
+          },
+          {
+            "text": "payments",
+            "startFrame": 3793
+          },
+          {
+            "text": "by",
+            "startFrame": 3804
+          },
+          {
+            "text": "how",
+            "startFrame": 3808
+          },
+          {
+            "text": "they",
+            "startFrame": 3813
+          }
+        ]
+      },
+      {
+        "startFrame": 3817,
+        "words": [
+          {
+            "text": "end:",
+            "startFrame": 3817
+          },
+          {
+            "text": "paid,",
+            "startFrame": 3838
+          },
+          {
+            "text": "declined,",
+            "startFrame": 3855
+          },
+          {
+            "text": "and",
+            "startFrame": 3881
+          },
+          {
+            "text": "unknown.",
+            "startFrame": 3893
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "startFrame": 3919,
+    "endFrame": 4074,
+    "text": "Unknown is painted red: payments where nobody yet knows whether money moved.",
+    "prefix": "Unknown is painted red: payments where nobody yet knows whether money moved.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3920,
+        "words": [
+          {
+            "text": "Unknown",
+            "startFrame": 3920
+          },
+          {
+            "text": "is",
+            "startFrame": 3934
+          },
+          {
+            "text": "painted",
+            "startFrame": 3937
+          },
+          {
+            "text": "red:",
+            "startFrame": 3948
+          }
+        ]
+      },
+      {
+        "startFrame": 3971,
+        "words": [
+          {
+            "text": "payments",
+            "startFrame": 3971
+          },
+          {
+            "text": "where",
+            "startFrame": 3985
+          },
+          {
+            "text": "nobody",
+            "startFrame": 3988
+          },
+          {
+            "text": "yet",
+            "startFrame": 4011
+          },
+          {
+            "text": "knows",
+            "startFrame": 4019
+          },
+          {
+            "text": "whether",
+            "startFrame": 4035
+          },
+          {
+            "text": "money",
+            "startFrame": 4043
+          },
+          {
+            "text": "moved.",
+            "startFrame": 4049
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "startFrame": 4075,
+    "endFrame": 4164,
+    "text": "Right now, the red line sits at zero.",
+    "prefix": "Right now, the red line sits at zero.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4076,
+        "words": [
+          {
+            "text": "Right",
+            "startFrame": 4076
+          },
+          {
+            "text": "now,",
+            "startFrame": 4080
+          },
+          {
+            "text": "the",
+            "startFrame": 4101
+          },
+          {
+            "text": "red",
+            "startFrame": 4104
+          },
+          {
+            "text": "line",
+            "startFrame": 4111
+          },
+          {
+            "text": "sits",
+            "startFrame": 4129
+          },
+          {
+            "text": "at",
+            "startFrame": 4137
+          },
+          {
+            "text": "zero.",
+            "startFrame": 4139
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "startFrame": 4165,
+    "endFrame": 4243,
+    "text": "They paste the trace number the merchant quoted.",
+    "prefix": "They paste the trace number the merchant quoted.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4166,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 4166
+          },
+          {
+            "text": "paste",
+            "startFrame": 4168
+          },
+          {
+            "text": "the",
+            "startFrame": 4177
+          },
+          {
+            "text": "trace",
+            "startFrame": 4179
+          },
+          {
+            "text": "number",
+            "startFrame": 4194
+          },
+          {
+            "text": "the",
+            "startFrame": 4202
+          },
+          {
+            "text": "merchant",
+            "startFrame": 4205
+          },
+          {
+            "text": "quoted.",
+            "startFrame": 4218
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "startFrame": 4244,
+    "endFrame": 4440,
+    "text": "One line appears, crossing ecom, the card zone and the adapter, with the time each step took.",
+    "prefix": "One line appears, crossing ecom, the card zone and the adapter, with the time each step took.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4245,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 4245
+          },
+          {
+            "text": "line",
+            "startFrame": 4251
+          },
+          {
+            "text": "appears,",
+            "startFrame": 4256
+          }
+        ]
+      },
+      {
+        "startFrame": 4281,
+        "words": [
+          {
+            "text": "crossing",
+            "startFrame": 4281
+          },
+          {
+            "text": "ecom,",
+            "startFrame": 4296
+          },
+          {
+            "text": "the",
+            "startFrame": 4317
+          },
+          {
+            "text": "card",
+            "startFrame": 4320
+          },
+          {
+            "text": "zone",
+            "startFrame": 4329
+          },
+          {
+            "text": "and",
+            "startFrame": 4342
+          },
+          {
+            "text": "the",
+            "startFrame": 4345
+          },
+          {
+            "text": "adapter,",
+            "startFrame": 4348
+          }
+        ]
+      },
+      {
+        "startFrame": 4376,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 4376
+          },
+          {
+            "text": "the",
+            "startFrame": 4379
+          },
+          {
+            "text": "time",
+            "startFrame": 4381
+          },
+          {
+            "text": "each",
+            "startFrame": 4405
+          },
+          {
+            "text": "step",
+            "startFrame": 4409
+          },
+          {
+            "text": "took.",
+            "startFrame": 4418
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "startFrame": 4441,
+    "endFrame": 4508,
+    "text": "They open the log lines of that request.",
+    "prefix": "They open the log lines of that request.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4442,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 4442
+          },
+          {
+            "text": "open",
+            "startFrame": 4445
+          },
+          {
+            "text": "the",
+            "startFrame": 4451
+          },
+          {
+            "text": "log",
+            "startFrame": 4454
+          },
+          {
+            "text": "lines",
+            "startFrame": 4463
+          },
+          {
+            "text": "of",
+            "startFrame": 4472
+          },
+          {
+            "text": "that",
+            "startFrame": 4474
+          },
+          {
+            "text": "request.",
+            "startFrame": 4479
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "startFrame": 4508,
+    "endFrame": 4661,
+    "text": "The card number shows its first six digits, a row of stars, and its last four.",
+    "prefix": "The card number shows its first six digits, a row of stars, and its last four.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4510,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4510
+          },
+          {
+            "text": "card",
+            "startFrame": 4512
+          },
+          {
+            "text": "number",
+            "startFrame": 4519
+          },
+          {
+            "text": "shows",
+            "startFrame": 4525
+          },
+          {
+            "text": "its",
+            "startFrame": 4533
+          },
+          {
+            "text": "first",
+            "startFrame": 4537
+          },
+          {
+            "text": "six",
+            "startFrame": 4549
+          },
+          {
+            "text": "digits,",
+            "startFrame": 4559
+          }
+        ]
+      },
+      {
+        "startFrame": 4582,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 4582
+          },
+          {
+            "text": "row",
+            "startFrame": 4585
+          },
+          {
+            "text": "of",
+            "startFrame": 4594
+          },
+          {
+            "text": "stars,",
+            "startFrame": 4597
+          }
+        ]
+      },
+      {
+        "startFrame": 4624,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4624
+          },
+          {
+            "text": "its",
+            "startFrame": 4626
+          },
+          {
+            "text": "last",
+            "startFrame": 4630
+          },
+          {
+            "text": "four.",
+            "startFrame": 4640
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "startFrame": 4662,
+    "endFrame": 4754,
+    "text": "Now the processing centre goes quiet for a while.",
+    "prefix": "Now the processing centre goes quiet for a while.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4663,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 4663
+          },
+          {
+            "text": "the",
+            "startFrame": 4666
+          },
+          {
+            "text": "processing",
+            "startFrame": 4668
+          },
+          {
+            "text": "centre",
+            "startFrame": 4686
+          },
+          {
+            "text": "goes",
+            "startFrame": 4696
+          },
+          {
+            "text": "quiet",
+            "startFrame": 4711
+          },
+          {
+            "text": "for",
+            "startFrame": 4724
+          },
+          {
+            "text": "a",
+            "startFrame": 4729
+          },
+          {
+            "text": "while.",
+            "startFrame": 4730
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "startFrame": 4754,
+    "endFrame": 4867,
+    "text": "Payments start to stay unknown, and the red line climbs.",
+    "prefix": "Payments start to stay unknown, and the red line climbs.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4758,
+        "words": [
+          {
+            "text": "Payments",
+            "startFrame": 4758
+          },
+          {
+            "text": "start",
+            "startFrame": 4769
+          },
+          {
+            "text": "to",
+            "startFrame": 4774
+          },
+          {
+            "text": "stay",
+            "startFrame": 4776
+          },
+          {
+            "text": "unknown,",
+            "startFrame": 4785
+          }
+        ]
+      },
+      {
+        "startFrame": 4815,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4815
+          },
+          {
+            "text": "the",
+            "startFrame": 4816
+          },
+          {
+            "text": "red",
+            "startFrame": 4819
+          },
+          {
+            "text": "line",
+            "startFrame": 4827
+          },
+          {
+            "text": "climbs.",
+            "startFrame": 4836
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "startFrame": 4867,
+    "endFrame": 4931,
+    "text": "Nobody is watching the screen.",
+    "prefix": "Nobody is watching the screen.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4869,
+        "words": [
+          {
+            "text": "Nobody",
+            "startFrame": 4869
+          },
+          {
+            "text": "is",
+            "startFrame": 4889
+          },
+          {
+            "text": "watching",
+            "startFrame": 4892
+          },
+          {
+            "text": "the",
+            "startFrame": 4905
+          },
+          {
+            "text": "screen.",
+            "startFrame": 4907
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "startFrame": 4932,
+    "endFrame": 5010,
+    "text": "That does not matter, because of alert rules.",
+    "prefix": "That does not matter, because of alert rules.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4933,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 4933
+          },
+          {
+            "text": "does",
+            "startFrame": 4936
+          },
+          {
+            "text": "not",
+            "startFrame": 4939
+          },
+          {
+            "text": "matter,",
+            "startFrame": 4945
+          }
+        ]
+      },
+      {
+        "startFrame": 4964,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 4964
+          },
+          {
+            "text": "of",
+            "startFrame": 4971
+          },
+          {
+            "text": "alert",
+            "startFrame": 4973
+          },
+          {
+            "text": "rules.",
+            "startFrame": 4983
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "startFrame": 5010,
+    "endFrame": 5215,
+    "text": "An alert rule is a condition the system checks on its own, all the time, written down like the rest of the product.",
+    "prefix": "An alert rule is a condition the system checks on its own, all the time, written down like the rest of the product.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5011,
+        "words": [
+          {
+            "text": "An",
+            "startFrame": 5011
+          },
+          {
+            "text": "alert",
+            "startFrame": 5012
+          },
+          {
+            "text": "rule",
+            "startFrame": 5023
+          },
+          {
+            "text": "is",
+            "startFrame": 5039
+          },
+          {
+            "text": "a",
+            "startFrame": 5041
+          },
+          {
+            "text": "condition",
+            "startFrame": 5043
+          },
+          {
+            "text": "the",
+            "startFrame": 5059
+          },
+          {
+            "text": "system",
+            "startFrame": 5062
+          }
+        ]
+      },
+      {
+        "startFrame": 5084,
+        "words": [
+          {
+            "text": "checks",
+            "startFrame": 5084
+          },
+          {
+            "text": "on",
+            "startFrame": 5096
+          },
+          {
+            "text": "its",
+            "startFrame": 5099
+          },
+          {
+            "text": "own,",
+            "startFrame": 5102
+          }
+        ]
+      },
+      {
+        "startFrame": 5123,
+        "words": [
+          {
+            "text": "all",
+            "startFrame": 5123
+          },
+          {
+            "text": "the",
+            "startFrame": 5129
+          },
+          {
+            "text": "time,",
+            "startFrame": 5131
+          }
+        ]
+      },
+      {
+        "startFrame": 5157,
+        "words": [
+          {
+            "text": "written",
+            "startFrame": 5157
+          },
+          {
+            "text": "down",
+            "startFrame": 5164
+          },
+          {
+            "text": "like",
+            "startFrame": 5172
+          },
+          {
+            "text": "the",
+            "startFrame": 5176
+          },
+          {
+            "text": "rest",
+            "startFrame": 5179
+          },
+          {
+            "text": "of",
+            "startFrame": 5187
+          },
+          {
+            "text": "the",
+            "startFrame": 5188
+          },
+          {
+            "text": "product.",
+            "startFrame": 5190
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "startFrame": 5215,
+    "endFrame": 5340,
+    "text": "When payments stay unknown for too long, the rule fires.",
+    "prefix": "When payments stay unknown for too long, the rule fires.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5216,
+        "words": [
+          {
+            "text": "When",
+            "startFrame": 5216
+          },
+          {
+            "text": "payments",
+            "startFrame": 5219
+          },
+          {
+            "text": "stay",
+            "startFrame": 5231
+          },
+          {
+            "text": "unknown",
+            "startFrame": 5245
+          },
+          {
+            "text": "for",
+            "startFrame": 5263
+          },
+          {
+            "text": "too",
+            "startFrame": 5268
+          },
+          {
+            "text": "long,",
+            "startFrame": 5275
+          }
+        ]
+      },
+      {
+        "startFrame": 5297,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5297
+          },
+          {
+            "text": "rule",
+            "startFrame": 5299
+          },
+          {
+            "text": "fires.",
+            "startFrame": 5310
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "startFrame": 5341,
+    "endFrame": 5419,
+    "text": "An email arrives: payments are stuck.",
+    "prefix": "An email arrives: payments are stuck.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5342,
+        "words": [
+          {
+            "text": "An",
+            "startFrame": 5342
+          },
+          {
+            "text": "email",
+            "startFrame": 5345
+          },
+          {
+            "text": "arrives:",
+            "startFrame": 5356
+          }
+        ]
+      },
+      {
+        "startFrame": 5383,
+        "words": [
+          {
+            "text": "payments",
+            "startFrame": 5383
+          },
+          {
+            "text": "are",
+            "startFrame": 5393
+          },
+          {
+            "text": "stuck.",
+            "startFrame": 5396
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "startFrame": 5420,
+    "endFrame": 5489,
+    "text": "It says what is wrong and when it started.",
+    "prefix": "It says what is wrong and when it started.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5421,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5421
+          },
+          {
+            "text": "says",
+            "startFrame": 5423
+          },
+          {
+            "text": "what",
+            "startFrame": 5430
+          },
+          {
+            "text": "is",
+            "startFrame": 5433
+          },
+          {
+            "text": "wrong",
+            "startFrame": 5436
+          },
+          {
+            "text": "and",
+            "startFrame": 5456
+          },
+          {
+            "text": "when",
+            "startFrame": 5459
+          },
+          {
+            "text": "it",
+            "startFrame": 5462
+          },
+          {
+            "text": "started.",
+            "startFrame": 5464
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 50,
+    "startFrame": 5490,
+    "endFrame": 5618,
+    "text": "Support opens the dashboard from the email and sees the same red line.",
+    "prefix": "Support opens the dashboard from the email and sees the same red line.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5491,
+        "words": [
+          {
+            "text": "Support",
+            "startFrame": 5491
+          },
+          {
+            "text": "opens",
+            "startFrame": 5506
+          },
+          {
+            "text": "the",
+            "startFrame": 5516
+          },
+          {
+            "text": "dashboard",
+            "startFrame": 5518
+          },
+          {
+            "text": "from",
+            "startFrame": 5534
+          },
+          {
+            "text": "the",
+            "startFrame": 5538
+          },
+          {
+            "text": "email",
+            "startFrame": 5539
+          }
+        ]
+      },
+      {
+        "startFrame": 5565,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5565
+          },
+          {
+            "text": "sees",
+            "startFrame": 5569
+          },
+          {
+            "text": "the",
+            "startFrame": 5578
+          },
+          {
+            "text": "same",
+            "startFrame": 5581
+          },
+          {
+            "text": "red",
+            "startFrame": 5591
+          },
+          {
+            "text": "line.",
+            "startFrame": 5597
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 51,
+    "startFrame": 5618,
+    "endFrame": 5674,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5619,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 5619
+          },
+          {
+            "text": "does",
+            "startFrame": 5621
+          },
+          {
+            "text": "this",
+            "startFrame": 5624
+          },
+          {
+            "text": "protect?",
+            "startFrame": 5628
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 52,
+    "startFrame": 5675,
+    "endFrame": 5828,
+    "text": "Without the trace, a merchant's simple question costs an hour of guessing.",
+    "prefix": "Without the trace, a merchant's simple question costs an hour of guessing.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5676,
+        "words": [
+          {
+            "text": "Without",
+            "startFrame": 5676
+          },
+          {
+            "text": "the",
+            "startFrame": 5685
+          },
+          {
+            "text": "trace,",
+            "startFrame": 5687
+          }
+        ]
+      },
+      {
+        "startFrame": 5716,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 5716
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 5717
+          },
+          {
+            "text": "simple",
+            "startFrame": 5738
+          },
+          {
+            "text": "question",
+            "startFrame": 5749
+          },
+          {
+            "text": "costs",
+            "startFrame": 5771
+          },
+          {
+            "text": "an",
+            "startFrame": 5787
+          },
+          {
+            "text": "hour",
+            "startFrame": 5793
+          },
+          {
+            "text": "of",
+            "startFrame": 5801
+          },
+          {
+            "text": "guessing.",
+            "startFrame": 5804
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 53,
+    "startFrame": 5829,
+    "endFrame": 6021,
+    "text": "Without masking, the logs become a second place where card numbers live, and the locked room has a hole in its wall.",
+    "prefix": "Without masking, the logs become a second place where card numbers live, and the locked room has a hole in its wall.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5830,
+        "words": [
+          {
+            "text": "Without",
+            "startFrame": 5830
+          },
+          {
+            "text": "masking,",
+            "startFrame": 5841
+          },
+          {
+            "text": "the",
+            "startFrame": 5868
+          },
+          {
+            "text": "logs",
+            "startFrame": 5870
+          },
+          {
+            "text": "become",
+            "startFrame": 5878
+          },
+          {
+            "text": "a",
+            "startFrame": 5885
+          },
+          {
+            "text": "second",
+            "startFrame": 5886
+          },
+          {
+            "text": "place",
+            "startFrame": 5899
+          }
+        ]
+      },
+      {
+        "startFrame": 5910,
+        "words": [
+          {
+            "text": "where",
+            "startFrame": 5910
+          },
+          {
+            "text": "card",
+            "startFrame": 5914
+          },
+          {
+            "text": "numbers",
+            "startFrame": 5924
+          },
+          {
+            "text": "live,",
+            "startFrame": 5932
+          }
+        ]
+      },
+      {
+        "startFrame": 5955,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5955
+          },
+          {
+            "text": "the",
+            "startFrame": 5957
+          },
+          {
+            "text": "locked",
+            "startFrame": 5959
+          },
+          {
+            "text": "room",
+            "startFrame": 5970
+          },
+          {
+            "text": "has",
+            "startFrame": 5979
+          },
+          {
+            "text": "a",
+            "startFrame": 5983
+          },
+          {
+            "text": "hole",
+            "startFrame": 5984
+          }
+        ]
+      },
+      {
+        "startFrame": 5995,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 5995
+          },
+          {
+            "text": "its",
+            "startFrame": 5996
+          },
+          {
+            "text": "wall.",
+            "startFrame": 5999
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 54,
+    "startFrame": 6022,
+    "endFrame": 6159,
+    "text": "Without alerts, a stuck payment is found by an angry buyer, not by the bank.",
+    "prefix": "Without alerts, a stuck payment is found by an angry buyer, not by the bank.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6023,
+        "words": [
+          {
+            "text": "Without",
+            "startFrame": 6023
+          },
+          {
+            "text": "alerts,",
+            "startFrame": 6031
+          },
+          {
+            "text": "a",
+            "startFrame": 6053
+          },
+          {
+            "text": "stuck",
+            "startFrame": 6054
+          },
+          {
+            "text": "payment",
+            "startFrame": 6063
+          },
+          {
+            "text": "is",
+            "startFrame": 6076
+          },
+          {
+            "text": "found",
+            "startFrame": 6079
+          }
+        ]
+      },
+      {
+        "startFrame": 6088,
+        "words": [
+          {
+            "text": "by",
+            "startFrame": 6088
+          },
+          {
+            "text": "an",
+            "startFrame": 6092
+          },
+          {
+            "text": "angry",
+            "startFrame": 6094
+          },
+          {
+            "text": "buyer,",
+            "startFrame": 6103
+          }
+        ]
+      },
+      {
+        "startFrame": 6122,
+        "words": [
+          {
+            "text": "not",
+            "startFrame": 6122
+          },
+          {
+            "text": "by",
+            "startFrame": 6129
+          },
+          {
+            "text": "the",
+            "startFrame": 6133
+          },
+          {
+            "text": "bank.",
+            "startFrame": 6135
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "startFrame": 6160,
+    "endFrame": 6228,
+    "text": "The trace protects the merchant's time.",
+    "prefix": "The trace protects the merchant's time.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6161,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 6161
+          },
+          {
+            "text": "trace",
+            "startFrame": 6163
+          },
+          {
+            "text": "protects",
+            "startFrame": 6173
+          },
+          {
+            "text": "the",
+            "startFrame": 6190
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 6193
+          },
+          {
+            "text": "time.",
+            "startFrame": 6206
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 56,
+    "startFrame": 6229,
+    "endFrame": 6293,
+    "text": "Masking protects the buyer's card.",
+    "prefix": "Masking protects the buyer's card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6230,
+        "words": [
+          {
+            "text": "Masking",
+            "startFrame": 6230
+          },
+          {
+            "text": "protects",
+            "startFrame": 6241
+          },
+          {
+            "text": "the",
+            "startFrame": 6256
+          },
+          {
+            "text": "buyer's",
+            "startFrame": 6259
+          },
+          {
+            "text": "card.",
+            "startFrame": 6270
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "startFrame": 6293,
+    "endFrame": 6400,
+    "text": "Alerts make sure the bank is the first to know, not the last.",
+    "prefix": "Alerts make sure the bank is the first to know, not the last.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6294,
+        "words": [
+          {
+            "text": "Alerts",
+            "startFrame": 6294
+          },
+          {
+            "text": "make",
+            "startFrame": 6302
+          },
+          {
+            "text": "sure",
+            "startFrame": 6306
+          },
+          {
+            "text": "the",
+            "startFrame": 6312
+          },
+          {
+            "text": "bank",
+            "startFrame": 6314
+          },
+          {
+            "text": "is",
+            "startFrame": 6333
+          },
+          {
+            "text": "the",
+            "startFrame": 6336
+          },
+          {
+            "text": "first",
+            "startFrame": 6338
+          }
+        ]
+      },
+      {
+        "startFrame": 6347,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 6347
+          },
+          {
+            "text": "know,",
+            "startFrame": 6349
+          },
+          {
+            "text": "not",
+            "startFrame": 6365
+          },
+          {
+            "text": "the",
+            "startFrame": 6371
+          },
+          {
+            "text": "last.",
+            "startFrame": 6373
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 58,
+    "startFrame": 6400,
+    "endFrame": 6456,
+    "text": "Back to the hospital.",
+    "prefix": "Back to the hospital.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6402,
+        "words": [
+          {
+            "text": "Back",
+            "startFrame": 6402
+          },
+          {
+            "text": "to",
+            "startFrame": 6408
+          },
+          {
+            "text": "the",
+            "startFrame": 6410
+          },
+          {
+            "text": "hospital.",
+            "startFrame": 6412
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 59,
+    "startFrame": 6457,
+    "endFrame": 6624,
+    "text": "One number on every chart, in every department, and no secrets written on the wristband.",
+    "prefix": "One number on every chart, in every department, and no secrets written on the wristband.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6458,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 6458
+          },
+          {
+            "text": "number",
+            "startFrame": 6463
+          },
+          {
+            "text": "on",
+            "startFrame": 6471
+          },
+          {
+            "text": "every",
+            "startFrame": 6482
+          },
+          {
+            "text": "chart,",
+            "startFrame": 6492
+          }
+        ]
+      },
+      {
+        "startFrame": 6516,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 6516
+          },
+          {
+            "text": "every",
+            "startFrame": 6524
+          },
+          {
+            "text": "department,",
+            "startFrame": 6531
+          }
+        ]
+      },
+      {
+        "startFrame": 6558,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6558
+          },
+          {
+            "text": "no",
+            "startFrame": 6563
+          },
+          {
+            "text": "secrets",
+            "startFrame": 6570
+          },
+          {
+            "text": "written",
+            "startFrame": 6585
+          },
+          {
+            "text": "on",
+            "startFrame": 6591
+          },
+          {
+            "text": "the",
+            "startFrame": 6594
+          },
+          {
+            "text": "wristband.",
+            "startFrame": 6595
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "startFrame": 6625,
+    "endFrame": 6730,
     "text": "Next: what the merchant gets each day.",
     "prefix": "Next: what the merchant gets each day.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1657,
+        "startFrame": 6626,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 1657
+            "startFrame": 6626
           },
           {
             "text": "what",
-            "startFrame": 1682
+            "startFrame": 6651
           },
           {
             "text": "the",
-            "startFrame": 1685
+            "startFrame": 6654
           },
           {
             "text": "merchant",
-            "startFrame": 1687
+            "startFrame": 6656
           },
           {
             "text": "gets",
-            "startFrame": 1698
+            "startFrame": 6667
           },
           {
             "text": "each",
-            "startFrame": 1703
+            "startFrame": 6673
           },
           {
             "text": "day.",
-            "startFrame": 1708
+            "startFrame": 6678
           }
         ]
       }
