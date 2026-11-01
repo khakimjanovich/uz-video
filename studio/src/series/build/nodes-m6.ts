@@ -13,6 +13,9 @@ export const M6_NODES = {
   m6Letter: { label: "Sealed request", sublabel: "Seal · date · serial", art: "request" },
   m6Key: { label: "Signing key", sublabel: "Bank and merchant only", art: "vault" },
   m6Spent: { label: "Spent serials", sublabel: "Each used once", art: "journal" },
+  m6Log: { label: "Log file", sublabel: "A token inside", art: "journal" },
+  m6Wax: { label: "Wax-sealed letter", sublabel: "Seal · date · serial", art: "receipt" },
+  m6KeySafe: { label: "Key safe", sublabel: "The bank writes", art: "vault" },
   // Lesson 24b: the lift button
   m6Page2: { label: "Second page", sublabel: "Same payment", art: "salespoint" },
   m6Lift: { label: "Lift button", sublabel: "Press it ten times" },
@@ -44,6 +47,8 @@ export const M6_NODES = {
   m6Postman: { label: "Postman", art: "transit" },
   m6Relay: { label: "Relay", sublabel: "The postman", art: "transit" },
   m6Final: { label: "Payment", sublabel: "Final state", art: "receipt" },
+  m6Stream: { label: "Message stream", sublabel: "The bank's", art: "transit" },
+  m6Relay2: { label: "Another copy", sublabel: "Of the app", art: "transit" },
   // Lesson 28b: the registered letter
   m6Registered: { label: "Registered letter", sublabel: "Sealed", art: "request" },
   m6Street: { label: "Real street address", art: "store" },
@@ -55,10 +60,14 @@ export const M6_NODES = {
   m6Bill: { label: "Payment link", sublabel: "A bill with a pay button", art: "receipt" },
   m6Portal: { label: "Portal", sublabel: "Admin or operator", art: "admin" },
   m6Payment: { label: "Payment", sublabel: "An ordinary one", art: "receipt" },
+  m6PaperBill: { label: "Paper bill", sublabel: "A pay-here button", art: "receipt" },
   // Lesson 30: crossing out, or handing back
   m6Reversal: { label: "Reversal", sublabel: "Cross the line out" },
   m6Refund: { label: "Refund", sublabel: "Hand the money back" },
   m6Clock: { label: "Bank's time zone", sublabel: "The day decides" },
   m6Paid: { label: "Paid payment", art: "receipt" },
-  m6Request: { label: "Refund on request", sublabel: "Beyond cap or window", art: "request" },
+  m6OldCard: { label: "Old card", sublabel: "No longer exists", art: "receipt" },
+  m6Cap: { label: "Refund cap", sublabel: "The bank's chosen most", art: "fee" },
+  m6Window: { label: "Refund window", sublabel: "Working days", art: "journal" },
+  m6Request: { label: "Refund by application", sublabel: "Beyond cap or window", art: "request" },
 } satisfies Record<string, NodeDef>;

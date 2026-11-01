@@ -1,39 +1,255 @@
 1
-00:00:00,050 --> 00:00:03,288
-How does the bank know a request was really written by the merchant?
+00:00:00,050 --> 00:00:05,520
+How does the bank know a request really came from the merchant, exactly as the merchant wrote it?
 
 2
-00:00:03,338 --> 00:00:06,888
-A token says who you are, not that you wrote this request.
+00:00:05,570 --> 00:00:09,144
+Picture a shop's server asking the bank to create a payment.
 
 3
-00:00:06,938 --> 00:00:13,584
-So the merchant's server seals every request, like a letter with a wax seal, a date, and a serial number.
+00:00:09,194 --> 00:00:15,000
+The request already carries a token, the pass the merchant's API client received from the bank.
 
 4
-00:00:13,634 --> 00:00:21,720
-The seal covers the method, the full address, the token, and the body, and it is made with a signing key only the bank and the merchant hold.
+00:00:15,050 --> 00:00:16,944
+But a token only says who you are.
 
 5
-00:00:21,770 --> 00:00:27,720
-The bank checks that the date is fresh, that the body matches the seal, and that the seal is right.
+00:00:16,994 --> 00:00:19,752
+It does not say that you wrote this particular request.
 
 6
-00:00:27,770 --> 00:00:34,464
-Then it spends the serial number, so the same sealed request, recorded and sent again tomorrow, is refused.
+00:00:19,802 --> 00:00:21,624
+And tokens leak.
 
 7
-00:00:34,514 --> 00:00:36,480
-A changed amount breaks the seal.
+00:00:21,674 --> 00:00:30,192
+One ends up in a log file, and anyone who reads that log can now ask for payments of any amount, with the buyer sent back to any address.
 
 8
-00:00:36,530 --> 00:00:38,760
-An old request is too late.
+00:00:30,242 --> 00:00:32,064
+There is a second danger.
 
 9
-00:00:38,810 --> 00:00:41,136
-A copied request was already used.
+00:00:32,114 --> 00:00:36,600
+Someone who records one honest request can simply send it again tomorrow.
 
 10
-00:00:41,186 --> 00:00:45,552
-Next: what happens when the same request arrives twice on purpose.
+00:00:36,650 --> 00:00:38,832
+So a pass alone is not enough.
+
+11
+00:00:38,882 --> 00:00:41,976
+Think of an old letter closed with a wax seal.
+
+12
+00:00:42,026 --> 00:00:45,504
+The seal comes from your own ring, so nobody else can make it.
+
+13
+00:00:45,554 --> 00:00:48,192
+A broken seal shows the letter was opened.
+
+14
+00:00:48,242 --> 00:00:50,136
+A date shows when it was written.
+
+15
+00:00:50,186 --> 00:00:55,032
+And a serial number lets the reader notice the same letter arriving twice.
+
+16
+00:00:55,082 --> 00:00:58,728
+The merchant's server does the same with every request.
+
+17
+00:00:58,778 --> 00:01:03,096
+It adds a request signature: a seal over every part that matters.
+
+18
+00:01:03,146 --> 00:01:05,880
+The seal covers the method, which says create.
+
+19
+00:01:05,930 --> 00:01:09,144
+It covers the full address the request goes to.
+
+20
+00:01:09,194 --> 00:01:11,016
+It covers the token.
+
+21
+00:01:11,066 --> 00:01:15,864
+It covers a fingerprint of the body, so the amount and the return address are sealed too.
+
+22
+00:01:15,914 --> 00:01:18,576
+And it covers the time and a one-time number.
+
+23
+00:01:18,626 --> 00:01:20,808
+The seal is made with a signing key.
+
+24
+00:01:20,858 --> 00:01:26,832
+That is a secret held by only two parties: the bank and this one API client.
+
+25
+00:01:26,882 --> 00:01:29,952
+The bank writes it straight into its key safe.
+
+26
+00:01:30,002 --> 00:01:32,640
+The payments app can read it, but never change it.
+
+27
+00:01:32,690 --> 00:01:36,336
+When a request arrives, ecom checks it in a fixed order.
+
+28
+00:01:36,386 --> 00:01:40,992
+First, the time must be fresh, inside the bank's chosen window.
+
+29
+00:01:41,042 --> 00:01:44,040
+Second, the body must match its fingerprint.
+
+30
+00:01:44,090 --> 00:01:49,584
+Third, the API client named in the seal must be the one that owns the token.
+
+31
+00:01:49,634 --> 00:01:54,528
+Last, ecom makes the seal again with the same key and compares the two.
+
+32
+00:01:54,578 --> 00:01:56,832
+Only then does it spend the one-time number.
+
+33
+00:01:56,882 --> 00:02:00,384
+That number is the nonce, and each nonce works once.
+
+34
+00:02:00,434 --> 00:02:06,504
+A nonce is spent only after the seal checks out, so a forger cannot burn a merchant's numbers in advance.
+
+35
+00:02:06,554 --> 00:02:08,376
+One more rule follows.
+
+36
+00:02:08,426 --> 00:02:14,256
+Only the merchant's own switched-on website, with one of its own return addresses, can take a payment.
+
+37
+00:02:14,306 --> 00:02:16,176
+Now watch it from the merchant's server.
+
+38
+00:02:16,226 --> 00:02:21,960
+It builds the body: the website, the order, the amount in cents and the return address.
+
+39
+00:02:22,010 --> 00:02:24,432
+It seals the request and sends it.
+
+40
+00:02:24,482 --> 00:02:26,304
+The answer comes back at once.
+
+41
+00:02:26,354 --> 00:02:31,176
+The payment is created, and the answer carries the link to the bank's payment page.
+
+42
+00:02:31,226 --> 00:02:36,312
+In the merchant portal, the payments list shows one new payment, waiting for the buyer.
+
+43
+00:02:36,362 --> 00:02:41,304
+Now the server sends the very same sealed request a second time, unchanged.
+
+44
+00:02:41,354 --> 00:02:42,960
+The bank refuses it.
+
+45
+00:02:43,010 --> 00:02:46,128
+The answer says the one-time number is already used.
+
+46
+00:02:46,178 --> 00:02:51,216
+Next, someone copies a request, changes the amount, and keeps the old seal.
+
+47
+00:02:51,266 --> 00:02:54,840
+The bank refuses it, because the body no longer matches.
+
+48
+00:02:54,890 --> 00:02:57,912
+Last, someone sends a request sealed long ago.
+
+49
+00:02:57,962 --> 00:03:01,944
+The bank refuses that too, because it is no longer fresh.
+
+50
+00:03:01,994 --> 00:03:06,432
+After every refusal, the payments list stays exactly the same.
+
+51
+00:03:06,482 --> 00:03:08,304
+Nothing new is created.
+
+52
+00:03:08,354 --> 00:03:10,176
+What does this protect?
+
+53
+00:03:10,226 --> 00:03:13,848
+Without the seal, a leaked token is a blank cheque.
+
+54
+00:03:13,898 --> 00:03:22,008
+Anyone could create payments in the merchant's name, for amounts the merchant never chose, and send the buyer back to a page the attacker controls.
+
+55
+00:03:22,058 --> 00:03:26,160
+Without the nonce, one recorded request becomes a copy machine.
+
+56
+00:03:26,210 --> 00:03:30,360
+The seal protects the merchant's name and every number in the request.
+
+57
+00:03:30,410 --> 00:03:33,408
+The date and the nonce protect against copies.
+
+58
+00:03:33,458 --> 00:03:38,832
+And the key safe protects the key itself, because no person ever types it into the app.
+
+59
+00:03:38,882 --> 00:03:40,704
+So back to the letter.
+
+60
+00:03:40,754 --> 00:03:43,344
+The seal says it is yours and unopened.
+
+61
+00:03:43,394 --> 00:03:45,384
+The date says it is fresh.
+
+62
+00:03:45,434 --> 00:03:48,216
+The serial number says it is the only one.
+
+63
+00:03:48,266 --> 00:03:51,744
+Nobody can forge it, and nobody can post it twice.
+
+64
+00:03:51,794 --> 00:03:56,664
+Next: what happens when the merchant's server asks for the same payment twice on purpose.
