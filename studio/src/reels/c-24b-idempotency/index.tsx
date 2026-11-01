@@ -5,18 +5,20 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "The same payment twice?", "Lesson 24: sealed", "An honest repeat", "This lesson: one payment", "At checkout", "Create a payment", "The network hiccups", "The network hiccups",
-  "No answer", "Which half was lost?", "Send it again", "A second payment", "Two payment pages", "Pay both",
-  "Give money back", "Retrying is right", "Recognise a retry", "A lift button", "Press it once", "Ten more times",
-  "One lift", "The same thing", "The same way", "Idempotency key", "A plain name", "The same on every retry",
-  "The bank remembers", "Three things", "Same key, same request", "Nothing created", "The first answer",
-  "An idempotent replay", "A different request", "Refused", "Never safe to guess", "The same moment",
-  "Both look new", "Written only once", "One wins", "The winner's answer", "The previous lesson", "A fresh seal",
-  "The same key", "Copies by strangers", "Ties the retries", "The merchant's server", "Create with its key",
-  "The answer is lost", "The same key", "The answer arrives", "Marked as a replay", "One payment, not two",
-  "A different amount", "Already used", "Still one payment", "What it protects", "Paying twice",
-  "Refunds, angry calls", "Send it again", "A hard choice", "Always safe", "Back to the lift", "Ten times",
-  "One payment", "Next: the payment page",
+  "The eighth of March", "Order 1042", "The network hiccups", "Arrived or not?", "Which half was lost?",
+  "Lesson 24: a seal", "This lesson: one payment",
+  "Send it again", "A second payment", "Two payment pages", "Pay both", "Money back, trust lost",
+  "Retrying is right", "Recognise a retry",
+  "Idempotency key", "A plain name", "Same on every retry", "The bank remembers",
+  "Three things", "Same key, same request", "Nothing created", "The first answer", "An idempotent replay",
+  "A different amount", "Refused", "Never safe to guess",
+  "The same moment", "Both look new", "Written only once", "One wins", "The winner's answer",
+  "The last lesson", "A fresh seal", "Same key, new seal", "Copies by strangers", "Ties the retries", "Opposites",
+  "Order 1042 again", "Create with its key", "The answer is lost", "Sealed again", "The answer arrives", "A replay",
+  "One payment, not two",
+  "Tests the edge", "A different amount", "Key already used", "Still one payment",
+  "The simplest rule", "Same key again", "A hard choice", "Pays once",
+  "Next: the payment page",
 ];
 
 export const C24bIdempotencyComposition = createEpisode({

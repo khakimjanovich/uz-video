@@ -1,227 +1,207 @@
 1
-00:00:00,050 --> 00:00:02,976
-How does the merchant's server learn that a payment is paid?
+00:00:00,050 --> 00:00:02,304
+Saturday, two in the afternoon.
 
 2
-00:00:03,026 --> 00:00:08,904
-In Lesson 29, every payment's news waited in the outbox, and a relay passed it on.
+00:00:02,354 --> 00:00:07,104
+Bekzod's hosting company takes Malika's server down for an hour of maintenance.
 
 3
-00:00:08,954 --> 00:00:13,464
-In Lesson 24, the merchant's server signed what it sent to the bank.
+00:00:07,154 --> 00:00:10,104
+In that hour, the shop sells six bouquets.
 
 4
-00:00:13,514 --> 00:00:18,672
-This lesson delivers the news the other way, signed by the bank, to the merchant's server.
+00:00:10,154 --> 00:00:14,712
+Malika ships nothing until her server hears paid, so all six wait.
 
 5
-00:00:18,722 --> 00:00:21,360
-The shop needs to know before it ships the goods.
+00:00:14,762 --> 00:00:22,896
+In Lesson 29, every payment's news waited in the outbox for the relay, and in Lesson 24, Bekzod's server signed what it sent to the bank.
 
 6
-00:00:21,410 --> 00:00:26,616
-Its server might be down for an hour, and still needs every event when it comes back, in order.
+00:00:22,946 --> 00:00:28,176
+This lesson delivers that news the other way, signed by the bank, to Bekzod's server.
 
 7
-00:00:26,666 --> 00:00:29,664
-It must also tell a real event from a forged one.
+00:00:28,226 --> 00:00:32,256
+When the server comes back, it needs every event it missed, in order.
 
 8
-00:00:29,714 --> 00:00:32,448
-Anyone can send a message that says paid.
+00:00:32,306 --> 00:00:37,848
+It must also tell a real event from a forged one, because anyone can send a message that says paid.
 
 9
-00:00:32,498 --> 00:00:34,368
-And there is a danger for the bank.
+00:00:37,898 --> 00:00:40,272
+And there is a danger for the bank itself.
 
 10
-00:00:34,418 --> 00:00:40,704
-An attacker could set their webhook address to a server inside the bank's own network, and make ecom call it.
+00:00:40,322 --> 00:00:47,760
+Someone who signs up as a merchant could set their webhook address to a server inside the bank's own network, and make ecom call it.
 
 11
-00:00:40,754 --> 00:00:42,576
-Think of a registered letter.
+00:00:47,810 --> 00:00:49,920
+The news travels as a webhook.
 
 12
-00:00:42,626 --> 00:00:45,552
-It is sealed, so the reader knows who sent it.
+00:00:49,970 --> 00:00:55,872
+When a payment's news leaves the outbox, ecom posts it to the website's webhook address.
 
 13
-00:00:45,602 --> 00:00:47,976
-It goes only to a real street address.
-
-14
-00:00:48,026 --> 00:00:51,144
-If nobody is home, the postman comes back later.
-
-15
-00:00:51,194 --> 00:00:54,432
-And after a while, the letter is marked as returned.
-
-16
-00:00:54,482 --> 00:00:56,448
-A webhook is that letter.
-
-17
-00:00:56,498 --> 00:01:02,376
-When the news about a payment leaves the outbox, ecom posts it to the website's webhook address.
-
-18
-00:01:02,426 --> 00:01:05,592
+00:00:55,922 --> 00:00:59,088
 That address is set by the merchant for each website.
 
-19
-00:01:05,642 --> 00:01:10,992
+14
+00:00:59,138 --> 00:01:04,488
 Every event carries its own id, the time it was sent, and a webhook signature.
 
-20
-00:01:11,042 --> 00:01:16,104
+15
+00:01:04,538 --> 00:01:09,600
 The signature is made with the same signing key as the merchant's API client.
 
-21
-00:01:16,154 --> 00:01:20,568
+16
+00:01:09,650 --> 00:01:14,064
 It follows a common open standard, so any webhook library can check it.
 
-22
-00:01:20,618 --> 00:01:27,120
-The merchant's server checks the seal, drops events that are too old, and drops any id it has seen before.
+17
+00:01:14,114 --> 00:01:20,880
+Bekzod's server checks the seal, drops events that are too old, and drops any id it has seen before.
 
-23
-00:01:27,170 --> 00:01:30,528
+18
+00:01:20,930 --> 00:01:24,288
 Before connecting, ecom checks the address.
 
-24
-00:01:30,578 --> 00:01:32,664
+19
+00:01:24,338 --> 00:01:26,424
 It must be a secure address.
 
-25
-00:01:32,714 --> 00:01:35,088
+20
+00:01:26,474 --> 00:01:28,848
 It must lead only to the public internet.
 
-26
-00:01:35,138 --> 00:01:39,792
+21
+00:01:28,898 --> 00:01:33,552
 And it is checked again at the very moment of connecting, so it cannot change in between.
 
-27
-00:01:39,842 --> 00:01:41,808
+22
+00:01:33,602 --> 00:01:35,568
 Redirects are not followed.
 
-28
-00:01:41,858 --> 00:01:48,720
-This guard stops server-side request forgery: a trick where someone makes a server call places it should never reach.
+23
+00:01:35,618 --> 00:01:42,264
+This guard stops server side request forgery, a trick where someone makes a server call places it should never reach.
 
-29
-00:01:48,770 --> 00:01:53,304
+24
+00:01:42,314 --> 00:01:48,768
+I would never ship webhooks without this guard, because without it, the bank's own webhooks become a way into the bank.
+
+25
+00:01:48,818 --> 00:01:53,352
 A delivery succeeds only when the merchant's server answers with success.
 
-30
-00:01:53,354 --> 00:01:56,616
+26
+00:01:53,402 --> 00:01:56,664
 Anything else is tried again, waiting longer each time.
 
-31
-00:01:56,666 --> 00:02:01,176
+27
+00:01:56,714 --> 00:02:01,224
 A payment's later events wait behind an earlier one, so they stay in order.
 
-32
-00:02:01,226 --> 00:02:06,216
+28
+00:02:01,274 --> 00:02:06,264
 After the bank's chosen time, an event that never got through is marked undelivered.
 
-33
-00:02:06,266 --> 00:02:08,376
+29
+00:02:06,314 --> 00:02:08,424
 The merchant can then ask for it again.
 
-34
-00:02:08,426 --> 00:02:12,696
+30
+00:02:08,474 --> 00:02:12,744
 Payment links get no webhooks, because there is no server behind them.
 
-35
-00:02:12,746 --> 00:02:14,568
-Now watch the product.
+31
+00:02:12,794 --> 00:02:15,792
+Here is that Saturday in the merchant portal.
 
-36
-00:02:14,618 --> 00:02:16,920
-In the merchant portal, open a payment.
+32
+00:02:15,842 --> 00:02:18,744
+On a normal day, Malika opens a payment.
 
-37
-00:02:16,970 --> 00:02:20,880
+33
+00:02:18,794 --> 00:02:22,704
 Below its calls to the card scheme is a section called webhooks.
 
-38
-00:02:20,930 --> 00:02:23,496
+34
+00:02:22,754 --> 00:02:25,320
 Each event shows its type and its status.
 
-39
-00:02:23,546 --> 00:02:28,560
-Here it says delivered, after one attempt, with the last answer from the merchant's server.
+35
+00:02:25,370 --> 00:02:29,856
+Here it says delivered, after one attempt, with the last answer from her server.
 
-40
-00:02:28,610 --> 00:02:32,088
-Now take the merchant's server offline, and make a new payment.
+36
+00:02:29,906 --> 00:02:32,592
+Now she opens a payment from the maintenance hour.
 
-41
-00:02:32,138 --> 00:02:37,704
+37
+00:02:32,642 --> 00:02:38,208
 Its event says retrying, with the time of the next attempt and the last answer, which is no answer.
 
-42
-00:02:37,754 --> 00:02:41,592
+38
+00:02:38,258 --> 00:02:42,096
 A later event for the same payment says waiting for an earlier event.
 
-43
-00:02:41,642 --> 00:02:45,840
+39
+00:02:42,146 --> 00:02:46,344
 While an event is still retrying, there is no button to send it again.
 
-44
-00:02:45,890 --> 00:02:48,264
-In the end, it says undelivered.
+40
+00:02:46,394 --> 00:02:50,424
+Suppose the maintenance runs long, past the bank's chosen time.
 
-45
-00:02:48,314 --> 00:02:55,056
+41
+00:02:50,474 --> 00:02:52,440
+The event says undelivered.
+
+42
+00:02:52,490 --> 00:02:59,232
 The hint says the server never answered with success, and asks the merchant to fix it, then send the event again.
 
-46
-00:02:55,106 --> 00:02:58,464
-The merchant brings the server back, and presses send again.
+43
+00:02:59,282 --> 00:03:03,168
+Bekzod brings the server back, and Malika presses send again.
 
-47
-00:02:58,514 --> 00:03:02,256
+44
+00:03:03,218 --> 00:03:06,960
 A short note says it is queued and goes out within seconds.
 
-48
-00:03:02,306 --> 00:03:04,296
-The status turns to delivered.
+45
+00:03:07,010 --> 00:03:10,680
+The status turns to delivered, and the bouquets ship.
 
-49
-00:03:04,346 --> 00:03:12,672
+46
+00:03:10,730 --> 00:03:12,552
+One last case.
+
+47
+00:03:12,602 --> 00:03:20,928
 Open a payment made from a link, and the section says no webhook was sent: the website has no webhook address, or it is a payment link.
 
+48
+00:03:20,978 --> 00:03:23,784
+So a forged paid never ships a bouquet.
+
+49
+00:03:23,834 --> 00:03:25,848
+An outage loses no news.
+
 50
-00:03:12,722 --> 00:03:14,544
-What does this protect?
+00:03:25,898 --> 00:03:28,416
+Refunded never arrives before paid.
 
 51
-00:03:14,594 --> 00:03:17,712
-The signature protects the merchant from a forged paid.
+00:03:28,466 --> 00:03:32,088
+And the bank's own network stays out of reach of its own webhooks.
 
 52
-00:03:17,762 --> 00:03:21,792
-The retries protect the merchant from losing news during an outage.
-
-53
-00:03:21,842 --> 00:03:25,056
-The order protects against seeing refunded before paid.
-
-54
-00:03:25,106 --> 00:03:28,992
-And the address guard protects the bank's own network from its own webhooks.
-
-55
-00:03:29,042 --> 00:03:30,864
-So back to the registered letter.
-
-56
-00:03:30,914 --> 00:03:35,640
-Sealed, sent only to a real address, and tried again until it arrives.
-
-57
-00:03:35,690 --> 00:03:38,064
+00:03:32,138 --> 00:03:34,512
 Next: payments without a website.
