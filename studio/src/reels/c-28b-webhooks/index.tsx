@@ -5,16 +5,16 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Learn it is paid", "Lesson 29: the outbox", "Lesson 24: signed", "This lesson: the other way", "Before shipping", "Down for an hour", "Real or forged", "Anyone can say paid",
-  "A danger for the bank", "Inside the bank's network", "A registered letter", "Sealed", "A real street address",
-  "Comes back later", "Returned", "A webhook", "The webhook address", "Set by the merchant", "Webhook signature",
-  "The same signing key", "An open standard", "Seal, age, id", "Check the address", "A secure address",
-  "Public internet only", "Checked again", "No redirects", "Request forgery", "Success", "Tried again", "In order",
-  "Undelivered", "Ask for it again", "Payment links", "Watch the product", "Open a payment", "Webhooks",
-  "Type and status", "Delivered", "Server offline", "Retrying", "Waiting for an earlier", "No button yet",
-  "Undelivered", "Fix it, send again", "Send again", "Queued", "Delivered", "No webhook was sent",
-  "What it protects", "A forged paid", "An outage", "Refunded before paid", "The bank's own network",
-  "Back to the letter", "Tried until it arrives", "Next: no website",
+  "Saturday, 2 p.m.", "An hour of maintenance", "Six bouquets", "All six wait",
+  "Lessons 29 and 24", "This lesson: the other way",
+  "Every event, in order", "Real or forged", "A danger for the bank", "Inside the bank's network",
+  "A webhook", "The webhook address", "Set by the merchant", "Webhook signature", "The same signing key", "An open standard", "Seal, age, id",
+  "Check the address", "A secure address", "Public internet only", "Checked again", "No redirects", "Request forgery", "A way into the bank",
+  "Success", "Tried again", "In order", "Undelivered", "Ask for it again", "Payment links",
+  "That Saturday", "A normal day", "Webhooks", "Type and status", "Delivered", "The maintenance hour", "Retrying",
+  "Waiting for an earlier", "No button yet", "Past the chosen time", "Undelivered", "Fix it, send again", "Send again",
+  "Queued", "The bouquets ship", "One last case", "No webhook was sent",
+  "No forged paid", "No news lost", "Refunded after paid", "The bank's own network", "Next: no website",
 ];
 
 export const C28bWebhooksComposition = createEpisode({

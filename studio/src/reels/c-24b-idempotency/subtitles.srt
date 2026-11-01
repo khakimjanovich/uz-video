@@ -1,259 +1,211 @@
 1
-00:00:00,050 --> 00:00:03,696
-What happens when a merchant's server asks for the same payment twice?
+00:00:00,050 --> 00:00:03,792
+The eighth of March is the busiest day of Malika's year.
 
 2
-00:00:03,746 --> 00:00:09,576
-In Lesson 24, every request carried a seal, and a copied request was refused.
+00:00:03,842 --> 00:00:08,544
+At ten past six in the evening, a buyer presses pay for order 1042.
 
 3
-00:00:09,626 --> 00:00:14,328
-But a server may honestly send the same request twice, when an answer gets lost.
+00:00:08,594 --> 00:00:13,488
+Bekzod's server asks the bank to create a payment, and the mobile network hiccups.
 
 4
-00:00:14,378 --> 00:00:19,656
-This lesson makes that safe: however many times it is sent, one payment comes.
-
-5
-00:00:19,706 --> 00:00:21,792
-Picture the shop's server at checkout.
-
-6
-00:00:21,842 --> 00:00:25,512
-It sends the bank a request: create a payment for this order.
-
-7
-00:00:25,562 --> 00:00:27,384
-Then the network hiccups.
-
-8
-00:00:27,434 --> 00:00:30,024
+00:00:13,538 --> 00:00:16,128
 The request may have arrived, or it may not.
 
+5
+00:00:16,178 --> 00:00:20,496
+The answer never comes back, and the server cannot tell which half was lost.
+
+6
+00:00:20,546 --> 00:00:26,376
+In Lesson 24, every request carried a seal, and a copied request was refused.
+
+7
+00:00:26,426 --> 00:00:32,736
+This lesson makes an honest second request safe: however many times it is sent, one payment comes.
+
+8
+00:00:32,786 --> 00:00:36,456
+So the server does the sensible thing, and sends the request again.
+
 9
-00:00:30,074 --> 00:00:31,896
-The answer never comes back.
-
-10
-00:00:31,946 --> 00:00:34,488
-The server cannot tell which half was lost.
-
-11
-00:00:34,538 --> 00:00:37,632
-So it does the sensible thing and sends the request again.
-
-12
-00:00:37,682 --> 00:00:40,992
+00:00:36,506 --> 00:00:39,816
 Without care, the bank now creates a second payment.
 
+10
+00:00:39,866 --> 00:00:43,152
+The buyer may get two payment pages for one bouquet.
+
+11
+00:00:43,202 --> 00:00:47,832
+A nervous buyer, on the busiest evening of the year, may pay both.
+
+12
+00:00:47,882 --> 00:00:52,368
+Then Malika has to give money back, and she has lost a customer's trust.
+
 13
-00:00:41,042 --> 00:00:43,968
-The buyer may get two payment pages for one order.
-
-14
-00:00:44,018 --> 00:00:46,488
-A nervous buyer may pay both.
-
-15
-00:00:46,538 --> 00:00:50,328
-Then the shop has to give money back, and the buyer has lost trust.
-
-16
-00:00:50,378 --> 00:00:52,200
+00:00:52,418 --> 00:00:54,240
 Retrying is right.
 
-17
-00:00:52,250 --> 00:00:56,040
+14
+00:00:54,290 --> 00:00:58,080
 The problem is a retry that the bank cannot recognise.
 
-18
-00:00:56,090 --> 00:00:57,912
-Think of a lift button.
+15
+00:00:58,130 --> 00:01:01,560
+So every create carries an idempotency key.
 
-19
-00:00:57,962 --> 00:01:00,384
-You press it once, and a lift is called.
+16
+00:01:01,610 --> 00:01:06,312
+It is a plain name Bekzod gives to this one attempt, such as the order number and a counter.
 
-20
-00:01:00,434 --> 00:01:03,384
-You press it ten more times, because you are in a hurry.
-
-21
-00:01:03,434 --> 00:01:05,256
-Still one lift comes.
-
-22
-00:01:05,306 --> 00:01:08,400
-Each press means the same thing: I want a lift here.
-
-23
-00:01:08,450 --> 00:01:11,280
-A payment request should work the same way.
-
-24
-00:01:11,330 --> 00:01:14,544
-So each create carries an idempotency key.
-
-25
-00:01:14,594 --> 00:01:19,392
-That is a plain name the merchant gives to this one attempt, such as the order and a counter.
-
-26
-00:01:19,442 --> 00:01:24,192
+17
+00:01:06,362 --> 00:01:11,112
 The merchant chooses it, and it stays the same on every retry of that attempt.
 
-27
-00:01:24,242 --> 00:01:31,728
-The bank remembers each key for each API client, together with the request it came with and the answer it gave.
+18
+00:01:11,162 --> 00:01:18,048
+The bank remembers each key for each API client, with the request it came with and the answer it gave.
 
-28
-00:01:31,778 --> 00:01:33,672
+19
+00:01:18,098 --> 00:01:19,992
 Now three things can happen.
 
-29
-00:01:33,722 --> 00:01:36,960
+20
+00:01:20,042 --> 00:01:23,280
 First, the same key arrives with the same request.
 
-30
-00:01:37,010 --> 00:01:38,976
-The bank does not create anything.
+21
+00:01:23,330 --> 00:01:24,984
+The bank creates nothing.
 
-31
-00:01:39,026 --> 00:01:43,632
+22
+00:01:25,034 --> 00:01:29,640
 It sends back the first answer again, with the same payment and the same page link.
 
-32
-00:01:43,682 --> 00:01:49,584
-It marks that answer as an idempotent replay, so the merchant's server can see it is a repeat.
+23
+00:01:29,690 --> 00:01:35,232
+It marks that answer as an idempotent replay, so Bekzod's server can see it is a repeat.
 
-33
-00:01:49,634 --> 00:01:54,696
-Second, the same key arrives with a different request, for example a different amount.
+24
+00:01:35,282 --> 00:01:39,912
+Second, the same key arrives with a different request, say a different amount.
 
-34
-00:01:54,746 --> 00:01:56,568
+25
+00:01:39,962 --> 00:01:41,784
 The bank refuses it.
 
-35
-00:01:56,618 --> 00:02:02,448
+26
+00:01:41,834 --> 00:01:47,664
 That is a different request under an old name, and guessing which one the merchant meant is never safe.
 
-36
-00:02:02,498 --> 00:02:06,000
+27
+00:01:47,714 --> 00:01:51,216
 Third, two retries arrive at the very same moment.
 
-37
-00:02:06,050 --> 00:02:09,384
+28
+00:01:51,266 --> 00:01:54,600
 Both look new, because neither has been saved yet.
 
-38
-00:02:09,434 --> 00:02:14,928
+29
+00:01:54,650 --> 00:01:59,760
 They meet at one place in the bank's records, where each key can be written only once.
 
-39
-00:02:14,978 --> 00:02:17,208
+30
+00:01:59,810 --> 00:02:02,040
 One wins and creates the payment.
 
-40
-00:02:17,258 --> 00:02:20,112
+31
+00:02:02,090 --> 00:02:04,944
 The other loses, and gets the winner's answer back.
 
-41
-00:02:20,162 --> 00:02:22,632
-There is one detail from the previous lesson.
+32
+00:02:04,994 --> 00:02:07,656
+One detail ties this to the last lesson.
 
-42
-00:02:22,682 --> 00:02:27,840
+33
+00:02:07,706 --> 00:02:12,864
 Every retry still needs a fresh seal, with a new time and a new one-time number.
 
-43
-00:02:27,890 --> 00:02:32,784
+34
+00:02:12,914 --> 00:02:17,808
 So the server seals the request again, but keeps the same idempotency key.
 
-44
-00:02:32,834 --> 00:02:35,472
+35
+00:02:17,858 --> 00:02:20,496
 The seal stops copies made by strangers.
 
-45
-00:02:35,522 --> 00:02:38,688
+36
+00:02:20,546 --> 00:02:23,712
 The key ties together the retries made by the merchant.
 
-46
-00:02:38,738 --> 00:02:40,608
-Now watch it from the merchant's server.
+37
+00:02:23,762 --> 00:02:30,120
+People mix these two up all the time, and they are opposites: one refuses repeats, the other welcomes them.
 
-47
-00:02:40,658 --> 00:02:42,744
-It sends create payment with its key.
+38
+00:02:30,170 --> 00:02:32,928
+Here is order 1042 again.
 
-48
-00:02:42,794 --> 00:02:44,616
+39
+00:02:32,978 --> 00:02:35,472
+The server sends create payment with its key.
+
+40
+00:02:35,522 --> 00:02:37,344
 The answer is lost on the way.
 
-49
-00:02:44,666 --> 00:02:48,168
+41
+00:02:37,394 --> 00:02:40,896
 It seals the same request again and sends it with the same key.
 
-50
-00:02:48,218 --> 00:02:50,040
+42
+00:02:40,946 --> 00:02:42,768
 This time the answer arrives.
 
-51
-00:02:50,090 --> 00:02:55,872
+43
+00:02:42,818 --> 00:02:48,600
 It holds the same payment and the same page link as the first, and it is marked as a replay.
 
-52
-00:02:55,922 --> 00:03:00,840
-In the merchant portal, the payments list shows one payment for this order, not two.
+44
+00:02:48,650 --> 00:02:53,856
+In the merchant portal, Malika's payments list shows one payment for this order, not two.
 
-53
-00:03:00,890 --> 00:03:04,608
-Now the server reuses the key, but with a different amount.
+45
+00:02:53,906 --> 00:02:55,968
+Then Bekzod tests the edge.
 
-54
-00:03:04,658 --> 00:03:09,720
+46
+00:02:56,018 --> 00:02:58,608
+He reuses the key with a different amount.
+
+47
+00:02:58,658 --> 00:03:03,720
 The answer is a refusal that says the key was already used for another request.
 
-55
-00:03:09,770 --> 00:03:12,072
+48
+00:03:03,770 --> 00:03:06,072
 The list still shows one payment.
 
-56
-00:03:12,122 --> 00:03:13,944
-What does this protect?
+49
+00:03:06,122 --> 00:03:10,752
+I think this is the simplest rule a developer can be given, and the most valuable one.
 
-57
-00:03:13,994 --> 00:03:17,280
-It protects the buyer from paying twice for one order.
+50
+00:03:10,802 --> 00:03:13,560
+When in doubt, send it again with the same key.
 
-58
-00:03:17,330 --> 00:03:22,296
-It protects the merchant from refunds and angry calls caused by a bad network.
-
-59
-00:03:22,346 --> 00:03:29,664
-And it lets the merchant's developers write the simplest safe rule there is: when in doubt, send it again with the same key.
-
-60
-00:03:29,714 --> 00:03:35,400
+51
+00:03:13,610 --> 00:03:19,296
 Without the key, every timeout forces a hard choice between a lost order and a double charge.
 
-61
-00:03:35,450 --> 00:03:38,016
-With it, retrying is always safe.
+52
+00:03:19,346 --> 00:03:25,896
+With it, the buyer pays once, Malika gives nothing back, and nobody calls her angry on the eighth of March.
 
-62
-00:03:38,066 --> 00:03:39,888
-So back to the lift button.
-
-63
-00:03:39,938 --> 00:03:42,840
-Press it once, or press it ten times.
-
-64
-00:03:42,890 --> 00:03:45,480
-One lift comes, and one payment is made.
-
-65
-00:03:45,530 --> 00:03:48,048
+53
+00:03:25,946 --> 00:03:28,464
 Next: the page the buyer opens.

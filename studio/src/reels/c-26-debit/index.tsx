@@ -5,17 +5,16 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Exactly once", "Lesson 26: a token", "Lessons 22 and 23", "This lesson: the charge", "Pay twice", "Retrying", "Two copies", "Each could charge", "A worse case", "Crashes",
-  "Did money move?", "Nobody knows", "A cash desk", "One cashier", "The logbook first", "The same way", "The claim",
-  "A single change", "Still card confirmed", "One caller wins", "The others stop", "Two things", "A live terminal",
-  "The agreed fee", "Nothing charged", "Operation journal", "The bank's logbook", "Debit, requested",
-  "Before any network", "One debit line", "By its token", "Its own id", "Still once", "Processing centre",
-  "Hold the money", "Take it at once", "The capture", "Money is taken", "Three answers", "Approved", "Declined",
-  "Unknown", "Never declined", "Never unpaid again", "The buyer's side", "Card into the frame", "Taking the payment",
-  "Paid", "Too little money", "Payment declined", "The merchant portal", "Paid", "Open it", "The bank fee",
-  "Calls to the card scheme", "One debit line", "Still one line", "What it protects", "A double charge", "No record",
-  "Charged again", "Pay again", "Charged once", "Paid once", "What, and when", "Back to the cash desk",
-  "One slip, one hand", "One charge", "Next: silence",
+  "Sunday, 9:20", "The screen freezes", "Press again", "Charged exactly once", "Token, fee, terminal", "This lesson: the charge",
+  "Only the start", "Retrying", "Two copies", "Each could charge", "A worse case", "Crashes", "Did money move?", "Nobody knows",
+  "My rule", "Decide, write, act", "The claim", "A single change", "Still card confirmed", "One caller wins", "The others stop",
+  "Two things", "A live terminal", "The agreed fee", "Nothing charged", "Operation journal", "The bank's logbook",
+  "Debit, requested", "Before any network", "One debit line", "By its token", "Its own id", "Still once", "Timur's card zone",
+  "Hold the money", "Take it at once", "The capture", "Money is taken", "Three answers", "Approved", "Declined", "Unknown",
+  "Never declined", "Never unpaid again", "Taking the payment", "Paid", "Too little money", "Payment declined",
+  "The merchant portal", "Tulips: paid", "She opens it", "The bank fee", "Calls to the card scheme", "One debit line",
+  "Still one line", "Take away a step", "A double charge", "No record", "Charged again", "Pay again", "Charged once",
+  "Paid once", "What, and when", "Next: silence",
 ];
 
 export const C26DebitComposition = createEpisode({
