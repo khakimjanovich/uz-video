@@ -7,41 +7,245 @@ How does one system talk to card networks that each speak a different language?
 Abroad, you carry a plug adapter.
 
 3
-00:00:07,058 --> 00:00:11,424
-Every country's socket is different, but your laptop's plug never changes.
+00:00:07,058 --> 00:00:09,336
+Every country's socket is different.
 
 4
-00:00:11,474 --> 00:00:17,544
-Each card processing centre has its own protocol, its own error codes and its own way of saying yes.
+00:00:09,386 --> 00:00:11,976
+Your laptop's plug never changes.
 
 5
-00:00:17,594 --> 00:00:25,584
-So the card zone has one adapter per centre: a small service that speaks the centre's language on one side, and one plain language on the other.
+00:00:12,026 --> 00:00:13,944
+You never rewire the laptop.
 
 6
-00:00:25,634 --> 00:00:29,688
-Inside the card zone there is one plug shape for every centre.
+00:00:13,994 --> 00:00:15,816
+You just pick the right adapter.
 
 7
-00:00:29,738 --> 00:00:34,992
-Charge, refund, check status: the same questions, whichever centre answers.
+00:00:15,866 --> 00:00:17,472
+Payments have the same problem.
 
 8
-00:00:35,042 --> 00:00:40,488
-And every answer becomes one of three outcomes: approved, declined, or unknown.
+00:00:17,522 --> 00:00:24,288
+Behind every card network sits a card processing centre: the switchboard that carries a payment to the buyer's bank.
 
 9
-00:00:40,538 --> 00:00:45,672
-A timeout is unknown, never declined, because the money may already have moved.
+00:00:24,338 --> 00:00:26,376
+Each centre has its own protocol.
 
 10
-00:00:45,722 --> 00:00:51,936
-So every charge carries our own payment id, and later we can ask the centre exactly what happened to it.
+00:00:26,426 --> 00:00:31,800
+It has its own field names, its own long list of error codes, and its own way of saying yes.
 
 11
-00:00:51,986 --> 00:00:55,536
-A new centre means a new adapter, and nothing else changes.
+00:00:31,850 --> 00:00:39,048
+If the card zone spoke every centre's language itself, every new centre would mean changing the code that guards card numbers.
 
 12
-00:00:55,586 --> 00:00:58,992
+00:00:39,098 --> 00:00:41,976
+That code should change as rarely as possible.
+
+13
+00:00:42,026 --> 00:00:44,640
+So the card zone has one adapter per centre.
+
+14
+00:00:44,690 --> 00:00:47,616
+An adapter is a small, separate service.
+
+15
+00:00:47,666 --> 00:00:50,712
+On one side, it speaks the centre's language.
+
+16
+00:00:50,762 --> 00:00:55,392
+On the other side, it speaks one plain language that the card zone understands.
+
+17
+00:00:55,442 --> 00:00:59,712
+Inside the card zone, there is one plug shape for every centre.
+
+18
+00:00:59,762 --> 00:01:01,584
+Charge a card.
+
+19
+00:01:01,634 --> 00:01:03,456
+Give money back.
+
+20
+00:01:03,506 --> 00:01:05,064
+Ask what happened to a payment.
+
+21
+00:01:05,114 --> 00:01:08,160
+The questions are the same, whichever centre answers.
+
+22
+00:01:08,210 --> 00:01:11,688
+The card zone never needs to know which centre is behind the plug.
+
+23
+00:01:11,738 --> 00:01:13,560
+Then come the answers.
+
+24
+00:01:13,610 --> 00:01:16,968
+Each centre says yes and no in hundreds of ways.
+
+25
+00:01:17,018 --> 00:01:22,992
+The adapter turns every answer into one of three outcomes: approved, declined, or unknown.
+
+26
+00:01:23,042 --> 00:01:25,224
+Approved means the money moved.
+
+27
+00:01:25,274 --> 00:01:28,848
+Declined means the buyer's bank said no, and no money moved.
+
+28
+00:01:28,898 --> 00:01:31,272
+Unknown is the honest third answer.
+
+29
+00:01:31,322 --> 00:01:33,144
+A timeout is unknown.
+
+30
+00:01:33,194 --> 00:01:36,552
+A broken or unreadable answer is unknown.
+
+31
+00:01:36,602 --> 00:01:40,704
+Unknown is never declined, because the money may already have moved.
+
+32
+00:01:40,754 --> 00:01:45,312
+Picture the buyer's bank saying yes, and the answer getting lost on the way back.
+
+33
+00:01:45,362 --> 00:01:50,568
+If the system read that silence as no, the buyer would pay again, and pay twice.
+
+34
+00:01:50,618 --> 00:01:53,400
+So every charge carries our own payment id.
+
+35
+00:01:53,450 --> 00:01:55,872
+The centre keeps that id with the payment.
+
+36
+00:01:55,922 --> 00:02:00,024
+Later, the card zone can ask the centre about exactly that payment.
+
+37
+00:02:00,074 --> 00:02:01,776
+Asking never moves money.
+
+38
+00:02:01,826 --> 00:02:03,648
+It only reads what happened.
+
+39
+00:02:03,698 --> 00:02:05,520
+Now watch the product.
+
+40
+00:02:05,570 --> 00:02:08,136
+The buyer has typed a card and pressed Pay.
+
+41
+00:02:08,186 --> 00:02:12,168
+The payment page shows a spinner and the words "Taking the payment".
+
+42
+00:02:12,218 --> 00:02:17,304
+A short line says the buyer's bank is being asked, and that this takes a few seconds.
+
+43
+00:02:17,354 --> 00:02:22,824
+Behind that line, the card zone hands the charge to the plug, and the adapter talks to its centre.
+
+44
+00:02:22,874 --> 00:02:25,560
+In the usual case, a yes comes back.
+
+45
+00:02:25,610 --> 00:02:29,640
+The page turns to "Paid" and shows a reference number from the network.
+
+46
+00:02:29,690 --> 00:02:38,664
+If the bank says no, the page shows "Payment declined" with a plain reason, such as "There isn't enough money on the card." Now the centre goes silent.
+
+47
+00:02:38,714 --> 00:02:40,728
+The page does not say declined.
+
+48
+00:02:40,778 --> 00:02:45,480
+It says "We're confirming your payment", and it tells the buyer not to pay again.
+
+49
+00:02:45,530 --> 00:02:51,096
+The result follows within minutes, once the system has asked the centre about that one payment id.
+
+50
+00:02:51,146 --> 00:02:53,664
+On the bank's side, the team gets an alert.
+
+51
+00:02:53,714 --> 00:02:58,104
+It names the adapter that could not reach its centre in the last few minutes.
+
+52
+00:02:58,154 --> 00:03:01,848
+It warns that charges through that adapter fail or stay unknown.
+
+53
+00:03:01,898 --> 00:03:03,720
+What does this protect?
+
+54
+00:03:03,770 --> 00:03:09,552
+Without adapters, one centre's odd error code could break the code that guards every card number.
+
+55
+00:03:09,602 --> 00:03:15,168
+Without the unknown outcome, a lost yes becomes a no, and a buyer pays twice.
+
+56
+00:03:15,218 --> 00:03:18,768
+The adapter protects the card zone from every centre's quirks.
+
+57
+00:03:18,818 --> 00:03:21,456
+The unknown outcome protects the buyer's money.
+
+58
+00:03:21,506 --> 00:03:26,568
+And when the bank joins a new network, it adds a new adapter, and nothing else changes.
+
+59
+00:03:26,618 --> 00:03:28,440
+Back to the travel plug.
+
+60
+00:03:28,490 --> 00:03:32,184
+A fourth country, a fourth socket, a fourth adapter.
+
+61
+00:03:32,234 --> 00:03:34,656
+The laptop stays exactly the same.
+
+62
+00:03:34,706 --> 00:03:38,568
+One adapter per socket, and silence is never no.
+
+63
+00:03:38,618 --> 00:03:42,024
 Next: how the card zone keeps a card number safe.
