@@ -5,26 +5,22 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Everyone, everything?", "Lesson 16: first admin", "Lesson 19: server login", "This lesson: the team", "One portal login", "A refund to a friend", "Change for everyone",
-  "Their own badge", "Only the doors needed", "A merchant's team", "How it works",
-  "Four merchant roles", "The admin", "The accountant", "The operator",
-  "The observer", "Invites by email", "Never their password", "Authenticator app",
-  "Roles per action", "Least privilege", "Signed out at once", "Blocking",
-  "History stays", "The last admin", "Name a new admin", "Never locked out",
-  "Watch the product", "Users", "Exactly one role", "Invite a user",
-  "Operator", "Invitation sent", "The new person's inbox", "A link",
-  "Own password, own app", "They sign in", "Payments", "No Users item",
-  "Not offered", "Back as the admin", "Change a role", "Block",
-  "Signed out at once", "The only admin", "Block stays grey", "What does this protect?",
-  "Who did what", "A badge each", "Least privilege", "Blocked at once",
-  "The last-admin rule", "Like staff badges", "Next: websites",
+  "Early March", "Flowers for the 8th", "A helper for the week", "Lessons 16 and 19",
+  "Share one login?", "The costly shortcut", "A refund to a friend", "Change for everyone",
+  "Malika opens Users", "Exactly one role", "There are four", "The admin", "The accountant", "The operator", "The observer",
+  "Invite a user", "Operator", "Invitation sent", "Never their password", "The helper's inbox",
+  "Authenticator app", "Money can go back", "They sign in", "Payments", "No Users item", "Not offered",
+  "Roles per action", "Least privilege", "A stolen login", "The Accountant role", "Signed out at once",
+  "The ninth of March", "Block the helper", "Asked first", "Still names the helper",
+  "Block herself?", "The only admin", "Block stays grey", "Never locked out",
+  "A login each", "The same minute", "Next: second website",
 ];
 
 export const C20MerchantUsersComposition = createEpisode({
   id: "c-20-merchant-users",
   number: 20,
   part: 4,
-  footer: "Staff badges",
+  footer: "One login each",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,
   map,
