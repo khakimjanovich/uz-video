@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Exactly once", "Pay twice", "Retrying", "Two copies", "Each could charge", "A worse case", "Crashes",
+  "Exactly once", "Lesson 26: a token", "Lessons 22 and 23", "This lesson: the charge", "Pay twice", "Retrying", "Two copies", "Each could charge", "A worse case", "Crashes",
   "Did money move?", "Nobody knows", "A cash desk", "One cashier", "The logbook first", "The same way", "The claim",
   "A single change", "Still card confirmed", "One caller wins", "The others stop", "Two things", "A live terminal",
   "The agreed fee", "Nothing charged", "Operation journal", "The bank's logbook", "Debit, requested",

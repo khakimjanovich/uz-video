@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "No website", "Orders in a messenger", "Agree on a price", "No website code", "Out of reach", "A link in a chat",
+  "No website", "Lesson 26: the page", "Lesson 21: limits", "This lesson: no code", "Orders in a messenger", "Agree on a price", "No website code", "Out of reach", "A link in a chat",
   "Still safe", "The real bank page", "A checked website", "Only for a while", "Its secret", "A paper bill",
   "Amount, what for", "Press and pay", "A payment link", "Admin or operator", "A live website", "Amount, how long",
   "An ordinary payment", "No API client", "No return address", "Everything else", "The website's limits",

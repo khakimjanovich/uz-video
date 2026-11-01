@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "How many ways in?", "Two kinds of visitor", "Buyers' browsers", "Other products", "One big entrance",
+  "How many ways in?", "Lesson 4: two doors", "Lessons 7 and 11", "This lesson: the doors", "Two kinds of visitor", "Buyers' browsers", "Other products", "One big entrance",
   "Clear text", "The most valuable box", "Two narrow doors", "A counter, a mail slot", "The counter", "The payers' door",
   "An encrypted line", "A trusted certificate", "The request", "A few requests", "Not found", "How fast",
   "Loading the page", "The mail slot", "The callers' door", "Arrives sealed", "The name outside", "Reads only that name",

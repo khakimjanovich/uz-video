@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "Which network?", "A phone number", "The country", "Before anyone answers", "Never who", "A longer code",
+  "Which network?", "Lesson 3: first six", "Lesson 9: sealed", "This lesson: first digits", "A phone number", "The country", "Before anyone answers", "Never who", "A longer code",
   "A card number", "Network and bank", "The BIN", "A list of BINs", "The BIN list", "Copied in", "On a schedule",
   "An empty list", "Keeps its old list", "Better than no list", "A lookup", "The first eight", "Eight, seven, six",
   "Longest match wins", "In memory", "Only eight digits", "Never the whole", "Unknown BIN", "An empty list",

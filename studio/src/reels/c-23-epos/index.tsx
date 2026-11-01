@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Which machine?", "A machine on the counter", "No counter online", "Machines it issued",
+  "Which machine?", "Lesson 21: its cards", "Lesson 8: adapters", "This lesson: terminals", "A machine on the counter", "No counter online", "Machines it issued",
   "The wrong numbers", "A licence plate", "Never reused", "How it works",
   "A virtual card machine", "A pair of numbers", "The MID and the TID", "One website, one card",
   "One live terminal", "Never registered twice", "Registered with the centre", "Kept if accepted",

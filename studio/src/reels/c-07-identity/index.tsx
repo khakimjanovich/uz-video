@@ -5,7 +5,7 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "Really from ecom?", "I am ecom", "Anyone can type it", "Proves nothing",
+  "Really from ecom?", "Lesson 5: charge by token", "Lesson 6: keys from Vault", "This lesson: proof", "I am ecom", "Anyone can type it", "Proves nothing",
   "The staff entrance", "An ID card", "A day pass", "Only those floors", "Two proofs",
   "A certificate", "Shows its certificate", "Shows one back", "Each side knows", "Mutual TLS", "Refused unread",
   "An access token", "A day pass", "Its own login server", "Trusts only that one", "Worth nothing here",

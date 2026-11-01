@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "No database break-in", "One line of script", "A changed file", "Copies every number", "The page still works",
+  "No database break-in", "Lesson 5: the card reader", "Lesson 10: first digits", "This lesson: the frame", "One line of script", "A changed file", "Copies every number", "The page still works",
   "The buyer still pays", "Unnoticed for weeks", "Web skimming", "The card frame", "Its own address", "Like a window",
   "The bank's card reader", "Tamper seals", "Seals too", "Seal one: one page", "A session", "Look-alike refused",
   "Seal two: a policy", "A rule", "Its own two files", "Refused before it runs", "Seal three", "A fingerprint",

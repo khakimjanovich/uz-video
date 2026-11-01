@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Never alone", "Rushed or bribed", "Stolen cards", "Two signatures",
+  "Never alone", "Lesson 17: verified", "The last step", "This lesson: two people", "Rushed or bribed", "Stolen cards", "Two signatures",
   "The same way", "Four eyes", "How it works", "No such button",
   "The maker", "The person who asks", "Nothing changes yet", "Exactly where it was",
   "The checker", "Agrees or refuses", "Only then active", "Never their own request",

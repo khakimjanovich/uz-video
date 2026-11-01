@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Never answers", "Charge a card", "Slow, or lost", "Time runs out", "Already charged?", "Or not", "Three mistakes",
+  "Never answers", "Lesson 27: unknown", "Lesson 8: our own id", "This lesson: asking", "Charge a card", "Slow, or lost", "Time runs out", "Already charged?", "Or not", "Three mistakes",
   "Call it declined", "Send it again", "Wait in memory", "A parcel", "Tracking says nothing", "No second parcel",
   "Wait a little longer", "Ask a person", "The same way", "Never declined", "Don't pay again", "A durable workflow",
   "Remembers where it is", "One per payment", "This one charge", "Questions only", "Never moves money",

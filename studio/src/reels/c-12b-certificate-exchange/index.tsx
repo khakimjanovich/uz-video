@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "Without the secret key", "The wrong way", "Emails it across", "Another product's inbox", "Pretend to be the caller",
+  "Without the secret key", "Lesson 7: a certificate", "Lesson 12: callers' door", "This lesson: getting one", "The wrong way", "Emails it across", "Another product's inbox", "Pretend to be the caller",
   "Never cross", "A passport office", "An application", "Checks and stamps", "Only the photo", "The caller does the same",
   "Its own Vault", "The key stays", "An application form", "The public half", "Signing request", "Sends only that",
   "The passport office", "Certificate authority", "Checks the form", "Well made?", "The right name?", "On the list?",

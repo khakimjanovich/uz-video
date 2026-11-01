@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Right to take payments", "Monday to Tuesday", "Nobody saw the papers", "Who let it in?",
+  "Right to take payments", "Lesson 16: a merchant", "No money yet", "This lesson: earning it", "Monday to Tuesday", "Nobody saw the papers", "Who let it in?",
   "A driving licence", "Its own number", "Earning its states", "How it works",
   "Company documents", "Who it does business with", "Know your business", "The file store",
   "The real type", "A fake charter refused", "A checksum", "A changed file caught",

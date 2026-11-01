@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Give money back", "A pair of shoes", "Three things wrong", "Refund twice", "Again, by phone", "Six months later",
+  "Give money back", "Lesson 2: two ways back", "Lesson 27: one winner", "This lesson: giving back", "A pair of shoes", "Three things wrong", "Refund twice", "Again, by phone", "Six months later",
   "Too much, too late", "The tab book", "Cross the line out", "A reversal", "Hand the money back", "A refund",
   "The day decides", "The bank's time zone", "The whole amount", "The refund cap", "The largest amount",
   "The refund window", "Working days", "Two bank admins", "Like the charge", "One claim", "The logbook first",

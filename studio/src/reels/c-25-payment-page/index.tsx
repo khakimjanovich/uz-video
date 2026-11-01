@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Nobody else", "A payment created", "The buyer pays", "Never on the shop's site", "No guessable address",
+  "Nobody else", "Lesson 25: one link", "Lesson 5: the frame", "This lesson: the page", "A payment created", "The buyer pays", "Never on the shop's site", "No guessable address",
   "Only for the link's holder", "Only for a while", "Exactly what is paid", "Confirm twice", "A hotel key card",
   "One room", "The guest who holds it", "Until checkout", "The same way", "A link", "A page token", "Send the buyer",
   "Not the token", "Only a fingerprint", "The link expires", "The payment page", "Name, order, amount",

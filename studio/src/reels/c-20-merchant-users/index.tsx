@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Everyone, everything?", "One portal login", "A refund to a friend", "Change for everyone",
+  "Everyone, everything?", "Lesson 16: first admin", "Lesson 19: server login", "This lesson: the team", "One portal login", "A refund to a friend", "Change for everyone",
   "Their own badge", "Only the doors needed", "A merchant's team", "How it works",
   "Four merchant roles", "The admin", "The accountant", "The operator",
   "The observer", "Invites by email", "Never their password", "Authenticator app",

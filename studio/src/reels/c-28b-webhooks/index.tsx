@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Learn it is paid", "Before shipping", "Down for an hour", "Real or forged", "Anyone can say paid",
+  "Learn it is paid", "Lesson 29: the outbox", "Lesson 24: signed", "This lesson: the other way", "Before shipping", "Down for an hour", "Real or forged", "Anyone can say paid",
   "A danger for the bank", "Inside the bank's network", "A registered letter", "Sealed", "A real street address",
   "Comes back later", "Returned", "A webhook", "The webhook address", "Set by the merchant", "Webhook signature",
   "The same signing key", "An open standard", "Seal, age, id", "Check the address", "A secure address",

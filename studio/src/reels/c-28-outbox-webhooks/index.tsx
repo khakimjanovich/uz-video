@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Never lose the news", "Save, then tell", "The shop never hears", "Paid for nothing", "Swap the order",
+  "Never lose the news", "Lessons 27 and 28", "Lesson 1: told", "This lesson: the news", "Save, then tell", "The shop never hears", "Paid for nothing", "Swap the order",
   "Tell, then crash", "Goods for nothing", "Split by a crash", "An outbox tray", "In one motion", "A postman",
   "In the tray, or open", "Nothing half done", "The same way", "Written to the outbox", "Inside the records",
   "Saved together", "Both or neither", "Never one alone", "The relay", "The postman", "The message stream",

@@ -3,237 +3,249 @@
 How do you know exactly what is running inside a bank?
 
 2
-00:00:03,122 --> 00:00:06,624
-Picture a product that always runs whatever is newest.
+00:00:03,122 --> 00:00:08,736
+In Lesson 39, the same install ran on a laptop, a test server and production.
 
 3
-00:00:06,674 --> 00:00:11,352
-On Tuesday, a rebuild quietly pulls a newer version nobody tested.
+00:00:08,786 --> 00:00:13,848
+Only the values changed, so the product itself must be exactly the same too.
 
 4
-00:00:11,402 --> 00:00:16,704
-On Wednesday, someone rolls back, pulls the newest again, and gets the same broken build.
+00:00:13,898 --> 00:00:18,432
+This lesson numbers each release, so everyone knows exactly what is running.
 
 5
-00:00:16,754 --> 00:00:22,104
-Then the bank's assessor asks: what exactly runs in your card zone, and what is inside it?
+00:00:18,482 --> 00:00:21,984
+Picture a product that always runs whatever is newest.
 
 6
-00:00:22,154 --> 00:00:23,976
-Nobody can answer.
+00:00:22,034 --> 00:00:26,712
+On Tuesday, a rebuild quietly pulls a newer version nobody tested.
 
 7
-00:00:24,026 --> 00:00:26,400
-A moving name can never say what runs.
+00:00:26,762 --> 00:00:32,064
+On Wednesday, someone rolls back, pulls the newest again, and gets the same broken build.
 
 8
-00:00:26,450 --> 00:00:28,272
-Think of a book.
+00:00:32,114 --> 00:00:37,464
+Then the bank's assessor asks: what exactly runs in your card zone, and what is inside it?
 
 9
-00:00:28,322 --> 00:00:31,440
-Its second edition never changes once it is printed.
+00:00:37,514 --> 00:00:39,336
+Nobody can answer.
 
 10
-00:00:31,490 --> 00:00:36,720
-When you quote it, you say which edition you read, and anyone can find the same page.
+00:00:39,386 --> 00:00:41,760
+A moving name can never say what runs.
 
 11
-00:00:36,770 --> 00:00:38,640
-Releases work the same way.
+00:00:41,810 --> 00:00:43,632
+Think of a book.
 
 12
-00:00:38,690 --> 00:00:42,384
-Each part of the system numbers its versions in three parts.
+00:00:43,682 --> 00:00:46,800
+Its second edition never changes once it is printed.
 
 13
-00:00:42,434 --> 00:00:46,560
-The first number grows when a change breaks something callers rely on.
+00:00:46,850 --> 00:00:52,080
+When you quote it, you say which edition you read, and anyone can find the same page.
 
 14
-00:00:46,610 --> 00:00:48,840
-The second grows when something is added.
+00:00:52,130 --> 00:00:54,000
+Releases work the same way.
 
 15
-00:00:48,890 --> 00:00:50,976
-The third grows for a fix.
+00:00:54,050 --> 00:00:57,744
+Each part of the system numbers its versions in three parts.
 
 16
-00:00:51,026 --> 00:00:53,832
-So the number alone tells you how careful to be.
+00:00:57,794 --> 00:01:01,920
+The first number grows when a change breaks something callers rely on.
 
 17
-00:00:53,882 --> 00:01:00,456
-A release is one numbered version, made once, from one exact state of the code, and never changed after.
+00:01:01,970 --> 00:01:04,200
+The second grows when something is added.
 
 18
-00:01:00,506 --> 00:01:04,080
-Everything is built from it, and published under its number.
+00:01:04,250 --> 00:01:06,336
+The third grows for a fix.
 
 19
-00:01:04,130 --> 00:01:10,848
-Each built piece carries a bill of materials: a list of every component inside it, each with its version.
+00:01:06,386 --> 00:01:09,192
+So the number alone tells you how careful to be.
 
 20
-00:01:10,898 --> 00:01:13,296
-It also carries a record of how it was built.
+00:01:09,242 --> 00:01:15,816
+A release is one numbered version, made once, from one exact state of the code, and never changed after.
 
 21
-00:01:13,346 --> 00:01:17,616
-So the assessor's question has an answer, written on the piece itself.
+00:01:15,866 --> 00:01:19,440
+Everything is built from it, and published under its number.
 
 22
-00:01:17,666 --> 00:01:19,896
-Every install pins its versions.
+00:01:19,490 --> 00:01:26,208
+Each built piece carries a bill of materials: a list of every component inside it, each with its version.
 
 23
-00:01:19,946 --> 00:01:24,168
-A pin is one line that names the exact release a product runs.
+00:01:26,258 --> 00:01:28,656
+It also carries a record of how it was built.
 
 24
-00:01:24,218 --> 00:01:29,256
-There is one line for the card zone, one for ecom, and one for the portals.
+00:01:28,706 --> 00:01:32,976
+So the assessor's question has an answer, written on the piece itself.
 
 25
-00:01:29,306 --> 00:01:33,048
-Every environment runs real releases, the laptop too.
+00:01:33,026 --> 00:01:35,256
+Every install pins its versions.
 
 26
-00:01:33,098 --> 00:01:36,264
-So what a builder tests is exactly what the bank runs.
+00:01:35,306 --> 00:01:39,528
+A pin is one line that names the exact release a product runs.
 
 27
-00:01:36,314 --> 00:01:38,568
-An upgrade is four steps.
+00:01:39,578 --> 00:01:44,616
+There is one line for the card zone, one for ecom, and one for the portals.
 
 28
-00:01:38,618 --> 00:01:39,432
-Back up.
+00:01:44,666 --> 00:01:48,408
+Every environment runs real releases, the laptop too.
 
 29
-00:01:39,482 --> 00:01:41,304
-Change the pinned line.
+00:01:48,458 --> 00:01:51,624
+So what a builder tests is exactly what the bank runs.
 
 30
-00:01:41,354 --> 00:01:42,120
-Deploy.
+00:01:51,674 --> 00:01:53,928
+An upgrade is four steps.
 
 31
-00:01:42,170 --> 00:01:42,912
-Check.
+00:01:53,978 --> 00:01:54,792
+Back up.
 
 32
-00:01:42,962 --> 00:01:46,560
-The card zone goes first, before ecom, which depends on it.
+00:01:54,842 --> 00:01:56,664
+Change the pinned line.
 
 33
-00:01:46,610 --> 00:01:52,248
-The release notes are read before starting: they say what changed, and whether a new value is needed.
+00:01:56,714 --> 00:01:57,480
+Deploy.
 
 34
-00:01:52,298 --> 00:01:54,816
-And the database only moves forward.
+00:01:57,530 --> 00:01:58,272
+Check.
 
 35
-00:01:54,866 --> 00:01:58,920
-A release can change the shape of the database, but never steps it back.
+00:01:58,322 --> 00:02:01,920
+The card zone goes first, before ecom, which depends on it.
 
 36
-00:01:58,970 --> 00:02:04,296
-So rolling back across such a change means restoring the backup taken just before.
+00:02:01,970 --> 00:02:07,608
+The release notes are read before starting: they say what changed, and whether a new value is needed.
 
 37
-00:02:04,346 --> 00:02:06,720
-That is why the backup is always step one.
+00:02:07,658 --> 00:02:10,176
+And the database only moves forward.
 
 38
-00:02:06,770 --> 00:02:08,592
-Let's watch the product.
+00:02:10,226 --> 00:02:14,280
+A release can change the shape of the database, but never steps it back.
 
 39
-00:02:08,642 --> 00:02:10,392
-An operator plans an upgrade.
+00:02:14,330 --> 00:02:19,656
+So rolling back across such a change means restoring the backup taken just before.
 
 40
-00:02:10,442 --> 00:02:12,264
-They look at the list of releases.
+00:02:19,706 --> 00:02:22,080
+That is why the backup is always step one.
 
 41
-00:02:12,314 --> 00:02:14,472
-Each has a plain number and its notes.
+00:02:22,130 --> 00:02:23,952
+Let's watch the product.
 
 42
-00:02:14,522 --> 00:02:17,472
-They choose the newest, and read its notes first.
+00:02:24,002 --> 00:02:25,824
+An operator plans an upgrade.
 
 43
-00:02:17,522 --> 00:02:22,848
-The notes say whether a breaking change is inside, and whether the installer will ask for a new value.
+00:02:25,874 --> 00:02:27,696
+They look at the list of releases.
 
 44
-00:02:22,898 --> 00:02:25,680
-On the server, the operator takes the backup.
+00:02:27,746 --> 00:02:29,904
+Each has a plain number and its notes.
 
 45
-00:02:25,730 --> 00:02:30,984
-Then they change one line: the card zone's pinned release, from the old number to the new one.
+00:02:29,954 --> 00:02:32,904
+They choose the newest, and read its notes first.
 
 46
-00:02:31,034 --> 00:02:32,856
-They deploy.
+00:02:32,954 --> 00:02:38,280
+The notes say whether a breaking change is inside, and whether the installer will ask for a new value.
 
 47
-00:02:32,906 --> 00:02:36,216
-The services restart on the new release, in order.
+00:02:38,330 --> 00:02:41,112
+On the server, the operator takes the backup.
 
 48
-00:02:36,266 --> 00:02:39,000
-The health check runs: every service healthy.
+00:02:41,162 --> 00:02:46,416
+Then they change one line: the card zone's pinned release, from the old number to the new one.
 
 49
-00:02:39,050 --> 00:02:41,664
-Only then do they do the same for ecom.
+00:02:46,466 --> 00:02:48,288
+They deploy.
 
 50
-00:02:41,714 --> 00:02:45,816
-Later, the assessor asks again: what is inside the card zone?
+00:02:48,338 --> 00:02:51,648
+The services restart on the new release, in order.
 
 51
-00:02:45,866 --> 00:02:49,560
-The operator opens the bill of materials of one of its pieces.
+00:02:51,698 --> 00:02:54,432
+The health check runs: every service healthy.
 
 52
-00:02:49,610 --> 00:02:56,640
-It lists every component inside, each with its version, and the count sits at the bottom: the answer to the question.
+00:02:54,482 --> 00:02:57,096
+Only then do they do the same for ecom.
 
 53
-00:02:56,690 --> 00:02:58,512
-What does this protect?
+00:02:57,146 --> 00:03:01,248
+Later, the assessor asks again: what is inside the card zone?
 
 54
-00:02:58,562 --> 00:03:04,056
-It protects the bank from surprises: nothing changes unless someone changes a pinned line.
+00:03:01,298 --> 00:03:04,992
+The operator opens the bill of materials of one of its pieces.
 
 55
-00:03:04,106 --> 00:03:08,304
-It protects a rollback, because an old release is still exactly what it was.
+00:03:05,042 --> 00:03:12,072
+It lists every component inside, each with its version, and the count sits at the bottom: the answer to the question.
 
 56
-00:03:08,354 --> 00:03:13,224
-It protects the assessor's trust, because every piece can say what it contains.
+00:03:12,122 --> 00:03:13,944
+What does this protect?
 
 57
-00:03:13,274 --> 00:03:17,832
-And it protects the data, because the backup always comes before the change.
+00:03:13,994 --> 00:03:19,488
+It protects the bank from surprises: nothing changes unless someone changes a pinned line.
 
 58
-00:03:17,882 --> 00:03:19,704
-Back to the bookshelf.
+00:03:19,538 --> 00:03:23,736
+It protects a rollback, because an old release is still exactly what it was.
 
 59
-00:03:19,754 --> 00:03:26,304
-Every edition named by its number, none ever changed after printing, and each with its contents listed.
+00:03:23,786 --> 00:03:28,656
+It protects the assessor's trust, because every piece can say what it contains.
 
 60
-00:03:26,354 --> 00:03:28,800
+00:03:28,706 --> 00:03:33,264
+And it protects the data, because the backup always comes before the change.
+
+61
+00:03:33,314 --> 00:03:35,136
+Back to the bookshelf.
+
+62
+00:03:35,186 --> 00:03:41,736
+Every edition named by its number, none ever changed after printing, and each with its contents listed.
+
+63
+00:03:41,786 --> 00:03:44,232
 Next: who is responsible for what.
