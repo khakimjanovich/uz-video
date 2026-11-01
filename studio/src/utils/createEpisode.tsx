@@ -1,5 +1,5 @@
 import React from "react";
-import { Episode, ReelScaffold, SubtitleCue, BuildMapStep, DiagramStep, CodeStep } from "../components";
+import { Episode, ReelScaffold, SubtitleCue, BuildMapStep, DiagramStep, CodeStep, ScreenStep } from "../components";
 import { ReelProps } from "../themes";
 import { BUILD_CATALOG, BuildId } from "../series/build/nodes";
 import { createReelComposition } from "./createReelComposition";
@@ -15,6 +15,7 @@ export function createEpisode({
   map,
   diagram,
   code,
+  screens,
 }: {
   id: string;
   number: number | string; // "12b" for a split lesson
@@ -25,6 +26,7 @@ export function createEpisode({
   map: BuildMapStep[];
   diagram: DiagramStep<BuildId>[];
   code?: CodeStep[];
+  screens?: ScreenStep[]; // real product screens (generated into public/screens by screens/)
 }) {
   const Component: React.FC<ReelProps> = ({ theme }) => (
     <ReelScaffold
@@ -37,7 +39,7 @@ export function createEpisode({
       // Captions follow the voice a short phrase at a time, in written form (subtitles.json phrases).
       captionStyle={{ left: 1150, right: 84, bottom: 140 }}
     >
-      <Episode part={part} map={map} catalog={BUILD_CATALOG} diagram={diagram} code={code} />
+      <Episode part={part} map={map} catalog={BUILD_CATALOG} diagram={diagram} code={code} screens={screens} />
     </ReelScaffold>
   );
   return createReelComposition({ id, component: Component, subtitles, width: 1920, height: 1080 });
