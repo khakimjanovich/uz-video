@@ -1,223 +1,175 @@
 1
-00:00:00,050 --> 00:00:02,136
-Who decides the bank's fee on a payment?
+00:00:00,050 --> 00:00:06,336
+Malika has a question for the bank, and it is a fair one: why does she pay more per bouquet than the shop next door?
 
 2
-00:00:02,186 --> 00:00:06,648
-In Lesson 2, the acquirer kept its fee and paid the shop the rest.
+00:00:06,386 --> 00:00:10,248
+Dilnoza can answer it in one minute, and this lesson is why.
 
 3
-00:00:06,698 --> 00:00:11,832
-In Lesson 21, each website got its own deal: its cards and its limits.
+00:00:10,298 --> 00:00:22,512
+In Lesson 2, the acquirer kept its fee and paid Malika the rest, and in Lesson 21, each website got its own deal, and this lesson decides that fee, for every website and every card.
 
 4
-00:00:11,882 --> 00:00:16,248
-This lesson decides that fee, for every website and every card.
+00:00:22,562 --> 00:00:27,936
+The easy way is to write the fee straight into the payment code, one rate for everyone.
 
 5
-00:00:16,298 --> 00:00:21,432
-Picture the fee written straight into the payment code, one rate for everyone.
+00:00:27,986 --> 00:00:34,800
+Then one merchant agrees a lower rate, one website gets a special offer, and one card costs the bank more.
 
 6
-00:00:21,482 --> 00:00:24,072
-Then one merchant agrees a lower rate.
-
-7
-00:00:24,122 --> 00:00:26,520
-One website gets a special offer.
-
-8
-00:00:26,570 --> 00:00:28,512
-One card costs the bank more.
-
-9
-00:00:28,562 --> 00:00:31,608
+00:00:34,850 --> 00:00:37,896
 Soon the code is a tangle nobody dares touch.
 
-10
-00:00:31,658 --> 00:00:37,128
-Worse, someone changes a rate in place, and last month's payments can no longer be explained.
+7
+00:00:37,946 --> 00:00:39,960
+So the bank uses fee rules.
 
-11
-00:00:37,178 --> 00:00:43,176
-In a supermarket, the tag on the item beats the sign on the aisle, which beats the offer for the whole store.
-
-12
-00:00:43,226 --> 00:00:45,264
-The most specific price wins.
-
-13
-00:00:45,314 --> 00:00:47,472
-The bank's fee works the same way.
-
-14
-00:00:47,522 --> 00:00:49,344
-Here is how it works.
-
-15
-00:00:49,394 --> 00:00:52,272
+8
+00:00:40,010 --> 00:00:42,888
 A fee rule is one price the bank sets.
 
-16
-00:00:52,322 --> 00:00:56,976
+9
+00:00:42,938 --> 00:00:47,592
 It can apply to one website, one merchant, one card, or the whole bank.
 
-17
-00:00:57,026 --> 00:01:00,504
+10
+00:00:47,642 --> 00:00:51,120
 When a payment arrives, the most specific rule wins.
 
-18
-00:01:00,554 --> 00:01:03,624
+11
+00:00:51,170 --> 00:00:54,240
 A website's own rule beats its merchant's rule.
 
-19
-00:01:03,674 --> 00:01:06,336
+12
+00:00:54,290 --> 00:00:56,952
 A merchant's rule beats a card's rule.
 
-20
-00:01:06,386 --> 00:01:10,752
+13
+00:00:57,002 --> 00:01:01,368
 And the bank's default is used only when nothing more specific applies.
 
-21
-00:01:10,802 --> 00:01:14,664
+14
+00:01:01,418 --> 00:01:06,408
+The shop next door has its own merchant rule, and Malika pays the bank's default.
+
+15
+00:01:06,458 --> 00:01:10,320
 The fee itself is a percent of the amount, plus a fixed part.
 
-22
-00:01:14,714 --> 00:01:17,112
+16
+00:01:10,370 --> 00:01:12,768
 It is kept between a minimum and a maximum.
 
-23
-00:01:17,162 --> 00:01:21,624
+17
+00:01:12,818 --> 00:01:17,280
 Money is always counted in whole cents, never in fractions of a cent.
 
-24
-00:01:21,674 --> 00:01:26,616
+18
+00:01:17,330 --> 00:01:22,272
 So the percent is rounded once, to whole cents, and the sum is exact.
 
-25
-00:01:26,666 --> 00:01:28,992
-Rules are never edited in place.
+19
+00:01:22,322 --> 00:01:26,880
+Otherwise small fractions would leak away across millions of payments.
 
-26
-00:01:29,042 --> 00:01:32,904
-A change is proposed by one admin, and a second admin approves it.
+20
+00:01:26,930 --> 00:01:28,800
+Dilnoza opens Fees.
 
-27
-00:01:32,954 --> 00:01:39,552
-Two rules for the same thing can never apply at the same moment: the database itself refuses an overlap.
-
-28
-00:01:39,602 --> 00:01:44,544
-And every payment keeps the rule it used, its fee, and what the merchant receives.
-
-29
-00:01:44,594 --> 00:01:49,104
-So last month's payments can always be explained, whatever the rules say today.
-
-30
-00:01:49,154 --> 00:01:50,976
-Now watch the product.
-
-31
-00:01:51,026 --> 00:01:54,696
-The viewer signs in as a bank admin and opens Fees.
-
-32
-00:01:54,746 --> 00:02:01,632
+21
+00:01:28,850 --> 00:01:35,736
 The page says it plainly: the most specific rule wins, and a new rule applies after a second admin approves it.
 
-33
-00:02:01,682 --> 00:02:06,648
+22
+00:01:35,786 --> 00:01:40,752
 Filters show the rules in force now, the ones waiting for approval, or all of them.
 
-34
-00:02:06,698 --> 00:02:08,520
-The viewer clicks New rule.
+23
+00:01:40,802 --> 00:01:44,664
+This month the bank's default is changing, so she clicks New rule.
 
-35
-00:02:08,570 --> 00:02:13,584
+24
+00:01:44,714 --> 00:01:49,728
 Under "Applies to" there are three choices: merchant, website and card.
 
-36
-00:02:13,634 --> 00:02:17,376
+25
+00:01:49,778 --> 00:01:53,520
 A hint says to leave everything empty for the bank default.
 
-37
-00:02:17,426 --> 00:02:23,136
-If the viewer picks a merchant but no card, the form says a merchant or website rule needs a card.
+26
+00:01:53,570 --> 00:01:59,088
+If she picked a merchant but no card, the form would say a merchant or website rule needs a card.
 
-38
-00:02:23,186 --> 00:02:29,424
-The viewer leaves the scope empty, sets a percent, a fixed part and a minimum, and clicks Send for approval.
+27
+00:01:59,138 --> 00:02:05,328
+She leaves the scope empty, sets a percent, a fixed part and a minimum, and clicks Send for approval.
 
-39
-00:02:29,474 --> 00:02:32,400
+28
+00:02:05,378 --> 00:02:08,304
 The page says another admin has to approve it.
 
-40
-00:02:32,450 --> 00:02:37,056
-In Approvals, under Fee changes, the maker's own buttons are grey.
+29
+00:02:08,354 --> 00:02:13,368
+Here is the rule I would defend hardest: rules are never edited in place.
 
-41
-00:02:37,106 --> 00:02:41,496
-A second admin signs in, opens the same tab, and clicks Approve.
+30
+00:02:13,418 --> 00:02:20,040
+A change is a new rule, proposed by one admin and approved by a second, the four eyes from Lesson 18.
 
-42
-00:02:41,546 --> 00:02:47,424
-Back on Fees, the rule now shows as in force, with who proposed it and who approved it.
+31
+00:02:20,090 --> 00:02:24,288
+In Approvals, under Fee changes, Dilnoza's own buttons are grey.
 
-43
-00:02:47,474 --> 00:02:49,296
-Now the Fee calculator.
+32
+00:02:24,338 --> 00:02:28,320
+A colleague signs in, opens the same tab, and clicks Approve.
 
-44
-00:02:49,346 --> 00:02:52,344
+33
+00:02:28,370 --> 00:02:33,984
+On Fees, the rule now shows as in force, with who proposed it and who approved it.
+
+34
+00:02:34,034 --> 00:02:40,632
+Two rules for the same thing can never apply at the same moment: the database itself refuses an overlap.
+
+35
+00:02:40,682 --> 00:02:42,504
+Now Malika's question.
+
+36
+00:02:42,554 --> 00:02:45,288
+Dilnoza opens the Fee calculator.
+
+37
+00:02:45,338 --> 00:02:48,336
 Its hint says it shows what a payment would pay right now.
 
-45
-00:02:52,394 --> 00:02:56,760
-The viewer chooses a merchant and a website, because a quote needs both.
+38
+00:02:48,386 --> 00:02:52,704
+She chooses Malika's shop and her website, because a quote needs both.
 
-46
-00:02:56,810 --> 00:02:58,752
+39
+00:02:52,754 --> 00:02:54,696
 The amount is already filled in.
 
-47
-00:02:58,802 --> 00:03:00,624
-They click Calculate.
+40
+00:02:54,746 --> 00:02:56,568
+She clicks Calculate.
 
-48
-00:03:00,674 --> 00:03:05,688
-The answer shows the fee, the rule used, and how much the merchant receives.
+41
+00:02:56,618 --> 00:03:01,512
+The answer shows the fee, the rule used, and how much Malika receives.
 
-49
-00:03:05,738 --> 00:03:07,560
-What does this protect?
+42
+00:03:01,562 --> 00:03:06,504
+And every payment keeps the rule it used, its fee, and what the merchant receives.
 
-50
-00:03:07,610 --> 00:03:10,992
-Without rules, every new deal is a change to the code.
+43
+00:03:06,554 --> 00:03:12,816
+So if Malika asks next year about last March, the answer is still there, whatever the rules say today.
 
-51
-00:03:11,042 --> 00:03:15,432
-Without four eyes, one admin could quietly give a friend a lower rate.
-
-52
-00:03:15,482 --> 00:03:20,376
-Without whole cents, small fractions would leak away across millions of payments.
-
-53
-00:03:20,426 --> 00:03:26,376
-And without the rule kept on each payment, nobody could answer a merchant who asks why they paid what they paid.
-
-54
-00:03:26,426 --> 00:03:30,072
-Fee rules protect merchants, the bank and its auditors.
-
-55
-00:03:30,122 --> 00:03:35,424
-So, like price tags: the most specific wins, and nobody repaints the old ones.
-
-56
-00:03:35,474 --> 00:03:39,240
+44
+00:03:12,866 --> 00:03:16,632
 Next: the virtual card machine each payment goes through.

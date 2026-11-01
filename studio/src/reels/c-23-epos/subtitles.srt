@@ -1,207 +1,175 @@
 1
-00:00:00,050 --> 00:00:02,664
-Through which machine does an online payment go?
+00:00:00,050 --> 00:00:04,008
+Wednesday, three days before Malika's wedding site opens.
 
 2
-00:00:02,714 --> 00:00:07,296
-In Lesson 21, each website was switched on for the cards it accepts.
+00:00:04,058 --> 00:00:10,488
+Dilnoza has one step left on its card, and it is the one the processing centre cares about.
 
 3
-00:00:07,346 --> 00:00:12,216
-In Lesson 8, the card zone spoke to each processing centre through its own adapter.
+00:00:10,538 --> 00:00:23,664
+In Lesson 21, the wedding site was switched on for one card, and in Lesson 8, Timur's card zone spoke to each processing centre through its own adapter, and this lesson gives each website and card the terminal those centres know it by.
 
 4
-00:00:12,266 --> 00:00:17,160
-This lesson gives each website and card the terminal those centres know it by.
-
-5
-00:00:17,210 --> 00:00:19,896
+00:00:23,714 --> 00:00:26,400
 In a shop, you pay at a card machine on the counter.
 
-6
-00:00:19,946 --> 00:00:26,112
+5
+00:00:26,450 --> 00:00:32,616
 Online there is no counter, but the processing centre still wants to know which machine sent each charge.
 
-7
-00:00:26,162 --> 00:00:29,688
+6
+00:00:32,666 --> 00:00:36,192
 It accepts charges only from machines it has issued.
 
-8
-00:00:29,738 --> 00:00:36,072
+7
+00:00:36,242 --> 00:00:42,576
 Send a charge with the wrong numbers, and the money is refused, or worse, booked to another merchant.
 
+8
+00:00:42,626 --> 00:00:47,832
+So each online payment goes through a virtual card machine: an e-POS terminal.
+
 9
-00:00:36,122 --> 00:00:39,168
-A taxi cannot take fares without a licence plate.
+00:00:47,882 --> 00:00:54,168
+Its identity is a pair of numbers that the processing centre issues: a merchant number and a terminal number.
 
 10
-00:00:39,218 --> 00:00:45,312
-A plate is issued once, one per car, and never reused, even after the car is scrapped.
-
-11
-00:00:45,362 --> 00:00:47,184
-Here is how it works.
-
-12
-00:00:47,234 --> 00:00:52,272
-Each online payment goes through a virtual card machine: an e-POS terminal.
-
-13
-00:00:52,322 --> 00:00:58,200
-Its plate is a pair of numbers that the processing centre issues: a merchant number and a terminal number.
-
-14
-00:00:58,250 --> 00:01:01,344
+00:00:54,218 --> 00:00:57,312
 On screen they are called the MID and the TID.
 
-15
-00:01:01,394 --> 00:01:05,544
-A bank admin registers the pair for one website and one card.
+11
+00:00:57,362 --> 00:00:59,928
+Dilnoza opens the website's page.
 
-16
-00:01:05,594 --> 00:01:08,976
-There is only one live terminal per website and card.
-
-17
-00:01:09,026 --> 00:01:13,632
-And a pair is never registered twice, not even after its terminal is closed.
-
-18
-00:01:13,682 --> 00:01:18,168
-Where a processing centre requires it, the terminal is registered with the centre too.
-
-19
-00:01:18,218 --> 00:01:20,496
-It is kept only if the centre accepts it.
-
-20
-00:01:20,546 --> 00:01:24,936
-If the centre refuses, or does not answer, nothing is saved.
-
-21
-00:01:24,986 --> 00:01:26,880
-An admin can suspend a terminal.
-
-22
-00:01:26,930 --> 00:01:30,672
-That stops its payments on the bank's side alone, and it can be resumed.
-
-23
-00:01:30,722 --> 00:01:32,544
-Revoking is final.
-
-24
-00:01:32,594 --> 00:01:36,240
-Every change is written down: who, what, and why.
-
-25
-00:01:36,290 --> 00:01:41,784
-And before every charge, the payment asks for the live terminal of its website and card.
-
-26
-00:01:41,834 --> 00:01:45,432
-No terminal, no charge, and no money moves.
-
-27
-00:01:45,482 --> 00:01:47,304
-Now watch the product.
-
-28
-00:01:47,354 --> 00:01:50,304
-The viewer is a bank admin on the website's page.
-
-29
-00:01:50,354 --> 00:01:59,040
+12
+00:00:59,978 --> 00:01:08,664
 There is a section called e-POS terminals, with a hint: each card needs one live terminal from the processing centre, or its payments are refused.
 
-30
-00:01:59,090 --> 00:02:04,680
+13
+00:01:08,714 --> 00:01:14,304
 On a website with no cards chosen yet, the "Register e-POS terminal" button is grey.
 
-31
-00:02:04,730 --> 00:02:08,640
-Here the website already takes one card, so the button is live.
+14
+00:01:14,354 --> 00:01:18,288
+Malika's site already takes one card, so the button is live.
 
-32
-00:02:08,690 --> 00:02:10,512
-The viewer clicks it.
+15
+00:01:18,338 --> 00:01:20,160
+Dilnoza clicks it.
 
-33
-00:02:10,562 --> 00:02:14,448
+16
+00:01:20,210 --> 00:01:24,096
 A form asks for the MID, the TID and the card.
 
-34
-00:02:14,498 --> 00:02:17,472
-They type the pair the centre issued and choose the card.
+17
+00:01:24,146 --> 00:01:27,432
+She types the pair the centre issued, and chooses the card.
 
-35
-00:02:17,522 --> 00:02:20,064
+18
+00:01:27,482 --> 00:01:32,064
+A bank admin registers each pair for one website and one card.
+
+19
+00:01:32,114 --> 00:01:38,112
+There is only one live terminal per website and card, so each payment has exactly one way out.
+
+20
+00:01:38,162 --> 00:01:44,472
+Where the processing centre requires it, the terminal is registered with the centre too, through Timur's card zone.
+
+21
+00:01:44,522 --> 00:01:46,800
+It is kept only if the centre accepts it.
+
+22
+00:01:46,850 --> 00:01:51,240
+If the centre refuses, or does not answer, nothing is saved.
+
+23
+00:01:51,290 --> 00:01:53,112
+Here it accepts.
+
+24
+00:01:53,162 --> 00:01:55,704
 The page says the terminal is registered.
 
-36
-00:02:20,114 --> 00:02:23,712
+25
+00:01:55,754 --> 00:01:59,352
 It appears in the list as Live, with who registered it.
 
-37
-00:02:23,762 --> 00:02:28,224
+26
+00:01:59,402 --> 00:02:03,864
 Next to it are three buttons: Suspend, Resume and Revoke.
 
-38
-00:02:28,274 --> 00:02:30,864
-The viewer opens Revoke, just to read it.
+27
+00:02:03,914 --> 00:02:07,992
+Suspend stops its payments on the bank's side alone, and it can be resumed.
 
-39
-00:02:30,914 --> 00:02:36,408
+28
+00:02:08,042 --> 00:02:09,864
+Revoking is final.
+
+29
+00:02:09,914 --> 00:02:12,576
+Dilnoza opens Revoke, just to read it.
+
+30
+00:02:12,626 --> 00:02:18,120
 The window warns that a revoked pair never comes back, and asks why, for the record.
 
-40
-00:02:36,458 --> 00:02:38,328
-They close it without revoking.
+31
+00:02:18,170 --> 00:02:20,328
+She closes it without revoking.
 
-41
-00:02:38,378 --> 00:02:41,424
+32
+00:02:20,378 --> 00:02:24,024
+Every change is written down: who, what, and why.
+
+33
+00:02:24,074 --> 00:02:28,656
+A pair is never registered twice, not even after its terminal is closed.
+
+34
+00:02:28,706 --> 00:02:33,576
+Think of a licence plate: issued once, one per car, never reused.
+
+35
+00:02:33,626 --> 00:02:37,656
+Teams are tempted to reuse an old pair to save a call to the centre.
+
+36
+00:02:37,706 --> 00:02:45,168
+I think that is the most expensive shortcut in this module, because a pair used twice mixes two merchants' histories forever.
+
+37
+00:02:45,218 --> 00:02:48,264
 Now the card at the top, "Before it takes payments".
 
-42
-00:02:41,474 --> 00:02:46,224
+38
+00:02:48,314 --> 00:02:53,064
 The terminal step is ticked: every card has a live e-POS terminal.
 
-43
-00:02:46,274 --> 00:02:49,656
+39
+00:02:53,114 --> 00:02:56,496
 With the fee from the last lesson, every step is done.
 
-44
-00:02:49,706 --> 00:02:53,664
+40
+00:02:56,546 --> 00:03:00,504
 The card turns green and says "Ready: taking payments".
 
-45
-00:02:53,714 --> 00:02:55,536
-What does this protect?
+41
+00:03:00,554 --> 00:03:06,048
+And before every charge, the payment asks for the live terminal of its website and card.
 
-46
-00:02:55,586 --> 00:02:59,568
-A charge with the wrong pair can lose money, or book it to someone else.
+42
+00:03:06,098 --> 00:03:09,696
+No terminal, no charge, and no money moves.
 
-47
-00:02:59,618 --> 00:03:03,864
-A pair used twice mixes two merchants' histories forever.
+43
+00:03:09,746 --> 00:03:15,480
+On Saturday, the first wedding order arrives, and it goes out through exactly one machine.
 
-48
-00:03:03,914 --> 00:03:09,072
-One live terminal per website and card means each payment has exactly one way out.
-
-49
-00:03:09,122 --> 00:03:15,552
-Asking for the live terminal before every charge means a suspended or missing terminal stops money before it moves.
-
-50
-00:03:15,602 --> 00:03:21,216
-This protects the merchant's money, the buyer's charge, and the bank's books with the processing centre.
-
-51
-00:03:21,266 --> 00:03:27,312
-So, like a taxi's licence plate: one per car, never reused, and no plate, no fares.
-
-52
-00:03:27,362 --> 00:03:31,536
+44
+00:03:15,530 --> 00:03:19,704
 Next: how the bank knows a request really comes from the merchant.
