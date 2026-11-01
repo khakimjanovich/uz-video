@@ -15,7 +15,6 @@ export const M01_NODES = {
   m01Frame: { label: "Card frame", sublabel: "The bank's reader", art: "tray" },
   m01Contract: { label: "Contract", sublabel: "Written down once", art: "journal" },
   // settings
-  m01Cook: { label: "A good cook", sublabel: "Never guesses", art: "reviewer" },
   m01Service: { label: "A service", sublabel: "About to start", art: "workflow" },
   m01Default: { label: "Default value", sublabel: "A quiet guess", art: "receipt" },
   m01Prod: { label: "Production", sublabel: "Real money", art: "bank" },
@@ -28,12 +27,9 @@ export const M01_NODES = {
   m01Login: { label: "Login server", sublabel: "Access tokens", art: "workflow" },
   m01AccessToken: { label: "Access token", sublabel: "Roles inside", art: "request" },
   // what you may keep about a card
-  m01Engineer: { label: "Support engineer", sublabel: "At a shop", art: "admin" },
+  m01Engineer: { label: "Developer", sublabel: "Connects the shop", art: "admin" },
   m01Token2: { label: "Card token", sublabel: "Another random name", art: "receipt" },
-  // the coat check
-  m01CoatRoom: { label: "Coat room", sublabel: "One locked room", art: "vault" },
-  // settings: the cook, three kinds of value, the card zone's own settings, the startup message
-  m01Ingredient: { label: "Ingredient", sublabel: "Missing", art: "tray" },
+  // settings: three kinds of value, the card zone's own settings, the startup message
   m01KindSystem: { label: "The system's own" },
   m01KindSecret: { label: "Secrets", sublabel: "Made inside Vault" },
   m01KindBank: { label: "The bank's own", sublabel: "Typed once" },
