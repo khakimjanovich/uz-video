@@ -1,39 +1,235 @@
 1
-00:00:00,050 --> 00:00:02,640
-What happens when a buyer says, I never bought this?
+00:00:00,050 --> 00:00:03,144
+What happens when a buyer says: I never bought this?
 
 2
-00:00:02,690 --> 00:00:07,968
-A small-claims court keeps one file per case, a date for your evidence, and a ruling.
+00:00:03,194 --> 00:00:05,016
+The buyer tells their own bank.
 
 3
-00:00:08,018 --> 00:00:10,008
-A dispute works the same way.
+00:00:05,066 --> 00:00:10,080
+Weeks later, the claim reaches our bank through the card network, with a deadline attached.
 
 4
-00:00:10,058 --> 00:00:15,264
-It comes from the bank's own customer, or as a claim from the buyer's bank through the card network.
+00:00:10,130 --> 00:00:14,352
+If the bank misses that deadline, the money is taken back without a fight.
 
 5
-00:00:15,314 --> 00:00:18,936
-Bank staff register it on the paid payment, and the merchant is told.
+00:00:14,402 --> 00:00:19,920
+If the merchant's evidence lands in the inbox of someone on holiday, the same thing happens.
 
 6
-00:00:18,986 --> 00:00:25,632
-They ask the merchant for evidence by a deadline counted in banking days, which skip weekends and the bank's holidays.
+00:00:19,970 --> 00:00:21,600
+Think of a small-claims court.
 
 7
-00:00:25,682 --> 00:00:28,080
-Won, and the payment is paid again.
+00:00:21,650 --> 00:00:23,880
+It keeps one file for each case.
 
 8
-00:00:28,130 --> 00:00:34,632
-Lost, and only with a second admin's approval does it become a chargeback: the money goes back to the buyer.
+00:00:23,930 --> 00:00:28,224
+It sets a date for your evidence, and that date skips the court's holidays.
 
 9
-00:00:34,682 --> 00:00:36,624
-Every step is written down.
+00:00:28,274 --> 00:00:31,440
+Then a judge rules, and the ruling goes in the file.
 
 10
-00:00:36,674 --> 00:00:39,936
+00:00:31,490 --> 00:00:33,480
+A dispute works the same way.
+
+11
+00:00:33,530 --> 00:00:37,440
+A dispute is a buyer's challenge to a payment that was already paid.
+
+12
+00:00:37,490 --> 00:00:39,912
+It reaches the bank in one of two ways.
+
+13
+00:00:39,962 --> 00:00:46,056
+Either the bank's own customer complains directly, or the buyer's bank sends a claim through the card network.
+
+14
+00:00:46,106 --> 00:00:49,656
+Bank staff register it on the paid payment, for its whole amount.
+
+15
+00:00:49,706 --> 00:00:53,760
+The payment becomes disputed, and the merchant is told at once.
+
+16
+00:00:53,810 --> 00:01:01,608
+From there, the dispute moves through fixed steps: registered, evidence requested, answer sent, and then a result.
+
+17
+00:01:01,658 --> 00:01:03,480
+Next comes the evidence date.
+
+18
+00:01:03,530 --> 00:01:08,184
+Staff ask the merchant for evidence by a deadline counted in banking days.
+
+19
+00:01:08,234 --> 00:01:14,256
+A banking day is a working day of the bank: weekends are skipped, and so are the bank's own holidays.
+
+20
+00:01:14,306 --> 00:01:19,992
+The date must also leave a margin before the card network's deadline, so the bank has time to send its answer.
+
+21
+00:01:20,042 --> 00:01:23,112
+The merchant uploads its files while the deadline holds.
+
+22
+00:01:23,162 --> 00:01:25,320
+An upload cannot be taken back.
+
+23
+00:01:25,370 --> 00:01:27,192
+Then the result.
+
+24
+00:01:27,242 --> 00:01:30,720
+If the bank wins, the payment is simply paid again.
+
+25
+00:01:30,770 --> 00:01:35,928
+If it loses, one admin records the loss, and a second admin must approve it.
+
+26
+00:01:35,978 --> 00:01:40,872
+Only then does the dispute become a chargeback: the money goes back to the buyer.
+
+27
+00:01:40,922 --> 00:01:45,120
+A loss means money leaving, so it always takes two people.
+
+28
+00:01:45,170 --> 00:01:46,512
+There is one shortcut.
+
+29
+00:01:46,562 --> 00:01:51,792
+If the payment is fully refunded before the answer is sent, the refund settles the dispute.
+
+30
+00:01:51,842 --> 00:01:55,800
+Every step is written down: who did it, when, and why.
+
+31
+00:01:55,850 --> 00:01:59,856
+And when disputes come close to their deadlines, an alert goes out.
+
+32
+00:01:59,906 --> 00:02:01,728
+Let's watch the product.
+
+33
+00:02:01,778 --> 00:02:06,288
+A bank admin opens Payments in the bank's portal and picks a paid payment.
+
+34
+00:02:06,338 --> 00:02:08,136
+They choose Register complaint.
+
+35
+00:02:08,186 --> 00:02:12,912
+The form asks for the source: a complaint, or a claim from the card network.
+
+36
+00:02:12,962 --> 00:02:14,928
+A claim needs its claim reference.
+
+37
+00:02:14,978 --> 00:02:19,992
+The admin adds what the payer says, the day it was received, and the day the answer is due.
+
+38
+00:02:20,042 --> 00:02:23,808
+The payment now shows Disputed, and the merchant is told.
+
+39
+00:02:23,858 --> 00:02:27,744
+Under Disputes, the list puts the nearest deadline first.
+
+40
+00:02:27,794 --> 00:02:32,544
+One row is marked Due soon; another is marked Overdue, in red.
+
+41
+00:02:32,594 --> 00:02:36,312
+The admin opens a dispute and chooses Ask for evidence.
+
+42
+00:02:36,362 --> 00:02:39,480
+They write what the merchant should send, and pick a date.
+
+43
+00:02:39,530 --> 00:02:42,960
+A date too close to the network's deadline is refused.
+
+44
+00:02:43,010 --> 00:02:48,168
+In the merchant's portal, the request appears, and the merchant uploads its files.
+
+45
+00:02:48,218 --> 00:02:51,696
+Back in the bank's portal, the files show up under the dispute.
+
+46
+00:02:51,746 --> 00:02:56,544
+The admin marks the answer sent, and later records the result: lost.
+
+47
+00:02:56,594 --> 00:02:58,584
+The payment does not change yet.
+
+48
+00:02:58,634 --> 00:03:02,448
+A red banner says: Lost, waiting for a second admin.
+
+49
+00:03:02,498 --> 00:03:04,920
+It names who recorded it, and when.
+
+50
+00:03:04,970 --> 00:03:09,528
+The server refuses an approval from the same admin who recorded the loss.
+
+51
+00:03:09,578 --> 00:03:13,944
+A second admin logs in, reads the note, and approves the loss.
+
+52
+00:03:13,994 --> 00:03:16,344
+The payment is now charged back.
+
+53
+00:03:16,394 --> 00:03:18,216
+What does this protect?
+
+54
+00:03:18,266 --> 00:03:26,232
+It protects the bank from losing by silence: every deadline is visible, counted in real working days, and alerted.
+
+55
+00:03:26,282 --> 00:03:31,584
+It protects the merchant, who always hears about a dispute and always gets time to answer.
+
+56
+00:03:31,634 --> 00:03:36,264
+And it protects the money: no single person can hand a payment back to the buyer.
+
+57
+00:03:36,314 --> 00:03:38,136
+Back to the court.
+
+58
+00:03:38,186 --> 00:03:43,992
+One file for each case, a date that skips the holidays, and two people before any loss.
+
+59
+00:03:44,042 --> 00:03:47,304
 Next: checking our books against the card network's.
