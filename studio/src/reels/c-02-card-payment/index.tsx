@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "Has money moved?", "A tab book", "One line", "No cash yet", "End of the week", "The same way",
+  "Has money moved?", "Lesson 1: a yes", "Lesson 1: the day's count", "This lesson: between the banks", "A tab book", "One line", "No cash yet", "End of the week", "The same way",
   "Two banks", "The acquirer", "Builds its system", "The issuer", "The buyer's money", "The card network",
   "May this card pay?", "The issuer checks", "Yes or no", "A promise", "Not money",
   "The money moves later", "One batch", "Settlement", "The fee", "Two moments",
