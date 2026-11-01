@@ -535,41 +535,37 @@
     "index": 11,
     "startFrame": 869,
     "endFrame": 991,
-    "text": "PCI DSS is the card industry's security rulebook.",
-    "prefix": "PCI DSS is the card industry's security rulebook.",
+    "text": "PCI-DSS is the card industry's security rulebook.",
+    "prefix": "PCI-DSS is the card industry's security rulebook.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 871,
+        "startFrame": 870,
         "words": [
           {
-            "text": "PCI",
-            "startFrame": 871
-          },
-          {
-            "text": "DSS",
-            "startFrame": 887
+            "text": "PCI-DSS",
+            "startFrame": 870
           },
           {
             "text": "is",
-            "startFrame": 915
+            "startFrame": 921
           },
           {
             "text": "the",
-            "startFrame": 917
+            "startFrame": 924
           },
           {
             "text": "card",
-            "startFrame": 920
+            "startFrame": 926
           },
           {
             "text": "industry's",
-            "startFrame": 930
+            "startFrame": 936
           },
           {
             "text": "security",
-            "startFrame": 948
+            "startFrame": 949
           },
           {
             "text": "rulebook.",
@@ -1587,7 +1583,7 @@
   {
     "index": 27,
     "startFrame": 2656,
-    "endFrame": 2709,
+    "endFrame": 2712,
     "text": "It has only two doors.",
     "prefix": "It has only two doors.",
     "highlight": "",
@@ -1622,56 +1618,56 @@
   },
   {
     "index": 28,
-    "startFrame": 2710,
-    "endFrame": 2811,
+    "startFrame": 2713,
+    "endFrame": 2814,
     "text": "One door is for buyers' browsers: the card form.",
     "prefix": "One door is for buyers' browsers: the card form.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2711,
+        "startFrame": 2714,
         "words": [
           {
             "text": "One",
-            "startFrame": 2711
+            "startFrame": 2714
           },
           {
             "text": "door",
-            "startFrame": 2717
+            "startFrame": 2720
           },
           {
             "text": "is",
-            "startFrame": 2731
-          },
-          {
-            "text": "for",
             "startFrame": 2734
           },
           {
+            "text": "for",
+            "startFrame": 2737
+          },
+          {
             "text": "buyers'",
-            "startFrame": 2740
+            "startFrame": 2742
           },
           {
             "text": "browsers:",
-            "startFrame": 2752
+            "startFrame": 2755
           }
         ]
       },
       {
-        "startFrame": 2780,
+        "startFrame": 2783,
         "words": [
           {
             "text": "the",
-            "startFrame": 2780
+            "startFrame": 2783
           },
           {
             "text": "card",
-            "startFrame": 2782
+            "startFrame": 2785
           },
           {
             "text": "form.",
-            "startFrame": 2790
+            "startFrame": 2793
           }
         ]
       }
@@ -1679,51 +1675,51 @@
   },
   {
     "index": 29,
-    "startFrame": 2811,
-    "endFrame": 2917,
+    "startFrame": 2814,
+    "endFrame": 2920,
     "text": "The other door is for partner systems, like ecom.",
     "prefix": "The other door is for partner systems, like ecom.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2813,
+        "startFrame": 2815,
         "words": [
           {
             "text": "The",
-            "startFrame": 2813
-          },
-          {
-            "text": "other",
             "startFrame": 2815
           },
           {
+            "text": "other",
+            "startFrame": 2818
+          },
+          {
             "text": "door",
-            "startFrame": 2821
+            "startFrame": 2824
           },
           {
             "text": "is",
-            "startFrame": 2839
+            "startFrame": 2841
           },
           {
             "text": "for",
-            "startFrame": 2842
+            "startFrame": 2845
           },
           {
             "text": "partner",
-            "startFrame": 2848
+            "startFrame": 2851
           },
           {
             "text": "systems,",
-            "startFrame": 2859
+            "startFrame": 2861
           },
           {
             "text": "like",
-            "startFrame": 2882
+            "startFrame": 2885
           },
           {
             "text": "ecom.",
-            "startFrame": 2891
+            "startFrame": 2894
           }
         ]
       }
@@ -1731,47 +1727,47 @@
   },
   {
     "index": 30,
-    "startFrame": 2918,
-    "endFrame": 2998,
+    "startFrame": 2921,
+    "endFrame": 3001,
     "text": "The database inside has no door at all.",
     "prefix": "The database inside has no door at all.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2919,
+        "startFrame": 2922,
         "words": [
           {
             "text": "The",
-            "startFrame": 2919
+            "startFrame": 2922
           },
           {
             "text": "database",
-            "startFrame": 2921
+            "startFrame": 2924
           },
           {
             "text": "inside",
-            "startFrame": 2936
+            "startFrame": 2939
           },
           {
             "text": "has",
-            "startFrame": 2953
+            "startFrame": 2956
           },
           {
             "text": "no",
-            "startFrame": 2959
+            "startFrame": 2962
           },
           {
             "text": "door",
-            "startFrame": 2968
+            "startFrame": 2971
           },
           {
             "text": "at",
-            "startFrame": 2976
+            "startFrame": 2979
           },
           {
             "text": "all.",
-            "startFrame": 2978
+            "startFrame": 2981
           }
         ]
       }
@@ -1779,31 +1775,31 @@
   },
   {
     "index": 31,
-    "startFrame": 2998,
-    "endFrame": 3054,
+    "startFrame": 3001,
+    "endFrame": 3057,
     "text": "Now watch the product.",
     "prefix": "Now watch the product.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3000,
+        "startFrame": 3003,
         "words": [
           {
             "text": "Now",
-            "startFrame": 3000
+            "startFrame": 3003
           },
           {
             "text": "watch",
-            "startFrame": 3005
+            "startFrame": 3008
           },
           {
             "text": "the",
-            "startFrame": 3012
+            "startFrame": 3015
           },
           {
             "text": "product.",
-            "startFrame": 3014
+            "startFrame": 3017
           }
         ]
       }
@@ -1811,76 +1807,76 @@
   },
   {
     "index": 32,
-    "startFrame": 3055,
-    "endFrame": 3176,
+    "startFrame": 3057,
+    "endFrame": 3179,
     "text": "This room has no screen of its own, so watch how the system behaves.",
     "prefix": "This room has no screen of its own, so watch how the system behaves.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3056,
+        "startFrame": 3058,
         "words": [
           {
             "text": "This",
-            "startFrame": 3056
+            "startFrame": 3058
           },
           {
             "text": "room",
-            "startFrame": 3061
+            "startFrame": 3063
           },
           {
             "text": "has",
-            "startFrame": 3067
+            "startFrame": 3070
           },
           {
             "text": "no",
-            "startFrame": 3074
+            "startFrame": 3077
           },
           {
             "text": "screen",
-            "startFrame": 3083
+            "startFrame": 3086
           },
           {
             "text": "of",
-            "startFrame": 3095
+            "startFrame": 3098
           },
           {
             "text": "its",
-            "startFrame": 3097
+            "startFrame": 3100
           },
           {
             "text": "own,",
-            "startFrame": 3101
+            "startFrame": 3104
           }
         ]
       },
       {
-        "startFrame": 3120,
+        "startFrame": 3123,
         "words": [
           {
             "text": "so",
-            "startFrame": 3120
+            "startFrame": 3123
           },
           {
             "text": "watch",
-            "startFrame": 3124
+            "startFrame": 3127
           },
           {
             "text": "how",
-            "startFrame": 3131
-          },
-          {
-            "text": "the",
             "startFrame": 3134
           },
           {
-            "text": "system",
+            "text": "the",
             "startFrame": 3137
           },
           {
+            "text": "system",
+            "startFrame": 3139
+          },
+          {
             "text": "behaves.",
-            "startFrame": 3146
+            "startFrame": 3149
           }
         ]
       }
@@ -1888,43 +1884,43 @@
   },
   {
     "index": 33,
-    "startFrame": 3177,
-    "endFrame": 3249,
+    "startFrame": 3180,
+    "endFrame": 3252,
     "text": "A buyer opens the bank's payment page.",
     "prefix": "A buyer opens the bank's payment page.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3178,
+        "startFrame": 3181,
         "words": [
           {
             "text": "A",
-            "startFrame": 3178
+            "startFrame": 3181
           },
           {
             "text": "buyer",
-            "startFrame": 3179
+            "startFrame": 3182
           },
           {
             "text": "opens",
-            "startFrame": 3192
+            "startFrame": 3195
           },
           {
             "text": "the",
-            "startFrame": 3201
-          },
-          {
-            "text": "bank's",
             "startFrame": 3204
           },
           {
+            "text": "bank's",
+            "startFrame": 3207
+          },
+          {
             "text": "payment",
-            "startFrame": 3214
+            "startFrame": 3217
           },
           {
             "text": "page.",
-            "startFrame": 3224
+            "startFrame": 3227
           }
         ]
       }
@@ -1932,81 +1928,81 @@
   },
   {
     "index": 34,
-    "startFrame": 3250,
-    "endFrame": 3400,
+    "startFrame": 3253,
+    "endFrame": 3403,
     "text": "The card form under \"Card details\" is the first door, opened inside the page.",
     "prefix": "The card form under \"Card details\" is the first door, opened inside the page.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3251,
+        "startFrame": 3254,
         "words": [
           {
             "text": "The",
-            "startFrame": 3251
+            "startFrame": 3254
           },
           {
             "text": "card",
-            "startFrame": 3253
+            "startFrame": 3256
           },
           {
             "text": "form",
-            "startFrame": 3261
+            "startFrame": 3264
           },
           {
             "text": "under",
-            "startFrame": 3268
+            "startFrame": 3271
           },
           {
             "text": "\"Card",
-            "startFrame": 3277
+            "startFrame": 3280
           },
           {
             "text": "details\"",
-            "startFrame": 3285
+            "startFrame": 3288
           },
           {
             "text": "is",
-            "startFrame": 3310
+            "startFrame": 3313
           }
         ]
       },
       {
-        "startFrame": 3313,
+        "startFrame": 3316,
         "words": [
           {
             "text": "the",
-            "startFrame": 3313
-          },
-          {
-            "text": "first",
             "startFrame": 3316
           },
           {
+            "text": "first",
+            "startFrame": 3319
+          },
+          {
             "text": "door,",
-            "startFrame": 3327
+            "startFrame": 3330
           }
         ]
       },
       {
-        "startFrame": 3349,
+        "startFrame": 3352,
         "words": [
           {
             "text": "opened",
-            "startFrame": 3349
+            "startFrame": 3352
           },
           {
             "text": "inside",
-            "startFrame": 3359
+            "startFrame": 3362
           },
           {
             "text": "the",
-            "startFrame": 3372
+            "startFrame": 3375
           },
           {
             "text": "page.",
-            "startFrame": 3374
+            "startFrame": 3377
           }
         ]
       }
@@ -2014,80 +2010,80 @@
   },
   {
     "index": 35,
-    "startFrame": 3401,
-    "endFrame": 3525,
+    "startFrame": 3404,
+    "endFrame": 3528,
     "text": "The buyer types the card, and it travels straight through that door into the room.",
     "prefix": "The buyer types the card, and it travels straight through that door into the room.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3403,
+        "startFrame": 3405,
         "words": [
           {
             "text": "The",
-            "startFrame": 3403
+            "startFrame": 3405
           },
           {
             "text": "buyer",
-            "startFrame": 3404
+            "startFrame": 3407
           },
           {
             "text": "types",
-            "startFrame": 3414
+            "startFrame": 3417
           },
           {
             "text": "the",
-            "startFrame": 3423
+            "startFrame": 3426
           },
           {
             "text": "card,",
-            "startFrame": 3426
+            "startFrame": 3429
           }
         ]
       },
       {
-        "startFrame": 3448,
+        "startFrame": 3451,
         "words": [
           {
             "text": "and",
-            "startFrame": 3448
+            "startFrame": 3451
           },
           {
             "text": "it",
-            "startFrame": 3450
+            "startFrame": 3453
           },
           {
             "text": "travels",
-            "startFrame": 3452
+            "startFrame": 3455
           },
           {
             "text": "straight",
-            "startFrame": 3466
+            "startFrame": 3469
           },
           {
             "text": "through",
-            "startFrame": 3478
+            "startFrame": 3480
           },
           {
             "text": "that",
-            "startFrame": 3483
+            "startFrame": 3485
           },
           {
             "text": "door",
-            "startFrame": 3490
+            "startFrame": 3493
           },
           {
             "text": "into",
-            "startFrame": 3498
+            "startFrame": 3500
           },
           {
             "text": "the",
-            "startFrame": 3501
+            "startFrame": 3504
           },
           {
             "text": "room.",
-            "startFrame": 3504
+            "startFrame": 3507
           }
         ]
       }
@@ -2095,43 +2091,43 @@
   },
   {
     "index": 36,
-    "startFrame": 3525,
-    "endFrame": 3583,
+    "startFrame": 3528,
+    "endFrame": 3586,
     "text": "ecom's servers are not on the way.",
     "prefix": "ecom's servers are not on the way.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3526,
+        "startFrame": 3529,
         "words": [
           {
             "text": "ecom's",
-            "startFrame": 3526
+            "startFrame": 3529
           },
           {
             "text": "servers",
-            "startFrame": 3538
+            "startFrame": 3541
           },
           {
             "text": "are",
-            "startFrame": 3548
+            "startFrame": 3551
           },
           {
             "text": "not",
-            "startFrame": 3550
+            "startFrame": 3553
           },
           {
             "text": "on",
-            "startFrame": 3559
-          },
-          {
-            "text": "the",
             "startFrame": 3561
           },
           {
+            "text": "the",
+            "startFrame": 3564
+          },
+          {
             "text": "way.",
-            "startFrame": 3563
+            "startFrame": 3566
           }
         ]
       }
@@ -2139,81 +2135,81 @@
   },
   {
     "index": 37,
-    "startFrame": 3584,
-    "endFrame": 3727,
+    "startFrame": 3587,
+    "endFrame": 3730,
     "text": "Inside the room, the card is locked away, and a token comes back out.",
     "prefix": "Inside the room, the card is locked away, and a token comes back out.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3585,
+        "startFrame": 3588,
         "words": [
           {
             "text": "Inside",
-            "startFrame": 3585
+            "startFrame": 3588
           },
           {
             "text": "the",
-            "startFrame": 3598
+            "startFrame": 3601
           },
           {
             "text": "room,",
-            "startFrame": 3600
+            "startFrame": 3603
           }
         ]
       },
       {
-        "startFrame": 3623,
+        "startFrame": 3625,
         "words": [
           {
             "text": "the",
-            "startFrame": 3623
-          },
-          {
-            "text": "card",
             "startFrame": 3625
           },
           {
-            "text": "is",
-            "startFrame": 3634
+            "text": "card",
+            "startFrame": 3628
           },
           {
-            "text": "locked",
+            "text": "is",
             "startFrame": 3637
           },
           {
+            "text": "locked",
+            "startFrame": 3640
+          },
+          {
             "text": "away,",
-            "startFrame": 3647
+            "startFrame": 3650
           }
         ]
       },
       {
-        "startFrame": 3673,
+        "startFrame": 3676,
         "words": [
           {
             "text": "and",
-            "startFrame": 3673
+            "startFrame": 3676
           },
           {
             "text": "a",
-            "startFrame": 3677
+            "startFrame": 3680
           },
           {
             "text": "token",
-            "startFrame": 3679
+            "startFrame": 3682
           },
           {
             "text": "comes",
-            "startFrame": 3691
+            "startFrame": 3694
           },
           {
             "text": "back",
-            "startFrame": 3698
+            "startFrame": 3701
           },
           {
             "text": "out.",
-            "startFrame": 3706
+            "startFrame": 3709
           }
         ]
       }
@@ -2221,121 +2217,121 @@
   },
   {
     "index": 38,
-    "startFrame": 3728,
-    "endFrame": 3923,
+    "startFrame": 3731,
+    "endFrame": 3926,
     "text": "Then ecom knocks on the second door: it asks the room to charge the card, and it names the card only by its token.",
     "prefix": "Then ecom knocks on the second door: it asks the room to charge the card, and it names the card only by its token.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3729,
+        "startFrame": 3732,
         "words": [
           {
             "text": "Then",
-            "startFrame": 3729
+            "startFrame": 3732
           },
           {
             "text": "ecom",
-            "startFrame": 3737
+            "startFrame": 3740
           },
           {
             "text": "knocks",
-            "startFrame": 3748
+            "startFrame": 3751
           },
           {
             "text": "on",
-            "startFrame": 3758
-          },
-          {
-            "text": "the",
-            "startFrame": 3760
-          },
-          {
-            "text": "second",
             "startFrame": 3761
           },
           {
+            "text": "the",
+            "startFrame": 3763
+          },
+          {
+            "text": "second",
+            "startFrame": 3764
+          },
+          {
             "text": "door:",
-            "startFrame": 3772
+            "startFrame": 3774
           }
         ]
       },
       {
-        "startFrame": 3793,
+        "startFrame": 3796,
         "words": [
           {
             "text": "it",
-            "startFrame": 3793
+            "startFrame": 3796
           },
           {
             "text": "asks",
-            "startFrame": 3795
+            "startFrame": 3798
           },
           {
             "text": "the",
-            "startFrame": 3802
-          },
-          {
-            "text": "room",
             "startFrame": 3804
           },
           {
+            "text": "room",
+            "startFrame": 3807
+          },
+          {
             "text": "to",
-            "startFrame": 3813
+            "startFrame": 3816
           },
           {
             "text": "charge",
-            "startFrame": 3815
+            "startFrame": 3818
           },
           {
             "text": "the",
-            "startFrame": 3827
+            "startFrame": 3830
           },
           {
             "text": "card,",
-            "startFrame": 3829
+            "startFrame": 3832
           }
         ]
       },
       {
-        "startFrame": 3851,
+        "startFrame": 3854,
         "words": [
           {
             "text": "and",
-            "startFrame": 3851
+            "startFrame": 3854
           },
           {
             "text": "it",
-            "startFrame": 3853
-          },
-          {
-            "text": "names",
             "startFrame": 3856
           },
           {
-            "text": "the",
-            "startFrame": 3865
+            "text": "names",
+            "startFrame": 3859
           },
           {
-            "text": "card",
+            "text": "the",
             "startFrame": 3868
           },
           {
+            "text": "card",
+            "startFrame": 3871
+          },
+          {
             "text": "only",
-            "startFrame": 3883
+            "startFrame": 3886
           },
           {
             "text": "by",
-            "startFrame": 3890
+            "startFrame": 3893
           },
           {
             "text": "its",
-            "startFrame": 3896
+            "startFrame": 3899
           },
           {
             "text": "token.",
-            "startFrame": 3899
+            "startFrame": 3902
           }
         ]
       }
@@ -2343,47 +2339,47 @@
   },
   {
     "index": 39,
-    "startFrame": 3924,
-    "endFrame": 3989,
+    "startFrame": 3926,
+    "endFrame": 3991,
     "text": "Now look at the running card zone itself.",
     "prefix": "Now look at the running card zone itself.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3925,
+        "startFrame": 3928,
         "words": [
           {
             "text": "Now",
-            "startFrame": 3925
+            "startFrame": 3928
           },
           {
             "text": "look",
-            "startFrame": 3930
+            "startFrame": 3932
           },
           {
             "text": "at",
-            "startFrame": 3933
+            "startFrame": 3936
           },
           {
             "text": "the",
-            "startFrame": 3935
+            "startFrame": 3938
           },
           {
             "text": "running",
-            "startFrame": 3937
+            "startFrame": 3940
           },
           {
             "text": "card",
-            "startFrame": 3944
+            "startFrame": 3947
           },
           {
             "text": "zone",
-            "startFrame": 3953
+            "startFrame": 3956
           },
           {
             "text": "itself.",
-            "startFrame": 3960
+            "startFrame": 3962
           }
         ]
       }
@@ -2391,35 +2387,35 @@
   },
   {
     "index": 40,
-    "startFrame": 3989,
-    "endFrame": 4045,
+    "startFrame": 3992,
+    "endFrame": 4048,
     "text": "Two doors answer from outside.",
     "prefix": "Two doors answer from outside.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3990,
+        "startFrame": 3993,
         "words": [
           {
             "text": "Two",
-            "startFrame": 3990
+            "startFrame": 3993
           },
           {
             "text": "doors",
-            "startFrame": 3994
+            "startFrame": 3997
           },
           {
             "text": "answer",
-            "startFrame": 4005
+            "startFrame": 4008
           },
           {
             "text": "from",
-            "startFrame": 4014
+            "startFrame": 4017
           },
           {
             "text": "outside.",
-            "startFrame": 4018
+            "startFrame": 4021
           }
         ]
       }
@@ -2427,47 +2423,47 @@
   },
   {
     "index": 41,
-    "startFrame": 4046,
-    "endFrame": 4139,
+    "startFrame": 4049,
+    "endFrame": 4142,
     "text": "The database answers to nobody outside the room.",
     "prefix": "The database answers to nobody outside the room.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4047,
+        "startFrame": 4050,
         "words": [
           {
             "text": "The",
-            "startFrame": 4047
+            "startFrame": 4050
           },
           {
             "text": "database",
-            "startFrame": 4049
+            "startFrame": 4052
           },
           {
             "text": "answers",
-            "startFrame": 4065
+            "startFrame": 4068
           },
           {
             "text": "to",
-            "startFrame": 4084
-          },
-          {
-            "text": "nobody",
             "startFrame": 4087
           },
           {
+            "text": "nobody",
+            "startFrame": 4089
+          },
+          {
             "text": "outside",
-            "startFrame": 4103
+            "startFrame": 4106
           },
           {
             "text": "the",
-            "startFrame": 4117
+            "startFrame": 4120
           },
           {
             "text": "room.",
-            "startFrame": 4118
+            "startFrame": 4121
           }
         ]
       }
@@ -2475,72 +2471,72 @@
   },
   {
     "index": 42,
-    "startFrame": 4140,
-    "endFrame": 4276,
+    "startFrame": 4142,
+    "endFrame": 4279,
     "text": "And in the bank admin portal, every payment shows only a masked number.",
     "prefix": "And in the bank admin portal, every payment shows only a masked number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4141,
+        "startFrame": 4144,
         "words": [
           {
             "text": "And",
-            "startFrame": 4141
-          },
-          {
-            "text": "in",
             "startFrame": 4144
           },
           {
-            "text": "the",
-            "startFrame": 4146
+            "text": "in",
+            "startFrame": 4147
           },
           {
-            "text": "bank",
+            "text": "the",
             "startFrame": 4149
           },
           {
+            "text": "bank",
+            "startFrame": 4152
+          },
+          {
             "text": "admin",
-            "startFrame": 4159
+            "startFrame": 4162
           },
           {
             "text": "portal,",
-            "startFrame": 4168
+            "startFrame": 4171
           }
         ]
       },
       {
-        "startFrame": 4191,
+        "startFrame": 4194,
         "words": [
           {
             "text": "every",
-            "startFrame": 4191
+            "startFrame": 4194
           },
           {
             "text": "payment",
-            "startFrame": 4199
+            "startFrame": 4202
           },
           {
             "text": "shows",
-            "startFrame": 4212
+            "startFrame": 4215
           },
           {
             "text": "only",
-            "startFrame": 4232
+            "startFrame": 4235
           },
           {
             "text": "a",
-            "startFrame": 4239
+            "startFrame": 4242
           },
           {
             "text": "masked",
-            "startFrame": 4241
+            "startFrame": 4243
           },
           {
             "text": "number.",
-            "startFrame": 4255
+            "startFrame": 4258
           }
         ]
       }
@@ -2548,35 +2544,35 @@
   },
   {
     "index": 43,
-    "startFrame": 4276,
-    "endFrame": 4354,
+    "startFrame": 4279,
+    "endFrame": 4357,
     "text": "ecom holds tickets, never coats.",
     "prefix": "ecom holds tickets, never coats.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4277,
+        "startFrame": 4280,
         "words": [
           {
             "text": "ecom",
-            "startFrame": 4277
+            "startFrame": 4280
           },
           {
             "text": "holds",
-            "startFrame": 4288
+            "startFrame": 4291
           },
           {
             "text": "tickets,",
-            "startFrame": 4298
+            "startFrame": 4301
           },
           {
             "text": "never",
-            "startFrame": 4321
+            "startFrame": 4324
           },
           {
             "text": "coats.",
-            "startFrame": 4328
+            "startFrame": 4331
           }
         ]
       }
@@ -2584,31 +2580,31 @@
   },
   {
     "index": 44,
-    "startFrame": 4355,
-    "endFrame": 4410,
+    "startFrame": 4358,
+    "endFrame": 4413,
     "text": "Now the honest part.",
     "prefix": "Now the honest part.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4356,
+        "startFrame": 4359,
         "words": [
           {
             "text": "Now",
-            "startFrame": 4356
+            "startFrame": 4359
           },
           {
             "text": "the",
-            "startFrame": 4364
-          },
-          {
-            "text": "honest",
             "startFrame": 4367
           },
           {
+            "text": "honest",
+            "startFrame": 4370
+          },
+          {
             "text": "part.",
-            "startFrame": 4375
+            "startFrame": 4378
           }
         ]
       }
@@ -2616,35 +2612,35 @@
   },
   {
     "index": 45,
-    "startFrame": 4411,
-    "endFrame": 4459,
+    "startFrame": 4414,
+    "endFrame": 4470,
     "text": "ecom still gets a check.",
     "prefix": "ecom still gets a check.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4412,
+        "startFrame": 4415,
         "words": [
           {
             "text": "ecom",
-            "startFrame": 4412
+            "startFrame": 4415
           },
           {
             "text": "still",
-            "startFrame": 4422
+            "startFrame": 4425
           },
           {
             "text": "gets",
-            "startFrame": 4429
+            "startFrame": 4432
           },
           {
             "text": "a",
-            "startFrame": 4434
+            "startFrame": 4437
           },
           {
             "text": "check.",
-            "startFrame": 4435
+            "startFrame": 4438
           }
         ]
       }
@@ -2652,80 +2648,80 @@
   },
   {
     "index": 46,
-    "startFrame": 4459,
-    "endFrame": 4593,
+    "startFrame": 4470,
+    "endFrame": 4604,
     "text": "It shows the card form on its page, and it uses tickets to take payments.",
     "prefix": "It shows the card form on its page, and it uses tickets to take payments.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4461,
+        "startFrame": 4471,
         "words": [
           {
             "text": "It",
-            "startFrame": 4461
-          },
-          {
-            "text": "shows",
-            "startFrame": 4462
-          },
-          {
-            "text": "the",
             "startFrame": 4471
           },
           {
+            "text": "shows",
+            "startFrame": 4473
+          },
+          {
+            "text": "the",
+            "startFrame": 4482
+          },
+          {
             "text": "card",
-            "startFrame": 4474
+            "startFrame": 4485
           },
           {
             "text": "form",
-            "startFrame": 4484
+            "startFrame": 4495
           },
           {
             "text": "on",
-            "startFrame": 4492
+            "startFrame": 4503
           },
           {
             "text": "its",
-            "startFrame": 4496
+            "startFrame": 4506
           },
           {
             "text": "page,",
-            "startFrame": 4498
+            "startFrame": 4509
           }
         ]
       },
       {
-        "startFrame": 4528,
+        "startFrame": 4539,
         "words": [
           {
             "text": "and",
-            "startFrame": 4528
+            "startFrame": 4539
           },
           {
             "text": "it",
-            "startFrame": 4530
+            "startFrame": 4541
           },
           {
             "text": "uses",
-            "startFrame": 4532
+            "startFrame": 4543
           },
           {
             "text": "tickets",
-            "startFrame": 4542
+            "startFrame": 4553
           },
           {
             "text": "to",
-            "startFrame": 4555
+            "startFrame": 4566
           },
           {
             "text": "take",
-            "startFrame": 4558
+            "startFrame": 4569
           },
           {
             "text": "payments.",
-            "startFrame": 4565
+            "startFrame": 4575
           }
         ]
       }
@@ -2733,85 +2729,85 @@
   },
   {
     "index": 47,
-    "startFrame": 4594,
-    "endFrame": 4715,
+    "startFrame": 4605,
+    "endFrame": 4726,
     "text": "So it is connected to the room, and its check is smaller, but not none.",
     "prefix": "So it is connected to the room, and its check is smaller, but not none.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4595,
+        "startFrame": 4606,
         "words": [
           {
             "text": "So",
-            "startFrame": 4595
-          },
-          {
-            "text": "it",
-            "startFrame": 4601
-          },
-          {
-            "text": "is",
-            "startFrame": 4602
-          },
-          {
-            "text": "connected",
             "startFrame": 4606
           },
           {
-            "text": "to",
-            "startFrame": 4618
-          },
-          {
-            "text": "the",
-            "startFrame": 4620
-          },
-          {
-            "text": "room,",
-            "startFrame": 4623
-          }
-        ]
-      },
-      {
-        "startFrame": 4648,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 4648
-          },
-          {
-            "text": "its",
-            "startFrame": 4650
-          },
-          {
-            "text": "check",
-            "startFrame": 4654
+            "text": "it",
+            "startFrame": 4612
           },
           {
             "text": "is",
-            "startFrame": 4660
+            "startFrame": 4613
           },
           {
-            "text": "smaller,",
-            "startFrame": 4663
+            "text": "connected",
+            "startFrame": 4617
+          },
+          {
+            "text": "to",
+            "startFrame": 4629
+          },
+          {
+            "text": "the",
+            "startFrame": 4631
+          },
+          {
+            "text": "room,",
+            "startFrame": 4634
           }
         ]
       },
       {
-        "startFrame": 4677,
+        "startFrame": 4659,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4659
+          },
+          {
+            "text": "its",
+            "startFrame": 4661
+          },
+          {
+            "text": "check",
+            "startFrame": 4665
+          },
+          {
+            "text": "is",
+            "startFrame": 4671
+          },
+          {
+            "text": "smaller,",
+            "startFrame": 4674
+          }
+        ]
+      },
+      {
+        "startFrame": 4688,
         "words": [
           {
             "text": "but",
-            "startFrame": 4677
+            "startFrame": 4688
           },
           {
             "text": "not",
-            "startFrame": 4682
+            "startFrame": 4692
           },
           {
             "text": "none.",
-            "startFrame": 4691
+            "startFrame": 4702
           }
         ]
       }
@@ -2819,39 +2815,39 @@
   },
   {
     "index": 48,
-    "startFrame": 4716,
-    "endFrame": 4776,
+    "startFrame": 4726,
+    "endFrame": 4787,
     "text": "And the room needs a building.",
     "prefix": "And the room needs a building.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4717,
+        "startFrame": 4728,
         "words": [
           {
             "text": "And",
-            "startFrame": 4717
+            "startFrame": 4728
           },
           {
             "text": "the",
-            "startFrame": 4719
+            "startFrame": 4730
           },
           {
             "text": "room",
-            "startFrame": 4721
+            "startFrame": 4732
           },
           {
             "text": "needs",
-            "startFrame": 4742
+            "startFrame": 4753
           },
           {
             "text": "a",
-            "startFrame": 4749
+            "startFrame": 4760
           },
           {
             "text": "building.",
-            "startFrame": 4750
+            "startFrame": 4761
           }
         ]
       }
@@ -2859,72 +2855,72 @@
   },
   {
     "index": 49,
-    "startFrame": 4777,
-    "endFrame": 4912,
+    "startFrame": 4788,
+    "endFrame": 4923,
     "text": "In a bank, the card zone runs inside the bank's own secured network.",
     "prefix": "In a bank, the card zone runs inside the bank's own secured network.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4778,
+        "startFrame": 4789,
         "words": [
           {
             "text": "In",
-            "startFrame": 4778
+            "startFrame": 4789
           },
           {
             "text": "a",
-            "startFrame": 4780
+            "startFrame": 4791
           },
           {
             "text": "bank,",
-            "startFrame": 4782
+            "startFrame": 4793
           }
         ]
       },
       {
-        "startFrame": 4803,
+        "startFrame": 4814,
         "words": [
           {
             "text": "the",
-            "startFrame": 4803
+            "startFrame": 4814
           },
           {
             "text": "card",
-            "startFrame": 4806
+            "startFrame": 4817
           },
           {
             "text": "zone",
-            "startFrame": 4813
+            "startFrame": 4824
           },
           {
             "text": "runs",
-            "startFrame": 4822
+            "startFrame": 4832
           },
           {
             "text": "inside",
-            "startFrame": 4830
+            "startFrame": 4840
           },
           {
             "text": "the",
-            "startFrame": 4847
+            "startFrame": 4858
           },
           {
             "text": "bank's",
-            "startFrame": 4850
+            "startFrame": 4861
           },
           {
             "text": "own",
-            "startFrame": 4868
+            "startFrame": 4879
           },
           {
             "text": "secured",
-            "startFrame": 4875
+            "startFrame": 4886
           },
           {
             "text": "network.",
-            "startFrame": 4887
+            "startFrame": 4898
           }
         ]
       }
@@ -2932,56 +2928,56 @@
   },
   {
     "index": 50,
-    "startFrame": 4913,
-    "endFrame": 5020,
+    "startFrame": 4924,
+    "endFrame": 5031,
     "text": "The bank's firewalls, guards and monitoring stand around it.",
     "prefix": "The bank's firewalls, guards and monitoring stand around it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4915,
+        "startFrame": 4925,
         "words": [
           {
             "text": "The",
-            "startFrame": 4915
+            "startFrame": 4925
           },
           {
             "text": "bank's",
-            "startFrame": 4916
+            "startFrame": 4927
           },
           {
             "text": "firewalls,",
-            "startFrame": 4924
+            "startFrame": 4935
           }
         ]
       },
       {
-        "startFrame": 4955,
+        "startFrame": 4965,
         "words": [
           {
             "text": "guards",
-            "startFrame": 4955
+            "startFrame": 4965
           },
           {
             "text": "and",
-            "startFrame": 4967
+            "startFrame": 4978
           },
           {
             "text": "monitoring",
-            "startFrame": 4970
+            "startFrame": 4981
           },
           {
             "text": "stand",
-            "startFrame": 4987
+            "startFrame": 4998
           },
           {
             "text": "around",
-            "startFrame": 4995
+            "startFrame": 5006
           },
           {
             "text": "it.",
-            "startFrame": 5004
+            "startFrame": 5015
           }
         ]
       }
@@ -2989,142 +2985,142 @@
   },
   {
     "index": 51,
-    "startFrame": 5021,
-    "endFrame": 5265,
+    "startFrame": 5032,
+    "endFrame": 5276,
     "text": "The card zone fits into that network through its two narrow doors, and it shares no parts with the bank's other systems, so it breaks nothing around it.",
     "prefix": "The card zone fits into that network through its two narrow doors, and it shares no parts with the bank's other systems, so it breaks nothing around it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5022,
+        "startFrame": 5033,
         "words": [
           {
             "text": "The",
-            "startFrame": 5022
-          },
-          {
-            "text": "card",
-            "startFrame": 5025
-          },
-          {
-            "text": "zone",
             "startFrame": 5033
           },
           {
-            "text": "fits",
+            "text": "card",
+            "startFrame": 5035
+          },
+          {
+            "text": "zone",
             "startFrame": 5044
           },
           {
-            "text": "into",
+            "text": "fits",
             "startFrame": 5054
           },
           {
-            "text": "that",
-            "startFrame": 5060
-          },
-          {
-            "text": "network",
+            "text": "into",
             "startFrame": 5065
           },
           {
+            "text": "that",
+            "startFrame": 5070
+          },
+          {
+            "text": "network",
+            "startFrame": 5076
+          },
+          {
             "text": "through",
-            "startFrame": 5081
+            "startFrame": 5092
           }
         ]
       },
       {
-        "startFrame": 5088,
+        "startFrame": 5098,
         "words": [
           {
             "text": "its",
-            "startFrame": 5088
+            "startFrame": 5098
           },
           {
             "text": "two",
-            "startFrame": 5092
+            "startFrame": 5103
           },
           {
             "text": "narrow",
-            "startFrame": 5100
+            "startFrame": 5110
           },
           {
             "text": "doors,",
-            "startFrame": 5110
+            "startFrame": 5121
           }
         ]
       },
       {
-        "startFrame": 5134,
+        "startFrame": 5145,
         "words": [
           {
             "text": "and",
-            "startFrame": 5134
+            "startFrame": 5145
           },
           {
             "text": "it",
-            "startFrame": 5137
+            "startFrame": 5148
           },
           {
             "text": "shares",
-            "startFrame": 5139
+            "startFrame": 5150
           },
           {
             "text": "no",
-            "startFrame": 5149
+            "startFrame": 5159
           },
           {
             "text": "parts",
-            "startFrame": 5156
+            "startFrame": 5167
           },
           {
             "text": "with",
-            "startFrame": 5166
+            "startFrame": 5177
           },
           {
             "text": "the",
-            "startFrame": 5169
+            "startFrame": 5180
           },
           {
             "text": "bank's",
-            "startFrame": 5172
+            "startFrame": 5183
           }
         ]
       },
       {
-        "startFrame": 5181,
+        "startFrame": 5192,
         "words": [
           {
             "text": "other",
-            "startFrame": 5181
+            "startFrame": 5192
           },
           {
             "text": "systems,",
-            "startFrame": 5186
+            "startFrame": 5197
           },
           {
             "text": "so",
-            "startFrame": 5214
+            "startFrame": 5224
           },
           {
             "text": "it",
-            "startFrame": 5218
+            "startFrame": 5228
           },
           {
             "text": "breaks",
-            "startFrame": 5220
-          },
-          {
-            "text": "nothing",
             "startFrame": 5231
           },
           {
+            "text": "nothing",
+            "startFrame": 5242
+          },
+          {
             "text": "around",
-            "startFrame": 5240
+            "startFrame": 5250
           },
           {
             "text": "it.",
-            "startFrame": 5249
+            "startFrame": 5260
           }
         ]
       }
@@ -3132,43 +3128,43 @@
   },
   {
     "index": 52,
-    "startFrame": 5266,
-    "endFrame": 5353,
+    "startFrame": 5276,
+    "endFrame": 5364,
     "text": "The product claims no certificate for itself.",
     "prefix": "The product claims no certificate for itself.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5267,
+        "startFrame": 5278,
         "words": [
           {
             "text": "The",
-            "startFrame": 5267
+            "startFrame": 5278
           },
           {
             "text": "product",
-            "startFrame": 5269
+            "startFrame": 5280
           },
           {
             "text": "claims",
-            "startFrame": 5277
+            "startFrame": 5288
           },
           {
             "text": "no",
-            "startFrame": 5289
+            "startFrame": 5300
           },
           {
             "text": "certificate",
-            "startFrame": 5297
+            "startFrame": 5308
           },
           {
             "text": "for",
-            "startFrame": 5318
+            "startFrame": 5329
           },
           {
             "text": "itself.",
-            "startFrame": 5324
+            "startFrame": 5335
           }
         ]
       }
@@ -3176,64 +3172,64 @@
   },
   {
     "index": 53,
-    "startFrame": 5353,
-    "endFrame": 5457,
+    "startFrame": 5364,
+    "endFrame": 5468,
     "text": "The bank's own assessor checks the room and the building together.",
     "prefix": "The bank's own assessor checks the room and the building together.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5355,
+        "startFrame": 5366,
         "words": [
           {
             "text": "The",
-            "startFrame": 5355
+            "startFrame": 5366
           },
           {
             "text": "bank's",
-            "startFrame": 5357
+            "startFrame": 5368
           },
           {
             "text": "own",
-            "startFrame": 5367
+            "startFrame": 5378
           },
           {
             "text": "assessor",
-            "startFrame": 5372
+            "startFrame": 5382
           },
           {
             "text": "checks",
-            "startFrame": 5386
+            "startFrame": 5396
           },
           {
             "text": "the",
-            "startFrame": 5394
+            "startFrame": 5405
           },
           {
             "text": "room",
-            "startFrame": 5397
+            "startFrame": 5407
           }
         ]
       },
       {
-        "startFrame": 5417,
+        "startFrame": 5427,
         "words": [
           {
             "text": "and",
-            "startFrame": 5417
+            "startFrame": 5427
           },
           {
             "text": "the",
-            "startFrame": 5418
+            "startFrame": 5429
           },
           {
             "text": "building",
-            "startFrame": 5421
+            "startFrame": 5431
           },
           {
             "text": "together.",
-            "startFrame": 5431
+            "startFrame": 5442
           }
         ]
       }
@@ -3241,31 +3237,31 @@
   },
   {
     "index": 54,
-    "startFrame": 5458,
-    "endFrame": 5514,
+    "startFrame": 5469,
+    "endFrame": 5524,
     "text": "What does this protect?",
     "prefix": "What does this protect?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5459,
+        "startFrame": 5470,
         "words": [
           {
             "text": "What",
-            "startFrame": 5459
+            "startFrame": 5470
           },
           {
             "text": "does",
-            "startFrame": 5461
+            "startFrame": 5471
           },
           {
             "text": "this",
-            "startFrame": 5464
+            "startFrame": 5474
           },
           {
             "text": "protect?",
-            "startFrame": 5467
+            "startFrame": 5478
           }
         ]
       }
@@ -3273,105 +3269,105 @@
   },
   {
     "index": 55,
-    "startFrame": 5514,
-    "endFrame": 5720,
+    "startFrame": 5525,
+    "endFrame": 5731,
     "text": "Without the room, every report, backup and laptop holds card numbers, and any one of them can leak them all.",
     "prefix": "Without the room, every report, backup and laptop holds card numbers, and any one of them can leak them all.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5515,
+        "startFrame": 5526,
         "words": [
           {
             "text": "Without",
-            "startFrame": 5515
+            "startFrame": 5526
           },
           {
             "text": "the",
-            "startFrame": 5524
+            "startFrame": 5534
           },
           {
             "text": "room,",
-            "startFrame": 5526
+            "startFrame": 5537
           }
         ]
       },
       {
-        "startFrame": 5550,
+        "startFrame": 5560,
         "words": [
           {
             "text": "every",
-            "startFrame": 5550
+            "startFrame": 5560
           },
           {
             "text": "report,",
-            "startFrame": 5556
+            "startFrame": 5567
           },
           {
             "text": "backup",
-            "startFrame": 5580
+            "startFrame": 5591
           },
           {
             "text": "and",
-            "startFrame": 5598
+            "startFrame": 5609
           },
           {
             "text": "laptop",
-            "startFrame": 5601
+            "startFrame": 5612
           },
           {
             "text": "holds",
-            "startFrame": 5616
+            "startFrame": 5627
           },
           {
             "text": "card",
-            "startFrame": 5623
+            "startFrame": 5634
           },
           {
             "text": "numbers,",
-            "startFrame": 5632
+            "startFrame": 5643
           }
         ]
       },
       {
-        "startFrame": 5656,
+        "startFrame": 5667,
         "words": [
           {
             "text": "and",
-            "startFrame": 5656
+            "startFrame": 5667
           },
           {
             "text": "any",
-            "startFrame": 5666
+            "startFrame": 5677
           },
           {
             "text": "one",
-            "startFrame": 5671
+            "startFrame": 5682
           },
           {
             "text": "of",
-            "startFrame": 5676
+            "startFrame": 5687
           },
           {
             "text": "them",
-            "startFrame": 5678
-          },
-          {
-            "text": "can",
             "startFrame": 5688
           },
           {
+            "text": "can",
+            "startFrame": 5699
+          },
+          {
             "text": "leak",
-            "startFrame": 5693
+            "startFrame": 5703
           },
           {
             "text": "them",
-            "startFrame": 5697
+            "startFrame": 5708
           },
           {
             "text": "all.",
-            "startFrame": 5700
+            "startFrame": 5711
           }
         ]
       }
@@ -3379,72 +3375,72 @@
   },
   {
     "index": 56,
-    "startFrame": 5721,
-    "endFrame": 5834,
+    "startFrame": 5731,
+    "endFrame": 5845,
     "text": "With the room, a leak from ecom leaks no card number at all.",
     "prefix": "With the room, a leak from ecom leaks no card number at all.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5722,
+        "startFrame": 5733,
         "words": [
           {
             "text": "With",
-            "startFrame": 5722
+            "startFrame": 5733
           },
           {
             "text": "the",
-            "startFrame": 5726
+            "startFrame": 5736
           },
           {
             "text": "room,",
-            "startFrame": 5728
+            "startFrame": 5739
           }
         ]
       },
       {
-        "startFrame": 5752,
+        "startFrame": 5762,
         "words": [
           {
             "text": "a",
-            "startFrame": 5752
+            "startFrame": 5762
           },
           {
             "text": "leak",
-            "startFrame": 5752
+            "startFrame": 5763
           },
           {
             "text": "from",
-            "startFrame": 5759
+            "startFrame": 5770
           },
           {
             "text": "ecom",
-            "startFrame": 5764
+            "startFrame": 5775
           },
           {
             "text": "leaks",
-            "startFrame": 5786
+            "startFrame": 5796
           },
           {
             "text": "no",
-            "startFrame": 5793
+            "startFrame": 5804
           },
           {
             "text": "card",
-            "startFrame": 5800
+            "startFrame": 5811
           },
           {
             "text": "number",
-            "startFrame": 5807
+            "startFrame": 5818
           },
           {
             "text": "at",
-            "startFrame": 5813
+            "startFrame": 5824
           },
           {
             "text": "all.",
-            "startFrame": 5815
+            "startFrame": 5826
           }
         ]
       }
@@ -3452,101 +3448,101 @@
   },
   {
     "index": 57,
-    "startFrame": 5834,
-    "endFrame": 6038,
+    "startFrame": 5845,
+    "endFrame": 6049,
     "text": "The buyer's card stays safe, ecom's check stays small, and the bank guards one small room instead of everything.",
     "prefix": "The buyer's card stays safe, ecom's check stays small, and the bank guards one small room instead of everything.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5836,
+        "startFrame": 5847,
         "words": [
           {
             "text": "The",
-            "startFrame": 5836
+            "startFrame": 5847
           },
           {
             "text": "buyer's",
-            "startFrame": 5838
-          },
-          {
-            "text": "card",
             "startFrame": 5849
           },
           {
+            "text": "card",
+            "startFrame": 5860
+          },
+          {
             "text": "stays",
-            "startFrame": 5857
+            "startFrame": 5867
           },
           {
             "text": "safe,",
-            "startFrame": 5866
+            "startFrame": 5877
           }
         ]
       },
       {
-        "startFrame": 5890,
+        "startFrame": 5901,
         "words": [
           {
             "text": "ecom's",
-            "startFrame": 5890
+            "startFrame": 5901
           },
           {
             "text": "check",
-            "startFrame": 5905
+            "startFrame": 5916
           },
           {
             "text": "stays",
-            "startFrame": 5911
+            "startFrame": 5922
           },
           {
             "text": "small,",
-            "startFrame": 5921
+            "startFrame": 5932
           }
         ]
       },
       {
-        "startFrame": 5943,
+        "startFrame": 5954,
         "words": [
           {
             "text": "and",
-            "startFrame": 5943
+            "startFrame": 5954
           },
           {
             "text": "the",
-            "startFrame": 5944
+            "startFrame": 5955
           },
           {
             "text": "bank",
-            "startFrame": 5947
-          },
-          {
-            "text": "guards",
             "startFrame": 5957
           },
           {
+            "text": "guards",
+            "startFrame": 5967
+          },
+          {
             "text": "one",
-            "startFrame": 5965
+            "startFrame": 5976
           },
           {
             "text": "small",
-            "startFrame": 5973
-          },
-          {
-            "text": "room",
             "startFrame": 5984
           },
           {
-            "text": "instead",
-            "startFrame": 6000
+            "text": "room",
+            "startFrame": 5995
           },
           {
-            "text": "of",
+            "text": "instead",
             "startFrame": 6011
           },
           {
+            "text": "of",
+            "startFrame": 6022
+          },
+          {
             "text": "everything.",
-            "startFrame": 6013
+            "startFrame": 6024
           }
         ]
       }
@@ -3554,35 +3550,35 @@
   },
   {
     "index": 58,
-    "startFrame": 6039,
-    "endFrame": 6095,
+    "startFrame": 6050,
+    "endFrame": 6105,
     "text": "Back to the coat check.",
     "prefix": "Back to the coat check.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6041,
+        "startFrame": 6051,
         "words": [
           {
             "text": "Back",
-            "startFrame": 6041
+            "startFrame": 6051
           },
           {
             "text": "to",
-            "startFrame": 6045
+            "startFrame": 6056
           },
           {
             "text": "the",
-            "startFrame": 6047
+            "startFrame": 6058
           },
           {
             "text": "coat",
-            "startFrame": 6050
+            "startFrame": 6061
           },
           {
             "text": "check.",
-            "startFrame": 6058
+            "startFrame": 6069
           }
         ]
       }
@@ -3590,48 +3586,48 @@
   },
   {
     "index": 59,
-    "startFrame": 6095,
-    "endFrame": 6189,
+    "startFrame": 6106,
+    "endFrame": 6200,
     "text": "Coats in one room, tickets everywhere else.",
     "prefix": "Coats in one room, tickets everywhere else.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6096,
+        "startFrame": 6107,
         "words": [
           {
             "text": "Coats",
-            "startFrame": 6096
+            "startFrame": 6107
           },
           {
             "text": "in",
-            "startFrame": 6104
+            "startFrame": 6115
           },
           {
             "text": "one",
-            "startFrame": 6108
+            "startFrame": 6119
           },
           {
             "text": "room,",
-            "startFrame": 6115
+            "startFrame": 6125
           }
         ]
       },
       {
-        "startFrame": 6135,
+        "startFrame": 6146,
         "words": [
           {
             "text": "tickets",
-            "startFrame": 6135
+            "startFrame": 6146
           },
           {
             "text": "everywhere",
-            "startFrame": 6151
+            "startFrame": 6162
           },
           {
             "text": "else.",
-            "startFrame": 6164
+            "startFrame": 6174
           }
         ]
       }
@@ -3639,60 +3635,60 @@
   },
   {
     "index": 60,
-    "startFrame": 6189,
-    "endFrame": 6288,
+    "startFrame": 6200,
+    "endFrame": 6299,
     "text": "We deliver the locked room; the bank owns the building.",
     "prefix": "We deliver the locked room; the bank owns the building.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6190,
+        "startFrame": 6201,
         "words": [
           {
             "text": "We",
-            "startFrame": 6190
+            "startFrame": 6201
           },
           {
             "text": "deliver",
-            "startFrame": 6192
+            "startFrame": 6203
           },
           {
             "text": "the",
-            "startFrame": 6202
+            "startFrame": 6213
           },
           {
             "text": "locked",
-            "startFrame": 6204
+            "startFrame": 6215
           },
           {
             "text": "room;",
-            "startFrame": 6214
+            "startFrame": 6225
           }
         ]
       },
       {
-        "startFrame": 6234,
+        "startFrame": 6245,
         "words": [
           {
             "text": "the",
-            "startFrame": 6234
+            "startFrame": 6245
           },
           {
             "text": "bank",
-            "startFrame": 6237
+            "startFrame": 6248
           },
           {
             "text": "owns",
-            "startFrame": 6254
+            "startFrame": 6265
           },
           {
             "text": "the",
-            "startFrame": 6262
+            "startFrame": 6273
           },
           {
             "text": "building.",
-            "startFrame": 6264
+            "startFrame": 6275
           }
         ]
       }
@@ -3700,64 +3696,64 @@
   },
   {
     "index": 61,
-    "startFrame": 6289,
-    "endFrame": 6436,
+    "startFrame": 6300,
+    "endFrame": 6446,
     "text": "Next: how ecom takes a payment without ever seeing the card.",
     "prefix": "Next: how ecom takes a payment without ever seeing the card.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6290,
+        "startFrame": 6301,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 6290
+            "startFrame": 6301
           },
           {
             "text": "how",
-            "startFrame": 6315
+            "startFrame": 6326
           },
           {
             "text": "ecom",
-            "startFrame": 6320
+            "startFrame": 6331
           },
           {
             "text": "takes",
-            "startFrame": 6335
+            "startFrame": 6346
           },
           {
             "text": "a",
-            "startFrame": 6342
+            "startFrame": 6352
           },
           {
             "text": "payment",
-            "startFrame": 6343
+            "startFrame": 6354
           },
           {
             "text": "without",
-            "startFrame": 6355
+            "startFrame": 6366
           },
           {
             "text": "ever",
-            "startFrame": 6367
+            "startFrame": 6378
           }
         ]
       },
       {
-        "startFrame": 6372,
+        "startFrame": 6383,
         "words": [
           {
             "text": "seeing",
-            "startFrame": 6372
+            "startFrame": 6383
           },
           {
             "text": "the",
-            "startFrame": 6381
+            "startFrame": 6392
           },
           {
             "text": "card.",
-            "startFrame": 6383
+            "startFrame": 6393
           }
         ]
       }

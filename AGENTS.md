@@ -177,6 +177,8 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | On screen | In `script.txt` | Caption |
 |-----------|-----------------|---------|
 | `T+1` | T plus one | yes |
+| `PIN` | P I N | yes |
+| `ID` | I D | yes |
 | `PCI-DSS` | P C I D S S | yes |
 | `OFD` | O F D | yes |
 | `9998` | nine nine nine eight | yes |
