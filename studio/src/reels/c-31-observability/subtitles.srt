@@ -1,0 +1,239 @@
+1
+00:00:00,050 --> 00:00:03,096
+How do you follow one payment through the whole system?
+
+2
+00:00:03,146 --> 00:00:04,968
+A merchant calls the bank.
+
+3
+00:00:05,018 --> 00:00:08,376
+My customer's payment has been spinning for a minute, they say.
+
+4
+00:00:08,426 --> 00:00:15,216
+That payment crossed the payment page, ecom, the card zone, an adapter and the processing centre.
+
+5
+00:00:15,266 --> 00:00:19,656
+It touched four machines, and each machine writes its own log lines.
+
+6
+00:00:19,706 --> 00:00:23,760
+Without one number to follow, someone searches four logs and guesses.
+
+7
+00:00:23,810 --> 00:00:28,032
+Worse, the lines that would help most are the ones most likely to hold a card number.
+
+8
+00:00:28,082 --> 00:00:29,904
+Think of a hospital.
+
+9
+00:00:29,954 --> 00:00:32,976
+When you arrive, you get a wristband with one number.
+
+10
+00:00:33,026 --> 00:00:38,856
+That number is on every chart, in every department: the lab, the scan, the ward.
+
+11
+00:00:38,906 --> 00:00:42,024
+Anyone can follow your whole stay by that one number.
+
+12
+00:00:42,074 --> 00:00:45,552
+Here, every request gets the same kind of number.
+
+13
+00:00:45,602 --> 00:00:51,504
+We call it a trace: one number that follows a request from the moment it arrives until its answer leaves.
+
+14
+00:00:51,554 --> 00:00:54,888
+When ecom calls the card zone, the trace goes along.
+
+15
+00:00:54,938 --> 00:00:58,200
+When the card zone calls an adapter, it goes along again.
+
+16
+00:00:58,250 --> 00:01:01,968
+So one request draws one line across both products.
+
+17
+00:01:02,018 --> 00:01:06,288
+Every answer names its trace too, even an answer that says no.
+
+18
+00:01:06,338 --> 00:01:11,976
+A merchant's server can quote that number to support, and support finds the whole story in seconds.
+
+19
+00:01:12,026 --> 00:01:14,592
+Every log line carries the same number.
+
+20
+00:01:14,642 --> 00:01:21,264
+So a warning in one log leads straight to the request that caused it, and to every other line about that request.
+
+21
+00:01:21,314 --> 00:01:23,136
+Now the card numbers.
+
+22
+00:01:23,186 --> 00:01:25,944
+Before any line is written, it is cleaned.
+
+23
+00:01:25,994 --> 00:01:27,456
+This is log masking.
+
+24
+00:01:27,506 --> 00:01:33,192
+A card number keeps only its first six and its last four digits; the middle becomes stars.
+
+25
+00:01:33,242 --> 00:01:37,512
+Any long run of digits that could be a card number is treated as one.
+
+26
+00:01:37,562 --> 00:01:40,656
+A token keeps only its last four characters.
+
+27
+00:01:40,706 --> 00:01:43,632
+Passwords and secrets are hidden completely.
+
+28
+00:01:43,682 --> 00:01:47,112
+This happens on every line, wherever the line is sent.
+
+29
+00:01:47,162 --> 00:01:50,256
+So nothing the running system writes can leak a card.
+
+30
+00:01:50,306 --> 00:01:53,424
+Each product sends all of this to its own monitoring.
+
+31
+00:01:53,474 --> 00:01:57,456
+ecom has its own, and the card zone runs its own, separately.
+
+32
+00:01:57,506 --> 00:02:00,144
+They share nothing here either, just as on the map.
+
+33
+00:02:00,194 --> 00:02:02,016
+Let's watch the product.
+
+34
+00:02:02,066 --> 00:02:05,208
+A support person opens ecom's monitoring.
+
+35
+00:02:05,258 --> 00:02:10,584
+The first dashboard shows payments by how they end: paid, declined, and unknown.
+
+36
+00:02:10,634 --> 00:02:15,792
+Unknown is painted red: payments where nobody yet knows whether money moved.
+
+37
+00:02:15,842 --> 00:02:18,792
+Right now, the red line sits at zero.
+
+38
+00:02:18,842 --> 00:02:21,432
+They paste the trace number the merchant quoted.
+
+39
+00:02:21,482 --> 00:02:27,984
+One line appears, crossing ecom, the card zone and the adapter, with the time each step took.
+
+40
+00:02:28,034 --> 00:02:30,240
+They open the log lines of that request.
+
+41
+00:02:30,290 --> 00:02:35,352
+The card number shows its first six digits, a row of stars, and its last four.
+
+42
+00:02:35,402 --> 00:02:38,448
+Now the processing centre goes quiet for a while.
+
+43
+00:02:38,498 --> 00:02:42,216
+Payments start to stay unknown, and the red line climbs.
+
+44
+00:02:42,266 --> 00:02:44,352
+Nobody is watching the screen.
+
+45
+00:02:44,402 --> 00:02:46,968
+That does not matter, because of alert rules.
+
+46
+00:02:47,018 --> 00:02:53,808
+An alert rule is a condition the system checks on its own, all the time, written down like the rest of the product.
+
+47
+00:02:53,858 --> 00:02:57,984
+When payments stay unknown for too long, the rule fires.
+
+48
+00:02:58,034 --> 00:03:00,624
+An email arrives: payments are stuck.
+
+49
+00:03:00,674 --> 00:03:02,952
+It says what is wrong and when it started.
+
+50
+00:03:03,002 --> 00:03:07,248
+Support opens the dashboard from the email and sees the same red line.
+
+51
+00:03:07,298 --> 00:03:09,120
+What does this protect?
+
+52
+00:03:09,170 --> 00:03:14,256
+Without the trace, a merchant's simple question costs an hour of guessing.
+
+53
+00:03:14,306 --> 00:03:20,688
+Without masking, the logs become a second place where card numbers live, and the locked room has a hole in its wall.
+
+54
+00:03:20,738 --> 00:03:25,296
+Without alerts, a stuck payment is found by an angry buyer, not by the bank.
+
+55
+00:03:25,346 --> 00:03:27,600
+The trace protects the merchant's time.
+
+56
+00:03:27,650 --> 00:03:29,736
+Masking protects the buyer's card.
+
+57
+00:03:29,786 --> 00:03:33,312
+Alerts make sure the bank is the first to know, not the last.
+
+58
+00:03:33,362 --> 00:03:35,184
+Back to the hospital.
+
+59
+00:03:35,234 --> 00:03:40,800
+One number on every chart, in every department, and no secrets written on the wristband.
+
+60
+00:03:40,850 --> 00:03:43,320
+Next: what the merchant gets each day.
