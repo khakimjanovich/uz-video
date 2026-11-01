@@ -252,6 +252,21 @@ def caption_glossary():
     return sorted(pairs, key=lambda p: -len(p[0]))
 
 
+def spoken_glossary():
+    """Written → spoken pairs from AGENTS.md's glossary (rows marked Caption: yes), longest first."""
+    section = (ROOT_DIR / "AGENTS.md").read_text(encoding="utf-8").split("### D. Pronunciation glossary", 1)[1]
+    pairs = [(m.group(1), m.group(2))
+             for m in re.finditer(r"^\|\s*`([^`]+)`\s*\|\s*(.+?)\s*\|\s*yes\s*\|", section, re.M)]
+    return sorted(pairs, key=lambda p: -len(p[0]))
+
+
+def spoken(sentence: str, pairs):
+    """The sentence as the voice should say it: each written term (case-sensitive, whole word) in its spoken form."""
+    for written, said in pairs:
+        sentence = re.sub(r"(?<![\w-])" + re.escape(written) + r"(?![\w-])", said, sentence)
+    return sentence
+
+
 def caption_tokens(sentence: str, boundaries, glossary):
     """The sentence's words with start times, spoken forms replaced by written ones."""
     words = sentence.split()
@@ -348,8 +363,11 @@ def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
     shutil.rmtree(work, ignore_errors=True)
     work.mkdir()
     glossary = caption_glossary()
+    sayings = spoken_glossary()
     srt_blocks, phrases, offset = [], [], 0.0
     for i, sentence in enumerate(sentences, 1):
+        # The voice says the spoken form ("P A N"); the captions turn it back into the written one ("PAN").
+        sentence = spoken(sentence, sayings)
         part = work / f"{i:03d}.mp3"
         boundaries = speak(sentence, part, voice, rate)
         duration = float(subprocess.run(
