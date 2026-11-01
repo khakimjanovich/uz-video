@@ -106,3 +106,13 @@ export const OVERRIDES: [string, string][] = [
 
 /** Amounts the front formats as a currency (its money formatter) are shown as plain decimals: "2,499.00". */
 export const NEUTRAL_AMOUNTS = true;
+
+/**
+ * Text that comes from data, not from the front's strings (a scheme's code printed as is, a currency code after
+ * an amount): replaced on the page itself just before each screenshot. Whole words only.
+ */
+export const PAGE_TEXT: [string, string][] = [
+  ["UZCARD", "Card A"],
+  ["HUMO", "Card B"],
+  ["UZS", ""],
+];
