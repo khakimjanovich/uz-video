@@ -43,9 +43,8 @@ uz-video/
         │   ├── diagram/           # ArchDiagram, ArchNode, ArchEdge, Packet (see §4)
         │   └── index.ts           # Barrel export
         ├── series/
-        │   └── acquiring/nodes.ts # Shared node catalogue for the Acquiring series
+        │   └── build/             # The course's build map and node catalogue (nodes.ts)
         └── reels/                 # Ultra-clean declarative reel compositions (60–80 lines each)
-            ├── _playground/       # Studio-only sandbox for diagram primitives ("_" = skipped by manage_reels.py)
             └── <reel-id>/         # Register each reel's composition in Root.tsx
                 ├── script.txt     # Uzbek voiceover text
                 ├── subtitles.srt  # Exact cue timings
@@ -146,7 +145,7 @@ The current act is available to any component via `useSubtitlesContext().act`.
 
 ```tsx
 <ReelScaffold reelId="my-lesson" subtitles={subtitles} acts={acts} title={(cue) => TITLES[cue]} footer={{ label: "Your bank", value: "Own acquiring" }}>
-  <ArchDiagram catalog={ACQUIRING_NODES} steps={steps} />
+  <ArchDiagram catalog={BUILD_CATALOG} steps={steps} />
 </ReelScaffold>
 ```
 
@@ -162,10 +161,10 @@ The current act is available to any component via `useSubtitlesContext().act`.
 | `badges` | `{ nodeId: "T+1" }` corner status chip |
 | `shake` | `{ nodeId: 0.4 }` shake a node at that fraction of the cue (sync to the word that names it); new `danger` nodes shake automatically |
 
-Each step lists the **full** diagram state (not a diff). Copy the previous step and edit it. See `reels/_playground/index.tsx` for a complete v1 → break → v2 → handoff example (`npm run dev` → **Playground**).
+Each step lists the **full** diagram state (not a diff). Copy the previous step and edit it.
 
 ### C. Rules
-- **Node catalogue:** new actors/services go into `series/acquiring/nodes.ts`, never inline in an episode, so labels and icons stay identical across every video.
+- **Node catalogue:** new actors/services go into `series/build/nodes.ts`, never inline in an episode, so labels and icons stay identical across every video.
 - **Diagram safe zone:** `ArchDiagram` positions inside y≈400–1560px, between `ReelHeader` and `SubtitleCard`. Don't place scenes over it.
 - **New primitives:** build from `ArchNode`/`ArchEdge` first; extract a new component only when two episodes need it.
 
