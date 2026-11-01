@@ -50,9 +50,9 @@
   {
     "index": 2,
     "startFrame": 64,
-    "endFrame": 136,
-    "text": "You never give a cleaner your own house keys.",
-    "prefix": "You never give a cleaner your own house keys.",
+    "endFrame": 232,
+    "text": "Picture a merchant's developer who is told to put the owner's portal password into the server's settings.",
+    "prefix": "Picture a merchant's developer who is told to put the owner's portal password into the server's settings.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -60,40 +60,82 @@
         "startFrame": 65,
         "words": [
           {
-            "text": "You",
+            "text": "Picture",
             "startFrame": 65
           },
           {
-            "text": "never",
-            "startFrame": 67
-          },
-          {
-            "text": "give",
-            "startFrame": 73
-          },
-          {
             "text": "a",
-            "startFrame": 76
+            "startFrame": 74
           },
           {
-            "text": "cleaner",
-            "startFrame": 78
+            "text": "merchant's",
+            "startFrame": 75
           },
           {
-            "text": "your",
-            "startFrame": 87
-          },
-          {
-            "text": "own",
+            "text": "developer",
             "startFrame": 91
           },
           {
-            "text": "house",
-            "startFrame": 98
+            "text": "who",
+            "startFrame": 106
           },
           {
-            "text": "keys.",
-            "startFrame": 107
+            "text": "is",
+            "startFrame": 111
+          },
+          {
+            "text": "told",
+            "startFrame": 114
+          }
+        ]
+      },
+      {
+        "startFrame": 125,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 125
+          },
+          {
+            "text": "put",
+            "startFrame": 127
+          },
+          {
+            "text": "the",
+            "startFrame": 133
+          },
+          {
+            "text": "owner's",
+            "startFrame": 140
+          },
+          {
+            "text": "portal",
+            "startFrame": 151
+          },
+          {
+            "text": "password",
+            "startFrame": 162
+          },
+          {
+            "text": "into",
+            "startFrame": 188
+          }
+        ]
+      },
+      {
+        "startFrame": 192,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 192
+          },
+          {
+            "text": "server's",
+            "startFrame": 195
+          },
+          {
+            "text": "settings.",
+            "startFrame": 205
           }
         ]
       }
@@ -101,80 +143,51 @@
   },
   {
     "index": 3,
-    "startFrame": 136,
-    "endFrame": 259,
-    "text": "You give them a key of their own, which you can change without changing yours.",
-    "prefix": "You give them a key of their own, which you can change without changing yours.",
+    "startFrame": 233,
+    "endFrame": 319,
+    "text": "The password ends up in a shared code store.",
+    "prefix": "The password ends up in a shared code store.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 137,
+        "startFrame": 235,
         "words": [
           {
-            "text": "You",
-            "startFrame": 137
+            "text": "The",
+            "startFrame": 235
           },
           {
-            "text": "give",
-            "startFrame": 140
+            "text": "password",
+            "startFrame": 236
           },
           {
-            "text": "them",
-            "startFrame": 144
+            "text": "ends",
+            "startFrame": 257
+          },
+          {
+            "text": "up",
+            "startFrame": 263
+          },
+          {
+            "text": "in",
+            "startFrame": 272
           },
           {
             "text": "a",
-            "startFrame": 147
+            "startFrame": 274
           },
           {
-            "text": "key",
-            "startFrame": 148
+            "text": "shared",
+            "startFrame": 275
           },
           {
-            "text": "of",
-            "startFrame": 157
+            "text": "code",
+            "startFrame": 286
           },
           {
-            "text": "their",
-            "startFrame": 160
-          },
-          {
-            "text": "own,",
-            "startFrame": 165
-          }
-        ]
-      },
-      {
-        "startFrame": 186,
-        "words": [
-          {
-            "text": "which",
-            "startFrame": 186
-          },
-          {
-            "text": "you",
-            "startFrame": 190
-          },
-          {
-            "text": "can",
-            "startFrame": 193
-          },
-          {
-            "text": "change",
-            "startFrame": 198
-          },
-          {
-            "text": "without",
-            "startFrame": 212
-          },
-          {
-            "text": "changing",
-            "startFrame": 223
-          },
-          {
-            "text": "yours.",
-            "startFrame": 235
+            "text": "store.",
+            "startFrame": 294
           }
         ]
       }
@@ -182,81 +195,64 @@
   },
   {
     "index": 4,
-    "startFrame": 259,
-    "endFrame": 415,
-    "text": "A merchant's server gets the same: an API client, a login for a machine.",
-    "prefix": "A merchant's server gets the same: an API client, a login for a machine.",
+    "startFrame": 320,
+    "endFrame": 437,
+    "text": "When the developer leaves, the owner's own login has to change.",
+    "prefix": "When the developer leaves, the owner's own login has to change.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 260,
+        "startFrame": 321,
         "words": [
           {
-            "text": "A",
-            "startFrame": 260
-          },
-          {
-            "text": "merchant's",
-            "startFrame": 262
-          },
-          {
-            "text": "server",
-            "startFrame": 274
-          },
-          {
-            "text": "gets",
-            "startFrame": 288
+            "text": "When",
+            "startFrame": 321
           },
           {
             "text": "the",
-            "startFrame": 294
+            "startFrame": 324
           },
           {
-            "text": "same:",
-            "startFrame": 297
+            "text": "developer",
+            "startFrame": 326
+          },
+          {
+            "text": "leaves,",
+            "startFrame": 340
           }
         ]
       },
       {
-        "startFrame": 323,
+        "startFrame": 363,
         "words": [
           {
-            "text": "an",
-            "startFrame": 323
+            "text": "the",
+            "startFrame": 363
           },
           {
-            "text": "API",
-            "startFrame": 329
-          },
-          {
-            "text": "client,",
-            "startFrame": 343
-          }
-        ]
-      },
-      {
-        "startFrame": 367,
-        "words": [
-          {
-            "text": "a",
+            "text": "owner's",
             "startFrame": 367
           },
           {
+            "text": "own",
+            "startFrame": 379
+          },
+          {
             "text": "login",
-            "startFrame": 368
+            "startFrame": 387
           },
           {
-            "text": "for",
-            "startFrame": 384
+            "text": "has",
+            "startFrame": 400
           },
           {
-            "text": "a",
-            "startFrame": 389
+            "text": "to",
+            "startFrame": 406
           },
           {
-            "text": "machine.",
-            "startFrame": 390
+            "text": "change.",
+            "startFrame": 408
           }
         ]
       }
@@ -264,43 +260,72 @@
   },
   {
     "index": 5,
-    "startFrame": 416,
-    "endFrame": 484,
-    "text": "Only an active merchant can create one.",
-    "prefix": "Only an active merchant can create one.",
+    "startFrame": 437,
+    "endFrame": 570,
+    "text": "And every request the server ever made looks like the owner clicking buttons.",
+    "prefix": "And every request the server ever made looks like the owner clicking buttons.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 417,
+        "startFrame": 439,
         "words": [
           {
-            "text": "Only",
-            "startFrame": 417
+            "text": "And",
+            "startFrame": 439
           },
           {
-            "text": "an",
-            "startFrame": 424
+            "text": "every",
+            "startFrame": 444
           },
           {
-            "text": "active",
-            "startFrame": 426
-          },
-          {
-            "text": "merchant",
-            "startFrame": 435
-          },
-          {
-            "text": "can",
+            "text": "request",
             "startFrame": 452
           },
           {
-            "text": "create",
-            "startFrame": 455
+            "text": "the",
+            "startFrame": 469
           },
           {
-            "text": "one.",
-            "startFrame": 465
+            "text": "server",
+            "startFrame": 472
+          },
+          {
+            "text": "ever",
+            "startFrame": 494
+          },
+          {
+            "text": "made",
+            "startFrame": 499
+          },
+          {
+            "text": "looks",
+            "startFrame": 508
+          }
+        ]
+      },
+      {
+        "startFrame": 517,
+        "words": [
+          {
+            "text": "like",
+            "startFrame": 517
+          },
+          {
+            "text": "the",
+            "startFrame": 521
+          },
+          {
+            "text": "owner",
+            "startFrame": 525
+          },
+          {
+            "text": "clicking",
+            "startFrame": 533
+          },
+          {
+            "text": "buttons.",
+            "startFrame": 542
           }
         ]
       }
@@ -308,64 +333,51 @@
   },
   {
     "index": 6,
-    "startFrame": 485,
-    "endFrame": 616,
-    "text": "Its secret is shown exactly once, and ecom never keeps it.",
-    "prefix": "Its secret is shown exactly once, and ecom never keeps it.",
+    "startFrame": 571,
+    "endFrame": 643,
+    "text": "You never give a cleaner your own house keys.",
+    "prefix": "You never give a cleaner your own house keys.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 486,
+        "startFrame": 572,
         "words": [
           {
-            "text": "Its",
-            "startFrame": 486
-          },
-          {
-            "text": "secret",
-            "startFrame": 491
-          },
-          {
-            "text": "is",
-            "startFrame": 500
-          },
-          {
-            "text": "shown",
-            "startFrame": 503
-          },
-          {
-            "text": "exactly",
-            "startFrame": 513
-          },
-          {
-            "text": "once,",
-            "startFrame": 530
-          }
-        ]
-      },
-      {
-        "startFrame": 554,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 554
-          },
-          {
-            "text": "ecom",
-            "startFrame": 568
+            "text": "You",
+            "startFrame": 572
           },
           {
             "text": "never",
+            "startFrame": 574
+          },
+          {
+            "text": "give",
             "startFrame": 580
           },
           {
-            "text": "keeps",
-            "startFrame": 589
+            "text": "a",
+            "startFrame": 583
           },
           {
-            "text": "it.",
-            "startFrame": 599
+            "text": "cleaner",
+            "startFrame": 585
+          },
+          {
+            "text": "your",
+            "startFrame": 594
+          },
+          {
+            "text": "own",
+            "startFrame": 598
+          },
+          {
+            "text": "house",
+            "startFrame": 605
+          },
+          {
+            "text": "keys.",
+            "startFrame": 614
           }
         ]
       }
@@ -373,101 +385,80 @@
   },
   {
     "index": 7,
-    "startFrame": 617,
-    "endFrame": 813,
-    "text": "The server trades its id and secret for a short-lived token, and only that token reaches the payments API.",
-    "prefix": "The server trades its id and secret for a short-lived token, and only that token reaches the payments API.",
+    "startFrame": 643,
+    "endFrame": 766,
+    "text": "You give them a key of their own, which you can change without changing yours.",
+    "prefix": "You give them a key of their own, which you can change without changing yours.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 618,
+        "startFrame": 644,
         "words": [
           {
-            "text": "The",
-            "startFrame": 618
+            "text": "You",
+            "startFrame": 644
           },
           {
-            "text": "server",
-            "startFrame": 620
+            "text": "give",
+            "startFrame": 647
           },
           {
-            "text": "trades",
-            "startFrame": 628
-          },
-          {
-            "text": "its",
-            "startFrame": 639
-          },
-          {
-            "text": "id",
-            "startFrame": 646
-          },
-          {
-            "text": "and",
-            "startFrame": 661
-          },
-          {
-            "text": "secret",
-            "startFrame": 664
-          }
-        ]
-      },
-      {
-        "startFrame": 680,
-        "words": [
-          {
-            "text": "for",
-            "startFrame": 680
+            "text": "them",
+            "startFrame": 651
           },
           {
             "text": "a",
-            "startFrame": 685
+            "startFrame": 654
           },
           {
-            "text": "short-lived",
-            "startFrame": 687
+            "text": "key",
+            "startFrame": 655
           },
           {
-            "text": "token,",
-            "startFrame": 707
+            "text": "of",
+            "startFrame": 664
+          },
+          {
+            "text": "their",
+            "startFrame": 666
+          },
+          {
+            "text": "own,",
+            "startFrame": 672
           }
         ]
       },
       {
-        "startFrame": 730,
+        "startFrame": 693,
         "words": [
           {
-            "text": "and",
+            "text": "which",
+            "startFrame": 693
+          },
+          {
+            "text": "you",
+            "startFrame": 697
+          },
+          {
+            "text": "can",
+            "startFrame": 700
+          },
+          {
+            "text": "change",
+            "startFrame": 705
+          },
+          {
+            "text": "without",
+            "startFrame": 719
+          },
+          {
+            "text": "changing",
             "startFrame": 730
           },
           {
-            "text": "only",
-            "startFrame": 734
-          },
-          {
-            "text": "that",
-            "startFrame": 743
-          },
-          {
-            "text": "token",
-            "startFrame": 749
-          },
-          {
-            "text": "reaches",
-            "startFrame": 760
-          },
-          {
-            "text": "the",
-            "startFrame": 770
-          },
-          {
-            "text": "payments",
-            "startFrame": 772
-          },
-          {
-            "text": "API.",
-            "startFrame": 783
+            "text": "yours.",
+            "startFrame": 741
           }
         ]
       }
@@ -475,122 +466,39 @@
   },
   {
     "index": 8,
-    "startFrame": 813,
-    "endFrame": 1055,
-    "text": "When a secret may have leaked, the merchant rotates it: a new secret is issued, and the old one stops working at once.",
-    "prefix": "When a secret may have leaked, the merchant rotates it: a new secret is issued, and the old one stops working at once.",
+    "startFrame": 766,
+    "endFrame": 830,
+    "text": "A merchant's server gets the same.",
+    "prefix": "A merchant's server gets the same.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 815,
+        "startFrame": 767,
         "words": [
           {
-            "text": "When",
-            "startFrame": 815
+            "text": "A",
+            "startFrame": 767
           },
           {
-            "text": "a",
-            "startFrame": 817
+            "text": "merchant's",
+            "startFrame": 768
           },
           {
-            "text": "secret",
-            "startFrame": 818
+            "text": "server",
+            "startFrame": 779
           },
           {
-            "text": "may",
-            "startFrame": 830
-          },
-          {
-            "text": "have",
-            "startFrame": 835
-          },
-          {
-            "text": "leaked,",
-            "startFrame": 842
-          }
-        ]
-      },
-      {
-        "startFrame": 867,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 867
-          },
-          {
-            "text": "merchant",
-            "startFrame": 869
-          },
-          {
-            "text": "rotates",
-            "startFrame": 882
-          },
-          {
-            "text": "it:",
-            "startFrame": 899
-          }
-        ]
-      },
-      {
-        "startFrame": 917,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 917
-          },
-          {
-            "text": "new",
-            "startFrame": 918
-          },
-          {
-            "text": "secret",
-            "startFrame": 928
-          },
-          {
-            "text": "is",
-            "startFrame": 943
-          },
-          {
-            "text": "issued,",
-            "startFrame": 949
-          }
-        ]
-      },
-      {
-        "startFrame": 977,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 977
+            "text": "gets",
+            "startFrame": 798
           },
           {
             "text": "the",
-            "startFrame": 979
+            "startFrame": 804
           },
           {
-            "text": "old",
-            "startFrame": 985
-          },
-          {
-            "text": "one",
-            "startFrame": 994
-          },
-          {
-            "text": "stops",
-            "startFrame": 1005
-          },
-          {
-            "text": "working",
-            "startFrame": 1017
-          },
-          {
-            "text": "at",
-            "startFrame": 1026
-          },
-          {
-            "text": "once.",
-            "startFrame": 1028
+            "text": "same.",
+            "startFrame": 806
           }
         ]
       }
@@ -598,43 +506,35 @@
   },
   {
     "index": 9,
-    "startFrame": 1055,
-    "endFrame": 1128,
-    "text": "The owner's own login is never touched.",
-    "prefix": "The owner's own login is never touched.",
+    "startFrame": 830,
+    "endFrame": 886,
+    "text": "Here is how it works.",
+    "prefix": "Here is how it works.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1056,
+        "startFrame": 832,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1056
-          },
-          {
-            "text": "owner's",
-            "startFrame": 1059
-          },
-          {
-            "text": "own",
-            "startFrame": 1069
-          },
-          {
-            "text": "login",
-            "startFrame": 1075
+            "text": "Here",
+            "startFrame": 832
           },
           {
             "text": "is",
-            "startFrame": 1091
+            "startFrame": 840
           },
           {
-            "text": "never",
-            "startFrame": 1094
+            "text": "how",
+            "startFrame": 843
           },
           {
-            "text": "touched.",
-            "startFrame": 1102
+            "text": "it",
+            "startFrame": 848
+          },
+          {
+            "text": "works.",
+            "startFrame": 849
           }
         ]
       }
@@ -642,43 +542,2733 @@
   },
   {
     "index": 10,
-    "startFrame": 1129,
-    "endFrame": 1228,
+    "startFrame": 887,
+    "endFrame": 1082,
+    "text": "An active merchant creates an API client: a login for a machine, not for a person.",
+    "prefix": "An active merchant creates an API client: a login for a machine, not for a person.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 887,
+        "words": [
+          {
+            "text": "An",
+            "startFrame": 887
+          },
+          {
+            "text": "active",
+            "startFrame": 890
+          },
+          {
+            "text": "merchant",
+            "startFrame": 901
+          },
+          {
+            "text": "creates",
+            "startFrame": 912
+          },
+          {
+            "text": "an",
+            "startFrame": 931
+          },
+          {
+            "text": "API",
+            "startFrame": 941
+          },
+          {
+            "text": "client:",
+            "startFrame": 962
+          }
+        ]
+      },
+      {
+        "startFrame": 991,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 991
+          },
+          {
+            "text": "login",
+            "startFrame": 992
+          },
+          {
+            "text": "for",
+            "startFrame": 1005
+          },
+          {
+            "text": "a",
+            "startFrame": 1010
+          },
+          {
+            "text": "machine,",
+            "startFrame": 1011
+          }
+        ]
+      },
+      {
+        "startFrame": 1041,
+        "words": [
+          {
+            "text": "not",
+            "startFrame": 1041
+          },
+          {
+            "text": "for",
+            "startFrame": 1050
+          },
+          {
+            "text": "a",
+            "startFrame": 1056
+          },
+          {
+            "text": "person.",
+            "startFrame": 1057
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "startFrame": 1082,
+    "endFrame": 1280,
+    "text": "It has an id, like a username, and a client secret, like a password that only the machine knows.",
+    "prefix": "It has an id, like a username, and a client secret, like a password that only the machine knows.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1083,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1083
+          },
+          {
+            "text": "has",
+            "startFrame": 1085
+          },
+          {
+            "text": "an",
+            "startFrame": 1091
+          },
+          {
+            "text": "id,",
+            "startFrame": 1093
+          }
+        ]
+      },
+      {
+        "startFrame": 1118,
+        "words": [
+          {
+            "text": "like",
+            "startFrame": 1118
+          },
+          {
+            "text": "a",
+            "startFrame": 1122
+          },
+          {
+            "text": "username,",
+            "startFrame": 1123
+          }
+        ]
+      },
+      {
+        "startFrame": 1161,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1161
+          },
+          {
+            "text": "a",
+            "startFrame": 1162
+          },
+          {
+            "text": "client",
+            "startFrame": 1164
+          },
+          {
+            "text": "secret,",
+            "startFrame": 1176
+          }
+        ]
+      },
+      {
+        "startFrame": 1200,
+        "words": [
+          {
+            "text": "like",
+            "startFrame": 1200
+          },
+          {
+            "text": "a",
+            "startFrame": 1203
+          },
+          {
+            "text": "password",
+            "startFrame": 1205
+          },
+          {
+            "text": "that",
+            "startFrame": 1225
+          },
+          {
+            "text": "only",
+            "startFrame": 1228
+          },
+          {
+            "text": "the",
+            "startFrame": 1238
+          },
+          {
+            "text": "machine",
+            "startFrame": 1240
+          },
+          {
+            "text": "knows.",
+            "startFrame": 1253
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 1280,
+    "endFrame": 1396,
+    "text": "The secret is shown exactly once, when the client is made.",
+    "prefix": "The secret is shown exactly once, when the client is made.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1282,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1282
+          },
+          {
+            "text": "secret",
+            "startFrame": 1284
+          },
+          {
+            "text": "is",
+            "startFrame": 1294
+          },
+          {
+            "text": "shown",
+            "startFrame": 1297
+          },
+          {
+            "text": "exactly",
+            "startFrame": 1309
+          },
+          {
+            "text": "once,",
+            "startFrame": 1326
+          }
+        ]
+      },
+      {
+        "startFrame": 1351,
+        "words": [
+          {
+            "text": "when",
+            "startFrame": 1351
+          },
+          {
+            "text": "the",
+            "startFrame": 1354
+          },
+          {
+            "text": "client",
+            "startFrame": 1357
+          },
+          {
+            "text": "is",
+            "startFrame": 1369
+          },
+          {
+            "text": "made.",
+            "startFrame": 1372
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1396,
+    "endFrame": 1497,
+    "text": "ecom keeps the client's id, but never the secret.",
+    "prefix": "ecom keeps the client's id, but never the secret.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1397,
+        "words": [
+          {
+            "text": "ecom",
+            "startFrame": 1397
+          },
+          {
+            "text": "keeps",
+            "startFrame": 1409
+          },
+          {
+            "text": "the",
+            "startFrame": 1417
+          },
+          {
+            "text": "client's",
+            "startFrame": 1420
+          },
+          {
+            "text": "id,",
+            "startFrame": 1432
+          }
+        ]
+      },
+      {
+        "startFrame": 1457,
+        "words": [
+          {
+            "text": "but",
+            "startFrame": 1457
+          },
+          {
+            "text": "never",
+            "startFrame": 1461
+          },
+          {
+            "text": "the",
+            "startFrame": 1469
+          },
+          {
+            "text": "secret.",
+            "startFrame": 1471
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 1498,
+    "endFrame": 1651,
+    "text": "So nobody at the bank, and nobody who breaks into ecom's database, can read it back.",
+    "prefix": "So nobody at the bank, and nobody who breaks into ecom's database, can read it back.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1499,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 1499
+          },
+          {
+            "text": "nobody",
+            "startFrame": 1504
+          },
+          {
+            "text": "at",
+            "startFrame": 1516
+          },
+          {
+            "text": "the",
+            "startFrame": 1518
+          },
+          {
+            "text": "bank,",
+            "startFrame": 1520
+          }
+        ]
+      },
+      {
+        "startFrame": 1543,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1543
+          },
+          {
+            "text": "nobody",
+            "startFrame": 1546
+          },
+          {
+            "text": "who",
+            "startFrame": 1556
+          },
+          {
+            "text": "breaks",
+            "startFrame": 1560
+          },
+          {
+            "text": "into",
+            "startFrame": 1572
+          },
+          {
+            "text": "ecom's",
+            "startFrame": 1577
+          },
+          {
+            "text": "database,",
+            "startFrame": 1590
+          }
+        ]
+      },
+      {
+        "startFrame": 1617,
+        "words": [
+          {
+            "text": "can",
+            "startFrame": 1617
+          },
+          {
+            "text": "read",
+            "startFrame": 1622
+          },
+          {
+            "text": "it",
+            "startFrame": 1626
+          },
+          {
+            "text": "back.",
+            "startFrame": 1628
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "startFrame": 1652,
+    "endFrame": 1783,
+    "text": "The merchant's server sends its id and secret to the login server.",
+    "prefix": "The merchant's server sends its id and secret to the login server.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1653,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1653
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 1655
+          },
+          {
+            "text": "server",
+            "startFrame": 1667
+          },
+          {
+            "text": "sends",
+            "startFrame": 1679
+          },
+          {
+            "text": "its",
+            "startFrame": 1691
+          },
+          {
+            "text": "id",
+            "startFrame": 1698
+          },
+          {
+            "text": "and",
+            "startFrame": 1722
+          },
+          {
+            "text": "secret",
+            "startFrame": 1726
+          }
+        ]
+      },
+      {
+        "startFrame": 1743,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 1743
+          },
+          {
+            "text": "the",
+            "startFrame": 1745
+          },
+          {
+            "text": "login",
+            "startFrame": 1748
+          },
+          {
+            "text": "server.",
+            "startFrame": 1758
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "startFrame": 1784,
+    "endFrame": 1902,
+    "text": "It gets back a short-lived token: a pass that expires soon.",
+    "prefix": "It gets back a short-lived token: a pass that expires soon.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1785,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1785
+          },
+          {
+            "text": "gets",
+            "startFrame": 1787
+          },
+          {
+            "text": "back",
+            "startFrame": 1791
+          },
+          {
+            "text": "a",
+            "startFrame": 1799
+          },
+          {
+            "text": "short-lived",
+            "startFrame": 1800
+          },
+          {
+            "text": "token:",
+            "startFrame": 1820
+          }
+        ]
+      },
+      {
+        "startFrame": 1846,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 1846
+          },
+          {
+            "text": "pass",
+            "startFrame": 1848
+          },
+          {
+            "text": "that",
+            "startFrame": 1862
+          },
+          {
+            "text": "expires",
+            "startFrame": 1865
+          },
+          {
+            "text": "soon.",
+            "startFrame": 1880
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "startFrame": 1903,
+    "endFrame": 1988,
+    "text": "Only that token reaches the payments service.",
+    "prefix": "Only that token reaches the payments service.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1904,
+        "words": [
+          {
+            "text": "Only",
+            "startFrame": 1904
+          },
+          {
+            "text": "that",
+            "startFrame": 1911
+          },
+          {
+            "text": "token",
+            "startFrame": 1919
+          },
+          {
+            "text": "reaches",
+            "startFrame": 1935
+          },
+          {
+            "text": "the",
+            "startFrame": 1946
+          },
+          {
+            "text": "payments",
+            "startFrame": 1949
+          },
+          {
+            "text": "service.",
+            "startFrame": 1959
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "startFrame": 1988,
+    "endFrame": 2106,
+    "text": "And only a machine login with the merchant's role can reach it at all.",
+    "prefix": "And only a machine login with the merchant's role can reach it at all.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1990,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 1990
+          },
+          {
+            "text": "only",
+            "startFrame": 1993
+          },
+          {
+            "text": "a",
+            "startFrame": 2001
+          },
+          {
+            "text": "machine",
+            "startFrame": 2002
+          },
+          {
+            "text": "login",
+            "startFrame": 2015
+          },
+          {
+            "text": "with",
+            "startFrame": 2032
+          },
+          {
+            "text": "the",
+            "startFrame": 2036
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 2037
+          }
+        ]
+      },
+      {
+        "startFrame": 2050,
+        "words": [
+          {
+            "text": "role",
+            "startFrame": 2050
+          },
+          {
+            "text": "can",
+            "startFrame": 2067
+          },
+          {
+            "text": "reach",
+            "startFrame": 2073
+          },
+          {
+            "text": "it",
+            "startFrame": 2081
+          },
+          {
+            "text": "at",
+            "startFrame": 2083
+          },
+          {
+            "text": "all.",
+            "startFrame": 2085
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "startFrame": 2106,
+    "endFrame": 2162,
+    "text": "People's logins cannot.",
+    "prefix": "People's logins cannot.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2108,
+        "words": [
+          {
+            "text": "People's",
+            "startFrame": 2108
+          },
+          {
+            "text": "logins",
+            "startFrame": 2117
+          },
+          {
+            "text": "cannot.",
+            "startFrame": 2129
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "startFrame": 2162,
+    "endFrame": 2340,
+    "text": "When a secret may have leaked, or the developer who knew it leaves, the merchant rotates it.",
+    "prefix": "When a secret may have leaked, or the developer who knew it leaves, the merchant rotates it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2164,
+        "words": [
+          {
+            "text": "When",
+            "startFrame": 2164
+          },
+          {
+            "text": "a",
+            "startFrame": 2166
+          },
+          {
+            "text": "secret",
+            "startFrame": 2168
+          },
+          {
+            "text": "may",
+            "startFrame": 2180
+          },
+          {
+            "text": "have",
+            "startFrame": 2186
+          },
+          {
+            "text": "leaked,",
+            "startFrame": 2195
+          }
+        ]
+      },
+      {
+        "startFrame": 2222,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 2222
+          },
+          {
+            "text": "the",
+            "startFrame": 2226
+          },
+          {
+            "text": "developer",
+            "startFrame": 2228
+          },
+          {
+            "text": "who",
+            "startFrame": 2245
+          },
+          {
+            "text": "knew",
+            "startFrame": 2249
+          },
+          {
+            "text": "it",
+            "startFrame": 2260
+          },
+          {
+            "text": "leaves,",
+            "startFrame": 2263
+          }
+        ]
+      },
+      {
+        "startFrame": 2291,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2291
+          },
+          {
+            "text": "merchant",
+            "startFrame": 2294
+          },
+          {
+            "text": "rotates",
+            "startFrame": 2307
+          },
+          {
+            "text": "it.",
+            "startFrame": 2323
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "startFrame": 2340,
+    "endFrame": 2513,
+    "text": "That is rotation: a new secret is issued, and the old one stops working at once.",
+    "prefix": "That is rotation: a new secret is issued, and the old one stops working at once.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2342,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 2342
+          },
+          {
+            "text": "is",
+            "startFrame": 2345
+          },
+          {
+            "text": "rotation:",
+            "startFrame": 2348
+          }
+        ]
+      },
+      {
+        "startFrame": 2382,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 2382
+          },
+          {
+            "text": "new",
+            "startFrame": 2383
+          },
+          {
+            "text": "secret",
+            "startFrame": 2390
+          },
+          {
+            "text": "is",
+            "startFrame": 2407
+          },
+          {
+            "text": "issued,",
+            "startFrame": 2414
+          }
+        ]
+      },
+      {
+        "startFrame": 2441,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2441
+          },
+          {
+            "text": "the",
+            "startFrame": 2443
+          },
+          {
+            "text": "old",
+            "startFrame": 2449
+          },
+          {
+            "text": "one",
+            "startFrame": 2457
+          },
+          {
+            "text": "stops",
+            "startFrame": 2465
+          },
+          {
+            "text": "working",
+            "startFrame": 2476
+          },
+          {
+            "text": "at",
+            "startFrame": 2486
+          },
+          {
+            "text": "once.",
+            "startFrame": 2487
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "startFrame": 2514,
+    "endFrame": 2587,
+    "text": "The owner's own login is never touched.",
+    "prefix": "The owner's own login is never touched.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2515,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2515
+          },
+          {
+            "text": "owner's",
+            "startFrame": 2518
+          },
+          {
+            "text": "own",
+            "startFrame": 2528
+          },
+          {
+            "text": "login",
+            "startFrame": 2533
+          },
+          {
+            "text": "is",
+            "startFrame": 2549
+          },
+          {
+            "text": "never",
+            "startFrame": 2553
+          },
+          {
+            "text": "touched.",
+            "startFrame": 2561
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "startFrame": 2587,
+    "endFrame": 2728,
+    "text": "Only an active merchant can create or rotate an API client.",
+    "prefix": "Only an active merchant can create or rotate an API client.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2589,
+        "words": [
+          {
+            "text": "Only",
+            "startFrame": 2589
+          },
+          {
+            "text": "an",
+            "startFrame": 2595
+          },
+          {
+            "text": "active",
+            "startFrame": 2597
+          },
+          {
+            "text": "merchant",
+            "startFrame": 2605
+          },
+          {
+            "text": "can",
+            "startFrame": 2617
+          },
+          {
+            "text": "create",
+            "startFrame": 2621
+          },
+          {
+            "text": "or",
+            "startFrame": 2636
+          },
+          {
+            "text": "rotate",
+            "startFrame": 2641
+          }
+        ]
+      },
+      {
+        "startFrame": 2666,
+        "words": [
+          {
+            "text": "an",
+            "startFrame": 2666
+          },
+          {
+            "text": "API",
+            "startFrame": 2675
+          },
+          {
+            "text": "client.",
+            "startFrame": 2700
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "startFrame": 2728,
+    "endFrame": 2784,
+    "text": "Now watch the product.",
+    "prefix": "Now watch the product.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2730,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2730
+          },
+          {
+            "text": "watch",
+            "startFrame": 2735
+          },
+          {
+            "text": "the",
+            "startFrame": 2742
+          },
+          {
+            "text": "product.",
+            "startFrame": 2744
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "startFrame": 2785,
+    "endFrame": 2927,
+    "text": "First, a merchant that is not yet switched on opens API clients.",
+    "prefix": "First, a merchant that is not yet switched on opens API clients.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2787,
+        "words": [
+          {
+            "text": "First,",
+            "startFrame": 2787
+          },
+          {
+            "text": "a",
+            "startFrame": 2813
+          },
+          {
+            "text": "merchant",
+            "startFrame": 2814
+          },
+          {
+            "text": "that",
+            "startFrame": 2826
+          },
+          {
+            "text": "is",
+            "startFrame": 2829
+          },
+          {
+            "text": "not",
+            "startFrame": 2831
+          },
+          {
+            "text": "yet",
+            "startFrame": 2838
+          },
+          {
+            "text": "switched",
+            "startFrame": 2843
+          }
+        ]
+      },
+      {
+        "startFrame": 2857,
+        "words": [
+          {
+            "text": "on",
+            "startFrame": 2857
+          },
+          {
+            "text": "opens",
+            "startFrame": 2861
+          },
+          {
+            "text": "API",
+            "startFrame": 2878
+          },
+          {
+            "text": "clients.",
+            "startFrame": 2894
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "startFrame": 2927,
+    "endFrame": 2983,
+    "text": "There is no button at all.",
+    "prefix": "There is no button at all.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2928,
+        "words": [
+          {
+            "text": "There",
+            "startFrame": 2928
+          },
+          {
+            "text": "is",
+            "startFrame": 2931
+          },
+          {
+            "text": "no",
+            "startFrame": 2933
+          },
+          {
+            "text": "button",
+            "startFrame": 2940
+          },
+          {
+            "text": "at",
+            "startFrame": 2948
+          },
+          {
+            "text": "all.",
+            "startFrame": 2950
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "startFrame": 2983,
+    "endFrame": 3221,
+    "text": "The page says API clients open when you are live\", and explains that two bank admins must activate the account first.",
+    "prefix": "The page says API clients open when you are live\", and explains that two bank admins must activate the account first.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2985,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2985
+          },
+          {
+            "text": "page",
+            "startFrame": 2987
+          },
+          {
+            "text": "says",
+            "startFrame": 2997
+          },
+          {
+            "text": "API",
+            "startFrame": 3022
+          },
+          {
+            "text": "clients",
+            "startFrame": 3037
+          },
+          {
+            "text": "open",
+            "startFrame": 3054
+          },
+          {
+            "text": "when",
+            "startFrame": 3066
+          },
+          {
+            "text": "you",
+            "startFrame": 3070
+          }
+        ]
+      },
+      {
+        "startFrame": 3073,
+        "words": [
+          {
+            "text": "are",
+            "startFrame": 3073
+          },
+          {
+            "text": "live\",",
+            "startFrame": 3076
+          },
+          {
+            "text": "and",
+            "startFrame": 3101
+          },
+          {
+            "text": "explains",
+            "startFrame": 3103
+          },
+          {
+            "text": "that",
+            "startFrame": 3116
+          },
+          {
+            "text": "two",
+            "startFrame": 3121
+          },
+          {
+            "text": "bank",
+            "startFrame": 3128
+          },
+          {
+            "text": "admins",
+            "startFrame": 3139
+          }
+        ]
+      },
+      {
+        "startFrame": 3157,
+        "words": [
+          {
+            "text": "must",
+            "startFrame": 3157
+          },
+          {
+            "text": "activate",
+            "startFrame": 3169
+          },
+          {
+            "text": "the",
+            "startFrame": 3182
+          },
+          {
+            "text": "account",
+            "startFrame": 3185
+          },
+          {
+            "text": "first.",
+            "startFrame": 3195
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "startFrame": 3222,
+    "endFrame": 3294,
+    "text": "Now the same page for an active merchant.",
+    "prefix": "Now the same page for an active merchant.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3223,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 3223
+          },
+          {
+            "text": "the",
+            "startFrame": 3228
+          },
+          {
+            "text": "same",
+            "startFrame": 3230
+          },
+          {
+            "text": "page",
+            "startFrame": 3238
+          },
+          {
+            "text": "for",
+            "startFrame": 3256
+          },
+          {
+            "text": "an",
+            "startFrame": 3260
+          },
+          {
+            "text": "active",
+            "startFrame": 3262
+          },
+          {
+            "text": "merchant.",
+            "startFrame": 3271
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "startFrame": 3295,
+    "endFrame": 3428,
+    "text": "The page explains that the merchant's servers use these to get access tokens.",
+    "prefix": "The page explains that the merchant's servers use these to get access tokens.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3297,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3297
+          },
+          {
+            "text": "page",
+            "startFrame": 3298
+          },
+          {
+            "text": "explains",
+            "startFrame": 3306
+          },
+          {
+            "text": "that",
+            "startFrame": 3321
+          },
+          {
+            "text": "the",
+            "startFrame": 3324
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 3325
+          },
+          {
+            "text": "servers",
+            "startFrame": 3341
+          },
+          {
+            "text": "use",
+            "startFrame": 3355
+          }
+        ]
+      },
+      {
+        "startFrame": 3365,
+        "words": [
+          {
+            "text": "these",
+            "startFrame": 3365
+          },
+          {
+            "text": "to",
+            "startFrame": 3377
+          },
+          {
+            "text": "get",
+            "startFrame": 3379
+          },
+          {
+            "text": "access",
+            "startFrame": 3385
+          },
+          {
+            "text": "tokens.",
+            "startFrame": 3400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "startFrame": 3429,
+    "endFrame": 3492,
+    "text": "The viewer clicks New client.",
+    "prefix": "The viewer clicks New client.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3430,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3430
+          },
+          {
+            "text": "viewer",
+            "startFrame": 3432
+          },
+          {
+            "text": "clicks",
+            "startFrame": 3443
+          },
+          {
+            "text": "New",
+            "startFrame": 3453
+          },
+          {
+            "text": "client.",
+            "startFrame": 3463
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "startFrame": 3492,
+    "endFrame": 3597,
+    "text": "A window opens: \"Your new API client\".",
+    "prefix": "A window opens: \"Your new API client\".",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3494,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 3494
+          },
+          {
+            "text": "window",
+            "startFrame": 3495
+          },
+          {
+            "text": "opens:",
+            "startFrame": 3507
+          }
+        ]
+      },
+      {
+        "startFrame": 3534,
+        "words": [
+          {
+            "text": "\"Your",
+            "startFrame": 3534
+          },
+          {
+            "text": "new",
+            "startFrame": 3537
+          },
+          {
+            "text": "API",
+            "startFrame": 3548
+          },
+          {
+            "text": "client\".",
+            "startFrame": 3569
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "startFrame": 3597,
+    "endFrame": 3685,
+    "text": "It shows the client id and the client secret.",
+    "prefix": "It shows the client id and the client secret.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3599,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 3599
+          },
+          {
+            "text": "shows",
+            "startFrame": 3601
+          },
+          {
+            "text": "the",
+            "startFrame": 3608
+          },
+          {
+            "text": "client",
+            "startFrame": 3611
+          },
+          {
+            "text": "id",
+            "startFrame": 3623
+          },
+          {
+            "text": "and",
+            "startFrame": 3644
+          },
+          {
+            "text": "the",
+            "startFrame": 3648
+          },
+          {
+            "text": "client",
+            "startFrame": 3650
+          },
+          {
+            "text": "secret.",
+            "startFrame": 3661
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "startFrame": 3686,
+    "endFrame": 3892,
+    "text": "Above them is a warning: this is the only time you will see this secret, so store it in your server's secret manager now.",
+    "prefix": "Above them is a warning: this is the only time you will see this secret, so store it in your server's secret manager now.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3687,
+        "words": [
+          {
+            "text": "Above",
+            "startFrame": 3687
+          },
+          {
+            "text": "them",
+            "startFrame": 3697
+          },
+          {
+            "text": "is",
+            "startFrame": 3709
+          },
+          {
+            "text": "a",
+            "startFrame": 3712
+          },
+          {
+            "text": "warning:",
+            "startFrame": 3714
+          }
+        ]
+      },
+      {
+        "startFrame": 3741,
+        "words": [
+          {
+            "text": "this",
+            "startFrame": 3741
+          },
+          {
+            "text": "is",
+            "startFrame": 3745
+          },
+          {
+            "text": "the",
+            "startFrame": 3747
+          },
+          {
+            "text": "only",
+            "startFrame": 3753
+          },
+          {
+            "text": "time",
+            "startFrame": 3763
+          },
+          {
+            "text": "you",
+            "startFrame": 3772
+          },
+          {
+            "text": "will",
+            "startFrame": 3775
+          },
+          {
+            "text": "see",
+            "startFrame": 3777
+          }
+        ]
+      },
+      {
+        "startFrame": 3785,
+        "words": [
+          {
+            "text": "this",
+            "startFrame": 3785
+          },
+          {
+            "text": "secret,",
+            "startFrame": 3790
+          },
+          {
+            "text": "so",
+            "startFrame": 3814
+          },
+          {
+            "text": "store",
+            "startFrame": 3819
+          },
+          {
+            "text": "it",
+            "startFrame": 3829
+          },
+          {
+            "text": "in",
+            "startFrame": 3831
+          },
+          {
+            "text": "your",
+            "startFrame": 3833
+          },
+          {
+            "text": "server's",
+            "startFrame": 3836
+          }
+        ]
+      },
+      {
+        "startFrame": 3848,
+        "words": [
+          {
+            "text": "secret",
+            "startFrame": 3848
+          },
+          {
+            "text": "manager",
+            "startFrame": 3860
+          },
+          {
+            "text": "now.",
+            "startFrame": 3870
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "startFrame": 3893,
+    "endFrame": 4027,
+    "text": "The viewer copies both, and ticks \"I have stored the secret safely\".",
+    "prefix": "The viewer copies both, and ticks \"I have stored the secret safely\".",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3894,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3894
+          },
+          {
+            "text": "viewer",
+            "startFrame": 3896
+          },
+          {
+            "text": "copies",
+            "startFrame": 3906
+          },
+          {
+            "text": "both,",
+            "startFrame": 3919
+          }
+        ]
+      },
+      {
+        "startFrame": 3940,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3940
+          },
+          {
+            "text": "ticks",
+            "startFrame": 3946
+          },
+          {
+            "text": "\"I",
+            "startFrame": 3967
+          },
+          {
+            "text": "have",
+            "startFrame": 3968
+          },
+          {
+            "text": "stored",
+            "startFrame": 3971
+          },
+          {
+            "text": "the",
+            "startFrame": 3983
+          },
+          {
+            "text": "secret",
+            "startFrame": 3984
+          },
+          {
+            "text": "safely\".",
+            "startFrame": 3995
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "startFrame": 4027,
+    "endFrame": 4205,
+    "text": "The window closes, and the list shows the new client with its id and the date it was created.",
+    "prefix": "The window closes, and the list shows the new client with its id and the date it was created.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4029,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4029
+          },
+          {
+            "text": "window",
+            "startFrame": 4031
+          },
+          {
+            "text": "closes,",
+            "startFrame": 4040
+          }
+        ]
+      },
+      {
+        "startFrame": 4067,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4067
+          },
+          {
+            "text": "the",
+            "startFrame": 4070
+          },
+          {
+            "text": "list",
+            "startFrame": 4072
+          },
+          {
+            "text": "shows",
+            "startFrame": 4081
+          },
+          {
+            "text": "the",
+            "startFrame": 4093
+          },
+          {
+            "text": "new",
+            "startFrame": 4095
+          },
+          {
+            "text": "client",
+            "startFrame": 4104
+          }
+        ]
+      },
+      {
+        "startFrame": 4119,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 4119
+          },
+          {
+            "text": "its",
+            "startFrame": 4123
+          },
+          {
+            "text": "id",
+            "startFrame": 4128
+          },
+          {
+            "text": "and",
+            "startFrame": 4149
+          },
+          {
+            "text": "the",
+            "startFrame": 4153
+          },
+          {
+            "text": "date",
+            "startFrame": 4156
+          },
+          {
+            "text": "it",
+            "startFrame": 4173
+          },
+          {
+            "text": "was",
+            "startFrame": 4175
+          },
+          {
+            "text": "created.",
+            "startFrame": 4178
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "startFrame": 4205,
+    "endFrame": 4318,
+    "text": "The secret is nowhere on the page, and it never will be again.",
+    "prefix": "The secret is nowhere on the page, and it never will be again.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4207,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4207
+          },
+          {
+            "text": "secret",
+            "startFrame": 4209
+          },
+          {
+            "text": "is",
+            "startFrame": 4224
+          },
+          {
+            "text": "nowhere",
+            "startFrame": 4228
+          },
+          {
+            "text": "on",
+            "startFrame": 4243
+          },
+          {
+            "text": "the",
+            "startFrame": 4246
+          },
+          {
+            "text": "page,",
+            "startFrame": 4248
+          }
+        ]
+      },
+      {
+        "startFrame": 4275,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4275
+          },
+          {
+            "text": "it",
+            "startFrame": 4277
+          },
+          {
+            "text": "never",
+            "startFrame": 4281
+          },
+          {
+            "text": "will",
+            "startFrame": 4289
+          },
+          {
+            "text": "be",
+            "startFrame": 4292
+          },
+          {
+            "text": "again.",
+            "startFrame": 4296
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "startFrame": 4318,
+    "endFrame": 4488,
+    "text": "The viewer's server now uses the id and secret to get a token, and the token works.",
+    "prefix": "The viewer's server now uses the id and secret to get a token, and the token works.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4319,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4319
+          },
+          {
+            "text": "viewer's",
+            "startFrame": 4322
+          },
+          {
+            "text": "server",
+            "startFrame": 4332
+          },
+          {
+            "text": "now",
+            "startFrame": 4342
+          },
+          {
+            "text": "uses",
+            "startFrame": 4351
+          },
+          {
+            "text": "the",
+            "startFrame": 4363
+          },
+          {
+            "text": "id",
+            "startFrame": 4367
+          }
+        ]
+      },
+      {
+        "startFrame": 4389,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4389
+          },
+          {
+            "text": "secret",
+            "startFrame": 4393
+          },
+          {
+            "text": "to",
+            "startFrame": 4414
+          },
+          {
+            "text": "get",
+            "startFrame": 4417
+          },
+          {
+            "text": "a",
+            "startFrame": 4421
+          },
+          {
+            "text": "token,",
+            "startFrame": 4422
+          }
+        ]
+      },
+      {
+        "startFrame": 4449,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4449
+          },
+          {
+            "text": "the",
+            "startFrame": 4450
+          },
+          {
+            "text": "token",
+            "startFrame": 4452
+          },
+          {
+            "text": "works.",
+            "startFrame": 4462
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "startFrame": 4489,
+    "endFrame": 4573,
+    "text": "Then the viewer clicks Rotate secret.",
+    "prefix": "Then the viewer clicks Rotate secret.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4490,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 4490
+          },
+          {
+            "text": "the",
+            "startFrame": 4494
+          },
+          {
+            "text": "viewer",
+            "startFrame": 4496
+          },
+          {
+            "text": "clicks",
+            "startFrame": 4517
+          },
+          {
+            "text": "Rotate",
+            "startFrame": 4533
+          },
+          {
+            "text": "secret.",
+            "startFrame": 4547
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "startFrame": 4574,
+    "endFrame": 4764,
+    "text": "The portal asks first: the current secret stops working immediately, so update your servers right after.",
+    "prefix": "The portal asks first: the current secret stops working immediately, so update your servers right after.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4575,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4575
+          },
+          {
+            "text": "portal",
+            "startFrame": 4578
+          },
+          {
+            "text": "asks",
+            "startFrame": 4588
+          },
+          {
+            "text": "first:",
+            "startFrame": 4599
+          }
+        ]
+      },
+      {
+        "startFrame": 4623,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 4623
+          },
+          {
+            "text": "current",
+            "startFrame": 4627
+          },
+          {
+            "text": "secret",
+            "startFrame": 4635
+          },
+          {
+            "text": "stops",
+            "startFrame": 4644
+          },
+          {
+            "text": "working",
+            "startFrame": 4658
+          },
+          {
+            "text": "immediately,",
+            "startFrame": 4670
+          }
+        ]
+      },
+      {
+        "startFrame": 4703,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 4703
+          },
+          {
+            "text": "update",
+            "startFrame": 4709
+          },
+          {
+            "text": "your",
+            "startFrame": 4720
+          },
+          {
+            "text": "servers",
+            "startFrame": 4723
+          },
+          {
+            "text": "right",
+            "startFrame": 4733
+          },
+          {
+            "text": "after.",
+            "startFrame": 4739
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "startFrame": 4765,
+    "endFrame": 4820,
+    "text": "The viewer confirms.",
+    "prefix": "The viewer confirms.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4766,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4766
+          },
+          {
+            "text": "viewer",
+            "startFrame": 4767
+          },
+          {
+            "text": "confirms.",
+            "startFrame": 4777
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "startFrame": 4821,
+    "endFrame": 4930,
+    "text": "A new secret appears, once, with the same warning.",
+    "prefix": "A new secret appears, once, with the same warning.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4821,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 4821
+          },
+          {
+            "text": "new",
+            "startFrame": 4822
+          },
+          {
+            "text": "secret",
+            "startFrame": 4830
+          },
+          {
+            "text": "appears,",
+            "startFrame": 4842
+          }
+        ]
+      },
+      {
+        "startFrame": 4867,
+        "words": [
+          {
+            "text": "once,",
+            "startFrame": 4867
+          },
+          {
+            "text": "with",
+            "startFrame": 4891
+          },
+          {
+            "text": "the",
+            "startFrame": 4895
+          },
+          {
+            "text": "same",
+            "startFrame": 4897
+          },
+          {
+            "text": "warning.",
+            "startFrame": 4907
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "startFrame": 4930,
+    "endFrame": 5060,
+    "text": "The server tries the old secret again, and the login server refuses it.",
+    "prefix": "The server tries the old secret again, and the login server refuses it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4932,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4932
+          },
+          {
+            "text": "server",
+            "startFrame": 4934
+          },
+          {
+            "text": "tries",
+            "startFrame": 4943
+          },
+          {
+            "text": "the",
+            "startFrame": 4953
+          },
+          {
+            "text": "old",
+            "startFrame": 4959
+          },
+          {
+            "text": "secret",
+            "startFrame": 4967
+          },
+          {
+            "text": "again,",
+            "startFrame": 4978
+          }
+        ]
+      },
+      {
+        "startFrame": 5000,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5000
+          },
+          {
+            "text": "the",
+            "startFrame": 5001
+          },
+          {
+            "text": "login",
+            "startFrame": 5004
+          },
+          {
+            "text": "server",
+            "startFrame": 5016
+          },
+          {
+            "text": "refuses",
+            "startFrame": 5028
+          },
+          {
+            "text": "it.",
+            "startFrame": 5043
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "startFrame": 5060,
+    "endFrame": 5116,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5061,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 5061
+          },
+          {
+            "text": "does",
+            "startFrame": 5063
+          },
+          {
+            "text": "this",
+            "startFrame": 5066
+          },
+          {
+            "text": "protect?",
+            "startFrame": 5070
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "startFrame": 5117,
+    "endFrame": 5290,
+    "text": "A person's password in a server's settings leaks, and its requests cannot be told apart from the person.",
+    "prefix": "A person's password in a server's settings leaks, and its requests cannot be told apart from the person.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5118,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 5118
+          },
+          {
+            "text": "person's",
+            "startFrame": 5119
+          },
+          {
+            "text": "password",
+            "startFrame": 5131
+          },
+          {
+            "text": "in",
+            "startFrame": 5152
+          },
+          {
+            "text": "a",
+            "startFrame": 5155
+          },
+          {
+            "text": "server's",
+            "startFrame": 5157
+          },
+          {
+            "text": "settings",
+            "startFrame": 5171
+          },
+          {
+            "text": "leaks,",
+            "startFrame": 5182
+          }
+        ]
+      },
+      {
+        "startFrame": 5205,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5205
+          },
+          {
+            "text": "its",
+            "startFrame": 5208
+          },
+          {
+            "text": "requests",
+            "startFrame": 5211
+          },
+          {
+            "text": "cannot",
+            "startFrame": 5225
+          },
+          {
+            "text": "be",
+            "startFrame": 5238
+          },
+          {
+            "text": "told",
+            "startFrame": 5241
+          },
+          {
+            "text": "apart",
+            "startFrame": 5248
+          },
+          {
+            "text": "from",
+            "startFrame": 5259
+          },
+          {
+            "text": "the",
+            "startFrame": 5263
+          },
+          {
+            "text": "person.",
+            "startFrame": 5265
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "startFrame": 5290,
+    "endFrame": 5400,
+    "text": "A separate key for each server keeps the owner's login private.",
+    "prefix": "A separate key for each server keeps the owner's login private.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5291,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 5291
+          },
+          {
+            "text": "separate",
+            "startFrame": 5293
+          },
+          {
+            "text": "key",
+            "startFrame": 5302
+          },
+          {
+            "text": "for",
+            "startFrame": 5309
+          },
+          {
+            "text": "each",
+            "startFrame": 5315
+          },
+          {
+            "text": "server",
+            "startFrame": 5321
+          },
+          {
+            "text": "keeps",
+            "startFrame": 5336
+          }
+        ]
+      },
+      {
+        "startFrame": 5346,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5346
+          },
+          {
+            "text": "owner's",
+            "startFrame": 5353
+          },
+          {
+            "text": "login",
+            "startFrame": 5365
+          },
+          {
+            "text": "private.",
+            "startFrame": 5376
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "startFrame": 5401,
+    "endFrame": 5563,
+    "text": "It lets the merchant cut off one leaked key in one click, without locking anyone out.",
+    "prefix": "It lets the merchant cut off one leaked key in one click, without locking anyone out.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5402,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5402
+          },
+          {
+            "text": "lets",
+            "startFrame": 5404
+          },
+          {
+            "text": "the",
+            "startFrame": 5408
+          },
+          {
+            "text": "merchant",
+            "startFrame": 5411
+          },
+          {
+            "text": "cut",
+            "startFrame": 5422
+          },
+          {
+            "text": "off",
+            "startFrame": 5428
+          },
+          {
+            "text": "one",
+            "startFrame": 5438
+          },
+          {
+            "text": "leaked",
+            "startFrame": 5448
+          }
+        ]
+      },
+      {
+        "startFrame": 5457,
+        "words": [
+          {
+            "text": "key",
+            "startFrame": 5457
+          },
+          {
+            "text": "in",
+            "startFrame": 5476
+          },
+          {
+            "text": "one",
+            "startFrame": 5482
+          },
+          {
+            "text": "click,",
+            "startFrame": 5492
+          }
+        ]
+      },
+      {
+        "startFrame": 5512,
+        "words": [
+          {
+            "text": "without",
+            "startFrame": 5512
+          },
+          {
+            "text": "locking",
+            "startFrame": 5523
+          },
+          {
+            "text": "anyone",
+            "startFrame": 5534
+          },
+          {
+            "text": "out.",
+            "startFrame": 5543
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "startFrame": 5564,
+    "endFrame": 5713,
+    "text": "And because ecom never keeps the secret, the bank cannot leak it either.",
+    "prefix": "And because ecom never keeps the secret, the bank cannot leak it either.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5565,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 5565
+          },
+          {
+            "text": "because",
+            "startFrame": 5567
+          },
+          {
+            "text": "ecom",
+            "startFrame": 5582
+          },
+          {
+            "text": "never",
+            "startFrame": 5603
+          },
+          {
+            "text": "keeps",
+            "startFrame": 5615
+          },
+          {
+            "text": "the",
+            "startFrame": 5624
+          },
+          {
+            "text": "secret,",
+            "startFrame": 5627
+          }
+        ]
+      },
+      {
+        "startFrame": 5649,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5649
+          },
+          {
+            "text": "bank",
+            "startFrame": 5653
+          },
+          {
+            "text": "cannot",
+            "startFrame": 5664
+          },
+          {
+            "text": "leak",
+            "startFrame": 5679
+          },
+          {
+            "text": "it",
+            "startFrame": 5686
+          },
+          {
+            "text": "either.",
+            "startFrame": 5689
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "startFrame": 5713,
+    "endFrame": 5877,
+    "text": "So, like the cleaner's own key: changed in one click, and the owner's key never touched.",
+    "prefix": "So, like the cleaner's own key: changed in one click, and the owner's key never touched.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5714,
+        "words": [
+          {
+            "text": "So,",
+            "startFrame": 5714
+          },
+          {
+            "text": "like",
+            "startFrame": 5732
+          },
+          {
+            "text": "the",
+            "startFrame": 5737
+          },
+          {
+            "text": "cleaner's",
+            "startFrame": 5740
+          },
+          {
+            "text": "own",
+            "startFrame": 5752
+          },
+          {
+            "text": "key:",
+            "startFrame": 5758
+          }
+        ]
+      },
+      {
+        "startFrame": 5781,
+        "words": [
+          {
+            "text": "changed",
+            "startFrame": 5781
+          },
+          {
+            "text": "in",
+            "startFrame": 5793
+          },
+          {
+            "text": "one",
+            "startFrame": 5796
+          },
+          {
+            "text": "click,",
+            "startFrame": 5802
+          }
+        ]
+      },
+      {
+        "startFrame": 5823,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5823
+          },
+          {
+            "text": "the",
+            "startFrame": 5824
+          },
+          {
+            "text": "owner's",
+            "startFrame": 5828
+          },
+          {
+            "text": "key",
+            "startFrame": 5838
+          },
+          {
+            "text": "never",
+            "startFrame": 5844
+          },
+          {
+            "text": "touched.",
+            "startFrame": 5852
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "startFrame": 5878,
+    "endFrame": 5977,
     "text": "Next: the people on the merchant's team.",
     "prefix": "Next: the people on the merchant's team.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1130,
+        "startFrame": 5879,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 1130
+            "startFrame": 5879
           },
           {
             "text": "the",
-            "startFrame": 1152
+            "startFrame": 5901
           },
           {
             "text": "people",
-            "startFrame": 1155
+            "startFrame": 5904
           },
           {
             "text": "on",
-            "startFrame": 1163
+            "startFrame": 5912
           },
           {
             "text": "the",
-            "startFrame": 1165
+            "startFrame": 5914
           },
           {
             "text": "merchant's",
-            "startFrame": 1166
+            "startFrame": 5915
           },
           {
             "text": "team.",
-            "startFrame": 1177
+            "startFrame": 5926
           }
         ]
       }
