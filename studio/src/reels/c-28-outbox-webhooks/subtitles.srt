@@ -1,0 +1,231 @@
+1
+00:00:00,050 --> 00:00:04,872
+How do you tell the world about a payment without ever losing the news, or inventing it?
+
+2
+00:00:04,922 --> 00:00:08,952
+Picture an app that saves a payment as paid, and then tells the shop.
+
+3
+00:00:09,002 --> 00:00:12,336
+If it crashes between those two steps, the shop never hears.
+
+4
+00:00:12,386 --> 00:00:15,648
+The shop ships nothing, and the buyer has paid for nothing.
+
+5
+00:00:15,698 --> 00:00:18,048
+Swap the order, and it is worse.
+
+6
+00:00:18,098 --> 00:00:21,672
+The app tells the shop paid, then crashes before saving.
+
+7
+00:00:21,722 --> 00:00:24,912
+Now the shop ships goods for a payment that does not exist.
+
+8
+00:00:24,962 --> 00:00:28,224
+Two separate steps can always be split by a crash.
+
+9
+00:00:28,274 --> 00:00:30,480
+Think of an office with an outbox tray.
+
+10
+00:00:30,530 --> 00:00:34,416
+You close the file and drop the letter in the tray in one motion.
+
+11
+00:00:34,466 --> 00:00:37,152
+Later, a postman collects from the tray.
+
+12
+00:00:37,202 --> 00:00:42,144
+If you are called away, the letter is either in the tray or the file is still open.
+
+13
+00:00:42,194 --> 00:00:44,016
+Nothing is half done.
+
+14
+00:00:44,066 --> 00:00:46,296
+The payments product works the same way.
+
+15
+00:00:46,346 --> 00:00:52,248
+When a payment reaches its end, such as paid or declined, its news is written to the outbox.
+
+16
+00:00:52,298 --> 00:00:55,896
+The outbox is a tray inside the bank's own records.
+
+17
+00:00:55,946 --> 00:01:00,336
+The news and the payment's final state are saved together, in one step.
+
+18
+00:01:00,386 --> 00:01:03,288
+Either both are saved, or neither is.
+
+19
+00:01:03,338 --> 00:01:08,280
+So there is never a paid payment without its news, and never news without a paid payment.
+
+20
+00:01:08,330 --> 00:01:10,152
+Next comes the relay.
+
+21
+00:01:10,202 --> 00:01:12,192
+The relay is the postman.
+
+22
+00:01:12,242 --> 00:01:18,072
+It keeps collecting the oldest unsent news from the tray, and passes it to the bank's message stream.
+
+23
+00:01:18,122 --> 00:01:20,784
+Several copies of the app may run at once.
+
+24
+00:01:20,834 --> 00:01:24,816
+Each copy takes different letters, so no two pick the same one.
+
+25
+00:01:24,866 --> 00:01:27,888
+Every piece of news is labelled with its payment.
+
+26
+00:01:27,938 --> 00:01:32,640
+So all the news about one payment travels in one line, always in order.
+
+27
+00:01:32,690 --> 00:01:34,848
+Paid can never overtake created.
+
+28
+00:01:34,898 --> 00:01:39,144
+The relay marks a letter sent only after the stream confirms it has it.
+
+29
+00:01:39,194 --> 00:01:44,136
+So consider a crash at the worst moment: after sending, but before marking.
+
+30
+00:01:44,186 --> 00:01:47,376
+When the app starts again, it sends that letter once more.
+
+31
+00:01:47,426 --> 00:01:49,200
+That is at-least-once delivery.
+
+32
+00:01:49,250 --> 00:01:52,992
+A letter may arrive twice, but never zero times.
+
+33
+00:01:53,042 --> 00:01:57,432
+To make repeats harmless, every piece of news carries its own id.
+
+34
+00:01:57,482 --> 00:02:01,368
+A reader who sees an id twice simply drops the second one.
+
+35
+00:02:01,418 --> 00:02:03,792
+One more rule keeps this simple.
+
+36
+00:02:03,842 --> 00:02:06,048
+The bank's records stay the truth.
+
+37
+00:02:06,098 --> 00:02:08,544
+The stream only carries the news about it.
+
+38
+00:02:08,594 --> 00:02:10,656
+Now watch the visible behaviour.
+
+39
+00:02:10,706 --> 00:02:12,528
+A buyer pays.
+
+40
+00:02:12,578 --> 00:02:15,168
+In the merchant portal, the payment shows paid.
+
+41
+00:02:15,218 --> 00:02:21,912
+Open it, and the webhooks section soon shows its first piece of news, on its way to the merchant's server.
+
+42
+00:02:21,962 --> 00:02:25,032
+Now stop the bank's app at the exact moment a payment is paid.
+
+43
+00:02:25,082 --> 00:02:26,976
+Start it again a minute later.
+
+44
+00:02:27,026 --> 00:02:30,384
+The payment is still paid, and its news still goes out.
+
+45
+00:02:30,434 --> 00:02:32,256
+Nothing is missing.
+
+46
+00:02:32,306 --> 00:02:36,384
+On the merchant's server, a piece of news may now arrive twice.
+
+47
+00:02:36,434 --> 00:02:38,376
+Both copies carry the same id.
+
+48
+00:02:38,426 --> 00:02:41,304
+The merchant keeps the first and drops the second.
+
+49
+00:02:41,354 --> 00:02:43,176
+What does this protect?
+
+50
+00:02:43,226 --> 00:02:48,024
+It protects the merchant from waiting forever for news that was lost in a crash.
+
+51
+00:02:48,074 --> 00:02:53,328
+It protects the merchant from shipping goods because of news about a payment that never happened.
+
+52
+00:02:53,378 --> 00:02:58,272
+And it protects the order of events, so a merchant never sees refunded before paid.
+
+53
+00:02:58,322 --> 00:03:01,560
+The buyer gets their goods because the shop always hears.
+
+54
+00:03:01,610 --> 00:03:05,880
+The bank never has to explain news that its own records do not show.
+
+55
+00:03:05,930 --> 00:03:07,752
+So back to the tray.
+
+56
+00:03:07,802 --> 00:03:10,176
+Decide and post in one motion.
+
+57
+00:03:10,226 --> 00:03:13,512
+The postman may knock twice, but never zero times.
+
+58
+00:03:13,562 --> 00:03:16,704
+Next: delivering the news to the merchant's server.

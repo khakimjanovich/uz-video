@@ -172,16 +172,19 @@ Each step lists the **full** diagram state (not a diff). Copy the previous step 
 ### D. Pronunciation glossary
 On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it correctly. Add every new term here before writing a script.
 
-`manage_reels.py voice` reads this table: wherever the voice says a spoken form from a row marked **Caption: yes**, the caption shows the on-screen form (`P C I D S S` → `PCI DSS`). Rows marked **no** keep the spoken words in captions (`card token` stays `card token`). "lesson three" is captioned "Lesson 3" by rule. Keep one pair per row, the spoken form exactly as written in scripts. The hyphen in `e-POS` made the voice service hang, so its spoken form is `e POS`.
+`manage_reels.py voice` reads this table both ways: before voicing, every on-screen form in a script (rows marked **Caption: yes**, whole word, case-sensitive) is turned into its spoken form, so a script may simply write `PAN`; and wherever the voice says a spoken form, the caption shows the on-screen form (`P C I D S S` → `PCI DSS`). Rows marked **no** keep the spoken words in captions (`card token` stays `card token`). "lesson three" is captioned "Lesson 3" by rule. Keep one pair per row, the spoken form exactly as written in scripts. The hyphen in `e-POS` made the voice service hang, so its spoken form is `e POS`.
 
 | On screen | In `script.txt` | Caption |
 |-----------|-----------------|---------|
-| `T+1` | T plyus bir | yes |
-| `PCI-DSS` | pi-si-ay di-es-es | yes |
-| `OFD` | o-ef-de | yes |
-| `9998` | to'qqiz ming to'qqiz yuz to'qson sakkiz | yes |
+| `T+1` | T plus one | yes |
+| `PIN` | P I N | yes |
+| `ID` | I D | yes |
+| `PCI-DSS` | P C I D S S | yes |
+| `OFD` | O F D | yes |
+| `9998` | nine nine nine eight | yes |
+| `BINs` | B I Ns | yes |
 | `tok_uz_…` | token | no |
-| `API` | ey-pi-ay | yes |
+| `API` | A P I | yes |
 | `e-POS` | e POS | yes |
 | `RFC 9421` | R F C ninety-four twenty-one | yes |
 | `RFC 9457` | R F C ninety-four fifty-seven | yes |
@@ -207,3 +210,21 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `PAN` | P A N | yes |
 | `7890` | seven eight nine zero | yes |
 | `jshell` | J shell | yes |
+| `BIN` | B I N | yes |
+| `OTP` | O T P | yes |
+| `MID` | M I D | yes |
+| `TID` | T I D | yes |
+| `KYB` | K Y B | yes |
+| `SBOM` | S bom | yes |
+| `SMS` | S M S | yes |
+| `HTTP` | H T T P | yes |
+| `HTTPS` | H T T P S | yes |
+| `URL` | U R L | yes |
+| `SSRF` | S S R F | yes |
+| `HMAC` | H mac | yes |
+| `RRN` | R R N | yes |
+| `MFA` | M F A | yes |
+| `SSO` | S S O | yes |
+| `PKI` | P K I | yes |
+| `CA` | C A | yes |
+| `JSON` | jason | yes |

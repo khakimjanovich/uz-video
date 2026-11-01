@@ -1,0 +1,307 @@
+1
+00:00:00,050 --> 00:00:03,600
+How deep does the security around one card number really go?
+
+2
+00:00:03,650 --> 00:00:05,472
+Think of a bank vault.
+
+3
+00:00:05,522 --> 00:00:07,344
+There is a gate on the street.
+
+4
+00:00:07,394 --> 00:00:09,216
+A guard inside the door.
+
+5
+00:00:09,266 --> 00:00:11,928
+Inner doors that open only with the right pass.
+
+6
+00:00:11,978 --> 00:00:15,504
+A safe at the back, with keys no single person holds.
+
+7
+00:00:15,554 --> 00:00:17,256
+And cameras everywhere.
+
+8
+00:00:17,306 --> 00:00:20,184
+No one layer is trusted to stop everything.
+
+9
+00:00:20,234 --> 00:00:23,280
+Each layer assumes the one before it might fail.
+
+10
+00:00:23,330 --> 00:00:25,824
+That idea is called defence in depth.
+
+11
+00:00:25,874 --> 00:00:28,176
+The card zone is built the same way.
+
+12
+00:00:28,226 --> 00:00:31,272
+Follow one card number through it, layer by layer.
+
+13
+00:00:31,322 --> 00:00:34,176
+Layer one is the gate: the payers' door.
+
+14
+00:00:34,226 --> 00:00:38,040
+The buyer's browser reaches the card zone only through this door.
+
+15
+00:00:38,090 --> 00:00:43,488
+It passes the card frame's few requests and answers not found to everything else.
+
+16
+00:00:43,538 --> 00:00:46,512
+It slows any one buyer who submits too fast.
+
+17
+00:00:46,562 --> 00:00:50,400
+Layer two is the glass at the counter: the card form's seals.
+
+18
+00:00:50,450 --> 00:00:53,136
+The frame runs only its own two files.
+
+19
+00:00:53,186 --> 00:00:55,008
+A changed file does not run.
+
+20
+00:00:55,058 --> 00:00:57,240
+A stranger's script is refused.
+
+21
+00:00:57,290 --> 00:01:00,312
+Only the payment page its session names may hold it.
+
+22
+00:01:00,362 --> 00:01:03,360
+This stops a skimmer copying the number as it is typed.
+
+23
+00:01:03,410 --> 00:01:06,480
+Layer three is the guard: the fraud limits.
+
+24
+00:01:06,530 --> 00:01:14,016
+Before any network is asked, the attempt is counted by the card's fingerprint, its first digits, the buyer's address and the shop.
+
+25
+00:01:14,066 --> 00:01:17,424
+Past the bank's chosen limits, the try is refused.
+
+26
+00:01:17,474 --> 00:01:20,352
+This stops a thief testing stolen cards.
+
+27
+00:01:20,402 --> 00:01:23,448
+Layer four is the safe: sealed numbers.
+
+28
+00:01:23,498 --> 00:01:27,096
+Vault seals the number, and only the sealed value is kept.
+
+29
+00:01:27,146 --> 00:01:30,432
+The database refuses anything unsealed.
+
+30
+00:01:30,482 --> 00:01:33,768
+The number is opened only to hand it to the card's network.
+
+31
+00:01:33,818 --> 00:01:38,280
+This stops a stolen database or backup from leaking a single card.
+
+32
+00:01:38,330 --> 00:01:42,648
+Layer five is the inner doors: two proofs on every call.
+
+33
+00:01:42,698 --> 00:01:46,440
+When ecom asks to charge the card, it never sees the number.
+
+34
+00:01:46,490 --> 00:01:48,312
+It holds only the token.
+
+35
+00:01:48,362 --> 00:01:53,928
+Every call it makes carries two proofs: its certificate, and its token from the login server.
+
+36
+00:01:53,978 --> 00:01:56,904
+Its role allows only the operations it needs.
+
+37
+00:01:56,954 --> 00:02:01,368
+This stops a stranger, or a caller overstepping, from using the card.
+
+38
+00:02:01,418 --> 00:02:05,448
+Layer six is the cameras: logs that never show the number.
+
+39
+00:02:05,498 --> 00:02:08,088
+Every use of card data is written down.
+
+40
+00:02:08,138 --> 00:02:13,032
+Every log line cuts a card number down to its first six and last four digits.
+
+41
+00:02:13,082 --> 00:02:15,264
+Secrets in a log are starred out.
+
+42
+00:02:15,314 --> 00:02:17,496
+Alerts carry no card data at all.
+
+43
+00:02:17,546 --> 00:02:21,120
+This stops the record of what happened from becoming a leak.
+
+44
+00:02:21,170 --> 00:02:23,448
+Layer seven is the keyholders.
+
+45
+00:02:23,498 --> 00:02:25,464
+Vault itself starts locked.
+
+46
+00:02:25,514 --> 00:02:29,928
+To open it, three of five keyholders each bring their own share of the key.
+
+47
+00:02:29,978 --> 00:02:32,448
+No one person can open the safe alone.
+
+48
+00:02:32,498 --> 00:02:35,064
+This stops one insider from taking the keys.
+
+49
+00:02:35,114 --> 00:02:37,512
+Now watch the product, with one buyer.
+
+50
+00:02:37,562 --> 00:02:39,504
+The buyer opens the payment page.
+
+51
+00:02:39,554 --> 00:02:41,376
+The padlock shows.
+
+52
+00:02:41,426 --> 00:02:44,544
+The frame appears and groups the number in fours.
+
+53
+00:02:44,594 --> 00:02:48,600
+The buyer presses "Send code", and a code arrives on their own phone.
+
+54
+00:02:48,650 --> 00:02:51,696
+They confirm, and the form says "Card accepted".
+
+55
+00:02:51,746 --> 00:02:55,752
+The page shows only the masked line, the network and the bank.
+
+56
+00:02:55,802 --> 00:02:57,864
+ecom asks for the charge by token.
+
+57
+00:02:57,914 --> 00:02:59,736
+The page says "Paid".
+
+58
+00:02:59,786 --> 00:03:03,912
+Seven layers worked, and the buyer saw two fields and a button.
+
+59
+00:03:03,962 --> 00:03:08,256
+On the bank's side, the team opens the card zone's logs for that payment.
+
+60
+00:03:08,306 --> 00:03:10,848
+They see the masked number, never the whole one.
+
+61
+00:03:10,898 --> 00:03:13,368
+They see who asked for what, and when.
+
+62
+00:03:13,418 --> 00:03:15,024
+Now Vault restarts.
+
+63
+00:03:15,074 --> 00:03:16,896
+It comes back locked.
+
+64
+00:03:16,946 --> 00:03:23,088
+The card form refuses new cards, and an alert says a service the card zone depends on is unavailable.
+
+65
+00:03:23,138 --> 00:03:26,352
+It stays that way until the keyholders meet and open it.
+
+66
+00:03:26,402 --> 00:03:28,224
+What does this protect?
+
+67
+00:03:28,274 --> 00:03:30,552
+Any single layer can fail one day.
+
+68
+00:03:30,602 --> 00:03:32,424
+A script slips past review.
+
+69
+00:03:32,474 --> 00:03:34,296
+A password leaks.
+
+70
+00:03:34,346 --> 00:03:36,456
+A copy of the database escapes.
+
+71
+00:03:36,506 --> 00:03:39,792
+When one layer fails, the next one still holds.
+
+72
+00:03:39,842 --> 00:03:42,912
+That protects cardholders, shops and the bank.
+
+73
+00:03:42,962 --> 00:03:44,784
+Back to the vault.
+
+74
+00:03:44,834 --> 00:03:48,912
+Gate, guard, inner doors, safe, keyholders and cameras.
+
+75
+00:03:48,962 --> 00:03:51,288
+A thief must beat every one of them.
+
+76
+00:03:51,338 --> 00:03:53,160
+Each one only has to hold.
+
+77
+00:03:53,210 --> 00:03:55,440
+Next: how a merchant signs up.

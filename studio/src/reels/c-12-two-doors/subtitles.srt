@@ -1,0 +1,247 @@
+1
+00:00:00,050 --> 00:00:02,568
+How many ways into the locked room should there be?
+
+2
+00:00:02,618 --> 00:00:05,064
+The room has two kinds of visitor.
+
+3
+00:00:05,114 --> 00:00:08,904
+Buyers' browsers come from the internet, to type a card into the frame.
+
+4
+00:00:08,954 --> 00:00:14,712
+Services from other products, like ecom, come from their own servers, to ask for a charge.
+
+5
+00:00:14,762 --> 00:00:16,704
+One big entrance could serve both.
+
+6
+00:00:16,754 --> 00:00:21,264
+But it would open every visitor's traffic, and see it all in clear text.
+
+7
+00:00:21,314 --> 00:00:24,696
+That entrance would become the most valuable box in the bank.
+
+8
+00:00:24,746 --> 00:00:28,344
+So the room has two narrow doors, and nothing else listens.
+
+9
+00:00:28,394 --> 00:00:33,096
+Think of a bank: a counter for the public, and a mail slot for partners.
+
+10
+00:00:33,146 --> 00:00:35,088
+The first door is the counter.
+
+11
+00:00:35,138 --> 00:00:36,960
+It is the payers' door.
+
+12
+00:00:37,010 --> 00:00:40,248
+A buyer's browser connects to it over an encrypted line.
+
+13
+00:00:40,298 --> 00:00:44,856
+The counter opens that line with a certificate that every browser trusts.
+
+14
+00:00:44,906 --> 00:00:46,728
+Then it looks at the request.
+
+15
+00:00:46,778 --> 00:00:52,464
+It passes on only the card frame's few requests: show the frame, send a card, send a code.
+
+16
+00:00:52,514 --> 00:00:55,584
+Every other request gets the answer "not found".
+
+17
+00:00:55,634 --> 00:01:00,792
+It also limits how fast one buyer can submit cards, at the bank's chosen rate.
+
+18
+00:01:00,842 --> 00:01:03,504
+It never limits simply loading the page.
+
+19
+00:01:03,554 --> 00:01:05,904
+The second door is the mail slot.
+
+20
+00:01:05,954 --> 00:01:07,776
+It is the callers' door.
+
+21
+00:01:07,826 --> 00:01:10,224
+A caller's connection arrives sealed.
+
+22
+00:01:10,274 --> 00:01:13,776
+On the outside of the envelope is the name of the service it wants.
+
+23
+00:01:13,826 --> 00:01:15,792
+The door reads only that name.
+
+24
+00:01:15,842 --> 00:01:17,664
+It never opens the envelope.
+
+25
+00:01:17,714 --> 00:01:21,216
+It passes it on, still sealed, to the service behind it.
+
+26
+00:01:21,266 --> 00:01:24,864
+Passing a connection along unopened is called pass-through.
+
+27
+00:01:24,914 --> 00:01:29,712
+Only a few names pass: the card vault, the adapters, and the login server.
+
+28
+00:01:29,762 --> 00:01:33,312
+Any other name, or no name at all, is refused.
+
+29
+00:01:33,362 --> 00:01:39,288
+The service behind the door then checks the caller itself, with the caller's certificate and its token.
+
+30
+00:01:39,338 --> 00:01:42,456
+So the door never needs a key to the caller's traffic.
+
+31
+00:01:42,506 --> 00:01:44,328
+Now watch the product.
+
+32
+00:01:44,378 --> 00:01:48,744
+The card zone has no screen of its own, so watch what each visitor meets.
+
+33
+00:01:48,794 --> 00:01:50,736
+The buyer opens the payment page.
+
+34
+00:01:50,786 --> 00:01:55,272
+The browser shows its padlock, because the counter's certificate is trusted.
+
+35
+00:01:55,322 --> 00:01:58,032
+The frame loads, and the buyer types a card.
+
+36
+00:01:58,082 --> 00:02:02,520
+Now someone tries a different address on the same door, an admin page, say.
+
+37
+00:02:02,570 --> 00:02:04,848
+The answer is plain: not found.
+
+38
+00:02:04,898 --> 00:02:06,960
+Nothing behind the door is named.
+
+39
+00:02:07,010 --> 00:02:12,744
+Now a buyer, or a script, presses "Send code" again and again, very fast.
+
+40
+00:02:12,794 --> 00:02:14,616
+The counter steps in.
+
+41
+00:02:14,666 --> 00:02:18,888
+The frame says: too many tries too fast, try again in a minute.
+
+42
+00:02:18,938 --> 00:02:21,240
+The session is still good after the wait.
+
+43
+00:02:21,290 --> 00:02:26,256
+On the callers' side, a service with a name that is not on the list knocks on the mail slot.
+
+44
+00:02:26,306 --> 00:02:28,560
+The connection simply closes.
+
+45
+00:02:28,610 --> 00:02:30,552
+It never reaches the card vault.
+
+46
+00:02:30,602 --> 00:02:37,224
+A listed name without a valid certificate gets past the slot, and is then refused by the service itself.
+
+47
+00:02:37,274 --> 00:02:41,184
+On the bank's side, the team watches the card zone in monitoring.
+
+48
+00:02:41,234 --> 00:02:44,112
+A part that stops answering raises an alert.
+
+49
+00:02:44,162 --> 00:02:45,984
+What does this protect?
+
+50
+00:02:46,034 --> 00:02:51,240
+Without narrow doors, one entrance would hold every caller's secrets in clear text.
+
+51
+00:02:51,290 --> 00:02:53,640
+One break there would expose everything.
+
+52
+00:02:53,690 --> 00:02:57,720
+With two doors, the counter sees only buyers' frame traffic.
+
+53
+00:02:57,770 --> 00:03:00,024
+The mail slot holds nothing it can read.
+
+54
+00:03:00,074 --> 00:03:04,008
+And the database, the keys and the logs have no door at all.
+
+55
+00:03:04,058 --> 00:03:05,952
+That protects the cardholders.
+
+56
+00:03:06,002 --> 00:03:09,312
+It also protects the bank's own network around the room.
+
+57
+00:03:09,362 --> 00:03:13,656
+The bank's firewalls stay simple: two openings, each with one job.
+
+58
+00:03:13,706 --> 00:03:15,528
+Back to the bank.
+
+59
+00:03:15,578 --> 00:03:19,992
+A counter that serves the public a few things, and says no to the rest.
+
+60
+00:03:20,042 --> 00:03:23,568
+A mail slot that reads only the name on the envelope.
+
+61
+00:03:23,618 --> 00:03:27,576
+No door ever holds every caller's traffic in clear text.
+
+62
+00:03:27,626 --> 00:03:30,216
+Next: how a caller gets its certificate.

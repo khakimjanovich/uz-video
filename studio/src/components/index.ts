@@ -10,3 +10,4 @@ export * from "./diagram";
 export * from "./BuildMap";
 export * from "./Episode";
 export * from "./CodeCard";
+export * from "./ScreenCard";

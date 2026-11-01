@@ -1,0 +1,215 @@
+1
+00:00:00,050 --> 00:00:03,168
+How do you stop a website taking more money than it is allowed?
+
+2
+00:00:03,218 --> 00:00:05,040
+Two things can break a limit.
+
+3
+00:00:05,090 --> 00:00:10,296
+A website's account is taken over, and the attacker creates one payment for a fortune.
+
+4
+00:00:10,346 --> 00:00:13,824
+Or, on a busy day, five buyers pay at once.
+
+5
+00:00:13,874 --> 00:00:18,432
+Each payment fits the day's limit alone, but together they go far over it.
+
+6
+00:00:18,482 --> 00:00:26,520
+A check that first reads the day's total and then charges lets all five through, because all five read the total before any of them is added.
+
+7
+00:00:26,570 --> 00:00:29,208
+Think of a concert hall with one seat left.
+
+8
+00:00:29,258 --> 00:00:33,744
+Two clerks sit at the counter, and two fans arrive at the same moment.
+
+9
+00:00:33,794 --> 00:00:36,432
+The hall still sells that seat only once.
+
+10
+00:00:36,482 --> 00:00:39,096
+Whoever comes second hears: sold out.
+
+11
+00:00:39,146 --> 00:00:41,976
+A website's payment limits work the same way.
+
+12
+00:00:42,026 --> 00:00:47,472
+Payment limits are the most a website may take in one payment, and the most in one day.
+
+13
+00:00:47,522 --> 00:00:51,216
+The bank sets both for each website, as part of its deal.
+
+14
+00:00:51,266 --> 00:00:53,088
+The first limit is simple.
+
+15
+00:00:53,138 --> 00:00:57,072
+A payment over the most per payment is refused the moment it is created.
+
+16
+00:00:57,122 --> 00:01:01,512
+That holds whether the merchant's server creates it, or a payment link does.
+
+17
+00:01:01,562 --> 00:01:05,064
+The daily limit is harder, because buyers race each other.
+
+18
+00:01:05,114 --> 00:01:07,896
+So each charge makes an atomic reservation.
+
+19
+00:01:07,946 --> 00:01:10,848
+Atomic means one step that cannot be split.
+
+20
+00:01:10,898 --> 00:01:17,880
+In that one step, the charge adds its amount to the day's total, but only if the new total still fits under the limit.
+
+21
+00:01:17,930 --> 00:01:22,320
+When two charges arrive together, one waits until the other is done.
+
+22
+00:01:22,370 --> 00:01:26,136
+The one that no longer fits fails before any money moves.
+
+23
+00:01:26,186 --> 00:01:32,256
+The reservation is saved together with the charge's own record, before the card network is ever asked.
+
+24
+00:01:32,306 --> 00:01:35,472
+If the card is declined, its share goes back to the day.
+
+25
+00:01:35,522 --> 00:01:38,400
+A reversal on the same day gives it back too.
+
+26
+00:01:38,450 --> 00:01:43,512
+A payment whose outcome is unknown keeps its share until someone knows what happened.
+
+27
+00:01:43,562 --> 00:01:47,136
+And the day is the same business day the daily reports add up.
+
+28
+00:01:47,186 --> 00:01:53,904
+In front of all of this stands the edge: the first server every request meets when it arrives from the internet.
+
+29
+00:01:53,954 --> 00:01:57,240
+It accepts only modern encrypted connections.
+
+30
+00:01:57,290 --> 00:02:00,480
+It tells browsers to use secure connections only.
+
+31
+00:02:00,530 --> 00:02:02,616
+It never names the software it runs.
+
+32
+00:02:02,666 --> 00:02:07,920
+It refuses requests that are too large, and it limits how fast one address may call.
+
+33
+00:02:07,970 --> 00:02:09,792
+Let's watch the product.
+
+34
+00:02:09,842 --> 00:02:14,904
+A bank admin opens a website in the bank's portal and goes to its deal terms.
+
+35
+00:02:14,954 --> 00:02:18,984
+Two fields sit side by side: Most per payment, and Most per day.
+
+36
+00:02:19,034 --> 00:02:21,744
+A hint says that empty means no limit.
+
+37
+00:02:21,794 --> 00:02:25,728
+The admin enters the bank's chosen amounts and saves.
+
+38
+00:02:25,778 --> 00:02:32,016
+In the merchant's portal, the website now shows its limits: so much a payment, so much a day.
+
+39
+00:02:32,066 --> 00:02:36,288
+The merchant creates a payment link for an amount above the per-payment limit.
+
+40
+00:02:36,338 --> 00:02:39,024
+The portal shows a red notice: Not done.
+
+41
+00:02:39,074 --> 00:02:42,648
+It says this website takes at most that amount in one payment.
+
+42
+00:02:42,698 --> 00:02:44,448
+No link is created.
+
+43
+00:02:44,498 --> 00:02:46,968
+Now picture the last minutes of a busy day.
+
+44
+00:02:47,018 --> 00:02:49,176
+Five buyers press Pay together.
+
+45
+00:02:49,226 --> 00:02:52,968
+Four charges fit, and go through one after another.
+
+46
+00:02:53,018 --> 00:02:54,840
+The fifth no longer fits.
+
+47
+00:02:54,890 --> 00:03:01,176
+Its payment fails with a plain message: the website has reached its limit for today, and no money was taken.
+
+48
+00:03:01,226 --> 00:03:03,048
+What does this protect?
+
+49
+00:03:03,098 --> 00:03:08,040
+It protects the bank from a stolen account that tries to move a fortune in one payment.
+
+50
+00:03:08,090 --> 00:03:12,528
+It protects the merchant from a busy day that quietly goes over the deal.
+
+51
+00:03:12,578 --> 00:03:19,176
+And it protects buyers: when a limit stops a payment, it stops it before their card is charged, never after.
+
+52
+00:03:19,226 --> 00:03:21,048
+Back to the concert hall.
+
+53
+00:03:21,098 --> 00:03:27,384
+However many clerks, however many fans at once, every seat is sold exactly once.
+
+54
+00:03:27,434 --> 00:03:31,248
+Next: how the system is installed, starting with its keys.

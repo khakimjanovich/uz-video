@@ -1,0 +1,3736 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 111,
+    "text": "What happens when a merchant's server asks for the same payment twice?",
+    "prefix": "What happens when a merchant's server asks for the same payment twice?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 2
+          },
+          {
+            "text": "happens",
+            "startFrame": 5
+          },
+          {
+            "text": "when",
+            "startFrame": 15
+          },
+          {
+            "text": "a",
+            "startFrame": 17
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 19
+          },
+          {
+            "text": "server",
+            "startFrame": 34
+          },
+          {
+            "text": "asks",
+            "startFrame": 45
+          }
+        ]
+      },
+      {
+        "startFrame": 53,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 53
+          },
+          {
+            "text": "the",
+            "startFrame": 56
+          },
+          {
+            "text": "same",
+            "startFrame": 58
+          },
+          {
+            "text": "payment",
+            "startFrame": 69
+          },
+          {
+            "text": "twice?",
+            "startFrame": 80
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "startFrame": 112,
+    "endFrame": 175,
+    "text": "Picture the shop's server at checkout.",
+    "prefix": "Picture the shop's server at checkout.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 113,
+        "words": [
+          {
+            "text": "Picture",
+            "startFrame": 113
+          },
+          {
+            "text": "the",
+            "startFrame": 120
+          },
+          {
+            "text": "shop's",
+            "startFrame": 121
+          },
+          {
+            "text": "server",
+            "startFrame": 133
+          },
+          {
+            "text": "at",
+            "startFrame": 146
+          },
+          {
+            "text": "checkout.",
+            "startFrame": 148
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "startFrame": 176,
+    "endFrame": 287,
+    "text": "It sends the bank a request: create a payment for this order.",
+    "prefix": "It sends the bank a request: create a payment for this order.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 177,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 177
+          },
+          {
+            "text": "sends",
+            "startFrame": 179
+          },
+          {
+            "text": "the",
+            "startFrame": 187
+          },
+          {
+            "text": "bank",
+            "startFrame": 190
+          },
+          {
+            "text": "a",
+            "startFrame": 201
+          },
+          {
+            "text": "request:",
+            "startFrame": 202
+          }
+        ]
+      },
+      {
+        "startFrame": 233,
+        "words": [
+          {
+            "text": "create",
+            "startFrame": 233
+          },
+          {
+            "text": "a",
+            "startFrame": 240
+          },
+          {
+            "text": "payment",
+            "startFrame": 242
+          },
+          {
+            "text": "for",
+            "startFrame": 256
+          },
+          {
+            "text": "this",
+            "startFrame": 260
+          },
+          {
+            "text": "order.",
+            "startFrame": 265
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "startFrame": 288,
+    "endFrame": 343,
+    "text": "Then the network hiccups.",
+    "prefix": "Then the network hiccups.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 289,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 289
+          },
+          {
+            "text": "the",
+            "startFrame": 293
+          },
+          {
+            "text": "network",
+            "startFrame": 295
+          },
+          {
+            "text": "hiccups.",
+            "startFrame": 308
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "startFrame": 344,
+    "endFrame": 422,
+    "text": "The request may have arrived, or it may not.",
+    "prefix": "The request may have arrived, or it may not.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 345,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 345
+          },
+          {
+            "text": "request",
+            "startFrame": 346
+          },
+          {
+            "text": "may",
+            "startFrame": 357
+          },
+          {
+            "text": "have",
+            "startFrame": 360
+          },
+          {
+            "text": "arrived,",
+            "startFrame": 364
+          }
+        ]
+      },
+      {
+        "startFrame": 390,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 390
+          },
+          {
+            "text": "it",
+            "startFrame": 393
+          },
+          {
+            "text": "may",
+            "startFrame": 395
+          },
+          {
+            "text": "not.",
+            "startFrame": 399
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "startFrame": 423,
+    "endFrame": 479,
+    "text": "The answer never comes back.",
+    "prefix": "The answer never comes back.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 424,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 424
+          },
+          {
+            "text": "answer",
+            "startFrame": 426
+          },
+          {
+            "text": "never",
+            "startFrame": 434
+          },
+          {
+            "text": "comes",
+            "startFrame": 440
+          },
+          {
+            "text": "back.",
+            "startFrame": 447
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "startFrame": 479,
+    "endFrame": 556,
+    "text": "The server cannot tell which half was lost.",
+    "prefix": "The server cannot tell which half was lost.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 480,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 480
+          },
+          {
+            "text": "server",
+            "startFrame": 483
+          },
+          {
+            "text": "cannot",
+            "startFrame": 491
+          },
+          {
+            "text": "tell",
+            "startFrame": 504
+          },
+          {
+            "text": "which",
+            "startFrame": 512
+          },
+          {
+            "text": "half",
+            "startFrame": 517
+          },
+          {
+            "text": "was",
+            "startFrame": 527
+          },
+          {
+            "text": "lost.",
+            "startFrame": 530
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "startFrame": 557,
+    "endFrame": 651,
+    "text": "So it does the sensible thing and sends the request again.",
+    "prefix": "So it does the sensible thing and sends the request again.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 558,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 558
+          },
+          {
+            "text": "it",
+            "startFrame": 562
+          },
+          {
+            "text": "does",
+            "startFrame": 564
+          },
+          {
+            "text": "the",
+            "startFrame": 570
+          },
+          {
+            "text": "sensible",
+            "startFrame": 573
+          },
+          {
+            "text": "thing",
+            "startFrame": 588
+          },
+          {
+            "text": "and",
+            "startFrame": 605
+          },
+          {
+            "text": "sends",
+            "startFrame": 608
+          }
+        ]
+      },
+      {
+        "startFrame": 616,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 616
+          },
+          {
+            "text": "request",
+            "startFrame": 619
+          },
+          {
+            "text": "again.",
+            "startFrame": 630
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "startFrame": 651,
+    "endFrame": 751,
+    "text": "Without care, the bank now creates a second payment.",
+    "prefix": "Without care, the bank now creates a second payment.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 653,
+        "words": [
+          {
+            "text": "Without",
+            "startFrame": 653
+          },
+          {
+            "text": "care,",
+            "startFrame": 663
+          },
+          {
+            "text": "the",
+            "startFrame": 681
+          },
+          {
+            "text": "bank",
+            "startFrame": 684
+          },
+          {
+            "text": "now",
+            "startFrame": 694
+          },
+          {
+            "text": "creates",
+            "startFrame": 703
+          },
+          {
+            "text": "a",
+            "startFrame": 717
+          },
+          {
+            "text": "second",
+            "startFrame": 718
+          },
+          {
+            "text": "payment.",
+            "startFrame": 729
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "startFrame": 752,
+    "endFrame": 841,
+    "text": "The buyer may get two payment pages for one order.",
+    "prefix": "The buyer may get two payment pages for one order.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 754,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 754
+          },
+          {
+            "text": "buyer",
+            "startFrame": 755
+          },
+          {
+            "text": "may",
+            "startFrame": 764
+          },
+          {
+            "text": "get",
+            "startFrame": 767
+          },
+          {
+            "text": "two",
+            "startFrame": 773
+          },
+          {
+            "text": "payment",
+            "startFrame": 781
+          },
+          {
+            "text": "pages",
+            "startFrame": 792
+          }
+        ]
+      },
+      {
+        "startFrame": 805,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 805
+          },
+          {
+            "text": "one",
+            "startFrame": 811
+          },
+          {
+            "text": "order.",
+            "startFrame": 818
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "startFrame": 841,
+    "endFrame": 916,
+    "text": "A nervous buyer may pay both.",
+    "prefix": "A nervous buyer may pay both.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 842,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 842
+          },
+          {
+            "text": "nervous",
+            "startFrame": 843
+          },
+          {
+            "text": "buyer",
+            "startFrame": 855
+          },
+          {
+            "text": "may",
+            "startFrame": 875
+          },
+          {
+            "text": "pay",
+            "startFrame": 883
+          },
+          {
+            "text": "both.",
+            "startFrame": 890
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 917,
+    "endFrame": 1032,
+    "text": "Then the shop has to give money back, and the buyer has lost trust.",
+    "prefix": "Then the shop has to give money back, and the buyer has lost trust.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 918,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 918
+          },
+          {
+            "text": "the",
+            "startFrame": 921
+          },
+          {
+            "text": "shop",
+            "startFrame": 922
+          },
+          {
+            "text": "has",
+            "startFrame": 931
+          },
+          {
+            "text": "to",
+            "startFrame": 936
+          },
+          {
+            "text": "give",
+            "startFrame": 938
+          },
+          {
+            "text": "money",
+            "startFrame": 945
+          },
+          {
+            "text": "back,",
+            "startFrame": 954
+          }
+        ]
+      },
+      {
+        "startFrame": 980,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 980
+          },
+          {
+            "text": "the",
+            "startFrame": 981
+          },
+          {
+            "text": "buyer",
+            "startFrame": 984
+          },
+          {
+            "text": "has",
+            "startFrame": 993
+          },
+          {
+            "text": "lost",
+            "startFrame": 996
+          },
+          {
+            "text": "trust.",
+            "startFrame": 1005
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1032,
+    "endFrame": 1088,
+    "text": "Retrying is right.",
+    "prefix": "Retrying is right.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1033,
+        "words": [
+          {
+            "text": "Retrying",
+            "startFrame": 1033
+          },
+          {
+            "text": "is",
+            "startFrame": 1048
+          },
+          {
+            "text": "right.",
+            "startFrame": 1052
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 1088,
+    "endFrame": 1203,
+    "text": "The problem is a retry that the bank cannot recognise.",
+    "prefix": "The problem is a retry that the bank cannot recognise.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1090,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1090
+          },
+          {
+            "text": "problem",
+            "startFrame": 1092
+          },
+          {
+            "text": "is",
+            "startFrame": 1109
+          },
+          {
+            "text": "a",
+            "startFrame": 1111
+          },
+          {
+            "text": "retry",
+            "startFrame": 1113
+          },
+          {
+            "text": "that",
+            "startFrame": 1134
+          },
+          {
+            "text": "the",
+            "startFrame": 1138
+          },
+          {
+            "text": "bank",
+            "startFrame": 1140
+          },
+          {
+            "text": "cannot",
+            "startFrame": 1155
+          },
+          {
+            "text": "recognise.",
+            "startFrame": 1170
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "startFrame": 1203,
+    "endFrame": 1259,
+    "text": "Think of a lift button.",
+    "prefix": "Think of a lift button.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1205,
+        "words": [
+          {
+            "text": "Think",
+            "startFrame": 1205
+          },
+          {
+            "text": "of",
+            "startFrame": 1207
+          },
+          {
+            "text": "a",
+            "startFrame": 1209
+          },
+          {
+            "text": "lift",
+            "startFrame": 1210
+          },
+          {
+            "text": "button.",
+            "startFrame": 1219
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "startFrame": 1260,
+    "endFrame": 1333,
+    "text": "You press it once, and a lift is called.",
+    "prefix": "You press it once, and a lift is called.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1261,
+        "words": [
+          {
+            "text": "You",
+            "startFrame": 1261
+          },
+          {
+            "text": "press",
+            "startFrame": 1263
+          },
+          {
+            "text": "it",
+            "startFrame": 1269
+          },
+          {
+            "text": "once,",
+            "startFrame": 1272
+          }
+        ]
+      },
+      {
+        "startFrame": 1292,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1292
+          },
+          {
+            "text": "a",
+            "startFrame": 1294
+          },
+          {
+            "text": "lift",
+            "startFrame": 1296
+          },
+          {
+            "text": "is",
+            "startFrame": 1306
+          },
+          {
+            "text": "called.",
+            "startFrame": 1309
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "startFrame": 1334,
+    "endFrame": 1423,
+    "text": "You press it ten more times, because you are in a hurry.",
+    "prefix": "You press it ten more times, because you are in a hurry.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1334,
+        "words": [
+          {
+            "text": "You",
+            "startFrame": 1334
+          },
+          {
+            "text": "press",
+            "startFrame": 1337
+          },
+          {
+            "text": "it",
+            "startFrame": 1344
+          },
+          {
+            "text": "ten",
+            "startFrame": 1347
+          },
+          {
+            "text": "more",
+            "startFrame": 1353
+          },
+          {
+            "text": "times,",
+            "startFrame": 1359
+          }
+        ]
+      },
+      {
+        "startFrame": 1383,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 1383
+          },
+          {
+            "text": "you",
+            "startFrame": 1393
+          },
+          {
+            "text": "are",
+            "startFrame": 1396
+          },
+          {
+            "text": "in",
+            "startFrame": 1398
+          },
+          {
+            "text": "a",
+            "startFrame": 1400
+          },
+          {
+            "text": "hurry.",
+            "startFrame": 1400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "startFrame": 1424,
+    "endFrame": 1479,
+    "text": "Still one lift comes.",
+    "prefix": "Still one lift comes.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1425,
+        "words": [
+          {
+            "text": "Still",
+            "startFrame": 1425
+          },
+          {
+            "text": "one",
+            "startFrame": 1430
+          },
+          {
+            "text": "lift",
+            "startFrame": 1435
+          },
+          {
+            "text": "comes.",
+            "startFrame": 1441
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "startFrame": 1480,
+    "endFrame": 1574,
+    "text": "Each press means the same thing: I want a lift here.",
+    "prefix": "Each press means the same thing: I want a lift here.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1481,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 1481
+          },
+          {
+            "text": "press",
+            "startFrame": 1486
+          },
+          {
+            "text": "means",
+            "startFrame": 1497
+          },
+          {
+            "text": "the",
+            "startFrame": 1504
+          },
+          {
+            "text": "same",
+            "startFrame": 1507
+          },
+          {
+            "text": "thing:",
+            "startFrame": 1516
+          }
+        ]
+      },
+      {
+        "startFrame": 1539,
+        "words": [
+          {
+            "text": "I",
+            "startFrame": 1539
+          },
+          {
+            "text": "want",
+            "startFrame": 1539
+          },
+          {
+            "text": "a",
+            "startFrame": 1543
+          },
+          {
+            "text": "lift",
+            "startFrame": 1544
+          },
+          {
+            "text": "here.",
+            "startFrame": 1553
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "startFrame": 1574,
+    "endFrame": 1660,
+    "text": "A payment request should work the same way.",
+    "prefix": "A payment request should work the same way.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1575,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1575
+          },
+          {
+            "text": "payment",
+            "startFrame": 1577
+          },
+          {
+            "text": "request",
+            "startFrame": 1586
+          },
+          {
+            "text": "should",
+            "startFrame": 1610
+          },
+          {
+            "text": "work",
+            "startFrame": 1618
+          },
+          {
+            "text": "the",
+            "startFrame": 1628
+          },
+          {
+            "text": "same",
+            "startFrame": 1630
+          },
+          {
+            "text": "way.",
+            "startFrame": 1639
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "startFrame": 1661,
+    "endFrame": 1758,
+    "text": "So each create carries an idempotency key.",
+    "prefix": "So each create carries an idempotency key.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1662,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 1662
+          },
+          {
+            "text": "each",
+            "startFrame": 1667
+          },
+          {
+            "text": "create",
+            "startFrame": 1673
+          },
+          {
+            "text": "carries",
+            "startFrame": 1684
+          },
+          {
+            "text": "an",
+            "startFrame": 1705
+          },
+          {
+            "text": "idempotency",
+            "startFrame": 1709
+          },
+          {
+            "text": "key.",
+            "startFrame": 1734
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "startFrame": 1759,
+    "endFrame": 1903,
+    "text": "That is a plain name the merchant gives to this one attempt, such as the order and a counter.",
+    "prefix": "That is a plain name the merchant gives to this one attempt, such as the order and a counter.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1760,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 1760
+          },
+          {
+            "text": "is",
+            "startFrame": 1762
+          },
+          {
+            "text": "a",
+            "startFrame": 1764
+          },
+          {
+            "text": "plain",
+            "startFrame": 1766
+          },
+          {
+            "text": "name",
+            "startFrame": 1775
+          },
+          {
+            "text": "the",
+            "startFrame": 1784
+          },
+          {
+            "text": "merchant",
+            "startFrame": 1786
+          },
+          {
+            "text": "gives",
+            "startFrame": 1805
+          }
+        ]
+      },
+      {
+        "startFrame": 1813,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 1813
+          },
+          {
+            "text": "this",
+            "startFrame": 1815
+          },
+          {
+            "text": "one",
+            "startFrame": 1821
+          },
+          {
+            "text": "attempt,",
+            "startFrame": 1825
+          }
+        ]
+      },
+      {
+        "startFrame": 1847,
+        "words": [
+          {
+            "text": "such",
+            "startFrame": 1847
+          },
+          {
+            "text": "as",
+            "startFrame": 1854
+          },
+          {
+            "text": "the",
+            "startFrame": 1858
+          },
+          {
+            "text": "order",
+            "startFrame": 1860
+          },
+          {
+            "text": "and",
+            "startFrame": 1875
+          },
+          {
+            "text": "a",
+            "startFrame": 1877
+          },
+          {
+            "text": "counter.",
+            "startFrame": 1878
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "startFrame": 1904,
+    "endFrame": 2047,
+    "text": "The merchant chooses it, and it stays the same on every retry of that attempt.",
+    "prefix": "The merchant chooses it, and it stays the same on every retry of that attempt.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1905,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1905
+          },
+          {
+            "text": "merchant",
+            "startFrame": 1908
+          },
+          {
+            "text": "chooses",
+            "startFrame": 1921
+          },
+          {
+            "text": "it,",
+            "startFrame": 1935
+          }
+        ]
+      },
+      {
+        "startFrame": 1951,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1951
+          },
+          {
+            "text": "it",
+            "startFrame": 1953
+          },
+          {
+            "text": "stays",
+            "startFrame": 1955
+          },
+          {
+            "text": "the",
+            "startFrame": 1965
+          },
+          {
+            "text": "same",
+            "startFrame": 1968
+          },
+          {
+            "text": "on",
+            "startFrame": 1983
+          },
+          {
+            "text": "every",
+            "startFrame": 1992
+          },
+          {
+            "text": "retry",
+            "startFrame": 2003
+          }
+        ]
+      },
+      {
+        "startFrame": 2018,
+        "words": [
+          {
+            "text": "of",
+            "startFrame": 2018
+          },
+          {
+            "text": "that",
+            "startFrame": 2020
+          },
+          {
+            "text": "attempt.",
+            "startFrame": 2024
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "startFrame": 2048,
+    "endFrame": 2274,
+    "text": "The bank remembers each key for each API client, together with the request it came with and the answer it gave.",
+    "prefix": "The bank remembers each key for each API client, together with the request it came with and the answer it gave.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2049,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2049
+          },
+          {
+            "text": "bank",
+            "startFrame": 2052
+          },
+          {
+            "text": "remembers",
+            "startFrame": 2061
+          },
+          {
+            "text": "each",
+            "startFrame": 2084
+          },
+          {
+            "text": "key",
+            "startFrame": 2090
+          },
+          {
+            "text": "for",
+            "startFrame": 2110
+          },
+          {
+            "text": "each",
+            "startFrame": 2121
+          },
+          {
+            "text": "API",
+            "startFrame": 2135
+          }
+        ]
+      },
+      {
+        "startFrame": 2153,
+        "words": [
+          {
+            "text": "client,",
+            "startFrame": 2153
+          },
+          {
+            "text": "together",
+            "startFrame": 2179
+          },
+          {
+            "text": "with",
+            "startFrame": 2190
+          },
+          {
+            "text": "the",
+            "startFrame": 2193
+          },
+          {
+            "text": "request",
+            "startFrame": 2196
+          },
+          {
+            "text": "it",
+            "startFrame": 2209
+          },
+          {
+            "text": "came",
+            "startFrame": 2211
+          }
+        ]
+      },
+      {
+        "startFrame": 2219,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 2219
+          },
+          {
+            "text": "and",
+            "startFrame": 2235
+          },
+          {
+            "text": "the",
+            "startFrame": 2237
+          },
+          {
+            "text": "answer",
+            "startFrame": 2239
+          },
+          {
+            "text": "it",
+            "startFrame": 2249
+          },
+          {
+            "text": "gave.",
+            "startFrame": 2251
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "startFrame": 2274,
+    "endFrame": 2332,
+    "text": "Now three things can happen.",
+    "prefix": "Now three things can happen.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2275,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 2275
+          },
+          {
+            "text": "three",
+            "startFrame": 2286
+          },
+          {
+            "text": "things",
+            "startFrame": 2297
+          },
+          {
+            "text": "can",
+            "startFrame": 2305
+          },
+          {
+            "text": "happen.",
+            "startFrame": 2309
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "startFrame": 2332,
+    "endFrame": 2430,
+    "text": "First, the same key arrives with the same request.",
+    "prefix": "First, the same key arrives with the same request.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2335,
+        "words": [
+          {
+            "text": "First,",
+            "startFrame": 2335
+          },
+          {
+            "text": "the",
+            "startFrame": 2356
+          },
+          {
+            "text": "same",
+            "startFrame": 2358
+          },
+          {
+            "text": "key",
+            "startFrame": 2367
+          },
+          {
+            "text": "arrives",
+            "startFrame": 2373
+          },
+          {
+            "text": "with",
+            "startFrame": 2389
+          },
+          {
+            "text": "the",
+            "startFrame": 2392
+          },
+          {
+            "text": "same",
+            "startFrame": 2394
+          },
+          {
+            "text": "request.",
+            "startFrame": 2402
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "startFrame": 2431,
+    "endFrame": 2491,
+    "text": "The bank does not create anything.",
+    "prefix": "The bank does not create anything.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2432,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2432
+          },
+          {
+            "text": "bank",
+            "startFrame": 2434
+          },
+          {
+            "text": "does",
+            "startFrame": 2443
+          },
+          {
+            "text": "not",
+            "startFrame": 2447
+          },
+          {
+            "text": "create",
+            "startFrame": 2455
+          },
+          {
+            "text": "anything.",
+            "startFrame": 2466
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "startFrame": 2491,
+    "endFrame": 2631,
+    "text": "It sends back the first answer again, with the same payment and the same page link.",
+    "prefix": "It sends back the first answer again, with the same payment and the same page link.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2493,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 2493
+          },
+          {
+            "text": "sends",
+            "startFrame": 2495
+          },
+          {
+            "text": "back",
+            "startFrame": 2503
+          },
+          {
+            "text": "the",
+            "startFrame": 2511
+          },
+          {
+            "text": "first",
+            "startFrame": 2514
+          },
+          {
+            "text": "answer",
+            "startFrame": 2527
+          },
+          {
+            "text": "again,",
+            "startFrame": 2536
+          }
+        ]
+      },
+      {
+        "startFrame": 2551,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 2551
+          },
+          {
+            "text": "the",
+            "startFrame": 2555
+          },
+          {
+            "text": "same",
+            "startFrame": 2557
+          },
+          {
+            "text": "payment",
+            "startFrame": 2567
+          },
+          {
+            "text": "and",
+            "startFrame": 2585
+          },
+          {
+            "text": "the",
+            "startFrame": 2587
+          },
+          {
+            "text": "same",
+            "startFrame": 2589
+          },
+          {
+            "text": "page",
+            "startFrame": 2597
+          },
+          {
+            "text": "link.",
+            "startFrame": 2607
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "startFrame": 2631,
+    "endFrame": 2809,
+    "text": "It marks that answer as an idempotent replay, so the merchant's server can see it is a repeat.",
+    "prefix": "It marks that answer as an idempotent replay, so the merchant's server can see it is a repeat.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2633,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 2633
+          },
+          {
+            "text": "marks",
+            "startFrame": 2635
+          },
+          {
+            "text": "that",
+            "startFrame": 2643
+          },
+          {
+            "text": "answer",
+            "startFrame": 2650
+          },
+          {
+            "text": "as",
+            "startFrame": 2667
+          },
+          {
+            "text": "an",
+            "startFrame": 2671
+          },
+          {
+            "text": "idempotent",
+            "startFrame": 2678
+          },
+          {
+            "text": "replay,",
+            "startFrame": 2701
+          }
+        ]
+      },
+      {
+        "startFrame": 2728,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 2728
+          },
+          {
+            "text": "the",
+            "startFrame": 2731
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 2733
+          },
+          {
+            "text": "server",
+            "startFrame": 2745
+          },
+          {
+            "text": "can",
+            "startFrame": 2756
+          },
+          {
+            "text": "see",
+            "startFrame": 2759
+          },
+          {
+            "text": "it",
+            "startFrame": 2776
+          },
+          {
+            "text": "is",
+            "startFrame": 2779
+          },
+          {
+            "text": "a",
+            "startFrame": 2781
+          },
+          {
+            "text": "repeat.",
+            "startFrame": 2783
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "startFrame": 2810,
+    "endFrame": 2963,
+    "text": "Second, the same key arrives with a different request, for example a different amount.",
+    "prefix": "Second, the same key arrives with a different request, for example a different amount.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2811,
+        "words": [
+          {
+            "text": "Second,",
+            "startFrame": 2811
+          },
+          {
+            "text": "the",
+            "startFrame": 2833
+          },
+          {
+            "text": "same",
+            "startFrame": 2835
+          },
+          {
+            "text": "key",
+            "startFrame": 2845
+          },
+          {
+            "text": "arrives",
+            "startFrame": 2851
+          },
+          {
+            "text": "with",
+            "startFrame": 2867
+          },
+          {
+            "text": "a",
+            "startFrame": 2871
+          },
+          {
+            "text": "different",
+            "startFrame": 2877
+          }
+        ]
+      },
+      {
+        "startFrame": 2886,
+        "words": [
+          {
+            "text": "request,",
+            "startFrame": 2886
+          },
+          {
+            "text": "for",
+            "startFrame": 2915
+          },
+          {
+            "text": "example",
+            "startFrame": 2918
+          },
+          {
+            "text": "a",
+            "startFrame": 2930
+          },
+          {
+            "text": "different",
+            "startFrame": 2932
+          },
+          {
+            "text": "amount.",
+            "startFrame": 2941
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "startFrame": 2963,
+    "endFrame": 3019,
+    "text": "The bank refuses it.",
+    "prefix": "The bank refuses it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2965,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2965
+          },
+          {
+            "text": "bank",
+            "startFrame": 2967
+          },
+          {
+            "text": "refuses",
+            "startFrame": 2977
+          },
+          {
+            "text": "it.",
+            "startFrame": 2995
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "startFrame": 3019,
+    "endFrame": 3195,
+    "text": "That is a different request under an old name, and guessing which one the merchant meant is never safe.",
+    "prefix": "That is a different request under an old name, and guessing which one the merchant meant is never safe.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3021,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 3021
+          },
+          {
+            "text": "is",
+            "startFrame": 3025
+          },
+          {
+            "text": "a",
+            "startFrame": 3027
+          },
+          {
+            "text": "different",
+            "startFrame": 3031
+          },
+          {
+            "text": "request",
+            "startFrame": 3040
+          },
+          {
+            "text": "under",
+            "startFrame": 3066
+          },
+          {
+            "text": "an",
+            "startFrame": 3072
+          },
+          {
+            "text": "old",
+            "startFrame": 3075
+          }
+        ]
+      },
+      {
+        "startFrame": 3082,
+        "words": [
+          {
+            "text": "name,",
+            "startFrame": 3082
+          },
+          {
+            "text": "and",
+            "startFrame": 3107
+          },
+          {
+            "text": "guessing",
+            "startFrame": 3110
+          },
+          {
+            "text": "which",
+            "startFrame": 3122
+          },
+          {
+            "text": "one",
+            "startFrame": 3126
+          },
+          {
+            "text": "the",
+            "startFrame": 3130
+          },
+          {
+            "text": "merchant",
+            "startFrame": 3132
+          },
+          {
+            "text": "meant",
+            "startFrame": 3145
+          }
+        ]
+      },
+      {
+        "startFrame": 3155,
+        "words": [
+          {
+            "text": "is",
+            "startFrame": 3155
+          },
+          {
+            "text": "never",
+            "startFrame": 3159
+          },
+          {
+            "text": "safe.",
+            "startFrame": 3167
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "startFrame": 3196,
+    "endFrame": 3302,
+    "text": "Third, two retries arrive at the very same moment.",
+    "prefix": "Third, two retries arrive at the very same moment.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3198,
+        "words": [
+          {
+            "text": "Third,",
+            "startFrame": 3198
+          },
+          {
+            "text": "two",
+            "startFrame": 3221
+          },
+          {
+            "text": "retries",
+            "startFrame": 3226
+          },
+          {
+            "text": "arrive",
+            "startFrame": 3241
+          },
+          {
+            "text": "at",
+            "startFrame": 3256
+          },
+          {
+            "text": "the",
+            "startFrame": 3258
+          },
+          {
+            "text": "very",
+            "startFrame": 3259
+          },
+          {
+            "text": "same",
+            "startFrame": 3269
+          },
+          {
+            "text": "moment.",
+            "startFrame": 3277
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "startFrame": 3302,
+    "endFrame": 3403,
+    "text": "Both look new, because neither has been saved yet.",
+    "prefix": "Both look new, because neither has been saved yet.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3304,
+        "words": [
+          {
+            "text": "Both",
+            "startFrame": 3304
+          },
+          {
+            "text": "look",
+            "startFrame": 3310
+          },
+          {
+            "text": "new,",
+            "startFrame": 3315
+          }
+        ]
+      },
+      {
+        "startFrame": 3341,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 3341
+          },
+          {
+            "text": "neither",
+            "startFrame": 3352
+          },
+          {
+            "text": "has",
+            "startFrame": 3361
+          },
+          {
+            "text": "been",
+            "startFrame": 3364
+          },
+          {
+            "text": "saved",
+            "startFrame": 3369
+          },
+          {
+            "text": "yet.",
+            "startFrame": 3382
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "startFrame": 3404,
+    "endFrame": 3570,
+    "text": "They meet at one place in the bank's records, where each key can be written only once.",
+    "prefix": "They meet at one place in the bank's records, where each key can be written only once.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3405,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 3405
+          },
+          {
+            "text": "meet",
+            "startFrame": 3409
+          },
+          {
+            "text": "at",
+            "startFrame": 3422
+          },
+          {
+            "text": "one",
+            "startFrame": 3427
+          },
+          {
+            "text": "place",
+            "startFrame": 3438
+          },
+          {
+            "text": "in",
+            "startFrame": 3449
+          },
+          {
+            "text": "the",
+            "startFrame": 3451
+          },
+          {
+            "text": "bank's",
+            "startFrame": 3453
+          }
+        ]
+      },
+      {
+        "startFrame": 3463,
+        "words": [
+          {
+            "text": "records,",
+            "startFrame": 3463
+          },
+          {
+            "text": "where",
+            "startFrame": 3488
+          },
+          {
+            "text": "each",
+            "startFrame": 3496
+          },
+          {
+            "text": "key",
+            "startFrame": 3502
+          },
+          {
+            "text": "can",
+            "startFrame": 3517
+          },
+          {
+            "text": "be",
+            "startFrame": 3520
+          },
+          {
+            "text": "written",
+            "startFrame": 3524
+          },
+          {
+            "text": "only",
+            "startFrame": 3534
+          },
+          {
+            "text": "once.",
+            "startFrame": 3541
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "startFrame": 3570,
+    "endFrame": 3638,
+    "text": "One wins and creates the payment.",
+    "prefix": "One wins and creates the payment.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3571,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 3571
+          },
+          {
+            "text": "wins",
+            "startFrame": 3579
+          },
+          {
+            "text": "and",
+            "startFrame": 3596
+          },
+          {
+            "text": "creates",
+            "startFrame": 3600
+          },
+          {
+            "text": "the",
+            "startFrame": 3612
+          },
+          {
+            "text": "payment.",
+            "startFrame": 3614
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "startFrame": 3638,
+    "endFrame": 3725,
+    "text": "The other loses, and gets the winner's answer back.",
+    "prefix": "The other loses, and gets the winner's answer back.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3640,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3640
+          },
+          {
+            "text": "other",
+            "startFrame": 3643
+          },
+          {
+            "text": "loses,",
+            "startFrame": 3650
+          }
+        ]
+      },
+      {
+        "startFrame": 3673,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3673
+          },
+          {
+            "text": "gets",
+            "startFrame": 3675
+          },
+          {
+            "text": "the",
+            "startFrame": 3681
+          },
+          {
+            "text": "winner's",
+            "startFrame": 3685
+          },
+          {
+            "text": "answer",
+            "startFrame": 3694
+          },
+          {
+            "text": "back.",
+            "startFrame": 3702
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "startFrame": 3726,
+    "endFrame": 3801,
+    "text": "There is one detail from the previous lesson.",
+    "prefix": "There is one detail from the previous lesson.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3727,
+        "words": [
+          {
+            "text": "There",
+            "startFrame": 3727
+          },
+          {
+            "text": "is",
+            "startFrame": 3730
+          },
+          {
+            "text": "one",
+            "startFrame": 3734
+          },
+          {
+            "text": "detail",
+            "startFrame": 3742
+          },
+          {
+            "text": "from",
+            "startFrame": 3757
+          },
+          {
+            "text": "the",
+            "startFrame": 3761
+          },
+          {
+            "text": "previous",
+            "startFrame": 3763
+          },
+          {
+            "text": "lesson.",
+            "startFrame": 3777
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "startFrame": 3801,
+    "endFrame": 3957,
+    "text": "Every retry still needs a fresh seal, with a new time and a new one-time number.",
+    "prefix": "Every retry still needs a fresh seal, with a new time and a new one-time number.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3802,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 3802
+          },
+          {
+            "text": "retry",
+            "startFrame": 3810
+          },
+          {
+            "text": "still",
+            "startFrame": 3828
+          },
+          {
+            "text": "needs",
+            "startFrame": 3838
+          },
+          {
+            "text": "a",
+            "startFrame": 3845
+          },
+          {
+            "text": "fresh",
+            "startFrame": 3846
+          },
+          {
+            "text": "seal,",
+            "startFrame": 3858
+          }
+        ]
+      },
+      {
+        "startFrame": 3879,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 3879
+          },
+          {
+            "text": "a",
+            "startFrame": 3882
+          },
+          {
+            "text": "new",
+            "startFrame": 3883
+          },
+          {
+            "text": "time",
+            "startFrame": 3890
+          },
+          {
+            "text": "and",
+            "startFrame": 3911
+          },
+          {
+            "text": "a",
+            "startFrame": 3913
+          },
+          {
+            "text": "new",
+            "startFrame": 3914
+          },
+          {
+            "text": "one-time",
+            "startFrame": 3922
+          },
+          {
+            "text": "number.",
+            "startFrame": 3935
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "startFrame": 3957,
+    "endFrame": 4105,
+    "text": "So the server seals the request again, but keeps the same idempotency key.",
+    "prefix": "So the server seals the request again, but keeps the same idempotency key.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3959,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 3959
+          },
+          {
+            "text": "the",
+            "startFrame": 3962
+          },
+          {
+            "text": "server",
+            "startFrame": 3964
+          },
+          {
+            "text": "seals",
+            "startFrame": 3973
+          },
+          {
+            "text": "the",
+            "startFrame": 3984
+          },
+          {
+            "text": "request",
+            "startFrame": 3986
+          },
+          {
+            "text": "again,",
+            "startFrame": 3998
+          }
+        ]
+      },
+      {
+        "startFrame": 4015,
+        "words": [
+          {
+            "text": "but",
+            "startFrame": 4015
+          },
+          {
+            "text": "keeps",
+            "startFrame": 4019
+          },
+          {
+            "text": "the",
+            "startFrame": 4027
+          },
+          {
+            "text": "same",
+            "startFrame": 4031
+          },
+          {
+            "text": "idempotency",
+            "startFrame": 4056
+          },
+          {
+            "text": "key.",
+            "startFrame": 4081
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "startFrame": 4106,
+    "endFrame": 4186,
+    "text": "The seal stops copies made by strangers.",
+    "prefix": "The seal stops copies made by strangers.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4107,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4107
+          },
+          {
+            "text": "seal",
+            "startFrame": 4109
+          },
+          {
+            "text": "stops",
+            "startFrame": 4117
+          },
+          {
+            "text": "copies",
+            "startFrame": 4127
+          },
+          {
+            "text": "made",
+            "startFrame": 4140
+          },
+          {
+            "text": "by",
+            "startFrame": 4149
+          },
+          {
+            "text": "strangers.",
+            "startFrame": 4152
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "startFrame": 4186,
+    "endFrame": 4282,
+    "text": "The key ties together the retries made by the merchant.",
+    "prefix": "The key ties together the retries made by the merchant.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4188,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4188
+          },
+          {
+            "text": "key",
+            "startFrame": 4190
+          },
+          {
+            "text": "ties",
+            "startFrame": 4196
+          },
+          {
+            "text": "together",
+            "startFrame": 4208
+          },
+          {
+            "text": "the",
+            "startFrame": 4219
+          },
+          {
+            "text": "retries",
+            "startFrame": 4221
+          },
+          {
+            "text": "made",
+            "startFrame": 4243
+          }
+        ]
+      },
+      {
+        "startFrame": 4253,
+        "words": [
+          {
+            "text": "by",
+            "startFrame": 4253
+          },
+          {
+            "text": "the",
+            "startFrame": 4257
+          },
+          {
+            "text": "merchant.",
+            "startFrame": 4259
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "startFrame": 4283,
+    "endFrame": 4340,
+    "text": "Now watch it from the merchant's server.",
+    "prefix": "Now watch it from the merchant's server.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4284,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 4284
+          },
+          {
+            "text": "watch",
+            "startFrame": 4289
+          },
+          {
+            "text": "it",
+            "startFrame": 4297
+          },
+          {
+            "text": "from",
+            "startFrame": 4300
+          },
+          {
+            "text": "the",
+            "startFrame": 4302
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 4304
+          },
+          {
+            "text": "server.",
+            "startFrame": 4315
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "startFrame": 4340,
+    "endFrame": 4404,
+    "text": "It sends create payment with its key.",
+    "prefix": "It sends create payment with its key.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4341,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 4341
+          },
+          {
+            "text": "sends",
+            "startFrame": 4344
+          },
+          {
+            "text": "create",
+            "startFrame": 4351
+          },
+          {
+            "text": "payment",
+            "startFrame": 4361
+          },
+          {
+            "text": "with",
+            "startFrame": 4374
+          },
+          {
+            "text": "its",
+            "startFrame": 4378
+          },
+          {
+            "text": "key.",
+            "startFrame": 4381
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "startFrame": 4405,
+    "endFrame": 4460,
+    "text": "The answer is lost on the way.",
+    "prefix": "The answer is lost on the way.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4406,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4406
+          },
+          {
+            "text": "answer",
+            "startFrame": 4407
+          },
+          {
+            "text": "is",
+            "startFrame": 4416
+          },
+          {
+            "text": "lost",
+            "startFrame": 4420
+          },
+          {
+            "text": "on",
+            "startFrame": 4431
+          },
+          {
+            "text": "the",
+            "startFrame": 4433
+          },
+          {
+            "text": "way.",
+            "startFrame": 4436
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "startFrame": 4461,
+    "endFrame": 4567,
+    "text": "It seals the same request again and sends it with the same key.",
+    "prefix": "It seals the same request again and sends it with the same key.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4462,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 4462
+          },
+          {
+            "text": "seals",
+            "startFrame": 4464
+          },
+          {
+            "text": "the",
+            "startFrame": 4474
+          },
+          {
+            "text": "same",
+            "startFrame": 4477
+          },
+          {
+            "text": "request",
+            "startFrame": 4485
+          },
+          {
+            "text": "again",
+            "startFrame": 4496
+          },
+          {
+            "text": "and",
+            "startFrame": 4512
+          },
+          {
+            "text": "sends",
+            "startFrame": 4516
+          }
+        ]
+      },
+      {
+        "startFrame": 4526,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 4526
+          },
+          {
+            "text": "with",
+            "startFrame": 4528
+          },
+          {
+            "text": "the",
+            "startFrame": 4531
+          },
+          {
+            "text": "same",
+            "startFrame": 4533
+          },
+          {
+            "text": "key.",
+            "startFrame": 4543
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "startFrame": 4567,
+    "endFrame": 4623,
+    "text": "This time the answer arrives.",
+    "prefix": "This time the answer arrives.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4569,
+        "words": [
+          {
+            "text": "This",
+            "startFrame": 4569
+          },
+          {
+            "text": "time",
+            "startFrame": 4571
+          },
+          {
+            "text": "the",
+            "startFrame": 4577
+          },
+          {
+            "text": "answer",
+            "startFrame": 4580
+          },
+          {
+            "text": "arrives.",
+            "startFrame": 4589
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "startFrame": 4623,
+    "endFrame": 4798,
+    "text": "It holds the same payment and the same page link as the first, and it is marked as a replay.",
+    "prefix": "It holds the same payment and the same page link as the first, and it is marked as a replay.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4625,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 4625
+          },
+          {
+            "text": "holds",
+            "startFrame": 4626
+          },
+          {
+            "text": "the",
+            "startFrame": 4633
+          },
+          {
+            "text": "same",
+            "startFrame": 4637
+          },
+          {
+            "text": "payment",
+            "startFrame": 4647
+          },
+          {
+            "text": "and",
+            "startFrame": 4664
+          },
+          {
+            "text": "the",
+            "startFrame": 4666
+          },
+          {
+            "text": "same",
+            "startFrame": 4668
+          }
+        ]
+      },
+      {
+        "startFrame": 4677,
+        "words": [
+          {
+            "text": "page",
+            "startFrame": 4677
+          },
+          {
+            "text": "link",
+            "startFrame": 4687
+          },
+          {
+            "text": "as",
+            "startFrame": 4705
+          },
+          {
+            "text": "the",
+            "startFrame": 4709
+          },
+          {
+            "text": "first,",
+            "startFrame": 4711
+          }
+        ]
+      },
+      {
+        "startFrame": 4742,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4742
+          },
+          {
+            "text": "it",
+            "startFrame": 4745
+          },
+          {
+            "text": "is",
+            "startFrame": 4747
+          },
+          {
+            "text": "marked",
+            "startFrame": 4750
+          },
+          {
+            "text": "as",
+            "startFrame": 4763
+          },
+          {
+            "text": "a",
+            "startFrame": 4766
+          },
+          {
+            "text": "replay.",
+            "startFrame": 4767
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "startFrame": 4798,
+    "endFrame": 4947,
+    "text": "In the merchant portal, the payments list shows one payment for this order, not two.",
+    "prefix": "In the merchant portal, the payments list shows one payment for this order, not two.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4799,
+        "words": [
+          {
+            "text": "In",
+            "startFrame": 4799
+          },
+          {
+            "text": "the",
+            "startFrame": 4800
+          },
+          {
+            "text": "merchant",
+            "startFrame": 4802
+          },
+          {
+            "text": "portal,",
+            "startFrame": 4813
+          }
+        ]
+      },
+      {
+        "startFrame": 4832,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 4832
+          },
+          {
+            "text": "payments",
+            "startFrame": 4834
+          },
+          {
+            "text": "list",
+            "startFrame": 4845
+          },
+          {
+            "text": "shows",
+            "startFrame": 4852
+          },
+          {
+            "text": "one",
+            "startFrame": 4864
+          },
+          {
+            "text": "payment",
+            "startFrame": 4875
+          },
+          {
+            "text": "for",
+            "startFrame": 4885
+          },
+          {
+            "text": "this",
+            "startFrame": 4888
+          }
+        ]
+      },
+      {
+        "startFrame": 4894,
+        "words": [
+          {
+            "text": "order,",
+            "startFrame": 4894
+          },
+          {
+            "text": "not",
+            "startFrame": 4915
+          },
+          {
+            "text": "two.",
+            "startFrame": 4924
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 50,
+    "startFrame": 4947,
+    "endFrame": 5060,
+    "text": "Now the server reuses the key, but with a different amount.",
+    "prefix": "Now the server reuses the key, but with a different amount.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4948,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 4948
+          },
+          {
+            "text": "the",
+            "startFrame": 4953
+          },
+          {
+            "text": "server",
+            "startFrame": 4955
+          },
+          {
+            "text": "reuses",
+            "startFrame": 4968
+          },
+          {
+            "text": "the",
+            "startFrame": 4987
+          },
+          {
+            "text": "key,",
+            "startFrame": 4990
+          }
+        ]
+      },
+      {
+        "startFrame": 5018,
+        "words": [
+          {
+            "text": "but",
+            "startFrame": 5018
+          },
+          {
+            "text": "with",
+            "startFrame": 5022
+          },
+          {
+            "text": "a",
+            "startFrame": 5026
+          },
+          {
+            "text": "different",
+            "startFrame": 5028
+          },
+          {
+            "text": "amount.",
+            "startFrame": 5038
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 51,
+    "startFrame": 5060,
+    "endFrame": 5213,
+    "text": "The answer is a refusal that says the key was already used for another request.",
+    "prefix": "The answer is a refusal that says the key was already used for another request.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5062,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 5062
+          },
+          {
+            "text": "answer",
+            "startFrame": 5065
+          },
+          {
+            "text": "is",
+            "startFrame": 5077
+          },
+          {
+            "text": "a",
+            "startFrame": 5081
+          },
+          {
+            "text": "refusal",
+            "startFrame": 5082
+          },
+          {
+            "text": "that",
+            "startFrame": 5107
+          },
+          {
+            "text": "says",
+            "startFrame": 5110
+          }
+        ]
+      },
+      {
+        "startFrame": 5118,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5118
+          },
+          {
+            "text": "key",
+            "startFrame": 5120
+          },
+          {
+            "text": "was",
+            "startFrame": 5138
+          },
+          {
+            "text": "already",
+            "startFrame": 5146
+          },
+          {
+            "text": "used",
+            "startFrame": 5158
+          },
+          {
+            "text": "for",
+            "startFrame": 5172
+          },
+          {
+            "text": "another",
+            "startFrame": 5176
+          },
+          {
+            "text": "request.",
+            "startFrame": 5184
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 52,
+    "startFrame": 5214,
+    "endFrame": 5284,
+    "text": "The list still shows one payment.",
+    "prefix": "The list still shows one payment.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5215,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 5215
+          },
+          {
+            "text": "list",
+            "startFrame": 5217
+          },
+          {
+            "text": "still",
+            "startFrame": 5223
+          },
+          {
+            "text": "shows",
+            "startFrame": 5239
+          },
+          {
+            "text": "one",
+            "startFrame": 5250
+          },
+          {
+            "text": "payment.",
+            "startFrame": 5259
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 53,
+    "startFrame": 5284,
+    "endFrame": 5340,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5285,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 5285
+          },
+          {
+            "text": "does",
+            "startFrame": 5287
+          },
+          {
+            "text": "this",
+            "startFrame": 5290
+          },
+          {
+            "text": "protect?",
+            "startFrame": 5294
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 54,
+    "startFrame": 5341,
+    "endFrame": 5440,
+    "text": "It protects the buyer from paying twice for one order.",
+    "prefix": "It protects the buyer from paying twice for one order.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5342,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5342
+          },
+          {
+            "text": "protects",
+            "startFrame": 5343
+          },
+          {
+            "text": "the",
+            "startFrame": 5354
+          },
+          {
+            "text": "buyer",
+            "startFrame": 5357
+          },
+          {
+            "text": "from",
+            "startFrame": 5368
+          },
+          {
+            "text": "paying",
+            "startFrame": 5373
+          },
+          {
+            "text": "twice",
+            "startFrame": 5385
+          }
+        ]
+      },
+      {
+        "startFrame": 5407,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 5407
+          },
+          {
+            "text": "one",
+            "startFrame": 5412
+          },
+          {
+            "text": "order.",
+            "startFrame": 5418
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "startFrame": 5441,
+    "endFrame": 5591,
+    "text": "It protects the merchant from refunds and angry calls caused by a bad network.",
+    "prefix": "It protects the merchant from refunds and angry calls caused by a bad network.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5442,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5442
+          },
+          {
+            "text": "protects",
+            "startFrame": 5443
+          },
+          {
+            "text": "the",
+            "startFrame": 5454
+          },
+          {
+            "text": "merchant",
+            "startFrame": 5456
+          },
+          {
+            "text": "from",
+            "startFrame": 5471
+          },
+          {
+            "text": "refunds",
+            "startFrame": 5479
+          },
+          {
+            "text": "and",
+            "startFrame": 5502
+          },
+          {
+            "text": "angry",
+            "startFrame": 5510
+          }
+        ]
+      },
+      {
+        "startFrame": 5521,
+        "words": [
+          {
+            "text": "calls",
+            "startFrame": 5521
+          },
+          {
+            "text": "caused",
+            "startFrame": 5532
+          },
+          {
+            "text": "by",
+            "startFrame": 5549
+          },
+          {
+            "text": "a",
+            "startFrame": 5553
+          },
+          {
+            "text": "bad",
+            "startFrame": 5554
+          },
+          {
+            "text": "network.",
+            "startFrame": 5564
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 56,
+    "startFrame": 5591,
+    "endFrame": 5812,
+    "text": "And it lets the merchant's developers write the simplest safe rule there is: when in doubt, send it again with the same key.",
+    "prefix": "And it lets the merchant's developers write the simplest safe rule there is: when in doubt, send it again with the same key.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5592,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 5592
+          },
+          {
+            "text": "it",
+            "startFrame": 5594
+          },
+          {
+            "text": "lets",
+            "startFrame": 5597
+          },
+          {
+            "text": "the",
+            "startFrame": 5602
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 5605
+          },
+          {
+            "text": "developers",
+            "startFrame": 5617
+          },
+          {
+            "text": "write",
+            "startFrame": 5634
+          }
+        ]
+      },
+      {
+        "startFrame": 5644,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5644
+          },
+          {
+            "text": "simplest",
+            "startFrame": 5648
+          },
+          {
+            "text": "safe",
+            "startFrame": 5665
+          },
+          {
+            "text": "rule",
+            "startFrame": 5676
+          },
+          {
+            "text": "there",
+            "startFrame": 5684
+          },
+          {
+            "text": "is:",
+            "startFrame": 5690
+          }
+        ]
+      },
+      {
+        "startFrame": 5713,
+        "words": [
+          {
+            "text": "when",
+            "startFrame": 5713
+          },
+          {
+            "text": "in",
+            "startFrame": 5717
+          },
+          {
+            "text": "doubt,",
+            "startFrame": 5721
+          }
+        ]
+      },
+      {
+        "startFrame": 5742,
+        "words": [
+          {
+            "text": "send",
+            "startFrame": 5742
+          },
+          {
+            "text": "it",
+            "startFrame": 5750
+          },
+          {
+            "text": "again",
+            "startFrame": 5751
+          },
+          {
+            "text": "with",
+            "startFrame": 5768
+          },
+          {
+            "text": "the",
+            "startFrame": 5772
+          },
+          {
+            "text": "same",
+            "startFrame": 5774
+          },
+          {
+            "text": "key.",
+            "startFrame": 5787
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "startFrame": 5812,
+    "endFrame": 5984,
+    "text": "Without the key, every timeout forces a hard choice between a lost order and a double charge.",
+    "prefix": "Without the key, every timeout forces a hard choice between a lost order and a double charge.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5814,
+        "words": [
+          {
+            "text": "Without",
+            "startFrame": 5814
+          },
+          {
+            "text": "the",
+            "startFrame": 5823
+          },
+          {
+            "text": "key,",
+            "startFrame": 5825
+          }
+        ]
+      },
+      {
+        "startFrame": 5851,
+        "words": [
+          {
+            "text": "every",
+            "startFrame": 5851
+          },
+          {
+            "text": "timeout",
+            "startFrame": 5857
+          },
+          {
+            "text": "forces",
+            "startFrame": 5872
+          },
+          {
+            "text": "a",
+            "startFrame": 5883
+          },
+          {
+            "text": "hard",
+            "startFrame": 5885
+          },
+          {
+            "text": "choice",
+            "startFrame": 5894
+          },
+          {
+            "text": "between",
+            "startFrame": 5903
+          }
+        ]
+      },
+      {
+        "startFrame": 5911,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 5911
+          },
+          {
+            "text": "lost",
+            "startFrame": 5912
+          },
+          {
+            "text": "order",
+            "startFrame": 5925
+          },
+          {
+            "text": "and",
+            "startFrame": 5945
+          },
+          {
+            "text": "a",
+            "startFrame": 5948
+          },
+          {
+            "text": "double",
+            "startFrame": 5949
+          },
+          {
+            "text": "charge.",
+            "startFrame": 5956
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 58,
+    "startFrame": 5984,
+    "endFrame": 6062,
+    "text": "With it, retrying is always safe.",
+    "prefix": "With it, retrying is always safe.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5986,
+        "words": [
+          {
+            "text": "With",
+            "startFrame": 5986
+          },
+          {
+            "text": "it,",
+            "startFrame": 5991
+          },
+          {
+            "text": "retrying",
+            "startFrame": 6004
+          },
+          {
+            "text": "is",
+            "startFrame": 6021
+          },
+          {
+            "text": "always",
+            "startFrame": 6024
+          },
+          {
+            "text": "safe.",
+            "startFrame": 6036
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 59,
+    "startFrame": 6063,
+    "endFrame": 6118,
+    "text": "So back to the lift button.",
+    "prefix": "So back to the lift button.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6064,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 6064
+          },
+          {
+            "text": "back",
+            "startFrame": 6068
+          },
+          {
+            "text": "to",
+            "startFrame": 6074
+          },
+          {
+            "text": "the",
+            "startFrame": 6076
+          },
+          {
+            "text": "lift",
+            "startFrame": 6079
+          },
+          {
+            "text": "button.",
+            "startFrame": 6085
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "startFrame": 6119,
+    "endFrame": 6207,
+    "text": "Press it once, or press it ten times.",
+    "prefix": "Press it once, or press it ten times.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6121,
+        "words": [
+          {
+            "text": "Press",
+            "startFrame": 6121
+          },
+          {
+            "text": "it",
+            "startFrame": 6127
+          },
+          {
+            "text": "once,",
+            "startFrame": 6129
+          }
+        ]
+      },
+      {
+        "startFrame": 6151,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 6151
+          },
+          {
+            "text": "press",
+            "startFrame": 6160
+          },
+          {
+            "text": "it",
+            "startFrame": 6168
+          },
+          {
+            "text": "ten",
+            "startFrame": 6171
+          },
+          {
+            "text": "times.",
+            "startFrame": 6177
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 61,
+    "startFrame": 6207,
+    "endFrame": 6286,
+    "text": "One lift comes, and one payment is made.",
+    "prefix": "One lift comes, and one payment is made.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6209,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 6209
+          },
+          {
+            "text": "lift",
+            "startFrame": 6214
+          },
+          {
+            "text": "comes,",
+            "startFrame": 6220
+          }
+        ]
+      },
+      {
+        "startFrame": 6240,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6240
+          },
+          {
+            "text": "one",
+            "startFrame": 6246
+          },
+          {
+            "text": "payment",
+            "startFrame": 6252
+          },
+          {
+            "text": "is",
+            "startFrame": 6262
+          },
+          {
+            "text": "made.",
+            "startFrame": 6264
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 62,
+    "startFrame": 6287,
+    "endFrame": 6393,
+    "text": "Next: the page the buyer opens.",
+    "prefix": "Next: the page the buyer opens.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6288,
+        "words": [
+          {
+            "text": "Next:",
+            "startFrame": 6288
+          },
+          {
+            "text": "the",
+            "startFrame": 6309
+          },
+          {
+            "text": "page",
+            "startFrame": 6312
+          },
+          {
+            "text": "the",
+            "startFrame": 6323
+          },
+          {
+            "text": "buyer",
+            "startFrame": 6325
+          },
+          {
+            "text": "opens.",
+            "startFrame": 6335
+          }
+        ]
+      }
+    ]
+  }
+]
