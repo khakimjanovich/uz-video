@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "The server's login", "The owner's password", "A shared code store", "The developer leaves",
+  "The server's login", "Lesson 18: switched on", "Lesson 1: the server", "This lesson: its own login", "The owner's password", "A shared code store", "The developer leaves",
   "Looks like the owner", "Never your house keys", "A key of their own", "The server gets the same",
   "How it works", "An API client", "An id and a secret", "Shown exactly once",
   "Never the secret", "Nobody can read it back", "To the login server", "A short-lived token",

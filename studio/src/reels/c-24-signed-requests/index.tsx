@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Really from the merchant?", "Create a payment", "A token", "Who you are", "Who you are", "Tokens leak",
+  "Really from the merchant?", "Lesson 19: a token", "Lesson 1: create", "This lesson: proof", "Create a payment", "A token", "Who you are", "Who you are", "Tokens leak",
   "Tokens leak", "A second danger", "A second danger", "Not enough", "A wax seal", "Your own ring", "A broken seal",
   "A date", "A serial number", "Every request", "Request signature", "The method", "The full address", "The token",
   "A fingerprint", "Time and a number", "A signing key", "Only two parties", "The key safe", "Read, never change",

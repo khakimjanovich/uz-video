@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Who owns the email?", "Anyone can type it", "A stranger signs up", "Contracts and reports",
+  "Who owns the email?", "Lesson 15: room done", "Lesson 1: the portal", "This lesson: sign-up", "Anyone can type it", "A stranger signs up", "Contracts and reports",
   "A postcard with a code", "Only who gets the post", "How it works", "The sign-up form",
   "Straight to login", "Never in ecom", "Saved as pending", "A one-time code",
   "Works once, short time", "Only the inbox reader", "Never the code itself", "Only fingerprints",

@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "What the merchant gets",
+  "What the merchant gets", "Lesson 1: the day's count", "This lesson: the count",
   "Payouts and orders",
   "One week is off",
   "Last week's refund?",

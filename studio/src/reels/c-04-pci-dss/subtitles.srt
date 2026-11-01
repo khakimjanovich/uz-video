@@ -3,241 +3,253 @@
 Where may a card number live in your system?
 
 2
-00:00:01,922 --> 00:00:07,128
-Picture a shop that keeps card numbers in its orders table, just in case it needs them for refunds.
+00:00:01,922 --> 00:00:06,048
+In Lesson 1, the card zone was the only place a card number ever lives.
 
 3
-00:00:07,178 --> 00:00:09,000
-It seems harmless.
+00:00:06,098 --> 00:00:12,168
+In Lesson 3, a card number was shown masked, kept as a token, and never copied around.
 
 4
-00:00:09,050 --> 00:00:10,872
-Then the numbers spread.
+00:00:12,218 --> 00:00:18,312
+This lesson explains why: the card industry's rulebook, and how one locked room keeps it small.
 
 5
-00:00:10,922 --> 00:00:13,776
-A report reads the table every morning.
+00:00:18,362 --> 00:00:23,568
+Picture a shop that keeps card numbers in its orders table, just in case it needs them for refunds.
 
 6
-00:00:13,826 --> 00:00:16,008
-A backup copies it every night.
+00:00:23,618 --> 00:00:25,440
+It seems harmless.
 
 7
-00:00:16,058 --> 00:00:18,480
-Every developer's laptop can reach it.
+00:00:25,490 --> 00:00:27,312
+Then the numbers spread.
 
 8
-00:00:18,530 --> 00:00:23,112
-Now each of those places holds card numbers too, so each of them must be checked.
+00:00:27,362 --> 00:00:30,216
+A report reads the table every morning.
 
 9
-00:00:23,162 --> 00:00:26,976
-One weak laptop can leak every card the shop has ever seen.
+00:00:30,266 --> 00:00:32,448
+A backup copies it every night.
 
 10
-00:00:27,026 --> 00:00:28,944
-Those checks come from one rulebook.
+00:00:32,498 --> 00:00:34,920
+Every developer's laptop can reach it.
 
 11
-00:00:28,994 --> 00:00:33,024
-PCI DSS is the card industry's security rulebook.
+00:00:34,970 --> 00:00:39,552
+Now each of those places holds card numbers too, so each of them must be checked.
 
 12
-00:00:33,074 --> 00:00:37,320
-It checks every system that stores, handles or sends a card number.
+00:00:39,602 --> 00:00:43,416
+One weak laptop can leak every card the shop has ever seen.
 
 13
-00:00:37,370 --> 00:00:42,504
-It also checks every system connected to those, or able to change how safe they are.
+00:00:43,466 --> 00:00:45,384
+Those checks come from one rulebook.
 
 14
-00:00:42,554 --> 00:00:47,496
-The check covers the system's network, its logins, its logs and its changes.
+00:00:45,434 --> 00:00:49,464
+PCI DSS is the card industry's security rulebook.
 
 15
-00:00:47,546 --> 00:00:52,992
-So in the shop's story, the report, the backup and every laptop are now in the check.
+00:00:49,514 --> 00:00:53,760
+It checks every system that stores, handles or sends a card number.
 
 16
-00:00:53,042 --> 00:00:58,056
-The more places a card number can reach, the bigger the check, and the more ways to fail it.
+00:00:53,810 --> 00:00:58,944
+It also checks every system connected to those, or able to change how safe they are.
 
 17
-00:00:58,106 --> 00:01:01,008
-So the way out is to have less to check.
+00:00:58,994 --> 00:01:03,936
+The check covers the system's network, its logins, its logs and its changes.
 
 18
-00:01:01,058 --> 00:01:02,928
-Think of a coat check at a theatre.
+00:01:03,986 --> 00:01:09,432
+So in the shop's story, the report, the backup and every laptop are now in the check.
 
 19
-00:01:02,978 --> 00:01:04,920
-Coats go into one locked room.
+00:01:09,482 --> 00:01:14,496
+The more places a card number can reach, the bigger the check, and the more ways to fail it.
 
 20
-00:01:04,970 --> 00:01:06,792
-Everyone else gets a ticket.
+00:01:14,546 --> 00:01:17,448
+So the way out is to have less to check.
 
 21
-00:01:06,842 --> 00:01:10,968
-The ticket brings your coat back, but a thief who steals it gets no coat.
+00:01:17,498 --> 00:01:19,368
+Think of a coat check at a theatre.
 
 22
-00:01:11,018 --> 00:01:12,840
-Card numbers work the same way.
+00:01:19,418 --> 00:01:21,360
+Coats go into one locked room.
 
 23
-00:01:12,890 --> 00:01:19,128
-They go into one locked room, and every other system gets a ticket: the card token, never the number.
+00:01:21,410 --> 00:01:23,232
+Everyone else gets a ticket.
 
 24
-00:01:19,178 --> 00:01:22,464
-In this system, the locked room is the card zone.
+00:01:23,282 --> 00:01:27,408
+The ticket brings your coat back, but a thief who steals it gets no coat.
 
 25
-00:01:22,514 --> 00:01:26,520
-It has its own database, its own keys and its own logins.
+00:01:27,458 --> 00:01:29,280
+Card numbers work the same way.
 
 26
-00:01:26,570 --> 00:01:28,512
-It shares none of them with ecom.
+00:01:29,330 --> 00:01:35,568
+They go into one locked room, and every other system gets a ticket: the card token, never the number.
 
 27
-00:01:28,562 --> 00:01:30,384
-It has only two doors.
+00:01:35,618 --> 00:01:38,904
+In this system, the locked room is the card zone.
 
 28
-00:01:30,434 --> 00:01:33,768
-One door is for buyers' browsers: the card form.
+00:01:38,954 --> 00:01:42,960
+It has its own database, its own keys and its own logins.
 
 29
-00:01:33,818 --> 00:01:37,320
-The other door is for partner systems, like ecom.
+00:01:43,010 --> 00:01:44,952
+It shares none of them with ecom.
 
 30
-00:01:37,370 --> 00:01:40,008
-The database inside has no door at all.
+00:01:45,002 --> 00:01:46,824
+It has only two doors.
 
 31
-00:01:40,058 --> 00:01:41,880
-Now watch the product.
+00:01:46,874 --> 00:01:50,208
+One door is for buyers' browsers: the card form.
 
 32
-00:01:41,930 --> 00:01:45,960
-This room has no screen of its own, so watch how the system behaves.
+00:01:50,258 --> 00:01:53,760
+The other door is for partner systems, like ecom.
 
 33
-00:01:46,010 --> 00:01:48,384
-A buyer opens the bank's payment page.
+00:01:53,810 --> 00:01:56,448
+The database inside has no door at all.
 
 34
-00:01:48,434 --> 00:01:53,424
-The card form under "Card details" is the first door, opened inside the page.
+00:01:56,498 --> 00:01:58,320
+Now watch the product.
 
 35
-00:01:53,474 --> 00:01:57,576
-The buyer types the card, and it travels straight through that door into the room.
+00:01:58,370 --> 00:02:02,400
+This room has no screen of its own, so watch how the system behaves.
 
 36
-00:01:57,626 --> 00:01:59,520
-ecom's servers are not on the way.
+00:02:02,450 --> 00:02:04,824
+A buyer opens the bank's payment page.
 
 37
-00:01:59,570 --> 00:02:04,320
-Inside the room, the card is locked away, and a token comes back out.
+00:02:04,874 --> 00:02:09,864
+The card form under "Card details" is the first door, opened inside the page.
 
 38
-00:02:04,370 --> 00:02:10,848
-Then ecom knocks on the second door: it asks the room to charge the card, and it names the card only by its token.
+00:02:09,914 --> 00:02:14,016
+The buyer types the card, and it travels straight through that door into the room.
 
 39
-00:02:10,898 --> 00:02:13,032
-Now look at the running card zone itself.
+00:02:14,066 --> 00:02:15,960
+ecom's servers are not on the way.
 
 40
-00:02:13,082 --> 00:02:14,928
-Two doors answer from outside.
+00:02:16,010 --> 00:02:20,760
+Inside the room, the card is locked away, and a token comes back out.
 
 41
-00:02:14,978 --> 00:02:18,048
-The database answers to nobody outside the room.
+00:02:20,810 --> 00:02:27,288
+Then ecom knocks on the second door: it asks the room to charge the card, and it names the card only by its token.
 
 42
-00:02:18,098 --> 00:02:22,608
-And in the bank admin portal, every payment shows only a masked number.
+00:02:27,338 --> 00:02:29,472
+Now look at the running card zone itself.
 
 43
-00:02:22,658 --> 00:02:25,224
-ecom holds tickets, never coats.
+00:02:29,522 --> 00:02:31,368
+Two doors answer from outside.
 
 44
-00:02:25,274 --> 00:02:27,096
-Now the honest part.
+00:02:31,418 --> 00:02:34,488
+The database answers to nobody outside the room.
 
 45
-00:02:27,146 --> 00:02:28,968
-ecom still gets a check.
+00:02:34,538 --> 00:02:39,048
+And in the bank admin portal, every payment shows only a masked number.
 
 46
-00:02:29,018 --> 00:02:33,456
-It shows the card form on its page, and it uses tickets to take payments.
+00:02:39,098 --> 00:02:41,664
+ecom holds tickets, never coats.
 
 47
-00:02:33,506 --> 00:02:37,512
-So it is connected to the room, and its check is smaller, but not none.
+00:02:41,714 --> 00:02:43,536
+Now the honest part.
 
 48
-00:02:37,562 --> 00:02:39,552
-And the room needs a building.
+00:02:43,586 --> 00:02:45,408
+ecom still gets a check.
 
 49
-00:02:39,602 --> 00:02:44,088
-In a bank, the card zone runs inside the bank's own secured network.
+00:02:45,458 --> 00:02:49,896
+It shows the card form on its page, and it uses tickets to take payments.
 
 50
-00:02:44,138 --> 00:02:47,688
-The bank's firewalls, guards and monitoring stand around it.
+00:02:49,946 --> 00:02:53,952
+So it is connected to the room, and its check is smaller, but not none.
 
 51
-00:02:47,738 --> 00:02:55,848
-The card zone fits into that network through its two narrow doors, and it shares no parts with the bank's other systems, so it breaks nothing around it.
+00:02:54,002 --> 00:02:55,992
+And the room needs a building.
 
 52
-00:02:55,898 --> 00:02:58,776
-The product claims no certificate for itself.
+00:02:56,042 --> 00:03:00,528
+In a bank, the card zone runs inside the bank's own secured network.
 
 53
-00:02:58,826 --> 00:03:02,256
-The bank's own assessor checks the room and the building together.
+00:03:00,578 --> 00:03:04,128
+The bank's firewalls, guards and monitoring stand around it.
 
 54
-00:03:02,306 --> 00:03:04,128
-What does this protect?
+00:03:04,178 --> 00:03:12,288
+The card zone fits into that network through its two narrow doors, and it shares no parts with the bank's other systems, so it breaks nothing around it.
 
 55
-00:03:04,178 --> 00:03:11,016
-Without the room, every report, backup and laptop holds card numbers, and any one of them can leak them all.
+00:03:12,338 --> 00:03:15,216
+The product claims no certificate for itself.
 
 56
-00:03:11,066 --> 00:03:14,808
-With the room, a leak from ecom leaks no card number at all.
+00:03:15,266 --> 00:03:18,696
+The bank's own assessor checks the room and the building together.
 
 57
-00:03:14,858 --> 00:03:21,624
-The buyer's card stays safe, ecom's check stays small, and the bank guards one small room instead of everything.
+00:03:18,746 --> 00:03:20,568
+What does this protect?
 
 58
-00:03:21,674 --> 00:03:23,496
-Back to the coat check.
+00:03:20,618 --> 00:03:27,456
+Without the room, every report, backup and laptop holds card numbers, and any one of them can leak them all.
 
 59
-00:03:23,546 --> 00:03:26,640
-Coats in one room, tickets everywhere else.
+00:03:27,506 --> 00:03:31,248
+With the room, a leak from ecom leaks no card number at all.
 
 60
-00:03:26,690 --> 00:03:29,952
-We deliver the locked room; the bank owns the building.
+00:03:31,298 --> 00:03:38,064
+The buyer's card stays safe, ecom's check stays small, and the bank guards one small room instead of everything.
 
 61
-00:03:30,002 --> 00:03:33,864
+00:03:38,114 --> 00:03:39,936
+Back to the coat check.
+
+62
+00:03:39,986 --> 00:03:43,080
+Coats in one room, tickets everywhere else.
+
+63
+00:03:43,130 --> 00:03:46,392
+We deliver the locked room; the bank owns the building.
+
+64
+00:03:46,442 --> 00:03:50,304
 Next: how ecom takes a payment without ever seeing the card.

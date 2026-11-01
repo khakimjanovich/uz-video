@@ -3,217 +3,229 @@
 What should a service do when a setting is missing?
 
 2
-00:00:02,834 --> 00:00:09,312
-Picture a payment service with a timeout written in its settings file: thirty seconds, as a sensible default.
+00:00:02,834 --> 00:00:07,536
+In Lesson 5, ecom and the card zone talked only through a written contract.
 
 3
-00:00:09,362 --> 00:00:15,192
-In production, nobody sets the real value, so thirty seconds quietly stays.
+00:00:07,586 --> 00:00:13,440
+In Lesson 4, each product had its own database, its own keys and its own logins.
 
 4
-00:00:15,242 --> 00:00:18,528
-One day the card network takes forty seconds to answer.
+00:00:13,490 --> 00:00:19,584
+This lesson shows where every key and setting comes from, and what happens when one is missing.
 
 5
-00:00:18,578 --> 00:00:22,080
-The service gives up at thirty and tells the shop the payment failed.
+00:00:19,634 --> 00:00:26,112
+Picture a payment service with a timeout written in its settings file: thirty seconds, as a sensible default.
 
 6
-00:00:22,130 --> 00:00:25,464
-But the card network said yes, and the buyer's money is gone.
+00:00:26,162 --> 00:00:31,992
+In production, nobody sets the real value, so thirty seconds quietly stays.
 
 7
-00:00:25,514 --> 00:00:28,368
-A guessed default looked safe until production.
+00:00:32,042 --> 00:00:35,328
+One day the card network takes forty seconds to answer.
 
 8
-00:00:28,418 --> 00:00:30,240
-A good cook works the other way.
+00:00:35,378 --> 00:00:38,880
+The service gives up at thirty and tells the shop the payment failed.
 
 9
-00:00:30,290 --> 00:00:33,912
-If an ingredient is missing, the cook stops the dish.
+00:00:38,930 --> 00:00:42,264
+But the card network said yes, and the buyer's money is gone.
 
 10
-00:00:33,962 --> 00:00:35,760
-The cook never guesses a pinch.
+00:00:42,314 --> 00:00:45,168
+A guessed default looked safe until production.
 
 11
-00:00:35,810 --> 00:00:37,632
-Our services are the same.
+00:00:45,218 --> 00:00:47,040
+A good cook works the other way.
 
 12
-00:00:37,682 --> 00:00:41,184
-The rule is simple: no setting has a default value.
+00:00:47,090 --> 00:00:50,712
+If an ingredient is missing, the cook stops the dish.
 
 13
-00:00:41,234 --> 00:00:46,704
-Every setting comes from one locked store, Vault: a safe for settings and secrets.
+00:00:50,762 --> 00:00:52,584
+The cook never guesses a pinch.
 
 14
-00:00:46,754 --> 00:00:48,768
-Three kinds of value go into it.
+00:00:52,634 --> 00:00:54,456
+Our services are the same.
 
 15
-00:00:48,818 --> 00:00:53,136
-Some belong to the system itself, like which service listens where.
+00:00:54,506 --> 00:00:58,008
+The rule is simple: no setting has a default value.
 
 16
-00:00:53,186 --> 00:00:59,376
-Some are secrets, like passwords and keys, and every one of them is generated inside Vault.
+00:00:58,058 --> 00:01:03,528
+Every setting comes from one locked store, Vault: a safe for settings and secrets.
 
 17
-00:00:59,426 --> 00:01:03,624
-Nobody types a password into a file, and the product ships none.
+00:01:03,578 --> 00:01:05,592
+Three kinds of value go into it.
 
 18
-00:01:03,674 --> 00:01:08,400
-And some only this bank knows, like the card network's address and the bank's login there.
+00:01:05,642 --> 00:01:09,960
+Some belong to the system itself, like which service listens where.
 
 19
-00:01:08,450 --> 00:01:11,904
-The operator types each of those once, into Vault.
+00:01:10,010 --> 00:01:16,200
+Some are secrets, like passwords and keys, and every one of them is generated inside Vault.
 
 20
-00:01:11,954 --> 00:01:18,720
-Before a service starts, it is handed exactly its own settings, in a private file only it can read.
+00:01:16,250 --> 00:01:20,448
+Nobody types a password into a file, and the product ships none.
 
 21
-00:01:18,770 --> 00:01:23,160
-Its own configuration holds only the names of settings, never the values.
+00:01:20,498 --> 00:01:25,224
+And some only this bank knows, like the card network's address and the bank's login there.
 
 22
-00:01:23,210 --> 00:01:27,264
-If even one value is missing, the service refuses to start.
+00:01:25,274 --> 00:01:28,728
+The operator types each of those once, into Vault.
 
 23
-00:01:27,314 --> 00:01:30,912
-It names every missing one at once, not just the first.
+00:01:28,778 --> 00:01:35,544
+Before a service starts, it is handed exactly its own settings, in a private file only it can read.
 
 24
-00:01:30,962 --> 00:01:36,144
-That is fail fast: stop loudly at the start, instead of failing quietly later.
+00:01:35,594 --> 00:01:39,984
+Its own configuration holds only the names of settings, never the values.
 
 25
-00:01:36,194 --> 00:01:39,360
-The same rule covers the bank's business decisions.
+00:01:40,034 --> 00:01:44,088
+If even one value is missing, the service refuses to start.
 
 26
-00:01:39,410 --> 00:01:47,424
-Rates, limits and waiting times are the bank's choices, so each is a setting the bank chooses, never a number hidden in the product.
+00:01:44,138 --> 00:01:47,736
+It names every missing one at once, not just the first.
 
 27
-00:01:47,474 --> 00:01:51,552
-The card zone has its own settings too, and every one is the bank's.
+00:01:47,786 --> 00:01:52,968
+That is fail fast: stop loudly at the start, instead of failing quietly later.
 
 28
-00:01:51,602 --> 00:01:57,072
-The bank chooses which systems may call the card zone, and which roles each caller gets.
+00:01:53,018 --> 00:01:56,184
+The same rule covers the bank's business decisions.
 
 29
-00:01:57,122 --> 00:02:05,400
-For each caller, the bank chooses which websites may show the card form, how long a card-entry session lives, and how many tries a buyer gets.
+00:01:56,234 --> 00:02:04,248
+Rates, limits and waiting times are the bank's choices, so each is a setting the bank chooses, never a number hidden in the product.
 
 30
-00:02:05,450 --> 00:02:14,712
-The bank chooses the fraud limits: how many attempts one card, one group of cards, one address and one shop may make within its chosen time window.
+00:02:04,298 --> 00:02:08,376
+The card zone has its own settings too, and every one is the bank's.
 
 31
-00:02:14,762 --> 00:02:21,792
-The bank chooses how long an unused card is kept before it is deleted, and how often the keys that lock card numbers change.
+00:02:08,426 --> 00:02:13,824
+The bank chooses which systems may call the card zone, and which roles each caller gets.
 
 32
-00:02:21,842 --> 00:02:25,104
-And the bank chooses when the nightly clean-up jobs run.
+00:02:13,874 --> 00:02:22,152
+For each caller, the bank chooses which websites may show the card form, how long a card-entry session lives, and how many tries a buyer gets.
 
 33
-00:02:25,154 --> 00:02:26,976
-Now watch the product.
+00:02:22,202 --> 00:02:31,464
+The bank chooses the fraud limits: how many attempts one card, one group of cards, one address and one shop may make within its chosen time window.
 
 34
-00:02:27,026 --> 00:02:30,552
-Settings have no screen, so watch how the system behaves.
+00:02:31,514 --> 00:02:38,544
+The bank chooses how long an unused card is kept before it is deleted, and how often the keys that lock card numbers change.
 
 35
-00:02:30,602 --> 00:02:32,904
-The operator installs the card zone.
+00:02:38,594 --> 00:02:41,856
+And the bank chooses when the nightly clean-up jobs run.
 
 36
-00:02:32,954 --> 00:02:39,816
-Vault holds the system's values and the generated secrets, but one caller's fraud limit has not been typed in yet.
+00:02:41,906 --> 00:02:43,728
+Now watch the product.
 
 37
-00:02:39,866 --> 00:02:42,336
-The install stops before anything runs.
+00:02:43,778 --> 00:02:47,304
+Settings have no screen, so watch how the system behaves.
 
 38
-00:02:42,386 --> 00:02:46,464
-Its message names the missing value, and the caller it belongs to.
+00:02:47,354 --> 00:02:49,656
+The operator installs the card zone.
 
 39
-00:02:46,514 --> 00:02:49,464
-The operator types it in and runs the install again.
+00:02:49,706 --> 00:02:56,568
+Vault holds the system's values and the generated secrets, but one caller's fraud limit has not been typed in yet.
 
 40
-00:02:49,514 --> 00:02:53,520
-Now take one service on its own, started with nothing set at all.
+00:02:56,618 --> 00:02:59,088
+The install stops before anything runs.
 
 41
-00:02:53,570 --> 00:02:55,392
-It does not start.
+00:02:59,138 --> 00:03:03,216
+Its message names the missing value, and the caller it belongs to.
 
 42
-00:02:55,442 --> 00:02:58,848
-It prints one message: required settings are missing.
+00:03:03,266 --> 00:03:06,216
+The operator types it in and runs the install again.
 
 43
-00:02:58,898 --> 00:03:02,520
-Below it comes one line for every missing setting, by name.
+00:03:06,266 --> 00:03:10,272
+Now take one service on its own, started with nothing set at all.
 
 44
-00:03:02,570 --> 00:03:04,392
-Nothing half-works.
+00:03:10,322 --> 00:03:12,144
+It does not start.
 
 45
-00:03:04,442 --> 00:03:09,048
-Nothing listens with a guessed address, a test password or a made-up timeout.
+00:03:12,194 --> 00:03:15,600
+It prints one message: required settings are missing.
 
 46
-00:03:09,098 --> 00:03:12,240
-Then its settings are handed over, and the service starts.
+00:03:15,650 --> 00:03:19,272
+Below it comes one line for every missing setting, by name.
 
 47
-00:03:12,290 --> 00:03:14,112
-What does this protect?
+00:03:19,322 --> 00:03:21,144
+Nothing half-works.
 
 48
-00:03:14,162 --> 00:03:20,040
-A wrong guess can never reach production, so a payment never fails on a timeout nobody chose.
+00:03:21,194 --> 00:03:25,800
+Nothing listens with a guessed address, a test password or a made-up timeout.
 
 49
-00:03:20,090 --> 00:03:25,296
-A test password can never guard real money, because no password exists outside Vault.
+00:03:25,850 --> 00:03:28,992
+Then its settings are handed over, and the service starts.
 
 50
-00:03:25,346 --> 00:03:32,376
-And the bank stays in charge: every limit, window and time in the product is a value the bank chose and can see.
+00:03:29,042 --> 00:03:30,864
+What does this protect?
 
 51
-00:03:32,426 --> 00:03:36,384
-That protects the buyer's money, and the bank's control over its own system.
+00:03:30,914 --> 00:03:36,792
+A wrong guess can never reach production, so a payment never fails on a timeout nobody chose.
 
 52
-00:03:36,434 --> 00:03:38,256
-Back to the cook.
+00:03:36,842 --> 00:03:42,048
+A test password can never guard real money, because no password exists outside Vault.
 
 53
-00:03:38,306 --> 00:03:41,304
-Every ingredient on the counter, or no dish at all.
+00:03:42,098 --> 00:03:49,128
+And the bank stays in charge: every limit, window and time in the product is a value the bank chose and can see.
 
 54
-00:03:41,354 --> 00:03:47,016
-Like the cook, the service won't guess: every value comes from Vault, or it doesn't start.
+00:03:49,178 --> 00:03:53,136
+That protects the buyer's money, and the bank's control over its own system.
 
 55
-00:03:47,066 --> 00:03:50,208
+00:03:53,186 --> 00:03:55,008
+Back to the cook.
+
+56
+00:03:55,058 --> 00:03:58,056
+Every ingredient on the counter, or no dish at all.
+
+57
+00:03:58,106 --> 00:04:03,768
+Like the cook, the service won't guess: every value comes from Vault, or it doesn't start.
+
+58
+00:04:03,818 --> 00:04:06,960
 Next: how every call proves who it comes from.

@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "How deep?", "A bank vault", "A gate", "A guard", "Inner doors", "A safe", "Cameras", "No one layer", "Might fail",
+  "How deep?", "So far: the layers", "This lesson: all together", "A bank vault", "A gate", "A guard", "Inner doors", "A safe", "Cameras", "No one layer", "Might fail",
   "Defence in depth", "The same way", "Layer by layer", "1: the gate", "Only this door", "Not found", "Too fast",
   "2: the glass", "Its own two files", "A changed file", "A stranger's script", "Its session names", "Stops a skimmer",
   "3: the guard", "Counted first", "Past the limits", "Stops card testing", "4: the safe", "Vault seals",

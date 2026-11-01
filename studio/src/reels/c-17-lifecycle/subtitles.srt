@@ -3,213 +3,225 @@
 How does a new merchant earn the right to take card payments?
 
 2
-00:00:03,362 --> 00:00:07,608
-Picture a company that signs up on Monday and takes payments on Tuesday.
+00:00:03,362 --> 00:00:08,880
+In Lesson 16, a checked email created the merchant, and made its first admin.
 
 3
-00:00:07,658 --> 00:00:11,496
-Nobody saw its founding papers, or its director's passport.
+00:00:08,930 --> 00:00:11,688
+But that merchant cannot take any money yet.
 
 4
-00:00:11,546 --> 00:00:17,880
-When complaints and disputed payments pile up, the bank cannot say who it signed with, or who let it in.
+00:00:11,738 --> 00:00:15,984
+This lesson shows how it earns that right, one checked document at a time.
 
 5
-00:00:17,930 --> 00:00:22,440
-To get a driving licence, you hand in your papers, and each one is checked.
+00:00:16,034 --> 00:00:20,280
+Picture a company that signs up on Monday and takes payments on Tuesday.
 
 6
-00:00:22,490 --> 00:00:26,400
-You get a licence with its own number, and every step goes in your file.
+00:00:20,330 --> 00:00:24,168
+Nobody saw its founding papers, or its director's passport.
 
 7
-00:00:26,450 --> 00:00:29,208
-A merchant earns its states the same way.
+00:00:24,218 --> 00:00:30,552
+When complaints and disputed payments pile up, the bank cannot say who it signed with, or who let it in.
 
 8
-00:00:29,258 --> 00:00:31,080
-Here is how it works.
+00:00:30,602 --> 00:00:35,112
+To get a driving licence, you hand in your papers, and each one is checked.
 
 9
-00:00:31,130 --> 00:00:34,824
-First, the merchant uploads its company documents.
+00:00:35,162 --> 00:00:39,072
+You get a licence with its own number, and every step goes in your file.
 
 10
-00:00:34,874 --> 00:00:37,104
-The bank must know who it does business with.
+00:00:39,122 --> 00:00:41,880
+A merchant earns its states the same way.
 
 11
-00:00:37,154 --> 00:00:38,976
-This is know your business.
+00:00:41,930 --> 00:00:43,752
+Here is how it works.
 
 12
-00:00:39,026 --> 00:00:41,448
-Each file goes into the file store.
+00:00:43,802 --> 00:00:47,496
+First, the merchant uploads its company documents.
 
 13
-00:00:41,498 --> 00:00:46,848
-The store reads each file's real type from the file's own contents, never from its name.
+00:00:47,546 --> 00:00:49,776
+The bank must know who it does business with.
 
 14
-00:00:46,898 --> 00:00:51,120
-So a file called "charter" that is really something else is refused.
+00:00:49,826 --> 00:00:51,648
+This is know your business.
 
 15
-00:00:51,170 --> 00:00:56,376
-The store also keeps a checksum: a fingerprint worked out from every byte of the file.
+00:00:51,698 --> 00:00:54,120
+Each file goes into the file store.
 
 16
-00:00:56,426 --> 00:01:01,776
-When the file is read back, its fingerprint must still match, so a changed file is caught.
+00:00:54,170 --> 00:00:59,520
+The store reads each file's real type from the file's own contents, never from its name.
 
 17
-00:01:01,826 --> 00:01:05,136
-Next, a bank admin checks every document.
+00:00:59,570 --> 00:01:03,792
+So a file called "charter" that is really something else is refused.
 
 18
-00:01:05,186 --> 00:01:10,080
-Each one is verified, or rejected with a reason the merchant can read and fix.
+00:01:03,842 --> 00:01:09,048
+The store also keeps a checksum: a fingerprint worked out from every byte of the file.
 
 19
-00:01:10,130 --> 00:01:15,456
-Only when every required document is verified can the company itself be verified.
+00:01:09,098 --> 00:01:14,448
+When the file is read back, its fingerprint must still match, so a changed file is caught.
 
 20
-00:01:15,506 --> 00:01:20,064
-Then it signs a contract, and the contract carries its own unique number.
+00:01:14,498 --> 00:01:17,808
+Next, a bank admin checks every document.
 
 21
-00:01:20,114 --> 00:01:22,392
-No two merchants ever share one.
+00:01:17,858 --> 00:01:22,752
+Each one is verified, or rejected with a reason the merchant can read and fix.
 
 22
-00:01:22,442 --> 00:01:28,224
-Every move between states is written down: from where, to where, who, and why.
+00:01:22,802 --> 00:01:28,128
+Only when every required document is verified can the company itself be verified.
 
 23
-00:01:28,274 --> 00:01:34,176
-That record is the status history, and it is written in the same step as the move itself.
+00:01:28,178 --> 00:01:32,736
+Then it signs a contract, and the contract carries its own unique number.
 
 24
-00:01:34,226 --> 00:01:36,792
-A move without its record cannot happen.
+00:01:32,786 --> 00:01:35,064
+No two merchants ever share one.
 
 25
-00:01:36,842 --> 00:01:38,664
-Now watch the product.
+00:01:35,114 --> 00:01:40,896
+Every move between states is written down: from where, to where, who, and why.
 
 26
-00:01:38,714 --> 00:01:42,744
-The viewer signs in as the merchant and opens Documents.
+00:01:40,946 --> 00:01:46,848
+That record is the status history, and it is written in the same step as the move itself.
 
 27
-00:01:42,794 --> 00:01:48,768
-The page says "Company documents", and explains that the bank checks who it works with before switching a merchant on.
+00:01:46,898 --> 00:01:49,464
+A move without its record cannot happen.
 
 28
-00:01:48,818 --> 00:01:53,520
-Two papers are marked Required: the company charter and the director's passport.
+00:01:49,514 --> 00:01:51,336
+Now watch the product.
 
 29
-00:01:53,570 --> 00:01:57,672
-Two more say "If it applies": a licence and a power of attorney.
+00:01:51,386 --> 00:01:55,416
+The viewer signs in as the merchant and opens Documents.
 
 30
-00:01:57,722 --> 00:02:02,400
-The viewer clicks Choose file, picks a sample charter, and clicks Upload.
+00:01:55,466 --> 00:02:01,440
+The page says "Company documents", and explains that the bank checks who it works with before switching a merchant on.
 
 31
-00:02:02,450 --> 00:02:04,272
-The page says "Uploaded.
+00:02:01,490 --> 00:02:06,192
+Two papers are marked Required: the company charter and the director's passport.
 
 32
-00:02:04,322 --> 00:02:08,280
-The bank will review it." The status reads "Waiting for review".
+00:02:06,242 --> 00:02:10,344
+Two more say "If it applies": a licence and a power of attorney.
 
 33
-00:02:08,330 --> 00:02:10,152
-Now the trick.
+00:02:10,394 --> 00:02:15,072
+The viewer clicks Choose file, picks a sample charter, and clicks Upload.
 
 34
-00:02:10,202 --> 00:02:15,648
-The viewer uploads a file whose name says it is a document, but whose contents are something else.
+00:02:15,122 --> 00:02:16,944
+The page says "Uploaded.
 
 35
-00:02:15,698 --> 00:02:18,912
-The picker lets it through, because it only looks at the name.
+00:02:16,994 --> 00:02:20,952
+The bank will review it." The status reads "Waiting for review".
 
 36
-00:02:18,962 --> 00:02:21,792
-The server reads the contents and refuses it.
+00:02:21,002 --> 00:02:22,824
+Now the trick.
 
 37
-00:02:21,842 --> 00:02:23,976
-Next, the bank admin portal.
+00:02:22,874 --> 00:02:28,320
+The viewer uploads a file whose name says it is a document, but whose contents are something else.
 
 38
-00:02:24,026 --> 00:02:27,072
-The admin opens Merchants and picks this merchant.
+00:02:28,370 --> 00:02:31,584
+The picker lets it through, because it only looks at the name.
 
 39
-00:02:27,122 --> 00:02:30,936
-Each document has two buttons, Verify and Reject.
+00:02:31,634 --> 00:02:34,464
+The server reads the contents and refuses it.
 
 40
-00:02:30,986 --> 00:02:35,304
-Reject asks the admin to say what is wrong, so the merchant can fix it.
+00:02:34,514 --> 00:02:36,648
+Next, the bank admin portal.
 
 41
-00:02:35,354 --> 00:02:37,200
-The admin verifies both.
+00:02:36,698 --> 00:02:39,744
+The admin opens Merchants and picks this merchant.
 
 42
-00:02:37,250 --> 00:02:44,424
-If the merchant had not yet confirmed its email, the "Approve documents" button would stay grey, with a message saying so.
+00:02:39,794 --> 00:02:43,608
+Each document has two buttons, Verify and Reject.
 
 43
-00:02:44,474 --> 00:02:48,768
-Here the email is confirmed, so the admin clicks Approve documents.
+00:02:43,658 --> 00:02:47,976
+Reject asks the admin to say what is wrong, so the merchant can fix it.
 
 44
-00:02:48,818 --> 00:02:53,880
-Then Sign contract, and types the contract number, as printed on the signed paper.
+00:02:48,026 --> 00:02:49,872
+The admin verifies both.
 
 45
-00:02:53,930 --> 00:02:56,424
-Last, the admin opens History.
+00:02:49,922 --> 00:02:57,096
+If the merchant had not yet confirmed its email, the "Approve documents" button would stay grey, with a message saying so.
 
 46
-00:02:56,474 --> 00:03:01,176
-Every move is there: from, to, who, and the reason.
+00:02:57,146 --> 00:03:01,440
+Here the email is confirmed, so the admin clicks Approve documents.
 
 47
-00:03:01,226 --> 00:03:03,048
-What does this protect?
+00:03:01,490 --> 00:03:06,552
+Then Sign contract, and types the contract number, as printed on the signed paper.
 
 48
-00:03:03,098 --> 00:03:07,152
-Without checked papers, the bank cannot say who it is paying.
+00:03:06,602 --> 00:03:09,096
+Last, the admin opens History.
 
 49
-00:03:07,202 --> 00:03:10,872
-Without a fingerprint, a document could be swapped after it was checked.
+00:03:09,146 --> 00:03:13,848
+Every move is there: from, to, who, and the reason.
 
 50
-00:03:10,922 --> 00:03:14,136
-Without the history, nobody could say who approved what.
+00:03:13,898 --> 00:03:15,720
+What does this protect?
 
 51
-00:03:14,186 --> 00:03:18,624
-Know your business protects the bank, the card network and every buyer.
+00:03:15,770 --> 00:03:19,824
+Without checked papers, the bank cannot say who it is paying.
 
 52
-00:03:18,674 --> 00:03:25,272
-The status history protects the people who did the checking, because it shows exactly what they saw and when.
+00:03:19,874 --> 00:03:23,544
+Without a fingerprint, a document could be swapped after it was checked.
 
 53
-00:03:25,322 --> 00:03:30,936
-So, like a driving licence: checked papers, a unique number, and every step in the file.
+00:03:23,594 --> 00:03:26,808
+Without the history, nobody could say who approved what.
 
 54
-00:03:30,986 --> 00:03:34,032
+00:03:26,858 --> 00:03:31,296
+Know your business protects the bank, the card network and every buyer.
+
+55
+00:03:31,346 --> 00:03:37,944
+The status history protects the people who did the checking, because it shows exactly what they saw and when.
+
+56
+00:03:37,994 --> 00:03:43,608
+So, like a driving licence: checked papers, a unique number, and every step in the file.
+
+57
+00:03:43,658 --> 00:03:46,704
 Next: why switching a merchant on needs two people.

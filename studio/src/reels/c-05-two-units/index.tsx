@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "Never see the card", "A real shop", "The card reader", "The bank's reader", "Only a receipt",
+  "Never see the card", "Lesson 4: tickets only", "Lesson 1: straight in", "This lesson: page and room", "A real shop", "The card reader", "The bank's reader", "Only a receipt",
   "The obvious design", "Through ecom", "One hop", "The full check", "The bank's reader on ecom",
   "Step by step", "Never talk freely", "Every question, written", "A contract", "Only what it allows",
   "A card-entry session", "One card, one payment", "An address",

@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Who decides the fee?", "One rate for everyone", "A lower rate", "A special offer",
+  "Who decides the fee?", "Lesson 2: the fee", "Lesson 21: the deal", "This lesson: deciding it", "One rate for everyone", "A lower rate", "A special offer",
   "A card costs more", "A tangle", "Changed in place", "Item beats aisle",
   "Most specific wins", "The bank's fee", "How it works", "A fee rule",
   "Website to whole bank", "Most specific wins", "Website beats merchant", "Merchant beats card",

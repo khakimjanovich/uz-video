@@ -5,7 +5,7 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "No single person",
+  "No single person", "Lesson 6: Vault", "Lesson 9: sealed", "This lesson: opening Vault",
   "A script run once",
   "A text file",
   "That person leaves",

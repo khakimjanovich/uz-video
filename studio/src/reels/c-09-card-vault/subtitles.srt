@@ -3,257 +3,269 @@
 How do you keep a card number so that even a stolen database is useless?
 
 2
-00:00:04,346 --> 00:00:06,168
-Picture the worst day.
+00:00:04,346 --> 00:00:09,816
+In Lesson 5, the card went straight into the card zone, and only a token came back.
 
 3
-00:00:06,218 --> 00:00:08,208
-A copy of the database leaks.
+00:00:09,866 --> 00:00:15,816
+In Lesson 6, Vault held every key, and no key was ever typed into a file.
 
 4
-00:00:08,258 --> 00:00:11,520
-If the card table holds numbers, every card is gone.
+00:00:15,866 --> 00:00:21,960
+This lesson uses Vault to seal each card number, so even a stolen database is useless.
 
 5
-00:00:11,570 --> 00:00:16,392
-If it holds numbers locked with a key that sits next to them, every card is still gone.
+00:00:22,010 --> 00:00:23,832
+Picture the worst day.
 
 6
-00:00:16,442 --> 00:00:18,936
-So the key must never sit next to the data.
+00:00:23,882 --> 00:00:25,872
+A copy of the database leaks.
 
 7
-00:00:18,986 --> 00:00:21,720
-Remember the locked room from earlier lessons.
+00:00:25,922 --> 00:00:29,184
+If the card table holds numbers, every card is gone.
 
 8
-00:00:21,770 --> 00:00:25,008
-Inside it, every coat goes into a sealed bag.
+00:00:29,234 --> 00:00:34,056
+If it holds numbers locked with a key that sits next to them, every card is still gone.
 
 9
-00:00:25,058 --> 00:00:28,032
-Only one machine can seal a bag or open it.
+00:00:34,106 --> 00:00:36,600
+So the key must never sit next to the data.
 
 10
-00:00:28,082 --> 00:00:30,336
-That machine never lends out its key.
+00:00:36,650 --> 00:00:39,384
+Remember the locked room from earlier lessons.
 
 11
-00:00:30,386 --> 00:00:32,904
-In the card zone, that machine is Vault.
+00:00:39,434 --> 00:00:42,672
+Inside it, every coat goes into a sealed bag.
 
 12
-00:00:32,954 --> 00:00:37,128
-The card vault, the service that keeps cards, hands Vault the card number.
+00:00:42,722 --> 00:00:45,696
+Only one machine can seal a bag or open it.
 
 13
-00:00:37,178 --> 00:00:39,048
-Vault hands back a sealed value.
+00:00:45,746 --> 00:00:48,000
+That machine never lends out its key.
 
 14
-00:00:39,098 --> 00:00:41,640
-The card vault keeps only the sealed value.
+00:00:48,050 --> 00:00:50,568
+In the card zone, that machine is Vault.
 
 15
-00:00:41,690 --> 00:00:43,512
-The key never leaves Vault.
+00:00:50,618 --> 00:00:54,792
+The card vault, the service that keeps cards, hands Vault the card number.
 
 16
-00:00:43,562 --> 00:00:45,624
-Each seal is tied to its own card.
+00:00:54,842 --> 00:00:56,712
+Vault hands back a sealed value.
 
 17
-00:00:45,674 --> 00:00:49,248
-A sealed value copied into another card's place will not open.
+00:00:56,762 --> 00:00:59,304
+The card vault keeps only the sealed value.
 
 18
-00:00:49,298 --> 00:00:51,840
-So nobody can shuffle bags to trick the room.
+00:00:59,354 --> 00:01:01,176
+The key never leaves Vault.
 
 19
-00:00:51,890 --> 00:00:53,712
-Now a puzzle.
+00:01:01,226 --> 00:01:03,288
+Each seal is tied to its own card.
 
 20
-00:00:53,762 --> 00:00:57,144
-Sometimes the card zone must find a card again by its number.
+00:01:03,338 --> 00:01:06,912
+A sealed value copied into another card's place will not open.
 
 21
-00:00:57,194 --> 00:00:59,904
-It must do that without opening every bag.
+00:01:06,962 --> 00:01:09,504
+So nobody can shuffle bags to trick the room.
 
 22
-00:00:59,954 --> 00:01:03,456
-So Vault also stamps each bag with a fingerprint.
+00:01:09,554 --> 00:01:11,376
+Now a puzzle.
 
 23
-00:01:03,506 --> 00:01:06,648
-The same number always gives the same fingerprint.
+00:01:11,426 --> 00:01:14,808
+Sometimes the card zone must find a card again by its number.
 
 24
-00:01:06,698 --> 00:01:09,528
-The fingerprint cannot be turned back into the number.
+00:01:14,858 --> 00:01:17,568
+It must do that without opening every bag.
 
 25
-00:01:09,578 --> 00:01:11,880
-This stamp is called a blind index.
+00:01:17,618 --> 00:01:21,120
+So Vault also stamps each bag with a fingerprint.
 
 26
-00:01:11,930 --> 00:01:14,928
-The card zone looks up the fingerprint, never the number.
+00:01:21,170 --> 00:01:24,312
+The same number always gives the same fingerprint.
 
 27
-00:01:14,978 --> 00:01:17,088
-The database guards the door too.
+00:01:24,362 --> 00:01:27,192
+The fingerprint cannot be turned back into the number.
 
 28
-00:01:17,138 --> 00:01:20,064
-It refuses any card value that is not sealed.
+00:01:27,242 --> 00:01:29,544
+This stamp is called a blind index.
 
 29
-00:01:20,114 --> 00:01:23,568
-Even a mistake in the code cannot write a plain number into it.
+00:01:29,594 --> 00:01:32,592
+The card zone looks up the fingerprint, never the number.
 
 30
-00:01:23,618 --> 00:01:25,440
-What if Vault is down?
+00:01:32,642 --> 00:01:34,752
+The database guards the door too.
 
 31
-00:01:25,490 --> 00:01:27,312
-Then the card vault stops.
+00:01:34,802 --> 00:01:37,728
+It refuses any card value that is not sealed.
 
 32
-00:01:27,362 --> 00:01:31,344
-It never guesses, and it never falls back to keeping a plain number.
+00:01:37,778 --> 00:01:41,232
+Even a mistake in the code cannot write a plain number into it.
 
 33
-00:01:31,394 --> 00:01:35,976
-Stopping safely instead of carrying on unsafely is called fail closed.
+00:01:41,282 --> 00:01:43,104
+What if Vault is down?
 
 34
-00:01:36,026 --> 00:01:41,160
-A number is opened for one reason only: to hand it to the card's network for a charge.
+00:01:43,154 --> 00:01:44,976
+Then the card vault stops.
 
 35
-00:01:41,210 --> 00:01:46,200
-Every use of card data is written down: what happened, who asked, and when.
+00:01:45,026 --> 00:01:49,008
+It never guesses, and it never falls back to keeping a plain number.
 
 36
-00:01:46,250 --> 00:01:50,016
-And a card nobody has used for the bank's chosen time is removed.
+00:01:49,058 --> 00:01:53,640
+Stopping safely instead of carrying on unsafely is called fail closed.
 
 37
-00:01:50,066 --> 00:01:53,736
-Only a short note keeps its token and its masked number.
+00:01:53,690 --> 00:01:58,824
+A number is opened for one reason only: to hand it to the card's network for a charge.
 
 38
-00:01:53,786 --> 00:01:55,608
-Now watch the product.
+00:01:58,874 --> 00:02:03,864
+Every use of card data is written down: what happened, who asked, and when.
 
 39
-00:01:55,658 --> 00:01:59,400
-There is no screen inside the locked room, so watch what each side sees.
+00:02:03,914 --> 00:02:07,680
+And a card nobody has used for the bank's chosen time is removed.
 
 40
-00:01:59,450 --> 00:02:02,976
-The buyer types a card into the card form and confirms the code.
+00:02:07,730 --> 00:02:11,400
+Only a short note keeps its token and its masked number.
 
 41
-00:02:03,026 --> 00:02:07,176
-The form says "Card accepted" and empties its number field.
+00:02:11,450 --> 00:02:13,272
+Now watch the product.
 
 42
-00:02:07,226 --> 00:02:13,464
-The payment page then shows one line: the first six digits, a row of stars, and the last four.
+00:02:13,322 --> 00:02:17,064
+There is no screen inside the locked room, so watch what each side sees.
 
 43
-00:02:13,514 --> 00:02:17,064
-Beside them sit the card's network and the bank that issued it.
+00:02:17,114 --> 00:02:20,640
+The buyer types a card into the card form and confirms the code.
 
 44
-00:02:17,114 --> 00:02:21,288
-That masked line is all anyone outside the room ever sees.
+00:02:20,690 --> 00:02:24,840
+The form says "Card accepted" and empties its number field.
 
 45
-00:02:21,338 --> 00:02:22,896
-Now Vault stops answering.
+00:02:24,890 --> 00:02:31,128
+The payment page then shows one line: the first six digits, a row of stars, and the last four.
 
 46
-00:02:22,946 --> 00:02:26,904
-The buyer types a card, and the form refuses it with a short message.
+00:02:31,178 --> 00:02:34,728
+Beside them sit the card's network and the bank that issued it.
 
 47
-00:02:26,954 --> 00:02:30,000
-Nothing is saved, sealed or unsealed.
+00:02:34,778 --> 00:02:38,952
+That masked line is all anyone outside the room ever sees.
 
 48
-00:02:30,050 --> 00:02:35,688
-On the bank's side, the team gets an alert: a service the card zone depends on is unavailable.
+00:02:39,002 --> 00:02:40,824
+Now Vault stops answering.
 
 49
-00:02:35,738 --> 00:02:37,848
-The alert names the part that failed.
+00:02:40,874 --> 00:02:44,832
+The buyer types a card, and the form refuses it with a short message.
 
 50
-00:02:37,898 --> 00:02:40,872
-Once Vault is back, the same card goes through.
+00:02:44,882 --> 00:02:47,928
+Nothing is saved, sealed or unsealed.
 
 51
-00:02:40,922 --> 00:02:42,504
-Now the leaked copy again.
+00:02:47,978 --> 00:02:53,616
+On the bank's side, the team gets an alert: a service the card zone depends on is unavailable.
 
 52
-00:02:42,554 --> 00:02:44,376
-An attacker opens it.
+00:02:53,666 --> 00:02:55,776
+The alert names the part that failed.
 
 53
-00:02:44,426 --> 00:02:48,240
-They find sealed values, fingerprints and masked numbers.
+00:02:55,826 --> 00:02:58,800
+Once Vault is back, the same card goes through.
 
 54
-00:02:48,290 --> 00:02:50,112
-The keys are not there.
+00:02:58,850 --> 00:03:00,672
+Now the leaked copy again.
 
 55
-00:02:50,162 --> 00:02:56,904
-A backup is just as useless without the Vault that sealed it, so the bank keeps both, and keeps them apart.
+00:03:00,722 --> 00:03:02,544
+An attacker opens it.
 
 56
-00:02:56,954 --> 00:02:58,776
-What does this protect?
+00:03:02,594 --> 00:03:06,408
+They find sealed values, fingerprints and masked numbers.
 
 57
-00:02:58,826 --> 00:03:03,144
-It protects every cardholder whose number has ever passed through the room.
+00:03:06,458 --> 00:03:08,280
+The keys are not there.
 
 58
-00:03:03,194 --> 00:03:08,448
-A stolen database, a stolen backup, or a curious insider all see noise.
+00:03:08,330 --> 00:03:15,072
+A backup is just as useless without the Vault that sealed it, so the bank keeps both, and keeps them apart.
 
 59
-00:03:08,498 --> 00:03:13,560
-And the bank is protected too, because a leak of noise is not a leak of cards.
+00:03:15,122 --> 00:03:16,944
+What does this protect?
 
 60
-00:03:13,610 --> 00:03:15,192
-Back to the sealed bags.
+00:03:16,994 --> 00:03:21,312
+It protects every cardholder whose number has ever passed through the room.
 
 61
-00:03:15,242 --> 00:03:16,920
-A machine that keeps its key.
+00:03:21,362 --> 00:03:26,616
+A stolen database, a stolen backup, or a curious insider all see noise.
 
 62
-00:03:16,970 --> 00:03:19,704
-A stamp that finds a bag without opening it.
+00:03:26,666 --> 00:03:31,728
+And the bank is protected too, because a leak of noise is not a leak of cards.
 
 63
-00:03:19,754 --> 00:03:23,088
-A database that refuses anything unsealed.
+00:03:31,778 --> 00:03:33,600
+Back to the sealed bags.
 
 64
-00:03:23,138 --> 00:03:26,376
-So a stolen copy of the database is just noise.
+00:03:33,650 --> 00:03:35,472
+A machine that keeps its key.
 
 65
-00:03:26,426 --> 00:03:29,040
+00:03:35,522 --> 00:03:38,256
+A stamp that finds a bag without opening it.
+
+66
+00:03:38,306 --> 00:03:41,640
+A database that refuses anything unsealed.
+
+67
+00:03:41,690 --> 00:03:44,928
+So a stolen copy of the database is just noise.
+
+68
+00:03:44,978 --> 00:03:47,592
 Next: what a card's first digits tell you.

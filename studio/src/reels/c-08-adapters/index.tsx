@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "A different language", "A plug adapter", "Every socket differs", "Plug never changes", "Never rewire",
+  "A different language", "Lesson 7: proven", "Lesson 2: yes or no", "This lesson: every centre", "A plug adapter", "Every socket differs", "Plug never changes", "Never rewire",
   "The right adapter", "The same problem", "Processing centre", "Its own protocol", "Its own protocol", "Every centre's language",
   "Change rarely", "One adapter per centre", "A separate service", "The centre's language", "One plain language",
   "One plug shape", "Charge a card", "Give money back", "What happened?", "The same questions", "Behind the plug",

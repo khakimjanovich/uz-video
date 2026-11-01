@@ -3,245 +3,257 @@
 How many ways into the locked room should there be?
 
 2
-00:00:02,618 --> 00:00:05,064
-The room has two kinds of visitor.
+00:00:02,618 --> 00:00:08,976
+In Lesson 4, the locked room had only two doors: one for buyers' browsers, and one for systems like ecom.
 
 3
-00:00:05,114 --> 00:00:08,904
-Buyers' browsers come from the internet, to type a card into the frame.
+00:00:09,026 --> 00:00:15,816
+In Lesson 11, the card frame came through the first door, and in Lesson 7, ecom's calls came through the second.
 
 4
-00:00:08,954 --> 00:00:14,712
-Services from other products, like ecom, come from their own servers, to ask for a charge.
+00:00:15,866 --> 00:00:20,520
+This lesson builds those two doors, and shows why nothing else listens.
 
 5
-00:00:14,762 --> 00:00:16,704
-One big entrance could serve both.
+00:00:20,570 --> 00:00:23,016
+The room has two kinds of visitor.
 
 6
-00:00:16,754 --> 00:00:21,264
-But it would open every visitor's traffic, and see it all in clear text.
+00:00:23,066 --> 00:00:26,856
+Buyers' browsers come from the internet, to type a card into the frame.
 
 7
-00:00:21,314 --> 00:00:24,696
-That entrance would become the most valuable box in the bank.
+00:00:26,906 --> 00:00:32,664
+Services from other products, like ecom, come from their own servers, to ask for a charge.
 
 8
-00:00:24,746 --> 00:00:28,344
-So the room has two narrow doors, and nothing else listens.
+00:00:32,714 --> 00:00:34,656
+One big entrance could serve both.
 
 9
-00:00:28,394 --> 00:00:33,096
-Think of a bank: a counter for the public, and a mail slot for partners.
+00:00:34,706 --> 00:00:39,216
+But it would open every visitor's traffic, and see it all in clear text.
 
 10
-00:00:33,146 --> 00:00:35,088
-The first door is the counter.
+00:00:39,266 --> 00:00:42,648
+That entrance would become the most valuable box in the bank.
 
 11
-00:00:35,138 --> 00:00:36,960
-It is the payers' door.
+00:00:42,698 --> 00:00:46,296
+So the room has two narrow doors, and nothing else listens.
 
 12
-00:00:37,010 --> 00:00:40,248
-A buyer's browser connects to it over an encrypted line.
+00:00:46,346 --> 00:00:51,048
+Think of a bank: a counter for the public, and a mail slot for partners.
 
 13
-00:00:40,298 --> 00:00:44,856
-The counter opens that line with a certificate that every browser trusts.
+00:00:51,098 --> 00:00:53,040
+The first door is the counter.
 
 14
-00:00:44,906 --> 00:00:46,728
-Then it looks at the request.
+00:00:53,090 --> 00:00:54,912
+It is the payers' door.
 
 15
-00:00:46,778 --> 00:00:52,464
-It passes on only the card frame's few requests: show the frame, send a card, send a code.
+00:00:54,962 --> 00:00:58,200
+A buyer's browser connects to it over an encrypted line.
 
 16
-00:00:52,514 --> 00:00:55,584
-Every other request gets the answer "not found".
+00:00:58,250 --> 00:01:02,808
+The counter opens that line with a certificate that every browser trusts.
 
 17
-00:00:55,634 --> 00:01:00,792
-It also limits how fast one buyer can submit cards, at the bank's chosen rate.
+00:01:02,858 --> 00:01:04,680
+Then it looks at the request.
 
 18
-00:01:00,842 --> 00:01:03,504
-It never limits simply loading the page.
+00:01:04,730 --> 00:01:10,416
+It passes on only the card frame's few requests: show the frame, send a card, send a code.
 
 19
-00:01:03,554 --> 00:01:05,904
-The second door is the mail slot.
+00:01:10,466 --> 00:01:13,536
+Every other request gets the answer "not found".
 
 20
-00:01:05,954 --> 00:01:07,776
-It is the callers' door.
+00:01:13,586 --> 00:01:18,744
+It also limits how fast one buyer can submit cards, at the bank's chosen rate.
 
 21
-00:01:07,826 --> 00:01:10,224
-A caller's connection arrives sealed.
+00:01:18,794 --> 00:01:21,456
+It never limits simply loading the page.
 
 22
-00:01:10,274 --> 00:01:13,776
-On the outside of the envelope is the name of the service it wants.
+00:01:21,506 --> 00:01:23,856
+The second door is the mail slot.
 
 23
-00:01:13,826 --> 00:01:15,792
-The door reads only that name.
+00:01:23,906 --> 00:01:25,728
+It is the callers' door.
 
 24
-00:01:15,842 --> 00:01:17,664
-It never opens the envelope.
+00:01:25,778 --> 00:01:28,176
+A caller's connection arrives sealed.
 
 25
-00:01:17,714 --> 00:01:21,216
-It passes it on, still sealed, to the service behind it.
+00:01:28,226 --> 00:01:31,728
+On the outside of the envelope is the name of the service it wants.
 
 26
-00:01:21,266 --> 00:01:24,864
-Passing a connection along unopened is called pass-through.
+00:01:31,778 --> 00:01:33,744
+The door reads only that name.
 
 27
-00:01:24,914 --> 00:01:29,712
-Only a few names pass: the card vault, the adapters, and the login server.
+00:01:33,794 --> 00:01:35,616
+It never opens the envelope.
 
 28
-00:01:29,762 --> 00:01:33,312
-Any other name, or no name at all, is refused.
+00:01:35,666 --> 00:01:39,168
+It passes it on, still sealed, to the service behind it.
 
 29
-00:01:33,362 --> 00:01:39,288
-The service behind the door then checks the caller itself, with the caller's certificate and its token.
+00:01:39,218 --> 00:01:42,816
+Passing a connection along unopened is called pass-through.
 
 30
-00:01:39,338 --> 00:01:42,456
-So the door never needs a key to the caller's traffic.
+00:01:42,866 --> 00:01:47,664
+Only a few names pass: the card vault, the adapters, and the login server.
 
 31
-00:01:42,506 --> 00:01:44,328
-Now watch the product.
+00:01:47,714 --> 00:01:51,264
+Any other name, or no name at all, is refused.
 
 32
-00:01:44,378 --> 00:01:48,744
-The card zone has no screen of its own, so watch what each visitor meets.
+00:01:51,314 --> 00:01:57,240
+The service behind the door then checks the caller itself, with the caller's certificate and its token.
 
 33
-00:01:48,794 --> 00:01:50,736
-The buyer opens the payment page.
+00:01:57,290 --> 00:02:00,408
+So the door never needs a key to the caller's traffic.
 
 34
-00:01:50,786 --> 00:01:55,272
-The browser shows its padlock, because the counter's certificate is trusted.
+00:02:00,458 --> 00:02:02,280
+Now watch the product.
 
 35
-00:01:55,322 --> 00:01:58,032
-The frame loads, and the buyer types a card.
+00:02:02,330 --> 00:02:06,696
+The card zone has no screen of its own, so watch what each visitor meets.
 
 36
-00:01:58,082 --> 00:02:02,520
-Now someone tries a different address on the same door, an admin page, say.
+00:02:06,746 --> 00:02:08,688
+The buyer opens the payment page.
 
 37
-00:02:02,570 --> 00:02:04,848
-The answer is plain: not found.
+00:02:08,738 --> 00:02:13,224
+The browser shows its padlock, because the counter's certificate is trusted.
 
 38
-00:02:04,898 --> 00:02:06,960
-Nothing behind the door is named.
+00:02:13,274 --> 00:02:15,984
+The frame loads, and the buyer types a card.
 
 39
-00:02:07,010 --> 00:02:12,744
-Now a buyer, or a script, presses "Send code" again and again, very fast.
+00:02:16,034 --> 00:02:20,472
+Now someone tries a different address on the same door, an admin page, say.
 
 40
-00:02:12,794 --> 00:02:14,616
-The counter steps in.
+00:02:20,522 --> 00:02:22,800
+The answer is plain: not found.
 
 41
-00:02:14,666 --> 00:02:18,888
-The frame says: too many tries too fast, try again in a minute.
+00:02:22,850 --> 00:02:24,912
+Nothing behind the door is named.
 
 42
-00:02:18,938 --> 00:02:21,240
-The session is still good after the wait.
+00:02:24,962 --> 00:02:30,696
+Now a buyer, or a script, presses "Send code" again and again, very fast.
 
 43
-00:02:21,290 --> 00:02:26,256
-On the callers' side, a service with a name that is not on the list knocks on the mail slot.
+00:02:30,746 --> 00:02:32,568
+The counter steps in.
 
 44
-00:02:26,306 --> 00:02:28,560
-The connection simply closes.
+00:02:32,618 --> 00:02:36,840
+The frame says: too many tries too fast, try again in a minute.
 
 45
-00:02:28,610 --> 00:02:30,552
-It never reaches the card vault.
+00:02:36,890 --> 00:02:39,192
+The session is still good after the wait.
 
 46
-00:02:30,602 --> 00:02:37,224
-A listed name without a valid certificate gets past the slot, and is then refused by the service itself.
+00:02:39,242 --> 00:02:44,208
+On the callers' side, a service with a name that is not on the list knocks on the mail slot.
 
 47
-00:02:37,274 --> 00:02:41,184
-On the bank's side, the team watches the card zone in monitoring.
+00:02:44,258 --> 00:02:46,512
+The connection simply closes.
 
 48
-00:02:41,234 --> 00:02:44,112
-A part that stops answering raises an alert.
+00:02:46,562 --> 00:02:48,504
+It never reaches the card vault.
 
 49
-00:02:44,162 --> 00:02:45,984
-What does this protect?
+00:02:48,554 --> 00:02:55,176
+A listed name without a valid certificate gets past the slot, and is then refused by the service itself.
 
 50
-00:02:46,034 --> 00:02:51,240
-Without narrow doors, one entrance would hold every caller's secrets in clear text.
+00:02:55,226 --> 00:02:59,136
+On the bank's side, the team watches the card zone in monitoring.
 
 51
-00:02:51,290 --> 00:02:53,640
-One break there would expose everything.
+00:02:59,186 --> 00:03:02,064
+A part that stops answering raises an alert.
 
 52
-00:02:53,690 --> 00:02:57,720
-With two doors, the counter sees only buyers' frame traffic.
+00:03:02,114 --> 00:03:03,936
+What does this protect?
 
 53
-00:02:57,770 --> 00:03:00,024
-The mail slot holds nothing it can read.
+00:03:03,986 --> 00:03:09,192
+Without narrow doors, one entrance would hold every caller's secrets in clear text.
 
 54
-00:03:00,074 --> 00:03:04,008
-And the database, the keys and the logs have no door at all.
+00:03:09,242 --> 00:03:11,592
+One break there would expose everything.
 
 55
-00:03:04,058 --> 00:03:05,952
-That protects the cardholders.
+00:03:11,642 --> 00:03:15,672
+With two doors, the counter sees only buyers' frame traffic.
 
 56
-00:03:06,002 --> 00:03:09,312
-It also protects the bank's own network around the room.
+00:03:15,722 --> 00:03:17,976
+The mail slot holds nothing it can read.
 
 57
-00:03:09,362 --> 00:03:13,656
-The bank's firewalls stay simple: two openings, each with one job.
+00:03:18,026 --> 00:03:21,960
+And the database, the keys and the logs have no door at all.
 
 58
-00:03:13,706 --> 00:03:15,528
-Back to the bank.
+00:03:22,010 --> 00:03:23,904
+That protects the cardholders.
 
 59
-00:03:15,578 --> 00:03:19,992
-A counter that serves the public a few things, and says no to the rest.
+00:03:23,954 --> 00:03:27,264
+It also protects the bank's own network around the room.
 
 60
-00:03:20,042 --> 00:03:23,568
-A mail slot that reads only the name on the envelope.
+00:03:27,314 --> 00:03:31,608
+The bank's firewalls stay simple: two openings, each with one job.
 
 61
-00:03:23,618 --> 00:03:27,576
-No door ever holds every caller's traffic in clear text.
+00:03:31,658 --> 00:03:33,480
+Back to the bank.
 
 62
-00:03:27,626 --> 00:03:30,216
+00:03:33,530 --> 00:03:37,944
+A counter that serves the public a few things, and says no to the rest.
+
+63
+00:03:37,994 --> 00:03:41,520
+A mail slot that reads only the name on the envelope.
+
+64
+00:03:41,570 --> 00:03:45,528
+No door ever holds every caller's traffic in clear text.
+
+65
+00:03:45,578 --> 00:03:48,168
 Next: how a caller gets its certificate.

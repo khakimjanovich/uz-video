@@ -3,205 +3,213 @@
 Can a payments product be secure on its own?
 
 2
-00:00:02,714 --> 00:00:04,944
-Picture a bank that buys a product.
+00:00:02,714 --> 00:00:09,648
+Lesson 4 put card numbers in one locked room, and Lesson 40 shipped that room as fixed releases.
 
 3
-00:00:04,994 --> 00:00:07,296
-Its brochure says: compliant.
+00:00:09,698 --> 00:00:13,992
+This lesson asks the last question: who answers for the building around it.
 
 4
-00:00:07,346 --> 00:00:09,432
-Then the bank's assessor arrives.
+00:00:14,042 --> 00:00:16,272
+Picture a bank that buys a product.
 
 5
-00:00:09,482 --> 00:00:17,016
-An assessor is the independent expert who checks a bank against the card industry's security standard, PCI DSS.
+00:00:16,322 --> 00:00:18,624
+Its brochure says: compliant.
 
 6
-00:00:17,066 --> 00:00:24,576
-The assessor asks for the firewall rules, the records of who logged in, the people who hold the keys, and the cameras on the server room.
+00:00:18,674 --> 00:00:20,760
+Then the bank's assessor arrives.
 
 7
-00:00:24,626 --> 00:00:26,448
-The vendor has none of them.
+00:00:20,810 --> 00:00:28,344
+An assessor is the independent expert who checks a bank against the card industry's security standard, PCI DSS.
 
 8
-00:00:26,498 --> 00:00:30,312
-Those belong to the bank's whole building, not to one room inside it.
+00:00:28,394 --> 00:00:35,904
+The assessor asks for the firewall rules, the records of who logged in, the people who hold the keys, and the cameras on the server room.
 
 9
-00:00:30,362 --> 00:00:36,264
-Worse, nobody wrote down which jobs were the product's and which were the bank's, so some fell between.
+00:00:35,954 --> 00:00:37,776
+The vendor has none of them.
 
 10
-00:00:36,314 --> 00:00:38,664
-Here is the picture this course ends on.
+00:00:37,826 --> 00:00:41,640
+Those belong to the bank's whole building, not to one room inside it.
 
 11
-00:00:38,714 --> 00:00:40,536
-We deliver the locked room.
+00:00:41,690 --> 00:00:47,592
+Worse, nobody wrote down which jobs were the product's and which were the bank's, so some fell between.
 
 12
-00:00:40,586 --> 00:00:46,344
-The bank owns the building around it: its walls, its guards, its cameras and its doors.
+00:00:47,642 --> 00:00:49,992
+Here is the picture this course ends on.
 
 13
-00:00:46,394 --> 00:00:49,776
-So the room must fit into the building without breaking it.
+00:00:50,042 --> 00:00:51,864
+We deliver the locked room.
 
 14
-00:00:49,826 --> 00:00:56,448
-It has exactly two narrow doors: one for payers typing a card, and one for the bank's own systems.
+00:00:51,914 --> 00:00:57,672
+The bank owns the building around it: its walls, its guards, its cameras and its doors.
 
 15
-00:00:56,498 --> 00:00:58,464
-Nothing else on its server listens.
+00:00:57,722 --> 00:01:01,104
+So the room must fit into the building without breaking it.
 
 16
-00:00:58,514 --> 00:01:01,488
-Its database is never reachable from outside.
+00:01:01,154 --> 00:01:07,776
+It has exactly two narrow doors: one for payers typing a card, and one for the bank's own systems.
 
 17
-00:01:01,538 --> 00:01:08,568
-It shares no part with ecom or with anything else: its own database, its own keys, its own logins.
+00:01:07,826 --> 00:01:09,792
+Nothing else on its server listens.
 
 18
-00:01:08,618 --> 00:01:12,792
-The bank's network wraps around it, and the bank builds the firewalls.
+00:01:09,842 --> 00:01:12,816
+Its database is never reachable from outside.
 
 19
-00:01:12,842 --> 00:01:14,664
-Each product ships with a guide.
+00:01:12,866 --> 00:01:19,896
+It shares no part with ecom or with anything else: its own database, its own keys, its own logins.
 
 20
-00:01:14,714 --> 00:01:20,976
-It says three things: what the building must provide, how to install the room, and who does what.
+00:01:19,946 --> 00:01:24,120
+The bank's network wraps around it, and the bank builds the firewalls.
 
 21
-00:01:21,026 --> 00:01:23,544
-Who does what is the responsibility matrix.
+00:01:24,170 --> 00:01:25,992
+Each product ships with a guide.
 
 22
-00:01:23,594 --> 00:01:29,736
-For each of the standard's twelve requirements, it says what the product does, what is the bank's, and what is shared.
+00:01:26,042 --> 00:01:32,304
+It says three things: what the building must provide, how to install the room, and who does what.
 
 23
-00:01:29,786 --> 00:01:34,536
-A product row describes what the product does; it is not a claim of compliance.
+00:01:32,354 --> 00:01:34,872
+Who does what is the responsibility matrix.
 
 24
-00:01:34,586 --> 00:01:42,312
-Take the network: the product opens only two doors, the bank builds the firewalls, and the list of allowed connections is shared.
+00:01:34,922 --> 00:01:41,064
+For each of the standard's twelve requirements, it says what the product does, what is the bank's, and what is shared.
 
 25
-00:01:42,362 --> 00:01:49,104
-Take the logs: the product keeps the trails, and collecting and reviewing them every day is the bank's.
+00:01:41,114 --> 00:01:45,864
+A product row describes what the product does; it is not a claim of compliance.
 
 26
-00:01:49,154 --> 00:01:50,976
-ecom has its own matrix.
+00:01:45,914 --> 00:01:53,640
+Take the network: the product opens only two doors, the bank builds the firewalls, and the list of allowed connections is shared.
 
 27
-00:01:51,026 --> 00:01:58,272
-It holds no card number, so it gets the smaller check from Lesson 4, and exactly which requirements apply is the assessor's call.
+00:01:53,690 --> 00:02:00,432
+Take the logs: the product keeps the trails, and collecting and reviewing them every day is the bank's.
 
 28
-00:01:58,322 --> 00:02:00,552
-Now the process that keeps it right.
+00:02:00,482 --> 00:02:02,304
+ecom has its own matrix.
 
 29
-00:02:00,602 --> 00:02:04,704
-Every release is checked against the standard's requirements, one by one.
+00:02:02,354 --> 00:02:09,600
+It holds no card number, so it gets the smaller check from Lesson 4, and exactly which requirements apply is the assessor's call.
 
 30
-00:02:04,754 --> 00:02:10,296
-Each is marked as met by the product, partly met, the bank's, shared, or a gap.
+00:02:09,650 --> 00:02:11,880
+Now the process that keeps it right.
 
 31
-00:02:10,346 --> 00:02:13,536
-Every gap goes on a list: the known gaps.
+00:02:11,930 --> 00:02:16,032
+Every release is checked against the standard's requirements, one by one.
 
 32
-00:02:13,586 --> 00:02:18,720
-Each known gap names the requirement it touches, and what the bank does until the product fixes it.
+00:02:16,082 --> 00:02:21,624
+Each is marked as met by the product, partly met, the bank's, shared, or a gap.
 
 33
-00:02:18,770 --> 00:02:26,736
-For example, after every restart three keyholders must come to unseal Vault, so the bank keeps three of them within reach.
+00:02:21,674 --> 00:02:24,864
+Every gap goes on a list: the known gaps.
 
 34
-00:02:26,786 --> 00:02:30,312
-And anything that moves money or keys takes two people.
+00:02:24,914 --> 00:02:30,048
+Each known gap names the requirement it touches, and what the bank does until the product fixes it.
 
 35
-00:02:30,362 --> 00:02:38,784
-Switching a merchant on, changing a fee, approving a dispute loss, writing off a difference: one person asks, and another decides.
+00:02:30,098 --> 00:02:38,064
+For example, after every restart three keyholders must come to unseal Vault, so the bank keeps three of them within reach.
 
 36
-00:02:38,834 --> 00:02:45,048
-Opening the keys takes three of five keyholders, and the bank makes sure no one holds two shares.
+00:02:38,114 --> 00:02:41,640
+And anything that moves money or keys takes two people.
 
 37
-00:02:45,098 --> 00:02:46,920
-Let's watch the product.
+00:02:41,690 --> 00:02:50,112
+Switching a merchant on, changing a fee, approving a dispute loss, writing off a difference: one person asks, and another decides.
 
 38
-00:02:46,970 --> 00:02:51,480
-The bank's install team opens the card zone's guide at the who-does-what table.
+00:02:50,162 --> 00:02:56,376
+Opening the keys takes three of five keyholders, and the bank makes sure no one holds two shares.
 
 39
-00:02:51,530 --> 00:02:55,464
-Twelve rows, three columns: product, the bank, shared.
+00:02:56,426 --> 00:02:58,248
+Let's watch the product.
 
 40
-00:02:55,514 --> 00:02:58,824
-They follow the network row across, then the logging row.
+00:02:58,298 --> 00:03:02,808
+The bank's install team opens the card zone's guide at the who-does-what table.
 
 41
-00:02:58,874 --> 00:03:00,744
-Then they turn to the known gaps.
+00:03:02,858 --> 00:03:06,792
+Twelve rows, three columns: product, the bank, shared.
 
 42
-00:03:00,794 --> 00:03:06,384
-Each line reads: the gap, the requirement it touches, and what the bank does until it is fixed.
+00:03:06,842 --> 00:03:10,152
+They follow the network row across, then the logging row.
 
 43
-00:03:06,434 --> 00:03:10,704
-Finally, the assessor walks the whole building, the guide in hand.
+00:03:10,202 --> 00:03:12,072
+Then they turn to the known gaps.
 
 44
-00:03:10,754 --> 00:03:12,576
-What does this protect?
+00:03:12,122 --> 00:03:17,712
+Each line reads: the gap, the requirement it touches, and what the bank does until it is fixed.
 
 45
-00:03:12,626 --> 00:03:16,416
-It protects the bank from a promise no product can keep on its own.
+00:03:17,762 --> 00:03:22,032
+Finally, the assessor walks the whole building, the guide in hand.
 
 46
-00:03:16,466 --> 00:03:20,616
-It protects the room, because every job outside it has a named owner.
+00:03:22,082 --> 00:03:23,904
+What does this protect?
 
 47
-00:03:20,666 --> 00:03:26,136
-And it protects honesty: each gap is written down with what covers it, never hidden.
+00:03:23,954 --> 00:03:27,744
+It protects the bank from a promise no product can keep on its own.
 
 48
-00:03:26,186 --> 00:03:28,608
-The product is not certified on its own.
+00:03:27,794 --> 00:03:31,944
+It protects the room, because every job outside it has a named owner.
 
 49
-00:03:28,658 --> 00:03:35,448
-The assessor judges the whole building, with the guide as the product's evidence, and the guide ships with every release.
+00:03:31,994 --> 00:03:37,464
+And it protects honesty: each gap is written down with what covers it, never hidden.
 
 50
-00:03:35,498 --> 00:03:40,872
-Back to the map from Lesson 1: the shop, the locked room, and the building around them both.
+00:03:37,514 --> 00:03:39,936
+The product is not certified on its own.
 
 51
-00:03:40,922 --> 00:03:44,184
-We deliver the locked room; the bank owns the building.
+00:03:39,986 --> 00:03:46,776
+The assessor judges the whole building, with the guide as the product's evidence, and the guide ships with every release.
 
 52
-00:03:44,234 --> 00:03:50,328
+00:03:46,826 --> 00:03:52,200
+Back to the map from Lesson 1: the shop, the locked room, and the building around them both.
+
+53
+00:03:52,250 --> 00:03:55,512
+We deliver the locked room; the bank owns the building.
+
+54
+00:03:55,562 --> 00:04:01,656
 That is the end of phase one: thank you for walking the whole product, from the Pay button to the building around it.

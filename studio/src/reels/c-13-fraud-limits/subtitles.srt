@@ -3,265 +3,277 @@
 How do you stop someone testing stolen cards on a payment page?
 
 2
-00:00:03,194 --> 00:00:05,376
-Picture a thief with a bag of keys.
+00:00:03,194 --> 00:00:08,472
+In Lesson 11, the card frame let a buyer type a card on any shop's payment page.
 
 3
-00:00:05,426 --> 00:00:09,264
-They try key after key in a shop's lock, to find the ones that fit.
+00:00:08,522 --> 00:00:14,880
+In Lesson 9, each card got a fingerprint, and in Lesson 10, its first digits named its network.
 
 4
-00:00:09,314 --> 00:00:12,768
-Locking that door after three wrong keys does not help.
+00:00:14,930 --> 00:00:20,856
+This lesson uses that fingerprint and those digits to stop a thief testing stolen cards.
 
 5
-00:00:12,818 --> 00:00:14,640
-They just walk to the next door.
+00:00:20,906 --> 00:00:23,088
+Picture a thief with a bag of keys.
 
 6
-00:00:14,690 --> 00:00:17,280
-Here, the keys are stolen card numbers.
+00:00:23,138 --> 00:00:26,976
+They try key after key in a shop's lock, to find the ones that fit.
 
 7
-00:00:17,330 --> 00:00:19,224
-The doors are payment sessions.
+00:00:27,026 --> 00:00:30,480
+Locking that door after three wrong keys does not help.
 
 8
-00:00:19,274 --> 00:00:22,200
-A thief buys ten thousand stolen numbers.
+00:00:30,530 --> 00:00:32,352
+They just walk to the next door.
 
 9
-00:00:22,250 --> 00:00:24,072
-Most of them are dead.
+00:00:32,402 --> 00:00:34,992
+Here, the keys are stolen card numbers.
 
 10
-00:00:24,122 --> 00:00:27,768
-To find the live ones, they try them on a small shop's payment page.
+00:00:35,042 --> 00:00:36,936
+The doors are payment sessions.
 
 11
-00:00:27,818 --> 00:00:29,640
-That is called card testing.
+00:00:36,986 --> 00:00:39,912
+A thief buys ten thousand stolen numbers.
 
 12
-00:00:29,690 --> 00:00:31,800
-Every try reaches a card network.
+00:00:39,962 --> 00:00:41,784
+Most of them are dead.
 
 13
-00:00:31,850 --> 00:00:34,944
-Every try may text a code to a real person's phone.
+00:00:41,834 --> 00:00:45,480
+To find the live ones, they try them on a small shop's payment page.
 
 14
-00:00:34,994 --> 00:00:42,096
-So card testing costs the bank money, floods strangers with codes, and hands the thief a list of working cards.
+00:00:45,530 --> 00:00:47,352
+That is called card testing.
 
 15
-00:00:42,146 --> 00:00:45,456
-Each session already allows only a few tries.
+00:00:47,402 --> 00:00:49,512
+Every try reaches a card network.
 
 16
-00:00:45,506 --> 00:00:47,688
-When they run out, the session ends.
+00:00:49,562 --> 00:00:52,656
+Every try may text a code to a real person's phone.
 
 17
-00:00:47,738 --> 00:00:50,352
-But the thief just opens a new session.
+00:00:52,706 --> 00:00:59,808
+So card testing costs the bank money, floods strangers with codes, and hands the thief a list of working cards.
 
 18
-00:00:50,402 --> 00:00:53,064
-So counting per session is not enough.
+00:00:59,858 --> 00:01:03,168
+Each session already allows only a few tries.
 
 19
-00:00:53,114 --> 00:00:56,136
-The card zone counts the keys, not the doors.
+00:01:03,218 --> 00:01:05,400
+When they run out, the session ends.
 
 20
-00:00:56,186 --> 00:01:00,168
-It writes every attempt down before any network is asked.
+00:01:05,450 --> 00:01:08,064
+But the thief just opens a new session.
 
 21
-00:01:00,218 --> 00:01:05,184
-Attempts made at the same moment count each other, so speed does not help the thief.
+00:01:08,114 --> 00:01:10,776
+So counting per session is not enough.
 
 22
-00:01:05,234 --> 00:01:07,848
-Each attempt is kept by four things.
+00:01:10,826 --> 00:01:13,848
+The card zone counts the keys, not the doors.
 
 23
-00:01:07,898 --> 00:01:10,632
-The card, by its fingerprint, never its number.
+00:01:13,898 --> 00:01:17,880
+It writes every attempt down before any network is asked.
 
 24
-00:01:10,682 --> 00:01:12,504
-The card's first digits.
+00:01:17,930 --> 00:01:22,896
+Attempts made at the same moment count each other, so speed does not help the thief.
 
 25
-00:01:12,554 --> 00:01:14,568
-The buyer's address on the internet.
+00:01:22,946 --> 00:01:25,560
+Each attempt is kept by four things.
 
 26
-00:01:14,618 --> 00:01:16,440
-And the shop.
+00:01:25,610 --> 00:01:28,344
+The card, by its fingerprint, never its number.
 
 27
-00:01:16,490 --> 00:01:20,304
-The bank chooses a limit for each of the four, and a time window.
+00:01:28,394 --> 00:01:30,216
+The card's first digits.
 
 28
-00:01:20,354 --> 00:01:26,232
-So many failed tries per card, per first digits, per address and per shop, within that window.
+00:01:30,266 --> 00:01:32,280
+The buyer's address on the internet.
 
 29
-00:01:26,282 --> 00:01:30,144
-These are the bank's chosen limits and the bank's chosen window.
+00:01:32,330 --> 00:01:34,152
+And the shop.
 
 30
-00:01:30,194 --> 00:01:34,080
-A limit on tries within a time window is called a velocity limit.
+00:01:34,202 --> 00:01:38,016
+The bank chooses a limit for each of the four, and a time window.
 
 31
-00:01:34,130 --> 00:01:39,624
-Past any one of the four limits, a new try is refused before any network is asked.
+00:01:38,066 --> 00:01:43,944
+So many failed tries per card, per first digits, per address and per shop, within that window.
 
 32
-00:01:39,674 --> 00:01:41,352
-No code is sent.
+00:01:43,994 --> 00:01:47,856
+These are the bank's chosen limits and the bank's chosen window.
 
 33
-00:01:41,402 --> 00:01:43,224
-No attempt is spent.
+00:01:47,906 --> 00:01:51,792
+A limit on tries within a time window is called a velocity limit.
 
 34
-00:01:43,274 --> 00:01:46,896
-And no new session opens for that shop until the window passes.
+00:01:51,842 --> 00:01:57,336
+Past any one of the four limits, a new try is refused before any network is asked.
 
 35
-00:01:46,946 --> 00:01:50,352
-Only failures that say something about the card count against it.
+00:01:57,386 --> 00:01:59,208
+No code is sent.
 
 36
-00:01:50,402 --> 00:01:52,224
-A wrong code counts.
+00:01:59,258 --> 00:02:01,080
+No attempt is spent.
 
 37
-00:01:52,274 --> 00:01:55,008
-A card the buyer's bank refuses counts.
+00:02:01,130 --> 00:02:04,752
+And no new session opens for that shop until the window passes.
 
 38
-00:01:55,058 --> 00:01:59,112
-A mistyped expiry date does not hold back a whole group of cards.
+00:02:04,802 --> 00:02:08,208
+Only failures that say something about the card count against it.
 
 39
-00:01:59,162 --> 00:02:04,800
-And the card zone's own failures, such as a network being down, never count against anyone.
+00:02:08,258 --> 00:02:10,080
+A wrong code counts.
 
 40
-00:02:04,850 --> 00:02:08,232
-When refusals pile up, an alert goes out to the team.
+00:02:10,130 --> 00:02:12,864
+A card the buyer's bank refuses counts.
 
 41
-00:02:08,282 --> 00:02:10,104
-Now watch the product.
+00:02:12,914 --> 00:02:16,968
+A mistyped expiry date does not hold back a whole group of cards.
 
 42
-00:02:10,154 --> 00:02:11,976
-A buyer types the wrong code.
+00:02:17,018 --> 00:02:22,656
+And the card zone's own failures, such as a network being down, never count against anyone.
 
 43
-00:02:12,026 --> 00:02:15,480
-The form says the code is wrong, and how many tries are left.
+00:02:22,706 --> 00:02:26,088
+When refusals pile up, an alert goes out to the team.
 
 44
-00:02:15,530 --> 00:02:17,448
-The buyer runs out of tries.
+00:02:26,138 --> 00:02:27,960
+Now watch the product.
 
 45
-00:02:17,498 --> 00:02:19,320
-The form clears.
+00:02:28,010 --> 00:02:29,832
+A buyer types the wrong code.
 
 46
-00:02:19,370 --> 00:02:26,280
-The payment page shows a yellow note: that attempt ended, too many tries or the time ran out, enter the card again.
+00:02:29,882 --> 00:02:33,336
+The form says the code is wrong, and how many tries are left.
 
 47
-00:02:26,330 --> 00:02:28,728
-A fresh, empty form appears.
+00:02:33,386 --> 00:02:35,304
+The buyer runs out of tries.
 
 48
-00:02:28,778 --> 00:02:30,960
-That is a normal buyer having a bad day.
+00:02:35,354 --> 00:02:37,176
+The form clears.
 
 49
-00:02:31,010 --> 00:02:34,656
-Now the thief, with a script, fires card after card.
+00:02:37,226 --> 00:02:44,136
+The payment page shows a yellow note: that attempt ended, too many tries or the time ran out, enter the card again.
 
 50
-00:02:34,706 --> 00:02:37,464
-For a while, each card is just refused.
+00:02:44,186 --> 00:02:46,584
+A fresh, empty form appears.
 
 51
-00:02:37,514 --> 00:02:39,432
-Then a counter reaches its limit.
+00:02:46,634 --> 00:02:48,816
+That is a normal buyer having a bad day.
 
 52
-00:02:39,482 --> 00:02:46,056
-From that moment, the form answers every new card the same way: "Too many unsuccessful attempts.
+00:02:48,866 --> 00:02:52,512
+Now the thief, with a script, fires card after card.
 
 53
-00:02:46,106 --> 00:02:48,960
-Try again later." No code is sent.
+00:02:52,562 --> 00:02:55,320
+For a while, each card is just refused.
 
 54
-00:02:49,010 --> 00:02:50,832
-No network is asked.
+00:02:55,370 --> 00:02:57,288
+Then a counter reaches its limit.
 
 55
-00:02:50,882 --> 00:02:52,728
-No stranger's phone buzzes.
+00:02:57,338 --> 00:03:03,912
+From that moment, the form answers every new card the same way: "Too many unsuccessful attempts.
 
 56
-00:02:52,778 --> 00:02:55,776
-On the bank's side, an alert email arrives.
+00:03:03,962 --> 00:03:06,816
+Try again later." No code is sent.
 
 57
-00:02:55,826 --> 00:02:59,064
-It says card entry was refused by a velocity rule.
+00:03:06,866 --> 00:03:08,688
+No network is asked.
 
 58
-00:02:59,114 --> 00:03:05,904
-It names the caller, and the counter that tripped: the card, the first digits, the address, or the shop.
+00:03:08,738 --> 00:03:10,584
+No stranger's phone buzzes.
 
 59
-00:03:05,954 --> 00:03:11,160
-It tells the team where to look next: the logs, and the buyer addresses behind the refusals.
+00:03:10,634 --> 00:03:13,632
+On the bank's side, an alert email arrives.
 
 60
-00:03:11,210 --> 00:03:13,032
-What does this protect?
+00:03:13,682 --> 00:03:16,920
+It says card entry was refused by a velocity rule.
 
 61
-00:03:13,082 --> 00:03:17,232
-It protects cardholders, whose phones would otherwise fill with codes.
+00:03:16,970 --> 00:03:23,760
+It names the caller, and the counter that tripped: the card, the first digits, the address, or the shop.
 
 62
-00:03:17,282 --> 00:03:22,008
-It protects the shop, whose page would otherwise become a thief's testing bench.
+00:03:23,810 --> 00:03:29,016
+It tells the team where to look next: the logs, and the buyer addresses behind the refusals.
 
 63
-00:03:22,058 --> 00:03:27,960
-And it protects the bank, which would otherwise pay for every try and hand thieves a list of live cards.
+00:03:29,066 --> 00:03:30,888
+What does this protect?
 
 64
-00:03:28,010 --> 00:03:29,832
-Back to the bag of keys.
+00:03:30,938 --> 00:03:35,088
+It protects cardholders, whose phones would otherwise fill with codes.
 
 65
-00:03:29,882 --> 00:03:32,976
-Every door now counts the same keys.
+00:03:35,138 --> 00:03:39,864
+It protects the shop, whose page would otherwise become a thief's testing bench.
 
 66
-00:03:33,026 --> 00:03:35,328
-Count the keys, not the doors.
+00:03:39,914 --> 00:03:45,816
+And it protects the bank, which would otherwise pay for every try and hand thieves a list of live cards.
 
 67
-00:03:35,378 --> 00:03:38,160
+00:03:45,866 --> 00:03:47,688
+Back to the bag of keys.
+
+68
+00:03:47,738 --> 00:03:50,832
+Every door now counts the same keys.
+
+69
+00:03:50,882 --> 00:03:53,184
+Count the keys, not the doors.
+
+70
+00:03:53,234 --> 00:03:56,016
 Next: how all these layers work together.

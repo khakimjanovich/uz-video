@@ -3,237 +3,249 @@
 How does the bank know its records match the card network's?
 
 2
-00:00:04,058 --> 00:00:06,144
-Picture two quiet mistakes.
+00:00:04,058 --> 00:00:09,384
+In Lesson 1, ecom checked every payment against the processing centre's own record.
 
 3
-00:00:06,194 --> 00:00:10,104
-One payment timed out on our side, but the processing centre booked it.
+00:00:09,434 --> 00:00:13,704
+In Lesson 34, ecom counted its own side of each day.
 
 4
-00:00:10,154 --> 00:00:13,536
-Another we marked paid, but the centre reversed it overnight.
+00:00:13,754 --> 00:00:17,736
+This lesson puts the two sides next to each other, line by line.
 
 5
-00:00:13,586 --> 00:00:15,504
-Both look fine in our own records.
+00:00:17,786 --> 00:00:19,872
+Picture two quiet mistakes.
 
 6
-00:00:15,554 --> 00:00:20,760
-At settlement, the bank is short, and nobody knows which payment caused it.
+00:00:19,922 --> 00:00:23,832
+One payment timed out on our side, but the processing centre booked it.
 
 7
-00:00:20,810 --> 00:00:23,064
-Think about checking your bank statement at home.
+00:00:23,882 --> 00:00:27,264
+Another we marked paid, but the centre reversed it overnight.
 
 8
-00:00:23,114 --> 00:00:24,936
-You put it next to your own notes.
+00:00:27,314 --> 00:00:29,232
+Both look fine in our own records.
 
 9
-00:00:24,986 --> 00:00:26,904
-You tick each line that matches.
+00:00:29,282 --> 00:00:34,488
+At settlement, the bank is short, and nobody knows which payment caused it.
 
 10
-00:00:26,954 --> 00:00:29,352
-And you circle every line that does not.
+00:00:34,538 --> 00:00:36,792
+Think about checking your bank statement at home.
 
 11
-00:00:29,402 --> 00:00:33,240
-Every day, for each card network, the bank does the same.
+00:00:36,842 --> 00:00:38,664
+You put it next to your own notes.
 
 12
-00:00:33,290 --> 00:00:39,048
-This is reconciliation: proving that two sets of books agree, line by line.
+00:00:38,714 --> 00:00:40,632
+You tick each line that matches.
 
 13
-00:00:39,098 --> 00:00:46,200
-Our side is every money movement ecom recorded: each charge, each reversal, each refund.
+00:00:40,682 --> 00:00:43,080
+And you circle every line that does not.
 
 14
-00:00:46,250 --> 00:00:49,800
-Their side is the processing centre's own report for that day.
+00:00:43,130 --> 00:00:46,968
+Every day, for each card network, the bank does the same.
 
 15
-00:00:49,850 --> 00:00:55,104
-ecom fetches that report through the card zone, and it arrives with masked card numbers only.
+00:00:47,018 --> 00:00:52,776
+This is reconciliation: proving that two sets of books agree, line by line.
 
 16
-00:00:55,154 --> 00:00:59,496
-ecom does the matching; the card zone only hands over the report.
+00:00:52,826 --> 00:00:59,928
+Our side is every money movement ecom recorded: each charge, each reversal, each refund.
 
 17
-00:00:59,546 --> 00:01:03,816
-Lines are paired by kind, by payment, and by the network's reference number.
+00:00:59,978 --> 00:01:03,528
+Their side is the processing centre's own report for that day.
 
 18
-00:01:03,866 --> 00:01:10,608
-Each pair must then agree on four things: whether money moved, the amount, the terminal, and the day.
+00:01:03,578 --> 00:01:08,832
+ecom fetches that report through the card zone, and it arrives with masked card numbers only.
 
 19
-00:01:10,658 --> 00:01:12,408
-The day's totals are checked too.
+00:01:08,882 --> 00:01:13,224
+ecom does the matching; the card zone only hands over the report.
 
 20
-00:01:12,458 --> 00:01:14,064
-Any difference is a break.
+00:01:13,274 --> 00:01:17,544
+Lines are paired by kind, by payment, and by the network's reference number.
 
 21
-00:01:14,114 --> 00:01:20,256
-A break is one line where the two books disagree, or a line that one side has and the other does not.
+00:01:17,594 --> 00:01:24,336
+Each pair must then agree on four things: whether money moved, the amount, the terminal, and the day.
 
 22
-00:01:20,306 --> 00:01:24,360
-A payment still unknown when the day closes is a break as well.
+00:01:24,386 --> 00:01:26,208
+The day's totals are checked too.
 
 23
-00:01:24,410 --> 00:01:29,688
-Every break becomes exactly one exception: a case with an owner and a deadline.
+00:01:26,258 --> 00:01:28,080
+Any difference is a break.
 
 24
-00:01:29,738 --> 00:01:31,560
-Then a person works it.
+00:01:28,130 --> 00:01:34,272
+A break is one line where the two books disagree, or a line that one side has and the other does not.
 
 25
-00:01:31,610 --> 00:01:36,672
-If they find proof that the two sides really agree, they resolve it with that evidence.
+00:01:34,322 --> 00:01:38,376
+A payment still unknown when the day closes is a break as well.
 
 26
-00:01:36,722 --> 00:01:41,328
-If the difference is real and cannot be recovered, they ask to write it off.
+00:01:38,426 --> 00:01:43,704
+Every break becomes exactly one exception: a case with an owner and a deadline.
 
 27
-00:01:41,378 --> 00:01:45,768
-A write-off means the bank accepts the difference and closes the case.
+00:01:43,754 --> 00:01:45,576
+Then a person works it.
 
 28
-00:01:45,818 --> 00:01:50,280
-Because a write-off is money the bank gives up, someone else must decide it.
+00:01:45,626 --> 00:01:50,688
+If they find proof that the two sides really agree, they resolve it with that evidence.
 
 29
-00:01:50,330 --> 00:01:53,232
-Every change to an exception is written down.
+00:01:50,738 --> 00:01:55,344
+If the difference is real and cannot be recovered, they ask to write it off.
 
 30
-00:01:53,282 --> 00:01:55,104
-Let's watch the product.
+00:01:55,394 --> 00:01:59,784
+A write-off means the bank accepts the difference and closes the case.
 
 31
-00:01:55,154 --> 00:01:59,088
-A bank admin opens Reconciliation in the bank's portal.
+00:01:59,834 --> 00:02:04,296
+Because a write-off is money the bank gives up, someone else must decide it.
 
 32
-00:01:59,138 --> 00:02:03,072
-They choose a card network and a business day, and press Reconcile.
+00:02:04,346 --> 00:02:07,248
+Every change to an exception is written down.
 
 33
-00:02:03,122 --> 00:02:08,208
-A run like this happens every night on its own; this button runs a day again.
+00:02:07,298 --> 00:02:09,120
+Let's watch the product.
 
 34
-00:02:08,258 --> 00:02:10,080
-The run finishes.
+00:02:09,170 --> 00:02:13,104
+A bank admin opens Reconciliation in the bank's portal.
 
 35
-00:02:10,130 --> 00:02:11,952
-Totals shows Differ.
+00:02:13,154 --> 00:02:17,088
+They choose a card network and a business day, and press Reconcile.
 
 36
-00:02:12,002 --> 00:02:18,696
-The items list shows every line with its match state: matched, mismatched, or missing on one side.
+00:02:17,138 --> 00:02:22,224
+A run like this happens every night on its own; this button runs a day again.
 
 37
-00:02:18,746 --> 00:02:22,128
-A mismatched line gives its reason: amount differs.
+00:02:22,274 --> 00:02:24,096
+The run finishes.
 
 38
-00:02:22,178 --> 00:02:25,272
-Our amount and the network's amount sit side by side.
+00:02:24,146 --> 00:02:25,968
+Totals shows Differ.
 
 39
-00:02:25,322 --> 00:02:27,480
-The admin opens Exceptions.
+00:02:26,018 --> 00:02:32,712
+The items list shows every line with its match state: matched, mismatched, or missing on one side.
 
 40
-00:02:27,530 --> 00:02:31,656
-Every unmatched item is here, with its owner and when it is due.
+00:02:32,762 --> 00:02:36,144
+A mismatched line gives its reason: amount differs.
 
 41
-00:02:31,706 --> 00:02:33,528
-One is marked Overdue.
+00:02:36,194 --> 00:02:39,288
+Our amount and the network's amount sit side by side.
 
 42
-00:02:33,578 --> 00:02:38,136
-The admin presses Take, and the page says: you own this exception now.
+00:02:39,338 --> 00:02:41,496
+The admin opens Exceptions.
 
 43
-00:02:38,186 --> 00:02:40,008
-They add a note about what they checked.
+00:02:41,546 --> 00:02:45,672
+Every unmatched item is here, with its owner and when it is due.
 
 44
-00:02:40,058 --> 00:02:44,808
-The difference is real, so they write the reason and choose Ask to write off.
+00:02:45,722 --> 00:02:47,544
+One is marked Overdue.
 
 45
-00:02:44,858 --> 00:02:47,496
-The page says a second admin decides.
+00:02:47,594 --> 00:02:52,152
+The admin presses Take, and the page says: you own this exception now.
 
 46
-00:02:47,546 --> 00:02:51,816
-When the same admin looks at the exception again, there is no approve button for them.
+00:02:52,202 --> 00:02:54,024
+They add a note about what they checked.
 
 47
-00:02:51,866 --> 00:02:58,104
-Instead, a line says they asked to write this off, and another admin approves or rejects.
+00:02:54,074 --> 00:02:58,824
+The difference is real, so they write the reason and choose Ask to write off.
 
 48
-00:02:58,154 --> 00:03:03,048
-A second admin logs in, opens the same exception, and reads the reason.
+00:02:58,874 --> 00:03:01,512
+The page says a second admin decides.
 
 49
-00:03:03,098 --> 00:03:04,584
-They approve the write-off.
+00:03:01,562 --> 00:03:05,832
+When the same admin looks at the exception again, there is no approve button for them.
 
 50
-00:03:04,634 --> 00:03:06,504
-The state becomes Written off.
+00:03:05,882 --> 00:03:12,120
+Instead, a line says they asked to write this off, and another admin approves or rejects.
 
 51
-00:03:06,554 --> 00:03:13,008
-The audit trail at the bottom shows every step: who opened it, who took it, who asked, and who approved.
+00:03:12,170 --> 00:03:17,064
+A second admin logs in, opens the same exception, and reads the reason.
 
 52
-00:03:13,058 --> 00:03:14,880
-What does this protect?
+00:03:17,114 --> 00:03:18,936
+They approve the write-off.
 
 53
-00:03:14,930 --> 00:03:20,952
-Without reconciliation, two books can disagree for weeks, and the bank learns about it from a buyer's complaint.
+00:03:18,986 --> 00:03:20,856
+The state becomes Written off.
 
 54
-00:03:21,002 --> 00:03:23,904
-With it, every difference is found the next day.
+00:03:20,906 --> 00:03:27,360
+The audit trail at the bottom shows every step: who opened it, who took it, who asked, and who approved.
 
 55
-00:03:23,954 --> 00:03:26,760
-Every difference has one owner and a deadline.
+00:03:27,410 --> 00:03:29,232
+What does this protect?
 
 56
-00:03:26,810 --> 00:03:30,864
-And no difference disappears because one person decided to ignore it.
+00:03:29,282 --> 00:03:35,304
+Without reconciliation, two books can disagree for weeks, and the bank learns about it from a buyer's complaint.
 
 57
-00:03:30,914 --> 00:03:36,600
-It protects the bank's money, and it protects the merchant from a payment lost between two systems.
+00:03:35,354 --> 00:03:38,256
+With it, every difference is found the next day.
 
 58
-00:03:36,650 --> 00:03:38,472
-Back to the statement.
+00:03:38,306 --> 00:03:41,112
+Every difference has one owner and a deadline.
 
 59
-00:03:38,522 --> 00:03:44,016
-Every line ticked, every difference circled, and every circle in someone's hands.
+00:03:41,162 --> 00:03:45,216
+And no difference disappears because one person decided to ignore it.
 
 60
-00:03:44,066 --> 00:03:47,064
+00:03:45,266 --> 00:03:50,952
+It protects the bank's money, and it protects the merchant from a payment lost between two systems.
+
+61
+00:03:51,002 --> 00:03:52,824
+Back to the statement.
+
+62
+00:03:52,874 --> 00:03:58,368
+Every line ticked, every difference circled, and every circle in someone's hands.
+
+63
+00:03:58,418 --> 00:04:01,416
 Next: limits on what one website may take.

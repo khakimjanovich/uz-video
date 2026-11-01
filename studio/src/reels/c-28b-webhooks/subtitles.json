@@ -67,9 +67,9 @@
   {
     "index": 2,
     "startFrame": 90,
-    "endFrame": 170,
-    "text": "The shop needs to know before it ships the goods.",
-    "prefix": "The shop needs to know before it ships the goods.",
+    "endFrame": 268,
+    "text": "In Lesson 29, every payment's news waited in the outbox, and a relay passed it on.",
+    "prefix": "In Lesson 29, every payment's news waited in the outbox, and a relay passed it on.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -77,44 +77,69 @@
         "startFrame": 92,
         "words": [
           {
-            "text": "The",
+            "text": "In",
             "startFrame": 92
           },
           {
-            "text": "shop",
-            "startFrame": 93
+            "text": "Lesson 29,",
+            "startFrame": 95
           },
           {
-            "text": "needs",
-            "startFrame": 101
+            "text": "every",
+            "startFrame": 131
           },
           {
-            "text": "to",
-            "startFrame": 108
+            "text": "payment's",
+            "startFrame": 139
           },
           {
-            "text": "know",
-            "startFrame": 111
+            "text": "news",
+            "startFrame": 153
           },
           {
-            "text": "before",
-            "startFrame": 122
+            "text": "waited",
+            "startFrame": 166
+          },
+          {
+            "text": "in",
+            "startFrame": 177
+          }
+        ]
+      },
+      {
+        "startFrame": 179,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 179
+          },
+          {
+            "text": "outbox,",
+            "startFrame": 182
+          },
+          {
+            "text": "and",
+            "startFrame": 211
+          },
+          {
+            "text": "a",
+            "startFrame": 214
+          },
+          {
+            "text": "relay",
+            "startFrame": 217
+          },
+          {
+            "text": "passed",
+            "startFrame": 234
           },
           {
             "text": "it",
-            "startFrame": 132
+            "startFrame": 246
           },
           {
-            "text": "ships",
-            "startFrame": 134
-          },
-          {
-            "text": "the",
-            "startFrame": 142
-          },
-          {
-            "text": "goods.",
-            "startFrame": 145
+            "text": "on.",
+            "startFrame": 248
           }
         ]
       }
@@ -122,101 +147,68 @@
   },
   {
     "index": 3,
-    "startFrame": 171,
-    "endFrame": 328,
-    "text": "Its server might be down for an hour, and still needs every event when it comes back, in order.",
-    "prefix": "Its server might be down for an hour, and still needs every event when it comes back, in order.",
+    "startFrame": 268,
+    "endFrame": 404,
+    "text": "In Lesson 24, the merchant's server signed what it sent to the bank.",
+    "prefix": "In Lesson 24, the merchant's server signed what it sent to the bank.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 172,
+        "startFrame": 269,
         "words": [
           {
-            "text": "Its",
-            "startFrame": 172
+            "text": "In",
+            "startFrame": 269
+          },
+          {
+            "text": "Lesson 24,",
+            "startFrame": 273
+          },
+          {
+            "text": "the",
+            "startFrame": 312
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 315
           },
           {
             "text": "server",
-            "startFrame": 176
+            "startFrame": 333
           },
           {
-            "text": "might",
-            "startFrame": 185
+            "text": "signed",
+            "startFrame": 345
           },
           {
-            "text": "be",
-            "startFrame": 190
-          },
-          {
-            "text": "down",
-            "startFrame": 193
-          },
-          {
-            "text": "for",
-            "startFrame": 203
-          },
-          {
-            "text": "an",
-            "startFrame": 207
-          },
-          {
-            "text": "hour,",
-            "startFrame": 209
-          }
-        ]
-      },
-      {
-        "startFrame": 228,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 228
-          },
-          {
-            "text": "still",
-            "startFrame": 230
-          },
-          {
-            "text": "needs",
-            "startFrame": 239
-          },
-          {
-            "text": "every",
-            "startFrame": 255
-          },
-          {
-            "text": "event",
-            "startFrame": 264
-          },
-          {
-            "text": "when",
-            "startFrame": 277
+            "text": "what",
+            "startFrame": 359
           },
           {
             "text": "it",
-            "startFrame": 280
-          },
-          {
-            "text": "comes",
-            "startFrame": 282
+            "startFrame": 362
           }
         ]
       },
       {
-        "startFrame": 290,
+        "startFrame": 364,
         "words": [
           {
-            "text": "back,",
-            "startFrame": 290
+            "text": "sent",
+            "startFrame": 364
           },
           {
-            "text": "in",
-            "startFrame": 301
+            "text": "to",
+            "startFrame": 375
           },
           {
-            "text": "order.",
-            "startFrame": 304
+            "text": "the",
+            "startFrame": 378
+          },
+          {
+            "text": "bank.",
+            "startFrame": 380
           }
         ]
       }
@@ -224,64 +216,89 @@
   },
   {
     "index": 4,
-    "startFrame": 329,
-    "endFrame": 420,
-    "text": "It must also tell a real event from a forged one.",
-    "prefix": "It must also tell a real event from a forged one.",
+    "startFrame": 405,
+    "endFrame": 561,
+    "text": "This lesson delivers the news the other way, signed by the bank, to the merchant's server.",
+    "prefix": "This lesson delivers the news the other way, signed by the bank, to the merchant's server.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 330,
+        "startFrame": 406,
         "words": [
           {
-            "text": "It",
-            "startFrame": 330
+            "text": "This",
+            "startFrame": 406
           },
           {
-            "text": "must",
-            "startFrame": 332
+            "text": "lesson",
+            "startFrame": 412
           },
           {
-            "text": "also",
-            "startFrame": 337
+            "text": "delivers",
+            "startFrame": 422
           },
           {
-            "text": "tell",
-            "startFrame": 345
+            "text": "the",
+            "startFrame": 434
           },
           {
-            "text": "a",
-            "startFrame": 351
+            "text": "news",
+            "startFrame": 437
           },
           {
-            "text": "real",
-            "startFrame": 352
+            "text": "the",
+            "startFrame": 450
           },
           {
-            "text": "event",
-            "startFrame": 362
+            "text": "other",
+            "startFrame": 453
           },
           {
-            "text": "from",
-            "startFrame": 379
+            "text": "way,",
+            "startFrame": 461
           }
         ]
       },
       {
-        "startFrame": 383,
+        "startFrame": 484,
         "words": [
           {
-            "text": "a",
-            "startFrame": 383
+            "text": "signed",
+            "startFrame": 484
           },
           {
-            "text": "forged",
-            "startFrame": 385
+            "text": "by",
+            "startFrame": 494
           },
           {
-            "text": "one.",
-            "startFrame": 399
+            "text": "the",
+            "startFrame": 498
+          },
+          {
+            "text": "bank,",
+            "startFrame": 501
+          }
+        ]
+      },
+      {
+        "startFrame": 518,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 518
+          },
+          {
+            "text": "the",
+            "startFrame": 521
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 523
+          },
+          {
+            "text": "server.",
+            "startFrame": 535
           }
         ]
       }
@@ -289,47 +306,55 @@
   },
   {
     "index": 5,
-    "startFrame": 420,
-    "endFrame": 503,
-    "text": "Anyone can send a message that says paid.",
-    "prefix": "Anyone can send a message that says paid.",
+    "startFrame": 561,
+    "endFrame": 641,
+    "text": "The shop needs to know before it ships the goods.",
+    "prefix": "The shop needs to know before it ships the goods.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 421,
+        "startFrame": 563,
         "words": [
           {
-            "text": "Anyone",
-            "startFrame": 421
+            "text": "The",
+            "startFrame": 563
           },
           {
-            "text": "can",
-            "startFrame": 431
+            "text": "shop",
+            "startFrame": 564
           },
           {
-            "text": "send",
-            "startFrame": 435
+            "text": "needs",
+            "startFrame": 572
           },
           {
-            "text": "a",
-            "startFrame": 441
+            "text": "to",
+            "startFrame": 579
           },
           {
-            "text": "message",
-            "startFrame": 442
+            "text": "know",
+            "startFrame": 582
           },
           {
-            "text": "that",
-            "startFrame": 465
+            "text": "before",
+            "startFrame": 593
           },
           {
-            "text": "says",
-            "startFrame": 468
+            "text": "it",
+            "startFrame": 603
           },
           {
-            "text": "paid.",
-            "startFrame": 477
+            "text": "ships",
+            "startFrame": 605
+          },
+          {
+            "text": "the",
+            "startFrame": 613
+          },
+          {
+            "text": "goods.",
+            "startFrame": 616
           }
         ]
       }
@@ -337,47 +362,101 @@
   },
   {
     "index": 6,
-    "startFrame": 504,
-    "endFrame": 561,
-    "text": "And there is a danger for the bank.",
-    "prefix": "And there is a danger for the bank.",
+    "startFrame": 642,
+    "endFrame": 799,
+    "text": "Its server might be down for an hour, and still needs every event when it comes back, in order.",
+    "prefix": "Its server might be down for an hour, and still needs every event when it comes back, in order.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 505,
+        "startFrame": 643,
         "words": [
           {
-            "text": "And",
-            "startFrame": 505
+            "text": "Its",
+            "startFrame": 643
           },
           {
-            "text": "there",
-            "startFrame": 507
+            "text": "server",
+            "startFrame": 647
           },
           {
-            "text": "is",
-            "startFrame": 509
+            "text": "might",
+            "startFrame": 656
           },
           {
-            "text": "a",
-            "startFrame": 512
+            "text": "be",
+            "startFrame": 661
           },
           {
-            "text": "danger",
-            "startFrame": 518
+            "text": "down",
+            "startFrame": 664
           },
           {
             "text": "for",
-            "startFrame": 532
+            "startFrame": 674
           },
           {
-            "text": "the",
-            "startFrame": 535
+            "text": "an",
+            "startFrame": 678
           },
           {
-            "text": "bank.",
-            "startFrame": 537
+            "text": "hour,",
+            "startFrame": 680
+          }
+        ]
+      },
+      {
+        "startFrame": 699,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 699
+          },
+          {
+            "text": "still",
+            "startFrame": 701
+          },
+          {
+            "text": "needs",
+            "startFrame": 710
+          },
+          {
+            "text": "every",
+            "startFrame": 726
+          },
+          {
+            "text": "event",
+            "startFrame": 735
+          },
+          {
+            "text": "when",
+            "startFrame": 748
+          },
+          {
+            "text": "it",
+            "startFrame": 751
+          },
+          {
+            "text": "comes",
+            "startFrame": 753
+          }
+        ]
+      },
+      {
+        "startFrame": 761,
+        "words": [
+          {
+            "text": "back,",
+            "startFrame": 761
+          },
+          {
+            "text": "in",
+            "startFrame": 772
+          },
+          {
+            "text": "order.",
+            "startFrame": 775
           }
         ]
       }
@@ -385,105 +464,64 @@
   },
   {
     "index": 7,
-    "startFrame": 561,
-    "endFrame": 751,
-    "text": "An attacker could set their webhook address to a server inside the bank's own network, and make ecom call it.",
-    "prefix": "An attacker could set their webhook address to a server inside the bank's own network, and make ecom call it.",
+    "startFrame": 799,
+    "endFrame": 890,
+    "text": "It must also tell a real event from a forged one.",
+    "prefix": "It must also tell a real event from a forged one.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 562,
+        "startFrame": 801,
         "words": [
           {
-            "text": "An",
-            "startFrame": 562
+            "text": "It",
+            "startFrame": 801
           },
           {
-            "text": "attacker",
-            "startFrame": 564
+            "text": "must",
+            "startFrame": 803
           },
           {
-            "text": "could",
-            "startFrame": 578
+            "text": "also",
+            "startFrame": 808
           },
           {
-            "text": "set",
-            "startFrame": 581
-          },
-          {
-            "text": "their",
-            "startFrame": 588
-          },
-          {
-            "text": "webhook",
-            "startFrame": 594
-          },
-          {
-            "text": "address",
-            "startFrame": 608
-          }
-        ]
-      },
-      {
-        "startFrame": 626,
-        "words": [
-          {
-            "text": "to",
-            "startFrame": 626
+            "text": "tell",
+            "startFrame": 815
           },
           {
             "text": "a",
-            "startFrame": 630
+            "startFrame": 822
           },
           {
-            "text": "server",
-            "startFrame": 632
+            "text": "real",
+            "startFrame": 823
           },
           {
-            "text": "inside",
-            "startFrame": 647
+            "text": "event",
+            "startFrame": 833
           },
           {
-            "text": "the",
-            "startFrame": 663
-          },
-          {
-            "text": "bank's",
-            "startFrame": 666
-          },
-          {
-            "text": "own",
-            "startFrame": 678
-          },
-          {
-            "text": "network,",
-            "startFrame": 683
+            "text": "from",
+            "startFrame": 849
           }
         ]
       },
       {
-        "startFrame": 708,
+        "startFrame": 854,
         "words": [
           {
-            "text": "and",
-            "startFrame": 708
+            "text": "a",
+            "startFrame": 854
           },
           {
-            "text": "make",
-            "startFrame": 710
+            "text": "forged",
+            "startFrame": 856
           },
           {
-            "text": "ecom",
-            "startFrame": 718
-          },
-          {
-            "text": "call",
-            "startFrame": 728
-          },
-          {
-            "text": "it.",
-            "startFrame": 736
+            "text": "one.",
+            "startFrame": 869
           }
         ]
       }
@@ -491,35 +529,47 @@
   },
   {
     "index": 8,
-    "startFrame": 751,
-    "endFrame": 807,
-    "text": "Think of a registered letter.",
-    "prefix": "Think of a registered letter.",
+    "startFrame": 891,
+    "endFrame": 974,
+    "text": "Anyone can send a message that says paid.",
+    "prefix": "Anyone can send a message that says paid.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 754,
+        "startFrame": 892,
         "words": [
           {
-            "text": "Think",
-            "startFrame": 754
+            "text": "Anyone",
+            "startFrame": 892
           },
           {
-            "text": "of",
-            "startFrame": 759
+            "text": "can",
+            "startFrame": 902
+          },
+          {
+            "text": "send",
+            "startFrame": 905
           },
           {
             "text": "a",
-            "startFrame": 761
+            "startFrame": 912
           },
           {
-            "text": "registered",
-            "startFrame": 762
+            "text": "message",
+            "startFrame": 913
           },
           {
-            "text": "letter.",
-            "startFrame": 778
+            "text": "that",
+            "startFrame": 935
+          },
+          {
+            "text": "says",
+            "startFrame": 939
+          },
+          {
+            "text": "paid.",
+            "startFrame": 948
           }
         ]
       }
@@ -527,60 +577,47 @@
   },
   {
     "index": 9,
-    "startFrame": 807,
-    "endFrame": 896,
-    "text": "It is sealed, so the reader knows who sent it.",
-    "prefix": "It is sealed, so the reader knows who sent it.",
+    "startFrame": 974,
+    "endFrame": 1032,
+    "text": "And there is a danger for the bank.",
+    "prefix": "And there is a danger for the bank.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 809,
+        "startFrame": 976,
         "words": [
           {
-            "text": "It",
-            "startFrame": 809
+            "text": "And",
+            "startFrame": 976
+          },
+          {
+            "text": "there",
+            "startFrame": 978
           },
           {
             "text": "is",
-            "startFrame": 811
+            "startFrame": 980
           },
           {
-            "text": "sealed,",
-            "startFrame": 815
-          }
-        ]
-      },
-      {
-        "startFrame": 842,
-        "words": [
+            "text": "a",
+            "startFrame": 983
+          },
           {
-            "text": "so",
-            "startFrame": 842
+            "text": "danger",
+            "startFrame": 989
+          },
+          {
+            "text": "for",
+            "startFrame": 1003
           },
           {
             "text": "the",
-            "startFrame": 845
+            "startFrame": 1006
           },
           {
-            "text": "reader",
-            "startFrame": 848
-          },
-          {
-            "text": "knows",
-            "startFrame": 857
-          },
-          {
-            "text": "who",
-            "startFrame": 867
-          },
-          {
-            "text": "sent",
-            "startFrame": 870
-          },
-          {
-            "text": "it.",
-            "startFrame": 880
+            "text": "bank.",
+            "startFrame": 1008
           }
         ]
       }
@@ -588,47 +625,105 @@
   },
   {
     "index": 10,
-    "startFrame": 897,
-    "endFrame": 969,
-    "text": "It goes only to a real street address.",
-    "prefix": "It goes only to a real street address.",
+    "startFrame": 1032,
+    "endFrame": 1222,
+    "text": "An attacker could set their webhook address to a server inside the bank's own network, and make ecom call it.",
+    "prefix": "An attacker could set their webhook address to a server inside the bank's own network, and make ecom call it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 898,
+        "startFrame": 1033,
         "words": [
           {
-            "text": "It",
-            "startFrame": 898
+            "text": "An",
+            "startFrame": 1033
           },
           {
-            "text": "goes",
-            "startFrame": 899
+            "text": "attacker",
+            "startFrame": 1035
           },
           {
-            "text": "only",
-            "startFrame": 906
+            "text": "could",
+            "startFrame": 1048
           },
+          {
+            "text": "set",
+            "startFrame": 1052
+          },
+          {
+            "text": "their",
+            "startFrame": 1059
+          },
+          {
+            "text": "webhook",
+            "startFrame": 1064
+          },
+          {
+            "text": "address",
+            "startFrame": 1079
+          }
+        ]
+      },
+      {
+        "startFrame": 1097,
+        "words": [
           {
             "text": "to",
-            "startFrame": 912
+            "startFrame": 1097
           },
           {
             "text": "a",
-            "startFrame": 916
+            "startFrame": 1101
           },
           {
-            "text": "real",
-            "startFrame": 920
+            "text": "server",
+            "startFrame": 1103
           },
           {
-            "text": "street",
-            "startFrame": 930
+            "text": "inside",
+            "startFrame": 1118
           },
           {
-            "text": "address.",
-            "startFrame": 941
+            "text": "the",
+            "startFrame": 1134
+          },
+          {
+            "text": "bank's",
+            "startFrame": 1137
+          },
+          {
+            "text": "own",
+            "startFrame": 1148
+          },
+          {
+            "text": "network,",
+            "startFrame": 1154
+          }
+        ]
+      },
+      {
+        "startFrame": 1179,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1179
+          },
+          {
+            "text": "make",
+            "startFrame": 1181
+          },
+          {
+            "text": "ecom",
+            "startFrame": 1188
+          },
+          {
+            "text": "call",
+            "startFrame": 1199
+          },
+          {
+            "text": "it.",
+            "startFrame": 1207
           }
         ]
       }
@@ -636,164 +731,10 @@
   },
   {
     "index": 11,
-    "startFrame": 969,
-    "endFrame": 1064,
-    "text": "If nobody is home, the postman comes back later.",
-    "prefix": "If nobody is home, the postman comes back later.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 971,
-        "words": [
-          {
-            "text": "If",
-            "startFrame": 971
-          },
-          {
-            "text": "nobody",
-            "startFrame": 974
-          },
-          {
-            "text": "is",
-            "startFrame": 985
-          },
-          {
-            "text": "home,",
-            "startFrame": 989
-          }
-        ]
-      },
-      {
-        "startFrame": 1011,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 1011
-          },
-          {
-            "text": "postman",
-            "startFrame": 1014
-          },
-          {
-            "text": "comes",
-            "startFrame": 1027
-          },
-          {
-            "text": "back",
-            "startFrame": 1034
-          },
-          {
-            "text": "later.",
-            "startFrame": 1043
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 12,
-    "startFrame": 1064,
-    "endFrame": 1163,
-    "text": "And after a while, the letter is marked as returned.",
-    "prefix": "And after a while, the letter is marked as returned.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 1065,
-        "words": [
-          {
-            "text": "And",
-            "startFrame": 1065
-          },
-          {
-            "text": "after",
-            "startFrame": 1068
-          },
-          {
-            "text": "a",
-            "startFrame": 1077
-          },
-          {
-            "text": "while,",
-            "startFrame": 1078
-          }
-        ]
-      },
-      {
-        "startFrame": 1100,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 1100
-          },
-          {
-            "text": "letter",
-            "startFrame": 1104
-          },
-          {
-            "text": "is",
-            "startFrame": 1116
-          },
-          {
-            "text": "marked",
-            "startFrame": 1119
-          },
-          {
-            "text": "as",
-            "startFrame": 1133
-          },
-          {
-            "text": "returned.",
-            "startFrame": 1136
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 13,
-    "startFrame": 1163,
-    "endFrame": 1223,
-    "text": "A webhook is that letter.",
-    "prefix": "A webhook is that letter.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 1164,
-        "words": [
-          {
-            "text": "A",
-            "startFrame": 1164
-          },
-          {
-            "text": "webhook",
-            "startFrame": 1166
-          },
-          {
-            "text": "is",
-            "startFrame": 1191
-          },
-          {
-            "text": "that",
-            "startFrame": 1194
-          },
-          {
-            "text": "letter.",
-            "startFrame": 1201
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 14,
-    "startFrame": 1224,
-    "endFrame": 1401,
-    "text": "When the news about a payment leaves the outbox, ecom posts it to the website's webhook address.",
-    "prefix": "When the news about a payment leaves the outbox, ecom posts it to the website's webhook address.",
+    "startFrame": 1222,
+    "endFrame": 1278,
+    "text": "Think of a registered letter.",
+    "prefix": "Think of a registered letter.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -801,77 +742,190 @@
         "startFrame": 1225,
         "words": [
           {
-            "text": "When",
+            "text": "Think",
             "startFrame": 1225
           },
           {
-            "text": "the",
-            "startFrame": 1227
-          },
-          {
-            "text": "news",
-            "startFrame": 1229
-          },
-          {
-            "text": "about",
-            "startFrame": 1236
+            "text": "of",
+            "startFrame": 1230
           },
           {
             "text": "a",
-            "startFrame": 1243
+            "startFrame": 1232
           },
           {
-            "text": "payment",
-            "startFrame": 1244
+            "text": "registered",
+            "startFrame": 1233
           },
           {
-            "text": "leaves",
-            "startFrame": 1262
+            "text": "letter.",
+            "startFrame": 1248
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 1278,
+    "endFrame": 1367,
+    "text": "It is sealed, so the reader knows who sent it.",
+    "prefix": "It is sealed, so the reader knows who sent it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1280,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1280
+          },
+          {
+            "text": "is",
+            "startFrame": 1282
+          },
+          {
+            "text": "sealed,",
+            "startFrame": 1286
           }
         ]
       },
       {
-        "startFrame": 1270,
+        "startFrame": 1312,
         "words": [
           {
+            "text": "so",
+            "startFrame": 1312
+          },
+          {
             "text": "the",
-            "startFrame": 1270
+            "startFrame": 1316
           },
           {
-            "text": "outbox,",
-            "startFrame": 1273
+            "text": "reader",
+            "startFrame": 1319
           },
           {
-            "text": "ecom",
-            "startFrame": 1304
-          },
-          {
-            "text": "posts",
-            "startFrame": 1315
-          },
-          {
-            "text": "it",
+            "text": "knows",
             "startFrame": 1328
           },
           {
-            "text": "to",
-            "startFrame": 1336
-          },
-          {
-            "text": "the",
+            "text": "who",
             "startFrame": 1338
           },
           {
-            "text": "website's",
+            "text": "sent",
             "startFrame": 1341
           },
           {
-            "text": "webhook",
-            "startFrame": 1358
+            "text": "it.",
+            "startFrame": 1351
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1368,
+    "endFrame": 1440,
+    "text": "It goes only to a real street address.",
+    "prefix": "It goes only to a real street address.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1369,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 1369
+          },
+          {
+            "text": "goes",
+            "startFrame": 1370
+          },
+          {
+            "text": "only",
+            "startFrame": 1377
+          },
+          {
+            "text": "to",
+            "startFrame": 1383
+          },
+          {
+            "text": "a",
+            "startFrame": 1387
+          },
+          {
+            "text": "real",
+            "startFrame": 1391
+          },
+          {
+            "text": "street",
+            "startFrame": 1401
           },
           {
             "text": "address.",
-            "startFrame": 1370
+            "startFrame": 1411
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 1440,
+    "endFrame": 1535,
+    "text": "If nobody is home, the postman comes back later.",
+    "prefix": "If nobody is home, the postman comes back later.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1442,
+        "words": [
+          {
+            "text": "If",
+            "startFrame": 1442
+          },
+          {
+            "text": "nobody",
+            "startFrame": 1445
+          },
+          {
+            "text": "is",
+            "startFrame": 1456
+          },
+          {
+            "text": "home,",
+            "startFrame": 1459
+          }
+        ]
+      },
+      {
+        "startFrame": 1482,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1482
+          },
+          {
+            "text": "postman",
+            "startFrame": 1485
+          },
+          {
+            "text": "comes",
+            "startFrame": 1498
+          },
+          {
+            "text": "back",
+            "startFrame": 1504
+          },
+          {
+            "text": "later.",
+            "startFrame": 1513
           }
         ]
       }
@@ -879,60 +933,60 @@
   },
   {
     "index": 15,
-    "startFrame": 1401,
-    "endFrame": 1497,
-    "text": "That address is set by the merchant for each website.",
-    "prefix": "That address is set by the merchant for each website.",
+    "startFrame": 1535,
+    "endFrame": 1633,
+    "text": "And after a while, the letter is marked as returned.",
+    "prefix": "And after a while, the letter is marked as returned.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1403,
+        "startFrame": 1536,
         "words": [
           {
-            "text": "That",
-            "startFrame": 1403
+            "text": "And",
+            "startFrame": 1536
           },
           {
-            "text": "address",
-            "startFrame": 1408
+            "text": "after",
+            "startFrame": 1539
           },
           {
-            "text": "is",
-            "startFrame": 1421
+            "text": "a",
+            "startFrame": 1547
           },
           {
-            "text": "set",
-            "startFrame": 1423
-          },
-          {
-            "text": "by",
-            "startFrame": 1431
-          },
-          {
-            "text": "the",
-            "startFrame": 1434
-          },
-          {
-            "text": "merchant",
-            "startFrame": 1436
+            "text": "while,",
+            "startFrame": 1549
           }
         ]
       },
       {
-        "startFrame": 1453,
+        "startFrame": 1571,
         "words": [
           {
-            "text": "for",
-            "startFrame": 1453
+            "text": "the",
+            "startFrame": 1571
           },
           {
-            "text": "each",
-            "startFrame": 1461
+            "text": "letter",
+            "startFrame": 1575
           },
           {
-            "text": "website.",
-            "startFrame": 1467
+            "text": "is",
+            "startFrame": 1587
+          },
+          {
+            "text": "marked",
+            "startFrame": 1590
+          },
+          {
+            "text": "as",
+            "startFrame": 1604
+          },
+          {
+            "text": "returned.",
+            "startFrame": 1607
           }
         ]
       }
@@ -940,85 +994,35 @@
   },
   {
     "index": 16,
-    "startFrame": 1498,
-    "endFrame": 1659,
-    "text": "Every event carries its own id, the time it was sent, and a webhook signature.",
-    "prefix": "Every event carries its own id, the time it was sent, and a webhook signature.",
+    "startFrame": 1634,
+    "endFrame": 1694,
+    "text": "A webhook is that letter.",
+    "prefix": "A webhook is that letter.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1499,
+        "startFrame": 1635,
         "words": [
           {
-            "text": "Every",
-            "startFrame": 1499
-          },
-          {
-            "text": "event",
-            "startFrame": 1506
-          },
-          {
-            "text": "carries",
-            "startFrame": 1517
-          },
-          {
-            "text": "its",
-            "startFrame": 1529
-          },
-          {
-            "text": "own",
-            "startFrame": 1532
-          },
-          {
-            "text": "id,",
-            "startFrame": 1538
-          }
-        ]
-      },
-      {
-        "startFrame": 1566,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 1566
-          },
-          {
-            "text": "time",
-            "startFrame": 1569
-          },
-          {
-            "text": "it",
-            "startFrame": 1576
-          },
-          {
-            "text": "was",
-            "startFrame": 1577
-          },
-          {
-            "text": "sent,",
-            "startFrame": 1581
-          }
-        ]
-      },
-      {
-        "startFrame": 1608,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 1608
-          },
-          {
-            "text": "a",
-            "startFrame": 1616
+            "text": "A",
+            "startFrame": 1635
           },
           {
             "text": "webhook",
-            "startFrame": 1618
+            "startFrame": 1637
           },
           {
-            "text": "signature.",
-            "startFrame": 1630
+            "text": "is",
+            "startFrame": 1662
+          },
+          {
+            "text": "that",
+            "startFrame": 1665
+          },
+          {
+            "text": "letter.",
+            "startFrame": 1671
           }
         ]
       }
@@ -1026,76 +1030,88 @@
   },
   {
     "index": 17,
-    "startFrame": 1660,
-    "endFrame": 1813,
-    "text": "The signature is made with the same signing key as the merchant's API client.",
-    "prefix": "The signature is made with the same signing key as the merchant's API client.",
+    "startFrame": 1694,
+    "endFrame": 1872,
+    "text": "When the news about a payment leaves the outbox, ecom posts it to the website's webhook address.",
+    "prefix": "When the news about a payment leaves the outbox, ecom posts it to the website's webhook address.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1661,
+        "startFrame": 1696,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1661
-          },
-          {
-            "text": "signature",
-            "startFrame": 1663
-          },
-          {
-            "text": "is",
-            "startFrame": 1678
-          },
-          {
-            "text": "made",
-            "startFrame": 1681
-          },
-          {
-            "text": "with",
-            "startFrame": 1690
-          },
-          {
-            "text": "the",
-            "startFrame": 1694
-          },
-          {
-            "text": "same",
+            "text": "When",
             "startFrame": 1696
           },
           {
-            "text": "signing",
+            "text": "the",
+            "startFrame": 1698
+          },
+          {
+            "text": "news",
+            "startFrame": 1700
+          },
+          {
+            "text": "about",
             "startFrame": 1707
+          },
+          {
+            "text": "a",
+            "startFrame": 1714
+          },
+          {
+            "text": "payment",
+            "startFrame": 1715
+          },
+          {
+            "text": "leaves",
+            "startFrame": 1733
           }
         ]
       },
       {
-        "startFrame": 1719,
+        "startFrame": 1741,
         "words": [
           {
-            "text": "key",
-            "startFrame": 1719
+            "text": "the",
+            "startFrame": 1741
           },
           {
-            "text": "as",
-            "startFrame": 1739
+            "text": "outbox,",
+            "startFrame": 1744
+          },
+          {
+            "text": "ecom",
+            "startFrame": 1775
+          },
+          {
+            "text": "posts",
+            "startFrame": 1786
+          },
+          {
+            "text": "it",
+            "startFrame": 1799
+          },
+          {
+            "text": "to",
+            "startFrame": 1807
           },
           {
             "text": "the",
-            "startFrame": 1743
+            "startFrame": 1809
           },
           {
-            "text": "merchant's",
-            "startFrame": 1745
+            "text": "website's",
+            "startFrame": 1812
           },
           {
-            "text": "API",
-            "startFrame": 1766
+            "text": "webhook",
+            "startFrame": 1829
           },
           {
-            "text": "client.",
-            "startFrame": 1785
+            "text": "address.",
+            "startFrame": 1841
           }
         ]
       }
@@ -1103,72 +1119,60 @@
   },
   {
     "index": 18,
-    "startFrame": 1813,
-    "endFrame": 1947,
-    "text": "It follows a common open standard, so any webhook library can check it.",
-    "prefix": "It follows a common open standard, so any webhook library can check it.",
+    "startFrame": 1872,
+    "endFrame": 1968,
+    "text": "That address is set by the merchant for each website.",
+    "prefix": "That address is set by the merchant for each website.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1814,
+        "startFrame": 1874,
         "words": [
           {
-            "text": "It",
-            "startFrame": 1814
+            "text": "That",
+            "startFrame": 1874
           },
           {
-            "text": "follows",
-            "startFrame": 1817
+            "text": "address",
+            "startFrame": 1879
           },
           {
-            "text": "a",
-            "startFrame": 1829
+            "text": "is",
+            "startFrame": 1891
           },
           {
-            "text": "common",
-            "startFrame": 1831
+            "text": "set",
+            "startFrame": 1894
           },
           {
-            "text": "open",
-            "startFrame": 1843
+            "text": "by",
+            "startFrame": 1902
           },
           {
-            "text": "standard,",
-            "startFrame": 1850
+            "text": "the",
+            "startFrame": 1905
+          },
+          {
+            "text": "merchant",
+            "startFrame": 1907
           }
         ]
       },
       {
-        "startFrame": 1872,
+        "startFrame": 1924,
         "words": [
           {
-            "text": "so",
-            "startFrame": 1872
+            "text": "for",
+            "startFrame": 1924
           },
           {
-            "text": "any",
-            "startFrame": 1881
+            "text": "each",
+            "startFrame": 1931
           },
           {
-            "text": "webhook",
-            "startFrame": 1887
-          },
-          {
-            "text": "library",
-            "startFrame": 1902
-          },
-          {
-            "text": "can",
-            "startFrame": 1917
-          },
-          {
-            "text": "check",
-            "startFrame": 1921
-          },
-          {
-            "text": "it.",
-            "startFrame": 1930
+            "text": "website.",
+            "startFrame": 1938
           }
         ]
       }
@@ -1176,105 +1180,85 @@
   },
   {
     "index": 19,
-    "startFrame": 1947,
-    "endFrame": 2143,
-    "text": "The merchant's server checks the seal, drops events that are too old, and drops any id it has seen before.",
-    "prefix": "The merchant's server checks the seal, drops events that are too old, and drops any id it has seen before.",
+    "startFrame": 1969,
+    "endFrame": 2130,
+    "text": "Every event carries its own id, the time it was sent, and a webhook signature.",
+    "prefix": "Every event carries its own id, the time it was sent, and a webhook signature.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1949,
+        "startFrame": 1970,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1949
+            "text": "Every",
+            "startFrame": 1970
           },
           {
-            "text": "merchant's",
-            "startFrame": 1951
-          },
-          {
-            "text": "server",
-            "startFrame": 1963
-          },
-          {
-            "text": "checks",
+            "text": "event",
             "startFrame": 1977
           },
           {
+            "text": "carries",
+            "startFrame": 1988
+          },
+          {
+            "text": "its",
+            "startFrame": 1999
+          },
+          {
+            "text": "own",
+            "startFrame": 2003
+          },
+          {
+            "text": "id,",
+            "startFrame": 2009
+          }
+        ]
+      },
+      {
+        "startFrame": 2037,
+        "words": [
+          {
             "text": "the",
-            "startFrame": 1986
+            "startFrame": 2037
           },
           {
-            "text": "seal,",
-            "startFrame": 1989
-          }
-        ]
-      },
-      {
-        "startFrame": 2012,
-        "words": [
-          {
-            "text": "drops",
-            "startFrame": 2012
-          },
-          {
-            "text": "events",
-            "startFrame": 2021
-          },
-          {
-            "text": "that",
-            "startFrame": 2030
-          },
-          {
-            "text": "are",
-            "startFrame": 2033
-          },
-          {
-            "text": "too",
-            "startFrame": 2035
-          },
-          {
-            "text": "old,",
-            "startFrame": 2043
-          }
-        ]
-      },
-      {
-        "startFrame": 2064,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 2064
-          },
-          {
-            "text": "drops",
-            "startFrame": 2065
-          },
-          {
-            "text": "any",
-            "startFrame": 2082
-          },
-          {
-            "text": "id",
-            "startFrame": 2089
+            "text": "time",
+            "startFrame": 2039
           },
           {
             "text": "it",
-            "startFrame": 2105
+            "startFrame": 2047
           },
           {
-            "text": "has",
-            "startFrame": 2107
+            "text": "was",
+            "startFrame": 2048
           },
           {
-            "text": "seen",
-            "startFrame": 2111
+            "text": "sent,",
+            "startFrame": 2052
+          }
+        ]
+      },
+      {
+        "startFrame": 2079,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2079
           },
           {
-            "text": "before.",
-            "startFrame": 2118
+            "text": "a",
+            "startFrame": 2087
+          },
+          {
+            "text": "webhook",
+            "startFrame": 2089
+          },
+          {
+            "text": "signature.",
+            "startFrame": 2101
           }
         ]
       }
@@ -1282,39 +1266,76 @@
   },
   {
     "index": 20,
-    "startFrame": 2144,
-    "endFrame": 2245,
-    "text": "Before connecting, ecom checks the address.",
-    "prefix": "Before connecting, ecom checks the address.",
+    "startFrame": 2131,
+    "endFrame": 2284,
+    "text": "The signature is made with the same signing key as the merchant's API client.",
+    "prefix": "The signature is made with the same signing key as the merchant's API client.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2145,
+        "startFrame": 2132,
         "words": [
           {
-            "text": "Before",
-            "startFrame": 2145
+            "text": "The",
+            "startFrame": 2132
           },
           {
-            "text": "connecting,",
-            "startFrame": 2153
+            "text": "signature",
+            "startFrame": 2134
           },
           {
-            "text": "ecom",
-            "startFrame": 2181
+            "text": "is",
+            "startFrame": 2149
           },
           {
-            "text": "checks",
-            "startFrame": 2202
+            "text": "made",
+            "startFrame": 2152
+          },
+          {
+            "text": "with",
+            "startFrame": 2161
           },
           {
             "text": "the",
+            "startFrame": 2165
+          },
+          {
+            "text": "same",
+            "startFrame": 2167
+          },
+          {
+            "text": "signing",
+            "startFrame": 2178
+          }
+        ]
+      },
+      {
+        "startFrame": 2190,
+        "words": [
+          {
+            "text": "key",
+            "startFrame": 2190
+          },
+          {
+            "text": "as",
             "startFrame": 2210
           },
           {
-            "text": "address.",
+            "text": "the",
             "startFrame": 2214
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 2216
+          },
+          {
+            "text": "API",
+            "startFrame": 2237
+          },
+          {
+            "text": "client.",
+            "startFrame": 2256
           }
         ]
       }
@@ -1322,39 +1343,72 @@
   },
   {
     "index": 21,
-    "startFrame": 2246,
-    "endFrame": 2310,
-    "text": "It must be a secure address.",
-    "prefix": "It must be a secure address.",
+    "startFrame": 2284,
+    "endFrame": 2418,
+    "text": "It follows a common open standard, so any webhook library can check it.",
+    "prefix": "It follows a common open standard, so any webhook library can check it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2247,
+        "startFrame": 2285,
         "words": [
           {
             "text": "It",
-            "startFrame": 2247
+            "startFrame": 2285
           },
           {
-            "text": "must",
-            "startFrame": 2249
-          },
-          {
-            "text": "be",
-            "startFrame": 2254
+            "text": "follows",
+            "startFrame": 2288
           },
           {
             "text": "a",
-            "startFrame": 2258
+            "startFrame": 2300
           },
           {
-            "text": "secure",
-            "startFrame": 2259
+            "text": "common",
+            "startFrame": 2302
           },
           {
-            "text": "address.",
-            "startFrame": 2280
+            "text": "open",
+            "startFrame": 2314
+          },
+          {
+            "text": "standard,",
+            "startFrame": 2321
+          }
+        ]
+      },
+      {
+        "startFrame": 2343,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 2343
+          },
+          {
+            "text": "any",
+            "startFrame": 2352
+          },
+          {
+            "text": "webhook",
+            "startFrame": 2358
+          },
+          {
+            "text": "library",
+            "startFrame": 2373
+          },
+          {
+            "text": "can",
+            "startFrame": 2388
+          },
+          {
+            "text": "check",
+            "startFrame": 2392
+          },
+          {
+            "text": "it.",
+            "startFrame": 2401
           }
         ]
       }
@@ -1362,47 +1416,105 @@
   },
   {
     "index": 22,
-    "startFrame": 2310,
-    "endFrame": 2382,
-    "text": "It must lead only to the public internet.",
-    "prefix": "It must lead only to the public internet.",
+    "startFrame": 2418,
+    "endFrame": 2614,
+    "text": "The merchant's server checks the seal, drops events that are too old, and drops any id it has seen before.",
+    "prefix": "The merchant's server checks the seal, drops events that are too old, and drops any id it has seen before.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2311,
+        "startFrame": 2419,
         "words": [
           {
-            "text": "It",
-            "startFrame": 2311
+            "text": "The",
+            "startFrame": 2419
           },
           {
-            "text": "must",
-            "startFrame": 2312
+            "text": "merchant's",
+            "startFrame": 2422
           },
           {
-            "text": "lead",
-            "startFrame": 2319
+            "text": "server",
+            "startFrame": 2434
           },
           {
-            "text": "only",
-            "startFrame": 2330
-          },
-          {
-            "text": "to",
-            "startFrame": 2341
+            "text": "checks",
+            "startFrame": 2448
           },
           {
             "text": "the",
-            "startFrame": 2345
+            "startFrame": 2457
           },
           {
-            "text": "public",
-            "startFrame": 2347
+            "text": "seal,",
+            "startFrame": 2459
+          }
+        ]
+      },
+      {
+        "startFrame": 2483,
+        "words": [
+          {
+            "text": "drops",
+            "startFrame": 2483
           },
           {
-            "text": "internet.",
-            "startFrame": 2357
+            "text": "events",
+            "startFrame": 2492
+          },
+          {
+            "text": "that",
+            "startFrame": 2501
+          },
+          {
+            "text": "are",
+            "startFrame": 2504
+          },
+          {
+            "text": "too",
+            "startFrame": 2506
+          },
+          {
+            "text": "old,",
+            "startFrame": 2514
+          }
+        ]
+      },
+      {
+        "startFrame": 2535,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2535
+          },
+          {
+            "text": "drops",
+            "startFrame": 2536
+          },
+          {
+            "text": "any",
+            "startFrame": 2553
+          },
+          {
+            "text": "id",
+            "startFrame": 2559
+          },
+          {
+            "text": "it",
+            "startFrame": 2576
+          },
+          {
+            "text": "has",
+            "startFrame": 2578
+          },
+          {
+            "text": "seen",
+            "startFrame": 2582
+          },
+          {
+            "text": "before.",
+            "startFrame": 2589
           }
         ]
       }
@@ -1410,93 +1522,39 @@
   },
   {
     "index": 23,
-    "startFrame": 2383,
-    "endFrame": 2523,
-    "text": "And it is checked again at the very moment of connecting, so it cannot change in between.",
-    "prefix": "And it is checked again at the very moment of connecting, so it cannot change in between.",
+    "startFrame": 2615,
+    "endFrame": 2716,
+    "text": "Before connecting, ecom checks the address.",
+    "prefix": "Before connecting, ecom checks the address.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2384,
+        "startFrame": 2616,
         "words": [
           {
-            "text": "And",
-            "startFrame": 2384
-          },
-          {
-            "text": "it",
-            "startFrame": 2387
-          },
-          {
-            "text": "is",
-            "startFrame": 2389
-          },
-          {
-            "text": "checked",
-            "startFrame": 2392
-          },
-          {
-            "text": "again",
-            "startFrame": 2400
-          },
-          {
-            "text": "at",
-            "startFrame": 2414
-          },
-          {
-            "text": "the",
-            "startFrame": 2416
-          },
-          {
-            "text": "very",
-            "startFrame": 2419
-          }
-        ]
-      },
-      {
-        "startFrame": 2429,
-        "words": [
-          {
-            "text": "moment",
-            "startFrame": 2429
-          },
-          {
-            "text": "of",
-            "startFrame": 2439
+            "text": "Before",
+            "startFrame": 2616
           },
           {
             "text": "connecting,",
-            "startFrame": 2441
-          }
-        ]
-      },
-      {
-        "startFrame": 2467,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 2467
+            "startFrame": 2623
           },
           {
-            "text": "it",
-            "startFrame": 2472
+            "text": "ecom",
+            "startFrame": 2652
           },
           {
-            "text": "cannot",
-            "startFrame": 2473
+            "text": "checks",
+            "startFrame": 2672
           },
           {
-            "text": "change",
-            "startFrame": 2484
+            "text": "the",
+            "startFrame": 2681
           },
           {
-            "text": "in",
-            "startFrame": 2497
-          },
-          {
-            "text": "between.",
-            "startFrame": 2498
+            "text": "address.",
+            "startFrame": 2685
           }
         ]
       }
@@ -1504,31 +1562,39 @@
   },
   {
     "index": 24,
-    "startFrame": 2524,
-    "endFrame": 2584,
-    "text": "Redirects are not followed.",
-    "prefix": "Redirects are not followed.",
+    "startFrame": 2717,
+    "endFrame": 2780,
+    "text": "It must be a secure address.",
+    "prefix": "It must be a secure address.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2525,
+        "startFrame": 2718,
         "words": [
           {
-            "text": "Redirects",
-            "startFrame": 2525
+            "text": "It",
+            "startFrame": 2718
           },
           {
-            "text": "are",
-            "startFrame": 2544
+            "text": "must",
+            "startFrame": 2720
           },
           {
-            "text": "not",
-            "startFrame": 2548
+            "text": "be",
+            "startFrame": 2725
           },
           {
-            "text": "followed.",
-            "startFrame": 2557
+            "text": "a",
+            "startFrame": 2729
+          },
+          {
+            "text": "secure",
+            "startFrame": 2730
+          },
+          {
+            "text": "address.",
+            "startFrame": 2751
           }
         ]
       }
@@ -1536,101 +1602,47 @@
   },
   {
     "index": 25,
-    "startFrame": 2584,
-    "endFrame": 2791,
-    "text": "This guard stops server-side request forgery: a trick where someone makes a server call places it should never reach.",
-    "prefix": "This guard stops server-side request forgery: a trick where someone makes a server call places it should never reach.",
+    "startFrame": 2781,
+    "endFrame": 2853,
+    "text": "It must lead only to the public internet.",
+    "prefix": "It must lead only to the public internet.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2586,
+        "startFrame": 2782,
         "words": [
           {
-            "text": "This",
-            "startFrame": 2586
+            "text": "It",
+            "startFrame": 2782
           },
           {
-            "text": "guard",
-            "startFrame": 2594
+            "text": "must",
+            "startFrame": 2783
           },
           {
-            "text": "stops",
-            "startFrame": 2601
+            "text": "lead",
+            "startFrame": 2790
           },
           {
-            "text": "server-side",
-            "startFrame": 2617
+            "text": "only",
+            "startFrame": 2801
           },
           {
-            "text": "request",
-            "startFrame": 2638
+            "text": "to",
+            "startFrame": 2812
           },
           {
-            "text": "forgery:",
-            "startFrame": 2650
-          }
-        ]
-      },
-      {
-        "startFrame": 2677,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 2677
+            "text": "the",
+            "startFrame": 2816
           },
           {
-            "text": "trick",
-            "startFrame": 2678
+            "text": "public",
+            "startFrame": 2818
           },
           {
-            "text": "where",
-            "startFrame": 2688
-          },
-          {
-            "text": "someone",
-            "startFrame": 2691
-          },
-          {
-            "text": "makes",
-            "startFrame": 2707
-          },
-          {
-            "text": "a",
-            "startFrame": 2716
-          },
-          {
-            "text": "server",
-            "startFrame": 2718
-          },
-          {
-            "text": "call",
-            "startFrame": 2730
-          }
-        ]
-      },
-      {
-        "startFrame": 2738,
-        "words": [
-          {
-            "text": "places",
-            "startFrame": 2738
-          },
-          {
-            "text": "it",
-            "startFrame": 2752
-          },
-          {
-            "text": "should",
-            "startFrame": 2754
-          },
-          {
-            "text": "never",
-            "startFrame": 2760
-          },
-          {
-            "text": "reach.",
-            "startFrame": 2768
+            "text": "internet.",
+            "startFrame": 2828
           }
         ]
       }
@@ -1638,64 +1650,93 @@
   },
   {
     "index": 26,
-    "startFrame": 2792,
-    "endFrame": 2929,
-    "text": "A delivery succeeds only when the merchant's server answers with success.",
-    "prefix": "A delivery succeeds only when the merchant's server answers with success.",
+    "startFrame": 2854,
+    "endFrame": 2994,
+    "text": "And it is checked again at the very moment of connecting, so it cannot change in between.",
+    "prefix": "And it is checked again at the very moment of connecting, so it cannot change in between.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2793,
+        "startFrame": 2855,
         "words": [
           {
-            "text": "A",
-            "startFrame": 2793
+            "text": "And",
+            "startFrame": 2855
           },
           {
-            "text": "delivery",
-            "startFrame": 2795
+            "text": "it",
+            "startFrame": 2858
           },
           {
-            "text": "succeeds",
-            "startFrame": 2807
+            "text": "is",
+            "startFrame": 2860
           },
           {
-            "text": "only",
-            "startFrame": 2833
+            "text": "checked",
+            "startFrame": 2862
           },
           {
-            "text": "when",
-            "startFrame": 2843
+            "text": "again",
+            "startFrame": 2871
+          },
+          {
+            "text": "at",
+            "startFrame": 2885
           },
           {
             "text": "the",
-            "startFrame": 2846
+            "startFrame": 2887
           },
           {
-            "text": "merchant's",
-            "startFrame": 2848
-          },
-          {
-            "text": "server",
-            "startFrame": 2866
+            "text": "very",
+            "startFrame": 2890
           }
         ]
       },
       {
-        "startFrame": 2878,
+        "startFrame": 2900,
         "words": [
           {
-            "text": "answers",
-            "startFrame": 2878
+            "text": "moment",
+            "startFrame": 2900
           },
           {
-            "text": "with",
-            "startFrame": 2891
+            "text": "of",
+            "startFrame": 2910
           },
           {
-            "text": "success.",
-            "startFrame": 2895
+            "text": "connecting,",
+            "startFrame": 2912
+          }
+        ]
+      },
+      {
+        "startFrame": 2938,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 2938
+          },
+          {
+            "text": "it",
+            "startFrame": 2942
+          },
+          {
+            "text": "cannot",
+            "startFrame": 2944
+          },
+          {
+            "text": "change",
+            "startFrame": 2955
+          },
+          {
+            "text": "in",
+            "startFrame": 2967
+          },
+          {
+            "text": "between.",
+            "startFrame": 2969
           }
         ]
       }
@@ -1703,56 +1744,31 @@
   },
   {
     "index": 27,
-    "startFrame": 2929,
-    "endFrame": 3028,
-    "text": "Anything else is tried again, waiting longer each time.",
-    "prefix": "Anything else is tried again, waiting longer each time.",
+    "startFrame": 2995,
+    "endFrame": 3055,
+    "text": "Redirects are not followed.",
+    "prefix": "Redirects are not followed.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2931,
+        "startFrame": 2996,
         "words": [
           {
-            "text": "Anything",
-            "startFrame": 2931
+            "text": "Redirects",
+            "startFrame": 2996
           },
           {
-            "text": "else",
-            "startFrame": 2940
+            "text": "are",
+            "startFrame": 3015
           },
           {
-            "text": "is",
-            "startFrame": 2947
+            "text": "not",
+            "startFrame": 3019
           },
           {
-            "text": "tried",
-            "startFrame": 2950
-          },
-          {
-            "text": "again,",
-            "startFrame": 2958
-          }
-        ]
-      },
-      {
-        "startFrame": 2981,
-        "words": [
-          {
-            "text": "waiting",
-            "startFrame": 2981
-          },
-          {
-            "text": "longer",
-            "startFrame": 2990
-          },
-          {
-            "text": "each",
-            "startFrame": 3001
-          },
-          {
-            "text": "time.",
-            "startFrame": 3006
+            "text": "followed.",
+            "startFrame": 3028
           }
         ]
       }
@@ -1760,76 +1776,101 @@
   },
   {
     "index": 28,
-    "startFrame": 3029,
-    "endFrame": 3165,
-    "text": "A payment's later events wait behind an earlier one, so they stay in order.",
-    "prefix": "A payment's later events wait behind an earlier one, so they stay in order.",
+    "startFrame": 3055,
+    "endFrame": 3262,
+    "text": "This guard stops server-side request forgery: a trick where someone makes a server call places it should never reach.",
+    "prefix": "This guard stops server-side request forgery: a trick where someone makes a server call places it should never reach.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3030,
+        "startFrame": 3057,
         "words": [
           {
-            "text": "A",
-            "startFrame": 3030
+            "text": "This",
+            "startFrame": 3057
           },
           {
-            "text": "payment's",
-            "startFrame": 3032
+            "text": "guard",
+            "startFrame": 3064
           },
           {
-            "text": "later",
-            "startFrame": 3043
+            "text": "stops",
+            "startFrame": 3072
           },
           {
-            "text": "events",
-            "startFrame": 3051
-          },
-          {
-            "text": "wait",
-            "startFrame": 3062
-          },
-          {
-            "text": "behind",
-            "startFrame": 3075
-          },
-          {
-            "text": "an",
+            "text": "server-side",
             "startFrame": 3088
           },
           {
-            "text": "earlier",
-            "startFrame": 3091
+            "text": "request",
+            "startFrame": 3108
+          },
+          {
+            "text": "forgery:",
+            "startFrame": 3121
           }
         ]
       },
       {
-        "startFrame": 3103,
+        "startFrame": 3148,
         "words": [
           {
-            "text": "one,",
-            "startFrame": 3103
+            "text": "a",
+            "startFrame": 3148
           },
           {
-            "text": "so",
-            "startFrame": 3124
+            "text": "trick",
+            "startFrame": 3149
           },
           {
-            "text": "they",
-            "startFrame": 3128
+            "text": "where",
+            "startFrame": 3158
           },
           {
-            "text": "stay",
-            "startFrame": 3132
+            "text": "someone",
+            "startFrame": 3162
           },
           {
-            "text": "in",
-            "startFrame": 3140
+            "text": "makes",
+            "startFrame": 3178
           },
           {
-            "text": "order.",
-            "startFrame": 3143
+            "text": "a",
+            "startFrame": 3187
+          },
+          {
+            "text": "server",
+            "startFrame": 3189
+          },
+          {
+            "text": "call",
+            "startFrame": 3201
+          }
+        ]
+      },
+      {
+        "startFrame": 3209,
+        "words": [
+          {
+            "text": "places",
+            "startFrame": 3209
+          },
+          {
+            "text": "it",
+            "startFrame": 3223
+          },
+          {
+            "text": "should",
+            "startFrame": 3225
+          },
+          {
+            "text": "never",
+            "startFrame": 3231
+          },
+          {
+            "text": "reach.",
+            "startFrame": 3239
           }
         ]
       }
@@ -1837,76 +1878,64 @@
   },
   {
     "index": 29,
-    "startFrame": 3165,
-    "endFrame": 3316,
-    "text": "After the bank's chosen time, an event that never got through is marked undelivered.",
-    "prefix": "After the bank's chosen time, an event that never got through is marked undelivered.",
+    "startFrame": 3263,
+    "endFrame": 3400,
+    "text": "A delivery succeeds only when the merchant's server answers with success.",
+    "prefix": "A delivery succeeds only when the merchant's server answers with success.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3167,
+        "startFrame": 3264,
         "words": [
           {
-            "text": "After",
-            "startFrame": 3167
+            "text": "A",
+            "startFrame": 3264
+          },
+          {
+            "text": "delivery",
+            "startFrame": 3265
+          },
+          {
+            "text": "succeeds",
+            "startFrame": 3278
+          },
+          {
+            "text": "only",
+            "startFrame": 3304
+          },
+          {
+            "text": "when",
+            "startFrame": 3314
           },
           {
             "text": "the",
-            "startFrame": 3172
+            "startFrame": 3317
           },
           {
-            "text": "bank's",
-            "startFrame": 3175
+            "text": "merchant's",
+            "startFrame": 3319
           },
           {
-            "text": "chosen",
-            "startFrame": 3189
-          },
-          {
-            "text": "time,",
-            "startFrame": 3200
+            "text": "server",
+            "startFrame": 3336
           }
         ]
       },
       {
-        "startFrame": 3225,
+        "startFrame": 3349,
         "words": [
           {
-            "text": "an",
-            "startFrame": 3225
+            "text": "answers",
+            "startFrame": 3349
           },
           {
-            "text": "event",
-            "startFrame": 3227
+            "text": "with",
+            "startFrame": 3361
           },
           {
-            "text": "that",
-            "startFrame": 3236
-          },
-          {
-            "text": "never",
-            "startFrame": 3240
-          },
-          {
-            "text": "got",
-            "startFrame": 3249
-          },
-          {
-            "text": "through",
-            "startFrame": 3256
-          },
-          {
-            "text": "is",
-            "startFrame": 3269
-          },
-          {
-            "text": "marked",
-            "startFrame": 3273
-          },
-          {
-            "text": "undelivered.",
-            "startFrame": 3288
+            "text": "success.",
+            "startFrame": 3366
           }
         ]
       }
@@ -1914,47 +1943,56 @@
   },
   {
     "index": 30,
-    "startFrame": 3317,
-    "endFrame": 3381,
-    "text": "The merchant can then ask for it again.",
-    "prefix": "The merchant can then ask for it again.",
+    "startFrame": 3400,
+    "endFrame": 3499,
+    "text": "Anything else is tried again, waiting longer each time.",
+    "prefix": "Anything else is tried again, waiting longer each time.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3318,
+        "startFrame": 3401,
         "words": [
           {
-            "text": "The",
-            "startFrame": 3318
+            "text": "Anything",
+            "startFrame": 3401
           },
           {
-            "text": "merchant",
-            "startFrame": 3319
+            "text": "else",
+            "startFrame": 3410
           },
           {
-            "text": "can",
-            "startFrame": 3330
+            "text": "is",
+            "startFrame": 3418
           },
           {
-            "text": "then",
-            "startFrame": 3333
+            "text": "tried",
+            "startFrame": 3420
           },
           {
-            "text": "ask",
-            "startFrame": 3345
+            "text": "again,",
+            "startFrame": 3429
+          }
+        ]
+      },
+      {
+        "startFrame": 3451,
+        "words": [
+          {
+            "text": "waiting",
+            "startFrame": 3451
           },
           {
-            "text": "for",
-            "startFrame": 3353
+            "text": "longer",
+            "startFrame": 3461
           },
           {
-            "text": "it",
-            "startFrame": 3358
+            "text": "each",
+            "startFrame": 3471
           },
           {
-            "text": "again.",
-            "startFrame": 3360
+            "text": "time.",
+            "startFrame": 3477
           }
         ]
       }
@@ -1962,68 +2000,76 @@
   },
   {
     "index": 31,
-    "startFrame": 3381,
-    "endFrame": 3510,
-    "text": "Payment links get no webhooks, because there is no server behind them.",
-    "prefix": "Payment links get no webhooks, because there is no server behind them.",
+    "startFrame": 3499,
+    "endFrame": 3636,
+    "text": "A payment's later events wait behind an earlier one, so they stay in order.",
+    "prefix": "A payment's later events wait behind an earlier one, so they stay in order.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3383,
+        "startFrame": 3501,
         "words": [
           {
-            "text": "Payment",
-            "startFrame": 3383
+            "text": "A",
+            "startFrame": 3501
           },
           {
-            "text": "links",
-            "startFrame": 3390
+            "text": "payment's",
+            "startFrame": 3503
           },
           {
-            "text": "get",
-            "startFrame": 3398
+            "text": "later",
+            "startFrame": 3514
           },
           {
-            "text": "no",
-            "startFrame": 3403
+            "text": "events",
+            "startFrame": 3522
           },
           {
-            "text": "webhooks,",
-            "startFrame": 3413
+            "text": "wait",
+            "startFrame": 3533
+          },
+          {
+            "text": "behind",
+            "startFrame": 3546
+          },
+          {
+            "text": "an",
+            "startFrame": 3559
+          },
+          {
+            "text": "earlier",
+            "startFrame": 3562
           }
         ]
       },
       {
-        "startFrame": 3443,
+        "startFrame": 3574,
         "words": [
           {
-            "text": "because",
-            "startFrame": 3443
+            "text": "one,",
+            "startFrame": 3574
           },
           {
-            "text": "there",
-            "startFrame": 3453
+            "text": "so",
+            "startFrame": 3595
           },
           {
-            "text": "is",
-            "startFrame": 3457
+            "text": "they",
+            "startFrame": 3599
           },
           {
-            "text": "no",
-            "startFrame": 3461
+            "text": "stay",
+            "startFrame": 3603
           },
           {
-            "text": "server",
-            "startFrame": 3468
+            "text": "in",
+            "startFrame": 3611
           },
           {
-            "text": "behind",
-            "startFrame": 3481
-          },
-          {
-            "text": "them.",
-            "startFrame": 3492
+            "text": "order.",
+            "startFrame": 3614
           }
         ]
       }
@@ -2031,31 +2077,76 @@
   },
   {
     "index": 32,
-    "startFrame": 3511,
-    "endFrame": 3567,
-    "text": "Now watch the product.",
-    "prefix": "Now watch the product.",
+    "startFrame": 3636,
+    "endFrame": 3787,
+    "text": "After the bank's chosen time, an event that never got through is marked undelivered.",
+    "prefix": "After the bank's chosen time, an event that never got through is marked undelivered.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3512,
+        "startFrame": 3638,
         "words": [
           {
-            "text": "Now",
-            "startFrame": 3512
-          },
-          {
-            "text": "watch",
-            "startFrame": 3517
+            "text": "After",
+            "startFrame": 3638
           },
           {
             "text": "the",
-            "startFrame": 3525
+            "startFrame": 3643
           },
           {
-            "text": "product.",
-            "startFrame": 3527
+            "text": "bank's",
+            "startFrame": 3646
+          },
+          {
+            "text": "chosen",
+            "startFrame": 3659
+          },
+          {
+            "text": "time,",
+            "startFrame": 3670
+          }
+        ]
+      },
+      {
+        "startFrame": 3696,
+        "words": [
+          {
+            "text": "an",
+            "startFrame": 3696
+          },
+          {
+            "text": "event",
+            "startFrame": 3698
+          },
+          {
+            "text": "that",
+            "startFrame": 3707
+          },
+          {
+            "text": "never",
+            "startFrame": 3710
+          },
+          {
+            "text": "got",
+            "startFrame": 3720
+          },
+          {
+            "text": "through",
+            "startFrame": 3727
+          },
+          {
+            "text": "is",
+            "startFrame": 3740
+          },
+          {
+            "text": "marked",
+            "startFrame": 3744
+          },
+          {
+            "text": "undelivered.",
+            "startFrame": 3759
           }
         ]
       }
@@ -2063,48 +2154,47 @@
   },
   {
     "index": 33,
-    "startFrame": 3567,
-    "endFrame": 3637,
-    "text": "In the merchant portal, open a payment.",
-    "prefix": "In the merchant portal, open a payment.",
+    "startFrame": 3787,
+    "endFrame": 3852,
+    "text": "The merchant can then ask for it again.",
+    "prefix": "The merchant can then ask for it again.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3568,
+        "startFrame": 3789,
         "words": [
           {
-            "text": "In",
-            "startFrame": 3568
-          },
-          {
-            "text": "the",
-            "startFrame": 3570
+            "text": "The",
+            "startFrame": 3789
           },
           {
             "text": "merchant",
-            "startFrame": 3571
+            "startFrame": 3790
           },
           {
-            "text": "portal,",
-            "startFrame": 3583
-          }
-        ]
-      },
-      {
-        "startFrame": 3605,
-        "words": [
-          {
-            "text": "open",
-            "startFrame": 3605
+            "text": "can",
+            "startFrame": 3801
           },
           {
-            "text": "a",
-            "startFrame": 3611
+            "text": "then",
+            "startFrame": 3804
           },
           {
-            "text": "payment.",
-            "startFrame": 3612
+            "text": "ask",
+            "startFrame": 3816
+          },
+          {
+            "text": "for",
+            "startFrame": 3824
+          },
+          {
+            "text": "it",
+            "startFrame": 3829
+          },
+          {
+            "text": "again.",
+            "startFrame": 3831
           }
         ]
       }
@@ -2112,68 +2202,68 @@
   },
   {
     "index": 34,
-    "startFrame": 3638,
-    "endFrame": 3756,
-    "text": "Below its calls to the card scheme is a section called webhooks.",
-    "prefix": "Below its calls to the card scheme is a section called webhooks.",
+    "startFrame": 3852,
+    "endFrame": 3981,
+    "text": "Payment links get no webhooks, because there is no server behind them.",
+    "prefix": "Payment links get no webhooks, because there is no server behind them.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3639,
+        "startFrame": 3854,
         "words": [
           {
-            "text": "Below",
-            "startFrame": 3639
+            "text": "Payment",
+            "startFrame": 3854
           },
           {
-            "text": "its",
-            "startFrame": 3647
+            "text": "links",
+            "startFrame": 3861
           },
           {
-            "text": "calls",
-            "startFrame": 3650
+            "text": "get",
+            "startFrame": 3869
           },
           {
-            "text": "to",
-            "startFrame": 3657
+            "text": "no",
+            "startFrame": 3874
           },
           {
-            "text": "the",
-            "startFrame": 3659
-          },
-          {
-            "text": "card",
-            "startFrame": 3662
-          },
-          {
-            "text": "scheme",
-            "startFrame": 3671
-          },
-          {
-            "text": "is",
-            "startFrame": 3688
+            "text": "webhooks,",
+            "startFrame": 3884
           }
         ]
       },
       {
-        "startFrame": 3691,
+        "startFrame": 3914,
         "words": [
           {
-            "text": "a",
-            "startFrame": 3691
+            "text": "because",
+            "startFrame": 3914
           },
           {
-            "text": "section",
-            "startFrame": 3692
+            "text": "there",
+            "startFrame": 3924
           },
           {
-            "text": "called",
-            "startFrame": 3717
+            "text": "is",
+            "startFrame": 3928
           },
           {
-            "text": "webhooks.",
-            "startFrame": 3724
+            "text": "no",
+            "startFrame": 3931
+          },
+          {
+            "text": "server",
+            "startFrame": 3939
+          },
+          {
+            "text": "behind",
+            "startFrame": 3951
+          },
+          {
+            "text": "them.",
+            "startFrame": 3963
           }
         ]
       }
@@ -2181,47 +2271,31 @@
   },
   {
     "index": 35,
-    "startFrame": 3757,
-    "endFrame": 3834,
-    "text": "Each event shows its type and its status.",
-    "prefix": "Each event shows its type and its status.",
+    "startFrame": 3982,
+    "endFrame": 4038,
+    "text": "Now watch the product.",
+    "prefix": "Now watch the product.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3758,
+        "startFrame": 3983,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 3758
+            "text": "Now",
+            "startFrame": 3983
           },
           {
-            "text": "event",
-            "startFrame": 3762
+            "text": "watch",
+            "startFrame": 3988
           },
           {
-            "text": "shows",
-            "startFrame": 3771
+            "text": "the",
+            "startFrame": 3995
           },
           {
-            "text": "its",
-            "startFrame": 3780
-          },
-          {
-            "text": "type",
-            "startFrame": 3784
-          },
-          {
-            "text": "and",
-            "startFrame": 3799
-          },
-          {
-            "text": "its",
-            "startFrame": 3801
-          },
-          {
-            "text": "status.",
-            "startFrame": 3805
+            "text": "product.",
+            "startFrame": 3998
           }
         ]
       }
@@ -2229,85 +2303,48 @@
   },
   {
     "index": 36,
-    "startFrame": 3835,
-    "endFrame": 3986,
-    "text": "Here it says delivered, after one attempt, with the last answer from the merchant's server.",
-    "prefix": "Here it says delivered, after one attempt, with the last answer from the merchant's server.",
+    "startFrame": 4038,
+    "endFrame": 4108,
+    "text": "In the merchant portal, open a payment.",
+    "prefix": "In the merchant portal, open a payment.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3837,
+        "startFrame": 4039,
         "words": [
           {
-            "text": "Here",
-            "startFrame": 3837
+            "text": "In",
+            "startFrame": 4039
           },
           {
-            "text": "it",
-            "startFrame": 3841
+            "text": "the",
+            "startFrame": 4040
           },
           {
-            "text": "says",
-            "startFrame": 3843
+            "text": "merchant",
+            "startFrame": 4042
           },
           {
-            "text": "delivered,",
-            "startFrame": 3854
+            "text": "portal,",
+            "startFrame": 4054
           }
         ]
       },
       {
-        "startFrame": 3884,
+        "startFrame": 4075,
         "words": [
           {
-            "text": "after",
-            "startFrame": 3884
+            "text": "open",
+            "startFrame": 4075
           },
           {
-            "text": "one",
-            "startFrame": 3893
+            "text": "a",
+            "startFrame": 4082
           },
           {
-            "text": "attempt,",
-            "startFrame": 3898
-          }
-        ]
-      },
-      {
-        "startFrame": 3919,
-        "words": [
-          {
-            "text": "with",
-            "startFrame": 3919
-          },
-          {
-            "text": "the",
-            "startFrame": 3922
-          },
-          {
-            "text": "last",
-            "startFrame": 3925
-          },
-          {
-            "text": "answer",
-            "startFrame": 3937
-          },
-          {
-            "text": "from",
-            "startFrame": 3946
-          },
-          {
-            "text": "the",
-            "startFrame": 3949
-          },
-          {
-            "text": "merchant's",
-            "startFrame": 3950
-          },
-          {
-            "text": "server.",
-            "startFrame": 3961
+            "text": "payment.",
+            "startFrame": 4083
           }
         ]
       }
@@ -2315,64 +2352,68 @@
   },
   {
     "index": 37,
-    "startFrame": 3987,
-    "endFrame": 4092,
-    "text": "Now take the merchant's server offline, and make a new payment.",
-    "prefix": "Now take the merchant's server offline, and make a new payment.",
+    "startFrame": 4109,
+    "endFrame": 4227,
+    "text": "Below its calls to the card scheme is a section called webhooks.",
+    "prefix": "Below its calls to the card scheme is a section called webhooks.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3988,
+        "startFrame": 4110,
         "words": [
           {
-            "text": "Now",
-            "startFrame": 3988
+            "text": "Below",
+            "startFrame": 4110
           },
           {
-            "text": "take",
-            "startFrame": 3993
+            "text": "its",
+            "startFrame": 4118
+          },
+          {
+            "text": "calls",
+            "startFrame": 4121
+          },
+          {
+            "text": "to",
+            "startFrame": 4128
           },
           {
             "text": "the",
-            "startFrame": 3999
+            "startFrame": 4130
           },
           {
-            "text": "merchant's",
-            "startFrame": 4001
+            "text": "card",
+            "startFrame": 4132
           },
           {
-            "text": "server",
-            "startFrame": 4013
+            "text": "scheme",
+            "startFrame": 4142
           },
           {
-            "text": "offline,",
-            "startFrame": 4024
+            "text": "is",
+            "startFrame": 4159
           }
         ]
       },
       {
-        "startFrame": 4053,
+        "startFrame": 4162,
         "words": [
           {
-            "text": "and",
-            "startFrame": 4053
-          },
-          {
-            "text": "make",
-            "startFrame": 4055
-          },
-          {
             "text": "a",
-            "startFrame": 4060
+            "startFrame": 4162
           },
           {
-            "text": "new",
-            "startFrame": 4060
+            "text": "section",
+            "startFrame": 4163
           },
           {
-            "text": "payment.",
-            "startFrame": 4067
+            "text": "called",
+            "startFrame": 4187
+          },
+          {
+            "text": "webhooks.",
+            "startFrame": 4195
           }
         ]
       }
@@ -2380,106 +2421,47 @@
   },
   {
     "index": 38,
-    "startFrame": 4093,
-    "endFrame": 4261,
-    "text": "Its event says retrying, with the time of the next attempt and the last answer, which is no answer.",
-    "prefix": "Its event says retrying, with the time of the next attempt and the last answer, which is no answer.",
+    "startFrame": 4227,
+    "endFrame": 4305,
+    "text": "Each event shows its type and its status.",
+    "prefix": "Each event shows its type and its status.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4094,
+        "startFrame": 4229,
         "words": [
           {
-            "text": "Its",
-            "startFrame": 4094
+            "text": "Each",
+            "startFrame": 4229
           },
           {
             "text": "event",
-            "startFrame": 4097
+            "startFrame": 4233
           },
           {
-            "text": "says",
-            "startFrame": 4105
+            "text": "shows",
+            "startFrame": 4242
           },
           {
-            "text": "retrying,",
-            "startFrame": 4116
-          }
-        ]
-      },
-      {
-        "startFrame": 4147,
-        "words": [
-          {
-            "text": "with",
-            "startFrame": 4147
+            "text": "its",
+            "startFrame": 4251
           },
           {
-            "text": "the",
-            "startFrame": 4150
+            "text": "type",
+            "startFrame": 4254
           },
-          {
-            "text": "time",
-            "startFrame": 4152
-          },
-          {
-            "text": "of",
-            "startFrame": 4161
-          },
-          {
-            "text": "the",
-            "startFrame": 4162
-          },
-          {
-            "text": "next",
-            "startFrame": 4164
-          },
-          {
-            "text": "attempt",
-            "startFrame": 4172
-          }
-        ]
-      },
-      {
-        "startFrame": 4189,
-        "words": [
           {
             "text": "and",
-            "startFrame": 4189
+            "startFrame": 4270
           },
           {
-            "text": "the",
-            "startFrame": 4191
+            "text": "its",
+            "startFrame": 4272
           },
           {
-            "text": "last",
-            "startFrame": 4194
-          },
-          {
-            "text": "answer,",
-            "startFrame": 4206
-          }
-        ]
-      },
-      {
-        "startFrame": 4223,
-        "words": [
-          {
-            "text": "which",
-            "startFrame": 4223
-          },
-          {
-            "text": "is",
-            "startFrame": 4227
-          },
-          {
-            "text": "no",
-            "startFrame": 4230
-          },
-          {
-            "text": "answer.",
-            "startFrame": 4236
+            "text": "status.",
+            "startFrame": 4276
           }
         ]
       }
@@ -2487,72 +2469,85 @@
   },
   {
     "index": 39,
-    "startFrame": 4261,
-    "endFrame": 4377,
-    "text": "A later event for the same payment says waiting for an earlier event.",
-    "prefix": "A later event for the same payment says waiting for an earlier event.",
+    "startFrame": 4306,
+    "endFrame": 4457,
+    "text": "Here it says delivered, after one attempt, with the last answer from the merchant's server.",
+    "prefix": "Here it says delivered, after one attempt, with the last answer from the merchant's server.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4262,
+        "startFrame": 4308,
         "words": [
           {
-            "text": "A",
-            "startFrame": 4262
+            "text": "Here",
+            "startFrame": 4308
           },
           {
-            "text": "later",
-            "startFrame": 4264
-          },
-          {
-            "text": "event",
-            "startFrame": 4273
-          },
-          {
-            "text": "for",
-            "startFrame": 4281
-          },
-          {
-            "text": "the",
-            "startFrame": 4284
-          },
-          {
-            "text": "same",
-            "startFrame": 4286
-          },
-          {
-            "text": "payment",
-            "startFrame": 4296
+            "text": "it",
+            "startFrame": 4312
           },
           {
             "text": "says",
-            "startFrame": 4313
+            "startFrame": 4314
+          },
+          {
+            "text": "delivered,",
+            "startFrame": 4325
           }
         ]
       },
       {
-        "startFrame": 4322,
+        "startFrame": 4355,
         "words": [
           {
-            "text": "waiting",
-            "startFrame": 4322
-          },
-          {
-            "text": "for",
-            "startFrame": 4335
-          },
-          {
-            "text": "an",
-            "startFrame": 4340
-          },
-          {
-            "text": "earlier",
-            "startFrame": 4343
-          },
-          {
-            "text": "event.",
+            "text": "after",
             "startFrame": 4355
+          },
+          {
+            "text": "one",
+            "startFrame": 4364
+          },
+          {
+            "text": "attempt,",
+            "startFrame": 4369
+          }
+        ]
+      },
+      {
+        "startFrame": 4390,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 4390
+          },
+          {
+            "text": "the",
+            "startFrame": 4393
+          },
+          {
+            "text": "last",
+            "startFrame": 4396
+          },
+          {
+            "text": "answer",
+            "startFrame": 4408
+          },
+          {
+            "text": "from",
+            "startFrame": 4417
+          },
+          {
+            "text": "the",
+            "startFrame": 4420
+          },
+          {
+            "text": "merchant's",
+            "startFrame": 4421
+          },
+          {
+            "text": "server.",
+            "startFrame": 4432
           }
         ]
       }
@@ -2560,76 +2555,64 @@
   },
   {
     "index": 40,
-    "startFrame": 4378,
-    "endFrame": 4505,
-    "text": "While an event is still retrying, there is no button to send it again.",
-    "prefix": "While an event is still retrying, there is no button to send it again.",
+    "startFrame": 4458,
+    "endFrame": 4563,
+    "text": "Now take the merchant's server offline, and make a new payment.",
+    "prefix": "Now take the merchant's server offline, and make a new payment.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4379,
+        "startFrame": 4459,
         "words": [
           {
-            "text": "While",
-            "startFrame": 4379
+            "text": "Now",
+            "startFrame": 4459
           },
           {
-            "text": "an",
-            "startFrame": 4383
+            "text": "take",
+            "startFrame": 4464
           },
           {
-            "text": "event",
-            "startFrame": 4385
+            "text": "the",
+            "startFrame": 4470
           },
           {
-            "text": "is",
-            "startFrame": 4398
+            "text": "merchant's",
+            "startFrame": 4472
           },
           {
-            "text": "still",
-            "startFrame": 4401
+            "text": "server",
+            "startFrame": 4484
           },
           {
-            "text": "retrying,",
-            "startFrame": 4411
+            "text": "offline,",
+            "startFrame": 4495
           }
         ]
       },
       {
-        "startFrame": 4444,
+        "startFrame": 4523,
         "words": [
           {
-            "text": "there",
-            "startFrame": 4444
+            "text": "and",
+            "startFrame": 4523
           },
           {
-            "text": "is",
-            "startFrame": 4447
+            "text": "make",
+            "startFrame": 4526
           },
           {
-            "text": "no",
-            "startFrame": 4450
+            "text": "a",
+            "startFrame": 4531
           },
           {
-            "text": "button",
-            "startFrame": 4458
+            "text": "new",
+            "startFrame": 4531
           },
           {
-            "text": "to",
-            "startFrame": 4471
-          },
-          {
-            "text": "send",
-            "startFrame": 4474
-          },
-          {
-            "text": "it",
-            "startFrame": 4481
-          },
-          {
-            "text": "again.",
-            "startFrame": 4483
+            "text": "payment.",
+            "startFrame": 4538
           }
         ]
       }
@@ -2637,44 +2620,106 @@
   },
   {
     "index": 41,
-    "startFrame": 4505,
-    "endFrame": 4578,
-    "text": "In the end, it says undelivered.",
-    "prefix": "In the end, it says undelivered.",
+    "startFrame": 4564,
+    "endFrame": 4732,
+    "text": "Its event says retrying, with the time of the next attempt and the last answer, which is no answer.",
+    "prefix": "Its event says retrying, with the time of the next attempt and the last answer, which is no answer.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4507,
+        "startFrame": 4565,
         "words": [
           {
-            "text": "In",
-            "startFrame": 4507
+            "text": "Its",
+            "startFrame": 4565
           },
           {
-            "text": "the",
-            "startFrame": 4509
+            "text": "event",
+            "startFrame": 4568
           },
           {
-            "text": "end,",
-            "startFrame": 4511
+            "text": "says",
+            "startFrame": 4576
+          },
+          {
+            "text": "retrying,",
+            "startFrame": 4587
           }
         ]
       },
       {
-        "startFrame": 4531,
+        "startFrame": 4618,
         "words": [
           {
-            "text": "it",
-            "startFrame": 4531
+            "text": "with",
+            "startFrame": 4618
           },
           {
-            "text": "says",
-            "startFrame": 4534
+            "text": "the",
+            "startFrame": 4621
           },
           {
-            "text": "undelivered.",
-            "startFrame": 4548
+            "text": "time",
+            "startFrame": 4623
+          },
+          {
+            "text": "of",
+            "startFrame": 4632
+          },
+          {
+            "text": "the",
+            "startFrame": 4633
+          },
+          {
+            "text": "next",
+            "startFrame": 4635
+          },
+          {
+            "text": "attempt",
+            "startFrame": 4643
+          }
+        ]
+      },
+      {
+        "startFrame": 4660,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4660
+          },
+          {
+            "text": "the",
+            "startFrame": 4662
+          },
+          {
+            "text": "last",
+            "startFrame": 4665
+          },
+          {
+            "text": "answer,",
+            "startFrame": 4677
+          }
+        ]
+      },
+      {
+        "startFrame": 4694,
+        "words": [
+          {
+            "text": "which",
+            "startFrame": 4694
+          },
+          {
+            "text": "is",
+            "startFrame": 4698
+          },
+          {
+            "text": "no",
+            "startFrame": 4701
+          },
+          {
+            "text": "answer.",
+            "startFrame": 4707
           }
         ]
       }
@@ -2682,109 +2727,72 @@
   },
   {
     "index": 42,
-    "startFrame": 4578,
-    "endFrame": 4781,
-    "text": "The hint says the server never answered with success, and asks the merchant to fix it, then send the event again.",
-    "prefix": "The hint says the server never answered with success, and asks the merchant to fix it, then send the event again.",
+    "startFrame": 4732,
+    "endFrame": 4848,
+    "text": "A later event for the same payment says waiting for an earlier event.",
+    "prefix": "A later event for the same payment says waiting for an earlier event.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4579,
+        "startFrame": 4733,
         "words": [
           {
-            "text": "The",
-            "startFrame": 4579
+            "text": "A",
+            "startFrame": 4733
           },
           {
-            "text": "hint",
-            "startFrame": 4582
-          },
-          {
-            "text": "says",
-            "startFrame": 4588
-          },
-          {
-            "text": "the",
-            "startFrame": 4595
-          },
-          {
-            "text": "server",
-            "startFrame": 4598
-          },
-          {
-            "text": "never",
-            "startFrame": 4610
-          },
-          {
-            "text": "answered",
-            "startFrame": 4625
-          }
-        ]
-      },
-      {
-        "startFrame": 4634,
-        "words": [
-          {
-            "text": "with",
-            "startFrame": 4634
-          },
-          {
-            "text": "success,",
-            "startFrame": 4638
-          },
-          {
-            "text": "and",
-            "startFrame": 4671
-          },
-          {
-            "text": "asks",
-            "startFrame": 4681
-          },
-          {
-            "text": "the",
-            "startFrame": 4689
-          },
-          {
-            "text": "merchant",
-            "startFrame": 4692
-          },
-          {
-            "text": "to",
-            "startFrame": 4704
-          },
-          {
-            "text": "fix",
-            "startFrame": 4706
-          }
-        ]
-      },
-      {
-        "startFrame": 4717,
-        "words": [
-          {
-            "text": "it,",
-            "startFrame": 4717
-          },
-          {
-            "text": "then",
-            "startFrame": 4734
-          },
-          {
-            "text": "send",
-            "startFrame": 4742
-          },
-          {
-            "text": "the",
-            "startFrame": 4749
+            "text": "later",
+            "startFrame": 4735
           },
           {
             "text": "event",
-            "startFrame": 4750
+            "startFrame": 4744
           },
           {
-            "text": "again.",
-            "startFrame": 4760
+            "text": "for",
+            "startFrame": 4752
+          },
+          {
+            "text": "the",
+            "startFrame": 4755
+          },
+          {
+            "text": "same",
+            "startFrame": 4757
+          },
+          {
+            "text": "payment",
+            "startFrame": 4767
+          },
+          {
+            "text": "says",
+            "startFrame": 4784
+          }
+        ]
+      },
+      {
+        "startFrame": 4792,
+        "words": [
+          {
+            "text": "waiting",
+            "startFrame": 4792
+          },
+          {
+            "text": "for",
+            "startFrame": 4806
+          },
+          {
+            "text": "an",
+            "startFrame": 4811
+          },
+          {
+            "text": "earlier",
+            "startFrame": 4814
+          },
+          {
+            "text": "event.",
+            "startFrame": 4826
           }
         ]
       }
@@ -2792,60 +2800,76 @@
   },
   {
     "index": 43,
-    "startFrame": 4782,
-    "endFrame": 4884,
-    "text": "The merchant brings the server back, and presses send again.",
-    "prefix": "The merchant brings the server back, and presses send again.",
+    "startFrame": 4849,
+    "endFrame": 4976,
+    "text": "While an event is still retrying, there is no button to send it again.",
+    "prefix": "While an event is still retrying, there is no button to send it again.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4783,
+        "startFrame": 4850,
         "words": [
           {
-            "text": "The",
-            "startFrame": 4783
+            "text": "While",
+            "startFrame": 4850
           },
           {
-            "text": "merchant",
-            "startFrame": 4785
+            "text": "an",
+            "startFrame": 4854
           },
           {
-            "text": "brings",
-            "startFrame": 4796
+            "text": "event",
+            "startFrame": 4855
           },
           {
-            "text": "the",
-            "startFrame": 4804
+            "text": "is",
+            "startFrame": 4869
           },
           {
-            "text": "server",
-            "startFrame": 4806
+            "text": "still",
+            "startFrame": 4872
           },
           {
-            "text": "back,",
-            "startFrame": 4817
+            "text": "retrying,",
+            "startFrame": 4882
           }
         ]
       },
       {
-        "startFrame": 4842,
+        "startFrame": 4915,
         "words": [
           {
-            "text": "and",
-            "startFrame": 4842
+            "text": "there",
+            "startFrame": 4915
           },
           {
-            "text": "presses",
-            "startFrame": 4845
+            "text": "is",
+            "startFrame": 4918
+          },
+          {
+            "text": "no",
+            "startFrame": 4921
+          },
+          {
+            "text": "button",
+            "startFrame": 4929
+          },
+          {
+            "text": "to",
+            "startFrame": 4942
           },
           {
             "text": "send",
-            "startFrame": 4856
+            "startFrame": 4944
+          },
+          {
+            "text": "it",
+            "startFrame": 4952
           },
           {
             "text": "again.",
-            "startFrame": 4863
+            "startFrame": 4954
           }
         ]
       }
@@ -2853,68 +2877,44 @@
   },
   {
     "index": 44,
-    "startFrame": 4884,
-    "endFrame": 4997,
-    "text": "A short note says it is queued and goes out within seconds.",
-    "prefix": "A short note says it is queued and goes out within seconds.",
+    "startFrame": 4976,
+    "endFrame": 5048,
+    "text": "In the end, it says undelivered.",
+    "prefix": "In the end, it says undelivered.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4885,
+        "startFrame": 4978,
         "words": [
           {
-            "text": "A",
-            "startFrame": 4885
+            "text": "In",
+            "startFrame": 4978
           },
           {
-            "text": "short",
-            "startFrame": 4886
+            "text": "the",
+            "startFrame": 4980
           },
           {
-            "text": "note",
-            "startFrame": 4895
-          },
-          {
-            "text": "says",
-            "startFrame": 4909
-          },
-          {
-            "text": "it",
-            "startFrame": 4916
-          },
-          {
-            "text": "is",
-            "startFrame": 4918
-          },
-          {
-            "text": "queued",
-            "startFrame": 4921
+            "text": "end,",
+            "startFrame": 4981
           }
         ]
       },
       {
-        "startFrame": 4941,
+        "startFrame": 5001,
         "words": [
           {
-            "text": "and",
-            "startFrame": 4941
+            "text": "it",
+            "startFrame": 5001
           },
           {
-            "text": "goes",
-            "startFrame": 4946
+            "text": "says",
+            "startFrame": 5005
           },
           {
-            "text": "out",
-            "startFrame": 4955
-          },
-          {
-            "text": "within",
-            "startFrame": 4960
-          },
-          {
-            "text": "seconds.",
-            "startFrame": 4968
+            "text": "undelivered.",
+            "startFrame": 5019
           }
         ]
       }
@@ -2922,35 +2922,109 @@
   },
   {
     "index": 45,
-    "startFrame": 4998,
-    "endFrame": 5058,
-    "text": "The status turns to delivered.",
-    "prefix": "The status turns to delivered.",
+    "startFrame": 5049,
+    "endFrame": 5252,
+    "text": "The hint says the server never answered with success, and asks the merchant to fix it, then send the event again.",
+    "prefix": "The hint says the server never answered with success, and asks the merchant to fix it, then send the event again.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4999,
+        "startFrame": 5050,
         "words": [
           {
             "text": "The",
-            "startFrame": 4999
+            "startFrame": 5050
           },
           {
-            "text": "status",
-            "startFrame": 5001
+            "text": "hint",
+            "startFrame": 5052
           },
           {
-            "text": "turns",
-            "startFrame": 5020
+            "text": "says",
+            "startFrame": 5059
+          },
+          {
+            "text": "the",
+            "startFrame": 5066
+          },
+          {
+            "text": "server",
+            "startFrame": 5069
+          },
+          {
+            "text": "never",
+            "startFrame": 5081
+          },
+          {
+            "text": "answered",
+            "startFrame": 5096
+          }
+        ]
+      },
+      {
+        "startFrame": 5105,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 5105
+          },
+          {
+            "text": "success,",
+            "startFrame": 5109
+          },
+          {
+            "text": "and",
+            "startFrame": 5142
+          },
+          {
+            "text": "asks",
+            "startFrame": 5152
+          },
+          {
+            "text": "the",
+            "startFrame": 5160
+          },
+          {
+            "text": "merchant",
+            "startFrame": 5162
           },
           {
             "text": "to",
-            "startFrame": 5031
+            "startFrame": 5175
           },
           {
-            "text": "delivered.",
-            "startFrame": 5033
+            "text": "fix",
+            "startFrame": 5177
+          }
+        ]
+      },
+      {
+        "startFrame": 5188,
+        "words": [
+          {
+            "text": "it,",
+            "startFrame": 5188
+          },
+          {
+            "text": "then",
+            "startFrame": 5205
+          },
+          {
+            "text": "send",
+            "startFrame": 5212
+          },
+          {
+            "text": "the",
+            "startFrame": 5220
+          },
+          {
+            "text": "event",
+            "startFrame": 5221
+          },
+          {
+            "text": "again.",
+            "startFrame": 5231
           }
         ]
       }
@@ -2958,138 +3032,60 @@
   },
   {
     "index": 46,
-    "startFrame": 5059,
-    "endFrame": 5310,
-    "text": "Open a payment made from a link, and the section says no webhook was sent: the website has no webhook address, or it is a payment link.",
-    "prefix": "Open a payment made from a link, and the section says no webhook was sent: the website has no webhook address, or it is a payment link.",
+    "startFrame": 5253,
+    "endFrame": 5354,
+    "text": "The merchant brings the server back, and presses send again.",
+    "prefix": "The merchant brings the server back, and presses send again.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5060,
+        "startFrame": 5254,
         "words": [
           {
-            "text": "Open",
-            "startFrame": 5060
+            "text": "The",
+            "startFrame": 5254
           },
           {
-            "text": "a",
-            "startFrame": 5066
+            "text": "merchant",
+            "startFrame": 5255
           },
           {
-            "text": "payment",
-            "startFrame": 5067
-          },
-          {
-            "text": "made",
-            "startFrame": 5080
-          },
-          {
-            "text": "from",
-            "startFrame": 5087
-          },
-          {
-            "text": "a",
-            "startFrame": 5091
-          },
-          {
-            "text": "link,",
-            "startFrame": 5093
-          }
-        ]
-      },
-      {
-        "startFrame": 5117,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 5117
+            "text": "brings",
+            "startFrame": 5267
           },
           {
             "text": "the",
-            "startFrame": 5118
+            "startFrame": 5275
           },
           {
-            "text": "section",
-            "startFrame": 5121
-          },
-          {
-            "text": "says",
-            "startFrame": 5137
-          },
-          {
-            "text": "no",
-            "startFrame": 5144
-          },
-          {
-            "text": "webhook",
-            "startFrame": 5153
-          },
-          {
-            "text": "was",
-            "startFrame": 5169
-          },
-          {
-            "text": "sent:",
-            "startFrame": 5175
-          }
-        ]
-      },
-      {
-        "startFrame": 5201,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 5201
-          },
-          {
-            "text": "website",
-            "startFrame": 5204
-          },
-          {
-            "text": "has",
-            "startFrame": 5217
-          },
-          {
-            "text": "no",
-            "startFrame": 5222
-          },
-          {
-            "text": "webhook",
-            "startFrame": 5229
-          },
-          {
-            "text": "address,",
-            "startFrame": 5244
-          }
-        ]
-      },
-      {
-        "startFrame": 5274,
-        "words": [
-          {
-            "text": "or",
-            "startFrame": 5274
-          },
-          {
-            "text": "it",
+            "text": "server",
             "startFrame": 5277
           },
           {
-            "text": "is",
-            "startFrame": 5278
+            "text": "back,",
+            "startFrame": 5288
+          }
+        ]
+      },
+      {
+        "startFrame": 5313,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5313
           },
           {
-            "text": "a",
-            "startFrame": 5280
+            "text": "presses",
+            "startFrame": 5316
           },
           {
-            "text": "payment",
-            "startFrame": 5281
+            "text": "send",
+            "startFrame": 5327
           },
           {
-            "text": "link.",
-            "startFrame": 5291
+            "text": "again.",
+            "startFrame": 5334
           }
         ]
       }
@@ -3097,31 +3093,68 @@
   },
   {
     "index": 47,
-    "startFrame": 5310,
-    "endFrame": 5366,
-    "text": "What does this protect?",
-    "prefix": "What does this protect?",
+    "startFrame": 5355,
+    "endFrame": 5468,
+    "text": "A short note says it is queued and goes out within seconds.",
+    "prefix": "A short note says it is queued and goes out within seconds.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5311,
+        "startFrame": 5356,
         "words": [
           {
-            "text": "What",
-            "startFrame": 5311
+            "text": "A",
+            "startFrame": 5356
           },
           {
-            "text": "does",
-            "startFrame": 5313
+            "text": "short",
+            "startFrame": 5357
           },
           {
-            "text": "this",
-            "startFrame": 5316
+            "text": "note",
+            "startFrame": 5366
           },
           {
-            "text": "protect?",
-            "startFrame": 5320
+            "text": "says",
+            "startFrame": 5380
+          },
+          {
+            "text": "it",
+            "startFrame": 5387
+          },
+          {
+            "text": "is",
+            "startFrame": 5388
+          },
+          {
+            "text": "queued",
+            "startFrame": 5392
+          }
+        ]
+      },
+      {
+        "startFrame": 5412,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5412
+          },
+          {
+            "text": "goes",
+            "startFrame": 5417
+          },
+          {
+            "text": "out",
+            "startFrame": 5426
+          },
+          {
+            "text": "within",
+            "startFrame": 5431
+          },
+          {
+            "text": "seconds.",
+            "startFrame": 5439
           }
         ]
       }
@@ -3129,51 +3162,35 @@
   },
   {
     "index": 48,
-    "startFrame": 5366,
-    "endFrame": 5461,
-    "text": "The signature protects the merchant from a forged paid.",
-    "prefix": "The signature protects the merchant from a forged paid.",
+    "startFrame": 5469,
+    "endFrame": 5529,
+    "text": "The status turns to delivered.",
+    "prefix": "The status turns to delivered.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5368,
+        "startFrame": 5470,
         "words": [
           {
             "text": "The",
-            "startFrame": 5368
+            "startFrame": 5470
           },
           {
-            "text": "signature",
-            "startFrame": 5370
+            "text": "status",
+            "startFrame": 5472
           },
           {
-            "text": "protects",
-            "startFrame": 5385
+            "text": "turns",
+            "startFrame": 5490
           },
           {
-            "text": "the",
-            "startFrame": 5399
+            "text": "to",
+            "startFrame": 5502
           },
           {
-            "text": "merchant",
-            "startFrame": 5402
-          },
-          {
-            "text": "from",
-            "startFrame": 5417
-          },
-          {
-            "text": "a",
-            "startFrame": 5422
-          },
-          {
-            "text": "forged",
-            "startFrame": 5423
-          },
-          {
-            "text": "paid.",
-            "startFrame": 5437
+            "text": "delivered.",
+            "startFrame": 5504
           }
         ]
       }
@@ -3181,160 +3198,109 @@
   },
   {
     "index": 49,
-    "startFrame": 5461,
-    "endFrame": 5583,
-    "text": "The retries protect the merchant from losing news during an outage.",
-    "prefix": "The retries protect the merchant from losing news during an outage.",
+    "startFrame": 5530,
+    "endFrame": 5781,
+    "text": "Open a payment made from a link, and the section says no webhook was sent: the website has no webhook address, or it is a payment link.",
+    "prefix": "Open a payment made from a link, and the section says no webhook was sent: the website has no webhook address, or it is a payment link.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5463,
+        "startFrame": 5531,
         "words": [
           {
-            "text": "The",
-            "startFrame": 5463
+            "text": "Open",
+            "startFrame": 5531
           },
           {
-            "text": "retries",
-            "startFrame": 5465
+            "text": "a",
+            "startFrame": 5537
           },
           {
-            "text": "protect",
-            "startFrame": 5480
+            "text": "payment",
+            "startFrame": 5538
           },
           {
-            "text": "the",
-            "startFrame": 5491
-          },
-          {
-            "text": "merchant",
-            "startFrame": 5494
+            "text": "made",
+            "startFrame": 5551
           },
           {
             "text": "from",
-            "startFrame": 5507
+            "startFrame": 5558
           },
           {
-            "text": "losing",
-            "startFrame": 5515
+            "text": "a",
+            "startFrame": 5562
           },
           {
-            "text": "news",
-            "startFrame": 5529
+            "text": "link,",
+            "startFrame": 5564
           }
         ]
       },
       {
-        "startFrame": 5547,
+        "startFrame": 5588,
         "words": [
           {
-            "text": "during",
-            "startFrame": 5547
-          },
-          {
-            "text": "an",
-            "startFrame": 5554
-          },
-          {
-            "text": "outage.",
-            "startFrame": 5556
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 50,
-    "startFrame": 5584,
-    "endFrame": 5681,
-    "text": "The order protects against seeing refunded before paid.",
-    "prefix": "The order protects against seeing refunded before paid.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 5585,
-        "words": [
-          {
-            "text": "The",
-            "startFrame": 5585
-          },
-          {
-            "text": "order",
-            "startFrame": 5586
-          },
-          {
-            "text": "protects",
-            "startFrame": 5593
-          },
-          {
-            "text": "against",
-            "startFrame": 5607
-          },
-          {
-            "text": "seeing",
-            "startFrame": 5616
-          },
-          {
-            "text": "refunded",
-            "startFrame": 5630
-          },
-          {
-            "text": "before",
-            "startFrame": 5648
-          },
-          {
-            "text": "paid.",
-            "startFrame": 5659
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 51,
-    "startFrame": 5682,
-    "endFrame": 5799,
-    "text": "And the address guard protects the bank's own network from its own webhooks.",
-    "prefix": "And the address guard protects the bank's own network from its own webhooks.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 5683,
-        "words": [
-          {
-            "text": "And",
-            "startFrame": 5683
+            "text": "and",
+            "startFrame": 5588
           },
           {
             "text": "the",
-            "startFrame": 5685
+            "startFrame": 5589
           },
           {
-            "text": "address",
-            "startFrame": 5687
+            "text": "section",
+            "startFrame": 5592
           },
           {
-            "text": "guard",
-            "startFrame": 5699
+            "text": "says",
+            "startFrame": 5608
           },
           {
-            "text": "protects",
-            "startFrame": 5706
+            "text": "no",
+            "startFrame": 5615
           },
+          {
+            "text": "webhook",
+            "startFrame": 5624
+          },
+          {
+            "text": "was",
+            "startFrame": 5639
+          },
+          {
+            "text": "sent:",
+            "startFrame": 5646
+          }
+        ]
+      },
+      {
+        "startFrame": 5672,
+        "words": [
           {
             "text": "the",
-            "startFrame": 5717
+            "startFrame": 5672
           },
           {
-            "text": "bank's",
-            "startFrame": 5721
+            "text": "website",
+            "startFrame": 5674
           },
           {
-            "text": "own",
-            "startFrame": 5737
+            "text": "has",
+            "startFrame": 5688
+          },
+          {
+            "text": "no",
+            "startFrame": 5693
+          },
+          {
+            "text": "webhook",
+            "startFrame": 5700
+          },
+          {
+            "text": "address,",
+            "startFrame": 5715
           }
         ]
       },
@@ -3342,24 +3308,112 @@
         "startFrame": 5745,
         "words": [
           {
-            "text": "network",
+            "text": "or",
             "startFrame": 5745
           },
           {
+            "text": "it",
+            "startFrame": 5748
+          },
+          {
+            "text": "is",
+            "startFrame": 5749
+          },
+          {
+            "text": "a",
+            "startFrame": 5751
+          },
+          {
+            "text": "payment",
+            "startFrame": 5752
+          },
+          {
+            "text": "link.",
+            "startFrame": 5762
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 50,
+    "startFrame": 5781,
+    "endFrame": 5837,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5782,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 5782
+          },
+          {
+            "text": "does",
+            "startFrame": 5784
+          },
+          {
+            "text": "this",
+            "startFrame": 5787
+          },
+          {
+            "text": "protect?",
+            "startFrame": 5791
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 51,
+    "startFrame": 5837,
+    "endFrame": 5932,
+    "text": "The signature protects the merchant from a forged paid.",
+    "prefix": "The signature protects the merchant from a forged paid.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5839,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 5839
+          },
+          {
+            "text": "signature",
+            "startFrame": 5840
+          },
+          {
+            "text": "protects",
+            "startFrame": 5855
+          },
+          {
+            "text": "the",
+            "startFrame": 5870
+          },
+          {
+            "text": "merchant",
+            "startFrame": 5873
+          },
+          {
             "text": "from",
-            "startFrame": 5759
+            "startFrame": 5888
           },
           {
-            "text": "its",
-            "startFrame": 5763
+            "text": "a",
+            "startFrame": 5893
           },
           {
-            "text": "own",
-            "startFrame": 5766
+            "text": "forged",
+            "startFrame": 5894
           },
           {
-            "text": "webhooks.",
-            "startFrame": 5771
+            "text": "paid.",
+            "startFrame": 5908
           }
         ]
       }
@@ -3367,39 +3421,64 @@
   },
   {
     "index": 52,
-    "startFrame": 5800,
-    "endFrame": 5856,
-    "text": "So back to the registered letter.",
-    "prefix": "So back to the registered letter.",
+    "startFrame": 5932,
+    "endFrame": 6054,
+    "text": "The retries protect the merchant from losing news during an outage.",
+    "prefix": "The retries protect the merchant from losing news during an outage.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5801,
+        "startFrame": 5934,
         "words": [
           {
-            "text": "So",
-            "startFrame": 5801
+            "text": "The",
+            "startFrame": 5934
           },
           {
-            "text": "back",
-            "startFrame": 5806
+            "text": "retries",
+            "startFrame": 5936
           },
           {
-            "text": "to",
-            "startFrame": 5814
+            "text": "protect",
+            "startFrame": 5951
           },
           {
             "text": "the",
-            "startFrame": 5817
+            "startFrame": 5962
           },
           {
-            "text": "registered",
-            "startFrame": 5819
+            "text": "merchant",
+            "startFrame": 5964
           },
           {
-            "text": "letter.",
-            "startFrame": 5832
+            "text": "from",
+            "startFrame": 5978
+          },
+          {
+            "text": "losing",
+            "startFrame": 5986
+          },
+          {
+            "text": "news",
+            "startFrame": 5999
+          }
+        ]
+      },
+      {
+        "startFrame": 6018,
+        "words": [
+          {
+            "text": "during",
+            "startFrame": 6018
+          },
+          {
+            "text": "an",
+            "startFrame": 6025
+          },
+          {
+            "text": "outage.",
+            "startFrame": 6027
           }
         ]
       }
@@ -3407,72 +3486,47 @@
   },
   {
     "index": 53,
-    "startFrame": 5856,
-    "endFrame": 5999,
-    "text": "Sealed, sent only to a real address, and tried again until it arrives.",
-    "prefix": "Sealed, sent only to a real address, and tried again until it arrives.",
+    "startFrame": 6055,
+    "endFrame": 6152,
+    "text": "The order protects against seeing refunded before paid.",
+    "prefix": "The order protects against seeing refunded before paid.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5857,
+        "startFrame": 6056,
         "words": [
           {
-            "text": "Sealed,",
-            "startFrame": 5857
+            "text": "The",
+            "startFrame": 6056
           },
           {
-            "text": "sent",
-            "startFrame": 5878
+            "text": "order",
+            "startFrame": 6057
           },
           {
-            "text": "only",
-            "startFrame": 5886
+            "text": "protects",
+            "startFrame": 6064
           },
           {
-            "text": "to",
-            "startFrame": 5893
+            "text": "against",
+            "startFrame": 6078
           },
           {
-            "text": "a",
-            "startFrame": 5896
+            "text": "seeing",
+            "startFrame": 6087
           },
           {
-            "text": "real",
-            "startFrame": 5900
+            "text": "refunded",
+            "startFrame": 6100
           },
           {
-            "text": "address,",
-            "startFrame": 5908
-          }
-        ]
-      },
-      {
-        "startFrame": 5931,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 5931
+            "text": "before",
+            "startFrame": 6119
           },
           {
-            "text": "tried",
-            "startFrame": 5934
-          },
-          {
-            "text": "again",
-            "startFrame": 5944
-          },
-          {
-            "text": "until",
-            "startFrame": 5959
-          },
-          {
-            "text": "it",
-            "startFrame": 5967
-          },
-          {
-            "text": "arrives.",
-            "startFrame": 5968
+            "text": "paid.",
+            "startFrame": 6130
           }
         ]
       }
@@ -3480,35 +3534,221 @@
   },
   {
     "index": 54,
-    "startFrame": 5999,
-    "endFrame": 6102,
+    "startFrame": 6153,
+    "endFrame": 6270,
+    "text": "And the address guard protects the bank's own network from its own webhooks.",
+    "prefix": "And the address guard protects the bank's own network from its own webhooks.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6154,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 6154
+          },
+          {
+            "text": "the",
+            "startFrame": 6156
+          },
+          {
+            "text": "address",
+            "startFrame": 6158
+          },
+          {
+            "text": "guard",
+            "startFrame": 6170
+          },
+          {
+            "text": "protects",
+            "startFrame": 6177
+          },
+          {
+            "text": "the",
+            "startFrame": 6188
+          },
+          {
+            "text": "bank's",
+            "startFrame": 6192
+          },
+          {
+            "text": "own",
+            "startFrame": 6208
+          }
+        ]
+      },
+      {
+        "startFrame": 6216,
+        "words": [
+          {
+            "text": "network",
+            "startFrame": 6216
+          },
+          {
+            "text": "from",
+            "startFrame": 6229
+          },
+          {
+            "text": "its",
+            "startFrame": 6234
+          },
+          {
+            "text": "own",
+            "startFrame": 6237
+          },
+          {
+            "text": "webhooks.",
+            "startFrame": 6242
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "startFrame": 6271,
+    "endFrame": 6326,
+    "text": "So back to the registered letter.",
+    "prefix": "So back to the registered letter.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6272,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 6272
+          },
+          {
+            "text": "back",
+            "startFrame": 6277
+          },
+          {
+            "text": "to",
+            "startFrame": 6285
+          },
+          {
+            "text": "the",
+            "startFrame": 6288
+          },
+          {
+            "text": "registered",
+            "startFrame": 6290
+          },
+          {
+            "text": "letter.",
+            "startFrame": 6303
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 56,
+    "startFrame": 6327,
+    "endFrame": 6470,
+    "text": "Sealed, sent only to a real address, and tried again until it arrives.",
+    "prefix": "Sealed, sent only to a real address, and tried again until it arrives.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6328,
+        "words": [
+          {
+            "text": "Sealed,",
+            "startFrame": 6328
+          },
+          {
+            "text": "sent",
+            "startFrame": 6349
+          },
+          {
+            "text": "only",
+            "startFrame": 6357
+          },
+          {
+            "text": "to",
+            "startFrame": 6364
+          },
+          {
+            "text": "a",
+            "startFrame": 6367
+          },
+          {
+            "text": "real",
+            "startFrame": 6370
+          },
+          {
+            "text": "address,",
+            "startFrame": 6379
+          }
+        ]
+      },
+      {
+        "startFrame": 6402,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6402
+          },
+          {
+            "text": "tried",
+            "startFrame": 6405
+          },
+          {
+            "text": "again",
+            "startFrame": 6415
+          },
+          {
+            "text": "until",
+            "startFrame": 6430
+          },
+          {
+            "text": "it",
+            "startFrame": 6438
+          },
+          {
+            "text": "arrives.",
+            "startFrame": 6439
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "startFrame": 6470,
+    "endFrame": 6572,
     "text": "Next: payments without a website.",
     "prefix": "Next: payments without a website.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6001,
+        "startFrame": 6472,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 6001
+            "startFrame": 6472
           },
           {
             "text": "payments",
-            "startFrame": 6021
+            "startFrame": 6492
           },
           {
             "text": "without",
-            "startFrame": 6032
+            "startFrame": 6503
           },
           {
             "text": "a",
-            "startFrame": 6040
+            "startFrame": 6511
           },
           {
             "text": "website.",
-            "startFrame": 6041
+            "startFrame": 6512
           }
         ]
       }

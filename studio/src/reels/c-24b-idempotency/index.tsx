@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "The same payment twice?", "At checkout", "Create a payment", "The network hiccups", "The network hiccups",
+  "The same payment twice?", "Lesson 24: sealed", "An honest repeat", "This lesson: one payment", "At checkout", "Create a payment", "The network hiccups", "The network hiccups",
   "No answer", "Which half was lost?", "Send it again", "A second payment", "Two payment pages", "Pay both",
   "Give money back", "Retrying is right", "Recognise a retry", "A lift button", "Press it once", "Ten more times",
   "One lift", "The same thing", "The same way", "Idempotency key", "A plain name", "The same on every retry",

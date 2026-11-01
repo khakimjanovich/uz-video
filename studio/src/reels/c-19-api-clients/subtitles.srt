@@ -3,193 +3,205 @@
 What should a merchant's server log in with?
 
 2
-00:00:02,138 --> 00:00:07,728
-Picture a merchant's developer who is told to put the owner's portal password into the server's settings.
+00:00:02,138 --> 00:00:05,616
+In Lesson 18, two admins switched the merchant on.
 
 3
-00:00:07,778 --> 00:00:10,632
-The password ends up in a shared code store.
+00:00:05,666 --> 00:00:10,080
+In Lesson 1, the shop's server asked ecom to create each payment.
 
 4
-00:00:10,682 --> 00:00:14,544
-When the developer leaves, the owner's own login has to change.
+00:00:10,130 --> 00:00:14,352
+This lesson gives that server its own login, separate from any person's.
 
 5
-00:00:14,594 --> 00:00:18,984
-And every request the server ever made looks like the owner clicking buttons.
+00:00:14,402 --> 00:00:19,992
+Picture a merchant's developer who is told to put the owner's portal password into the server's settings.
 
 6
-00:00:19,034 --> 00:00:21,408
-You never give a cleaner your own house keys.
+00:00:20,042 --> 00:00:22,896
+The password ends up in a shared code store.
 
 7
-00:00:21,458 --> 00:00:25,512
-You give them a key of their own, which you can change without changing yours.
+00:00:22,946 --> 00:00:26,808
+When the developer leaves, the owner's own login has to change.
 
 8
-00:00:25,562 --> 00:00:27,648
-A merchant's server gets the same.
+00:00:26,858 --> 00:00:31,248
+And every request the server ever made looks like the owner clicking buttons.
 
 9
-00:00:27,698 --> 00:00:29,520
-Here is how it works.
+00:00:31,298 --> 00:00:33,672
+You never give a cleaner your own house keys.
 
 10
-00:00:29,570 --> 00:00:36,048
-An active merchant creates an API client: a login for a machine, not for a person.
+00:00:33,722 --> 00:00:37,776
+You give them a key of their own, which you can change without changing yours.
 
 11
-00:00:36,098 --> 00:00:42,648
-It has an id, like a username, and a client secret, like a password that only the machine knows.
+00:00:37,826 --> 00:00:39,912
+A merchant's server gets the same.
 
 12
-00:00:42,698 --> 00:00:46,512
-The secret is shown exactly once, when the client is made.
+00:00:39,962 --> 00:00:41,784
+Here is how it works.
 
 13
-00:00:46,562 --> 00:00:49,896
-ecom keeps the client's id, but never the secret.
+00:00:41,834 --> 00:00:48,312
+An active merchant creates an API client: a login for a machine, not for a person.
 
 14
-00:00:49,946 --> 00:00:55,032
-So nobody at the bank, and nobody who breaks into ecom's database, can read it back.
+00:00:48,362 --> 00:00:54,912
+It has an id, like a username, and a client secret, like a password that only the machine knows.
 
 15
-00:00:55,082 --> 00:00:59,424
-The merchant's server sends its id and secret to the login server.
+00:00:54,962 --> 00:00:58,776
+The secret is shown exactly once, when the client is made.
 
 16
-00:00:59,474 --> 00:01:03,384
-It gets back a short-lived token: a pass that expires soon.
+00:00:58,826 --> 00:01:02,160
+ecom keeps the client's id, but never the secret.
 
 17
-00:01:03,434 --> 00:01:06,240
-Only that token reaches the payments service.
+00:01:02,210 --> 00:01:07,296
+So nobody at the bank, and nobody who breaks into ecom's database, can read it back.
 
 18
-00:01:06,290 --> 00:01:10,176
-And only a machine login with the merchant's role can reach it at all.
+00:01:07,346 --> 00:01:11,688
+The merchant's server sends its id and secret to the login server.
 
 19
-00:01:10,226 --> 00:01:12,048
-People's logins cannot.
+00:01:11,738 --> 00:01:15,648
+It gets back a short-lived token: a pass that expires soon.
 
 20
-00:01:12,098 --> 00:01:17,976
-When a secret may have leaked, or the developer who knew it leaves, the merchant rotates it.
+00:01:15,698 --> 00:01:18,504
+Only that token reaches the payments service.
 
 21
-00:01:18,026 --> 00:01:23,760
-That is rotation: a new secret is issued, and the old one stops working at once.
+00:01:18,554 --> 00:01:22,440
+And only a machine login with the merchant's role can reach it at all.
 
 22
-00:01:23,810 --> 00:01:26,208
-The owner's own login is never touched.
+00:01:22,490 --> 00:01:24,312
+People's logins cannot.
 
 23
-00:01:26,258 --> 00:01:30,912
-Only an active merchant can create or rotate an API client.
+00:01:24,362 --> 00:01:30,240
+When a secret may have leaked, or the developer who knew it leaves, the merchant rotates it.
 
 24
-00:01:30,962 --> 00:01:32,784
-Now watch the product.
+00:01:30,290 --> 00:01:36,024
+That is rotation: a new secret is issued, and the old one stops working at once.
 
 25
-00:01:32,834 --> 00:01:37,536
-First, a merchant that is not yet switched on opens API clients.
+00:01:36,074 --> 00:01:38,472
+The owner's own login is never touched.
 
 26
-00:01:37,586 --> 00:01:39,408
-There is no button at all.
+00:01:38,522 --> 00:01:43,176
+Only an active merchant can create or rotate an API client.
 
 27
-00:01:39,458 --> 00:01:47,352
-The page says API clients open when you are live", and explains that two bank admins must activate the account first.
+00:01:43,226 --> 00:01:45,048
+Now watch the product.
 
 28
-00:01:47,402 --> 00:01:49,800
-Now the same page for an active merchant.
+00:01:45,098 --> 00:01:49,800
+First, a merchant that is not yet switched on opens API clients.
 
 29
-00:01:49,850 --> 00:01:54,264
-The page explains that the merchant's servers use these to get access tokens.
+00:01:49,850 --> 00:01:51,672
+There is no button at all.
 
 30
-00:01:54,314 --> 00:01:56,376
-The viewer clicks New client.
+00:01:51,722 --> 00:01:59,616
+The page says API clients open when you are live", and explains that two bank admins must activate the account first.
 
 31
-00:01:56,426 --> 00:01:59,880
-A window opens: "Your new API client".
+00:01:59,666 --> 00:02:02,064
+Now the same page for an active merchant.
 
 32
-00:01:59,930 --> 00:02:02,832
-It shows the client id and the client secret.
+00:02:02,114 --> 00:02:06,528
+The page explains that the merchant's servers use these to get access tokens.
 
 33
-00:02:02,882 --> 00:02:09,720
-Above them is a warning: this is the only time you will see this secret, so store it in your server's secret manager now.
+00:02:06,578 --> 00:02:08,640
+The viewer clicks New client.
 
 34
-00:02:09,770 --> 00:02:14,208
-The viewer copies both, and ticks "I have stored the secret safely".
+00:02:08,690 --> 00:02:12,144
+A window opens: "Your new API client".
 
 35
-00:02:14,258 --> 00:02:20,136
-The window closes, and the list shows the new client with its id and the date it was created.
+00:02:12,194 --> 00:02:15,096
+It shows the client id and the client secret.
 
 36
-00:02:20,186 --> 00:02:23,904
-The secret is nowhere on the page, and it never will be again.
+00:02:15,146 --> 00:02:21,984
+Above them is a warning: this is the only time you will see this secret, so store it in your server's secret manager now.
 
 37
-00:02:23,954 --> 00:02:29,592
-The viewer's server now uses the id and secret to get a token, and the token works.
+00:02:22,034 --> 00:02:26,472
+The viewer copies both, and ticks "I have stored the secret safely".
 
 38
-00:02:29,642 --> 00:02:32,424
-Then the viewer clicks Rotate secret.
+00:02:26,522 --> 00:02:32,400
+The window closes, and the list shows the new client with its id and the date it was created.
 
 39
-00:02:32,474 --> 00:02:38,784
-The portal asks first: the current secret stops working immediately, so update your servers right after.
+00:02:32,450 --> 00:02:36,168
+The secret is nowhere on the page, and it never will be again.
 
 40
-00:02:38,834 --> 00:02:40,656
-The viewer confirms.
+00:02:36,218 --> 00:02:41,856
+The viewer's server now uses the id and secret to get a token, and the token works.
 
 41
-00:02:40,706 --> 00:02:44,304
-A new secret appears, once, with the same warning.
+00:02:41,906 --> 00:02:44,688
+Then the viewer clicks Rotate secret.
 
 42
-00:02:44,354 --> 00:02:48,648
-The server tries the old secret again, and the login server refuses it.
+00:02:44,738 --> 00:02:51,048
+The portal asks first: the current secret stops working immediately, so update your servers right after.
 
 43
-00:02:48,698 --> 00:02:50,520
-What does this protect?
+00:02:51,098 --> 00:02:52,920
+The viewer confirms.
 
 44
-00:02:50,570 --> 00:02:56,304
-A person's password in a server's settings leaks, and its requests cannot be told apart from the person.
+00:02:52,970 --> 00:02:56,568
+A new secret appears, once, with the same warning.
 
 45
-00:02:56,354 --> 00:03:00,000
-A separate key for each server keeps the owner's login private.
+00:02:56,618 --> 00:03:00,912
+The server tries the old secret again, and the login server refuses it.
 
 46
-00:03:00,050 --> 00:03:05,424
-It lets the merchant cut off one leaked key in one click, without locking anyone out.
+00:03:00,962 --> 00:03:02,784
+What does this protect?
 
 47
-00:03:05,474 --> 00:03:10,416
-And because ecom never keeps the secret, the bank cannot leak it either.
+00:03:02,834 --> 00:03:08,568
+A person's password in a server's settings leaks, and its requests cannot be told apart from the person.
 
 48
-00:03:10,466 --> 00:03:15,888
-So, like the cleaner's own key: changed in one click, and the owner's key never touched.
+00:03:08,618 --> 00:03:12,264
+A separate key for each server keeps the owner's login private.
 
 49
-00:03:15,938 --> 00:03:18,216
+00:03:12,314 --> 00:03:17,688
+It lets the merchant cut off one leaked key in one click, without locking anyone out.
+
+50
+00:03:17,738 --> 00:03:22,680
+And because ecom never keeps the secret, the bank cannot leak it either.
+
+51
+00:03:22,730 --> 00:03:28,152
+So, like the cleaner's own key: changed in one click, and the owner's key never touched.
+
+52
+00:03:28,202 --> 00:03:30,480
 Next: the people on the merchant's team.

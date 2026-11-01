@@ -83,9 +83,9 @@
   {
     "index": 2,
     "startFrame": 130,
-    "endFrame": 186,
-    "text": "Picture the worst day.",
-    "prefix": "Picture the worst day.",
+    "endFrame": 295,
+    "text": "In Lesson 5, the card went straight into the card zone, and only a token came back.",
+    "prefix": "In Lesson 5, the card went straight into the card zone, and only a token came back.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -93,20 +93,78 @@
         "startFrame": 131,
         "words": [
           {
-            "text": "Picture",
+            "text": "In",
             "startFrame": 131
           },
           {
+            "text": "Lesson 5,",
+            "startFrame": 134
+          },
+          {
             "text": "the",
-            "startFrame": 137
+            "startFrame": 166
           },
           {
-            "text": "worst",
-            "startFrame": 139
+            "text": "card",
+            "startFrame": 169
           },
           {
-            "text": "day.",
-            "startFrame": 147
+            "text": "went",
+            "startFrame": 180
+          },
+          {
+            "text": "straight",
+            "startFrame": 185
+          },
+          {
+            "text": "into",
+            "startFrame": 202
+          }
+        ]
+      },
+      {
+        "startFrame": 207,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 207
+          },
+          {
+            "text": "card",
+            "startFrame": 210
+          },
+          {
+            "text": "zone,",
+            "startFrame": 219
+          }
+        ]
+      },
+      {
+        "startFrame": 239,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 239
+          },
+          {
+            "text": "only",
+            "startFrame": 246
+          },
+          {
+            "text": "a",
+            "startFrame": 254
+          },
+          {
+            "text": "token",
+            "startFrame": 256
+          },
+          {
+            "text": "came",
+            "startFrame": 265
+          },
+          {
+            "text": "back.",
+            "startFrame": 271
           }
         ]
       }
@@ -114,39 +172,80 @@
   },
   {
     "index": 3,
-    "startFrame": 186,
-    "endFrame": 247,
-    "text": "A copy of the database leaks.",
-    "prefix": "A copy of the database leaks.",
+    "startFrame": 295,
+    "endFrame": 475,
+    "text": "In Lesson 6, Vault held every key, and no key was ever typed into a file.",
+    "prefix": "In Lesson 6, Vault held every key, and no key was ever typed into a file.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 187,
+        "startFrame": 296,
         "words": [
           {
-            "text": "A",
-            "startFrame": 187
+            "text": "In",
+            "startFrame": 296
           },
           {
-            "text": "copy",
-            "startFrame": 189
+            "text": "Lesson 6,",
+            "startFrame": 300
           },
           {
-            "text": "of",
-            "startFrame": 200
+            "text": "Vault",
+            "startFrame": 334
           },
           {
-            "text": "the",
-            "startFrame": 202
+            "text": "held",
+            "startFrame": 343
           },
           {
-            "text": "database",
-            "startFrame": 204
+            "text": "every",
+            "startFrame": 357
           },
           {
-            "text": "leaks.",
-            "startFrame": 218
+            "text": "key,",
+            "startFrame": 366
+          }
+        ]
+      },
+      {
+        "startFrame": 393,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 393
+          },
+          {
+            "text": "no",
+            "startFrame": 399
+          },
+          {
+            "text": "key",
+            "startFrame": 405
+          },
+          {
+            "text": "was",
+            "startFrame": 416
+          },
+          {
+            "text": "ever",
+            "startFrame": 425
+          },
+          {
+            "text": "typed",
+            "startFrame": 433
+          },
+          {
+            "text": "into",
+            "startFrame": 443
+          },
+          {
+            "text": "a",
+            "startFrame": 448
+          },
+          {
+            "text": "file.",
+            "startFrame": 450
           }
         ]
       }
@@ -154,60 +253,84 @@
   },
   {
     "index": 4,
-    "startFrame": 247,
-    "endFrame": 346,
-    "text": "If the card table holds numbers, every card is gone.",
-    "prefix": "If the card table holds numbers, every card is gone.",
+    "startFrame": 475,
+    "endFrame": 659,
+    "text": "This lesson uses Vault to seal each card number, so even a stolen database is useless.",
+    "prefix": "This lesson uses Vault to seal each card number, so even a stolen database is useless.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 249,
+        "startFrame": 477,
         "words": [
           {
-            "text": "If",
-            "startFrame": 249
+            "text": "This",
+            "startFrame": 477
           },
           {
-            "text": "the",
-            "startFrame": 251
+            "text": "lesson",
+            "startFrame": 483
+          },
+          {
+            "text": "uses",
+            "startFrame": 495
+          },
+          {
+            "text": "Vault",
+            "startFrame": 506
+          },
+          {
+            "text": "to",
+            "startFrame": 515
+          },
+          {
+            "text": "seal",
+            "startFrame": 518
+          },
+          {
+            "text": "each",
+            "startFrame": 540
           },
           {
             "text": "card",
-            "startFrame": 253
-          },
-          {
-            "text": "table",
-            "startFrame": 261
-          },
-          {
-            "text": "holds",
-            "startFrame": 271
-          },
-          {
-            "text": "numbers,",
-            "startFrame": 279
+            "startFrame": 545
           }
         ]
       },
       {
-        "startFrame": 306,
+        "startFrame": 553,
         "words": [
           {
-            "text": "every",
-            "startFrame": 306
+            "text": "number,",
+            "startFrame": 553
           },
           {
-            "text": "card",
-            "startFrame": 314
+            "text": "so",
+            "startFrame": 573
+          },
+          {
+            "text": "even",
+            "startFrame": 581
+          },
+          {
+            "text": "a",
+            "startFrame": 588
+          },
+          {
+            "text": "stolen",
+            "startFrame": 590
+          },
+          {
+            "text": "database",
+            "startFrame": 601
           },
           {
             "text": "is",
-            "startFrame": 322
+            "startFrame": 623
           },
           {
-            "text": "gone.",
-            "startFrame": 325
+            "text": "useless.",
+            "startFrame": 627
           }
         ]
       }
@@ -215,97 +338,31 @@
   },
   {
     "index": 5,
-    "startFrame": 347,
-    "endFrame": 492,
-    "text": "If it holds numbers locked with a key that sits next to them, every card is still gone.",
-    "prefix": "If it holds numbers locked with a key that sits next to them, every card is still gone.",
+    "startFrame": 660,
+    "endFrame": 715,
+    "text": "Picture the worst day.",
+    "prefix": "Picture the worst day.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 348,
+        "startFrame": 661,
         "words": [
           {
-            "text": "If",
-            "startFrame": 348
+            "text": "Picture",
+            "startFrame": 661
           },
           {
-            "text": "it",
-            "startFrame": 351
+            "text": "the",
+            "startFrame": 667
           },
           {
-            "text": "holds",
-            "startFrame": 353
+            "text": "worst",
+            "startFrame": 669
           },
           {
-            "text": "numbers",
-            "startFrame": 364
-          },
-          {
-            "text": "locked",
-            "startFrame": 375
-          },
-          {
-            "text": "with",
-            "startFrame": 389
-          },
-          {
-            "text": "a",
-            "startFrame": 393
-          },
-          {
-            "text": "key",
-            "startFrame": 394
-          }
-        ]
-      },
-      {
-        "startFrame": 405,
-        "words": [
-          {
-            "text": "that",
-            "startFrame": 405
-          },
-          {
-            "text": "sits",
-            "startFrame": 408
-          },
-          {
-            "text": "next",
-            "startFrame": 416
-          },
-          {
-            "text": "to",
-            "startFrame": 425
-          },
-          {
-            "text": "them,",
-            "startFrame": 427
-          }
-        ]
-      },
-      {
-        "startFrame": 445,
-        "words": [
-          {
-            "text": "every",
-            "startFrame": 445
-          },
-          {
-            "text": "card",
-            "startFrame": 452
-          },
-          {
-            "text": "is",
-            "startFrame": 462
-          },
-          {
-            "text": "still",
-            "startFrame": 464
-          },
-          {
-            "text": "gone.",
-            "startFrame": 471
+            "text": "day.",
+            "startFrame": 677
           }
         ]
       }
@@ -313,60 +370,39 @@
   },
   {
     "index": 6,
-    "startFrame": 493,
-    "endFrame": 569,
-    "text": "So the key must never sit next to the data.",
-    "prefix": "So the key must never sit next to the data.",
+    "startFrame": 716,
+    "endFrame": 777,
+    "text": "A copy of the database leaks.",
+    "prefix": "A copy of the database leaks.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 494,
+        "startFrame": 717,
         "words": [
           {
-            "text": "So",
-            "startFrame": 494
+            "text": "A",
+            "startFrame": 717
+          },
+          {
+            "text": "copy",
+            "startFrame": 719
+          },
+          {
+            "text": "of",
+            "startFrame": 730
           },
           {
             "text": "the",
-            "startFrame": 498
+            "startFrame": 732
           },
           {
-            "text": "key",
-            "startFrame": 500
+            "text": "database",
+            "startFrame": 734
           },
           {
-            "text": "must",
-            "startFrame": 508
-          },
-          {
-            "text": "never",
-            "startFrame": 515
-          },
-          {
-            "text": "sit",
-            "startFrame": 522
-          },
-          {
-            "text": "next",
-            "startFrame": 531
-          }
-        ]
-      },
-      {
-        "startFrame": 540,
-        "words": [
-          {
-            "text": "to",
-            "startFrame": 540
-          },
-          {
-            "text": "the",
-            "startFrame": 542
-          },
-          {
-            "text": "data.",
-            "startFrame": 545
+            "text": "leaks.",
+            "startFrame": 748
           }
         ]
       }
@@ -374,43 +410,60 @@
   },
   {
     "index": 7,
-    "startFrame": 569,
-    "endFrame": 652,
-    "text": "Remember the locked room from earlier lessons.",
-    "prefix": "Remember the locked room from earlier lessons.",
+    "startFrame": 777,
+    "endFrame": 876,
+    "text": "If the card table holds numbers, every card is gone.",
+    "prefix": "If the card table holds numbers, every card is gone.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 570,
+        "startFrame": 779,
         "words": [
           {
-            "text": "Remember",
-            "startFrame": 570
+            "text": "If",
+            "startFrame": 779
           },
           {
             "text": "the",
-            "startFrame": 577
+            "startFrame": 781
           },
           {
-            "text": "locked",
-            "startFrame": 579
+            "text": "card",
+            "startFrame": 783
           },
           {
-            "text": "room",
-            "startFrame": 591
+            "text": "table",
+            "startFrame": 791
           },
           {
-            "text": "from",
-            "startFrame": 606
+            "text": "holds",
+            "startFrame": 801
           },
           {
-            "text": "earlier",
-            "startFrame": 614
+            "text": "numbers,",
+            "startFrame": 809
+          }
+        ]
+      },
+      {
+        "startFrame": 836,
+        "words": [
+          {
+            "text": "every",
+            "startFrame": 836
           },
           {
-            "text": "lessons.",
-            "startFrame": 623
+            "text": "card",
+            "startFrame": 844
+          },
+          {
+            "text": "is",
+            "startFrame": 852
+          },
+          {
+            "text": "gone.",
+            "startFrame": 855
           }
         ]
       }
@@ -418,51 +471,97 @@
   },
   {
     "index": 8,
-    "startFrame": 653,
-    "endFrame": 751,
-    "text": "Inside it, every coat goes into a sealed bag.",
-    "prefix": "Inside it, every coat goes into a sealed bag.",
+    "startFrame": 877,
+    "endFrame": 1022,
+    "text": "If it holds numbers locked with a key that sits next to them, every card is still gone.",
+    "prefix": "If it holds numbers locked with a key that sits next to them, every card is still gone.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 654,
+        "startFrame": 878,
         "words": [
           {
-            "text": "Inside",
-            "startFrame": 654
+            "text": "If",
+            "startFrame": 878
           },
           {
-            "text": "it,",
-            "startFrame": 668
+            "text": "it",
+            "startFrame": 881
           },
           {
-            "text": "every",
-            "startFrame": 680
+            "text": "holds",
+            "startFrame": 883
           },
           {
-            "text": "coat",
-            "startFrame": 687
+            "text": "numbers",
+            "startFrame": 894
           },
           {
-            "text": "goes",
-            "startFrame": 704
+            "text": "locked",
+            "startFrame": 905
           },
           {
-            "text": "into",
-            "startFrame": 711
+            "text": "with",
+            "startFrame": 919
           },
           {
             "text": "a",
-            "startFrame": 716
+            "startFrame": 923
           },
           {
-            "text": "sealed",
-            "startFrame": 718
+            "text": "key",
+            "startFrame": 924
+          }
+        ]
+      },
+      {
+        "startFrame": 935,
+        "words": [
+          {
+            "text": "that",
+            "startFrame": 935
           },
           {
-            "text": "bag.",
-            "startFrame": 728
+            "text": "sits",
+            "startFrame": 938
+          },
+          {
+            "text": "next",
+            "startFrame": 946
+          },
+          {
+            "text": "to",
+            "startFrame": 955
+          },
+          {
+            "text": "them,",
+            "startFrame": 957
+          }
+        ]
+      },
+      {
+        "startFrame": 975,
+        "words": [
+          {
+            "text": "every",
+            "startFrame": 975
+          },
+          {
+            "text": "card",
+            "startFrame": 982
+          },
+          {
+            "text": "is",
+            "startFrame": 991
+          },
+          {
+            "text": "still",
+            "startFrame": 994
+          },
+          {
+            "text": "gone.",
+            "startFrame": 1001
           }
         ]
       }
@@ -470,60 +569,60 @@
   },
   {
     "index": 9,
-    "startFrame": 751,
-    "endFrame": 841,
-    "text": "Only one machine can seal a bag or open it.",
-    "prefix": "Only one machine can seal a bag or open it.",
+    "startFrame": 1023,
+    "endFrame": 1098,
+    "text": "So the key must never sit next to the data.",
+    "prefix": "So the key must never sit next to the data.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 753,
+        "startFrame": 1024,
         "words": [
           {
-            "text": "Only",
-            "startFrame": 753
+            "text": "So",
+            "startFrame": 1024
           },
           {
-            "text": "one",
-            "startFrame": 759
+            "text": "the",
+            "startFrame": 1028
           },
           {
-            "text": "machine",
-            "startFrame": 764
+            "text": "key",
+            "startFrame": 1030
           },
           {
-            "text": "can",
-            "startFrame": 779
+            "text": "must",
+            "startFrame": 1038
           },
           {
-            "text": "seal",
-            "startFrame": 782
+            "text": "never",
+            "startFrame": 1045
           },
           {
-            "text": "a",
-            "startFrame": 790
+            "text": "sit",
+            "startFrame": 1052
           },
           {
-            "text": "bag",
-            "startFrame": 792
+            "text": "next",
+            "startFrame": 1061
           }
         ]
       },
       {
-        "startFrame": 811,
+        "startFrame": 1070,
         "words": [
           {
-            "text": "or",
-            "startFrame": 811
+            "text": "to",
+            "startFrame": 1070
           },
           {
-            "text": "open",
-            "startFrame": 815
+            "text": "the",
+            "startFrame": 1072
           },
           {
-            "text": "it.",
-            "startFrame": 825
+            "text": "data.",
+            "startFrame": 1075
           }
         ]
       }
@@ -531,43 +630,43 @@
   },
   {
     "index": 10,
-    "startFrame": 842,
-    "endFrame": 911,
-    "text": "That machine never lends out its key.",
-    "prefix": "That machine never lends out its key.",
+    "startFrame": 1099,
+    "endFrame": 1182,
+    "text": "Remember the locked room from earlier lessons.",
+    "prefix": "Remember the locked room from earlier lessons.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 843,
+        "startFrame": 1100,
         "words": [
           {
-            "text": "That",
-            "startFrame": 843
+            "text": "Remember",
+            "startFrame": 1100
           },
           {
-            "text": "machine",
-            "startFrame": 847
+            "text": "the",
+            "startFrame": 1106
           },
           {
-            "text": "never",
-            "startFrame": 865
+            "text": "locked",
+            "startFrame": 1109
           },
           {
-            "text": "lends",
-            "startFrame": 875
+            "text": "room",
+            "startFrame": 1121
           },
           {
-            "text": "out",
-            "startFrame": 883
+            "text": "from",
+            "startFrame": 1136
           },
           {
-            "text": "its",
-            "startFrame": 886
+            "text": "earlier",
+            "startFrame": 1144
           },
           {
-            "text": "key.",
-            "startFrame": 889
+            "text": "lessons.",
+            "startFrame": 1153
           }
         ]
       }
@@ -575,52 +674,51 @@
   },
   {
     "index": 11,
-    "startFrame": 911,
-    "endFrame": 988,
-    "text": "In the card zone, that machine is Vault.",
-    "prefix": "In the card zone, that machine is Vault.",
+    "startFrame": 1183,
+    "endFrame": 1281,
+    "text": "Inside it, every coat goes into a sealed bag.",
+    "prefix": "Inside it, every coat goes into a sealed bag.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 912,
+        "startFrame": 1184,
         "words": [
           {
-            "text": "In",
-            "startFrame": 912
+            "text": "Inside",
+            "startFrame": 1184
           },
           {
-            "text": "the",
-            "startFrame": 914
+            "text": "it,",
+            "startFrame": 1197
           },
           {
-            "text": "card",
-            "startFrame": 916
+            "text": "every",
+            "startFrame": 1210
           },
           {
-            "text": "zone,",
-            "startFrame": 925
-          }
-        ]
-      },
-      {
-        "startFrame": 941,
-        "words": [
-          {
-            "text": "that",
-            "startFrame": 941
+            "text": "coat",
+            "startFrame": 1217
           },
           {
-            "text": "machine",
-            "startFrame": 945
+            "text": "goes",
+            "startFrame": 1234
           },
           {
-            "text": "is",
-            "startFrame": 960
+            "text": "into",
+            "startFrame": 1241
           },
           {
-            "text": "Vault.",
-            "startFrame": 963
+            "text": "a",
+            "startFrame": 1246
+          },
+          {
+            "text": "sealed",
+            "startFrame": 1247
+          },
+          {
+            "text": "bag.",
+            "startFrame": 1258
           }
         ]
       }
@@ -628,77 +726,60 @@
   },
   {
     "index": 12,
-    "startFrame": 988,
-    "endFrame": 1114,
-    "text": "The card vault, the service that keeps cards, hands Vault the card number.",
-    "prefix": "The card vault, the service that keeps cards, hands Vault the card number.",
+    "startFrame": 1281,
+    "endFrame": 1371,
+    "text": "Only one machine can seal a bag or open it.",
+    "prefix": "Only one machine can seal a bag or open it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 990,
+        "startFrame": 1283,
         "words": [
           {
-            "text": "The",
-            "startFrame": 990
+            "text": "Only",
+            "startFrame": 1283
           },
           {
-            "text": "card",
-            "startFrame": 992
+            "text": "one",
+            "startFrame": 1289
           },
           {
-            "text": "vault,",
-            "startFrame": 1000
+            "text": "machine",
+            "startFrame": 1294
+          },
+          {
+            "text": "can",
+            "startFrame": 1309
+          },
+          {
+            "text": "seal",
+            "startFrame": 1312
+          },
+          {
+            "text": "a",
+            "startFrame": 1320
+          },
+          {
+            "text": "bag",
+            "startFrame": 1322
           }
         ]
       },
       {
-        "startFrame": 1010,
+        "startFrame": 1341,
         "words": [
           {
-            "text": "the",
-            "startFrame": 1010
+            "text": "or",
+            "startFrame": 1341
           },
           {
-            "text": "service",
-            "startFrame": 1013
+            "text": "open",
+            "startFrame": 1345
           },
           {
-            "text": "that",
-            "startFrame": 1026
-          },
-          {
-            "text": "keeps",
-            "startFrame": 1029
-          },
-          {
-            "text": "cards,",
-            "startFrame": 1038
-          }
-        ]
-      },
-      {
-        "startFrame": 1064,
-        "words": [
-          {
-            "text": "hands",
-            "startFrame": 1064
-          },
-          {
-            "text": "Vault",
-            "startFrame": 1073
-          },
-          {
-            "text": "the",
-            "startFrame": 1082
-          },
-          {
-            "text": "card",
-            "startFrame": 1084
-          },
-          {
-            "text": "number.",
-            "startFrame": 1093
+            "text": "it.",
+            "startFrame": 1355
           }
         ]
       }
@@ -706,39 +787,43 @@
   },
   {
     "index": 13,
-    "startFrame": 1115,
-    "endFrame": 1172,
-    "text": "Vault hands back a sealed value.",
-    "prefix": "Vault hands back a sealed value.",
+    "startFrame": 1372,
+    "endFrame": 1440,
+    "text": "That machine never lends out its key.",
+    "prefix": "That machine never lends out its key.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1116,
+        "startFrame": 1373,
         "words": [
           {
-            "text": "Vault",
-            "startFrame": 1116
+            "text": "That",
+            "startFrame": 1373
           },
           {
-            "text": "hands",
-            "startFrame": 1122
+            "text": "machine",
+            "startFrame": 1376
           },
           {
-            "text": "back",
-            "startFrame": 1130
+            "text": "never",
+            "startFrame": 1395
           },
           {
-            "text": "a",
-            "startFrame": 1137
+            "text": "lends",
+            "startFrame": 1405
           },
           {
-            "text": "sealed",
-            "startFrame": 1138
+            "text": "out",
+            "startFrame": 1413
           },
           {
-            "text": "value.",
-            "startFrame": 1150
+            "text": "its",
+            "startFrame": 1416
+          },
+          {
+            "text": "key.",
+            "startFrame": 1419
           }
         ]
       }
@@ -746,47 +831,52 @@
   },
   {
     "index": 14,
-    "startFrame": 1172,
-    "endFrame": 1250,
-    "text": "The card vault keeps only the sealed value.",
-    "prefix": "The card vault keeps only the sealed value.",
+    "startFrame": 1441,
+    "endFrame": 1518,
+    "text": "In the card zone, that machine is Vault.",
+    "prefix": "In the card zone, that machine is Vault.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1174,
+        "startFrame": 1442,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1174
-          },
-          {
-            "text": "card",
-            "startFrame": 1176
-          },
-          {
-            "text": "vault",
-            "startFrame": 1183
-          },
-          {
-            "text": "keeps",
-            "startFrame": 1192
-          },
-          {
-            "text": "only",
-            "startFrame": 1207
+            "text": "In",
+            "startFrame": 1442
           },
           {
             "text": "the",
-            "startFrame": 1214
+            "startFrame": 1444
           },
           {
-            "text": "sealed",
-            "startFrame": 1217
+            "text": "card",
+            "startFrame": 1446
           },
           {
-            "text": "value.",
-            "startFrame": 1227
+            "text": "zone,",
+            "startFrame": 1455
+          }
+        ]
+      },
+      {
+        "startFrame": 1471,
+        "words": [
+          {
+            "text": "that",
+            "startFrame": 1471
+          },
+          {
+            "text": "machine",
+            "startFrame": 1475
+          },
+          {
+            "text": "is",
+            "startFrame": 1489
+          },
+          {
+            "text": "Vault.",
+            "startFrame": 1493
           }
         ]
       }
@@ -794,35 +884,77 @@
   },
   {
     "index": 15,
-    "startFrame": 1250,
-    "endFrame": 1306,
-    "text": "The key never leaves Vault.",
-    "prefix": "The key never leaves Vault.",
+    "startFrame": 1518,
+    "endFrame": 1644,
+    "text": "The card vault, the service that keeps cards, hands Vault the card number.",
+    "prefix": "The card vault, the service that keeps cards, hands Vault the card number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1252,
+        "startFrame": 1520,
         "words": [
           {
             "text": "The",
-            "startFrame": 1252
+            "startFrame": 1520
           },
           {
-            "text": "key",
-            "startFrame": 1253
+            "text": "card",
+            "startFrame": 1522
           },
           {
-            "text": "never",
-            "startFrame": 1260
+            "text": "vault,",
+            "startFrame": 1530
+          }
+        ]
+      },
+      {
+        "startFrame": 1540,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1540
           },
           {
-            "text": "leaves",
-            "startFrame": 1269
+            "text": "service",
+            "startFrame": 1543
           },
           {
-            "text": "Vault.",
-            "startFrame": 1277
+            "text": "that",
+            "startFrame": 1555
+          },
+          {
+            "text": "keeps",
+            "startFrame": 1559
+          },
+          {
+            "text": "cards,",
+            "startFrame": 1568
+          }
+        ]
+      },
+      {
+        "startFrame": 1594,
+        "words": [
+          {
+            "text": "hands",
+            "startFrame": 1594
+          },
+          {
+            "text": "Vault",
+            "startFrame": 1603
+          },
+          {
+            "text": "the",
+            "startFrame": 1612
+          },
+          {
+            "text": "card",
+            "startFrame": 1614
+          },
+          {
+            "text": "number.",
+            "startFrame": 1623
           }
         ]
       }
@@ -830,47 +962,39 @@
   },
   {
     "index": 16,
-    "startFrame": 1306,
-    "endFrame": 1369,
-    "text": "Each seal is tied to its own card.",
-    "prefix": "Each seal is tied to its own card.",
+    "startFrame": 1645,
+    "endFrame": 1702,
+    "text": "Vault hands back a sealed value.",
+    "prefix": "Vault hands back a sealed value.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1307,
+        "startFrame": 1646,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 1307
+            "text": "Vault",
+            "startFrame": 1646
           },
           {
-            "text": "seal",
-            "startFrame": 1312
+            "text": "hands",
+            "startFrame": 1651
           },
           {
-            "text": "is",
-            "startFrame": 1321
+            "text": "back",
+            "startFrame": 1660
           },
           {
-            "text": "tied",
-            "startFrame": 1325
+            "text": "a",
+            "startFrame": 1667
           },
           {
-            "text": "to",
-            "startFrame": 1335
+            "text": "sealed",
+            "startFrame": 1668
           },
           {
-            "text": "its",
-            "startFrame": 1338
-          },
-          {
-            "text": "own",
-            "startFrame": 1341
-          },
-          {
-            "text": "card.",
-            "startFrame": 1346
+            "text": "value.",
+            "startFrame": 1680
           }
         ]
       }
@@ -878,64 +1002,47 @@
   },
   {
     "index": 17,
-    "startFrame": 1370,
-    "endFrame": 1478,
-    "text": "A sealed value copied into another card's place will not open.",
-    "prefix": "A sealed value copied into another card's place will not open.",
+    "startFrame": 1702,
+    "endFrame": 1780,
+    "text": "The card vault keeps only the sealed value.",
+    "prefix": "The card vault keeps only the sealed value.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1371,
+        "startFrame": 1704,
         "words": [
           {
-            "text": "A",
-            "startFrame": 1371
+            "text": "The",
+            "startFrame": 1704
+          },
+          {
+            "text": "card",
+            "startFrame": 1706
+          },
+          {
+            "text": "vault",
+            "startFrame": 1713
+          },
+          {
+            "text": "keeps",
+            "startFrame": 1722
+          },
+          {
+            "text": "only",
+            "startFrame": 1737
+          },
+          {
+            "text": "the",
+            "startFrame": 1744
           },
           {
             "text": "sealed",
-            "startFrame": 1373
+            "startFrame": 1747
           },
           {
-            "text": "value",
-            "startFrame": 1383
-          },
-          {
-            "text": "copied",
-            "startFrame": 1394
-          },
-          {
-            "text": "into",
-            "startFrame": 1409
-          },
-          {
-            "text": "another",
-            "startFrame": 1415
-          },
-          {
-            "text": "card's",
-            "startFrame": 1425
-          },
-          {
-            "text": "place",
-            "startFrame": 1434
-          }
-        ]
-      },
-      {
-        "startFrame": 1446,
-        "words": [
-          {
-            "text": "will",
-            "startFrame": 1446
-          },
-          {
-            "text": "not",
-            "startFrame": 1449
-          },
-          {
-            "text": "open.",
-            "startFrame": 1458
+            "text": "value.",
+            "startFrame": 1757
           }
         ]
       }
@@ -943,51 +1050,35 @@
   },
   {
     "index": 18,
-    "startFrame": 1478,
-    "endFrame": 1556,
-    "text": "So nobody can shuffle bags to trick the room.",
-    "prefix": "So nobody can shuffle bags to trick the room.",
+    "startFrame": 1780,
+    "endFrame": 1836,
+    "text": "The key never leaves Vault.",
+    "prefix": "The key never leaves Vault.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1480,
+        "startFrame": 1781,
         "words": [
           {
-            "text": "So",
-            "startFrame": 1480
+            "text": "The",
+            "startFrame": 1781
           },
           {
-            "text": "nobody",
-            "startFrame": 1483
+            "text": "key",
+            "startFrame": 1783
           },
           {
-            "text": "can",
-            "startFrame": 1494
+            "text": "never",
+            "startFrame": 1790
           },
           {
-            "text": "shuffle",
-            "startFrame": 1498
+            "text": "leaves",
+            "startFrame": 1799
           },
           {
-            "text": "bags",
-            "startFrame": 1511
-          },
-          {
-            "text": "to",
-            "startFrame": 1524
-          },
-          {
-            "text": "trick",
-            "startFrame": 1527
-          },
-          {
-            "text": "the",
-            "startFrame": 1534
-          },
-          {
-            "text": "room.",
-            "startFrame": 1536
+            "text": "Vault.",
+            "startFrame": 1807
           }
         ]
       }
@@ -995,27 +1086,47 @@
   },
   {
     "index": 19,
-    "startFrame": 1556,
-    "endFrame": 1612,
-    "text": "Now a puzzle.",
-    "prefix": "Now a puzzle.",
+    "startFrame": 1836,
+    "endFrame": 1899,
+    "text": "Each seal is tied to its own card.",
+    "prefix": "Each seal is tied to its own card.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1558,
+        "startFrame": 1837,
         "words": [
           {
-            "text": "Now",
-            "startFrame": 1558
+            "text": "Each",
+            "startFrame": 1837
           },
           {
-            "text": "a",
-            "startFrame": 1563
+            "text": "seal",
+            "startFrame": 1842
           },
           {
-            "text": "puzzle.",
-            "startFrame": 1564
+            "text": "is",
+            "startFrame": 1851
+          },
+          {
+            "text": "tied",
+            "startFrame": 1855
+          },
+          {
+            "text": "to",
+            "startFrame": 1865
+          },
+          {
+            "text": "its",
+            "startFrame": 1868
+          },
+          {
+            "text": "own",
+            "startFrame": 1871
+          },
+          {
+            "text": "card.",
+            "startFrame": 1875
           }
         ]
       }
@@ -1023,68 +1134,64 @@
   },
   {
     "index": 20,
-    "startFrame": 1612,
-    "endFrame": 1715,
-    "text": "Sometimes the card zone must find a card again by its number.",
-    "prefix": "Sometimes the card zone must find a card again by its number.",
+    "startFrame": 1900,
+    "endFrame": 2008,
+    "text": "A sealed value copied into another card's place will not open.",
+    "prefix": "A sealed value copied into another card's place will not open.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1614,
+        "startFrame": 1901,
         "words": [
           {
-            "text": "Sometimes",
-            "startFrame": 1614
+            "text": "A",
+            "startFrame": 1901
           },
           {
-            "text": "the",
-            "startFrame": 1626
+            "text": "sealed",
+            "startFrame": 1902
           },
           {
-            "text": "card",
-            "startFrame": 1628
+            "text": "value",
+            "startFrame": 1913
           },
           {
-            "text": "zone",
-            "startFrame": 1636
+            "text": "copied",
+            "startFrame": 1924
           },
           {
-            "text": "must",
-            "startFrame": 1652
+            "text": "into",
+            "startFrame": 1938
           },
           {
-            "text": "find",
-            "startFrame": 1657
+            "text": "another",
+            "startFrame": 1945
           },
           {
-            "text": "a",
-            "startFrame": 1663
+            "text": "card's",
+            "startFrame": 1955
           },
           {
-            "text": "card",
-            "startFrame": 1664
+            "text": "place",
+            "startFrame": 1963
           }
         ]
       },
       {
-        "startFrame": 1673,
+        "startFrame": 1976,
         "words": [
           {
-            "text": "again",
-            "startFrame": 1673
+            "text": "will",
+            "startFrame": 1976
           },
           {
-            "text": "by",
-            "startFrame": 1682
+            "text": "not",
+            "startFrame": 1979
           },
           {
-            "text": "its",
-            "startFrame": 1687
-          },
-          {
-            "text": "number.",
-            "startFrame": 1690
+            "text": "open.",
+            "startFrame": 1988
           }
         ]
       }
@@ -1092,47 +1199,51 @@
   },
   {
     "index": 21,
-    "startFrame": 1715,
-    "endFrame": 1798,
-    "text": "It must do that without opening every bag.",
-    "prefix": "It must do that without opening every bag.",
+    "startFrame": 2008,
+    "endFrame": 2086,
+    "text": "So nobody can shuffle bags to trick the room.",
+    "prefix": "So nobody can shuffle bags to trick the room.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1717,
+        "startFrame": 2010,
         "words": [
           {
-            "text": "It",
-            "startFrame": 1717
+            "text": "So",
+            "startFrame": 2010
           },
           {
-            "text": "must",
-            "startFrame": 1718
+            "text": "nobody",
+            "startFrame": 2013
           },
           {
-            "text": "do",
-            "startFrame": 1723
+            "text": "can",
+            "startFrame": 2024
           },
           {
-            "text": "that",
-            "startFrame": 1729
+            "text": "shuffle",
+            "startFrame": 2028
           },
           {
-            "text": "without",
-            "startFrame": 1738
+            "text": "bags",
+            "startFrame": 2041
           },
           {
-            "text": "opening",
-            "startFrame": 1749
+            "text": "to",
+            "startFrame": 2054
           },
           {
-            "text": "every",
-            "startFrame": 1766
+            "text": "trick",
+            "startFrame": 2057
           },
           {
-            "text": "bag.",
-            "startFrame": 1773
+            "text": "the",
+            "startFrame": 2064
+          },
+          {
+            "text": "room.",
+            "startFrame": 2066
           }
         ]
       }
@@ -1140,51 +1251,27 @@
   },
   {
     "index": 22,
-    "startFrame": 1798,
-    "endFrame": 1904,
-    "text": "So Vault also stamps each bag with a fingerprint.",
-    "prefix": "So Vault also stamps each bag with a fingerprint.",
+    "startFrame": 2086,
+    "endFrame": 2142,
+    "text": "Now a puzzle.",
+    "prefix": "Now a puzzle.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1800,
+        "startFrame": 2087,
         "words": [
           {
-            "text": "So",
-            "startFrame": 1800
-          },
-          {
-            "text": "Vault",
-            "startFrame": 1806
-          },
-          {
-            "text": "also",
-            "startFrame": 1818
-          },
-          {
-            "text": "stamps",
-            "startFrame": 1829
-          },
-          {
-            "text": "each",
-            "startFrame": 1850
-          },
-          {
-            "text": "bag",
-            "startFrame": 1857
-          },
-          {
-            "text": "with",
-            "startFrame": 1871
+            "text": "Now",
+            "startFrame": 2087
           },
           {
             "text": "a",
-            "startFrame": 1875
+            "startFrame": 2092
           },
           {
-            "text": "fingerprint.",
-            "startFrame": 1876
+            "text": "puzzle.",
+            "startFrame": 2094
           }
         ]
       }
@@ -1192,47 +1279,68 @@
   },
   {
     "index": 23,
-    "startFrame": 1905,
-    "endFrame": 2000,
-    "text": "The same number always gives the same fingerprint.",
-    "prefix": "The same number always gives the same fingerprint.",
+    "startFrame": 2142,
+    "endFrame": 2245,
+    "text": "Sometimes the card zone must find a card again by its number.",
+    "prefix": "Sometimes the card zone must find a card again by its number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1906,
+        "startFrame": 2144,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1906
-          },
-          {
-            "text": "same",
-            "startFrame": 1908
-          },
-          {
-            "text": "number",
-            "startFrame": 1916
-          },
-          {
-            "text": "always",
-            "startFrame": 1926
-          },
-          {
-            "text": "gives",
-            "startFrame": 1941
+            "text": "Sometimes",
+            "startFrame": 2144
           },
           {
             "text": "the",
-            "startFrame": 1950
+            "startFrame": 2156
           },
           {
-            "text": "same",
-            "startFrame": 1952
+            "text": "card",
+            "startFrame": 2158
           },
           {
-            "text": "fingerprint.",
-            "startFrame": 1970
+            "text": "zone",
+            "startFrame": 2166
+          },
+          {
+            "text": "must",
+            "startFrame": 2182
+          },
+          {
+            "text": "find",
+            "startFrame": 2187
+          },
+          {
+            "text": "a",
+            "startFrame": 2193
+          },
+          {
+            "text": "card",
+            "startFrame": 2194
+          }
+        ]
+      },
+      {
+        "startFrame": 2203,
+        "words": [
+          {
+            "text": "again",
+            "startFrame": 2203
+          },
+          {
+            "text": "by",
+            "startFrame": 2212
+          },
+          {
+            "text": "its",
+            "startFrame": 2216
+          },
+          {
+            "text": "number.",
+            "startFrame": 2220
           }
         ]
       }
@@ -1240,51 +1348,47 @@
   },
   {
     "index": 24,
-    "startFrame": 2000,
-    "endFrame": 2086,
-    "text": "The fingerprint cannot be turned back into the number.",
-    "prefix": "The fingerprint cannot be turned back into the number.",
+    "startFrame": 2245,
+    "endFrame": 2328,
+    "text": "It must do that without opening every bag.",
+    "prefix": "It must do that without opening every bag.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2002,
+        "startFrame": 2247,
         "words": [
           {
-            "text": "The",
-            "startFrame": 2002
+            "text": "It",
+            "startFrame": 2247
           },
           {
-            "text": "fingerprint",
-            "startFrame": 2004
+            "text": "must",
+            "startFrame": 2248
           },
           {
-            "text": "cannot",
-            "startFrame": 2019
+            "text": "do",
+            "startFrame": 2253
           },
           {
-            "text": "be",
-            "startFrame": 2031
+            "text": "that",
+            "startFrame": 2259
           },
           {
-            "text": "turned",
-            "startFrame": 2035
+            "text": "without",
+            "startFrame": 2268
           },
           {
-            "text": "back",
-            "startFrame": 2045
+            "text": "opening",
+            "startFrame": 2279
           },
           {
-            "text": "into",
-            "startFrame": 2056
+            "text": "every",
+            "startFrame": 2296
           },
           {
-            "text": "the",
-            "startFrame": 2060
-          },
-          {
-            "text": "number.",
-            "startFrame": 2063
+            "text": "bag.",
+            "startFrame": 2303
           }
         ]
       }
@@ -1292,43 +1396,51 @@
   },
   {
     "index": 25,
-    "startFrame": 2087,
-    "endFrame": 2157,
-    "text": "This stamp is called a blind index.",
-    "prefix": "This stamp is called a blind index.",
+    "startFrame": 2328,
+    "endFrame": 2434,
+    "text": "So Vault also stamps each bag with a fingerprint.",
+    "prefix": "So Vault also stamps each bag with a fingerprint.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2088,
+        "startFrame": 2330,
         "words": [
           {
-            "text": "This",
-            "startFrame": 2088
+            "text": "So",
+            "startFrame": 2330
           },
           {
-            "text": "stamp",
-            "startFrame": 2092
+            "text": "Vault",
+            "startFrame": 2335
           },
           {
-            "text": "is",
-            "startFrame": 2105
+            "text": "also",
+            "startFrame": 2348
           },
           {
-            "text": "called",
-            "startFrame": 2108
+            "text": "stamps",
+            "startFrame": 2359
+          },
+          {
+            "text": "each",
+            "startFrame": 2380
+          },
+          {
+            "text": "bag",
+            "startFrame": 2387
+          },
+          {
+            "text": "with",
+            "startFrame": 2401
           },
           {
             "text": "a",
-            "startFrame": 2116
+            "startFrame": 2405
           },
           {
-            "text": "blind",
-            "startFrame": 2117
-          },
-          {
-            "text": "index.",
-            "startFrame": 2129
+            "text": "fingerprint.",
+            "startFrame": 2406
           }
         ]
       }
@@ -1336,60 +1448,47 @@
   },
   {
     "index": 26,
-    "startFrame": 2157,
-    "endFrame": 2248,
-    "text": "The card zone looks up the fingerprint, never the number.",
-    "prefix": "The card zone looks up the fingerprint, never the number.",
+    "startFrame": 2435,
+    "endFrame": 2530,
+    "text": "The same number always gives the same fingerprint.",
+    "prefix": "The same number always gives the same fingerprint.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2159,
+        "startFrame": 2436,
         "words": [
           {
             "text": "The",
-            "startFrame": 2159
+            "startFrame": 2436
           },
           {
-            "text": "card",
-            "startFrame": 2161
+            "text": "same",
+            "startFrame": 2438
           },
           {
-            "text": "zone",
-            "startFrame": 2170
+            "text": "number",
+            "startFrame": 2446
           },
           {
-            "text": "looks",
-            "startFrame": 2179
+            "text": "always",
+            "startFrame": 2456
           },
           {
-            "text": "up",
-            "startFrame": 2187
-          },
-          {
-            "text": "the",
-            "startFrame": 2189
-          },
-          {
-            "text": "fingerprint,",
-            "startFrame": 2192
-          }
-        ]
-      },
-      {
-        "startFrame": 2217,
-        "words": [
-          {
-            "text": "never",
-            "startFrame": 2217
+            "text": "gives",
+            "startFrame": 2471
           },
           {
             "text": "the",
-            "startFrame": 2223
+            "startFrame": 2480
           },
           {
-            "text": "number.",
-            "startFrame": 2225
+            "text": "same",
+            "startFrame": 2482
+          },
+          {
+            "text": "fingerprint.",
+            "startFrame": 2500
           }
         ]
       }
@@ -1397,39 +1496,51 @@
   },
   {
     "index": 27,
-    "startFrame": 2249,
-    "endFrame": 2313,
-    "text": "The database guards the door too.",
-    "prefix": "The database guards the door too.",
+    "startFrame": 2530,
+    "endFrame": 2616,
+    "text": "The fingerprint cannot be turned back into the number.",
+    "prefix": "The fingerprint cannot be turned back into the number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2251,
+        "startFrame": 2532,
         "words": [
           {
             "text": "The",
-            "startFrame": 2251
+            "startFrame": 2532
           },
           {
-            "text": "database",
-            "startFrame": 2252
+            "text": "fingerprint",
+            "startFrame": 2534
           },
           {
-            "text": "guards",
-            "startFrame": 2274
+            "text": "cannot",
+            "startFrame": 2549
+          },
+          {
+            "text": "be",
+            "startFrame": 2561
+          },
+          {
+            "text": "turned",
+            "startFrame": 2565
+          },
+          {
+            "text": "back",
+            "startFrame": 2575
+          },
+          {
+            "text": "into",
+            "startFrame": 2586
           },
           {
             "text": "the",
-            "startFrame": 2281
+            "startFrame": 2590
           },
           {
-            "text": "door",
-            "startFrame": 2283
-          },
-          {
-            "text": "too.",
-            "startFrame": 2291
+            "text": "number.",
+            "startFrame": 2592
           }
         ]
       }
@@ -1437,51 +1548,43 @@
   },
   {
     "index": 28,
-    "startFrame": 2314,
-    "endFrame": 2402,
-    "text": "It refuses any card value that is not sealed.",
-    "prefix": "It refuses any card value that is not sealed.",
+    "startFrame": 2617,
+    "endFrame": 2687,
+    "text": "This stamp is called a blind index.",
+    "prefix": "This stamp is called a blind index.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2315,
+        "startFrame": 2618,
         "words": [
           {
-            "text": "It",
-            "startFrame": 2315
+            "text": "This",
+            "startFrame": 2618
           },
           {
-            "text": "refuses",
-            "startFrame": 2317
-          },
-          {
-            "text": "any",
-            "startFrame": 2336
-          },
-          {
-            "text": "card",
-            "startFrame": 2343
-          },
-          {
-            "text": "value",
-            "startFrame": 2352
-          },
-          {
-            "text": "that",
-            "startFrame": 2363
+            "text": "stamp",
+            "startFrame": 2622
           },
           {
             "text": "is",
-            "startFrame": 2367
+            "startFrame": 2635
           },
           {
-            "text": "not",
-            "startFrame": 2370
+            "text": "called",
+            "startFrame": 2638
           },
           {
-            "text": "sealed.",
-            "startFrame": 2376
+            "text": "a",
+            "startFrame": 2646
+          },
+          {
+            "text": "blind",
+            "startFrame": 2647
+          },
+          {
+            "text": "index.",
+            "startFrame": 2659
           }
         ]
       }
@@ -1489,72 +1592,60 @@
   },
   {
     "index": 29,
-    "startFrame": 2403,
-    "endFrame": 2508,
-    "text": "Even a mistake in the code cannot write a plain number into it.",
-    "prefix": "Even a mistake in the code cannot write a plain number into it.",
+    "startFrame": 2687,
+    "endFrame": 2778,
+    "text": "The card zone looks up the fingerprint, never the number.",
+    "prefix": "The card zone looks up the fingerprint, never the number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2404,
+        "startFrame": 2689,
         "words": [
           {
-            "text": "Even",
-            "startFrame": 2404
+            "text": "The",
+            "startFrame": 2689
           },
           {
-            "text": "a",
-            "startFrame": 2410
+            "text": "card",
+            "startFrame": 2691
           },
           {
-            "text": "mistake",
-            "startFrame": 2410
+            "text": "zone",
+            "startFrame": 2700
           },
           {
-            "text": "in",
-            "startFrame": 2425
+            "text": "looks",
+            "startFrame": 2709
+          },
+          {
+            "text": "up",
+            "startFrame": 2717
           },
           {
             "text": "the",
-            "startFrame": 2426
+            "startFrame": 2719
           },
           {
-            "text": "code",
-            "startFrame": 2428
-          },
-          {
-            "text": "cannot",
-            "startFrame": 2446
-          },
-          {
-            "text": "write",
-            "startFrame": 2462
+            "text": "fingerprint,",
+            "startFrame": 2722
           }
         ]
       },
       {
-        "startFrame": 2467,
+        "startFrame": 2747,
         "words": [
           {
-            "text": "a",
-            "startFrame": 2467
+            "text": "never",
+            "startFrame": 2747
           },
           {
-            "text": "plain",
-            "startFrame": 2468
+            "text": "the",
+            "startFrame": 2753
           },
           {
-            "text": "number",
-            "startFrame": 2477
-          },
-          {
-            "text": "into",
-            "startFrame": 2483
-          },
-          {
-            "text": "it.",
-            "startFrame": 2491
+            "text": "number.",
+            "startFrame": 2755
           }
         ]
       }
@@ -1562,35 +1653,39 @@
   },
   {
     "index": 30,
-    "startFrame": 2508,
-    "endFrame": 2564,
-    "text": "What if Vault is down?",
-    "prefix": "What if Vault is down?",
+    "startFrame": 2779,
+    "endFrame": 2843,
+    "text": "The database guards the door too.",
+    "prefix": "The database guards the door too.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2509,
+        "startFrame": 2780,
         "words": [
           {
-            "text": "What",
-            "startFrame": 2509
+            "text": "The",
+            "startFrame": 2780
           },
           {
-            "text": "if",
-            "startFrame": 2511
+            "text": "database",
+            "startFrame": 2782
           },
           {
-            "text": "Vault",
-            "startFrame": 2513
+            "text": "guards",
+            "startFrame": 2804
           },
           {
-            "text": "is",
-            "startFrame": 2524
+            "text": "the",
+            "startFrame": 2811
           },
           {
-            "text": "down?",
-            "startFrame": 2528
+            "text": "door",
+            "startFrame": 2813
+          },
+          {
+            "text": "too.",
+            "startFrame": 2820
           }
         ]
       }
@@ -1598,35 +1693,51 @@
   },
   {
     "index": 31,
-    "startFrame": 2564,
-    "endFrame": 2620,
-    "text": "Then the card vault stops.",
-    "prefix": "Then the card vault stops.",
+    "startFrame": 2844,
+    "endFrame": 2932,
+    "text": "It refuses any card value that is not sealed.",
+    "prefix": "It refuses any card value that is not sealed.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2566,
+        "startFrame": 2845,
         "words": [
           {
-            "text": "Then",
-            "startFrame": 2566
+            "text": "It",
+            "startFrame": 2845
           },
           {
-            "text": "the",
-            "startFrame": 2568
+            "text": "refuses",
+            "startFrame": 2847
+          },
+          {
+            "text": "any",
+            "startFrame": 2866
           },
           {
             "text": "card",
-            "startFrame": 2569
+            "startFrame": 2873
           },
           {
-            "text": "vault",
-            "startFrame": 2577
+            "text": "value",
+            "startFrame": 2882
           },
           {
-            "text": "stops.",
-            "startFrame": 2585
+            "text": "that",
+            "startFrame": 2893
+          },
+          {
+            "text": "is",
+            "startFrame": 2897
+          },
+          {
+            "text": "not",
+            "startFrame": 2900
+          },
+          {
+            "text": "sealed.",
+            "startFrame": 2906
           }
         ]
       }
@@ -1634,77 +1745,72 @@
   },
   {
     "index": 32,
-    "startFrame": 2620,
-    "endFrame": 2741,
-    "text": "It never guesses, and it never falls back to keeping a plain number.",
-    "prefix": "It never guesses, and it never falls back to keeping a plain number.",
+    "startFrame": 2933,
+    "endFrame": 3037,
+    "text": "Even a mistake in the code cannot write a plain number into it.",
+    "prefix": "Even a mistake in the code cannot write a plain number into it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2622,
+        "startFrame": 2934,
         "words": [
           {
-            "text": "It",
-            "startFrame": 2622
+            "text": "Even",
+            "startFrame": 2934
           },
           {
-            "text": "never",
-            "startFrame": 2624
+            "text": "a",
+            "startFrame": 2940
           },
           {
-            "text": "guesses,",
-            "startFrame": 2633
+            "text": "mistake",
+            "startFrame": 2940
+          },
+          {
+            "text": "in",
+            "startFrame": 2955
+          },
+          {
+            "text": "the",
+            "startFrame": 2956
+          },
+          {
+            "text": "code",
+            "startFrame": 2958
+          },
+          {
+            "text": "cannot",
+            "startFrame": 2976
+          },
+          {
+            "text": "write",
+            "startFrame": 2992
           }
         ]
       },
       {
-        "startFrame": 2659,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 2659
-          },
-          {
-            "text": "it",
-            "startFrame": 2662
-          },
-          {
-            "text": "never",
-            "startFrame": 2664
-          },
-          {
-            "text": "falls",
-            "startFrame": 2674
-          },
-          {
-            "text": "back",
-            "startFrame": 2685
-          },
-          {
-            "text": "to",
-            "startFrame": 2694
-          },
-          {
-            "text": "keeping",
-            "startFrame": 2697
-          }
-        ]
-      },
-      {
-        "startFrame": 2706,
+        "startFrame": 2997,
         "words": [
           {
             "text": "a",
-            "startFrame": 2706
+            "startFrame": 2997
           },
           {
             "text": "plain",
-            "startFrame": 2707
+            "startFrame": 2998
           },
           {
-            "text": "number.",
-            "startFrame": 2717
+            "text": "number",
+            "startFrame": 3007
+          },
+          {
+            "text": "into",
+            "startFrame": 3013
+          },
+          {
+            "text": "it.",
+            "startFrame": 3021
           }
         ]
       }
@@ -1712,64 +1818,35 @@
   },
   {
     "index": 33,
-    "startFrame": 2741,
-    "endFrame": 2880,
-    "text": "Stopping safely instead of carrying on unsafely is called fail closed.",
-    "prefix": "Stopping safely instead of carrying on unsafely is called fail closed.",
+    "startFrame": 3038,
+    "endFrame": 3094,
+    "text": "What if Vault is down?",
+    "prefix": "What if Vault is down?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2743,
+        "startFrame": 3039,
         "words": [
           {
-            "text": "Stopping",
-            "startFrame": 2743
+            "text": "What",
+            "startFrame": 3039
           },
           {
-            "text": "safely",
-            "startFrame": 2756
+            "text": "if",
+            "startFrame": 3041
           },
           {
-            "text": "instead",
-            "startFrame": 2773
-          },
-          {
-            "text": "of",
-            "startFrame": 2782
-          },
-          {
-            "text": "carrying",
-            "startFrame": 2784
-          },
-          {
-            "text": "on",
-            "startFrame": 2796
-          },
-          {
-            "text": "unsafely",
-            "startFrame": 2800
+            "text": "Vault",
+            "startFrame": 3043
           },
           {
             "text": "is",
-            "startFrame": 2831
-          }
-        ]
-      },
-      {
-        "startFrame": 2834,
-        "words": [
-          {
-            "text": "called",
-            "startFrame": 2834
+            "startFrame": 3054
           },
           {
-            "text": "fail",
-            "startFrame": 2841
-          },
-          {
-            "text": "closed.",
-            "startFrame": 2852
+            "text": "down?",
+            "startFrame": 3058
           }
         ]
       }
@@ -1777,97 +1854,35 @@
   },
   {
     "index": 34,
-    "startFrame": 2880,
-    "endFrame": 3035,
-    "text": "A number is opened for one reason only: to hand it to the card's network for a charge.",
-    "prefix": "A number is opened for one reason only: to hand it to the card's network for a charge.",
+    "startFrame": 3094,
+    "endFrame": 3150,
+    "text": "Then the card vault stops.",
+    "prefix": "Then the card vault stops.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2881,
+        "startFrame": 3095,
         "words": [
           {
-            "text": "A",
-            "startFrame": 2881
-          },
-          {
-            "text": "number",
-            "startFrame": 2882
-          },
-          {
-            "text": "is",
-            "startFrame": 2892
-          },
-          {
-            "text": "opened",
-            "startFrame": 2897
-          },
-          {
-            "text": "for",
-            "startFrame": 2908
-          },
-          {
-            "text": "one",
-            "startFrame": 2915
-          },
-          {
-            "text": "reason",
-            "startFrame": 2926
-          },
-          {
-            "text": "only:",
-            "startFrame": 2937
-          }
-        ]
-      },
-      {
-        "startFrame": 2958,
-        "words": [
-          {
-            "text": "to",
-            "startFrame": 2958
-          },
-          {
-            "text": "hand",
-            "startFrame": 2961
-          },
-          {
-            "text": "it",
-            "startFrame": 2968
-          },
-          {
-            "text": "to",
-            "startFrame": 2970
+            "text": "Then",
+            "startFrame": 3095
           },
           {
             "text": "the",
-            "startFrame": 2972
+            "startFrame": 3098
           },
           {
-            "text": "card's",
-            "startFrame": 2975
+            "text": "card",
+            "startFrame": 3099
           },
           {
-            "text": "network",
-            "startFrame": 2984
-          }
-        ]
-      },
-      {
-        "startFrame": 3001,
-        "words": [
-          {
-            "text": "for",
-            "startFrame": 3001
+            "text": "vault",
+            "startFrame": 3107
           },
           {
-            "text": "a",
-            "startFrame": 3006
-          },
-          {
-            "text": "charge.",
-            "startFrame": 3007
+            "text": "stops.",
+            "startFrame": 3115
           }
         ]
       }
@@ -1875,76 +1890,77 @@
   },
   {
     "index": 35,
-    "startFrame": 3036,
-    "endFrame": 3186,
-    "text": "Every use of card data is written down: what happened, who asked, and when.",
-    "prefix": "Every use of card data is written down: what happened, who asked, and when.",
+    "startFrame": 3150,
+    "endFrame": 3271,
+    "text": "It never guesses, and it never falls back to keeping a plain number.",
+    "prefix": "It never guesses, and it never falls back to keeping a plain number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3037,
+        "startFrame": 3152,
         "words": [
           {
-            "text": "Every",
-            "startFrame": 3037
+            "text": "It",
+            "startFrame": 3152
           },
           {
-            "text": "use",
-            "startFrame": 3043
+            "text": "never",
+            "startFrame": 3154
           },
           {
-            "text": "of",
-            "startFrame": 3050
-          },
-          {
-            "text": "card",
-            "startFrame": 3052
-          },
-          {
-            "text": "data",
-            "startFrame": 3059
-          },
-          {
-            "text": "is",
-            "startFrame": 3076
-          },
-          {
-            "text": "written",
-            "startFrame": 3081
-          },
-          {
-            "text": "down:",
-            "startFrame": 3087
+            "text": "guesses,",
+            "startFrame": 3163
           }
         ]
       },
       {
-        "startFrame": 3115,
+        "startFrame": 3188,
         "words": [
           {
-            "text": "what",
-            "startFrame": 3115
-          },
-          {
-            "text": "happened,",
-            "startFrame": 3118
-          },
-          {
-            "text": "who",
-            "startFrame": 3136
-          },
-          {
-            "text": "asked,",
-            "startFrame": 3140
-          },
-          {
             "text": "and",
-            "startFrame": 3162
+            "startFrame": 3188
           },
           {
-            "text": "when.",
-            "startFrame": 3165
+            "text": "it",
+            "startFrame": 3192
+          },
+          {
+            "text": "never",
+            "startFrame": 3194
+          },
+          {
+            "text": "falls",
+            "startFrame": 3203
+          },
+          {
+            "text": "back",
+            "startFrame": 3215
+          },
+          {
+            "text": "to",
+            "startFrame": 3224
+          },
+          {
+            "text": "keeping",
+            "startFrame": 3227
+          }
+        ]
+      },
+      {
+        "startFrame": 3236,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 3236
+          },
+          {
+            "text": "plain",
+            "startFrame": 3237
+          },
+          {
+            "text": "number.",
+            "startFrame": 3247
           }
         ]
       }
@@ -1952,72 +1968,64 @@
   },
   {
     "index": 36,
-    "startFrame": 3187,
-    "endFrame": 3301,
-    "text": "And a card nobody has used for the bank's chosen time is removed.",
-    "prefix": "And a card nobody has used for the bank's chosen time is removed.",
+    "startFrame": 3271,
+    "endFrame": 3410,
+    "text": "Stopping safely instead of carrying on unsafely is called fail closed.",
+    "prefix": "Stopping safely instead of carrying on unsafely is called fail closed.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3188,
+        "startFrame": 3273,
         "words": [
           {
-            "text": "And",
-            "startFrame": 3188
+            "text": "Stopping",
+            "startFrame": 3273
           },
           {
-            "text": "a",
-            "startFrame": 3190
+            "text": "safely",
+            "startFrame": 3285
           },
           {
-            "text": "card",
-            "startFrame": 3191
+            "text": "instead",
+            "startFrame": 3303
           },
           {
-            "text": "nobody",
-            "startFrame": 3199
+            "text": "of",
+            "startFrame": 3312
           },
           {
-            "text": "has",
-            "startFrame": 3211
+            "text": "carrying",
+            "startFrame": 3314
           },
           {
-            "text": "used",
-            "startFrame": 3216
+            "text": "on",
+            "startFrame": 3325
           },
           {
-            "text": "for",
-            "startFrame": 3225
+            "text": "unsafely",
+            "startFrame": 3330
+          },
+          {
+            "text": "is",
+            "startFrame": 3361
           }
         ]
       },
       {
-        "startFrame": 3227,
+        "startFrame": 3364,
         "words": [
           {
-            "text": "the",
-            "startFrame": 3227
+            "text": "called",
+            "startFrame": 3364
           },
           {
-            "text": "bank's",
-            "startFrame": 3229
+            "text": "fail",
+            "startFrame": 3370
           },
           {
-            "text": "chosen",
-            "startFrame": 3240
-          },
-          {
-            "text": "time",
-            "startFrame": 3252
-          },
-          {
-            "text": "is",
-            "startFrame": 3270
-          },
-          {
-            "text": "removed.",
-            "startFrame": 3274
+            "text": "closed.",
+            "startFrame": 3382
           }
         ]
       }
@@ -2025,64 +2033,97 @@
   },
   {
     "index": 37,
-    "startFrame": 3301,
-    "endFrame": 3413,
-    "text": "Only a short note keeps its token and its masked number.",
-    "prefix": "Only a short note keeps its token and its masked number.",
+    "startFrame": 3410,
+    "endFrame": 3565,
+    "text": "A number is opened for one reason only: to hand it to the card's network for a charge.",
+    "prefix": "A number is opened for one reason only: to hand it to the card's network for a charge.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3303,
+        "startFrame": 3410,
         "words": [
           {
-            "text": "Only",
-            "startFrame": 3303
+            "text": "A",
+            "startFrame": 3410
           },
           {
-            "text": "a",
-            "startFrame": 3309
+            "text": "number",
+            "startFrame": 3412
           },
           {
-            "text": "short",
-            "startFrame": 3310
+            "text": "is",
+            "startFrame": 3422
           },
           {
-            "text": "note",
-            "startFrame": 3320
+            "text": "opened",
+            "startFrame": 3427
           },
           {
-            "text": "keeps",
-            "startFrame": 3335
+            "text": "for",
+            "startFrame": 3438
           },
           {
-            "text": "its",
-            "startFrame": 3343
+            "text": "one",
+            "startFrame": 3445
           },
           {
-            "text": "token",
-            "startFrame": 3347
+            "text": "reason",
+            "startFrame": 3455
+          },
+          {
+            "text": "only:",
+            "startFrame": 3467
           }
         ]
       },
       {
-        "startFrame": 3367,
+        "startFrame": 3488,
         "words": [
           {
-            "text": "and",
-            "startFrame": 3367
+            "text": "to",
+            "startFrame": 3488
           },
           {
-            "text": "its",
-            "startFrame": 3370
+            "text": "hand",
+            "startFrame": 3491
           },
           {
-            "text": "masked",
-            "startFrame": 3374
+            "text": "it",
+            "startFrame": 3498
           },
           {
-            "text": "number.",
-            "startFrame": 3387
+            "text": "to",
+            "startFrame": 3500
+          },
+          {
+            "text": "the",
+            "startFrame": 3502
+          },
+          {
+            "text": "card's",
+            "startFrame": 3505
+          },
+          {
+            "text": "network",
+            "startFrame": 3514
+          }
+        ]
+      },
+      {
+        "startFrame": 3530,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 3530
+          },
+          {
+            "text": "a",
+            "startFrame": 3535
+          },
+          {
+            "text": "charge.",
+            "startFrame": 3537
           }
         ]
       }
@@ -2090,31 +2131,76 @@
   },
   {
     "index": 38,
-    "startFrame": 3413,
-    "endFrame": 3469,
-    "text": "Now watch the product.",
-    "prefix": "Now watch the product.",
+    "startFrame": 3566,
+    "endFrame": 3716,
+    "text": "Every use of card data is written down: what happened, who asked, and when.",
+    "prefix": "Every use of card data is written down: what happened, who asked, and when.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3414,
+        "startFrame": 3567,
         "words": [
           {
-            "text": "Now",
-            "startFrame": 3414
+            "text": "Every",
+            "startFrame": 3567
           },
           {
-            "text": "watch",
-            "startFrame": 3419
+            "text": "use",
+            "startFrame": 3573
           },
           {
-            "text": "the",
-            "startFrame": 3427
+            "text": "of",
+            "startFrame": 3580
           },
           {
-            "text": "product.",
-            "startFrame": 3429
+            "text": "card",
+            "startFrame": 3582
+          },
+          {
+            "text": "data",
+            "startFrame": 3589
+          },
+          {
+            "text": "is",
+            "startFrame": 3606
+          },
+          {
+            "text": "written",
+            "startFrame": 3611
+          },
+          {
+            "text": "down:",
+            "startFrame": 3617
+          }
+        ]
+      },
+      {
+        "startFrame": 3645,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 3645
+          },
+          {
+            "text": "happened,",
+            "startFrame": 3648
+          },
+          {
+            "text": "who",
+            "startFrame": 3666
+          },
+          {
+            "text": "asked,",
+            "startFrame": 3670
+          },
+          {
+            "text": "and",
+            "startFrame": 3692
+          },
+          {
+            "text": "when.",
+            "startFrame": 3695
           }
         ]
       }
@@ -2122,76 +2208,72 @@
   },
   {
     "index": 39,
-    "startFrame": 3469,
-    "endFrame": 3582,
-    "text": "There is no screen inside the locked room, so watch what each side sees.",
-    "prefix": "There is no screen inside the locked room, so watch what each side sees.",
+    "startFrame": 3717,
+    "endFrame": 3831,
+    "text": "And a card nobody has used for the bank's chosen time is removed.",
+    "prefix": "And a card nobody has used for the bank's chosen time is removed.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3471,
+        "startFrame": 3718,
         "words": [
           {
-            "text": "There",
-            "startFrame": 3471
+            "text": "And",
+            "startFrame": 3718
           },
           {
-            "text": "is",
-            "startFrame": 3473
+            "text": "a",
+            "startFrame": 3720
           },
           {
-            "text": "no",
-            "startFrame": 3476
+            "text": "card",
+            "startFrame": 3721
           },
           {
-            "text": "screen",
-            "startFrame": 3481
+            "text": "nobody",
+            "startFrame": 3729
           },
           {
-            "text": "inside",
-            "startFrame": 3492
+            "text": "has",
+            "startFrame": 3741
           },
           {
-            "text": "the",
-            "startFrame": 3503
+            "text": "used",
+            "startFrame": 3746
           },
           {
-            "text": "locked",
-            "startFrame": 3505
-          },
-          {
-            "text": "room,",
-            "startFrame": 3514
+            "text": "for",
+            "startFrame": 3755
           }
         ]
       },
       {
-        "startFrame": 3528,
+        "startFrame": 3757,
         "words": [
           {
-            "text": "so",
-            "startFrame": 3528
+            "text": "the",
+            "startFrame": 3757
           },
           {
-            "text": "watch",
-            "startFrame": 3532
+            "text": "bank's",
+            "startFrame": 3759
           },
           {
-            "text": "what",
-            "startFrame": 3540
+            "text": "chosen",
+            "startFrame": 3770
           },
           {
-            "text": "each",
-            "startFrame": 3542
+            "text": "time",
+            "startFrame": 3782
           },
           {
-            "text": "side",
-            "startFrame": 3547
+            "text": "is",
+            "startFrame": 3800
           },
           {
-            "text": "sees.",
-            "startFrame": 3556
+            "text": "removed.",
+            "startFrame": 3804
           }
         ]
       }
@@ -2199,72 +2281,64 @@
   },
   {
     "index": 40,
-    "startFrame": 3583,
-    "endFrame": 3690,
-    "text": "The buyer types a card into the card form and confirms the code.",
-    "prefix": "The buyer types a card into the card form and confirms the code.",
+    "startFrame": 3831,
+    "endFrame": 3942,
+    "text": "Only a short note keeps its token and its masked number.",
+    "prefix": "Only a short note keeps its token and its masked number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3585,
+        "startFrame": 3833,
         "words": [
           {
-            "text": "The",
-            "startFrame": 3585
-          },
-          {
-            "text": "buyer",
-            "startFrame": 3587
-          },
-          {
-            "text": "types",
-            "startFrame": 3596
+            "text": "Only",
+            "startFrame": 3833
           },
           {
             "text": "a",
-            "startFrame": 3604
+            "startFrame": 3839
           },
           {
-            "text": "card",
-            "startFrame": 3606
+            "text": "short",
+            "startFrame": 3840
           },
           {
-            "text": "into",
-            "startFrame": 3615
+            "text": "note",
+            "startFrame": 3850
           },
           {
-            "text": "the",
-            "startFrame": 3619
+            "text": "keeps",
+            "startFrame": 3865
           },
           {
-            "text": "card",
-            "startFrame": 3621
+            "text": "its",
+            "startFrame": 3873
+          },
+          {
+            "text": "token",
+            "startFrame": 3877
           }
         ]
       },
       {
-        "startFrame": 3630,
+        "startFrame": 3897,
         "words": [
           {
-            "text": "form",
-            "startFrame": 3630
-          },
-          {
             "text": "and",
-            "startFrame": 3650
+            "startFrame": 3897
           },
           {
-            "text": "confirms",
-            "startFrame": 3652
+            "text": "its",
+            "startFrame": 3900
           },
           {
-            "text": "the",
-            "startFrame": 3666
+            "text": "masked",
+            "startFrame": 3903
           },
           {
-            "text": "code.",
-            "startFrame": 3668
+            "text": "number.",
+            "startFrame": 3917
           }
         ]
       }
@@ -2272,60 +2346,31 @@
   },
   {
     "index": 41,
-    "startFrame": 3690,
-    "endFrame": 3816,
-    "text": "The form says \"Card accepted\" and empties its number field.",
-    "prefix": "The form says \"Card accepted\" and empties its number field.",
+    "startFrame": 3943,
+    "endFrame": 3999,
+    "text": "Now watch the product.",
+    "prefix": "Now watch the product.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3692,
+        "startFrame": 3944,
         "words": [
           {
-            "text": "The",
-            "startFrame": 3692
+            "text": "Now",
+            "startFrame": 3944
           },
           {
-            "text": "form",
-            "startFrame": 3694
+            "text": "watch",
+            "startFrame": 3949
           },
           {
-            "text": "says",
-            "startFrame": 3703
+            "text": "the",
+            "startFrame": 3957
           },
           {
-            "text": "\"Card",
-            "startFrame": 3722
-          },
-          {
-            "text": "accepted\"",
-            "startFrame": 3730
-          },
-          {
-            "text": "and",
-            "startFrame": 3760
-          },
-          {
-            "text": "empties",
-            "startFrame": 3772
-          }
-        ]
-      },
-      {
-        "startFrame": 3782,
-        "words": [
-          {
-            "text": "its",
-            "startFrame": 3782
-          },
-          {
-            "text": "number",
-            "startFrame": 3786
-          },
-          {
-            "text": "field.",
-            "startFrame": 3792
+            "text": "product.",
+            "startFrame": 3959
           }
         ]
       }
@@ -2333,106 +2378,76 @@
   },
   {
     "index": 42,
-    "startFrame": 3816,
-    "endFrame": 4004,
-    "text": "The payment page then shows one line: the first six digits, a row of stars, and the last four.",
-    "prefix": "The payment page then shows one line: the first six digits, a row of stars, and the last four.",
+    "startFrame": 3999,
+    "endFrame": 4112,
+    "text": "There is no screen inside the locked room, so watch what each side sees.",
+    "prefix": "There is no screen inside the locked room, so watch what each side sees.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3818,
+        "startFrame": 4001,
         "words": [
           {
-            "text": "The",
-            "startFrame": 3818
+            "text": "There",
+            "startFrame": 4001
           },
           {
-            "text": "payment",
-            "startFrame": 3819
+            "text": "is",
+            "startFrame": 4003
           },
           {
-            "text": "page",
-            "startFrame": 3829
+            "text": "no",
+            "startFrame": 4006
           },
           {
-            "text": "then",
-            "startFrame": 3839
+            "text": "screen",
+            "startFrame": 4011
           },
           {
-            "text": "shows",
-            "startFrame": 3845
-          },
-          {
-            "text": "one",
-            "startFrame": 3857
-          },
-          {
-            "text": "line:",
-            "startFrame": 3865
-          }
-        ]
-      },
-      {
-        "startFrame": 3888,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 3888
-          },
-          {
-            "text": "first",
-            "startFrame": 3891
-          },
-          {
-            "text": "six",
-            "startFrame": 3900
-          },
-          {
-            "text": "digits,",
-            "startFrame": 3907
-          }
-        ]
-      },
-      {
-        "startFrame": 3929,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 3929
-          },
-          {
-            "text": "row",
-            "startFrame": 3930
-          },
-          {
-            "text": "of",
-            "startFrame": 3940
-          },
-          {
-            "text": "stars,",
-            "startFrame": 3942
-          }
-        ]
-      },
-      {
-        "startFrame": 3968,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 3968
+            "text": "inside",
+            "startFrame": 4022
           },
           {
             "text": "the",
-            "startFrame": 3970
+            "startFrame": 4033
           },
           {
-            "text": "last",
-            "startFrame": 3972
+            "text": "locked",
+            "startFrame": 4035
           },
           {
-            "text": "four.",
-            "startFrame": 3982
+            "text": "room,",
+            "startFrame": 4044
+          }
+        ]
+      },
+      {
+        "startFrame": 4058,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 4058
+          },
+          {
+            "text": "watch",
+            "startFrame": 4062
+          },
+          {
+            "text": "what",
+            "startFrame": 4069
+          },
+          {
+            "text": "each",
+            "startFrame": 4072
+          },
+          {
+            "text": "side",
+            "startFrame": 4077
+          },
+          {
+            "text": "sees.",
+            "startFrame": 4086
           }
         ]
       }
@@ -2440,68 +2455,72 @@
   },
   {
     "index": 43,
-    "startFrame": 4005,
-    "endFrame": 4112,
-    "text": "Beside them sit the card's network and the bank that issued it.",
-    "prefix": "Beside them sit the card's network and the bank that issued it.",
+    "startFrame": 4113,
+    "endFrame": 4220,
+    "text": "The buyer types a card into the card form and confirms the code.",
+    "prefix": "The buyer types a card into the card form and confirms the code.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4006,
+        "startFrame": 4115,
         "words": [
           {
-            "text": "Beside",
-            "startFrame": 4006
+            "text": "The",
+            "startFrame": 4115
           },
           {
-            "text": "them",
-            "startFrame": 4014
+            "text": "buyer",
+            "startFrame": 4117
           },
           {
-            "text": "sit",
-            "startFrame": 4018
+            "text": "types",
+            "startFrame": 4126
+          },
+          {
+            "text": "a",
+            "startFrame": 4134
+          },
+          {
+            "text": "card",
+            "startFrame": 4136
+          },
+          {
+            "text": "into",
+            "startFrame": 4145
           },
           {
             "text": "the",
-            "startFrame": 4025
+            "startFrame": 4149
           },
           {
-            "text": "card's",
-            "startFrame": 4028
-          },
-          {
-            "text": "network",
-            "startFrame": 4039
-          },
-          {
-            "text": "and",
-            "startFrame": 4059
+            "text": "card",
+            "startFrame": 4151
           }
         ]
       },
       {
-        "startFrame": 4061,
+        "startFrame": 4160,
         "words": [
           {
+            "text": "form",
+            "startFrame": 4160
+          },
+          {
+            "text": "and",
+            "startFrame": 4180
+          },
+          {
+            "text": "confirms",
+            "startFrame": 4182
+          },
+          {
             "text": "the",
-            "startFrame": 4061
+            "startFrame": 4196
           },
           {
-            "text": "bank",
-            "startFrame": 4064
-          },
-          {
-            "text": "that",
-            "startFrame": 4082
-          },
-          {
-            "text": "issued",
-            "startFrame": 4087
-          },
-          {
-            "text": "it.",
-            "startFrame": 4097
+            "text": "code.",
+            "startFrame": 4197
           }
         ]
       }
@@ -2509,64 +2528,60 @@
   },
   {
     "index": 44,
-    "startFrame": 4113,
-    "endFrame": 4239,
-    "text": "That masked line is all anyone outside the room ever sees.",
-    "prefix": "That masked line is all anyone outside the room ever sees.",
+    "startFrame": 4220,
+    "endFrame": 4346,
+    "text": "The form says \"Card accepted\" and empties its number field.",
+    "prefix": "The form says \"Card accepted\" and empties its number field.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4114,
+        "startFrame": 4222,
         "words": [
           {
-            "text": "That",
-            "startFrame": 4114
+            "text": "The",
+            "startFrame": 4222
           },
           {
-            "text": "masked",
-            "startFrame": 4118
+            "text": "form",
+            "startFrame": 4224
           },
           {
-            "text": "line",
-            "startFrame": 4131
+            "text": "says",
+            "startFrame": 4233
           },
           {
-            "text": "is",
-            "startFrame": 4152
+            "text": "\"Card",
+            "startFrame": 4252
           },
           {
-            "text": "all",
-            "startFrame": 4155
+            "text": "accepted\"",
+            "startFrame": 4260
           },
           {
-            "text": "anyone",
-            "startFrame": 4163
+            "text": "and",
+            "startFrame": 4290
           },
           {
-            "text": "outside",
-            "startFrame": 4171
+            "text": "empties",
+            "startFrame": 4302
           }
         ]
       },
       {
-        "startFrame": 4187,
+        "startFrame": 4312,
         "words": [
           {
-            "text": "the",
-            "startFrame": 4187
+            "text": "its",
+            "startFrame": 4312
           },
           {
-            "text": "room",
-            "startFrame": 4189
+            "text": "number",
+            "startFrame": 4315
           },
           {
-            "text": "ever",
-            "startFrame": 4205
-          },
-          {
-            "text": "sees.",
-            "startFrame": 4211
+            "text": "field.",
+            "startFrame": 4322
           }
         ]
       }
@@ -2574,31 +2589,106 @@
   },
   {
     "index": 45,
-    "startFrame": 4240,
-    "endFrame": 4287,
-    "text": "Now Vault stops answering.",
-    "prefix": "Now Vault stops answering.",
+    "startFrame": 4346,
+    "endFrame": 4534,
+    "text": "The payment page then shows one line: the first six digits, a row of stars, and the last four.",
+    "prefix": "The payment page then shows one line: the first six digits, a row of stars, and the last four.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4241,
+        "startFrame": 4348,
         "words": [
           {
-            "text": "Now",
-            "startFrame": 4241
+            "text": "The",
+            "startFrame": 4348
           },
           {
-            "text": "Vault",
-            "startFrame": 4246
+            "text": "payment",
+            "startFrame": 4349
           },
           {
-            "text": "stops",
-            "startFrame": 4252
+            "text": "page",
+            "startFrame": 4359
           },
           {
-            "text": "answering.",
-            "startFrame": 4263
+            "text": "then",
+            "startFrame": 4369
+          },
+          {
+            "text": "shows",
+            "startFrame": 4375
+          },
+          {
+            "text": "one",
+            "startFrame": 4386
+          },
+          {
+            "text": "line:",
+            "startFrame": 4395
+          }
+        ]
+      },
+      {
+        "startFrame": 4418,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 4418
+          },
+          {
+            "text": "first",
+            "startFrame": 4421
+          },
+          {
+            "text": "six",
+            "startFrame": 4430
+          },
+          {
+            "text": "digits,",
+            "startFrame": 4437
+          }
+        ]
+      },
+      {
+        "startFrame": 4459,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 4459
+          },
+          {
+            "text": "row",
+            "startFrame": 4460
+          },
+          {
+            "text": "of",
+            "startFrame": 4470
+          },
+          {
+            "text": "stars,",
+            "startFrame": 4472
+          }
+        ]
+      },
+      {
+        "startFrame": 4498,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4498
+          },
+          {
+            "text": "the",
+            "startFrame": 4500
+          },
+          {
+            "text": "last",
+            "startFrame": 4502
+          },
+          {
+            "text": "four.",
+            "startFrame": 4512
           }
         ]
       }
@@ -2606,76 +2696,68 @@
   },
   {
     "index": 46,
-    "startFrame": 4288,
-    "endFrame": 4408,
-    "text": "The buyer types a card, and the form refuses it with a short message.",
-    "prefix": "The buyer types a card, and the form refuses it with a short message.",
+    "startFrame": 4535,
+    "endFrame": 4642,
+    "text": "Beside them sit the card's network and the bank that issued it.",
+    "prefix": "Beside them sit the card's network and the bank that issued it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4290,
+        "startFrame": 4536,
         "words": [
           {
-            "text": "The",
-            "startFrame": 4290
+            "text": "Beside",
+            "startFrame": 4536
           },
           {
-            "text": "buyer",
-            "startFrame": 4292
+            "text": "them",
+            "startFrame": 4544
           },
           {
-            "text": "types",
-            "startFrame": 4301
+            "text": "sit",
+            "startFrame": 4548
           },
           {
-            "text": "a",
-            "startFrame": 4310
+            "text": "the",
+            "startFrame": 4555
           },
           {
-            "text": "card,",
-            "startFrame": 4312
+            "text": "card's",
+            "startFrame": 4558
+          },
+          {
+            "text": "network",
+            "startFrame": 4569
+          },
+          {
+            "text": "and",
+            "startFrame": 4589
           }
         ]
       },
       {
-        "startFrame": 4335,
+        "startFrame": 4591,
         "words": [
           {
-            "text": "and",
-            "startFrame": 4335
-          },
-          {
             "text": "the",
-            "startFrame": 4337
+            "startFrame": 4591
           },
           {
-            "text": "form",
-            "startFrame": 4339
+            "text": "bank",
+            "startFrame": 4594
           },
           {
-            "text": "refuses",
-            "startFrame": 4348
+            "text": "that",
+            "startFrame": 4612
           },
           {
-            "text": "it",
-            "startFrame": 4364
+            "text": "issued",
+            "startFrame": 4617
           },
           {
-            "text": "with",
-            "startFrame": 4367
-          },
-          {
-            "text": "a",
-            "startFrame": 4371
-          },
-          {
-            "text": "short",
-            "startFrame": 4372
-          },
-          {
-            "text": "message.",
-            "startFrame": 4381
+            "text": "it.",
+            "startFrame": 4627
           }
         ]
       }
@@ -2683,44 +2765,64 @@
   },
   {
     "index": 47,
-    "startFrame": 4408,
-    "endFrame": 4500,
-    "text": "Nothing is saved, sealed or unsealed.",
-    "prefix": "Nothing is saved, sealed or unsealed.",
+    "startFrame": 4643,
+    "endFrame": 4769,
+    "text": "That masked line is all anyone outside the room ever sees.",
+    "prefix": "That masked line is all anyone outside the room ever sees.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4409,
+        "startFrame": 4644,
         "words": [
           {
-            "text": "Nothing",
-            "startFrame": 4409
+            "text": "That",
+            "startFrame": 4644
+          },
+          {
+            "text": "masked",
+            "startFrame": 4648
+          },
+          {
+            "text": "line",
+            "startFrame": 4661
           },
           {
             "text": "is",
-            "startFrame": 4417
+            "startFrame": 4682
           },
           {
-            "text": "saved,",
-            "startFrame": 4420
+            "text": "all",
+            "startFrame": 4685
+          },
+          {
+            "text": "anyone",
+            "startFrame": 4693
+          },
+          {
+            "text": "outside",
+            "startFrame": 4701
           }
         ]
       },
       {
-        "startFrame": 4442,
+        "startFrame": 4717,
         "words": [
           {
-            "text": "sealed",
-            "startFrame": 4442
+            "text": "the",
+            "startFrame": 4717
           },
           {
-            "text": "or",
-            "startFrame": 4465
+            "text": "room",
+            "startFrame": 4719
           },
           {
-            "text": "unsealed.",
-            "startFrame": 4469
+            "text": "ever",
+            "startFrame": 4735
+          },
+          {
+            "text": "sees.",
+            "startFrame": 4741
           }
         ]
       }
@@ -2728,97 +2830,31 @@
   },
   {
     "index": 48,
-    "startFrame": 4501,
-    "endFrame": 4671,
-    "text": "On the bank's side, the team gets an alert: a service the card zone depends on is unavailable.",
-    "prefix": "On the bank's side, the team gets an alert: a service the card zone depends on is unavailable.",
+    "startFrame": 4770,
+    "endFrame": 4825,
+    "text": "Now Vault stops answering.",
+    "prefix": "Now Vault stops answering.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4502,
+        "startFrame": 4771,
         "words": [
           {
-            "text": "On",
-            "startFrame": 4502
+            "text": "Now",
+            "startFrame": 4771
           },
           {
-            "text": "the",
-            "startFrame": 4504
+            "text": "Vault",
+            "startFrame": 4776
           },
           {
-            "text": "bank's",
-            "startFrame": 4507
+            "text": "stops",
+            "startFrame": 4782
           },
           {
-            "text": "side,",
-            "startFrame": 4516
-          }
-        ]
-      },
-      {
-        "startFrame": 4537,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 4537
-          },
-          {
-            "text": "team",
-            "startFrame": 4539
-          },
-          {
-            "text": "gets",
-            "startFrame": 4549
-          },
-          {
-            "text": "an",
-            "startFrame": 4555
-          },
-          {
-            "text": "alert:",
-            "startFrame": 4557
-          }
-        ]
-      },
-      {
-        "startFrame": 4583,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 4583
-          },
-          {
-            "text": "service",
-            "startFrame": 4584
-          },
-          {
-            "text": "the",
-            "startFrame": 4597
-          },
-          {
-            "text": "card",
-            "startFrame": 4600
-          },
-          {
-            "text": "zone",
-            "startFrame": 4610
-          },
-          {
-            "text": "depends",
-            "startFrame": 4618
-          },
-          {
-            "text": "on",
-            "startFrame": 4630
-          },
-          {
-            "text": "is",
-            "startFrame": 4637
-          },
-          {
-            "text": "unavailable.",
-            "startFrame": 4640
+            "text": "answering.",
+            "startFrame": 4793
           }
         ]
       }
@@ -2826,43 +2862,76 @@
   },
   {
     "index": 49,
-    "startFrame": 4672,
-    "endFrame": 4736,
-    "text": "The alert names the part that failed.",
-    "prefix": "The alert names the part that failed.",
+    "startFrame": 4826,
+    "endFrame": 4945,
+    "text": "The buyer types a card, and the form refuses it with a short message.",
+    "prefix": "The buyer types a card, and the form refuses it with a short message.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4673,
+        "startFrame": 4827,
         "words": [
           {
             "text": "The",
-            "startFrame": 4673
+            "startFrame": 4827
           },
           {
-            "text": "alert",
-            "startFrame": 4674
+            "text": "buyer",
+            "startFrame": 4830
           },
           {
-            "text": "names",
-            "startFrame": 4683
+            "text": "types",
+            "startFrame": 4839
+          },
+          {
+            "text": "a",
+            "startFrame": 4848
+          },
+          {
+            "text": "card,",
+            "startFrame": 4850
+          }
+        ]
+      },
+      {
+        "startFrame": 4873,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4873
           },
           {
             "text": "the",
-            "startFrame": 4693
+            "startFrame": 4875
           },
           {
-            "text": "part",
-            "startFrame": 4697
+            "text": "form",
+            "startFrame": 4877
           },
           {
-            "text": "that",
-            "startFrame": 4705
+            "text": "refuses",
+            "startFrame": 4886
           },
           {
-            "text": "failed.",
-            "startFrame": 4711
+            "text": "it",
+            "startFrame": 4901
+          },
+          {
+            "text": "with",
+            "startFrame": 4905
+          },
+          {
+            "text": "a",
+            "startFrame": 4909
+          },
+          {
+            "text": "short",
+            "startFrame": 4910
+          },
+          {
+            "text": "message.",
+            "startFrame": 4919
           }
         ]
       }
@@ -2870,56 +2939,44 @@
   },
   {
     "index": 50,
-    "startFrame": 4736,
-    "endFrame": 4827,
-    "text": "Once Vault is back, the same card goes through.",
-    "prefix": "Once Vault is back, the same card goes through.",
+    "startFrame": 4946,
+    "endFrame": 5038,
+    "text": "Nothing is saved, sealed or unsealed.",
+    "prefix": "Nothing is saved, sealed or unsealed.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4738,
+        "startFrame": 4947,
         "words": [
           {
-            "text": "Once",
-            "startFrame": 4738
-          },
-          {
-            "text": "Vault",
-            "startFrame": 4744
+            "text": "Nothing",
+            "startFrame": 4947
           },
           {
             "text": "is",
-            "startFrame": 4751
+            "startFrame": 4955
           },
           {
-            "text": "back,",
-            "startFrame": 4755
+            "text": "saved,",
+            "startFrame": 4958
           }
         ]
       },
       {
-        "startFrame": 4774,
+        "startFrame": 4979,
         "words": [
           {
-            "text": "the",
-            "startFrame": 4774
+            "text": "sealed",
+            "startFrame": 4979
           },
           {
-            "text": "same",
-            "startFrame": 4777
+            "text": "or",
+            "startFrame": 5003
           },
           {
-            "text": "card",
-            "startFrame": 4786
-          },
-          {
-            "text": "goes",
-            "startFrame": 4796
-          },
-          {
-            "text": "through.",
-            "startFrame": 4804
+            "text": "unsealed.",
+            "startFrame": 5007
           }
         ]
       }
@@ -2927,35 +2984,97 @@
   },
   {
     "index": 51,
-    "startFrame": 4827,
-    "endFrame": 4876,
-    "text": "Now the leaked copy again.",
-    "prefix": "Now the leaked copy again.",
+    "startFrame": 5039,
+    "endFrame": 5209,
+    "text": "On the bank's side, the team gets an alert: a service the card zone depends on is unavailable.",
+    "prefix": "On the bank's side, the team gets an alert: a service the card zone depends on is unavailable.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4829,
+        "startFrame": 5040,
         "words": [
           {
-            "text": "Now",
-            "startFrame": 4829
+            "text": "On",
+            "startFrame": 5040
           },
           {
             "text": "the",
-            "startFrame": 4833
+            "startFrame": 5042
           },
           {
-            "text": "leaked",
-            "startFrame": 4836
+            "text": "bank's",
+            "startFrame": 5044
           },
           {
-            "text": "copy",
-            "startFrame": 4844
+            "text": "side,",
+            "startFrame": 5053
+          }
+        ]
+      },
+      {
+        "startFrame": 5074,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5074
           },
           {
-            "text": "again.",
-            "startFrame": 4854
+            "text": "team",
+            "startFrame": 5077
+          },
+          {
+            "text": "gets",
+            "startFrame": 5087
+          },
+          {
+            "text": "an",
+            "startFrame": 5093
+          },
+          {
+            "text": "alert:",
+            "startFrame": 5094
+          }
+        ]
+      },
+      {
+        "startFrame": 5121,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 5121
+          },
+          {
+            "text": "service",
+            "startFrame": 5122
+          },
+          {
+            "text": "the",
+            "startFrame": 5135
+          },
+          {
+            "text": "card",
+            "startFrame": 5138
+          },
+          {
+            "text": "zone",
+            "startFrame": 5148
+          },
+          {
+            "text": "depends",
+            "startFrame": 5156
+          },
+          {
+            "text": "on",
+            "startFrame": 5168
+          },
+          {
+            "text": "is",
+            "startFrame": 5174
+          },
+          {
+            "text": "unavailable.",
+            "startFrame": 5178
           }
         ]
       }
@@ -2963,31 +3082,43 @@
   },
   {
     "index": 52,
-    "startFrame": 4876,
-    "endFrame": 4932,
-    "text": "An attacker opens it.",
-    "prefix": "An attacker opens it.",
+    "startFrame": 5209,
+    "endFrame": 5274,
+    "text": "The alert names the part that failed.",
+    "prefix": "The alert names the part that failed.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4876,
+        "startFrame": 5211,
         "words": [
           {
-            "text": "An",
-            "startFrame": 4876
+            "text": "The",
+            "startFrame": 5211
           },
           {
-            "text": "attacker",
-            "startFrame": 4879
+            "text": "alert",
+            "startFrame": 5212
           },
           {
-            "text": "opens",
-            "startFrame": 4894
+            "text": "names",
+            "startFrame": 5221
           },
           {
-            "text": "it.",
-            "startFrame": 4905
+            "text": "the",
+            "startFrame": 5231
+          },
+          {
+            "text": "part",
+            "startFrame": 5235
+          },
+          {
+            "text": "that",
+            "startFrame": 5243
+          },
+          {
+            "text": "failed.",
+            "startFrame": 5249
           }
         ]
       }
@@ -2995,52 +3126,56 @@
   },
   {
     "index": 53,
-    "startFrame": 4932,
-    "endFrame": 5048,
-    "text": "They find sealed values, fingerprints and masked numbers.",
-    "prefix": "They find sealed values, fingerprints and masked numbers.",
+    "startFrame": 5274,
+    "endFrame": 5364,
+    "text": "Once Vault is back, the same card goes through.",
+    "prefix": "Once Vault is back, the same card goes through.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4934,
+        "startFrame": 5276,
         "words": [
           {
-            "text": "They",
-            "startFrame": 4934
+            "text": "Once",
+            "startFrame": 5276
           },
           {
-            "text": "find",
-            "startFrame": 4936
+            "text": "Vault",
+            "startFrame": 5281
           },
           {
-            "text": "sealed",
-            "startFrame": 4944
+            "text": "is",
+            "startFrame": 5288
           },
           {
-            "text": "values,",
-            "startFrame": 4956
+            "text": "back,",
+            "startFrame": 5292
           }
         ]
       },
       {
-        "startFrame": 4981,
+        "startFrame": 5312,
         "words": [
           {
-            "text": "fingerprints",
-            "startFrame": 4981
+            "text": "the",
+            "startFrame": 5312
           },
           {
-            "text": "and",
-            "startFrame": 5003
+            "text": "same",
+            "startFrame": 5315
           },
           {
-            "text": "masked",
-            "startFrame": 5009
+            "text": "card",
+            "startFrame": 5324
           },
           {
-            "text": "numbers.",
-            "startFrame": 5021
+            "text": "goes",
+            "startFrame": 5333
+          },
+          {
+            "text": "through.",
+            "startFrame": 5342
           }
         ]
       }
@@ -3048,193 +3183,10 @@
   },
   {
     "index": 54,
-    "startFrame": 5048,
-    "endFrame": 5104,
-    "text": "The keys are not there.",
-    "prefix": "The keys are not there.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 5049,
-        "words": [
-          {
-            "text": "The",
-            "startFrame": 5049
-          },
-          {
-            "text": "keys",
-            "startFrame": 5051
-          },
-          {
-            "text": "are",
-            "startFrame": 5058
-          },
-          {
-            "text": "not",
-            "startFrame": 5060
-          },
-          {
-            "text": "there.",
-            "startFrame": 5067
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 55,
-    "startFrame": 5104,
-    "endFrame": 5308,
-    "text": "A backup is just as useless without the Vault that sealed it, so the bank keeps both, and keeps them apart.",
-    "prefix": "A backup is just as useless without the Vault that sealed it, so the bank keeps both, and keeps them apart.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 5105,
-        "words": [
-          {
-            "text": "A",
-            "startFrame": 5105
-          },
-          {
-            "text": "backup",
-            "startFrame": 5107
-          },
-          {
-            "text": "is",
-            "startFrame": 5123
-          },
-          {
-            "text": "just",
-            "startFrame": 5128
-          },
-          {
-            "text": "as",
-            "startFrame": 5138
-          },
-          {
-            "text": "useless",
-            "startFrame": 5143
-          },
-          {
-            "text": "without",
-            "startFrame": 5165
-          }
-        ]
-      },
-      {
-        "startFrame": 5178,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 5178
-          },
-          {
-            "text": "Vault",
-            "startFrame": 5180
-          },
-          {
-            "text": "that",
-            "startFrame": 5192
-          },
-          {
-            "text": "sealed",
-            "startFrame": 5196
-          },
-          {
-            "text": "it,",
-            "startFrame": 5208
-          }
-        ]
-      },
-      {
-        "startFrame": 5223,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 5223
-          },
-          {
-            "text": "the",
-            "startFrame": 5227
-          },
-          {
-            "text": "bank",
-            "startFrame": 5230
-          },
-          {
-            "text": "keeps",
-            "startFrame": 5239
-          },
-          {
-            "text": "both,",
-            "startFrame": 5248
-          }
-        ]
-      },
-      {
-        "startFrame": 5269,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 5269
-          },
-          {
-            "text": "keeps",
-            "startFrame": 5272
-          },
-          {
-            "text": "them",
-            "startFrame": 5280
-          },
-          {
-            "text": "apart.",
-            "startFrame": 5284
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 56,
-    "startFrame": 5308,
-    "endFrame": 5364,
-    "text": "What does this protect?",
-    "prefix": "What does this protect?",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 5309,
-        "words": [
-          {
-            "text": "What",
-            "startFrame": 5309
-          },
-          {
-            "text": "does",
-            "startFrame": 5311
-          },
-          {
-            "text": "this",
-            "startFrame": 5314
-          },
-          {
-            "text": "protect?",
-            "startFrame": 5318
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 57,
-    "startFrame": 5364,
-    "endFrame": 5495,
-    "text": "It protects every cardholder whose number has ever passed through the room.",
-    "prefix": "It protects every cardholder whose number has ever passed through the room.",
+    "startFrame": 5365,
+    "endFrame": 5421,
+    "text": "Now the leaked copy again.",
+    "prefix": "Now the leaked copy again.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -3242,57 +3194,145 @@
         "startFrame": 5366,
         "words": [
           {
-            "text": "It",
+            "text": "Now",
             "startFrame": 5366
           },
           {
-            "text": "protects",
-            "startFrame": 5367
+            "text": "the",
+            "startFrame": 5371
           },
           {
-            "text": "every",
-            "startFrame": 5387
+            "text": "leaked",
+            "startFrame": 5374
           },
           {
-            "text": "cardholder",
-            "startFrame": 5397
+            "text": "copy",
+            "startFrame": 5381
           },
           {
-            "text": "whose",
+            "text": "again.",
+            "startFrame": 5392
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "startFrame": 5421,
+    "endFrame": 5477,
+    "text": "An attacker opens it.",
+    "prefix": "An attacker opens it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5421,
+        "words": [
+          {
+            "text": "An",
+            "startFrame": 5421
+          },
+          {
+            "text": "attacker",
             "startFrame": 5424
           },
           {
-            "text": "number",
-            "startFrame": 5431
+            "text": "opens",
+            "startFrame": 5439
           },
           {
-            "text": "has",
-            "startFrame": 5442
-          },
-          {
-            "text": "ever",
+            "text": "it.",
             "startFrame": 5450
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 56,
+    "startFrame": 5477,
+    "endFrame": 5593,
+    "text": "They find sealed values, fingerprints and masked numbers.",
+    "prefix": "They find sealed values, fingerprints and masked numbers.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5479,
+        "words": [
+          {
+            "text": "They",
+            "startFrame": 5479
+          },
+          {
+            "text": "find",
+            "startFrame": 5481
+          },
+          {
+            "text": "sealed",
+            "startFrame": 5489
+          },
+          {
+            "text": "values,",
+            "startFrame": 5501
           }
         ]
       },
       {
-        "startFrame": 5456,
+        "startFrame": 5527,
         "words": [
           {
-            "text": "passed",
-            "startFrame": 5456
+            "text": "fingerprints",
+            "startFrame": 5527
           },
           {
-            "text": "through",
-            "startFrame": 5468
+            "text": "and",
+            "startFrame": 5548
           },
           {
-            "text": "the",
-            "startFrame": 5472
+            "text": "masked",
+            "startFrame": 5554
           },
           {
-            "text": "room.",
-            "startFrame": 5475
+            "text": "numbers.",
+            "startFrame": 5567
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "startFrame": 5593,
+    "endFrame": 5649,
+    "text": "The keys are not there.",
+    "prefix": "The keys are not there.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5594,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 5594
+          },
+          {
+            "text": "keys",
+            "startFrame": 5596
+          },
+          {
+            "text": "are",
+            "startFrame": 5604
+          },
+          {
+            "text": "not",
+            "startFrame": 5605
+          },
+          {
+            "text": "there.",
+            "startFrame": 5612
           }
         ]
       }
@@ -3300,206 +3340,113 @@
   },
   {
     "index": 58,
-    "startFrame": 5495,
-    "endFrame": 5654,
-    "text": "A stolen database, a stolen backup, or a curious insider all see noise.",
-    "prefix": "A stolen database, a stolen backup, or a curious insider all see noise.",
+    "startFrame": 5649,
+    "endFrame": 5853,
+    "text": "A backup is just as useless without the Vault that sealed it, so the bank keeps both, and keeps them apart.",
+    "prefix": "A backup is just as useless without the Vault that sealed it, so the bank keeps both, and keeps them apart.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5497,
+        "startFrame": 5650,
         "words": [
           {
             "text": "A",
-            "startFrame": 5497
+            "startFrame": 5650
           },
           {
-            "text": "stolen",
-            "startFrame": 5498
-          },
-          {
-            "text": "database,",
-            "startFrame": 5510
-          }
-        ]
-      },
-      {
-        "startFrame": 5537,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 5537
-          },
-          {
-            "text": "stolen",
-            "startFrame": 5538
-          },
-          {
-            "text": "backup,",
-            "startFrame": 5549
-          }
-        ]
-      },
-      {
-        "startFrame": 5575,
-        "words": [
-          {
-            "text": "or",
-            "startFrame": 5575
-          },
-          {
-            "text": "a",
-            "startFrame": 5577
-          },
-          {
-            "text": "curious",
-            "startFrame": 5578
-          },
-          {
-            "text": "insider",
-            "startFrame": 5593
-          },
-          {
-            "text": "all",
-            "startFrame": 5615
-          },
-          {
-            "text": "see",
-            "startFrame": 5620
-          },
-          {
-            "text": "noise.",
-            "startFrame": 5626
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 59,
-    "startFrame": 5654,
-    "endFrame": 5807,
-    "text": "And the bank is protected too, because a leak of noise is not a leak of cards.",
-    "prefix": "And the bank is protected too, because a leak of noise is not a leak of cards.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 5655,
-        "words": [
-          {
-            "text": "And",
-            "startFrame": 5655
-          },
-          {
-            "text": "the",
-            "startFrame": 5658
-          },
-          {
-            "text": "bank",
-            "startFrame": 5660
+            "text": "backup",
+            "startFrame": 5652
           },
           {
             "text": "is",
-            "startFrame": 5671
+            "startFrame": 5668
           },
           {
-            "text": "protected",
-            "startFrame": 5674
+            "text": "just",
+            "startFrame": 5673
           },
           {
-            "text": "too,",
-            "startFrame": 5689
+            "text": "as",
+            "startFrame": 5683
+          },
+          {
+            "text": "useless",
+            "startFrame": 5688
+          },
+          {
+            "text": "without",
+            "startFrame": 5710
           }
         ]
       },
       {
-        "startFrame": 5709,
+        "startFrame": 5723,
         "words": [
-          {
-            "text": "because",
-            "startFrame": 5709
-          },
-          {
-            "text": "a",
-            "startFrame": 5718
-          },
-          {
-            "text": "leak",
-            "startFrame": 5720
-          },
-          {
-            "text": "of",
-            "startFrame": 5727
-          },
-          {
-            "text": "noise",
-            "startFrame": 5730
-          },
-          {
-            "text": "is",
-            "startFrame": 5754
-          },
-          {
-            "text": "not",
-            "startFrame": 5758
-          }
-        ]
-      },
-      {
-        "startFrame": 5766,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 5766
-          },
-          {
-            "text": "leak",
-            "startFrame": 5768
-          },
-          {
-            "text": "of",
-            "startFrame": 5776
-          },
-          {
-            "text": "cards.",
-            "startFrame": 5778
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 60,
-    "startFrame": 5808,
-    "endFrame": 5856,
-    "text": "Back to the sealed bags.",
-    "prefix": "Back to the sealed bags.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 5810,
-        "words": [
-          {
-            "text": "Back",
-            "startFrame": 5810
-          },
-          {
-            "text": "to",
-            "startFrame": 5815
-          },
           {
             "text": "the",
-            "startFrame": 5816
+            "startFrame": 5723
+          },
+          {
+            "text": "Vault",
+            "startFrame": 5725
+          },
+          {
+            "text": "that",
+            "startFrame": 5737
           },
           {
             "text": "sealed",
-            "startFrame": 5819
+            "startFrame": 5741
           },
           {
-            "text": "bags.",
+            "text": "it,",
+            "startFrame": 5753
+          }
+        ]
+      },
+      {
+        "startFrame": 5768,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 5768
+          },
+          {
+            "text": "the",
+            "startFrame": 5772
+          },
+          {
+            "text": "bank",
+            "startFrame": 5775
+          },
+          {
+            "text": "keeps",
+            "startFrame": 5784
+          },
+          {
+            "text": "both,",
+            "startFrame": 5793
+          }
+        ]
+      },
+      {
+        "startFrame": 5814,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5814
+          },
+          {
+            "text": "keeps",
+            "startFrame": 5817
+          },
+          {
+            "text": "them",
+            "startFrame": 5825
+          },
+          {
+            "text": "apart.",
             "startFrame": 5829
           }
         ]
@@ -3507,40 +3454,179 @@
     ]
   },
   {
-    "index": 61,
-    "startFrame": 5857,
-    "endFrame": 5908,
-    "text": "A machine that keeps its key.",
-    "prefix": "A machine that keeps its key.",
+    "index": 59,
+    "startFrame": 5853,
+    "endFrame": 5909,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5857,
+        "startFrame": 5854,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 5854
+          },
+          {
+            "text": "does",
+            "startFrame": 5856
+          },
+          {
+            "text": "this",
+            "startFrame": 5859
+          },
+          {
+            "text": "protect?",
+            "startFrame": 5863
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "startFrame": 5909,
+    "endFrame": 6040,
+    "text": "It protects every cardholder whose number has ever passed through the room.",
+    "prefix": "It protects every cardholder whose number has ever passed through the room.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5911,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 5911
+          },
+          {
+            "text": "protects",
+            "startFrame": 5912
+          },
+          {
+            "text": "every",
+            "startFrame": 5932
+          },
+          {
+            "text": "cardholder",
+            "startFrame": 5942
+          },
+          {
+            "text": "whose",
+            "startFrame": 5969
+          },
+          {
+            "text": "number",
+            "startFrame": 5976
+          },
+          {
+            "text": "has",
+            "startFrame": 5987
+          },
+          {
+            "text": "ever",
+            "startFrame": 5995
+          }
+        ]
+      },
+      {
+        "startFrame": 6001,
+        "words": [
+          {
+            "text": "passed",
+            "startFrame": 6001
+          },
+          {
+            "text": "through",
+            "startFrame": 6014
+          },
+          {
+            "text": "the",
+            "startFrame": 6017
+          },
+          {
+            "text": "room.",
+            "startFrame": 6020
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 61,
+    "startFrame": 6040,
+    "endFrame": 6199,
+    "text": "A stolen database, a stolen backup, or a curious insider all see noise.",
+    "prefix": "A stolen database, a stolen backup, or a curious insider all see noise.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6042,
         "words": [
           {
             "text": "A",
-            "startFrame": 5857
+            "startFrame": 6042
           },
           {
-            "text": "machine",
-            "startFrame": 5858
+            "text": "stolen",
+            "startFrame": 6043
           },
           {
-            "text": "that",
-            "startFrame": 5869
+            "text": "database,",
+            "startFrame": 6055
+          }
+        ]
+      },
+      {
+        "startFrame": 6082,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 6082
           },
           {
-            "text": "keeps",
-            "startFrame": 5873
+            "text": "stolen",
+            "startFrame": 6083
           },
           {
-            "text": "its",
-            "startFrame": 5882
+            "text": "backup,",
+            "startFrame": 6094
+          }
+        ]
+      },
+      {
+        "startFrame": 6120,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 6120
           },
           {
-            "text": "key.",
-            "startFrame": 5886
+            "text": "a",
+            "startFrame": 6122
+          },
+          {
+            "text": "curious",
+            "startFrame": 6124
+          },
+          {
+            "text": "insider",
+            "startFrame": 6138
+          },
+          {
+            "text": "all",
+            "startFrame": 6160
+          },
+          {
+            "text": "see",
+            "startFrame": 6165
+          },
+          {
+            "text": "noise.",
+            "startFrame": 6171
           }
         ]
       }
@@ -3548,51 +3634,93 @@
   },
   {
     "index": 62,
-    "startFrame": 5909,
-    "endFrame": 5992,
-    "text": "A stamp that finds a bag without opening it.",
-    "prefix": "A stamp that finds a bag without opening it.",
+    "startFrame": 6199,
+    "endFrame": 6352,
+    "text": "And the bank is protected too, because a leak of noise is not a leak of cards.",
+    "prefix": "And the bank is protected too, because a leak of noise is not a leak of cards.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5910,
+        "startFrame": 6200,
         "words": [
           {
-            "text": "A",
-            "startFrame": 5910
+            "text": "And",
+            "startFrame": 6200
           },
           {
-            "text": "stamp",
-            "startFrame": 5911
+            "text": "the",
+            "startFrame": 6203
           },
           {
-            "text": "that",
-            "startFrame": 5923
+            "text": "bank",
+            "startFrame": 6205
           },
           {
-            "text": "finds",
-            "startFrame": 5927
+            "text": "is",
+            "startFrame": 6216
+          },
+          {
+            "text": "protected",
+            "startFrame": 6219
+          },
+          {
+            "text": "too,",
+            "startFrame": 6234
+          }
+        ]
+      },
+      {
+        "startFrame": 6254,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 6254
           },
           {
             "text": "a",
-            "startFrame": 5937
+            "startFrame": 6263
           },
           {
-            "text": "bag",
-            "startFrame": 5939
+            "text": "leak",
+            "startFrame": 6265
           },
           {
-            "text": "without",
-            "startFrame": 5954
+            "text": "of",
+            "startFrame": 6272
           },
           {
-            "text": "opening",
-            "startFrame": 5965
+            "text": "noise",
+            "startFrame": 6275
           },
           {
-            "text": "it.",
-            "startFrame": 5975
+            "text": "is",
+            "startFrame": 6299
+          },
+          {
+            "text": "not",
+            "startFrame": 6303
+          }
+        ]
+      },
+      {
+        "startFrame": 6311,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 6311
+          },
+          {
+            "text": "leak",
+            "startFrame": 6313
+          },
+          {
+            "text": "of",
+            "startFrame": 6321
+          },
+          {
+            "text": "cards.",
+            "startFrame": 6323
           }
         ]
       }
@@ -3600,39 +3728,35 @@
   },
   {
     "index": 63,
-    "startFrame": 5992,
-    "endFrame": 6093,
-    "text": "A database that refuses anything unsealed.",
-    "prefix": "A database that refuses anything unsealed.",
+    "startFrame": 6353,
+    "endFrame": 6408,
+    "text": "Back to the sealed bags.",
+    "prefix": "Back to the sealed bags.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5993,
+        "startFrame": 6355,
         "words": [
           {
-            "text": "A",
-            "startFrame": 5993
+            "text": "Back",
+            "startFrame": 6355
           },
           {
-            "text": "database",
-            "startFrame": 5995
+            "text": "to",
+            "startFrame": 6360
           },
           {
-            "text": "that",
-            "startFrame": 6011
+            "text": "the",
+            "startFrame": 6361
           },
           {
-            "text": "refuses",
-            "startFrame": 6014
+            "text": "sealed",
+            "startFrame": 6364
           },
           {
-            "text": "anything",
-            "startFrame": 6039
-          },
-          {
-            "text": "unsealed.",
-            "startFrame": 6059
+            "text": "bags.",
+            "startFrame": 6374
           }
         ]
       }
@@ -3640,55 +3764,39 @@
   },
   {
     "index": 64,
-    "startFrame": 6094,
-    "endFrame": 6192,
-    "text": "So a stolen copy of the database is just noise.",
-    "prefix": "So a stolen copy of the database is just noise.",
+    "startFrame": 6409,
+    "endFrame": 6465,
+    "text": "A machine that keeps its key.",
+    "prefix": "A machine that keeps its key.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6095,
+        "startFrame": 6409,
         "words": [
           {
-            "text": "So",
-            "startFrame": 6095
+            "text": "A",
+            "startFrame": 6409
           },
           {
-            "text": "a",
-            "startFrame": 6099
+            "text": "machine",
+            "startFrame": 6411
           },
           {
-            "text": "stolen",
-            "startFrame": 6100
+            "text": "that",
+            "startFrame": 6421
           },
           {
-            "text": "copy",
-            "startFrame": 6112
+            "text": "keeps",
+            "startFrame": 6426
           },
           {
-            "text": "of",
-            "startFrame": 6123
+            "text": "its",
+            "startFrame": 6435
           },
           {
-            "text": "the",
-            "startFrame": 6124
-          },
-          {
-            "text": "database",
-            "startFrame": 6126
-          },
-          {
-            "text": "is",
-            "startFrame": 6148
-          },
-          {
-            "text": "just",
-            "startFrame": 6152
-          },
-          {
-            "text": "noise.",
-            "startFrame": 6162
+            "text": "key.",
+            "startFrame": 6438
           }
         ]
       }
@@ -3696,47 +3804,195 @@
   },
   {
     "index": 65,
-    "startFrame": 6192,
-    "endFrame": 6302,
+    "startFrame": 6465,
+    "endFrame": 6548,
+    "text": "A stamp that finds a bag without opening it.",
+    "prefix": "A stamp that finds a bag without opening it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6466,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 6466
+          },
+          {
+            "text": "stamp",
+            "startFrame": 6468
+          },
+          {
+            "text": "that",
+            "startFrame": 6480
+          },
+          {
+            "text": "finds",
+            "startFrame": 6483
+          },
+          {
+            "text": "a",
+            "startFrame": 6494
+          },
+          {
+            "text": "bag",
+            "startFrame": 6496
+          },
+          {
+            "text": "without",
+            "startFrame": 6510
+          },
+          {
+            "text": "opening",
+            "startFrame": 6521
+          },
+          {
+            "text": "it.",
+            "startFrame": 6532
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 66,
+    "startFrame": 6549,
+    "endFrame": 6650,
+    "text": "A database that refuses anything unsealed.",
+    "prefix": "A database that refuses anything unsealed.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6550,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 6550
+          },
+          {
+            "text": "database",
+            "startFrame": 6552
+          },
+          {
+            "text": "that",
+            "startFrame": 6568
+          },
+          {
+            "text": "refuses",
+            "startFrame": 6571
+          },
+          {
+            "text": "anything",
+            "startFrame": 6595
+          },
+          {
+            "text": "unsealed.",
+            "startFrame": 6616
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 67,
+    "startFrame": 6650,
+    "endFrame": 6748,
+    "text": "So a stolen copy of the database is just noise.",
+    "prefix": "So a stolen copy of the database is just noise.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6651,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 6651
+          },
+          {
+            "text": "a",
+            "startFrame": 6655
+          },
+          {
+            "text": "stolen",
+            "startFrame": 6657
+          },
+          {
+            "text": "copy",
+            "startFrame": 6669
+          },
+          {
+            "text": "of",
+            "startFrame": 6680
+          },
+          {
+            "text": "the",
+            "startFrame": 6681
+          },
+          {
+            "text": "database",
+            "startFrame": 6683
+          },
+          {
+            "text": "is",
+            "startFrame": 6705
+          },
+          {
+            "text": "just",
+            "startFrame": 6709
+          },
+          {
+            "text": "noise.",
+            "startFrame": 6719
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 68,
+    "startFrame": 6749,
+    "endFrame": 6858,
     "text": "Next: what a card's first digits tell you.",
     "prefix": "Next: what a card's first digits tell you.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6194,
+        "startFrame": 6750,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 6194
+            "startFrame": 6750
           },
           {
             "text": "what",
-            "startFrame": 6218
+            "startFrame": 6775
           },
           {
             "text": "a",
-            "startFrame": 6221
+            "startFrame": 6777
           },
           {
             "text": "card's",
-            "startFrame": 6223
+            "startFrame": 6779
           },
           {
             "text": "first",
-            "startFrame": 6231
+            "startFrame": 6788
           },
           {
             "text": "digits",
-            "startFrame": 6241
+            "startFrame": 6798
           },
           {
             "text": "tell",
-            "startFrame": 6249
+            "startFrame": 6806
           },
           {
             "text": "you.",
-            "startFrame": 6255
+            "startFrame": 6812
           }
         ]
       }

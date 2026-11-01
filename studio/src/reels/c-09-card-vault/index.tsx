@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "A stolen database", "The worst day", "A copy leaks", "Every card is gone", "A key next to them", "Never next to the data",
+  "A stolen database", "Lesson 5: only a token", "Lesson 6: Vault", "This lesson: sealed", "The worst day", "A copy leaks", "Every card is gone", "A key next to them", "Never next to the data",
   "The locked room", "A sealed bag", "Only one machine", "Never lends its key", "Vault", "The card vault",
   "A sealed value", "Only the sealed value", "Key never leaves", "Tied to its own card", "Will not open",
   "No shuffling bags", "A puzzle", "Find a card again", "Without opening", "A fingerprint", "Same fingerprint",

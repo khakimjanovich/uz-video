@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Every website?", "A second website", "All checks for nothing", "Every stall inspected",
+  "Every website?", "Lessons 18 and 20", "Several websites", "This lesson: each website", "A second website", "All checks for nothing", "Every stall inspected",
   "Websites the same way", "How it works", "A sales point", "Starts as a draft",
   "Back to the shop", "A return address", "Secure, on its own site", "Never somewhere else",
   "Only while a draft", "A site check", "Say what is wrong", "The deal",
