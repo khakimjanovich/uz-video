@@ -6,7 +6,7 @@ import { existsSync, mkdirSync } from "node:fs";
 import { createRequire } from "node:module";
 import { homedir } from "node:os";
 import { dirname, join } from "node:path";
-import { OVERRIDES } from "./overrides";
+import { NEUTRAL_AMOUNTS, OVERRIDES } from "./overrides";
 
 const ACQUIRING = join(homedir(), "Documents/acquiring");
 const CACHE = join(homedir(), "Library/Caches/uz-video-screens");
@@ -149,7 +149,20 @@ export async function shoot(shots: Shot[], outDir: string) {
         viewport: shot.viewport ?? { width: 1440, height: 900 },
         deviceScaleFactor: 2,
         locale: shot.language ?? "en",
+        timezoneId: "UTC", // stable dates in every shot
       });
+      if (NEUTRAL_AMOUNTS)
+        await context.addInitScript(() => {
+          // No real currency on screen: a currency format becomes the same number as a plain decimal.
+          const Native = Intl.NumberFormat;
+          const Neutral = function (locales?: string | string[], options?: Intl.NumberFormatOptions) {
+            if (options?.style !== "currency") return new Native(locales, options);
+            const { currency: _currency, currencyDisplay: _display, ...rest } = options;
+            return new Native(locales, { ...rest, style: "decimal", minimumFractionDigits: rest.minimumFractionDigits ?? 2, maximumFractionDigits: rest.maximumFractionDigits ?? 2 });
+          } as unknown as typeof Intl.NumberFormat;
+          Object.assign(Neutral, Native);
+          Intl.NumberFormat = Neutral;
+        });
       await context.addInitScript(
         ({ language, session }) => {
           localStorage.setItem("i18nextLng", language);

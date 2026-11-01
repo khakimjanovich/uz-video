@@ -74,7 +74,27 @@ export const OVERRIDES: [string, string][] = [
   ['"Uzcarddagi id"', '"Markazdagi id"'],
   ["Uzcard yoki Humo daʼvolari", "karta tarmoqlari daʼvolari"],
   ["Uzcard va Humo hisobotlari", "protsessing markazlari hisobotlari"],
+  // currency names in amount labels (amounts themselves: NEUTRAL_AMOUNTS below)
+  ["Fixed fee, so'm", "Fixed fee"],
+  ["Minimum, so'm", "Minimum"],
+  ["Maximum, so'm", "Maximum"],
+  ["Amount, so'm", "Amount"],
+  ["At least 1 UZS", "At least 1.00"],
+  ["In so'm; collected", "Collected"],
+  ["Фиксированная комиссия, сум", "Фиксированная комиссия"],
+  ["Минимум, сум", "Минимум"],
+  ["Максимум, сум", "Максимум"],
+  ["Сумма, сум", "Сумма"],
+  ["Qatʼiy komissiya, soʻm", "Qatʼiy komissiya"],
+  ["Minimum, soʻm", "Minimum"],
+  ["Maksimum, soʻm", "Maksimum"],
+  ["Summa, soʻm", "Summa"],
+  ["Kamida 1 UZS", "Kamida 1.00"],
+  ["Soʻmda; summa", "Summa"],
   // card schemes, every language (the enum labels)
   ['"Uzcard"', '"Card A"'],
   ['"Humo"', '"Card B"'],
 ];
+
+/** Amounts the front formats as a currency (its money formatter) are shown as plain decimals: "2,499.00". */
+export const NEUTRAL_AMOUNTS = true;
