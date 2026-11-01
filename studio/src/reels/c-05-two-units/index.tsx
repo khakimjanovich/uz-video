@@ -1,14 +1,24 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "Without seeing the card", "The bank's card reader", "Only a receipt", "The payment page",
-  "A card-entry session", "An address", "A frame", "Straight to the card zone", "Only the token",
-  "Charge by token", "A contract", "Only what it allows", "ecom still guards it",
-  "Next: settings",
+  "Never see the card", "A real shop", "The card reader", "The bank's reader", "Only a receipt",
+  "The obvious design", "Through ecom", "One hop", "The full check", "The bank's reader on ecom",
+  "Step by step", "Never talk freely", "Every question, written", "A contract", "Only what it allows",
+  "A card-entry session", "One card, one payment", "An address",
+  "A frame", "The card zone's window", "On ecom's counter",
+  "Types the card", "Straight to the card zone", "Not on the way", "A receipt", "Never the number",
+  "Charge by token", "This payment's session",
+  "Watch the product", "The payment page", "Secure payment page", "The amount to pay", "Card details",
+  "Number and date", "One short line", "Pay", "Taking the payment", "Paid",
+  "The wrong way", "Too long, too many", "The attempt ended", "Short-lived", "Used up",
+  "A masked number", "All ecom holds",
+  "What does it protect?", "Never through ecom", "No card leaks", "The shop never touches it", "One small room",
+  "The token still matters", "A ticket for a coat", "A smaller check",
+  "The counter", "Faces the buyer", "Receipts, never cards", "Next: settings",
 ];
 
 export const C05TwoUnitsComposition = createEpisode({
@@ -20,4 +30,5 @@ export const C05TwoUnitsComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  screens,
 });
