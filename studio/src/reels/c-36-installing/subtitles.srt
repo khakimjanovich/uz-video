@@ -3,37 +3,225 @@
 How do you make sure no single person can open the bank's secrets?
 
 2
-00:00:03,794 --> 00:00:08,328
-Tear a treasure map into five pieces, and give them to five people.
+00:00:03,794 --> 00:00:07,584
+Picture a payments product installed by a script someone ran once.
 
 3
-00:00:08,378 --> 00:00:11,976
-Any three can put it together, but no one alone can.
+00:00:07,634 --> 00:00:11,448
+The master password sits in a text file on that person's laptop.
 
 4
-00:00:12,026 --> 00:00:14,136
-Vault is opened the same way.
+00:00:11,498 --> 00:00:14,136
+Months later, that person leaves the bank.
 
 5
-00:00:14,186 --> 00:00:19,416
-At install, it is split into five key shares, and any three open it.
+00:00:14,186 --> 00:00:16,008
+Then a disk fails.
 
 6
-00:00:19,466 --> 00:00:25,104
-Each keyholder keeps their own share, and nothing of the ceremony is written down anywhere.
+00:00:16,058 --> 00:00:21,648
+The database backup is there, but it cannot be read, because nobody kept the keys that sealed it.
 
 7
-00:00:25,154 --> 00:00:31,080
-After every restart, Vault is sealed again, and three keyholders must unseal it.
+00:00:21,698 --> 00:00:26,592
+One person and one file: the keys end up either lost or leaked.
 
 8
-00:00:31,130 --> 00:00:36,504
-A master key for setup is made only for that session, and always revoked at the end.
+00:00:26,642 --> 00:00:28,368
+Now think of a treasure map.
 
 9
-00:00:36,554 --> 00:00:42,432
-And because the database backups are unreadable without that Vault, the two are always backed up together.
+00:00:28,418 --> 00:00:32,640
+Tear it into five pieces, and give the pieces to five different people.
 
 10
-00:00:42,482 --> 00:00:44,808
+00:00:32,690 --> 00:00:35,472
+Any three of them can put the map back together.
+
+11
+00:00:35,522 --> 00:00:38,280
+No one alone can, and no two can either.
+
+12
+00:00:38,330 --> 00:00:43,560
+Vault, which holds every key and every setting in the system, opens the same way.
+
+13
+00:00:43,610 --> 00:00:47,856
+At install, Vault's opening key is split into five key shares.
+
+14
+00:00:47,906 --> 00:00:52,008
+A key share is one piece of that key, useless on its own.
+
+15
+00:00:52,058 --> 00:00:54,744
+Any three shares together open Vault.
+
+16
+00:00:54,794 --> 00:00:57,984
+Each share goes to one person: a keyholder.
+
+17
+00:00:58,034 --> 00:01:02,472
+A keyholder keeps their share in their own password manager, and nowhere else.
+
+18
+00:01:02,522 --> 00:01:06,960
+The bank chooses the keyholders, and makes sure no one holds two shares.
+
+19
+00:01:07,010 --> 00:01:13,920
+Nothing of this ceremony is written down anywhere: not the shares, not on the server, not in a log.
+
+20
+00:01:13,970 --> 00:01:15,768
+Vault also locks itself.
+
+21
+00:01:15,818 --> 00:01:20,904
+Every time it starts, it starts sealed: it holds everything, but can read nothing.
+
+22
+00:01:20,954 --> 00:01:25,536
+To unseal it, three keyholders come, and each types their own share.
+
+23
+00:01:25,586 --> 00:01:28,488
+Until then, nothing that needs Vault can run.
+
+24
+00:01:28,538 --> 00:01:32,808
+Setting things up needs one more key: a master key for the session.
+
+25
+00:01:32,858 --> 00:01:38,808
+It is made from three keyholders' shares, used for that one session, and always revoked at the end.
+
+26
+00:01:38,858 --> 00:01:42,768
+So no master key sits around, waiting to be stolen.
+
+27
+00:01:42,818 --> 00:01:44,256
+Last, backups.
+
+28
+00:01:44,306 --> 00:01:47,616
+Card numbers in the database are sealed by Vault's keys.
+
+29
+00:01:47,666 --> 00:01:51,120
+A database backup without that Vault is unreadable.
+
+30
+00:01:51,170 --> 00:01:55,800
+So the database and Vault are always backed up together, and restored together.
+
+31
+00:01:55,850 --> 00:01:57,672
+Let's watch the product.
+
+32
+00:01:57,722 --> 00:02:01,416
+An operator runs the card zone's installer on a fresh server.
+
+33
+00:02:01,466 --> 00:02:04,680
+It checks the machine first, then reaches the keys.
+
+34
+00:02:04,730 --> 00:02:12,456
+It says Vault is new, and that each of the five keyholders copies their own share straight into their own password manager.
+
+35
+00:02:12,506 --> 00:02:15,792
+Then it waits: press Enter when the keyholders are here.
+
+36
+00:02:15,842 --> 00:02:17,664
+Five people gather.
+
+37
+00:02:17,714 --> 00:02:21,504
+From here, the camera stays on the people, never on the screen.
+
+38
+00:02:21,554 --> 00:02:23,784
+Each person saves their own share.
+
+39
+00:02:23,834 --> 00:02:27,600
+The installer waits again, until every share is saved.
+
+40
+00:02:27,650 --> 00:02:29,472
+Then it clears the screen.
+
+41
+00:02:29,522 --> 00:02:38,496
+Three keyholders step up, one at a time, and type their shares unseen: first to unseal Vault, then to make the session's master key.
+
+42
+00:02:38,546 --> 00:02:42,120
+The installer sets everything up and starts the services.
+
+43
+00:02:42,170 --> 00:02:44,832
+At the end, it revokes the master key.
+
+44
+00:02:44,882 --> 00:02:48,504
+Now the operator restarts Vault, just as any reboot would.
+
+45
+00:02:48,554 --> 00:02:50,424
+They run the installer's check.
+
+46
+00:02:50,474 --> 00:02:54,696
+It stops at once: Vault is sealed, and nothing that needs it can run.
+
+47
+00:02:54,746 --> 00:02:56,568
+Three keyholders are called.
+
+48
+00:02:56,618 --> 00:02:59,976
+One by one, each types their own share, unseen.
+
+49
+00:03:00,026 --> 00:03:03,600
+On the third share, Vault opens, and the check passes.
+
+50
+00:03:03,650 --> 00:03:05,472
+What does this protect?
+
+51
+00:03:05,522 --> 00:03:10,800
+It protects the bank from one person who leaves, loses a laptop, or is tempted.
+
+52
+00:03:10,850 --> 00:03:15,264
+No one alone can open the keys, and no one alone can hold them hostage.
+
+53
+00:03:15,314 --> 00:03:21,144
+It protects the card numbers too, because a stolen server or a stolen backup holds nothing readable.
+
+54
+00:03:21,194 --> 00:03:27,552
+And it protects the bank's recovery: as long as the database and Vault are backed up together, a restore works.
+
+55
+00:03:27,602 --> 00:03:29,424
+Back to the treasure map.
+
+56
+00:03:29,474 --> 00:03:34,800
+Five pieces, five people, and three of them, every time the keys are opened.
+
+57
+00:03:34,850 --> 00:03:37,176
 Next: one install, everywhere.
