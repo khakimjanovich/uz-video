@@ -1,0 +1,263 @@
+1
+00:00:00,050 --> 00:00:03,048
+How do you make sure a card is charged exactly once?
+
+2
+00:00:03,098 --> 00:00:05,472
+Picture the buyer pressing pay twice.
+
+3
+00:00:05,522 --> 00:00:08,808
+Or the page retrying on a weak network.
+
+4
+00:00:08,858 --> 00:00:13,008
+Or two copies of the bank's app picking up the same confirmed card.
+
+5
+00:00:13,058 --> 00:00:14,832
+Each of them could charge the card.
+
+6
+00:00:14,882 --> 00:00:16,728
+Now picture a worse case.
+
+7
+00:00:16,778 --> 00:00:21,456
+The app asks the network to charge the card, and crashes before it saves the answer.
+
+8
+00:00:21,506 --> 00:00:22,632
+Did money move?
+
+9
+00:00:22,682 --> 00:00:24,504
+Nobody knows.
+
+10
+00:00:24,554 --> 00:00:26,328
+Think of a bank's cash desk.
+
+11
+00:00:26,378 --> 00:00:29,184
+Only one cashier can hold the withdrawal slip.
+
+12
+00:00:29,234 --> 00:00:33,864
+And the cashier writes the withdrawal in the logbook before opening the drawer.
+
+13
+00:00:33,914 --> 00:00:35,736
+The charge works the same way.
+
+14
+00:00:35,786 --> 00:00:37,608
+First comes the claim.
+
+15
+00:00:37,658 --> 00:00:42,192
+The claim is a single change to the payment, from card confirmed to debiting.
+
+16
+00:00:42,242 --> 00:00:45,696
+It succeeds only if the payment is still card confirmed.
+
+17
+00:00:45,746 --> 00:00:50,784
+So however many clicks or retries arrive, exactly one caller wins.
+
+18
+00:00:50,834 --> 00:00:53,952
+The others find the payment already taken, and stop.
+
+19
+00:00:54,002 --> 00:00:56,256
+The winner then finds two things.
+
+20
+00:00:56,306 --> 00:00:59,232
+It finds the website's live terminal for this card.
+
+21
+00:00:59,282 --> 00:01:02,448
+And it finds the fee the bank agreed with this merchant.
+
+22
+00:01:02,498 --> 00:01:07,056
+If either is missing, the payment fails right there, and nothing is charged.
+
+23
+00:01:07,106 --> 00:01:10,584
+Next, the winner writes a line in the operation journal.
+
+24
+00:01:10,634 --> 00:01:13,920
+That is the bank's logbook of every call that moves money.
+
+25
+00:01:13,970 --> 00:01:19,248
+The line says debit, requested, for this payment, through this terminal.
+
+26
+00:01:19,298 --> 00:01:22,128
+It is written before any network is asked.
+
+27
+00:01:22,178 --> 00:01:25,056
+And a payment can hold only one debit line.
+
+28
+00:01:25,106 --> 00:01:28,584
+Then ecom asks the card zone to charge the card by its token.
+
+29
+00:01:28,634 --> 00:01:30,336
+The call carries its own id.
+
+30
+00:01:30,386 --> 00:01:36,504
+If the call is sent twice, the card zone sees the same id, and the charge still happens once.
+
+31
+00:01:36,554 --> 00:01:40,728
+The card zone talks to the processing centre, which asks the buyer's bank.
+
+32
+00:01:40,778 --> 00:01:43,392
+Some networks only hold the money at first.
+
+33
+00:01:43,442 --> 00:01:47,160
+For those, the card zone takes the held money at once.
+
+34
+00:01:47,210 --> 00:01:49,320
+That second step is the capture.
+
+35
+00:01:49,370 --> 00:01:53,496
+So for every network, approved means the money is taken.
+
+36
+00:01:53,546 --> 00:01:55,104
+Three answers can come back.
+
+37
+00:01:55,154 --> 00:01:58,056
+Approved means paid, with a reference number.
+
+38
+00:01:58,106 --> 00:02:01,728
+Declined is final, with a reason the bank can explain.
+
+39
+00:02:01,778 --> 00:02:04,224
+And no answer in time is unknown.
+
+40
+00:02:04,274 --> 00:02:06,648
+Unknown is never treated as declined.
+
+41
+00:02:06,698 --> 00:02:09,672
+A paid payment never becomes unpaid again.
+
+42
+00:02:09,722 --> 00:02:11,544
+Now watch it from the buyer's side.
+
+43
+00:02:11,594 --> 00:02:15,024
+The buyer types the card into the frame and confirms it there.
+
+44
+00:02:15,074 --> 00:02:19,896
+The page changes to taking the payment, and says the buyer's bank is being asked.
+
+45
+00:02:19,946 --> 00:02:24,192
+A few seconds later, it says paid, and shows the reference number.
+
+46
+00:02:24,242 --> 00:02:26,064
+Try a card with too little money.
+
+47
+00:02:26,114 --> 00:02:31,776
+The page says the payment was declined, and gives the reason: there isn't enough money on the card.
+
+48
+00:02:31,826 --> 00:02:33,648
+Now open the merchant portal.
+
+49
+00:02:33,698 --> 00:02:36,480
+The payments list shows the payment as paid.
+
+50
+00:02:36,530 --> 00:02:37,296
+Open it.
+
+51
+00:02:37,346 --> 00:02:40,872
+The details show the amount, the website and the bank fee.
+
+52
+00:02:40,922 --> 00:02:43,752
+Below them is a section called calls to the card scheme.
+
+53
+00:02:43,802 --> 00:02:47,472
+It has one line: debit, first sent, now approved.
+
+54
+00:02:47,522 --> 00:02:50,832
+Even after a double click, there is still only one line.
+
+55
+00:02:50,882 --> 00:02:52,704
+What does this protect?
+
+56
+00:02:52,754 --> 00:02:56,160
+Without the claim, a double click is a double charge.
+
+57
+00:02:56,210 --> 00:03:01,704
+Without the journal written first, a crash leaves money moved and no record of it.
+
+58
+00:03:01,754 --> 00:03:06,408
+Without the once-only id, a retried call charges the card again.
+
+59
+00:03:06,458 --> 00:03:13,896
+And without the unknown outcome, a slow network would tell the buyer to pay again, while the first charge quietly went through.
+
+60
+00:03:13,946 --> 00:03:15,792
+The buyer is charged once.
+
+61
+00:03:15,842 --> 00:03:17,808
+The merchant is paid once.
+
+62
+00:03:17,858 --> 00:03:20,664
+And the bank can always say what it asked, and when.
+
+63
+00:03:20,714 --> 00:03:22,536
+So back to the cash desk.
+
+64
+00:03:22,586 --> 00:03:26,112
+One slip, in one hand, written in the logbook first.
+
+65
+00:03:26,162 --> 00:03:27,984
+One charge.
+
+66
+00:03:28,034 --> 00:03:31,080
+Next: what happens when the network goes silent.
