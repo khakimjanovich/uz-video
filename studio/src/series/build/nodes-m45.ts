@@ -14,7 +14,11 @@ export const M45_NODES = {
   m45Admin: { label: "Admin", sublabel: "Merchant's team", art: "admin" },
   m45Operator: { label: "Operator", art: "tray" },
   m45Observer: { label: "Observer", art: "checker" },
+  m45Support: { label: "Support desk", art: "tray" },
   // systems
+  m45Shared: { label: "One shared login", art: "request" },
+  m45Authenticator: { label: "Authenticator app", sublabel: "On their phone" },
+  m45Portal: { label: "Merchant portal", art: "store" },
   m45Bank: { label: "The bank", sublabel: "Sends the code", art: "bank" },
   m45Inbox: { label: "Inbox", sublabel: "That email address", art: "receipt" },
   m45Form: { label: "Sign-up form", art: "request" },
@@ -29,6 +33,8 @@ export const M45_NODES = {
   m45Licence: { label: "Driving licence", sublabel: "Its own number", art: "receipt" },
   m45Folder: { label: "Your file", art: "journal" },
   m45Docs: { label: "Company documents", art: "receipt" },
+  m45FileStore: { label: "File store", sublabel: "Reads the real type", art: "vault" },
+  m45FakeFile: { label: "\"charter\"", sublabel: "Really something else", art: "receipt" },
   m45Fingerprint: { label: "Fingerprint", sublabel: "Catches a changed file" },
   m45Contract: { label: "Contract", sublabel: "Unique number", art: "receipt" },
   m45Cheque: { label: "Company cheque", sublabel: "Two signatures", art: "receipt" },
@@ -57,5 +63,6 @@ export const M45_NODES = {
   m45Proposal: { label: "Proposed change", art: "request" },
   // terminals
   m45Taxi: { label: "Taxi", sublabel: "Licence plate", art: "transit" },
+  m45Counter: { label: "Card machine", sublabel: "On the counter", art: "salespoint" },
   m45Tid2: { label: "Same pair again", art: "tray" },
 } satisfies Record<string, NodeDef>;
