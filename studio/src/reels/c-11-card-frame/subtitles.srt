@@ -1,0 +1,247 @@
+1
+00:00:00,050 --> 00:00:04,392
+How do thieves steal card numbers without breaking into any database?
+
+2
+00:00:04,442 --> 00:00:07,272
+They add one line of script to a payment page.
+
+3
+00:00:07,322 --> 00:00:12,144
+It might arrive through a hacked analytics tool, or a changed file on a shared server.
+
+4
+00:00:12,194 --> 00:00:17,280
+That one line copies every card number as the buyer types it, and sends it away.
+
+5
+00:00:17,330 --> 00:00:18,816
+The page still works.
+
+6
+00:00:18,866 --> 00:00:20,688
+The buyer still pays.
+
+7
+00:00:20,738 --> 00:00:22,656
+Nobody notices for weeks.
+
+8
+00:00:22,706 --> 00:00:24,528
+This is called web skimming.
+
+9
+00:00:24,578 --> 00:00:27,048
+The card zone's answer is the card frame.
+
+10
+00:00:27,098 --> 00:00:31,320
+The frame is the card zone's own small page, on its own address.
+
+11
+00:00:31,370 --> 00:00:34,176
+It sits inside the bank's payment page like a window.
+
+12
+00:00:34,226 --> 00:00:37,296
+Think of it as the bank's card reader on the shop's counter.
+
+13
+00:00:37,346 --> 00:00:39,768
+A real card reader has tamper seals.
+
+14
+00:00:39,818 --> 00:00:41,640
+The frame has seals too.
+
+15
+00:00:41,690 --> 00:00:45,864
+Seal one: only the page its session names may hold the frame.
+
+16
+00:00:45,914 --> 00:00:50,688
+Each time a buyer pays, the card zone opens a session for one page.
+
+17
+00:00:50,738 --> 00:00:54,792
+A look-alike site that tries to hold the frame is refused by the browser.
+
+18
+00:00:54,842 --> 00:00:57,840
+Seal two: a Content Security Policy.
+
+19
+00:00:57,890 --> 00:01:00,456
+That is a rule the frame gives the browser.
+
+20
+00:01:00,506 --> 00:01:05,592
+It says: run nothing but my own two files, and talk only to my own address.
+
+21
+00:01:05,642 --> 00:01:08,712
+Any other script is refused before it runs.
+
+22
+00:01:08,762 --> 00:01:11,856
+Seal three: Subresource Integrity.
+
+23
+00:01:11,906 --> 00:01:15,168
+The frame names each of its two files by a fingerprint.
+
+24
+00:01:15,218 --> 00:01:21,168
+If even one character of a file changes, the fingerprint no longer matches, and the browser will not run it.
+
+25
+00:01:21,218 --> 00:01:27,576
+When the buyer finishes, the frame hands back only two things: a token and the masked number.
+
+26
+00:01:27,626 --> 00:01:31,248
+It hands them only to the one page its session names.
+
+27
+00:01:31,298 --> 00:01:34,944
+The card number itself never leaves the frame for the page.
+
+28
+00:01:34,994 --> 00:01:38,400
+When the browser blocks something, it reports it to the card zone.
+
+29
+00:01:38,450 --> 00:01:41,328
+So a tampering attempt leaves a trace.
+
+30
+00:01:41,378 --> 00:01:46,896
+And the shop's page around the frame is watched too, because a skimmer there could still trick the buyer.
+
+31
+00:01:46,946 --> 00:01:48,768
+Now watch the product.
+
+32
+00:01:48,818 --> 00:01:50,760
+The buyer opens the payment page.
+
+33
+00:01:50,810 --> 00:01:55,704
+The frame appears inside it, with two fields: card number and expiry date.
+
+34
+00:01:55,754 --> 00:01:59,064
+As the buyer types, the number falls into groups of four.
+
+35
+00:01:59,114 --> 00:02:02,328
+The expiry date gets its slash by itself.
+
+36
+00:02:02,378 --> 00:02:07,176
+The buyer presses "Send code", types the code from their phone, and presses "Confirm".
+
+37
+00:02:07,226 --> 00:02:10,728
+The frame says "Card accepted" and clears the number field.
+
+38
+00:02:10,778 --> 00:02:13,320
+The page shows only the masked line.
+
+39
+00:02:13,370 --> 00:02:15,192
+Now try to break it.
+
+40
+00:02:15,242 --> 00:02:18,960
+Open the frame's address on its own, outside the payment page.
+
+41
+00:02:19,010 --> 00:02:23,808
+It shows one sentence: this page opens only inside the payment page.
+
+42
+00:02:23,858 --> 00:02:25,680
+No form appears.
+
+43
+00:02:25,730 --> 00:02:28,272
+Put the frame inside a look-alike site.
+
+44
+00:02:28,322 --> 00:02:31,584
+The browser shows an empty, refused box instead.
+
+45
+00:02:31,634 --> 00:02:33,456
+Now act as a skimmer.
+
+46
+00:02:33,506 --> 00:02:36,960
+Inside the frame, try to load a script from another address.
+
+47
+00:02:37,010 --> 00:02:42,192
+The browser's console shows a red line: the script is refused under the frame's policy.
+
+48
+00:02:42,242 --> 00:02:44,064
+Nothing loads.
+
+49
+00:02:44,114 --> 00:02:47,712
+On the bank's side, that refusal arrives as a report.
+
+50
+00:02:47,762 --> 00:02:52,800
+The team sees it in the card zone's logs, with the rule that was broken and the page it came from.
+
+51
+00:02:52,850 --> 00:02:54,672
+No card data is in it.
+
+52
+00:02:54,722 --> 00:02:56,544
+What does this protect?
+
+53
+00:02:56,594 --> 00:03:03,048
+It protects the one moment a card number exists in plain view: in the buyer's browser, as it is typed.
+
+54
+00:03:03,098 --> 00:03:08,520
+A database can be locked and sealed, and a skimmer can still copy numbers at the keyboard.
+
+55
+00:03:08,570 --> 00:03:11,160
+The seals protect the buyer from a stranger's script.
+
+56
+00:03:11,210 --> 00:03:13,392
+They protect the bank from a stolen form.
+
+57
+00:03:13,442 --> 00:03:17,208
+And they protect the shop, whose page never touches the number.
+
+58
+00:03:17,258 --> 00:03:19,080
+Back to the card reader.
+
+59
+00:03:19,130 --> 00:03:21,336
+It runs only the bank's software.
+
+60
+00:03:21,386 --> 00:03:23,208
+It works only on one counter.
+
+61
+00:03:23,258 --> 00:03:25,080
+And a broken seal shows.
+
+62
+00:03:25,130 --> 00:03:27,696
+Next: the two doors into the locked room.
