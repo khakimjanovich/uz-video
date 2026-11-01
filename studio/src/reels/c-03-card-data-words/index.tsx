@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "What may you keep?", "Card ending 7890", "Never the whole number", "The digits on the back",
+  "What may you keep?", "Lesson 1: a token", "Lesson 2: enough to pay", "This lesson: what to keep", "Card ending 7890", "Never the whole number", "The digits on the back",
   "A support engineer", "A support ticket", "Lives in the ticket", "Backups, search, readers", "Many places",
   "Like your bank", "The words",
   "The PAN", "A thief needs it most", "The card zone",
