@@ -148,7 +148,7 @@ export const screens: ScreenStep[] = [
     src: "screens/c-10-bin-directory/networks.png",
     title: "Payment page",
     region: [440, 20, 560, 350],
-    beats: [{ cue: 33, region: [...FORM], focus: [[545, 285, 110, 26]] }],
+    beats: [{ cue: 33, region: [...FORM], focus: [[545, 285, 125, 26]] }],
   },
   {
     cue: 34,
@@ -175,6 +175,6 @@ export const screens: ScreenStep[] = [
     title: "Payment page · the masked line",
     region: [...LINE],
     focus: [[540, 293, 310, 28]],
-    beats: [{ cue: 46, region: [...LINE], focus: [[540, 293, 100, 28]] }],
+    beats: [{ cue: 46, region: [...LINE], focus: [[540, 293, 122, 28]] }],
   },
 ];

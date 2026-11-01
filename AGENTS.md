@@ -182,6 +182,7 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `PCI-DSS` | P C I D S S | yes |
 | `OFD` | O F D | yes |
 | `9998` | nine nine nine eight | yes |
+| `BINs` | B I Ns | yes |
 | `tok_uz_…` | token | no |
 | `API` | A P I | yes |
 | `e-POS` | e POS | yes |
