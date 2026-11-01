@@ -13,7 +13,7 @@ const TITLES = [
   "Types the card", "Straight to the card zone", "Not on the way", "A receipt", "Never the number",
   "Charge by token", "This payment's session",
   "Watch the product", "The payment page", "Secure payment page", "The amount to pay", "Card details",
-  "Number and date", "One short line", "Pay", "Taking the payment", "Paid",
+  "Number and date", "One short line", "Type the code", "Taking the payment", "Paid",
   "The wrong way", "Too long, too many", "The attempt ended", "Short-lived", "Used up",
   "A masked number", "All ecom holds",
   "What does it protect?", "Never through ecom", "No card leaks", "The shop never touches it", "One small room",

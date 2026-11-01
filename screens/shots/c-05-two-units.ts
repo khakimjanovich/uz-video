@@ -5,4 +5,4 @@ import { prepare, serve, shoot } from "../harness";
 
 prepare();
 await serve();
-await shoot(pick("pay-card", "pay-typed", "pay-debiting", "pay-paid", "pay-ended", "admin-payments"), join(import.meta.dir, "../../studio/public/screens/c-05-two-units"));
+await shoot(pick("pay-card", "pay-typed", "pay-code", "pay-debiting", "pay-paid", "pay-ended", "admin-payments"), join(import.meta.dir, "../../studio/public/screens/c-05-two-units"));

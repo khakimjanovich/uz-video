@@ -47,185 +47,185 @@ It gave the buyer the card, and it holds the buyer's money.
 Between them sits the card network, which carries messages from one bank to the other.
 
 13
-00:00:37,466 --> 00:00:44,520
-When the buyer presses Pay, the acquirer sends a question through the card network to the issuer: may this card pay this amount?
+00:00:37,466 --> 00:00:45,048
+When the buyer confirms the payment, the acquirer sends a question through the card network to the issuer: may this card pay this amount?
 
 14
-00:00:44,570 --> 00:00:47,688
+00:00:45,098 --> 00:00:48,216
 The issuer checks the card and the money on the account.
 
 15
-00:00:47,738 --> 00:00:51,192
+00:00:48,266 --> 00:00:51,720
 Then it answers yes or no, in a few seconds.
 
 16
-00:00:51,242 --> 00:00:53,616
+00:00:51,770 --> 00:00:54,144
 That yes is a promise, written down.
 
 17
-00:00:53,666 --> 00:00:56,136
+00:00:54,194 --> 00:00:56,664
 It is a line in the tab book, not money.
 
 18
-00:00:56,186 --> 00:00:57,864
+00:00:56,714 --> 00:00:58,536
 The money moves later.
 
 19
-00:00:57,914 --> 00:01:03,984
+00:00:58,586 --> 00:01:04,656
 Many payments travel together, in one batch, from the issuer through the card network to the acquirer.
 
 20
-00:01:04,034 --> 00:01:05,928
+00:01:04,706 --> 00:01:06,600
 That batch is called settlement.
 
 21
-00:01:05,978 --> 00:01:09,456
+00:01:06,650 --> 00:01:10,128
 Then the acquirer keeps its fee and pays the shop the rest.
 
 22
-00:01:09,506 --> 00:01:14,304
+00:01:10,178 --> 00:01:14,976
 So a payment has two moments: the yes, in seconds, and the money, later.
 
 23
-00:01:14,354 --> 00:01:17,592
+00:01:15,026 --> 00:01:18,264
 Giving money back depends on which side of settlement you stand.
 
 24
-00:01:17,642 --> 00:01:20,664
+00:01:18,314 --> 00:01:21,336
 Before settlement, no money has moved yet.
 
 25
-00:01:20,714 --> 00:01:24,840
+00:01:21,386 --> 00:01:25,512
 So the line is simply crossed out, as if the payment never happened.
 
 26
-00:01:24,890 --> 00:01:26,712
+00:01:25,562 --> 00:01:27,384
 That is a reversal.
 
 27
-00:01:26,762 --> 00:01:29,520
+00:01:27,434 --> 00:01:30,192
 After settlement, the money has already moved.
 
 28
-00:01:29,570 --> 00:01:33,792
+00:01:30,242 --> 00:01:34,464
 Crossing out is too late, so the money must be sent back as a new movement.
 
 29
-00:01:33,842 --> 00:01:35,664
+00:01:34,514 --> 00:01:36,336
 That is a refund.
 
 30
-00:01:35,714 --> 00:01:37,536
+00:01:36,386 --> 00:01:38,208
 Now watch the product.
 
 31
-00:01:37,586 --> 00:01:41,616
-On the bank's payment page, the buyer types the card and presses Pay.
+00:01:38,258 --> 00:01:43,512
+On the bank's payment page, the buyer types the card and confirms it with a code sent to their phone.
 
 32
-00:01:41,666 --> 00:01:46,104
+00:01:43,562 --> 00:01:48,000
 The page says "Taking the payment", and below it, "Your bank is being asked".
 
 33
-00:01:46,154 --> 00:01:49,992
+00:01:48,050 --> 00:01:51,888
 A few seconds later it says "Paid", with a reference number.
 
 34
-00:01:50,042 --> 00:01:51,864
+00:01:51,938 --> 00:01:53,760
 That is the issuer's yes.
 
 35
-00:01:51,914 --> 00:01:55,272
+00:01:53,810 --> 00:01:57,168
 Now open the merchant portal, where the shop's staff work.
 
 36
-00:01:55,322 --> 00:01:58,920
+00:01:57,218 --> 00:02:00,816
 The Payments page lists every payment on the shop's websites.
 
 37
-00:01:58,970 --> 00:02:00,792
+00:02:00,866 --> 00:02:02,688
 Open the paid one.
 
 38
-00:02:00,842 --> 00:02:05,400
+00:02:02,738 --> 00:02:07,296
 It shows the amount, the bank's fee, and every call to the card network.
 
 39
-00:02:05,450 --> 00:02:09,432
+00:02:07,346 --> 00:02:11,328
 It also shows "Refundable until" a date, and a "Give back" button.
 
 40
-00:02:09,482 --> 00:02:17,424
+00:02:11,378 --> 00:02:19,320
 Press it, and a dialog explains the rule in one line: on the day of payment the money is reversed; later it is refunded.
 
 41
-00:02:17,474 --> 00:02:25,080
+00:02:19,370 --> 00:02:26,976
 In the bank admin portal, on its own Payments page, a payment given back shows one of two different states: Reversed, or Refunded.
 
 42
-00:02:25,130 --> 00:02:26,952
+00:02:27,026 --> 00:02:28,848
 They never share one word.
 
 43
-00:02:27,002 --> 00:02:36,264
+00:02:28,898 --> 00:02:38,160
 And each morning, the merchant's Daily reports page adds up the day before: what was paid, the bank fee, what was refunded, and what the shop receives.
 
 44
-00:02:36,314 --> 00:02:38,136
+00:02:38,210 --> 00:02:40,032
 What does this protect?
 
 45
-00:02:38,186 --> 00:02:41,424
+00:02:40,082 --> 00:02:43,320
 Picture a system that treats the yes as money.
 
 46
-00:02:41,474 --> 00:02:47,496
+00:02:43,370 --> 00:02:49,392
 It pays the shop at once, then the batch never brings that payment, and the bank has paid out money it never got.
 
 47
-00:02:47,546 --> 00:02:51,168
+00:02:49,442 --> 00:02:53,064
 Now picture a system that mixes reversal and refund.
 
 48
-00:02:51,218 --> 00:02:56,184
+00:02:53,114 --> 00:02:58,080
 It crosses out a line that was already settled, and the buyer's money never comes back.
 
 49
-00:02:56,234 --> 00:03:01,872
+00:02:58,130 --> 00:03:03,768
 Or it sends a refund for a payment that was already crossed out, and the buyer is paid twice.
 
 50
-00:03:01,922 --> 00:03:06,744
+00:03:03,818 --> 00:03:08,640
 Either way, someone loses money: the bank, the shop or the buyer.
 
 51
-00:03:06,794 --> 00:03:09,096
+00:03:08,690 --> 00:03:10,992
 So two pairs always stay apart.
 
 52
-00:03:09,146 --> 00:03:10,968
+00:03:11,042 --> 00:03:12,864
 Approved is not paid out.
 
 53
-00:03:11,018 --> 00:03:13,080
+00:03:12,914 --> 00:03:14,976
 A reversal is not a refund.
 
 54
-00:03:13,130 --> 00:03:14,952
+00:03:15,026 --> 00:03:16,848
 Back to the tab book.
 
 55
-00:03:15,002 --> 00:03:16,992
+00:03:16,898 --> 00:03:18,888
 A line is written in seconds.
 
 56
-00:03:17,042 --> 00:03:18,984
+00:03:18,938 --> 00:03:20,880
 The money moves at the end of the week.
 
 57
-00:03:19,034 --> 00:03:23,496
+00:03:20,930 --> 00:03:25,392
 Before then, you cross a line out; after then, you hand the cash back.
 
 58
-00:03:23,546 --> 00:03:25,824
+00:03:25,442 --> 00:03:27,720
 Next: what you may keep about a card.

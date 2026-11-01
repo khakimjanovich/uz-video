@@ -177,6 +177,24 @@ export const M01_SHOTS: Record<string, Shot> = {
       await box(p, "frame", "iframe");
     },
   },
+  // The code step: the card sent, the code from the buyer's phone typed in, "Confirm" next.
+  "pay-code": {
+    name: "pay-code",
+    path: PAY,
+    fixtures: {
+      "GET /api/v1/pay/*": page({ status: "CREATED", cardEntry: entry(SESSION_A) }),
+      "POST /entry/v1/sessions/*/card": () => ({ body: { status: "CODE_SENT" } }),
+    },
+    act: async (p) => {
+      await frame(p).locator("#pan").waitFor();
+      await p.waitForTimeout(800);
+      await typeCard(p);
+      await frame(p).locator("button[type=submit]").first().click();
+      await frame(p).locator("#otp").waitFor();
+      await frame(p).locator("#otp").pressSequentially("482915");
+      await box(p, "frame", "iframe");
+    },
+  },
   // Too many tries: the frame's session ends, the page opens a new one and says why.
   "pay-ended": {
     name: "pay-ended",

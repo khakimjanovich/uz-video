@@ -119,7 +119,10 @@ export const screens: ScreenStep[] = [
     ],
   },
   { cue: 33, src: `${SHOT}/pay-typed.png`, title: PAY.cardTitle, region: PAY.frame, focus: [PAY.fields] },
-  { cue: 34, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.cardLine], beats: [{ cue: 36, region: PAY.status, focus: [PAY.taking] }] },
+  { cue: 34, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.cardLine] },
+  // The code from the buyer's phone, typed into the card zone's frame; "Confirm" next.
+  { cue: 35, src: `${SHOT}/pay-code.png`, title: PAY.cardTitle, region: PAY.frame, focus: [[556, 426, 328, 38]] },
+  { cue: 36, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.taking] },
   { cue: 37, src: `${SHOT}/pay-paid.png`, title: PAY.title, region: PAY.status, focus: [PAY.paid] },
   { cue: 40, src: `${SHOT}/pay-ended.png`, title: PAY.cardTitle, region: PAY.ended, focus: [PAY.note] },
   { cue: 43, src: `${SHOT}/admin-payments.png`, title: BANK.title, region: BANK.list, focus: [BANK.firstCard] },
