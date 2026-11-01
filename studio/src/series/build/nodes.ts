@@ -35,6 +35,7 @@ export const BUILD_CATALOG = {
   bank: { label: "The bank", sublabel: "Network · guards", art: "bank" },
   ticket: { label: "Ticket", sublabel: "Add a fee to card payments", art: "request" },
   tabBook: { label: "Tab book", sublabel: "One line per sale", art: "journal" },
+  promise: { label: "The yes", sublabel: "Money set aside", art: "journal" },
   network: { label: "Card network", sublabel: "Between the banks", art: "processing" },
   supportTicket: { label: "Support ticket", sublabel: "Card number pasted in", art: "request" },
   searchIndex: { label: "Search index", art: "journal" },
