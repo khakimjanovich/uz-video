@@ -71,9 +71,9 @@
   {
     "index": 2,
     "startFrame": 86,
-    "endFrame": 342,
-    "text": "Entering an office building, you show an ID card from the building's own pass office, and reception gives you a day pass that lists the floors you may visit.",
-    "prefix": "Entering an office building, you show an ID card from the building's own pass office, and reception gives you a day pass that lists the floors you may visit.",
+    "endFrame": 228,
+    "text": "Picture a request that simply says, in its header: I am ecom.",
+    "prefix": "Picture a request that simply says, in its header: I am ecom.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -81,140 +81,62 @@
         "startFrame": 87,
         "words": [
           {
-            "text": "Entering",
+            "text": "Picture",
             "startFrame": 87
           },
           {
-            "text": "an",
+            "text": "a",
+            "startFrame": 96
+          },
+          {
+            "text": "request",
             "startFrame": 97
           },
           {
-            "text": "office",
-            "startFrame": 99
-          },
-          {
-            "text": "building,",
-            "startFrame": 110
-          }
-        ]
-      },
-      {
-        "startFrame": 132,
-        "words": [
-          {
-            "text": "you",
-            "startFrame": 132
-          },
-          {
-            "text": "show",
-            "startFrame": 134
-          },
-          {
-            "text": "an",
-            "startFrame": 141
-          },
-          {
-            "text": "ID",
-            "startFrame": 144
-          },
-          {
-            "text": "card",
-            "startFrame": 158
-          },
-          {
-            "text": "from",
-            "startFrame": 167
-          },
-          {
-            "text": "the",
-            "startFrame": 171
-          },
-          {
-            "text": "building's",
-            "startFrame": 173
-          }
-        ]
-      },
-      {
-        "startFrame": 188,
-        "words": [
-          {
-            "text": "own",
-            "startFrame": 188
-          },
-          {
-            "text": "pass",
-            "startFrame": 194
-          },
-          {
-            "text": "office,",
-            "startFrame": 204
-          }
-        ]
-      },
-      {
-        "startFrame": 231,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 231
-          },
-          {
-            "text": "reception",
-            "startFrame": 233
-          },
-          {
-            "text": "gives",
-            "startFrame": 251
-          },
-          {
-            "text": "you",
-            "startFrame": 256
-          },
-          {
-            "text": "a",
-            "startFrame": 259
-          },
-          {
-            "text": "day",
-            "startFrame": 261
-          },
-          {
-            "text": "pass",
-            "startFrame": 266
-          },
-          {
             "text": "that",
-            "startFrame": 280
+            "startFrame": 114
+          },
+          {
+            "text": "simply",
+            "startFrame": 119
+          },
+          {
+            "text": "says,",
+            "startFrame": 131
           }
         ]
       },
       {
-        "startFrame": 285,
+        "startFrame": 159,
         "words": [
           {
-            "text": "lists",
-            "startFrame": 285
+            "text": "in",
+            "startFrame": 159
           },
           {
-            "text": "the",
-            "startFrame": 293
+            "text": "its",
+            "startFrame": 162
           },
           {
-            "text": "floors",
-            "startFrame": 297
+            "text": "header:",
+            "startFrame": 166
+          }
+        ]
+      },
+      {
+        "startFrame": 191,
+        "words": [
+          {
+            "text": "I",
+            "startFrame": 191
           },
           {
-            "text": "you",
-            "startFrame": 310
+            "text": "am",
+            "startFrame": 192
           },
           {
-            "text": "may",
-            "startFrame": 312
-          },
-          {
-            "text": "visit.",
-            "startFrame": 317
+            "text": "ecom.",
+            "startFrame": 203
           }
         ]
       }
@@ -222,51 +144,35 @@
   },
   {
     "index": 3,
-    "startFrame": 343,
-    "endFrame": 429,
-    "text": "The card zone does the same for every call.",
-    "prefix": "The card zone does the same for every call.",
+    "startFrame": 229,
+    "endFrame": 284,
+    "text": "Anyone can type that line.",
+    "prefix": "Anyone can type that line.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 344,
+        "startFrame": 230,
         "words": [
           {
-            "text": "The",
-            "startFrame": 344
+            "text": "Anyone",
+            "startFrame": 230
           },
           {
-            "text": "card",
-            "startFrame": 346
+            "text": "can",
+            "startFrame": 237
           },
           {
-            "text": "zone",
-            "startFrame": 353
+            "text": "type",
+            "startFrame": 240
           },
           {
-            "text": "does",
-            "startFrame": 364
+            "text": "that",
+            "startFrame": 248
           },
           {
-            "text": "the",
-            "startFrame": 369
-          },
-          {
-            "text": "same",
-            "startFrame": 371
-          },
-          {
-            "text": "for",
-            "startFrame": 390
-          },
-          {
-            "text": "every",
-            "startFrame": 401
-          },
-          {
-            "text": "call.",
-            "startFrame": 407
+            "text": "line.",
+            "startFrame": 255
           }
         ]
       }
@@ -274,76 +180,89 @@
   },
   {
     "index": 4,
-    "startFrame": 429,
-    "endFrame": 569,
-    "text": "The first proof is a certificate signed by the card zone's own pass office.",
-    "prefix": "The first proof is a certificate signed by the card zone's own pass office.",
+    "startFrame": 285,
+    "endFrame": 427,
+    "text": "A name you write yourself is like a name badge made at home: it proves nothing.",
+    "prefix": "A name you write yourself is like a name badge made at home: it proves nothing.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 431,
+        "startFrame": 285,
         "words": [
           {
-            "text": "The",
-            "startFrame": 431
+            "text": "A",
+            "startFrame": 285
           },
           {
-            "text": "first",
-            "startFrame": 433
+            "text": "name",
+            "startFrame": 287
           },
           {
-            "text": "proof",
-            "startFrame": 441
+            "text": "you",
+            "startFrame": 295
+          },
+          {
+            "text": "write",
+            "startFrame": 300
+          },
+          {
+            "text": "yourself",
+            "startFrame": 306
           },
           {
             "text": "is",
-            "startFrame": 458
+            "startFrame": 324
           },
           {
-            "text": "a",
-            "startFrame": 461
-          },
-          {
-            "text": "certificate",
-            "startFrame": 462
-          },
-          {
-            "text": "signed",
-            "startFrame": 479
+            "text": "like",
+            "startFrame": 327
           }
         ]
       },
       {
-        "startFrame": 490,
+        "startFrame": 330,
         "words": [
           {
-            "text": "by",
-            "startFrame": 490
+            "text": "a",
+            "startFrame": 330
           },
           {
-            "text": "the",
-            "startFrame": 494
+            "text": "name",
+            "startFrame": 331
           },
           {
-            "text": "card",
-            "startFrame": 496
+            "text": "badge",
+            "startFrame": 342
           },
           {
-            "text": "zone's",
-            "startFrame": 506
+            "text": "made",
+            "startFrame": 355
           },
           {
-            "text": "own",
-            "startFrame": 526
+            "text": "at",
+            "startFrame": 362
           },
           {
-            "text": "pass",
-            "startFrame": 531
+            "text": "home:",
+            "startFrame": 364
+          }
+        ]
+      },
+      {
+        "startFrame": 390,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 390
           },
           {
-            "text": "office.",
-            "startFrame": 541
+            "text": "proves",
+            "startFrame": 391
+          },
+          {
+            "text": "nothing.",
+            "startFrame": 400
           }
         ]
       }
@@ -351,85 +270,51 @@
   },
   {
     "index": 5,
-    "startFrame": 570,
-    "endFrame": 726,
-    "text": "Both sides show one, so each knows who is on the other end: mutual TLS.",
-    "prefix": "Both sides show one, so each knows who is on the other end: mutual TLS.",
+    "startFrame": 427,
+    "endFrame": 516,
+    "text": "Now picture the staff entrance of an office building.",
+    "prefix": "Now picture the staff entrance of an office building.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 571,
+        "startFrame": 429,
         "words": [
           {
-            "text": "Both",
-            "startFrame": 571
+            "text": "Now",
+            "startFrame": 429
           },
           {
-            "text": "sides",
-            "startFrame": 578
-          },
-          {
-            "text": "show",
-            "startFrame": 588
-          },
-          {
-            "text": "one,",
-            "startFrame": 597
-          }
-        ]
-      },
-      {
-        "startFrame": 615,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 615
-          },
-          {
-            "text": "each",
-            "startFrame": 623
-          },
-          {
-            "text": "knows",
-            "startFrame": 628
-          },
-          {
-            "text": "who",
-            "startFrame": 636
-          },
-          {
-            "text": "is",
-            "startFrame": 639
-          },
-          {
-            "text": "on",
-            "startFrame": 641
+            "text": "picture",
+            "startFrame": 440
           },
           {
             "text": "the",
-            "startFrame": 643
+            "startFrame": 450
           },
           {
-            "text": "other",
-            "startFrame": 645
-          }
-        ]
-      },
-      {
-        "startFrame": 653,
-        "words": [
-          {
-            "text": "end:",
-            "startFrame": 653
+            "text": "staff",
+            "startFrame": 452
           },
           {
-            "text": "mutual",
-            "startFrame": 679
+            "text": "entrance",
+            "startFrame": 468
           },
           {
-            "text": "TLS.",
-            "startFrame": 691
+            "text": "of",
+            "startFrame": 479
+          },
+          {
+            "text": "an",
+            "startFrame": 480
+          },
+          {
+            "text": "office",
+            "startFrame": 483
+          },
+          {
+            "text": "building.",
+            "startFrame": 493
           }
         ]
       }
@@ -437,76 +322,68 @@
   },
   {
     "index": 6,
-    "startFrame": 727,
-    "endFrame": 863,
-    "text": "The second proof is an access token from the card zone's own login server.",
-    "prefix": "The second proof is an access token from the card zone's own login server.",
+    "startFrame": 517,
+    "endFrame": 641,
+    "text": "You show an ID card, issued by the building's own pass office.",
+    "prefix": "You show an ID card, issued by the building's own pass office.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 728,
+        "startFrame": 518,
         "words": [
           {
-            "text": "The",
-            "startFrame": 728
+            "text": "You",
+            "startFrame": 518
           },
           {
-            "text": "second",
-            "startFrame": 730
-          },
-          {
-            "text": "proof",
-            "startFrame": 741
-          },
-          {
-            "text": "is",
-            "startFrame": 758
+            "text": "show",
+            "startFrame": 519
           },
           {
             "text": "an",
-            "startFrame": 760
+            "startFrame": 526
           },
           {
-            "text": "access",
-            "startFrame": 764
+            "text": "ID",
+            "startFrame": 528
           },
           {
-            "text": "token",
-            "startFrame": 778
-          },
-          {
-            "text": "from",
-            "startFrame": 788
+            "text": "card,",
+            "startFrame": 540
           }
         ]
       },
       {
-        "startFrame": 791,
+        "startFrame": 561,
         "words": [
           {
+            "text": "issued",
+            "startFrame": 561
+          },
+          {
+            "text": "by",
+            "startFrame": 570
+          },
+          {
             "text": "the",
-            "startFrame": 791
+            "startFrame": 574
           },
           {
-            "text": "card",
-            "startFrame": 794
-          },
-          {
-            "text": "zone's",
-            "startFrame": 804
+            "text": "building's",
+            "startFrame": 576
           },
           {
             "text": "own",
-            "startFrame": 824
+            "startFrame": 597
           },
           {
-            "text": "login",
-            "startFrame": 829
+            "text": "pass",
+            "startFrame": 602
           },
           {
-            "text": "server.",
-            "startFrame": 838
+            "text": "office.",
+            "startFrame": 613
           }
         ]
       }
@@ -514,60 +391,80 @@
   },
   {
     "index": 7,
-    "startFrame": 864,
-    "endFrame": 968,
-    "text": "Inside the token are roles: the floors you may visit.",
-    "prefix": "Inside the token are roles: the floors you may visit.",
+    "startFrame": 641,
+    "endFrame": 770,
+    "text": "Reception gives you a day pass, and the pass lists the floors you may visit.",
+    "prefix": "Reception gives you a day pass, and the pass lists the floors you may visit.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 865,
+        "startFrame": 642,
         "words": [
           {
-            "text": "Inside",
-            "startFrame": 865
+            "text": "Reception",
+            "startFrame": 642
           },
           {
-            "text": "the",
-            "startFrame": 877
+            "text": "gives",
+            "startFrame": 659
           },
           {
-            "text": "token",
-            "startFrame": 879
+            "text": "you",
+            "startFrame": 664
           },
           {
-            "text": "are",
-            "startFrame": 890
+            "text": "a",
+            "startFrame": 667
           },
           {
-            "text": "roles:",
-            "startFrame": 894
+            "text": "day",
+            "startFrame": 668
+          },
+          {
+            "text": "pass,",
+            "startFrame": 674
           }
         ]
       },
       {
-        "startFrame": 920,
+        "startFrame": 699,
         "words": [
           {
+            "text": "and",
+            "startFrame": 699
+          },
+          {
             "text": "the",
-            "startFrame": 920
+            "startFrame": 701
+          },
+          {
+            "text": "pass",
+            "startFrame": 703
+          },
+          {
+            "text": "lists",
+            "startFrame": 716
+          },
+          {
+            "text": "the",
+            "startFrame": 724
           },
           {
             "text": "floors",
-            "startFrame": 923
+            "startFrame": 726
           },
           {
             "text": "you",
-            "startFrame": 935
+            "startFrame": 739
           },
           {
             "text": "may",
-            "startFrame": 937
+            "startFrame": 741
           },
           {
             "text": "visit.",
-            "startFrame": 944
+            "startFrame": 746
           }
         ]
       }
@@ -575,139 +472,43 @@
   },
   {
     "index": 8,
-    "startFrame": 969,
-    "endFrame": 1215,
-    "text": "Each operation needs its own role, so even the real ecom can only do what its roles allow: bind a card, read it, or charge it.",
-    "prefix": "Each operation needs its own role, so even the real ecom can only do what its roles allow: bind a card, read it, or charge it.",
+    "startFrame": 771,
+    "endFrame": 844,
+    "text": "The lift goes only to those floors.",
+    "prefix": "The lift goes only to those floors.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 970,
+        "startFrame": 772,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 970
+            "text": "The",
+            "startFrame": 772
           },
           {
-            "text": "operation",
-            "startFrame": 975
+            "text": "lift",
+            "startFrame": 775
           },
           {
-            "text": "needs",
-            "startFrame": 999
-          },
-          {
-            "text": "its",
-            "startFrame": 1007
-          },
-          {
-            "text": "own",
-            "startFrame": 1011
-          },
-          {
-            "text": "role,",
-            "startFrame": 1018
-          }
-        ]
-      },
-      {
-        "startFrame": 1038,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 1038
-          },
-          {
-            "text": "even",
-            "startFrame": 1042
-          },
-          {
-            "text": "the",
-            "startFrame": 1048
-          },
-          {
-            "text": "real",
-            "startFrame": 1050
-          },
-          {
-            "text": "ecom",
-            "startFrame": 1058
-          },
-          {
-            "text": "can",
-            "startFrame": 1072
+            "text": "goes",
+            "startFrame": 786
           },
           {
             "text": "only",
-            "startFrame": 1077
+            "startFrame": 797
           },
           {
-            "text": "do",
-            "startFrame": 1085
-          }
-        ]
-      },
-      {
-        "startFrame": 1092,
-        "words": [
-          {
-            "text": "what",
-            "startFrame": 1092
+            "text": "to",
+            "startFrame": 804
           },
           {
-            "text": "its",
-            "startFrame": 1095
+            "text": "those",
+            "startFrame": 807
           },
           {
-            "text": "roles",
-            "startFrame": 1099
-          },
-          {
-            "text": "allow:",
-            "startFrame": 1108
-          }
-        ]
-      },
-      {
-        "startFrame": 1134,
-        "words": [
-          {
-            "text": "bind",
-            "startFrame": 1134
-          },
-          {
-            "text": "a",
-            "startFrame": 1140
-          },
-          {
-            "text": "card,",
-            "startFrame": 1141
-          }
-        ]
-      },
-      {
-        "startFrame": 1166,
-        "words": [
-          {
-            "text": "read",
-            "startFrame": 1166
-          },
-          {
-            "text": "it,",
-            "startFrame": 1172
-          },
-          {
-            "text": "or",
-            "startFrame": 1184
-          },
-          {
-            "text": "charge",
-            "startFrame": 1187
-          },
-          {
-            "text": "it.",
-            "startFrame": 1198
+            "text": "floors.",
+            "startFrame": 814
           }
         ]
       }
@@ -715,52 +516,110 @@
   },
   {
     "index": 9,
-    "startFrame": 1216,
-    "endFrame": 1292,
-    "text": "Steal one proof, and you still get nothing.",
-    "prefix": "Steal one proof, and you still get nothing.",
+    "startFrame": 844,
+    "endFrame": 1044,
+    "text": "The card zone works the same way for every call: two proofs, from two places, and a list of floors.",
+    "prefix": "The card zone works the same way for every call: two proofs, from two places, and a list of floors.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1217,
+        "startFrame": 846,
         "words": [
           {
-            "text": "Steal",
-            "startFrame": 1217
+            "text": "The",
+            "startFrame": 846
           },
           {
-            "text": "one",
-            "startFrame": 1226
+            "text": "card",
+            "startFrame": 848
           },
           {
-            "text": "proof,",
-            "startFrame": 1231
+            "text": "zone",
+            "startFrame": 855
+          },
+          {
+            "text": "works",
+            "startFrame": 864
+          },
+          {
+            "text": "the",
+            "startFrame": 871
+          },
+          {
+            "text": "same",
+            "startFrame": 874
+          },
+          {
+            "text": "way",
+            "startFrame": 885
           }
         ]
       },
       {
-        "startFrame": 1254,
+        "startFrame": 902,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 902
+          },
+          {
+            "text": "every",
+            "startFrame": 912
+          },
+          {
+            "text": "call:",
+            "startFrame": 919
+          }
+        ]
+      },
+      {
+        "startFrame": 941,
+        "words": [
+          {
+            "text": "two",
+            "startFrame": 941
+          },
+          {
+            "text": "proofs,",
+            "startFrame": 947
+          },
+          {
+            "text": "from",
+            "startFrame": 966
+          },
+          {
+            "text": "two",
+            "startFrame": 970
+          },
+          {
+            "text": "places,",
+            "startFrame": 977
+          }
+        ]
+      },
+      {
+        "startFrame": 1003,
         "words": [
           {
             "text": "and",
-            "startFrame": 1254
+            "startFrame": 1003
           },
           {
-            "text": "you",
-            "startFrame": 1256
+            "text": "a",
+            "startFrame": 1005
           },
           {
-            "text": "still",
-            "startFrame": 1257
+            "text": "list",
+            "startFrame": 1007
           },
           {
-            "text": "get",
-            "startFrame": 1264
+            "text": "of",
+            "startFrame": 1015
           },
           {
-            "text": "nothing.",
-            "startFrame": 1268
+            "text": "floors.",
+            "startFrame": 1016
           }
         ]
       }
@@ -768,134 +627,97 @@
   },
   {
     "index": 10,
-    "startFrame": 1293,
-    "endFrame": 1530,
-    "text": "The card zone keeps its own pass office and its own login server, separate from ecom's, so nothing outside the room can hand out its passes.",
-    "prefix": "The card zone keeps its own pass office and its own login server, separate from ecom's, so nothing outside the room can hand out its passes.",
+    "startFrame": 1044,
+    "endFrame": 1248,
+    "text": "The first proof is a certificate: a digital ID card, signed by the card zone's own pass office.",
+    "prefix": "The first proof is a certificate: a digital ID card, signed by the card zone's own pass office.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1294,
+        "startFrame": 1046,
         "words": [
           {
             "text": "The",
-            "startFrame": 1294
+            "startFrame": 1046
           },
           {
-            "text": "card",
-            "startFrame": 1296
+            "text": "first",
+            "startFrame": 1048
           },
           {
-            "text": "zone",
-            "startFrame": 1304
+            "text": "proof",
+            "startFrame": 1056
           },
           {
-            "text": "keeps",
-            "startFrame": 1315
+            "text": "is",
+            "startFrame": 1072
           },
           {
-            "text": "its",
-            "startFrame": 1322
+            "text": "a",
+            "startFrame": 1075
           },
           {
-            "text": "own",
-            "startFrame": 1325
-          },
-          {
-            "text": "pass",
-            "startFrame": 1330
-          },
-          {
-            "text": "office",
-            "startFrame": 1340
+            "text": "certificate:",
+            "startFrame": 1077
           }
         ]
       },
       {
-        "startFrame": 1358,
+        "startFrame": 1109,
         "words": [
           {
-            "text": "and",
-            "startFrame": 1358
+            "text": "a",
+            "startFrame": 1109
           },
           {
-            "text": "its",
-            "startFrame": 1363
+            "text": "digital",
+            "startFrame": 1115
           },
           {
-            "text": "own",
-            "startFrame": 1366
+            "text": "ID",
+            "startFrame": 1129
           },
           {
-            "text": "login",
-            "startFrame": 1372
-          },
-          {
-            "text": "server,",
-            "startFrame": 1383
+            "text": "card,",
+            "startFrame": 1140
           }
         ]
       },
       {
-        "startFrame": 1403,
+        "startFrame": 1162,
         "words": [
           {
-            "text": "separate",
-            "startFrame": 1403
+            "text": "signed",
+            "startFrame": 1162
           },
           {
-            "text": "from",
-            "startFrame": 1414
-          },
-          {
-            "text": "ecom's,",
-            "startFrame": 1420
-          }
-        ]
-      },
-      {
-        "startFrame": 1449,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 1449
-          },
-          {
-            "text": "nothing",
-            "startFrame": 1453
-          },
-          {
-            "text": "outside",
-            "startFrame": 1463
+            "text": "by",
+            "startFrame": 1172
           },
           {
             "text": "the",
-            "startFrame": 1478
+            "startFrame": 1175
           },
           {
-            "text": "room",
-            "startFrame": 1479
+            "text": "card",
+            "startFrame": 1177
           },
           {
-            "text": "can",
-            "startFrame": 1487
+            "text": "zone's",
+            "startFrame": 1187
           },
           {
-            "text": "hand",
-            "startFrame": 1489
+            "text": "own",
+            "startFrame": 1206
           },
           {
-            "text": "out",
-            "startFrame": 1496
+            "text": "pass",
+            "startFrame": 1210
           },
           {
-            "text": "its",
-            "startFrame": 1499
-          },
-          {
-            "text": "passes.",
-            "startFrame": 1501
+            "text": "office.",
+            "startFrame": 1219
           }
         ]
       }
@@ -903,55 +725,2874 @@
   },
   {
     "index": 11,
-    "startFrame": 1530,
-    "endFrame": 1663,
+    "startFrame": 1248,
+    "endFrame": 1339,
+    "text": "When a caller connects, it shows its certificate.",
+    "prefix": "When a caller connects, it shows its certificate.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1249,
+        "words": [
+          {
+            "text": "When",
+            "startFrame": 1249
+          },
+          {
+            "text": "a",
+            "startFrame": 1251
+          },
+          {
+            "text": "caller",
+            "startFrame": 1253
+          },
+          {
+            "text": "connects,",
+            "startFrame": 1262
+          }
+        ]
+      },
+      {
+        "startFrame": 1292,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 1292
+          },
+          {
+            "text": "shows",
+            "startFrame": 1295
+          },
+          {
+            "text": "its",
+            "startFrame": 1306
+          },
+          {
+            "text": "certificate.",
+            "startFrame": 1310
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 1339,
+    "endFrame": 1421,
+    "text": "The card zone shows its own certificate back.",
+    "prefix": "The card zone shows its own certificate back.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1341,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1341
+          },
+          {
+            "text": "card",
+            "startFrame": 1343
+          },
+          {
+            "text": "zone",
+            "startFrame": 1352
+          },
+          {
+            "text": "shows",
+            "startFrame": 1362
+          },
+          {
+            "text": "its",
+            "startFrame": 1372
+          },
+          {
+            "text": "own",
+            "startFrame": 1375
+          },
+          {
+            "text": "certificate",
+            "startFrame": 1382
+          },
+          {
+            "text": "back.",
+            "startFrame": 1397
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 1422,
+    "endFrame": 1495,
+    "text": "So each side knows who is on the other end.",
+    "prefix": "So each side knows who is on the other end.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1423,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 1423
+          },
+          {
+            "text": "each",
+            "startFrame": 1429
+          },
+          {
+            "text": "side",
+            "startFrame": 1435
+          },
+          {
+            "text": "knows",
+            "startFrame": 1446
+          },
+          {
+            "text": "who",
+            "startFrame": 1458
+          },
+          {
+            "text": "is",
+            "startFrame": 1461
+          },
+          {
+            "text": "on",
+            "startFrame": 1464
+          }
+        ]
+      },
+      {
+        "startFrame": 1466,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1466
+          },
+          {
+            "text": "other",
+            "startFrame": 1468
+          },
+          {
+            "text": "end.",
+            "startFrame": 1475
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 1496,
+    "endFrame": 1620,
+    "text": "Because both sides show one, this is called mutual TLS.",
+    "prefix": "Because both sides show one, this is called mutual TLS.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1497,
+        "words": [
+          {
+            "text": "Because",
+            "startFrame": 1497
+          },
+          {
+            "text": "both",
+            "startFrame": 1506
+          },
+          {
+            "text": "sides",
+            "startFrame": 1514
+          },
+          {
+            "text": "show",
+            "startFrame": 1524
+          },
+          {
+            "text": "one,",
+            "startFrame": 1533
+          }
+        ]
+      },
+      {
+        "startFrame": 1554,
+        "words": [
+          {
+            "text": "this",
+            "startFrame": 1554
+          },
+          {
+            "text": "is",
+            "startFrame": 1557
+          },
+          {
+            "text": "called",
+            "startFrame": 1560
+          },
+          {
+            "text": "mutual",
+            "startFrame": 1570
+          },
+          {
+            "text": "TLS.",
+            "startFrame": 1585
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "startFrame": 1621,
+    "endFrame": 1836,
+    "text": "If a caller has no certificate from the card zone's pass office, the connection is refused before any request is even read.",
+    "prefix": "If a caller has no certificate from the card zone's pass office, the connection is refused before any request is even read.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1622,
+        "words": [
+          {
+            "text": "If",
+            "startFrame": 1622
+          },
+          {
+            "text": "a",
+            "startFrame": 1624
+          },
+          {
+            "text": "caller",
+            "startFrame": 1626
+          },
+          {
+            "text": "has",
+            "startFrame": 1636
+          },
+          {
+            "text": "no",
+            "startFrame": 1643
+          },
+          {
+            "text": "certificate",
+            "startFrame": 1651
+          },
+          {
+            "text": "from",
+            "startFrame": 1670
+          }
+        ]
+      },
+      {
+        "startFrame": 1674,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1674
+          },
+          {
+            "text": "card",
+            "startFrame": 1676
+          },
+          {
+            "text": "zone's",
+            "startFrame": 1685
+          },
+          {
+            "text": "pass",
+            "startFrame": 1693
+          },
+          {
+            "text": "office,",
+            "startFrame": 1702
+          }
+        ]
+      },
+      {
+        "startFrame": 1727,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1727
+          },
+          {
+            "text": "connection",
+            "startFrame": 1729
+          },
+          {
+            "text": "is",
+            "startFrame": 1742
+          },
+          {
+            "text": "refused",
+            "startFrame": 1745
+          },
+          {
+            "text": "before",
+            "startFrame": 1757
+          },
+          {
+            "text": "any",
+            "startFrame": 1768
+          },
+          {
+            "text": "request",
+            "startFrame": 1774
+          },
+          {
+            "text": "is",
+            "startFrame": 1800
+          },
+          {
+            "text": "even",
+            "startFrame": 1805
+          },
+          {
+            "text": "read.",
+            "startFrame": 1814
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "startFrame": 1836,
+    "endFrame": 1914,
+    "text": "The second proof is an access token.",
+    "prefix": "The second proof is an access token.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1838,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1838
+          },
+          {
+            "text": "second",
+            "startFrame": 1840
+          },
+          {
+            "text": "proof",
+            "startFrame": 1850
+          },
+          {
+            "text": "is",
+            "startFrame": 1869
+          },
+          {
+            "text": "an",
+            "startFrame": 1872
+          },
+          {
+            "text": "access",
+            "startFrame": 1875
+          },
+          {
+            "text": "token.",
+            "startFrame": 1890
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "startFrame": 1915,
+    "endFrame": 2002,
+    "text": "Here, an access token is a day pass.",
+    "prefix": "Here, an access token is a day pass.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1916,
+        "words": [
+          {
+            "text": "Here,",
+            "startFrame": 1916
+          },
+          {
+            "text": "an",
+            "startFrame": 1931
+          },
+          {
+            "text": "access",
+            "startFrame": 1934
+          },
+          {
+            "text": "token",
+            "startFrame": 1948
+          },
+          {
+            "text": "is",
+            "startFrame": 1962
+          },
+          {
+            "text": "a",
+            "startFrame": 1966
+          },
+          {
+            "text": "day",
+            "startFrame": 1968
+          },
+          {
+            "text": "pass.",
+            "startFrame": 1973
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "startFrame": 2003,
+    "endFrame": 2153,
+    "text": "The caller asks for it from the card zone's own login server, using its own secret.",
+    "prefix": "The caller asks for it from the card zone's own login server, using its own secret.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2004,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2004
+          },
+          {
+            "text": "caller",
+            "startFrame": 2006
+          },
+          {
+            "text": "asks",
+            "startFrame": 2018
+          },
+          {
+            "text": "for",
+            "startFrame": 2028
+          },
+          {
+            "text": "it",
+            "startFrame": 2033
+          },
+          {
+            "text": "from",
+            "startFrame": 2035
+          },
+          {
+            "text": "the",
+            "startFrame": 2039
+          },
+          {
+            "text": "card",
+            "startFrame": 2040
+          }
+        ]
+      },
+      {
+        "startFrame": 2050,
+        "words": [
+          {
+            "text": "zone's",
+            "startFrame": 2050
+          },
+          {
+            "text": "own",
+            "startFrame": 2070
+          },
+          {
+            "text": "login",
+            "startFrame": 2077
+          },
+          {
+            "text": "server,",
+            "startFrame": 2087
+          }
+        ]
+      },
+      {
+        "startFrame": 2111,
+        "words": [
+          {
+            "text": "using",
+            "startFrame": 2111
+          },
+          {
+            "text": "its",
+            "startFrame": 2120
+          },
+          {
+            "text": "own",
+            "startFrame": 2123
+          },
+          {
+            "text": "secret.",
+            "startFrame": 2128
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "startFrame": 2154,
+    "endFrame": 2236,
+    "text": "The card zone trusts only that login server.",
+    "prefix": "The card zone trusts only that login server.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2155,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2155
+          },
+          {
+            "text": "card",
+            "startFrame": 2157
+          },
+          {
+            "text": "zone",
+            "startFrame": 2164
+          },
+          {
+            "text": "trusts",
+            "startFrame": 2170
+          },
+          {
+            "text": "only",
+            "startFrame": 2189
+          },
+          {
+            "text": "that",
+            "startFrame": 2197
+          },
+          {
+            "text": "login",
+            "startFrame": 2201
+          },
+          {
+            "text": "server.",
+            "startFrame": 2210
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "startFrame": 2237,
+    "endFrame": 2343,
+    "text": "A pass from another product's login server is worth nothing here.",
+    "prefix": "A pass from another product's login server is worth nothing here.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2238,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2238
+          },
+          {
+            "text": "pass",
+            "startFrame": 2239
+          },
+          {
+            "text": "from",
+            "startFrame": 2248
+          },
+          {
+            "text": "another",
+            "startFrame": 2252
+          },
+          {
+            "text": "product's",
+            "startFrame": 2260
+          },
+          {
+            "text": "login",
+            "startFrame": 2270
+          },
+          {
+            "text": "server",
+            "startFrame": 2279
+          },
+          {
+            "text": "is",
+            "startFrame": 2298
+          }
+        ]
+      },
+      {
+        "startFrame": 2302,
+        "words": [
+          {
+            "text": "worth",
+            "startFrame": 2302
+          },
+          {
+            "text": "nothing",
+            "startFrame": 2310
+          },
+          {
+            "text": "here.",
+            "startFrame": 2321
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "startFrame": 2344,
+    "endFrame": 2457,
+    "text": "Inside the access token is who it belongs to, and its roles.",
+    "prefix": "Inside the access token is who it belongs to, and its roles.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2345,
+        "words": [
+          {
+            "text": "Inside",
+            "startFrame": 2345
+          },
+          {
+            "text": "the",
+            "startFrame": 2355
+          },
+          {
+            "text": "access",
+            "startFrame": 2358
+          },
+          {
+            "text": "token",
+            "startFrame": 2372
+          },
+          {
+            "text": "is",
+            "startFrame": 2382
+          },
+          {
+            "text": "who",
+            "startFrame": 2386
+          },
+          {
+            "text": "it",
+            "startFrame": 2389
+          },
+          {
+            "text": "belongs",
+            "startFrame": 2391
+          }
+        ]
+      },
+      {
+        "startFrame": 2406,
+        "words": [
+          {
+            "text": "to,",
+            "startFrame": 2406
+          },
+          {
+            "text": "and",
+            "startFrame": 2423
+          },
+          {
+            "text": "its",
+            "startFrame": 2426
+          },
+          {
+            "text": "roles.",
+            "startFrame": 2430
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "startFrame": 2458,
+    "endFrame": 2572,
+    "text": "A role is a floor you may visit: one kind of operation.",
+    "prefix": "A role is a floor you may visit: one kind of operation.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2459,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 2459
+          },
+          {
+            "text": "role",
+            "startFrame": 2460
+          },
+          {
+            "text": "is",
+            "startFrame": 2478
+          },
+          {
+            "text": "a",
+            "startFrame": 2480
+          },
+          {
+            "text": "floor",
+            "startFrame": 2481
+          },
+          {
+            "text": "you",
+            "startFrame": 2492
+          },
+          {
+            "text": "may",
+            "startFrame": 2495
+          },
+          {
+            "text": "visit:",
+            "startFrame": 2501
+          }
+        ]
+      },
+      {
+        "startFrame": 2530,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 2530
+          },
+          {
+            "text": "kind",
+            "startFrame": 2536
+          },
+          {
+            "text": "of",
+            "startFrame": 2540
+          },
+          {
+            "text": "operation.",
+            "startFrame": 2542
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "startFrame": 2573,
+    "endFrame": 2641,
+    "text": "One role lets a caller bind a card.",
+    "prefix": "One role lets a caller bind a card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2574,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 2574
+          },
+          {
+            "text": "role",
+            "startFrame": 2581
+          },
+          {
+            "text": "lets",
+            "startFrame": 2596
+          },
+          {
+            "text": "a",
+            "startFrame": 2600
+          },
+          {
+            "text": "caller",
+            "startFrame": 2602
+          },
+          {
+            "text": "bind",
+            "startFrame": 2611
+          },
+          {
+            "text": "a",
+            "startFrame": 2616
+          },
+          {
+            "text": "card.",
+            "startFrame": 2617
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "startFrame": 2641,
+    "endFrame": 2697,
+    "text": "Another lets it read a card.",
+    "prefix": "Another lets it read a card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2643,
+        "words": [
+          {
+            "text": "Another",
+            "startFrame": 2643
+          },
+          {
+            "text": "lets",
+            "startFrame": 2649
+          },
+          {
+            "text": "it",
+            "startFrame": 2653
+          },
+          {
+            "text": "read",
+            "startFrame": 2657
+          },
+          {
+            "text": "a",
+            "startFrame": 2662
+          },
+          {
+            "text": "card.",
+            "startFrame": 2663
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "startFrame": 2697,
+    "endFrame": 2748,
+    "text": "Another lets it charge a card.",
+    "prefix": "Another lets it charge a card.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2699,
+        "words": [
+          {
+            "text": "Another",
+            "startFrame": 2699
+          },
+          {
+            "text": "lets",
+            "startFrame": 2706
+          },
+          {
+            "text": "it",
+            "startFrame": 2711
+          },
+          {
+            "text": "charge",
+            "startFrame": 2713
+          },
+          {
+            "text": "a",
+            "startFrame": 2723
+          },
+          {
+            "text": "card.",
+            "startFrame": 2724
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "startFrame": 2749,
+    "endFrame": 2893,
+    "text": "Every operation needs its own role, and anything not listed is refused.",
+    "prefix": "Every operation needs its own role, and anything not listed is refused.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2750,
+        "words": [
+          {
+            "text": "Every",
+            "startFrame": 2750
+          },
+          {
+            "text": "operation",
+            "startFrame": 2757
+          },
+          {
+            "text": "needs",
+            "startFrame": 2775
+          },
+          {
+            "text": "its",
+            "startFrame": 2782
+          },
+          {
+            "text": "own",
+            "startFrame": 2787
+          },
+          {
+            "text": "role,",
+            "startFrame": 2795
+          }
+        ]
+      },
+      {
+        "startFrame": 2821,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2821
+          },
+          {
+            "text": "anything",
+            "startFrame": 2829
+          },
+          {
+            "text": "not",
+            "startFrame": 2841
+          },
+          {
+            "text": "listed",
+            "startFrame": 2848
+          },
+          {
+            "text": "is",
+            "startFrame": 2858
+          },
+          {
+            "text": "refused.",
+            "startFrame": 2861
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "startFrame": 2893,
+    "endFrame": 2994,
+    "text": "So even the real ecom can only do what its roles allow.",
+    "prefix": "So even the real ecom can only do what its roles allow.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2895,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 2895
+          },
+          {
+            "text": "even",
+            "startFrame": 2899
+          },
+          {
+            "text": "the",
+            "startFrame": 2904
+          },
+          {
+            "text": "real",
+            "startFrame": 2906
+          },
+          {
+            "text": "ecom",
+            "startFrame": 2914
+          },
+          {
+            "text": "can",
+            "startFrame": 2932
+          },
+          {
+            "text": "only",
+            "startFrame": 2937
+          },
+          {
+            "text": "do",
+            "startFrame": 2945
+          }
+        ]
+      },
+      {
+        "startFrame": 2952,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 2952
+          },
+          {
+            "text": "its",
+            "startFrame": 2955
+          },
+          {
+            "text": "roles",
+            "startFrame": 2958
+          },
+          {
+            "text": "allow.",
+            "startFrame": 2969
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "startFrame": 2995,
+    "endFrame": 3128,
+    "text": "No caller at all holds the role for the card zone's admin operations.",
+    "prefix": "No caller at all holds the role for the card zone's admin operations.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2996,
+        "words": [
+          {
+            "text": "No",
+            "startFrame": 2996
+          },
+          {
+            "text": "caller",
+            "startFrame": 3000
+          },
+          {
+            "text": "at",
+            "startFrame": 3019
+          },
+          {
+            "text": "all",
+            "startFrame": 3022
+          },
+          {
+            "text": "holds",
+            "startFrame": 3029
+          },
+          {
+            "text": "the",
+            "startFrame": 3037
+          },
+          {
+            "text": "role",
+            "startFrame": 3039
+          }
+        ]
+      },
+      {
+        "startFrame": 3050,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 3050
+          },
+          {
+            "text": "the",
+            "startFrame": 3053
+          },
+          {
+            "text": "card",
+            "startFrame": 3055
+          },
+          {
+            "text": "zone's",
+            "startFrame": 3065
+          },
+          {
+            "text": "admin",
+            "startFrame": 3086
+          },
+          {
+            "text": "operations.",
+            "startFrame": 3094
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "startFrame": 3129,
+    "endFrame": 3184,
+    "text": "Now watch the product.",
+    "prefix": "Now watch the product.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3130,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 3130
+          },
+          {
+            "text": "watch",
+            "startFrame": 3135
+          },
+          {
+            "text": "the",
+            "startFrame": 3142
+          },
+          {
+            "text": "product.",
+            "startFrame": 3144
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "startFrame": 3185,
+    "endFrame": 3296,
+    "text": "These checks have no screen, so watch how the system behaves.",
+    "prefix": "These checks have no screen, so watch how the system behaves.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3186,
+        "words": [
+          {
+            "text": "These",
+            "startFrame": 3186
+          },
+          {
+            "text": "checks",
+            "startFrame": 3190
+          },
+          {
+            "text": "have",
+            "startFrame": 3203
+          },
+          {
+            "text": "no",
+            "startFrame": 3209
+          },
+          {
+            "text": "screen,",
+            "startFrame": 3218
+          }
+        ]
+      },
+      {
+        "startFrame": 3242,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 3242
+          },
+          {
+            "text": "watch",
+            "startFrame": 3247
+          },
+          {
+            "text": "how",
+            "startFrame": 3253
+          },
+          {
+            "text": "the",
+            "startFrame": 3257
+          },
+          {
+            "text": "system",
+            "startFrame": 3259
+          },
+          {
+            "text": "behaves.",
+            "startFrame": 3268
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "startFrame": 3296,
+    "endFrame": 3387,
+    "text": "A caller with no certificate knocks on the partner door.",
+    "prefix": "A caller with no certificate knocks on the partner door.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3298,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 3298
+          },
+          {
+            "text": "caller",
+            "startFrame": 3300
+          },
+          {
+            "text": "with",
+            "startFrame": 3310
+          },
+          {
+            "text": "no",
+            "startFrame": 3314
+          },
+          {
+            "text": "certificate",
+            "startFrame": 3321
+          },
+          {
+            "text": "knocks",
+            "startFrame": 3339
+          },
+          {
+            "text": "on",
+            "startFrame": 3353
+          }
+        ]
+      },
+      {
+        "startFrame": 3355,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3355
+          },
+          {
+            "text": "partner",
+            "startFrame": 3356
+          },
+          {
+            "text": "door.",
+            "startFrame": 3365
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "startFrame": 3387,
+    "endFrame": 3446,
+    "text": "The connection closes at once.",
+    "prefix": "The connection closes at once.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3389,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3389
+          },
+          {
+            "text": "connection",
+            "startFrame": 3390
+          },
+          {
+            "text": "closes",
+            "startFrame": 3404
+          },
+          {
+            "text": "at",
+            "startFrame": 3417
+          },
+          {
+            "text": "once.",
+            "startFrame": 3419
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "startFrame": 3447,
+    "endFrame": 3532,
+    "text": "No request is read, and nothing is answered.",
+    "prefix": "No request is read, and nothing is answered.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3448,
+        "words": [
+          {
+            "text": "No",
+            "startFrame": 3448
+          },
+          {
+            "text": "request",
+            "startFrame": 3453
+          },
+          {
+            "text": "is",
+            "startFrame": 3466
+          },
+          {
+            "text": "read,",
+            "startFrame": 3470
+          }
+        ]
+      },
+      {
+        "startFrame": 3490,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3490
+          },
+          {
+            "text": "nothing",
+            "startFrame": 3495
+          },
+          {
+            "text": "is",
+            "startFrame": 3505
+          },
+          {
+            "text": "answered.",
+            "startFrame": 3508
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "startFrame": 3533,
+    "endFrame": 3676,
+    "text": "Next, a caller brings a valid certificate, but a pass from the wrong login server.",
+    "prefix": "Next, a caller brings a valid certificate, but a pass from the wrong login server.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3534,
+        "words": [
+          {
+            "text": "Next,",
+            "startFrame": 3534
+          },
+          {
+            "text": "a",
+            "startFrame": 3550
+          },
+          {
+            "text": "caller",
+            "startFrame": 3552
+          },
+          {
+            "text": "brings",
+            "startFrame": 3563
+          },
+          {
+            "text": "a",
+            "startFrame": 3570
+          },
+          {
+            "text": "valid",
+            "startFrame": 3571
+          },
+          {
+            "text": "certificate,",
+            "startFrame": 3580
+          }
+        ]
+      },
+      {
+        "startFrame": 3605,
+        "words": [
+          {
+            "text": "but",
+            "startFrame": 3605
+          },
+          {
+            "text": "a",
+            "startFrame": 3608
+          },
+          {
+            "text": "pass",
+            "startFrame": 3610
+          },
+          {
+            "text": "from",
+            "startFrame": 3623
+          },
+          {
+            "text": "the",
+            "startFrame": 3626
+          },
+          {
+            "text": "wrong",
+            "startFrame": 3628
+          },
+          {
+            "text": "login",
+            "startFrame": 3640
+          },
+          {
+            "text": "server.",
+            "startFrame": 3650
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "startFrame": 3677,
+    "endFrame": 3758,
+    "text": "The card zone answers: unauthorized.",
+    "prefix": "The card zone answers: unauthorized.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3678,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3678
+          },
+          {
+            "text": "card",
+            "startFrame": 3680
+          },
+          {
+            "text": "zone",
+            "startFrame": 3687
+          },
+          {
+            "text": "answers:",
+            "startFrame": 3695
+          },
+          {
+            "text": "unauthorized.",
+            "startFrame": 3720
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "startFrame": 3759,
+    "endFrame": 3874,
+    "text": "The pass did not come from its own login server, so it counts for nothing.",
+    "prefix": "The pass did not come from its own login server, so it counts for nothing.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3760,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3760
+          },
+          {
+            "text": "pass",
+            "startFrame": 3762
+          },
+          {
+            "text": "did",
+            "startFrame": 3772
+          },
+          {
+            "text": "not",
+            "startFrame": 3776
+          },
+          {
+            "text": "come",
+            "startFrame": 3785
+          },
+          {
+            "text": "from",
+            "startFrame": 3794
+          },
+          {
+            "text": "its",
+            "startFrame": 3798
+          },
+          {
+            "text": "own",
+            "startFrame": 3801
+          }
+        ]
+      },
+      {
+        "startFrame": 3806,
+        "words": [
+          {
+            "text": "login",
+            "startFrame": 3806
+          },
+          {
+            "text": "server,",
+            "startFrame": 3815
+          },
+          {
+            "text": "so",
+            "startFrame": 3838
+          },
+          {
+            "text": "it",
+            "startFrame": 3841
+          },
+          {
+            "text": "counts",
+            "startFrame": 3843
+          },
+          {
+            "text": "for",
+            "startFrame": 3850
+          },
+          {
+            "text": "nothing.",
+            "startFrame": 3852
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "startFrame": 3875,
+    "endFrame": 3961,
+    "text": "Now the real ecom calls, with both proofs.",
+    "prefix": "Now the real ecom calls, with both proofs.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3876,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 3876
+          },
+          {
+            "text": "the",
+            "startFrame": 3880
+          },
+          {
+            "text": "real",
+            "startFrame": 3882
+          },
+          {
+            "text": "ecom",
+            "startFrame": 3889
+          },
+          {
+            "text": "calls,",
+            "startFrame": 3899
+          }
+        ]
+      },
+      {
+        "startFrame": 3920,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 3920
+          },
+          {
+            "text": "both",
+            "startFrame": 3923
+          },
+          {
+            "text": "proofs.",
+            "startFrame": 3932
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "startFrame": 3962,
+    "endFrame": 4030,
+    "text": "It asks to charge a card by its token.",
+    "prefix": "It asks to charge a card by its token.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3963,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 3963
+          },
+          {
+            "text": "asks",
+            "startFrame": 3966
+          },
+          {
+            "text": "to",
+            "startFrame": 3974
+          },
+          {
+            "text": "charge",
+            "startFrame": 3976
+          },
+          {
+            "text": "a",
+            "startFrame": 3986
+          },
+          {
+            "text": "card",
+            "startFrame": 3988
+          },
+          {
+            "text": "by",
+            "startFrame": 3999
+          },
+          {
+            "text": "its",
+            "startFrame": 4003
+          },
+          {
+            "text": "token.",
+            "startFrame": 4007
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "startFrame": 4031,
+    "endFrame": 4151,
+    "text": "Its pass carries the role to charge, so the call goes through.",
+    "prefix": "Its pass carries the role to charge, so the call goes through.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4031,
+        "words": [
+          {
+            "text": "Its",
+            "startFrame": 4031
+          },
+          {
+            "text": "pass",
+            "startFrame": 4034
+          },
+          {
+            "text": "carries",
+            "startFrame": 4047
+          },
+          {
+            "text": "the",
+            "startFrame": 4057
+          },
+          {
+            "text": "role",
+            "startFrame": 4060
+          },
+          {
+            "text": "to",
+            "startFrame": 4077
+          },
+          {
+            "text": "charge,",
+            "startFrame": 4080
+          }
+        ]
+      },
+      {
+        "startFrame": 4106,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 4106
+          },
+          {
+            "text": "the",
+            "startFrame": 4110
+          },
+          {
+            "text": "call",
+            "startFrame": 4113
+          },
+          {
+            "text": "goes",
+            "startFrame": 4120
+          },
+          {
+            "text": "through.",
+            "startFrame": 4128
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "startFrame": 4152,
+    "endFrame": 4278,
+    "text": "Then ecom asks for an admin operation, one that searches cards.",
+    "prefix": "Then ecom asks for an admin operation, one that searches cards.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4153,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 4153
+          },
+          {
+            "text": "ecom",
+            "startFrame": 4162
+          },
+          {
+            "text": "asks",
+            "startFrame": 4172
+          },
+          {
+            "text": "for",
+            "startFrame": 4183
+          },
+          {
+            "text": "an",
+            "startFrame": 4187
+          },
+          {
+            "text": "admin",
+            "startFrame": 4190
+          },
+          {
+            "text": "operation,",
+            "startFrame": 4198
+          }
+        ]
+      },
+      {
+        "startFrame": 4229,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 4229
+          },
+          {
+            "text": "that",
+            "startFrame": 4235
+          },
+          {
+            "text": "searches",
+            "startFrame": 4239
+          },
+          {
+            "text": "cards.",
+            "startFrame": 4251
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "startFrame": 4279,
+    "endFrame": 4334,
+    "text": "Both proofs pass.",
+    "prefix": "Both proofs pass.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4280,
+        "words": [
+          {
+            "text": "Both",
+            "startFrame": 4280
+          },
+          {
+            "text": "proofs",
+            "startFrame": 4284
+          },
+          {
+            "text": "pass.",
+            "startFrame": 4291
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "startFrame": 4335,
+    "endFrame": 4475,
+    "text": "But ecom's pass has no admin role, so the card zone answers: forbidden.",
+    "prefix": "But ecom's pass has no admin role, so the card zone answers: forbidden.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4336,
+        "words": [
+          {
+            "text": "But",
+            "startFrame": 4336
+          },
+          {
+            "text": "ecom's",
+            "startFrame": 4341
+          },
+          {
+            "text": "pass",
+            "startFrame": 4353
+          },
+          {
+            "text": "has",
+            "startFrame": 4364
+          },
+          {
+            "text": "no",
+            "startFrame": 4369
+          },
+          {
+            "text": "admin",
+            "startFrame": 4378
+          },
+          {
+            "text": "role,",
+            "startFrame": 4389
+          }
+        ]
+      },
+      {
+        "startFrame": 4408,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 4408
+          },
+          {
+            "text": "the",
+            "startFrame": 4410
+          },
+          {
+            "text": "card",
+            "startFrame": 4413
+          },
+          {
+            "text": "zone",
+            "startFrame": 4420
+          },
+          {
+            "text": "answers:",
+            "startFrame": 4427
+          },
+          {
+            "text": "forbidden.",
+            "startFrame": 4449
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "startFrame": 4476,
+    "endFrame": 4565,
+    "text": "Three refusals, for three different reasons.",
+    "prefix": "Three refusals, for three different reasons.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4478,
+        "words": [
+          {
+            "text": "Three",
+            "startFrame": 4478
+          },
+          {
+            "text": "refusals,",
+            "startFrame": 4486
+          },
+          {
+            "text": "for",
+            "startFrame": 4517
+          },
+          {
+            "text": "three",
+            "startFrame": 4521
+          },
+          {
+            "text": "different",
+            "startFrame": 4530
+          },
+          {
+            "text": "reasons.",
+            "startFrame": 4538
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "startFrame": 4566,
+    "endFrame": 4637,
+    "text": "No certificate means no connection.",
+    "prefix": "No certificate means no connection.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4567,
+        "words": [
+          {
+            "text": "No",
+            "startFrame": 4567
+          },
+          {
+            "text": "certificate",
+            "startFrame": 4571
+          },
+          {
+            "text": "means",
+            "startFrame": 4590
+          },
+          {
+            "text": "no",
+            "startFrame": 4601
+          },
+          {
+            "text": "connection.",
+            "startFrame": 4608
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "startFrame": 4637,
+    "endFrame": 4708,
+    "text": "A bad pass means unauthorized.",
+    "prefix": "A bad pass means unauthorized.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4638,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 4638
+          },
+          {
+            "text": "bad",
+            "startFrame": 4640
+          },
+          {
+            "text": "pass",
+            "startFrame": 4648
+          },
+          {
+            "text": "means",
+            "startFrame": 4660
+          },
+          {
+            "text": "unauthorized.",
+            "startFrame": 4669
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "startFrame": 4708,
+    "endFrame": 4768,
+    "text": "A missing role means forbidden.",
+    "prefix": "A missing role means forbidden.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4709,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 4709
+          },
+          {
+            "text": "missing",
+            "startFrame": 4711
+          },
+          {
+            "text": "role",
+            "startFrame": 4720
+          },
+          {
+            "text": "means",
+            "startFrame": 4735
+          },
+          {
+            "text": "forbidden.",
+            "startFrame": 4742
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "startFrame": 4768,
+    "endFrame": 4899,
+    "text": "Each answer tells the operator exactly which check stopped the call.",
+    "prefix": "Each answer tells the operator exactly which check stopped the call.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4769,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 4769
+          },
+          {
+            "text": "answer",
+            "startFrame": 4776
+          },
+          {
+            "text": "tells",
+            "startFrame": 4786
+          },
+          {
+            "text": "the",
+            "startFrame": 4793
+          },
+          {
+            "text": "operator",
+            "startFrame": 4796
+          },
+          {
+            "text": "exactly",
+            "startFrame": 4812
+          },
+          {
+            "text": "which",
+            "startFrame": 4841
+          },
+          {
+            "text": "check",
+            "startFrame": 4849
+          }
+        ]
+      },
+      {
+        "startFrame": 4864,
+        "words": [
+          {
+            "text": "stopped",
+            "startFrame": 4864
+          },
+          {
+            "text": "the",
+            "startFrame": 4874
+          },
+          {
+            "text": "call.",
+            "startFrame": 4877
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "startFrame": 4900,
+    "endFrame": 5020,
+    "text": "The card zone keeps its own pass office and its own login server.",
+    "prefix": "The card zone keeps its own pass office and its own login server.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4901,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4901
+          },
+          {
+            "text": "card",
+            "startFrame": 4903
+          },
+          {
+            "text": "zone",
+            "startFrame": 4911
+          },
+          {
+            "text": "keeps",
+            "startFrame": 4921
+          },
+          {
+            "text": "its",
+            "startFrame": 4928
+          },
+          {
+            "text": "own",
+            "startFrame": 4935
+          },
+          {
+            "text": "pass",
+            "startFrame": 4942
+          },
+          {
+            "text": "office",
+            "startFrame": 4953
+          }
+        ]
+      },
+      {
+        "startFrame": 4973,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4973
+          },
+          {
+            "text": "its",
+            "startFrame": 4976
+          },
+          {
+            "text": "own",
+            "startFrame": 4980
+          },
+          {
+            "text": "login",
+            "startFrame": 4986
+          },
+          {
+            "text": "server.",
+            "startFrame": 4994
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "startFrame": 5020,
+    "endFrame": 5172,
+    "text": "Neither is shared with ecom, so nothing outside the room can hand out the room's passes.",
+    "prefix": "Neither is shared with ecom, so nothing outside the room can hand out the room's passes.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5021,
+        "words": [
+          {
+            "text": "Neither",
+            "startFrame": 5021
+          },
+          {
+            "text": "is",
+            "startFrame": 5031
+          },
+          {
+            "text": "shared",
+            "startFrame": 5035
+          },
+          {
+            "text": "with",
+            "startFrame": 5045
+          },
+          {
+            "text": "ecom,",
+            "startFrame": 5050
+          }
+        ]
+      },
+      {
+        "startFrame": 5076,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 5076
+          },
+          {
+            "text": "nothing",
+            "startFrame": 5079
+          },
+          {
+            "text": "outside",
+            "startFrame": 5091
+          },
+          {
+            "text": "the",
+            "startFrame": 5105
+          },
+          {
+            "text": "room",
+            "startFrame": 5106
+          },
+          {
+            "text": "can",
+            "startFrame": 5116
+          },
+          {
+            "text": "hand",
+            "startFrame": 5119
+          },
+          {
+            "text": "out",
+            "startFrame": 5129
+          }
+        ]
+      },
+      {
+        "startFrame": 5132,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5132
+          },
+          {
+            "text": "room's",
+            "startFrame": 5134
+          },
+          {
+            "text": "passes.",
+            "startFrame": 5142
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 50,
+    "startFrame": 5172,
+    "endFrame": 5228,
+    "text": "What does this protect?",
+    "prefix": "What does this protect?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5173,
+        "words": [
+          {
+            "text": "What",
+            "startFrame": 5173
+          },
+          {
+            "text": "does",
+            "startFrame": 5175
+          },
+          {
+            "text": "this",
+            "startFrame": 5178
+          },
+          {
+            "text": "protect?",
+            "startFrame": 5182
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 51,
+    "startFrame": 5228,
+    "endFrame": 5329,
+    "text": "Steal only the certificate, and you have no pass.",
+    "prefix": "Steal only the certificate, and you have no pass.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5230,
+        "words": [
+          {
+            "text": "Steal",
+            "startFrame": 5230
+          },
+          {
+            "text": "only",
+            "startFrame": 5241
+          },
+          {
+            "text": "the",
+            "startFrame": 5248
+          },
+          {
+            "text": "certificate,",
+            "startFrame": 5251
+          }
+        ]
+      },
+      {
+        "startFrame": 5282,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5282
+          },
+          {
+            "text": "you",
+            "startFrame": 5284
+          },
+          {
+            "text": "have",
+            "startFrame": 5287
+          },
+          {
+            "text": "no",
+            "startFrame": 5294
+          },
+          {
+            "text": "pass.",
+            "startFrame": 5299
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 52,
+    "startFrame": 5330,
+    "endFrame": 5434,
+    "text": "Steal only the pass, and you cannot even connect.",
+    "prefix": "Steal only the pass, and you cannot even connect.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5331,
+        "words": [
+          {
+            "text": "Steal",
+            "startFrame": 5331
+          },
+          {
+            "text": "only",
+            "startFrame": 5345
+          },
+          {
+            "text": "the",
+            "startFrame": 5352
+          },
+          {
+            "text": "pass,",
+            "startFrame": 5354
+          }
+        ]
+      },
+      {
+        "startFrame": 5380,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5380
+          },
+          {
+            "text": "you",
+            "startFrame": 5383
+          },
+          {
+            "text": "cannot",
+            "startFrame": 5387
+          },
+          {
+            "text": "even",
+            "startFrame": 5403
+          },
+          {
+            "text": "connect.",
+            "startFrame": 5409
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 53,
+    "startFrame": 5435,
+    "endFrame": 5608,
+    "text": "Steal both from ecom, and you still reach only ecom's floors, never the admin floor.",
+    "prefix": "Steal both from ecom, and you still reach only ecom's floors, never the admin floor.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5436,
+        "words": [
+          {
+            "text": "Steal",
+            "startFrame": 5436
+          },
+          {
+            "text": "both",
+            "startFrame": 5448
+          },
+          {
+            "text": "from",
+            "startFrame": 5457
+          },
+          {
+            "text": "ecom,",
+            "startFrame": 5462
+          }
+        ]
+      },
+      {
+        "startFrame": 5489,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5489
+          },
+          {
+            "text": "you",
+            "startFrame": 5490
+          },
+          {
+            "text": "still",
+            "startFrame": 5493
+          },
+          {
+            "text": "reach",
+            "startFrame": 5502
+          },
+          {
+            "text": "only",
+            "startFrame": 5515
+          },
+          {
+            "text": "ecom's",
+            "startFrame": 5525
+          },
+          {
+            "text": "floors,",
+            "startFrame": 5538
+          }
+        ]
+      },
+      {
+        "startFrame": 5563,
+        "words": [
+          {
+            "text": "never",
+            "startFrame": 5563
+          },
+          {
+            "text": "the",
+            "startFrame": 5570
+          },
+          {
+            "text": "admin",
+            "startFrame": 5574
+          },
+          {
+            "text": "floor.",
+            "startFrame": 5583
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 54,
+    "startFrame": 5608,
+    "endFrame": 5812,
+    "text": "And a mistake inside ecom cannot give ecom more power, because only the card zone grants the roles.",
+    "prefix": "And a mistake inside ecom cannot give ecom more power, because only the card zone grants the roles.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5610,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 5610
+          },
+          {
+            "text": "a",
+            "startFrame": 5612
+          },
+          {
+            "text": "mistake",
+            "startFrame": 5613
+          },
+          {
+            "text": "inside",
+            "startFrame": 5626
+          },
+          {
+            "text": "ecom",
+            "startFrame": 5644
+          },
+          {
+            "text": "cannot",
+            "startFrame": 5664
+          },
+          {
+            "text": "give",
+            "startFrame": 5680
+          },
+          {
+            "text": "ecom",
+            "startFrame": 5694
+          }
+        ]
+      },
+      {
+        "startFrame": 5706,
+        "words": [
+          {
+            "text": "more",
+            "startFrame": 5706
+          },
+          {
+            "text": "power,",
+            "startFrame": 5712
+          },
+          {
+            "text": "because",
+            "startFrame": 5733
+          },
+          {
+            "text": "only",
+            "startFrame": 5744
+          },
+          {
+            "text": "the",
+            "startFrame": 5751
+          },
+          {
+            "text": "card",
+            "startFrame": 5754
+          },
+          {
+            "text": "zone",
+            "startFrame": 5765
+          },
+          {
+            "text": "grants",
+            "startFrame": 5775
+          },
+          {
+            "text": "the",
+            "startFrame": 5783
+          },
+          {
+            "text": "roles.",
+            "startFrame": 5786
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 55,
+    "startFrame": 5812,
+    "endFrame": 5985,
+    "text": "This protects every card in the room, and the bank's trust that only its chosen callers can touch them.",
+    "prefix": "This protects every card in the room, and the bank's trust that only its chosen callers can touch them.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5813,
+        "words": [
+          {
+            "text": "This",
+            "startFrame": 5813
+          },
+          {
+            "text": "protects",
+            "startFrame": 5818
+          },
+          {
+            "text": "every",
+            "startFrame": 5839
+          },
+          {
+            "text": "card",
+            "startFrame": 5850
+          },
+          {
+            "text": "in",
+            "startFrame": 5858
+          },
+          {
+            "text": "the",
+            "startFrame": 5861
+          },
+          {
+            "text": "room,",
+            "startFrame": 5862
+          }
+        ]
+      },
+      {
+        "startFrame": 5884,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5884
+          },
+          {
+            "text": "the",
+            "startFrame": 5885
+          },
+          {
+            "text": "bank's",
+            "startFrame": 5888
+          },
+          {
+            "text": "trust",
+            "startFrame": 5898
+          },
+          {
+            "text": "that",
+            "startFrame": 5911
+          },
+          {
+            "text": "only",
+            "startFrame": 5916
+          },
+          {
+            "text": "its",
+            "startFrame": 5926
+          },
+          {
+            "text": "chosen",
+            "startFrame": 5929
+          }
+        ]
+      },
+      {
+        "startFrame": 5942,
+        "words": [
+          {
+            "text": "callers",
+            "startFrame": 5942
+          },
+          {
+            "text": "can",
+            "startFrame": 5954
+          },
+          {
+            "text": "touch",
+            "startFrame": 5958
+          },
+          {
+            "text": "them.",
+            "startFrame": 5966
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 56,
+    "startFrame": 5986,
+    "endFrame": 6041,
+    "text": "Back to the staff entrance.",
+    "prefix": "Back to the staff entrance.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5987,
+        "words": [
+          {
+            "text": "Back",
+            "startFrame": 5987
+          },
+          {
+            "text": "to",
+            "startFrame": 5994
+          },
+          {
+            "text": "the",
+            "startFrame": 5996
+          },
+          {
+            "text": "staff",
+            "startFrame": 5998
+          },
+          {
+            "text": "entrance.",
+            "startFrame": 6013
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 57,
+    "startFrame": 6041,
+    "endFrame": 6195,
+    "text": "An ID card from the building's own office, a day pass, and only your floors.",
+    "prefix": "An ID card from the building's own office, a day pass, and only your floors.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6042,
+        "words": [
+          {
+            "text": "An",
+            "startFrame": 6042
+          },
+          {
+            "text": "ID",
+            "startFrame": 6044
+          },
+          {
+            "text": "card",
+            "startFrame": 6055
+          },
+          {
+            "text": "from",
+            "startFrame": 6064
+          },
+          {
+            "text": "the",
+            "startFrame": 6067
+          },
+          {
+            "text": "building's",
+            "startFrame": 6069
+          },
+          {
+            "text": "own",
+            "startFrame": 6087
+          },
+          {
+            "text": "office,",
+            "startFrame": 6093
+          }
+        ]
+      },
+      {
+        "startFrame": 6117,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 6117
+          },
+          {
+            "text": "day",
+            "startFrame": 6120
+          },
+          {
+            "text": "pass,",
+            "startFrame": 6126
+          }
+        ]
+      },
+      {
+        "startFrame": 6149,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6149
+          },
+          {
+            "text": "only",
+            "startFrame": 6156
+          },
+          {
+            "text": "your",
+            "startFrame": 6163
+          },
+          {
+            "text": "floors.",
+            "startFrame": 6166
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 58,
+    "startFrame": 6195,
+    "endFrame": 6328,
     "text": "Next: how the card zone talks to every card network.",
     "prefix": "Next: how the card zone talks to every card network.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1531,
+        "startFrame": 6196,
         "words": [
           {
             "text": "Next:",
-            "startFrame": 1531
+            "startFrame": 6196
           },
           {
             "text": "how",
-            "startFrame": 1556
+            "startFrame": 6221
           },
           {
             "text": "the",
-            "startFrame": 1558
+            "startFrame": 6223
           },
           {
             "text": "card",
-            "startFrame": 1560
+            "startFrame": 6225
           },
           {
             "text": "zone",
-            "startFrame": 1567
+            "startFrame": 6232
           },
           {
             "text": "talks",
-            "startFrame": 1574
+            "startFrame": 6239
           },
           {
             "text": "to",
-            "startFrame": 1587
+            "startFrame": 6252
           },
           {
             "text": "every",
-            "startFrame": 1592
+            "startFrame": 6257
           },
           {
             "text": "card",
-            "startFrame": 1599
+            "startFrame": 6264
           },
           {
             "text": "network.",
-            "startFrame": 1608
+            "startFrame": 6273
           }
         ]
       }
