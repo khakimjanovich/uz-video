@@ -3,37 +3,201 @@
 Should everyone at a merchant see and do everything?
 
 2
-00:00:03,458 --> 00:00:11,544
-In a shop, the owner, the accountant and the cashier each have their own badge, and each badge opens only the doors that job needs.
+00:00:03,458 --> 00:00:08,712
+Picture a shop where the owner, the accountant and the support desk share one portal login.
 
 3
-00:00:11,594 --> 00:00:13,872
-A merchant's team works the same way.
+00:00:08,762 --> 00:00:14,016
+The support agent sends a refund to a friend, and the record says only that the shop did it.
 
 4
-00:00:13,922 --> 00:00:20,808
-Each person has their own login and one of four roles: admin, accountant, operator, or observer.
+00:00:14,066 --> 00:00:18,168
+When the accountant leaves, the password must change for everyone.
 
 5
-00:00:20,858 --> 00:00:22,680
-An admin invites people.
+00:00:18,218 --> 00:00:23,496
+In a real shop, the owner, the accountant and the cashier each have their own badge.
 
 6
-00:00:22,730 --> 00:00:28,656
-Each one sets their own password and an authenticator app on their phone, because these people can give money back.
+00:00:23,546 --> 00:00:26,904
+Each badge opens only the doors that job needs.
 
 7
-00:00:28,706 --> 00:00:33,816
-Every action names the roles that may run it, and nothing more: least privilege.
+00:00:26,954 --> 00:00:29,232
+A merchant's team works the same way.
 
 8
-00:00:33,866 --> 00:00:37,608
-Changing someone's role or blocking them takes effect at once.
+00:00:29,282 --> 00:00:31,104
+Here is how it works.
 
 9
-00:00:37,658 --> 00:00:43,176
-And a merchant can never lose its last admin, so nobody is ever locked out of their own shop.
+00:00:31,154 --> 00:00:35,352
+Each person has their own login and exactly one of four merchant roles.
 
 10
-00:00:43,226 --> 00:00:45,528
+00:00:35,402 --> 00:00:39,168
+The admin can do everything, including the team and the settings.
+
+11
+00:00:39,218 --> 00:00:43,200
+The accountant views and exports, and handles disputes.
+
+12
+00:00:43,250 --> 00:00:49,440
+The operator views, exports, makes payment links, gives refunds and handles disputes.
+
+13
+00:00:49,490 --> 00:00:51,408
+The observer only views.
+
+14
+00:00:51,458 --> 00:00:53,352
+An admin invites people by email.
+
+15
+00:00:53,402 --> 00:00:56,256
+Nobody ever types another person's password.
+
+16
+00:00:56,306 --> 00:01:03,408
+Each person sets their own password, and an authenticator app on their phone, because some of these people can give money back.
+
+17
+00:01:03,458 --> 00:01:07,704
+Every action in the portal names the roles that may run it, and nothing more.
+
+18
+00:01:07,754 --> 00:01:11,640
+That is least privilege: each person gets only what their job needs.
+
+19
+00:01:11,690 --> 00:01:15,744
+Changing someone's role takes effect at once, and they are signed out.
+
+20
+00:01:15,794 --> 00:01:18,288
+Blocking someone signs them out at once too.
+
+21
+00:01:18,338 --> 00:01:20,568
+Their past actions stay in the history.
+
+22
+00:01:20,618 --> 00:01:23,232
+And a merchant can never lose its last admin.
+
+23
+00:01:23,282 --> 00:01:27,864
+The last admin cannot step down or be blocked until a new admin is named.
+
+24
+00:01:27,914 --> 00:01:30,600
+So nobody is ever locked out of their own shop.
+
+25
+00:01:30,650 --> 00:01:32,472
+Now watch the product.
+
+26
+00:01:32,522 --> 00:01:36,624
+The viewer signs in as the merchant's admin and opens Users.
+
+27
+00:01:36,674 --> 00:01:42,360
+The page says it lists everyone who works in the portal, and that each person has exactly one role.
+
+28
+00:01:42,410 --> 00:01:49,824
+The viewer clicks "Invite a user", types an email and a name, and sees the four roles, each with a short line on what it can do.
+
+29
+00:01:49,874 --> 00:01:51,888
+They choose Operator and send it.
+
+30
+00:01:51,938 --> 00:01:54,456
+The page says the invitation was sent.
+
+31
+00:01:54,506 --> 00:01:56,328
+Now the new person's inbox.
+
+32
+00:01:56,378 --> 00:01:58,200
+The email has a link.
+
+33
+00:01:58,250 --> 00:02:03,600
+They open it, set their own password, and scan a code with an authenticator app on their phone.
+
+34
+00:02:03,650 --> 00:02:05,472
+Then they sign in.
+
+35
+00:02:05,522 --> 00:02:08,856
+Their menu shows Payments, and other pages for their work.
+
+36
+00:02:08,906 --> 00:02:10,944
+But there is no Users item at all.
+
+37
+00:02:10,994 --> 00:02:15,000
+The operator cannot manage the team, so the screen does not offer it.
+
+38
+00:02:15,050 --> 00:02:16,872
+Back as the admin.
+
+39
+00:02:16,922 --> 00:02:19,872
+Changing a role is one choice in a list.
+
+40
+00:02:19,922 --> 00:02:22,464
+Then the viewer clicks Block on a person.
+
+41
+00:02:22,514 --> 00:02:29,184
+A window asks first: they are signed out at once and can no longer sign in, and their past actions stay in the history.
+
+42
+00:02:29,234 --> 00:02:33,144
+Now the admin tries to block themself while they are the only admin.
+
+43
+00:02:33,194 --> 00:02:38,112
+The window asks them to choose a new admin, and the Block button stays grey until they do.
+
+44
+00:02:38,162 --> 00:02:39,984
+What does this protect?
+
+45
+00:02:40,034 --> 00:02:42,096
+A shared login hides who did what.
+
+46
+00:02:42,146 --> 00:02:47,376
+With a badge each, every refund and every export names a real person.
+
+47
+00:02:47,426 --> 00:02:53,040
+Least privilege means a stolen operator login cannot add new users or change settings.
+
+48
+00:02:53,090 --> 00:02:57,936
+Blocking at once means a person who leaves loses access the same minute.
+
+49
+00:02:57,986 --> 00:03:01,728
+And the last-admin rule protects the merchant from locking itself out.
+
+50
+00:03:01,778 --> 00:03:06,744
+So, like staff badges: everyone their own, and only the doors their job needs.
+
+51
+00:03:06,794 --> 00:03:09,096
 Next: the merchant's websites.
