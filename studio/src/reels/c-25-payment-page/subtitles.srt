@@ -3,41 +3,229 @@
 How does a buyer reach the bank's payment page, and nobody else?
 
 2
-00:00:03,866 --> 00:00:10,656
-A hotel key card opens one room, only for the guest who holds it, and only until checkout.
+00:00:03,866 --> 00:00:05,808
+The merchant has created a payment.
 
 3
-00:00:10,706 --> 00:00:12,672
-The payment page works the same way.
+00:00:05,858 --> 00:00:07,680
+Now the buyer has to pay it.
 
 4
-00:00:12,722 --> 00:00:15,984
-The merchant sends the buyer a link with a one-time key.
+00:00:07,730 --> 00:00:12,840
+The buyer must not type a card on the shop's own site, because the shop must never touch a card number.
 
 5
-00:00:16,034 --> 00:00:20,232
-The bank keeps only a fingerprint of that key, and the link expires.
+00:00:12,890 --> 00:00:17,640
+And the page cannot sit at an address anyone could guess by changing a number.
 
 6
-00:00:20,282 --> 00:00:24,384
-The page shows the website, the amount, and the cards it accepts.
+00:00:17,690 --> 00:00:20,400
+It must open only for the person who got the link.
 
 7
-00:00:24,434 --> 00:00:28,944
-It opens a card-entry session with the card zone and puts the card frame inside.
+00:00:20,450 --> 00:00:22,152
+It must work only for a while.
 
 8
-00:00:28,994 --> 00:00:33,504
-The page listens only to the frame, and accepts only a token from it.
+00:00:22,202 --> 00:00:24,528
+It must show exactly what is being paid.
 
 9
-00:00:33,554 --> 00:00:38,040
-ecom checks the card belongs to this payment, and then the charge starts.
+00:00:24,578 --> 00:00:27,840
+And it must survive a buyer who presses Pay twice.
 
 10
-00:00:38,090 --> 00:00:43,296
-And a double click never runs twice: one lock lets only one step through at a time.
+00:00:27,890 --> 00:00:29,640
+Think of a hotel key card.
 
 11
-00:00:43,346 --> 00:00:45,408
+00:00:29,690 --> 00:00:30,984
+It opens one room.
+
+12
+00:00:31,034 --> 00:00:32,904
+It works for the guest who holds it.
+
+13
+00:00:32,954 --> 00:00:34,800
+And it stops working at checkout.
+
+14
+00:00:34,850 --> 00:00:37,296
+The bank's payment page works the same way.
+
+15
+00:00:37,346 --> 00:00:40,680
+When the merchant creates a payment, the bank answers with a link.
+
+16
+00:00:40,730 --> 00:00:45,576
+The link carries a page token: a long, random, one-time key.
+
+17
+00:00:45,626 --> 00:00:47,880
+The merchant sends the buyer to that link.
+
+18
+00:00:47,930 --> 00:00:50,544
+The bank does not keep the token itself.
+
+19
+00:00:50,594 --> 00:00:56,568
+It keeps only a fingerprint of it, so even someone reading the bank's records cannot rebuild the link.
+
+20
+00:00:56,618 --> 00:00:59,736
+And the link expires after the bank's chosen time.
+
+21
+00:00:59,786 --> 00:01:03,312
+When the buyer opens the link, the bank's payment page loads.
+
+22
+00:01:03,362 --> 00:01:09,552
+It shows the website's name and logo, the order, the amount, and the cards this website accepts.
+
+23
+00:01:09,602 --> 00:01:12,240
+Those are the cards with a live terminal behind them.
+
+24
+00:01:12,290 --> 00:01:18,528
+Then the page opens a card-entry session with the card zone, and puts the card zone's frame inside the page.
+
+25
+00:01:18,578 --> 00:01:22,344
+The card number goes into that frame, and only into that frame.
+
+26
+00:01:22,394 --> 00:01:26,136
+A payment gets only the bank's chosen number of these sessions.
+
+27
+00:01:26,186 --> 00:01:29,808
+After that, the payment fails, and no money moves.
+
+28
+00:01:29,858 --> 00:01:34,608
+When the buyer finishes typing, the frame sends the page one small message.
+
+29
+00:01:34,658 --> 00:01:39,696
+The page accepts it only from the frame's own address, and only if it holds a token.
+
+30
+00:01:39,746 --> 00:01:41,568
+It never accepts a card number.
+
+31
+00:01:41,618 --> 00:01:43,848
+The page passes the token to ecom.
+
+32
+00:01:43,898 --> 00:01:47,952
+ecom asks the card zone whether this card belongs to this payment's session.
+
+33
+00:01:48,002 --> 00:01:49,848
+Only then does the charge begin.
+
+34
+00:01:49,898 --> 00:01:54,408
+And a page lock lets only one step run at a time for each payment.
+
+35
+00:01:54,458 --> 00:01:56,592
+Now watch the product from the buyer's side.
+
+36
+00:01:56,642 --> 00:01:59,136
+The buyer taps the link in the shop's checkout.
+
+37
+00:01:59,186 --> 00:02:03,336
+The page opens with a line at the top: secure payment page of the bank.
+
+38
+00:02:03,386 --> 00:02:10,344
+Below it are the website, the order number, the amount to pay, the accepted cards, and a line that says valid until, with the time.
+
+39
+00:02:10,394 --> 00:02:12,672
+Under that sits the card details frame.
+
+40
+00:02:12,722 --> 00:02:15,024
+The buyer double-clicks the pay button.
+
+41
+00:02:15,074 --> 00:02:16,896
+The first click goes through.
+
+42
+00:02:16,946 --> 00:02:20,472
+The second is turned away, because the page is busy.
+
+43
+00:02:20,522 --> 00:02:22,344
+Only one step runs.
+
+44
+00:02:22,394 --> 00:02:27,096
+Suppose the buyer leaves the frame open too long, or makes too many tries.
+
+45
+00:02:27,146 --> 00:02:30,816
+The page says that attempt ended, and asks to enter the card again.
+
+46
+00:02:30,866 --> 00:02:38,736
+If the buyer uses up every attempt, the page says the payment page closed before any money moved, and asks for a new link from the shop.
+
+47
+00:02:38,786 --> 00:02:42,624
+And a buyer who opens an old link sees that the link has expired.
+
+48
+00:02:42,674 --> 00:02:46,560
+When the payment ends, the page shows a back to the shop link.
+
+49
+00:02:46,610 --> 00:02:48,432
+What does this protect?
+
+50
+00:02:48,482 --> 00:02:53,544
+Without the page token, anyone could walk through payment pages by guessing addresses.
+
+51
+00:02:53,594 --> 00:02:58,056
+Without the fingerprint, a leaked copy of the bank's records would hand out live links.
+
+52
+00:02:58,106 --> 00:03:02,112
+Without the frame, the card number would pass through ecom and the shop.
+
+53
+00:03:02,162 --> 00:03:05,808
+Without the lock, one double click could start two charges.
+
+54
+00:03:05,858 --> 00:03:09,672
+The page protects the buyer, who sees exactly what is being paid.
+
+55
+00:03:09,722 --> 00:03:12,576
+It protects the shop, which never touches a card.
+
+56
+00:03:12,626 --> 00:03:14,136
+So back to the key card.
+
+57
+00:03:14,186 --> 00:03:17,112
+One guest, one room, until checkout.
+
+58
+00:03:17,162 --> 00:03:19,224
 Next: the charge itself.
