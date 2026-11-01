@@ -2,11 +2,11 @@
 // every /api call is answered from fixtures, sign-in is faked, and the card frame is the cards repo's own
 // page, script and style served on a stand-in origin. Run with Bun; see screens/README.md.
 import { spawn } from "node:child_process";
-import { existsSync, mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, rmSync } from "node:fs";
 import { createRequire } from "node:module";
 import { homedir } from "node:os";
 import { dirname, join } from "node:path";
-import { NEUTRAL_AMOUNTS, OVERRIDES } from "./overrides";
+import { NEUTRAL_AMOUNTS, OVERRIDES, PAGE_TEXT } from "./overrides";
 
 const ACQUIRING = join(homedir(), "Documents/acquiring");
 const CACHE = join(homedir(), "Library/Caches/uz-video-screens");
@@ -29,8 +29,28 @@ function sh(cmd: string, cwd?: string) {
   return r.stdout.toString().trim();
 }
 
-/** The front and the contracts at their origin/main, the front's dependencies linked, the API types generated. */
+/** The front and the contracts at their origin/main, the front's dependencies linked, the API types generated.
+ *  Several lessons may prepare at once: the first takes a lock, the others wait for it. */
 export function prepare() {
+  const lock = join(CACHE, ".lock");
+  mkdirSync(CACHE, { recursive: true });
+  for (let i = 0; ; i++) {
+    try {
+      mkdirSync(lock);
+      break;
+    } catch {
+      if (i > 600) throw new Error(`the screens cache stays locked: remove ${lock} if no run is going on`);
+      Bun.sleepSync(500);
+    }
+  }
+  try {
+    return prepareUnlocked();
+  } finally {
+    rmSync(lock, { recursive: true, force: true });
+  }
+}
+
+function prepareUnlocked() {
   mkdirSync(CACHE, { recursive: true });
   const front = sh("git rev-parse origin/main", join(ACQUIRING, "ecom-front"));
   if (!existsSync(FRONT)) sh(`git clone -q ${join(ACQUIRING, "ecom-front")} ${FRONT}`);
@@ -190,6 +210,19 @@ export async function shoot(shots: Shot[], outDir: string) {
       if (shot.act) await shot.act(page);
       if (shot.wait) await page.locator(shot.wait).first().waitFor();
       await page.waitForLoadState("networkidle");
+      await page.evaluate((pairs) => {
+        // Data printed as is (PAGE_TEXT in overrides.ts), whole words, in every text node and field.
+        const swap = (text: string) => {
+          const swapped = pairs.reduce(
+            (t, [from, to]) => t.replace(new RegExp(`(^|[^\\p{L}\\p{N}_])${from}(?=$|[^\\p{L}\\p{N}_])`, "gu"), `$1${to}`),
+            text,
+          );
+          return swapped === text ? text : swapped.replace(/ {2,}/g, " ").trim();
+        };
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        for (let node = walker.nextNode(); node; node = walker.nextNode()) node.nodeValue = swap(node.nodeValue ?? "");
+        for (const field of document.querySelectorAll("input")) field.value = swap(field.value);
+      }, PAGE_TEXT);
       const file = join(outDir, `${shot.name}.png`);
       mkdirSync(dirname(file), { recursive: true });
       await page.screenshot({ path: file });
