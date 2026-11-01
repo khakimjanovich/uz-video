@@ -1,12 +1,23 @@
 import { SubtitleCue } from "../../components";
 import { createEpisode } from "../../utils/createEpisode";
 import subtitlesJson from "./subtitles.json";
-import { diagram, map } from "./steps";
+import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Never alone", "Two signatures", "Four eyes", "The maker", "Nothing changes yet",
-  "The checker", "Not your own request", "Expires", "Documents again", "Both people named",
+  "Never alone", "Rushed or bribed", "Stolen cards", "Two signatures",
+  "The same way", "Four eyes", "How it works", "No such button",
+  "The maker", "The person who asks", "Nothing changes yet", "Exactly where it was",
+  "The checker", "Agrees or refuses", "Only then active", "Never their own request",
+  "The server refuses", "A request expires", "Months later? No", "Documents checked again",
+  "Both people named", "Not merchants only", "The whole product", "Two people",
+  "A new fee rule", "Refund windows, refunds", "Proposes, decides", "The same screen",
+  "Watch the product", "The approved merchant", "Request activation", "One click",
+  "Activation requested", "Approvals", "Who, and when it expires", "Approve and Reject grey",
+  "You made this request", "Not the maker", "A second admin", "Buttons are live",
+  "Approve", "Now active", "The history", "Both people named",
+  "Other kinds of request", "What does this protect?", "One mistake, one bribe", "With two, it is not",
+  "Protects buyers", "Protects the bank", "Protects the admins", "Like a cheque",
   "Next: server login",
 ];
 
@@ -19,4 +30,5 @@ export const C18FourEyesComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  screens,
 });
