@@ -4,9 +4,9 @@ import { BuildId } from "../../series/build/nodes";
 type Beat = Omit<DiagramStep<BuildId>, "cue">;
 
 // Lesson 13: counting the keys, not the doors. Sunday 3 a.m., a script on Malika's page (0–8), the bridge (9–10),
-// per-session tries are not enough (11–15), count every attempt (16–18), four counters (19–23), the velocity limit (24–30),
-// what counts (31–35), the alert (36), Saturday's real buyer (37–42), Sunday's script (43–49), Timur's team's email (50–53),
-// Malika's ordinary Sunday (54–57), next (58).
+// per-session tries are not enough (11–15), count every attempt (17–19), four counters (20–24), the velocity limit (25–31),
+// what counts (32–36), the alert (37), Saturday's real buyer (38–43), Sunday's script (44–50), Timur's team's email (51–54),
+// Malika's ordinary Sunday (55–58), next (62).
 const DOORS = { attacker: [0, 1], m2DoorA: [3, 0], m2DoorB: [3, 1], m2DoorC: [3, 2] } as const;
 const SESSIONS: Beat = {
   layout: { m2Keys: [0, 1], m2SessionA: [3, 0], m2SessionB: [3, 1], m2SessionC: [3, 2] },
@@ -58,80 +58,84 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 14, ...SESSIONS, badges: { m2Keys: "nearly useless" } },
   { cue: 15, layout: DOORS, edges: [{ from: "attacker", to: "m2DoorA", broken: true }, { from: "attacker", to: "m2DoorB" }], packets: [{ from: "attacker", to: "m2DoorB", label: "key" }], badges: { m2DoorA: "locked after 3" } },
   // Count every attempt, first.
-  { cue: 16, ...COUNT, accent: ["m2Counter"], badges: { m2Counter: "counts the keys" } },
-  { cue: 17, ...COUNT, packets: [{ from: "m2SmallShop", to: "m2Counter", label: "attempt" }, { from: "m2Counter", to: "network", label: "then ask", delay: 60 }], badges: { m2Counter: "written first" } },
-  { cue: 18, ...COUNT, packets: tries("m2SmallShop", "m2Counter", "at once"), badges: { m2Counter: "speed doesn't help" } },
+  { cue: 17, ...COUNT, accent: ["m2Counter"], badges: { m2Counter: "counts the keys" } },
+  { cue: 18, ...COUNT, packets: [{ from: "m2SmallShop", to: "m2Counter", label: "attempt" }, { from: "m2Counter", to: "network", label: "then ask", delay: 60 }], badges: { m2Counter: "written first" } },
+  { cue: 19, ...COUNT, packets: tries("m2SmallShop", "m2Counter", "at once"), badges: { m2Counter: "speed doesn't help" } },
   // Four counters.
-  { cue: 19, ...FOUR },
-  { cue: 20, ...FOUR, accent: ["m2CountCard"], badges: { m2CountCard: "never the number" } },
-  { cue: 21, ...FOUR, accent: ["m2CountBin"] },
-  { cue: 22, ...FOUR, accent: ["m2CountAddress"] },
-  { cue: 23, ...FOUR, accent: ["m2CountShop"] },
+  { cue: 20, ...FOUR },
+  { cue: 21, ...FOUR, accent: ["m2CountCard"], badges: { m2CountCard: "never the number" } },
+  { cue: 22, ...FOUR, accent: ["m2CountBin"] },
+  { cue: 23, ...FOUR, accent: ["m2CountAddress"] },
+  { cue: 24, ...FOUR, accent: ["m2CountShop"] },
   // The velocity limit.
-  { cue: 24, ...FOUR, badges: { m2Counter: "the bank's choice" } },
-  { cue: 25, ...FOUR, badges: { m2CountCard: "so many", m2CountBin: "so many", m2CountAddress: "so many", m2CountShop: "so many" } },
-  { cue: 26, ...FOUR, badges: { m2Counter: "velocity limit" } },
-  { cue: 27, ...BLOCKED, packets: [{ from: "m2SmallShop", to: "m2Counter", label: "try", stopAt: 0.9 }], badges: { m2Counter: "refused" } },
-  { cue: 28, ...BLOCKED, badges: { network: "no code sent" } },
-  { cue: 29, ...BLOCKED, badges: { m2SmallShop: "no attempt spent" } },
-  { cue: 30, ...BLOCKED, badges: { m2SmallShop: "no new session" } },
+  { cue: 25, ...FOUR, badges: { m2Counter: "the bank's choice" } },
+  { cue: 26, ...FOUR, badges: { m2CountCard: "so many", m2CountBin: "so many", m2CountAddress: "so many", m2CountShop: "so many" } },
+  { cue: 27, ...FOUR, badges: { m2Counter: "velocity limit" } },
+  { cue: 28, ...BLOCKED, packets: [{ from: "m2SmallShop", to: "m2Counter", label: "try", stopAt: 0.9 }], badges: { m2Counter: "refused" } },
+  { cue: 29, ...BLOCKED, badges: { network: "no code sent" } },
+  { cue: 30, ...BLOCKED, badges: { m2SmallShop: "no attempt spent" } },
+  { cue: 31, ...BLOCKED, badges: { m2SmallShop: "no new session" } },
   // What counts.
-  { cue: 31, ...COUNT, badges: { m2Counter: "card failures only" } },
-  { cue: 32, ...COUNT, packets: [{ from: "m2SmallShop", to: "m2Counter", label: "wrong code" }], badges: { m2Counter: "counts" } },
-  { cue: 33, ...COUNT, packets: [{ from: "network", to: "m2Counter", label: "bank says no" }], badges: { m2Counter: "counts" } },
-  { cue: 34, ...FOUR, badges: { m2CountBin: "not for an expiry typo" } },
-  { cue: 35, ...COUNT, edges: [{ from: "m2SmallShop", to: "m2Counter" }, { from: "m2Counter", to: "network", broken: true }], danger: ["network"], badges: { m2Counter: "never counted" } },
+  { cue: 32, ...COUNT, badges: { m2Counter: "card failures only" } },
+  { cue: 33, ...COUNT, packets: [{ from: "m2SmallShop", to: "m2Counter", label: "wrong code" }], badges: { m2Counter: "counts" } },
+  { cue: 34, ...COUNT, packets: [{ from: "network", to: "m2Counter", label: "bank says no" }], badges: { m2Counter: "counts" } },
+  { cue: 35, ...FOUR, badges: { m2CountBin: "not for an expiry typo" } },
+  { cue: 36, ...COUNT, edges: [{ from: "m2SmallShop", to: "m2Counter" }, { from: "m2Counter", to: "network", broken: true }], danger: ["network"], badges: { m2Counter: "never counted" } },
   // The alert.
-  { cue: 36, ...ALERT, packets: [{ from: "m2AlertEmail", to: "m2Team", label: "alert" }], badges: { m2Counter: "refusals pile up" } },
+  { cue: 37, ...ALERT, packets: [{ from: "m2AlertEmail", to: "m2Team", label: "alert" }], badges: { m2Counter: "refusals pile up" } },
   // Saturday: a real buyer runs out of tries.
-  { cue: 37, layout: { buyer: [1.5, 1] }, badges: { buyer: "Sat · a bad day" } },
-  { cue: 40, layout: { buyer: [0.4, 1], m2SessionA: [2.6, 1] }, edges: [{ from: "buyer", to: "m2SessionA" }], crossed: ["m2SessionA"], badges: { m2SessionA: "out of tries" } },
+  { cue: 38, layout: { buyer: [1.5, 1] }, badges: { buyer: "Sat · a bad day" } },
+  { cue: 41, layout: { buyer: [0.4, 1], m2SessionA: [2.6, 1] }, edges: [{ from: "buyer", to: "m2SessionA" }], crossed: ["m2SessionA"], badges: { m2SessionA: "out of tries" } },
   // Sunday: the script meets the counters.
-  { cue: 43, ...COUNT, layout: { attacker: [0, 1], m2Counter: [1.5, 1], network: [3, 1] }, edges: [{ from: "attacker", to: "m2Counter" }, { from: "m2Counter", to: "network" }], packets: tries("attacker", "m2Counter", "card"), badges: { attacker: "Sun 03:00" } },
-  { cue: 44, ...COUNT, layout: { attacker: [0, 1], m2Counter: [1.5, 1], network: [3, 1] }, edges: [{ from: "attacker", to: "m2Counter" }, { from: "m2Counter", to: "network" }], packets: [{ from: "network", to: "m2Counter", label: "refused" }] },
-  { cue: 45, ...FOUR, danger: ["m2CountBin"], badges: { m2CountBin: "limit reached" } },
-  { cue: 48, ...BLOCKED, badges: { network: "not asked" } },
-  { cue: 49, ...REACH, crossed: ["network"], badges: { m2Person: "no buzz" } },
+  { cue: 44, ...COUNT, layout: { attacker: [0, 1], m2Counter: [1.5, 1], network: [3, 1] }, edges: [{ from: "attacker", to: "m2Counter" }, { from: "m2Counter", to: "network" }], packets: tries("attacker", "m2Counter", "card"), badges: { attacker: "Sun 03:00" } },
+  { cue: 45, ...COUNT, layout: { attacker: [0, 1], m2Counter: [1.5, 1], network: [3, 1] }, edges: [{ from: "attacker", to: "m2Counter" }, { from: "m2Counter", to: "network" }], packets: [{ from: "network", to: "m2Counter", label: "refused" }] },
+  { cue: 46, ...FOUR, danger: ["m2CountBin"], badges: { m2CountBin: "limit reached" } },
+  { cue: 49, ...BLOCKED, badges: { network: "not asked" } },
+  { cue: 50, ...REACH, crossed: ["network"], badges: { m2Person: "no buzz" } },
   // Timur's team gets the email.
-  { cue: 50, ...ALERT, packets: [{ from: "m2AlertEmail", to: "m2Team", label: "email" }], badges: { m2Team: "Timur's team" } },
-  { cue: 51, ...ALERT, badges: { m2AlertEmail: "a velocity rule" } },
-  { cue: 52, ...ALERT, badges: { m2AlertEmail: "caller · counter" } },
-  { cue: 53, ...ALERT, badges: { m2Team: "logs · addresses" } },
+  { cue: 51, ...ALERT, packets: [{ from: "m2AlertEmail", to: "m2Team", label: "email" }], badges: { m2Team: "Timur's team" } },
+  { cue: 52, ...ALERT, badges: { m2AlertEmail: "a velocity rule" } },
+  { cue: 53, ...ALERT, badges: { m2AlertEmail: "caller · counter" } },
+  { cue: 54, ...ALERT, badges: { m2Team: "logs · addresses" } },
   // Malika's ordinary Sunday.
-  { cue: 54, layout: { shop: [1.5, 1] }, accent: ["shop"], badges: { shop: "ordinary orders" } },
-  { cue: 55, ...TEST, crossed: ["attacker"], badges: { m2SmallShop: "no testing bench" } },
-  { cue: 56, ...REACH, crossed: ["network"], badges: { m2Person: "quiet" } },
-  { cue: 57, ...BLOCKED, badges: { network: "no cost", m2Counter: "no live list" } },
+  { cue: 55, layout: { shop: [1.5, 1] }, accent: ["shop"], badges: { shop: "ordinary orders" } },
+  { cue: 56, ...TEST, crossed: ["attacker"], badges: { m2SmallShop: "no testing bench" } },
+  { cue: 57, ...REACH, crossed: ["network"], badges: { m2Person: "quiet" } },
+  { cue: 58, ...BLOCKED, badges: { network: "no cost", m2Counter: "no live list" } },
+  // Recap, the question (held 2 s), and the answer: the counters follow the keys.
+  { cue: 59, ...FOUR, badges: { m2Counter: "every attempt counted" } },
+  { cue: 60, ...FOUR },
+  { cue: 61, ...FOUR, accent: ["m2CountCard", "m2CountBin", "m2CountAddress", "m2CountShop"], badges: { m2Counter: "follows the keys" } },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 9, part: 3, current: ["card", "bin"] },
   { cue: 10, part: 3, current: ["frame", "card", "bin"], units: { cards: "counters" } },
-  { cue: 58, part: 3, current: ["frame", "card", "cardsinfra", "procport"], units: { cards: "all layers" } },
+  { cue: 62, part: 3, rows: [3], current: ["frame", "card", "cardsinfra", "procport"], units: { cards: "all layers" } },
 ];
 
 // The card form: a wrong code, a session out of tries, a velocity refusal.
 const FORM = [460, 268, 520, 360] as const;
 export const screens: ScreenStep[] = [
   {
-    cue: 38,
+    cue: 39,
     src: "screens/c-13-fraud-limits/code-wrong.png",
     title: "Payment page · card form",
     region: [...FORM],
     focus: [[555, 375, 340, 40]],
-    beats: [{ cue: 39, region: [...FORM], focus: [[555, 478, 340, 30]] }],
+    beats: [{ cue: 40, region: [...FORM], focus: [[555, 478, 340, 30]] }],
   },
   {
-    cue: 41,
+    cue: 42,
     src: "screens/c-13-fraud-limits/ended.png",
     title: "Payment page · a fresh card form",
     region: [...FORM],
     focus: [[545, 316, 350, 76]],
-    beats: [{ cue: 42, region: [...FORM], focus: [[555, 435, 340, 150]] }],
+    beats: [{ cue: 43, region: [...FORM], focus: [[555, 435, 340, 150]] }],
   },
   {
-    cue: 46,
+    cue: 47,
     src: "screens/c-13-fraud-limits/velocity.png",
     title: "Payment page · card form",
     region: [...FORM],
