@@ -1,203 +1,219 @@
 1
-00:00:00,050 --> 00:00:03,576
+00:00:00,050 --> 00:00:04,080
 Thursday night, Timur installs the card zone at the bank.
 
 2
-00:00:03,626 --> 00:00:05,928
+00:00:04,130 --> 00:00:06,840
 Halfway in, the install stops.
 
 3
-00:00:05,978 --> 00:00:08,904
+00:00:06,890 --> 00:00:10,224
 One caller's fraud limit has not been typed in yet.
 
 4
-00:00:08,954 --> 00:00:12,888
+00:00:10,274 --> 00:00:14,856
 The message names the missing value, and the caller it belongs to.
 
 5
-00:00:12,938 --> 00:00:17,640
+00:00:14,906 --> 00:00:20,328
 In Lesson 5, ecom and the card zone talked only through a written contract.
 
 6
-00:00:17,690 --> 00:00:23,976
+00:00:20,378 --> 00:00:27,912
 This lesson shows where every key and setting comes from, and why a missing one stops everything.
 
 7
-00:00:24,026 --> 00:00:26,064
+00:00:27,962 --> 00:00:30,072
 Timur could wish for a default.
 
 8
-00:00:26,114 --> 00:00:28,272
+00:00:30,122 --> 00:00:32,496
 Here is what a default costs.
 
 9
-00:00:28,322 --> 00:00:33,096
+00:00:32,546 --> 00:00:38,088
 Say a payment service shipped with a timeout of thirty seconds, as a sensible guess.
 
 10
-00:00:33,146 --> 00:00:38,976
+00:00:38,138 --> 00:00:45,048
 In production, nobody sets the real value, so thirty seconds quietly stays.
 
 11
-00:00:39,026 --> 00:00:42,792
+00:00:45,098 --> 00:00:49,416
 One night the card network takes forty seconds to answer.
 
 12
-00:00:42,842 --> 00:00:47,064
+00:00:49,466 --> 00:00:54,576
 The service gives up at thirty and tells Malika's site the payment failed.
 
 13
-00:00:47,114 --> 00:00:50,448
+00:00:54,626 --> 00:00:58,488
 But the card network said yes, and the buyer's money is gone.
 
 14
-00:00:50,498 --> 00:00:53,424
+00:00:58,538 --> 00:01:02,064
 A guessed default looks safe until production.
 
 15
-00:00:53,474 --> 00:00:58,896
-That is why I would defend one rule in any meeting: no setting has a default value.
+00:01:02,114 --> 00:01:08,048
+So what should a service do with a setting nobody has typed in?
 
 16
-00:00:58,946 --> 00:01:04,416
-Every setting comes from one locked store, Vault: a safe for settings and secrets.
+00:01:08,098 --> 00:01:14,408
+That is why I would defend one rule in any meeting: no setting has a default value.
 
 17
-00:01:04,466 --> 00:01:06,480
-Three kinds of value go into it.
+00:01:14,458 --> 00:01:21,008
+Every setting comes from one locked store, Vault: a safe for settings and secrets.
 
 18
-00:01:06,530 --> 00:01:10,848
-Some belong to the system itself, like which service listens where.
+00:01:21,058 --> 00:01:23,432
+Three kinds of value go into it.
 
 19
-00:01:10,898 --> 00:01:17,088
-Some are secrets, like passwords and keys, and every one of them is generated inside Vault.
+00:01:23,482 --> 00:01:28,448
+Some belong to the system itself, like which service listens where.
 
 20
-00:01:17,138 --> 00:01:21,336
-Nobody types a password into a file, and the product ships none.
+00:01:28,498 --> 00:01:35,456
+Some are secrets, like passwords and keys, and every one of them is generated inside Vault.
 
 21
-00:01:21,386 --> 00:01:26,112
-And some only this bank knows, like the card network's address and the bank's login there.
+00:01:35,506 --> 00:01:40,448
+Nobody types a password into a file, and the product ships none.
 
 22
-00:01:26,162 --> 00:01:29,040
-Timur types each of those once, into Vault.
+00:01:40,498 --> 00:01:45,920
+And some only this bank knows, like the card network's address and the bank's login there.
 
 23
-00:01:29,090 --> 00:01:35,856
-Before a service starts, it is handed exactly its own settings, in a private file only it can read.
+00:01:45,970 --> 00:01:49,016
+Timur types each of those once, into Vault.
 
 24
-00:01:35,906 --> 00:01:40,296
-Its own configuration holds only the names of settings, never the values.
+00:01:49,066 --> 00:01:56,600
+Before a service starts, it is handed exactly its own settings, in a private file only it can read.
 
 25
-00:01:40,346 --> 00:01:44,400
-If even one value is missing, the service refuses to start.
+00:01:56,650 --> 00:02:01,784
+Its own configuration holds only the names of settings, never the values.
 
 26
-00:01:44,450 --> 00:01:48,048
-It names every missing one at once, not just the first.
+00:02:01,834 --> 00:02:06,704
+If even one value is missing, the service refuses to start.
 
 27
-00:01:48,098 --> 00:01:53,280
-That is fail fast: stop loudly at the start, instead of failing quietly later.
+00:02:06,754 --> 00:02:10,688
+It names every missing one at once, not just the first.
 
 28
-00:01:53,330 --> 00:01:56,496
-The same rule covers the bank's business decisions.
+00:02:10,738 --> 00:02:16,808
+That is fail fast: stop loudly at the start, instead of failing quietly later.
 
 29
-00:01:56,546 --> 00:02:04,560
-Rates, limits and waiting times are the bank's choices, so each is a setting the bank chooses, never a number hidden in the product.
+00:02:16,858 --> 00:02:20,456
+The same rule covers the bank's business decisions.
 
 30
-00:02:04,610 --> 00:02:08,688
-The card zone has its own settings too, and every one is the bank's.
+00:02:20,506 --> 00:02:29,792
+Rates, limits and waiting times are the bank's choices, so each is a setting the bank chooses, never a number hidden in the product.
 
 31
-00:02:08,738 --> 00:02:14,136
-The bank chooses which systems may call the card zone, and which roles each caller gets.
+00:02:29,842 --> 00:02:35,072
+The card zone has its own settings too, and every one is the bank's.
 
 32
-00:02:14,186 --> 00:02:22,800
-For each caller, the bank chooses which websites may show the card form, how long a card entry session lives, and how many tries a buyer gets.
+00:02:35,122 --> 00:02:41,432
+The bank chooses which systems may call the card zone, and which roles each caller gets.
 
 33
-00:02:22,850 --> 00:02:32,112
-The bank chooses the fraud limits: how many attempts one card, one group of cards, one address and one shop may make within its chosen time window.
+00:02:41,482 --> 00:02:51,248
+For each caller, the bank chooses which websites may show the card form, how long a card entry session lives, and how many tries a buyer gets.
 
 34
-00:02:32,162 --> 00:02:39,192
-The bank chooses how long an unused card is kept before it is deleted, and how often the keys that lock card numbers change.
+00:02:51,298 --> 00:03:01,832
+The bank chooses the fraud limits: how many attempts one card, one group of cards, one address and one shop may make within its chosen time window.
 
 35
-00:02:39,242 --> 00:02:42,456
-And the bank chooses when the nightly clean up jobs run.
+00:03:01,882 --> 00:03:10,160
+The bank chooses how long an unused card is kept before it is deleted, and how often the keys that lock card numbers change.
 
 36
-00:02:42,506 --> 00:02:46,848
-So Thursday's missing fraud limit is a real decision, not a typo.
+00:03:10,210 --> 00:03:13,736
+And the bank chooses when the nightly clean up jobs run.
 
 37
-00:02:46,898 --> 00:02:49,992
-Timur types it into Vault and runs the install again.
+00:03:13,786 --> 00:03:18,752
+So Thursday's missing fraud limit is a real decision, not a typo.
 
 38
-00:02:50,042 --> 00:02:51,864
-This time, it runs.
+00:03:18,802 --> 00:03:22,376
+Timur types it into Vault and runs the install again.
 
 39
-00:02:51,914 --> 00:02:56,472
-Settings have no screen, so watch one service start with nothing set at all.
+00:03:22,426 --> 00:03:24,440
+This time, it runs.
 
 40
-00:02:56,522 --> 00:02:58,344
-It does not start.
+00:03:24,490 --> 00:03:29,984
+Settings have no screen, so watch one service start with nothing set at all.
 
 41
-00:02:58,394 --> 00:03:01,800
-It prints one message: required settings are missing.
+00:03:30,034 --> 00:03:31,856
+It does not start.
 
 42
-00:03:01,850 --> 00:03:05,472
-Below it comes one line for every missing setting, by name.
+00:03:31,906 --> 00:03:36,056
+It prints one message: required settings are missing.
 
 43
-00:03:05,522 --> 00:03:07,344
-Nothing half works.
+00:03:36,106 --> 00:03:40,664
+Below it comes one line for every missing setting, by name.
 
 44
-00:03:07,394 --> 00:03:11,688
-Nothing listens with a guessed address, a test password or a made up timeout.
+00:03:40,714 --> 00:03:42,536
+Nothing half works.
 
 45
-00:03:11,738 --> 00:03:14,880
-Then its settings are handed over, and the service starts.
+00:03:42,586 --> 00:03:47,408
+Nothing listens with a guessed address, a test password or a made up timeout.
 
 46
-00:03:14,930 --> 00:03:20,808
-So a wrong guess never reaches production, and a payment never fails on a timeout nobody chose.
+00:03:47,458 --> 00:03:51,344
+Then its settings are handed over, and the service starts.
 
 47
-00:03:20,858 --> 00:03:26,112
-A test password never guards real money, because no password exists outside Vault.
+00:03:51,394 --> 00:03:58,424
+So a wrong guess never reaches production, and a payment never fails on a timeout nobody chose.
 
 48
-00:03:26,162 --> 00:03:33,192
-And the bank stays in charge: every limit, window and time in the product is a value the bank chose and can see.
+00:03:58,474 --> 00:04:04,664
+A test password never guards real money, because no password exists outside Vault.
 
 49
-00:03:33,242 --> 00:03:35,808
-Thursday's install stopped for one minute.
+00:04:04,714 --> 00:04:12,872
+And the bank stays in charge: every limit, window and time in the product is a value the bank chose and can see.
 
 50
-00:03:35,858 --> 00:03:40,536
-A guessed limit would have stayed wrong, quietly, until it cost someone money.
+00:04:12,922 --> 00:04:16,016
+Thursday's install stopped for one minute.
 
 51
-00:03:40,586 --> 00:03:43,728
+00:04:16,066 --> 00:04:21,224
+A guessed limit would have stayed wrong, quietly, until it cost someone money.
+
+52
+00:04:21,274 --> 00:04:26,768
+To recap: no setting has a default, and a missing one stops the start.
+
+53
+00:04:26,818 --> 00:04:32,392
+So what does a service do when one setting is missing?
+
+54
+00:04:32,442 --> 00:04:36,400
+It refuses to start, and names every missing one.
+
+55
+00:04:36,450 --> 00:04:40,240
 Next: how every call proves who it comes from.
