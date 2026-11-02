@@ -5,17 +5,15 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Monday, 4 p.m.", "Start tonight?", "She cannot switch it on", "Not alone",
-  "Lesson 17: verified",
-  "Rushed or bribed", "Stolen cards", "No such button",
-  "Request activation", "She clicks it", "Activation requested", "The maker", "Nothing changes yet", "Exactly where it was",
-  "Approvals", "Who, and when it expires", "Approve and Reject grey", "You made this request", "Never their own request", "The server refuses",
-  "Ten minutes later", "Buttons are live", "The checker", "One click on Approve", "Now active",
-  "Documents checked again", "A request expires", "Months later? No",
-  "The history", "Dilnoza asked",
-  "Four eyes", "Not merchants only", "Other kinds", "Two people", "Proposes, decides", "The same screen",
-  "Red tape?", "The opposite", "One mistake, one bribe", "With two, it is not", "Both names",
-  "Half past four",
+  "Monday, 4 p.m.", "Start tonight?", "She cannot switch it on", "Not alone", "Lesson 17: verified",
+  "Rushed or bribed", "Stolen cards", "No such button", "Request activation", "She clicks it",
+  "Activation requested", "The maker", "Nothing changes yet", "Exactly where it was", "Approvals",
+  "Who, and when it expires", "Approve and Reject grey", "You made this request", "Her own request?",
+  "Never their own request", "The server refuses", "Ten minutes later", "Buttons are live", "The checker",
+  "One click on Approve", "Now active", "Documents checked again", "A request expires", "Months later? No",
+  "The history", "Dilnoza asked", "Four eyes", "Not merchants only", "Other kinds", "Two people",
+  "Proposes, decides", "The same screen", "Red tape?", "The opposite", "One mistake, one bribe",
+  "With two, it is not", "Both names", "Half past four", "Recap", "Who switched it on?", "The checker",
   "Next: server login",
 ];
 
@@ -29,4 +27,6 @@ export const C18FourEyesComposition = createEpisode({
   map,
   diagram,
   screens,
+  focus: true,
+  hidePanelBefore: 46, // the story shows no course panel; it returns at the closing "Next" line
 });
