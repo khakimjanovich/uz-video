@@ -5,7 +5,7 @@ type Beat = Omit<DiagramStep<BuildId>, "cue">;
 
 // Lesson 10: what the first digits tell you. 11:10 pm, a card the shop doesn't take (0–4), the bridge (5–6), the BIN (7–10),
 // the lists copied in and kept (11–15), the lookup (16–24), checked before any code (25–29), the request never sent (30–33),
-// tonight's buyer on the page (34–46), nobody woken (47–49), never the person (50), next (51).
+// tonight's buyer on the page (34–46), nobody woken (47–49), never the person (50), next (54).
 const BIN = { m2Card: [0, 1], network: [2.8, 0.2], issuer: [2.8, 1.8] } as const;
 const B: Beat = { layout: BIN, edges: [{ from: "m2Card", to: "network", label: "BIN" }, { from: "m2Card", to: "issuer", label: "BIN" }] };
 const LISTS = { m2NetworkA: [0, 0.2], m2NetworkB: [0, 1.8], m2AdapterA: [1.5, 0.2], m2AdapterB: [1.5, 1.8], m2Bin: [3, 1] } as const;
@@ -112,10 +112,13 @@ export const diagram: DiagramStep<BuildId>[] = [
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the one before.
-  { cue: 5, part: 3, current: ["card"] },
-  { cue: 6, part: 3, current: ["bin"], units: { cards: "first digits" } },
-  { cue: 25, part: 3, current: ["frame", "bin"], units: { cards: "check first" } },
-  { cue: 51, part: 3, current: ["frame"], units: { cards: "card form" } },
+  { cue: 5, part: 3, current: ["card"], dot: "card" },
+  { cue: 6, part: 3, current: ["bin"], units: { cards: "first digits" }, dot: "bin" },
+  { cue: 25, part: 3, current: ["frame", "bin"], units: { cards: "check first" }, dot: "frame" },
+  // Recap, the question (held 2 s), and the answer: only the lesson's own boxes stay bright.
+  { cue: 51, part: 3, dot: "off" },
+  { cue: 53, part: 3, current: ["frame", "bin"] },
+  { cue: 54, part: 3, rows: [3], current: ["frame"], units: { cards: "card form" } },
 ];
 
 // The pay page: the networks above the card form, the refusals, the code, the masked line with its bank.
