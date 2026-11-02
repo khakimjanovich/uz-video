@@ -4,7 +4,7 @@ import { BuildId } from "../../series/build/nodes";
 // Lesson 16: sign-up, told through Malika's Sunday night at the kitchen table.
 // Sunday night (0), the bridge (1–2), the form and the password (3–7), the code arrives (8–9), why a code (10–13),
 // the one-time code and its fingerprints (14–17), the check-your-email page (18–23), verified and first admin (24–25),
-// the stranger's lockout (26–30), failing closed (31–35), who it protects (36–39), next (40).
+// the stranger's lockout (26–30), failing closed (31–36), who it protects (37–40), next (44).
 const FORM = { m45Person: [0, 0.3], attacker: [0, 1.9], m45Form: [1.5, 1], m45Inbox: [3, 1] } as const;
 const POST = { m45Person: [0, 1.7], m45Bank: [1.5, 0.3], m45Inbox: [3, 1.7] } as const;
 const POST_EDGES = [{ from: "m45Person", to: "m45Bank", label: "sign up" }, { from: "m45Bank", to: "m45Inbox" }] as const;
@@ -111,25 +111,27 @@ export const diagram: DiagramStep<BuildId>[] = [
     packets: [{ from: "attacker", to: "shop", label: "unchecked shop" }],
     danger: ["attacker"],
   },
-  { cue: 35, layout: DOWN, edges: [...DOWN_EDGES], danger: ["m45CodeStore"], badges: { m45Bank: "fails closed" } },
+  { cue: 36, layout: DOWN, edges: [...DOWN_EDGES], danger: ["m45CodeStore"], badges: { m45Bank: "fails closed" } },
   // Who it protects; Malika never noticed.
-  { cue: 36, layout: POST, edges: [...READ], accent: ["m45Person"], badges: { m45Person: "real owner" } },
+  { cue: 37, layout: POST, edges: [...READ], accent: ["m45Person"], badges: { m45Person: "real owner" } },
   {
-    cue: 37,
+    cue: 38,
     layout: POST,
     edges: [...READ],
     packets: [{ from: "m45Bank", to: "m45Inbox", label: "contract" }, { from: "m45Bank", to: "m45Inbox", label: "report", delay: 50 }],
     accent: ["m45Bank"],
   },
-  { cue: 38, layout: POST, edges: [...READ], badges: { m45Person: "Malika · never noticed" } },
-  { cue: 39, layout: POST, edges: [...READ], packets: [{ from: "m45Inbox", to: "m45Person", label: "482107" }], accent: ["m45Person"], badges: { m45Person: "green tick" } },
+  { cue: 39, layout: POST, edges: [...READ], badges: { m45Person: "Malika · never noticed" } },
+  { cue: 40, layout: POST, edges: [...READ], packets: [{ from: "m45Inbox", to: "m45Person", label: "482107" }], accent: ["m45Person"], badges: { m45Person: "green tick" } },
+  // The recap's answer.
+  { cue: 43, layout: POST, edges: [...READ], packets: [{ from: "m45Inbox", to: "m45Person", label: "482107" }], accent: ["m45Inbox"], badges: { m45Inbox: "only the code" } },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 1, part: 4, current: ["partner", "admin"], units: { ecom: "the shop's side" } },
   { cue: 2, part: 4, current: ["partner", "emailport", "emailsvc"], units: { ecom: "sign-up" } },
-  { cue: 40, part: 4, current: ["partner", "admin"], units: { ecom: "next: take money" } },
+  { cue: 44, part: 4, rows: [4], current: ["partner", "admin"], units: { ecom: "next: take money" } },
 ];
 
 const DIR = "screens/c-16-registration";

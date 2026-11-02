@@ -1,167 +1,183 @@
 1
-00:00:00,050 --> 00:00:04,008
+00:00:00,050 --> 00:00:04,728
 The first week of March is the busiest week of Malika's year.
 
 2
-00:00:04,058 --> 00:00:09,192
+00:00:04,778 --> 00:00:10,920
 Everyone buys flowers for the eighth, and she cannot answer every buyer alone.
 
 3
-00:00:09,242 --> 00:00:13,752
+00:00:10,970 --> 00:00:16,128
 So she hires a helper for the week, and her accountant wants to see the payments too.
 
 4
-00:00:13,802 --> 00:00:24,792
+00:00:16,178 --> 00:00:28,320
 In Lesson 16, Malika became her shop's first admin, and in Lesson 19 its server got a login of its own, and this lesson gives the rest of her team their own logins and roles.
 
 5
-00:00:24,842 --> 00:00:26,976
+00:00:28,370 --> 00:00:30,912
 The easy way is to share one login.
 
 6
-00:00:27,026 --> 00:00:31,680
+00:00:30,962 --> 00:00:36,480
 I think it is the most common shortcut in small shops, and the most expensive one.
 
 7
-00:00:31,730 --> 00:00:36,840
+00:00:36,530 --> 00:00:42,408
 If the helper sends a refund to a friend, the record says only that the shop did it.
 
 8
-00:00:36,890 --> 00:00:40,536
+00:00:42,458 --> 00:00:46,632
 And when someone leaves, the password changes for everyone.
 
 9
-00:00:40,586 --> 00:00:42,888
+00:00:46,682 --> 00:00:49,344
 So Malika opens Users.
 
 10
-00:00:42,938 --> 00:00:48,408
+00:00:49,394 --> 00:00:55,848
 The page lists everyone who works in the portal, and says each person has exactly one role.
 
 11
-00:00:48,458 --> 00:00:50,280
+00:00:55,898 --> 00:00:57,720
 There are four.
 
 12
-00:00:50,330 --> 00:00:54,096
+00:00:57,770 --> 00:01:02,256
 The admin can do everything, including the team and the settings.
 
 13
-00:00:54,146 --> 00:00:58,128
+00:01:02,306 --> 00:01:07,032
 The accountant views and exports, and handles disputes.
 
 14
-00:00:58,178 --> 00:01:04,368
+00:01:07,082 --> 00:01:14,040
 The operator views, exports, makes payment links, gives refunds and handles disputes.
 
 15
-00:01:04,418 --> 00:01:06,336
+00:01:14,090 --> 00:01:16,392
 The observer only views.
 
 16
-00:01:06,386 --> 00:01:14,184
+00:01:16,442 --> 00:01:25,656
 Malika clicks "Invite a user", types her helper's email and name, and sees the four roles, each with a short line on what it can do.
 
 17
-00:01:14,234 --> 00:01:16,512
+00:01:25,706 --> 00:01:28,440
 She chooses Operator and sends it.
 
 18
-00:01:16,562 --> 00:01:19,080
+00:01:28,490 --> 00:01:31,368
 The page says the invitation was sent.
 
 19
-00:01:19,130 --> 00:01:21,984
+00:01:31,418 --> 00:01:34,776
 Nobody ever types another person's password.
 
 20
-00:01:22,034 --> 00:01:24,888
+00:01:34,826 --> 00:01:38,088
 In the helper's inbox, the email has a link.
 
 21
-00:01:24,938 --> 00:01:30,072
+00:01:38,138 --> 00:01:44,184
 The helper sets their own password, and scans a code with an authenticator app on their phone.
 
 22
-00:01:30,122 --> 00:01:33,984
+00:01:44,234 --> 00:01:49,032
 That second step is there because an operator can give money back.
 
 23
-00:01:34,034 --> 00:01:35,856
+00:01:49,082 --> 00:01:50,904
 Then they sign in.
 
 24
-00:01:35,906 --> 00:01:39,192
+00:01:50,954 --> 00:01:54,744
 The menu shows Payments, and other pages for the work.
 
 25
-00:01:39,242 --> 00:01:41,280
-But there is no Users item at all.
+00:01:54,794 --> 00:01:58,808
+So what is missing from this menu?
 
 26
-00:01:41,330 --> 00:01:45,336
-The operator cannot manage the team, so the screen does not offer it.
+00:01:58,858 --> 00:02:01,208
+But there is no Users item at all.
 
 27
-00:01:45,386 --> 00:01:49,632
-Every action in the portal names the roles that may run it, and nothing more.
+00:02:01,258 --> 00:02:05,864
+The operator cannot manage the team, so the screen does not offer it.
 
 28
-00:01:49,682 --> 00:01:53,568
-That is least privilege: each person gets only what their job needs.
+00:02:05,914 --> 00:02:10,976
+Every action in the portal names the roles that may run it, and nothing more.
 
 29
-00:01:53,618 --> 00:01:58,368
-So a stolen operator login cannot add new users or change settings.
+00:02:11,026 --> 00:02:15,488
+That is least privilege: each person gets only what their job needs.
 
 30
-00:01:58,418 --> 00:02:04,728
-For her accountant, Malika picks the Accountant role: changing a role is one choice in a list.
+00:02:15,538 --> 00:02:21,152
+So a stolen operator login cannot add new users or change settings.
 
 31
-00:02:04,778 --> 00:02:08,640
-A role change takes effect at once, and the person is signed out.
+00:02:21,202 --> 00:02:28,400
+For her accountant, Malika picks the Accountant role: changing a role is one choice in a list.
 
 32
-00:02:08,690 --> 00:02:11,688
-On the ninth of March, the rush is over.
+00:02:28,450 --> 00:02:33,080
+A role change takes effect at once, and the person is signed out.
 
 33
-00:02:11,738 --> 00:02:14,088
-Malika clicks Block on her helper.
+00:02:33,130 --> 00:02:36,608
+On the ninth of March, the rush is over.
 
 34
-00:02:14,138 --> 00:02:20,808
-A window asks first: they are signed out at once and can no longer sign in, and their past actions stay in the history.
+00:02:36,658 --> 00:02:39,272
+Malika clicks Block on her helper.
 
 35
-00:02:20,858 --> 00:02:25,248
-Every refund the helper gave still names the helper.
+00:02:39,322 --> 00:02:47,432
+A window asks first: they are signed out at once and can no longer sign in, and their past actions stay in the history.
 
 36
-00:02:25,298 --> 00:02:29,832
-Then, out of curiosity, Malika tries to block herself.
+00:02:47,482 --> 00:02:52,472
+Every refund the helper gave still names the helper.
 
 37
-00:02:29,882 --> 00:02:31,704
-She is the only admin.
+00:02:52,522 --> 00:02:57,944
+Then, out of curiosity, Malika tries to block herself.
 
 38
-00:02:31,754 --> 00:02:37,320
-The window asks her to choose a new admin first, and the Block button stays grey until she does.
+00:02:57,994 --> 00:02:59,816
+She is the only admin.
 
 39
-00:02:37,370 --> 00:02:43,008
-A merchant can never lose its last admin, so nobody is ever locked out of their own shop.
+00:02:59,866 --> 00:03:06,968
+The window asks her to choose a new admin first, and the Block button stays grey until she does.
 
 40
-00:02:43,058 --> 00:02:48,240
-A login each means every refund and every export names a real person.
+00:03:07,018 --> 00:03:13,760
+A merchant can never lose its last admin, so nobody is ever locked out of their own shop.
 
 41
-00:02:48,290 --> 00:02:51,384
-And a person who leaves loses access the same minute.
+00:03:13,810 --> 00:03:19,544
+A login each means every refund and every export names a real person.
 
 42
-00:02:51,434 --> 00:02:53,952
+00:03:19,594 --> 00:03:23,360
+And a person who leaves loses access the same minute.
+
+43
+00:03:23,410 --> 00:03:28,400
+To recap: each person has their own login and exactly one role.
+
+44
+00:03:28,450 --> 00:03:32,920
+So who can add new people to Malika's team?
+
+45
+00:03:32,970 --> 00:03:34,792
+Only an admin.
+
+46
+00:03:34,842 --> 00:03:37,672
 Next: Malika's second website.

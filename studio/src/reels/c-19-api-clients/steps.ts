@@ -3,8 +3,8 @@ import { BuildId } from "../../series/build/nodes";
 
 // Lesson 19: API clients. One shop carries it: Bekzod connects Malika's website to the bank.
 // "Just use my password" (0–1), the bridge from lessons 18 and 1 (2), why not (3–6), the API clients page (7–12),
-// a new client, its secret shown once (13–20), never kept by ecom (21–22), id + secret → token (23–27),
-// Thursday's leak and rotation (28–36), what a separate key keeps (37–39), next (40).
+// a new client, its secret shown once (13–20), never kept by ecom (22–23), id + secret → token (24–28),
+// Thursday's leak and rotation (29–37), what a separate key keeps (38–40), next (44).
 const CREATE = { shop: [0, 1], m45Client: [1.5, 1], merchant: [3, 1], m45Db: [1.5, 2.2] } as const;
 const CREATE_EDGES = [{ from: "shop", to: "m45Client" }, { from: "m45Client", to: "merchant" }, { from: "m45Client", to: "m45Db", broken: true }] as const;
 const TOKEN = { merchant: [0, 1], m45Login: [1.5, 0.2], m45PayApi: [3, 1] } as const;
@@ -32,49 +32,51 @@ export const diagram: DiagramStep<BuildId>[] = [
   // New client: a login for a machine.
   { cue: 13, layout: { shop: CREATE.shop, m45Client: CREATE.m45Client }, edges: [{ from: "shop", to: "m45Client" }], packets: [{ from: "shop", to: "m45Client", label: "create" }], badges: { m45Client: "a machine's login" } },
   // ecom keeps the id, never the secret.
-  { cue: 21, layout: CREATE, edges: [...CREATE_EDGES], badges: { m45Db: "id only" } },
-  { cue: 22, layout: { ...CREATE, attacker: [3, 2.2] }, edges: [...CREATE_EDGES, { from: "attacker", to: "m45Db" }], danger: ["attacker"], badges: { m45Db: "nothing to read" } },
+  { cue: 22, layout: CREATE, edges: [...CREATE_EDGES], badges: { m45Db: "id only" } },
+  { cue: 23, layout: { ...CREATE, attacker: [3, 2.2] }, edges: [...CREATE_EDGES, { from: "attacker", to: "m45Db" }], danger: ["attacker"], badges: { m45Db: "nothing to read" } },
   // id + secret → a short-lived token → the payments API.
-  { cue: 23, layout: TOKEN, edges: [...TOKEN_EDGES], packets: [{ from: "merchant", to: "m45Login", label: "id + secret" }] },
-  { cue: 24, layout: TOKEN, edges: [...TOKEN_EDGES], packets: [{ from: "m45Login", to: "merchant", label: "token" }], badges: { merchant: "expires soon" } },
-  { cue: 25, layout: TOKEN, edges: [...TOKEN_EDGES], packets: [{ from: "merchant", to: "m45PayApi", label: "token" }], badges: { m45PayApi: "token only" } },
-  { cue: 26, layout: TOKEN, edges: [...TOKEN_EDGES], accent: ["m45PayApi"], badges: { m45PayApi: "machine + merchant role" } },
+  { cue: 24, layout: TOKEN, edges: [...TOKEN_EDGES], packets: [{ from: "merchant", to: "m45Login", label: "id + secret" }] },
+  { cue: 25, layout: TOKEN, edges: [...TOKEN_EDGES], packets: [{ from: "m45Login", to: "merchant", label: "token" }], badges: { merchant: "expires soon" } },
+  { cue: 26, layout: TOKEN, edges: [...TOKEN_EDGES], packets: [{ from: "merchant", to: "m45PayApi", label: "token" }], badges: { m45PayApi: "token only" } },
+  { cue: 27, layout: TOKEN, edges: [...TOKEN_EDGES], accent: ["m45PayApi"], badges: { m45PayApi: "machine + merchant role" } },
   {
-    cue: 27,
+    cue: 28,
     layout: PEOPLE,
     edges: [...TOKEN_EDGES, { from: "m45Owner", to: "m45PayApi", broken: true }],
     packets: [{ from: "m45Owner", to: "m45PayApi", label: "person", stopAt: 0.6 }],
     badges: { m45Owner: "not even Malika" },
   },
   // Thursday: the secret lands in a group chat.
-  { cue: 28, layout: LEAK, edges: [{ from: "merchant", to: "m45Client" }, { from: "m45Client", to: "attacker" }], danger: ["attacker"], badges: { m45Client: "Thu", attacker: "group chat" } },
-  { cue: 29, layout: LEAK, edges: [{ from: "merchant", to: "m45Client" }, { from: "m45Client", to: "attacker" }], danger: ["attacker"], badges: { m45Client: "rotate", attacker: "group chat" } },
+  { cue: 29, layout: LEAK, edges: [{ from: "merchant", to: "m45Client" }, { from: "m45Client", to: "attacker" }], danger: ["attacker"], badges: { m45Client: "Thu", attacker: "group chat" } },
+  { cue: 30, layout: LEAK, edges: [{ from: "merchant", to: "m45Client" }, { from: "m45Client", to: "attacker" }], danger: ["attacker"], badges: { m45Client: "rotate", attacker: "group chat" } },
   {
-    cue: 34,
+    cue: 35,
     layout: TOKEN,
     edges: [...TOKEN_EDGES],
     packets: [{ from: "merchant", to: "m45Login", label: "old secret", stopAt: 0.6 }, { from: "merchant", to: "m45Login", label: "new secret", delay: 60 }],
     badges: { m45Login: "rotation" },
   },
   {
-    cue: 35,
+    cue: 36,
     layout: { attacker: [0, 1], m45Login: [2, 1] },
     edges: [{ from: "attacker", to: "m45Login" }],
     packets: [{ from: "attacker", to: "m45Login", label: "old secret", stopAt: 0.6 }],
     danger: ["attacker"],
     badges: { attacker: "from the chat", m45Login: "refused" },
   },
-  { cue: 36, layout: PEOPLE, edges: [...TOKEN_EDGES, { from: "m45Owner", to: "m45Login", label: "own login" }], accent: ["m45Owner"], badges: { m45Owner: "untouched" } },
+  { cue: 37, layout: PEOPLE, edges: [...TOKEN_EDGES, { from: "m45Owner", to: "m45Login", label: "own login" }], accent: ["m45Owner"], badges: { m45Owner: "untouched" } },
   // What a separate key keeps.
-  { cue: 37, layout: PEOPLE, edges: [...TOKEN_EDGES, { from: "m45Owner", to: "m45Login", label: "own login" }], accent: ["m45Owner"], badges: { m45Owner: "private" } },
-  { cue: 38, layout: LEAK, edges: [{ from: "merchant", to: "m45Client" }, { from: "m45Client", to: "attacker", broken: true }], accent: ["m45Client"], badges: { m45Client: "one click" } },
-  { cue: 39, layout: CREATE, edges: [...CREATE_EDGES], accent: ["m45Db"], badges: { m45Db: "nothing to leak" } },
+  { cue: 38, layout: PEOPLE, edges: [...TOKEN_EDGES, { from: "m45Owner", to: "m45Login", label: "own login" }], accent: ["m45Owner"], badges: { m45Owner: "private" } },
+  { cue: 39, layout: LEAK, edges: [{ from: "merchant", to: "m45Client" }, { from: "m45Client", to: "attacker", broken: true }], accent: ["m45Client"], badges: { m45Client: "one click" } },
+  { cue: 40, layout: CREATE, edges: [...CREATE_EDGES], accent: ["m45Db"], badges: { m45Db: "nothing to leak" } },
+  // The recap's answer.
+  { cue: 43, layout: LEAK, edges: [{ from: "merchant", to: "m45Client" }, { from: "m45Client", to: "attacker", broken: true }], accent: ["m45Client"], badges: { m45Client: "rotate · old secret dead" } },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 2, part: 4, current: ["merchant", "payment", "keycloak"] },
-  { cue: 40, part: 4, current: ["merchant", "keycloak", "partner"], units: { ecom: "next: the team" } },
+  { cue: 44, part: 4, rows: [4], current: ["merchant", "keycloak", "partner"], units: { ecom: "next: the team" } },
 ];
 
 // The portal: locked yesterday, open today; a new client, the list, Thursday's rotation.
@@ -116,7 +118,7 @@ export const screens: ScreenStep[] = [
   },
   { cue: 17, src: `${DIR}/new-client-stored.png`, title: "Merchant portal · API clients", region: WINDOW, focus: [[516, 340, 260, 36]] },
   { cue: 19, src: `${DIR}/list.png`, title: "Merchant portal · API clients", region: LEFT, focus: [[263, 200, 400, 40]], beats: [{ cue: 20, region: LEFT, focus: [[261, 160, 780, 101]] }] },
-  { cue: 30, src: `${DIR}/list.png`, title: "Merchant portal · API clients", region: [640, 40, 800, 500], focus: [[1270, 219, 129, 30]] },
-  { cue: 31, src: `${DIR}/rotate.png`, title: "Merchant portal · API clients", region: WINDOW, focus: [[516, 105, 408, 45]], beats: [{ cue: 32, region: WINDOW, focus: [[800, 165, 130, 36]] }] },
-  { cue: 33, src: `${DIR}/new-secret.png`, title: "Merchant portal · API clients", region: WINDOW, focus: [[516, 100, 408, 260]] },
+  { cue: 31, src: `${DIR}/list.png`, title: "Merchant portal · API clients", region: [640, 40, 800, 500], focus: [[1270, 219, 129, 30]] },
+  { cue: 32, src: `${DIR}/rotate.png`, title: "Merchant portal · API clients", region: WINDOW, focus: [[516, 105, 408, 45]], beats: [{ cue: 33, region: WINDOW, focus: [[800, 165, 130, 36]] }] },
+  { cue: 34, src: `${DIR}/new-secret.png`, title: "Merchant portal · API clients", region: WINDOW, focus: [[516, 100, 408, 260]] },
 ];

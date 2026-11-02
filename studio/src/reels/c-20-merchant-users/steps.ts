@@ -2,8 +2,8 @@ import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 
 // Lesson 20: Malika's March team. The rush and a helper (0–2), the bridge (3), one shared login (4–7),
-// Users and the four roles (8–14), the invitation and the helper's first sign-in (15–25), least privilege (26–28),
-// a role change (29–30), March 9: block the helper (31–34), the last admin (35–38), a login each (39–40), next (41).
+// Users and the four roles (8–14), the invitation and the helper's first sign-in (15–26), least privilege (27–29),
+// a role change (30–31), March 9: block the helper (32–35), the last admin (36–39), a login each (40–41), next (45).
 const TEAM = { m45Owner: [0, 1], m45Support: [1.5, 1], m45Accountant: [3, 1] } as const;
 const SHARED = { m45Owner: [0, 0.2], m45Accountant: [0, 1.1], m45Support: [0, 2], m45Shared: [1.6, 1.1], m45Portal: [3, 1.1] } as const;
 const SHARED_EDGES = [
@@ -57,30 +57,34 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 20, layout: SETUP, edges: [...SETUP_EDGES], packets: [{ from: "m45Operator", to: "m45Login", label: "own password" }, { from: "m45Login", to: "m45Authenticator", label: "scan", delay: 50 }], accent: ["m45Authenticator"] },
   { cue: 21, layout: SETUP, edges: [...SETUP_EDGES], accent: ["m45Authenticator"], badges: { m45Operator: "can give money back" } },
   // Least privilege.
-  { cue: 26, layout: ROLES, edges: [...ROLE_EDGES], badges: { m45Portal: "roles per action" } },
-  { cue: 27, layout: ROLES, edges: [...ROLE_EDGES], accent: ["m45Observer"], badges: { m45Portal: "least privilege" } },
+  { cue: 27, layout: ROLES, edges: [...ROLE_EDGES], badges: { m45Portal: "roles per action" } },
+  { cue: 28, layout: ROLES, edges: [...ROLE_EDGES], accent: ["m45Observer"], badges: { m45Portal: "least privilege" } },
   {
-    cue: 28,
+    cue: 29,
     layout: { attacker: [0, 1], m45Operator: [1.5, 1], m45Portal: [3, 1] },
     edges: [{ from: "attacker", to: "m45Operator" }, { from: "m45Operator", to: "m45Portal" }],
     packets: [{ from: "m45Operator", to: "m45Portal", label: "add user", stopAt: 0.6 }],
     danger: ["attacker"],
   },
-  { cue: 30, layout: OUT, edges: [...OUT_EDGES], packets: [{ from: "m45Admin", to: "m45Operator", label: "new role" }], badges: { m45Operator: "signed out" } },
+  { cue: 31, layout: OUT, edges: [...OUT_EDGES], packets: [{ from: "m45Admin", to: "m45Operator", label: "new role" }], badges: { m45Operator: "signed out" } },
   // March 9: the rush is over.
-  { cue: 31, layout: OUT, edges: [...OUT_EDGES], badges: { m45Operator: "March 9" } },
-  { cue: 34, layout: OUT, edges: [...OUT_EDGES], crossed: ["m45Operator"], accent: ["m45History"], badges: { m45History: "names the helper" } },
+  { cue: 32, layout: OUT, edges: [...OUT_EDGES], badges: { m45Operator: "March 9" } },
+  { cue: 35, layout: OUT, edges: [...OUT_EDGES], crossed: ["m45Operator"], accent: ["m45History"], badges: { m45History: "names the helper" } },
   // The last admin.
-  { cue: 38, layout: LAST, edges: [...LAST_EDGES], accent: ["m45Portal"], badges: { m45Admin: "last admin", m45Portal: "never locked out" } },
+  { cue: 39, layout: LAST, edges: [...LAST_EDGES], accent: ["m45Portal"], badges: { m45Admin: "last admin", m45Portal: "never locked out" } },
   // A login each.
-  { cue: 39, layout: ROLES, edges: [...ROLE_EDGES], accent: ["m45Admin", "m45Bookkeeper", "m45Operator", "m45Observer"], badges: { m45Portal: "a real person" } },
-  { cue: 40, layout: OUT, edges: [...OUT_EDGES], crossed: ["m45Operator"], badges: { m45Operator: "same minute" } },
+  { cue: 40, layout: ROLES, edges: [...ROLE_EDGES], accent: ["m45Admin", "m45Bookkeeper", "m45Operator", "m45Observer"], badges: { m45Portal: "a real person" } },
+  { cue: 41, layout: OUT, edges: [...OUT_EDGES], crossed: ["m45Operator"], badges: { m45Operator: "same minute" } },
+  // The recap: four roles, one login each.
+  { cue: 42, layout: ROLES, edges: [...ROLE_EDGES], accent: ["m45Admin", "m45Bookkeeper", "m45Operator", "m45Observer"], badges: { m45Portal: "one role each" } },
+  // The recap's answer.
+  { cue: 44, layout: ROLES, edges: [...ROLE_EDGES], accent: ["m45Admin"], badges: { m45Admin: "manages the team" } },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 3, part: 4, current: ["merchant", "partner", "keycloak", "emailsvc"], units: { ecom: "the team" } },
-  { cue: 41, part: 4, current: ["partner", "admin"], units: { ecom: "next: websites" } },
+  { cue: 45, part: 4, rows: [4], current: ["partner", "admin"], units: { ecom: "next: websites" } },
 ];
 
 const DIR = "screens/c-20-merchant-users";
@@ -97,11 +101,11 @@ export const screens: ScreenStep[] = [
     focus: [[1240, 10, 200, 40]],
     beats: [
       { cue: 23, region: [0, 0, 800, 500], focus: [[6, 160, 220, 30]] },
-      { cue: 24, region: [0, 0, 800, 500], focus: [[6, 75, 220, 240]] },
+      { cue: 25, region: [0, 0, 800, 500], focus: [[6, 75, 220, 240]] },
     ],
   },
-  { cue: 29, src: `${DIR}/role.png`, title: "Merchant portal · Users", region: [400, 200, 800, 500], focus: [[681, 409, 180, 30], [686, 452, 174, 106]] },
-  { cue: 32, src: `${DIR}/users.png`, title: "Merchant portal · Users", region: [560, 40, 880, 550], focus: [[1255, 349, 66, 30]] },
-  { cue: 33, src: `${DIR}/block.png`, title: "Merchant portal · Users", region: [380, 280, 680, 425], focus: [[516, 415, 408, 45]] },
-  { cue: 35, src: `${DIR}/block-last-admin.png`, title: "Merchant portal · Users", region: [380, 260, 680, 425], focus: [[516, 334, 300, 30]], beats: [{ cue: 37, region: [380, 260, 680, 425], focus: [[516, 440, 408, 66], [849, 530, 76, 36]] }] },
+  { cue: 30, src: `${DIR}/role.png`, title: "Merchant portal · Users", region: [400, 200, 800, 500], focus: [[681, 409, 180, 30], [686, 452, 174, 106]] },
+  { cue: 33, src: `${DIR}/users.png`, title: "Merchant portal · Users", region: [560, 40, 880, 550], focus: [[1255, 349, 66, 30]] },
+  { cue: 34, src: `${DIR}/block.png`, title: "Merchant portal · Users", region: [380, 280, 680, 425], focus: [[516, 415, 408, 45]] },
+  { cue: 36, src: `${DIR}/block-last-admin.png`, title: "Merchant portal · Users", region: [380, 260, 680, 425], focus: [[516, 334, 300, 30]], beats: [{ cue: 38, region: [380, 260, 680, 425], focus: [[516, 440, 408, 66], [849, 530, 76, 36]] }] },
 ];

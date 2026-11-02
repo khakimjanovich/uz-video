@@ -1,163 +1,179 @@
 1
-00:00:00,050 --> 00:00:04,416
+00:00:00,050 --> 00:00:05,280
 Monday morning, Malika's shop exists, but it cannot take a single payment.
 
 2
-00:00:04,466 --> 00:00:15,168
+00:00:05,330 --> 00:00:17,904
 In Lesson 16, her checked email created the merchant and made her its first admin, and this lesson is how that merchant earns the right to take money, one checked document at a time.
 
 3
-00:00:15,218 --> 00:00:17,040
+00:00:17,954 --> 00:00:19,800
 She opens Documents.
 
 4
-00:00:17,090 --> 00:00:23,064
+00:00:19,850 --> 00:00:26,952
 The page says "Company documents", and explains that the bank checks who it works with before switching a merchant on.
 
 5
-00:00:23,114 --> 00:00:27,816
+00:00:27,002 --> 00:00:32,568
 Two papers are marked Required: the company charter and the director's passport.
 
 6
-00:00:27,866 --> 00:00:31,968
+00:00:32,618 --> 00:00:37,440
 Two more say "If it applies": a licence and a power of attorney.
 
 7
-00:00:32,018 --> 00:00:34,248
+00:00:37,490 --> 00:00:39,984
 The bank must know who it does business with.
 
 8
-00:00:34,298 --> 00:00:36,120
+00:00:40,034 --> 00:00:41,760
 That is know your business.
 
 9
-00:00:36,170 --> 00:00:45,312
+00:00:41,810 --> 00:00:52,704
 A company that signs up in the morning and takes payments by lunch, with nobody having seen its papers, is the one that piles up complaints and disputed payments.
 
 10
-00:00:45,362 --> 00:00:48,648
+00:00:52,754 --> 00:00:56,688
 And then nobody can say who it was, or who let it in.
 
 11
-00:00:48,698 --> 00:00:53,040
+00:00:56,738 --> 00:01:01,536
 Malika clicks Choose file, picks her charter, and clicks Upload.
 
 12
-00:00:53,090 --> 00:00:54,912
+00:01:01,586 --> 00:01:03,600
 The page says "Uploaded.
 
 13
-00:00:54,962 --> 00:00:58,920
+00:01:03,650 --> 00:01:08,304
 The bank will review it." The status reads "Waiting for review".
 
 14
-00:00:58,970 --> 00:01:01,392
+00:01:08,354 --> 00:01:10,680
 Each file goes into the file store.
 
 15
-00:01:01,442 --> 00:01:06,792
+00:01:10,730 --> 00:01:17,064
 The store reads each file's real type from the file's own contents, never from its name.
 
 16
-00:01:06,842 --> 00:01:13,032
+00:01:17,114 --> 00:01:24,288
 Someone else tries a trick: a file whose name says it is a document, but whose contents are something else.
 
 17
-00:01:13,082 --> 00:01:16,296
+00:01:24,338 --> 00:01:28,152
 The picker lets it through, because it only looks at the name.
 
 18
-00:01:16,346 --> 00:01:19,176
+00:01:28,202 --> 00:01:31,512
 The server reads the contents and refuses it.
 
 19
-00:01:19,226 --> 00:01:24,432
+00:01:31,562 --> 00:01:37,536
 The store also keeps a checksum: a fingerprint worked out from every byte of the file.
 
 20
-00:01:24,482 --> 00:01:31,248
+00:01:37,586 --> 00:01:45,312
 When the file is read back, its fingerprint must still match, so a document swapped after it was checked is caught.
 
 21
-00:01:31,298 --> 00:01:34,464
+00:01:45,362 --> 00:01:49,008
 At the bank, Dilnoza opens the admin portal.
 
 22
-00:01:34,514 --> 00:01:37,416
+00:01:49,058 --> 00:01:52,392
 She opens Merchants and picks Malika's shop.
 
 23
-00:01:37,466 --> 00:01:41,280
+00:01:52,442 --> 00:01:56,880
 Each document has two buttons, Verify and Reject.
 
 24
-00:01:41,330 --> 00:01:45,648
+00:01:56,930 --> 00:02:02,088
 Reject asks her to say what is wrong, so the merchant can read it and fix it.
 
 25
-00:01:45,698 --> 00:01:47,232
+00:02:02,138 --> 00:02:03,960
 She verifies both.
 
 26
-00:01:47,282 --> 00:01:52,608
+00:02:04,010 --> 00:02:10,248
 Only when every required document is verified can the company itself be verified.
 
 27
-00:01:52,658 --> 00:01:59,808
+00:02:10,298 --> 00:02:18,264
 If Malika had not confirmed her email, the "Approve documents" button would stay grey, with a message saying so.
 
 28
-00:01:59,858 --> 00:02:04,584
+00:02:18,314 --> 00:02:23,520
 Her email is confirmed, so Dilnoza clicks Approve documents.
 
 29
-00:02:04,634 --> 00:02:10,032
+00:02:23,570 --> 00:02:29,664
 Then Sign contract, and she types the contract number, as printed on the signed paper.
 
 30
-00:02:10,082 --> 00:02:13,872
+00:02:29,714 --> 00:02:34,080
 That number is unique: no two merchants ever share one.
 
 31
-00:02:13,922 --> 00:02:15,984
+00:02:34,130 --> 00:02:36,504
 Last, she opens History.
 
 32
-00:02:16,034 --> 00:02:19,920
+00:02:36,554 --> 00:02:41,448
 Every move is there: from where, to where, who, and why.
 
 33
-00:02:19,970 --> 00:02:21,792
+00:02:41,498 --> 00:02:43,416
 That is the status history.
 
 34
-00:02:21,842 --> 00:02:25,728
+00:02:43,466 --> 00:02:48,168
 I think it is the part most teams add last, and it should come first.
 
 35
-00:02:25,778 --> 00:02:31,656
-It is written in the same step as the move itself, so a move without its record cannot happen.
+00:02:48,218 --> 00:02:54,944
+So how can the bank be sure that no move ever lacks its record?
 
 36
-00:02:31,706 --> 00:02:40,584
-Months later, when someone asks why this shop was let in, the answer is on one screen: Dilnoza, on Monday, after both papers were verified.
+00:02:54,994 --> 00:03:01,736
+It is written in the same step as the move itself, so a move without its record cannot happen.
 
 37
-00:02:40,634 --> 00:02:45,072
-Know your business protects the bank, the card network and every buyer.
+00:03:01,786 --> 00:03:11,984
+Months later, when someone asks why this shop was let in, the answer is on one screen: Dilnoza, on Monday, after both papers were verified.
 
 38
-00:02:45,122 --> 00:02:50,400
-The history protects Dilnoza too, because it shows exactly what she saw and when.
+00:03:12,034 --> 00:03:17,144
+Know your business protects the bank, the card network and every buyer.
 
 39
-00:02:50,450 --> 00:02:54,072
-Malika's shop now has checked papers and a contract number.
+00:03:17,194 --> 00:03:23,816
+The history protects Dilnoza too, because it shows exactly what she saw and when.
 
 40
-00:02:54,122 --> 00:02:55,944
-It still cannot take money.
+00:03:23,866 --> 00:03:28,256
+Malika's shop now has checked papers and a contract number.
 
 41
-00:02:55,994 --> 00:02:58,920
+00:03:28,306 --> 00:03:30,128
+It still cannot take money.
+
+42
+00:03:30,178 --> 00:03:38,768
+To recap: Dilnoza verifies every paper, signs the contract, and the history records each move.
+
+43
+00:03:38,818 --> 00:03:43,528
+So is Malika's shop ready to take money?
+
+44
+00:03:43,578 --> 00:03:47,584
+Not yet: papers and a contract are not enough.
+
+45
+00:03:47,634 --> 00:03:50,944
 Next: why switching it on needs two people.

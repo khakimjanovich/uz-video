@@ -3,7 +3,7 @@ import { BuildId } from "../../series/build/nodes";
 
 // Lesson 23: e-POS terminals. One site carries it: Malika's wedding site opens Saturday, and Dilnoza has one step left.
 // Wednesday (0–1), the bridge (2), which machine (3–6), the e-POS terminal and its pair (7–9), registering it (10–22),
-// suspend, revoke, the record (23–31), never reused (32–35), ready (36–39), the live terminal before every charge (40–42), next (43).
+// suspend, revoke, the record (23–31), never reused (33–36), ready (37–40), the live terminal before every charge (41–43), next (47).
 const COUNTER = { buyer: [0, 1], m45Counter: [1.5, 1], processing: [3, 1] } as const;
 const COUNTER_EDGES = [{ from: "buyer", to: "m45Counter", label: "card" }, { from: "m45Counter", to: "processing" }] as const;
 const ONLINE = { buyer: [0, 1], salespoint: [1.5, 1], processing: [3, 1] } as const;
@@ -51,20 +51,22 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 27, layout: AUDIT, edges: [...AUDIT_EDGES], crossed: ["tid"], badges: { tid: "revoked: final" } },
   { cue: 31, layout: AUDIT, edges: [...AUDIT_EDGES], packets: [{ from: "tid", to: "m45History", label: "who · what · why" }], accent: ["m45History"] },
   // Never registered twice: a licence plate.
-  { cue: 32, layout: TWICE, edges: [{ from: "m45Tid2", to: "tid", broken: true }], crossed: ["m45Tid2"], badges: { tid: "closed", m45Tid2: "refused" } },
-  { cue: 33, layout: { m45Taxi: [1.5, 1] }, accent: ["m45Taxi"], badges: { m45Taxi: "once · never reused" } },
-  { cue: 34, layout: TWICE, edges: [{ from: "m45Tid2", to: "tid" }], badges: { tid: "old pair", m45Tid2: "save a call?" } },
-  { cue: 35, layout: TWICE, edges: [{ from: "m45Tid2", to: "tid" }], danger: ["m45Tid2"], badges: { m45Tid2: "histories mixed" } },
+  { cue: 33, layout: TWICE, edges: [{ from: "m45Tid2", to: "tid", broken: true }], crossed: ["m45Tid2"], badges: { tid: "closed", m45Tid2: "refused" } },
+  { cue: 34, layout: { m45Taxi: [1.5, 1] }, accent: ["m45Taxi"], badges: { m45Taxi: "once · never reused" } },
+  { cue: 35, layout: TWICE, edges: [{ from: "m45Tid2", to: "tid" }], badges: { tid: "old pair", m45Tid2: "save a call?" } },
+  { cue: 36, layout: TWICE, edges: [{ from: "m45Tid2", to: "tid" }], danger: ["m45Tid2"], badges: { m45Tid2: "histories mixed" } },
   // Before every charge: the live terminal. Saturday: one machine.
-  { cue: 40, layout: CHARGE, edges: [...CHARGE_EDGES], packets: [{ from: "payment", to: "tid", label: "website + card" }, { from: "tid", to: "processing", label: "charge", delay: 50 }] },
-  { cue: 41, layout: CHARGE, edges: [...CHARGE_EDGES], packets: [{ from: "payment", to: "tid", label: "charge", stopAt: 0.6 }], crossed: ["tid"], badges: { payment: "no money moves" } },
-  { cue: 42, layout: PAIR, edges: [...PAIR_EDGES], packets: [{ from: "salespoint", to: "tid", label: "wedding order" }, { from: "tid", to: "processing", label: "charge", delay: 45 }], accent: ["tid"], badges: { tid: "exactly one machine" } },
+  { cue: 41, layout: CHARGE, edges: [...CHARGE_EDGES], packets: [{ from: "payment", to: "tid", label: "website + card" }, { from: "tid", to: "processing", label: "charge", delay: 50 }] },
+  { cue: 42, layout: CHARGE, edges: [...CHARGE_EDGES], packets: [{ from: "payment", to: "tid", label: "charge", stopAt: 0.6 }], crossed: ["tid"], badges: { payment: "no money moves" } },
+  { cue: 43, layout: PAIR, edges: [...PAIR_EDGES], packets: [{ from: "salespoint", to: "tid", label: "wedding order" }, { from: "tid", to: "processing", label: "charge", delay: 45 }], accent: ["tid"], badges: { tid: "exactly one machine" } },
+  // The recap's answer.
+  { cue: 46, layout: CHARGE, edges: [...CHARGE_EDGES], packets: [{ from: "payment", to: "tid", label: "charge", stopAt: 0.6 }], crossed: ["tid"], badges: { payment: "refused" } },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 2, part: 4, current: ["partner", "adapters", "epos", "procsvc"] },
-  { cue: 43, part: 4, current: ["merchant", "payment"], units: { ecom: "next: signed requests" } },
+  { cue: 47, part: 4, rows: [4], current: ["merchant", "payment"], units: { ecom: "next: signed requests" } },
 ];
 
 const DIR = "screens/c-23-epos";
@@ -95,15 +97,15 @@ export const screens: ScreenStep[] = [
   },
   { cue: 28, src: `${DIR}/revoke.png`, title: "Bank console · Website", region: [380, 240, 680, 425], focus: [[500, 310, 440, 280]], beats: [{ cue: 29, region: [380, 240, 680, 425], focus: [[516, 355, 408, 60]] }, { cue: 30, region: [380, 240, 680, 425], focus: [[730, 540, 92, 34]] }] },
   {
-    cue: 36,
+    cue: 37,
     src: `${DIR}/ready.png`,
     title: "Bank console · Website",
     region: GOLIVE,
     focus: [[270, 192, 753, 50]],
     beats: [
-      { cue: 37, region: GOLIVE, focus: [[291, 420, 450, 40]] },
-      { cue: 38, region: GOLIVE, focus: [[291, 250, 450, 330]] },
-      { cue: 39, region: GOLIVE, focus: [[830, 212, 180, 28]] },
+      { cue: 38, region: GOLIVE, focus: [[291, 420, 450, 40]] },
+      { cue: 39, region: GOLIVE, focus: [[291, 250, 450, 330]] },
+      { cue: 40, region: GOLIVE, focus: [[830, 212, 180, 28]] },
     ],
   },
 ];

@@ -6,14 +6,14 @@ import { diagram, map, screens } from "./steps";
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
   "April", "Wedding flowers", "It does not", "Lessons 18 and 20", "A brand's copy", "Checks for nothing",
-  "Malika opens Websites", "Checked by the bank", "Add website", "Return addresses",
-  "A sales point", "The return address", "Secure, on its own site", "Most underrated field", "A fake thank-you page",
-  "Bekzod tests it", "The server refuses", "The bank will check it", "Starts as a draft", "Only while a draft",
-  "At the bank", "Before it takes payments", "Switch on is grey", "What switching on needs",
-  "Record a check", "Say what is wrong", "Deal terms", "Per payment, per day",
+  "Malika opens Websites", "Checked by the bank", "Add website", "Return addresses", "A sales point",
+  "The return address", "Secure, on its own site", "Most underrated field", "Any address?",
+  "A fake thank-you page", "Bekzod tests it", "The server refuses", "The bank will check it",
+  "Starts as a draft", "Only while a draft", "At the bank", "Before it takes payments", "Switch on is grey",
+  "What switching on needs", "Record a check", "Say what is wrong", "Deal terms", "Per payment, per day",
   "One card", "Empty means no limit", "Switch on lights up", "One click", "No terminal or fee yet",
   "Not the end", "A terminal and a fee", "One question", "Both active", "Suspend either one",
-  "Every website checked", "Next: the fee",
+  "Every website checked", "Recap", "At once?", "No, each is checked", "Next: the fee",
 ];
 
 export const C21SalesPointsComposition = createEpisode({
@@ -26,4 +26,6 @@ export const C21SalesPointsComposition = createEpisode({
   map,
   diagram,
   screens,
+  focus: true,
+  hidePanelBefore: 43, // the story shows no course panel; it returns at the closing "Next" line
 });
