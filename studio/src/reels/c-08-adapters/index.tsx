@@ -10,11 +10,11 @@ const TITLES = [
   "Change rarely", "One adapter per centre", "A separate service", "The centre's language", "One plain language",
   "Three requests", "Charge a card", "Give money back", "What happened?", "Behind the adapter",
   "The answers", "Three outcomes", "Approved", "Declined", "Unknown", "A timeout", "Unreadable answer",
-  "Never declined", "Most teams", "Silence as no", "Pays twice", "Our own payment id", "Ask about it",
+  "Yes or no?", "Never declined", "Most teams", "Silence as no", "Pays twice", "Our own payment id", "Ask about it",
   "Asking moves no money", "It only reads", "What the buyer saw", "Taking the payment", "A few seconds",
   "The adapter at work", "A yes", "Paid", "Declined, then silence", "Not declined", "Confirming",
   "Within minutes", "An alert", "Could not reach", "Fail or unknown", "A new network", "One adapter",
-  "Paid exactly once", "Next: keep it safe",
+  "Paid exactly once", "Recap", "Which answer?", "Unknown", "Next: keep it safe",
 ];
 
 export const C08AdaptersComposition = createEpisode({
@@ -26,5 +26,7 @@ export const C08AdaptersComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 57, // the story shows no course panel; it returns on the closing "Next" beat
   screens,
 });

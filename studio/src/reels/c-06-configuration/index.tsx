@@ -7,7 +7,7 @@ import { diagram, map } from "./steps";
 const TITLES = [
   "Thursday night", "The install stops", "A fraud limit missing", "Names the missing value", "Lesson 5: a contract", "This lesson: every setting",
   "Wish for a default?", "What it costs", "Thirty seconds", "In production", "Forty seconds", "The payment failed", "The money is gone", "Looks safe",
-  "No default value",
+  "A missing setting?", "No default value",
   "Vault", "Three kinds of value", "The system's own", "Secrets", "Ships none", "Only this bank knows", "Typed once",
   "Its own settings", "Names, never values", "Refuses to start", "Every missing one", "Fail fast",
   "Business decisions", "The bank's choices",
@@ -15,7 +15,7 @@ const TITLES = [
   "A real decision", "Typed in, run again", "It runs",
   "Nothing set", "It does not start", "Settings are missing", "Every one, by name", "Nothing half works", "Nothing guessed", "The service starts",
   "No wrong guess", "No test password", "The bank in charge",
-  "One minute", "Wrong, quietly", "Next: who is calling",
+  "One minute", "Wrong, quietly", "Recap", "What happens?", "Fail fast", "Next: who is calling",
 ];
 
 export const C06ConfigurationComposition = createEpisode({
@@ -27,4 +27,6 @@ export const C06ConfigurationComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 54, // the story shows no course panel; it returns on the closing "Next" beat
 });

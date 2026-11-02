@@ -13,7 +13,7 @@ const TITLES = [
   "The wrong centre", "A phone buzzes", "Should never see it", "Tonight's buyer", "The networks it accepts",
   "Another network", "Doesn't accept", "Nothing sent", "No listed network", "Starting with those", "Nothing sent",
   "A card it accepts", "A code arrives", "Card accepted", "The masked number", "The first digits alone",
-  "Nobody woken", "A normal refusal", "The lists stop", "Never the person", "Next: the card form",
+  "Nobody woken", "A normal refusal", "The lists stop", "Never the person", "Recap", "Which answer?", "Refused", "Next: the card form",
 ];
 
 export const C10BinDirectoryComposition = createEpisode({
@@ -25,5 +25,7 @@ export const C10BinDirectoryComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 54, // the story shows no course panel; it returns on the closing "Next" beat
   screens,
 });

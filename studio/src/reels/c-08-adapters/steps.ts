@@ -2,8 +2,8 @@ import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 
 // Lesson 8: unknown is never declined. Thursday's silent centre (0–5), the bridge (6–7), the centres (8–12),
-// one adapter per centre (13–21), three outcomes (22–28), Timur's rule and our own payment id (29–36),
-// what the buyer saw (37–46), the alert (47–49), a new network (50–51), paid once (52), next (53).
+// one adapter per centre (13–21), three outcomes (22–28), Timur's rule and our own payment id (30–37),
+// what the buyer saw (38–47), the alert (48–50), a new network (51–52), paid once (53), next (57).
 const SALE = { buyer: [0.5, 1], shop: [2.5, 1] } as const;
 const SALE_EDGE = [{ from: "buyer", to: "shop" }] as const;
 const QUIET = { m2AdapterA: [0, 1], m2CentreA: [1.5, 1], issuer: [3, 1] } as const;
@@ -112,46 +112,49 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 27, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "m2AdapterA", to: "m2CentreA", label: "charge", stopAt: 0.6 }], badges: { m2AdapterA: "timeout = unknown" } },
   { cue: 28, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "m2CentreA", to: "m2AdapterA", label: "#%&?" }], badges: { m2AdapterA: "unreadable = unknown" } },
   // Timur's rule: unknown is never declined.
-  { cue: 29, ...O, crossed: ["m2Declined"], accent: ["m2Unknown"], badges: { m2Unknown: "never declined" } },
-  { cue: 30, ...O, danger: ["m2Declined"], badges: { m2Declined: "simpler" } },
+  { cue: 30, ...O, crossed: ["m2Declined"], accent: ["m2Unknown"], badges: { m2Unknown: "never declined" } },
+  { cue: 31, ...O, danger: ["m2Declined"], badges: { m2Declined: "simpler" } },
   {
-    cue: 31,
+    cue: 32,
     layout: LOST,
     edges: [...LOST_EDGES],
     packets: [{ from: "issuer", to: "m2CentreA", label: "yes" }, { from: "m2CentreA", to: "m2AdapterA", label: "yes", delay: 50, stopAt: 0.5 }],
     badges: { buyer: "told: failed" },
   },
-  { cue: 32, layout: LOST, edges: [...LOST_EDGES], danger: ["buyer"], badges: { buyer: "pays twice" } },
+  { cue: 33, layout: LOST, edges: [...LOST_EDGES], danger: ["buyer"], badges: { buyer: "pays twice" } },
   {
-    cue: 33,
+    cue: 34,
     layout: ONE,
     edges: [...ONE_EDGES],
     packets: [{ from: "card", to: "m2AdapterA", label: "charge · our id" }, { from: "m2AdapterA", to: "m2CentreA", label: "charge · our id", delay: 45 }],
     badges: { m2CentreA: "keeps our id" },
   },
-  { cue: 34, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "card", to: "m2CentreA", label: "what happened to id?" }] },
-  { cue: 35, layout: ONE, edges: [...ONE_EDGES], badges: { card: "moves no money" } },
-  { cue: 36, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "m2CentreA", to: "card", label: "it happened" }], badges: { card: "reads only" } },
+  { cue: 35, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "card", to: "m2CentreA", label: "what happened to id?" }] },
+  { cue: 36, layout: ONE, edges: [...ONE_EDGES], badges: { card: "moves no money" } },
+  { cue: 37, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "m2CentreA", to: "card", label: "it happened" }], badges: { card: "reads only" } },
   // Behind "Taking the payment".
-  { cue: 40, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "card", to: "m2AdapterA", label: "charge" }, { from: "m2AdapterA", to: "m2CentreA", label: "charge", delay: 45 }] },
+  { cue: 41, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "card", to: "m2AdapterA", label: "charge" }, { from: "m2AdapterA", to: "m2CentreA", label: "charge", delay: 45 }] },
   // The result follows, asked by the payment id.
-  { cue: 46, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "card", to: "m2CentreA", label: "this id?" }, { from: "m2CentreA", to: "card", label: "approved", delay: 60 }] },
+  { cue: 47, layout: ONE, edges: [...ONE_EDGES], packets: [{ from: "card", to: "m2CentreA", label: "this id?" }, { from: "m2CentreA", to: "card", label: "approved", delay: 60 }] },
   // Timur's alert.
-  { cue: 47, layout: ALERT, edges: [...ALERT_EDGES], packets: [{ from: "m2Alert", to: "m2Team", label: "alert" }], badges: { m2Team: "Timur" } },
-  { cue: 48, layout: ALERT, edges: [...ALERT_EDGES], danger: ["m2AdapterA"], badges: { m2AdapterA: "can't reach" } },
-  { cue: 49, layout: ALERT, edges: [...ALERT_EDGES], badges: { m2Alert: "fail or unknown" } },
+  { cue: 48, layout: ALERT, edges: [...ALERT_EDGES], packets: [{ from: "m2Alert", to: "m2Team", label: "alert" }], badges: { m2Team: "Timur" } },
+  { cue: 49, layout: ALERT, edges: [...ALERT_EDGES], danger: ["m2AdapterA"], badges: { m2AdapterA: "can't reach" } },
+  { cue: 50, layout: ALERT, edges: [...ALERT_EDGES], badges: { m2Alert: "fail or unknown" } },
   // A new network: one more adapter.
-  { cue: 50, layout: THREE, edges: [...THREE_EDGES], accent: ["m2AdapterC", "m2CentreC"], badges: { m2CentreC: "new network" } },
-  { cue: 51, layout: THREE, edges: [...THREE_EDGES], accent: ["m2AdapterC"], badges: { card: "unchanged" } },
+  { cue: 51, layout: THREE, edges: [...THREE_EDGES], accent: ["m2AdapterC", "m2CentreC"], badges: { m2CentreC: "new network" } },
+  { cue: 52, layout: THREE, edges: [...THREE_EDGES], accent: ["m2AdapterC"], badges: { card: "unchanged" } },
   // Paid exactly once.
-  { cue: 52, layout: SALE, edges: [...SALE_EDGE], accent: ["buyer"], badges: { buyer: "paid once" } },
+  { cue: 53, layout: SALE, edges: [...SALE_EDGE], accent: ["buyer"], badges: { buyer: "paid once" } },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the one before.
-  { cue: 6, part: 3, current: ["payment", "card"], units: { cards: "agreed to charge" } },
-  { cue: 7, part: 3, current: ["card", "adapters", "procsvc"], units: { cards: "adapters" } },
-  { cue: 53, part: 3, current: ["card", "cardsinfra"], units: { cards: "keep it safe" } },
+  { cue: 6, part: 3, current: ["payment", "card"], units: { cards: "agreed to charge" }, dot: "card" },
+  { cue: 7, part: 3, current: ["card", "adapters", "procsvc"], units: { cards: "adapters" }, dot: "procsvc" },
+  // Recap, the question (held 2 s), and the answer: only the lesson's own boxes stay bright.
+  { cue: 54, part: 3, dot: "off" },
+  { cue: 56, part: 3, current: ["card", "adapters", "procsvc"] },
+  { cue: 57, part: 3, rows: [3], current: ["card", "cardsinfra"], units: { cards: "keep it safe" } },
 ];
 
 // The pay page while the adapter talks to its centre, and the three outcomes as the buyer reads them.
@@ -160,22 +163,22 @@ const TITLE = [560, 398, 320, 34] as const;
 const TEXT = [500, 440, 440, 26] as const;
 export const screens: ScreenStep[] = [
   {
-    cue: 37,
+    cue: 38,
     src: "screens/c-08-adapters/debiting.png",
     title: "Payment page · taking the payment",
     region: [...STATUS],
     beats: [
-      { cue: 38, region: [...STATUS], focus: [[...TITLE]] },
-      { cue: 39, region: [...STATUS], focus: [[...TEXT]] },
+      { cue: 39, region: [...STATUS], focus: [[...TITLE]] },
+      { cue: 40, region: [...STATUS], focus: [[...TEXT]] },
     ],
   },
-  { cue: 41, src: "screens/c-08-adapters/paid.png", title: "Payment page · paid", region: [...STATUS], beats: [{ cue: 42, region: [...STATUS], focus: [[500, 446, 440, 48]] }] },
-  { cue: 43, src: "screens/c-08-adapters/declined.png", title: "Payment page · declined", region: [...STATUS], focus: [[...TITLE], [...TEXT]] },
+  { cue: 42, src: "screens/c-08-adapters/paid.png", title: "Payment page · paid", region: [...STATUS], beats: [{ cue: 43, region: [...STATUS], focus: [[500, 446, 440, 48]] }] },
+  { cue: 44, src: "screens/c-08-adapters/declined.png", title: "Payment page · declined", region: [...STATUS], focus: [[...TITLE], [...TEXT]] },
   {
-    cue: 44,
+    cue: 45,
     src: "screens/c-08-adapters/unknown.png",
     title: "Payment page · confirming",
     region: [...STATUS],
-    beats: [{ cue: 45, region: [...STATUS], focus: [[...TITLE], [...TEXT]] }],
+    beats: [{ cue: 46, region: [...STATUS], focus: [[...TITLE], [...TEXT]] }],
   },
 ];

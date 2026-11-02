@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "The worst day", "One card number", "A second", "Two seconds", "Looks finished", "Never next to it",
+  "The worst day", "One card number", "A second", "Two seconds", "Looks finished", "Where's the key?", "Never next to it",
   "Lesson 6: Vault", "This lesson: sealing", "Hands it to Vault", "A sealed value", "Only the sealed value", "Never leaves Vault",
   "Its own card", "Will not open", "No shuffling", "A puzzle", "Find a card again", "Without opening",
   "A fingerprint", "Same number, same stamp", "One way", "A blind index", "Look up the fingerprint",
@@ -14,7 +14,7 @@ const TITLES = [
   "None of this", "Confirms the code", "Card accepted", "The masked line", "Network and bank", "All anyone sees",
   "Vault stopped", "Refused", "Nothing saved", "An alert", "Names the part", "Goes through",
   "The report", "Sealed values", "Fingerprints", "Masked numbers", "No keys", "Kept apart",
-  "All noise", "Never a card number", "Next: first digits",
+  "All noise", "Never a card number", "Recap", "Stolen copy?", "Only noise", "Next: first digits",
 ];
 
 export const C09CardVaultComposition = createEpisode({
@@ -26,5 +26,7 @@ export const C09CardVaultComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 58, // the story shows no course panel; it returns on the closing "Next" beat
   screens,
 });

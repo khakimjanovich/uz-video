@@ -7,7 +7,7 @@ import { diagram, map, screens } from "./steps";
 const TITLES = [
   "Web skimming", "One line of script", "A changed file", "Copies every number", "The page still works", "The buyer still pays",
   "Unnoticed for weeks", "Bekzod asks Timur", "Come and try", "Lesson 5: the card reader", "This lesson: the seals",
-  "Its own address", "Like a window", "Tamper seals", "Three seals", "Seal one: one page", "A session",
+  "Its own address", "Like a window", "Stop a script?", "Tamper seals", "Three seals", "Seal one: one page", "A session",
   "Look-alike refused", "Seal two: a policy", "A rule", "Its own two files", "Refused before it runs",
   "Seal three", "A fingerprint", "One character changes", "A token, masked number", "Only that page",
   "The number never leaves", "It reports it", "A trace", "The page is watched", "Break it", "A normal payment",
@@ -15,7 +15,7 @@ const TITLES = [
   "Opened alone", "One sentence", "No form", "A look-alike site", "A refused box", "Play the thief",
   "Another address", "A red line", "Nothing loads", "Timur's screen", "A report", "In the logs", "No card data",
   "Most people forget", "At the keyboard", "Plain view", "Guard that moment", "The buyer", "The bank", "Malika",
-  "Bekzod slept", "Next: two doors",
+  "Bekzod slept", "Recap", "Which seal?", "The rule", "Next: two doors",
 ];
 
 export const C11CardFrameComposition = createEpisode({
@@ -27,5 +27,7 @@ export const C11CardFrameComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 64, // the story shows no course panel; it returns on the closing "Next" beat
   screens,
 });
