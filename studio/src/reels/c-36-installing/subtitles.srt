@@ -1,243 +1,259 @@
 1
-00:00:00,050 --> 00:00:01,992
+00:00:00,050 --> 00:00:02,304
 Monday, seven in the morning.
 
 2
-00:00:02,042 --> 00:00:05,928
+00:00:02,354 --> 00:00:06,936
 Timur stands in the bank's server room, in front of a fresh server.
 
 3
-00:00:05,978 --> 00:00:09,840
+00:00:06,986 --> 00:00:11,568
 Today he installs the card zone, and five colleagues stand behind him.
 
 4
-00:00:09,890 --> 00:00:12,528
+00:00:11,618 --> 00:00:14,664
 Dilnoza from operations is one of them.
 
 5
-00:00:12,578 --> 00:00:17,184
+00:00:14,714 --> 00:00:20,064
 In Lesson 6, every key and setting in the system came from Vault.
 
 6
-00:00:17,234 --> 00:00:21,504
+00:00:20,114 --> 00:00:25,128
 In Lesson 9, card numbers were sealed with keys that never leave Vault.
 
 7
-00:00:21,554 --> 00:00:24,360
+00:00:25,178 --> 00:00:28,584
 This lesson is about who can open Vault itself.
 
 8
-00:00:24,410 --> 00:00:27,192
+00:00:28,634 --> 00:00:31,992
 There is an easier way, and Timur knows it.
 
 9
-00:00:27,242 --> 00:00:32,400
+00:00:32,042 --> 00:00:37,920
 Run an install script once, and keep the master password in a text file on his laptop.
 
 10
-00:00:32,450 --> 00:00:34,776
+00:00:37,970 --> 00:00:40,584
 Months later, Timur leaves the bank.
 
 11
-00:00:34,826 --> 00:00:36,648
+00:00:40,634 --> 00:00:42,456
 Then a disk fails.
 
 12
-00:00:36,698 --> 00:00:42,096
+00:00:42,506 --> 00:00:48,888
 The database backup is there, but nobody can read it, because nobody kept the keys that sealed it.
 
 13
-00:00:42,146 --> 00:00:47,040
+00:00:48,938 --> 00:00:54,312
 One person and one file: the keys end up either lost or leaked.
 
 14
-00:00:47,090 --> 00:00:51,552
+00:00:54,362 --> 00:00:59,904
 Most teams guard their keys against strangers, and forget the person who installed them.
 
 15
-00:00:51,602 --> 00:00:54,144
+00:00:59,954 --> 00:01:02,880
 I think that person is the bigger risk.
 
 16
-00:00:54,194 --> 00:00:56,064
-So Vault opens a different way.
+00:01:02,930 --> 00:01:08,960
+So how can a bank open Vault without trusting one person?
 
 17
-00:00:56,114 --> 00:01:00,360
-At install, Vault's opening key is split into five key shares.
+00:01:09,010 --> 00:01:11,240
+So Vault opens a different way.
 
 18
-00:01:00,410 --> 00:01:04,512
-A key share is one piece of that key, useless on its own.
+00:01:11,290 --> 00:01:16,472
+At install, Vault's opening key is split into five key shares.
 
 19
-00:01:04,562 --> 00:01:07,248
-Any three shares together open Vault.
+00:01:16,522 --> 00:01:21,056
+A key share is one piece of that key, useless on its own.
 
 20
-00:01:07,298 --> 00:01:10,056
-No one alone can, and no two can either.
+00:01:21,106 --> 00:01:24,032
+Any three shares together open Vault.
 
 21
-00:01:10,106 --> 00:01:13,296
-Each share goes to one person: a keyholder.
+00:01:24,082 --> 00:01:27,272
+No one alone can, and no two can either.
 
 22
-00:01:13,346 --> 00:01:17,784
-A keyholder keeps their share in their own password manager, and nowhere else.
+00:01:27,322 --> 00:01:31,040
+Each share goes to one person: a keyholder.
 
 23
-00:01:17,834 --> 00:01:22,272
-The bank chooses the keyholders, and makes sure no one holds two shares.
+00:01:31,090 --> 00:01:36,152
+A keyholder keeps their share in their own password manager, and nowhere else.
 
 24
-00:01:22,322 --> 00:01:29,232
-Nothing of this ceremony is written down anywhere: not the shares, not on the server, not in a log.
+00:01:36,202 --> 00:01:41,024
+The bank chooses the keyholders, and makes sure no one holds two shares.
 
 25
-00:01:29,282 --> 00:01:31,104
-Vault also locks itself.
+00:01:41,074 --> 00:01:48,896
+Nothing of this ceremony is written down anywhere: not the shares, not on the server, not in a log.
 
 26
-00:01:31,154 --> 00:01:36,240
-Every time it starts, it starts sealed: it holds everything, but can read nothing.
+00:01:48,946 --> 00:01:51,032
+Vault also locks itself.
 
 27
-00:01:36,290 --> 00:01:40,872
-To unseal it, three keyholders come, and each types their own share.
+00:01:51,082 --> 00:01:57,032
+Every time it starts, it starts sealed: it holds everything, but can read nothing.
 
 28
-00:01:40,922 --> 00:01:43,824
-Until then, nothing that needs Vault can run.
+00:01:57,082 --> 00:02:02,624
+To unseal it, three keyholders come, and each types their own share.
 
 29
-00:01:43,874 --> 00:01:48,144
-Setting things up needs one more key: a master key for the session.
+00:02:02,674 --> 00:02:06,080
+Until then, nothing that needs Vault can run.
 
 30
-00:01:48,194 --> 00:01:54,144
-It is made from three keyholders' shares, used for that one session, and always revoked at the end.
+00:02:06,130 --> 00:02:10,976
+Setting things up needs one more key: a master key for the session.
 
 31
-00:01:54,194 --> 00:01:58,104
-So no master key sits around, waiting to be stolen.
+00:02:11,026 --> 00:02:18,488
+It is made from three keyholders' shares, used for that one session, and always revoked at the end.
 
 32
-00:01:58,154 --> 00:01:59,976
-And backups.
+00:02:18,538 --> 00:02:23,192
+So no master key sits around, waiting to be stolen.
 
 33
-00:02:00,026 --> 00:02:03,336
-Card numbers in the database are sealed by Vault's keys.
+00:02:23,242 --> 00:02:25,064
+And backups.
 
 34
-00:02:03,386 --> 00:02:06,840
-A database backup without that Vault is unreadable.
+00:02:25,114 --> 00:02:28,784
+Card numbers in the database are sealed by Vault's keys.
 
 35
-00:02:06,890 --> 00:02:11,520
-So the database and Vault are always backed up together, and restored together.
+00:02:28,834 --> 00:02:33,056
+A database backup without that Vault is unreadable.
 
 36
-00:02:11,570 --> 00:02:15,504
-Back in the server room, Timur starts the card zone's installer.
+00:02:33,106 --> 00:02:38,360
+So the database and Vault are always backed up together, and restored together.
 
 37
-00:02:15,554 --> 00:02:18,768
-It checks the machine first, then reaches the keys.
+00:02:38,410 --> 00:02:42,776
+Back in the server room, Timur starts the card zone's installer.
 
 38
-00:02:18,818 --> 00:02:26,544
-It says Vault is new, and that each of the five keyholders copies their own share straight into their own password manager.
+00:02:42,826 --> 00:02:46,592
+It checks the machine first, then reaches the keys.
 
 39
-00:02:26,594 --> 00:02:29,880
-Then it waits: press Enter when the keyholders are here.
+00:02:46,642 --> 00:02:55,184
+It says Vault is new, and that each of the five keyholders copies their own share straight into their own password manager.
 
 40
-00:02:29,930 --> 00:02:31,752
-Timur presses Enter.
+00:02:55,234 --> 00:02:59,336
+Then it waits: press Enter when the keyholders are here.
 
 41
-00:02:31,802 --> 00:02:35,592
-From here, the camera stays on the people, never on the screen.
+00:02:59,386 --> 00:03:01,208
+Timur presses Enter.
 
 42
-00:02:35,642 --> 00:02:37,824
-Each keyholder saves their own share.
+00:03:01,258 --> 00:03:05,816
+From here, the camera stays on the people, never on the screen.
 
 43
-00:02:37,874 --> 00:02:41,640
-The installer waits again, until every share is saved.
+00:03:05,866 --> 00:03:08,480
+Each keyholder saves their own share.
 
 44
-00:02:41,690 --> 00:02:43,512
-Then it clears the screen.
+00:03:08,530 --> 00:03:12,920
+The installer waits again, until every share is saved.
 
 45
-00:02:43,562 --> 00:02:52,536
-Three keyholders step up, one at a time, and type their shares unseen: first to unseal Vault, then to make the session's master key.
+00:03:12,970 --> 00:03:14,792
+Then it clears the screen.
 
 46
-00:02:52,586 --> 00:02:56,160
-The installer sets everything up and starts the services.
+00:03:14,842 --> 00:03:25,208
+Three keyholders step up, one at a time, and type their shares unseen: first to unseal Vault, then to make the session's master key.
 
 47
-00:02:56,210 --> 00:02:58,872
-At the end, it revokes the master key.
+00:03:25,258 --> 00:03:29,696
+The installer sets everything up and starts the services.
 
 48
-00:02:58,922 --> 00:03:02,136
-Then Timur does what every bank should do on day one.
+00:03:29,746 --> 00:03:32,984
+At the end, it revokes the master key.
 
 49
-00:03:02,186 --> 00:03:04,992
-He restarts Vault, just as any reboot would.
+00:03:33,034 --> 00:03:36,872
+Then Timur does what every bank should do on day one.
 
 50
-00:03:05,042 --> 00:03:06,912
-He runs the installer's check.
+00:03:36,922 --> 00:03:40,304
+He restarts Vault, just as any reboot would.
 
 51
-00:03:06,962 --> 00:03:11,184
-It stops at once: Vault is sealed, and nothing that needs it can run.
+00:03:40,354 --> 00:03:42,392
+He runs the installer's check.
 
 52
-00:03:11,234 --> 00:03:13,056
-Three keyholders are called.
+00:03:42,442 --> 00:03:47,624
+It stops at once: Vault is sealed, and nothing that needs it can run.
 
 53
-00:03:13,106 --> 00:03:16,104
-Dilnoza types her share first, unseen.
+00:03:47,674 --> 00:03:49,832
+Three keyholders are called.
 
 54
-00:03:16,154 --> 00:03:17,976
-Two more follow.
+00:03:49,882 --> 00:03:53,600
+Dilnoza types her share first, unseen.
 
 55
-00:03:18,026 --> 00:03:21,600
-On the third share, Vault opens, and the check passes.
+00:03:53,650 --> 00:03:55,472
+Two more follow.
 
 56
-00:03:21,650 --> 00:03:23,472
-Nine o'clock.
+00:03:55,522 --> 00:03:59,816
+On the third share, Vault opens, and the check passes.
 
 57
-00:03:23,522 --> 00:03:28,104
-No one in that room can open the keys alone, and no one can hold them hostage.
+00:03:59,866 --> 00:04:01,688
+Nine o'clock.
 
 58
-00:03:28,154 --> 00:03:33,552
-If any one of them leaves, loses a laptop, or is tempted, the bank loses nothing.
+00:04:01,738 --> 00:04:06,848
+No one in that room can open the keys alone, and no one can hold them hostage.
 
 59
-00:03:33,602 --> 00:03:37,440
-A stolen server or a stolen backup holds nothing readable.
+00:04:06,898 --> 00:04:13,376
+If any one of them leaves, loses a laptop, or is tempted, the bank loses nothing.
 
 60
-00:03:37,490 --> 00:03:41,856
-And as long as the database and Vault are backed up together, a restore works.
+00:04:13,426 --> 00:04:17,672
+A stolen server or a stolen backup holds nothing readable.
 
 61
-00:03:41,906 --> 00:03:44,232
+00:04:17,722 --> 00:04:22,808
+And as long as the database and Vault are backed up together, a restore works.
+
+62
+00:04:22,858 --> 00:04:30,656
+To recap: Vault's opening key is split into five shares, and any three keyholders open it.
+
+63
+00:04:30,706 --> 00:04:34,888
+So can Timur open Vault alone?
+
+64
+00:04:34,938 --> 00:04:38,536
+No: it always takes three keyholders.
+
+65
+00:04:38,586 --> 00:04:41,320
 Next: one install, everywhere.
