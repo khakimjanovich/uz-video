@@ -1,99 +1,115 @@
 1
-00:00:00,050 --> 00:00:03,480
+00:00:00,050 --> 00:00:03,888
 When you press Pay on a website, what happens behind that button?
 
 2
-00:00:03,530 --> 00:00:04,872
+00:00:03,938 --> 00:00:05,760
 Follow one payment.
 
 3
-00:00:04,922 --> 00:00:08,448
+00:00:05,810 --> 00:00:09,840
 A buyer picks a toy on a shop's website and presses Pay.
 
 4
-00:00:08,498 --> 00:00:13,128
+00:00:09,890 --> 00:00:15,384
 The shop's server asks the bank's payments product, ecom, to create a payment.
 
 5
-00:00:13,178 --> 00:00:16,560
+00:00:15,434 --> 00:00:19,224
 ecom answers with a link to the bank's own payment page.
 
 6
-00:00:16,610 --> 00:00:20,832
+00:00:19,274 --> 00:00:24,216
 The buyer lands on that page, which shows the shop, the amount and the order.
 
 7
-00:00:20,882 --> 00:00:27,912
+00:00:24,266 --> 00:00:32,496
 The card form on that page belongs to a second, smaller product: the card zone, the only place a card number ever lives.
 
 8
-00:00:27,962 --> 00:00:33,576
-The buyer types the card, and it goes straight into the card zone, never through ecom or the shop.
+00:00:32,546 --> 00:00:36,512
+Where do you think the card number goes?
 
 9
-00:00:33,626 --> 00:00:40,968
-The card zone locks the number away and gives ecom a token instead: a stand-in that names the card without revealing it.
+00:00:36,562 --> 00:00:43,112
+The buyer types the card, and it goes straight into the card zone, never through ecom or the shop.
 
 10
-00:00:41,018 --> 00:00:44,112
-ecom asks the card zone to charge the card by its token.
+00:00:43,162 --> 00:00:51,752
+The card zone locks the number away and gives ecom a token instead: a stand-in that names the card without revealing it.
 
 11
-00:00:44,162 --> 00:00:48,456
-The card zone talks to the card processing centre, which asks the buyer's bank.
+00:00:51,802 --> 00:00:55,712
+ecom asks the card zone to charge the card by its token.
 
 12
-00:00:48,506 --> 00:00:50,256
-A yes comes back in seconds.
+00:00:55,762 --> 00:01:00,992
+The card zone talks to the card processing centre, which asks the buyer's bank.
 
 13
-00:00:50,306 --> 00:00:53,376
-The buyer sees paid, and the shop's server is told.
+00:01:01,042 --> 00:01:03,128
+A yes comes back in seconds.
 
 14
-00:00:53,426 --> 00:00:59,160
-At the end of the day, ecom counts what the shop earned, keeps the bank's fee, and reports the payout.
+00:01:03,178 --> 00:01:06,872
+The buyer sees paid, and the shop's server is told.
 
 15
-00:00:59,210 --> 00:01:03,528
-It also checks every payment against the processing centre's own record.
+00:01:06,922 --> 00:01:13,448
+At the end of the day, ecom counts what the shop earned, keeps the bank's fee, and reports the payout.
 
 16
-00:01:03,578 --> 00:01:05,856
-Three kinds of people use the system.
+00:01:13,498 --> 00:01:18,464
+It also checks every payment against the processing centre's own record.
 
 17
-00:01:05,906 --> 00:01:08,184
-The buyer only ever sees one page.
+00:01:18,514 --> 00:01:21,056
+Three kinds of people use the system.
 
 18
-00:01:08,234 --> 00:01:12,384
-The shop's owner and staff see their payments and refunds in a portal.
+00:01:21,106 --> 00:01:23,888
+The buyer only ever sees one page.
 
 19
-00:01:12,434 --> 00:01:15,504
-The bank's staff approve shops and set fees.
+00:01:23,938 --> 00:01:28,496
+The shop's owner and staff see their payments and refunds in a portal.
 
 20
-00:01:15,554 --> 00:01:17,880
-So the system is two products.
+00:01:28,546 --> 00:01:31,952
+The bank's staff approve shops and set fees.
 
 21
-00:01:17,930 --> 00:01:26,232
-ecom is the shop's side: merchants, fees, terminals, payments, refunds, reports, disputes, and checking the books.
+00:01:32,002 --> 00:01:34,640
+So the system is two products.
 
 22
-00:01:26,282 --> 00:01:29,280
-The card zone is the locked room for card numbers.
+00:01:34,690 --> 00:01:44,552
+ecom is the shop's side: merchants, fees, terminals, payments, refunds, reports, disputes, and checking the books.
 
 23
-00:01:29,330 --> 00:01:34,800
-They share nothing: each has its own database, its own keys and its own logins.
+00:01:44,602 --> 00:01:48,032
+The card zone is the locked room for card numbers.
 
 24
-00:01:34,850 --> 00:01:39,792
-This course builds both, one piece at a time: first the locked room, then the shop.
+00:01:48,082 --> 00:01:54,488
+They share nothing: each has its own database, its own keys and its own logins.
 
 25
-00:01:39,842 --> 00:01:42,936
+00:01:54,538 --> 00:02:00,488
+This course builds both, one piece at a time: first the locked room, then the shop.
+
+26
+00:02:00,538 --> 00:02:06,152
+To recap: the buyer pays on the bank's page, and the card number stays in the card zone.
+
+27
+00:02:06,202 --> 00:02:11,416
+So which product ever sees the card number?
+
+28
+00:02:11,466 --> 00:02:13,288
+Only the card zone.
+
+29
+00:02:13,338 --> 00:02:16,816
 Next: how a card payment works between the banks.

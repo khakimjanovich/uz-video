@@ -364,6 +364,9 @@ def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
     work.mkdir()
     glossary = caption_glossary()
     sayings = spoken_glossary()
+    # Optional pauses.json: {"<sentence number from 0>": seconds}. The silence is added after that sentence, so the caption stays up while the viewer thinks.
+    pauses_file = reel_dir / "pauses.json"
+    pauses = json.loads(pauses_file.read_text(encoding="utf-8")) if pauses_file.exists() else {}
     srt_blocks, phrases, offset = [], [], 0.0
     for i, sentence in enumerate(sentences, 1):
         # The voice says the spoken form ("P A N"); the captions turn it back into the written one ("PAN"),
@@ -372,6 +375,12 @@ def generate_voice(reel_name: str, voice_raw="andrew", rate="+5%"):
         sentence = spoken(sentence, sayings)
         part = work / f"{i:03d}.mp3"
         boundaries = speak(sentence, part, voice, rate)
+        pause = pauses.get(str(i - 1))
+        if pause:
+            padded = work / f"{i:03d}.pad"
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(part), "-af", f"apad=pad_dur={pause}",
+                            "-ar", "24000", "-ac", "1", "-b:a", "48k", "-f", "mp3", str(padded)], check=True)
+            padded.replace(part)
         duration = float(subprocess.run(
             ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(part)],
             check=True, capture_output=True, text=True).stdout.strip())
