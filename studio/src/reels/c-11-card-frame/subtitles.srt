@@ -1,243 +1,259 @@
 1
-00:00:00,050 --> 00:00:06,744
+00:00:00,050 --> 00:00:08,280
 Bekzod builds Malika's website, and one Wednesday he reads about web skimming and stops sleeping well.
 
 2
-00:00:06,794 --> 00:00:10,152
+00:00:08,330 --> 00:00:12,456
 A thief adds one line of script to a payment page.
 
 3
-00:00:10,202 --> 00:00:15,024
+00:00:12,506 --> 00:00:18,192
 It might arrive through a hacked analytics tool, or a changed file on a shared server.
 
 4
-00:00:15,074 --> 00:00:20,160
+00:00:18,242 --> 00:00:24,288
 That one line copies every card number as the buyer types it, and sends it away.
 
 5
-00:00:20,210 --> 00:00:22,032
+00:00:24,338 --> 00:00:26,160
 The page still works.
 
 6
-00:00:22,082 --> 00:00:23,904
+00:00:26,210 --> 00:00:28,032
 The buyer still pays.
 
 7
-00:00:23,954 --> 00:00:25,872
+00:00:28,082 --> 00:00:30,336
 Nobody notices for weeks.
 
 8
-00:00:25,922 --> 00:00:30,504
+00:00:30,386 --> 00:00:35,616
 Bekzod writes to Timur at the bank: could this happen to Malika's buyers?
 
 9
-00:00:30,554 --> 00:00:33,432
+00:00:35,666 --> 00:00:39,096
 Timur answers with an invitation: come and try.
 
 10
-00:00:33,482 --> 00:00:37,992
+00:00:39,146 --> 00:00:44,544
 In Lesson 5, the card frame became the bank's card reader on the payment page.
 
 11
-00:00:38,042 --> 00:00:40,584
+00:00:44,594 --> 00:00:47,616
 This lesson shows the seals on that reader.
 
 12
-00:00:40,634 --> 00:00:44,856
+00:00:47,666 --> 00:00:52,392
 The frame is the card zone's own small page, on its own address.
 
 13
-00:00:44,906 --> 00:00:47,712
+00:00:52,442 --> 00:00:55,896
 It sits inside the bank's payment page like a window.
 
 14
-00:00:47,762 --> 00:00:51,000
-A real card reader on a shop counter has tamper seals.
+00:00:55,946 --> 00:01:02,528
+How would you stop a stranger's script from reading what is typed in that window?
 
 15
-00:00:51,050 --> 00:00:52,872
-The frame has three.
+00:01:02,578 --> 00:01:06,464
+A real card reader on a shop counter has tamper seals.
 
 16
-00:00:52,922 --> 00:00:57,096
-Seal one: only the page its session names may hold the frame.
+00:01:06,514 --> 00:01:08,336
+The frame has three.
 
 17
-00:00:57,146 --> 00:01:01,920
-Each time a buyer pays, the card zone opens a session for one page.
+00:01:08,386 --> 00:01:13,112
+Seal one: only the page its session names may hold the frame.
 
 18
-00:01:01,970 --> 00:01:06,024
-A look-alike site that tries to hold the frame is refused by the browser.
+00:01:13,162 --> 00:01:18,344
+Each time a buyer pays, the card zone opens a session for one page.
 
 19
-00:01:06,074 --> 00:01:09,072
-Seal two: a Content Security Policy.
+00:01:18,394 --> 00:01:23,408
+A look-alike site that tries to hold the frame is refused by the browser.
 
 20
-00:01:09,122 --> 00:01:11,688
-That is a rule the frame gives the browser.
+00:01:23,458 --> 00:01:26,744
+Seal two: a Content Security Policy.
 
 21
-00:01:11,738 --> 00:01:16,824
-It says: run nothing but my own two files, and talk only to my own address.
+00:01:26,794 --> 00:01:29,816
+That is a rule the frame gives the browser.
 
 22
-00:01:16,874 --> 00:01:19,944
-Any other script is refused before it runs.
+00:01:29,866 --> 00:01:35,912
+It says: run nothing but my own two files, and talk only to my own address.
 
 23
-00:01:19,994 --> 00:01:23,088
-Seal three: Subresource Integrity.
+00:01:35,962 --> 00:01:39,440
+Any other script is refused before it runs.
 
 24
-00:01:23,138 --> 00:01:26,400
-The frame names each of its two files by a fingerprint.
+00:01:39,490 --> 00:01:43,136
+Seal three: Subresource Integrity.
 
 25
-00:01:26,450 --> 00:01:32,400
-If even one character of a file changes, the fingerprint no longer matches, and the browser will not run it.
+00:01:43,186 --> 00:01:47,024
+The frame names each of its two files by a fingerprint.
 
 26
-00:01:32,450 --> 00:01:38,808
-When the buyer finishes, the frame hands back only two things: a token and the masked number.
+00:01:47,074 --> 00:01:54,128
+If even one character of a file changes, the fingerprint no longer matches, and the browser will not run it.
 
 27
-00:01:38,858 --> 00:01:42,480
-It hands them only to the one page its session names.
+00:01:54,178 --> 00:02:01,400
+When the buyer finishes, the frame hands back only two things: a token and the masked number.
 
 28
-00:01:42,530 --> 00:01:45,408
-The card number itself never leaves the frame.
+00:02:01,450 --> 00:02:05,696
+It hands them only to the one page its session names.
 
 29
-00:01:45,458 --> 00:01:48,864
-When the browser blocks something, it reports it to the card zone.
+00:02:05,746 --> 00:02:08,888
+The card number itself never leaves the frame.
 
 30
-00:01:48,914 --> 00:01:51,792
-So a tampering attempt leaves a trace.
+00:02:08,938 --> 00:02:12,896
+When the browser blocks something, it reports it to the card zone.
 
 31
-00:01:51,842 --> 00:01:57,024
-And the page around the frame is watched too, because a skimmer there could still trick the buyer.
+00:02:12,946 --> 00:02:16,112
+So a tampering attempt leaves a trace.
 
 32
-00:01:57,074 --> 00:01:59,928
-Then Timur and Bekzod sit down to break it.
+00:02:16,162 --> 00:02:22,520
+And the page around the frame is watched too, because a skimmer there could still trick the buyer.
 
 33
-00:01:59,978 --> 00:02:01,800
-First, a normal payment.
+00:02:22,570 --> 00:02:25,688
+Then Timur and Bekzod sit down to break it.
 
 34
-00:02:01,850 --> 00:02:07,560
-The frame appears inside the payment page, with two fields: card number and expiry date.
+00:02:25,738 --> 00:02:27,680
+First, a normal payment.
 
 35
-00:02:07,610 --> 00:02:11,064
-As Bekzod types, the number falls into groups of four.
+00:02:27,730 --> 00:02:34,448
+The frame appears inside the payment page, with two fields: card number and expiry date.
 
 36
-00:02:11,114 --> 00:02:14,328
-The expiry date gets its slash by itself.
+00:02:34,498 --> 00:02:38,528
+As Bekzod types, the number falls into groups of four.
 
 37
-00:02:14,378 --> 00:02:18,720
-He presses Send code, types the code from his phone, and presses Confirm.
+00:02:38,578 --> 00:02:42,152
+The expiry date gets its slash by itself.
 
 38
-00:02:18,770 --> 00:02:22,272
-The frame says "Card accepted" and clears the number field.
+00:02:42,202 --> 00:02:47,288
+He presses Send code, types the code from his phone, and presses Confirm.
 
 39
-00:02:22,322 --> 00:02:24,864
-The page shows only the masked line.
+00:02:47,338 --> 00:02:51,320
+The frame says "Card accepted" and clears the number field.
 
 40
-00:02:24,914 --> 00:02:29,880
-Now Bekzod opens the frame's address on its own, outside the payment page.
+00:02:51,370 --> 00:02:54,128
+The page shows only the masked line.
 
 41
-00:02:29,930 --> 00:02:34,728
-It shows one sentence: this page opens only inside the payment page.
+00:02:54,178 --> 00:02:59,768
+Now Bekzod opens the frame's address on its own, outside the payment page.
 
 42
-00:02:34,778 --> 00:02:36,600
-No form appears.
+00:02:59,818 --> 00:03:05,432
+It shows one sentence: this page opens only inside the payment page.
 
 43
-00:02:36,650 --> 00:02:39,360
-He puts the frame inside a look-alike site.
+00:03:05,482 --> 00:03:07,304
+No form appears.
 
 44
-00:02:39,410 --> 00:02:42,672
-The browser shows an empty, refused box instead.
+00:03:07,354 --> 00:03:10,472
+He puts the frame inside a look-alike site.
 
 45
-00:02:42,722 --> 00:02:44,544
-Then he plays the thief.
+00:03:10,522 --> 00:03:14,360
+The browser shows an empty, refused box instead.
 
 46
-00:02:44,594 --> 00:02:48,504
-Inside the frame, he tries to load a script from another address.
+00:03:14,410 --> 00:03:16,136
+Then he plays the thief.
 
 47
-00:02:48,554 --> 00:02:53,736
-The browser's console shows a red line: the script is refused under the frame's policy.
+00:03:16,186 --> 00:03:20,696
+Inside the frame, he tries to load a script from another address.
 
 48
-00:02:53,786 --> 00:02:55,608
-Nothing loads.
+00:03:20,746 --> 00:03:26,864
+The browser's console shows a red line: the script is refused under the frame's policy.
 
 49
-00:02:55,658 --> 00:02:57,648
-Timur turns his screen around.
+00:03:26,914 --> 00:03:28,736
+Nothing loads.
 
 50
-00:02:57,698 --> 00:03:00,504
-The refusal has already arrived as a report.
+00:03:28,786 --> 00:03:31,136
+Timur turns his screen around.
 
 51
-00:03:00,554 --> 00:03:04,992
-It sits in the card zone's logs, with the rule that was broken and the page it came from.
+00:03:31,186 --> 00:03:34,712
+The refusal has already arrived as a report.
 
 52
-00:03:05,042 --> 00:03:06,864
-No card data is in it.
+00:03:34,762 --> 00:03:40,280
+It sits in the card zone's logs, with the rule that was broken and the page it came from.
 
 53
-00:03:06,914 --> 00:03:10,320
-I think this is the part of card security most people forget.
+00:03:40,330 --> 00:03:42,416
+No card data is in it.
 
 54
-00:03:10,370 --> 00:03:15,792
-A database can be locked and sealed, and a skimmer can still copy numbers at the keyboard.
+00:03:42,466 --> 00:03:46,544
+I think this is the part of card security most people forget.
 
 55
-00:03:15,842 --> 00:03:21,000
-The one moment a card number exists in plain view is in the buyer's browser, as it is typed.
+00:03:46,594 --> 00:03:53,216
+A database can be locked and sealed, and a skimmer can still copy numbers at the keyboard.
 
 56
-00:03:21,050 --> 00:03:22,872
-The seals guard that moment.
+00:03:53,266 --> 00:03:59,384
+The one moment a card number exists in plain view is in the buyer's browser, as it is typed.
 
 57
-00:03:22,922 --> 00:03:25,176
-They protect the buyer from a stranger's script.
+00:03:59,434 --> 00:04:01,304
+The seals guard that moment.
 
 58
-00:03:25,226 --> 00:03:27,408
-They protect the bank from a stolen form.
+00:04:01,354 --> 00:04:04,064
+They protect the buyer from a stranger's script.
 
 59
-00:03:27,458 --> 00:03:31,656
-And they protect Malika, whose pages never touch the number.
+00:04:04,114 --> 00:04:06,680
+They protect the bank from a stolen form.
 
 60
-00:03:31,706 --> 00:03:33,528
-That night, Bekzod slept.
+00:04:06,730 --> 00:04:11,456
+And they protect Malika, whose pages never touch the number.
 
 61
-00:03:33,578 --> 00:03:36,144
+00:04:11,506 --> 00:04:13,616
+That night, Bekzod slept.
+
+62
+00:04:13,666 --> 00:04:21,416
+To recap: the frame has three seals: the right page, a content rule, and file fingerprints.
+
+63
+00:04:21,466 --> 00:04:26,464
+Which seal stops a script from another address?
+
+64
+00:04:26,514 --> 00:04:32,368
+The content security policy: it runs only the frame's own files.
+
+65
+00:04:32,418 --> 00:04:35,584
 Next: the two doors into the locked room.
