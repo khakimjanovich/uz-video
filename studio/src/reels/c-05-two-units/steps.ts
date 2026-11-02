@@ -4,8 +4,8 @@ import { BANK, PAY } from "../../series/build/screens-m01";
 
 // Lesson 5: the bank's card reader on ecom's page. One story carries it: Malika's market stall, then her roses on the web.
 // The stall's card reader (cues 0–3), the bridge from lesson 4 (4–5), the obvious design (6–11), the contract (12–15), the card entry session (16–18),
-// the frame (19–21), card in, receipt out (22–26), charge by token (27–28), the product (29–44), what it protects (45–51),
-// the stall and the page (52–54), next (55).
+// the question and the frame (19–22), card in, receipt out (23–27), charge by token (28–29), the product (30–45), what it protects (46–52),
+// the stall and the page (53–55), recap, question, answer (56–58), next (59).
 const CARD_ZONE = ["frame", "card", "bin", "adapters", "cardsinfra"] as const;
 const COUNTER = { buyer: [0, 1], m01Reader: [1.5, 1], shop: [3, 1] } as const;
 const COUNTER_EDGES = [{ from: "buyer", to: "m01Reader" }, { from: "m01Reader", to: "shop" }] as const;
@@ -53,83 +53,88 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 17, layout: TWO, edges: [...ASK_EDGE], badges: { m01CardZone: "one card, one payment" } },
   { cue: 18, layout: TWO, edges: [...ASK_EDGE], packets: [{ from: "m01CardZone", to: "m01Ecom", label: "address" }] },
   // Step three: the frame.
-  { cue: 19, layout: PAGE, edges: [...PAGE_EDGES], accent: ["m01Frame"] },
-  { cue: 20, layout: PAGE, edges: [...PAGE_EDGES], badges: { m01Frame: "the card zone's" } },
-  { cue: 21, layout: PAGE, edges: [...PAGE_EDGES], frames: [ON_COUNTER], badges: { m01Frame: "the bank's reader" } },
+  { cue: 19, layout: { m01Page: [1.5, 1] }, badges: { m01Page: "the web page" } },
+  { cue: 20, layout: PAGE, edges: [...PAGE_EDGES], accent: ["m01Frame"] },
+  { cue: 21, layout: PAGE, edges: [...PAGE_EDGES], badges: { m01Frame: "the card zone's" } },
+  { cue: 22, layout: PAGE, edges: [...PAGE_EDGES], frames: [ON_COUNTER], badges: { m01Frame: "the bank's reader" } },
   // Step four: the card goes straight in. Step five: a receipt comes back.
-  { cue: 22, layout: PAGE, edges: [...TYPED], frames: [ON_COUNTER], packets: [{ from: "buyer", to: "m01Frame", label: "card" }] },
-  { cue: 23, layout: PAGE, edges: [...TYPED], frames: [ON_COUNTER], packets: [{ from: "m01Frame", to: "m01CardZone", label: "card" }] },
-  { cue: 24, layout: { ...PAGE, m01Ecom: [0, 0] }, edges: [...TYPED], frames: [ON_COUNTER], crossed: ["m01Ecom"], badges: { m01Ecom: "not on the way" } },
+  { cue: 23, layout: PAGE, edges: [...TYPED], frames: [ON_COUNTER], packets: [{ from: "buyer", to: "m01Frame", label: "card" }] },
+  { cue: 24, layout: PAGE, edges: [...TYPED], frames: [ON_COUNTER], packets: [{ from: "m01Frame", to: "m01CardZone", label: "card" }] },
+  { cue: 25, layout: { ...PAGE, m01Ecom: [0, 0] }, edges: [...TYPED], frames: [ON_COUNTER], crossed: ["m01Ecom"], badges: { m01Ecom: "not on the way" } },
   {
-    cue: 25,
+    cue: 26,
     layout: PAGE,
     edges: [...TYPED],
     frames: [ON_COUNTER],
     packets: [{ from: "m01CardZone", to: "m01Frame", label: "token" }, { from: "m01Frame", to: "m01Page", label: "token · masked · bank", delay: 45 }],
   },
-  { cue: 26, layout: PAGE, edges: [...TYPED], frames: [ON_COUNTER], badges: { m01Page: "never the number" } },
+  { cue: 27, layout: PAGE, edges: [...TYPED], frames: [ON_COUNTER], badges: { m01Page: "never the number" } },
   // Step six: charge by token, from this payment's session only.
-  { cue: 27, layout: TWO, edges: [...ASK_EDGE], packets: [{ from: "m01Ecom", to: "m01CardZone", label: "charge: token" }] },
-  { cue: 28, layout: TWO, edges: [...ASK_EDGE], badges: { m01Ecom: "same session?" } },
+  { cue: 28, layout: TWO, edges: [...ASK_EDGE], packets: [{ from: "m01Ecom", to: "m01CardZone", label: "charge: token" }] },
+  { cue: 29, layout: TWO, edges: [...ASK_EDGE], badges: { m01Ecom: "same session?" } },
   // The other buyer: a short-lived session.
-  { cue: 38, layout: { buyer: [0.4, 1], m01Frame: [2.6, 1] }, edges: [{ from: "buyer", to: "m01Frame" }], badges: { buyer: "making tea" } },
+  { cue: 39, layout: { buyer: [0.4, 1], m01Frame: [2.6, 1] }, edges: [{ from: "buyer", to: "m01Frame" }], badges: { buyer: "making tea" } },
   {
-    cue: 39,
+    cue: 40,
     layout: { buyer: [0.4, 1], m01Frame: [2.6, 1] },
     edges: [{ from: "buyer", to: "m01Frame" }],
     packets: [{ from: "buyer", to: "m01Frame", label: "wrong card", stopAt: 0.7 }, { from: "buyer", to: "m01Frame", label: "wrong card", delay: 50, stopAt: 0.7 }],
     badges: { m01Frame: "too many tries" },
   },
-  { cue: 41, layout: TWO, edges: [...ASK_EDGE], badges: { m01CardZone: "short-lived" } },
-  { cue: 42, layout: TWO, edges: [...ASK_EDGE], badges: { m01CardZone: "one card, then used up" } },
-  { cue: 44, layout: HOLDS, edges: [...HOLDS_EDGES], accent: ["m01Ecom"], badges: { m01Ecom: "all ecom holds" } },
+  { cue: 42, layout: TWO, edges: [...ASK_EDGE], badges: { m01CardZone: "short-lived" } },
+  { cue: 43, layout: TWO, edges: [...ASK_EDGE], badges: { m01CardZone: "one card, then used up" } },
+  { cue: 45, layout: HOLDS, edges: [...HOLDS_EDGES], accent: ["m01Ecom"], badges: { m01Ecom: "all ecom holds" } },
   // What it protects.
-  { cue: 45, layout: STORES, edges: [...STORES_EDGES], badges: { m01Ecom: "no card number" } },
-  { cue: 46, layout: { m01Ecom: [0.4, 1], attacker: [2.6, 1] }, edges: [{ from: "m01Ecom", to: "attacker" }], packets: [{ from: "m01Ecom", to: "attacker", label: "leak" }], badges: { attacker: "no card" } },
-  { cue: 47, layout: { shop: [0.5, 1], pan: [2.5, 1] }, crossed: ["pan"], badges: { shop: "Malika never touches it" } },
-  { cue: 49, layout: { m01Token: [1.5, 1] }, accent: ["m01Token"], badges: { m01Token: "still matters" } },
+  { cue: 46, layout: STORES, edges: [...STORES_EDGES], badges: { m01Ecom: "no card number" } },
+  { cue: 47, layout: { m01Ecom: [0.4, 1], attacker: [2.6, 1] }, edges: [{ from: "m01Ecom", to: "attacker" }], packets: [{ from: "m01Ecom", to: "attacker", label: "leak" }], badges: { attacker: "no card" } },
+  { cue: 48, layout: { shop: [0.5, 1], pan: [2.5, 1] }, crossed: ["pan"], badges: { shop: "Malika never touches it" } },
+  { cue: 50, layout: { m01Token: [1.5, 1] }, accent: ["m01Token"], badges: { m01Token: "still matters" } },
   {
-    cue: 50,
+    cue: 51,
     layout: GUARD,
     edges: [{ from: "m01Ecom", to: "m01Token" }, { from: "m01Token", to: "lockedRoom", label: "starts" }],
     packets: [{ from: "m01Token", to: "lockedRoom", label: "a payment" }],
     badges: { m01Ecom: "guards it" },
   },
   // The stall and the page.
-  { cue: 52, layout: COUNTER, edges: [...COUNTER_EDGES], accent: ["m01Reader"], badges: { shop: "Saturday" } },
-  { cue: 53, layout: PAGE, edges: [...PAGE_EDGES], frames: [ON_COUNTER], accent: ["m01Frame"], badges: { m01Frame: "inside ecom's page" } },
-  { cue: 54, layout: COUNTER, edges: [...COUNTER_EDGES], packets: [{ from: "m01Reader", to: "shop", label: "receipt" }], badges: { shop: "receipts, never cards" } },
+  { cue: 53, layout: COUNTER, edges: [...COUNTER_EDGES], accent: ["m01Reader"], badges: { shop: "Saturday" } },
+  { cue: 54, layout: PAGE, edges: [...PAGE_EDGES], frames: [ON_COUNTER], accent: ["m01Frame"], badges: { m01Frame: "inside ecom's page" } },
+  { cue: 55, layout: COUNTER, edges: [...COUNTER_EDGES], packets: [{ from: "m01Reader", to: "shop", label: "receipt" }], badges: { shop: "receipts, never cards" } },
+  // Recap, the question (held 2 s), and the answer.
+  { cue: 56, layout: PAGE, edges: [...TYPED], frames: [ON_COUNTER], accent: ["m01Frame"], badges: { m01Frame: "card in", m01Page: "receipt out" } },
+  { cue: 57, layout: WRONG, edges: [...WRONG_EDGES], badges: { m01Ecom: "sees the card number?" } },
+  { cue: 58, layout: WRONG, edges: [...WRONG_EDGES], crossed: ["m01Ecom"], badges: { m01Ecom: "token · mask only" } },
 ];
 
 // The product: the bank's page from the order to "Paid", an ended attempt, the bank's row.
 const SHOT = "screens/c-05-two-units";
 export const screens: ScreenStep[] = [
   {
-    cue: 29,
+    cue: 30,
     src: `${SHOT}/pay-card.png`,
     title: PAY.cardTitle,
     region: PAY.top,
     beats: [
-      { cue: 30, region: PAY.top, focus: [PAY.header] },
-      { cue: 31, region: PAY.top, focus: [PAY.amount] },
-      { cue: 32, region: PAY.frame, focus: [PAY.frameBox] },
+      { cue: 31, region: PAY.top, focus: [PAY.header] },
+      { cue: 32, region: PAY.top, focus: [PAY.amount] },
+      { cue: 33, region: PAY.frame, focus: [PAY.frameBox] },
     ],
   },
-  { cue: 33, src: `${SHOT}/pay-typed.png`, title: PAY.cardTitle, region: PAY.frame, focus: [PAY.fields] },
-  { cue: 34, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.cardLine] },
+  { cue: 34, src: `${SHOT}/pay-typed.png`, title: PAY.cardTitle, region: PAY.frame, focus: [PAY.fields] },
+  { cue: 35, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.cardLine] },
   // The code from the buyer's phone, typed into the card zone's frame; "Confirm" next.
-  { cue: 35, src: `${SHOT}/pay-code.png`, title: PAY.cardTitle, region: PAY.frame, focus: [[556, 426, 328, 38]] },
-  { cue: 36, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.taking] },
-  { cue: 37, src: `${SHOT}/pay-paid.png`, title: PAY.title, region: PAY.status, focus: [PAY.paid] },
-  { cue: 40, src: `${SHOT}/pay-ended.png`, title: PAY.cardTitle, region: PAY.ended, focus: [PAY.note] },
-  { cue: 43, src: `${SHOT}/admin-payments.png`, title: BANK.title, region: BANK.list, focus: [BANK.firstCard] },
+  { cue: 36, src: `${SHOT}/pay-code.png`, title: PAY.cardTitle, region: PAY.frame, focus: [[556, 426, 328, 38]] },
+  { cue: 37, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.taking] },
+  { cue: 38, src: `${SHOT}/pay-paid.png`, title: PAY.title, region: PAY.status, focus: [PAY.paid] },
+  { cue: 41, src: `${SHOT}/pay-ended.png`, title: PAY.cardTitle, region: PAY.ended, focus: [PAY.note] },
+  { cue: 44, src: `${SHOT}/admin-payments.png`, title: BANK.title, region: BANK.list, focus: [BANK.firstCard] },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the one before.
-  { cue: 4, part: 2, current: [...CARD_ZONE], units: { cards: "locked room" } },
-  { cue: 5, part: 2, current: ["payment", "frame", "card"] },
-  { cue: 48, part: 2, current: [...CARD_ZONE], units: { cards: "full check" } },
-  { cue: 51, part: 2, current: ["payment", "procport"], units: { ecom: "smaller check", cards: "full check" } },
-  { cue: 55, part: 2, current: ["vault"], units: { ecom: "settings", cards: "settings" } },
+  { cue: 4, part: 2, rows: [2], current: [...CARD_ZONE], dot: "card", units: { cards: "locked room" } },
+  { cue: 5, part: 2, current: ["payment", "frame", "card"], dot: "frame" },
+  { cue: 49, part: 2, current: [...CARD_ZONE], dot: "card", units: { cards: "full check" } },
+  { cue: 52, part: 2, current: ["payment", "procport"], dot: "payment", units: { ecom: "smaller check", cards: "full check" } },
+  { cue: 59, part: 2, rows: [2], dot: "off", current: ["vault"], units: { ecom: "settings", cards: "settings" } },
 ];

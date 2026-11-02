@@ -4,8 +4,8 @@ import { BANK, PAY } from "../../series/build/screens-m01";
 
 // Lesson 3: what you may keep about a card. One story carries it: Bekzod pastes a buyer's card number into a support ticket.
 // The pasted number (cues 0–4), the bridge from lesson 2 (5–6), where it spreads (7–9), Dilnoza's reply and the bank's phone call (10–16),
-// the PAN (17–20), the code on the back (21–23), the masked number (24–28), the card token (29–33), three rules (34–38),
-// the product (39–48), why Dilnoza never needed it (49–53), the backups keep it anyway (54–56), next (57).
+// the PAN (17–20), the code on the back (21–23), the question and the masked number (24–29), the card token (30–34), three rules (35–39),
+// the product (40–49), why Dilnoza never needed it (50–54), the backups keep it anyway (55–57), recap, question, answer (58–60), next (61).
 const CARD_ZONE = ["frame", "card", "bin", "adapters", "cardsinfra"] as const;
 const MESSAGE = { buyer: [0.5, 1], shop: [2.5, 1] } as const;
 const MESSAGE_EDGE = [{ from: "buyer", to: "shop" }] as const;
@@ -59,74 +59,79 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 22, layout: { backCode: [1.5, 1] }, crossed: ["backCode"], badges: { backCode: "not kept once approved" } },
   { cue: 23, layout: { backCode: [1.5, 1] }, crossed: ["backCode"], badges: { backCode: "never even asked" } },
   // The masked number.
-  { cue: 24, layout: { masked: [1.5, 1] }, accent: ["masked"], badges: { masked: "screens · reports" } },
-  { cue: 25, layout: MASK, edges: [...MASK_EDGE], packets: [{ from: "pan", to: "masked", label: "stars between" }] },
-  { cue: 26, layout: MASK, edges: [...MASK_EDGE], badges: { masked: "first 6: the bank" } },
-  { cue: 27, layout: MASK, edges: [...MASK_EDGE], badges: { masked: "last 4: your card" } },
+  { cue: 24, layout: { pan: [1.5, 1] }, crossed: ["pan"], badges: { pan: "not on screens" } },
+  { cue: 25, layout: { masked: [1.5, 1] }, accent: ["masked"], badges: { masked: "screens · reports" } },
+  { cue: 26, layout: MASK, edges: [...MASK_EDGE], packets: [{ from: "pan", to: "masked", label: "stars between" }] },
+  { cue: 27, layout: MASK, edges: [...MASK_EDGE], badges: { masked: "first 6: the bank" } },
+  { cue: 28, layout: MASK, edges: [...MASK_EDGE], badges: { masked: "last 4: your card" } },
   {
-    cue: 28,
+    cue: 29,
     layout: { masked: [0.5, 1], attacker: [2.5, 1] },
     edges: [{ from: "masked", to: "attacker" }],
     packets: [{ from: "masked", to: "attacker", label: "pay?", stopAt: 0.55 }],
     badges: { masked: "cannot pay" },
   },
   // The card token.
-  { cue: 29, layout: { m01Ecom: [0.5, 1], m01Token: [2.5, 1] }, edges: [{ from: "m01Ecom", to: "m01Token", label: "keeps" }], accent: ["m01Token"], badges: { m01Ecom: "charge it later" } },
-  { cue: 30, layout: TOKEN, edges: [...TOKEN_EDGES], packets: [{ from: "m01CardZone", to: "m01Token", label: "random name" }], accent: ["m01Token"] },
-  { cue: 31, layout: TOKEN, edges: [...TOKEN_EDGES], badges: { m01Token: "nothing from the number" } },
+  { cue: 30, layout: { m01Ecom: [0.5, 1], m01Token: [2.5, 1] }, edges: [{ from: "m01Ecom", to: "m01Token", label: "keeps" }], accent: ["m01Token"], badges: { m01Ecom: "charge it later" } },
+  { cue: 31, layout: TOKEN, edges: [...TOKEN_EDGES], packets: [{ from: "m01CardZone", to: "m01Token", label: "random name" }], accent: ["m01Token"] },
+  { cue: 32, layout: TOKEN, edges: [...TOKEN_EDGES], badges: { m01Token: "nothing from the number" } },
   {
-    cue: 32,
+    cue: 33,
     layout: TWO,
     edges: [{ from: "m01CardZone", to: "m01Token" }, { from: "m01CardZone", to: "m01Token2" }],
     packets: [{ from: "m01CardZone", to: "m01Token", label: "token" }, { from: "m01CardZone", to: "m01Token2", label: "token", delay: 30 }],
     badges: { m01Token2: "share nothing" },
   },
   {
-    cue: 33,
+    cue: 34,
     layout: { ...TOKEN, attacker: [3, 2.2] },
     edges: [...TOKEN_EDGES, { from: "m01Token", to: "attacker" }],
     packets: [{ from: "m01Token", to: "attacker", label: "?", stopAt: 0.5 }],
     badges: { attacker: "learns nothing" },
   },
   // Three words, three rules.
-  { cue: 34, layout: WORDS },
-  { cue: 35, layout: WORDS, frames: [ZONE_WALL], accent: ["pan"], badges: { pan: "card zone only" } },
-  { cue: 36, layout: WORDS, frames: [ZONE_WALL], accent: ["masked"], badges: { masked: "may be shown" } },
-  { cue: 37, layout: WORDS, frames: [ZONE_WALL], accent: ["m01Token"], badges: { m01Token: "may be kept" } },
-  { cue: 38, layout: RULES, frames: [{ ...ZONE_WALL, from: [0, 0.6], to: [0, 0.6] }], crossed: ["backCode"], badges: { backCode: "kept by no one" } },
+  { cue: 35, layout: WORDS },
+  { cue: 36, layout: WORDS, frames: [ZONE_WALL], accent: ["pan"], badges: { pan: "card zone only" } },
+  { cue: 37, layout: WORDS, frames: [ZONE_WALL], accent: ["masked"], badges: { masked: "may be shown" } },
+  { cue: 38, layout: WORDS, frames: [ZONE_WALL], accent: ["m01Token"], badges: { m01Token: "may be kept" } },
+  { cue: 39, layout: RULES, frames: [{ ...ZONE_WALL, from: [0, 0.6], to: [0, 0.6] }], crossed: ["backCode"], badges: { backCode: "kept by no one" } },
   // Why Dilnoza never needed the PAN.
-  { cue: 49, layout: { bankStaff: [0.5, 1], pan: [2.5, 1] }, crossed: ["pan"], badges: { bankStaff: "Dilnoza" } },
-  { cue: 50, layout: { bankStaff: [0.4, 1], masked: [2.6, 1] }, edges: [{ from: "bankStaff", to: "masked" }], accent: ["masked"], badges: { masked: "finds the payment" } },
-  { cue: 51, layout: WORDS, accent: ["masked", "m01Token"], badges: { masked: "nothing to spend", m01Token: "nothing to spend" } },
-  { cue: 52, layout: { pan: [0.5, 1], attacker: [2.5, 1] }, edges: [{ from: "pan", to: "attacker" }], packets: [{ from: "pan", to: "attacker", label: "spend" }], danger: ["pan"] },
-  { cue: 53, layout: ROOM, frames: [ROOM_WALL], accent: ["masked", "m01Token"], badges: { m01CardZone: "the PAN" } },
+  { cue: 50, layout: { bankStaff: [0.5, 1], pan: [2.5, 1] }, crossed: ["pan"], badges: { bankStaff: "Dilnoza" } },
+  { cue: 51, layout: { bankStaff: [0.4, 1], masked: [2.6, 1] }, edges: [{ from: "bankStaff", to: "masked" }], accent: ["masked"], badges: { masked: "finds the payment" } },
+  { cue: 52, layout: WORDS, accent: ["masked", "m01Token"], badges: { masked: "nothing to spend", m01Token: "nothing to spend" } },
+  { cue: 53, layout: { pan: [0.5, 1], attacker: [2.5, 1] }, edges: [{ from: "pan", to: "attacker" }], packets: [{ from: "pan", to: "attacker", label: "spend" }], danger: ["pan"] },
+  { cue: 54, layout: ROOM, frames: [ROOM_WALL], accent: ["masked", "m01Token"], badges: { m01CardZone: "the PAN" } },
   // Deleted from the ticket, kept by the backups.
-  { cue: 54, layout: PASTE, edges: [...PASTE_EDGE], crossed: ["supportTicket"], badges: { supportTicket: "number deleted" } },
-  { cue: 55, layout: SPREAD, edges: SPREAD_EDGES, crossed: ["supportTicket"], danger: ["backup"], badges: { backup: "still there" } },
-  { cue: 56, layout: FIXED, edges: [...FIXED_EDGES], accent: ["masked", "m01Token"], crossed: ["pan"], badges: { supportTicket: "never paste it" } },
+  { cue: 55, layout: PASTE, edges: [...PASTE_EDGE], crossed: ["supportTicket"], badges: { supportTicket: "number deleted" } },
+  { cue: 56, layout: SPREAD, edges: SPREAD_EDGES, crossed: ["supportTicket"], danger: ["backup"], badges: { backup: "still there" } },
+  { cue: 57, layout: FIXED, edges: [...FIXED_EDGES], accent: ["masked", "m01Token"], crossed: ["pan"], badges: { supportTicket: "never paste it" } },
+  // Recap, the question (held 2 s), and the answer.
+  { cue: 58, layout: WORDS, frames: [ZONE_WALL], accent: ["pan", "masked", "m01Token"], badges: { pan: "card zone", masked: "shown", m01Token: "kept" } },
+  { cue: 59, layout: WORDS, badges: { m01Token: "kept to charge later?" } },
+  { cue: 60, layout: WORDS, accent: ["m01Token"], badges: { m01Token: "the card token" } },
 ];
 
 // The product: the card form with no code box, the short card line, the bank's Card column.
 const SHOT = "screens/c-03-card-data-words";
 export const screens: ScreenStep[] = [
-  { cue: 39, src: `${SHOT}/pay-card.png`, title: PAY.cardTitle, region: PAY.top, focus: [PAY.header] },
+  { cue: 40, src: `${SHOT}/pay-card.png`, title: PAY.cardTitle, region: PAY.top, focus: [PAY.header] },
   {
-    cue: 40,
+    cue: 41,
     src: `${SHOT}/pay-card.png`,
     title: PAY.cardTitle,
     region: PAY.frame,
     focus: [PAY.frameBox],
-    beats: [{ cue: 41, region: PAY.frame, focus: [PAY.fields] }, { cue: 42, region: PAY.frame }],
+    beats: [{ cue: 42, region: PAY.frame, focus: [PAY.fields] }, { cue: 43, region: PAY.frame }],
   },
-  { cue: 43, src: `${SHOT}/pay-typed.png`, title: PAY.cardTitle, region: PAY.frame, focus: [PAY.fields] },
-  { cue: 44, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.cardLine] },
-  { cue: 45, src: `${SHOT}/admin-payments.png`, title: BANK.title, region: BANK.list, beats: [{ cue: 46, region: BANK.list, focus: [BANK.cards] }, { cue: 47, region: BANK.list, focus: [BANK.firstCard] }, { cue: 48, region: BANK.list, focus: [BANK.cards] }] },
+  { cue: 44, src: `${SHOT}/pay-typed.png`, title: PAY.cardTitle, region: PAY.frame, focus: [PAY.fields] },
+  { cue: 45, src: `${SHOT}/pay-debiting.png`, title: PAY.title, region: PAY.status, focus: [PAY.cardLine] },
+  { cue: 46, src: `${SHOT}/admin-payments.png`, title: BANK.title, region: BANK.list, beats: [{ cue: 47, region: BANK.list, focus: [BANK.cards] }, { cue: 48, region: BANK.list, focus: [BANK.firstCard] }, { cue: 49, region: BANK.list, focus: [BANK.cards] }] },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the one before.
-  { cue: 5, part: 1, current: ["payment", "procport", "card", "procsvc"], units: { cards: "enough to pay" } },
-  { cue: 6, part: 1, current: [...CARD_ZONE], units: { cards: "card data" } },
-  { cue: 20, part: 1, current: [...CARD_ZONE], units: { cards: "PAN only here" } },
-  { cue: 57, part: 1, current: [...CARD_ZONE], units: { cards: "card numbers" } },
+  { cue: 5, part: 1, rows: [1], current: ["payment", "procport", "card", "procsvc"], dot: "card", units: { cards: "enough to pay" } },
+  { cue: 6, part: 1, current: [...CARD_ZONE], dot: "card", units: { cards: "card data" } },
+  { cue: 20, part: 1, current: [...CARD_ZONE], dot: "card", units: { cards: "PAN only here" } },
+  { cue: 61, part: 1, rows: [1], current: [...CARD_ZONE], dot: "off", units: { cards: "card numbers" } },
 ];
