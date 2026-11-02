@@ -2,8 +2,8 @@ import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 
 // Lesson 37: limits. Malika's busiest night and the stolen account (cues 0–4), the bridge (5–6), the two limits (7–11),
-// the daily race, the obvious check and the atomic reservation (12–25), the edge (26–30), the product (31–39),
-// the last minutes before midnight (40–44), what it protects (45–47), next (48).
+// the daily race, the obvious check and the atomic reservation (12–26), the edge (27–31), the product (32–40),
+// the last minutes before midnight (41–45), what it protects (46–48), next (48).
 const FIVE = ["pay", "pay", "pay", "pay", "pay"];
 const RACE = { m78Buyers: [0.3, 1], m78PerDay: [2.7, 1] } as const;
 const RACE_EDGE = [{ from: "m78Buyers", to: "m78PerDay" }] as const;
@@ -22,7 +22,7 @@ export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 5, part: 6, current: ["partner", "payment"], units: { ecom: "deal limits · one claim" } },
   { cue: 6, part: 6, current: ["payment", "postgres"] },
-  { cue: 48, part: 7, current: ["vault", "cardsinfra"] },
+  { cue: 52, part: 7, rows: [7], current: ["vault", "cardsinfra"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -50,32 +50,36 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 14, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "looks safe" }, danger: ["m78PerDay"] },
   { cue: 15, layout: RACE, edges: [...RACE_EDGE], packets: FIVE.map((_, k) => ({ from: "m78Buyers", to: "m78PerDay", label: "read: fits", delay: 10 + k * 6 })), badges: { m78PerDay: "all five through" }, danger: ["m78PerDay"] },
   // The atomic reservation.
-  { cue: 16, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "atomic reservation" }, accent: ["m78PerDay"] },
-  { cue: 17, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "one step" }, accent: ["m78PerDay"] },
-  { cue: 18, layout: RACE, edges: [...RACE_EDGE], packets: [{ from: "m78Buyers", to: "m78PerDay", label: "+ amount" }], badges: { m78PerDay: "add only if it fits" } },
-  { cue: 19, layout: RACE, edges: [...RACE_EDGE], packets: [{ from: "m78Buyers", to: "m78PerDay", label: "first" }, { from: "m78Buyers", to: "m78PerDay", label: "waits", delay: 70 }] },
-  { cue: 20, layout: RACE, edges: [...RACE_EDGE], packets: [{ from: "m78Buyers", to: "m78PerDay", label: "doesn't fit", stopAt: 0.6 }], badges: { m78Buyers: "no money moved" }, danger: ["m78PerDay"] },
-  { cue: 21, layout: SAVE, edges: [...SAVE_EDGES], packets: [{ from: "m78PerDay", to: "record", label: "reserve" }, { from: "record", to: "network", label: "charge", delay: 70 }] },
-  { cue: 22, layout: SAVE, edges: [...SAVE_EDGES], packets: [{ from: "record", to: "m78PerDay", label: "share back" }], badges: { record: "declined" } },
-  { cue: 23, layout: SAVE, edges: [...SAVE_EDGES], packets: [{ from: "record", to: "m78PerDay", label: "share back" }], badges: { record: "reversed same day" } },
-  { cue: 24, layout: SAVE, edges: [...SAVE_EDGES], badges: { record: "unknown: keeps it" }, danger: ["record"] },
-  { cue: 25, layout: { m78PerDay: [0.4, 1], m78Day: [2.6, 1] }, edges: [{ from: "m78PerDay", to: "m78Day", label: "same day" }], badges: { m78Day: "as the reports" } },
+  { cue: 16, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "how to stop five?" }, danger: ["m78PerDay"] },
+  { cue: 17, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "atomic reservation" }, accent: ["m78PerDay"] },
+  { cue: 18, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "one step" }, accent: ["m78PerDay"] },
+  { cue: 19, layout: RACE, edges: [...RACE_EDGE], packets: [{ from: "m78Buyers", to: "m78PerDay", label: "+ amount" }], badges: { m78PerDay: "add only if it fits" } },
+  { cue: 20, layout: RACE, edges: [...RACE_EDGE], packets: [{ from: "m78Buyers", to: "m78PerDay", label: "first" }, { from: "m78Buyers", to: "m78PerDay", label: "waits", delay: 70 }] },
+  { cue: 21, layout: RACE, edges: [...RACE_EDGE], packets: [{ from: "m78Buyers", to: "m78PerDay", label: "doesn't fit", stopAt: 0.6 }], badges: { m78Buyers: "no money moved" }, danger: ["m78PerDay"] },
+  { cue: 22, layout: SAVE, edges: [...SAVE_EDGES], packets: [{ from: "m78PerDay", to: "record", label: "reserve" }, { from: "record", to: "network", label: "charge", delay: 70 }] },
+  { cue: 23, layout: SAVE, edges: [...SAVE_EDGES], packets: [{ from: "record", to: "m78PerDay", label: "share back" }], badges: { record: "declined" } },
+  { cue: 24, layout: SAVE, edges: [...SAVE_EDGES], packets: [{ from: "record", to: "m78PerDay", label: "share back" }], badges: { record: "reversed same day" } },
+  { cue: 25, layout: SAVE, edges: [...SAVE_EDGES], badges: { record: "unknown: keeps it" }, danger: ["record"] },
+  { cue: 26, layout: { m78PerDay: [0.4, 1], m78Day: [2.6, 1] }, edges: [{ from: "m78PerDay", to: "m78Day", label: "same day" }], badges: { m78Day: "as the reports" } },
   // The edge.
-  { cue: 26, layout: EDGE, edges: [...EDGE_EDGES], packets: [{ from: "buyer", to: "m78EdgeDoor", label: "request" }], accent: ["m78EdgeDoor"] },
-  { cue: 27, layout: EDGE, edges: [...EDGE_EDGES], badges: { m78EdgeDoor: "modern encryption" } },
-  { cue: 28, layout: EDGE, edges: [...EDGE_EDGES], badges: { m78EdgeDoor: "secure only" } },
-  { cue: 29, layout: EDGE, edges: [...EDGE_EDGES], badges: { m78EdgeDoor: "no software name" } },
-  { cue: 30, layout: EDGE, edges: [...EDGE_EDGES], packets: [{ from: "buyer", to: "m78EdgeDoor", label: "too big", stopAt: 0.6 }], badges: { m78EdgeDoor: "size · rate limits" } },
+  { cue: 27, layout: EDGE, edges: [...EDGE_EDGES], packets: [{ from: "buyer", to: "m78EdgeDoor", label: "request" }], accent: ["m78EdgeDoor"] },
+  { cue: 28, layout: EDGE, edges: [...EDGE_EDGES], badges: { m78EdgeDoor: "modern encryption" } },
+  { cue: 29, layout: EDGE, edges: [...EDGE_EDGES], badges: { m78EdgeDoor: "secure only" } },
+  { cue: 30, layout: EDGE, edges: [...EDGE_EDGES], badges: { m78EdgeDoor: "no software name" } },
+  { cue: 31, layout: EDGE, edges: [...EDGE_EDGES], packets: [{ from: "buyer", to: "m78EdgeDoor", label: "too big", stopAt: 0.6 }], badges: { m78EdgeDoor: "size · rate limits" } },
   // The last minutes before midnight.
-  { cue: 40, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "almost full" } },
-  { cue: 41, layout: RACE, edges: [...RACE_EDGE], packets: five(false), badges: { m78Buyers: "Pay, together" } },
-  { cue: 42, layout: RACE, edges: [...RACE_EDGE], packets: five(true).slice(0, 4), badges: { m78PerDay: "four fit" }, accent: ["m78PerDay"] },
-  { cue: 43, layout: RACE, edges: [...RACE_EDGE], packets: [five(true)[4]], badges: { m78PerDay: "the fifth: no" }, danger: ["m78PerDay"] },
-  { cue: 44, layout: RACE, edges: [...RACE_EDGE], badges: { m78Buyers: "no money taken", m78PerDay: "limit for today" }, danger: ["m78PerDay"] },
+  { cue: 41, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "almost full" } },
+  { cue: 42, layout: RACE, edges: [...RACE_EDGE], packets: five(false), badges: { m78Buyers: "Pay, together" } },
+  { cue: 43, layout: RACE, edges: [...RACE_EDGE], packets: five(true).slice(0, 4), badges: { m78PerDay: "four fit" }, accent: ["m78PerDay"] },
+  { cue: 44, layout: RACE, edges: [...RACE_EDGE], packets: [five(true)[4]], badges: { m78PerDay: "the fifth: no" }, danger: ["m78PerDay"] },
+  { cue: 45, layout: RACE, edges: [...RACE_EDGE], badges: { m78Buyers: "no money taken", m78PerDay: "limit for today" }, danger: ["m78PerDay"] },
   // What it protects.
-  { cue: 45, layout: GUARDS, badges: { acquirer: "no fortune at once" }, accent: ["acquirer"] },
-  { cue: 46, layout: GUARDS, badges: { acquirer: "no fortune at once", shop: "within the deal" }, accent: ["shop"] },
-  { cue: 47, layout: GUARDS, badges: { acquirer: "no fortune at once", shop: "within the deal", buyer: "stopped before" }, accent: ["buyer"] },
+  { cue: 46, layout: GUARDS, badges: { acquirer: "no fortune at once" }, accent: ["acquirer"] },
+  { cue: 47, layout: GUARDS, badges: { acquirer: "no fortune at once", shop: "within the deal" }, accent: ["shop"] },
+  { cue: 48, layout: GUARDS, badges: { acquirer: "no fortune at once", shop: "within the deal", buyer: "stopped before" }, accent: ["buyer"] },
+  { cue: 49, layout: RACE, edges: [...RACE_EDGE], badges: { m78PerDay: "one atomic step" }, accent: ["m78PerDay"] },
+  { cue: 50, layout: RACE, edges: [...RACE_EDGE], packets: [five(true)[4]], badges: { m78Buyers: "the fifth: money?" }, danger: ["m78PerDay"] },
+  { cue: 51, layout: RACE, edges: [...RACE_EDGE], badges: { m78Buyers: "no money moved", m78PerDay: "stopped before" }, accent: ["m78Buyers"] },
 ];
 
 const S = "screens/c-35-hardening";
@@ -83,27 +87,27 @@ const DEAL: [number, number, number, number] = [240, 280, 800, 500];
 const MODAL: [number, number, number, number] = [320, 190, 800, 500];
 export const screens: ScreenStep[] = [
   {
-    cue: 31,
+    cue: 32,
     src: `${S}/deal-terms.png`,
     title: "Bank console · Website",
     region: [0, 40, 1152, 720],
     focus: [[270, 308, 753, 283]],
     beats: [
-      { cue: 32, region: DEAL, focus: [[291, 438, 711, 30]] },
-      { cue: 33, region: DEAL, focus: [[291, 456, 711, 18]] },
-      { cue: 34, region: DEAL, focus: [[291, 478, 711, 40], [932, 535, 70, 36]] },
+      { cue: 33, region: DEAL, focus: [[291, 438, 711, 30]] },
+      { cue: 34, region: DEAL, focus: [[291, 456, 711, 18]] },
+      { cue: 35, region: DEAL, focus: [[291, 478, 711, 40], [932, 535, 70, 36]] },
     ],
   },
-  { cue: 35, src: `${S}/websites.png`, title: "Merchant portal · Websites", region: [240, 40, 860, 537], focus: [[655, 340, 370, 50]] },
+  { cue: 36, src: `${S}/websites.png`, title: "Merchant portal · Websites", region: [240, 40, 860, 537], focus: [[655, 340, 370, 50]] },
   {
-    cue: 36,
+    cue: 37,
     src: `${S}/link-refused.png`,
     title: "Merchant portal · Payment links",
     region: MODAL,
     focus: [[516, 343, 408, 62]],
     beats: [
-      { cue: 37, region: MODAL, focus: [[516, 572, 408, 56]] },
-      { cue: 39, region: MODAL, focus: [[500, 205, 440, 491]] },
+      { cue: 38, region: MODAL, focus: [[516, 572, 408, 56]] },
+      { cue: 40, region: MODAL, focus: [[500, 205, 440, 491]] },
     ],
   },
 ];
