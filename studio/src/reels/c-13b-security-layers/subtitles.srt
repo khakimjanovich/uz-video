@@ -1,299 +1,315 @@
 1
-00:00:00,050 --> 00:00:02,448
+00:00:00,050 --> 00:00:02,904
 Monday, ten fourteen in the morning.
 
 2
-00:00:02,498 --> 00:00:06,984
+00:00:02,954 --> 00:00:08,136
 A buyer orders peonies from Malika's shop, types a card, and pays.
 
 3
-00:00:07,034 --> 00:00:08,856
+00:00:08,186 --> 00:00:10,008
 It takes under a minute.
 
 4
-00:00:08,906 --> 00:00:14,976
+00:00:10,058 --> 00:00:17,280
 In that minute, one card number passes seven layers of security, and the buyer notices none of them.
 
 5
-00:00:15,026 --> 00:00:19,536
+00:00:17,330 --> 00:00:22,416
 Since Lesson 4, each lesson has added one layer around the card zone.
 
 6
-00:00:19,586 --> 00:00:24,912
+00:00:22,466 --> 00:00:28,680
 This lesson follows that one card number through all of them, and shows what each one stops.
 
 7
-00:00:24,962 --> 00:00:27,120
+00:00:28,730 --> 00:00:31,224
 A bank vault is the right picture.
 
 8
-00:00:27,170 --> 00:00:28,992
+00:00:31,274 --> 00:00:33,096
 A gate on the street.
 
 9
-00:00:29,042 --> 00:00:30,864
+00:00:33,146 --> 00:00:34,968
 Glass at the counter.
 
 10
-00:00:30,914 --> 00:00:32,736
+00:00:35,018 --> 00:00:36,840
 A guard inside.
 
 11
-00:00:32,786 --> 00:00:34,608
+00:00:36,890 --> 00:00:38,712
 A safe at the back.
 
 12
-00:00:34,658 --> 00:00:37,320
+00:00:38,762 --> 00:00:42,048
 Inner doors that open only with the right pass.
 
 13
-00:00:37,370 --> 00:00:39,192
+00:00:42,098 --> 00:00:43,920
 Cameras everywhere.
 
 14
-00:00:39,242 --> 00:00:41,808
+00:00:43,970 --> 00:00:47,016
 And keys no single person holds.
 
 15
-00:00:41,858 --> 00:00:44,616
-No layer is trusted to stop everything.
+00:00:47,066 --> 00:00:51,704
+So what happens when one layer fails?
 
 16
-00:00:44,666 --> 00:00:47,352
-Each one assumes the layer before it might fail.
+00:00:51,754 --> 00:00:55,064
+No layer is trusted to stop everything.
 
 17
-00:00:47,402 --> 00:00:49,896
-That idea is called defence in depth.
+00:00:55,114 --> 00:00:58,232
+Each one assumes the layer before it might fail.
 
 18
-00:00:49,946 --> 00:00:52,800
-Layer one is the gate: the payers' door.
+00:00:58,282 --> 00:01:01,208
+That idea is called defence in depth.
 
 19
-00:00:52,850 --> 00:00:56,664
-The buyer's browser reaches the card zone only through this door.
+00:01:01,258 --> 00:01:04,568
+Layer one is the gate: the payers' door.
 
 20
-00:00:56,714 --> 00:01:01,752
-It passes the card frame's few requests, and answers not found to everything else.
+00:01:04,618 --> 00:01:08,816
+The buyer's browser reaches the card zone only through this door.
 
 21
-00:01:01,802 --> 00:01:04,776
-It slows any one buyer who submits too fast.
+00:01:08,866 --> 00:01:14,864
+It passes the card frame's few requests, and answers not found to everything else.
 
 22
-00:01:04,826 --> 00:01:08,664
-Layer two is the glass at the counter: the card form's seals.
+00:01:14,914 --> 00:01:18,368
+It slows any one buyer who submits too fast.
 
 23
-00:01:08,714 --> 00:01:11,400
-The frame runs only its own two files.
+00:01:18,418 --> 00:01:22,784
+Layer two is the glass at the counter: the card form's seals.
 
 24
-00:01:11,450 --> 00:01:13,272
-A changed file does not run.
+00:01:22,834 --> 00:01:26,120
+The frame runs only its own two files.
 
 25
-00:01:13,322 --> 00:01:15,504
-A stranger's script is refused.
+00:01:26,170 --> 00:01:28,472
+A changed file does not run.
 
 26
-00:01:15,554 --> 00:01:18,576
-Only the payment page its session names may hold it.
+00:01:28,522 --> 00:01:31,136
+A stranger's script is refused.
 
 27
-00:01:18,626 --> 00:01:21,624
-This stops a skimmer copying the number as it is typed.
+00:01:31,186 --> 00:01:34,832
+Only the payment page its session names may hold it.
 
 28
-00:01:21,674 --> 00:01:24,744
-Layer three is the guard: the fraud limits.
+00:01:34,882 --> 00:01:38,480
+This stops a skimmer copying the number as it is typed.
 
 29
-00:01:24,794 --> 00:01:32,280
-Before any network is asked, the attempt is counted by the card's fingerprint, its first digits, the buyer's address and the shop.
+00:01:38,530 --> 00:01:41,960
+Layer three is the guard: the fraud limits.
 
 30
-00:01:32,330 --> 00:01:35,688
-Past the bank's chosen limits, the try is refused.
+00:01:42,010 --> 00:01:50,744
+Before any network is asked, the attempt is counted by the card's fingerprint, its first digits, the buyer's address and the shop.
 
 31
-00:01:35,738 --> 00:01:38,616
-This stops a thief testing stolen cards.
+00:01:50,794 --> 00:01:54,632
+Past the bank's chosen limits, the try is refused.
 
 32
-00:01:38,666 --> 00:01:41,712
-Layer four is the safe: sealed numbers.
+00:01:54,682 --> 00:01:58,040
+This stops a thief testing stolen cards.
 
 33
-00:01:41,762 --> 00:01:45,360
-Vault seals the number, and only the sealed value is kept.
+00:01:58,090 --> 00:02:01,688
+Layer four is the safe: sealed numbers.
 
 34
-00:01:45,410 --> 00:01:48,696
-The database refuses anything unsealed.
+00:02:01,738 --> 00:02:05,912
+Vault seals the number, and only the sealed value is kept.
 
 35
-00:01:48,746 --> 00:01:52,032
-The number is opened only to hand it to the card's network.
+00:02:05,962 --> 00:02:09,704
+The database refuses anything unsealed.
 
 36
-00:01:52,082 --> 00:01:56,544
-This stops a stolen database or backup from leaking a single card.
+00:02:09,754 --> 00:02:13,400
+The number is opened only to hand it to the card's network.
 
 37
-00:01:56,594 --> 00:02:00,912
-Layer five is the inner doors: two proofs on every call.
+00:02:13,450 --> 00:02:18,488
+This stops a stolen database or backup from leaking a single card.
 
 38
-00:02:00,962 --> 00:02:04,704
-When ecom asks to charge the card, it never sees the number.
+00:02:18,538 --> 00:02:23,600
+Layer five is the inner doors: two proofs on every call.
 
 39
-00:02:04,754 --> 00:02:06,576
-It holds only the token.
+00:02:23,650 --> 00:02:27,920
+When ecom asks to charge the card, it never sees the number.
 
 40
-00:02:06,626 --> 00:02:12,192
-Every call it makes carries two proofs: its certificate, and its token from the login server.
+00:02:27,970 --> 00:02:29,960
+It holds only the token.
 
 41
-00:02:12,242 --> 00:02:15,168
-Its role allows only the operations it needs.
+00:02:30,010 --> 00:02:36,776
+Every call it makes carries two proofs: its certificate, and its token from the login server.
 
 42
-00:02:15,218 --> 00:02:19,632
-This stops a stranger, or a caller overstepping, from using the card.
+00:02:36,826 --> 00:02:40,400
+Its role allows only the operations it needs.
 
 43
-00:02:19,682 --> 00:02:23,712
-Layer six is the cameras: logs that never show the number.
+00:02:40,450 --> 00:02:45,848
+This stops a stranger, or a caller overstepping, from using the card.
 
 44
-00:02:23,762 --> 00:02:26,352
-Every use of card data is written down.
+00:02:45,898 --> 00:02:50,552
+Layer six is the cameras: logs that never show the number.
 
 45
-00:02:26,402 --> 00:02:31,296
-Every log line cuts a card number down to its first six and last four digits.
+00:02:50,602 --> 00:02:53,552
+Every use of card data is written down.
 
 46
-00:02:31,346 --> 00:02:33,528
-Secrets in a log are starred out.
+00:02:53,602 --> 00:02:59,480
+Every log line cuts a card number down to its first six and last four digits.
 
 47
-00:02:33,578 --> 00:02:35,760
-Alerts carry no card data at all.
+00:02:59,530 --> 00:03:01,880
+Secrets in a log are starred out.
 
 48
-00:02:35,810 --> 00:02:39,384
-This stops the record of what happened from becoming a leak.
+00:03:01,930 --> 00:03:04,544
+Alerts carry no card data at all.
 
 49
-00:02:39,434 --> 00:02:41,712
-Layer seven is the keyholders.
+00:03:04,594 --> 00:03:08,456
+This stops the record of what happened from becoming a leak.
 
 50
-00:02:41,762 --> 00:02:43,728
-Vault itself starts locked.
+00:03:08,506 --> 00:03:11,192
+Layer seven is the keyholders.
 
 51
-00:02:43,778 --> 00:02:48,192
-To open it, three of five keyholders each bring their own share of the key.
+00:03:11,242 --> 00:03:13,472
+Vault itself starts locked.
 
 52
-00:02:48,242 --> 00:02:50,808
-This stops one insider from taking the keys.
+00:03:13,522 --> 00:03:18,464
+To open it, three of five keyholders each bring their own share of the key.
 
 53
-00:02:50,858 --> 00:02:53,064
-Now the buyer's minute, as they saw it.
+00:03:18,514 --> 00:03:21,368
+This stops one insider from taking the keys.
 
 54
-00:02:53,114 --> 00:02:56,112
-The payment page opens, and the padlock shows.
+00:03:21,418 --> 00:03:24,056
+Now the buyer's minute, as they saw it.
 
 55
-00:02:56,162 --> 00:02:59,280
-The frame appears and groups the number in fours.
+00:03:24,106 --> 00:03:27,728
+The payment page opens, and the padlock shows.
 
 56
-00:02:59,330 --> 00:03:03,192
-The buyer presses Send code, and a code arrives on their own phone.
+00:03:27,778 --> 00:03:31,328
+The frame appears and groups the number in fours.
 
 57
-00:03:03,242 --> 00:03:06,288
-They confirm, and the form says "Card accepted".
+00:03:31,378 --> 00:03:36,224
+The buyer presses Send code, and a code arrives on their own phone.
 
 58
-00:03:06,338 --> 00:03:10,344
-The page shows only the masked line, the network and the bank.
+00:03:36,274 --> 00:03:39,704
+They confirm, and the form says "Card accepted".
 
 59
-00:03:10,394 --> 00:03:12,456
-ecom asks for the charge by token.
+00:03:39,754 --> 00:03:44,432
+The page shows only the masked line, the network and the bank.
 
 60
-00:03:12,506 --> 00:03:14,328
-The page says "Paid".
+00:03:44,482 --> 00:03:47,000
+ecom asks for the charge by token.
 
 61
-00:03:14,378 --> 00:03:18,504
-Seven layers worked, and the buyer saw two fields and a button.
+00:03:47,050 --> 00:03:48,872
+The page says "Paid".
 
 62
-00:03:18,554 --> 00:03:21,744
-Later, Timur opens the card zone's logs for that payment.
+00:03:48,922 --> 00:03:53,816
+Seven layers worked, and the buyer saw two fields and a button.
 
 63
-00:03:21,794 --> 00:03:23,760
-He sees only the masked number.
+00:03:53,866 --> 00:03:57,896
+Later, Timur opens the card zone's logs for that payment.
 
 64
-00:03:23,810 --> 00:03:26,712
-He also sees who asked for what, and when.
+00:03:57,946 --> 00:04:00,200
+He sees only the masked number.
 
 65
-00:03:26,762 --> 00:03:29,736
-That night, Vault restarts after maintenance.
+00:04:00,250 --> 00:04:03,536
+He also sees who asked for what, and when.
 
 66
-00:03:29,786 --> 00:03:31,608
-It comes back locked.
+00:04:03,586 --> 00:04:07,136
+That night, Vault restarts after maintenance.
 
 67
-00:03:31,658 --> 00:03:37,800
-The card form refuses new cards, and an alert says a service the card zone depends on is unavailable.
+00:04:07,186 --> 00:04:09,008
+It comes back locked.
 
 68
-00:03:37,850 --> 00:03:41,064
-It stays that way until the keyholders meet and open it.
+00:04:09,058 --> 00:04:15,944
+The card form refuses new cards, and an alert says a service the card zone depends on is unavailable.
 
 69
-00:03:41,114 --> 00:03:44,712
-Timur cannot open it alone, and that is exactly the point.
+00:04:15,994 --> 00:04:20,096
+It stays that way until the keyholders meet and open it.
 
 70
-00:03:44,762 --> 00:03:48,192
-I trust no single layer, not even my favourite ones.
+00:04:20,146 --> 00:04:24,656
+Timur cannot open it alone, and that is exactly the point.
 
 71
-00:03:48,242 --> 00:03:50,760
-One day a script slips past review.
+00:04:24,706 --> 00:04:28,592
+I trust no single layer, not even my favourite ones.
 
 72
-00:03:50,810 --> 00:03:52,632
-A password leaks.
+00:04:28,642 --> 00:04:31,400
+One day a script slips past review.
 
 73
-00:03:52,682 --> 00:03:54,792
-A copy of the database escapes.
+00:04:31,450 --> 00:04:33,272
+A password leaks.
 
 74
-00:03:54,842 --> 00:04:01,080
-When one layer fails, the next one still holds, for the cardholders, for shops like Malika's, and for the bank.
+00:04:33,322 --> 00:04:35,768
+A copy of the database escapes.
 
 75
-00:04:01,130 --> 00:04:03,360
+00:04:35,818 --> 00:04:43,184
+When one layer fails, the next one still holds, for the cardholders, for shops like Malika's, and for the bank.
+
+76
+00:04:43,234 --> 00:04:49,688
+To recap: seven layers, from the gate to the keyholders, and none trusted alone.
+
+77
+00:04:49,738 --> 00:04:54,880
+So if one layer fails, does the card leak?
+
+78
+00:04:54,930 --> 00:04:57,784
+No, the next layer still holds.
+
+79
+00:04:57,834 --> 00:05:00,424
 Next: how a merchant signs up.
