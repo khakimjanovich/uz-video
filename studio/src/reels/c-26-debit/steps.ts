@@ -2,8 +2,8 @@ import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 
 // Lesson 26: Sunday's tulips, pressed twice at a bus stop. The bus stop (0–3), the bridge (4–5), many callers, one crash (6–13),
-// the rule (14–15), the claim (16–20), terminal and fee (21–24), the journal line first (25–29), the charge by token with its own id (30–37),
-// three answers (38–43), the buyer's page and the merchant portal (44–54), take a step away (55–59), the close (60–62), next (63).
+// the rule (15–16), the claim (17–21), terminal and fee (22–25), the journal line first (26–30), the charge by token with its own id (31–38),
+// three answers (39–44), the buyer's page and the merchant portal (45–55), take a step away (56–60), the close (61–63), next (63).
 const STOP = { buyer: [0, 1], m6Page: [1.5, 1], m6Ecom: [3, 1] } as const;
 const STOP_EDGES = [{ from: "buyer", to: "m6Page" }, { from: "m6Page", to: "m6Ecom" }] as const;
 const MANY = { buyer: [0, 0.2], merchant: [0, 1.8], m6Claim: [1.5, 1], m6Ecom: [3, 1] } as const;
@@ -56,12 +56,12 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 12, layout: { m6App: [0, 1], network: [3, 1] }, edges: [{ from: "m6App", to: "network" }], danger: ["m6App"], badges: { network: "money moved?" } },
   { cue: 13, layout: { m6App: [0, 1], network: [3, 1] }, edges: [{ from: "m6App", to: "network" }], danger: ["m6App"], badges: { m6App: "nobody knows" } },
   // The rule: decide who goes, write it down, then act.
-  journal(14, { badges: { m6Claim: "decide", journal: "write", network: "act" } }),
-  journal(15, { packets: [{ from: "m6Claim", to: "journal", label: "write", delay: 20 }, { from: "journal", to: "network", label: "act", delay: 90 }], badges: { m6Claim: "who goes" } }),
-  many(16, { accent: ["m6Claim"] }),
-  many(17, { badges: { m6Claim: "confirmed → debiting" } }),
-  many(18, { badges: { m6Claim: "still confirmed?" } }),
-  many(19, {
+  journal(15, { badges: { m6Claim: "decide", journal: "write", network: "act" } }),
+  journal(16, { packets: [{ from: "m6Claim", to: "journal", label: "write", delay: 20 }, { from: "journal", to: "network", label: "act", delay: 90 }], badges: { m6Claim: "who goes" } }),
+  many(17, { accent: ["m6Claim"] }),
+  many(18, { badges: { m6Claim: "confirmed → debiting" } }),
+  many(19, { badges: { m6Claim: "still confirmed?" } }),
+  many(20, {
     packets: [
       { from: "buyer", to: "m6Claim", label: "press", delay: 10 },
       { from: "merchant", to: "m6Claim", label: "retry", delay: 20 },
@@ -69,19 +69,19 @@ export const diagram: DiagramStep<BuildId>[] = [
       { from: "m6Claim", to: "m6Ecom", label: "one wins", delay: 75 },
     ],
   }),
-  many(20, { packets: [{ from: "m6Claim", to: "buyer", label: "taken", delay: 10 }, { from: "m6Claim", to: "merchant", label: "taken", delay: 10 }], badges: { buyer: "stop", merchant: "stop" } }),
-  find(21, {}),
-  find(22, { packets: [{ from: "m6Claim", to: "m6Terminal", label: "find" }], accent: ["m6Terminal"], badges: { m6Terminal: "for this card" } }),
-  find(23, { packets: [{ from: "m6Claim", to: "m6Fee", label: "find" }], accent: ["m6Fee"], badges: { m6Fee: "agreed with Malika" } }),
-  find(24, { danger: ["m6Terminal"], crossed: ["m6Terminal"], badges: { m6Claim: "nothing charged" } }),
-  journal(25, { packets: [{ from: "m6Claim", to: "journal", label: "a line" }], accent: ["journal"] }),
-  journal(26, { badges: { journal: "every money call" } }),
-  journal(27, { badges: { journal: "debit · requested" } }),
-  journal(28, { badges: { journal: "first", network: "not yet" } }),
-  journal(29, { badges: { journal: "one debit line" } }),
-  charge(30, { packets: [{ from: "m6Ecom", to: "m6Zone", label: "token" }] }),
-  charge(31, { packets: [{ from: "m6Ecom", to: "m6Zone", label: "token + id" }] }),
-  charge(32, {
+  many(21, { packets: [{ from: "m6Claim", to: "buyer", label: "taken", delay: 10 }, { from: "m6Claim", to: "merchant", label: "taken", delay: 10 }], badges: { buyer: "stop", merchant: "stop" } }),
+  find(22, {}),
+  find(23, { packets: [{ from: "m6Claim", to: "m6Terminal", label: "find" }], accent: ["m6Terminal"], badges: { m6Terminal: "for this card" } }),
+  find(24, { packets: [{ from: "m6Claim", to: "m6Fee", label: "find" }], accent: ["m6Fee"], badges: { m6Fee: "agreed with Malika" } }),
+  find(25, { danger: ["m6Terminal"], crossed: ["m6Terminal"], badges: { m6Claim: "nothing charged" } }),
+  journal(26, { packets: [{ from: "m6Claim", to: "journal", label: "a line" }], accent: ["journal"] }),
+  journal(27, { badges: { journal: "every money call" } }),
+  journal(28, { badges: { journal: "debit · requested" } }),
+  journal(29, { badges: { journal: "first", network: "not yet" } }),
+  journal(30, { badges: { journal: "one debit line" } }),
+  charge(31, { packets: [{ from: "m6Ecom", to: "m6Zone", label: "token" }] }),
+  charge(32, { packets: [{ from: "m6Ecom", to: "m6Zone", label: "token + id" }] }),
+  charge(33, {
     packets: [
       { from: "m6Ecom", to: "m6Zone", label: "id 7" },
       { from: "m6Ecom", to: "m6Zone", label: "id 7", delay: 45 },
@@ -89,32 +89,35 @@ export const diagram: DiagramStep<BuildId>[] = [
     ],
     badges: { m6Zone: "same id: once" },
   }),
-  route(33, { packets: [{ from: "m6Zone", to: "processing", label: "charge" }, { from: "processing", to: "issuer", label: "ask", delay: 50 }], badges: { m6Zone: "Timur's" } }),
-  route(34, { badges: { processing: "holds first" } }),
-  route(35, { packets: [{ from: "m6Zone", to: "processing", label: "take it" }], badges: { m6Zone: "at once" } }),
-  route(36, { badges: { m6Zone: "the capture" } }),
-  route(37, { packets: [{ from: "processing", to: "m6Zone", label: "approved" }], badges: { m6Zone: "money taken" } }),
-  charge(38, { badges: { m6Ecom: "three answers" } }),
-  charge(39, { packets: answer("approved"), accent: ["m6Ecom"], badges: { m6Ecom: "paid · reference" } }),
-  charge(40, { packets: answer("declined"), badges: { m6Ecom: "final · a reason" } }),
-  charge(41, { packets: [{ from: "m6Zone", to: "network", label: "charge", stopAt: 0.6 }], danger: ["network"], badges: { m6Ecom: "unknown" } }),
-  charge(42, { danger: ["network"], badges: { m6Ecom: "never declined" } }),
-  { cue: 43, layout: { m6Final: [1.5, 1] }, accent: ["m6Final"], badges: { m6Final: "paid stays paid" } },
+  route(34, { packets: [{ from: "m6Zone", to: "processing", label: "charge" }, { from: "processing", to: "issuer", label: "ask", delay: 50 }], badges: { m6Zone: "Timur's" } }),
+  route(35, { badges: { processing: "holds first" } }),
+  route(36, { packets: [{ from: "m6Zone", to: "processing", label: "take it" }], badges: { m6Zone: "at once" } }),
+  route(37, { badges: { m6Zone: "the capture" } }),
+  route(38, { packets: [{ from: "processing", to: "m6Zone", label: "approved" }], badges: { m6Zone: "money taken" } }),
+  charge(39, { badges: { m6Ecom: "three answers" } }),
+  charge(40, { packets: answer("approved"), accent: ["m6Ecom"], badges: { m6Ecom: "paid · reference" } }),
+  charge(41, { packets: answer("declined"), badges: { m6Ecom: "final · a reason" } }),
+  charge(42, { packets: [{ from: "m6Zone", to: "network", label: "charge", stopAt: 0.6 }], danger: ["network"], badges: { m6Ecom: "unknown" } }),
+  charge(43, { danger: ["network"], badges: { m6Ecom: "never declined" } }),
+  { cue: 44, layout: { m6Final: [1.5, 1] }, accent: ["m6Final"], badges: { m6Final: "paid stays paid" } },
   // Take away any step, and something breaks.
-  many(56, { packets: clicks, badges: { m6Ecom: "two charges" }, danger: ["m6Ecom"], crossed: ["m6Claim"] }),
-  { cue: 57, layout: { m6App: [0, 1], journal: [1.5, 2.1], network: [3, 1] }, edges: [{ from: "m6App", to: "network" }], crossed: ["journal"], danger: ["m6App"], badges: { network: "no record" } },
-  charge(58, { packets: [{ from: "m6Ecom", to: "m6Zone", label: "retry" }, { from: "m6Zone", to: "network", label: "charge again", delay: 50 }], danger: ["network"] }),
+  many(57, { packets: clicks, badges: { m6Ecom: "two charges" }, danger: ["m6Ecom"], crossed: ["m6Claim"] }),
+  { cue: 58, layout: { m6App: [0, 1], journal: [1.5, 2.1], network: [3, 1] }, edges: [{ from: "m6App", to: "network" }], crossed: ["journal"], danger: ["m6App"], badges: { network: "no record" } },
+  charge(59, { packets: [{ from: "m6Ecom", to: "m6Zone", label: "retry" }, { from: "m6Zone", to: "network", label: "charge again", delay: 50 }], danger: ["network"] }),
   {
-    cue: 59,
+    cue: 60,
     layout: { buyer: [0, 1], m6Ecom: [1.5, 1], network: [3, 1] },
     edges: [{ from: "m6Ecom", to: "buyer" }, { from: "m6Ecom", to: "network" }],
     packets: [{ from: "m6Ecom", to: "buyer", label: "pay again" }],
     danger: ["buyer"],
     badges: { network: "went through" },
   },
-  { cue: 60, layout: { buyer: [1.5, 1] }, accent: ["buyer"], badges: { buyer: "charged once" } },
-  { cue: 61, layout: { shop: [1.5, 1] }, accent: ["shop"], badges: { shop: "Malika: paid once" } },
-  journal(62, { accent: ["journal"], badges: { journal: "what, and when" } }),
+  { cue: 61, layout: { buyer: [1.5, 1] }, accent: ["buyer"], badges: { buyer: "charged once" } },
+  { cue: 62, layout: { shop: [1.5, 1] }, accent: ["shop"], badges: { shop: "Malika: paid once" } },
+  journal(63, { accent: ["journal"], badges: { journal: "what, and when" } }),
+  journal(64, { accent: ["journal"], badges: { m6Claim: "1 · claim", journal: "2 · write", network: "3 · charge" } }),
+  stop(65, { danger: ["buyer"], badges: { buyer: "2 presses", m6Ecom: "charged twice?" } }),
+  many(66, { accent: ["m6Claim"], badges: { m6Claim: "one caller wins" } }),
 ];
 
 export const map: BuildMapStep[] = [
@@ -122,27 +125,27 @@ export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 4, part: 5, current: ["buyer", "payment", "frame", "commission", "epos"] },
   { cue: 5, part: 5, current: ["payment", "procport", "card"] },
-  { cue: 55, part: 5, current: ["payment", "card"], units: { ecom: "every step needed" } },
-  { cue: 63, part: 5, current: ["payment", "procport", "adapters", "procsvc"], units: { cards: "silent?" } },
+  { cue: 56, part: 5, current: ["payment", "card"], units: { ecom: "every step needed" } },
+  { cue: 67, part: 5, current: ["payment", "procport", "adapters", "procsvc"], units: { cards: "silent?" } },
 ];
 
 const SHOT = (name: string) => `screens/c-26-debit/${name}.png`;
 const DONE = [330, 40, 780, 487] as const;
 const DRAWER = [820, 0, 620, 388] as const;
 export const screens: ScreenStep[] = [
-  { cue: 44, src: SHOT("debiting"), title: "Payment page", region: [...DONE], focus: [[480, 380, 480, 110]] },
-  { cue: 45, src: SHOT("paid"), title: "Payment page", region: [...DONE], focus: [[480, 380, 480, 110]] },
-  { cue: 46, src: SHOT("declined"), title: "Payment page", region: [...DONE], beats: [{ cue: 47, region: [...DONE], focus: [[480, 380, 480, 110]] }] },
-  { cue: 48, src: SHOT("list-paid"), title: "Merchant portal · Payments", region: [530, 200, 820, 525], beats: [{ cue: 49, region: [530, 200, 820, 525], focus: [[1220, 270, 120, 60]] }] },
+  { cue: 45, src: SHOT("debiting"), title: "Payment page", region: [...DONE], focus: [[480, 380, 480, 110]] },
+  { cue: 46, src: SHOT("paid"), title: "Payment page", region: [...DONE], focus: [[480, 380, 480, 110]] },
+  { cue: 47, src: SHOT("declined"), title: "Payment page", region: [...DONE], beats: [{ cue: 48, region: [...DONE], focus: [[480, 380, 480, 110]] }] },
+  { cue: 49, src: SHOT("list-paid"), title: "Merchant portal · Payments", region: [530, 200, 820, 525], beats: [{ cue: 50, region: [530, 200, 820, 525], focus: [[1220, 270, 120, 60]] }] },
   {
-    cue: 50,
+    cue: 51,
     src: SHOT("detail"),
     title: "Merchant portal · Payment",
     region: [...DRAWER],
     beats: [
-      { cue: 51, region: [...DRAWER], focus: [[836, 115, 290, 45]] },
-      { cue: 52, region: [...DRAWER], focus: [[836, 270, 300, 30]] },
-      { cue: 53, region: [...DRAWER], focus: [[840, 315, 400, 45]] },
+      { cue: 52, region: [...DRAWER], focus: [[836, 115, 290, 45]] },
+      { cue: 53, region: [...DRAWER], focus: [[836, 270, 300, 30]] },
+      { cue: 54, region: [...DRAWER], focus: [[840, 315, 400, 45]] },
     ],
   },
 ];

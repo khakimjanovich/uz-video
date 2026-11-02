@@ -7,14 +7,14 @@ import { diagram, map, screens } from "./steps";
 const TITLES = [
   "Sunday, 9:20", "The screen freezes", "Press again", "Charged exactly once", "Token, fee, terminal", "This lesson: the charge",
   "Only the start", "Retrying", "Two copies", "Each could charge", "A worse case", "Crashes", "Did money move?", "Nobody knows",
-  "My rule", "Decide, write, act", "The claim", "A single change", "Still card confirmed", "One caller wins", "The others stop",
+  "Exactly once?", "My rule", "Decide, write, act", "The claim", "A single change", "Still card confirmed", "One caller wins", "The others stop",
   "Two things", "A live terminal", "The agreed fee", "Nothing charged", "Operation journal", "The bank's logbook",
   "Debit, requested", "Before any network", "One debit line", "By its token", "Its own id", "Still once", "Timur's card zone",
   "Hold the money", "Take it at once", "The capture", "Money is taken", "Three answers", "Approved", "Declined", "Unknown",
   "Never declined", "Never unpaid again", "Taking the payment", "Paid", "Too little money", "Payment declined",
   "The merchant portal", "Tulips: paid", "She opens it", "The bank fee", "Calls to the card scheme", "One debit line",
   "Still one line", "Take away a step", "A double charge", "No record", "Charged again", "Pay again", "Charged once",
-  "Paid once", "What, and when", "Next: silence",
+  "Paid once", "What, and when", "Recap", "What stops a double pres?", "The answer", "Next: silence",
 ];
 
 export const C26DebitComposition = createEpisode({
@@ -26,5 +26,7 @@ export const C26DebitComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 64, // the story shows no course panel; it returns with the recap
   screens,
 });
