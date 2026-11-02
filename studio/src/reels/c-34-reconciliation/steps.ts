@@ -2,8 +2,8 @@ import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 
 // Lesson 36: reconciliation. Wednesday morning the bank is short, and two of Malika's payments look fine (cues 0–5),
-// the bridge (6–7), our side and theirs (8–13), pairs and their four checks (14–16), breaks and exceptions (17–28),
-// Dilnoza's screens (29–49), what it protects (50–52), next (53).
+// the bridge (6–7), our side and theirs (8–13), pairs and their four checks (14–16), breaks and exceptions (17–29),
+// Dilnoza's screens (30–50), what it protects (51–53), next (53).
 const MISTAKE = { m78Ours: [0.4, 1], processing: [2.6, 1] } as const;
 const MISTAKE_EDGE = [{ from: "m78Ours", to: "processing" }] as const;
 const BOOKS = { m78Ours: [0, 1], reconciliation: [1.5, 1], m78Theirs: [3, 1] } as const;
@@ -21,7 +21,7 @@ export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 6, part: 6, current: ["procsvc", "payment", "commission"], units: { ecom: "checked · counted" } },
   { cue: 7, part: 6, current: ["reconciliation", "procport", "adapters"] },
-  { cue: 53, part: 6, current: ["payment", "partner"] },
+  { cue: 57, part: 6, rows: [6], current: ["payment", "partner"] },
 ];
 
 export const diagram: DiagramStep<BuildId>[] = [
@@ -60,19 +60,23 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 17, layout: PAIR, edges: [...PAIR_EDGES], badges: { m78Pair: "a break" }, danger: ["m78Pair"] },
   { cue: 18, layout: PAIR, edges: [PAIR_EDGES[0]], badges: { m78Pair: "disagree or missing", m78Theirs: "no line" }, crossed: ["m78Theirs"], danger: ["m78Pair"] },
   { cue: 19, layout: PAIR, edges: [...PAIR_EDGES], badges: { m78Pair: "unknown at close" }, danger: ["m78Pair"] },
-  { cue: 20, layout: CASE, edges: [CASE_EDGES[0]], packets: [{ from: "m78Pair", to: "m78Exception", label: "exactly one" }], badges: { m78Exception: "owner · deadline" }, accent: ["m78Exception"] },
-  { cue: 21, layout: CASE, edges: [CASE_EDGES[0]], badges: { m78Exception: "an owner" }, accent: ["m78Exception"] },
-  { cue: 22, layout: CASE, edges: [CASE_EDGES[0]], badges: { m78Exception: "no owner: no fix" }, crossed: ["admin"], danger: ["m78Exception"] },
-  { cue: 23, layout: CASE, edges: [...CASE_EDGES], packets: [{ from: "admin", to: "m78Exception", label: "takes it" }] },
-  { cue: 24, layout: CASE, edges: [...CASE_EDGES], badges: { m78Exception: "resolved: evidence" }, accent: ["m78Exception"] },
-  { cue: 25, layout: CASE, edges: [...CASE_EDGES], badges: { m78Exception: "real difference" }, danger: ["m78Exception"] },
-  { cue: 26, layout: CASE, edges: [...CASE_EDGES], badges: { m78Exception: "write-off: closed" } },
-  { cue: 27, layout: DECIDE, edges: [...DECIDE_EDGES], packets: [{ from: "admin", to: "m78Exception", label: "write off?" }], badges: { checker: "someone else" }, accent: ["checker"] },
-  { cue: 28, layout: DECIDE, edges: [...DECIDE_EDGES], badges: { m78Exception: "every change written" } },
+  { cue: 20, layout: PAIR, edges: [...PAIR_EDGES], badges: { m78Pair: "a difference: then what?" }, danger: ["m78Pair"] },
+  { cue: 21, layout: CASE, edges: [CASE_EDGES[0]], packets: [{ from: "m78Pair", to: "m78Exception", label: "exactly one" }], badges: { m78Exception: "owner · deadline" }, accent: ["m78Exception"] },
+  { cue: 22, layout: CASE, edges: [CASE_EDGES[0]], badges: { m78Exception: "an owner" }, accent: ["m78Exception"] },
+  { cue: 23, layout: CASE, edges: [CASE_EDGES[0]], badges: { m78Exception: "no owner: no fix" }, crossed: ["admin"], danger: ["m78Exception"] },
+  { cue: 24, layout: CASE, edges: [...CASE_EDGES], packets: [{ from: "admin", to: "m78Exception", label: "takes it" }] },
+  { cue: 25, layout: CASE, edges: [...CASE_EDGES], badges: { m78Exception: "resolved: evidence" }, accent: ["m78Exception"] },
+  { cue: 26, layout: CASE, edges: [...CASE_EDGES], badges: { m78Exception: "real difference" }, danger: ["m78Exception"] },
+  { cue: 27, layout: CASE, edges: [...CASE_EDGES], badges: { m78Exception: "write-off: closed" } },
+  { cue: 28, layout: DECIDE, edges: [...DECIDE_EDGES], packets: [{ from: "admin", to: "m78Exception", label: "write off?" }], badges: { checker: "someone else" }, accent: ["checker"] },
+  { cue: 29, layout: DECIDE, edges: [...DECIDE_EDGES], badges: { m78Exception: "every change written" } },
   // What it protects.
-  { cue: 50, layout: BOOKS, edges: [...BOOKS_EDGES], badges: { reconciliation: "weeks apart?" }, crossed: ["reconciliation"], danger: ["m78Ours", "m78Theirs"] },
-  { cue: 51, layout: CASE, edges: [...CASE_EDGES], badges: { m78Pair: "found Wednesday", m78Exception: "one owner · deadline" }, accent: ["m78Exception"] },
-  { cue: 52, layout: { acquirer: [0.4, 1], shop: [2.6, 1] }, badges: { acquirer: "its money", shop: "Malika: nothing lost" }, accent: ["acquirer", "shop"] },
+  { cue: 51, layout: BOOKS, edges: [...BOOKS_EDGES], badges: { reconciliation: "weeks apart?" }, crossed: ["reconciliation"], danger: ["m78Ours", "m78Theirs"] },
+  { cue: 52, layout: CASE, edges: [...CASE_EDGES], badges: { m78Pair: "found Wednesday", m78Exception: "one owner · deadline" }, accent: ["m78Exception"] },
+  { cue: 53, layout: { acquirer: [0.4, 1], shop: [2.6, 1] }, badges: { acquirer: "its money", shop: "Malika: nothing lost" }, accent: ["acquirer", "shop"] },
+  { cue: 54, layout: CASE, edges: [...CASE_EDGES], badges: { m78Exception: "one owner" }, accent: ["m78Exception", "admin"] },
+  { cue: 55, layout: DECIDE, edges: [...DECIDE_EDGES], badges: { checker: "who decides?" }, danger: ["m78Exception"] },
+  { cue: 56, layout: DECIDE, edges: [...DECIDE_EDGES], badges: { admin: "asked", checker: "a second admin" }, accent: ["checker"] },
 ];
 
 const S = "screens/c-34-reconciliation";
@@ -85,72 +89,72 @@ const MID: Box = [820, 300, 620, 388];
 const LOW: Box = [820, 512, 620, 388];
 export const screens: ScreenStep[] = [
   {
-    cue: 29,
+    cue: 30,
     src: `${S}/runs.png`,
     title: "Bank console · Reconciliation",
     region: PAGE,
     focus: [[248, 80, 220, 40]],
     beats: [
-      { cue: 30, region: PAGE, focus: [[260, 156, 435, 36]] },
-      { cue: 31, region: RIGHT, focus: [[1150, 290, 120, 50]] },
-      { cue: 32, region: PAGE, focus: [[261, 280, 1158, 82]] },
-      { cue: 33, region: PAGE, focus: [[1010, 290, 120, 50]] },
+      { cue: 31, region: PAGE, focus: [[260, 156, 435, 36]] },
+      { cue: 32, region: RIGHT, focus: [[1150, 290, 120, 50]] },
+      { cue: 33, region: PAGE, focus: [[261, 280, 1158, 82]] },
+      { cue: 34, region: PAGE, focus: [[1010, 290, 120, 50]] },
     ],
   },
   {
-    cue: 34,
+    cue: 35,
     src: `${S}/items.png`,
     title: "Bank console · Reconciliation",
     region: ITEMS,
     focus: [[280, 520, 160, 180]],
     beats: [
-      { cue: 35, region: ITEMS, focus: [[480, 522, 130, 36]] },
-      { cue: 36, region: [700, 380, 740, 462], focus: [[1080, 522, 190, 36]] },
+      { cue: 36, region: ITEMS, focus: [[480, 522, 130, 36]] },
+      { cue: 37, region: [700, 380, 740, 462], focus: [[1080, 522, 190, 36]] },
     ],
   },
   {
-    cue: 37,
+    cue: 38,
     src: `${S}/exceptions.png`,
     title: "Bank console · Exceptions",
     region: PAGE,
     focus: [[248, 80, 400, 40]],
     beats: [
-      { cue: 38, region: PAGE, focus: [[261, 212, 1158, 207]] },
-      { cue: 39, region: RIGHT, focus: [[1240, 266, 175, 52]] },
+      { cue: 39, region: PAGE, focus: [[261, 212, 1158, 207]] },
+      { cue: 40, region: RIGHT, focus: [[1240, 266, 175, 52]] },
     ],
   },
-  { cue: 40, src: `${S}/taken.png`, title: "Bank console · Exception", region: [700, 420, 740, 462], focus: [[984, 836, 440, 48]] },
+  { cue: 41, src: `${S}/taken.png`, title: "Bank console · Exception", region: [700, 420, 740, 462], focus: [[984, 836, 440, 48]] },
   {
-    cue: 41,
+    cue: 42,
     src: `${S}/reason.png`,
     title: "Bank console · Exception",
     region: MID,
     focus: [[853, 430, 554, 82]],
-    beats: [{ cue: 42, region: MID, focus: [[952, 522, 120, 30]] }],
+    beats: [{ cue: 43, region: MID, focus: [[952, 522, 120, 30]] }],
   },
-  { cue: 43, src: `${S}/ask-write-off.png`, title: "Bank console · Exception", region: LOW, focus: [[984, 836, 440, 48]] },
+  { cue: 44, src: `${S}/ask-write-off.png`, title: "Bank console · Exception", region: LOW, focus: [[984, 836, 440, 48]] },
   {
-    cue: 44,
+    cue: 45,
     src: `${S}/requester.png`,
     title: "Bank console · Exception · same admin",
     region: MID,
     focus: [[853, 580, 554, 34]],
-    beats: [{ cue: 45, region: MID, focus: [[853, 616, 554, 26]] }],
+    beats: [{ cue: 46, region: MID, focus: [[853, 616, 554, 26]] }],
   },
   {
-    cue: 46,
+    cue: 47,
     src: `${S}/approver.png`,
     title: "Bank console · Exception · second admin",
     region: MID,
     focus: [[836, 414, 588, 41]],
-    beats: [{ cue: 47, region: MID, focus: [[952, 579, 135, 30]] }],
+    beats: [{ cue: 48, region: MID, focus: [[952, 579, 135, 30]] }],
   },
   {
-    cue: 48,
+    cue: 49,
     src: `${S}/written-off.png`,
     title: "Bank console · Exception",
     region: TOP,
     focus: [[836, 62, 102, 20]],
-    beats: [{ cue: 49, region: LOW, focus: [[836, 523, 588, 378]] }],
+    beats: [{ cue: 50, region: LOW, focus: [[836, 523, 588, 378]] }],
   },
 ];
