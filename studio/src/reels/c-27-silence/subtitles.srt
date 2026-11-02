@@ -1,211 +1,227 @@
 1
-00:00:00,050 --> 00:00:02,520
+00:00:00,050 --> 00:00:02,784
 Thursday, ten to eleven at night.
 
 2
-00:00:02,570 --> 00:00:08,496
+00:00:02,834 --> 00:00:09,720
 A buyer pays Malika for a wedding bouquet, and ecom asks the card zone to charge the card.
 
 3
-00:00:08,546 --> 00:00:10,368
+00:00:09,770 --> 00:00:11,592
 Then nothing.
 
 4
-00:00:10,418 --> 00:00:17,064
+00:00:11,642 --> 00:00:19,824
 The card processing centre is slow, or its reply is lost on the way, and the bank's chosen waiting time runs out.
 
 5
-00:00:17,114 --> 00:00:19,392
+00:00:19,874 --> 00:00:22,560
 The buyer's card may already be charged.
 
 6
-00:00:19,442 --> 00:00:21,264
+00:00:22,610 --> 00:00:24,432
 Or it may not.
 
 7
-00:00:21,314 --> 00:00:32,496
+00:00:24,482 --> 00:00:37,680
 In Lesson 27, a charge like this was marked unknown, never declined, and in Lesson 8, every charge carried our own payment id, so a centre can be asked about it later.
 
 8
-00:00:32,546 --> 00:00:38,496
+00:00:37,730 --> 00:00:44,472
 This lesson asks that question, patiently, until the charge is found or a person decides.
 
 9
-00:00:38,546 --> 00:00:40,704
+00:00:44,522 --> 00:00:47,040
 There are three tempting mistakes here.
 
 10
-00:00:40,754 --> 00:00:45,432
+00:00:47,090 --> 00:00:52,584
 Call it declined, and the buyer pays again, so the card is charged twice.
 
 11
-00:00:45,482 --> 00:00:48,744
+00:00:52,634 --> 00:00:56,568
 Send the charge again, and the result is the same.
 
 12
-00:00:48,794 --> 00:00:53,880
+00:00:56,618 --> 00:01:02,472
 Wait in the app's memory, and the app restarts, and nobody ever finds out.
 
 13
-00:00:53,930 --> 00:00:59,160
+00:01:02,522 --> 00:01:08,736
 I think silence is the hardest case in payments, because every quick answer to it is wrong.
 
 14
-00:00:59,210 --> 00:01:01,488
-So the first rule is a refusal.
+00:01:08,786 --> 00:01:15,104
+When the network goes silent, what should the bank do with the charge?
 
 15
-00:01:01,538 --> 00:01:07,584
-An unknown charge is never declined, and never sent again, because the money may already have moved.
+00:01:15,154 --> 00:01:17,840
+So the first rule is a refusal.
 
 16
-00:01:07,634 --> 00:01:10,440
-The buyer's page tells them not to pay again.
+00:01:17,890 --> 00:01:25,160
+An unknown charge is never declined, and never sent again, because the money may already have moved.
 
 17
-00:01:10,490 --> 00:01:12,984
-Then a durable workflow takes over.
+00:01:25,210 --> 00:01:28,520
+The buyer's page tells them not to pay again.
 
 18
-00:01:13,034 --> 00:01:17,304
-It is a task that remembers where it is, even when the app restarts.
+00:01:28,570 --> 00:01:31,520
+Then a durable workflow takes over.
 
 19
-00:01:17,354 --> 00:01:22,824
-There is exactly one for each payment, so two copies can never chase the same charge.
+00:01:31,570 --> 00:01:36,320
+It is a task that remembers where it is, even when the app restarts.
 
 20
-00:01:22,874 --> 00:01:28,200
-It asks the card processing centre about this one charge only, by the payment's own id.
+00:01:36,370 --> 00:01:42,608
+There is exactly one for each payment, so two copies can never chase the same charge.
 
 21
-00:01:28,250 --> 00:01:30,072
-These are questions only.
+00:01:42,658 --> 00:01:48,872
+It asks the card processing centre about this one charge only, by the payment's own id.
 
 22
-00:01:30,122 --> 00:01:31,944
-They never move money.
+00:01:48,922 --> 00:01:50,576
+These are questions only.
 
 23
-00:01:31,994 --> 00:01:36,912
-Between questions it waits, and each wait is longer than the one before.
+00:01:50,626 --> 00:01:52,448
+They never move money.
 
 24
-00:01:36,962 --> 00:01:38,784
-That pattern is backoff.
+00:01:52,498 --> 00:01:58,136
+Between questions it waits, and each wait is longer than the one before.
 
 25
-00:01:38,834 --> 00:01:41,664
-It gives a struggling network room to recover.
+00:01:58,186 --> 00:02:00,152
+That pattern is backoff.
 
 26
-00:01:41,714 --> 00:01:43,536
-Found means paid.
+00:02:00,202 --> 00:02:03,536
+It gives a struggling network room to recover.
 
 27
-00:01:43,586 --> 00:01:47,520
-Not found means declined, but only once the network has had time to know.
+00:02:03,586 --> 00:02:05,408
+Found means paid.
 
 28
-00:01:47,570 --> 00:01:52,728
-If the charge is found after the buyer's page has closed, the order is already over.
+00:02:05,458 --> 00:02:10,184
+Not found means declined, but only once the network has had time to know.
 
 29
-00:01:52,778 --> 00:01:54,672
-So the money goes back to the card.
+00:02:10,234 --> 00:02:16,112
+If the charge is found after the buyer's page has closed, the order is already over.
 
 30
-00:01:54,722 --> 00:02:00,288
-The questions stop before the card processing centre's daily cutoff, less the bank's chosen margin.
+00:02:16,162 --> 00:02:18,464
+So the money goes back to the card.
 
 31
-00:02:00,338 --> 00:02:02,856
-That leaves time to give money back the same day.
+00:02:18,514 --> 00:02:24,968
+The questions stop before the card processing centre's daily cutoff, less the bank's chosen margin.
 
 32
-00:02:02,906 --> 00:02:06,048
-Anything still unknown then goes to manual review.
+00:02:25,018 --> 00:02:28,064
+That leaves time to give money back the same day.
 
 33
-00:02:06,098 --> 00:02:09,816
-A person at the bank checks with the network, and records the answer.
+00:02:28,114 --> 00:02:31,760
+Anything still unknown then goes to manual review.
 
 34
-00:02:09,866 --> 00:02:13,416
-Here is the wedding bouquet, as everyone sees it.
+00:02:31,810 --> 00:02:36,152
+A person at the bank checks with the network, and records the answer.
 
 35
-00:02:13,466 --> 00:02:19,200
-On the buyer's phone, the page says we're confirming your payment, and adds: don't pay again.
+00:02:36,202 --> 00:02:40,328
+Here is the wedding bouquet, as everyone sees it.
 
 36
-00:02:19,250 --> 00:02:23,352
-In Malika's merchant portal, the status reads checking with the bank.
+00:02:40,378 --> 00:02:46,856
+On the buyer's phone, the page says we're confirming your payment, and adds: don't pay again.
 
 37
-00:02:23,402 --> 00:02:28,440
-She opens it, and the calls to the card scheme show one debit line, with no answer.
+00:02:46,906 --> 00:02:51,752
+In Malika's merchant portal, the status reads checking with the bank.
 
 38
-00:02:28,490 --> 00:02:31,704
-Most nights, the workflow gets its answer a little later.
+00:02:51,802 --> 00:02:57,680
+She opens it, and the calls to the card scheme show one debit line, with no answer.
 
 39
-00:02:31,754 --> 00:02:36,792
-The status changes to paid, or to declined, and Malika is told.
+00:02:57,730 --> 00:03:01,544
+Most nights, the workflow gets its answer a little later.
 
 40
-00:02:36,842 --> 00:02:38,880
-Tonight is the rare case.
+00:03:01,594 --> 00:03:07,112
+The status changes to paid, or to declined, and Malika is told.
 
 41
-00:02:38,930 --> 00:02:42,096
-The day's deadline nears, and there is still no answer.
+00:03:07,162 --> 00:03:09,512
+Tonight is the rare case.
 
 42
-00:02:42,146 --> 00:02:44,712
-The status changes to being checked by a person.
+00:03:09,562 --> 00:03:13,400
+The day's deadline nears, and there is still no answer.
 
 43
-00:02:44,762 --> 00:02:50,664
-In the bank's admin portal, Dilnoza sees the payment under needs review, with how long it has waited.
+00:03:13,450 --> 00:03:16,640
+The status changes to being checked by a person.
 
 44
-00:02:50,714 --> 00:02:54,264
-She asks the network, then picks debited or not debited.
+00:03:16,690 --> 00:03:23,336
+In the bank's admin portal, Dilnoza sees the payment under needs review, with how long it has waited.
 
 45
-00:02:54,314 --> 00:02:58,008
-For debited, she enters the network's reference for the charge.
+00:03:23,386 --> 00:03:27,488
+She asks the network, then picks debited or not debited.
 
 46
-00:02:58,058 --> 00:03:02,760
-Either way, she writes a note: who at the network confirmed it, and how.
+00:03:27,538 --> 00:03:31,832
+For debited, she enters the network's reference for the charge.
 
 47
-00:03:02,810 --> 00:03:04,992
-That note is saved for audit.
+00:03:31,882 --> 00:03:37,472
+Either way, she writes a note: who at the network confirmed it, and how.
 
 48
-00:03:05,042 --> 00:03:08,808
-She presses resolve, and the payment takes its final state.
+00:03:37,522 --> 00:03:39,992
+That note is saved for audit.
 
 49
-00:03:08,858 --> 00:03:12,288
-By morning, the buyer has paid once, or not at all.
+00:03:40,042 --> 00:03:44,432
+She presses resolve, and the payment takes its final state.
 
 50
-00:03:12,338 --> 00:03:17,904
-Malika ships a bouquet only if it was paid, and never refuses one that was.
+00:03:44,482 --> 00:03:48,536
+By morning, the buyer has paid once, or not at all.
 
 51
-00:03:17,954 --> 00:03:20,952
-The bank can explain every charge at the end of the day.
+00:03:48,586 --> 00:03:54,728
+Malika ships a bouquet only if it was paid, and never refuses one that was.
 
 52
-00:03:21,002 --> 00:03:24,696
-And none of it depended on the app staying up, or on anyone remembering.
+00:03:54,778 --> 00:03:58,256
+The bank can explain every charge at the end of the day.
 
 53
-00:03:24,746 --> 00:03:27,312
+00:03:58,306 --> 00:04:02,600
+And none of it depended on the app staying up, or on anyone remembering.
+
+54
+00:04:02,650 --> 00:04:08,648
+To recap: an unknown charge is asked about, never declined and never sent again.
+
+55
+00:04:08,698 --> 00:04:14,704
+And if the network never answers, who decides in the end?
+
+56
+00:04:14,754 --> 00:04:18,016
+A person at the bank, who records the answer.
+
+57
+00:04:18,066 --> 00:04:20,968
 Next: how the shop hears about a payment.
