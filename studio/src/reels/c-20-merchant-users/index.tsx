@@ -5,15 +5,15 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Early March", "Flowers for the 8th", "A helper for the week", "Lessons 16 and 19",
-  "Share one login?", "The costly shortcut", "A refund to a friend", "Change for everyone",
-  "Malika opens Users", "Exactly one role", "There are four", "The admin", "The accountant", "The operator", "The observer",
+  "Early March", "Flowers for the 8th", "A helper for the week", "Lessons 16 and 19", "Share one login?",
+  "The costly shortcut", "A refund to a friend", "Change for everyone", "Malika opens Users",
+  "Exactly one role", "There are four", "The admin", "The accountant", "The operator", "The observer",
   "Invite a user", "Operator", "Invitation sent", "Never their password", "The helper's inbox",
-  "Authenticator app", "Money can go back", "They sign in", "Payments", "No Users item", "Not offered",
-  "Roles per action", "Least privilege", "A stolen login", "The Accountant role", "Signed out at once",
-  "The ninth of March", "Block the helper", "Asked first", "Still names the helper",
-  "Block herself?", "The only admin", "Block stays grey", "Never locked out",
-  "A login each", "The same minute", "Next: second website",
+  "Authenticator app", "Money can go back", "They sign in", "Payments", "What is missing?", "No Users item",
+  "Not offered", "Roles per action", "Least privilege", "A stolen login", "The Accountant role",
+  "Signed out at once", "The ninth of March", "Block the helper", "Asked first", "Still names the helper",
+  "Block herself?", "The only admin", "Block stays grey", "Never locked out", "A login each", "The same minute",
+  "Recap", "Who adds people?", "Only an admin", "Next: second website",
 ];
 
 export const C20MerchantUsersComposition = createEpisode({
@@ -26,4 +26,6 @@ export const C20MerchantUsersComposition = createEpisode({
   map,
   diagram,
   screens,
+  focus: true,
+  hidePanelBefore: 45, // the story shows no course panel; it returns at the closing "Next" line
 });
