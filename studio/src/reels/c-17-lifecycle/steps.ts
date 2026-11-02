@@ -4,7 +4,7 @@ import { BuildId } from "../../series/build/nodes";
 // Lesson 17: earning the right to take money, told through Malika's Monday and Dilnoza's review.
 // Monday morning (0), the bridge (1), the documents page (2–5), know your business (6–9), upload (10–12),
 // the file store and the trick (13–17), the checksum (18–19), Dilnoza's review (20–28), the contract number (29),
-// the status history (30–35), who it protects (36–37), still no money (38–39), next (40).
+// the status history (30–36), who it protects (37–38), still no money (39–40), next (44).
 const STATES = { stPending: [0, 1], stVerified: [1, 1], stContract: [2, 1], stActive: [3, 1] } as const;
 const STATE_EDGES = [
   { from: "stPending", to: "stVerified" },
@@ -48,20 +48,22 @@ export const diagram: DiagramStep<BuildId>[] = [
     packets: [{ from: "stPending", to: "m45History", label: "who · why" }, { from: "stContract", to: "m45History", label: "from · to", delay: 45 }],
   },
   { cue: 33, layout: { ...HIGH, m45History: [1.5, 2] }, edges: [...STATE_EDGES], accent: ["m45History"], badges: { m45History: "first, not last" } },
-  { cue: 34, layout: { ...HIGH, m45History: [1.5, 2] }, edges: [...STATE_EDGES], accent: ["m45History"], badges: { m45History: "no record, no move" } },
-  { cue: 35, layout: { m45BankAdmin: [0, 1], m45History: [2.5, 1] }, edges: [{ from: "m45BankAdmin", to: "m45History", label: "why let in?" }], accent: ["m45History"], badges: { m45History: "Dilnoza · Monday" } },
+  { cue: 35, layout: { ...HIGH, m45History: [1.5, 2] }, edges: [...STATE_EDGES], accent: ["m45History"], badges: { m45History: "no record, no move" } },
+  { cue: 36, layout: { m45BankAdmin: [0, 1], m45History: [2.5, 1] }, edges: [{ from: "m45BankAdmin", to: "m45History", label: "why let in?" }], accent: ["m45History"], badges: { m45History: "Dilnoza · Monday" } },
   // Who it protects.
-  { cue: 36, layout: { m45Docs: [0, 1], bank: [2, 0.3], buyer: [2, 1.9] }, edges: [{ from: "m45Docs", to: "bank" }, { from: "m45Docs", to: "buyer" }], accent: ["m45Docs"], badges: { m45Docs: "know your business" } },
-  { cue: 37, layout: { m45BankAdmin: [0, 1], m45History: [2.5, 1] }, edges: [{ from: "m45BankAdmin", to: "m45History", label: "what · when" }], accent: ["m45BankAdmin"], badges: { m45BankAdmin: "Dilnoza" } },
+  { cue: 37, layout: { m45Docs: [0, 1], bank: [2, 0.3], buyer: [2, 1.9] }, edges: [{ from: "m45Docs", to: "bank" }, { from: "m45Docs", to: "buyer" }], accent: ["m45Docs"], badges: { m45Docs: "know your business" } },
+  { cue: 38, layout: { m45BankAdmin: [0, 1], m45History: [2.5, 1] }, edges: [{ from: "m45BankAdmin", to: "m45History", label: "what · when" }], accent: ["m45BankAdmin"], badges: { m45BankAdmin: "Dilnoza" } },
   // Checked papers and a contract, but still no money.
-  { cue: 38, layout: { ...HIGH, m45Contract: [2, 2] }, edges: [...STATE_EDGES, { from: "stContract", to: "m45Contract" }], accent: ["stContract"], badges: { m45Contract: "C-2026-0042" } },
-  { cue: 39, layout: STATES, edges: [...STATE_EDGES], accent: ["stContract"], badges: { stActive: "not yet" } },
+  { cue: 39, layout: { ...HIGH, m45Contract: [2, 2] }, edges: [...STATE_EDGES, { from: "stContract", to: "m45Contract" }], accent: ["stContract"], badges: { m45Contract: "C-2026-0042" } },
+  { cue: 40, layout: STATES, edges: [...STATE_EDGES], accent: ["stContract"], badges: { stActive: "not yet" } },
+  // The recap's answer.
+  { cue: 43, layout: STATES, edges: [...STATE_EDGES], accent: ["stContract"], badges: { stActive: "needs a second admin" } },
 ];
 
 export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the one before.
   { cue: 1, part: 4, current: ["partner", "admin"] },
-  { cue: 40, part: 4, current: ["partner", "admin"], units: { ecom: "next: two people" } },
+  { cue: 44, part: 4, rows: [4], current: ["partner", "admin"], units: { ecom: "next: two people" } },
 ];
 
 const DIR = "screens/c-17-lifecycle";
