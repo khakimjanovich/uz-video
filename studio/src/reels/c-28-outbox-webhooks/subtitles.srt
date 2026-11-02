@@ -1,215 +1,231 @@
 1
-00:00:00,050 --> 00:00:02,640
+00:00:00,050 --> 00:00:03,048
 Monday, a quarter past eight in the morning.
 
 2
-00:00:02,690 --> 00:00:07,920
+00:00:03,098 --> 00:00:09,696
 A buyer pays for a box of peonies, and at that exact moment, the bank's app restarts.
 
 3
-00:00:07,970 --> 00:00:12,192
+00:00:09,746 --> 00:00:14,280
 Malika ships only when the bank tells her shop that a payment is paid.
 
 4
-00:00:12,242 --> 00:00:16,464
+00:00:14,330 --> 00:00:19,152
 So the question is simple: will that news ever arrive?
 
 5
-00:00:16,514 --> 00:00:27,480
+00:00:19,202 --> 00:00:31,920
 In Lesson 27, a payment ended paid or declined, in Lesson 28, even a silent one found its end, and in Lesson 1, the shop's server was told how its payment ended.
 
 6
-00:00:27,530 --> 00:00:32,088
+00:00:31,970 --> 00:00:37,128
 This lesson makes sure that news is never lost, and never invented.
 
 7
-00:00:32,138 --> 00:00:34,368
+00:00:37,178 --> 00:00:39,696
 The naive way takes two steps.
 
 8
-00:00:34,418 --> 00:00:37,944
+00:00:39,746 --> 00:00:43,872
 The app saves the payment as paid, and then tells the shop.
 
 9
-00:00:37,994 --> 00:00:41,448
+00:00:43,922 --> 00:00:48,120
 If it crashes between those steps, the shop never hears.
 
 10
-00:00:41,498 --> 00:00:45,096
+00:00:48,170 --> 00:00:52,464
 Malika ships nothing, and the buyer has paid for nothing.
 
 11
-00:00:45,146 --> 00:00:47,496
+00:00:52,514 --> 00:00:55,272
 Swap the order, and it is worse.
 
 12
-00:00:47,546 --> 00:00:51,120
+00:00:55,322 --> 00:00:59,448
 The app tells the shop paid, then crashes before saving.
 
 13
-00:00:51,170 --> 00:00:55,296
+00:00:59,498 --> 00:01:04,248
 Now Malika ships peonies for a payment that does not exist.
 
 14
-00:00:55,346 --> 00:00:58,608
+00:01:04,298 --> 00:01:08,400
 Two separate steps can always be split by a crash.
 
 15
-00:00:58,658 --> 00:01:04,560
+00:01:08,450 --> 00:01:15,360
 Most systems are built this way, and they work, until the one restart that lands in between.
 
 16
-00:01:04,610 --> 00:01:10,560
-So when a payment reaches its end, such as paid or declined, its news is written to the outbox.
+00:01:15,410 --> 00:01:20,912
+How can a payment and its news never come apart?
 
 17
-00:01:10,610 --> 00:01:14,208
-The outbox is a tray inside the bank's own records.
+00:01:20,962 --> 00:01:28,088
+So when a payment reaches its end, such as paid or declined, its news is written to the outbox.
 
 18
-00:01:14,258 --> 00:01:18,648
-The news and the payment's final state are saved together, in one step.
+00:01:28,138 --> 00:01:32,264
+The outbox is a tray inside the bank's own records.
 
 19
-00:01:18,698 --> 00:01:21,600
-Either both are saved, or neither is.
+00:01:32,314 --> 00:01:37,376
+The news and the payment's final state are saved together, in one step.
 
 20
-00:01:21,650 --> 00:01:26,520
-There is never a paid payment without its news, and never news without a paid payment.
+00:01:37,426 --> 00:01:40,832
+Either both are saved, or neither is.
 
 21
-00:01:26,570 --> 00:01:28,392
-Next comes the relay.
+00:01:40,882 --> 00:01:46,424
+There is never a paid payment without its news, and never news without a paid payment.
 
 22
-00:01:28,442 --> 00:01:34,176
-It keeps collecting the oldest unsent news from the outbox, and passes it to the bank's message stream.
+00:01:46,474 --> 00:01:48,296
+Next comes the relay.
 
 23
-00:01:34,226 --> 00:01:36,888
-Several copies of the app may run at once.
+00:01:48,346 --> 00:01:55,208
+It keeps collecting the oldest unsent news from the outbox, and passes it to the bank's message stream.
 
 24
-00:01:36,938 --> 00:01:40,584
-Each copy takes different news, so no two pick the same one.
+00:01:55,258 --> 00:01:58,304
+Several copies of the app may run at once.
 
 25
-00:01:40,634 --> 00:01:43,656
-Every piece of news is labelled with its payment.
+00:01:58,354 --> 00:02:02,840
+Each copy takes different news, so no two pick the same one.
 
 26
-00:01:43,706 --> 00:01:48,408
-So all the news about one payment travels in one line, always in order.
+00:02:02,890 --> 00:02:06,344
+Every piece of news is labelled with its payment.
 
 27
-00:01:48,458 --> 00:01:50,616
-Paid can never overtake created.
+00:02:06,394 --> 00:02:11,816
+So all the news about one payment travels in one line, always in order.
 
 28
-00:01:50,666 --> 00:01:55,416
-The relay marks news as sent only after the stream confirms it has it.
+00:02:11,866 --> 00:02:14,384
+Paid can never overtake created.
 
 29
-00:01:55,466 --> 00:02:00,408
-So consider a crash at the worst moment: after sending, but before marking.
+00:02:14,434 --> 00:02:20,048
+The relay marks news as sent only after the stream confirms it has it.
 
 30
-00:02:00,458 --> 00:02:03,672
-When the app starts again, it sends that news once more.
+00:02:20,098 --> 00:02:25,928
+So consider a crash at the worst moment: after sending, but before marking.
 
 31
-00:02:03,722 --> 00:02:05,568
-That is at least once delivery.
+00:02:25,978 --> 00:02:29,840
+When the app starts again, it sends that news once more.
 
 32
-00:02:05,618 --> 00:02:08,856
-News may arrive twice, but never zero times.
+00:02:29,890 --> 00:02:32,120
+That is at least once delivery.
 
 33
-00:02:08,906 --> 00:02:13,296
-To make repeats harmless, every piece of news carries its own id.
+00:02:32,170 --> 00:02:36,080
+News may arrive twice, but never zero times.
 
 34
-00:02:13,346 --> 00:02:17,232
-A reader who sees an id twice simply drops the second one.
+00:02:36,130 --> 00:02:41,408
+To make repeats harmless, every piece of news carries its own id.
 
 35
-00:02:17,282 --> 00:02:19,656
-One more rule keeps this simple.
+00:02:41,458 --> 00:02:45,848
+A reader who sees an id twice simply drops the second one.
 
 36
-00:02:19,706 --> 00:02:21,912
-The bank's records stay the truth.
+00:02:45,898 --> 00:02:48,704
+One more rule keeps this simple.
 
 37
-00:02:21,962 --> 00:02:24,408
-The stream only carries the news about it.
+00:02:48,754 --> 00:02:51,488
+The bank's records stay the truth.
 
 38
-00:02:24,458 --> 00:02:26,688
-Here is how it looks on an ordinary day.
+00:02:51,538 --> 00:02:54,440
+The stream only carries the news about it.
 
 39
-00:02:26,738 --> 00:02:28,560
-A buyer pays.
+00:02:54,490 --> 00:02:57,152
+Here is how it looks on an ordinary day.
 
 40
-00:02:28,610 --> 00:02:31,200
-In the merchant portal, the payment shows paid.
+00:02:57,202 --> 00:02:58,592
+A buyer pays.
 
 41
-00:02:31,250 --> 00:02:38,064
-Malika opens it, and the webhooks section soon shows its first piece of news, on its way to her shop's server.
+00:02:58,642 --> 00:03:01,664
+In the merchant portal, the payment shows paid.
 
 42
-00:02:38,114 --> 00:02:39,960
-Now back to Monday's restart.
+00:03:01,714 --> 00:03:09,608
+Malika opens it, and the webhooks section soon shows its first piece of news, on its way to her shop's server.
 
 43
-00:02:40,010 --> 00:02:43,104
-The bank's app stopped at the exact moment the peonies were paid.
+00:03:09,658 --> 00:03:11,984
+Now back to Monday's restart.
 
 44
-00:02:43,154 --> 00:02:45,048
-It started again a minute later.
+00:03:12,034 --> 00:03:15,560
+The bank's app stopped at the exact moment the peonies were paid.
 
 45
-00:02:45,098 --> 00:02:48,456
-The payment is still paid, and its news still goes out.
+00:03:15,610 --> 00:03:17,792
+It started again a minute later.
 
 46
-00:02:48,506 --> 00:02:50,328
-Nothing is missing.
+00:03:17,842 --> 00:03:21,632
+The payment is still paid, and its news still goes out.
 
 47
-00:02:50,378 --> 00:02:54,288
-On Bekzod's server, that news may now arrive twice.
+00:03:21,682 --> 00:03:23,504
+Nothing is missing.
 
 48
-00:02:54,338 --> 00:02:56,280
-Both copies carry the same id.
+00:03:23,554 --> 00:03:27,872
+On Bekzod's server, that news may now arrive twice.
 
 49
-00:02:56,330 --> 00:02:59,280
-His server keeps the first and drops the second.
+00:03:27,922 --> 00:03:30,128
+Both copies carry the same id.
 
 50
-00:02:59,330 --> 00:03:03,432
-So Malika never waits forever for news lost in a crash.
+00:03:30,178 --> 00:03:33,656
+His server keeps the first and drops the second.
 
 51
-00:03:03,482 --> 00:03:07,464
-She never ships because of news about a payment that never happened.
+00:03:33,706 --> 00:03:38,648
+So Malika never waits forever for news lost in a crash.
 
 52
-00:03:07,514 --> 00:03:09,792
-And she never sees refunded before paid.
+00:03:38,698 --> 00:03:43,496
+She never ships because of news about a payment that never happened.
 
 53
-00:03:09,842 --> 00:03:14,112
-The bank never has to explain news that its own records do not show.
+00:03:43,546 --> 00:03:46,352
+And she never sees refunded before paid.
 
 54
-00:03:14,162 --> 00:03:17,304
+00:03:46,402 --> 00:03:51,392
+The bank never has to explain news that its own records do not show.
+
+55
+00:03:51,442 --> 00:03:58,424
+To recap: the payment and its news are saved together, and the news is sent at least once.
+
+56
+00:03:58,474 --> 00:04:04,264
+So what if the app crashes right after the payment is saved?
+
+57
+00:04:04,314 --> 00:04:10,216
+Nothing is lost: the news is still in the outbox, and goes out when the app starts again.
+
+58
+00:04:10,266 --> 00:04:14,032
 Next: delivering the news to the merchant's server.
