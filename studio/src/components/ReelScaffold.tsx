@@ -20,7 +20,7 @@ export interface ReelScaffoldProps {
   subtitles: SubtitleCue[];
   highlightsMap?: HighlightsMap;
   acts?: ActsMap;
-  captionStyle?: React.CSSProperties; // move the caption tape (16:9 layouts)
+  captionStyle?: React.CSSProperties | ((cueIndex: number) => React.CSSProperties); // move the caption tape (16:9 layouts), optionally per cue
   captions?: boolean; // false: voice only, no caption tape (the picture carries the idea)
   series?: string; // small line above the title
   title: React.ReactNode | ((cueIndex: number) => React.ReactNode);
@@ -73,7 +73,7 @@ export const ReelScaffold: React.FC<ReelScaffoldProps> = ({
 
         {typeof children === "function" ? children(subState) : children}
 
-        {captions ? <SubtitleCard currentSubtitle={subState.currentSubtitle} danger={danger} style={captionStyle} /> : null}
+        {captions ? <SubtitleCard currentSubtitle={subState.currentSubtitle} danger={danger} style={typeof captionStyle === "function" ? captionStyle(subState.cueIndex) : captionStyle} /> : null}
         <RegulatoryFooter label={footer.label} value={footer.value} />
       </AbsoluteFill>
     </SubtitlesContext.Provider>

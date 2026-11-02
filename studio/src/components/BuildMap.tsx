@@ -1,5 +1,5 @@
 import React from "react";
-import { interpolate, useCurrentFrame } from "remotion";
+import { Easing, interpolate, useCurrentFrame } from "remotion";
 import { useSubtitlesContext } from "../hooks";
 import { BUILD_ARROWS, BUILD_NODES, BUILD_PARTS, BuildNodeId, UNIT_BOXES, UnitId } from "../series/build/map";
 
@@ -9,19 +9,24 @@ export interface BuildMapStep {
   current?: BuildNodeId[]; // filled ink: what this sentence is about
   built?: BuildNodeId[]; // green outline: already in place
   part?: number; // highlighted row in the progress panel (the course module)
+  rows?: number[]; // panel rows this sentence is about (focus mode); defaults to [part]
+  analogy?: "card-token"; // a picture card in the right column (card number -> token); lasts until the next step
+  dot?: BuildNodeId | "off"; // the payment marker: glides to this node when the step starts; "off" hides it
   units?: Partial<Record<UnitId, string>>; // unit boxes drawn solid, with a stamp (e.g. cards: "CDE")
 }
 
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 // The Series B presentation: the system diagram on the left, the build progress on the right.
-export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; scale: number; panelX: number; showMap?: boolean }> = ({
+export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; scale: number; panelX: number; showMap?: boolean; focus?: boolean; hidePanelBefore?: number }> = ({
   steps,
   x,
   y,
   scale,
   panelX,
   showMap = true,
+  focus = false,
+  hidePanelBefore = 0,
 }) => {
   const frame = useCurrentFrame();
   const { cueIndex, subtitles } = useSubtitlesContext();
@@ -30,6 +35,35 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
   const prev = steps[i - 1];
   const t = frame - (subtitles[step.cue]?.startFrame ?? 0);
   const pop = interpolate(t, [0, 10], [0.9, 1], CLAMP);
+  // Focus mode: while a sentence is about some nodes, the rest fade back so the eye finds them (fades over the first 10 frames).
+  const dimOf = (s: BuildMapStep | undefined, id: BuildNodeId) => (focus && s?.current?.length && !s.current.includes(id) ? 0.15 : 1);
+  // The payment dot: sits on the latest node named by a step so far, and glides from the one before it.
+  const dotAt = (upTo: number) => steps.slice(0, upTo + 1).reduce<BuildMapStep["dot"]>((d, st) => st.dot ?? d, undefined);
+  const dotNow = dotAt(i);
+  const dotPrev = dotAt(i - 1);
+  // The dot rides the node's top edge, so the label stays readable.
+  const center = (id: BuildNodeId) => ({ x: BUILD_NODES[id].x + BUILD_NODES[id].w / 2, y: BUILD_NODES[id].y });
+  const glide = interpolate(t, [0, 30], [0, 1], { ...CLAMP, easing: Easing.inOut(Easing.cubic) });
+  // Focus mode, panel rows: only the rows the sentence is about stay bright.
+  const rowDim = (s: BuildMapStep | undefined, n: number) => (focus && s && !(s.rows ?? (s.part !== undefined ? [s.part] : [])).includes(n) ? 0.15 : 1);
+  const rowFade = (n: number) => {
+    const from = rowDim(prev, n);
+    return from + (rowDim(step, n) - from) * interpolate(t, [0, 10], [0, 1], CLAMP);
+  };
+  // Focus mode, arrows: an arrow stays bright only while both boxes it joins are in play (same order as BUILD_ARROWS).
+  const ARROW_ENDS: [BuildNodeId, BuildNodeId][] = [
+    ["partner", "emailport"], ["epos", "procport"], ["payment", "procport"], ["reconciliation", "procport"],
+    ["emailport", "emailsvc"], ["procport", "card"], ["adapters", "procsvc"],
+  ];
+  const arrowDim = (s: BuildMapStep | undefined, k: number) => (focus && s?.current?.length && !ARROW_ENDS[k].every((id) => s.current!.includes(id)) ? 0.15 : 1);
+  const arrowFade = (k: number) => {
+    const from = arrowDim(prev, k);
+    return from + (arrowDim(step, k) - from) * interpolate(t, [0, 10], [0, 1], CLAMP);
+  };
+  const fade = (id: BuildNodeId) => {
+    const from = dimOf(prev, id);
+    return from + (dimOf(step, id) - from) * interpolate(t, [0, 10], [0, 1], CLAMP);
+  };
 
   return (
     <>
@@ -61,8 +95,8 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
             </g>
           );
         })}
-        {BUILD_ARROWS.map(([ax, y1, y2]) => (
-          <path key={`${ax}-${y1}`} d={`M ${ax} ${y1} V ${y2 - 4} M ${ax - 5} ${y2 - 10} L ${ax} ${y2 - 3} L ${ax + 5} ${y2 - 10}`} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} />
+        {BUILD_ARROWS.map(([ax, y1, y2], k) => (
+          <path key={`${ax}-${y1}`} opacity={arrowFade(k)} d={`M ${ax} ${y1} V ${y2 - 4} M ${ax - 5} ${y2 - 10} L ${ax} ${y2 - 3} L ${ax + 5} ${y2 - 10}`} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} />
         ))}
         {(() => {
           // The delivery frame is a frame, not a box: dashed until its part, then solid; its tab sits on the bottom edge.
@@ -73,7 +107,7 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
           const tabX = k.x + 16;
           const tabY = k.y + k.h;
           return (
-            <g>
+            <g opacity={fade("kubernetes")}>
               <rect x={k.x} y={k.y} width={k.w} height={k.h} rx={20} fill="none" stroke={color}
                 strokeWidth={on || built ? 3 : 1.5} strokeDasharray={on || built ? "10 6" : "3 6"} />
               <rect x={tabX} y={tabY - 14} width={130} height={28} rx={6}
@@ -93,7 +127,7 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
           const cx = n.x + n.w / 2;
           const cy = n.y + n.h / 2;
           return (
-            <g key={id} transform={`translate(${cx} ${cy}) scale(${s}) translate(${-cx} ${-cy})`}>
+            <g key={id} opacity={fade(id)} transform={`translate(${cx} ${cy}) scale(${s}) translate(${-cx} ${-cy})`}>
               <rect
                 x={n.x}
                 y={n.y}
@@ -129,15 +163,50 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
             </g>
           );
         })}
+        {dotNow && dotNow !== "off" ? (() => {
+          const to = center(dotNow);
+          const from = dotPrev && dotPrev !== "off" ? center(dotPrev) : to;
+          const x = from.x + (to.x - from.x) * glide;
+          const y = from.y + (to.y - from.y) * glide;
+          const appear = dotPrev && dotPrev !== "off" ? 1 : interpolate(t, [0, 12], [0, 1], CLAMP);
+          return (
+            <g transform={`translate(${x} ${y})`} opacity={appear}>
+              <circle r={15} fill="var(--stamp-green)" opacity={0.25} />
+              <circle r={9} fill="var(--stamp-green)" stroke="var(--paper)" strokeWidth={3} />
+            </g>
+          );
+        })() : null}
       </svg>
       ) : null}
+      {step.analogy === "card-token" ? (
+        <svg className="absolute font-mono" style={{ left: panelX, top: 262, opacity: pop * 10 - 9 }} width={683} height={320} viewBox="0 0 683 320">
+          <text x={0} y={22} fontSize={20} fill="var(--ink-muted)" style={{ textTransform: "uppercase", letterSpacing: 1 }}>What ecom gets instead</text>
+          <g transform="translate(0 66)">
+            <rect x={0} y={0} width={230} height={140} rx={14} fill="var(--paper)" stroke="var(--ink)" strokeWidth={4} />
+            <rect x={22} y={26} width={42} height={30} rx={5} fill="none" stroke="var(--ink)" strokeWidth={3} />
+            <text x={22} y={104} fontSize={24} fontWeight={700} fill="var(--ink)">4242 4242 4242</text>
+          </g>
+          <text x={115} y={246} textAnchor="middle" fontSize={24} fontWeight={700} fill="var(--ink)">CARD NUMBER</text>
+          <text x={115} y={274} textAnchor="middle" fontSize={20} fill="var(--ink-muted)">stays locked up</text>
+          <path d="M250 136 H370 M356 124 L372 136 L356 148" fill="none" stroke="var(--ink)" strokeWidth={4} />
+          <text x={310} y={112} textAnchor="middle" fontSize={20} fill="var(--ink-muted)">swapped</text>
+          <g transform="translate(400 66)">
+            <path d="M0 0 H230 V54 a14 14 0 0 0 0 28 V140 H0 V82 a14 14 0 0 0 0 -28 Z" fill="var(--ink)" />
+            <text x={115} y={70} textAnchor="middle" dominantBaseline="central" fontSize={40} fontWeight={700} fill="var(--paper)">tok_47</text>
+          </g>
+          <text x={515} y={246} textAnchor="middle" fontSize={24} fontWeight={700} fill="var(--ink)">TOKEN</text>
+          <text x={515} y={274} textAnchor="middle" fontSize={20} fill="var(--ink-muted)">all ecom ever holds</text>
+          <text x={0} y={310} fontSize={22} fontWeight={700} fill="var(--stamp-green)">It names the card. It is not the card.</text>
+        </svg>
+      ) : null}
+      {cueIndex >= hidePanelBefore && (!focus || step.rows) ? (
       <div className="absolute font-mono uppercase text-ink" style={{ left: panelX, top: y + 18, right: 84 }}>
         <div className="text-[20px] text-ink-muted tracking-wider mb-2">Course modules</div>
         {BUILD_PARTS.map((p) => {
           const active = p.n === step.part;
           const done = step.part !== undefined && p.n < step.part;
           return (
-            <div key={p.n} className={`flex items-center gap-4 py-[2px] border-b-[2px] border-dotted border-ink-muted ${active ? "text-ink" : done ? "text-ink" : "text-ink-muted"}`}>
+            <div key={p.n} style={{ opacity: rowFade(p.n) }} className={`flex items-center gap-4 py-[2px] border-b-[2px] border-dotted border-ink-muted ${active ? "text-ink" : done ? "text-ink" : "text-ink-muted"}`}>
               <span className={`inline-flex w-[28px] h-[28px] items-center justify-center text-[18px] font-bold ${active ? "bg-ink text-paper" : done ? "border-[3px] border-stamp-green" : "border-[3px] border-dashed border-ink-muted"}`}>
                 {p.n}
               </span>
@@ -147,6 +216,7 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
           );
         })}
       </div>
+      ) : null}
     </>
   );
 };
