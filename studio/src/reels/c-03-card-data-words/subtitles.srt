@@ -1,231 +1,247 @@
 1
-00:00:00,050 --> 00:00:01,872
+00:00:00,050 --> 00:00:02,232
 Tuesday, ten in the morning.
 
 2
-00:00:01,922 --> 00:00:06,096
+00:00:02,282 --> 00:00:07,032
 A buyer writes to Malika: my payment failed, here is my card.
 
 3
-00:00:06,146 --> 00:00:08,520
+00:00:07,082 --> 00:00:09,984
 The message holds all sixteen digits.
 
 4
-00:00:08,570 --> 00:00:13,368
+00:00:10,034 --> 00:00:15,792
 Malika forwards it to Bekzod, the developer who connects her shop to the bank.
 
 5
-00:00:13,418 --> 00:00:18,408
+00:00:15,842 --> 00:00:21,888
 Bekzod wants to help, so he pastes the whole number into a support ticket to the bank.
 
 6
-00:00:18,458 --> 00:00:24,432
+00:00:21,938 --> 00:00:28,848
 In Lesson 2, that number was all the buyer's bank needed to say yes, so whoever holds it can pay with it.
 
 7
-00:00:24,482 --> 00:00:29,616
+00:00:28,898 --> 00:00:35,256
 This lesson gives you the words that let a system talk about a card without ever pasting its number.
 
 8
-00:00:29,666 --> 00:00:31,704
+00:00:35,306 --> 00:00:37,848
 The number now lives in the ticket.
 
 9
-00:00:31,754 --> 00:00:37,080
+00:00:37,898 --> 00:00:43,896
 It lives in the ticket's backups, in its search, and with everyone who can read tickets.
 
 10
-00:00:37,130 --> 00:00:40,920
+00:00:43,946 --> 00:00:48,720
 One paste copied a card number into places never built to guard it.
 
 11
-00:00:40,970 --> 00:00:45,048
+00:00:48,770 --> 00:00:53,328
 Dilnoza, in the bank's operations team, opens the ticket.
 
 12
-00:00:45,098 --> 00:00:50,112
+00:00:53,378 --> 00:00:59,256
 She replies in one line: never send this again, the last four digits are enough.
 
 13
-00:00:50,162 --> 00:00:55,488
+00:00:59,306 --> 00:01:05,424
 She talks the way your own bank does on the phone: your card ending seven eight nine zero.
 
 14
-00:00:55,538 --> 00:00:58,200
+00:01:05,474 --> 00:01:08,328
 A bank never reads out the whole number.
 
 15
-00:00:58,250 --> 00:01:00,888
+00:01:08,378 --> 00:01:11,400
 And it never asks for the three digits on the back.
 
 16
-00:01:00,938 --> 00:01:05,112
+00:01:11,450 --> 00:01:16,392
 I think the most dangerous place for a card number is not a hacked server.
 
 17
-00:01:05,162 --> 00:01:07,440
+00:01:16,442 --> 00:01:19,128
 It is a helpful person with a text box.
 
 18
-00:01:07,490 --> 00:01:09,312
+00:01:19,178 --> 00:01:21,000
 Here are the words.
 
 19
-00:01:09,362 --> 00:01:13,632
+00:01:21,050 --> 00:01:25,848
 The long number on the front of the card is the PAN, the card's own number.
 
 20
-00:01:13,682 --> 00:01:16,392
+00:01:25,898 --> 00:01:28,776
 It is the one piece a thief needs most.
 
 21
-00:01:16,442 --> 00:01:22,728
+00:01:28,826 --> 00:01:36,336
 In this system it lives in one place only: the card zone, the locked room from Lesson 1.
 
 22
-00:01:22,778 --> 00:01:25,632
+00:01:36,386 --> 00:01:39,720
 The three digits on the back are the card's security code.
 
 23
-00:01:25,682 --> 00:01:30,384
+00:01:39,770 --> 00:01:45,384
 The card industry's rules say nobody may keep it once a payment is approved.
 
 24
-00:01:30,434 --> 00:01:33,888
+00:01:45,434 --> 00:01:49,200
 This system goes further: it never even asks for it.
 
 25
-00:01:33,938 --> 00:01:37,872
-When screens and reports show a card, they show the masked number.
+00:01:49,250 --> 00:01:54,992
+If a screen cannot show the whole number, what can it show?
 
 26
-00:01:37,922 --> 00:01:42,120
-That is the first six digits and the last four, with stars between.
+00:01:55,042 --> 00:01:59,504
+When screens and reports show a card, they show the masked number.
 
 27
-00:01:42,170 --> 00:01:45,120
-The first six only tell which bank gave out the card.
+00:01:59,554 --> 00:02:04,496
+That is the first six digits and the last four, with stars between.
 
 28
-00:01:45,170 --> 00:01:48,096
-The last four let a person recognise their own card.
+00:02:04,546 --> 00:02:08,072
+The first six only tell which bank gave out the card.
 
 29
-00:01:48,146 --> 00:01:52,272
-Nothing in between is shown, so the masked number cannot be used to pay.
+00:02:08,122 --> 00:02:11,504
+The last four let a person recognise their own card.
 
 30
-00:01:52,322 --> 00:01:57,576
-And when another system needs to point at a card, to charge it later, it keeps a card token.
+00:02:11,554 --> 00:02:16,328
+Nothing in between is shown, so the masked number cannot be used to pay.
 
 31
-00:01:57,626 --> 00:02:01,272
-A card token is a random name the card zone gives the card.
+00:02:16,378 --> 00:02:22,808
+And when another system needs to point at a card, to charge it later, it keeps a card token.
 
 32
-00:02:01,322 --> 00:02:03,144
-Nothing in it comes from the number.
+00:02:22,858 --> 00:02:26,864
+A card token is a random name the card zone gives the card.
 
 33
-00:02:03,194 --> 00:02:05,808
-Make two tokens, and they share nothing.
+00:02:26,914 --> 00:02:28,736
+Nothing in it comes from the number.
 
 34
-00:02:05,858 --> 00:02:09,144
-So a stolen token tells a thief nothing about the card.
+00:02:28,786 --> 00:02:31,784
+Make two tokens, and they share nothing.
 
 35
-00:02:09,194 --> 00:02:11,568
-Three words, three rules.
+00:02:31,834 --> 00:02:35,816
+So a stolen token tells a thief nothing about the card.
 
 36
-00:02:11,618 --> 00:02:13,944
-The PAN lives only in the card zone.
+00:02:35,866 --> 00:02:38,672
+Three words, three rules.
 
 37
-00:02:13,994 --> 00:02:15,816
-The masked number may be shown.
+00:02:38,722 --> 00:02:41,288
+The PAN lives only in the card zone.
 
 38
-00:02:15,866 --> 00:02:17,688
-The token may be kept.
+00:02:41,338 --> 00:02:43,520
+The masked number may be shown.
 
 39
-00:02:17,738 --> 00:02:20,040
-And the code on the back is kept by no one.
+00:02:43,570 --> 00:02:45,392
+The token may be kept.
 
 40
-00:02:20,090 --> 00:02:23,520
-Malika's buyer met those rules on the bank's payment page.
+00:02:45,442 --> 00:02:48,104
+And the code on the back is kept by no one.
 
 41
-00:02:23,570 --> 00:02:25,968
-Under "Card details" sits the card form.
+00:02:48,154 --> 00:02:52,328
+Malika's buyer met those rules on the bank's payment page.
 
 42
-00:02:26,018 --> 00:02:28,272
-It asks for the number and the date on the card.
+00:02:52,378 --> 00:02:55,256
+Under "Card details" sits the card form.
 
 43
-00:02:28,322 --> 00:02:30,432
-There is no box for the code on the back.
+00:02:55,306 --> 00:02:58,064
+It asks for the number and the date on the card.
 
 44
-00:02:30,482 --> 00:02:33,000
-The buyer types the card and continues.
+00:02:58,114 --> 00:03:00,464
+There is no box for the code on the back.
 
 45
-00:02:33,050 --> 00:02:38,904
-The page now shows one short line: the masked number, the buyer's bank and its card network.
+00:03:00,514 --> 00:03:03,392
+The buyer types the card and continues.
 
 46
-00:02:38,954 --> 00:02:42,984
-Dilnoza opens the bank admin portal, on its Payments page.
+00:03:03,442 --> 00:03:10,304
+The page now shows one short line: the masked number, the buyer's bank and its card network.
 
 47
-00:02:43,034 --> 00:02:44,856
-Each payment has a Card column.
+00:03:10,354 --> 00:03:15,200
+Dilnoza opens the bank admin portal, on its Payments page.
 
 48
-00:02:44,906 --> 00:02:50,184
-Every row shows a masked number: six digits, stars, four digits.
+00:03:15,250 --> 00:03:17,360
+Each payment has a Card column.
 
 49
-00:02:50,234 --> 00:02:52,992
-Nowhere in the portal is there a full card number.
+00:03:17,410 --> 00:03:23,624
+Every row shows a masked number: six digits, stars, four digits.
 
 50
-00:02:53,042 --> 00:02:55,608
-So Dilnoza never needed the PAN.
+00:03:23,674 --> 00:03:27,056
+Nowhere in the portal is there a full card number.
 
 51
-00:02:55,658 --> 00:02:58,944
-The masked number and the amount are enough to find the payment.
+00:03:27,106 --> 00:03:30,272
+So Dilnoza never needed the PAN.
 
 52
-00:02:58,994 --> 00:03:03,360
-A leaked mask or a leaked token gives a thief nothing to spend.
+00:03:30,322 --> 00:03:34,160
+The masked number and the amount are enough to find the payment.
 
 53
-00:03:03,410 --> 00:03:08,928
-A leaked PAN lets a thief spend the buyer's money, and the shop and the bank pay for it.
+00:03:34,210 --> 00:03:39,320
+A leaked mask or a leaked token gives a thief nothing to spend.
 
 54
-00:03:08,978 --> 00:03:14,472
-So the PAN stays in one room, and everything else gets a smaller, safer word.
+00:03:39,370 --> 00:03:45,752
+A leaked PAN lets a thief spend the buyer's money, and the shop and the bank pay for it.
 
 55
-00:03:14,522 --> 00:03:16,752
-Bekzod deletes the number from the ticket.
+00:03:45,802 --> 00:03:52,088
+So the PAN stays in one room, and everything else gets a smaller, safer word.
 
 56
-00:03:16,802 --> 00:03:18,600
-The backups keep it anyway.
+00:03:52,138 --> 00:03:54,752
+Bekzod deletes the number from the ticket.
 
 57
-00:03:18,650 --> 00:03:21,384
-That is why the rule is never to paste it at all.
+00:03:54,802 --> 00:03:56,600
+The backups keep it anyway.
 
 58
-00:03:21,434 --> 00:03:23,832
+00:03:56,650 --> 00:03:59,888
+That is why the rule is never to paste it at all.
+
+59
+00:03:59,938 --> 00:04:07,472
+To recap: the PAN stays in the card zone, screens show a mask, and other systems keep a token.
+
+60
+00:04:07,522 --> 00:04:13,120
+So which word may a shop keep, to charge a card later?
+
+61
+00:04:13,170 --> 00:04:14,992
+The card token.
+
+62
+00:04:15,042 --> 00:04:17,848
 Next: where a card number may live.
