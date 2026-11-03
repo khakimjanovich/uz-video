@@ -8,7 +8,7 @@ const TITLES = [
   "Tuesday, 11 a.m.", "A wilted bouquet", "Nothing goes wrong",
   "Lessons 2 and 27", "This lesson: giving back",
   "Without care", "Give back twice", "Again, by phone", "Six months later", "Too much, too late",
-  "The day decides", "Reversed", "A refund", "The bank's time zone", "The whole amount",
+  "Reversal or refund?", "The day decides", "Reversed", "A refund", "The bank's time zone", "The whole amount",
   "The refund cap", "The largest amount", "The refund window", "Working days", "Two bank admins",
   "Like the charge", "One claim", "The logbook first", "By token, with an id", "Approved is final", "Refused stays paid", "No answer: ask later",
   "Not alone", "The bank does it", "Refund by application", "Writes to the bank", "A second admin",
@@ -17,7 +17,7 @@ const TITLES = [
   "Giving the money back", "Reversed", "A reversal line", "Money returned",
   "A hotel's large order", "No give back button", "Above the refund limit", "From the spring", "The window has closed", "Only views",
   "Writes to the bank", "Refund by application", "Application number", "Send for approval", "A second admin",
-  "No double refunds", "Every refund explained", "Large or late", "Two admins", "Next: one payment",
+  "No double refunds", "Every refund explained", "Large or late", "Two admins", "Recap", "Who can give back more t?", "The answer", "Next: one payment",
 ];
 
 export const C30RefundsComposition = createEpisode({
@@ -29,5 +29,7 @@ export const C30RefundsComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 61, // the story shows no course panel; it returns with the recap
   screens,
 });

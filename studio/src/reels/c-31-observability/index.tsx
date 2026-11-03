@@ -16,7 +16,7 @@ const TITLES = [
   "A card number",
   "Lesson 24: the path",
   "This lesson: follow it",
-  "A trace",
+  "One number?", "A trace",
   "The trace goes along",
   "Along again",
   "One line",
@@ -61,7 +61,7 @@ const TITLES = [
   "Without masking",
   "Without alerts",
   "The bank knew first",
-  "Next: each day",
+  "Recap", "How does dilnoza find a ?", "The answer", "Next: each day",
 ];
 
 export const C31ObservabilityComposition = createEpisode({
@@ -73,4 +73,6 @@ export const C31ObservabilityComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 57, // the story shows no course panel; it returns with the recap
 });

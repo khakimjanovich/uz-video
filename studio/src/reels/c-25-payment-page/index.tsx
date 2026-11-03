@@ -8,7 +8,7 @@ const TITLES = [
   "Sunday, 9:15", "At a bus stop", "No card on her site", "A link",
   "Lessons 25 and 5", "This lesson: the page",
   "Never touch a card", "No guessable address", "Only for its holder", "Only for a while", "Exactly what is paid", "Confirm twice",
-  "The link", "A page token", "Not the token", "Only a fingerprint", "The link expires",
+  "Only this buyer", "The link", "A page token", "Not the token", "Only a fingerprint", "The link expires",
   "The page loads", "Name, order, amount", "A live terminal", "A card entry session", "Only into the frame",
   "A chosen number", "The payment fails", "One small message", "Only from the frame", "Never a card number",
   "Token to ecom", "This payment's card?", "Then the charge", "A page lock",
@@ -17,7 +17,7 @@ const TITLES = [
   "Too long, too many", "Enter the card again", "Closed, no money", "The link has expired", "Back to the shop",
   "Every rule, a door", "Guessing addresses", "Live links", "The card number", "Two charges",
   "Simple advice", "A number to count up", "Never touches a card",
-  "Next: the charge",
+  "Recap", "Where does the card numb?", "The answer", "Next: the charge",
 ];
 
 export const C25PaymentPageComposition = createEpisode({
@@ -29,5 +29,7 @@ export const C25PaymentPageComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 53, // the story shows no course panel; it returns with the recap
   screens,
 });

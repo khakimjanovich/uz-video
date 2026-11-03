@@ -1,231 +1,247 @@
 1
-00:00:00,050 --> 00:00:01,872
+00:00:00,050 --> 00:00:02,088
 Wednesday, eleven at night.
 
 2
-00:00:01,922 --> 00:00:09,360
+00:00:02,138 --> 00:00:11,184
 One of Malika's regular customers writes to her in a messenger: a birthday bouquet, delivered tomorrow at noon, can I pay now?
 
 3
-00:00:09,410 --> 00:00:11,232
+00:00:11,234 --> 00:00:13,320
 They agree on the price in the chat.
 
 4
-00:00:11,282 --> 00:00:16,320
+00:00:13,370 --> 00:00:19,200
 And many sellers like her have no shop site at all, and no Bekzod to build one.
 
 5
-00:00:16,370 --> 00:00:25,512
+00:00:19,250 --> 00:00:29,880
 In Lesson 26, Bekzod's server created a payment and the buyer paid on the bank's page, and in Lesson 21, each website got its own limits.
 
 6
-00:00:25,562 --> 00:00:29,640
+00:00:29,930 --> 00:00:35,184
 This lesson gives the same page to a seller with no website code at all.
 
 7
-00:00:29,690 --> 00:00:36,504
+00:00:35,234 --> 00:00:43,080
 Writing a server, sealing requests and managing retries is out of reach for most small sellers.
 
 8
-00:00:36,554 --> 00:00:39,288
+00:00:43,130 --> 00:00:46,152
 Sending a link in a chat is easy.
 
 9
-00:00:39,338 --> 00:00:41,328
+00:00:46,202 --> 00:00:48,384
 But the link still has to be safe.
 
 10
-00:00:41,378 --> 00:00:43,512
+00:00:48,434 --> 00:00:50,712
 It must open the real bank page.
 
 11
-00:00:43,562 --> 00:00:46,176
+00:00:50,762 --> 00:00:54,240
 It must belong to a website the bank has checked.
 
 12
-00:00:46,226 --> 00:00:48,048
+00:00:54,290 --> 00:00:56,304
 It must work only for a while.
 
 13
-00:00:48,098 --> 00:00:51,432
+00:00:56,354 --> 00:01:00,144
 And its secret must not be readable from the bank's records.
 
 14
-00:00:51,482 --> 00:00:53,304
-That is a payment link.
+00:01:00,194 --> 00:01:06,248
+What can a seller send in a chat that is safe, and needs no code?
 
 15
-00:00:53,354 --> 00:00:57,216
-A merchant admin or operator makes one in the merchant portal.
+00:01:06,298 --> 00:01:08,120
+That is a payment link.
 
 16
-00:00:57,266 --> 00:00:59,832
-They pick one of the merchant's live websites.
+00:01:08,170 --> 00:01:12,464
+A merchant admin or operator makes one in the merchant portal.
 
 17
-00:00:59,882 --> 00:01:04,200
-They write the amount, what the buyer pays for, and how long the link works.
+00:01:12,514 --> 00:01:15,632
+They pick one of the merchant's live websites.
 
 18
-00:01:04,250 --> 00:01:06,672
-Behind the link is an ordinary payment.
+00:01:15,682 --> 00:01:20,504
+They write the amount, what the buyer pays for, and how long the link works.
 
 19
-00:01:06,722 --> 00:01:11,232
-It simply has no API client, because no server created it.
+00:01:20,554 --> 00:01:23,240
+Behind the link is an ordinary payment.
 
 20
-00:01:11,282 --> 00:01:15,600
-And it has no return address, because there is no shop page to go back to.
+00:01:23,290 --> 00:01:28,256
+It simply has no API client, because no server created it.
 
 21
-00:01:15,650 --> 00:01:17,640
-Everything else is the same.
+00:01:28,306 --> 00:01:33,296
+And it has no return address, because there is no shop page to go back to.
 
 22
-00:01:17,690 --> 00:01:19,824
-The website's own limits still apply.
+00:01:33,346 --> 00:01:35,576
+Everything else is the same.
 
 23
-00:01:19,874 --> 00:01:22,752
-The website's fee still applies.
+00:01:35,626 --> 00:01:38,696
+The website's own limits still apply.
 
 24
-00:01:22,802 --> 00:01:28,824
-The link is the bank's page address with a one-time page token, just like the link Bekzod's server receives.
+00:01:38,746 --> 00:01:42,008
+The website's fee still applies.
 
 25
-00:01:28,874 --> 00:01:31,656
-The bank keeps only a fingerprint of that token.
+00:01:42,058 --> 00:01:49,160
+The link is the bank's page address with a one-time page token, just like the link Bekzod's server receives.
 
 26
-00:01:31,706 --> 00:01:35,064
-So the full link is shown once, at the moment it is made.
+00:01:49,210 --> 00:01:52,280
+The bank keeps only a fingerprint of that token.
 
 27
-00:01:35,114 --> 00:01:39,456
-The merchant chooses how long it works, up to the bank's chosen maximum.
+00:01:52,330 --> 00:01:56,384
+So the full link is shown once, at the moment it is made.
 
 28
-00:01:39,506 --> 00:01:44,688
-The buyer pays on the same bank page as any other payment, with the same card frame.
+00:01:56,434 --> 00:02:01,280
+The merchant chooses how long it works, up to the bank's chosen maximum.
 
 29
-00:01:44,738 --> 00:01:48,216
-And a link nobody pays in time is closed as expired.
+00:02:01,330 --> 00:02:07,472
+The buyer pays on the same bank page as any other payment, with the same card frame.
 
 30
-00:01:48,266 --> 00:01:51,240
-I like this feature because it adds almost nothing new.
+00:02:07,522 --> 00:02:11,744
+And a link nobody pays in time is closed as expired.
 
 31
-00:01:51,290 --> 00:01:55,872
-A link is just a payment without a server, and every old rule still guards it.
+00:02:11,794 --> 00:02:15,176
+I like this feature because it adds almost nothing new.
 
 32
-00:01:55,922 --> 00:01:58,800
-In the merchant portal, she opens payment links.
+00:02:15,226 --> 00:02:21,104
+A link is just a payment without a server, and every old rule still guards it.
 
 33
-00:01:58,850 --> 00:02:04,872
-The page says it plainly: sell in a chat, and send a buyer a link to the bank's payment page.
+00:02:21,154 --> 00:02:24,440
+In the merchant portal, she opens payment links.
 
 34
-00:02:04,922 --> 00:02:06,744
-She presses new link.
+00:02:24,490 --> 00:02:31,472
+The page says it plainly: sell in a chat, and send a buyer a link to the bank's payment page.
 
 35
-00:02:06,794 --> 00:02:09,024
-The form asks for a live website.
+00:02:31,522 --> 00:02:33,344
+She presses new link.
 
 36
-00:02:09,074 --> 00:02:14,232
-If none of her websites took payments yet, the form would say so, and nothing could be made.
+00:02:33,394 --> 00:02:36,008
+The form asks for a live website.
 
 37
-00:02:14,282 --> 00:02:18,216
-She picks her website, types what the buyer pays for, and the amount.
+00:02:36,058 --> 00:02:42,224
+If none of her websites took payments yet, the form would say so, and nothing could be made.
 
 38
-00:02:18,266 --> 00:02:21,168
-She chooses how many hours the link works.
+00:02:42,274 --> 00:02:46,928
+She picks her website, types what the buyer pays for, and the amount.
 
 39
-00:02:21,218 --> 00:02:24,720
-Ask for longer than the bank allows, and the bank refuses it.
+00:02:46,978 --> 00:02:50,144
+She chooses how many hours the link works.
 
 40
-00:02:24,770 --> 00:02:26,592
-She presses create.
+00:02:50,194 --> 00:02:54,368
+Ask for longer than the bank allows, and the bank refuses it.
 
 41
-00:02:26,642 --> 00:02:28,752
-A window says your link is ready.
+00:02:54,418 --> 00:02:56,240
+She presses create.
 
 42
-00:02:28,802 --> 00:02:33,912
-It explains that the link is shown only once, and the bank keeps only its fingerprint.
+00:02:56,290 --> 00:02:59,048
+A window says your link is ready.
 
 43
-00:02:33,962 --> 00:02:36,672
-She presses copy link, and it says copied.
+00:02:59,098 --> 00:03:05,288
+It explains that the link is shown only once, and the bank keeps only its fingerprint.
 
 44
-00:02:36,722 --> 00:02:38,544
-She pastes it into the chat.
+00:03:05,338 --> 00:03:08,552
+She presses copy link, and it says copied.
 
 45
-00:02:38,594 --> 00:02:42,792
-Back on the list, the new link waits for the buyer, without its address.
+00:03:08,602 --> 00:03:10,544
+She pastes it into the chat.
 
 46
-00:02:42,842 --> 00:02:47,376
-A teammate who only views can see this list, but has no new link button.
+00:03:10,594 --> 00:03:15,536
+Back on the list, the new link waits for the buyer, without its address.
 
 47
-00:02:47,426 --> 00:02:49,680
-Now the buyer taps the link in the chat.
+00:03:15,586 --> 00:03:20,816
+A teammate who only views can see this list, but has no new link button.
 
 48
-00:02:49,730 --> 00:02:54,624
-The same secure bank page opens, with the website, what it is for, and the amount.
+00:03:20,866 --> 00:03:23,504
+Now the buyer taps the link in the chat.
 
 49
-00:02:54,674 --> 00:02:58,224
-The buyer pays through the card frame, and the page says paid.
+00:03:23,554 --> 00:03:29,240
+The same secure bank page opens, with the website, what it is for, and the amount.
 
 50
-00:02:58,274 --> 00:03:01,944
-There is no back to the shop link, because there is no shop page.
+00:03:29,290 --> 00:03:33,440
+The buyer pays through the card frame, and the page says paid.
 
 51
-00:03:01,994 --> 00:03:05,040
-In Malika's portal, the link now shows paid.
+00:03:33,490 --> 00:03:37,664
+There is no back to the shop link, because there is no shop page.
 
 52
-00:03:05,090 --> 00:03:07,080
-Another link is never paid.
+00:03:37,714 --> 00:03:41,192
+In Malika's portal, the link now shows paid.
 
 53
-00:03:07,130 --> 00:03:11,832
-It turns expired, and a buyer who opens it sees that the link has expired.
+00:03:41,242 --> 00:03:43,616
+Another link is never paid.
 
 54
-00:03:11,882 --> 00:03:16,392
-So a seller without a website gets the same safe page as everyone else.
+00:03:43,666 --> 00:03:49,208
+It turns expired, and a buyer who opens it sees that the link has expired.
 
 55
-00:03:16,442 --> 00:03:19,152
-The card never touches the chat or Malika.
+00:03:49,258 --> 00:03:54,680
+So a seller without a website gets the same safe page as everyone else.
 
 56
-00:03:19,202 --> 00:03:22,704
-A leaked copy of the bank's records holds no working links.
+00:03:54,730 --> 00:03:57,896
+The card never touches the chat or Malika.
 
 57
-00:03:22,754 --> 00:03:28,392
-And the website's limits still guard every link, so a link cannot become a back door.
+00:03:57,946 --> 00:04:02,312
+A leaked copy of the bank's records holds no working links.
 
 58
-00:03:28,442 --> 00:03:30,312
+00:04:02,362 --> 00:04:09,008
+And the website's limits still guard every link, so a link cannot become a back door.
+
+59
+00:04:09,058 --> 00:04:15,056
+To recap: a payment link is a payment without a server, on the same bank page.
+
+60
+00:04:15,106 --> 00:04:20,440
+So what guards a link, when no server created it?
+
+61
+00:04:20,490 --> 00:04:26,224
+Every old rule: the page token, the expiry, and the website's limits.
+
+62
+00:04:26,274 --> 00:04:28,288
 Next: giving money back.

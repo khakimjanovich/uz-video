@@ -3,8 +3,8 @@ import { BuildId } from "../../series/build/nodes";
 
 // Lesson 28b: webhooks. One shop carries it: Malika's server down for an hour on a Saturday, six bouquets waiting.
 // Server down, six waiting (0–3), the bridge from lessons 29 and 24 (4–5), what the shop and the bank need (6–9),
-// the webhook, its id, time and signature (10–16), the address guard (17–23), success, retries, order, undelivered (24–29),
-// that Saturday in the merchant portal (30–46), what it protects (47–50), next (51).
+// the webhook, its id, time and signature (10–16), the address guard (18–24), success, retries, order, undelivered (25–30),
+// that Saturday in the merchant portal (31–47), what it protects (48–51), next (51).
 const POST = { m6Ecom: [0, 1], m6Hook: [1.5, 1], merchant: [3, 1] } as const;
 const POST_EDGES = [{ from: "m6Ecom", to: "m6Hook" }, { from: "m6Hook", to: "merchant" }] as const;
 const GUARD = { m6Ecom: [0, 1], m6Hook: [1.5, 1], merchant: [3, 0.2], m6Inside: [3, 1.8] } as const;
@@ -39,35 +39,38 @@ export const diagram: DiagramStep<BuildId>[] = [
   post(15, { badges: { m6Hook: "open standard" } }),
   post(16, { packets: [{ from: "m6Hook", to: "merchant", label: "event" }], badges: { merchant: "seal · age · id" } }),
   // The address guard.
-  guard(17, { badges: { m6Ecom: "check first" } }),
-  guard(18, { badges: { m6Hook: "secure address" } }),
-  guard(19, { danger: ["m6Inside"], badges: { m6Hook: "public only" } }),
-  guard(20, { packets: [{ from: "m6Hook", to: "merchant", label: "connect" }], badges: { m6Hook: "checked again" } }),
-  guard(21, { packets: [{ from: "m6Hook", to: "m6Inside", label: "redirect", stopAt: 0.5 }], badges: { m6Hook: "no redirects" } }),
-  guard(22, { danger: ["m6Inside"], crossed: ["m6Inside"], badges: { m6Ecom: "request forgery stopped" } }),
-  guard(23, { packets: [{ from: "m6Hook", to: "m6Inside", label: "call" }], danger: ["m6Inside"], badges: { m6Inside: "a way into the bank" } }),
+  guard(18, { badges: { m6Ecom: "check first" } }),
+  guard(19, { badges: { m6Hook: "secure address" } }),
+  guard(20, { danger: ["m6Inside"], badges: { m6Hook: "public only" } }),
+  guard(21, { packets: [{ from: "m6Hook", to: "merchant", label: "connect" }], badges: { m6Hook: "checked again" } }),
+  guard(22, { packets: [{ from: "m6Hook", to: "m6Inside", label: "redirect", stopAt: 0.5 }], badges: { m6Hook: "no redirects" } }),
+  guard(23, { danger: ["m6Inside"], crossed: ["m6Inside"], badges: { m6Ecom: "request forgery stopped" } }),
+  guard(24, { packets: [{ from: "m6Hook", to: "m6Inside", label: "call" }], danger: ["m6Inside"], badges: { m6Inside: "a way into the bank" } }),
   // Success, retries, order, undelivered.
-  post(24, { packets: [{ from: "m6Hook", to: "merchant", label: "event" }, { from: "merchant", to: "m6Hook", label: "success", delay: 50 }] }),
-  post(25, { packets: tries(), badges: { m6Hook: "longer each time" } }),
-  post(26, {
+  post(25, { packets: [{ from: "m6Hook", to: "merchant", label: "event" }, { from: "merchant", to: "m6Hook", label: "success", delay: 50 }] }),
+  post(26, { packets: tries(), badges: { m6Hook: "longer each time" } }),
+  post(27, {
     packets: [
       { from: "m6Hook", to: "merchant", label: "paid", delay: 10, stopAt: 0.85 },
       { from: "m6Ecom", to: "m6Hook", label: "refunded", delay: 20 },
     ],
     badges: { m6Hook: "later waits" },
   }),
-  post(27, { danger: ["merchant"], badges: { m6Hook: "undelivered" } }),
-  post(28, { packets: [{ from: "merchant", to: "m6Ecom", label: "send again" }] }),
-  { cue: 29, layout: { m6Bill: [0, 1], m6Hook: [3, 1] }, edges: [{ from: "m6Bill", to: "m6Hook" }], crossed: ["m6Hook"], badges: { m6Bill: "no server behind it" } },
+  post(28, { danger: ["merchant"], badges: { m6Hook: "undelivered" } }),
+  post(29, { packets: [{ from: "merchant", to: "m6Ecom", label: "send again" }] }),
+  { cue: 30, layout: { m6Bill: [0, 1], m6Hook: [3, 1] }, edges: [{ from: "m6Bill", to: "m6Hook" }], crossed: ["m6Hook"], badges: { m6Bill: "no server behind it" } },
   // That Saturday in the merchant portal.
-  { cue: 30, layout: { merchant: [1.5, 1] }, accent: ["merchant"], badges: { merchant: "Saturday" } },
-  { cue: 35, layout: POST, edges: [...POST_EDGES], danger: ["merchant"], packets: tries(), badges: { merchant: "maintenance hour" } },
-  { cue: 39, layout: POST, edges: [...POST_EDGES], danger: ["merchant"], packets: tries(), badges: { merchant: "still down", m6Hook: "past chosen time" } },
+  { cue: 31, layout: { merchant: [1.5, 1] }, accent: ["merchant"], badges: { merchant: "Saturday" } },
+  { cue: 36, layout: POST, edges: [...POST_EDGES], danger: ["merchant"], packets: tries(), badges: { merchant: "maintenance hour" } },
+  { cue: 40, layout: POST, edges: [...POST_EDGES], danger: ["merchant"], packets: tries(), badges: { merchant: "still down", m6Hook: "past chosen time" } },
   // What it protects.
   { ...post(47, { packets: [{ from: "attacker", to: "merchant", label: "paid", stopAt: 0.8 }], danger: ["attacker"], badges: { merchant: "no bouquet ships" } }), layout: { ...POST, attacker: [3, 2.1] } },
-  post(48, { packets: tries(1), badges: { merchant: "back: all events" } }),
-  post(49, { packets: [{ from: "m6Hook", to: "merchant", label: "paid" }, { from: "m6Hook", to: "merchant", label: "refunded", delay: 45 }] }),
-  guard(50, { danger: ["m6Inside"], crossed: ["m6Inside"], badges: { m6Inside: "out of reach" } }),
+  post(49, { packets: tries(1), badges: { merchant: "back: all events" } }),
+  post(50, { packets: [{ from: "m6Hook", to: "merchant", label: "paid" }, { from: "m6Hook", to: "merchant", label: "refunded", delay: 45 }] }),
+  guard(51, { danger: ["m6Inside"], crossed: ["m6Inside"], badges: { m6Inside: "out of reach" } }),
+  post(52, { accent: ["m6Hook"], badges: { m6Hook: "signed · retried · safe" } }),
+  post(53, { danger: ["merchant"], packets: tries(), badges: { merchant: "server down" } }),
+  post(54, { packets: tries(1), accent: ["m6Hook"], badges: { m6Hook: "waits · retries", merchant: "send again" } }),
 ];
 
 export const map: BuildMapStep[] = [
@@ -75,7 +78,7 @@ export const map: BuildMapStep[] = [
   // The bridge: what this lesson uses from the ones before.
   { cue: 4, part: 5, current: ["payment", "kafka", "merchant"] },
   { cue: 5, part: 5, current: ["kafka", "merchant"] },
-  { cue: 51, part: 5, current: ["merchant", "payment", "frame"], units: { ecom: "payment links next" } },
+  { cue: 55, part: 5, current: ["merchant", "payment", "frame"], units: { ecom: "payment links next" } },
 ];
 
 const SHOT = (name: string) => `screens/c-28b-webhooks/${name}.png`;
@@ -85,39 +88,39 @@ const HOOKS = [820, 200, 620, 388] as const;
 const LOWER = [820, 250, 620, 388] as const;
 export const screens: ScreenStep[] = [
   {
-    cue: 31,
+    cue: 32,
     src: SHOT("delivered"),
     title: TITLE,
     region: [...DRAWER],
     beats: [
-      { cue: 32, region: [...HOOKS], focus: [[836, 392, 200, 34]] },
-      { cue: 33, region: [...HOOKS], focus: [[845, 448, 175, 28], [1328, 448, 78, 28]] },
-      { cue: 34, region: [...HOOKS], focus: [[1328, 448, 78, 28], [845, 469, 175, 24]] },
+      { cue: 33, region: [...HOOKS], focus: [[836, 392, 200, 34]] },
+      { cue: 34, region: [...HOOKS], focus: [[845, 448, 175, 28], [1328, 448, 78, 28]] },
+      { cue: 35, region: [...HOOKS], focus: [[1328, 448, 78, 28], [845, 469, 175, 24]] },
     ],
   },
   {
-    cue: 36,
+    cue: 37,
     src: SHOT("retrying"),
     title: TITLE,
     region: [...LOWER],
     focus: [[1333, 448, 74, 28], [845, 486, 200, 40]],
     beats: [
-      { cue: 37, region: [...LOWER], focus: [[1200, 561, 207, 30]] },
-      { cue: 38, region: [...LOWER], focus: [[1290, 440, 125, 95]] },
+      { cue: 38, region: [...LOWER], focus: [[1200, 561, 207, 30]] },
+      { cue: 39, region: [...LOWER], focus: [[1290, 440, 125, 95]] },
     ],
   },
   {
-    cue: 40,
+    cue: 41,
     src: SHOT("undelivered"),
     title: TITLE,
     region: [...HOOKS],
     focus: [[1311, 448, 95, 28]],
     beats: [
-      { cue: 41, region: [...HOOKS], focus: [[844, 509, 572, 28]] },
-      { cue: 42, region: [...HOOKS], focus: [[1326, 475, 75, 38]] },
+      { cue: 42, region: [...HOOKS], focus: [[844, 509, 572, 28]] },
+      { cue: 43, region: [...HOOKS], focus: [[1326, 475, 75, 38]] },
     ],
   },
-  { cue: 43, src: SHOT("queued"), title: TITLE, region: [820, 400, 620, 480], focus: [[995, 838, 420, 44]] },
-  { cue: 44, src: SHOT("delivered"), title: TITLE, region: [...HOOKS], focus: [[1328, 448, 78, 28]] },
-  { cue: 45, src: SHOT("link"), title: TITLE, region: [...HOOKS], beats: [{ cue: 46, region: [...HOOKS], focus: [[832, 434, 596, 52]] }] },
+  { cue: 44, src: SHOT("queued"), title: TITLE, region: [820, 400, 620, 480], focus: [[995, 838, 420, 44]] },
+  { cue: 45, src: SHOT("delivered"), title: TITLE, region: [...HOOKS], focus: [[1328, 448, 78, 28]] },
+  { cue: 46, src: SHOT("link"), title: TITLE, region: [...HOOKS], beats: [{ cue: 47, region: [...HOOKS], focus: [[832, 434, 596, 52]] }] },
 ];

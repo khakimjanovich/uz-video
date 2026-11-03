@@ -3,221 +3,237 @@
 The last day of October.
 
 2
-00:00:01,922 --> 00:00:06,384
+00:00:01,922 --> 00:00:07,344
 Malika's accountant puts the bank's payouts next to the shop's own orders.
 
 3
-00:00:06,434 --> 00:00:10,728
+00:00:07,394 --> 00:00:12,384
 One week is off by the price of two bouquets, and nobody can say why.
 
 4
-00:00:10,778 --> 00:00:12,984
+00:00:12,434 --> 00:00:15,024
 Was last week's refund counted today?
 
 5
-00:00:13,034 --> 00:00:15,480
+00:00:15,074 --> 00:00:17,832
 Was a reversed payment counted as a sale?
 
 6
-00:00:15,530 --> 00:00:17,520
+00:00:17,882 --> 00:00:20,376
 Did one night simply not run?
 
 7
-00:00:17,570 --> 00:00:20,880
+00:00:20,426 --> 00:00:24,216
 A total that nobody can take apart cannot be trusted.
 
 8
-00:00:20,930 --> 00:00:26,280
+00:00:24,266 --> 00:00:30,816
 In Lesson 1, ecom counted at the end of each day what the shop earned, and kept the bank's fee.
 
 9
-00:00:26,330 --> 00:00:31,176
+00:00:30,866 --> 00:00:36,672
 This lesson builds that count, night by night, so every payout can be explained.
 
 10
-00:00:31,226 --> 00:00:34,968
+00:00:36,722 --> 00:00:41,112
 Every night, the bank counts the day for each website.
 
 11
-00:00:35,018 --> 00:00:40,032
+00:00:41,162 --> 00:00:46,896
 Two things make that count trustworthy: a clear day, and a count you can repeat.
 
 12
-00:00:40,082 --> 00:00:41,904
+00:00:46,946 --> 00:00:48,888
 First, the clear day.
 
 13
-00:00:41,954 --> 00:00:46,104
+00:00:48,938 --> 00:00:54,360
 A business day runs from midnight to midnight, in the bank's own time zone.
 
 14
-00:00:46,154 --> 00:00:51,072
+00:00:54,410 --> 00:00:59,880
 It is the same day that decides whether money goes back by reversal or by refund.
 
 15
-00:00:51,122 --> 00:00:56,712
+00:00:59,930 --> 00:01:06,576
 So the reports and the refund rules never disagree about which day a payment belongs to.
 
 16
-00:00:56,762 --> 00:00:58,584
+00:01:06,626 --> 00:01:08,448
 Then the count.
 
 17
-00:00:58,634 --> 00:01:02,928
+00:01:08,498 --> 00:01:13,464
 Every night, the bank adds up each website's day in four numbers.
 
 18
-00:01:02,978 --> 00:01:06,456
+00:01:13,514 --> 00:01:17,640
 Paid is the payments made that day that were not reversed.
 
 19
-00:01:06,506 --> 00:01:11,208
+00:01:17,690 --> 00:01:23,184
 Refunded is the refunds made that day, whenever the original payment was.
 
 20
-00:01:11,258 --> 00:01:14,256
+00:01:23,234 --> 00:01:26,928
 The fee is the bank's share, from the bank's fee rules.
 
 21
-00:01:14,306 --> 00:01:20,832
+00:01:26,978 --> 00:01:34,632
 And the payout is what the merchant receives: what was paid, less what was refunded, each after its fee.
 
 22
-00:01:20,882 --> 00:01:25,080
+00:01:34,682 --> 00:01:39,720
 A day with many refunds and few sales gives a negative payout.
 
 23
-00:01:25,130 --> 00:01:26,952
+00:01:39,770 --> 00:01:41,592
 That is not an error.
 
 24
-00:01:27,002 --> 00:01:28,992
+00:01:41,642 --> 00:01:43,992
 It is the honest answer for that day.
 
 25
-00:01:29,042 --> 00:01:30,864
+00:01:44,042 --> 00:01:45,864
 Now the part you can repeat.
 
 26
-00:01:30,914 --> 00:01:33,096
-Counting a day again is a rebuild.
+00:01:45,914 --> 00:01:50,720
+What should happen when a night is counted again?
 
 27
-00:01:33,146 --> 00:01:36,720
-A rebuild replaces the day's numbers; it never adds to them.
+00:01:50,770 --> 00:01:53,288
+Counting a day again is a rebuild.
 
 28
-00:01:36,770 --> 00:01:39,000
-This is where I see most teams go wrong.
+00:01:53,338 --> 00:01:57,656
+A rebuild replaces the day's numbers; it never adds to them.
 
 29
-00:01:39,050 --> 00:01:45,888
-They add each night's numbers to a running total, and the first time someone reruns a night, the merchant is paid twice.
+00:01:57,706 --> 00:02:00,320
+This is where I see most teams go wrong.
 
 30
-00:01:45,938 --> 00:01:51,168
-So each night, the bank counts not only yesterday, but a few days before it again.
+00:02:00,370 --> 00:02:08,024
+They add each night's numbers to a running total, and the first time someone reruns a night, the merchant is paid twice.
 
 31
-00:01:51,218 --> 00:01:54,888
-If one night is missed, the next night simply catches up.
+00:02:08,074 --> 00:02:14,144
+So each night, the bank counts not only yesterday, but a few days before it again.
 
 32
-00:01:54,938 --> 00:01:57,048
-Nothing is ever counted twice.
+00:02:14,194 --> 00:02:18,584
+If one night is missed, the next night simply catches up.
 
 33
-00:01:57,098 --> 00:02:04,896
-And behind every total sits a list of every line: each payment, and each refund as a negative line.
+00:02:18,634 --> 00:02:21,056
+Nothing is ever counted twice.
 
 34
-00:02:04,946 --> 00:02:08,088
-So any number can be explained, one line at a time.
+00:02:21,106 --> 00:02:30,056
+And behind every total sits a list of every line: each payment, and each refund as a negative line.
 
 35
-00:02:08,138 --> 00:02:11,568
-Malika opens her portal and chooses Reports.
+00:02:30,106 --> 00:02:33,680
+So any number can be explained, one line at a time.
 
 36
-00:02:11,618 --> 00:02:13,920
-The page is called Daily reports.
+00:02:33,730 --> 00:02:37,568
+Malika opens her portal and chooses Reports.
 
 37
-00:02:13,970 --> 00:02:19,224
-It explains that each night the bank adds up the day before for every website.
+00:02:37,618 --> 00:02:40,280
+The page is called Daily reports.
 
 38
-00:02:19,274 --> 00:02:22,560
-There is one row for each website and business day.
+00:02:40,330 --> 00:02:46,184
+It explains that each night the bank adds up the day before for every website.
 
 39
-00:02:22,610 --> 00:02:28,416
-The columns read Business day, Paid, Bank fee, Refunded, and You receive.
+00:02:46,234 --> 00:02:50,264
+There is one row for each website and business day.
 
 40
-00:02:28,466 --> 00:02:30,720
-One day shows a payment and a refund.
+00:02:50,314 --> 00:02:57,104
+The columns read Business day, Paid, Bank fee, Refunded, and You receive.
 
 41
-00:02:30,770 --> 00:02:32,592
-Paid shows the payment's amount.
+00:02:57,154 --> 00:02:59,984
+One day shows a payment and a refund.
 
 42
-00:02:32,642 --> 00:02:34,464
-Refunded shows the refund.
+00:03:00,034 --> 00:03:01,976
+Paid shows the payment's amount.
 
 43
-00:02:34,514 --> 00:02:37,056
-You receive shows what is left after the fee.
+00:03:02,026 --> 00:03:04,184
+Refunded shows the refund.
 
 44
-00:02:37,106 --> 00:02:42,408
-On another day, refunds outweigh sales, and You receive shows a minus.
+00:03:04,234 --> 00:03:07,376
+You receive shows what is left after the fee.
 
 45
-00:02:42,458 --> 00:02:45,816
-Malika downloads that week's lines for her accountant.
+00:03:07,426 --> 00:03:13,880
+On another day, refunds outweigh sales, and You receive shows a minus.
 
 46
-00:02:45,866 --> 00:02:47,976
-The file opens in a spreadsheet.
+00:03:13,930 --> 00:03:17,960
+Malika downloads that week's lines for her accountant.
 
 47
-00:02:48,026 --> 00:02:53,544
-The payment is there, with its order, its website, its amount, its fee and its time.
+00:03:18,010 --> 00:03:20,288
+The file opens in a spreadsheet.
 
 48
-00:02:53,594 --> 00:02:56,640
-The refund is there too, as a negative line.
+00:03:20,338 --> 00:03:27,080
+The payment is there, with its order, its website, its amount, its fee and its time.
 
 49
-00:02:56,690 --> 00:03:00,816
-The card column shows only the first six and the last four digits.
+00:03:27,130 --> 00:03:31,088
+The refund is there too, as a negative line.
 
 50
-00:03:00,866 --> 00:03:03,672
-Add up the lines, and you get the totals on the screen.
+00:03:31,138 --> 00:03:36,152
+The card column shows only the first six and the last four digits.
 
 51
-00:03:03,722 --> 00:03:10,104
-The accountant finds it in a minute: a refund made on Monday, for a bouquet bought the week before.
+00:03:36,202 --> 00:03:39,416
+Add up the lines, and you get the totals on the screen.
 
 52
-00:03:10,154 --> 00:03:13,440
-When Malika first joined, this page was empty.
+00:03:39,466 --> 00:03:46,856
+The accountant finds it in a minute: a refund made on Monday, for a bouquet bought the week before.
 
 53
-00:03:13,490 --> 00:03:17,424
-It said a report appears the morning after the first day with payments.
+00:03:46,906 --> 00:03:50,696
+When Malika first joined, this page was empty.
 
 54
-00:03:17,474 --> 00:03:24,168
-A payout the merchant can check, a total support can take apart, and no night missed or counted twice.
+00:03:50,746 --> 00:03:55,520
+It said a report appears the morning after the first day with payments.
 
 55
-00:03:24,218 --> 00:03:26,832
-That is what a clear day and a rebuild buy.
+00:03:55,570 --> 00:04:03,392
+A payout the merchant can check, a total support can take apart, and no night missed or counted twice.
 
 56
-00:03:26,882 --> 00:03:29,904
+00:04:03,442 --> 00:04:06,368
+That is what a clear day and a rebuild buy.
+
+57
+00:04:06,418 --> 00:04:13,544
+To recap: a clear day, four numbers, and a rebuild that replaces and never adds.
+
+58
+00:04:13,594 --> 00:04:19,480
+So what happens if a night is missed, or run twice?
+
+59
+00:04:19,530 --> 00:04:23,272
+The next night catches up, and nothing is counted twice.
+
+60
+00:04:23,322 --> 00:04:26,848
 Next: when a buyer says, I never bought this.

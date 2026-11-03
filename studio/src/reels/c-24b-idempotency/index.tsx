@@ -9,7 +9,7 @@ const TITLES = [
   "Lesson 24: a seal", "This lesson: one payment",
   "Send it again", "A second payment", "Two payment pages", "Pay both", "Money back, trust lost",
   "Retrying is right", "Recognise a retry",
-  "Idempotency key", "A plain name", "Same on every retry", "The bank remembers",
+  "A retry or a new order?", "Idempotency key", "A plain name", "Same on every retry", "The bank remembers",
   "Three things", "Same key, same request", "Nothing created", "The first answer", "An idempotent replay",
   "A different amount", "Refused", "Never safe to guess",
   "The same moment", "Both look new", "Written only once", "One wins", "The winner's answer",
@@ -18,7 +18,7 @@ const TITLES = [
   "One payment, not two",
   "Tests the edge", "A different amount", "Key already used", "Still one payment",
   "The simplest rule", "Same key again", "A hard choice", "Pays once",
-  "Next: the payment page",
+  "Recap", "What does the bank do wh?", "The answer", "Next: the payment page",
 ];
 
 export const C24bIdempotencyComposition = createEpisode({
@@ -30,5 +30,7 @@ export const C24bIdempotencyComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 53, // the story shows no course panel; it returns with the recap
   screens,
 });

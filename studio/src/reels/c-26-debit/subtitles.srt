@@ -1,255 +1,271 @@
 1
-00:00:00,050 --> 00:00:02,016
+00:00:00,050 --> 00:00:02,328
 Sunday, twenty past nine.
 
 2
-00:00:02,066 --> 00:00:06,432
+00:00:02,378 --> 00:00:07,344
 The buyer at the bus stop presses Confirm, and the screen freezes for a second.
 
 3
-00:00:06,482 --> 00:00:08,304
+00:00:07,394 --> 00:00:09,216
 So the buyer presses again.
 
 4
-00:00:08,354 --> 00:00:14,112
+00:00:09,266 --> 00:00:15,936
 Two presses, one bunch of tulips, and one card that must be charged exactly once.
 
 5
-00:00:14,162 --> 00:00:24,720
+00:00:15,986 --> 00:00:28,536
 In Lesson 26, the page took a token from the card frame and ecom checked that it belongs to this payment, and the fee from Lesson 22 and the terminal from Lesson 23 are ready too.
 
 6
-00:00:24,770 --> 00:00:28,080
+00:00:28,586 --> 00:00:32,160
 This lesson charges the card, exactly once.
 
 7
-00:00:28,130 --> 00:00:30,384
+00:00:32,210 --> 00:00:34,848
 A double press is only the start.
 
 8
-00:00:30,434 --> 00:00:32,856
+00:00:34,898 --> 00:00:37,848
 The page can retry on a weak network.
 
 9
-00:00:32,906 --> 00:00:36,672
+00:00:37,898 --> 00:00:42,024
 Two copies of the bank's app can pick up the same confirmed card.
 
 10
-00:00:36,722 --> 00:00:38,544
+00:00:42,074 --> 00:00:44,328
 Each of them could charge the card.
 
 11
-00:00:38,594 --> 00:00:40,416
+00:00:44,378 --> 00:00:46,080
 And there is a worse case.
 
 12
-00:00:40,466 --> 00:00:45,144
+00:00:46,130 --> 00:00:51,864
 The app asks the network to charge the card, and crashes before it saves the answer.
 
 13
-00:00:45,194 --> 00:00:47,016
+00:00:51,914 --> 00:00:53,736
 Did money move?
 
 14
-00:00:47,066 --> 00:00:48,888
+00:00:53,786 --> 00:00:55,608
 Nobody knows.
 
 15
-00:00:48,938 --> 00:00:52,104
-Here is my rule for any code that moves money.
+00:00:55,658 --> 00:01:02,312
+How do you charge a card exactly once, even when the app crashes?
 
 16
-00:00:52,154 --> 00:00:55,752
-Decide who goes, write it down, and only then act.
+00:01:02,362 --> 00:01:06,008
+Here is my rule for any code that moves money.
 
 17
-00:00:55,802 --> 00:00:57,624
-First comes the claim.
+00:01:06,058 --> 00:01:10,184
+Decide who goes, write it down, and only then act.
 
 18
-00:00:57,674 --> 00:01:02,208
-The claim is a single change to the payment, from card confirmed to debiting.
+00:01:10,234 --> 00:01:12,056
+First comes the claim.
 
 19
-00:01:02,258 --> 00:01:05,712
-It succeeds only if the payment is still card confirmed.
+00:01:12,106 --> 00:01:17,504
+The claim is a single change to the payment, from card confirmed to debiting.
 
 20
-00:01:05,762 --> 00:01:10,944
-So however many presses or retries arrive, exactly one caller wins.
+00:01:17,554 --> 00:01:21,560
+It succeeds only if the payment is still card confirmed.
 
 21
-00:01:10,994 --> 00:01:14,112
-The others find the payment already taken, and stop.
+00:01:21,610 --> 00:01:27,656
+So however many presses or retries arrive, exactly one caller wins.
 
 22
-00:01:14,162 --> 00:01:16,248
-The winner then looks for two things.
+00:01:27,706 --> 00:01:31,400
+The others find the payment already taken, and stop.
 
 23
-00:01:16,298 --> 00:01:19,224
-It finds the website's live terminal for this card.
+00:01:31,450 --> 00:01:33,896
+The winner then looks for two things.
 
 24
-00:01:19,274 --> 00:01:22,344
-And it finds the fee the bank agreed with Malika.
+00:01:33,946 --> 00:01:37,160
+It finds the website's live terminal for this card.
 
 25
-00:01:22,394 --> 00:01:26,952
-If either is missing, the payment fails right there, and nothing is charged.
+00:01:37,210 --> 00:01:40,448
+And it finds the fee the bank agreed with Malika.
 
 26
-00:01:27,002 --> 00:01:30,480
-Next, the winner writes a line in the operation journal.
+00:01:40,498 --> 00:01:45,872
+If either is missing, the payment fails right there, and nothing is charged.
 
 27
-00:01:30,530 --> 00:01:33,816
-That is the bank's logbook of every call that moves money.
+00:01:45,922 --> 00:01:49,952
+Next, the winner writes a line in the operation journal.
 
 28
-00:01:33,866 --> 00:01:39,144
-The line says debit, requested, for this payment, through this terminal.
+00:01:50,002 --> 00:01:53,672
+That is the bank's logbook of every call that moves money.
 
 29
-00:01:39,194 --> 00:01:42,024
-It is written before any network is asked.
+00:01:53,722 --> 00:01:59,888
+The line says debit, requested, for this payment, through this terminal.
 
 30
-00:01:42,074 --> 00:01:44,952
-And a payment can hold only one debit line.
+00:01:59,938 --> 00:02:03,056
+It is written before any network is asked.
 
 31
-00:01:45,002 --> 00:01:48,480
-Then ecom asks the card zone to charge the card by its token.
+00:02:03,106 --> 00:02:06,584
+And a payment can hold only one debit line.
 
 32
-00:01:48,530 --> 00:01:50,352
-The call carries its own id.
+00:02:06,634 --> 00:02:10,928
+Then ecom asks the card zone to charge the card by its token.
 
 33
-00:01:50,402 --> 00:01:56,184
-If it is sent twice, the card zone sees the same id, and the charge still happens once.
+00:02:10,978 --> 00:02:13,064
+The call carries its own id.
 
 34
-00:01:56,234 --> 00:02:01,152
-Timur's card zone talks to the card processing centre, which asks the buyer's bank.
+00:02:13,114 --> 00:02:19,760
+If it is sent twice, the card zone sees the same id, and the charge still happens once.
 
 35
-00:02:01,202 --> 00:02:03,816
-Some networks only hold the money at first.
+00:02:19,810 --> 00:02:25,328
+Timur's card zone talks to the card processing centre, which asks the buyer's bank.
 
 36
-00:02:03,866 --> 00:02:07,584
-For those, the card zone takes the held money at once.
+00:02:25,378 --> 00:02:28,352
+Some networks only hold the money at first.
 
 37
-00:02:07,634 --> 00:02:09,744
-That second step is the capture.
+00:02:28,402 --> 00:02:32,720
+For those, the card zone takes the held money at once.
 
 38
-00:02:09,794 --> 00:02:13,920
-So for every network, approved means the money is taken.
+00:02:32,770 --> 00:02:35,288
+That second step is the capture.
 
 39
-00:02:13,970 --> 00:02:15,792
-Three answers can come back.
+00:02:35,338 --> 00:02:39,968
+So for every network, approved means the money is taken.
 
 40
-00:02:15,842 --> 00:02:18,744
-Approved means paid, with a reference number.
+00:02:40,018 --> 00:02:41,960
+Three answers can come back.
 
 41
-00:02:18,794 --> 00:02:22,416
-Declined is final, with a reason the bank can explain.
+00:02:42,010 --> 00:02:45,440
+Approved means paid, with a reference number.
 
 42
-00:02:22,466 --> 00:02:24,912
-And no answer in time is unknown.
+00:02:45,490 --> 00:02:49,616
+Declined is final, with a reason the bank can explain.
 
 43
-00:02:24,962 --> 00:02:27,336
-Unknown is never treated as declined.
+00:02:49,666 --> 00:02:52,472
+And no answer in time is unknown.
 
 44
-00:02:27,386 --> 00:02:30,360
-A paid payment never becomes unpaid again.
+00:02:52,522 --> 00:02:55,496
+Unknown is never treated as declined.
 
 45
-00:02:30,410 --> 00:02:36,552
-Back at the bus stop, the page changes to taking the payment, and says the buyer's bank is being asked.
+00:02:55,546 --> 00:02:59,048
+A paid payment never becomes unpaid again.
 
 46
-00:02:36,602 --> 00:02:40,848
-A few seconds later, it says paid, and shows the reference number.
+00:02:59,098 --> 00:03:06,296
+Back at the bus stop, the page changes to taking the payment, and says the buyer's bank is being asked.
 
 47
-00:02:40,898 --> 00:02:43,536
-Another buyer tries a card with too little money.
+00:03:06,346 --> 00:03:11,432
+A few seconds later, it says paid, and shows the reference number.
 
 48
-00:02:43,586 --> 00:02:49,248
-The page says the payment was declined, and gives the reason: there isn't enough money on the card.
+00:03:11,482 --> 00:03:14,816
+Another buyer tries a card with too little money.
 
 49
-00:02:49,298 --> 00:02:52,512
-That evening, Malika opens the merchant portal.
+00:03:14,866 --> 00:03:21,464
+The page says the payment was declined, and gives the reason: there isn't enough money on the card.
 
 50
-00:02:52,562 --> 00:02:55,272
-The payments list shows the tulips as paid.
+00:03:21,514 --> 00:03:25,208
+That evening, Malika opens the merchant portal.
 
 51
-00:02:55,322 --> 00:02:57,144
-She opens the payment.
+00:03:25,258 --> 00:03:28,568
+The payments list shows the tulips as paid.
 
 52
-00:02:57,194 --> 00:03:00,720
-The details show the amount, the website and the bank fee.
+00:03:28,618 --> 00:03:30,440
+She opens the payment.
 
 53
-00:03:00,770 --> 00:03:03,600
-Below them is a section called calls to the card scheme.
+00:03:30,490 --> 00:03:34,424
+The details show the amount, the website and the bank fee.
 
 54
-00:03:03,650 --> 00:03:07,320
-It has one line: debit, first sent, now approved.
+00:03:34,474 --> 00:03:38,048
+Below them is a section called calls to the card scheme.
 
 55
-00:03:07,370 --> 00:03:10,440
-Two presses at the bus stop, and still only one line.
+00:03:38,098 --> 00:03:42,224
+It has one line: debit, first sent, now approved.
 
 56
-00:03:10,490 --> 00:03:13,608
-Take away any step, and something breaks.
+00:03:42,274 --> 00:03:46,064
+Two presses at the bus stop, and still only one line.
 
 57
-00:03:13,658 --> 00:03:17,088
-Without the claim, a double press is a double charge.
+00:03:46,114 --> 00:03:49,784
+Take away any step, and something breaks.
 
 58
-00:03:17,138 --> 00:03:22,632
-Without the journal written first, a crash leaves money moved and no record of it.
+00:03:49,834 --> 00:03:53,864
+Without the claim, a double press is a double charge.
 
 59
-00:03:22,682 --> 00:03:26,856
-Without the call's own id, a retried call charges the card again.
+00:03:53,914 --> 00:04:00,224
+Without the journal written first, a crash leaves money moved and no record of it.
 
 60
-00:03:26,906 --> 00:03:34,008
-And without unknown, a slow network would tell the buyer to pay again, while the first charge quietly went through.
+00:04:00,274 --> 00:04:05,288
+Without the call's own id, a retried call charges the card again.
 
 61
-00:03:34,058 --> 00:03:35,904
-The buyer is charged once.
+00:04:05,338 --> 00:04:13,904
+And without unknown, a slow network would tell the buyer to pay again, while the first charge quietly went through.
 
 62
-00:03:35,954 --> 00:03:37,896
-Malika is paid once.
+00:04:13,954 --> 00:04:16,064
+The buyer is charged once.
 
 63
-00:03:37,946 --> 00:03:40,752
-And the bank can always say what it asked, and when.
+00:04:16,114 --> 00:04:18,368
+Malika is paid once.
 
 64
-00:03:40,802 --> 00:03:43,848
+00:04:18,418 --> 00:04:21,920
+And the bank can always say what it asked, and when.
+
+65
+00:04:21,970 --> 00:04:30,152
+To recap: claim first, write the logbook line, then charge, and unknown is never declined.
+
+66
+00:04:30,202 --> 00:04:35,344
+So what stops a double press from charging twice?
+
+67
+00:04:35,394 --> 00:04:38,344
+The claim: only one caller wins.
+
+68
+00:04:38,394 --> 00:04:41,872
 Next: what happens when the network goes silent.
