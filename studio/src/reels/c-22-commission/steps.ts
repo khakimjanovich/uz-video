@@ -1,7 +1,7 @@
 import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 
-// Lesson 22: fee rules. One shop carries it: why does Malika pay more per bouquet than the shop next door?
+// Lesson 22: fee rules. One shop carries it: why does Malika pay more per train set than the shop next door?
 // The question (0–1), the bridge (2), one rate in the code (3–5), fee rules and the most specific wins (6–14),
 // percent, bounds and whole cents (15–19), Dilnoza's new default (20–28), never edited in place (29–34),
 // Malika's answer in the calculator (35–41), every payment keeps its rule (42–43), next (47).

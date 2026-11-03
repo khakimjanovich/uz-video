@@ -104,7 +104,7 @@ export const diagram: DiagramStep<BuildId>[] = [
     danger: ["m78Dispute"],
   },
   // What Malika kept.
-  { cue: 53, layout: GUARDS, badges: { shop: "one bouquet lost" } },
+  { cue: 53, layout: GUARDS, badges: { shop: "one train set lost" } },
   { cue: 54, layout: GUARDS, badges: { shop: "told at once", m78Calendar: "real days", record: "never one person" }, accent: ["shop", "m78Calendar", "record"] },
   { cue: 55, layout: GUARDS, badges: { shop: "evidence", m78Calendar: "banking days" }, accent: ["shop", "m78Calendar"] },
   { cue: 56, layout: GUARDS, badges: { record: "money leaves: who decides?" }, danger: ["record"] },

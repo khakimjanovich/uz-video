@@ -1,7 +1,7 @@
 import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 
-// Lesson 21: Malika's wedding-flowers website. It does not take payments (0–2), the bridge (3), the copycat risk (4–5),
+// Lesson 21: Malika's train-set website. It does not take payments (0–2), the bridge (3), the copycat risk (4–5),
 // Add website and the return addresses (6–18), a draft (19–20), Dilnoza checks it and sets the deal (21–32),
 // Switch on is not the end (33–35), one question (36–38), every website checked (39), next (43).
 const SITES = { shop: [0, 1], salespoint: [2, 0.3], m45Site2: [2, 1.8] } as const;
@@ -21,7 +21,7 @@ const ASK_EDGES = [{ from: "payment", to: "salespoint", label: "may it?" }, { fr
 
 export const diagram: DiagramStep<BuildId>[] = [
   // April: a second website, and it takes nothing.
-  { cue: 0, layout: SITES, edges: [...SITES_EDGES], accent: ["m45Site2"], badges: { shop: "April", m45Site2: "wedding site" } },
+  { cue: 0, layout: SITES, edges: [...SITES_EDGES], accent: ["m45Site2"], badges: { shop: "April", m45Site2: "train-set site" } },
   { cue: 1, layout: SITES, edges: [...SITES_EDGES], badges: { shop: "approved", m45Site2: "take money?" } },
   { cue: 2, layout: SITES, edges: [...SITES_EDGES], danger: ["m45Site2"], badges: { shop: "approved", m45Site2: "not yet" } },
   // Why: a copycat could ride on an approved company.

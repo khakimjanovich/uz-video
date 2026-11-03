@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "A Thursday in March", "Malika's flower shop", "I never bought this", "A deadline attached", "Missed deadline",
+  "A Thursday in March", "Malika's toy shop", "I never bought this", "A deadline attached", "Missed deadline",
   "An inbox on holiday", "Not the facts", "The calendar", "Lesson 32: giving back", "This lesson: a claim",
   "A dispute", "Two ways", "Complaint or claim", "Register it", "Disputed", "Fixed steps", "The evidence date",
   "Banking days", "A banking day", "A margin", "The merchant uploads", "Can't be taken back", "The result",
@@ -13,7 +13,7 @@ const TITLES = [
   "A full refund", "Written down", "An alert", "Malika's payment", "Register complaint", "The source",
   "Claim reference", "What the payer says", "Disputed", "Disputes", "Due soon, Overdue", "Ask for evidence",
   "Pick a date", "Too close is refused", "Malika uploads", "The files", "Answer sent", "Recorded lost", "Not yet",
-  "Waiting for a second", "Who and when", "Dilnoza herself", "A second admin", "Charged back", "One bouquet",
+  "Waiting for a second", "Who and when", "Dilnoza herself", "A second admin", "Charged back", "One train set",
   "Not to silence", "Recap", "Before money leaves?", "A second admin", "Next: checking books",
 ];
 

@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "Early March", "Flowers for the 8th", "A helper for the week", "Lessons 16 and 19", "Share one login?",
+  "Early March", "Toys for the 8th", "A helper for the week", "Lessons 16 and 19", "Share one login?",
   "The costly shortcut", "A refund to a friend", "Change for everyone", "Malika opens Users",
   "Exactly one role", "There are four", "The admin", "The accountant", "The operator", "The observer",
   "Invite a user", "Operator", "Invitation sent", "Never their password", "The helper's inbox",
