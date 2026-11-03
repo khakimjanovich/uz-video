@@ -2,7 +2,7 @@ import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 import { BANK, MERCHANT, PAY } from "../../series/build/screens-m01";
 
-// Lesson 2: how a card payment works. One shop carries it: Malika's forty bouquets on a Friday night.
+// Lesson 2: how a card payment works. One shop carries it: Malika's forty train sets on a Friday night.
 // Paid, but no money (0–6), the bridge from lesson 1 (7–8), two banks and the network (9–13), the question and the yes is a promise (14–17), settlement and the fee (18–22),
 // approved is not paid out (23–25), reversal and refund (26–37), the product (38–47), recap, question, answer (48–51), next (52).
 const SALE = { buyer: [0.5, 1], shop: [2.5, 1] } as const;
@@ -24,9 +24,9 @@ const BACK = { wallet: [0.6, 1], buyer: [2.6, 1] } as const;
 const BACK_EDGE = [{ from: "wallet", to: "buyer" }] as const;
 
 export const diagram: DiagramStep<BuildId>[] = [
-  // Friday night: forty bouquets, forty "paid". Saturday: nothing in the account.
+  // Friday night: forty train sets, forty "paid". Saturday: nothing in the account.
   { cue: 0, layout: SALE, edges: [...SALE_EDGE], badges: { shop: "Fri 21:00" } },
-  { cue: 1, layout: SALE, edges: [...SALE_EDGE], packets: [{ from: "buyer", to: "shop", label: "40 bouquets" }] },
+  { cue: 1, layout: SALE, edges: [...SALE_EDGE], packets: [{ from: "buyer", to: "shop", label: "40 train sets" }] },
   { cue: 2, layout: SALE, edges: [...SALE_EDGE], accent: ["shop"], badges: { shop: "paid ×40" } },
   { cue: 3, layout: ACCOUNT, edges: [...ACCOUNT_EDGE], badges: { shop: "paid ×40", wallet: "Sat" } },
   { cue: 4, layout: ACCOUNT, edges: [...ACCOUNT_EDGE], danger: ["wallet"], badges: { shop: "paid ×40", wallet: "0" } },
