@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice; it changes only when the beat does.
 const TITLES = [
-  "Friday, 9 p.m.", "Forty bouquets", "Paid ×40", "Saturday morning", "Nothing there", "Nothing went wrong",
+  "Friday, 9 p.m.", "Forty train sets", "Paid ×40", "Saturday morning", "Nothing there", "Nothing went wrong",
   "Paid = ?", "Lesson 1: one word", "This lesson: the yes", "Two banks", "The acquirer", "The issuer",
   "May this card pay?", "About two seconds", "Has money moved?", "A promise", "Money set aside", "Nothing moved",
   "Later, in bulk", "One batch", "Settlement", "The fee", "Monday", "Approved ≠ paid out",
