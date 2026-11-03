@@ -30,7 +30,7 @@ const TITLES = [
   "Not an error",
   "The honest answer",
   "Repeat it",
-  "A rebuild",
+  "Counted again?", "A rebuild",
   "Replaces, never adds",
   "Most teams go wrong",
   "Paid twice",
@@ -60,7 +60,7 @@ const TITLES = [
   "The morning after",
   "Checked, taken apart",
   "A clear day, a rebuild",
-  "Next: I never bought it",
+  "Recap", "What happens if a night ?", "The answer", "Next: I never bought it",
 ];
 
 export const C32DailyReportsComposition = createEpisode({
@@ -72,5 +72,7 @@ export const C32DailyReportsComposition = createEpisode({
   titles: TITLES,
   map,
   diagram,
+  focus: true,
+  hidePanelBefore: 56, // the story shows no course panel; it returns with the recap
   screens,
 });
