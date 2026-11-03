@@ -5,7 +5,7 @@ import { diagram, map, screens } from "./steps";
 
 // One headline per cue (sentence): the beat's key word, said by the voice.
 const TITLES = [
-  "April", "Wedding flowers", "It does not", "Lessons 18 and 20", "A brand's copy", "Checks for nothing",
+  "April", "Wooden train sets", "It does not", "Lessons 18 and 20", "A brand's copy", "Checks for nothing",
   "Malika opens Websites", "Checked by the bank", "Add website", "Return addresses", "A sales point",
   "The return address", "Secure, on its own site", "Most underrated field", "Any address?",
   "A fake thank-you page", "Bekzod tests it", "The server refuses", "The bank will check it",
