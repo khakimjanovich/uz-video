@@ -100,7 +100,7 @@ export const diagram: DiagramStep<BuildId>[] = [
   { cue: 46, layout: { m78Product: [1.5, 1] }, badges: { m78Product: "not certified alone" } },
   { cue: 47, layout: BUILDING, frames: [...BUILDING_FRAMES], badges: { assessor: "the whole building", lockedRoom: "the guide: evidence" }, accent: ["assessor"] },
   // Friday evening at Malika's shop: the whole course in one payment.
-  { cue: 49, layout: { buyer: [0.5, 1], shop: [2.5, 1] }, edges: [{ from: "buyer", to: "shop" }], packets: [{ from: "buyer", to: "shop", label: "40 bouquets" }], badges: { shop: "Malika · Fri" } },
+  { cue: 49, layout: { buyer: [0.5, 1], shop: [2.5, 1] }, edges: [{ from: "buyer", to: "shop" }], packets: [{ from: "buyer", to: "shop", label: "40 train sets" }], badges: { shop: "Malika · Fri" } },
   {
     cue: 50,
     layout: FRIDAY,
