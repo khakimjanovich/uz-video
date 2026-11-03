@@ -1,219 +1,219 @@
 1
-00:00:00,050 --> 00:00:02,472
+00:00:00,050 --> 00:00:02,400
 Wednesday, nine in the morning.
 
 2
-00:00:02,522 --> 00:00:09,432
+00:00:02,450 --> 00:00:09,552
 The bank's assessor arrives, and Timur meets them holding one document: the card zone's guide.
 
 3
-00:00:09,482 --> 00:00:18,624
+00:00:09,602 --> 00:00:18,840
 An assessor is the independent expert who checks a bank against the card industry's security standard, PCI DSS.
 
 4
-00:00:18,674 --> 00:00:22,536
+00:00:18,890 --> 00:00:22,704
 In Lesson 4, card numbers went into one locked room.
 
 5
-00:00:22,586 --> 00:00:26,808
+00:00:22,754 --> 00:00:27,192
 In Lesson 40, that room shipped as fixed releases.
 
 6
-00:00:26,858 --> 00:00:31,824
+00:00:27,242 --> 00:00:32,280
 This lesson asks the last question: who answers for the building around it.
 
 7
-00:00:31,874 --> 00:00:37,296
+00:00:32,330 --> 00:00:37,680
 Elsewhere, a bank buys a product whose brochure says: compliant.
 
 8
-00:00:37,346 --> 00:00:45,984
+00:00:37,730 --> 00:00:46,248
 The assessor asks for the firewall rules, the records of who logged in, the people who hold the keys, and the cameras on the server room.
 
 9
-00:00:46,034 --> 00:00:47,856
+00:00:46,298 --> 00:00:48,120
 The vendor has none of them.
 
 10
-00:00:47,906 --> 00:00:52,584
+00:00:48,170 --> 00:00:52,680
 Those belong to the bank's whole building, not to one room inside it.
 
 11
-00:00:52,634 --> 00:00:59,136
+00:00:52,730 --> 00:00:59,736
 Worse, nobody wrote down which jobs were the product's and which were the bank's, so some fell between.
 
 12
-00:00:59,186 --> 00:01:03,432
+00:00:59,786 --> 00:01:03,888
 I think a brochure that says compliant is a warning sign.
 
 13
-00:01:03,482 --> 00:01:08,000
+00:01:03,938 --> 00:01:08,504
 So can a product be compliant on its own?
 
 14
-00:01:08,050 --> 00:01:10,760
+00:01:08,554 --> 00:01:11,240
 No product can be compliant on its own.
 
 15
-00:01:10,810 --> 00:01:12,632
+00:01:11,290 --> 00:01:13,112
 We deliver the locked room.
 
 16
-00:01:12,682 --> 00:01:19,304
+00:01:13,162 --> 00:01:19,640
 The bank owns the building around it: its walls, its guards, its cameras and its doors.
 
 17
-00:01:19,354 --> 00:01:23,144
+00:01:19,690 --> 00:01:23,552
 So the room must fit into the building without breaking it.
 
 18
-00:01:23,194 --> 00:01:31,040
+00:01:23,602 --> 00:01:31,448
 It has exactly two narrow doors: one for payers typing a card, and one for the bank's own systems.
 
 19
-00:01:31,090 --> 00:01:33,248
+00:01:31,498 --> 00:01:33,656
 Nothing else on its server listens.
 
 20
-00:01:33,298 --> 00:01:36,656
+00:01:33,706 --> 00:01:37,232
 Its database is never reachable from outside.
 
 21
-00:01:36,706 --> 00:01:44,864
+00:01:37,282 --> 00:01:45,296
 It shares no part with ecom or with anything else: its own database, its own keys, its own logins.
 
 22
-00:01:44,914 --> 00:01:49,208
+00:01:45,346 --> 00:01:49,520
 The bank's network wraps around it, with the bank's firewalls.
 
 23
-00:01:49,258 --> 00:01:51,368
+00:01:49,570 --> 00:01:51,464
 Each product ships with a guide.
 
 24
-00:01:51,418 --> 00:01:58,592
+00:01:51,514 --> 00:01:58,544
 It says three things: what the building must provide, how to install the room, and who does what.
 
 25
-00:01:58,642 --> 00:02:01,520
+00:01:58,594 --> 00:02:01,544
 Who does what is the responsibility matrix.
 
 26
-00:02:01,570 --> 00:02:08,672
+00:02:01,594 --> 00:02:08,288
 For each of the standard's twelve requirements, it says what the product does, what is the bank's, and what is shared.
 
 27
-00:02:08,722 --> 00:02:14,336
+00:02:08,338 --> 00:02:13,784
 A product row describes what the product does; it is not a claim of compliance.
 
 28
-00:02:14,386 --> 00:02:23,528
+00:02:13,834 --> 00:02:23,192
 Take the network: the product opens only two doors, the bank builds the firewalls, and the list of allowed connections is shared.
 
 29
-00:02:23,578 --> 00:02:31,112
+00:02:23,242 --> 00:02:31,376
 Take the logs: the product keeps the trails, and collecting and reviewing them every day is the bank's.
 
 30
-00:02:31,162 --> 00:02:33,104
+00:02:31,426 --> 00:02:33,416
 ecom has its own matrix.
 
 31
-00:02:33,154 --> 00:02:42,056
+00:02:33,466 --> 00:02:43,328
 It holds no card number, so it gets the smaller check from Lesson 4, and exactly which requirements apply is the assessor's call.
 
 32
-00:02:42,106 --> 00:02:47,048
+00:02:43,378 --> 00:02:48,320
 Every release is checked against the standard's requirements, one by one.
 
 33
-00:02:47,098 --> 00:02:53,312
+00:02:48,370 --> 00:02:54,440
 Each is marked as met by the product, partly met, the bank's, shared, or a gap.
 
 34
-00:02:53,362 --> 00:03:01,928
+00:02:54,490 --> 00:03:02,984
 Every gap goes on the list of known gaps, naming the requirement it touches, and what the bank does until the product fixes it.
 
 35
-00:03:01,978 --> 00:03:10,736
+00:03:03,034 --> 00:03:12,200
 For example, after every restart three keyholders must come to unseal Vault, so the bank keeps three of them within reach.
 
 36
-00:03:10,786 --> 00:03:15,008
+00:03:12,250 --> 00:03:16,544
 And anything that moves money or keys takes two people.
 
 37
-00:03:15,058 --> 00:03:25,064
+00:03:16,594 --> 00:03:26,432
 Switching a merchant on, changing a fee, approving a dispute loss, writing off a difference: one person asks, and another decides.
 
 38
-00:03:25,114 --> 00:03:30,104
+00:03:26,482 --> 00:03:31,280
 In the admin portal, Dilnoza asks, and a colleague decides.
 
 39
-00:03:30,154 --> 00:03:35,960
+00:03:31,330 --> 00:03:37,136
 Opening the keys takes three of five keyholders, and no one holds two shares.
 
 40
-00:03:36,010 --> 00:03:40,040
+00:03:37,186 --> 00:03:41,000
 Timur opens the guide at the who does what table.
 
 41
-00:03:40,090 --> 00:03:44,816
+00:03:41,050 --> 00:03:45,800
 Twelve rows, three columns: product, the bank, shared.
 
 42
-00:03:44,866 --> 00:03:49,784
+00:03:45,850 --> 00:03:50,672
 The assessor follows the network row across, then the logging row.
 
 43
-00:03:49,834 --> 00:03:52,616
+00:03:50,722 --> 00:03:53,552
 Together they turn to the known gaps.
 
 44
-00:03:52,666 --> 00:03:58,568
+00:03:53,602 --> 00:03:59,624
 Each line reads: the gap, its requirement, and what the bank does meanwhile.
 
 45
-00:03:58,618 --> 00:04:02,888
+00:03:59,674 --> 00:04:03,800
 Then the assessor walks the whole building, the guide in hand.
 
 46
-00:04:02,938 --> 00:04:07,856
+00:04:03,850 --> 00:04:08,792
 Nothing is hidden, and every job outside the room has a named owner.
 
 47
-00:04:07,906 --> 00:04:10,760
+00:04:08,842 --> 00:04:11,696
 The product is not certified on its own.
 
 48
-00:04:10,810 --> 00:04:19,472
+00:04:11,746 --> 00:04:20,336
 The assessor judges the whole building, with the guide as the product's evidence, and the guide ships with every release.
 
 49
-00:04:19,522 --> 00:04:25,640
+00:04:20,386 --> 00:04:26,432
 Back to the map from Lesson 1: the shop, the locked room, and the building around them both.
 
 50
-00:04:25,690 --> 00:04:29,744
-Friday evening, Malika sells forty bouquets.
+00:04:26,482 --> 00:04:31,136
+Friday evening, Malika sells forty wooden train sets.
 
 51
-00:04:29,794 --> 00:04:40,544
+00:04:31,186 --> 00:04:41,792
 Bekzod's connection sends each buyer to the bank's page, each card passes the room's narrow door, and on Monday Dilnoza's report shows Malika's payout.
 
 52
-00:04:40,594 --> 00:04:44,480
+00:04:41,842 --> 00:04:45,704
 We deliver the locked room; the bank owns the building.
 
 53
-00:04:44,530 --> 00:04:49,240
+00:04:45,754 --> 00:04:50,416
 So who answers for the cameras on the server room?
 
 54
-00:04:49,290 --> 00:04:51,448
+00:04:50,466 --> 00:04:52,720
 The bank, and the guide names it.
 
 55
-00:04:51,498 --> 00:04:58,912
+00:04:52,770 --> 00:05:00,352
 That is the end of phase one: thank you for walking the whole product, from the Pay button to the building around it.

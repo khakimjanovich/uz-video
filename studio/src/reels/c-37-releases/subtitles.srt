@@ -1,247 +1,247 @@
 1
-00:00:00,050 --> 00:00:02,016
+00:00:00,050 --> 00:00:02,088
 Thursday, eleven at night.
 
 2
-00:00:02,066 --> 00:00:07,344
+00:00:02,138 --> 00:00:07,560
 The bank's payments are quiet, and Timur is about to upgrade the card zone.
 
 3
-00:00:07,394 --> 00:00:11,760
-Tomorrow is Friday, and Malika's flower shop will be busy.
+00:00:07,610 --> 00:00:11,856
+Tomorrow is Friday, and Malika's toy shop will be busy.
 
 4
-00:00:11,810 --> 00:00:16,680
+00:00:11,906 --> 00:00:16,968
 He wants to know exactly what will run in the morning, and exactly how to go back.
 
 5
-00:00:16,730 --> 00:00:23,376
+00:00:17,018 --> 00:00:23,448
 In Lesson 39, the same install ran on a laptop, a test server and production.
 
 6
-00:00:23,426 --> 00:00:29,136
+00:00:23,498 --> 00:00:29,184
 Only the values changed, so the product itself must be exactly the same too.
 
 7
-00:00:29,186 --> 00:00:34,464
+00:00:29,234 --> 00:00:34,512
 This lesson numbers each release, so everyone knows exactly what is running.
 
 8
-00:00:34,514 --> 00:00:38,784
+00:00:34,562 --> 00:00:38,808
 Imagine the card zone always ran whatever is newest.
 
 9
-00:00:38,834 --> 00:00:44,280
+00:00:38,858 --> 00:00:44,232
 On Tuesday, a rebuild quietly pulls a newer version nobody tested.
 
 10
-00:00:44,330 --> 00:00:50,856
+00:00:44,282 --> 00:00:50,712
 On Wednesday, someone rolls back, pulls the newest again, and gets the same broken build.
 
 11
-00:00:50,906 --> 00:00:56,952
+00:00:50,762 --> 00:00:57,000
 Then the bank's assessor asks: what exactly runs in your card zone, and what is inside it?
 
 12
-00:00:57,002 --> 00:00:58,824
+00:00:57,050 --> 00:00:58,872
 Nobody can answer.
 
 13
-00:00:58,874 --> 00:01:02,016
+00:00:58,922 --> 00:01:02,256
 A moving name can never say what runs.
 
 14
-00:01:02,066 --> 00:01:06,864
+00:01:02,306 --> 00:01:07,200
 I think newest is the most dangerous word you can write in an install.
 
 15
-00:01:06,914 --> 00:01:12,200
+00:01:07,250 --> 00:01:12,560
 So what should an install say, instead of newest?
 
 16
-00:01:12,250 --> 00:01:16,568
+00:01:12,610 --> 00:01:16,904
 So each part of the system numbers its versions in three parts.
 
 17
-00:01:16,618 --> 00:01:21,344
+00:01:16,954 --> 00:01:21,536
 The first number grows when a change breaks something callers rely on.
 
 18
-00:01:21,394 --> 00:01:24,056
+00:01:21,586 --> 00:01:24,200
 The second grows when something is added.
 
 19
-00:01:24,106 --> 00:01:26,480
+00:01:24,250 --> 00:01:26,504
 The third grows for a fix.
 
 20
-00:01:26,530 --> 00:01:29,552
+00:01:26,554 --> 00:01:29,792
 So the number alone tells you how careful to be.
 
 21
-00:01:29,602 --> 00:01:37,376
+00:01:29,842 --> 00:01:37,448
 A release is one numbered version, made once, from one exact state of the code, and never changed after.
 
 22
-00:01:37,426 --> 00:01:41,432
+00:01:37,498 --> 00:01:41,600
 Everything is built from it, and published under its number.
 
 23
-00:01:41,482 --> 00:01:49,280
+00:01:41,650 --> 00:01:49,184
 Each built piece carries a bill of materials: a list of every component inside it, each with its version.
 
 24
-00:01:49,330 --> 00:01:52,016
+00:01:49,234 --> 00:01:52,040
 It also carries a record of how it was built.
 
 25
-00:01:52,066 --> 00:01:56,432
+00:01:52,090 --> 00:01:57,008
 So the assessor's question has an answer, written on the piece itself.
 
 26
-00:01:56,482 --> 00:01:59,048
+00:01:57,058 --> 00:01:59,648
 Every install pins its versions.
 
 27
-00:01:59,098 --> 00:02:03,656
+00:01:59,698 --> 00:02:04,616
 A pin is one line that names the exact release a product runs.
 
 28
-00:02:03,706 --> 00:02:09,824
+00:02:04,666 --> 00:02:10,544
 There is one line for the card zone, one for ecom, and one for the portals.
 
 29
-00:02:09,874 --> 00:02:14,312
+00:02:10,594 --> 00:02:14,984
 Every environment runs real releases, the laptop too.
 
 30
-00:02:14,362 --> 00:02:18,320
+00:02:15,034 --> 00:02:18,968
 So what Bekzod tests is exactly what the bank runs.
 
 31
-00:02:18,370 --> 00:02:20,960
+00:02:19,018 --> 00:02:21,704
 An upgrade is four steps.
 
 32
-00:02:21,010 --> 00:02:22,832
+00:02:21,754 --> 00:02:23,576
 Back up.
 
 33
-00:02:22,882 --> 00:02:24,704
+00:02:23,626 --> 00:02:25,448
 Change the pinned line.
 
 34
-00:02:24,754 --> 00:02:26,576
+00:02:25,498 --> 00:02:27,320
 Deploy.
 
 35
-00:02:26,626 --> 00:02:28,448
+00:02:27,370 --> 00:02:29,192
 Check.
 
 36
-00:02:28,498 --> 00:02:33,104
+00:02:29,242 --> 00:02:33,800
 The card zone goes first, before ecom, which depends on it.
 
 37
-00:02:33,154 --> 00:02:39,512
+00:02:33,850 --> 00:02:40,328
 The release notes are read before starting: they say what changed, and whether a new value is needed.
 
 38
-00:02:39,562 --> 00:02:42,608
+00:02:40,378 --> 00:02:43,256
 And the database only moves forward.
 
 39
-00:02:42,658 --> 00:02:47,408
+00:02:43,306 --> 00:02:48,128
 A release can change the shape of the database, but never steps it back.
 
 40
-00:02:47,458 --> 00:02:53,768
+00:02:48,178 --> 00:02:54,392
 So rolling back across such a change means restoring the backup taken just before.
 
 41
-00:02:53,818 --> 00:02:56,672
+00:02:54,442 --> 00:02:57,320
 That is why the backup is always step one.
 
 42
-00:02:56,722 --> 00:02:59,576
+00:02:57,370 --> 00:03:00,176
 Timur opens the list of releases.
 
 43
-00:02:59,626 --> 00:03:02,216
+00:03:00,226 --> 00:03:02,768
 Each has a plain number and its notes.
 
 44
-00:03:02,266 --> 00:03:06,032
+00:03:02,818 --> 00:03:06,488
 He chooses the newest, and reads its notes first.
 
 45
-00:03:06,082 --> 00:03:12,656
+00:03:06,538 --> 00:03:13,088
 They say whether a breaking change is inside, and whether the installer will ask for a new value.
 
 46
-00:03:12,706 --> 00:03:15,200
+00:03:13,138 --> 00:03:15,632
 On the server, he takes the backup.
 
 47
-00:03:15,250 --> 00:03:23,480
+00:03:15,682 --> 00:03:23,744
 Then he changes one line: the card zone's pinned release, from one point three point two to one point four point zero.
 
 48
-00:03:23,530 --> 00:03:25,352
+00:03:23,794 --> 00:03:25,616
 He deploys.
 
 49
-00:03:25,402 --> 00:03:29,192
+00:03:25,666 --> 00:03:29,600
 The services restart on the new release, in order.
 
 50
-00:03:29,242 --> 00:03:32,528
+00:03:29,650 --> 00:03:32,888
 The health check runs: every service healthy.
 
 51
-00:03:32,578 --> 00:03:35,264
+00:03:32,938 --> 00:03:35,744
 Only then does he do the same for ecom.
 
 52
-00:03:35,314 --> 00:03:40,472
+00:03:35,794 --> 00:03:41,048
 A month later, the assessor asks again: what is inside the card zone?
 
 53
-00:03:40,522 --> 00:03:44,912
+00:03:41,098 --> 00:03:45,368
 Timur opens the bill of materials of one of its pieces.
 
 54
-00:03:44,962 --> 00:03:51,464
+00:03:45,418 --> 00:03:51,776
 It lists every component inside, each with its version, and the count sits at the bottom.
 
 55
-00:03:51,514 --> 00:03:56,000
+00:03:51,826 --> 00:03:56,408
 That is the answer, and the assessor can trust every piece.
 
 56
-00:03:56,050 --> 00:04:01,664
+00:03:56,458 --> 00:04:02,216
 Friday night, Malika's orders run on exactly the release Timur chose.
 
 57
-00:04:01,714 --> 00:04:05,576
+00:04:02,266 --> 00:04:05,912
 Nothing changes unless someone changes a pinned line.
 
 58
-00:04:05,626 --> 00:04:12,800
+00:04:05,962 --> 00:04:13,016
 If he must go back, the old release is still exactly what it was, and the backup came before the change.
 
 59
-00:04:12,850 --> 00:04:18,344
+00:04:13,066 --> 00:04:18,512
 To recap: every release has one number, and every install pins it.
 
 60
-00:04:18,394 --> 00:04:22,864
+00:04:18,562 --> 00:04:23,152
 So how does Timur go back, if he must?
 
 61
-00:04:22,914 --> 00:04:27,760
+00:04:23,202 --> 00:04:28,168
 He pins the old release, and restores the backup taken before.
 
 62
-00:04:27,810 --> 00:04:30,688
+00:04:28,218 --> 00:04:31,072
 Next: who is responsible for what.

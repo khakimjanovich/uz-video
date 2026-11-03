@@ -1,243 +1,243 @@
 1
-00:00:00,050 --> 00:00:02,112
+00:00:00,050 --> 00:00:02,208
 Monday, two in the afternoon.
 
 2
-00:00:02,162 --> 00:00:06,312
+00:00:02,258 --> 00:00:06,312
 The keyholders are back at their desks, and Vault is open.
 
 3
-00:00:06,362 --> 00:00:10,152
+00:00:06,362 --> 00:00:10,320
 In Lesson 38, three of them unsealed it.
 
 4
-00:00:10,202 --> 00:00:13,512
+00:00:10,370 --> 00:00:13,680
 Now Timur installs everything else on top of it.
 
 5
-00:00:13,562 --> 00:00:22,368
-Across town, Bekzod, the developer who connects Malika's flower shop to the bank, runs the same install on his laptop.
+00:00:13,730 --> 00:00:22,416
+Across town, Bekzod, the developer who connects Malika's toy shop to the bank, runs the same install on his laptop.
 
 6
-00:00:22,418 --> 00:00:26,064
+00:00:22,466 --> 00:00:26,328
 This lesson is about why those two installs are the same.
 
 7
-00:00:26,114 --> 00:00:30,960
+00:00:26,378 --> 00:00:31,272
 Elsewhere, someone installed the product by hand, and has since moved on.
 
 8
-00:00:31,010 --> 00:00:37,968
+00:00:31,322 --> 00:00:38,640
 Months later, nobody knows which values production runs with, or why the test server behaves differently.
 
 9
-00:00:38,018 --> 00:00:42,816
+00:00:38,690 --> 00:00:43,632
 An install nobody can repeat is an install nobody understands.
 
 10
-00:00:42,866 --> 00:00:49,448
+00:00:43,682 --> 00:00:50,264
 So how can a laptop and a production server run the same install?
 
 11
-00:00:49,498 --> 00:00:54,224
+00:00:50,314 --> 00:00:55,064
 So the steps are identical on a laptop, a test server and production.
 
 12
-00:00:54,274 --> 00:00:59,576
+00:00:55,114 --> 00:01:00,392
 Only the values differ, and each environment's values are written down once.
 
 13
-00:00:59,626 --> 00:01:08,288
+00:01:00,442 --> 00:01:09,296
 A value is anything that belongs to this bank in this place: an address, a certificate, an email for alerts.
 
 14
-00:01:08,338 --> 00:01:12,704
+00:01:09,346 --> 00:01:13,808
 The card zone has its own values, and the bank sets every one.
 
 15
-00:01:12,754 --> 00:01:17,288
+00:01:13,858 --> 00:01:18,416
 Who may call the card zone, and which roles each caller may use.
 
 16
-00:01:17,338 --> 00:01:26,984
+00:01:18,466 --> 00:01:28,760
 The fraud limits from Lesson 14: how many refused tries a card, its first digits, an address or a shop may have within a window of time.
 
 17
-00:01:27,034 --> 00:01:33,320
+00:01:28,810 --> 00:01:35,312
 How long a card entry session lives, how many tries it allows, and how long a code lives.
 
 18
-00:01:33,370 --> 00:01:35,720
+00:01:35,362 --> 00:01:37,664
 Each is the bank's chosen value.
 
 19
-00:01:35,770 --> 00:01:38,816
+00:01:37,714 --> 00:01:40,784
 Nothing has a default, and nothing is guessed.
 
 20
-00:01:38,866 --> 00:01:41,792
+00:01:40,834 --> 00:01:43,712
 I think a default is a decision nobody made.
 
 21
-00:01:41,842 --> 00:01:47,384
+00:01:43,762 --> 00:01:48,848
 The bank sets each value once for each environment, and they are kept in Vault.
 
 22
-00:01:47,434 --> 00:01:49,256
+00:01:48,898 --> 00:01:50,720
 Order matters too.
 
 23
-00:01:49,306 --> 00:01:51,968
+00:01:50,770 --> 00:01:53,072
 The card zone installs first.
 
 24
-00:01:52,018 --> 00:01:59,024
+00:01:53,122 --> 00:02:00,056
 ecom then asks the card zone for its certificate, waits until it is signed, and carries on.
 
 25
-00:01:59,074 --> 00:02:02,912
+00:02:00,106 --> 00:02:03,872
 Before anything is installed, a preflight runs.
 
 26
-00:02:02,962 --> 00:02:06,896
+00:02:03,922 --> 00:02:07,976
 A preflight is a check of the machine before any work starts.
 
 27
-00:02:06,946 --> 00:02:11,768
+00:02:08,026 --> 00:02:12,776
 It looks for what the install needs, such as the right tools and free ports.
 
 28
-00:02:11,818 --> 00:02:16,016
+00:02:12,826 --> 00:02:16,952
 When something is missing, it says exactly what to fix.
 
 29
-00:02:16,066 --> 00:02:21,176
+00:02:17,002 --> 00:02:22,088
 Then Vault is set up, and every service's settings are written from it.
 
 30
-00:02:21,226 --> 00:02:25,712
+00:02:22,138 --> 00:02:26,600
 The services start in order, each one waiting for what it needs.
 
 31
-00:02:25,762 --> 00:02:33,200
+00:02:26,650 --> 00:02:34,232
 A later change is just a new value, applied the same way, and only the services that use it restart.
 
 32
-00:02:33,250 --> 00:02:41,240
+00:02:34,282 --> 00:02:42,512
 Every install ends with a health check: each service is asked whether it is ready, and answers a clear yes or no.
 
 33
-00:02:41,290 --> 00:02:45,776
+00:02:42,562 --> 00:02:46,880
 Timur starts the card zone's installer on the fresh server.
 
 34
-00:02:45,826 --> 00:02:48,032
+00:02:46,930 --> 00:02:49,160
 The preflight runs first.
 
 35
-00:02:48,082 --> 00:02:49,664
+00:02:49,210 --> 00:02:51,032
 Most lines pass.
 
 36
-00:02:49,714 --> 00:02:53,408
+00:02:51,082 --> 00:02:54,728
 One line fails, and right under it is the fix.
 
 37
-00:02:53,458 --> 00:02:55,904
+00:02:54,778 --> 00:02:57,200
 Timur fixes it and starts again.
 
 38
-00:02:55,954 --> 00:02:57,776
+00:02:57,250 --> 00:02:59,072
 Now everything passes.
 
 39
-00:02:57,826 --> 00:03:00,536
+00:02:59,122 --> 00:03:01,976
 The installer asks for the release to run.
 
 40
-00:03:00,586 --> 00:03:03,632
+00:03:02,026 --> 00:03:05,048
 Then it asks for the bank's values, one at a time.
 
 41
-00:03:03,682 --> 00:03:05,624
+00:03:05,098 --> 00:03:06,944
 Where each door listens.
 
 42
-00:03:05,674 --> 00:03:08,216
+00:03:06,994 --> 00:03:09,368
 Which callers may use the card zone.
 
 43
-00:03:08,266 --> 00:03:15,968
+00:03:09,418 --> 00:03:17,120
 For each caller, the websites it serves, how long a card entry session lives, and how many tries it allows.
 
 44
-00:03:16,018 --> 00:03:18,920
+00:03:17,170 --> 00:03:20,072
 Malika's shop is one of those websites.
 
 45
-00:03:18,970 --> 00:03:24,920
+00:03:20,122 --> 00:03:26,144
 Then the fraud limits, the addresses for alerts, and the certificate for the payers' door.
 
 46
-00:03:24,970 --> 00:03:27,872
+00:03:26,194 --> 00:03:29,192
 Every answer is checked as it is given.
 
 47
-00:03:27,922 --> 00:03:30,800
+00:03:29,242 --> 00:03:32,048
 An answer in the wrong form is asked again.
 
 48
-00:03:30,850 --> 00:03:36,224
+00:03:32,098 --> 00:03:37,376
 A certificate that does not match its key is asked again, with the reason.
 
 49
-00:03:36,274 --> 00:03:41,720
+00:03:37,426 --> 00:03:42,920
 When every value is there, the installer says so, and how many it asked.
 
 50
-00:03:41,770 --> 00:03:47,936
+00:03:42,970 --> 00:03:49,520
 It starts the services in order, and ends with the health check: every service healthy.
 
 51
-00:03:47,986 --> 00:03:51,128
+00:03:49,570 --> 00:03:52,784
 Then Timur runs ecom's installer.
 
 52
-00:03:51,178 --> 00:03:56,432
+00:03:52,834 --> 00:03:58,208
 It asks for its own values, sends its certificate request, and waits.
 
 53
-00:03:56,482 --> 00:03:59,624
+00:03:58,258 --> 00:04:01,328
 On the card zone, the request is signed.
 
 54
-00:03:59,674 --> 00:04:04,928
+00:04:01,378 --> 00:04:06,560
 ecom carries on, and its own health check shows every service healthy too.
 
 55
-00:04:04,978 --> 00:04:10,760
+00:04:06,610 --> 00:04:12,560
 By evening, every value the bank runs on is written down, once, in one place.
 
 56
-00:04:10,810 --> 00:04:15,176
+00:04:12,610 --> 00:04:16,880
 A missing value stops the install instead of being filled in.
 
 57
-00:04:15,226 --> 00:04:20,240
+00:04:16,930 --> 00:04:22,040
 And what Bekzod tests on his laptop is the same install that runs in the bank.
 
 58
-00:04:20,290 --> 00:04:25,664
+00:04:22,090 --> 00:04:27,488
 To recap: the steps are the same everywhere, and only the values differ.
 
 59
-00:04:25,714 --> 00:04:30,904
+00:04:27,538 --> 00:04:32,680
 So what does the install do when a value is missing?
 
 60
-00:04:30,954 --> 00:04:33,208
+00:04:32,730 --> 00:04:35,056
 It stops, and nothing is guessed.
 
 61
-00:04:33,258 --> 00:04:36,880
+00:04:35,106 --> 00:04:38,704
 Next: how a release is numbered and shipped.
