@@ -2,7 +2,7 @@ import { BuildMapStep, DiagramStep, ScreenStep } from "../../components";
 import { BuildId } from "../../series/build/nodes";
 import { BANK, PAY } from "../../series/build/screens-m01";
 
-// Lesson 5: the bank's card reader on ecom's page. One story carries it: Malika's market stall, then her roses on the web.
+// Lesson 5: the bank's card reader on ecom's page. One story carries it: Malika's market stall, then her train sets on the web.
 // The stall's card reader (cues 0–3), the bridge from lesson 4 (4–5), the obvious design (6–11), the contract (12–15), the card entry session (16–18),
 // the question and the frame (19–22), card in, receipt out (23–27), charge by token (28–29), the product (30–45), what it protects (46–52),
 // the stall and the page (53–55), recap, question, answer (56–58), next (59).
