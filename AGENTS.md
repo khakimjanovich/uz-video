@@ -121,7 +121,7 @@ cd studio && npm run dev
 
 **Visual identity: Receipt.** Every video is a thermal payment slip on a dark counter: Archivo Black headlines (one per step), IBM Plex Mono for everything else, ink boxes, rubber-stamp badges (red = problem, green = OK), captions on black tape, a dotted "totals" footer line. Tokens live in `studio/src/index.css`; no emoji in diagram labels.
 
-Products and rules live in [`SERIES.md`](SERIES.md); the programmer series plan in [`SERIES-BUILD.md`](SERIES-BUILD.md). Order of work: **plan → script → voice → stills check**. English first; Uzbek copies only on request. MP4s are rendered only on request; review happens in Studio or on stills.
+Products and rules live in [`SERIES.md`](SERIES.md); the programmer series plan in [`SERIES-MERCHANT.md`](SERIES-MERCHANT.md). Order of work: **plan → script → voice → stills check**. English first; Uzbek copies only on request. MP4s are rendered only on request; review happens in Studio or on stills.
 
 Every video is **one architecture diagram that evolves with the voiceover**, 1080×1920 (9:16). `captions={false}` on `ReelScaffold` turns the caption tape off.
 

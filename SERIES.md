@@ -1,13 +1,14 @@
-# heeyPay Acquiring — Video Products
+# Video Products: heeyMerchant and heeyID
 
 Workflow: **plan → script (`reels/<id>/script.txt`) → steps + voice → stills check → render on request**.
-English first (TTS voice); an Uzbek copy only when asked. Videos never end on a question.
+English first (TTS voice); an Uzbek copy only when asked (never for heeyID). Videos never end on a question.
 
 ## Products
 
 | Product | Audience | Goal | Status |
 |---|---|---|---|
-| **Series B, build an acquiring system**: [`SERIES-BUILD.md`](SERIES-BUILD.md) | backend developers new to payments | build a working acquiring system | producing |
+| **heeyMerchant** (Series B, build an acquiring system): [`SERIES-MERCHANT.md`](SERIES-MERCHANT.md), ids `c-NN-<slug>`, Studio folder `heeyMerchant` | backend developers new to payments | build a working acquiring system | producing |
+| **heeyID** (build a customer identity platform): [`SERIES-HEEYID.md`](SERIES-HEEYID.md), ids `h-NN-<slug>`, Studio folder `heeyID` | backend developers new to identity | build heeyID MVP 1 | planning |
 
 Retired on 2026-10-18: Tier 1 (`ep01`–`ep07`) and Tier 2 (`t2-00`–`t2-08`). The owner pitch was retired on 2026-11-01 (tag `owner-pitch`). Restore from commit `67f4751` if ever needed.
 
@@ -22,6 +23,6 @@ Retired on 2026-10-18: Tier 1 (`ep01`–`ep07`) and Tier 2 (`t2-00`–`t2-08`). 
 - **Terms:** widely known industry names (replay attack, HMAC, nonce, idempotency key, maker-checker), never invented ones.
 - **Sources:** the story comes from the BRD; precision comes from the code. Never mention build status ("planned", "not live"). Settings in the code are "the configured time / role / limit", never their default number.
 
-## Later MVPs (BRD only)
+## heeyMerchant later MVPs (BRD only)
 
 Saved cards & recurring (MVP 2) · Invoicing by phone number (MVP 3) · Mobile SDK (MVP 4) · Split payments (MVP 5) · Hold & capture + OFD receipt (MVP 6) · UzQR & MUNIS (separate topic).
