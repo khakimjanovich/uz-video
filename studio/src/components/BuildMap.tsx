@@ -214,13 +214,15 @@ export const BuildMap: React.FC<{ steps: BuildMapStep<string>[]; def?: MapDef; x
         {def.parts.map((p) => {
           const active = p.n === step.part;
           const done = step.part !== undefined && p.n < step.part;
+          // More than 7 modules: smaller rows, so the list stays above the caption card.
+          const dense = def.parts.length > 7;
           return (
-            <div key={p.n} style={{ opacity: rowFade(p.n) }} className={`flex items-center gap-4 py-[2px] border-b-[2px] border-dotted border-ink-muted ${active ? "text-ink" : done ? "text-ink" : "text-ink-muted"}`}>
-              <span className={`inline-flex w-[28px] h-[28px] items-center justify-center text-[18px] font-bold ${active ? "bg-ink text-paper" : done ? "border-[3px] border-stamp-green" : "border-[3px] border-dashed border-ink-muted"}`}>
+            <div key={p.n} style={{ opacity: rowFade(p.n) }} className={`flex items-center gap-4 ${dense ? "py-0" : "py-[2px]"} border-b-[2px] border-dotted border-ink-muted ${active ? "text-ink" : done ? "text-ink" : "text-ink-muted"}`}>
+              <span className={`inline-flex ${dense ? "w-[24px] h-[24px] text-[16px]" : "w-[28px] h-[28px] text-[18px]"} items-center justify-center font-bold ${active ? "bg-ink text-paper" : done ? "border-[3px] border-stamp-green" : "border-[3px] border-dashed border-ink-muted"}`}>
                 {p.n}
               </span>
-              <span className={`text-[20px] ${active ? "font-bold" : ""}`}>{p.title}</span>
-              <span className="ml-auto text-[18px] text-ink-muted">{p.lessons}</span>
+              <span className={`${dense ? "text-[18px]" : "text-[20px]"} ${active ? "font-bold" : ""}`}>{p.title}</span>
+              <span className={`ml-auto ${dense ? "text-[16px]" : "text-[18px]"} text-ink-muted`}>{p.lessons}</span>
             </div>
           );
         })}

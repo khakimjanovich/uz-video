@@ -18,68 +18,92 @@ A course that teaches a backend developer who is new to identity to build heeyID
 Each lesson arrives because the one before it leaves a question open.
 
 ### Module 1. Orientation
+
 | # | Id | Concept | Sources |
 |---|---|---|---|
-| 1 | `h-01-map` | The build map: bank perimeter, edge, two gateways, Keycloak, workers, four stores, TAF, MyID and the bank's services | SAD §1, §3.1–3.2, §8 |
-| 2 | `h-02-one-identity` | Why: prove once, reuse in every app of the bank; master app and side apps; one installation per bank | BRD §2, FR-84, FR-91, SAD §1 |
-| 3 | `h-03-identity-words` | Authentication vs identity proofing vs authorisation; assurance level 1 and 2; OAuth 2.1 / OIDC, PKCE, DPoP | SRS §2, C-2 |
+| 1 | `h-01-map` | The build map: the perimeter, the edge, two gateways, Keycloak, the stores, TAF, MyID and the bank services. Master app and side apps. | SAD §1, §3, §8 |
+| 2 | `h-02-one-identity` | One person, one phone number, one password for all apps. One account in each app, many sessions. The master app and the side apps. One installation for one bank. | BRD FR-84, FR-91, SRS-APP-01…04, SAD A6, ADR-32, ADR-33 |
+| 3 | `h-03-identity-words` | Authentication, identity proofing and authorisation. Level 1 and level 2. OAuth 2.1 and OIDC. | SRS §2, C-2 |
 
 ### Module 2. Foundations
+
 | # | Id | Concept | Sources |
 |---|---|---|---|
-| 4 | `h-04-perimeter` | One installation per bank, two zones (stage, production), no call to the vendor, data stays in Uzbekistan; the TAF agent already runs in the bank's network | C-1, C-11, C-16, SRS-TEN-01, SRS-TST-01 |
-| 5 | `h-05-apps` | One person, one password, one account per app, many sessions; one Keycloak realm, one client per app, tokens with aud = the app; session rank and probation | C-1, A6, ADR-32…35, SRS-APP-01…12 |
-| 6 | `h-06-configuration` | Deploy config fails fast; policies and texts come from the catalogue and change with maker-checker | C-12, ADR-28, SRS-ADM-07 |
-| 7 | `h-07-adapters` | Domain with no I/O, ports and adapters (TAF, MyID, SMS, push, lookup), simulators, timeout and breaker per dependency | C-15, SAD §8, §10.1 |
-| 8 | `h-08-keys` | Vault: installation keys, MyID and TAF credentials, FCM credential, audit HMAC key; key custody | SAD §7.2 |
-| 9 | `h-09-api-contract` | No heeyID SDK in MVP 1: the OpenAPI contract and the integration guide; the bank adds the MyID and TAF SDKs to the master app; what the app keeps (device id, tokens, PIN digest) and never keeps (password, personal identification number) | SAD §3.2, A7, ADR-14, §7.3 |
+| 4 | `h-04-perimeter` | One installation for each bank, two zones, no call to the vendor. The TAF agent already runs in the bank network. | C-1, C-11, C-16, SRS-TEN-01 |
+| 5 | `h-05-apps-and-tokens` | One Keycloak realm. One client for each app. Each token names its app (aud, azp). Each backend accepts only its own tokens. | SAD A6, SRS-TEN-03, NFR-S-12 |
+| 6 | `h-06-configuration` | No default in the code. OpenTofu gives the deploy values and the policy defaults. A missing value stops the start. The bank changes policies in the panel with maker-checker. | ADR-28, SRS-ADM-07 |
+| 7 | `h-07-adapters` | A domain with no I/O. Ports and adapters for TAF, MyID, SMS, push and the customer records. Simulators, timeouts and breakers. | C-15, SAD §8, §10.1 |
+| 8 | `h-08-keys` | Vault: the installation KEK, the index key, the code pepper, the audit key, and the MyID, TAF and FCM credentials. | SAD §3.2, §7.2 |
+| 9 | `h-09-api-contract` | No heeyID SDK in MVP 1. The OpenAPI contract and the integration guide. The bank puts the MyID and TAF SDKs in the master app. What an app can keep, and what it never keeps. | SAD A7, ADR-14, §7.3 |
 
 ### Module 3. Registration (level 1)
+
 | # | Id | Concept | Sources |
 |---|---|---|---|
-| 10 | `h-10-registration` | Phone number, one-time code sent through TAF, password entered two times; new, active and blocked numbers | SRS-REG-01…07, SAD §4.1 |
-| 11 | `h-11-codes-and-limits` | One-time codes, counters and cool-downs in Valkey | SRS-REG-06, SRS-BLK-01 |
-| 12 | `h-12-taf-verdict` | TAF: basic and risk verdict, green / yellow / red, waiting time, fallback to the bank's SMS (not scored), the my.gov.uz trusted-bank stop, face confirmation for level 2, phone ownership | C-16, ADR-30, SRS-AF-01…08, SAD §4.14 |
-| 13 | `h-13-password` | Argon2id digest, wrong-password lock, change, and the waiting reset (SMS reset in side apps) | SRS-REG-10, SRS-DEV-16…17, SAD §4.13 |
+| 10 | `h-10-registration` | In the master app: the code through TAF. In a side app or on the web: the code through the bank SMS service. A password entered two times. | SRS-REG-01…07, SRS-APP-03, SAD §4.1, §4.15 |
+| 11 | `h-11-codes-and-limits` | One-time codes, counters and cool-downs in Valkey. | SRS-REG-06, SRS-BLK-01 |
+| 12 | `h-12-taf-verdict` | TAF in the master app only. Green, Yellow and Red. The waiting time, the SMS fallback (not scored), the trusted-bank stop, the face confirmation, phone ownership. | C-16, ADR-30, SRS-AF-01…08, SAD §4.14 |
+| 13 | `h-13-password` | The Argon2id digest, the wrong-password lock, and the password change. | SRS-REG-10, SRS-DEV-16, SAD §4.13 |
 
 ### Module 4. Proofing (level 2)
+
 | # | Id | Concept | Sources |
 |---|---|---|---|
-| 14 | `h-14-consent` | Consent gate before each MyID call; versioned consent screens | SRS-CON-01…03, SAD §4.2 |
-| 15 | `h-15-myid-proofing` | Native in-app MyID, the backend opens the session, one-use result code, lost code | C-7, C-13, SRS-PRF-01…11, SAD §4.3 |
-| 16 | `h-16-prove-once` | Re-check instead of full proofing while the reusable id is valid; MyID only when needed | C-8, SRS-PRF-08, SAD §1 |
-| 17 | `h-17-verified-identity` | The protected class: encrypted with bank keys, versions, masked reads, each release audited | SAD §3.3 #6, SRS §6.3 |
-| 18 | `h-18-phone-check` | Compare with MyID's phone list (old numbers), then TAF phone ownership, then phone review | C-14, SRS-PRF-12, SRS-REV-01…02, SAD §4.8 |
-| 19 | `h-19-linking` | Link to the bank customer by personal identification number, retry, comparison note | C-9, SRS-LNK-01…07, SAD §4.4 |
+| 14 | `h-14-consent` | The consent gate before each MyID call. Versioned consent screens. | SRS-CON-01…03, SAD §4.2 |
+| 15 | `h-15-myid-proofing` | MyID only in the master app. The backend opens the session. The one-use result code. A side app gets E-APP-01 and sends the customer to the master app. | C-7, ADR-14, SRS-PRF-01…11, SRS-APP-08, SAD §4.3 |
+| 16 | `h-16-prove-once` | The re-check in place of a full proofing while the reusable identifier is valid. | C-8, SRS-PRF-08 |
+| 17 | `h-17-verified-identity` | The protected class: keys of the bank, versions, masked reads, each read audited. | SAD §3.3, SRS §6.3 |
+| 18 | `h-18-phone-check` | Each check of the number (SMS, TAF, MyID) with the provider, the app and the time. The MyID phone list, then TAF ownership, then the phone review. | BRD FR-85, SRS-PRF-12, SRS-REV-01…02, SAD §4.8 |
+| 19 | `h-19-linking` | The link to the bank customer by the personal identification number. | C-9, SRS-LNK-01…07, SAD §4.4 |
 
 ### Module 5. Devices and login
-| # | Id | Concept | Sources |
-|---|---|---|---|
-| 20 | `h-20-trusted-device` | Device record, Known and Trusted, binding check, PIN | SRS-DEV-01…07, SAD §4.5 |
-| 21 | `h-21-access-grants` | Tokens issued by Keycloak through the gateway, session assurance level, renewal that never stops | C-3, C-6, SRS-DEV-04, SAD §4.5 |
-| 22 | `h-22-step-up` | Each app has a required level; the platform never refuses a step-up | SRS-REG-08…09, SRS-DEV-08 |
-| 23 | `h-23-known-device-login` | Password, then one-time code, on a known device | SRS-DEV-09, SAD §4.9 |
-| 24 | `h-24-new-device` | New-device code by TAF SMS to the new phone; the other phone approves or says "This was not me"; push with no code; the code alone after the approval wait | SRS-DEV-10…15, SRS-NTF-04, SAD §4.10 |
-| 25 | `h-25-number-changes` | Number on hold after "This was not me", re-registration, number reassignment, dormant account, the marketplace account link | SRS-PRF-14…16, SAD §4.11 |
-| 26 | `h-26-remote-access` | Remote-access event from the app | SRS-DEV-12, SAD §4.12 |
 
-### Module 6. Lifecycle and trail
 | # | Id | Concept | Sources |
 |---|---|---|---|
-| 27 | `h-27-refresh` | Identity refresh, document expiry, restricted flag | SRS-RFR-01…04, SAD §4.6 |
-| 28 | `h-28-blocking` | Blocks, revocation list, cases | SRS-BLK-01…06, SAD §4.7 |
-| 29 | `h-29-notifications` | Outbox on Kafka, SMS and push templates, content rules; codes go through TAF, the bank's SMS only as fallback | SRS-NTF-01…04 |
-| 30 | `h-30-audit` | Audit chain with HMAC, the shape the bank's security monitoring reads, antifraud events | SRS-AUD-01…04, C-10, SRS §5.4 |
+| 20 | `h-20-trusted-device` | The device record, Known and Trusted, the binding check, the app PIN. | SRS-DEV-01…07, SAD §4.5 |
+| 21 | `h-21-access-grants` | Tokens through the gateway, the session level, renewal. | C-3, C-6, SRS-DEV-04, SAD §4.5 |
+| 22 | `h-22-step-up` | Each app has a required level. A side app sends the customer to the master app for level 2. | SRS-REG-08…09, SRS-DEV-08, SRS-APP-08 |
+| 23 | `h-23-known-device-login` | The password, then the one-time code, on a known device. | SRS-DEV-09, SAD §4.9 |
+| 24 | `h-24-new-device` | In the master app: the TAF code and the approval on a rank-2 session. MyID for a customer who was ever at level 2. The code alone after the wait. | SRS-DEV-10…14, SAD §4.10 |
+| 25 | `h-25-remote-access` | The remote-access event from the master app. | SRS-DEV-12, SAD §4.12 |
 
-### Module 7. Operations and delivery
+### Module 6. Side apps and the master app
+
 | # | Id | Concept | Sources |
 |---|---|---|---|
-| 31 | `h-31-admin-panel` | Staff identity, roles, proposals with maker-checker, cases, phone reviews, exports | SRS-ADM-01…07 |
-| 32 | `h-32-test-identities` | MyID test identities, stage connects only to the MyID test environment | SRS-TST-01…02 |
-| 33 | `h-33-installing` | One install per bank: Helm, Compose for local, first sprint definition of done | SAD §6, §10.6–10.7 |
+| 26 | `h-26-side-app-login` | The marketplace on the web and on the phone: the password, then the approval in the master app in place of the code, or the bank SMS code. Level 2 only after the approval. | BRD FR-86, FR-87, FR-90, SRS-APP-03…05, SAD §4.15 |
+| 27 | `h-27-account-link` | After TAF in the master app: "Is this marketplace account yours?" Yes links it. No ends its sessions and closes it. | BRD FR-88, SRS-APP-06, SAD §4.16 |
+| 28 | `h-28-address-sharing` | Each time: "Share your verified address with the marketplace?" No standing consent. The customer can delete a saved address. | BRD FR-89, SRS-APP-07, SAD §4.17 |
+
+### Module 7. Sessions and recovery
+
+| # | Id | Concept | Sources |
+|---|---|---|---|
+| 29 | `h-29-sessions-and-rank` | The rank of a session (Green, or Yellow and MyID), seniority, the probation period, the list of sessions, ending one session. | BRD FR-92, FR-93, SRS-APP-10, SRS-APP-11, SAD §4.18, ADR-34 |
+| 30 | `h-30-password-reset` | The reset in the master app with TAF and MyID, at once. The waiting reset: only a rank-2 session or an operator can cancel it. The SMS reset in side apps. | BRD FR-94, SRS-DEV-17, SRS-APP-12, SAD §4.13, ADR-35 |
+| 31 | `h-31-this-was-not-me` | "This was not me": the number goes on hold, the password changes at once, the SIM question, MyID before the number goes. | SRS-DEV-15, SAD §4.10 step 7, ADR-31 |
+| 32 | `h-32-number-changes` | Re-registration, number reassignment, a dormant account. | SRS-PRF-14…16, SRS-DEV-11, SAD §4.11 |
+
+### Module 8. Lifecycle and trail
+
+| # | Id | Concept | Sources |
+|---|---|---|---|
+| 33 | `h-33-refresh` | The identity refresh, document expiry, the restricted flag. | SRS-RFR-01…04, SAD §4.6 |
+| 34 | `h-34-blocking` | Blocks, the revocation list, cases. | SRS-BLK-01…06, SAD §4.7 |
+| 35 | `h-35-notifications` | The outbox on Kafka, SMS and push. Codes: TAF in the master app, the bank SMS in side apps. New session, number on hold, no SMS to a number on hold. | BRD FR-75, FR-75a, SRS-NTF-01…04 |
+| 36 | `h-36-audit-and-retention` | The audit chain with HMAC, the events for the bank, and how long each record is kept. | SRS-AUD-01…04, SRS §6.5, C-10 |
+
+### Module 9. Operations
+
+| # | Id | Concept | Sources |
+|---|---|---|---|
+| 37 | `h-37-admin-panel` | Staff identity, roles, maker-checker, cases, phone reviews, waiting resets, sessions. | SRS-ADM-01…07 |
+| 38 | `h-38-test-identities` | MyID test identities; the stage zone uses only the MyID test environment. | SRS-TST-01…02 |
+| 39 | `h-39-installing` | One installation for each bank with OpenTofu and Helm, Compose for local work, the definition of done. | SAD §6, §10.6–10.7 |
 
 ## Decisions
 
 - **Hero:** Aziz (2026-11-09).
-- **Configuration (lesson 6):** deploy values (URLs, keys, credentials) have no default and stop startup when missing; business policies and texts have catalogue defaults that the bank changes with maker-checker (2026-11-09). SAD C-12 keeps its wording: it speaks of policies only.
+- **Lesson map v2 (2026-11-10):** 39 lessons in 9 modules, from BRD 2.3, SRS 3.7 and SAD 3.8. The side-app lessons come right after the mobile-bank lessons.
+- **Configuration (lesson 6):** deploy values and policy defaults come only from the OpenTofu configuration; the code has no default, and a missing value stops startup. The bank changes policies and texts in the panel with maker-checker (2026-11-10, SAD ADR-28).
 - **Code:** `Documents/heeyid/` holds two repos: `heeyid-infra` (same scope as acquiring's infra) and `heeyid` (the Java build, layout from SAD §10.1).
