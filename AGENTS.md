@@ -227,3 +227,10 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `PKI` | P K I | yes |
 | `CA` | C A | yes |
 | `JSON` | jason | yes |
+| `MyID` | my I D | yes |
+| `heeyID` | hey I D | yes |
+| `heeyid-infra` | hey I D infra | yes |
+| `heeyid` | hey I D | yes |
+| `keycloak-ext` | keycloak ext | yes |
+| `iOS` | I O S | yes |
+| `TAF` | T A F | yes |

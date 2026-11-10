@@ -42,6 +42,7 @@ import { C36InstallingComposition } from "./reels/c-36-installing";
 import { C36bOneInstallComposition } from "./reels/c-36b-one-install";
 import { C37ReleasesComposition } from "./reels/c-37-releases";
 import { C38ResponsibilityComposition } from "./reels/c-38-responsibility";
+import { H01MapComposition } from "./reels/h-01-map";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -102,6 +103,11 @@ export const RemotionRoot: React.FC = () => {
           <C36bOneInstallComposition />
           <C37ReleasesComposition />
           <C38ResponsibilityComposition />
+        </Folder>
+      </Folder>
+      <Folder name="heeyID">
+        <Folder name="h1-Orientation">
+          <H01MapComposition />
         </Folder>
       </Folder>
     </>

@@ -63,6 +63,32 @@ const ART = {
       <path d="M89 54 H72 M78 54 V61 M84 54 V59" />
     </>
   ),
+  phone: (
+    <>
+      <rect x="42" y="6" width="36" height="68" rx="6" />
+      <path d="M54 14 H66" />
+      <circle cx="60" cy="64" r="3" />
+      <path d="M50 36 L57 43 L71 28" />
+    </>
+  ),
+  unknownPhone: (
+    <>
+      <rect x="42" y="6" width="36" height="68" rx="6" />
+      <path d="M54 14 H66" />
+      <circle cx="60" cy="64" r="3" />
+      <path d="M54 32 Q54 24 60 24 Q66 24 66 31 Q66 36 60 38 V44" />
+      <circle cx="60" cy="51" r="1.5" />
+    </>
+  ),
+  // A SIM card (cut corner, chip) with a check: the mobile operator's antifraud verdict.
+  sim: (
+    <>
+      <path d="M30 8 H78 L90 20 V72 H30 Z" />
+      <rect x="40" y="30" width="28" height="22" rx="3" />
+      <path d="M54 30 V52 M40 41 H68" />
+      <path d="M78 58 L86 66 L108 44" />
+    </>
+  ),
   attacker: (
     <>
       <path d="M32 70 Q30 22 60 16 Q90 22 88 70" />
