@@ -42,65 +42,73 @@ import { C36InstallingComposition } from "./reels/c-36-installing";
 import { C36bOneInstallComposition } from "./reels/c-36b-one-install";
 import { C37ReleasesComposition } from "./reels/c-37-releases";
 import { C38ResponsibilityComposition } from "./reels/c-38-responsibility";
+import { H01MapComposition } from "./reels/h-01-map";
 
-// The course in order: one Studio folder per module, lessons numbered 1–41 straight through.
+// One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      <Folder name="1-Orientation">
-        <C01MapComposition />
-        <C02CardPaymentComposition />
-        <C03CardDataWordsComposition />
+      <Folder name="heeyMerchant">
+        <Folder name="1-Orientation">
+          <C01MapComposition />
+          <C02CardPaymentComposition />
+          <C03CardDataWordsComposition />
+        </Folder>
+        <Folder name="2-Security-and-configuration">
+          <C04PciDssComposition />
+          <C05TwoUnitsComposition />
+          <C06ConfigurationComposition />
+          <C07IdentityComposition />
+        </Folder>
+        <Folder name="3-The-card-zone">
+          <C08AdaptersComposition />
+          <C09CardVaultComposition />
+          <C10BinDirectoryComposition />
+          <C11CardFrameComposition />
+          <C12TwoDoorsComposition />
+          <C12bCertificateExchangeComposition />
+          <C13FraudLimitsComposition />
+          <C13bSecurityLayersComposition />
+        </Folder>
+        <Folder name="4-Merchants-and-money-rules">
+          <C16RegistrationComposition />
+          <C17LifecycleComposition />
+          <C18FourEyesComposition />
+          <C19ApiClientsComposition />
+          <C20MerchantUsersComposition />
+          <C21SalesPointsComposition />
+          <C22CommissionComposition />
+          <C23EposComposition />
+        </Folder>
+        <Folder name="5-Payments">
+          <C24SignedRequestsComposition />
+          <C24bIdempotencyComposition />
+          <C25PaymentPageComposition />
+          <C26DebitComposition />
+          <C27SilenceComposition />
+          <C28OutboxWebhooksComposition />
+          <C28bWebhooksComposition />
+          <C29PaymentLinksComposition />
+          <C30RefundsComposition />
+        </Folder>
+        <Folder name="6-Operations">
+          <C31ObservabilityComposition />
+          <C32DailyReportsComposition />
+          <C33DisputesComposition />
+          <C34ReconciliationComposition />
+          <C35HardeningComposition />
+        </Folder>
+        <Folder name="7-Delivery">
+          <C36InstallingComposition />
+          <C36bOneInstallComposition />
+          <C37ReleasesComposition />
+          <C38ResponsibilityComposition />
+        </Folder>
       </Folder>
-      <Folder name="2-Security-and-configuration">
-        <C04PciDssComposition />
-        <C05TwoUnitsComposition />
-        <C06ConfigurationComposition />
-        <C07IdentityComposition />
-      </Folder>
-      <Folder name="3-The-card-zone">
-        <C08AdaptersComposition />
-        <C09CardVaultComposition />
-        <C10BinDirectoryComposition />
-        <C11CardFrameComposition />
-        <C12TwoDoorsComposition />
-        <C12bCertificateExchangeComposition />
-        <C13FraudLimitsComposition />
-        <C13bSecurityLayersComposition />
-      </Folder>
-      <Folder name="4-Merchants-and-money-rules">
-        <C16RegistrationComposition />
-        <C17LifecycleComposition />
-        <C18FourEyesComposition />
-        <C19ApiClientsComposition />
-        <C20MerchantUsersComposition />
-        <C21SalesPointsComposition />
-        <C22CommissionComposition />
-        <C23EposComposition />
-      </Folder>
-      <Folder name="5-Payments">
-        <C24SignedRequestsComposition />
-        <C24bIdempotencyComposition />
-        <C25PaymentPageComposition />
-        <C26DebitComposition />
-        <C27SilenceComposition />
-        <C28OutboxWebhooksComposition />
-        <C28bWebhooksComposition />
-        <C29PaymentLinksComposition />
-        <C30RefundsComposition />
-      </Folder>
-      <Folder name="6-Operations">
-        <C31ObservabilityComposition />
-        <C32DailyReportsComposition />
-        <C33DisputesComposition />
-        <C34ReconciliationComposition />
-        <C35HardeningComposition />
-      </Folder>
-      <Folder name="7-Delivery">
-        <C36InstallingComposition />
-        <C36bOneInstallComposition />
-        <C37ReleasesComposition />
-        <C38ResponsibilityComposition />
+      <Folder name="heeyID">
+        <Folder name="h1-Orientation">
+          <H01MapComposition />
+        </Folder>
       </Folder>
     </>
   );

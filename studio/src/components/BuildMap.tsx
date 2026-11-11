@@ -1,25 +1,38 @@
 import React from "react";
 import { Easing, interpolate, useCurrentFrame } from "remotion";
 import { useSubtitlesContext } from "../hooks";
-import { BUILD_ARROWS, BUILD_NODES, BUILD_PARTS, BuildNodeId, UNIT_BOXES, UnitId } from "../series/build/map";
+import { BuildNodeId, SERIES_B_MAP } from "../series/build/map";
+
+// One course's map: its boxes, arrows, unit frames, modules panel and the dashed outer frame.
+// Coordinates are in a 680×500 design space; BuildMap scales them to fit.
+export type MapBox = { label: string; sub?: string; x: number; y: number; w: number; h: number; logos?: string[] };
+export type MapDef<Id extends string = string> = {
+  nodes: Record<Id, MapBox>;
+  arrows: [number, number, number][]; // vertical arrows: [x, fromY, toY]
+  arrowEnds: [Id, Id][]; // the two boxes each arrow joins (same order as arrows), for focus mode
+  units: readonly { id: string; x: number; y: number; w: number; h: number; label: string }[];
+  parts: { n: number; title: string; lessons: number; nodes: Id[] }[];
+  frame: Id; // drawn as a dashed frame with a tab on its bottom edge, not as a box
+};
 
 // One state of the map, keyed to the subtitle cue where it starts.
-export interface BuildMapStep {
+export interface BuildMapStep<Id extends string = BuildNodeId> {
   cue: number;
-  current?: BuildNodeId[]; // filled ink: what this sentence is about
-  built?: BuildNodeId[]; // green outline: already in place
+  current?: Id[]; // filled ink: what this sentence is about
+  built?: Id[]; // green outline: already in place
   part?: number; // highlighted row in the progress panel (the course module)
   rows?: number[]; // panel rows this sentence is about (focus mode); defaults to [part]
   analogy?: "card-token"; // a picture card in the right column (card number -> token); lasts until the next step
-  dot?: BuildNodeId | "off"; // the payment marker: glides to this node when the step starts; "off" hides it
-  units?: Partial<Record<UnitId, string>>; // unit boxes drawn solid, with a stamp (e.g. cards: "CDE")
+  dot?: Id | "off"; // the payment marker: glides to this node when the step starts; "off" hides it
+  units?: Partial<Record<string, string>>; // unit boxes drawn solid, with a stamp (e.g. cards: "CDE")
 }
 
 const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 // The Series B presentation: the system diagram on the left, the build progress on the right.
-export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; scale: number; panelX: number; showMap?: boolean; focus?: boolean; hidePanelBefore?: number }> = ({
+export const BuildMap: React.FC<{ steps: BuildMapStep<string>[]; def?: MapDef; x: number; y: number; scale: number; panelX: number; showMap?: boolean; focus?: boolean; hidePanelBefore?: number }> = ({
   steps,
+  def = SERIES_B_MAP as MapDef,
   x,
   y,
   scale,
@@ -36,31 +49,27 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
   const t = frame - (subtitles[step.cue]?.startFrame ?? 0);
   const pop = interpolate(t, [0, 10], [0.9, 1], CLAMP);
   // Focus mode: while a sentence is about some nodes, the rest fade back so the eye finds them (fades over the first 10 frames).
-  const dimOf = (s: BuildMapStep | undefined, id: BuildNodeId) => (focus && s?.current?.length && !s.current.includes(id) ? 0.15 : 1);
+  const dimOf = (s: BuildMapStep<string> | undefined, id: string) => (focus && s?.current?.length && !s.current.includes(id) ? 0.15 : 1);
   // The payment dot: sits on the latest node named by a step so far, and glides from the one before it.
-  const dotAt = (upTo: number) => steps.slice(0, upTo + 1).reduce<BuildMapStep["dot"]>((d, st) => st.dot ?? d, undefined);
+  const dotAt = (upTo: number) => steps.slice(0, upTo + 1).reduce<BuildMapStep<string>["dot"]>((d, st) => st.dot ?? d, undefined);
   const dotNow = dotAt(i);
   const dotPrev = dotAt(i - 1);
   // The dot rides the node's top edge, so the label stays readable.
-  const center = (id: BuildNodeId) => ({ x: BUILD_NODES[id].x + BUILD_NODES[id].w / 2, y: BUILD_NODES[id].y });
+  const center = (id: string) => ({ x: def.nodes[id].x + def.nodes[id].w / 2, y: def.nodes[id].y });
   const glide = interpolate(t, [0, 30], [0, 1], { ...CLAMP, easing: Easing.inOut(Easing.cubic) });
   // Focus mode, panel rows: only the rows the sentence is about stay bright.
-  const rowDim = (s: BuildMapStep | undefined, n: number) => (focus && s && !(s.rows ?? (s.part !== undefined ? [s.part] : [])).includes(n) ? 0.15 : 1);
+  const rowDim = (s: BuildMapStep<string> | undefined, n: number) => (focus && s && !(s.rows ?? (s.part !== undefined ? [s.part] : [])).includes(n) ? 0.15 : 1);
   const rowFade = (n: number) => {
     const from = rowDim(prev, n);
     return from + (rowDim(step, n) - from) * interpolate(t, [0, 10], [0, 1], CLAMP);
   };
-  // Focus mode, arrows: an arrow stays bright only while both boxes it joins are in play (same order as BUILD_ARROWS).
-  const ARROW_ENDS: [BuildNodeId, BuildNodeId][] = [
-    ["partner", "emailport"], ["epos", "procport"], ["payment", "procport"], ["reconciliation", "procport"],
-    ["emailport", "emailsvc"], ["procport", "card"], ["adapters", "procsvc"],
-  ];
-  const arrowDim = (s: BuildMapStep | undefined, k: number) => (focus && s?.current?.length && !ARROW_ENDS[k].every((id) => s.current!.includes(id)) ? 0.15 : 1);
+  // Focus mode, arrows: an arrow stays bright only while both boxes it joins are in play (same order as def.arrows).
+  const arrowDim = (s: BuildMapStep<string> | undefined, k: number) => (focus && s?.current?.length && !def.arrowEnds[k].every((id) => s.current!.includes(id)) ? 0.15 : 1);
   const arrowFade = (k: number) => {
     const from = arrowDim(prev, k);
     return from + (arrowDim(step, k) - from) * interpolate(t, [0, 10], [0, 1], CLAMP);
   };
-  const fade = (id: BuildNodeId) => {
+  const fade = (id: string) => {
     const from = dimOf(prev, id);
     return from + (dimOf(step, id) - from) * interpolate(t, [0, 10], [0, 1], CLAMP);
   };
@@ -75,7 +84,7 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
         height={500 * scale}
         viewBox="0 0 680 500"
       >
-        {UNIT_BOXES.map((u) => {
+        {def.units.map((u) => {
           const stamp = step.units?.[u.id];
           return (
             <g key={u.id}>
@@ -95,31 +104,31 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
             </g>
           );
         })}
-        {BUILD_ARROWS.map(([ax, y1, y2], k) => (
+        {def.arrows.map(([ax, y1, y2], k) => (
           <path key={`${ax}-${y1}`} opacity={arrowFade(k)} d={`M ${ax} ${y1} V ${y2 - 4} M ${ax - 5} ${y2 - 10} L ${ax} ${y2 - 3} L ${ax + 5} ${y2 - 10}`} fill="none" stroke="var(--ink-muted)" strokeWidth={1.5} />
         ))}
         {(() => {
           // The delivery frame is a frame, not a box: dashed until its part, then solid; its tab sits on the bottom edge.
-          const k = BUILD_NODES.kubernetes;
-          const on = step.current?.includes("kubernetes");
-          const built = !on && step.built?.includes("kubernetes");
+          const k = def.nodes[def.frame];
+          const on = step.current?.includes(def.frame);
+          const built = !on && step.built?.includes(def.frame);
           const color = on ? "var(--ink)" : built ? "var(--stamp-green)" : "var(--ink-muted)";
           const tabX = k.x + 16;
           const tabY = k.y + k.h;
           return (
-            <g opacity={fade("kubernetes")}>
+            <g opacity={fade(def.frame)}>
               <rect x={k.x} y={k.y} width={k.w} height={k.h} rx={20} fill="none" stroke={color}
                 strokeWidth={on || built ? 3 : 1.5} strokeDasharray={on || built ? "10 6" : "3 6"} />
-              <rect x={tabX} y={tabY - 14} width={130} height={28} rx={6}
+              <rect x={tabX} y={tabY - 14} width={k.logos ? 130 : k.label.length * 9 + 20} height={28} rx={6}
                 fill={on ? "var(--ink)" : "var(--paper)"} stroke={color} strokeWidth={1.5} />
-              <path d={k.logos![0]} transform={`translate(${tabX + 8} ${tabY - 9}) scale(0.75)`} fill={on ? "var(--paper)" : color} />
-              <text x={tabX + 34} y={tabY} dominantBaseline="central" fontSize={12} fontWeight={700}
+              {k.logos ? <path d={k.logos[0]} transform={`translate(${tabX + 8} ${tabY - 9}) scale(0.75)`} fill={on ? "var(--paper)" : color} /> : null}
+              <text x={tabX + (k.logos ? 34 : 10)} y={tabY} dominantBaseline="central" fontSize={12} fontWeight={700}
                 fill={on ? "var(--paper)" : color} style={{ textTransform: "uppercase" }}>{k.label}</text>
             </g>
           );
         })()}
-        {(Object.keys(BUILD_NODES) as BuildNodeId[]).filter((id) => id !== "kubernetes").map((id) => {
-          const n = BUILD_NODES[id];
+        {Object.keys(def.nodes).filter((id) => id !== def.frame).map((id) => {
+          const n = def.nodes[id];
           const isCurrent = step.current?.includes(id);
           const isBuilt = !isCurrent && step.built?.includes(id);
           const isNew = isCurrent && !prev?.current?.includes(id);
@@ -202,16 +211,18 @@ export const BuildMap: React.FC<{ steps: BuildMapStep[]; x: number; y: number; s
       {cueIndex >= hidePanelBefore && (!focus || step.rows) ? (
       <div className="absolute font-mono uppercase text-ink" style={{ left: panelX, top: y + 18, right: 84 }}>
         <div className="text-[20px] text-ink-muted tracking-wider mb-2">Course modules</div>
-        {BUILD_PARTS.map((p) => {
+        {def.parts.map((p) => {
           const active = p.n === step.part;
           const done = step.part !== undefined && p.n < step.part;
+          // More than 7 modules: smaller rows, so the list stays above the caption card.
+          const dense = def.parts.length > 7;
           return (
-            <div key={p.n} style={{ opacity: rowFade(p.n) }} className={`flex items-center gap-4 py-[2px] border-b-[2px] border-dotted border-ink-muted ${active ? "text-ink" : done ? "text-ink" : "text-ink-muted"}`}>
-              <span className={`inline-flex w-[28px] h-[28px] items-center justify-center text-[18px] font-bold ${active ? "bg-ink text-paper" : done ? "border-[3px] border-stamp-green" : "border-[3px] border-dashed border-ink-muted"}`}>
+            <div key={p.n} style={{ opacity: rowFade(p.n) }} className={`flex items-center gap-4 ${dense ? "py-0" : "py-[2px]"} border-b-[2px] border-dotted border-ink-muted ${active ? "text-ink" : done ? "text-ink" : "text-ink-muted"}`}>
+              <span className={`inline-flex ${dense ? "w-[24px] h-[24px] text-[16px]" : "w-[28px] h-[28px] text-[18px]"} items-center justify-center font-bold ${active ? "bg-ink text-paper" : done ? "border-[3px] border-stamp-green" : "border-[3px] border-dashed border-ink-muted"}`}>
                 {p.n}
               </span>
-              <span className={`text-[20px] ${active ? "font-bold" : ""}`}>{p.title}</span>
-              <span className="ml-auto text-[18px] text-ink-muted">{p.lessons}</span>
+              <span className={`${dense ? "text-[18px]" : "text-[20px]"} ${active ? "font-bold" : ""}`}>{p.title}</span>
+              <span className={`ml-auto ${dense ? "text-[16px]" : "text-[18px]"} text-ink-muted`}>{p.lessons}</span>
             </div>
           );
         })}

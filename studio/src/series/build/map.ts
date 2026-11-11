@@ -1,6 +1,7 @@
 // The Series B build map (two units: ecom and the cards unit): one source of truth for the presentation diagram and the progress panel.
 // Coordinates are in a 680×500 design space; BuildMap scales them to fit.
 // Infrastructure boxes show the product's official monochrome logo (Simple Icons) above its name.
+import type { MapDef } from "../../components/BuildMap";
 import { siApachekafka, siGrafana, siDocker, siKeycloak, siPostgresql, siPrometheus, siRedis, siTemporal, siVault } from "simple-icons";
 
 export type BuildNodeId =
@@ -83,3 +84,15 @@ export const BUILD_PARTS: { n: number; title: string; lessons: number; nodes: Bu
 
 /** Every node built by the modules before `part`. */
 export const builtBefore = (part: number): BuildNodeId[] => BUILD_PARTS.filter((p) => p.n < part).flatMap((p) => p.nodes);
+
+export const SERIES_B_MAP: MapDef<BuildNodeId> = {
+  nodes: BUILD_NODES,
+  arrows: BUILD_ARROWS,
+  arrowEnds: [
+    ["partner", "emailport"], ["epos", "procport"], ["payment", "procport"], ["reconciliation", "procport"],
+    ["emailport", "emailsvc"], ["procport", "card"], ["adapters", "procsvc"],
+  ],
+  units: UNIT_BOXES,
+  parts: BUILD_PARTS,
+  frame: "kubernetes",
+};

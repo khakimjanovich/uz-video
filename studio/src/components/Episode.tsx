@@ -1,5 +1,5 @@
 import { useSubtitlesContext } from "../hooks";
-import { BuildMap, BuildMapStep } from "./BuildMap";
+import { BuildMap, BuildMapStep, MapDef } from "./BuildMap";
 import { BuyerStep, BuyerView } from "./BuyerView";
 import { CodeCard, CodeStep } from "./CodeCard";
 import { ScreenCard, ScreenStep } from "./ScreenCard";
@@ -12,6 +12,7 @@ const DIAGRAM_ZONE: Zone = { x: 60, y: 300, w: 1040, h: 650, cols: 4, rows: 3 };
 export function Episode<Id extends string>({
   part,
   map,
+  mapDef,
   catalog,
   diagram,
   code = [],
@@ -19,9 +20,11 @@ export function Episode<Id extends string>({
   focus = false,
   hidePanelBefore = 0,
   buyer = [],
+  keepLabels = false,
 }: {
   part: number; // which part this episode belongs to (lit in the panel during story beats)
-  map: BuildMapStep[];
+  map: BuildMapStep<string>[];
+  mapDef?: MapDef; // the course map (Series B when left out)
   catalog: Record<Id, NodeDef>;
   diagram: DiagramStep<Id>[];
   code?: CodeStep[]; // real files from the companion repo, shown on code beats
@@ -29,6 +32,7 @@ export function Episode<Id extends string>({
   focus?: boolean; // map beats: fade every node that the sentence is not about
   hidePanelBefore?: number; // the course-modules panel stays hidden until this cue
   buyer?: BuyerStep[]; // the buyer's own screen beside the map and the diagram
+  keepLabels?: boolean; // diagram boxes keep their names on every step
 }) {
   const { cueIndex } = useSubtitlesContext();
   const lastMap = Math.max(-1, ...map.filter((s) => s.cue <= cueIndex).map((s) => s.cue));
@@ -38,12 +42,12 @@ export function Episode<Id extends string>({
   const screenNow = [...screens].sort((a, b) => b.cue - a.cue).find((s) => s.cue <= cueIndex);
   const lastScreen = screenNow?.cue ?? -1;
   const onMap = lastMap >= lastDiagram && lastMap >= lastCode && lastMap >= lastScreen;
-  const panelOnly: BuildMapStep[] = [{ cue: 0, part }];
+  const panelOnly: BuildMapStep<string>[] = [{ cue: 0, part }];
 
   if (onMap)
     return (
       <>
-        <BuildMap steps={map} x={70} y={238} scale={1.42} panelX={1150} focus={focus} hidePanelBefore={hidePanelBefore} />
+        <BuildMap steps={map} def={mapDef} x={70} y={238} scale={1.42} panelX={1150} focus={focus} hidePanelBefore={hidePanelBefore} />
         <BuyerView steps={buyer} />
       </>
     );
@@ -51,21 +55,21 @@ export function Episode<Id extends string>({
     return (
       <>
         <ScreenCard step={screenNow} x={60} y={250} w={1050} h={700} />
-        <BuildMap steps={panelOnly} x={0} y={238} scale={1} panelX={1150} showMap={false} hidePanelBefore={hidePanelBefore} />
+        <BuildMap steps={panelOnly} def={mapDef} x={0} y={238} scale={1} panelX={1150} showMap={false} hidePanelBefore={hidePanelBefore} />
       </>
     );
   if (codeNow && lastCode >= lastDiagram)
     return (
       <>
         <CodeCard step={codeNow} x={60} y={250} w={1050} h={700} />
-        <BuildMap steps={panelOnly} x={0} y={238} scale={1} panelX={1150} showMap={false} hidePanelBefore={hidePanelBefore} />
+        <BuildMap steps={panelOnly} def={mapDef} x={0} y={238} scale={1} panelX={1150} showMap={false} hidePanelBefore={hidePanelBefore} />
       </>
     );
   return (
     <>
-      <ArchDiagram catalog={catalog} steps={diagram} zone={DIAGRAM_ZONE} scale={0.62} />
+      <ArchDiagram catalog={catalog} steps={diagram} zone={DIAGRAM_ZONE} scale={0.62} keepLabels={keepLabels} />
       <BuyerView steps={buyer} />
-      <BuildMap steps={panelOnly} x={0} y={238} scale={1} panelX={1150} showMap={false} hidePanelBefore={hidePanelBefore} />
+      <BuildMap steps={panelOnly} def={mapDef} x={0} y={238} scale={1} panelX={1150} showMap={false} hidePanelBefore={hidePanelBefore} />
     </>
   );
 }

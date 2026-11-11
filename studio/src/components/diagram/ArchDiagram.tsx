@@ -60,6 +60,7 @@ export interface ArchDiagramProps<Id extends string> {
   steps: DiagramStep<Id>[];
   zone?: Zone; // grid area; defaults to the 9:16 reel safe zone
   scale?: number; // node size factor (16:9 uses smaller boxes)
+  keepLabels?: boolean; // names stay under every box, not only on the step that introduces it
 }
 
 // Safe zone between ReelHeader and SubtitleCard on the 1080x1920 canvas.
@@ -124,7 +125,7 @@ const sameEdge = <Id extends string>(a: DiagramEdge<Id>, b: DiagramEdge<Id>) =>
  * cue. On a new step, kept nodes slide to their new slot, new nodes pop in,
  * removed nodes fade out, new edges draw on, and packets travel along edges.
  */
-export function ArchDiagram<Id extends string>({ catalog, steps, zone = REEL_ZONE, scale = 1 }: ArchDiagramProps<Id>) {
+export function ArchDiagram<Id extends string>({ catalog, steps, zone = REEL_ZONE, scale = 1, keepLabels = false }: ArchDiagramProps<Id>) {
   const g: Geo = { zone, nw: NODE_W * scale, nh: NODE_H * scale };
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -262,7 +263,7 @@ export function ArchDiagram<Id extends string>({ catalog, steps, zone = REEL_ZON
         const shake =
           shakeAt === null || t < shakeAt ? 0 : Math.sin((t - shakeAt) * 1.4) * interpolate(t, [shakeAt, shakeAt + 22], [12, 0], CLAMP);
         const node = (
-          <ArchNode def={catalog[id]} variant={variant} badge={step.badges?.[id]} showLabel={introduced(id)} />
+          <ArchNode def={catalog[id]} variant={variant} badge={step.badges?.[id]} showLabel={keepLabels || introduced(id)} />
         );
         return (
           <div

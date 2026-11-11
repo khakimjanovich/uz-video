@@ -1,4 +1,4 @@
-# Series B: Build an acquiring system
+# heeyMerchant: Build an acquiring system (Series B)
 
 A course that teaches a backend developer who is new to payments to build an e-commerce card acquiring system from zero: ecom, the payments product, and the card zone, a separate PCI DSS unit that is the only place a card number lives.
 
