@@ -112,6 +112,10 @@ export const HEEYID_CATALOG = {
   // Module 5: devices and login.
   tablet: { label: "Old tablet", sublabel: "Lost", art: "unknownPhone" },
   scamCaller: { label: "Caller", sublabel: "Says he is the bank", art: "attacker" },
+  marketWeb: { label: "Marketplace web", sublabel: "Side app, browser", art: "shoeshop" },
+  passwordReset: { label: "Password reset", sublabel: "Waits", art: "workflow" },
+  address: { label: "Verified address", sublabel: "Verified identity", art: "receipt" },
+  someone: { label: "Someone else", sublabel: "Not Aziz", art: "attacker" },
 } satisfies Record<string, NodeDef>;
 
 export type HeeyId = keyof typeof HEEYID_CATALOG;
