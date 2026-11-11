@@ -1,0 +1,259 @@
+1
+00:00:00,050 --> 00:00:03,864
+Three months ago, Aziz printed a ticket at a copy shop.
+
+2
+00:00:03,914 --> 00:00:08,208
+He logged in to the marketplace website on the shop's computer, and he never logged out.
+
+3
+00:00:08,258 --> 00:00:13,560
+Last week, he bought a new phone and installed the mobile bank, with a green TAF check.
+
+4
+00:00:13,610 --> 00:00:22,272
+Today, a stranger at the copy shop opens that old browser, finds the list of sessions, and taps End on the mobile bank on Aziz's new phone.
+
+5
+00:00:22,322 --> 00:00:25,680
+Two sessions of one person, and one wants the other gone.
+
+6
+00:00:25,730 --> 00:00:27,552
+Which one should win?
+
+7
+00:00:27,602 --> 00:00:31,704
+In Lesson 21, each session got its tokens and its level.
+
+8
+00:00:31,754 --> 00:00:37,440
+This lesson adds two more facts to every session: when it started, and its rank.
+
+9
+00:00:37,490 --> 00:00:39,600
+First, the rules that fail.
+
+10
+00:00:39,650 --> 00:00:43,296
+Rule one: any session can end any other session.
+
+11
+00:00:43,346 --> 00:00:46,512
+Then the stranger ends the owner, and keeps the door.
+
+12
+00:00:46,562 --> 00:00:49,296
+Rule two: the older session wins.
+
+13
+00:00:49,346 --> 00:00:54,384
+That sounds fair, but the copy-shop session is three months older than Aziz's new phone.
+
+14
+00:00:54,434 --> 00:00:56,256
+So the stranger wins again.
+
+15
+00:00:56,306 --> 00:00:59,256
+Age alone cannot tell the owner from the thief.
+
+16
+00:00:59,306 --> 00:01:03,120
+Something else must count: how strongly the session was checked.
+
+17
+00:01:03,170 --> 00:01:04,992
+That is the rank.
+
+18
+00:01:05,042 --> 00:01:09,984
+A session has rank two when it is in the master app and its TAF verdict was green.
+
+19
+00:01:10,034 --> 00:01:15,216
+It also has rank two when the verdict was yellow and the customer then passed MyID.
+
+20
+00:01:15,266 --> 00:01:22,608
+When TAF was down and nothing was scored, the session has rank one, until a later green verdict raises it.
+
+21
+00:01:22,658 --> 00:01:28,584
+Every other session has rank one: every web session, and every session in a side app.
+
+22
+00:01:28,634 --> 00:01:30,456
+Now the rule.
+
+23
+00:01:30,506 --> 00:01:34,896
+A session can end another session only when that session has a lower rank.
+
+24
+00:01:34,946 --> 00:01:38,448
+Or when both have the same rank, and the other one is younger.
+
+25
+00:01:38,498 --> 00:01:40,320
+Back to the copy shop.
+
+26
+00:01:40,370 --> 00:01:42,744
+The stranger's session has rank one.
+
+27
+00:01:42,794 --> 00:01:45,024
+Aziz's new phone has rank two.
+
+28
+00:01:45,074 --> 00:01:49,800
+So the platform refuses, and writes an audit event and an antifraud event.
+
+29
+00:01:49,850 --> 00:01:53,448
+Now Aziz opens the list of sessions in the mobile bank.
+
+30
+00:01:53,498 --> 00:01:57,120
+He sees the copy-shop browser, with its app and its start time.
+
+31
+00:01:57,170 --> 00:02:01,704
+He taps End, and it ends, because rank two outranks rank one.
+
+32
+00:02:01,754 --> 00:02:04,296
+Age matters only between equals.
+
+33
+00:02:04,346 --> 00:02:10,560
+Two marketplace sessions, both rank one: the older one can end the younger one, but not the other way around.
+
+34
+00:02:10,610 --> 00:02:12,624
+I think this is a quiet, good idea.
+
+35
+00:02:12,674 --> 00:02:15,504
+The owner usually has the strongest check.
+
+36
+00:02:15,554 --> 00:02:18,240
+A thief usually has the oldest forgotten door.
+
+37
+00:02:18,290 --> 00:02:21,912
+So the rank comes first, and the age only breaks a tie.
+
+38
+00:02:21,962 --> 00:02:23,904
+One more rule cuts deeper.
+
+39
+00:02:23,954 --> 00:02:30,744
+A password change or a password reset ends every other session of the same or a lower rank, whatever its age.
+
+40
+00:02:30,794 --> 00:02:35,496
+The age rule applies only when the customer ends one session from the list.
+
+41
+00:02:35,546 --> 00:02:37,632
+Lesson 30 uses this.
+
+42
+00:02:37,682 --> 00:02:44,328
+Each new session also sends a notification: by push to every other session, and by SMS.
+
+43
+00:02:44,378 --> 00:02:46,944
+So no new door opens in silence.
+
+44
+00:02:46,994 --> 00:02:49,872
+And there is a second guard: the probation period.
+
+45
+00:02:49,922 --> 00:02:56,016
+A fresh session is the riskiest moment, even after a green TAF verdict and a MyID check.
+
+46
+00:02:56,066 --> 00:02:57,816
+A check can be fooled once.
+
+47
+00:02:57,866 --> 00:03:04,776
+So after a new session, a new phone, or a password reset, each app blocks some of its own actions for a while.
+
+48
+00:03:04,826 --> 00:03:07,104
+Which actions, and for how long?
+
+49
+00:03:07,154 --> 00:03:10,824
+The bank decides, for each app, in the platform's policies.
+
+50
+00:03:10,874 --> 00:03:13,872
+The platform does not block those actions itself.
+
+51
+00:03:13,922 --> 00:03:15,744
+It does not even know them.
+
+52
+00:03:15,794 --> 00:03:24,768
+Instead, the token of each session carries four facts: when the session started, when its probation ends, its rank, and its level.
+
+53
+00:03:24,818 --> 00:03:30,624
+The backend of each app reads them, and blocks its own risky actions until the probation ends.
+
+54
+00:03:30,674 --> 00:03:37,296
+So the mobile bank and the marketplace can each be careful in their own way, with one shared truth about the session.
+
+55
+00:03:37,346 --> 00:03:40,896
+To recap: every session has a start time and a rank.
+
+56
+00:03:40,946 --> 00:03:46,176
+Rank two comes from the master app, with a green verdict, or a yellow verdict and MyID.
+
+57
+00:03:46,226 --> 00:03:49,776
+A session ends only lower ranks, or younger equals.
+
+58
+00:03:49,826 --> 00:03:53,184
+A password change ends all same or lower ranks.
+
+59
+00:03:53,234 --> 00:03:58,368
+And the probation slows down every new session, in each app's own way.
+
+60
+00:03:58,418 --> 00:04:00,528
+Now picture a sharper stranger.
+
+61
+00:04:00,578 --> 00:04:04,416
+He talked the mobile operator into a new SIM card with Aziz's number.
+
+62
+00:04:04,466 --> 00:04:09,360
+He installs the mobile bank, and asks for a new password, as if he forgot it.
+
+63
+00:04:09,410 --> 00:04:11,544
+Aziz still has active sessions.
+
+64
+00:04:11,594 --> 00:04:13,704
+Should that reset happen at once?
+
+65
+00:04:13,754 --> 00:04:15,936
+Next: the password reset.
