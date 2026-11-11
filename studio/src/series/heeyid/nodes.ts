@@ -101,6 +101,14 @@ export const HEEYID_CATALOG = {
   bot: { label: "Script", sublabel: "Types Aziz's number", art: "attacker" },
   portal: { label: "State portal", sublabel: "One trusted bank", art: "admin" },
   passwordRow: { label: "Password row", sublabel: "Argon2id · salt", art: "vault" },
+  // Module 4: consent, MyID proofing, the protected identity, the phone check, linking.
+  consent: { label: "Consent screen", sublabel: "Four fixed parts", art: "request" },
+  acceptance: { label: "Acceptance record", sublabel: "Version · time · device", art: "receipt" },
+  staff: { label: "Bank staff", sublabel: "Maker and checker", art: "admin" },
+  caseOperator: { label: "Bank operator", sublabel: "Cases · phone reviews", art: "reviewer" },
+  audit: { label: "Audit trail", sublabel: "Reader · purpose", art: "workflow" },
+  impostor: { label: "Impostor", sublabel: "A stranger's number", art: "attacker" },
+  newHolder: { label: "New holder", sublabel: "Aziz's old number", art: "unknownPhone" },
 } satisfies Record<string, NodeDef>;
 
 export type HeeyId = keyof typeof HEEYID_CATALOG;
