@@ -16,6 +16,12 @@ export const HEEYID_CATALOG = {
   taf: { label: "TAF", sublabel: "Antifraud verdict", art: "sim" },
   myid: { label: "MyID", sublabel: "Face · passport", art: "checker" },
   records: { label: "Customer records", sublabel: "Of the bank", art: "journal" },
+  person: { label: "Person", sublabel: "PINFL · level", art: "buyer" },
+  login: { label: "Phone number", sublabel: "One password", art: "phone" },
+  laptop: { label: "Work laptop", sublabel: "Browser", art: "admin" },
+  operator: { label: "Bank operator", sublabel: "Ends sessions", art: "reviewer" },
+  checkLog: { label: "Check log", sublabel: "Provider · app · time", art: "journal" },
+  secondBank: { label: "Second bank", sublabel: "Own installation", art: "bank" },
   keycloak: { label: "Keycloak", sublabel: "Access grant", logo: siKeycloak.path },
 } satisfies Record<string, NodeDef>;
 
