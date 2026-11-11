@@ -48,6 +48,7 @@ import { H03IdentityWordsComposition } from "./reels/h-03-identity-words";
 import { H04PerimeterComposition } from "./reels/h-04-perimeter";
 import { H05AppsAndTokensComposition } from "./reels/h-05-apps-and-tokens";
 import { H06ConfigurationComposition } from "./reels/h-06-configuration";
+import { H07AdaptersComposition } from "./reels/h-07-adapters";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -120,6 +121,7 @@ export const RemotionRoot: React.FC = () => {
           <H04PerimeterComposition />
           <H05AppsAndTokensComposition />
           <H06ConfigurationComposition />
+          <H07AdaptersComposition />
         </Folder>
       </Folder>
     </>
