@@ -63,6 +63,7 @@ import { H18PhoneCheckComposition } from "./reels/h-18-phone-check";
 import { H19LinkingComposition } from "./reels/h-19-linking";
 import { H20TrustedDeviceComposition } from "./reels/h-20-trusted-device";
 import { H21AccessGrantsComposition } from "./reels/h-21-access-grants";
+import { H22StepUpComposition } from "./reels/h-22-step-up";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -156,6 +157,7 @@ export const RemotionRoot: React.FC = () => {
         <Folder name="h5-Devices-and-login">
           <H20TrustedDeviceComposition />
           <H21AccessGrantsComposition />
+          <H22StepUpComposition />
         </Folder>
       </Folder>
     </>
