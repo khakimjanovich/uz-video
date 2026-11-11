@@ -1,0 +1,215 @@
+1
+00:00:00,050 --> 00:00:04,728
+Saturday, one in the morning, the stolen phone lights up in the thief's pocket.
+
+2
+00:00:04,778 --> 00:00:06,168
+It is a push from the bank.
+
+3
+00:00:06,218 --> 00:00:09,816
+The thief leans in to read it, and finds nothing worth reading.
+
+4
+00:00:09,866 --> 00:00:13,920
+Why does a message from the bank carry so little, on purpose?
+
+5
+00:00:13,970 --> 00:00:23,088
+In Lesson 12, TAF sent the codes in the master app, and in Lesson 26, the bank's SMS service sent them in the side apps.
+
+6
+00:00:23,138 --> 00:00:30,048
+This lesson collects every message the platform sends: which road it takes, whom it may reach, and what it may say.
+
+7
+00:00:30,098 --> 00:00:31,920
+First, the roads.
+
+8
+00:00:31,970 --> 00:00:34,824
+The platform has no messaging contract of its own.
+
+9
+00:00:34,874 --> 00:00:43,896
+Every SMS goes through the SMS service of the bank, and every push goes through the push service, in the Firebase project of the bank.
+
+10
+00:00:43,946 --> 00:00:45,192
+Codes follow the app.
+
+11
+00:00:45,242 --> 00:00:52,944
+In the master app, TAF sends the code, and the bank's SMS service sends it only while TAF is down.
+
+12
+00:00:52,994 --> 00:00:58,656
+In a side app, on a phone or on the web, the bank's SMS service always sends it.
+
+13
+00:00:58,706 --> 00:01:02,328
+Only the code message carries a code, and a push never does.
+
+14
+00:01:02,378 --> 00:01:04,320
+Second, the addresses.
+
+15
+00:01:04,370 --> 00:01:10,488
+An SMS goes only to the number of the registration, or to the verified number of the customer.
+
+16
+00:01:10,538 --> 00:01:13,392
+A push goes only to the devices of the customer.
+
+17
+00:01:13,442 --> 00:01:16,704
+Now, how does a message leave without getting lost?
+
+18
+00:01:16,754 --> 00:01:18,888
+Say Aziz changes his password.
+
+19
+00:01:18,938 --> 00:01:27,312
+In the same database transaction, the platform writes the new password digest, and a row in the outbox: send password changed.
+
+20
+00:01:27,362 --> 00:01:34,440
+A relay publishes that row to Kafka, and a worker hands it to the SMS service or the push service.
+
+21
+00:01:34,490 --> 00:01:40,152
+If the platform crashes in the middle, the row is still there, and the relay sends it later.
+
+22
+00:01:40,202 --> 00:01:46,560
+And if the change itself fails, there is no row, so there is no message about a change that never happened.
+
+23
+00:01:46,610 --> 00:01:51,144
+The services send back delivery reports, and the platform records them.
+
+24
+00:01:51,194 --> 00:01:58,008
+A failed dispatch goes again, as often as the configured retry policy says, and then the platform records it as failed.
+
+25
+00:01:58,058 --> 00:01:59,880
+Third, what must be sent.
+
+26
+00:01:59,930 --> 00:02:04,728
+Some messages are security notifications, and the customer cannot switch them off.
+
+27
+00:02:04,778 --> 00:02:14,400
+A new session sends a push to all his other sessions, and an SMS to his verified number, with the app, the device model, the network address and the time.
+
+28
+00:02:14,450 --> 00:02:24,072
+A login from a new device, a password change, a locked password, a block, an unblock: each one has its own template, and each one goes out.
+
+29
+00:02:24,122 --> 00:02:26,112
+Now the rule from Lesson 31.
+
+30
+00:02:26,162 --> 00:02:29,424
+When Aziz taps this was not me, his number goes on hold.
+
+31
+00:02:29,474 --> 00:02:35,736
+From then on, every message goes by push only, and no SMS goes to that number while it is on hold.
+
+32
+00:02:35,786 --> 00:02:41,736
+The reason is simple: the person who holds that SIM card may be the person Aziz is running from.
+
+33
+00:02:41,786 --> 00:02:46,320
+Fourth, what a message may say, and this is where the thief comes back.
+
+34
+00:02:46,370 --> 00:02:50,880
+No message contains document data or the personal identification number.
+
+35
+00:02:50,930 --> 00:02:56,088
+No message has a name other than the first name, and no message has a link that starts an action.
+
+36
+00:02:56,138 --> 00:03:00,960
+A message about a login may show the device model, the network address and the time.
+
+37
+00:03:01,010 --> 00:03:05,208
+And a push never contains a code, a text or personal data.
+
+38
+00:03:05,258 --> 00:03:08,304
+It carries only the type of the message and a reference.
+
+39
+00:03:08,354 --> 00:03:13,200
+The app gets the words afterwards: it asks the platform for the text with the reference.
+
+40
+00:03:13,250 --> 00:03:21,096
+Only a device of the customer can get that text, in the customer's language, from the template version that was published when the message left.
+
+41
+00:03:21,146 --> 00:03:26,208
+So the thief on Saturday night sees, at most, which kind of message the bank sent.
+
+42
+00:03:26,258 --> 00:03:32,184
+I think this is the most honest design for a phone that can be lost: the push is a doorbell, not a letter.
+
+43
+00:03:32,234 --> 00:03:37,440
+The push service is outside the bank's perimeter, so it learns nothing about Aziz either.
+
+44
+00:03:37,490 --> 00:03:42,648
+And when the push service is down, notifications go by SMS only.
+
+45
+00:03:42,698 --> 00:03:44,592
+Last, the words themselves.
+
+46
+00:03:44,642 --> 00:03:47,136
+Each template exists in the four languages.
+
+47
+00:03:47,186 --> 00:03:52,656
+Compliance changes a template with maker-checker, and the platform keeps every version.
+
+48
+00:03:52,706 --> 00:03:56,832
+The audit event of each message names the version that was sent.
+
+49
+00:03:56,882 --> 00:04:07,080
+To recap: two roads, the bank's SMS service and the push service, and codes by TAF in the master app and by the bank's SMS in side apps.
+
+50
+00:04:07,130 --> 00:04:17,736
+An outbox so nothing is lost, security notifications that nobody can switch off, no SMS to a number on hold, and pushes that carry only a type and a reference.
+
+51
+00:04:17,786 --> 00:04:21,024
+But each of these messages also became an audit event.
+
+52
+00:04:21,074 --> 00:04:24,888
+Months from now, someone will ask what really happened on Friday night.
+
+53
+00:04:24,938 --> 00:04:28,872
+How does the bank prove it, and prove that nobody changed the proof?
+
+54
+00:04:28,922 --> 00:04:30,744
+Next: the audit trail.
