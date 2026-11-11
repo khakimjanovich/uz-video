@@ -1,0 +1,223 @@
+1
+00:00:00,050 --> 00:00:05,496
+Friday, nine at night, the bazaar is loud, and Aziz's bag is lighter than it was.
+
+2
+00:00:05,546 --> 00:00:09,672
+His phone is gone, with the mobile bank and the marketplace still signed in.
+
+3
+00:00:09,722 --> 00:00:16,152
+From his sister's phone he calls the bank and says one sentence: lock everything until I have a phone again.
+
+4
+00:00:16,202 --> 00:00:20,184
+Who in this system is allowed to lock Aziz out of his own account?
+
+5
+00:00:20,234 --> 00:00:26,472
+In Lesson 33, a refresh that gives a different personal identification number ended in a block.
+
+6
+00:00:26,522 --> 00:00:31,824
+This lesson opens that block: who can set it, what it does at once, and who can lift it.
+
+7
+00:00:31,874 --> 00:00:36,744
+The list of who can block is short, and I think its shortness is the design.
+
+8
+00:00:36,794 --> 00:00:45,144
+Only two: the platform itself, when a refresh gives a different personal identification number, and an operator, with a reason.
+
+9
+00:00:45,194 --> 00:00:48,144
+No other automatic block exists in this version.
+
+10
+00:00:48,194 --> 00:00:53,064
+A number that the mobile operator gives to a new person never blocks its old owner.
+
+11
+00:00:53,114 --> 00:00:56,040
+And a failed face check never blocks anybody.
+
+12
+00:00:56,090 --> 00:01:01,584
+It only counts an attempt, for the phone number, the device and the personal identification number.
+
+13
+00:01:01,634 --> 00:01:10,008
+After the first counted failure and after the second, a cool-down starts, and after the daily cap no attempt is possible until the next day.
+
+14
+00:01:10,058 --> 00:01:18,072
+Only failures that the person or the capture caused are counted: a wrong document, a face that does not match, a poor image.
+
+15
+00:01:18,122 --> 00:01:22,296
+A failure that the service caused, like a timeout, is not counted.
+
+16
+00:01:22,346 --> 00:01:24,168
+Back to Aziz.
+
+17
+00:01:24,218 --> 00:01:30,600
+The operator finds him in the panel and presses block, with the reason: phone stolen, customer request.
+
+18
+00:01:30,650 --> 00:01:32,520
+Now watch what one block does.
+
+19
+00:01:32,570 --> 00:01:37,944
+It ends every access grant of Aziz, in every app, on every device.
+
+20
+00:01:37,994 --> 00:01:44,808
+It refuses every request from each of his devices, so the phone in the thief's pocket gets an error, not a balance.
+
+21
+00:01:44,858 --> 00:01:48,432
+It refuses a registration or a login with his number.
+
+22
+00:01:48,482 --> 00:01:51,072
+It stops each open proofing session.
+
+23
+00:01:51,122 --> 00:01:56,904
+It keeps his devices and his identity data, because a block is a pause, not a deletion.
+
+24
+00:01:56,954 --> 00:02:00,048
+It sends the security notification account blocked.
+
+25
+00:02:00,098 --> 00:02:02,904
+It opens a case, or updates an open one.
+
+26
+00:02:02,954 --> 00:02:07,704
+And it writes an audit event and sends an event to the bank's antifraud system.
+
+27
+00:02:07,754 --> 00:02:10,680
+How can all of that be true at the very next request?
+
+28
+00:02:10,730 --> 00:02:17,760
+The block makes three writes together: the customer state in Postgres, the sessions in Keycloak, and the outbox.
+
+29
+00:02:17,810 --> 00:02:24,648
+The gateway also keeps a revocation list in Valkey, and every renewal passes the binding check first.
+
+30
+00:02:24,698 --> 00:02:28,800
+So the stop is real at the next request, even at the busiest hour.
+
+31
+00:02:28,850 --> 00:02:35,232
+The operator path and the automatic path make the same three writes, and only the actor is different.
+
+32
+00:02:35,282 --> 00:02:37,104
+Now the case.
+
+33
+00:02:37,154 --> 00:02:40,224
+A case is the operator's folder for one problem.
+
+34
+00:02:40,274 --> 00:02:45,840
+It shows the customer, the trigger, the related values, masked, and the comparison notes.
+
+35
+00:02:45,890 --> 00:02:54,480
+Cases also open for other reasons: data that the customer refused, a stopped re-registration, a link that was refused or expired.
+
+36
+00:02:54,530 --> 00:02:56,472
+Phone reviews have their own list.
+
+37
+00:02:56,522 --> 00:03:03,336
+Each case ends with one result: no action, unblocked, link set by the bank, or customer contacted.
+
+38
+00:03:03,386 --> 00:03:06,720
+On Saturday, Aziz has a new phone with his old number.
+
+39
+00:03:06,770 --> 00:03:10,488
+He calls again, and the operator unblocks him, with a reason.
+
+40
+00:03:10,538 --> 00:03:12,432
+Only an operator can unblock.
+
+41
+00:03:12,482 --> 00:03:18,744
+An unblock makes the devices trusted again and sends the notification account unblocked, with no new proofing.
+
+42
+00:03:18,794 --> 00:03:21,432
+Read that once more: the devices.
+
+43
+00:03:21,482 --> 00:03:24,696
+All of them, and that includes the phone the thief has.
+
+44
+00:03:24,746 --> 00:03:30,096
+So the careful operator first revokes the stolen phone, and only then unblocks.
+
+45
+00:03:30,146 --> 00:03:35,016
+The new phone then joins like any new device, with the checks of Lesson 24.
+
+46
+00:03:35,066 --> 00:03:37,848
+There is one exception to the easy unblock.
+
+47
+00:03:37,898 --> 00:03:43,896
+When the block came from a different personal identification number, an unblock does not give back any device.
+
+48
+00:03:43,946 --> 00:03:51,552
+The customer must log in on a device and pass a full proofing, and only then does the platform record a trusted device again.
+
+49
+00:03:51,602 --> 00:03:57,864
+That makes sense to me: after a mismatch, the platform does not know yet which face was the real one.
+
+50
+00:03:57,914 --> 00:04:03,480
+To recap: two can block, the platform on a different number and an operator with a reason.
+
+51
+00:04:03,530 --> 00:04:09,000
+A block ends every session at the next request, keeps the data, and opens a case.
+
+52
+00:04:09,050 --> 00:04:14,328
+Only an operator unblocks, and the devices come back, except after a mismatch.
+
+53
+00:04:14,378 --> 00:04:17,520
+But one thing from Friday night is still strange.
+
+54
+00:04:17,570 --> 00:04:24,072
+Aziz got account blocked by SMS and by push, and one of his devices was in a thief's pocket.
+
+55
+00:04:24,122 --> 00:04:26,304
+What can a message on a stolen phone show?
+
+56
+00:04:26,354 --> 00:04:28,488
+Next: notifications.
