@@ -69,6 +69,7 @@ import { H24NewDeviceComposition } from "./reels/h-24-new-device";
 import { H25RemoteAccessComposition } from "./reels/h-25-remote-access";
 import { H26SideAppLoginComposition } from "./reels/h-26-side-app-login";
 import { H27AccountLinkComposition } from "./reels/h-27-account-link";
+import { H28AddressSharingComposition } from "./reels/h-28-address-sharing";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -170,6 +171,7 @@ export const RemotionRoot: React.FC = () => {
         <Folder name="h6-Side-apps">
           <H26SideAppLoginComposition />
           <H27AccountLinkComposition />
+          <H28AddressSharingComposition />
         </Folder>
       </Folder>
     </>
