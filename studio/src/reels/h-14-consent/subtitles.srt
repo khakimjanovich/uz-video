@@ -1,0 +1,211 @@
+1
+00:00:00,050 --> 00:00:03,792
+It is Sunday evening, and Aziz wants a washing machine on credit.
+
+2
+00:00:03,842 --> 00:00:09,384
+He opens the mobile bank, taps the credit offer, and the app stops him with a screen full of text.
+
+3
+00:00:09,434 --> 00:00:14,280
+Before any camera opens, the screen tells him what the bank is about to read about him.
+
+4
+00:00:14,330 --> 00:00:19,400
+Why does a screen come first, and not the face check?
+
+5
+00:00:19,450 --> 00:00:26,480
+In Lesson 13, Aziz's password became a digest that nobody can reverse, with a lock for wrong guesses.
+
+6
+00:00:26,530 --> 00:00:29,984
+Everything so far proves his phone, not his person.
+
+7
+00:00:30,034 --> 00:00:37,376
+This lesson adds the first step towards level two: the consent gate, the screen that stands before every call to MyID.
+
+8
+00:00:37,426 --> 00:00:39,344
+Look at the screen with Aziz.
+
+9
+00:00:39,394 --> 00:00:41,216
+It has four fixed parts.
+
+10
+00:00:41,266 --> 00:00:53,120
+The first part is the data: his names, his date and place of birth, his personal identification number, gender, citizenship, nationality, document data, registered addresses and phone number.
+
+11
+00:00:53,170 --> 00:00:56,000
+The second part is the provider: MyID.
+
+12
+00:00:56,050 --> 00:01:00,608
+The third part is the purpose: to identify him as a customer of this bank.
+
+13
+00:01:00,658 --> 00:01:05,528
+The fourth part says who can read the data later: the bank's channels and its operators.
+
+14
+00:01:05,578 --> 00:01:11,600
+The bank writes the words of each part, in the language of the journey, but it cannot remove a part.
+
+15
+00:01:11,650 --> 00:01:15,512
+And the screen shows only after Aziz's phone number is verified.
+
+16
+00:01:15,562 --> 00:01:19,448
+Aziz reads the fourth line twice, and taps Refuse.
+
+17
+00:01:19,498 --> 00:01:23,320
+What happens now?
+
+18
+00:01:23,370 --> 00:01:25,192
+Nothing at MyID.
+
+19
+00:01:25,242 --> 00:01:30,520
+The platform opens no session, counts no attempt, and keeps Aziz at level one.
+
+20
+00:01:30,570 --> 00:01:32,848
+It writes one event: refused.
+
+21
+00:01:32,898 --> 00:01:38,992
+I think this is the most honest choice in the whole proofing journey: saying no costs the customer nothing.
+
+22
+00:01:39,042 --> 00:01:43,816
+Ten minutes later, Aziz changes his mind, and taps the credit offer again.
+
+23
+00:01:43,866 --> 00:01:45,688
+The screen comes back.
+
+24
+00:01:45,738 --> 00:01:49,792
+Nothing is pre-selected, and nothing is copied from his first answer.
+
+25
+00:01:49,842 --> 00:01:51,664
+This time he taps Accept.
+
+26
+00:01:51,714 --> 00:01:55,840
+Before any other step, the platform writes an acceptance record.
+
+27
+00:01:55,890 --> 00:02:05,008
+It holds the identifiers and the versions of the consent text and the terms text, the language, the date and time, the device, and Aziz.
+
+28
+00:02:05,058 --> 00:02:08,080
+Only then can the platform open a session at MyID.
+
+29
+00:02:08,130 --> 00:02:11,416
+And one acceptance permits one session, no more.
+
+30
+00:02:11,466 --> 00:02:16,216
+The record points to the session it allowed, so nobody can use a yes two times.
+
+31
+00:02:16,266 --> 00:02:19,576
+The gate is not a one-time screen at registration.
+
+32
+00:02:19,626 --> 00:02:26,392
+It stands before every call to MyID: a step-up, a new device, a dormant account, and a refresh.
+
+33
+00:02:26,442 --> 00:02:31,048
+Next year, when Aziz moves to a new phone, he sees the gate again.
+
+34
+00:02:31,098 --> 00:02:32,920
+Now the versions.
+
+35
+00:02:32,970 --> 00:02:38,392
+Each consent text and each terms text exists in the four languages of the installation.
+
+36
+00:02:38,442 --> 00:02:44,824
+Each version has a publication date, the staff user who proposed it, and a different staff user who approved it.
+
+37
+00:02:44,874 --> 00:02:51,568
+The product ships a default text, the bank's compliance team can change it, and the platform keeps every version.
+
+38
+00:02:51,618 --> 00:02:54,136
+Here is the case that this protects.
+
+39
+00:02:54,186 --> 00:02:57,928
+Aziz opens the screen and starts to read, slowly.
+
+40
+00:02:57,978 --> 00:03:02,704
+Two minutes later, compliance publishes a new version, with a changed purpose.
+
+41
+00:03:02,754 --> 00:03:06,832
+Three minutes after that, Aziz taps Accept on the old text.
+
+42
+00:03:06,882 --> 00:03:10,384
+The platform refuses the answer and shows him the new text.
+
+43
+00:03:10,434 --> 00:03:14,256
+Why so strict?
+
+44
+00:03:14,306 --> 00:03:19,104
+Because the acceptance record must name exactly the version that Aziz saw.
+
+45
+00:03:19,154 --> 00:03:24,864
+If the bank must ever show what he agreed to, the record and the text must match, word for word.
+
+46
+00:03:24,914 --> 00:03:32,856
+On the map, the consent step lives in the customer gateway, and the acceptance records live in the record store, next to the customer.
+
+47
+00:03:32,906 --> 00:03:36,336
+The mobile bank only shows the screen and sends the answer.
+
+48
+00:03:36,386 --> 00:03:46,104
+To recap: four fixed parts, one answer before every call to MyID, a refusal that costs nothing, and an acceptance record that names the exact version.
+
+49
+00:03:46,154 --> 00:03:47,976
+Aziz has said yes.
+
+50
+00:03:48,026 --> 00:03:49,848
+Now the camera can open.
+
+51
+00:03:49,898 --> 00:03:55,784
+But who opens the session at MyID: the mobile bank, or the platform?
+
+52
+00:03:55,834 --> 00:03:59,096
+And what happens when the marketplace asks for the same check?
+
+53
+00:03:59,146 --> 00:04:01,136
+Next: proofing with MyID.

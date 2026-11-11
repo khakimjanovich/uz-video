@@ -1,0 +1,215 @@
+1
+00:00:00,050 --> 00:00:03,912
+Aziz still has a phone number that he has not used since university.
+
+2
+00:00:03,962 --> 00:00:08,544
+He gave it to the government services portal years ago, and then he forgot it.
+
+3
+00:00:08,594 --> 00:00:10,080
+MyID did not forget.
+
+4
+00:00:10,130 --> 00:00:16,136
+So when his face passes MyID today, whose phone number is on the record?
+
+5
+00:00:16,186 --> 00:00:23,024
+In Lesson 17, the verified identity went into the protected class, with the phone number from MyID inside it.
+
+6
+00:00:23,074 --> 00:00:28,760
+This lesson uses that number for one job: the phone check, the last step before level two.
+
+7
+00:00:28,810 --> 00:00:32,632
+Why is a face not enough?
+
+8
+00:00:32,682 --> 00:00:39,952
+Level two means two things at once: MyID proved the person, and the phone number of the account belongs to that person.
+
+9
+00:00:40,002 --> 00:00:42,016
+A face proves who holds the phone.
+
+10
+00:00:42,066 --> 00:00:44,488
+It does not prove that the number is his.
+
+11
+00:00:44,538 --> 00:00:50,368
+Picture a man who gets a SIM card with a stranger's number, and passes MyID with his own face.
+
+12
+00:00:50,418 --> 00:00:54,856
+Without a phone check, he would get level two on a number that belongs to somebody else.
+
+13
+00:00:54,906 --> 00:00:59,080
+So, after Aziz confirms his data, the phone check starts.
+
+14
+00:00:59,130 --> 00:01:03,640
+It runs only in a step-up, and a refresh does not repeat it.
+
+15
+00:01:03,690 --> 00:01:12,544
+Step one: the platform sends TAF a face confirmation, with Aziz's personal identification number and his verified phone number.
+
+16
+00:01:12,594 --> 00:01:17,296
+The app never sees the personal identification number, because the platform sends it.
+
+17
+00:01:17,346 --> 00:01:24,496
+Step two: the platform compares Aziz's verified number with the number from MyID, as full international numbers.
+
+18
+00:01:24,546 --> 00:01:26,944
+The same number gives the status Confirmed.
+
+19
+00:01:26,994 --> 00:01:31,864
+But Aziz's numbers differ: the MyID one is his old university number.
+
+20
+00:01:31,914 --> 00:01:40,264
+Step three: the platform asks TAF a second question: does this phone number belong to this personal identification number?
+
+21
+00:01:40,314 --> 00:01:44,872
+TAF compares the number with the personal identification number from step one.
+
+22
+00:01:44,922 --> 00:01:46,744
+Owner gives Confirmed.
+
+23
+00:01:46,794 --> 00:01:52,528
+Not owner, account not found, or no answer from TAF gives Processing.
+
+24
+00:01:52,578 --> 00:01:55,384
+Today, TAF says owner.
+
+25
+00:01:55,434 --> 00:01:59,680
+Aziz's status is Confirmed, and three things happen together.
+
+26
+00:01:59,730 --> 00:02:02,704
+He is at level two, in every app of the bank.
+
+27
+00:02:02,754 --> 00:02:07,648
+His phone becomes a trusted device, and he gets a new access grant with level two.
+
+28
+00:02:07,698 --> 00:02:10,792
+And linking starts, which the next lesson explains.
+
+29
+00:02:10,842 --> 00:02:14,224
+Now suppose that TAF had said: not owner.
+
+30
+00:02:14,274 --> 00:02:16,552
+Aziz's status would be Processing.
+
+31
+00:02:16,602 --> 00:02:20,584
+He would stay at level one, and the app would show him the word Processing.
+
+32
+00:02:20,634 --> 00:02:25,672
+The platform opens a phone review, and sends an event to the bank's antifraud system.
+
+33
+00:02:25,722 --> 00:02:35,800
+The review shows an operator his phone number, his personal identification number masked, the MyID number masked except the last four digits, the time, the device and the app.
+
+34
+00:02:35,850 --> 00:02:37,672
+There is no timer.
+
+35
+00:02:37,722 --> 00:02:41,056
+Aziz stays at level one until a person decides.
+
+36
+00:02:41,106 --> 00:02:44,560
+I think Processing is the bravest state in this design.
+
+37
+00:02:44,610 --> 00:02:49,360
+The platform admits that it does not know, and it waits for a human instead of a guess.
+
+38
+00:02:49,410 --> 00:02:53,272
+The operator approves or rejects, and must write a reason.
+
+39
+00:02:53,322 --> 00:02:58,648
+Approval does what Confirmed did: level two, a trusted device, and linking.
+
+40
+00:02:58,698 --> 00:03:02,752
+Rejection keeps Aziz at level one, with the status Rejected.
+
+41
+00:03:02,802 --> 00:03:07,024
+Both send him a security notification, and both go to the audit trail.
+
+42
+00:03:07,074 --> 00:03:11,416
+And the review list in the admin panel is the only alert that operators get.
+
+43
+00:03:11,466 --> 00:03:14,152
+Back to the real Aziz, who is confirmed.
+
+44
+00:03:14,202 --> 00:03:17,440
+His record now has a short history next to the number.
+
+45
+00:03:17,490 --> 00:03:21,424
+Each check of the number is kept, with the provider, the app and the time.
+
+46
+00:03:21,474 --> 00:03:26,488
+A code from the bank's SMS service, in the marketplace, last March.
+
+47
+00:03:26,538 --> 00:03:30,808
+A TAF check, in the mobile bank, at registration.
+
+48
+00:03:30,858 --> 00:03:33,568
+A MyID check, in the mobile bank, today.
+
+49
+00:03:33,618 --> 00:03:38,680
+So the bank can always answer one question: how do we know that this number is Aziz's?
+
+50
+00:03:38,730 --> 00:03:50,464
+To recap: a face confirmation to TAF, then the number from MyID, then TAF ownership, then a person; Confirmed gives level two, and Processing waits for a review.
+
+51
+00:03:50,514 --> 00:03:55,696
+Aziz is confirmed, and the platform knows his personal identification number.
+
+52
+00:03:55,746 --> 00:04:00,736
+But is he already a customer of the bank, with accounts and cards somewhere in its records?
+
+53
+00:04:00,786 --> 00:04:04,864
+And how does the platform find him there, without ever trusting a phone number?
+
+54
+00:04:04,914 --> 00:04:06,736
+Next: linking.
