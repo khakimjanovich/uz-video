@@ -54,7 +54,7 @@ export const diagram: DiagramStep<HeeyId>[] = [
   { cue: 25, layout: NEW, edges: [...NEW_EDGES], badges: { trusted: "model · address · time" } },
   { cue: 26, layout: NEW, edges: [...NEW_EDGES], badges: { trusted: "never give a code" } },
   { cue: 27, layout: NEW, edges: [...NEW_EDGES], accent: ["trusted"], badges: { trusted: "Approve · This was not me" } },
-  { cue: 29, layout: { ...NEW, scamCaller: [0, 0.3] }, edges: [...NEW_EDGES, { from: "scamCaller", to: "aziz" }], danger: ["scamCaller"], badges: { scamCaller: "\"tell me the code\"" } },
+  { cue: 29, layout: { ...NEW, scamCaller: [0, 2] }, edges: [...NEW_EDGES, { from: "scamCaller", to: "aziz" }], danger: ["scamCaller"], badges: { scamCaller: "\"tell me the code\"" } },
   { cue: 30, layout: NEW, edges: [...NEW_EDGES], badges: { trusted: "no code to read" } },
   { cue: 31, layout: NEW, edges: [...NEW_EDGES], accent: ["trusted", "newPhone"], packets: [{ from: "trusted", to: "platform", label: "Approve" }, { from: "newPhone", to: "platform", label: "code", delay: 40 }] },
   { cue: 32, layout: NEW, edges: [...NEW_EDGES], badges: { platform: "code + approval" } },
