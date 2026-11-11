@@ -1,0 +1,291 @@
+1
+00:00:00,050 --> 00:00:03,240
+After the SIM swap, Aziz buys a new SIM card.
+
+2
+00:00:03,290 --> 00:00:06,792
+The operator gives him a number that someone else used for years.
+
+3
+00:00:06,842 --> 00:00:11,112
+That someone is still a customer of the bank, and the number still sits on their account.
+
+4
+00:00:11,162 --> 00:00:15,216
+He puts it into a new phone, and types the number into the mobile bank.
+
+5
+00:00:15,266 --> 00:00:22,488
+To the platform, Aziz now looks exactly like a thief: a known number, a strange phone, and no password.
+
+6
+00:00:22,538 --> 00:00:26,376
+How does the platform tell a new owner of a number from a thief of one?
+
+7
+00:00:26,426 --> 00:00:31,080
+In Lesson 31, the number left Aziz's account after the SIM question.
+
+8
+00:00:31,130 --> 00:00:39,648
+This lesson covers three ways that a number and a person drift apart: number reassignment, re-registration, and a dormant account.
+
+9
+00:00:39,698 --> 00:00:41,304
+Start with the reassignment.
+
+10
+00:00:41,354 --> 00:00:45,648
+The number belongs to an active customer, so this is not a registration.
+
+11
+00:00:45,698 --> 00:00:50,328
+The mobile bank asks for that customer's password, and Aziz does not know it.
+
+12
+00:00:50,378 --> 00:00:54,720
+So he taps Forgot password, and the reset runs the checks of a new phone.
+
+13
+00:00:54,770 --> 00:01:00,768
+TAF sends a code, and it lands on Aziz's SIM card, because the number really is his now.
+
+14
+00:01:00,818 --> 00:01:05,064
+The old owner was at level two, so the account check asks for MyID.
+
+15
+00:01:05,114 --> 00:01:08,400
+MyID checks the face, and the face is Aziz's.
+
+16
+00:01:08,450 --> 00:01:13,824
+The personal identification number from MyID belongs to a different person than the old owner.
+
+17
+00:01:13,874 --> 00:01:15,696
+That is the signal.
+
+18
+00:01:15,746 --> 00:01:17,472
+A thief fails the face.
+
+19
+00:01:17,522 --> 00:01:21,048
+A new owner passes it, and turns out to be someone else.
+
+20
+00:01:21,098 --> 00:01:23,880
+So the platform removes the number from the old owner.
+
+21
+00:01:23,930 --> 00:01:25,752
+It does not block the old owner.
+
+22
+00:01:25,802 --> 00:01:29,832
+They did nothing wrong: the operator simply gave their old number away.
+
+23
+00:01:29,882 --> 00:01:31,704
+Their sessions end.
+
+24
+00:01:31,754 --> 00:01:38,328
+A push message, number removed, goes to all their devices, and they verify a new number at their next login.
+
+25
+00:01:38,378 --> 00:01:43,968
+The audit trail records the event number reassigned, and the antifraud system hears about it.
+
+26
+00:01:44,018 --> 00:01:47,592
+I think this is the most important line in the lesson: never a block.
+
+27
+00:01:47,642 --> 00:01:51,168
+A number changing hands is normal life, not fraud.
+
+28
+00:01:51,218 --> 00:01:53,040
+Now, who gets the number?
+
+29
+00:01:53,090 --> 00:01:56,016
+The platform looks at the person that MyID found.
+
+30
+00:01:56,066 --> 00:02:02,664
+If that person has no account, and MyID lists this number for them, they become a new customer at level two.
+
+31
+00:02:02,714 --> 00:02:07,920
+If MyID does not list it, they start at level one, with the number under a phone review.
+
+32
+00:02:07,970 --> 00:02:11,184
+But Aziz is already a customer, with his old number.
+
+33
+00:02:11,234 --> 00:02:14,712
+So the second rule applies: re-registration.
+
+34
+00:02:14,762 --> 00:02:19,248
+Re-registration is for one person who arrives under a second number.
+
+35
+00:02:19,298 --> 00:02:21,288
+The usual shape is simple.
+
+36
+00:02:21,338 --> 00:02:26,112
+Someone registers a new number, at level one, and later steps up with MyID.
+
+37
+00:02:26,162 --> 00:02:30,696
+MyID says: this person already exists, with a different number.
+
+38
+00:02:30,746 --> 00:02:33,264
+Now the platform asks one question.
+
+39
+00:02:33,314 --> 00:02:36,744
+Is the new number on my I D's list of numbers for that person?
+
+40
+00:02:36,794 --> 00:02:40,584
+If yes, the platform moves the number to the existing customer.
+
+41
+00:02:40,634 --> 00:02:43,080
+The new phone becomes the trusted device.
+
+42
+00:02:43,130 --> 00:02:48,720
+Every earlier device of the customer is revoked, with the reason replaced by re-registration.
+
+43
+00:02:48,770 --> 00:02:50,952
+The short level-one record is closed.
+
+44
+00:02:51,002 --> 00:02:55,680
+And an SMS goes to the old number: a new phone was registered.
+
+45
+00:02:55,730 --> 00:02:59,712
+Aziz's new number is on his MyID list, so this is his path.
+
+46
+00:02:59,762 --> 00:03:03,504
+His new phone is now trusted, and his old phone is revoked.
+
+47
+00:03:03,554 --> 00:03:07,344
+If the number is not on the list, the platform does nothing on its own.
+
+48
+00:03:07,394 --> 00:03:12,912
+The step-up stops, the level-one customer stays as it was, and a case opens for an operator.
+
+49
+00:03:12,962 --> 00:03:18,600
+Re-registrations are also limited per day, so nobody can move numbers around in a loop.
+
+50
+00:03:18,650 --> 00:03:20,472
+The third case is about time.
+
+51
+00:03:20,522 --> 00:03:23,808
+Suppose a customer does not touch the bank for a long while.
+
+52
+00:03:23,858 --> 00:03:27,816
+None of the devices are used for longer than the configured dormancy period.
+
+53
+00:03:27,866 --> 00:03:29,448
+That account is dormant.
+
+54
+00:03:29,498 --> 00:03:34,128
+A dormant account never opens from a new phone with a one-time code alone.
+
+55
+00:03:34,178 --> 00:03:38,688
+Old numbers get new owners, and nobody is watching the old sessions.
+
+56
+00:03:38,738 --> 00:03:40,512
+So the platform asks for more.
+
+57
+00:03:40,562 --> 00:03:48,432
+A customer who was ever at level two passes a MyID re-check, or a full proofing when the reusable identifier has expired.
+
+58
+00:03:48,482 --> 00:03:54,336
+In a side app, the login starts at level one, and level two needs the approval in the master app.
+
+59
+00:03:54,386 --> 00:03:58,968
+A dormant customer who was never at level two has no face on file.
+
+60
+00:03:59,018 --> 00:04:03,408
+So the platform locks the old record, and makes a new customer at level one.
+
+61
+00:04:03,458 --> 00:04:06,720
+The audit trail records a dormant account reset.
+
+62
+00:04:06,770 --> 00:04:08,952
+Nothing is handed over on a code alone.
+
+63
+00:04:09,002 --> 00:04:13,680
+And when MyID finds a different person here too, it is a number reassignment again.
+
+64
+00:04:13,730 --> 00:04:19,008
+Each of these cases runs in one database transaction, together with its events.
+
+65
+00:04:19,058 --> 00:04:22,416
+So a crash can never leave one number on two customers.
+
+66
+00:04:22,466 --> 00:04:27,144
+To recap: a number belongs to a person only while MyID agrees.
+
+67
+00:04:27,194 --> 00:04:32,304
+A new owner proves the face, and the number moves, with no block on the old owner.
+
+68
+00:04:32,354 --> 00:04:37,848
+One person with two numbers is joined by re-registration, but only when MyID lists the number.
+
+69
+00:04:37,898 --> 00:04:40,608
+And a dormant account needs more than a code.
+
+70
+00:04:40,658 --> 00:04:45,312
+Aziz is settled again: one number, one trusted phone, level two.
+
+71
+00:04:45,362 --> 00:04:48,864
+But his passport, the one MyID checked, expires next year.
+
+72
+00:04:48,914 --> 00:04:52,056
+What happens to his level two when the document runs out?
+
+73
+00:04:52,106 --> 00:04:54,696
+Next: the identity refresh.

@@ -1,0 +1,231 @@
+1
+00:00:00,050 --> 00:00:05,112
+Aziz orders a bookshelf in the marketplace app, and it must come to his flat.
+
+2
+00:00:05,162 --> 00:00:07,032
+He taps Add address.
+
+3
+00:00:07,082 --> 00:00:12,096
+The platform already knows his registered address, because MyID gave it at his proofing.
+
+4
+00:00:12,146 --> 00:00:17,280
+The marketplace is an app of the same bank, on the same phone, for the same person.
+
+5
+00:00:17,330 --> 00:00:21,432
+So why should anyone ask Aziz before the marketplace gets that address?
+
+6
+00:00:21,482 --> 00:00:26,280
+In Lesson 27, Aziz linked his marketplace account in the mobile bank.
+
+7
+00:00:26,330 --> 00:00:31,656
+This lesson is the first time that the marketplace wants something from his verified identity.
+
+8
+00:00:31,706 --> 00:00:34,560
+Start with what the marketplace can normally see.
+
+9
+00:00:34,610 --> 00:00:39,480
+Each app has its own sessions, and its backend accepts only its own tokens.
+
+10
+00:00:39,530 --> 00:00:41,352
+Lesson 5 showed that wall.
+
+11
+00:00:41,402 --> 00:00:48,888
+Through it, the marketplace gets a short summary of the customer: the level, the verified phone number, and a display name.
+
+12
+00:00:48,938 --> 00:00:51,336
+The summary never holds an address.
+
+13
+00:00:51,386 --> 00:00:55,728
+The address sits in the protected part of the record, with the passport data.
+
+14
+00:00:55,778 --> 00:00:59,520
+The bank's keys encrypt it, and every read of it is audited.
+
+15
+00:00:59,570 --> 00:01:05,400
+So there is exactly one way for an address to leave: a sharing request that Aziz approves.
+
+16
+00:01:05,450 --> 00:01:07,272
+Here is how it runs.
+
+17
+00:01:07,322 --> 00:01:13,056
+The marketplace backend asks the platform for a sharing request, with its own marketplace token.
+
+18
+00:01:13,106 --> 00:01:15,576
+The platform first checks two things.
+
+19
+00:01:15,626 --> 00:01:17,448
+Is Aziz at level two?
+
+20
+00:01:17,498 --> 00:01:20,040
+And is his marketplace account linked?
+
+21
+00:01:20,090 --> 00:01:23,592
+If either answer is no, the platform does not ask him.
+
+22
+00:01:23,642 --> 00:01:28,080
+It tells the marketplace to send Aziz to the mobile bank first.
+
+23
+00:01:28,130 --> 00:01:33,432
+Aziz is at level two, and his account is linked, so the request goes on.
+
+24
+00:01:33,482 --> 00:01:38,808
+The platform keeps it for the configured waiting time, and sends a push signal to the mobile bank.
+
+25
+00:01:38,858 --> 00:01:42,552
+Again, the push carries only the request identifier.
+
+26
+00:01:42,602 --> 00:01:46,368
+The mobile bank pulls the request, and asks one question.
+
+27
+00:01:46,418 --> 00:01:49,128
+Share your verified address with the marketplace?
+
+28
+00:01:49,178 --> 00:01:50,760
+Aziz taps Share.
+
+29
+00:01:50,810 --> 00:01:57,000
+Now the platform reads the address from the protected record, for one purpose: address sharing.
+
+30
+00:01:57,050 --> 00:02:02,184
+It writes an audit event that names the reader, the marketplace, and the purpose.
+
+31
+00:02:02,234 --> 00:02:06,312
+The marketplace collects the address one time, and saves it.
+
+32
+00:02:06,362 --> 00:02:08,064
+The bookshelf has a place to go.
+
+33
+00:02:08,114 --> 00:02:09,936
+Now the other answers.
+
+34
+00:02:09,986 --> 00:02:15,576
+If Aziz taps Refuse, nothing is saved, and the marketplace gets a refusal.
+
+35
+00:02:15,626 --> 00:02:21,216
+If he does not answer in the configured time, the result is the same: nothing is saved.
+
+36
+00:02:21,266 --> 00:02:23,952
+The audit trail records the refusal too.
+
+37
+00:02:24,002 --> 00:02:29,544
+Next month, Aziz adds his address once more, this time on the marketplace website.
+
+38
+00:02:29,594 --> 00:02:31,464
+The mobile bank asks again.
+
+39
+00:02:31,514 --> 00:02:35,904
+There is no standing consent: one answer covers one address, one time.
+
+40
+00:02:35,954 --> 00:02:39,336
+I think this is the right choice, even if it costs one more tap.
+
+41
+00:02:39,386 --> 00:02:49,680
+A box that Aziz ticked once, long ago, would let the marketplace read his address forever, after every move, without him ever seeing it again.
+
+42
+00:02:49,730 --> 00:02:55,056
+A fresh question each time keeps the decision with Aziz, at the moment it matters.
+
+43
+00:02:55,106 --> 00:02:56,928
+And when he moves out of that flat?
+
+44
+00:02:56,978 --> 00:03:00,720
+Aziz deletes the saved address in the marketplace itself.
+
+45
+00:03:00,770 --> 00:03:03,552
+The platform does not take part in that deletion.
+
+46
+00:03:03,602 --> 00:03:09,456
+Once shared, the copy belongs to the marketplace, and the marketplace must let him remove it.
+
+47
+00:03:09,506 --> 00:03:11,496
+Look at what this design does not do.
+
+48
+00:03:11,546 --> 00:03:15,048
+The marketplace never holds a key to the identity record.
+
+49
+00:03:15,098 --> 00:03:17,352
+It never reads the passport data.
+
+50
+00:03:17,402 --> 00:03:20,664
+It cannot ask for the address on a session at level one.
+
+51
+00:03:20,714 --> 00:03:26,400
+And it cannot skip the question, because the question lives in the mobile bank, not in the marketplace.
+
+52
+00:03:26,450 --> 00:03:31,536
+To recap: the address leaves the protected record only through a sharing request.
+
+53
+00:03:31,586 --> 00:03:34,584
+The request needs level two and a linked account.
+
+54
+00:03:34,634 --> 00:03:42,600
+The mobile bank asks each time, the platform audits each read, and the customer deletes saved addresses in the marketplace.
+
+55
+00:03:42,650 --> 00:03:49,944
+Aziz now has many sessions: the mobile bank on his phone, the marketplace app, and a browser at his parents' house.
+
+56
+00:03:49,994 --> 00:03:56,928
+Suppose a stranger gets a session of his own in some other browser, and tries to end Aziz's session in the mobile bank.
+
+57
+00:03:56,978 --> 00:03:58,320
+Which session wins?
+
+58
+00:03:58,370 --> 00:04:00,912
+Next: sessions and their rank.

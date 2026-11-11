@@ -67,6 +67,13 @@ import { H22StepUpComposition } from "./reels/h-22-step-up";
 import { H23KnownDeviceLoginComposition } from "./reels/h-23-known-device-login";
 import { H24NewDeviceComposition } from "./reels/h-24-new-device";
 import { H25RemoteAccessComposition } from "./reels/h-25-remote-access";
+import { H26SideAppLoginComposition } from "./reels/h-26-side-app-login";
+import { H27AccountLinkComposition } from "./reels/h-27-account-link";
+import { H28AddressSharingComposition } from "./reels/h-28-address-sharing";
+import { H29SessionsAndRankComposition } from "./reels/h-29-sessions-and-rank";
+import { H30PasswordResetComposition } from "./reels/h-30-password-reset";
+import { H31ThisWasNotMeComposition } from "./reels/h-31-this-was-not-me";
+import { H32NumberChangesComposition } from "./reels/h-32-number-changes";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -164,6 +171,17 @@ export const RemotionRoot: React.FC = () => {
           <H23KnownDeviceLoginComposition />
           <H24NewDeviceComposition />
           <H25RemoteAccessComposition />
+        </Folder>
+        <Folder name="h6-Side-apps">
+          <H26SideAppLoginComposition />
+          <H27AccountLinkComposition />
+          <H28AddressSharingComposition />
+        </Folder>
+        <Folder name="h7-Sessions-and-recovery">
+          <H29SessionsAndRankComposition />
+          <H30PasswordResetComposition />
+          <H31ThisWasNotMeComposition />
+          <H32NumberChangesComposition />
         </Folder>
       </Folder>
     </>

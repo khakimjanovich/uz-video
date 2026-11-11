@@ -1,0 +1,291 @@
+1
+00:00:00,050 --> 00:00:04,032
+Last spring, Aziz bought a phone case on the marketplace website.
+
+2
+00:00:04,082 --> 00:00:08,376
+He typed his number, an SMS code, and a password.
+
+3
+00:00:08,426 --> 00:00:13,536
+Today, his friend shows him the mobile bank, and Aziz installs it for the first time.
+
+4
+00:00:13,586 --> 00:00:23,400
+So now one number has two doors: a web account that only an SMS code ever checked, and the mobile bank, which is about to check the SIM card itself.
+
+5
+00:00:23,450 --> 00:00:27,000
+Should the mobile bank simply trust that old web account?
+
+6
+00:00:27,050 --> 00:00:33,432
+In Lesson 26, a new customer on the marketplace website got an app account marked not confirmed.
+
+7
+00:00:33,482 --> 00:00:38,808
+This lesson removes that mark, in the mobile bank, right after the TAF check.
+
+8
+00:00:38,858 --> 00:00:40,728
+First, why the mark exists.
+
+9
+00:00:40,778 --> 00:00:47,352
+An SMS code on the web proves one small thing: someone read a message to this number, at that moment.
+
+10
+00:00:47,402 --> 00:00:51,504
+It says nothing about the phone, or the SIM card, or who was holding it.
+
+11
+00:00:51,554 --> 00:00:56,184
+A browser cannot run the TAF part, so nothing better was possible there.
+
+12
+00:00:56,234 --> 00:00:58,776
+Now Aziz types his number in the mobile bank.
+
+13
+00:00:58,826 --> 00:01:01,920
+The platform sees that this number already has a customer.
+
+14
+00:01:01,970 --> 00:01:07,176
+So this is not a new registration, and the mobile bank does not make a second customer.
+
+15
+00:01:07,226 --> 00:01:10,608
+It asks for the password that this number already has.
+
+16
+00:01:10,658 --> 00:01:12,480
+Aziz types it.
+
+17
+00:01:12,530 --> 00:01:19,200
+Then TAF sends a one-time code to his number, and checks that it lands on this phone, with this SIM card.
+
+18
+00:01:19,250 --> 00:01:21,072
+The verdict is green.
+
+19
+00:01:21,122 --> 00:01:26,880
+Only now, after a correct code and a green verdict, does the platform look at the marketplace.
+
+20
+00:01:26,930 --> 00:01:31,824
+It finds an app account of this person in the marketplace, still marked not confirmed.
+
+21
+00:01:31,874 --> 00:01:34,368
+So the mobile bank asks one question.
+
+22
+00:01:34,418 --> 00:01:36,936
+This number also has a marketplace account.
+
+23
+00:01:36,986 --> 00:01:38,808
+Is it yours?
+
+24
+00:01:38,858 --> 00:01:39,600
+Link it?
+
+25
+00:01:39,650 --> 00:01:42,768
+Aziz remembers the phone case, and he taps Yes.
+
+26
+00:01:42,818 --> 00:01:45,576
+The marketplace account stays as it is.
+
+27
+00:01:45,626 --> 00:01:49,296
+Its mark changes to linked, verified through the mobile bank.
+
+28
+00:01:49,346 --> 00:01:57,312
+From now on, it uses the level of the person, so when Aziz is at level two, the marketplace sees level two too.
+
+29
+00:01:57,362 --> 00:01:58,800
+That was the easy answer.
+
+30
+00:01:58,850 --> 00:02:02,328
+Now suppose Aziz had never used the marketplace at all.
+
+31
+00:02:02,378 --> 00:02:06,072
+Someone else typed his number on the website, long before he did.
+
+32
+00:02:06,122 --> 00:02:11,064
+That person read one SMS code to his number, and set a password.
+
+33
+00:02:11,114 --> 00:02:12,600
+So Aziz taps No.
+
+34
+00:02:12,650 --> 00:02:15,192
+The mobile bank does not act at once.
+
+35
+00:02:15,242 --> 00:02:20,808
+It asks a second time: This ends all marketplace sessions and closes that account.
+
+36
+00:02:20,858 --> 00:02:22,680
+Continue?
+
+37
+00:02:22,730 --> 00:02:24,000
+There is a Back button.
+
+38
+00:02:24,050 --> 00:02:27,024
+Back changes nothing, and the question stays.
+
+39
+00:02:27,074 --> 00:02:28,920
+I think this second question is right.
+
+40
+00:02:28,970 --> 00:02:35,904
+One wrong tap on No would log the real owner out of every marketplace browser, so the app makes him say it twice.
+
+41
+00:02:35,954 --> 00:02:37,776
+Aziz taps Continue.
+
+42
+00:02:37,826 --> 00:02:42,888
+The platform ends every marketplace session of this number, on every browser and phone.
+
+43
+00:02:42,938 --> 00:02:45,144
+The marketplace account is closed.
+
+44
+00:02:45,194 --> 00:02:47,016
+It is not deleted.
+
+45
+00:02:47,066 --> 00:02:52,032
+A bank operator can open it again, with a reason, during the retention period.
+
+46
+00:02:52,082 --> 00:02:56,760
+A later login in the marketplace makes a new app account, on a clean page.
+
+47
+00:02:56,810 --> 00:03:00,864
+Then the mobile bank asks Aziz to change his password at once.
+
+48
+00:03:00,914 --> 00:03:01,608
+Why?
+
+49
+00:03:01,658 --> 00:03:04,536
+Because the person who made the web account may know it.
+
+50
+00:03:04,586 --> 00:03:06,408
+But look at that again.
+
+51
+00:03:06,458 --> 00:03:11,280
+If someone else made the web account, Aziz did not know its password in the first place.
+
+52
+00:03:11,330 --> 00:03:14,496
+So he could not even pass the first step in the mobile bank.
+
+53
+00:03:14,546 --> 00:03:16,368
+What does he do then?
+
+54
+00:03:16,418 --> 00:03:18,984
+He resets the password in the mobile bank.
+
+55
+00:03:19,034 --> 00:03:26,136
+The reset uses the same TAF check, and the mobile bank offers a MyID check in the reset.
+
+56
+00:03:26,186 --> 00:03:31,920
+Aziz was never at level two, so it is a full MyID check, with his consent.
+
+57
+00:03:31,970 --> 00:03:35,952
+With a green verdict and MyID, the reset does not wait.
+
+58
+00:03:36,002 --> 00:03:39,144
+Lesson 30 explains the waiting reset.
+
+59
+00:03:39,194 --> 00:03:44,664
+And the new master-app session that comes out of the reset outranks every marketplace session.
+
+60
+00:03:44,714 --> 00:03:49,080
+So the reset itself ends all of the stranger's marketplace sessions.
+
+61
+00:03:49,130 --> 00:03:51,552
+Lesson 29 explains that rank.
+
+62
+00:03:51,602 --> 00:03:57,576
+One more rule: each answer writes an audit event and sends an event to the bank's antifraud system.
+
+63
+00:03:57,626 --> 00:04:01,056
+So the bank can see later who linked what, and who refused.
+
+64
+00:04:01,106 --> 00:04:06,336
+To recap: an account that only an SMS code checked stays not confirmed.
+
+65
+00:04:06,386 --> 00:04:12,192
+After a correct code and a green TAF verdict in the mobile bank, the customer answers one question.
+
+66
+00:04:12,242 --> 00:04:14,064
+Yes links the account.
+
+67
+00:04:14,114 --> 00:04:21,768
+No, then Continue, ends its sessions and closes it, without deleting it, and the password changes at once.
+
+68
+00:04:21,818 --> 00:04:23,640
+Aziz said Yes.
+
+69
+00:04:23,690 --> 00:04:29,736
+His marketplace account is linked, and a week later he passes MyID and is at level two.
+
+70
+00:04:29,786 --> 00:04:34,488
+Now the marketplace wants to deliver his next order, and it needs his address.
+
+71
+00:04:34,538 --> 00:04:37,704
+The platform keeps his registered address, from MyID.
+
+72
+00:04:37,754 --> 00:04:39,840
+Can the marketplace simply read it?
+
+73
+00:04:39,890 --> 00:04:41,736
+Next: address sharing.

@@ -1,0 +1,291 @@
+1
+00:00:00,050 --> 00:00:05,256
+Friday evening, in another city, a stranger puts a new SIM card into a new phone.
+
+2
+00:00:05,306 --> 00:00:08,952
+This afternoon, the mobile operator gave him Aziz's number.
+
+3
+00:00:09,002 --> 00:00:12,216
+He installs the mobile bank and taps Forgot password.
+
+4
+00:00:12,266 --> 00:00:16,632
+Every SMS to Aziz's number now arrives on his phone.
+
+5
+00:00:16,682 --> 00:00:18,504
+Is that enough to take the account?
+
+6
+00:00:18,554 --> 00:00:24,504
+In Lesson 29, a password change ended every session of the same or a lower rank.
+
+7
+00:00:24,554 --> 00:00:30,456
+This lesson opens the other door to a new password: the reset, when the person has no session at all.
+
+8
+00:00:30,506 --> 00:00:33,600
+A reset in the master app starts with the phone number.
+
+9
+00:00:33,650 --> 00:00:37,968
+Then the platform runs the checks of a login from that phone, without the password.
+
+10
+00:00:38,018 --> 00:00:42,000
+On a known phone, that is a one-time code through TAF.
+
+11
+00:00:42,050 --> 00:00:47,640
+On a new phone, it is the new-device code through TAF, and then the account check.
+
+12
+00:00:47,690 --> 00:00:49,512
+Watch the stranger.
+
+13
+00:00:49,562 --> 00:00:54,744
+The TAF code arrives on his phone, because the SIM card really has Aziz's number.
+
+14
+00:00:54,794 --> 00:00:56,424
+The verdict can even be green.
+
+15
+00:00:56,474 --> 00:01:01,464
+But Aziz was at level two, so the account check asks for MyID on this new phone.
+
+16
+00:01:01,514 --> 00:01:06,000
+The stranger's face is not Aziz's face, and the reset stops.
+
+17
+00:01:06,050 --> 00:01:07,968
+MyID protects Aziz.
+
+18
+00:01:08,018 --> 00:01:10,944
+But what about a customer who was never at level two?
+
+19
+00:01:10,994 --> 00:01:13,176
+There is no face on file to compare.
+
+20
+00:01:13,226 --> 00:01:16,512
+For that customer, a second guard does the work: time.
+
+21
+00:01:16,562 --> 00:01:22,632
+When the person still has an active session somewhere, the reset does not change the password at once.
+
+22
+00:01:22,682 --> 00:01:24,936
+It waits for the configured waiting period.
+
+23
+00:01:24,986 --> 00:01:28,392
+The platform answers with the time when the reset will end.
+
+24
+00:01:28,442 --> 00:01:35,400
+And it sends a notification, password reset requested, by push to every session and by SMS.
+
+25
+00:01:35,450 --> 00:01:38,304
+The real owner sees it on the phone in his pocket.
+
+26
+00:01:38,354 --> 00:01:41,616
+Now only two parties can cancel the waiting reset.
+
+27
+00:01:41,666 --> 00:01:47,112
+One is a session of rank two: a master-app session with a green TAF check.
+
+28
+00:01:47,162 --> 00:01:49,800
+The other is a bank operator, with a reason.
+
+29
+00:01:49,850 --> 00:01:53,712
+A session of rank one gets the notification, but no cancel button.
+
+30
+00:01:53,762 --> 00:01:55,584
+Why so strict?
+
+31
+00:01:55,634 --> 00:02:00,384
+A cancel keeps the old password alive, so only the strongest check may do it.
+
+32
+00:02:00,434 --> 00:02:06,816
+When the owner taps Cancel, the old password stays valid, and a notification says that the reset was cancelled.
+
+33
+00:02:06,866 --> 00:02:09,936
+When nobody cancels, the waiting period ends.
+
+34
+00:02:09,986 --> 00:02:13,632
+The new password becomes valid, and the phone gets a session.
+
+35
+00:02:13,682 --> 00:02:19,008
+Every other session of the same or a lower rank ends, and the probation period starts.
+
+36
+00:02:19,058 --> 00:02:21,816
+Then the notification: password changed.
+
+37
+00:02:21,866 --> 00:02:26,496
+I think this waiting reset is the most important rule against a SIM swap.
+
+38
+00:02:26,546 --> 00:02:31,224
+An SMS code alone must never take an account from a person who is still using it.
+
+39
+00:02:31,274 --> 00:02:32,808
+Now the honest case.
+
+40
+00:02:32,858 --> 00:02:37,800
+On Sunday, Aziz himself forgets his password, on his own trusted phone.
+
+41
+00:02:37,850 --> 00:02:42,432
+The mobile bank sends a code through TAF, and the verdict is green.
+
+42
+00:02:42,482 --> 00:02:46,752
+Then the mobile bank offers him a MyID check, right inside the reset.
+
+43
+00:02:46,802 --> 00:02:48,336
+He passes the re-check.
+
+44
+00:02:48,386 --> 00:02:52,752
+With a green verdict and MyID on this phone, the reset does not wait.
+
+45
+00:02:52,802 --> 00:02:56,184
+Aziz types a new password, and types it a second time.
+
+46
+00:02:56,234 --> 00:02:58,488
+That is the deal the master app offers.
+
+47
+00:02:58,538 --> 00:03:03,768
+Prove the SIM with TAF, and prove the face with MyID, and you skip the wait.
+
+48
+00:03:03,818 --> 00:03:09,528
+A customer who was never at level two can do the same, with a full MyID check and consent.
+
+49
+00:03:09,578 --> 00:03:12,168
+Without MyID, the reset waits.
+
+50
+00:03:12,218 --> 00:03:18,480
+And when the person has no active session at all, there is nobody to warn, so the reset does not wait either.
+
+51
+00:03:18,530 --> 00:03:20,352
+Now the side apps.
+
+52
+00:03:20,402 --> 00:03:25,440
+They have no TAF and no MyID, so their reset is weaker.
+
+53
+00:03:25,490 --> 00:03:30,960
+A side app may reset a password with an SMS code from the bank's SMS service.
+
+54
+00:03:31,010 --> 00:03:35,568
+But only for a customer with no master-app account, who was never at level two.
+
+55
+00:03:35,618 --> 00:03:38,520
+Everyone else must reset in the mobile bank.
+
+56
+00:03:38,570 --> 00:03:42,912
+The side-app reset is limited per day, then a cool-down follows.
+
+57
+00:03:42,962 --> 00:03:47,016
+And the waiting rule still applies when the customer has an active session.
+
+58
+00:03:47,066 --> 00:03:51,936
+Yes, a SIM swap is still a risk for a customer who uses only side apps.
+
+59
+00:03:51,986 --> 00:03:55,776
+The bank accepts that risk, on purpose, and writes it down.
+
+60
+00:03:55,826 --> 00:03:57,192
+Last, the trail.
+
+61
+00:03:57,242 --> 00:04:06,264
+Each step of each reset writes an audit event and an antifraud event, and sends a notification to every other session and by SMS.
+
+62
+00:04:06,314 --> 00:04:08,832
+Resets for each customer are counted, too.
+
+63
+00:04:08,882 --> 00:04:14,088
+And a bank operator can cancel or approve a waiting reset, always with a reason.
+
+64
+00:04:14,138 --> 00:04:19,344
+To recap: the master-app reset runs the checks of a login, without the password.
+
+65
+00:04:19,394 --> 00:04:25,488
+An active session makes the reset wait, and only a rank-two session or an operator can cancel it.
+
+66
+00:04:25,538 --> 00:04:29,520
+Green TAF and MyID together make it immediate.
+
+67
+00:04:29,570 --> 00:04:35,376
+And side apps reset by SMS only for customers the master app has never seen.
+
+68
+00:04:35,426 --> 00:04:38,328
+But go back to the stranger with Aziz's SIM card.
+
+69
+00:04:38,378 --> 00:04:40,032
+He did not forget the password.
+
+70
+00:04:40,082 --> 00:04:43,248
+He guessed it, and he tries a normal login on his new phone.
+
+71
+00:04:43,298 --> 00:04:46,944
+Aziz's phone lights up: Approve, or This was not me.
+
+72
+00:04:46,994 --> 00:04:49,272
+What happens after he taps This was not me?
+
+73
+00:04:49,322 --> 00:04:51,024
+Next: this was not me.
