@@ -1,0 +1,187 @@
+1
+00:00:00,050 --> 00:00:03,192
+Remember the operator who blocked Aziz on Friday night?
+
+2
+00:00:03,242 --> 00:00:09,192
+One search, one button, one reason, and every session of a person ended at once.
+
+3
+00:00:09,242 --> 00:00:11,256
+That is a lot of power on one screen.
+
+4
+00:00:11,306 --> 00:00:15,192
+So who may sit at that screen, and who watches the person who does?
+
+5
+00:00:15,242 --> 00:00:21,552
+In Lesson 36, every staff action became an audit event in a chain that nobody can rewrite.
+
+6
+00:00:21,602 --> 00:00:29,976
+This lesson opens the administrator panel itself: how staff sign in, what each role can do, and why no single person can change a rule alone.
+
+7
+00:00:30,026 --> 00:00:31,848
+Start at the door.
+
+8
+00:00:31,898 --> 00:00:37,632
+Staff sign in only through the bank's own staff identity, with multi-factor authentication there.
+
+9
+00:00:37,682 --> 00:00:42,480
+The platform issues no staff credentials and keeps no staff passwords.
+
+10
+00:00:42,530 --> 00:00:48,696
+A staff session ends after the configured time with no activity, and after the configured lifetime.
+
+11
+00:00:48,746 --> 00:00:51,120
+Behind the door is the admin gateway.
+
+12
+00:00:51,170 --> 00:00:58,248
+It uses the same domain code as the customer gateway, so there is no second copy of the business rules to drift apart.
+
+13
+00:00:58,298 --> 00:01:01,536
+Each staff user has exactly one of four roles.
+
+14
+00:01:01,586 --> 00:01:07,344
+The role comes from the bank's staff identity, or from a staff-role table that a security administrator keeps.
+
+15
+00:01:07,394 --> 00:01:15,840
+A viewer can see the customer, the devices, the proofing history, the cases, the phone reviews and the events, and nothing more.
+
+16
+00:01:15,890 --> 00:01:27,120
+An operator acts on customers: block and unblock, revoke devices, end sessions, reset attempt counters, ask for a refresh, and decide phone reviews and cases.
+
+17
+00:01:27,170 --> 00:01:33,528
+An operator also cancels or approves a waiting password reset, and opens a closed app account again.
+
+18
+00:01:33,578 --> 00:01:40,944
+A security administrator proposes and approves changes to policies and provider settings, and keeps the staff-role table.
+
+19
+00:01:40,994 --> 00:01:49,464
+Compliance manages the texts of consents, terms and notifications, and exports the audit records and the data of one customer.
+
+20
+00:01:49,514 --> 00:01:56,136
+Notice what is missing: the security administrator cannot block Aziz, and the operator cannot change a policy.
+
+21
+00:01:56,186 --> 00:02:02,352
+And the platform checks the role at each operation on the server, not only by hiding a button on the screen.
+
+22
+00:02:02,402 --> 00:02:03,888
+Now the operator's screen.
+
+23
+00:02:03,938 --> 00:02:10,536
+The operator finds a customer only with the exact verified phone number, or the exact personal identification number.
+
+24
+00:02:10,586 --> 00:02:15,384
+There is no search by name, so nobody browses customers out of curiosity.
+
+25
+00:02:15,434 --> 00:02:24,576
+One screen shows the state, the level, the link, the devices, the app accounts with their sessions, the proofing history, the cases and the recent events.
+
+26
+00:02:24,626 --> 00:02:34,032
+Sensitive values are masked: the personal identification number shows its first two and last two digits, and the document only its last four characters.
+
+27
+00:02:34,082 --> 00:02:39,120
+The panel shows no full document numbers, no addresses and no images.
+
+28
+00:02:39,170 --> 00:02:41,832
+Each operator action needs a written reason.
+
+29
+00:02:41,882 --> 00:02:49,680
+It starts at once, it writes an audit event with the operator's identity, and when it touches the customer, it sends the security notification.
+
+30
+00:02:49,730 --> 00:02:55,920
+Cases from Lesson 34 wait in one list, and phone reviews from Lesson 18 wait in another.
+
+31
+00:02:55,970 --> 00:03:02,712
+Now the most important rule of the panel, and I think the one that saves a bank on a bad day: maker-checker.
+
+32
+00:03:02,762 --> 00:03:08,256
+On Monday, a security administrator wants a shorter lifetime for one-time codes.
+
+33
+00:03:08,306 --> 00:03:09,912
+The change does not happen.
+
+34
+00:03:09,962 --> 00:03:14,328
+It becomes a proposal, which shows the current value next to the proposed one.
+
+35
+00:03:14,378 --> 00:03:17,064
+A second security administrator opens it.
+
+36
+00:03:17,114 --> 00:03:21,600
+The person who proposed cannot approve, so it must be someone else with the same role.
+
+37
+00:03:21,650 --> 00:03:25,320
+The second person approves, and only then does the change start.
+
+38
+00:03:25,370 --> 00:03:30,816
+It becomes a new version, with the proposer, the approver, the times and the reason.
+
+39
+00:03:30,866 --> 00:03:37,776
+A rejected proposal is kept too, with its reason, and anyone with the role can propose an earlier version again.
+
+40
+00:03:37,826 --> 00:03:45,048
+The same rule covers provider settings, consent and terms texts, notification templates, and the staff-role table.
+
+41
+00:03:45,098 --> 00:03:50,712
+One tired person, or one stolen staff account, cannot quietly loosen a limit.
+
+42
+00:03:50,762 --> 00:03:55,608
+To recap: staff come in through the bank's own identity, with one role each.
+
+43
+00:03:55,658 --> 00:04:03,672
+Operators act on customers, security administrators on rules, Compliance on texts and exports, and viewers only look.
+
+44
+00:04:03,722 --> 00:04:09,240
+Every action has a reason and an audit event, and every rule change needs two people.
+
+45
+00:04:09,290 --> 00:04:12,312
+But everything in this panel is about real customers.
+
+46
+00:04:12,362 --> 00:04:17,184
+Where does the team try all of it, again and again, without a real person's identity?
+
+47
+00:04:17,234 --> 00:04:19,344
+Next: test identities.
