@@ -1,0 +1,211 @@
+1
+00:00:00,050 --> 00:00:03,936
+Six months after the stolen phone, a letter comes to the bank.
+
+2
+00:00:03,986 --> 00:00:09,768
+Aziz writes that on that Friday night, before the block, someone approved a login on a laptop, and it was not him.
+
+3
+00:00:09,818 --> 00:00:11,640
+He wants to know what happened.
+
+4
+00:00:11,690 --> 00:00:18,264
+The bank wants to know too, and it also wants to show that its answer is the truth, not a story written afterwards.
+
+5
+00:00:18,314 --> 00:00:23,568
+How does a platform keep a record that even its own administrators cannot rewrite?
+
+6
+00:00:23,618 --> 00:00:30,984
+In Lesson 35, every message the platform sent left through the outbox, with its template version in an audit event.
+
+7
+00:00:31,034 --> 00:00:40,080
+This lesson follows those audit events: what goes into one, why nobody can change it, who reads the stream, and how long each record stays.
+
+8
+00:00:40,130 --> 00:00:41,952
+Start with one event.
+
+9
+00:00:42,002 --> 00:00:50,184
+Each one has the event type, the app, the time to the millisecond, and the actor: a customer reference, a staff identity, or the system.
+
+10
+00:00:50,234 --> 00:00:56,040
+It has the device, the network address, and the registration, session or case it belongs to.
+
+11
+00:00:56,090 --> 00:01:05,208
+It has the result and a reason key, the MyID references when there are any, and, for a read of identity data, the reader and the purpose.
+
+12
+00:01:05,258 --> 00:01:17,280
+The list of event types is long on purpose: registration, proofing, linking, devices, logins, administration, notifications, apps, sessions and resets.
+
+13
+00:01:17,330 --> 00:01:19,152
+Now, what an event never has.
+
+14
+00:01:19,202 --> 00:01:26,328
+No document images, no full document numbers, no full personal identification number, no addresses.
+
+15
+00:01:26,378 --> 00:01:33,456
+No codes, no passwords, no result codes, no reusable identifiers, no access grants.
+
+16
+00:01:33,506 --> 00:01:41,616
+The identifiers are the platform's own references, and the personal identification number shows only its first two and last two digits.
+
+17
+00:01:41,666 --> 00:01:44,568
+So the trail can travel without becoming a leak.
+
+18
+00:01:44,618 --> 00:01:46,800
+Second: nobody can change it.
+
+19
+00:01:46,850 --> 00:01:49,104
+The platform only adds events.
+
+20
+00:01:49,154 --> 00:01:55,800
+No operation of the system, and no administrator action, can change or delete an event before its retention ends.
+
+21
+00:01:55,850 --> 00:02:01,560
+The database role of the application simply has no right to update or delete that table.
+
+22
+00:02:01,610 --> 00:02:07,416
+But a person with direct access to the database could still try, so the trail protects itself with a chain.
+
+23
+00:02:07,466 --> 00:02:15,912
+Each event gets an HMAC: a keyed fingerprint of its sequence number, the fingerprint of the event before it, and the event itself.
+
+24
+00:02:15,962 --> 00:02:19,848
+The key lives in Vault, as the audit key of the installation.
+
+25
+00:02:19,898 --> 00:02:26,256
+Change one old event, and its fingerprint no longer matches, and neither does any fingerprint after it.
+
+26
+00:02:26,306 --> 00:02:31,152
+Every day a verifier walks the chain and raises an alert at the first break.
+
+27
+00:02:31,202 --> 00:02:37,344
+I think this is what makes a trail worth keeping: we do not ask the bank to trust us, we let it check us.
+
+28
+00:02:37,394 --> 00:02:39,216
+Third: who reads it.
+
+29
+00:02:39,266 --> 00:02:46,752
+Each event goes to the security monitoring of the bank as a continuous feed, through a Kafka topic, within seconds.
+
+30
+00:02:46,802 --> 00:02:52,824
+If the feed is down, the platform keeps the events and sends them later, in the correct order.
+
+31
+00:02:52,874 --> 00:03:02,952
+A second stream goes to the bank's antifraud system: risk events, such as a login, a block or a password change, with references and no personal data.
+
+32
+00:03:03,002 --> 00:03:09,480
+And Compliance can export events by period, by customer and by event type, in a format that a machine can read.
+
+33
+00:03:09,530 --> 00:03:11,352
+Back to Aziz's letter.
+
+34
+00:03:11,402 --> 00:03:14,280
+Compliance exports his events for that Friday.
+
+35
+00:03:14,330 --> 00:03:20,832
+The trail shows a login on the marketplace web, a correct password, and an approval request to his trusted phone.
+
+36
+00:03:20,882 --> 00:03:27,168
+It shows that the approval came from that phone, twenty minutes after the theft and half an hour before the block.
+
+37
+00:03:27,218 --> 00:03:30,456
+It shows the block, and later the revoke of that same phone.
+
+38
+00:03:30,506 --> 00:03:37,416
+So the approval came from the stolen phone, and the chain verifies, so nobody wrote these lines after the letter arrived.
+
+39
+00:03:37,466 --> 00:03:40,296
+Fourth: how long each record lives.
+
+40
+00:03:40,346 --> 00:03:45,024
+Every kind of record has its own clock, and the bank configures the long ones.
+
+41
+00:03:45,074 --> 00:03:49,992
+A one-time code lives until it is used or expires, and then it is deleted.
+
+42
+00:03:50,042 --> 00:03:57,024
+A registration that never reached level one is deleted after the registration-expiry period, but its audit events stay.
+
+43
+00:03:57,074 --> 00:04:04,008
+An earlier version of a verified identity stays for the identity retention, counted from the day it was replaced.
+
+44
+00:04:04,058 --> 00:04:11,808
+The customer and the current identity stay for the life of the customer, then for the identity retention after closure.
+
+45
+00:04:11,858 --> 00:04:19,176
+Audit events stay for the audit retention that the bank's regulation asks for, and then they leave in groups of full days.
+
+46
+00:04:19,226 --> 00:04:23,328
+Policy and text versions stay for the life of the installation.
+
+47
+00:04:23,378 --> 00:04:29,832
+Deletion removes a record from the active store and, within the backup rotation, from every backup.
+
+48
+00:04:29,882 --> 00:04:35,088
+Nothing is deleted early, and each month a deletion report shows that the rule held.
+
+49
+00:04:35,138 --> 00:04:39,528
+To recap: one event for each step, with no secret inside it.
+
+50
+00:04:39,578 --> 00:04:46,944
+An HMAC chain that the bank can check, a feed to its monitoring and its antifraud system, and a clock for every record.
+
+51
+00:04:46,994 --> 00:04:51,384
+But someone had to export that Friday, and someone else pressed block.
+
+52
+00:04:51,434 --> 00:04:55,512
+Who are these people, what may each of them do, and who checks them?
+
+53
+00:04:55,562 --> 00:04:57,864
+Next: the administrator panel.
