@@ -1,0 +1,275 @@
+1
+00:00:00,050 --> 00:00:01,872
+Wednesday, eleven at night.
+
+2
+00:00:01,922 --> 00:00:05,160
+Aziz is watching a football match when his phone buzzes.
+
+3
+00:00:05,210 --> 00:00:12,144
+The mobile bank shows a login request from a phone he has never owned, at an address he does not know, one minute ago.
+
+4
+00:00:12,194 --> 00:00:15,192
+Under it: Approve, and This was not me.
+
+5
+00:00:15,242 --> 00:00:17,064
+Aziz taps This was not me.
+
+6
+00:00:17,114 --> 00:00:18,936
+One tap.
+
+7
+00:00:18,986 --> 00:00:21,936
+What must the platform do now, and what must it not do?
+
+8
+00:00:21,986 --> 00:00:28,344
+In Lesson 30, the stranger with Aziz's SIM card tried a reset, and MyID stopped him.
+
+9
+00:00:28,394 --> 00:00:34,464
+This lesson follows his other try, a normal login with a guessed password, and the button that answers it.
+
+10
+00:00:34,514 --> 00:00:37,320
+First, how the request reached Aziz.
+
+11
+00:00:37,370 --> 00:00:41,592
+The stranger typed Aziz's number and the correct password on a new phone.
+
+12
+00:00:41,642 --> 00:00:45,432
+Only after a correct password does a new-device request start.
+
+13
+00:00:45,482 --> 00:00:50,496
+TAF sends the code to the number, so it lands on the stranger's SIM card.
+
+14
+00:00:50,546 --> 00:00:55,128
+At the same time, the platform finds Aziz's session in the mobile bank.
+
+15
+00:00:55,178 --> 00:00:58,488
+It has rank two, so it gets the approval request.
+
+16
+00:00:58,538 --> 00:01:02,232
+The push carries no code, only the request identifier.
+
+17
+00:01:02,282 --> 00:01:05,616
+The new phone needs both: the code and the approval.
+
+18
+00:01:05,666 --> 00:01:07,488
+Now Aziz refuses.
+
+19
+00:01:07,538 --> 00:01:09,744
+Step one is the obvious one.
+
+20
+00:01:09,794 --> 00:01:16,392
+The login on the new phone is refused, the attempt ends, and an event goes to the bank's antifraud system.
+
+21
+00:01:16,442 --> 00:01:18,576
+But think about what this tap means.
+
+22
+00:01:18,626 --> 00:01:21,816
+The request started only after a correct password.
+
+23
+00:01:21,866 --> 00:01:23,952
+So someone knows Aziz's password.
+
+24
+00:01:24,002 --> 00:01:28,416
+And that someone may also hold his SIM card, because the code went to that number.
+
+25
+00:01:28,466 --> 00:01:34,464
+Every new code and every SMS alert to that number may land in a stranger's hand.
+
+26
+00:01:34,514 --> 00:01:37,152
+So step two: the number goes on hold.
+
+27
+00:01:37,202 --> 00:01:44,016
+While it is on hold, the platform starts no login that needs a one-time code to this number, on any phone or browser.
+
+28
+00:01:44,066 --> 00:01:47,040
+It sends no SMS to the number at all.
+
+29
+00:01:47,090 --> 00:01:49,224
+Notifications go by push only.
+
+30
+00:01:49,274 --> 00:01:55,896
+So the marketplace website cannot help the stranger either: a web login that needs a code is refused.
+
+31
+00:01:55,946 --> 00:02:00,840
+And Aziz's own sessions keep working, because their access does not need the number.
+
+32
+00:02:00,890 --> 00:02:03,528
+Step three happens on the phone that refused.
+
+33
+00:02:03,578 --> 00:02:07,440
+The mobile bank asks Aziz to change his password, at once.
+
+34
+00:02:07,490 --> 00:02:10,728
+He types the old one, then a new one, two times.
+
+35
+00:02:10,778 --> 00:02:15,984
+As after each password change, the other sessions of the same or a lower rank end.
+
+36
+00:02:16,034 --> 00:02:22,512
+Aziz's session has rank two, so every other session ends, including any that the stranger opened.
+
+37
+00:02:22,562 --> 00:02:24,600
+Step four is one question.
+
+38
+00:02:24,650 --> 00:02:26,280
+Does your SIM card still work?
+
+39
+00:02:26,330 --> 00:02:29,832
+If Aziz says yes, the stranger had only the password.
+
+40
+00:02:29,882 --> 00:02:33,120
+The new password fixes that, and the hold ends.
+
+41
+00:02:33,170 --> 00:02:36,384
+If Aziz says no, the stranger has his SIM card.
+
+42
+00:02:36,434 --> 00:02:38,928
+Then the number must leave the account.
+
+43
+00:02:38,978 --> 00:02:43,896
+Aziz was at level two, so first he passes a MyID re-check, on this phone.
+
+44
+00:02:43,946 --> 00:02:50,880
+Then the platform removes the number, the same way as a number reassignment, and Aziz adds a new number.
+
+45
+00:02:50,930 --> 00:02:53,328
+His account is not blocked at any point.
+
+46
+00:02:53,378 --> 00:02:59,160
+At each step, the platform writes an audit event and sends an event to the antifraud system.
+
+47
+00:02:59,210 --> 00:03:02,016
+And it sends the notification, number on hold.
+
+48
+00:03:02,066 --> 00:03:04,920
+Why a hold, and not a removal at once?
+
+49
+00:03:04,970 --> 00:03:07,032
+I think the answer is the wrong tap.
+
+50
+00:03:07,082 --> 00:03:11,328
+People tap the wrong button, at eleven at night, during a football match.
+
+51
+00:03:11,378 --> 00:03:17,352
+If This was not me removed the number at once, one wrong tap would take away Aziz's only login.
+
+52
+00:03:17,402 --> 00:03:20,088
+The hold is safe and easy to undo.
+
+53
+00:03:20,138 --> 00:03:22,320
+The SIM question decides the rest.
+
+54
+00:03:22,370 --> 00:03:24,312
+The design pays a price for this.
+
+55
+00:03:24,362 --> 00:03:27,648
+SMS notifications stop while the number is on hold.
+
+56
+00:03:27,698 --> 00:03:32,568
+And a customer who has no session on any device cannot end the hold alone.
+
+57
+00:03:32,618 --> 00:03:35,088
+A bank operator ends it, with a reason.
+
+58
+00:03:35,138 --> 00:03:36,288
+One more detail.
+
+59
+00:03:36,338 --> 00:03:38,856
+Only a rank-two session can refuse.
+
+60
+00:03:38,906 --> 00:03:45,360
+A session of rank one, like a marketplace browser, gets a notification about the new login, but no buttons.
+
+61
+00:03:45,410 --> 00:03:50,112
+Otherwise, a stranger with an old web session could approve his own login.
+
+62
+00:03:50,162 --> 00:03:53,304
+To recap: This was not me refuses the login.
+
+63
+00:03:53,354 --> 00:03:58,176
+Then the number goes on hold: no codes, no SMS, push only.
+
+64
+00:03:58,226 --> 00:04:01,800
+The password changes at once, and the other sessions end.
+
+65
+00:04:01,850 --> 00:04:06,672
+Then the SIM question: yes ends the hold, no removes the number after MyID.
+
+66
+00:04:06,722 --> 00:04:08,544
+Aziz said no.
+
+67
+00:04:08,594 --> 00:04:13,536
+His old number is now free, and one day the mobile operator gives it to someone else.
+
+68
+00:04:13,586 --> 00:04:16,944
+When that person registers with it, what does the platform see?
+
+69
+00:04:16,994 --> 00:04:18,984
+Next: when numbers change.
