@@ -57,6 +57,7 @@ import { H12TafVerdictComposition } from "./reels/h-12-taf-verdict";
 import { H13PasswordComposition } from "./reels/h-13-password";
 import { H14ConsentComposition } from "./reels/h-14-consent";
 import { H15MyIdProofingComposition } from "./reels/h-15-myid-proofing";
+import { H16ProveOnceComposition } from "./reels/h-16-prove-once";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -142,6 +143,7 @@ export const RemotionRoot: React.FC = () => {
         <Folder name="h4-Proofing">
           <H14ConsentComposition />
           <H15MyIdProofingComposition />
+          <H16ProveOnceComposition />
         </Folder>
       </Folder>
     </>

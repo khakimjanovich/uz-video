@@ -1,0 +1,207 @@
+1
+00:00:00,050 --> 00:00:05,072
+How many times a year should a bank look at your face?
+
+2
+00:00:05,122 --> 00:00:11,144
+For Aziz, this year, the answer is once, and after that only when something new happens.
+
+3
+00:00:11,194 --> 00:00:18,992
+In Lesson 15, Aziz passed a full proofing in the mobile bank: his document and his face, compared with the state records.
+
+4
+00:00:19,042 --> 00:00:26,456
+This lesson shows what the platform keeps from that day, so that the next check is short, and so that most days have no check at all.
+
+5
+00:00:26,506 --> 00:00:30,032
+Start with what MyID gave back, next to the identity.
+
+6
+00:00:30,082 --> 00:00:35,912
+After a successful proofing, MyID issues a reusable identifier for Aziz.
+
+7
+00:00:35,962 --> 00:00:42,896
+It is valid until a date in the contract between the bank and MyID, for example the end of the month or the end of the year.
+
+8
+00:00:42,946 --> 00:00:48,272
+The platform keeps the identifier and its expiry date with Aziz's verified identity.
+
+9
+00:00:48,322 --> 00:00:50,144
+It never sends it to the phone.
+
+10
+00:00:50,194 --> 00:00:54,056
+Eight months later, Aziz's phone falls into a river.
+
+11
+00:00:54,106 --> 00:00:56,312
+His identifier is still valid.
+
+12
+00:00:56,362 --> 00:01:01,208
+He buys a new phone, installs the mobile bank, and types his number and his password.
+
+13
+00:01:01,258 --> 00:01:07,640
+The new-device code arrives by SMS, through TAF, and the verdict is green.
+
+14
+00:01:07,690 --> 00:01:15,584
+His old phone, at the bottom of the river, cannot approve the login, so after the configured waiting time the correct code is enough.
+
+15
+00:01:15,634 --> 00:01:20,888
+Now the platform sees a customer who was at level two, on a device that it has never seen.
+
+16
+00:01:20,938 --> 00:01:24,056
+So it asks for MyID, but not for everything.
+
+17
+00:01:24,106 --> 00:01:25,928
+This is a re-check.
+
+18
+00:01:25,978 --> 00:01:30,488
+Aziz passes the consent gate again, because every call to MyID needs it.
+
+19
+00:01:30,538 --> 00:01:34,976
+The platform opens the session with the reusable identifier already set.
+
+20
+00:01:35,026 --> 00:01:39,488
+The MyID screen skips the document, and goes straight to the camera.
+
+21
+00:01:39,538 --> 00:01:45,224
+MyID checks that the face is live, and compares it with the person behind the identifier.
+
+22
+00:01:45,274 --> 00:01:48,272
+It sends back a match result, and no profile.
+
+23
+00:01:48,322 --> 00:01:55,136
+The platform keeps the match confidence, the references and the time, and the identity data does not change.
+
+24
+00:01:55,186 --> 00:01:57,584
+The new phone becomes his trusted device.
+
+25
+00:01:57,634 --> 00:01:59,696
+It took Aziz one look at the camera.
+
+26
+00:01:59,746 --> 00:02:03,568
+So which kind of check comes when?
+
+27
+00:02:03,618 --> 00:02:07,504
+The platform decides, from the purpose and from the identifier.
+
+28
+00:02:07,554 --> 00:02:14,320
+A step-up from level one to level two is always a full proofing: there is nothing to compare with yet.
+
+29
+00:02:14,370 --> 00:02:21,232
+A refresh of the identity is always a full proofing too, because its job is to read new data.
+
+30
+00:02:21,282 --> 00:02:28,288
+A new device, or a dormant account, of a customer who was at level two, gets a re-check while the identifier is valid.
+
+31
+00:02:28,338 --> 00:02:39,568
+When the identifier has expired, it gets a full proofing with the personal identification number already set, so the screen still goes straight to the face, but the platform receives a full profile.
+
+32
+00:02:39,618 --> 00:02:48,256
+A yellow verdict from TAF, for a customer who was at level two, follows the same rule: a re-check before the login continues.
+
+33
+00:02:48,306 --> 00:02:56,416
+And one more rule: the platform never sends a customer at level two, with a valid document, to MyID for any other reason.
+
+34
+00:02:56,466 --> 00:03:00,424
+No channel, no app and no partner can start a proofing for him.
+
+35
+00:03:00,474 --> 00:03:04,024
+I think this rule matters more than the re-check itself.
+
+36
+00:03:04,074 --> 00:03:11,896
+Every call to MyID costs the bank money, and every extra face check teaches customers to show their face whenever an app asks.
+
+37
+00:03:11,946 --> 00:03:13,432
+Prove once, then bind.
+
+38
+00:03:13,482 --> 00:03:18,256
+The platform keeps no face template, and it runs no face engine of its own.
+
+39
+00:03:18,306 --> 00:03:23,128
+MyID checks that the face is live, and the platform keeps only the result.
+
+40
+00:03:23,178 --> 00:03:24,688
+What about the side apps?
+
+41
+00:03:24,738 --> 00:03:28,672
+Aziz also logs in to the marketplace app on his new phone.
+
+42
+00:03:28,722 --> 00:03:31,360
+A side app never asks for MyID at login.
+
+43
+00:03:31,410 --> 00:03:37,912
+His marketplace session starts at level one, and it gets level two only after he approves it in the mobile bank.
+
+44
+00:03:37,962 --> 00:03:41,200
+Prove once also works inside a single journey.
+
+45
+00:03:41,250 --> 00:03:46,648
+Suppose that a step-up stops right after the result from MyID arrives, because the app closed.
+
+46
+00:03:46,698 --> 00:03:53,416
+Within the configured reuse period, the platform completes the step-up with that same result, with no new call to MyID.
+
+47
+00:03:53,466 --> 00:04:00,472
+After the period, a new proofing is necessary, and a result is only ever used for its own purpose.
+
+48
+00:04:00,522 --> 00:04:13,816
+To recap: the reusable identifier stays in the bank, a re-check compares only the face, a step-up and a refresh always read the full profile, and nobody may send a proofed customer to MyID for nothing.
+
+49
+00:04:13,866 --> 00:04:22,120
+So the platform now holds Aziz's verified identity: his names, his document, his addresses and his personal identification number.
+
+50
+00:04:22,170 --> 00:04:25,120
+That is the most sensitive record in the whole system.
+
+51
+00:04:25,170 --> 00:04:27,352
+Who can read it, and how would anyone know?
+
+52
+00:04:27,402 --> 00:04:29,848
+Next: the verified identity.
