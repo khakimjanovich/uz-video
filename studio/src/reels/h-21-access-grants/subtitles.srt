@@ -1,0 +1,283 @@
+1
+00:00:00,050 --> 00:00:03,864
+Aziz opens the mobile bank at breakfast to check his balance.
+
+2
+00:00:03,914 --> 00:00:06,696
+He opens it again at lunch, and once more at night.
+
+3
+00:00:06,746 --> 00:00:08,448
+He never types his password.
+
+4
+00:00:08,498 --> 00:00:11,976
+So what lets him in, again and again, without a login?
+
+5
+00:00:12,026 --> 00:00:18,720
+In Lesson 20, his phone got a record and a state, and the gateway checked the binding at each request.
+
+6
+00:00:18,770 --> 00:00:25,728
+This lesson shows what the app holds when it calls: the access grant, its tokens, its level and its renewal.
+
+7
+00:00:25,778 --> 00:00:27,792
+An access grant is a session.
+
+8
+00:00:27,842 --> 00:00:32,136
+It belongs to one app account, on one device, for one customer.
+
+9
+00:00:32,186 --> 00:00:35,952
+Aziz got his first grant on registration day, at level one.
+
+10
+00:00:36,002 --> 00:00:38,184
+He gets a new one after each login.
+
+11
+00:00:38,234 --> 00:00:42,288
+Two parts of the platform take part, and they have very different jobs.
+
+12
+00:00:42,338 --> 00:00:44,328
+The customer gateway decides.
+
+13
+00:00:44,378 --> 00:00:48,504
+It checks the password, the code, the verdict and the device binding.
+
+14
+00:00:48,554 --> 00:00:48,864
+Keycloak only issues.
+
+15
+00:00:48,914 --> 00:00:52,968
+When the gateway is satisfied, it signs a short note for Keycloak.
+
+16
+00:00:53,018 --> 00:00:58,608
+The note says three things: this device, this customer, this session level.
+
+17
+00:00:58,658 --> 00:01:02,232
+It is valid for a very short time, and only once.
+
+18
+00:01:02,282 --> 00:01:08,328
+Keycloak reads the note and issues two tokens: an access token and a refresh token.
+
+19
+00:01:08,378 --> 00:01:10,200
+I think this is the right split.
+
+20
+00:01:10,250 --> 00:01:17,496
+Keycloak is a well-known engine for tokens, but it knows nothing about TAF, MyID or the bank's rules.
+
+21
+00:01:17,546 --> 00:01:23,688
+All those rules stay in the gateway, so a new version of Keycloak never changes how the bank decides.
+
+22
+00:01:23,738 --> 00:01:25,920
+Now look at what the access token says.
+
+23
+00:01:25,970 --> 00:01:27,672
+First, it names its own app.
+
+24
+00:01:27,722 --> 00:01:32,448
+A mobile bank token never opens the marketplace, as Lesson 5 showed.
+
+25
+00:01:32,498 --> 00:01:36,288
+Second, it carries the session level: one or two.
+
+26
+00:01:36,338 --> 00:01:41,568
+The gateway writes level two only when the customer is at level two and the device is Trusted.
+
+27
+00:01:41,618 --> 00:01:45,912
+On registration day, Aziz's token said level one.
+
+28
+00:01:45,962 --> 00:01:52,296
+A week later he passed MyID on this phone, and the gateway issued a new token with level two at once.
+
+29
+00:01:52,346 --> 00:01:54,720
+He did not wait for the old token to run out.
+
+30
+00:01:54,770 --> 00:02:00,024
+So any app, and any backend of the bank, can read the level straight from the token.
+
+31
+00:02:00,074 --> 00:02:01,896
+Back to breakfast.
+
+32
+00:02:01,946 --> 00:02:05,808
+The access token lives only a short time, on purpose.
+
+33
+00:02:05,858 --> 00:02:09,336
+When it runs out, the app does not ask Aziz for anything.
+
+34
+00:02:09,386 --> 00:02:13,728
+It sends the refresh token to the gateway, with its device identifier.
+
+35
+00:02:13,778 --> 00:02:15,600
+This is a renewal.
+
+36
+00:02:15,650 --> 00:02:19,488
+The gateway renews only for the same device and the same app.
+
+37
+00:02:19,538 --> 00:02:24,000
+Before anything else, the renewal passes the binding check from Lesson 20.
+
+38
+00:02:24,050 --> 00:02:26,880
+Then the gateway looks at the revocation list.
+
+39
+00:02:26,930 --> 00:02:31,824
+This list holds every grant that was ended, and the gateway reads it at each call.
+
+40
+00:02:31,874 --> 00:02:38,208
+If both checks pass, Keycloak gives a fresh access token, and a fresh refresh token too.
+
+41
+00:02:38,258 --> 00:02:40,800
+The old refresh token is now used up.
+
+42
+00:02:40,850 --> 00:02:45,000
+If someone tries to use it a second time, Keycloak sees the reuse.
+
+43
+00:02:45,050 --> 00:02:47,232
+A renewal needs no password.
+
+44
+00:02:47,282 --> 00:02:51,072
+The password opens a login, and a renewal is not a login.
+
+45
+00:02:51,122 --> 00:02:52,944
+It only continues one.
+
+46
+00:02:52,994 --> 00:02:54,816
+There is one more limit.
+
+47
+00:02:54,866 --> 00:03:00,696
+When Aziz leaves the app alone for longer than the inactivity limit, the app asks for his app PIN.
+
+48
+00:03:00,746 --> 00:03:02,568
+The grant does not end.
+
+49
+00:03:02,618 --> 00:03:05,640
+The PIN only unlocks the app on this phone again.
+
+50
+00:03:05,690 --> 00:03:11,616
+The bank sets the full lifetime of a grant, and its inactivity limit, as policies.
+
+51
+00:03:11,666 --> 00:03:14,376
+Now the other side: how a grant ends.
+
+52
+00:03:14,426 --> 00:03:17,640
+Last year Aziz used the mobile bank on a tablet.
+
+53
+00:03:17,690 --> 00:03:19,512
+This week he cannot find it.
+
+54
+00:03:19,562 --> 00:03:23,160
+He calls the bank, and an operator revokes the tablet.
+
+55
+00:03:23,210 --> 00:03:27,624
+The grant of the tablet ends at its next request, not at its next renewal.
+
+56
+00:03:27,674 --> 00:03:30,240
+If the tablet calls, it is refused.
+
+57
+00:03:30,290 --> 00:03:33,648
+If it tries to renew, the revocation list says no.
+
+58
+00:03:33,698 --> 00:03:46,584
+A grant can end in a few more ways: a block of the customer, a binding mismatch, a replaced phone, a phone number that was removed, a password reset or change on a different device, or simply its lifetime.
+
+59
+00:03:46,634 --> 00:03:50,736
+In each case, the app gets the same answer: this grant has ended.
+
+60
+00:03:50,786 --> 00:03:52,272
+The app tries a renewal.
+
+61
+00:03:52,322 --> 00:03:55,776
+When the renewal fails too, Aziz must log in again.
+
+62
+00:03:55,826 --> 00:03:57,648
+To recap.
+
+63
+00:03:57,698 --> 00:04:00,816
+The gateway decides, and Keycloak issues.
+
+64
+00:04:00,866 --> 00:04:03,120
+The token names its app and its level.
+
+65
+00:04:03,170 --> 00:04:06,432
+A renewal keeps the session alive with no password.
+
+66
+00:04:06,482 --> 00:04:10,896
+And one revocation stops a device at its very next request.
+
+67
+00:04:10,946 --> 00:04:12,768
+But look at the marketplace.
+
+68
+00:04:12,818 --> 00:04:20,064
+Aziz's marketplace token says level one, and the page he wants shows his orders, which needs level two.
+
+69
+00:04:20,114 --> 00:04:22,152
+Should the marketplace refuse him?
+
+70
+00:04:22,202 --> 00:04:24,864
+What does an app do with a level that is too low?
+
+71
+00:04:24,914 --> 00:04:26,352
+Next: step-up.
