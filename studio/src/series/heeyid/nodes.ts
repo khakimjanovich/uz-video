@@ -91,6 +91,16 @@ export const HEEYID_CATALOG = {
   keychain: { label: "Keychain · Keystore", sublabel: "On the phone", art: "vault" },
   memory: { label: "Memory", sublabel: "Until expiry or close", art: "phone" },
   neverKept: { label: "Never kept", sublabel: "On any app", art: "receipt" },
+  // Module 3: registration, codes, TAF, password.
+  webProfile: { label: "Marketplace web", sublabel: "Side app · browser", art: "store" },
+  azizPhone: { label: "Aziz's phone", sublabel: "Gets the SMS", art: "phone" },
+  smsService: { label: "SMS service", sublabel: "Of the bank", art: "request" },
+  registration: { label: "Registration", sublabel: "Record", art: "receipt" },
+  codeStore: { label: "Codes", sublabel: "Keyed digest only", art: "vault" },
+  valkey: { label: "Valkey", sublabel: "Counters · cool-downs", art: "tray" },
+  bot: { label: "Script", sublabel: "Types Aziz's number", art: "attacker" },
+  portal: { label: "State portal", sublabel: "One trusted bank", art: "admin" },
+  passwordRow: { label: "Password row", sublabel: "Argon2id · salt", art: "vault" },
 } satisfies Record<string, NodeDef>;
 
 export type HeeyId = keyof typeof HEEYID_CATALOG;
