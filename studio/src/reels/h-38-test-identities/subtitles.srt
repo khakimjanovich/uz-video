@@ -1,0 +1,175 @@
+1
+00:00:00,050 --> 00:00:04,728
+Aziz has been our hero for thirty-seven lessons, but he is not a real person.
+
+2
+00:00:04,778 --> 00:00:11,016
+The test team needs him every day: registered, proved, blocked, refreshed, and proved again.
+
+3
+00:00:11,066 --> 00:00:16,200
+MyID, though, is a state service that proves real people from state records.
+
+4
+00:00:16,250 --> 00:00:25,368
+So how does the team run Aziz's journeys through MyID, without the data of a real person, and without one test record ever reaching production?
+
+5
+00:00:25,418 --> 00:00:35,712
+In Lesson 7, simulators stood in for each outside service, and in Lesson 37, the panel kept every change to configuration under maker-checker.
+
+6
+00:00:35,762 --> 00:00:41,160
+This lesson puts those pieces into two zones, and gives Aziz a test identity.
+
+7
+00:00:41,210 --> 00:00:43,032
+First, the zones.
+
+8
+00:00:43,082 --> 00:00:47,136
+The bank runs heeyID as two separate installations.
+
+9
+00:00:47,186 --> 00:00:52,512
+Stage lives in the test zone of the bank, and production lives in the production zone.
+
+10
+00:00:52,562 --> 00:00:58,152
+Each one has its own MyID credentials, its own connections to the bank's services, and its own data.
+
+11
+00:00:58,202 --> 00:01:05,184
+Stage connects only to the MyID test environment, and production connects only to the MyID production environment.
+
+12
+00:01:05,234 --> 00:01:11,064
+Neither installation can reach the environment of the other, and there is no network route between the zones.
+
+13
+00:01:11,114 --> 00:01:14,784
+Only configuration moves from stage to production.
+
+14
+00:01:14,834 --> 00:01:19,008
+Customers, devices, sessions and audit events never move.
+
+15
+00:01:19,058 --> 00:01:21,000
+Second, the test identity.
+
+16
+00:01:21,050 --> 00:01:25,680
+MyID has a test environment, with test identities registered there.
+
+17
+00:01:25,730 --> 00:01:27,816
+The stage configuration lists them.
+
+18
+00:01:27,866 --> 00:01:37,152
+Each one has a personal identification number, or a document series and number, and the result that it must give: success, or a named failure reason.
+
+19
+00:01:37,202 --> 00:01:45,528
+For example, one identity succeeds, another fails because the face does not match, and another fails because the document has expired.
+
+20
+00:01:45,578 --> 00:01:50,184
+So the acceptance tests run the same journeys with the same results, every time.
+
+21
+00:01:50,234 --> 00:01:51,816
+Third, the test flag.
+
+22
+00:01:51,866 --> 00:01:58,560
+Each customer that the platform creates in stage uses a MyID test identity and carries a test flag.
+
+23
+00:01:58,610 --> 00:02:01,848
+Limits and reports never count test customers.
+
+24
+00:02:01,898 --> 00:02:07,200
+In production, every customer is a real person that the MyID production service proved.
+
+25
+00:02:07,250 --> 00:02:14,952
+That includes the people the bank uses for its own checks: in production they are normal customers, under every rule of this course.
+
+26
+00:02:15,002 --> 00:02:19,512
+I think that rule is the honest one: production has no back door called test.
+
+27
+00:02:19,562 --> 00:02:22,200
+Fourth, the guards that keep the zones apart.
+
+28
+00:02:22,250 --> 00:02:28,536
+A production build does not start when its MyID host is a test host, or when test customers are allowed.
+
+29
+00:02:28,586 --> 00:02:34,080
+In the production zone, the database itself refuses a customer row with the test flag.
+
+30
+00:02:34,130 --> 00:02:42,360
+And the move from stage to production is only a difference in Helm values, which a second person approves, so no database content moves.
+
+31
+00:02:42,410 --> 00:02:44,280
+Fifth, the simulators.
+
+32
+00:02:44,330 --> 00:02:53,592
+Every acceptance test can also run with no MyID, no SMS service, no push service, no customer lookup and no antifraud system.
+
+33
+00:02:53,642 --> 00:02:58,824
+The simulators give each reason code and each answer that the real services can give.
+
+34
+00:02:58,874 --> 00:03:03,312
+So a developer can run the whole suite on a laptop, with no internet.
+
+35
+00:03:03,362 --> 00:03:09,672
+Each night, a second run goes against the MyID test environment and adds to the simulated run.
+
+36
+00:03:09,722 --> 00:03:11,544
+Back to Aziz.
+
+37
+00:03:11,594 --> 00:03:15,096
+In stage, he is a test identity with a known result.
+
+38
+00:03:15,146 --> 00:03:19,128
+On a developer's laptop, he is a simulator that never gets tired.
+
+39
+00:03:19,178 --> 00:03:23,424
+And in production, he does not exist at all, which is exactly right.
+
+40
+00:03:23,474 --> 00:03:29,376
+To recap: two zones, two installations, two MyID environments, and no route between them.
+
+41
+00:03:29,426 --> 00:03:37,416
+Test identities with expected results, a test flag that limits and reports ignore, and guards that stop a test value in production.
+
+42
+00:03:37,466 --> 00:03:40,368
+But one question is still open for the whole course.
+
+43
+00:03:40,418 --> 00:03:46,536
+Who builds these two installations in a new bank, from nothing, and how do we know that the build is done?
+
+44
+00:03:46,586 --> 00:03:50,016
+Next, the last lesson: installing heeyID.
