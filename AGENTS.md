@@ -234,3 +234,15 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `keycloak-ext` | keycloak ext | yes |
 | `iOS` | I O S | yes |
 | `TAF` | T A F | yes |
+| `OAuth 2.1` | oh auth two point one | yes |
+| `OAuth` | oh auth | yes |
+| `OIDC` | O I D C | yes |
+| `OpenID Connect` | open I D connect | yes |
+| `SDK` | S D K | yes |
+| `SDKs` | S D Ks | yes |
+| `OpenAPI` | open A P I | yes |
+| `OpenTofu` | open tofu | yes |
+| `FCM` | F C M | yes |
+| `Valkey` | val key | yes |
+| `aud` | A U D | yes |
+| `azp` | A Z P | yes |
