@@ -74,6 +74,13 @@ import { H29SessionsAndRankComposition } from "./reels/h-29-sessions-and-rank";
 import { H30PasswordResetComposition } from "./reels/h-30-password-reset";
 import { H31ThisWasNotMeComposition } from "./reels/h-31-this-was-not-me";
 import { H32NumberChangesComposition } from "./reels/h-32-number-changes";
+import { H33RefreshComposition } from "./reels/h-33-refresh";
+import { H34BlockingComposition } from "./reels/h-34-blocking";
+import { H35NotificationsComposition } from "./reels/h-35-notifications";
+import { H36AuditAndRetentionComposition } from "./reels/h-36-audit-and-retention";
+import { H37AdminPanelComposition } from "./reels/h-37-admin-panel";
+import { H38TestIdentitiesComposition } from "./reels/h-38-test-identities";
+import { H39InstallingComposition } from "./reels/h-39-installing";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -182,6 +189,17 @@ export const RemotionRoot: React.FC = () => {
           <H30PasswordResetComposition />
           <H31ThisWasNotMeComposition />
           <H32NumberChangesComposition />
+        </Folder>
+        <Folder name="h8-Lifecycle-and-trail">
+          <H33RefreshComposition />
+          <H34BlockingComposition />
+          <H35NotificationsComposition />
+          <H36AuditAndRetentionComposition />
+        </Folder>
+        <Folder name="h9-Operations">
+          <H37AdminPanelComposition />
+          <H38TestIdentitiesComposition />
+          <H39InstallingComposition />
         </Folder>
       </Folder>
     </>
