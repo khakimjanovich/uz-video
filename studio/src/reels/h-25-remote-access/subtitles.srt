@@ -1,0 +1,275 @@
+1
+00:00:00,050 --> 00:00:02,088
+Thursday, half past four.
+
+2
+00:00:02,138 --> 00:00:07,608
+Aziz's phone rings, and a calm voice says that it is the security team of his bank.
+
+3
+00:00:07,658 --> 00:00:14,832
+Someone is trying to take his money, the voice says, so he must install a small app, right now, to protect his account.
+
+4
+00:00:14,882 --> 00:00:17,928
+The app lets another person see and control his screen.
+
+5
+00:00:17,978 --> 00:00:22,944
+Aziz's phone is trusted, his session is valid, and his face is his own.
+
+6
+00:00:22,994 --> 00:00:24,816
+So what can still go wrong?
+
+7
+00:00:24,866 --> 00:00:30,768
+In Lesson 24, a new phone proved the SIM card, the old phone approved, and MyID proved the face.
+
+8
+00:00:30,818 --> 00:00:37,992
+This lesson covers the one danger that none of those checks can see: someone who drives Aziz's own trusted phone.
+
+9
+00:00:38,042 --> 00:00:39,864
+Look at the checks one by one.
+
+10
+00:00:39,914 --> 00:00:41,736
+The phone is Trusted.
+
+11
+00:00:41,786 --> 00:00:43,320
+The grant is valid.
+
+12
+00:00:43,370 --> 00:00:48,096
+The binding check passes, because every request really comes from Aziz's device.
+
+13
+00:00:48,146 --> 00:00:52,272
+Even the face is real, because Aziz himself holds the phone.
+
+14
+00:00:52,322 --> 00:00:54,960
+From the gateway, everything looks perfect.
+
+15
+00:00:55,010 --> 00:00:57,504
+The danger is not in the request.
+
+16
+00:00:57,554 --> 00:00:59,304
+It is in the hands that make it.
+
+17
+00:00:59,354 --> 00:01:02,400
+So the guard must live on the phone, not on the server.
+
+18
+00:01:02,450 --> 00:01:04,320
+This is the job of the master app.
+
+19
+00:01:04,370 --> 00:01:09,816
+The mobile bank looks for two things: remote-access software, and an active phone call.
+
+20
+00:01:09,866 --> 00:01:11,928
+Only the master app does this.
+
+21
+00:01:11,978 --> 00:01:15,768
+It moves money, so it carries the app self-protection of the bank.
+
+22
+00:01:15,818 --> 00:01:20,208
+Side apps, like the marketplace, do not detect remote access at all.
+
+23
+00:01:20,258 --> 00:01:23,928
+The caller's app is now installed, and it starts to share the screen.
+
+24
+00:01:23,978 --> 00:01:25,608
+The mobile bank finds it.
+
+25
+00:01:25,658 --> 00:01:28,728
+At once, the mobile bank blocks its own screen.
+
+26
+00:01:28,778 --> 00:01:32,592
+The caller sees nothing useful, and he can tap nothing.
+
+27
+00:01:32,642 --> 00:01:35,136
+Then the mobile bank tells the platform.
+
+28
+00:01:35,186 --> 00:01:37,224
+It sends a remote-access event.
+
+29
+00:01:37,274 --> 00:01:42,000
+The event carries three things: the device, the time, and the type.
+
+30
+00:01:42,050 --> 00:01:45,600
+The type is either remote-access software, or a phone call.
+
+31
+00:01:45,650 --> 00:01:48,408
+Now watch what the platform does, and what it does not do.
+
+32
+00:01:48,458 --> 00:01:50,280
+It writes an audit event.
+
+33
+00:01:50,330 --> 00:01:53,760
+It sends an event to the antifraud system of the bank.
+
+34
+00:01:53,810 --> 00:01:55,632
+And that is all.
+
+35
+00:01:55,682 --> 00:01:57,888
+The platform does not block Aziz.
+
+36
+00:01:57,938 --> 00:02:01,776
+It does not change his customer record, his device or his grant.
+
+37
+00:02:01,826 --> 00:02:05,088
+The phone stays trusted, and his session stays valid.
+
+38
+00:02:05,138 --> 00:02:06,936
+At first this sounds too soft.
+
+39
+00:02:06,986 --> 00:02:10,104
+A thief is on the line, so why not lock everything?
+
+40
+00:02:10,154 --> 00:02:12,408
+I think the soft answer is the right one.
+
+41
+00:02:12,458 --> 00:02:14,064
+A phone call is not a crime.
+
+42
+00:02:14,114 --> 00:02:16,560
+Aziz calls his mother every evening.
+
+43
+00:02:16,610 --> 00:02:23,256
+If every call blocked his account, honest people would be locked out every day, and they would stop trusting the bank.
+
+44
+00:02:23,306 --> 00:02:26,112
+And a block would punish Aziz for what the caller did.
+
+45
+00:02:26,162 --> 00:02:27,984
+So the work is split.
+
+46
+00:02:28,034 --> 00:02:31,176
+The master app protects the screen at the moment of danger.
+
+47
+00:02:31,226 --> 00:02:33,288
+The platform keeps an honest record.
+
+48
+00:02:33,338 --> 00:02:39,960
+The antifraud system of the bank sees the pattern over time: the same caller, many customers, the same hour.
+
+49
+00:02:40,010 --> 00:02:44,184
+In this first version, the antifraud system only receives events.
+
+50
+00:02:44,234 --> 00:02:46,632
+The platform never waits for its answer.
+
+51
+00:02:46,682 --> 00:02:48,504
+Back to Aziz.
+
+52
+00:02:48,554 --> 00:02:51,672
+His screen is dark, and the caller is getting angry.
+
+53
+00:02:51,722 --> 00:02:53,544
+That anger is a good sign.
+
+54
+00:02:53,594 --> 00:02:56,760
+Aziz hangs up and calls the number on the back of his card.
+
+55
+00:02:56,810 --> 00:03:01,032
+The real bank tells him that nobody from the bank asks for an app like that.
+
+56
+00:03:01,082 --> 00:03:04,152
+This closes the module on devices and login.
+
+57
+00:03:04,202 --> 00:03:07,368
+Lesson 20 gave the phone a record and a state.
+
+58
+00:03:07,418 --> 00:03:10,056
+Lesson 21 gave it an access grant.
+
+59
+00:03:10,106 --> 00:03:13,104
+Lesson 22 showed the way up to level two.
+
+60
+00:03:13,154 --> 00:03:19,512
+Lessons twenty-three and twenty-four showed the two logins: on a known phone, and on a new one.
+
+61
+00:03:19,562 --> 00:03:22,896
+And this lesson put a guard on the hands that hold the phone.
+
+62
+00:03:22,946 --> 00:03:24,768
+To recap.
+
+63
+00:03:24,818 --> 00:03:27,648
+Only the master app detects remote access.
+
+64
+00:03:27,698 --> 00:03:29,256
+It blocks its own screen.
+
+65
+00:03:29,306 --> 00:03:34,152
+The platform records the event and forwards it, and Aziz stays a customer.
+
+66
+00:03:34,202 --> 00:03:36,432
+But the marketplace has none of this.
+
+67
+00:03:36,482 --> 00:03:40,800
+It has no MyID, no TAF and no remote-access guard.
+
+68
+00:03:40,850 --> 00:03:46,032
+So how does Aziz log in to the marketplace on the web, and how does the master app vouch for him there?
+
+69
+00:03:46,082 --> 00:03:47,928
+Next: side-app login.

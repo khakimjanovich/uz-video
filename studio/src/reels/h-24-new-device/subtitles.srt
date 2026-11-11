@@ -1,0 +1,295 @@
+1
+00:00:00,050 --> 00:00:04,128
+The box is still on the table, and the new phone smells of plastic.
+
+2
+00:00:04,178 --> 00:00:07,872
+Aziz moves his SIM card into it and installs the mobile bank.
+
+3
+00:00:07,922 --> 00:00:11,088
+He types his number and his password, and both are right.
+
+4
+00:00:11,138 --> 00:00:12,960
+Isn't that enough?
+
+5
+00:00:13,010 --> 00:00:18,504
+A stranger with a swapped SIM card and a guessed password would have exactly the same two things.
+
+6
+00:00:18,554 --> 00:00:23,208
+In Lesson 23, Aziz logged in on a phone the platform already knew.
+
+7
+00:00:23,258 --> 00:00:30,360
+This lesson starts on a phone it has never seen: the new-device code, the approval on the old phone, and the account check.
+
+8
+00:00:30,410 --> 00:00:33,696
+The gateway checks the password first, as always.
+
+9
+00:00:33,746 --> 00:00:36,072
+Nothing starts before a correct password.
+
+10
+00:00:36,122 --> 00:00:41,784
+Then it looks for the device identifier, and finds nothing: this phone is not known for Aziz.
+
+11
+00:00:41,834 --> 00:00:44,784
+So the gateway opens a new-device request.
+
+12
+00:00:44,834 --> 00:00:48,216
+In the master app, the new-device code goes out at once.
+
+13
+00:00:48,266 --> 00:00:52,536
+TAF sends it by SMS to Aziz's verified number.
+
+14
+00:00:52,586 --> 00:00:56,736
+The message says it is for a login, and it names the model of the new phone.
+
+15
+00:00:56,786 --> 00:00:59,976
+The SIM card is in the new phone, so the code lands there.
+
+16
+00:01:00,026 --> 00:01:01,848
+That proves the SIM.
+
+17
+00:01:01,898 --> 00:01:03,912
+It does not prove the person.
+
+18
+00:01:03,962 --> 00:01:05,784
+Now the old phone.
+
+19
+00:01:05,834 --> 00:01:09,840
+It is still on Aziz's desk, and it still has a session in the mobile bank.
+
+20
+00:01:09,890 --> 00:01:13,152
+That session passed a green verdict, so it has rank two.
+
+21
+00:01:13,202 --> 00:01:15,504
+Lesson 29 explains rank.
+
+22
+00:01:15,554 --> 00:01:20,664
+For now, rank two means a session the platform trusts to answer for Aziz.
+
+23
+00:01:20,714 --> 00:01:23,568
+The platform sends a push signal to the old phone.
+
+24
+00:01:23,618 --> 00:01:27,408
+The signal carries no code, only the number of the request.
+
+25
+00:01:27,458 --> 00:01:31,224
+The old phone then pulls the request over its own session.
+
+26
+00:01:31,274 --> 00:01:35,136
+It shows the model of the new phone, the network address, and the time.
+
+27
+00:01:35,186 --> 00:01:38,904
+It shows a warning: never give any code to another person.
+
+28
+00:01:38,954 --> 00:01:42,840
+And it shows two buttons: Approve, and This was not me.
+
+29
+00:01:42,890 --> 00:01:46,176
+I think the warning matters as much as the buttons.
+
+30
+00:01:46,226 --> 00:01:49,464
+Many thefts start with a friendly voice that asks for a code.
+
+31
+00:01:49,514 --> 00:01:53,976
+Here, the old phone never shows a code at all, so there is nothing to read out.
+
+32
+00:01:54,026 --> 00:01:58,104
+Aziz taps Approve on the old phone, and types the code on the new one.
+
+33
+00:01:58,154 --> 00:02:04,344
+With a rank-two session on a different phone, the login needs both: a correct code and the approval.
+
+34
+00:02:04,394 --> 00:02:09,768
+If the old phone stays silent for the whole approval waiting period, a correct code is enough.
+
+35
+00:02:09,818 --> 00:02:14,544
+If no other phone has a rank-two session, a correct code is enough from the start.
+
+36
+00:02:14,594 --> 00:02:18,624
+A session of rank one gets only a notice, without the buttons.
+
+37
+00:02:18,674 --> 00:02:22,776
+Next comes the verdict from TAF, as in Lesson 12.
+
+38
+00:02:22,826 --> 00:02:24,648
+Today it is green.
+
+39
+00:02:24,698 --> 00:02:26,520
+Now the account check.
+
+40
+00:02:26,570 --> 00:02:30,504
+The platform asks one question: what kind of account is this?
+
+41
+00:02:30,554 --> 00:02:36,456
+If nobody used any of its devices for longer than the dormancy period, the account is dormant.
+
+42
+00:02:36,506 --> 00:02:38,664
+Lesson 32 covers that.
+
+43
+00:02:38,714 --> 00:02:43,536
+If the customer was never at level two, the login completes at level one.
+
+44
+00:02:43,586 --> 00:02:46,632
+When an app needs more, the customer does a step-up.
+
+45
+00:02:46,682 --> 00:02:50,616
+Aziz was at level two, so his new phone must prove his face.
+
+46
+00:02:50,666 --> 00:02:54,624
+The mobile bank asks for consent, then runs a MyID re-check.
+
+47
+00:02:54,674 --> 00:02:59,544
+If the reusable identifier has expired, it runs a full proofing instead.
+
+48
+00:02:59,594 --> 00:03:01,416
+His face matches.
+
+49
+00:03:01,466 --> 00:03:04,200
+This is the guard that a stranger cannot pass.
+
+50
+00:03:04,250 --> 00:03:09,024
+The stranger may hold the SIM card, may know the password, and may even catch the code.
+
+51
+00:03:09,074 --> 00:03:11,256
+But he does not have Aziz's face.
+
+52
+00:03:11,306 --> 00:03:13,128
+Now the login completes.
+
+53
+00:03:13,178 --> 00:03:15,960
+The platform makes a record for the new phone.
+
+54
+00:03:16,010 --> 00:03:19,440
+It passed MyID on this device, so the state is Trusted.
+
+55
+00:03:19,490 --> 00:03:21,792
+Without a MyID check, it would be Known.
+
+56
+00:03:21,842 --> 00:03:23,736
+Then comes a new access grant.
+
+57
+00:03:23,786 --> 00:03:26,856
+Last, the notice: new device login.
+
+58
+00:03:26,906 --> 00:03:34,512
+It goes by push to Aziz's other devices, and by SMS to his number, with the model, the network address and the time.
+
+59
+00:03:34,562 --> 00:03:40,032
+The platform writes an audit event, and sends an event to the antifraud system of the bank.
+
+60
+00:03:40,082 --> 00:03:41,904
+And the other button?
+
+61
+00:03:41,954 --> 00:03:47,904
+If Aziz had tapped This was not me, the login would end at once, and his number would go on hold.
+
+62
+00:03:47,954 --> 00:03:50,112
+Lesson 31 shows why.
+
+63
+00:03:50,162 --> 00:03:51,984
+One last note on side apps.
+
+64
+00:03:52,034 --> 00:03:56,712
+On a new phone in the marketplace, the approval in the master app replaces the code.
+
+65
+00:03:56,762 --> 00:04:03,456
+With no rank-two session, the bank's SMS service sends the code, and the session starts at level one.
+
+66
+00:04:03,506 --> 00:04:06,408
+Lesson 26 covers the details.
+
+67
+00:04:06,458 --> 00:04:08,280
+To recap.
+
+68
+00:04:08,330 --> 00:04:11,928
+On a new phone, the number and the password are not enough.
+
+69
+00:04:11,978 --> 00:04:13,752
+The code proves the SIM card.
+
+70
+00:04:13,802 --> 00:04:15,624
+The old phone approves.
+
+71
+00:04:15,674 --> 00:04:17,688
+And MyID proves the face.
+
+72
+00:04:17,738 --> 00:04:20,304
+Now Aziz is safe from a stranger's hands.
+
+73
+00:04:20,354 --> 00:04:26,904
+But what if a stranger guides Aziz's own hands, on a phone call, and asks him to install a screen-sharing app?
+
+74
+00:04:26,954 --> 00:04:29,040
+Next: remote access.

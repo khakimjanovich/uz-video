@@ -1,0 +1,275 @@
+1
+00:00:00,050 --> 00:00:02,304
+Pick up Aziz's phone and look at it.
+
+2
+00:00:02,354 --> 00:00:07,104
+It is glass, a chip and a SIM card, and a million other phones look the same.
+
+3
+00:00:07,154 --> 00:00:10,272
+So how does the platform know that this phone is Aziz's?
+
+4
+00:00:10,322 --> 00:00:15,384
+In Lesson 19, the platform linked Aziz to the bank's own customer records.
+
+5
+00:00:15,434 --> 00:00:22,728
+This lesson looks at the thing in his hand: the device record, its states, the check at each request, and the app PIN.
+
+6
+00:00:22,778 --> 00:00:26,160
+Go back to the day Aziz registered in the mobile bank.
+
+7
+00:00:26,210 --> 00:00:30,360
+When his account was made, the platform also made a record for his phone.
+
+8
+00:00:30,410 --> 00:00:33,120
+It gave the phone a random identifier.
+
+9
+00:00:33,170 --> 00:00:37,008
+The app keeps this identifier and sends it with every request.
+
+10
+00:00:37,058 --> 00:00:41,568
+The identifier is never made from the serial number or any other hardware value.
+
+11
+00:00:41,618 --> 00:00:45,120
+It is random, so it tells nobody anything about the phone.
+
+12
+00:00:45,170 --> 00:00:46,992
+Now look inside the record.
+
+13
+00:00:47,042 --> 00:00:48,864
+It keeps the customer reference.
+
+14
+00:00:48,914 --> 00:00:54,168
+It keeps Aziz's personal identification number, in a form that cannot be reversed.
+
+15
+00:00:54,218 --> 00:00:59,232
+It keeps the platform, the model, the version of the system and the version of the app.
+
+16
+00:00:59,282 --> 00:01:03,000
+It keeps the time the record was made, and the time the phone was last seen.
+
+17
+00:01:03,050 --> 00:01:04,872
+And it keeps a state.
+
+18
+00:01:04,922 --> 00:01:08,736
+One identifier belongs to one customer for its whole life.
+
+19
+00:01:08,786 --> 00:01:10,968
+It never moves to a second person.
+
+20
+00:01:11,018 --> 00:01:14,328
+On registration day, Aziz was at level one.
+
+21
+00:01:14,378 --> 00:01:16,992
+So his phone got the state Known, not Trusted.
+
+22
+00:01:17,042 --> 00:01:21,144
+Known means that the platform has seen this phone with this customer before.
+
+23
+00:01:21,194 --> 00:01:23,136
+It says nothing about the person.
+
+24
+00:01:23,186 --> 00:01:28,776
+A week later, Aziz passed MyID on this same phone, and his status became Confirmed.
+
+25
+00:01:28,826 --> 00:01:32,640
+At that moment the record changed: the phone became Trusted.
+
+26
+00:01:32,690 --> 00:01:36,672
+Only a MyID check that ends with Confirmed makes a device trusted.
+
+27
+00:01:36,722 --> 00:01:39,096
+No code and no password can do it.
+
+28
+00:01:39,146 --> 00:01:40,800
+Next, the app PIN.
+
+29
+00:01:40,850 --> 00:01:41,040
+After the first login on a phone, the app asks Aziz to set an app PIN.
+
+30
+00:01:41,090 --> 00:01:43,656
+The app is not usable until he does.
+
+31
+00:01:43,706 --> 00:01:45,912
+The length is a policy of the bank.
+
+32
+00:01:45,962 --> 00:01:51,624
+The app refuses easy PINs, like a simple run of digits, or one digit again and again.
+
+33
+00:01:51,674 --> 00:01:53,712
+Here is the part I like most.
+
+34
+00:01:53,762 --> 00:01:56,112
+The PIN never leaves the phone.
+
+35
+00:01:56,162 --> 00:02:02,136
+The platform records only that a PIN was set, when, and on which device.
+
+36
+00:02:02,186 --> 00:02:04,488
+Only the phone checks the PIN.
+
+37
+00:02:04,538 --> 00:02:09,024
+The platform never accepts a PIN as proof of anything.
+
+38
+00:02:09,074 --> 00:02:16,392
+And the PIN is not the password: the password opens a login, the PIN only unlocks the app on this phone.
+
+39
+00:02:16,442 --> 00:02:18,264
+I think this split is honest.
+
+40
+00:02:18,314 --> 00:02:24,432
+A short PIN is good for the hand, and weak for a server, so the server never trusts it.
+
+41
+00:02:24,482 --> 00:02:26,304
+Now the threat.
+
+42
+00:02:26,354 --> 00:02:29,712
+A stranger gets hold of Aziz's phone for a few minutes.
+
+43
+00:02:29,762 --> 00:02:33,432
+He copies the app's tokens and puts them in the app on his own phone.
+
+44
+00:02:33,482 --> 00:02:38,496
+His app sends a request with the copied tokens, and with its own device identifier.
+
+45
+00:02:38,546 --> 00:02:40,560
+This is where the binding check works.
+
+46
+00:02:40,610 --> 00:02:44,928
+At each request, the customer gateway asks three questions.
+
+47
+00:02:44,978 --> 00:02:47,520
+First, is this device Trusted or Known?
+
+48
+00:02:47,570 --> 00:02:51,672
+Second, does this device belong to the customer of this request?
+
+49
+00:02:51,722 --> 00:02:57,744
+Third, is the personal identification number bound to this device the same as the customer's number?
+
+50
+00:02:57,794 --> 00:03:00,576
+The stranger's phone fails the second question.
+
+51
+00:03:00,626 --> 00:03:02,448
+It is not Aziz's device.
+
+52
+00:03:02,498 --> 00:03:04,320
+One no is enough.
+
+53
+00:03:04,370 --> 00:03:06,576
+The access grant ends at once.
+
+54
+00:03:06,626 --> 00:03:10,632
+The device becomes Revoked, with the reason binding mismatch.
+
+55
+00:03:10,682 --> 00:03:15,192
+The platform writes a security event, and the app must start a new login.
+
+56
+00:03:15,242 --> 00:03:17,760
+A revoked device stays revoked.
+
+57
+00:03:17,810 --> 00:03:19,632
+It never becomes trusted again.
+
+58
+00:03:19,682 --> 00:03:25,512
+If someone logs in again on that same phone, the platform makes a new record, which starts from the beginning.
+
+59
+00:03:25,562 --> 00:03:31,752
+An operator of the bank can also revoke one device, or all the devices of a customer, with a reason.
+
+60
+00:03:31,802 --> 00:03:36,120
+The grant of a revoked device ends at its next request, not later.
+
+61
+00:03:36,170 --> 00:03:39,576
+So the check runs on every request, not once a day.
+
+62
+00:03:39,626 --> 00:03:48,312
+To recap: a random identifier, three states, one check at each request, and a PIN that never leaves the phone.
+
+63
+00:03:48,362 --> 00:03:50,184
+Known means seen before.
+
+64
+00:03:50,234 --> 00:03:52,944
+Trusted means MyID passed on this device.
+
+65
+00:03:52,994 --> 00:03:54,744
+Revoked is final.
+
+66
+00:03:54,794 --> 00:03:57,432
+But the binding check needs something to check.
+
+67
+00:03:57,482 --> 00:04:01,896
+At each request, the app shows the gateway more than an identifier.
+
+68
+00:04:01,946 --> 00:04:04,536
+What does the app actually hold to call the platform?
+
+69
+00:04:04,586 --> 00:04:06,672
+Next: access grants.

@@ -109,6 +109,9 @@ export const HEEYID_CATALOG = {
   audit: { label: "Audit trail", sublabel: "Reader · purpose", art: "workflow" },
   impostor: { label: "Impostor", sublabel: "A stranger's number", art: "attacker" },
   newHolder: { label: "New holder", sublabel: "Aziz's old number", art: "unknownPhone" },
+  // Module 5: devices and login.
+  tablet: { label: "Old tablet", sublabel: "Lost", art: "unknownPhone" },
+  scamCaller: { label: "Caller", sublabel: "Says he is the bank", art: "attacker" },
 } satisfies Record<string, NodeDef>;
 
 export type HeeyId = keyof typeof HEEYID_CATALOG;
