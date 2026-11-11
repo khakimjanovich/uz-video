@@ -1,0 +1,287 @@
+1
+00:00:00,050 --> 00:00:03,168
+It is two in the morning, and Aziz's phone buzzes.
+
+2
+00:00:03,218 --> 00:00:05,040
+A code from the bank.
+
+3
+00:00:05,090 --> 00:00:06,912
+Then another one.
+
+4
+00:00:06,962 --> 00:00:08,688
+He did not ask for any of them.
+
+5
+00:00:08,738 --> 00:00:14,088
+Somewhere, a script types his number into the marketplace web page, again and again.
+
+6
+00:00:14,138 --> 00:00:20,696
+Who stops it, and who stops the next step, when the script starts to guess the code?
+
+7
+00:00:20,746 --> 00:00:26,696
+In Lesson 10, the platform made a random code for a registration and kept it only as a digest.
+
+8
+00:00:26,746 --> 00:00:36,152
+This lesson shows the rules around that code: how long it lives, how many tries it gets, and how many codes one number, one address or one device can ask for.
+
+9
+00:00:36,202 --> 00:00:38,024
+Start with the code itself.
+
+10
+00:00:38,074 --> 00:00:42,320
+It is random, with enough digits that a guess is very unlikely.
+
+11
+00:00:42,370 --> 00:00:45,968
+The platform keeps it in a small table of codes in Postgres.
+
+12
+00:00:46,018 --> 00:00:47,840
+It does not keep the code.
+
+13
+00:00:47,890 --> 00:00:54,344
+It keeps a keyed digest of it, made with the code pepper, a secret that lives in Vault, as Lesson 8 showed.
+
+14
+00:00:54,394 --> 00:00:57,200
+So a copy of the database gives nobody a code.
+
+15
+00:00:57,250 --> 00:01:01,184
+Each new code also makes the older codes of the same journey void.
+
+16
+00:01:01,234 --> 00:01:04,160
+So at any moment, one code is alive.
+
+17
+00:01:04,210 --> 00:01:10,448
+The code is never in clear at rest, not even after it goes to TAF, and it never goes to a log.
+
+18
+00:01:10,498 --> 00:01:15,296
+When Aziz types a code, the platform compares the digests in constant time.
+
+19
+00:01:15,346 --> 00:01:21,440
+A wrong code and a nearly right code take the same time to answer, so the timing tells an attacker nothing.
+
+20
+00:01:21,490 --> 00:01:23,096
+Now the limits on one code.
+
+21
+00:01:23,146 --> 00:01:25,520
+Each is a policy that the bank sets.
+
+22
+00:01:25,570 --> 00:01:27,296
+The code has a short lifetime.
+
+23
+00:01:27,346 --> 00:01:29,960
+It accepts only a few wrong entries.
+
+24
+00:01:30,010 --> 00:01:34,280
+Then the answer is: wrong code, and the number of tries that remain.
+
+25
+00:01:34,330 --> 00:01:40,256
+After the last wrong entry, the code is void, and the person must ask for a new one.
+
+26
+00:01:40,306 --> 00:01:47,528
+A new code needs a minimum interval since the last one: ask too soon, and the answer is wait, then ask again.
+
+27
+00:01:47,578 --> 00:01:50,336
+And each journey gets only a few resends.
+
+28
+00:01:50,386 --> 00:01:52,328
+One more limit comes from outside.
+
+29
+00:01:52,378 --> 00:01:57,656
+TAF has its own lock: after a few wrong codes, it blocks the number for a while.
+
+30
+00:01:57,706 --> 00:02:02,792
+So the platform's limit on wrong entries may never be looser than the TAF limit.
+
+31
+00:02:02,842 --> 00:02:07,616
+If it were, TAF would lock Aziz out before the platform even counts.
+
+32
+00:02:07,666 --> 00:02:10,064
+So guessing one code does not work.
+
+33
+00:02:10,114 --> 00:02:12,968
+But the script at two in the morning does not guess.
+
+34
+00:02:13,018 --> 00:02:14,888
+It simply asks for new codes.
+
+35
+00:02:14,938 --> 00:02:16,832
+That is where the rate limits come in.
+
+36
+00:02:16,882 --> 00:02:21,200
+The platform counts three things, in the time zone of the installation.
+
+37
+00:02:21,250 --> 00:02:23,960
+The code requests for each phone number in one day.
+
+38
+00:02:24,010 --> 00:02:27,296
+The code requests for each network address in one hour.
+
+39
+00:02:27,346 --> 00:02:30,560
+And the registrations for each device in one day.
+
+40
+00:02:30,610 --> 00:02:32,528
+The bank sets each limit.
+
+41
+00:02:32,578 --> 00:02:35,096
+The script hits the limit for Aziz's number.
+
+42
+00:02:35,146 --> 00:02:40,136
+Its next request gets one answer: too many requests, try again at the given time.
+
+43
+00:02:40,186 --> 00:02:45,296
+The platform writes an audit event, and sends an event to the bank's antifraud system.
+
+44
+00:02:45,346 --> 00:02:47,240
+Aziz's phone goes quiet.
+
+45
+00:02:47,290 --> 00:02:49,112
+Where do these counters live?
+
+46
+00:02:49,162 --> 00:02:50,984
+In Valkey.
+
+47
+00:02:51,034 --> 00:03:00,512
+A counter there can carry its own expiry, so a cool-down simply runs out by itself, and a read takes less than a millisecond, even at peak load.
+
+48
+00:03:00,562 --> 00:03:03,344
+And nothing in Valkey is the only copy.
+
+49
+00:03:03,394 --> 00:03:07,664
+Each value there either comes again from Postgres, or expires.
+
+50
+00:03:07,714 --> 00:03:11,192
+I think the most important rule in this lesson is a short one.
+
+51
+00:03:11,242 --> 00:03:13,976
+A limit in the app is only for convenience.
+
+52
+00:03:14,026 --> 00:03:17,264
+The app can grey out a button, but only the server counts.
+
+53
+00:03:17,314 --> 00:03:20,024
+The script at two in the morning never opened the app.
+
+54
+00:03:20,074 --> 00:03:24,344
+It called the API directly, and the API still said no.
+
+55
+00:03:24,394 --> 00:03:29,720
+The same idea guards a much more expensive call, which comes later in the course: MyID.
+
+56
+00:03:29,770 --> 00:03:38,480
+The platform counts failed MyID attempts for three subjects: the phone number, the device, and the personal identification number when it is known.
+
+57
+00:03:38,530 --> 00:03:42,032
+When one subject reaches a limit, the attempt is refused.
+
+58
+00:03:42,082 --> 00:03:47,936
+There is a daily cap, a cool-down after the first counted failure, and a longer cool-down after the second.
+
+59
+00:03:47,986 --> 00:03:51,920
+The refusal tells the person the earliest time of the next try.
+
+60
+00:03:51,970 --> 00:03:54,680
+Only a failure that the person caused counts.
+
+61
+00:03:54,730 --> 00:03:56,792
+A face that does not match counts.
+
+62
+00:03:56,842 --> 00:03:58,664
+MyID being down does not.
+
+63
+00:03:58,714 --> 00:04:01,880
+An operator can reset the counters, with a reason.
+
+64
+00:04:01,930 --> 00:04:03,920
+And test customers are never counted.
+
+65
+00:04:03,970 --> 00:04:05,792
+To recap.
+
+66
+00:04:05,842 --> 00:04:10,832
+One code, kept as a keyed digest, with a short life and only a few tries.
+
+67
+00:04:10,882 --> 00:04:14,336
+Rate limits for the number, the address and the device.
+
+68
+00:04:14,386 --> 00:04:19,232
+Counters and cool-downs in Valkey, and every decision on the server.
+
+69
+00:04:19,282 --> 00:04:22,640
+But think about the code that Aziz typed correctly on Monday.
+
+70
+00:04:22,690 --> 00:04:24,512
+It was the right code.
+
+71
+00:04:24,562 --> 00:04:27,512
+Was it typed on the phone that really holds his SIM card?
+
+72
+00:04:27,562 --> 00:04:30,272
+Next: the TAF verdict.
