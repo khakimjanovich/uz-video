@@ -44,6 +44,13 @@ import { C37ReleasesComposition } from "./reels/c-37-releases";
 import { C38ResponsibilityComposition } from "./reels/c-38-responsibility";
 import { H01MapComposition } from "./reels/h-01-map";
 import { H02OneIdentityComposition } from "./reels/h-02-one-identity";
+import { H03IdentityWordsComposition } from "./reels/h-03-identity-words";
+import { H04PerimeterComposition } from "./reels/h-04-perimeter";
+import { H05AppsAndTokensComposition } from "./reels/h-05-apps-and-tokens";
+import { H06ConfigurationComposition } from "./reels/h-06-configuration";
+import { H07AdaptersComposition } from "./reels/h-07-adapters";
+import { H08KeysComposition } from "./reels/h-08-keys";
+import { H09ApiContractComposition } from "./reels/h-09-api-contract";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -110,6 +117,15 @@ export const RemotionRoot: React.FC = () => {
         <Folder name="h1-Orientation">
           <H01MapComposition />
           <H02OneIdentityComposition />
+          <H03IdentityWordsComposition />
+        </Folder>
+        <Folder name="h2-Foundations">
+          <H04PerimeterComposition />
+          <H05AppsAndTokensComposition />
+          <H06ConfigurationComposition />
+          <H07AdaptersComposition />
+          <H08KeysComposition />
+          <H09ApiContractComposition />
         </Folder>
       </Folder>
     </>

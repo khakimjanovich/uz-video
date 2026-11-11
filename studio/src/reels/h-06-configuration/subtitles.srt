@@ -1,0 +1,215 @@
+1
+00:00:00,050 --> 00:00:06,864
+It is a quiet Tuesday in the data centre of the bank, and the platform team sets up heeyID for the first time.
+
+2
+00:00:06,914 --> 00:00:11,736
+One line is missing from the configuration: the lifetime of a one-time code.
+
+3
+00:00:11,786 --> 00:00:17,096
+What should the platform do: guess a number, or stop?
+
+4
+00:00:17,146 --> 00:00:22,544
+In Lesson 5, each app got its own required level, and each token its own lifetime.
+
+5
+00:00:22,594 --> 00:00:27,872
+This lesson shows who sets values like these, where they live, and how they change.
+
+6
+00:00:27,922 --> 00:00:29,456
+Many systems would guess.
+
+7
+00:00:29,506 --> 00:00:34,160
+Somewhere in the code there is a constant, and the constant wins, quietly.
+
+8
+00:00:34,210 --> 00:00:37,376
+In heeyID, the code has no default value at all.
+
+9
+00:00:37,426 --> 00:00:41,528
+I think a default hidden in the code is a decision that nobody signed.
+
+10
+00:00:41,578 --> 00:00:46,352
+Nobody sees it, nobody approves it, and nobody can say when it changed.
+
+11
+00:00:46,402 --> 00:00:51,944
+So the defaults live in one place: the OpenTofu configuration of the installation.
+
+12
+00:00:51,994 --> 00:00:55,976
+OpenTofu is the tool that describes the installation as code.
+
+13
+00:00:56,026 --> 00:01:04,832
+Its catalogue holds a value for each policy in the requirements, and the default texts for consent, terms and notifications, in four languages.
+
+14
+00:01:04,882 --> 00:01:09,776
+At setup, the platform reads this catalogue and writes it as version zero.
+
+15
+00:01:09,826 --> 00:01:16,424
+The proposer of version zero is the product, and each row has a mark that says: this is still the default.
+
+16
+00:01:16,474 --> 00:01:21,632
+If one value is missing, the setup stops, with a clear error that names the value.
+
+17
+00:01:21,682 --> 00:01:29,960
+So on that Tuesday, the platform team sees the missing code lifetime in the first minute, not in a complaint from a customer a month later.
+
+18
+00:01:30,010 --> 00:01:32,600
+There is a second gate before the first customer.
+
+19
+00:01:32,650 --> 00:01:38,576
+The installation does not start its service until the bank has at least one active app with a required level.
+
+20
+00:01:38,626 --> 00:01:43,400
+Until then, every journey answers: the service is not available.
+
+21
+00:01:43,450 --> 00:01:46,352
+Two kinds of values sit in that configuration.
+
+22
+00:01:46,402 --> 00:01:52,328
+Policies are settings of the bank: code lifetimes, attempt limits and waiting times.
+
+23
+00:01:52,378 --> 00:02:02,672
+Installation keys belong to one zone: the MyID host, the zone itself, whether test customers are allowed, the breaker values and the access token lifetime.
+
+24
+00:02:02,722 --> 00:02:05,840
+The bank can change a policy in the administrator panel.
+
+25
+00:02:05,890 --> 00:02:08,312
+Nobody can change an installation key there.
+
+26
+00:02:08,362 --> 00:02:10,016
+Now a policy changes.
+
+27
+00:02:10,066 --> 00:02:16,664
+Months later, Malika, a security administrator of the bank, wants a shorter lifetime for one-time codes.
+
+28
+00:02:16,714 --> 00:02:19,472
+She opens the panel, and makes a proposal.
+
+29
+00:02:19,522 --> 00:02:23,600
+The proposal shows the current value, the new value and her reason.
+
+30
+00:02:23,650 --> 00:02:25,568
+The value does not change yet.
+
+31
+00:02:25,618 --> 00:02:31,784
+A second security administrator must approve it, and Malika cannot approve her own proposal.
+
+32
+00:02:31,834 --> 00:02:37,520
+This is maker-checker: one person makes a change, and a different person with the same role checks it.
+
+33
+00:02:37,570 --> 00:02:44,408
+When her colleague approves, the policy gets a new version, with the proposer, the approver, the times and the reason.
+
+34
+00:02:44,458 --> 00:02:49,088
+If the colleague rejects it, the rejected proposal stays, with its reason.
+
+35
+00:02:49,138 --> 00:02:55,160
+And if a new value turns out wrong, a staff user with that role can propose an earlier version again.
+
+36
+00:02:55,210 --> 00:03:00,560
+Texts follow the same path, with the Compliance role in place of the security administrator.
+
+37
+00:03:00,610 --> 00:03:03,728
+The platform also checks each value itself.
+
+38
+00:03:03,778 --> 00:03:12,704
+It refuses zero, a negative number, a wrong unit, a minimum match confidence below the threshold, and a dormancy period that is too long.
+
+39
+00:03:12,754 --> 00:03:14,864
+A typo cannot become a policy.
+
+40
+00:03:14,914 --> 00:03:19,280
+The panel shows one more thing: which values are still the product default.
+
+41
+00:03:19,330 --> 00:03:25,568
+So the bank can see, on any day, which decisions it made itself, and which it took from the product.
+
+42
+00:03:25,618 --> 00:03:27,440
+Back to the missing line.
+
+43
+00:03:27,490 --> 00:03:32,192
+The setup stopped, the team added the value, and version zero was complete.
+
+44
+00:03:32,242 --> 00:03:35,720
+Malika's change became version one, with two names on it.
+
+45
+00:03:35,770 --> 00:03:39,056
+Every value has a source, a version and an owner.
+
+46
+00:03:39,106 --> 00:03:44,192
+That is why this course says the configured time or the configured limit, and never a number.
+
+47
+00:03:44,242 --> 00:03:46,064
+The number belongs to the bank.
+
+48
+00:03:46,114 --> 00:03:48,800
+To recap: there is no default in the code.
+
+49
+00:03:48,850 --> 00:03:53,912
+The defaults and the texts come from the OpenTofu configuration, as version zero.
+
+50
+00:03:53,962 --> 00:03:56,192
+A missing value stops the setup.
+
+51
+00:03:56,242 --> 00:04:01,040
+Policies change in the panel with maker-checker, and installation keys do not.
+
+52
+00:04:01,090 --> 00:04:08,792
+Some of those values are timeouts: how long heeyID waits for MyID, TAF or the SMS service.
+
+53
+00:04:08,842 --> 00:04:11,456
+So what happens when one of them is slow, or down?
+
+54
+00:04:11,506 --> 00:04:13,256
+Next: adapters.
