@@ -1,4 +1,4 @@
-import { siApachekafka, siFirebase, siKeycloak, siKotlin, siOpenapiinitiative, siOpenid, siOpentofu, siPostgresql, siVault } from "simple-icons";
+import { siApachekafka, siDocker, siFirebase, siHelm, siKeycloak, siKotlin, siKubernetes, siOpenapiinitiative, siOpenid, siOpentofu, siPostgresql, siVault } from "simple-icons";
 import { NodeDef } from "../../components/diagram";
 import { Course } from "../../utils/createEpisode";
 import { HEEYID_MAP, HeeyMapId } from "./map";
@@ -116,6 +116,36 @@ export const HEEYID_CATALOG = {
   passwordReset: { label: "Password reset", sublabel: "Waits", art: "workflow" },
   address: { label: "Verified address", sublabel: "Verified identity", art: "receipt" },
   someone: { label: "Someone else", sublabel: "Not Aziz", art: "attacker" },
+  // Lessons 33–39: lifecycle, trail and operations.
+  passport: { label: "Passport", sublabel: "Expiry date", art: "receipt" },
+  identityOld: { label: "Earlier version", sublabel: "Kept", art: "journal" },
+  workers: { label: "Workers", sublabel: "Scheduled jobs", art: "workflow" },
+  phoneThief: { label: "Thief", sublabel: "Stolen phone", art: "attacker" },
+  caseFile: { label: "Case", sublabel: "Masked values", art: "reviewer" },
+  revocation: { label: "Revocation list", sublabel: "Valkey", art: "tray" },
+  outbox: { label: "Outbox", sublabel: "Same transaction", art: "tray" },
+  pushService: { label: "Push service", sublabel: "No personal data", logo: siFirebase.path },
+  auditTrail: { label: "Audit trail", sublabel: "HMAC chain", art: "journal" },
+  monitoring: { label: "Security monitoring", sublabel: "Of the bank", art: "checker" },
+  compliance: { label: "Compliance", sublabel: "Texts · exports", art: "reviewer" },
+  viewer: { label: "Viewer", sublabel: "Sees only", art: "buyer" },
+  secAdmin: { label: "Security admin", sublabel: "Policies", art: "admin" },
+  secAdmin2: { label: "Second admin", sublabel: "Same role", art: "admin" },
+  staffId: { label: "Staff identity", sublabel: "Of the bank · MFA", art: "checker" },
+  adminGw: { label: "Admin gateway", sublabel: "Same rules", art: "bank" },
+  proposal: { label: "Proposal", sublabel: "Current · proposed", art: "receipt" },
+  testId: { label: "Test identity", sublabel: "Expected result", art: "journal" },
+  simulators: { label: "Simulators", sublabel: "No internet", art: "workflow" },
+  helm: { label: "Helm chart", sublabel: "The units", logo: siHelm.path },
+  cluster: { label: "Kubernetes", sublabel: "One per zone", logo: siKubernetes.path },
+  goLive: { label: "Go-live check", sublabel: "One app with a level", art: "checker" },
+  compose: { label: "Compose", sublabel: "On a laptop", logo: siDocker.path },
+  ev1: { label: "Event 41", sublabel: "Audit", art: "receipt" },
+  ev2: { label: "Event 42", sublabel: "Audit", art: "receipt" },
+  ev3: { label: "Event 43", sublabel: "Audit", art: "receipt" },
+  otc: { label: "One-time code", sublabel: "Digest only", art: "sim" },
+  registrationRec: { label: "Registration", sublabel: "Not finished", art: "request" },
+  versions: { label: "Policy versions", sublabel: "And texts", art: "receipt" },
 } satisfies Record<string, NodeDef>;
 
 export type HeeyId = keyof typeof HEEYID_CATALOG;
