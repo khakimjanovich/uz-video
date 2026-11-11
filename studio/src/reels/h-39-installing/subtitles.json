@@ -1,0 +1,3689 @@
+[
+  {
+    "index": 1,
+    "startFrame": 1,
+    "endFrame": 80,
+    "text": "A new bank signs the contract on a Monday.",
+    "prefix": "A new bank signs the contract on a Monday.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1,
+        "words": [
+          {
+            "text": "A",
+            "startFrame": 1
+          },
+          {
+            "text": "new",
+            "startFrame": 2
+          },
+          {
+            "text": "bank",
+            "startFrame": 8
+          },
+          {
+            "text": "signs",
+            "startFrame": 16
+          },
+          {
+            "text": "the",
+            "startFrame": 26
+          },
+          {
+            "text": "contract",
+            "startFrame": 28
+          },
+          {
+            "text": "on",
+            "startFrame": 49
+          },
+          {
+            "text": "a",
+            "startFrame": 52
+          },
+          {
+            "text": "Monday.",
+            "startFrame": 53
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "startFrame": 81,
+    "endFrame": 301,
+    "text": "Somewhere in that bank, a platform team gets two new Kubernetes clusters, one in the test zone and one in the production zone.",
+    "prefix": "Somewhere in that bank, a platform team gets two new Kubernetes clusters, one in the test zone and one in the production zone.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 82,
+        "words": [
+          {
+            "text": "Somewhere",
+            "startFrame": 82
+          },
+          {
+            "text": "in",
+            "startFrame": 94
+          },
+          {
+            "text": "that",
+            "startFrame": 96
+          },
+          {
+            "text": "bank,",
+            "startFrame": 102
+          }
+        ]
+      },
+      {
+        "startFrame": 119,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 119
+          },
+          {
+            "text": "platform",
+            "startFrame": 120
+          },
+          {
+            "text": "team",
+            "startFrame": 135
+          },
+          {
+            "text": "gets",
+            "startFrame": 150
+          },
+          {
+            "text": "two",
+            "startFrame": 159
+          },
+          {
+            "text": "new",
+            "startFrame": 169
+          },
+          {
+            "text": "Kubernetes",
+            "startFrame": 178
+          },
+          {
+            "text": "clusters,",
+            "startFrame": 194
+          }
+        ]
+      },
+      {
+        "startFrame": 220,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 220
+          },
+          {
+            "text": "in",
+            "startFrame": 226
+          },
+          {
+            "text": "the",
+            "startFrame": 227
+          },
+          {
+            "text": "test",
+            "startFrame": 229
+          },
+          {
+            "text": "zone",
+            "startFrame": 239
+          },
+          {
+            "text": "and",
+            "startFrame": 254
+          },
+          {
+            "text": "one",
+            "startFrame": 259
+          }
+        ]
+      },
+      {
+        "startFrame": 265,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 265
+          },
+          {
+            "text": "the",
+            "startFrame": 267
+          },
+          {
+            "text": "production",
+            "startFrame": 269
+          },
+          {
+            "text": "zone.",
+            "startFrame": 280
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "startFrame": 301,
+    "endFrame": 459,
+    "text": "Between that Monday and the day Aziz types his phone number for the first time, what has to happen?",
+    "prefix": "Between that Monday and the day Aziz types his phone number for the first time, what has to happen?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 303,
+        "words": [
+          {
+            "text": "Between",
+            "startFrame": 303
+          },
+          {
+            "text": "that",
+            "startFrame": 312
+          },
+          {
+            "text": "Monday",
+            "startFrame": 316
+          },
+          {
+            "text": "and",
+            "startFrame": 337
+          },
+          {
+            "text": "the",
+            "startFrame": 341
+          },
+          {
+            "text": "day",
+            "startFrame": 344
+          },
+          {
+            "text": "Aziz",
+            "startFrame": 353
+          },
+          {
+            "text": "types",
+            "startFrame": 365
+          }
+        ]
+      },
+      {
+        "startFrame": 373,
+        "words": [
+          {
+            "text": "his",
+            "startFrame": 373
+          },
+          {
+            "text": "phone",
+            "startFrame": 375
+          },
+          {
+            "text": "number",
+            "startFrame": 384
+          },
+          {
+            "text": "for",
+            "startFrame": 390
+          },
+          {
+            "text": "the",
+            "startFrame": 392
+          },
+          {
+            "text": "first",
+            "startFrame": 394
+          },
+          {
+            "text": "time,",
+            "startFrame": 403
+          }
+        ]
+      },
+      {
+        "startFrame": 425,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 425
+          },
+          {
+            "text": "has",
+            "startFrame": 428
+          },
+          {
+            "text": "to",
+            "startFrame": 434
+          },
+          {
+            "text": "happen?",
+            "startFrame": 437
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "startFrame": 460,
+    "endFrame": 787,
+    "text": "In Lesson 6, the configuration came from OpenTofu with no default in the code, and in Lesson 38, stage and production became two installations with no route between them.",
+    "prefix": "In Lesson 6, the configuration came from OpenTofu with no default in the code, and in Lesson 38, stage and production became two installations with no route between them.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 461,
+        "words": [
+          {
+            "text": "In",
+            "startFrame": 461
+          },
+          {
+            "text": "Lesson 6,",
+            "startFrame": 465
+          },
+          {
+            "text": "the",
+            "startFrame": 497
+          },
+          {
+            "text": "configuration",
+            "startFrame": 500
+          },
+          {
+            "text": "came",
+            "startFrame": 523
+          },
+          {
+            "text": "from",
+            "startFrame": 530
+          },
+          {
+            "text": "OpenTofu",
+            "startFrame": 541
+          }
+        ]
+      },
+      {
+        "startFrame": 571,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 571
+          },
+          {
+            "text": "no",
+            "startFrame": 576
+          },
+          {
+            "text": "default",
+            "startFrame": 583
+          },
+          {
+            "text": "in",
+            "startFrame": 597
+          },
+          {
+            "text": "the",
+            "startFrame": 600
+          },
+          {
+            "text": "code,",
+            "startFrame": 602
+          }
+        ]
+      },
+      {
+        "startFrame": 627,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 627
+          },
+          {
+            "text": "in",
+            "startFrame": 629
+          },
+          {
+            "text": "Lesson 38,",
+            "startFrame": 633
+          }
+        ]
+      },
+      {
+        "startFrame": 666,
+        "words": [
+          {
+            "text": "stage",
+            "startFrame": 666
+          },
+          {
+            "text": "and",
+            "startFrame": 682
+          },
+          {
+            "text": "production",
+            "startFrame": 684
+          },
+          {
+            "text": "became",
+            "startFrame": 697
+          },
+          {
+            "text": "two",
+            "startFrame": 712
+          },
+          {
+            "text": "installations",
+            "startFrame": 720
+          }
+        ]
+      },
+      {
+        "startFrame": 738,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 738
+          },
+          {
+            "text": "no",
+            "startFrame": 742
+          },
+          {
+            "text": "route",
+            "startFrame": 751
+          },
+          {
+            "text": "between",
+            "startFrame": 759
+          },
+          {
+            "text": "them.",
+            "startFrame": 770
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "startFrame": 787,
+    "endFrame": 939,
+    "text": "This last lesson installs heeyID in a bank, and then looks back at the whole road.",
+    "prefix": "This last lesson installs heeyID in a bank, and then looks back at the whole road.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 789,
+        "words": [
+          {
+            "text": "This",
+            "startFrame": 789
+          },
+          {
+            "text": "last",
+            "startFrame": 793
+          },
+          {
+            "text": "lesson",
+            "startFrame": 803
+          },
+          {
+            "text": "installs",
+            "startFrame": 811
+          },
+          {
+            "text": "heeyID",
+            "startFrame": 826
+          },
+          {
+            "text": "in",
+            "startFrame": 858
+          },
+          {
+            "text": "a",
+            "startFrame": 859
+          },
+          {
+            "text": "bank,",
+            "startFrame": 861
+          }
+        ]
+      },
+      {
+        "startFrame": 886,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 886
+          },
+          {
+            "text": "then",
+            "startFrame": 888
+          },
+          {
+            "text": "looks",
+            "startFrame": 892
+          },
+          {
+            "text": "back",
+            "startFrame": 897
+          },
+          {
+            "text": "at",
+            "startFrame": 906
+          },
+          {
+            "text": "the",
+            "startFrame": 908
+          },
+          {
+            "text": "whole",
+            "startFrame": 909
+          },
+          {
+            "text": "road.",
+            "startFrame": 918
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "startFrame": 940,
+    "endFrame": 1169,
+    "text": "One rule stands over everything: one installation serves one bank, and each zone of that bank gets its own installation.",
+    "prefix": "One rule stands over everything: one installation serves one bank, and each zone of that bank gets its own installation.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 941,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 941
+          },
+          {
+            "text": "rule",
+            "startFrame": 949
+          },
+          {
+            "text": "stands",
+            "startFrame": 959
+          },
+          {
+            "text": "over",
+            "startFrame": 973
+          },
+          {
+            "text": "everything:",
+            "startFrame": 984
+          }
+        ]
+      },
+      {
+        "startFrame": 1014,
+        "words": [
+          {
+            "text": "one",
+            "startFrame": 1014
+          },
+          {
+            "text": "installation",
+            "startFrame": 1019
+          },
+          {
+            "text": "serves",
+            "startFrame": 1043
+          },
+          {
+            "text": "one",
+            "startFrame": 1052
+          },
+          {
+            "text": "bank,",
+            "startFrame": 1062
+          }
+        ]
+      },
+      {
+        "startFrame": 1086,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1086
+          },
+          {
+            "text": "each",
+            "startFrame": 1095
+          },
+          {
+            "text": "zone",
+            "startFrame": 1099
+          },
+          {
+            "text": "of",
+            "startFrame": 1106
+          },
+          {
+            "text": "that",
+            "startFrame": 1108
+          },
+          {
+            "text": "bank",
+            "startFrame": 1113
+          },
+          {
+            "text": "gets",
+            "startFrame": 1123
+          }
+        ]
+      },
+      {
+        "startFrame": 1128,
+        "words": [
+          {
+            "text": "its",
+            "startFrame": 1128
+          },
+          {
+            "text": "own",
+            "startFrame": 1132
+          },
+          {
+            "text": "installation.",
+            "startFrame": 1138
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "startFrame": 1170,
+    "endFrame": 1304,
+    "text": "There is never a second bank inside, and never a call home to the vendor.",
+    "prefix": "There is never a second bank inside, and never a call home to the vendor.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1171,
+        "words": [
+          {
+            "text": "There",
+            "startFrame": 1171
+          },
+          {
+            "text": "is",
+            "startFrame": 1173
+          },
+          {
+            "text": "never",
+            "startFrame": 1176
+          },
+          {
+            "text": "a",
+            "startFrame": 1186
+          },
+          {
+            "text": "second",
+            "startFrame": 1188
+          },
+          {
+            "text": "bank",
+            "startFrame": 1201
+          },
+          {
+            "text": "inside,",
+            "startFrame": 1209
+          }
+        ]
+      },
+      {
+        "startFrame": 1238,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1238
+          },
+          {
+            "text": "never",
+            "startFrame": 1242
+          },
+          {
+            "text": "a",
+            "startFrame": 1249
+          },
+          {
+            "text": "call",
+            "startFrame": 1251
+          },
+          {
+            "text": "home",
+            "startFrame": 1259
+          },
+          {
+            "text": "to",
+            "startFrame": 1275
+          },
+          {
+            "text": "the",
+            "startFrame": 1277
+          },
+          {
+            "text": "vendor.",
+            "startFrame": 1280
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "startFrame": 1305,
+    "endFrame": 1363,
+    "text": "Start with the configuration.",
+    "prefix": "Start with the configuration.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1306,
+        "words": [
+          {
+            "text": "Start",
+            "startFrame": 1306
+          },
+          {
+            "text": "with",
+            "startFrame": 1321
+          },
+          {
+            "text": "the",
+            "startFrame": 1325
+          },
+          {
+            "text": "configuration.",
+            "startFrame": 1328
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "startFrame": 1363,
+    "endFrame": 1646,
+    "text": "The OpenTofu configuration of the installation gives the deploy values for that zone, and the defaults for every policy and every text, in the four languages.",
+    "prefix": "The OpenTofu configuration of the installation gives the deploy values for that zone, and the defaults for every policy and every text, in the four languages.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1365,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1365
+          },
+          {
+            "text": "OpenTofu",
+            "startFrame": 1368
+          },
+          {
+            "text": "configuration",
+            "startFrame": 1393
+          },
+          {
+            "text": "of",
+            "startFrame": 1412
+          },
+          {
+            "text": "the",
+            "startFrame": 1414
+          },
+          {
+            "text": "installation",
+            "startFrame": 1415
+          },
+          {
+            "text": "gives",
+            "startFrame": 1435
+          }
+        ]
+      },
+      {
+        "startFrame": 1441,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1441
+          },
+          {
+            "text": "deploy",
+            "startFrame": 1444
+          },
+          {
+            "text": "values",
+            "startFrame": 1459
+          },
+          {
+            "text": "for",
+            "startFrame": 1474
+          },
+          {
+            "text": "that",
+            "startFrame": 1477
+          },
+          {
+            "text": "zone,",
+            "startFrame": 1483
+          }
+        ]
+      },
+      {
+        "startFrame": 1509,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1509
+          },
+          {
+            "text": "the",
+            "startFrame": 1510
+          },
+          {
+            "text": "defaults",
+            "startFrame": 1513
+          },
+          {
+            "text": "for",
+            "startFrame": 1525
+          },
+          {
+            "text": "every",
+            "startFrame": 1536
+          },
+          {
+            "text": "policy",
+            "startFrame": 1542
+          },
+          {
+            "text": "and",
+            "startFrame": 1562
+          },
+          {
+            "text": "every",
+            "startFrame": 1573
+          }
+        ]
+      },
+      {
+        "startFrame": 1581,
+        "words": [
+          {
+            "text": "text,",
+            "startFrame": 1581
+          },
+          {
+            "text": "in",
+            "startFrame": 1604
+          },
+          {
+            "text": "the",
+            "startFrame": 1606
+          },
+          {
+            "text": "four",
+            "startFrame": 1608
+          },
+          {
+            "text": "languages.",
+            "startFrame": 1617
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "startFrame": 1647,
+    "endFrame": 1858,
+    "text": "At setup, the platform reads that catalogue and writes it as version zero, marked as the product default.",
+    "prefix": "At setup, the platform reads that catalogue and writes it as version zero, marked as the product default.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1648,
+        "words": [
+          {
+            "text": "At",
+            "startFrame": 1648
+          },
+          {
+            "text": "setup,",
+            "startFrame": 1651
+          },
+          {
+            "text": "the",
+            "startFrame": 1671
+          },
+          {
+            "text": "platform",
+            "startFrame": 1674
+          },
+          {
+            "text": "reads",
+            "startFrame": 1690
+          },
+          {
+            "text": "that",
+            "startFrame": 1699
+          },
+          {
+            "text": "catalogue",
+            "startFrame": 1703
+          }
+        ]
+      },
+      {
+        "startFrame": 1725,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1725
+          },
+          {
+            "text": "writes",
+            "startFrame": 1729
+          },
+          {
+            "text": "it",
+            "startFrame": 1740
+          },
+          {
+            "text": "as",
+            "startFrame": 1752
+          },
+          {
+            "text": "version",
+            "startFrame": 1757
+          },
+          {
+            "text": "zero,",
+            "startFrame": 1769
+          }
+        ]
+      },
+      {
+        "startFrame": 1799,
+        "words": [
+          {
+            "text": "marked",
+            "startFrame": 1799
+          },
+          {
+            "text": "as",
+            "startFrame": 1818
+          },
+          {
+            "text": "the",
+            "startFrame": 1820
+          },
+          {
+            "text": "product",
+            "startFrame": 1822
+          },
+          {
+            "text": "default.",
+            "startFrame": 1832
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "startFrame": 1859,
+    "endFrame": 2037,
+    "text": "If one value is missing, the setup stops with a clear error, and nothing starts half configured.",
+    "prefix": "If one value is missing, the setup stops with a clear error, and nothing starts half configured.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1860,
+        "words": [
+          {
+            "text": "If",
+            "startFrame": 1860
+          },
+          {
+            "text": "one",
+            "startFrame": 1864
+          },
+          {
+            "text": "value",
+            "startFrame": 1871
+          },
+          {
+            "text": "is",
+            "startFrame": 1884
+          },
+          {
+            "text": "missing,",
+            "startFrame": 1888
+          }
+        ]
+      },
+      {
+        "startFrame": 1915,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1915
+          },
+          {
+            "text": "setup",
+            "startFrame": 1917
+          },
+          {
+            "text": "stops",
+            "startFrame": 1927
+          },
+          {
+            "text": "with",
+            "startFrame": 1939
+          },
+          {
+            "text": "a",
+            "startFrame": 1942
+          },
+          {
+            "text": "clear",
+            "startFrame": 1944
+          },
+          {
+            "text": "error,",
+            "startFrame": 1959
+          }
+        ]
+      },
+      {
+        "startFrame": 1981,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1981
+          },
+          {
+            "text": "nothing",
+            "startFrame": 1984
+          },
+          {
+            "text": "starts",
+            "startFrame": 1994
+          },
+          {
+            "text": "half",
+            "startFrame": 2003
+          },
+          {
+            "text": "configured.",
+            "startFrame": 2010
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 2037,
+    "endFrame": 2093,
+    "text": "Then the units.",
+    "prefix": "Then the units.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2039,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 2039
+          },
+          {
+            "text": "the",
+            "startFrame": 2043
+          },
+          {
+            "text": "units.",
+            "startFrame": 2044
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "startFrame": 2093,
+    "endFrame": 2168,
+    "text": "Each unit is an image with a Helm chart.",
+    "prefix": "Each unit is an image with a Helm chart.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2094,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 2094
+          },
+          {
+            "text": "unit",
+            "startFrame": 2100
+          },
+          {
+            "text": "is",
+            "startFrame": 2115
+          },
+          {
+            "text": "an",
+            "startFrame": 2118
+          },
+          {
+            "text": "image",
+            "startFrame": 2121
+          },
+          {
+            "text": "with",
+            "startFrame": 2132
+          },
+          {
+            "text": "a",
+            "startFrame": 2135
+          },
+          {
+            "text": "Helm",
+            "startFrame": 2136
+          },
+          {
+            "text": "chart.",
+            "startFrame": 2145
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "startFrame": 2169,
+    "endFrame": 2330,
+    "text": "The gateways, Keycloak, the workers, and the MyID and push adapters run in front.",
+    "prefix": "The gateways, Keycloak, the workers, and the MyID and push adapters run in front.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2170,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2170
+          },
+          {
+            "text": "gateways,",
+            "startFrame": 2172
+          },
+          {
+            "text": "Keycloak,",
+            "startFrame": 2195
+          }
+        ]
+      },
+      {
+        "startFrame": 2220,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 2220
+          },
+          {
+            "text": "workers,",
+            "startFrame": 2223
+          },
+          {
+            "text": "and",
+            "startFrame": 2240
+          },
+          {
+            "text": "the",
+            "startFrame": 2243
+          },
+          {
+            "text": "MyID",
+            "startFrame": 2244
+          },
+          {
+            "text": "and",
+            "startFrame": 2270
+          },
+          {
+            "text": "push",
+            "startFrame": 2275
+          },
+          {
+            "text": "adapters",
+            "startFrame": 2283
+          }
+        ]
+      },
+      {
+        "startFrame": 2297,
+        "words": [
+          {
+            "text": "run",
+            "startFrame": 2297
+          },
+          {
+            "text": "in",
+            "startFrame": 2303
+          },
+          {
+            "text": "front.",
+            "startFrame": 2305
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "startFrame": 2330,
+    "endFrame": 2534,
+    "text": "Postgres, Valkey, Kafka and Vault run behind them, and each one is a new installation for that zone.",
+    "prefix": "Postgres, Valkey, Kafka and Vault run behind them, and each one is a new installation for that zone.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2332,
+        "words": [
+          {
+            "text": "Postgres,",
+            "startFrame": 2332
+          },
+          {
+            "text": "Valkey,",
+            "startFrame": 2349
+          },
+          {
+            "text": "Kafka",
+            "startFrame": 2376
+          },
+          {
+            "text": "and",
+            "startFrame": 2397
+          },
+          {
+            "text": "Vault",
+            "startFrame": 2402
+          },
+          {
+            "text": "run",
+            "startFrame": 2413
+          },
+          {
+            "text": "behind",
+            "startFrame": 2419
+          },
+          {
+            "text": "them,",
+            "startFrame": 2431
+          }
+        ]
+      },
+      {
+        "startFrame": 2449,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2449
+          },
+          {
+            "text": "each",
+            "startFrame": 2459
+          },
+          {
+            "text": "one",
+            "startFrame": 2464
+          },
+          {
+            "text": "is",
+            "startFrame": 2477
+          },
+          {
+            "text": "a",
+            "startFrame": 2480
+          },
+          {
+            "text": "new",
+            "startFrame": 2481
+          },
+          {
+            "text": "installation",
+            "startFrame": 2488
+          }
+        ]
+      },
+      {
+        "startFrame": 2506,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 2506
+          },
+          {
+            "text": "that",
+            "startFrame": 2509
+          },
+          {
+            "text": "zone.",
+            "startFrame": 2514
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "startFrame": 2535,
+    "endFrame": 2713,
+    "text": "Vault makes the keys of the installation, and the bank's security team keeps the keys that unseal it.",
+    "prefix": "Vault makes the keys of the installation, and the bank's security team keeps the keys that unseal it.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2536,
+        "words": [
+          {
+            "text": "Vault",
+            "startFrame": 2536
+          },
+          {
+            "text": "makes",
+            "startFrame": 2545
+          },
+          {
+            "text": "the",
+            "startFrame": 2551
+          },
+          {
+            "text": "keys",
+            "startFrame": 2554
+          },
+          {
+            "text": "of",
+            "startFrame": 2569
+          },
+          {
+            "text": "the",
+            "startFrame": 2571
+          },
+          {
+            "text": "installation,",
+            "startFrame": 2572
+          }
+        ]
+      },
+      {
+        "startFrame": 2604,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2604
+          },
+          {
+            "text": "the",
+            "startFrame": 2606
+          },
+          {
+            "text": "bank's",
+            "startFrame": 2609
+          },
+          {
+            "text": "security",
+            "startFrame": 2618
+          },
+          {
+            "text": "team",
+            "startFrame": 2632
+          },
+          {
+            "text": "keeps",
+            "startFrame": 2648
+          },
+          {
+            "text": "the",
+            "startFrame": 2656
+          },
+          {
+            "text": "keys",
+            "startFrame": 2659
+          }
+        ]
+      },
+      {
+        "startFrame": 2672,
+        "words": [
+          {
+            "text": "that",
+            "startFrame": 2672
+          },
+          {
+            "text": "unseal",
+            "startFrame": 2678
+          },
+          {
+            "text": "it.",
+            "startFrame": 2697
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "startFrame": 2714,
+    "endFrame": 2848,
+    "text": "Keycloak gets one realm, with one client for each app of the bank.",
+    "prefix": "Keycloak gets one realm, with one client for each app of the bank.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2715,
+        "words": [
+          {
+            "text": "Keycloak",
+            "startFrame": 2715
+          },
+          {
+            "text": "gets",
+            "startFrame": 2734
+          },
+          {
+            "text": "one",
+            "startFrame": 2739
+          },
+          {
+            "text": "realm,",
+            "startFrame": 2747
+          }
+        ]
+      },
+      {
+        "startFrame": 2770,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 2770
+          },
+          {
+            "text": "one",
+            "startFrame": 2774
+          },
+          {
+            "text": "client",
+            "startFrame": 2782
+          },
+          {
+            "text": "for",
+            "startFrame": 2799
+          },
+          {
+            "text": "each",
+            "startFrame": 2809
+          },
+          {
+            "text": "app",
+            "startFrame": 2816
+          },
+          {
+            "text": "of",
+            "startFrame": 2821
+          },
+          {
+            "text": "the",
+            "startFrame": 2823
+          },
+          {
+            "text": "bank.",
+            "startFrame": 2825
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "startFrame": 2849,
+    "endFrame": 2904,
+    "text": "Then the gate.",
+    "prefix": "Then the gate.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2850,
+        "words": [
+          {
+            "text": "Then",
+            "startFrame": 2850
+          },
+          {
+            "text": "the",
+            "startFrame": 2854
+          },
+          {
+            "text": "gate.",
+            "startFrame": 2856
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "startFrame": 2905,
+    "endFrame": 3060,
+    "text": "The service does not start until the bank has at least one active app with a required level.",
+    "prefix": "The service does not start until the bank has at least one active app with a required level.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 2906,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 2906
+          },
+          {
+            "text": "service",
+            "startFrame": 2907
+          },
+          {
+            "text": "does",
+            "startFrame": 2919
+          },
+          {
+            "text": "not",
+            "startFrame": 2923
+          },
+          {
+            "text": "start",
+            "startFrame": 2933
+          },
+          {
+            "text": "until",
+            "startFrame": 2949
+          },
+          {
+            "text": "the",
+            "startFrame": 2956
+          },
+          {
+            "text": "bank",
+            "startFrame": 2959
+          }
+        ]
+      },
+      {
+        "startFrame": 2968,
+        "words": [
+          {
+            "text": "has",
+            "startFrame": 2968
+          },
+          {
+            "text": "at",
+            "startFrame": 2972
+          },
+          {
+            "text": "least",
+            "startFrame": 2975
+          },
+          {
+            "text": "one",
+            "startFrame": 2985
+          },
+          {
+            "text": "active",
+            "startFrame": 2997
+          },
+          {
+            "text": "app",
+            "startFrame": 3008
+          },
+          {
+            "text": "with",
+            "startFrame": 3017
+          }
+        ]
+      },
+      {
+        "startFrame": 3021,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 3021
+          },
+          {
+            "text": "required",
+            "startFrame": 3022
+          },
+          {
+            "text": "level.",
+            "startFrame": 3037
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "startFrame": 3061,
+    "endFrame": 3263,
+    "text": "The panel shows every policy and text that is still the product default, so the bank sees what it has not decided yet.",
+    "prefix": "The panel shows every policy and text that is still the product default, so the bank sees what it has not decided yet.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3062,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 3062
+          },
+          {
+            "text": "panel",
+            "startFrame": 3064
+          },
+          {
+            "text": "shows",
+            "startFrame": 3074
+          },
+          {
+            "text": "every",
+            "startFrame": 3093
+          },
+          {
+            "text": "policy",
+            "startFrame": 3101
+          },
+          {
+            "text": "and",
+            "startFrame": 3117
+          },
+          {
+            "text": "text",
+            "startFrame": 3120
+          },
+          {
+            "text": "that",
+            "startFrame": 3134
+          }
+        ]
+      },
+      {
+        "startFrame": 3137,
+        "words": [
+          {
+            "text": "is",
+            "startFrame": 3137
+          },
+          {
+            "text": "still",
+            "startFrame": 3140
+          },
+          {
+            "text": "the",
+            "startFrame": 3151
+          },
+          {
+            "text": "product",
+            "startFrame": 3154
+          },
+          {
+            "text": "default,",
+            "startFrame": 3165
+          }
+        ]
+      },
+      {
+        "startFrame": 3186,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 3186
+          },
+          {
+            "text": "the",
+            "startFrame": 3189
+          },
+          {
+            "text": "bank",
+            "startFrame": 3193
+          },
+          {
+            "text": "sees",
+            "startFrame": 3201
+          },
+          {
+            "text": "what",
+            "startFrame": 3212
+          },
+          {
+            "text": "it",
+            "startFrame": 3214
+          },
+          {
+            "text": "has",
+            "startFrame": 3216
+          },
+          {
+            "text": "not",
+            "startFrame": 3220
+          },
+          {
+            "text": "decided",
+            "startFrame": 3228
+          },
+          {
+            "text": "yet.",
+            "startFrame": 3242
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "startFrame": 3263,
+    "endFrame": 3375,
+    "text": "Stage goes first, against the MyID test environment.",
+    "prefix": "Stage goes first, against the MyID test environment.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3265,
+        "words": [
+          {
+            "text": "Stage",
+            "startFrame": 3265
+          },
+          {
+            "text": "goes",
+            "startFrame": 3276
+          },
+          {
+            "text": "first,",
+            "startFrame": 3284
+          }
+        ]
+      },
+      {
+        "startFrame": 3310,
+        "words": [
+          {
+            "text": "against",
+            "startFrame": 3310
+          },
+          {
+            "text": "the",
+            "startFrame": 3317
+          },
+          {
+            "text": "MyID",
+            "startFrame": 3319
+          },
+          {
+            "text": "test",
+            "startFrame": 3338
+          },
+          {
+            "text": "environment.",
+            "startFrame": 3348
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "startFrame": 3376,
+    "endFrame": 3528,
+    "text": "Production follows as a difference in Helm values, approved by a second person.",
+    "prefix": "Production follows as a difference in Helm values, approved by a second person.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3377,
+        "words": [
+          {
+            "text": "Production",
+            "startFrame": 3377
+          },
+          {
+            "text": "follows",
+            "startFrame": 3390
+          },
+          {
+            "text": "as",
+            "startFrame": 3407
+          },
+          {
+            "text": "a",
+            "startFrame": 3412
+          },
+          {
+            "text": "difference",
+            "startFrame": 3414
+          },
+          {
+            "text": "in",
+            "startFrame": 3428
+          },
+          {
+            "text": "Helm",
+            "startFrame": 3431
+          },
+          {
+            "text": "values,",
+            "startFrame": 3440
+          }
+        ]
+      },
+      {
+        "startFrame": 3470,
+        "words": [
+          {
+            "text": "approved",
+            "startFrame": 3470
+          },
+          {
+            "text": "by",
+            "startFrame": 3487
+          },
+          {
+            "text": "a",
+            "startFrame": 3491
+          },
+          {
+            "text": "second",
+            "startFrame": 3493
+          },
+          {
+            "text": "person.",
+            "startFrame": 3504
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "startFrame": 3528,
+    "endFrame": 3672,
+    "text": "And for the developers there is a third, smaller home: Compose on a laptop.",
+    "prefix": "And for the developers there is a third, smaller home: Compose on a laptop.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3530,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 3530
+          },
+          {
+            "text": "for",
+            "startFrame": 3532
+          },
+          {
+            "text": "the",
+            "startFrame": 3535
+          },
+          {
+            "text": "developers",
+            "startFrame": 3537
+          },
+          {
+            "text": "there",
+            "startFrame": 3552
+          },
+          {
+            "text": "is",
+            "startFrame": 3556
+          },
+          {
+            "text": "a",
+            "startFrame": 3559
+          },
+          {
+            "text": "third,",
+            "startFrame": 3561
+          }
+        ]
+      },
+      {
+        "startFrame": 3590,
+        "words": [
+          {
+            "text": "smaller",
+            "startFrame": 3590
+          },
+          {
+            "text": "home:",
+            "startFrame": 3605
+          },
+          {
+            "text": "Compose",
+            "startFrame": 3625
+          },
+          {
+            "text": "on",
+            "startFrame": 3639
+          },
+          {
+            "text": "a",
+            "startFrame": 3641
+          },
+          {
+            "text": "laptop.",
+            "startFrame": 3643
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "startFrame": 3672,
+    "endFrame": 3996,
+    "text": "One command starts Postgres, Valkey, Kafka, Vault in development mode, and Keycloak with a client for the mobile bank, the marketplace app and the marketplace web.",
+    "prefix": "One command starts Postgres, Valkey, Kafka, Vault in development mode, and Keycloak with a client for the mobile bank, the marketplace app and the marketplace web.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3674,
+        "words": [
+          {
+            "text": "One",
+            "startFrame": 3674
+          },
+          {
+            "text": "command",
+            "startFrame": 3682
+          },
+          {
+            "text": "starts",
+            "startFrame": 3702
+          },
+          {
+            "text": "Postgres,",
+            "startFrame": 3712
+          }
+        ]
+      },
+      {
+        "startFrame": 3744,
+        "words": [
+          {
+            "text": "Valkey,",
+            "startFrame": 3744
+          },
+          {
+            "text": "Kafka,",
+            "startFrame": 3770
+          },
+          {
+            "text": "Vault",
+            "startFrame": 3801
+          },
+          {
+            "text": "in",
+            "startFrame": 3812
+          },
+          {
+            "text": "development",
+            "startFrame": 3814
+          },
+          {
+            "text": "mode,",
+            "startFrame": 3829
+          }
+        ]
+      },
+      {
+        "startFrame": 3850,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3850
+          },
+          {
+            "text": "Keycloak",
+            "startFrame": 3854
+          },
+          {
+            "text": "with",
+            "startFrame": 3869
+          },
+          {
+            "text": "a",
+            "startFrame": 3872
+          },
+          {
+            "text": "client",
+            "startFrame": 3873
+          },
+          {
+            "text": "for",
+            "startFrame": 3886
+          },
+          {
+            "text": "the",
+            "startFrame": 3888
+          },
+          {
+            "text": "mobile",
+            "startFrame": 3890
+          }
+        ]
+      },
+      {
+        "startFrame": 3899,
+        "words": [
+          {
+            "text": "bank,",
+            "startFrame": 3899
+          },
+          {
+            "text": "the",
+            "startFrame": 3921
+          },
+          {
+            "text": "marketplace",
+            "startFrame": 3924
+          },
+          {
+            "text": "app",
+            "startFrame": 3942
+          },
+          {
+            "text": "and",
+            "startFrame": 3955
+          },
+          {
+            "text": "the",
+            "startFrame": 3956
+          },
+          {
+            "text": "marketplace",
+            "startFrame": 3958
+          },
+          {
+            "text": "web.",
+            "startFrame": 3975
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "startFrame": 3997,
+    "endFrame": 4171,
+    "text": "It also starts a simulator for each outside service, and a seed loads the default catalogue.",
+    "prefix": "It also starts a simulator for each outside service, and a seed loads the default catalogue.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 3998,
+        "words": [
+          {
+            "text": "It",
+            "startFrame": 3998
+          },
+          {
+            "text": "also",
+            "startFrame": 4000
+          },
+          {
+            "text": "starts",
+            "startFrame": 4010
+          },
+          {
+            "text": "a",
+            "startFrame": 4019
+          },
+          {
+            "text": "simulator",
+            "startFrame": 4020
+          },
+          {
+            "text": "for",
+            "startFrame": 4039
+          },
+          {
+            "text": "each",
+            "startFrame": 4049
+          },
+          {
+            "text": "outside",
+            "startFrame": 4057
+          }
+        ]
+      },
+      {
+        "startFrame": 4071,
+        "words": [
+          {
+            "text": "service,",
+            "startFrame": 4071
+          },
+          {
+            "text": "and",
+            "startFrame": 4098
+          },
+          {
+            "text": "a",
+            "startFrame": 4101
+          },
+          {
+            "text": "seed",
+            "startFrame": 4102
+          },
+          {
+            "text": "loads",
+            "startFrame": 4114
+          },
+          {
+            "text": "the",
+            "startFrame": 4126
+          },
+          {
+            "text": "default",
+            "startFrame": 4129
+          },
+          {
+            "text": "catalogue.",
+            "startFrame": 4141
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "startFrame": 4171,
+    "endFrame": 4264,
+    "text": "The acceptance suite then runs with no internet at all.",
+    "prefix": "The acceptance suite then runs with no internet at all.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4173,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4173
+          },
+          {
+            "text": "acceptance",
+            "startFrame": 4174
+          },
+          {
+            "text": "suite",
+            "startFrame": 4188
+          },
+          {
+            "text": "then",
+            "startFrame": 4204
+          },
+          {
+            "text": "runs",
+            "startFrame": 4210
+          },
+          {
+            "text": "with",
+            "startFrame": 4220
+          },
+          {
+            "text": "no",
+            "startFrame": 4224
+          },
+          {
+            "text": "internet",
+            "startFrame": 4233
+          },
+          {
+            "text": "at",
+            "startFrame": 4242
+          },
+          {
+            "text": "all.",
+            "startFrame": 4245
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "startFrame": 4265,
+    "endFrame": 4320,
+    "text": "So when is it done?",
+    "prefix": "So when is it done?",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4266,
+        "words": [
+          {
+            "text": "So",
+            "startFrame": 4266
+          },
+          {
+            "text": "when",
+            "startFrame": 4271
+          },
+          {
+            "text": "is",
+            "startFrame": 4273
+          },
+          {
+            "text": "it",
+            "startFrame": 4275
+          },
+          {
+            "text": "done?",
+            "startFrame": 4277
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "startFrame": 4321,
+    "endFrame": 4455,
+    "text": "I think a definition of done is only useful if each line can be checked.",
+    "prefix": "I think a definition of done is only useful if each line can be checked.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4322,
+        "words": [
+          {
+            "text": "I",
+            "startFrame": 4322
+          },
+          {
+            "text": "think",
+            "startFrame": 4324
+          },
+          {
+            "text": "a",
+            "startFrame": 4328
+          },
+          {
+            "text": "definition",
+            "startFrame": 4330
+          },
+          {
+            "text": "of",
+            "startFrame": 4344
+          },
+          {
+            "text": "done",
+            "startFrame": 4346
+          },
+          {
+            "text": "is",
+            "startFrame": 4363
+          },
+          {
+            "text": "only",
+            "startFrame": 4369
+          }
+        ]
+      },
+      {
+        "startFrame": 4380,
+        "words": [
+          {
+            "text": "useful",
+            "startFrame": 4380
+          },
+          {
+            "text": "if",
+            "startFrame": 4399
+          },
+          {
+            "text": "each",
+            "startFrame": 4407
+          },
+          {
+            "text": "line",
+            "startFrame": 4413
+          },
+          {
+            "text": "can",
+            "startFrame": 4425
+          },
+          {
+            "text": "be",
+            "startFrame": 4428
+          },
+          {
+            "text": "checked.",
+            "startFrame": 4431
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "startFrame": 4456,
+    "endFrame": 4525,
+    "text": "The decisions are written and accepted.",
+    "prefix": "The decisions are written and accepted.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4457,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4457
+          },
+          {
+            "text": "decisions",
+            "startFrame": 4459
+          },
+          {
+            "text": "are",
+            "startFrame": 4474
+          },
+          {
+            "text": "written",
+            "startFrame": 4479
+          },
+          {
+            "text": "and",
+            "startFrame": 4492
+          },
+          {
+            "text": "accepted.",
+            "startFrame": 4496
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "startFrame": 4525,
+    "endFrame": 4629,
+    "text": "The API contracts of both gateways are published.",
+    "prefix": "The API contracts of both gateways are published.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4527,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4527
+          },
+          {
+            "text": "API",
+            "startFrame": 4530
+          },
+          {
+            "text": "contracts",
+            "startFrame": 4544
+          },
+          {
+            "text": "of",
+            "startFrame": 4563
+          },
+          {
+            "text": "both",
+            "startFrame": 4566
+          },
+          {
+            "text": "gateways",
+            "startFrame": 4574
+          },
+          {
+            "text": "are",
+            "startFrame": 4597
+          },
+          {
+            "text": "published.",
+            "startFrame": 4600
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "startFrame": 4629,
+    "endFrame": 4756,
+    "text": "Each failure path has a test, and the app-separation test passes.",
+    "prefix": "Each failure path has a test, and the app-separation test passes.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4631,
+        "words": [
+          {
+            "text": "Each",
+            "startFrame": 4631
+          },
+          {
+            "text": "failure",
+            "startFrame": 4635
+          },
+          {
+            "text": "path",
+            "startFrame": 4646
+          },
+          {
+            "text": "has",
+            "startFrame": 4657
+          },
+          {
+            "text": "a",
+            "startFrame": 4662
+          },
+          {
+            "text": "test,",
+            "startFrame": 4663
+          }
+        ]
+      },
+      {
+        "startFrame": 4691,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4691
+          },
+          {
+            "text": "the",
+            "startFrame": 4693
+          },
+          {
+            "text": "app-separation",
+            "startFrame": 4696
+          },
+          {
+            "text": "test",
+            "startFrame": 4717
+          },
+          {
+            "text": "passes.",
+            "startFrame": 4726
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "startFrame": 4757,
+    "endFrame": 4912,
+    "text": "Audit events reach the stream, and a simulator of the bank's monitoring reads them.",
+    "prefix": "Audit events reach the stream, and a simulator of the bank's monitoring reads them.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4758,
+        "words": [
+          {
+            "text": "Audit",
+            "startFrame": 4758
+          },
+          {
+            "text": "events",
+            "startFrame": 4765
+          },
+          {
+            "text": "reach",
+            "startFrame": 4780
+          },
+          {
+            "text": "the",
+            "startFrame": 4792
+          },
+          {
+            "text": "stream,",
+            "startFrame": 4795
+          }
+        ]
+      },
+      {
+        "startFrame": 4824,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4824
+          },
+          {
+            "text": "a",
+            "startFrame": 4825
+          },
+          {
+            "text": "simulator",
+            "startFrame": 4827
+          },
+          {
+            "text": "of",
+            "startFrame": 4845
+          },
+          {
+            "text": "the",
+            "startFrame": 4847
+          },
+          {
+            "text": "bank's",
+            "startFrame": 4849
+          },
+          {
+            "text": "monitoring",
+            "startFrame": 4864
+          },
+          {
+            "text": "reads",
+            "startFrame": 4883
+          },
+          {
+            "text": "them.",
+            "startFrame": 4892
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "startFrame": 4912,
+    "endFrame": 5075,
+    "text": "The code has a review, and the release has an independent security review and a penetration test.",
+    "prefix": "The code has a review, and the release has an independent security review and a penetration test.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 4913,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 4913
+          },
+          {
+            "text": "code",
+            "startFrame": 4916
+          },
+          {
+            "text": "has",
+            "startFrame": 4924
+          },
+          {
+            "text": "a",
+            "startFrame": 4930
+          },
+          {
+            "text": "review,",
+            "startFrame": 4931
+          }
+        ]
+      },
+      {
+        "startFrame": 4957,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4957
+          },
+          {
+            "text": "the",
+            "startFrame": 4960
+          },
+          {
+            "text": "release",
+            "startFrame": 4962
+          },
+          {
+            "text": "has",
+            "startFrame": 4973
+          },
+          {
+            "text": "an",
+            "startFrame": 4978
+          },
+          {
+            "text": "independent",
+            "startFrame": 4981
+          },
+          {
+            "text": "security",
+            "startFrame": 4996
+          },
+          {
+            "text": "review",
+            "startFrame": 5011
+          }
+        ]
+      },
+      {
+        "startFrame": 5028,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5028
+          },
+          {
+            "text": "a",
+            "startFrame": 5032
+          },
+          {
+            "text": "penetration",
+            "startFrame": 5033
+          },
+          {
+            "text": "test.",
+            "startFrame": 5051
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "startFrame": 5076,
+    "endFrame": 5197,
+    "text": "The integration guide, the runbooks and the decision log exist.",
+    "prefix": "The integration guide, the runbooks and the decision log exist.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5077,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 5077
+          },
+          {
+            "text": "integration",
+            "startFrame": 5080
+          },
+          {
+            "text": "guide,",
+            "startFrame": 5098
+          }
+        ]
+      },
+      {
+        "startFrame": 5115,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5115
+          },
+          {
+            "text": "runbooks",
+            "startFrame": 5118
+          },
+          {
+            "text": "and",
+            "startFrame": 5140
+          },
+          {
+            "text": "the",
+            "startFrame": 5144
+          },
+          {
+            "text": "decision",
+            "startFrame": 5146
+          },
+          {
+            "text": "log",
+            "startFrame": 5162
+          },
+          {
+            "text": "exist.",
+            "startFrame": 5168
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "startFrame": 5197,
+    "endFrame": 5408,
+    "text": "And the product manager signs off after a demo on real phones in the test zone, against the MyID test identities.",
+    "prefix": "And the product manager signs off after a demo on real phones in the test zone, against the MyID test identities.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5199,
+        "words": [
+          {
+            "text": "And",
+            "startFrame": 5199
+          },
+          {
+            "text": "the",
+            "startFrame": 5200
+          },
+          {
+            "text": "product",
+            "startFrame": 5203
+          },
+          {
+            "text": "manager",
+            "startFrame": 5213
+          },
+          {
+            "text": "signs",
+            "startFrame": 5223
+          },
+          {
+            "text": "off",
+            "startFrame": 5234
+          },
+          {
+            "text": "after",
+            "startFrame": 5247
+          }
+        ]
+      },
+      {
+        "startFrame": 5255,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 5255
+          },
+          {
+            "text": "demo",
+            "startFrame": 5258
+          },
+          {
+            "text": "on",
+            "startFrame": 5268
+          },
+          {
+            "text": "real",
+            "startFrame": 5275
+          },
+          {
+            "text": "phones",
+            "startFrame": 5283
+          },
+          {
+            "text": "in",
+            "startFrame": 5302
+          },
+          {
+            "text": "the",
+            "startFrame": 5305
+          },
+          {
+            "text": "test",
+            "startFrame": 5307
+          }
+        ]
+      },
+      {
+        "startFrame": 5318,
+        "words": [
+          {
+            "text": "zone,",
+            "startFrame": 5318
+          },
+          {
+            "text": "against",
+            "startFrame": 5339
+          },
+          {
+            "text": "the",
+            "startFrame": 5346
+          },
+          {
+            "text": "MyID",
+            "startFrame": 5348
+          },
+          {
+            "text": "test",
+            "startFrame": 5369
+          },
+          {
+            "text": "identities.",
+            "startFrame": 5378
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "startFrame": 5409,
+    "endFrame": 5452,
+    "text": "Now look back at the road.",
+    "prefix": "Now look back at the road.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5410,
+        "words": [
+          {
+            "text": "Now",
+            "startFrame": 5410
+          },
+          {
+            "text": "look",
+            "startFrame": 5414
+          },
+          {
+            "text": "back",
+            "startFrame": 5419
+          },
+          {
+            "text": "at",
+            "startFrame": 5426
+          },
+          {
+            "text": "the",
+            "startFrame": 5428
+          },
+          {
+            "text": "road.",
+            "startFrame": 5430
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "startFrame": 5452,
+    "endFrame": 5611,
+    "text": "Aziz registered with his phone number, a code and one password, and reached level one.",
+    "prefix": "Aziz registered with his phone number, a code and one password, and reached level one.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5453,
+        "words": [
+          {
+            "text": "Aziz",
+            "startFrame": 5453
+          },
+          {
+            "text": "registered",
+            "startFrame": 5464
+          },
+          {
+            "text": "with",
+            "startFrame": 5477
+          },
+          {
+            "text": "his",
+            "startFrame": 5480
+          },
+          {
+            "text": "phone",
+            "startFrame": 5483
+          },
+          {
+            "text": "number,",
+            "startFrame": 5492
+          }
+        ]
+      },
+      {
+        "startFrame": 5514,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 5514
+          },
+          {
+            "text": "code",
+            "startFrame": 5515
+          },
+          {
+            "text": "and",
+            "startFrame": 5530
+          },
+          {
+            "text": "one",
+            "startFrame": 5535
+          },
+          {
+            "text": "password,",
+            "startFrame": 5542
+          }
+        ]
+      },
+      {
+        "startFrame": 5572,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5572
+          },
+          {
+            "text": "reached",
+            "startFrame": 5578
+          },
+          {
+            "text": "level",
+            "startFrame": 5586
+          },
+          {
+            "text": "one.",
+            "startFrame": 5593
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "startFrame": 5611,
+    "endFrame": 5773,
+    "text": "He proved who he is one time, with MyID, in the master app, and reached level two.",
+    "prefix": "He proved who he is one time, with MyID, in the master app, and reached level two.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5612,
+        "words": [
+          {
+            "text": "He",
+            "startFrame": 5612
+          },
+          {
+            "text": "proved",
+            "startFrame": 5614
+          },
+          {
+            "text": "who",
+            "startFrame": 5625
+          },
+          {
+            "text": "he",
+            "startFrame": 5628
+          },
+          {
+            "text": "is",
+            "startFrame": 5631
+          },
+          {
+            "text": "one",
+            "startFrame": 5634
+          },
+          {
+            "text": "time,",
+            "startFrame": 5642
+          }
+        ]
+      },
+      {
+        "startFrame": 5667,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 5667
+          },
+          {
+            "text": "MyID,",
+            "startFrame": 5670
+          },
+          {
+            "text": "in",
+            "startFrame": 5705
+          },
+          {
+            "text": "the",
+            "startFrame": 5707
+          },
+          {
+            "text": "master",
+            "startFrame": 5708
+          },
+          {
+            "text": "app,",
+            "startFrame": 5720
+          }
+        ]
+      },
+      {
+        "startFrame": 5734,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5734
+          },
+          {
+            "text": "reached",
+            "startFrame": 5738
+          },
+          {
+            "text": "level",
+            "startFrame": 5745
+          },
+          {
+            "text": "two.",
+            "startFrame": 5751
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "startFrame": 5773,
+    "endFrame": 5914,
+    "text": "The platform linked him to the bank's records and made his phone a trusted device.",
+    "prefix": "The platform linked him to the bank's records and made his phone a trusted device.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5775,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 5775
+          },
+          {
+            "text": "platform",
+            "startFrame": 5776
+          },
+          {
+            "text": "linked",
+            "startFrame": 5794
+          },
+          {
+            "text": "him",
+            "startFrame": 5801
+          },
+          {
+            "text": "to",
+            "startFrame": 5806
+          },
+          {
+            "text": "the",
+            "startFrame": 5808
+          },
+          {
+            "text": "bank's",
+            "startFrame": 5811
+          },
+          {
+            "text": "records",
+            "startFrame": 5821
+          }
+        ]
+      },
+      {
+        "startFrame": 5841,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 5841
+          },
+          {
+            "text": "made",
+            "startFrame": 5845
+          },
+          {
+            "text": "his",
+            "startFrame": 5851
+          },
+          {
+            "text": "phone",
+            "startFrame": 5855
+          },
+          {
+            "text": "a",
+            "startFrame": 5872
+          },
+          {
+            "text": "trusted",
+            "startFrame": 5873
+          },
+          {
+            "text": "device.",
+            "startFrame": 5885
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "startFrame": 5914,
+    "endFrame": 6043,
+    "text": "His side apps asked the master app for an approval, not for his face.",
+    "prefix": "His side apps asked the master app for an approval, not for his face.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 5916,
+        "words": [
+          {
+            "text": "His",
+            "startFrame": 5916
+          },
+          {
+            "text": "side",
+            "startFrame": 5919
+          },
+          {
+            "text": "apps",
+            "startFrame": 5927
+          },
+          {
+            "text": "asked",
+            "startFrame": 5942
+          },
+          {
+            "text": "the",
+            "startFrame": 5949
+          },
+          {
+            "text": "master",
+            "startFrame": 5951
+          },
+          {
+            "text": "app",
+            "startFrame": 5964
+          }
+        ]
+      },
+      {
+        "startFrame": 5970,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 5970
+          },
+          {
+            "text": "an",
+            "startFrame": 5975
+          },
+          {
+            "text": "approval,",
+            "startFrame": 5976
+          }
+        ]
+      },
+      {
+        "startFrame": 6004,
+        "words": [
+          {
+            "text": "not",
+            "startFrame": 6004
+          },
+          {
+            "text": "for",
+            "startFrame": 6010
+          },
+          {
+            "text": "his",
+            "startFrame": 6014
+          },
+          {
+            "text": "face.",
+            "startFrame": 6017
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "startFrame": 6043,
+    "endFrame": 6272,
+    "text": "His sessions got a rank, and a stranger with his number met a password, a TAF verdict, and his own phone saying this was not me.",
+    "prefix": "His sessions got a rank, and a stranger with his number met a password, a TAF verdict, and his own phone saying this was not me.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6045,
+        "words": [
+          {
+            "text": "His",
+            "startFrame": 6045
+          },
+          {
+            "text": "sessions",
+            "startFrame": 6047
+          },
+          {
+            "text": "got",
+            "startFrame": 6056
+          },
+          {
+            "text": "a",
+            "startFrame": 6060
+          },
+          {
+            "text": "rank,",
+            "startFrame": 6061
+          }
+        ]
+      },
+      {
+        "startFrame": 6084,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6084
+          },
+          {
+            "text": "a",
+            "startFrame": 6086
+          },
+          {
+            "text": "stranger",
+            "startFrame": 6087
+          },
+          {
+            "text": "with",
+            "startFrame": 6102
+          },
+          {
+            "text": "his",
+            "startFrame": 6106
+          },
+          {
+            "text": "number",
+            "startFrame": 6109
+          },
+          {
+            "text": "met",
+            "startFrame": 6116
+          }
+        ]
+      },
+      {
+        "startFrame": 6121,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 6121
+          },
+          {
+            "text": "password,",
+            "startFrame": 6123
+          },
+          {
+            "text": "a",
+            "startFrame": 6158
+          },
+          {
+            "text": "TAF",
+            "startFrame": 6160
+          },
+          {
+            "text": "verdict,",
+            "startFrame": 6182
+          }
+        ]
+      },
+      {
+        "startFrame": 6200,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6200
+          },
+          {
+            "text": "his",
+            "startFrame": 6203
+          },
+          {
+            "text": "own",
+            "startFrame": 6207
+          },
+          {
+            "text": "phone",
+            "startFrame": 6214
+          },
+          {
+            "text": "saying",
+            "startFrame": 6228
+          },
+          {
+            "text": "this",
+            "startFrame": 6236
+          },
+          {
+            "text": "was",
+            "startFrame": 6240
+          },
+          {
+            "text": "not",
+            "startFrame": 6244
+          },
+          {
+            "text": "me.",
+            "startFrame": 6254
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "startFrame": 6273,
+    "endFrame": 6529,
+    "text": "His document expired and was refreshed, his account was blocked and unblocked, and every step went into a chain that nobody can rewrite.",
+    "prefix": "His document expired and was refreshed, his account was blocked and unblocked, and every step went into a chain that nobody can rewrite.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6274,
+        "words": [
+          {
+            "text": "His",
+            "startFrame": 6274
+          },
+          {
+            "text": "document",
+            "startFrame": 6277
+          },
+          {
+            "text": "expired",
+            "startFrame": 6290
+          },
+          {
+            "text": "and",
+            "startFrame": 6316
+          },
+          {
+            "text": "was",
+            "startFrame": 6319
+          },
+          {
+            "text": "refreshed,",
+            "startFrame": 6324
+          }
+        ]
+      },
+      {
+        "startFrame": 6344,
+        "words": [
+          {
+            "text": "his",
+            "startFrame": 6344
+          },
+          {
+            "text": "account",
+            "startFrame": 6347
+          },
+          {
+            "text": "was",
+            "startFrame": 6360
+          },
+          {
+            "text": "blocked",
+            "startFrame": 6365
+          },
+          {
+            "text": "and",
+            "startFrame": 6386
+          },
+          {
+            "text": "unblocked,",
+            "startFrame": 6395
+          }
+        ]
+      },
+      {
+        "startFrame": 6427,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6427
+          },
+          {
+            "text": "every",
+            "startFrame": 6434
+          },
+          {
+            "text": "step",
+            "startFrame": 6442
+          },
+          {
+            "text": "went",
+            "startFrame": 6455
+          },
+          {
+            "text": "into",
+            "startFrame": 6459
+          },
+          {
+            "text": "a",
+            "startFrame": 6463
+          },
+          {
+            "text": "chain",
+            "startFrame": 6465
+          },
+          {
+            "text": "that",
+            "startFrame": 6475
+          }
+        ]
+      },
+      {
+        "startFrame": 6479,
+        "words": [
+          {
+            "text": "nobody",
+            "startFrame": 6479
+          },
+          {
+            "text": "can",
+            "startFrame": 6494
+          },
+          {
+            "text": "rewrite.",
+            "startFrame": 6500
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "startFrame": 6530,
+    "endFrame": 6734,
+    "text": "Behind him were operators with one role each, rules that need two people, and two zones that never touch.",
+    "prefix": "Behind him were operators with one role each, rules that need two people, and two zones that never touch.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6531,
+        "words": [
+          {
+            "text": "Behind",
+            "startFrame": 6531
+          },
+          {
+            "text": "him",
+            "startFrame": 6539
+          },
+          {
+            "text": "were",
+            "startFrame": 6542
+          },
+          {
+            "text": "operators",
+            "startFrame": 6546
+          },
+          {
+            "text": "with",
+            "startFrame": 6563
+          },
+          {
+            "text": "one",
+            "startFrame": 6567
+          },
+          {
+            "text": "role",
+            "startFrame": 6577
+          },
+          {
+            "text": "each,",
+            "startFrame": 6589
+          }
+        ]
+      },
+      {
+        "startFrame": 6612,
+        "words": [
+          {
+            "text": "rules",
+            "startFrame": 6612
+          },
+          {
+            "text": "that",
+            "startFrame": 6624
+          },
+          {
+            "text": "need",
+            "startFrame": 6630
+          },
+          {
+            "text": "two",
+            "startFrame": 6639
+          },
+          {
+            "text": "people,",
+            "startFrame": 6646
+          }
+        ]
+      },
+      {
+        "startFrame": 6671,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6671
+          },
+          {
+            "text": "two",
+            "startFrame": 6678
+          },
+          {
+            "text": "zones",
+            "startFrame": 6685
+          },
+          {
+            "text": "that",
+            "startFrame": 6696
+          },
+          {
+            "text": "never",
+            "startFrame": 6700
+          },
+          {
+            "text": "touch.",
+            "startFrame": 6707
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "startFrame": 6734,
+    "endFrame": 6846,
+    "text": "All of it runs inside one bank, in one installation.",
+    "prefix": "All of it runs inside one bank, in one installation.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6736,
+        "words": [
+          {
+            "text": "All",
+            "startFrame": 6736
+          },
+          {
+            "text": "of",
+            "startFrame": 6740
+          },
+          {
+            "text": "it",
+            "startFrame": 6742
+          },
+          {
+            "text": "runs",
+            "startFrame": 6746
+          },
+          {
+            "text": "inside",
+            "startFrame": 6759
+          },
+          {
+            "text": "one",
+            "startFrame": 6777
+          },
+          {
+            "text": "bank,",
+            "startFrame": 6787
+          }
+        ]
+      },
+      {
+        "startFrame": 6807,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 6807
+          },
+          {
+            "text": "one",
+            "startFrame": 6811
+          },
+          {
+            "text": "installation.",
+            "startFrame": 6816
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "startFrame": 6846,
+    "endFrame": 6902,
+    "text": "Prove once, then bind.",
+    "prefix": "Prove once, then bind.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6847,
+        "words": [
+          {
+            "text": "Prove",
+            "startFrame": 6847
+          },
+          {
+            "text": "once,",
+            "startFrame": 6854
+          },
+          {
+            "text": "then",
+            "startFrame": 6864
+          },
+          {
+            "text": "bind.",
+            "startFrame": 6868
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "startFrame": 6902,
+    "endFrame": 6988,
+    "text": "That is heeyID.",
+    "prefix": "That is heeyID.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 6904,
+        "words": [
+          {
+            "text": "That",
+            "startFrame": 6904
+          },
+          {
+            "text": "is",
+            "startFrame": 6906
+          },
+          {
+            "text": "heeyID.",
+            "startFrame": 6909
+          }
+        ]
+      }
+    ]
+  }
+]

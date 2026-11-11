@@ -80,6 +80,7 @@ import { H35NotificationsComposition } from "./reels/h-35-notifications";
 import { H36AuditAndRetentionComposition } from "./reels/h-36-audit-and-retention";
 import { H37AdminPanelComposition } from "./reels/h-37-admin-panel";
 import { H38TestIdentitiesComposition } from "./reels/h-38-test-identities";
+import { H39InstallingComposition } from "./reels/h-39-installing";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
 export const RemotionRoot: React.FC = () => {
@@ -198,6 +199,7 @@ export const RemotionRoot: React.FC = () => {
         <Folder name="h9-Operations">
           <H37AdminPanelComposition />
           <H38TestIdentitiesComposition />
+          <H39InstallingComposition />
         </Folder>
       </Folder>
     </>
