@@ -1,0 +1,247 @@
+1
+00:00:00,050 --> 00:00:06,384
+A backup copy of the heeyID database leaves the bank, on a disk that nobody should have taken.
+
+2
+00:00:06,434 --> 00:00:12,384
+On it are the customers of the bank: names, passport data, addresses and phone numbers.
+
+3
+00:00:12,434 --> 00:00:14,256
+Aziz is one of them.
+
+4
+00:00:14,306 --> 00:00:18,128
+What can the person with the disk read?
+
+5
+00:00:18,178 --> 00:00:24,080
+In Lesson 7, each adapter held a secret, and the platform kept passports encrypted.
+
+6
+00:00:24,130 --> 00:00:29,336
+This lesson shows where every key lives, and why the disk is worth so little.
+
+7
+00:00:29,386 --> 00:00:33,800
+All the keys of heeyID live in Vault, and the Vault belongs to the bank.
+
+8
+00:00:33,850 --> 00:00:39,272
+Each zone has its own new Vault, and the security team of the bank keeps the keys that unseal it.
+
+9
+00:00:39,322 --> 00:00:41,048
+The vendor never sees one of them.
+
+10
+00:00:41,098 --> 00:00:46,040
+I think this is the line in the design that matters most: the bank keeps the keys.
+
+11
+00:00:46,090 --> 00:00:47,912
+Six kinds of keys sit there.
+
+12
+00:00:47,962 --> 00:00:50,864
+Walk across the disk, and meet them one by one.
+
+13
+00:00:50,914 --> 00:00:57,104
+First, the verified identity of Aziz: his names, his document data and his addresses.
+
+14
+00:00:57,154 --> 00:01:01,808
+His record has its own data key, and that data key encrypts the record.
+
+15
+00:01:01,858 --> 00:01:08,288
+The data key is stored next to the record, but wrapped: the installation key-encryption key encrypts it.
+
+16
+00:01:08,338 --> 00:01:11,240
+The key-encryption key never leaves Vault.
+
+17
+00:01:11,290 --> 00:01:19,232
+To read the record, the gateway sends the wrapped data key to Vault, gets it back unwrapped for this one request, and then forgets it.
+
+18
+00:01:19,282 --> 00:01:21,152
+This is envelope encryption.
+
+19
+00:01:21,202 --> 00:01:26,456
+On the disk, the thief has records and wrapped data keys, and no way to open them.
+
+20
+00:01:26,506 --> 00:01:29,720
+And Vault records each time a key is unwrapped.
+
+21
+00:01:29,770 --> 00:01:31,352
+Second, search.
+
+22
+00:01:31,402 --> 00:01:37,160
+An operator must find Aziz by his exact personal identification number, among all the rows.
+
+23
+00:01:37,210 --> 00:01:38,720
+But the number is encrypted.
+
+24
+00:01:38,770 --> 00:01:45,320
+So the platform keeps a blind index: a keyed hash of the number, made with the installation index key.
+
+25
+00:01:45,370 --> 00:01:49,808
+The same number always gives the same index, so an exact search works.
+
+26
+00:01:49,858 --> 00:01:53,960
+Without the index key, the thief cannot even test a guess.
+
+27
+00:01:54,010 --> 00:01:58,352
+The same key makes the digest that binds a session to its device.
+
+28
+00:01:58,402 --> 00:02:00,272
+Third, the one-time codes.
+
+29
+00:02:00,322 --> 00:02:06,680
+heeyID keeps a code only as a digest, and the digest mixes in a secret pepper from Vault.
+
+30
+00:02:06,730 --> 00:02:12,464
+A short code is easy to guess, so a plain digest of it is easy to reverse.
+
+31
+00:02:12,514 --> 00:02:16,208
+With the pepper in Vault, the thief cannot even check a guess.
+
+32
+00:02:16,258 --> 00:02:17,768
+Fourth, the audit trail.
+
+33
+00:02:17,818 --> 00:02:22,976
+Each audit event is chained to the event before it with an HMAC, under the audit key.
+
+34
+00:02:23,026 --> 00:02:25,448
+Change one event, and the chain breaks.
+
+35
+00:02:25,498 --> 00:02:30,128
+A daily verifier checks the chain, and raises an alert at each break.
+
+36
+00:02:30,178 --> 00:02:32,480
+Fifth, the token signatures.
+
+37
+00:02:32,530 --> 00:02:35,960
+Keycloak signs each token with the realm keys.
+
+38
+00:02:36,010 --> 00:02:40,280
+They sit in the Keycloak database, encrypted with a secret from Vault.
+
+39
+00:02:40,330 --> 00:02:50,408
+Sixth, the credentials of the outside services: the MyID credential, the TAF client secret, the client certificates of the adapters, and the push credential.
+
+40
+00:02:50,458 --> 00:02:53,888
+Each credential goes only to the adapter that uses it.
+
+41
+00:02:53,938 --> 00:02:59,696
+The push credential, for example, arrives as a file for the push adapter, and for nothing else.
+
+42
+00:02:59,746 --> 00:03:03,560
+None of them is ever in the code, on a phone, or in a log.
+
+43
+00:03:03,610 --> 00:03:05,432
+And the passwords?
+
+44
+00:03:05,482 --> 00:03:08,192
+They are not encrypted at all, on purpose.
+
+45
+00:03:08,242 --> 00:03:14,120
+heeyID keeps only a slow, salted password hash, and a hash cannot be reversed.
+
+46
+00:03:14,170 --> 00:03:17,960
+There is no key to steal, because there is nothing to decrypt.
+
+47
+00:03:18,010 --> 00:03:19,832
+Keys also age.
+
+48
+00:03:19,882 --> 00:03:23,072
+Each key has a rotation period, and the bank sets it.
+
+49
+00:03:23,122 --> 00:03:31,136
+When the key-encryption key rotates, its old versions stay for unwrapping, and the platform wraps the data keys again in the background.
+
+50
+00:03:31,186 --> 00:03:34,952
+Old audit keys stay too, so old chains still verify.
+
+51
+00:03:35,002 --> 00:03:40,928
+Each key has an owner who approves its change: the security team of the bank, or its platform team.
+
+52
+00:03:40,978 --> 00:03:42,800
+Back to the disk.
+
+53
+00:03:42,850 --> 00:03:51,152
+The thief has encrypted records, wrapped data keys, blind indexes, code digests, password hashes and a signed audit chain.
+
+54
+00:03:51,202 --> 00:03:54,656
+Every key that could open them stays in the Vault of the bank.
+
+55
+00:03:54,706 --> 00:03:58,496
+The disk is a loss of hardware, not a loss of identities.
+
+56
+00:03:58,546 --> 00:04:02,024
+To recap: one Vault for each zone, in the bank.
+
+57
+00:04:02,074 --> 00:04:11,840
+Six kinds of keys: the key-encryption key, the index key, the code pepper, the audit key, the realm keys, and the credentials of the outside services.
+
+58
+00:04:11,890 --> 00:04:18,296
+Envelope encryption for identities, a blind index for search, and digests for codes and passwords.
+
+59
+00:04:18,346 --> 00:04:21,680
+The keys never leave the bank, and they never reach a phone.
+
+60
+00:04:21,730 --> 00:04:25,928
+But the apps of the bank still keep something on the phone, and still call heeyID.
+
+61
+00:04:25,978 --> 00:04:28,712
+What may an app keep, and how does it talk to heeyID?
+
+62
+00:04:28,762 --> 00:04:31,232
+Next: the API contract.
