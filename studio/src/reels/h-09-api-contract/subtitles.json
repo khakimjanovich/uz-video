@@ -2,9 +2,9 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 74,
-    "text": "Monday morning, in the mobile bank team.",
-    "prefix": "Monday morning, in the mobile bank team.",
+    "endFrame": 218,
+    "text": "Suppose Jasur, an iOS developer in the mobile bank team, gets his task: connect the app to heeyID.",
+    "prefix": "Suppose Jasur, an iOS developer in the mobile bank team, gets his task: connect the app to heeyID.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -12,32 +12,86 @@
         "startFrame": 2,
         "words": [
           {
-            "text": "Monday",
+            "text": "Suppose",
             "startFrame": 2
           },
           {
-            "text": "morning,",
-            "startFrame": 9
+            "text": "Jasur,",
+            "startFrame": 15
           },
           {
-            "text": "in",
-            "startFrame": 34
-          },
-          {
-            "text": "the",
-            "startFrame": 36
-          },
-          {
-            "text": "mobile",
+            "text": "an",
             "startFrame": 37
           },
           {
-            "text": "bank",
-            "startFrame": 45
+            "text": "iOS",
+            "startFrame": 42
           },
           {
-            "text": "team.",
-            "startFrame": 52
+            "text": "developer",
+            "startFrame": 67
+          },
+          {
+            "text": "in",
+            "startFrame": 81
+          },
+          {
+            "text": "the",
+            "startFrame": 84
+          },
+          {
+            "text": "mobile",
+            "startFrame": 85
+          }
+        ]
+      },
+      {
+        "startFrame": 93,
+        "words": [
+          {
+            "text": "bank",
+            "startFrame": 93
+          },
+          {
+            "text": "team,",
+            "startFrame": 101
+          },
+          {
+            "text": "gets",
+            "startFrame": 118
+          },
+          {
+            "text": "his",
+            "startFrame": 123
+          },
+          {
+            "text": "task:",
+            "startFrame": 128
+          }
+        ]
+      },
+      {
+        "startFrame": 155,
+        "words": [
+          {
+            "text": "connect",
+            "startFrame": 155
+          },
+          {
+            "text": "the",
+            "startFrame": 163
+          },
+          {
+            "text": "app",
+            "startFrame": 167
+          },
+          {
+            "text": "to",
+            "startFrame": 177
+          },
+          {
+            "text": "heeyID.",
+            "startFrame": 180
           }
         ]
       }
@@ -45,73 +99,80 @@
   },
   {
     "index": 2,
-    "startFrame": 74,
-    "endFrame": 235,
-    "text": "Jasur, an iOS developer, gets his task: connect the app to heeyID.",
-    "prefix": "Jasur, an iOS developer, gets his task: connect the app to heeyID.",
+    "startFrame": 218,
+    "endFrame": 368,
+    "text": "He searches for the heeyID SDK, a package that he can add with one line.",
+    "prefix": "He searches for the heeyID SDK, a package that he can add with one line.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 76,
+        "startFrame": 220,
         "words": [
           {
-            "text": "Jasur,",
-            "startFrame": 76
+            "text": "He",
+            "startFrame": 220
           },
           {
-            "text": "an",
-            "startFrame": 96
+            "text": "searches",
+            "startFrame": 222
           },
           {
-            "text": "iOS",
-            "startFrame": 99
-          },
-          {
-            "text": "developer,",
-            "startFrame": 122
-          }
-        ]
-      },
-      {
-        "startFrame": 145,
-        "words": [
-          {
-            "text": "gets",
-            "startFrame": 145
-          },
-          {
-            "text": "his",
-            "startFrame": 149
-          },
-          {
-            "text": "task:",
-            "startFrame": 153
-          }
-        ]
-      },
-      {
-        "startFrame": 177,
-        "words": [
-          {
-            "text": "connect",
-            "startFrame": 177
+            "text": "for",
+            "startFrame": 233
           },
           {
             "text": "the",
-            "startFrame": 184
+            "startFrame": 235
           },
           {
-            "text": "app",
-            "startFrame": 188
+            "text": "heeyID",
+            "startFrame": 237
           },
           {
-            "text": "to",
-            "startFrame": 198
+            "text": "SDK,",
+            "startFrame": 270
+          }
+        ]
+      },
+      {
+        "startFrame": 304,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 304
           },
           {
-            "text": "heeyID.",
-            "startFrame": 200
+            "text": "package",
+            "startFrame": 305
+          },
+          {
+            "text": "that",
+            "startFrame": 320
+          },
+          {
+            "text": "he",
+            "startFrame": 322
+          },
+          {
+            "text": "can",
+            "startFrame": 324
+          },
+          {
+            "text": "add",
+            "startFrame": 328
+          },
+          {
+            "text": "with",
+            "startFrame": 336
+          },
+          {
+            "text": "one",
+            "startFrame": 339
+          },
+          {
+            "text": "line.",
+            "startFrame": 347
           }
         ]
       }
@@ -119,80 +180,27 @@
   },
   {
     "index": 3,
-    "startFrame": 236,
-    "endFrame": 386,
-    "text": "He searches for the heeyID SDK, a package that he can add with one line.",
-    "prefix": "He searches for the heeyID SDK, a package that he can add with one line.",
+    "startFrame": 369,
+    "endFrame": 425,
+    "text": "There is none.",
+    "prefix": "There is none.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 237,
+        "startFrame": 370,
         "words": [
           {
-            "text": "He",
-            "startFrame": 237
+            "text": "There",
+            "startFrame": 370
           },
           {
-            "text": "searches",
-            "startFrame": 240
+            "text": "is",
+            "startFrame": 373
           },
           {
-            "text": "for",
-            "startFrame": 250
-          },
-          {
-            "text": "the",
-            "startFrame": 252
-          },
-          {
-            "text": "heeyID",
-            "startFrame": 255
-          },
-          {
-            "text": "SDK,",
-            "startFrame": 287
-          }
-        ]
-      },
-      {
-        "startFrame": 321,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 321
-          },
-          {
-            "text": "package",
-            "startFrame": 322
-          },
-          {
-            "text": "that",
-            "startFrame": 337
-          },
-          {
-            "text": "he",
-            "startFrame": 340
-          },
-          {
-            "text": "can",
-            "startFrame": 342
-          },
-          {
-            "text": "add",
-            "startFrame": 345
-          },
-          {
-            "text": "with",
-            "startFrame": 353
-          },
-          {
-            "text": "one",
-            "startFrame": 356
-          },
-          {
-            "text": "line.",
-            "startFrame": 364
+            "text": "none.",
+            "startFrame": 377
           }
         ]
       }
@@ -200,27 +208,64 @@
   },
   {
     "index": 4,
-    "startFrame": 386,
-    "endFrame": 442,
-    "text": "There is none.",
-    "prefix": "There is none.",
+    "startFrame": 425,
+    "endFrame": 602,
+    "text": "So how does a team build against heeyID with no SDK?",
+    "prefix": "So how does a team build against heeyID with no SDK?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 387,
+        "startFrame": 426,
         "words": [
           {
-            "text": "There",
-            "startFrame": 387
+            "text": "So",
+            "startFrame": 426
           },
           {
-            "text": "is",
-            "startFrame": 391
+            "text": "how",
+            "startFrame": 430
           },
           {
-            "text": "none.",
-            "startFrame": 395
+            "text": "does",
+            "startFrame": 432
+          },
+          {
+            "text": "a",
+            "startFrame": 436
+          },
+          {
+            "text": "team",
+            "startFrame": 438
+          },
+          {
+            "text": "build",
+            "startFrame": 447
+          },
+          {
+            "text": "against",
+            "startFrame": 458
+          },
+          {
+            "text": "heeyID",
+            "startFrame": 466
+          }
+        ]
+      },
+      {
+        "startFrame": 494,
+        "words": [
+          {
+            "text": "with",
+            "startFrame": 494
+          },
+          {
+            "text": "no",
+            "startFrame": 499
+          },
+          {
+            "text": "SDK?",
+            "startFrame": 509
           }
         ]
       }
@@ -228,64 +273,89 @@
   },
   {
     "index": 5,
-    "startFrame": 442,
-    "endFrame": 619,
-    "text": "So how does a team build against heeyID with no SDK?",
-    "prefix": "So how does a team build against heeyID with no SDK?",
+    "startFrame": 602,
+    "endFrame": 748,
+    "text": "Lesson 6 kept every key in the Vault of the bank, and no key reached a phone.",
+    "prefix": "Lesson 6 kept every key in the Vault of the bank, and no key reached a phone.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 444,
+        "startFrame": 603,
         "words": [
           {
-            "text": "So",
-            "startFrame": 444
+            "text": "Lesson 6",
+            "startFrame": 603
           },
           {
-            "text": "how",
-            "startFrame": 448
+            "text": "kept",
+            "startFrame": 623
           },
           {
-            "text": "does",
-            "startFrame": 449
+            "text": "every",
+            "startFrame": 638
           },
           {
-            "text": "a",
-            "startFrame": 453
+            "text": "key",
+            "startFrame": 647
           },
           {
-            "text": "team",
-            "startFrame": 455
+            "text": "in",
+            "startFrame": 660
           },
           {
-            "text": "build",
-            "startFrame": 464
+            "text": "the",
+            "startFrame": 663
           },
           {
-            "text": "against",
-            "startFrame": 475
-          },
-          {
-            "text": "heeyID",
-            "startFrame": 484
+            "text": "Vault",
+            "startFrame": 665
           }
         ]
       },
       {
-        "startFrame": 512,
+        "startFrame": 673,
         "words": [
           {
-            "text": "with",
-            "startFrame": 512
+            "text": "of",
+            "startFrame": 673
+          },
+          {
+            "text": "the",
+            "startFrame": 674
+          },
+          {
+            "text": "bank,",
+            "startFrame": 676
+          }
+        ]
+      },
+      {
+        "startFrame": 694,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 694
           },
           {
             "text": "no",
-            "startFrame": 516
+            "startFrame": 699
           },
           {
-            "text": "SDK?",
-            "startFrame": 527
+            "text": "key",
+            "startFrame": 707
+          },
+          {
+            "text": "reached",
+            "startFrame": 716
+          },
+          {
+            "text": "a",
+            "startFrame": 724
+          },
+          {
+            "text": "phone.",
+            "startFrame": 726
           }
         ]
       }
@@ -293,117 +363,27 @@
   },
   {
     "index": 6,
-    "startFrame": 620,
-    "endFrame": 752,
-    "text": "In Lesson 8, every key stayed in the Vault of the bank, and none reached a phone.",
-    "prefix": "In Lesson 8, every key stayed in the Vault of the bank, and none reached a phone.",
+    "startFrame": 749,
+    "endFrame": 971,
+    "text": "This lesson shows what reaches the mobile bank instead: a contract, a guide, and a short list of things that the app may keep.",
+    "prefix": "This lesson shows what reaches the mobile bank instead: a contract, a guide, and a short list of things that the app may keep.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 621,
-        "words": [
-          {
-            "text": "In",
-            "startFrame": 621
-          },
-          {
-            "text": "Lesson 8,",
-            "startFrame": 624
-          },
-          {
-            "text": "every",
-            "startFrame": 649
-          },
-          {
-            "text": "key",
-            "startFrame": 656
-          },
-          {
-            "text": "stayed",
-            "startFrame": 665
-          },
-          {
-            "text": "in",
-            "startFrame": 675
-          },
-          {
-            "text": "the",
-            "startFrame": 677
-          },
-          {
-            "text": "Vault",
-            "startFrame": 679
-          }
-        ]
-      },
-      {
-        "startFrame": 688,
-        "words": [
-          {
-            "text": "of",
-            "startFrame": 688
-          },
-          {
-            "text": "the",
-            "startFrame": 689
-          },
-          {
-            "text": "bank,",
-            "startFrame": 691
-          }
-        ]
-      },
-      {
-        "startFrame": 709,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 709
-          },
-          {
-            "text": "none",
-            "startFrame": 713
-          },
-          {
-            "text": "reached",
-            "startFrame": 721
-          },
-          {
-            "text": "a",
-            "startFrame": 728
-          },
-          {
-            "text": "phone.",
-            "startFrame": 729
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 7,
-    "startFrame": 752,
-    "endFrame": 950,
-    "text": "This lesson shows what reaches the apps instead: a contract, a guide, and a short list of things that an app may keep.",
-    "prefix": "This lesson shows what reaches the apps instead: a contract, a guide, and a short list of things that an app may keep.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 754,
+        "startFrame": 750,
         "words": [
           {
             "text": "This",
-            "startFrame": 754
+            "startFrame": 750
           },
           {
             "text": "lesson",
-            "startFrame": 759
+            "startFrame": 755
           },
           {
             "text": "shows",
-            "startFrame": 769
+            "startFrame": 766
           },
           {
             "text": "what",
@@ -411,94 +391,138 @@
           },
           {
             "text": "reaches",
-            "startFrame": 785
+            "startFrame": 786
           },
           {
             "text": "the",
-            "startFrame": 794
+            "startFrame": 795
           },
           {
-            "text": "apps",
-            "startFrame": 797
+            "text": "mobile",
+            "startFrame": 798
           },
           {
-            "text": "instead:",
-            "startFrame": 806
+            "text": "bank",
+            "startFrame": 808
           }
         ]
       },
       {
-        "startFrame": 828,
+        "startFrame": 817,
         "words": [
           {
+            "text": "instead:",
+            "startFrame": 817
+          },
+          {
             "text": "a",
-            "startFrame": 828
+            "startFrame": 847
           },
           {
             "text": "contract,",
-            "startFrame": 829
-          },
+            "startFrame": 849
+          }
+        ]
+      },
+      {
+        "startFrame": 871,
+        "words": [
           {
             "text": "a",
-            "startFrame": 851
+            "startFrame": 871
           },
           {
             "text": "guide,",
-            "startFrame": 852
-          }
-        ]
-      },
-      {
-        "startFrame": 879,
-        "words": [
+            "startFrame": 872
+          },
           {
             "text": "and",
-            "startFrame": 879
-          },
-          {
-            "text": "a",
-            "startFrame": 880
-          },
-          {
-            "text": "short",
-            "startFrame": 881
-          },
-          {
-            "text": "list",
-            "startFrame": 890
-          },
-          {
-            "text": "of",
             "startFrame": 897
           },
           {
-            "text": "things",
-            "startFrame": 899
+            "text": "a",
+            "startFrame": 900
           },
           {
-            "text": "that",
+            "text": "short",
+            "startFrame": 901
+          },
+          {
+            "text": "list",
             "startFrame": 910
+          },
+          {
+            "text": "of",
+            "startFrame": 916
+          },
+          {
+            "text": "things",
+            "startFrame": 917
           }
         ]
       },
       {
-        "startFrame": 913,
+        "startFrame": 927,
         "words": [
           {
-            "text": "an",
-            "startFrame": 913
+            "text": "that",
+            "startFrame": 927
+          },
+          {
+            "text": "the",
+            "startFrame": 930
           },
           {
             "text": "app",
-            "startFrame": 916
+            "startFrame": 935
           },
           {
             "text": "may",
-            "startFrame": 924
+            "startFrame": 942
           },
           {
             "text": "keep.",
-            "startFrame": 927
+            "startFrame": 946
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "startFrame": 971,
+    "endFrame": 1050,
+    "text": "First, why there is no SDK.",
+    "prefix": "First, why there is no SDK.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 974,
+        "words": [
+          {
+            "text": "First,",
+            "startFrame": 974
+          },
+          {
+            "text": "why",
+            "startFrame": 994
+          },
+          {
+            "text": "there",
+            "startFrame": 999
+          },
+          {
+            "text": "is",
+            "startFrame": 1002
+          },
+          {
+            "text": "no",
+            "startFrame": 1005
+          },
+          {
+            "text": "SDK.",
+            "startFrame": 1016
           }
         ]
       }
@@ -506,39 +530,47 @@
   },
   {
     "index": 8,
-    "startFrame": 950,
-    "endFrame": 1030,
-    "text": "First, why there is no SDK.",
-    "prefix": "First, why there is no SDK.",
+    "startFrame": 1051,
+    "endFrame": 1130,
+    "text": "The bank's own team builds the mobile bank.",
+    "prefix": "The bank's own team builds the mobile bank.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 953,
+        "startFrame": 1052,
         "words": [
           {
-            "text": "First,",
-            "startFrame": 953
+            "text": "The",
+            "startFrame": 1052
           },
           {
-            "text": "why",
-            "startFrame": 973
+            "text": "bank's",
+            "startFrame": 1054
           },
           {
-            "text": "there",
-            "startFrame": 978
+            "text": "own",
+            "startFrame": 1062
           },
           {
-            "text": "is",
-            "startFrame": 981
+            "text": "team",
+            "startFrame": 1067
           },
           {
-            "text": "no",
-            "startFrame": 984
+            "text": "builds",
+            "startFrame": 1085
           },
           {
-            "text": "SDK.",
-            "startFrame": 995
+            "text": "the",
+            "startFrame": 1094
+          },
+          {
+            "text": "mobile",
+            "startFrame": 1096
+          },
+          {
+            "text": "bank.",
+            "startFrame": 1106
           }
         ]
       }
@@ -546,64 +578,84 @@
   },
   {
     "index": 9,
-    "startFrame": 1030,
-    "endFrame": 1115,
-    "text": "The teams of the bank build the apps of the bank.",
-    "prefix": "The teams of the bank build the apps of the bank.",
+    "startFrame": 1130,
+    "endFrame": 1315,
+    "text": "An SDK from heeyID would add more work, and a second release train beside the app.",
+    "prefix": "An SDK from heeyID would add more work, and a second release train beside the app.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1031,
+        "startFrame": 1131,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1031
+            "text": "An",
+            "startFrame": 1131
           },
           {
-            "text": "teams",
-            "startFrame": 1034
+            "text": "SDK",
+            "startFrame": 1134
           },
           {
-            "text": "of",
-            "startFrame": 1043
+            "text": "from",
+            "startFrame": 1153
           },
           {
-            "text": "the",
-            "startFrame": 1044
+            "text": "heeyID",
+            "startFrame": 1158
           },
           {
-            "text": "bank",
-            "startFrame": 1046
+            "text": "would",
+            "startFrame": 1198
           },
           {
-            "text": "build",
-            "startFrame": 1066
+            "text": "add",
+            "startFrame": 1205
           },
           {
-            "text": "the",
-            "startFrame": 1074
+            "text": "more",
+            "startFrame": 1209
           },
           {
-            "text": "apps",
-            "startFrame": 1078
+            "text": "work,",
+            "startFrame": 1218
           }
         ]
       },
       {
-        "startFrame": 1088,
+        "startFrame": 1241,
         "words": [
           {
-            "text": "of",
-            "startFrame": 1088
+            "text": "and",
+            "startFrame": 1241
+          },
+          {
+            "text": "a",
+            "startFrame": 1250
+          },
+          {
+            "text": "second",
+            "startFrame": 1251
+          },
+          {
+            "text": "release",
+            "startFrame": 1262
+          },
+          {
+            "text": "train",
+            "startFrame": 1270
+          },
+          {
+            "text": "beside",
+            "startFrame": 1280
           },
           {
             "text": "the",
-            "startFrame": 1090
+            "startFrame": 1290
           },
           {
-            "text": "bank.",
-            "startFrame": 1091
+            "text": "app.",
+            "startFrame": 1293
           }
         ]
       }
@@ -611,101 +663,97 @@
   },
   {
     "index": 10,
-    "startFrame": 1116,
-    "endFrame": 1326,
-    "text": "An SDK from heeyID would add work before the first release, and a second release train for every app.",
-    "prefix": "An SDK from heeyID would add work before the first release, and a second release train for every app.",
+    "startFrame": 1315,
+    "endFrame": 1524,
+    "text": "No SDK is the honest choice: the contract is the product, and each team owns its own code.",
+    "prefix": "No SDK is the honest choice: the contract is the product, and each team owns its own code.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1116,
+        "startFrame": 1317,
         "words": [
           {
-            "text": "An",
-            "startFrame": 1116
+            "text": "No",
+            "startFrame": 1317
           },
           {
             "text": "SDK",
-            "startFrame": 1120
+            "startFrame": 1324
           },
           {
-            "text": "from",
-            "startFrame": 1139
+            "text": "is",
+            "startFrame": 1350
           },
           {
-            "text": "heeyID",
-            "startFrame": 1145
+            "text": "the",
+            "startFrame": 1354
           },
           {
-            "text": "would",
-            "startFrame": 1180
+            "text": "honest",
+            "startFrame": 1358
           },
           {
-            "text": "add",
-            "startFrame": 1186
-          },
-          {
-            "text": "work",
-            "startFrame": 1194
-          },
-          {
-            "text": "before",
-            "startFrame": 1204
+            "text": "choice:",
+            "startFrame": 1369
           }
         ]
       },
       {
-        "startFrame": 1213,
+        "startFrame": 1395,
         "words": [
           {
             "text": "the",
-            "startFrame": 1213
+            "startFrame": 1395
           },
           {
-            "text": "first",
-            "startFrame": 1216
+            "text": "contract",
+            "startFrame": 1398
           },
           {
-            "text": "release,",
-            "startFrame": 1226
+            "text": "is",
+            "startFrame": 1423
+          },
+          {
+            "text": "the",
+            "startFrame": 1426
+          },
+          {
+            "text": "product,",
+            "startFrame": 1428
           }
         ]
       },
       {
-        "startFrame": 1248,
+        "startFrame": 1450,
         "words": [
           {
             "text": "and",
-            "startFrame": 1248
+            "startFrame": 1450
           },
           {
-            "text": "a",
-            "startFrame": 1251
+            "text": "each",
+            "startFrame": 1459
           },
           {
-            "text": "second",
-            "startFrame": 1252
+            "text": "team",
+            "startFrame": 1465
           },
           {
-            "text": "release",
-            "startFrame": 1263
+            "text": "owns",
+            "startFrame": 1484
           },
           {
-            "text": "train",
-            "startFrame": 1271
+            "text": "its",
+            "startFrame": 1491
           },
           {
-            "text": "for",
-            "startFrame": 1288
+            "text": "own",
+            "startFrame": 1495
           },
           {
-            "text": "every",
-            "startFrame": 1297
-          },
-          {
-            "text": "app.",
-            "startFrame": 1305
+            "text": "code.",
+            "startFrame": 1501
           }
         ]
       }
@@ -713,126 +761,35 @@
   },
   {
     "index": 11,
-    "startFrame": 1326,
-    "endFrame": 1564,
-    "text": "I think no SDK is the honest choice for a first release: the contract is the product, and each team owns its own code.",
-    "prefix": "I think no SDK is the honest choice for a first release: the contract is the product, and each team owns its own code.",
+    "startFrame": 1525,
+    "endFrame": 1588,
+    "text": "So heeyID gives three things.",
+    "prefix": "So heeyID gives three things.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1327,
+        "startFrame": 1526,
         "words": [
           {
-            "text": "I",
-            "startFrame": 1327
+            "text": "So",
+            "startFrame": 1526
           },
           {
-            "text": "think",
-            "startFrame": 1330
+            "text": "heeyID",
+            "startFrame": 1534
           },
           {
-            "text": "no",
-            "startFrame": 1336
+            "text": "gives",
+            "startFrame": 1542
           },
           {
-            "text": "SDK",
-            "startFrame": 1342
+            "text": "three",
+            "startFrame": 1548
           },
           {
-            "text": "is",
-            "startFrame": 1367
-          },
-          {
-            "text": "the",
-            "startFrame": 1370
-          },
-          {
-            "text": "honest",
-            "startFrame": 1373
-          },
-          {
-            "text": "choice",
-            "startFrame": 1383
-          }
-        ]
-      },
-      {
-        "startFrame": 1393,
-        "words": [
-          {
-            "text": "for",
-            "startFrame": 1393
-          },
-          {
-            "text": "a",
-            "startFrame": 1397
-          },
-          {
-            "text": "first",
-            "startFrame": 1398
-          },
-          {
-            "text": "release:",
-            "startFrame": 1410
-          }
-        ]
-      },
-      {
-        "startFrame": 1432,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 1432
-          },
-          {
-            "text": "contract",
-            "startFrame": 1435
-          },
-          {
-            "text": "is",
-            "startFrame": 1462
-          },
-          {
-            "text": "the",
-            "startFrame": 1466
-          },
-          {
-            "text": "product,",
-            "startFrame": 1468
-          }
-        ]
-      },
-      {
-        "startFrame": 1489,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 1489
-          },
-          {
-            "text": "each",
-            "startFrame": 1498
-          },
-          {
-            "text": "team",
-            "startFrame": 1503
-          },
-          {
-            "text": "owns",
-            "startFrame": 1523
-          },
-          {
-            "text": "its",
-            "startFrame": 1531
-          },
-          {
-            "text": "own",
-            "startFrame": 1535
-          },
-          {
-            "text": "code.",
-            "startFrame": 1540
+            "text": "things.",
+            "startFrame": 1560
           }
         ]
       }
@@ -840,35 +797,27 @@
   },
   {
     "index": 12,
-    "startFrame": 1564,
-    "endFrame": 1628,
-    "text": "So heeyID gives three things.",
-    "prefix": "So heeyID gives three things.",
+    "startFrame": 1589,
+    "endFrame": 1644,
+    "text": "The REST API.",
+    "prefix": "The REST API.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1566,
+        "startFrame": 1590,
         "words": [
           {
-            "text": "So",
-            "startFrame": 1566
+            "text": "The",
+            "startFrame": 1590
           },
           {
-            "text": "heeyID",
-            "startFrame": 1574
+            "text": "REST",
+            "startFrame": 1592
           },
           {
-            "text": "gives",
-            "startFrame": 1582
-          },
-          {
-            "text": "three",
-            "startFrame": 1587
-          },
-          {
-            "text": "things.",
-            "startFrame": 1599
+            "text": "API.",
+            "startFrame": 1608
           }
         ]
       }
@@ -876,27 +825,39 @@
   },
   {
     "index": 13,
-    "startFrame": 1628,
-    "endFrame": 1684,
-    "text": "The REST API.",
-    "prefix": "The REST API.",
+    "startFrame": 1645,
+    "endFrame": 1734,
+    "text": "The OpenAPI contract that describes it.",
+    "prefix": "The OpenAPI contract that describes it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1630,
+        "startFrame": 1646,
         "words": [
           {
             "text": "The",
-            "startFrame": 1630
+            "startFrame": 1646
           },
           {
-            "text": "REST",
-            "startFrame": 1632
+            "text": "OpenAPI",
+            "startFrame": 1649
           },
           {
-            "text": "API.",
-            "startFrame": 1648
+            "text": "contract",
+            "startFrame": 1675
+          },
+          {
+            "text": "that",
+            "startFrame": 1699
+          },
+          {
+            "text": "describes",
+            "startFrame": 1703
+          },
+          {
+            "text": "it.",
+            "startFrame": 1717
           }
         ]
       }
@@ -904,39 +865,60 @@
   },
   {
     "index": 14,
-    "startFrame": 1685,
-    "endFrame": 1774,
-    "text": "The OpenAPI contract that describes it.",
-    "prefix": "The OpenAPI contract that describes it.",
+    "startFrame": 1735,
+    "endFrame": 1823,
+    "text": "And an integration guide with the rules for the app.",
+    "prefix": "And an integration guide with the rules for the app.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1686,
+        "startFrame": 1736,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1686
+            "text": "And",
+            "startFrame": 1736
           },
           {
-            "text": "OpenAPI",
-            "startFrame": 1688
-          },
-          {
-            "text": "contract",
-            "startFrame": 1714
-          },
-          {
-            "text": "that",
+            "text": "an",
             "startFrame": 1738
           },
           {
-            "text": "describes",
-            "startFrame": 1742
+            "text": "integration",
+            "startFrame": 1740
           },
           {
-            "text": "it.",
-            "startFrame": 1757
+            "text": "guide",
+            "startFrame": 1758
+          },
+          {
+            "text": "with",
+            "startFrame": 1773
+          },
+          {
+            "text": "the",
+            "startFrame": 1778
+          },
+          {
+            "text": "rules",
+            "startFrame": 1780
+          }
+        ]
+      },
+      {
+        "startFrame": 1793,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 1793
+          },
+          {
+            "text": "the",
+            "startFrame": 1797
+          },
+          {
+            "text": "app.",
+            "startFrame": 1801
           }
         ]
       }
@@ -944,60 +926,81 @@
   },
   {
     "index": 15,
-    "startFrame": 1775,
-    "endFrame": 1864,
-    "text": "And an integration guide with the rules for the apps.",
-    "prefix": "And an integration guide with the rules for the apps.",
+    "startFrame": 1824,
+    "endFrame": 2001,
+    "text": "The contract describes every call: the path, the request, the answer and the errors.",
+    "prefix": "The contract describes every call: the path, the request, the answer and the errors.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1776,
+        "startFrame": 1825,
         "words": [
           {
-            "text": "And",
-            "startFrame": 1776
+            "text": "The",
+            "startFrame": 1825
           },
           {
-            "text": "an",
-            "startFrame": 1778
+            "text": "contract",
+            "startFrame": 1827
           },
           {
-            "text": "integration",
-            "startFrame": 1780
+            "text": "describes",
+            "startFrame": 1845
           },
           {
-            "text": "guide",
-            "startFrame": 1798
+            "text": "every",
+            "startFrame": 1866
           },
           {
-            "text": "with",
-            "startFrame": 1808
-          },
-          {
-            "text": "the",
-            "startFrame": 1811
-          },
-          {
-            "text": "rules",
-            "startFrame": 1813
+            "text": "call:",
+            "startFrame": 1875
           }
         ]
       },
       {
-        "startFrame": 1828,
+        "startFrame": 1897,
         "words": [
           {
-            "text": "for",
-            "startFrame": 1828
+            "text": "the",
+            "startFrame": 1897
+          },
+          {
+            "text": "path,",
+            "startFrame": 1899
           },
           {
             "text": "the",
-            "startFrame": 1833
+            "startFrame": 1922
           },
           {
-            "text": "apps.",
-            "startFrame": 1836
+            "text": "request,",
+            "startFrame": 1924
+          }
+        ]
+      },
+      {
+        "startFrame": 1950,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1950
+          },
+          {
+            "text": "answer",
+            "startFrame": 1954
+          },
+          {
+            "text": "and",
+            "startFrame": 1969
+          },
+          {
+            "text": "the",
+            "startFrame": 1971
+          },
+          {
+            "text": "errors.",
+            "startFrame": 1972
           }
         ]
       }
@@ -1005,81 +1008,173 @@
   },
   {
     "index": 16,
-    "startFrame": 1865,
-    "endFrame": 2042,
-    "text": "The contract describes every call: the path, the request, the answer and the errors.",
-    "prefix": "The contract describes every call: the path, the request, the answer and the errors.",
+    "startFrame": 2001,
+    "endFrame": 2350,
+    "text": "There is one call for each step: start a registration, verify the code, set the password, log in, give consent, open a proofing session, set the app PIN and renew a session.",
+    "prefix": "There is one call for each step: start a registration, verify the code, set the password, log in, give consent, open a proofing session, set the app PIN and renew a session.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1866,
+        "startFrame": 2003,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1866
+            "text": "There",
+            "startFrame": 2003
           },
           {
-            "text": "contract",
-            "startFrame": 1868
+            "text": "is",
+            "startFrame": 2006
           },
           {
-            "text": "describes",
-            "startFrame": 1886
+            "text": "one",
+            "startFrame": 2009
           },
           {
-            "text": "every",
-            "startFrame": 1907
+            "text": "call",
+            "startFrame": 2016
           },
           {
-            "text": "call:",
-            "startFrame": 1916
+            "text": "for",
+            "startFrame": 2025
+          },
+          {
+            "text": "each",
+            "startFrame": 2030
+          },
+          {
+            "text": "step:",
+            "startFrame": 2035
           }
         ]
       },
       {
-        "startFrame": 1938,
+        "startFrame": 2061,
         "words": [
           {
-            "text": "the",
-            "startFrame": 1938
+            "text": "start",
+            "startFrame": 2061
           },
           {
-            "text": "path,",
-            "startFrame": 1940
+            "text": "a",
+            "startFrame": 2068
           },
           {
-            "text": "the",
-            "startFrame": 1963
-          },
-          {
-            "text": "request,",
-            "startFrame": 1965
+            "text": "registration,",
+            "startFrame": 2070
           }
         ]
       },
       {
-        "startFrame": 1991,
+        "startFrame": 2100,
         "words": [
           {
-            "text": "the",
-            "startFrame": 1991
+            "text": "verify",
+            "startFrame": 2100
           },
           {
-            "text": "answer",
-            "startFrame": 1995
+            "text": "the",
+            "startFrame": 2112
+          },
+          {
+            "text": "code,",
+            "startFrame": 2115
+          }
+        ]
+      },
+      {
+        "startFrame": 2136,
+        "words": [
+          {
+            "text": "set",
+            "startFrame": 2136
+          },
+          {
+            "text": "the",
+            "startFrame": 2141
+          },
+          {
+            "text": "password,",
+            "startFrame": 2143
+          }
+        ]
+      },
+      {
+        "startFrame": 2171,
+        "words": [
+          {
+            "text": "log",
+            "startFrame": 2171
+          },
+          {
+            "text": "in,",
+            "startFrame": 2180
+          },
+          {
+            "text": "give",
+            "startFrame": 2195
+          },
+          {
+            "text": "consent,",
+            "startFrame": 2199
+          }
+        ]
+      },
+      {
+        "startFrame": 2226,
+        "words": [
+          {
+            "text": "open",
+            "startFrame": 2226
+          },
+          {
+            "text": "a",
+            "startFrame": 2231
+          },
+          {
+            "text": "proofing",
+            "startFrame": 2233
+          },
+          {
+            "text": "session,",
+            "startFrame": 2245
+          }
+        ]
+      },
+      {
+        "startFrame": 2268,
+        "words": [
+          {
+            "text": "set",
+            "startFrame": 2268
+          },
+          {
+            "text": "the",
+            "startFrame": 2273
+          },
+          {
+            "text": "app",
+            "startFrame": 2278
+          },
+          {
+            "text": "PIN",
+            "startFrame": 2285
           },
           {
             "text": "and",
-            "startFrame": 2010
+            "startFrame": 2312
           },
           {
-            "text": "the",
-            "startFrame": 2012
+            "text": "renew",
+            "startFrame": 2316
           },
           {
-            "text": "errors.",
-            "startFrame": 2013
+            "text": "a",
+            "startFrame": 2324
+          },
+          {
+            "text": "session.",
+            "startFrame": 2325
           }
         ]
       }
@@ -1087,164 +1182,72 @@
   },
   {
     "index": 17,
-    "startFrame": 2042,
-    "endFrame": 2387,
-    "text": "There is one call for each step: start a registration, verify the code, set the password, log in, approve a login, give consent, open a proofing session and renew a session.",
-    "prefix": "There is one call for each step: start a registration, verify the code, set the password, log in, approve a login, give consent, open a proofing session and renew a session.",
+    "startFrame": 2351,
+    "endFrame": 2543,
+    "text": "Each request carries a correlation identifier, and after registration also the device identifier.",
+    "prefix": "Each request carries a correlation identifier, and after registration also the device identifier.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2044,
+        "startFrame": 2352,
         "words": [
           {
-            "text": "There",
-            "startFrame": 2044
+            "text": "Each",
+            "startFrame": 2352
           },
           {
-            "text": "is",
-            "startFrame": 2047
+            "text": "request",
+            "startFrame": 2357
           },
           {
-            "text": "one",
-            "startFrame": 2050
-          },
-          {
-            "text": "call",
-            "startFrame": 2058
-          },
-          {
-            "text": "for",
-            "startFrame": 2067
-          },
-          {
-            "text": "each",
-            "startFrame": 2074
-          },
-          {
-            "text": "step:",
-            "startFrame": 2080
-          }
-        ]
-      },
-      {
-        "startFrame": 2105,
-        "words": [
-          {
-            "text": "start",
-            "startFrame": 2105
+            "text": "carries",
+            "startFrame": 2376
           },
           {
             "text": "a",
-            "startFrame": 2113
+            "startFrame": 2387
           },
           {
-            "text": "registration,",
-            "startFrame": 2113
+            "text": "correlation",
+            "startFrame": 2388
+          },
+          {
+            "text": "identifier,",
+            "startFrame": 2411
           }
         ]
       },
       {
-        "startFrame": 2146,
+        "startFrame": 2447,
         "words": [
-          {
-            "text": "verify",
-            "startFrame": 2146
-          },
-          {
-            "text": "the",
-            "startFrame": 2160
-          },
-          {
-            "text": "code,",
-            "startFrame": 2162
-          }
-        ]
-      },
-      {
-        "startFrame": 2182,
-        "words": [
-          {
-            "text": "set",
-            "startFrame": 2182
-          },
-          {
-            "text": "the",
-            "startFrame": 2187
-          },
-          {
-            "text": "password,",
-            "startFrame": 2189
-          }
-        ]
-      },
-      {
-        "startFrame": 2216,
-        "words": [
-          {
-            "text": "log",
-            "startFrame": 2216
-          },
-          {
-            "text": "in,",
-            "startFrame": 2225
-          },
-          {
-            "text": "approve",
-            "startFrame": 2241
-          },
-          {
-            "text": "a",
-            "startFrame": 2250
-          },
-          {
-            "text": "login,",
-            "startFrame": 2251
-          }
-        ]
-      },
-      {
-        "startFrame": 2274,
-        "words": [
-          {
-            "text": "give",
-            "startFrame": 2274
-          },
-          {
-            "text": "consent,",
-            "startFrame": 2279
-          },
-          {
-            "text": "open",
-            "startFrame": 2311
-          },
-          {
-            "text": "a",
-            "startFrame": 2316
-          },
-          {
-            "text": "proofing",
-            "startFrame": 2318
-          },
-          {
-            "text": "session",
-            "startFrame": 2331
-          },
           {
             "text": "and",
-            "startFrame": 2350
+            "startFrame": 2447
           },
           {
-            "text": "renew",
-            "startFrame": 2353
+            "text": "after",
+            "startFrame": 2451
           },
           {
-            "text": "a",
-            "startFrame": 2361
+            "text": "registration",
+            "startFrame": 2459
           },
           {
-            "text": "session.",
-            "startFrame": 2362
+            "text": "also",
+            "startFrame": 2486
+          },
+          {
+            "text": "the",
+            "startFrame": 2496
+          },
+          {
+            "text": "device",
+            "startFrame": 2499
+          },
+          {
+            "text": "identifier.",
+            "startFrame": 2512
           }
         ]
       }
@@ -1252,72 +1255,135 @@
   },
   {
     "index": 18,
-    "startFrame": 2387,
-    "endFrame": 2580,
-    "text": "Each request carries a correlation identifier, and after registration also the device identifier.",
-    "prefix": "Each request carries a correlation identifier, and after registration also the device identifier.",
+    "startFrame": 2544,
+    "endFrame": 2798,
+    "text": "Each error has one shape: a code, a reason key, a message for the customer, and whether a retry is allowed, and after how long.",
+    "prefix": "Each error has one shape: a code, a reason key, a message for the customer, and whether a retry is allowed, and after how long.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2388,
+        "startFrame": 2545,
         "words": [
           {
             "text": "Each",
-            "startFrame": 2388
+            "startFrame": 2545
           },
           {
-            "text": "request",
-            "startFrame": 2394
+            "text": "error",
+            "startFrame": 2551
           },
           {
-            "text": "carries",
-            "startFrame": 2412
+            "text": "has",
+            "startFrame": 2560
           },
           {
-            "text": "a",
-            "startFrame": 2423
+            "text": "one",
+            "startFrame": 2566
           },
           {
-            "text": "correlation",
-            "startFrame": 2425
-          },
-          {
-            "text": "identifier,",
-            "startFrame": 2447
+            "text": "shape:",
+            "startFrame": 2573
           }
         ]
       },
       {
-        "startFrame": 2484,
+        "startFrame": 2600,
         "words": [
           {
-            "text": "and",
-            "startFrame": 2484
+            "text": "a",
+            "startFrame": 2600
           },
           {
-            "text": "after",
-            "startFrame": 2488
+            "text": "code,",
+            "startFrame": 2602
           },
           {
-            "text": "registration",
-            "startFrame": 2496
+            "text": "a",
+            "startFrame": 2627
           },
           {
-            "text": "also",
-            "startFrame": 2523
+            "text": "reason",
+            "startFrame": 2629
+          },
+          {
+            "text": "key,",
+            "startFrame": 2639
+          }
+        ]
+      },
+      {
+        "startFrame": 2662,
+        "words": [
+          {
+            "text": "a",
+            "startFrame": 2662
+          },
+          {
+            "text": "message",
+            "startFrame": 2663
+          },
+          {
+            "text": "for",
+            "startFrame": 2677
           },
           {
             "text": "the",
-            "startFrame": 2533
+            "startFrame": 2679
           },
           {
-            "text": "device",
-            "startFrame": 2536
+            "text": "customer,",
+            "startFrame": 2681
+          }
+        ]
+      },
+      {
+        "startFrame": 2707,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2707
           },
           {
-            "text": "identifier.",
-            "startFrame": 2549
+            "text": "whether",
+            "startFrame": 2710
+          },
+          {
+            "text": "a",
+            "startFrame": 2718
+          },
+          {
+            "text": "retry",
+            "startFrame": 2720
+          },
+          {
+            "text": "is",
+            "startFrame": 2735
+          },
+          {
+            "text": "allowed,",
+            "startFrame": 2738
+          }
+        ]
+      },
+      {
+        "startFrame": 2763,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2763
+          },
+          {
+            "text": "after",
+            "startFrame": 2765
+          },
+          {
+            "text": "how",
+            "startFrame": 2772
+          },
+          {
+            "text": "long.",
+            "startFrame": 2777
           }
         ]
       }
@@ -1325,135 +1391,64 @@
   },
   {
     "index": 19,
-    "startFrame": 2580,
-    "endFrame": 2835,
-    "text": "Each error has one shape: a code, a reason key, a message for the customer, and whether a retry is allowed, and after how long.",
-    "prefix": "Each error has one shape: a code, a reason key, a message for the customer, and whether a retry is allowed, and after how long.",
+    "startFrame": 2798,
+    "endFrame": 2906,
+    "text": "Each code names one outcome of the product, one to one.",
+    "prefix": "Each code names one outcome of the product, one to one.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2582,
+        "startFrame": 2800,
         "words": [
           {
             "text": "Each",
-            "startFrame": 2582
+            "startFrame": 2800
           },
           {
-            "text": "error",
-            "startFrame": 2587
+            "text": "code",
+            "startFrame": 2805
           },
           {
-            "text": "has",
-            "startFrame": 2596
+            "text": "names",
+            "startFrame": 2819
           },
           {
             "text": "one",
-            "startFrame": 2602
+            "startFrame": 2829
           },
           {
-            "text": "shape:",
-            "startFrame": 2610
-          }
-        ]
-      },
-      {
-        "startFrame": 2637,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 2637
+            "text": "outcome",
+            "startFrame": 2838
           },
           {
-            "text": "code,",
-            "startFrame": 2638
-          },
-          {
-            "text": "a",
-            "startFrame": 2664
-          },
-          {
-            "text": "reason",
-            "startFrame": 2666
-          },
-          {
-            "text": "key,",
-            "startFrame": 2676
-          }
-        ]
-      },
-      {
-        "startFrame": 2698,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 2698
-          },
-          {
-            "text": "message",
-            "startFrame": 2700
-          },
-          {
-            "text": "for",
-            "startFrame": 2713
+            "text": "of",
+            "startFrame": 2848
           },
           {
             "text": "the",
-            "startFrame": 2716
+            "startFrame": 2850
           },
           {
-            "text": "customer,",
-            "startFrame": 2718
+            "text": "product,",
+            "startFrame": 2851
           }
         ]
       },
       {
-        "startFrame": 2744,
+        "startFrame": 2876,
         "words": [
           {
-            "text": "and",
-            "startFrame": 2744
+            "text": "one",
+            "startFrame": 2876
           },
           {
-            "text": "whether",
-            "startFrame": 2747
+            "text": "to",
+            "startFrame": 2882
           },
           {
-            "text": "a",
-            "startFrame": 2755
-          },
-          {
-            "text": "retry",
-            "startFrame": 2757
-          },
-          {
-            "text": "is",
-            "startFrame": 2772
-          },
-          {
-            "text": "allowed,",
-            "startFrame": 2775
-          }
-        ]
-      },
-      {
-        "startFrame": 2799,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 2799
-          },
-          {
-            "text": "after",
-            "startFrame": 2802
-          },
-          {
-            "text": "how",
-            "startFrame": 2808
-          },
-          {
-            "text": "long.",
-            "startFrame": 2813
+            "text": "one.",
+            "startFrame": 2884
           }
         ]
       }
@@ -1461,68 +1456,72 @@
   },
   {
     "index": 20,
-    "startFrame": 2835,
-    "endFrame": 2941,
-    "text": "The codes are the error outcomes of the requirements, one to one.",
-    "prefix": "The codes are the error outcomes of the requirements, one to one.",
+    "startFrame": 2906,
+    "endFrame": 3027,
+    "text": "So Jasur's app never reads a sentence to find out what went wrong.",
+    "prefix": "So Jasur's app never reads a sentence to find out what went wrong.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2837,
+        "startFrame": 2908,
         "words": [
           {
-            "text": "The",
-            "startFrame": 2837
+            "text": "So",
+            "startFrame": 2908
           },
           {
-            "text": "codes",
-            "startFrame": 2839
+            "text": "Jasur's",
+            "startFrame": 2914
           },
           {
-            "text": "are",
-            "startFrame": 2849
+            "text": "app",
+            "startFrame": 2928
           },
           {
-            "text": "the",
-            "startFrame": 2852
+            "text": "never",
+            "startFrame": 2935
           },
           {
-            "text": "error",
-            "startFrame": 2858
+            "text": "reads",
+            "startFrame": 2945
           },
           {
-            "text": "outcomes",
-            "startFrame": 2867
+            "text": "a",
+            "startFrame": 2951
           },
           {
-            "text": "of",
-            "startFrame": 2879
+            "text": "sentence",
+            "startFrame": 2952
           }
         ]
       },
       {
-        "startFrame": 2881,
+        "startFrame": 2975,
         "words": [
           {
-            "text": "the",
-            "startFrame": 2881
-          },
-          {
-            "text": "requirements,",
-            "startFrame": 2883
-          },
-          {
-            "text": "one",
-            "startFrame": 2913
-          },
-          {
             "text": "to",
-            "startFrame": 2919
+            "startFrame": 2975
           },
           {
-            "text": "one.",
-            "startFrame": 2922
+            "text": "find",
+            "startFrame": 2977
+          },
+          {
+            "text": "out",
+            "startFrame": 2988
+          },
+          {
+            "text": "what",
+            "startFrame": 2996
+          },
+          {
+            "text": "went",
+            "startFrame": 3001
+          },
+          {
+            "text": "wrong.",
+            "startFrame": 3007
           }
         ]
       }
@@ -1530,80 +1529,52 @@
   },
   {
     "index": 21,
-    "startFrame": 2942,
-    "endFrame": 3073,
-    "text": "So the app of Jasur never reads a sentence to find out what went wrong.",
-    "prefix": "So the app of Jasur never reads a sentence to find out what went wrong.",
+    "startFrame": 3027,
+    "endFrame": 3110,
+    "text": "It reads the code, and shows the message.",
+    "prefix": "It reads the code, and shows the message.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2943,
+        "startFrame": 3029,
         "words": [
           {
-            "text": "So",
-            "startFrame": 2943
-          },
-          {
-            "text": "the",
-            "startFrame": 2946
-          },
-          {
-            "text": "app",
-            "startFrame": 2950
-          },
-          {
-            "text": "of",
-            "startFrame": 2955
-          },
-          {
-            "text": "Jasur",
-            "startFrame": 2958
-          },
-          {
-            "text": "never",
-            "startFrame": 2979
+            "text": "It",
+            "startFrame": 3029
           },
           {
             "text": "reads",
-            "startFrame": 2991
+            "startFrame": 3034
+          },
+          {
+            "text": "the",
+            "startFrame": 3040
+          },
+          {
+            "text": "code,",
+            "startFrame": 3043
           }
         ]
       },
       {
-        "startFrame": 2997,
+        "startFrame": 3066,
         "words": [
           {
-            "text": "a",
-            "startFrame": 2997
+            "text": "and",
+            "startFrame": 3066
           },
           {
-            "text": "sentence",
-            "startFrame": 2998
+            "text": "shows",
+            "startFrame": 3068
           },
           {
-            "text": "to",
-            "startFrame": 3019
+            "text": "the",
+            "startFrame": 3078
           },
           {
-            "text": "find",
-            "startFrame": 3021
-          },
-          {
-            "text": "out",
-            "startFrame": 3032
-          },
-          {
-            "text": "what",
-            "startFrame": 3040
-          },
-          {
-            "text": "went",
-            "startFrame": 3046
-          },
-          {
-            "text": "wrong.",
-            "startFrame": 3051
+            "text": "message.",
+            "startFrame": 3081
           }
         ]
       }
@@ -1611,52 +1582,43 @@
   },
   {
     "index": 22,
-    "startFrame": 3073,
-    "endFrame": 3156,
-    "text": "It reads the code, and shows the message.",
-    "prefix": "It reads the code, and shows the message.",
+    "startFrame": 3110,
+    "endFrame": 3192,
+    "text": "Then come the SDKs that do exist.",
+    "prefix": "Then come the SDKs that do exist.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3075,
-        "words": [
-          {
-            "text": "It",
-            "startFrame": 3075
-          },
-          {
-            "text": "reads",
-            "startFrame": 3080
-          },
-          {
-            "text": "the",
-            "startFrame": 3086
-          },
-          {
-            "text": "code,",
-            "startFrame": 3089
-          }
-        ]
-      },
-      {
         "startFrame": 3112,
         "words": [
           {
-            "text": "and",
+            "text": "Then",
             "startFrame": 3112
           },
           {
-            "text": "shows",
-            "startFrame": 3114
+            "text": "come",
+            "startFrame": 3118
           },
           {
             "text": "the",
-            "startFrame": 3124
+            "startFrame": 3122
           },
           {
-            "text": "message.",
-            "startFrame": 3127
+            "text": "SDKs",
+            "startFrame": 3125
+          },
+          {
+            "text": "that",
+            "startFrame": 3154
+          },
+          {
+            "text": "do",
+            "startFrame": 3158
+          },
+          {
+            "text": "exist.",
+            "startFrame": 3163
           }
         ]
       }
@@ -1664,43 +1626,76 @@
   },
   {
     "index": 23,
-    "startFrame": 3156,
-    "endFrame": 3239,
-    "text": "Then come the SDKs that do exist.",
-    "prefix": "Then come the SDKs that do exist.",
+    "startFrame": 3193,
+    "endFrame": 3394,
+    "text": "The bank adds the MyID SDK and the TAF SDK to the mobile bank.",
+    "prefix": "The bank adds the MyID SDK and the TAF SDK to the mobile bank.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3158,
+        "startFrame": 3194,
         "words": [
           {
-            "text": "Then",
-            "startFrame": 3158
+            "text": "The",
+            "startFrame": 3194
           },
           {
-            "text": "come",
-            "startFrame": 3164
+            "text": "bank",
+            "startFrame": 3196
+          },
+          {
+            "text": "adds",
+            "startFrame": 3205
           },
           {
             "text": "the",
-            "startFrame": 3168
+            "startFrame": 3213
           },
           {
-            "text": "SDKs",
-            "startFrame": 3171
+            "text": "MyID",
+            "startFrame": 3214
           },
           {
-            "text": "that",
-            "startFrame": 3200
+            "text": "SDK",
+            "startFrame": 3247
           },
           {
-            "text": "do",
-            "startFrame": 3204
+            "text": "and",
+            "startFrame": 3280
+          }
+        ]
+      },
+      {
+        "startFrame": 3284,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 3284
           },
           {
-            "text": "exist.",
-            "startFrame": 3209
+            "text": "TAF",
+            "startFrame": 3286
+          },
+          {
+            "text": "SDK",
+            "startFrame": 3328
+          },
+          {
+            "text": "to",
+            "startFrame": 3357
+          },
+          {
+            "text": "the",
+            "startFrame": 3361
+          },
+          {
+            "text": "mobile",
+            "startFrame": 3363
+          },
+          {
+            "text": "bank.",
+            "startFrame": 3371
           }
         ]
       }
@@ -1708,105 +1703,51 @@
   },
   {
     "index": 24,
-    "startFrame": 3239,
-    "endFrame": 3486,
-    "text": "The bank adds the MyID SDK and the TAF SDK to the master app, and only to the master app.",
-    "prefix": "The bank adds the MyID SDK and the TAF SDK to the master app, and only to the master app.",
+    "startFrame": 3395,
+    "endFrame": 3480,
+    "text": "MyID runs as a native check inside the app.",
+    "prefix": "MyID runs as a native check inside the app.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3240,
+        "startFrame": 3396,
         "words": [
-          {
-            "text": "The",
-            "startFrame": 3240
-          },
-          {
-            "text": "bank",
-            "startFrame": 3243
-          },
-          {
-            "text": "adds",
-            "startFrame": 3252
-          },
-          {
-            "text": "the",
-            "startFrame": 3260
-          },
           {
             "text": "MyID",
-            "startFrame": 3262
+            "startFrame": 3396
           },
           {
-            "text": "SDK",
-            "startFrame": 3296
+            "text": "runs",
+            "startFrame": 3408
           },
           {
-            "text": "and",
-            "startFrame": 3328
-          }
-        ]
-      },
-      {
-        "startFrame": 3332,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 3332
+            "text": "as",
+            "startFrame": 3419
           },
           {
-            "text": "TAF",
-            "startFrame": 3335
+            "text": "a",
+            "startFrame": 3422
           },
           {
-            "text": "SDK",
-            "startFrame": 3374
+            "text": "native",
+            "startFrame": 3423
           },
           {
-            "text": "to",
-            "startFrame": 3399
+            "text": "check",
+            "startFrame": 3435
           },
           {
-            "text": "the",
-            "startFrame": 3402
-          },
-          {
-            "text": "master",
-            "startFrame": 3404
-          },
-          {
-            "text": "app,",
-            "startFrame": 3417
-          }
-        ]
-      },
-      {
-        "startFrame": 3439,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 3439
-          },
-          {
-            "text": "only",
+            "text": "inside",
             "startFrame": 3443
           },
           {
-            "text": "to",
-            "startFrame": 3451
-          },
-          {
             "text": "the",
-            "startFrame": 3453
-          },
-          {
-            "text": "master",
-            "startFrame": 3456
+            "startFrame": 3455
           },
           {
             "text": "app.",
-            "startFrame": 3467
+            "startFrame": 3458
           }
         ]
       }
@@ -1814,51 +1755,106 @@
   },
   {
     "index": 25,
-    "startFrame": 3487,
-    "endFrame": 3573,
-    "text": "MyID runs as a native check inside the app.",
-    "prefix": "MyID runs as a native check inside the app.",
+    "startFrame": 3481,
+    "endFrame": 3677,
+    "text": "The backend opens the session, and the customer never leaves the app: no web view, and no web frame.",
+    "prefix": "The backend opens the session, and the customer never leaves the app: no web view, and no web frame.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3488,
+        "startFrame": 3482,
         "words": [
           {
-            "text": "MyID",
-            "startFrame": 3488
+            "text": "The",
+            "startFrame": 3482
           },
           {
-            "text": "runs",
+            "text": "backend",
+            "startFrame": 3485
+          },
+          {
+            "text": "opens",
             "startFrame": 3501
           },
           {
-            "text": "as",
-            "startFrame": 3511
+            "text": "the",
+            "startFrame": 3510
           },
           {
-            "text": "a",
-            "startFrame": 3515
-          },
+            "text": "session,",
+            "startFrame": 3512
+          }
+        ]
+      },
+      {
+        "startFrame": 3540,
+        "words": [
           {
-            "text": "native",
-            "startFrame": 3515
-          },
-          {
-            "text": "check",
-            "startFrame": 3527
-          },
-          {
-            "text": "inside",
-            "startFrame": 3536
+            "text": "and",
+            "startFrame": 3540
           },
           {
             "text": "the",
-            "startFrame": 3547
+            "startFrame": 3541
           },
           {
-            "text": "app.",
-            "startFrame": 3551
+            "text": "customer",
+            "startFrame": 3544
+          },
+          {
+            "text": "never",
+            "startFrame": 3558
+          },
+          {
+            "text": "leaves",
+            "startFrame": 3570
+          },
+          {
+            "text": "the",
+            "startFrame": 3578
+          },
+          {
+            "text": "app:",
+            "startFrame": 3582
+          }
+        ]
+      },
+      {
+        "startFrame": 3608,
+        "words": [
+          {
+            "text": "no",
+            "startFrame": 3608
+          },
+          {
+            "text": "web",
+            "startFrame": 3616
+          },
+          {
+            "text": "view,",
+            "startFrame": 3623
+          }
+        ]
+      },
+      {
+        "startFrame": 3641,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 3641
+          },
+          {
+            "text": "no",
+            "startFrame": 3645
+          },
+          {
+            "text": "web",
+            "startFrame": 3649
+          },
+          {
+            "text": "frame.",
+            "startFrame": 3655
           }
         ]
       }
@@ -1866,106 +1862,47 @@
   },
   {
     "index": 26,
-    "startFrame": 3573,
-    "endFrame": 3769,
-    "text": "The backend opens the session, and the customer never leaves the app: no web view, and no web frame.",
-    "prefix": "The backend opens the session, and the customer never leaves the app: no web view, and no web frame.",
+    "startFrame": 3678,
+    "endFrame": 3768,
+    "text": "The MyID credential never goes to the phone.",
+    "prefix": "The MyID credential never goes to the phone.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3575,
+        "startFrame": 3679,
         "words": [
           {
             "text": "The",
-            "startFrame": 3575
+            "startFrame": 3679
           },
           {
-            "text": "backend",
-            "startFrame": 3577
+            "text": "MyID",
+            "startFrame": 3680
           },
           {
-            "text": "opens",
-            "startFrame": 3593
-          },
-          {
-            "text": "the",
-            "startFrame": 3602
-          },
-          {
-            "text": "session,",
-            "startFrame": 3605
-          }
-        ]
-      },
-      {
-        "startFrame": 3632,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 3632
-          },
-          {
-            "text": "the",
-            "startFrame": 3633
-          },
-          {
-            "text": "customer",
-            "startFrame": 3636
+            "text": "credential",
+            "startFrame": 3700
           },
           {
             "text": "never",
-            "startFrame": 3651
+            "startFrame": 3724
           },
           {
-            "text": "leaves",
-            "startFrame": 3662
+            "text": "goes",
+            "startFrame": 3732
           },
           {
-            "text": "the",
-            "startFrame": 3670
-          },
-          {
-            "text": "app:",
-            "startFrame": 3674
-          }
-        ]
-      },
-      {
-        "startFrame": 3701,
-        "words": [
-          {
-            "text": "no",
-            "startFrame": 3701
-          },
-          {
-            "text": "web",
-            "startFrame": 3708
-          },
-          {
-            "text": "view,",
-            "startFrame": 3716
-          }
-        ]
-      },
-      {
-        "startFrame": 3733,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 3733
-          },
-          {
-            "text": "no",
-            "startFrame": 3737
-          },
-          {
-            "text": "web",
+            "text": "to",
             "startFrame": 3741
           },
           {
-            "text": "frame.",
-            "startFrame": 3747
+            "text": "the",
+            "startFrame": 3744
+          },
+          {
+            "text": "phone.",
+            "startFrame": 3746
           }
         ]
       }
@@ -1973,47 +1910,89 @@
   },
   {
     "index": 27,
-    "startFrame": 3770,
-    "endFrame": 3861,
-    "text": "The MyID credential never goes to the phone.",
-    "prefix": "The MyID credential never goes to the phone.",
+    "startFrame": 3769,
+    "endFrame": 3922,
+    "text": "The mobile bank also gets the push SDK of the bank, to receive the wake-up signals.",
+    "prefix": "The mobile bank also gets the push SDK of the bank, to receive the wake-up signals.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3771,
+        "startFrame": 3770,
         "words": [
           {
             "text": "The",
-            "startFrame": 3771
+            "startFrame": 3770
           },
           {
-            "text": "MyID",
-            "startFrame": 3773
+            "text": "mobile",
+            "startFrame": 3772
           },
           {
-            "text": "credential",
-            "startFrame": 3792
+            "text": "bank",
+            "startFrame": 3781
           },
           {
-            "text": "never",
-            "startFrame": 3816
+            "text": "also",
+            "startFrame": 3794
           },
           {
-            "text": "goes",
-            "startFrame": 3824
-          },
-          {
-            "text": "to",
-            "startFrame": 3834
+            "text": "gets",
+            "startFrame": 3803
           },
           {
             "text": "the",
-            "startFrame": 3836
+            "startFrame": 3808
           },
           {
-            "text": "phone.",
-            "startFrame": 3838
+            "text": "push",
+            "startFrame": 3811
+          },
+          {
+            "text": "SDK",
+            "startFrame": 3824
+          }
+        ]
+      },
+      {
+        "startFrame": 3843,
+        "words": [
+          {
+            "text": "of",
+            "startFrame": 3843
+          },
+          {
+            "text": "the",
+            "startFrame": 3845
+          },
+          {
+            "text": "bank,",
+            "startFrame": 3847
+          }
+        ]
+      },
+      {
+        "startFrame": 3864,
+        "words": [
+          {
+            "text": "to",
+            "startFrame": 3864
+          },
+          {
+            "text": "receive",
+            "startFrame": 3867
+          },
+          {
+            "text": "the",
+            "startFrame": 3879
+          },
+          {
+            "text": "wake-up",
+            "startFrame": 3881
+          },
+          {
+            "text": "signals.",
+            "startFrame": 3891
           }
         ]
       }
@@ -2021,85 +2000,27 @@
   },
   {
     "index": 28,
-    "startFrame": 3861,
-    "endFrame": 4002,
-    "text": "Each app also gets the push SDK of the bank, to receive the wake-up signals.",
-    "prefix": "Each app also gets the push SDK of the bank, to receive the wake-up signals.",
+    "startFrame": 3922,
+    "endFrame": 3978,
+    "text": "Now the guide.",
+    "prefix": "Now the guide.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3863,
+        "startFrame": 3924,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 3863
-          },
-          {
-            "text": "app",
-            "startFrame": 3867
-          },
-          {
-            "text": "also",
-            "startFrame": 3873
-          },
-          {
-            "text": "gets",
-            "startFrame": 3883
+            "text": "Now",
+            "startFrame": 3924
           },
           {
             "text": "the",
-            "startFrame": 3888
+            "startFrame": 3929
           },
           {
-            "text": "push",
-            "startFrame": 3890
-          },
-          {
-            "text": "SDK",
-            "startFrame": 3905
-          }
-        ]
-      },
-      {
-        "startFrame": 3923,
-        "words": [
-          {
-            "text": "of",
-            "startFrame": 3923
-          },
-          {
-            "text": "the",
-            "startFrame": 3925
-          },
-          {
-            "text": "bank,",
-            "startFrame": 3927
-          }
-        ]
-      },
-      {
-        "startFrame": 3944,
-        "words": [
-          {
-            "text": "to",
-            "startFrame": 3944
-          },
-          {
-            "text": "receive",
-            "startFrame": 3947
-          },
-          {
-            "text": "the",
-            "startFrame": 3960
-          },
-          {
-            "text": "wake-up",
-            "startFrame": 3963
-          },
-          {
-            "text": "signals.",
-            "startFrame": 3973
+            "text": "guide.",
+            "startFrame": 3931
           }
         ]
       }
@@ -2107,27 +2028,76 @@
   },
   {
     "index": 29,
-    "startFrame": 4002,
-    "endFrame": 4058,
-    "text": "Now the guide.",
-    "prefix": "Now the guide.",
+    "startFrame": 3979,
+    "endFrame": 4119,
+    "text": "Its most important page is a table: what the app can keep, and where.",
+    "prefix": "Its most important page is a table: what the app can keep, and where.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4004,
+        "startFrame": 3980,
         "words": [
           {
-            "text": "Now",
-            "startFrame": 4004
+            "text": "Its",
+            "startFrame": 3980
+          },
+          {
+            "text": "most",
+            "startFrame": 3983
+          },
+          {
+            "text": "important",
+            "startFrame": 3989
+          },
+          {
+            "text": "page",
+            "startFrame": 4001
+          },
+          {
+            "text": "is",
+            "startFrame": 4021
+          },
+          {
+            "text": "a",
+            "startFrame": 4024
+          },
+          {
+            "text": "table:",
+            "startFrame": 4026
+          }
+        ]
+      },
+      {
+        "startFrame": 4049,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 4049
           },
           {
             "text": "the",
-            "startFrame": 4009
+            "startFrame": 4053
           },
           {
-            "text": "guide.",
-            "startFrame": 4010
+            "text": "app",
+            "startFrame": 4056
+          },
+          {
+            "text": "can",
+            "startFrame": 4064
+          },
+          {
+            "text": "keep,",
+            "startFrame": 4069
+          },
+          {
+            "text": "and",
+            "startFrame": 4089
+          },
+          {
+            "text": "where.",
+            "startFrame": 4093
           }
         ]
       }
@@ -2135,76 +2105,118 @@
   },
   {
     "index": 30,
-    "startFrame": 4058,
-    "endFrame": 4203,
-    "text": "Its most important page is a table: what an app can keep, and where.",
-    "prefix": "Its most important page is a table: what an app can keep, and where.",
+    "startFrame": 4120,
+    "endFrame": 4365,
+    "text": "The device identifier, and the identifier of a running registration or login, in the storage that the Keychain or the Keystore protects.",
+    "prefix": "The device identifier, and the identifier of a running registration or login, in the storage that the Keychain or the Keystore protects.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4060,
+        "startFrame": 4121,
         "words": [
           {
-            "text": "Its",
-            "startFrame": 4060
+            "text": "The",
+            "startFrame": 4121
           },
           {
-            "text": "most",
-            "startFrame": 4063
+            "text": "device",
+            "startFrame": 4123
           },
           {
-            "text": "important",
-            "startFrame": 4069
-          },
-          {
-            "text": "page",
-            "startFrame": 4081
-          },
-          {
-            "text": "is",
-            "startFrame": 4103
-          },
-          {
-            "text": "a",
-            "startFrame": 4107
-          },
-          {
-            "text": "table:",
-            "startFrame": 4108
+            "text": "identifier,",
+            "startFrame": 4135
           }
         ]
       },
       {
-        "startFrame": 4131,
+        "startFrame": 4171,
         "words": [
           {
-            "text": "what",
-            "startFrame": 4131
-          },
-          {
-            "text": "an",
-            "startFrame": 4135
-          },
-          {
-            "text": "app",
-            "startFrame": 4137
-          },
-          {
-            "text": "can",
-            "startFrame": 4144
-          },
-          {
-            "text": "keep,",
-            "startFrame": 4149
-          },
-          {
             "text": "and",
+            "startFrame": 4171
+          },
+          {
+            "text": "the",
             "startFrame": 4172
           },
           {
-            "text": "where.",
-            "startFrame": 4177
+            "text": "identifier",
+            "startFrame": 4175
+          },
+          {
+            "text": "of",
+            "startFrame": 4197
+          },
+          {
+            "text": "a",
+            "startFrame": 4198
+          },
+          {
+            "text": "running",
+            "startFrame": 4200
+          },
+          {
+            "text": "registration",
+            "startFrame": 4215
+          }
+        ]
+      },
+      {
+        "startFrame": 4237,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 4237
+          },
+          {
+            "text": "login,",
+            "startFrame": 4242
+          },
+          {
+            "text": "in",
+            "startFrame": 4271
+          },
+          {
+            "text": "the",
+            "startFrame": 4273
+          },
+          {
+            "text": "storage",
+            "startFrame": 4276
+          },
+          {
+            "text": "that",
+            "startFrame": 4290
+          },
+          {
+            "text": "the",
+            "startFrame": 4292
+          },
+          {
+            "text": "Keychain",
+            "startFrame": 4294
+          }
+        ]
+      },
+      {
+        "startFrame": 4317,
+        "words": [
+          {
+            "text": "or",
+            "startFrame": 4317
+          },
+          {
+            "text": "the",
+            "startFrame": 4320
+          },
+          {
+            "text": "Keystore",
+            "startFrame": 4322
+          },
+          {
+            "text": "protects.",
+            "startFrame": 4335
           }
         ]
       }
@@ -2212,77 +2224,81 @@
   },
   {
     "index": 31,
-    "startFrame": 4203,
-    "endFrame": 4343,
-    "text": "The device identifier, in the storage that the Keychain or the Keystore protects.",
-    "prefix": "The device identifier, in the storage that the Keychain or the Keystore protects.",
+    "startFrame": 4366,
+    "endFrame": 4525,
+    "text": "The refresh token, in the Keychain, or in storage that the Android Keystore protects.",
+    "prefix": "The refresh token, in the Keychain, or in storage that the Android Keystore protects.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4205,
+        "startFrame": 4367,
         "words": [
           {
             "text": "The",
-            "startFrame": 4205
+            "startFrame": 4367
           },
           {
-            "text": "device",
-            "startFrame": 4206
+            "text": "refresh",
+            "startFrame": 4369
           },
           {
-            "text": "identifier,",
-            "startFrame": 4217
+            "text": "token,",
+            "startFrame": 4384
           }
         ]
       },
       {
-        "startFrame": 4248,
+        "startFrame": 4407,
         "words": [
           {
             "text": "in",
-            "startFrame": 4248
+            "startFrame": 4407
           },
           {
             "text": "the",
-            "startFrame": 4250
+            "startFrame": 4409
           },
           {
-            "text": "storage",
-            "startFrame": 4252
-          },
-          {
-            "text": "that",
-            "startFrame": 4266
-          },
-          {
-            "text": "the",
-            "startFrame": 4269
-          },
-          {
-            "text": "Keychain",
-            "startFrame": 4271
-          },
-          {
-            "text": "or",
-            "startFrame": 4294
+            "text": "Keychain,",
+            "startFrame": 4412
           }
         ]
       },
       {
-        "startFrame": 4297,
+        "startFrame": 4442,
         "words": [
           {
+            "text": "or",
+            "startFrame": 4442
+          },
+          {
+            "text": "in",
+            "startFrame": 4445
+          },
+          {
+            "text": "storage",
+            "startFrame": 4448
+          },
+          {
+            "text": "that",
+            "startFrame": 4463
+          },
+          {
             "text": "the",
-            "startFrame": 4297
+            "startFrame": 4466
+          },
+          {
+            "text": "Android",
+            "startFrame": 4469
           },
           {
             "text": "Keystore",
-            "startFrame": 4300
+            "startFrame": 4483
           },
           {
             "text": "protects.",
-            "startFrame": 4313
+            "startFrame": 4495
           }
         ]
       }
@@ -2290,81 +2306,93 @@
   },
   {
     "index": 32,
-    "startFrame": 4344,
-    "endFrame": 4503,
-    "text": "The refresh token, in the Keychain, or in storage that the Android Keystore protects.",
-    "prefix": "The refresh token, in the Keychain, or in storage that the Android Keystore protects.",
+    "startFrame": 4526,
+    "endFrame": 4730,
+    "text": "The access token and the identity summary, in memory only, until they expire or the app closes.",
+    "prefix": "The access token and the identity summary, in memory only, until they expire or the app closes.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4345,
+        "startFrame": 4527,
         "words": [
           {
             "text": "The",
-            "startFrame": 4345
+            "startFrame": 4527
           },
           {
-            "text": "refresh",
-            "startFrame": 4347
+            "text": "access",
+            "startFrame": 4530
           },
           {
-            "text": "token,",
-            "startFrame": 4362
-          }
-        ]
-      },
-      {
-        "startFrame": 4385,
-        "words": [
+            "text": "token",
+            "startFrame": 4546
+          },
           {
-            "text": "in",
-            "startFrame": 4385
+            "text": "and",
+            "startFrame": 4563
           },
           {
             "text": "the",
-            "startFrame": 4387
+            "startFrame": 4566
           },
           {
-            "text": "Keychain,",
-            "startFrame": 4390
+            "text": "identity",
+            "startFrame": 4569
+          },
+          {
+            "text": "summary,",
+            "startFrame": 4582
           }
         ]
       },
       {
-        "startFrame": 4419,
+        "startFrame": 4610,
         "words": [
+          {
+            "text": "in",
+            "startFrame": 4610
+          },
+          {
+            "text": "memory",
+            "startFrame": 4614
+          },
+          {
+            "text": "only,",
+            "startFrame": 4629
+          }
+        ]
+      },
+      {
+        "startFrame": 4653,
+        "words": [
+          {
+            "text": "until",
+            "startFrame": 4653
+          },
+          {
+            "text": "they",
+            "startFrame": 4660
+          },
+          {
+            "text": "expire",
+            "startFrame": 4663
+          },
           {
             "text": "or",
-            "startFrame": 4419
-          },
-          {
-            "text": "in",
-            "startFrame": 4423
-          },
-          {
-            "text": "storage",
-            "startFrame": 4425
-          },
-          {
-            "text": "that",
-            "startFrame": 4441
+            "startFrame": 4686
           },
           {
             "text": "the",
-            "startFrame": 4443
+            "startFrame": 4689
           },
           {
-            "text": "Android",
-            "startFrame": 4447
+            "text": "app",
+            "startFrame": 4692
           },
           {
-            "text": "Keystore",
-            "startFrame": 4461
-          },
-          {
-            "text": "protects.",
-            "startFrame": 4472
+            "text": "closes.",
+            "startFrame": 4700
           }
         ]
       }
@@ -2372,93 +2400,27 @@
   },
   {
     "index": 33,
-    "startFrame": 4503,
-    "endFrame": 4708,
-    "text": "The access token and the identity summary, in memory only, until they expire or the app closes.",
-    "prefix": "The access token and the identity summary, in memory only, until they expire or the app closes.",
+    "startFrame": 4731,
+    "endFrame": 4787,
+    "text": "The push token.",
+    "prefix": "The push token.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4505,
+        "startFrame": 4732,
         "words": [
           {
             "text": "The",
-            "startFrame": 4505
+            "startFrame": 4732
           },
           {
-            "text": "access",
-            "startFrame": 4508
+            "text": "push",
+            "startFrame": 4734
           },
           {
-            "text": "token",
-            "startFrame": 4524
-          },
-          {
-            "text": "and",
-            "startFrame": 4541
-          },
-          {
-            "text": "the",
-            "startFrame": 4543
-          },
-          {
-            "text": "identity",
-            "startFrame": 4546
-          },
-          {
-            "text": "summary,",
-            "startFrame": 4560
-          }
-        ]
-      },
-      {
-        "startFrame": 4587,
-        "words": [
-          {
-            "text": "in",
-            "startFrame": 4587
-          },
-          {
-            "text": "memory",
-            "startFrame": 4592
-          },
-          {
-            "text": "only,",
-            "startFrame": 4607
-          }
-        ]
-      },
-      {
-        "startFrame": 4631,
-        "words": [
-          {
-            "text": "until",
-            "startFrame": 4631
-          },
-          {
-            "text": "they",
-            "startFrame": 4638
-          },
-          {
-            "text": "expire",
-            "startFrame": 4640
-          },
-          {
-            "text": "or",
-            "startFrame": 4663
-          },
-          {
-            "text": "the",
-            "startFrame": 4666
-          },
-          {
-            "text": "app",
-            "startFrame": 4670
-          },
-          {
-            "text": "closes.",
-            "startFrame": 4678
+            "text": "token.",
+            "startFrame": 4741
           }
         ]
       }
@@ -2466,77 +2428,85 @@
   },
   {
     "index": 34,
-    "startFrame": 4709,
-    "endFrame": 4869,
-    "text": "An approval request, in memory and on the screen, until Aziz answers it.",
-    "prefix": "An approval request, in memory and on the screen, until Aziz answers it.",
+    "startFrame": 4787,
+    "endFrame": 4973,
+    "text": "The app PIN, only as a slow, salted hash, in the Keychain or the Keystore.",
+    "prefix": "The app PIN, only as a slow, salted hash, in the Keychain or the Keystore.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4709,
+        "startFrame": 4788,
         "words": [
           {
-            "text": "An",
-            "startFrame": 4709
+            "text": "The",
+            "startFrame": 4788
           },
           {
-            "text": "approval",
-            "startFrame": 4711
+            "text": "app",
+            "startFrame": 4792
           },
           {
-            "text": "request,",
-            "startFrame": 4727
+            "text": "PIN,",
+            "startFrame": 4799
           }
         ]
       },
       {
-        "startFrame": 4754,
+        "startFrame": 4838,
         "words": [
           {
+            "text": "only",
+            "startFrame": 4838
+          },
+          {
+            "text": "as",
+            "startFrame": 4846
+          },
+          {
+            "text": "a",
+            "startFrame": 4849
+          },
+          {
+            "text": "slow,",
+            "startFrame": 4850
+          }
+        ]
+      },
+      {
+        "startFrame": 4874,
+        "words": [
+          {
+            "text": "salted",
+            "startFrame": 4874
+          },
+          {
+            "text": "hash,",
+            "startFrame": 4886
+          },
+          {
             "text": "in",
-            "startFrame": 4754
-          },
-          {
-            "text": "memory",
-            "startFrame": 4759
-          },
-          {
-            "text": "and",
-            "startFrame": 4779
-          },
-          {
-            "text": "on",
-            "startFrame": 4784
+            "startFrame": 4910
           },
           {
             "text": "the",
-            "startFrame": 4787
+            "startFrame": 4912
           },
           {
-            "text": "screen,",
-            "startFrame": 4789
-          }
-        ]
-      },
-      {
-        "startFrame": 4816,
-        "words": [
-          {
-            "text": "until",
-            "startFrame": 4816
+            "text": "Keychain",
+            "startFrame": 4915
           },
           {
-            "text": "Aziz",
-            "startFrame": 4824
+            "text": "or",
+            "startFrame": 4938
           },
           {
-            "text": "answers",
-            "startFrame": 4840
+            "text": "the",
+            "startFrame": 4941
           },
           {
-            "text": "it.",
-            "startFrame": 4851
+            "text": "Keystore.",
+            "startFrame": 4943
           }
         ]
       }
@@ -2544,27 +2514,27 @@
   },
   {
     "index": 35,
-    "startFrame": 4869,
-    "endFrame": 4925,
-    "text": "The push token.",
-    "prefix": "The push token.",
+    "startFrame": 4974,
+    "endFrame": 5029,
+    "text": "And the language.",
+    "prefix": "And the language.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4871,
+        "startFrame": 4975,
         "words": [
           {
-            "text": "The",
-            "startFrame": 4871
+            "text": "And",
+            "startFrame": 4975
           },
           {
-            "text": "push",
-            "startFrame": 4872
+            "text": "the",
+            "startFrame": 4976
           },
           {
-            "text": "token.",
-            "startFrame": 4879
+            "text": "language.",
+            "startFrame": 4978
           }
         ]
       }
@@ -2572,73 +2542,56 @@
   },
   {
     "index": 36,
-    "startFrame": 4925,
-    "endFrame": 5070,
-    "text": "The app PIN, only as a slow, salted hash, on the device.",
-    "prefix": "The app PIN, only as a slow, salted hash, on the device.",
+    "startFrame": 5030,
+    "endFrame": 5118,
+    "text": "Then the other column: what the app never keeps.",
+    "prefix": "Then the other column: what the app never keeps.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4926,
+        "startFrame": 5031,
         "words": [
           {
-            "text": "The",
-            "startFrame": 4926
-          },
-          {
-            "text": "app",
-            "startFrame": 4930
-          },
-          {
-            "text": "PIN,",
-            "startFrame": 4937
-          }
-        ]
-      },
-      {
-        "startFrame": 4976,
-        "words": [
-          {
-            "text": "only",
-            "startFrame": 4976
-          },
-          {
-            "text": "as",
-            "startFrame": 4984
-          },
-          {
-            "text": "a",
-            "startFrame": 4986
-          },
-          {
-            "text": "slow,",
-            "startFrame": 4988
-          }
-        ]
-      },
-      {
-        "startFrame": 5012,
-        "words": [
-          {
-            "text": "salted",
-            "startFrame": 5012
-          },
-          {
-            "text": "hash,",
-            "startFrame": 5023
-          },
-          {
-            "text": "on",
-            "startFrame": 5037
+            "text": "Then",
+            "startFrame": 5031
           },
           {
             "text": "the",
-            "startFrame": 5040
+            "startFrame": 5034
           },
           {
-            "text": "device.",
-            "startFrame": 5042
+            "text": "other",
+            "startFrame": 5036
+          },
+          {
+            "text": "column:",
+            "startFrame": 5044
+          }
+        ]
+      },
+      {
+        "startFrame": 5068,
+        "words": [
+          {
+            "text": "what",
+            "startFrame": 5068
+          },
+          {
+            "text": "the",
+            "startFrame": 5071
+          },
+          {
+            "text": "app",
+            "startFrame": 5074
+          },
+          {
+            "text": "never",
+            "startFrame": 5083
+          },
+          {
+            "text": "keeps.",
+            "startFrame": 5090
           }
         ]
       }
@@ -2646,27 +2599,23 @@
   },
   {
     "index": 37,
-    "startFrame": 5070,
-    "endFrame": 5126,
-    "text": "And the language.",
-    "prefix": "And the language.",
+    "startFrame": 5119,
+    "endFrame": 5175,
+    "text": "The password.",
+    "prefix": "The password.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5071,
+        "startFrame": 5120,
         "words": [
           {
-            "text": "And",
-            "startFrame": 5071
+            "text": "The",
+            "startFrame": 5120
           },
           {
-            "text": "the",
-            "startFrame": 5073
-          },
-          {
-            "text": "language.",
-            "startFrame": 5075
+            "text": "password.",
+            "startFrame": 5122
           }
         ]
       }
@@ -2674,56 +2623,27 @@
   },
   {
     "index": 38,
-    "startFrame": 5126,
-    "endFrame": 5213,
-    "text": "Then the other column: what an app never keeps.",
-    "prefix": "Then the other column: what an app never keeps.",
+    "startFrame": 5175,
+    "endFrame": 5231,
+    "text": "The MyID credential.",
+    "prefix": "The MyID credential.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5128,
+        "startFrame": 5177,
         "words": [
           {
-            "text": "Then",
-            "startFrame": 5128
+            "text": "The",
+            "startFrame": 5177
           },
           {
-            "text": "the",
-            "startFrame": 5130
+            "text": "MyID",
+            "startFrame": 5178
           },
           {
-            "text": "other",
-            "startFrame": 5132
-          },
-          {
-            "text": "column:",
-            "startFrame": 5139
-          }
-        ]
-      },
-      {
-        "startFrame": 5163,
-        "words": [
-          {
-            "text": "what",
-            "startFrame": 5163
-          },
-          {
-            "text": "an",
-            "startFrame": 5166
-          },
-          {
-            "text": "app",
-            "startFrame": 5169
-          },
-          {
-            "text": "never",
-            "startFrame": 5176
-          },
-          {
-            "text": "keeps.",
-            "startFrame": 5185
+            "text": "credential.",
+            "startFrame": 5195
           }
         ]
       }
@@ -2731,23 +2651,52 @@
   },
   {
     "index": 39,
-    "startFrame": 5213,
-    "endFrame": 5269,
-    "text": "The password.",
-    "prefix": "The password.",
+    "startFrame": 5231,
+    "endFrame": 5314,
+    "text": "The MyID result code, after its one upload.",
+    "prefix": "The MyID result code, after its one upload.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5214,
+        "startFrame": 5233,
         "words": [
           {
             "text": "The",
-            "startFrame": 5214
+            "startFrame": 5233
           },
           {
-            "text": "password.",
-            "startFrame": 5216
+            "text": "MyID",
+            "startFrame": 5234
+          },
+          {
+            "text": "result",
+            "startFrame": 5248
+          },
+          {
+            "text": "code,",
+            "startFrame": 5258
+          }
+        ]
+      },
+      {
+        "startFrame": 5274,
+        "words": [
+          {
+            "text": "after",
+            "startFrame": 5274
+          },
+          {
+            "text": "its",
+            "startFrame": 5282
+          },
+          {
+            "text": "one",
+            "startFrame": 5284
+          },
+          {
+            "text": "upload.",
+            "startFrame": 5288
           }
         ]
       }
@@ -2755,27 +2704,31 @@
   },
   {
     "index": 40,
-    "startFrame": 5269,
-    "endFrame": 5319,
-    "text": "The MyID credential.",
-    "prefix": "The MyID credential.",
+    "startFrame": 5314,
+    "endFrame": 5373,
+    "text": "The personal identification number.",
+    "prefix": "The personal identification number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5271,
+        "startFrame": 5315,
         "words": [
           {
             "text": "The",
-            "startFrame": 5271
+            "startFrame": 5315
           },
           {
-            "text": "MyID",
-            "startFrame": 5272
+            "text": "personal",
+            "startFrame": 5317
           },
           {
-            "text": "credential.",
-            "startFrame": 5289
+            "text": "identification",
+            "startFrame": 5329
+          },
+          {
+            "text": "number.",
+            "startFrame": 5350
           }
         ]
       }
@@ -2783,52 +2736,35 @@
   },
   {
     "index": 41,
-    "startFrame": 5319,
-    "endFrame": 5401,
-    "text": "The MyID result code, after its one upload.",
-    "prefix": "The MyID result code, after its one upload.",
+    "startFrame": 5373,
+    "endFrame": 5460,
+    "text": "Document data, addresses and images.",
+    "prefix": "Document data, addresses and images.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5321,
+        "startFrame": 5375,
         "words": [
           {
-            "text": "The",
-            "startFrame": 5321
+            "text": "Document",
+            "startFrame": 5375
           },
           {
-            "text": "MyID",
-            "startFrame": 5322
+            "text": "data,",
+            "startFrame": 5386
           },
           {
-            "text": "result",
-            "startFrame": 5336
+            "text": "addresses",
+            "startFrame": 5406
           },
           {
-            "text": "code,",
-            "startFrame": 5346
-          }
-        ]
-      },
-      {
-        "startFrame": 5362,
-        "words": [
-          {
-            "text": "after",
-            "startFrame": 5362
+            "text": "and",
+            "startFrame": 5423
           },
           {
-            "text": "its",
-            "startFrame": 5369
-          },
-          {
-            "text": "one",
-            "startFrame": 5372
-          },
-          {
-            "text": "upload.",
-            "startFrame": 5376
+            "text": "images.",
+            "startFrame": 5431
           }
         ]
       }
@@ -2836,31 +2772,48 @@
   },
   {
     "index": 42,
-    "startFrame": 5402,
-    "endFrame": 5460,
-    "text": "The personal identification number.",
-    "prefix": "The personal identification number.",
+    "startFrame": 5460,
+    "endFrame": 5541,
+    "text": "A one-time code, after Aziz types it.",
+    "prefix": "A one-time code, after Aziz types it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5403,
+        "startFrame": 5461,
         "words": [
           {
-            "text": "The",
-            "startFrame": 5403
+            "text": "A",
+            "startFrame": 5461
           },
           {
-            "text": "personal",
-            "startFrame": 5405
+            "text": "one-time",
+            "startFrame": 5463
           },
           {
-            "text": "identification",
-            "startFrame": 5417
+            "text": "code,",
+            "startFrame": 5478
+          }
+        ]
+      },
+      {
+        "startFrame": 5497,
+        "words": [
+          {
+            "text": "after",
+            "startFrame": 5497
           },
           {
-            "text": "number.",
-            "startFrame": 5438
+            "text": "Aziz",
+            "startFrame": 5506
+          },
+          {
+            "text": "types",
+            "startFrame": 5515
+          },
+          {
+            "text": "it.",
+            "startFrame": 5526
           }
         ]
       }
@@ -2868,35 +2821,97 @@
   },
   {
     "index": 43,
-    "startFrame": 5461,
-    "endFrame": 5548,
-    "text": "Document data, addresses and images.",
-    "prefix": "Document data, addresses and images.",
+    "startFrame": 5542,
+    "endFrame": 5727,
+    "text": "A limit that the gateway uses: the app may show a counter, but the server applies every limit.",
+    "prefix": "A limit that the gateway uses: the app may show a counter, but the server applies every limit.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5462,
+        "startFrame": 5543,
         "words": [
           {
-            "text": "Document",
-            "startFrame": 5462
+            "text": "A",
+            "startFrame": 5543
           },
           {
-            "text": "data,",
-            "startFrame": 5473
+            "text": "limit",
+            "startFrame": 5545
           },
           {
-            "text": "addresses",
-            "startFrame": 5494
+            "text": "that",
+            "startFrame": 5557
           },
           {
-            "text": "and",
-            "startFrame": 5511
+            "text": "the",
+            "startFrame": 5560
           },
           {
-            "text": "images.",
-            "startFrame": 5518
+            "text": "gateway",
+            "startFrame": 5562
+          },
+          {
+            "text": "uses:",
+            "startFrame": 5574
+          }
+        ]
+      },
+      {
+        "startFrame": 5605,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5605
+          },
+          {
+            "text": "app",
+            "startFrame": 5609
+          },
+          {
+            "text": "may",
+            "startFrame": 5617
+          },
+          {
+            "text": "show",
+            "startFrame": 5621
+          },
+          {
+            "text": "a",
+            "startFrame": 5628
+          },
+          {
+            "text": "counter,",
+            "startFrame": 5629
+          }
+        ]
+      },
+      {
+        "startFrame": 5655,
+        "words": [
+          {
+            "text": "but",
+            "startFrame": 5655
+          },
+          {
+            "text": "the",
+            "startFrame": 5658
+          },
+          {
+            "text": "server",
+            "startFrame": 5660
+          },
+          {
+            "text": "applies",
+            "startFrame": 5672
+          },
+          {
+            "text": "every",
+            "startFrame": 5696
+          },
+          {
+            "text": "limit.",
+            "startFrame": 5703
           }
         ]
       }
@@ -2904,48 +2919,27 @@
   },
   {
     "index": 44,
-    "startFrame": 5548,
-    "endFrame": 5629,
-    "text": "A one-time code, after Aziz types it.",
-    "prefix": "A one-time code, after Aziz types it.",
+    "startFrame": 5727,
+    "endFrame": 5783,
+    "text": "And biometric data.",
+    "prefix": "And biometric data.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5549,
+        "startFrame": 5728,
         "words": [
           {
-            "text": "A",
-            "startFrame": 5549
+            "text": "And",
+            "startFrame": 5728
           },
           {
-            "text": "one-time",
-            "startFrame": 5551
+            "text": "biometric",
+            "startFrame": 5733
           },
           {
-            "text": "code,",
-            "startFrame": 5566
-          }
-        ]
-      },
-      {
-        "startFrame": 5585,
-        "words": [
-          {
-            "text": "after",
-            "startFrame": 5585
-          },
-          {
-            "text": "Aziz",
-            "startFrame": 5593
-          },
-          {
-            "text": "types",
-            "startFrame": 5603
-          },
-          {
-            "text": "it.",
-            "startFrame": 5613
+            "text": "data.",
+            "startFrame": 5752
           }
         ]
       }
@@ -2953,39 +2947,51 @@
   },
   {
     "index": 45,
-    "startFrame": 5629,
-    "endFrame": 5695,
-    "text": "A limit that the gateway uses.",
-    "prefix": "A limit that the gateway uses.",
+    "startFrame": 5784,
+    "endFrame": 5854,
+    "text": "Now be honest about the edge of this design.",
+    "prefix": "Now be honest about the edge of this design.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5631,
+        "startFrame": 5785,
         "words": [
           {
-            "text": "A",
-            "startFrame": 5631
+            "text": "Now",
+            "startFrame": 5785
           },
           {
-            "text": "limit",
-            "startFrame": 5633
+            "text": "be",
+            "startFrame": 5790
           },
           {
-            "text": "that",
-            "startFrame": 5648
+            "text": "honest",
+            "startFrame": 5794
+          },
+          {
+            "text": "about",
+            "startFrame": 5803
           },
           {
             "text": "the",
-            "startFrame": 5651
+            "startFrame": 5809
           },
           {
-            "text": "gateway",
-            "startFrame": 5653
+            "text": "edge",
+            "startFrame": 5814
           },
           {
-            "text": "uses.",
-            "startFrame": 5665
+            "text": "of",
+            "startFrame": 5822
+          },
+          {
+            "text": "this",
+            "startFrame": 5824
+          },
+          {
+            "text": "design.",
+            "startFrame": 5829
           }
         ]
       }
@@ -2993,27 +2999,47 @@
   },
   {
     "index": 46,
-    "startFrame": 5696,
-    "endFrame": 5751,
-    "text": "And biometric data.",
-    "prefix": "And biometric data.",
+    "startFrame": 5854,
+    "endFrame": 5942,
+    "text": "heeyID cannot enforce these rules inside an app.",
+    "prefix": "heeyID cannot enforce these rules inside an app.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5697,
+        "startFrame": 5856,
         "words": [
           {
-            "text": "And",
-            "startFrame": 5697
+            "text": "heeyID",
+            "startFrame": 5856
           },
           {
-            "text": "biometric",
-            "startFrame": 5702
+            "text": "cannot",
+            "startFrame": 5868
           },
           {
-            "text": "data.",
-            "startFrame": 5720
+            "text": "enforce",
+            "startFrame": 5879
+          },
+          {
+            "text": "these",
+            "startFrame": 5892
+          },
+          {
+            "text": "rules",
+            "startFrame": 5898
+          },
+          {
+            "text": "inside",
+            "startFrame": 5908
+          },
+          {
+            "text": "an",
+            "startFrame": 5919
+          },
+          {
+            "text": "app.",
+            "startFrame": 5921
           }
         ]
       }
@@ -3021,35 +3047,51 @@
   },
   {
     "index": 47,
-    "startFrame": 5752,
-    "endFrame": 5808,
-    "text": "The row about limits matters.",
-    "prefix": "The row about limits matters.",
+    "startFrame": 5943,
+    "endFrame": 6027,
+    "text": "It cannot look into the Keychain on Aziz's phone.",
+    "prefix": "It cannot look into the Keychain on Aziz's phone.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5754,
+        "startFrame": 5944,
         "words": [
           {
-            "text": "The",
-            "startFrame": 5754
+            "text": "It",
+            "startFrame": 5944
           },
           {
-            "text": "row",
-            "startFrame": 5755
+            "text": "cannot",
+            "startFrame": 5946
           },
           {
-            "text": "about",
-            "startFrame": 5761
+            "text": "look",
+            "startFrame": 5956
           },
           {
-            "text": "limits",
-            "startFrame": 5770
+            "text": "into",
+            "startFrame": 5961
           },
           {
-            "text": "matters.",
-            "startFrame": 5779
+            "text": "the",
+            "startFrame": 5965
+          },
+          {
+            "text": "Keychain",
+            "startFrame": 5967
+          },
+          {
+            "text": "on",
+            "startFrame": 5988
+          },
+          {
+            "text": "Aziz's",
+            "startFrame": 5992
+          },
+          {
+            "text": "phone.",
+            "startFrame": 6005
           }
         ]
       }
@@ -3057,47 +3099,76 @@
   },
   {
     "index": 48,
-    "startFrame": 5808,
-    "endFrame": 5880,
-    "text": "An app may show a counter, for comfort.",
-    "prefix": "An app may show a counter, for comfort.",
+    "startFrame": 6028,
+    "endFrame": 6162,
+    "text": "So the guide gives the rules, and the API tests keep the app correct.",
+    "prefix": "So the guide gives the rules, and the API tests keep the app correct.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5809,
+        "startFrame": 6029,
         "words": [
           {
-            "text": "An",
-            "startFrame": 5809
+            "text": "So",
+            "startFrame": 6029
+          },
+          {
+            "text": "the",
+            "startFrame": 6032
+          },
+          {
+            "text": "guide",
+            "startFrame": 6034
+          },
+          {
+            "text": "gives",
+            "startFrame": 6045
+          },
+          {
+            "text": "the",
+            "startFrame": 6051
+          },
+          {
+            "text": "rules,",
+            "startFrame": 6054
+          }
+        ]
+      },
+      {
+        "startFrame": 6079,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6079
+          },
+          {
+            "text": "the",
+            "startFrame": 6082
+          },
+          {
+            "text": "API",
+            "startFrame": 6088
+          },
+          {
+            "text": "tests",
+            "startFrame": 6108
+          },
+          {
+            "text": "keep",
+            "startFrame": 6124
+          },
+          {
+            "text": "the",
+            "startFrame": 6129
           },
           {
             "text": "app",
-            "startFrame": 5812
+            "startFrame": 6132
           },
           {
-            "text": "may",
-            "startFrame": 5818
-          },
-          {
-            "text": "show",
-            "startFrame": 5821
-          },
-          {
-            "text": "a",
-            "startFrame": 5828
-          },
-          {
-            "text": "counter,",
-            "startFrame": 5829
-          },
-          {
-            "text": "for",
-            "startFrame": 5851
-          },
-          {
-            "text": "comfort.",
-            "startFrame": 5854
+            "text": "correct.",
+            "startFrame": 6138
           }
         ]
       }
@@ -3105,60 +3176,68 @@
   },
   {
     "index": 49,
-    "startFrame": 5881,
-    "endFrame": 6004,
-    "text": "But the platform applies every limit itself, on the server.",
-    "prefix": "But the platform applies every limit itself, on the server.",
+    "startFrame": 6162,
+    "endFrame": 6275,
+    "text": "The mobile bank is a client of the contract, and nothing more.",
+    "prefix": "The mobile bank is a client of the contract, and nothing more.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5882,
+        "startFrame": 6164,
         "words": [
           {
-            "text": "But",
-            "startFrame": 5882
+            "text": "The",
+            "startFrame": 6164
           },
           {
-            "text": "the",
-            "startFrame": 5884
+            "text": "mobile",
+            "startFrame": 6166
           },
           {
-            "text": "platform",
-            "startFrame": 5886
+            "text": "bank",
+            "startFrame": 6176
           },
           {
-            "text": "applies",
-            "startFrame": 5900
+            "text": "is",
+            "startFrame": 6192
           },
           {
-            "text": "every",
-            "startFrame": 5925
+            "text": "a",
+            "startFrame": 6195
           },
           {
-            "text": "limit",
-            "startFrame": 5934
+            "text": "client",
+            "startFrame": 6197
           },
           {
-            "text": "itself,",
-            "startFrame": 5945
+            "text": "of",
+            "startFrame": 6209
           }
         ]
       },
       {
-        "startFrame": 5972,
+        "startFrame": 6210,
         "words": [
           {
-            "text": "on",
-            "startFrame": 5972
-          },
-          {
             "text": "the",
-            "startFrame": 5975
+            "startFrame": 6210
           },
           {
-            "text": "server.",
-            "startFrame": 5976
+            "text": "contract,",
+            "startFrame": 6213
+          },
+          {
+            "text": "and",
+            "startFrame": 6241
+          },
+          {
+            "text": "nothing",
+            "startFrame": 6244
+          },
+          {
+            "text": "more.",
+            "startFrame": 6252
           }
         ]
       }
@@ -3166,68 +3245,27 @@
   },
   {
     "index": 50,
-    "startFrame": 6005,
-    "endFrame": 6111,
-    "text": "A limit in the app is only a convenience, never a control.",
-    "prefix": "A limit in the app is only a convenience, never a control.",
+    "startFrame": 6275,
+    "endFrame": 6331,
+    "text": "Back to Jasur.",
+    "prefix": "Back to Jasur.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6006,
+        "startFrame": 6277,
         "words": [
           {
-            "text": "A",
-            "startFrame": 6006
+            "text": "Back",
+            "startFrame": 6277
           },
           {
-            "text": "limit",
-            "startFrame": 6007
+            "text": "to",
+            "startFrame": 6282
           },
           {
-            "text": "in",
-            "startFrame": 6014
-          },
-          {
-            "text": "the",
-            "startFrame": 6017
-          },
-          {
-            "text": "app",
-            "startFrame": 6019
-          },
-          {
-            "text": "is",
-            "startFrame": 6032
-          },
-          {
-            "text": "only",
-            "startFrame": 6037
-          }
-        ]
-      },
-      {
-        "startFrame": 6047,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 6047
-          },
-          {
-            "text": "convenience,",
-            "startFrame": 6048
-          },
-          {
-            "text": "never",
-            "startFrame": 6076
-          },
-          {
-            "text": "a",
-            "startFrame": 6083
-          },
-          {
-            "text": "control.",
-            "startFrame": 6085
+            "text": "Jasur.",
+            "startFrame": 6285
           }
         ]
       }
@@ -3235,51 +3273,143 @@
   },
   {
     "index": 51,
-    "startFrame": 6111,
-    "endFrame": 6181,
-    "text": "Now be honest about the edge of this design.",
-    "prefix": "Now be honest about the edge of this design.",
+    "startFrame": 6331,
+    "endFrame": 6579,
+    "text": "In the end, his app calls the contract, keeps the device identifier in the Keychain and the access token in memory, and shows the errors by code.",
+    "prefix": "In the end, his app calls the contract, keeps the device identifier in the Keychain and the access token in memory, and shows the errors by code.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6113,
+        "startFrame": 6332,
         "words": [
           {
-            "text": "Now",
-            "startFrame": 6113
-          },
-          {
-            "text": "be",
-            "startFrame": 6117
-          },
-          {
-            "text": "honest",
-            "startFrame": 6121
-          },
-          {
-            "text": "about",
-            "startFrame": 6131
+            "text": "In",
+            "startFrame": 6332
           },
           {
             "text": "the",
-            "startFrame": 6136
+            "startFrame": 6335
           },
           {
-            "text": "edge",
-            "startFrame": 6141
+            "text": "end,",
+            "startFrame": 6336
+          }
+        ]
+      },
+      {
+        "startFrame": 6350,
+        "words": [
+          {
+            "text": "his",
+            "startFrame": 6350
           },
           {
-            "text": "of",
-            "startFrame": 6150
+            "text": "app",
+            "startFrame": 6355
           },
           {
-            "text": "this",
-            "startFrame": 6152
+            "text": "calls",
+            "startFrame": 6361
           },
           {
-            "text": "design.",
-            "startFrame": 6156
+            "text": "the",
+            "startFrame": 6369
+          },
+          {
+            "text": "contract,",
+            "startFrame": 6372
+          }
+        ]
+      },
+      {
+        "startFrame": 6399,
+        "words": [
+          {
+            "text": "keeps",
+            "startFrame": 6399
+          },
+          {
+            "text": "the",
+            "startFrame": 6407
+          },
+          {
+            "text": "device",
+            "startFrame": 6410
+          },
+          {
+            "text": "identifier",
+            "startFrame": 6422
+          },
+          {
+            "text": "in",
+            "startFrame": 6440
+          },
+          {
+            "text": "the",
+            "startFrame": 6442
+          },
+          {
+            "text": "Keychain",
+            "startFrame": 6444
+          }
+        ]
+      },
+      {
+        "startFrame": 6468,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6468
+          },
+          {
+            "text": "the",
+            "startFrame": 6470
+          },
+          {
+            "text": "access",
+            "startFrame": 6475
+          },
+          {
+            "text": "token",
+            "startFrame": 6490
+          },
+          {
+            "text": "in",
+            "startFrame": 6499
+          },
+          {
+            "text": "memory,",
+            "startFrame": 6502
+          }
+        ]
+      },
+      {
+        "startFrame": 6526,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6526
+          },
+          {
+            "text": "shows",
+            "startFrame": 6529
+          },
+          {
+            "text": "the",
+            "startFrame": 6538
+          },
+          {
+            "text": "errors",
+            "startFrame": 6541
+          },
+          {
+            "text": "by",
+            "startFrame": 6551
+          },
+          {
+            "text": "code.",
+            "startFrame": 6556
           }
         ]
       }
@@ -3287,47 +3417,64 @@
   },
   {
     "index": 52,
-    "startFrame": 6182,
-    "endFrame": 6270,
-    "text": "heeyID cannot enforce these rules inside an app.",
-    "prefix": "heeyID cannot enforce these rules inside an app.",
+    "startFrame": 6580,
+    "endFrame": 6760,
+    "text": "He adds the MyID and TAF SDKs, and nothing from heeyID.",
+    "prefix": "He adds the MyID and TAF SDKs, and nothing from heeyID.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6183,
+        "startFrame": 6581,
         "words": [
           {
-            "text": "heeyID",
-            "startFrame": 6183
+            "text": "He",
+            "startFrame": 6581
           },
           {
-            "text": "cannot",
-            "startFrame": 6196
+            "text": "adds",
+            "startFrame": 6584
           },
           {
-            "text": "enforce",
-            "startFrame": 6207
+            "text": "the",
+            "startFrame": 6591
           },
           {
-            "text": "these",
-            "startFrame": 6220
+            "text": "MyID",
+            "startFrame": 6593
           },
           {
-            "text": "rules",
-            "startFrame": 6226
+            "text": "and",
+            "startFrame": 6623
           },
           {
-            "text": "inside",
-            "startFrame": 6236
+            "text": "TAF",
+            "startFrame": 6628
           },
           {
-            "text": "an",
-            "startFrame": 6247
+            "text": "SDKs,",
+            "startFrame": 6668
+          }
+        ]
+      },
+      {
+        "startFrame": 6706,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 6706
           },
           {
-            "text": "app.",
-            "startFrame": 6249
+            "text": "nothing",
+            "startFrame": 6712
+          },
+          {
+            "text": "from",
+            "startFrame": 6722
+          },
+          {
+            "text": "heeyID.",
+            "startFrame": 6727
           }
         ]
       }
@@ -3335,64 +3482,80 @@
   },
   {
     "index": 53,
-    "startFrame": 6270,
-    "endFrame": 6358,
-    "text": "It cannot look into the Keychain on the phone of Aziz.",
-    "prefix": "It cannot look into the Keychain on the phone of Aziz.",
+    "startFrame": 6761,
+    "endFrame": 6934,
+    "text": "The contract lives apart from the platform code, so every team reads the same file.",
+    "prefix": "The contract lives apart from the platform code, so every team reads the same file.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6272,
+        "startFrame": 6762,
         "words": [
           {
-            "text": "It",
-            "startFrame": 6272
+            "text": "The",
+            "startFrame": 6762
           },
           {
-            "text": "cannot",
-            "startFrame": 6273
+            "text": "contract",
+            "startFrame": 6765
           },
           {
-            "text": "look",
-            "startFrame": 6284
+            "text": "lives",
+            "startFrame": 6792
           },
           {
-            "text": "into",
-            "startFrame": 6290
+            "text": "apart",
+            "startFrame": 6802
+          },
+          {
+            "text": "from",
+            "startFrame": 6814
           },
           {
             "text": "the",
-            "startFrame": 6294
+            "startFrame": 6818
           },
           {
-            "text": "Keychain",
-            "startFrame": 6296
+            "text": "platform",
+            "startFrame": 6819
           },
           {
-            "text": "on",
-            "startFrame": 6311
+            "text": "code,",
+            "startFrame": 6833
           }
         ]
       },
       {
-        "startFrame": 6314,
+        "startFrame": 6855,
         "words": [
           {
+            "text": "so",
+            "startFrame": 6855
+          },
+          {
+            "text": "every",
+            "startFrame": 6862
+          },
+          {
+            "text": "team",
+            "startFrame": 6870
+          },
+          {
+            "text": "reads",
+            "startFrame": 6888
+          },
+          {
             "text": "the",
-            "startFrame": 6314
+            "startFrame": 6896
           },
           {
-            "text": "phone",
-            "startFrame": 6316
+            "text": "same",
+            "startFrame": 6898
           },
           {
-            "text": "of",
-            "startFrame": 6326
-          },
-          {
-            "text": "Aziz.",
-            "startFrame": 6328
+            "text": "file.",
+            "startFrame": 6908
           }
         ]
       }
@@ -3400,76 +3563,60 @@
   },
   {
     "index": 54,
-    "startFrame": 6358,
-    "endFrame": 6486,
-    "text": "So the guide gives the rules, and the API tests keep the apps correct.",
-    "prefix": "So the guide gives the rules, and the API tests keep the apps correct.",
+    "startFrame": 6934,
+    "endFrame": 7055,
+    "text": "When the contract changes, that file shows the change first.",
+    "prefix": "When the contract changes, that file shows the change first.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6359,
+        "startFrame": 6935,
         "words": [
           {
-            "text": "So",
-            "startFrame": 6359
+            "text": "When",
+            "startFrame": 6935
           },
           {
             "text": "the",
-            "startFrame": 6362
+            "startFrame": 6937
           },
           {
-            "text": "guide",
-            "startFrame": 6364
+            "text": "contract",
+            "startFrame": 6939
           },
           {
-            "text": "gives",
-            "startFrame": 6374
-          },
-          {
-            "text": "the",
-            "startFrame": 6379
-          },
-          {
-            "text": "rules,",
-            "startFrame": 6382
+            "text": "changes,",
+            "startFrame": 6955
           }
         ]
       },
       {
-        "startFrame": 6406,
+        "startFrame": 6980,
         "words": [
           {
-            "text": "and",
-            "startFrame": 6406
+            "text": "that",
+            "startFrame": 6980
+          },
+          {
+            "text": "file",
+            "startFrame": 6985
+          },
+          {
+            "text": "shows",
+            "startFrame": 6998
           },
           {
             "text": "the",
-            "startFrame": 6408
+            "startFrame": 7013
           },
           {
-            "text": "API",
-            "startFrame": 6414
+            "text": "change",
+            "startFrame": 7015
           },
           {
-            "text": "tests",
-            "startFrame": 6432
-          },
-          {
-            "text": "keep",
-            "startFrame": 6445
-          },
-          {
-            "text": "the",
-            "startFrame": 6451
-          },
-          {
-            "text": "apps",
-            "startFrame": 6453
-          },
-          {
-            "text": "correct.",
-            "startFrame": 6461
+            "text": "first.",
+            "startFrame": 7026
           }
         ]
       }
@@ -3477,64 +3624,101 @@
   },
   {
     "index": 55,
-    "startFrame": 6486,
-    "endFrame": 6585,
-    "text": "Each app is a client of the contract, and nothing more.",
-    "prefix": "Each app is a client of the contract, and nothing more.",
+    "startFrame": 7055,
+    "endFrame": 7286,
+    "text": "Check yourself: Aziz types his password in the mobile bank, so may the app keep it for next time?",
+    "prefix": "Check yourself: Aziz types his password in the mobile bank, so may the app keep it for next time?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6488,
+        "startFrame": 7056,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 6488
+            "text": "Check",
+            "startFrame": 7056
           },
           {
-            "text": "app",
-            "startFrame": 6493
+            "text": "yourself:",
+            "startFrame": 7062
           },
           {
-            "text": "is",
-            "startFrame": 6504
+            "text": "Aziz",
+            "startFrame": 7095
           },
           {
-            "text": "a",
-            "startFrame": 6507
+            "text": "types",
+            "startFrame": 7107
           },
           {
-            "text": "client",
-            "startFrame": 6509
+            "text": "his",
+            "startFrame": 7115
           },
           {
-            "text": "of",
-            "startFrame": 6520
+            "text": "password",
+            "startFrame": 7119
           },
           {
-            "text": "the",
-            "startFrame": 6521
-          },
-          {
-            "text": "contract,",
-            "startFrame": 6523
+            "text": "in",
+            "startFrame": 7136
           }
         ]
       },
       {
-        "startFrame": 6553,
+        "startFrame": 7138,
         "words": [
           {
-            "text": "and",
-            "startFrame": 6553
+            "text": "the",
+            "startFrame": 7138
           },
           {
-            "text": "nothing",
-            "startFrame": 6555
+            "text": "mobile",
+            "startFrame": 7140
           },
           {
-            "text": "more.",
-            "startFrame": 6564
+            "text": "bank,",
+            "startFrame": 7149
+          }
+        ]
+      },
+      {
+        "startFrame": 7169,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 7169
+          },
+          {
+            "text": "may",
+            "startFrame": 7174
+          },
+          {
+            "text": "the",
+            "startFrame": 7179
+          },
+          {
+            "text": "app",
+            "startFrame": 7183
+          },
+          {
+            "text": "keep",
+            "startFrame": 7191
+          },
+          {
+            "text": "it",
+            "startFrame": 7197
+          },
+          {
+            "text": "for",
+            "startFrame": 7199
+          },
+          {
+            "text": "next",
+            "startFrame": 7201
+          },
+          {
+            "text": "time?",
+            "startFrame": 7207
           }
         ]
       }
@@ -3542,27 +3726,88 @@
   },
   {
     "index": 56,
-    "startFrame": 6586,
-    "endFrame": 6641,
-    "text": "Back to Jasur.",
-    "prefix": "Back to Jasur.",
+    "startFrame": 7286,
+    "endFrame": 7435,
+    "text": "No: the password is on the never list, so the app sends it once and forgets it.",
+    "prefix": "No: the password is on the never list, so the app sends it once and forgets it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6587,
+        "startFrame": 7287,
         "words": [
           {
-            "text": "Back",
-            "startFrame": 6587
+            "text": "No:",
+            "startFrame": 7287
           },
           {
-            "text": "to",
-            "startFrame": 6593
+            "text": "the",
+            "startFrame": 7307
           },
           {
-            "text": "Jasur.",
-            "startFrame": 6595
+            "text": "password",
+            "startFrame": 7310
+          },
+          {
+            "text": "is",
+            "startFrame": 7332
+          },
+          {
+            "text": "on",
+            "startFrame": 7335
+          },
+          {
+            "text": "the",
+            "startFrame": 7337
+          },
+          {
+            "text": "never",
+            "startFrame": 7339
+          },
+          {
+            "text": "list,",
+            "startFrame": 7348
+          }
+        ]
+      },
+      {
+        "startFrame": 7367,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 7367
+          },
+          {
+            "text": "the",
+            "startFrame": 7371
+          },
+          {
+            "text": "app",
+            "startFrame": 7374
+          },
+          {
+            "text": "sends",
+            "startFrame": 7381
+          },
+          {
+            "text": "it",
+            "startFrame": 7389
+          },
+          {
+            "text": "once",
+            "startFrame": 7393
+          },
+          {
+            "text": "and",
+            "startFrame": 7405
+          },
+          {
+            "text": "forgets",
+            "startFrame": 7407
+          },
+          {
+            "text": "it.",
+            "startFrame": 7419
           }
         ]
       }
@@ -3570,134 +3815,35 @@
   },
   {
     "index": 57,
-    "startFrame": 6642,
-    "endFrame": 6898,
-    "text": "By Wednesday, his app calls the contract, keeps the device identifier in the Keychain and the access token in memory, and shows the errors by code.",
-    "prefix": "By Wednesday, his app calls the contract, keeps the device identifier in the Keychain and the access token in memory, and shows the errors by code.",
+    "startFrame": 7435,
+    "endFrame": 7516,
+    "text": "There is no heeyID SDK.",
+    "prefix": "There is no heeyID SDK.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6643,
+        "startFrame": 7437,
         "words": [
           {
-            "text": "By",
-            "startFrame": 6643
+            "text": "There",
+            "startFrame": 7437
           },
           {
-            "text": "Wednesday,",
-            "startFrame": 6648
+            "text": "is",
+            "startFrame": 7441
           },
           {
-            "text": "his",
-            "startFrame": 6669
+            "text": "no",
+            "startFrame": 7444
           },
           {
-            "text": "app",
-            "startFrame": 6674
+            "text": "heeyID",
+            "startFrame": 7450
           },
           {
-            "text": "calls",
-            "startFrame": 6682
-          },
-          {
-            "text": "the",
-            "startFrame": 6692
-          },
-          {
-            "text": "contract,",
-            "startFrame": 6695
-          }
-        ]
-      },
-      {
-        "startFrame": 6721,
-        "words": [
-          {
-            "text": "keeps",
-            "startFrame": 6721
-          },
-          {
-            "text": "the",
-            "startFrame": 6729
-          },
-          {
-            "text": "device",
-            "startFrame": 6732
-          },
-          {
-            "text": "identifier",
-            "startFrame": 6744
-          },
-          {
-            "text": "in",
-            "startFrame": 6762
-          },
-          {
-            "text": "the",
-            "startFrame": 6765
-          },
-          {
-            "text": "Keychain",
-            "startFrame": 6767
-          }
-        ]
-      },
-      {
-        "startFrame": 6789,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 6789
-          },
-          {
-            "text": "the",
-            "startFrame": 6791
-          },
-          {
-            "text": "access",
-            "startFrame": 6796
-          },
-          {
-            "text": "token",
-            "startFrame": 6811
-          },
-          {
-            "text": "in",
-            "startFrame": 6820
-          },
-          {
-            "text": "memory,",
-            "startFrame": 6823
-          }
-        ]
-      },
-      {
-        "startFrame": 6846,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 6846
-          },
-          {
-            "text": "shows",
-            "startFrame": 6849
-          },
-          {
-            "text": "the",
-            "startFrame": 6857
-          },
-          {
-            "text": "errors",
-            "startFrame": 6860
-          },
-          {
-            "text": "by",
-            "startFrame": 6870
-          },
-          {
-            "text": "code.",
-            "startFrame": 6875
+            "text": "SDK.",
+            "startFrame": 7480
           }
         ]
       }
@@ -3705,64 +3851,68 @@
   },
   {
     "index": 58,
-    "startFrame": 6898,
-    "endFrame": 7078,
-    "text": "He adds the MyID and TAF SDKs, and nothing from heeyID.",
-    "prefix": "He adds the MyID and TAF SDKs, and nothing from heeyID.",
+    "startFrame": 7516,
+    "endFrame": 7681,
+    "text": "There is the REST API, the OpenAPI contract and the integration guide.",
+    "prefix": "There is the REST API, the OpenAPI contract and the integration guide.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6899,
+        "startFrame": 7517,
         "words": [
           {
-            "text": "He",
-            "startFrame": 6899
+            "text": "There",
+            "startFrame": 7517
           },
           {
-            "text": "adds",
-            "startFrame": 6903
+            "text": "is",
+            "startFrame": 7521
           },
           {
             "text": "the",
-            "startFrame": 6909
+            "startFrame": 7524
           },
           {
-            "text": "MyID",
-            "startFrame": 6912
+            "text": "REST",
+            "startFrame": 7526
           },
           {
-            "text": "and",
-            "startFrame": 6942
-          },
-          {
-            "text": "TAF",
-            "startFrame": 6947
-          },
-          {
-            "text": "SDKs,",
-            "startFrame": 6986
+            "text": "API,",
+            "startFrame": 7544
           }
         ]
       },
       {
-        "startFrame": 7024,
+        "startFrame": 7581,
         "words": [
           {
+            "text": "the",
+            "startFrame": 7581
+          },
+          {
+            "text": "OpenAPI",
+            "startFrame": 7585
+          },
+          {
+            "text": "contract",
+            "startFrame": 7612
+          },
+          {
             "text": "and",
-            "startFrame": 7024
+            "startFrame": 7640
           },
           {
-            "text": "nothing",
-            "startFrame": 7030
+            "text": "the",
+            "startFrame": 7641
           },
           {
-            "text": "from",
-            "startFrame": 7040
+            "text": "integration",
+            "startFrame": 7643
           },
           {
-            "text": "heeyID.",
-            "startFrame": 7045
+            "text": "guide.",
+            "startFrame": 7659
           }
         ]
       }
@@ -3770,64 +3920,60 @@
   },
   {
     "index": 59,
-    "startFrame": 7079,
-    "endFrame": 7243,
-    "text": "When the contract changes, the OpenAPI file shows the change first.",
-    "prefix": "When the contract changes, the OpenAPI file shows the change first.",
+    "startFrame": 7682,
+    "endFrame": 7831,
+    "text": "The MyID and TAF SDKs live in the mobile bank.",
+    "prefix": "The MyID and TAF SDKs live in the mobile bank.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7080,
+        "startFrame": 7683,
         "words": [
           {
-            "text": "When",
-            "startFrame": 7080
+            "text": "The",
+            "startFrame": 7683
           },
           {
-            "text": "the",
-            "startFrame": 7082
+            "text": "MyID",
+            "startFrame": 7685
           },
           {
-            "text": "contract",
-            "startFrame": 7084
+            "text": "and",
+            "startFrame": 7714
           },
           {
-            "text": "changes,",
-            "startFrame": 7099
+            "text": "TAF",
+            "startFrame": 7719
+          },
+          {
+            "text": "SDKs",
+            "startFrame": 7751
+          },
+          {
+            "text": "live",
+            "startFrame": 7775
+          },
+          {
+            "text": "in",
+            "startFrame": 7797
           }
         ]
       },
       {
-        "startFrame": 7124,
+        "startFrame": 7799,
         "words": [
           {
             "text": "the",
-            "startFrame": 7124
+            "startFrame": 7799
           },
           {
-            "text": "OpenAPI",
-            "startFrame": 7129
+            "text": "mobile",
+            "startFrame": 7801
           },
           {
-            "text": "file",
-            "startFrame": 7167
-          },
-          {
-            "text": "shows",
-            "startFrame": 7191
-          },
-          {
-            "text": "the",
-            "startFrame": 7202
-          },
-          {
-            "text": "change",
-            "startFrame": 7204
-          },
-          {
-            "text": "first.",
-            "startFrame": 7214
+            "text": "bank.",
+            "startFrame": 7809
           }
         ]
       }
@@ -3835,60 +3981,105 @@
   },
   {
     "index": 60,
-    "startFrame": 7244,
-    "endFrame": 7377,
-    "text": "To recap: there is no heeyID SDK in this release.",
-    "prefix": "To recap: there is no heeyID SDK in this release.",
+    "startFrame": 7831,
+    "endFrame": 7974,
+    "text": "There is a short list of what the app may keep, and a longer list of what it never keeps.",
+    "prefix": "There is a short list of what the app may keep, and a longer list of what it never keeps.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7245,
+        "startFrame": 7833,
         "words": [
           {
-            "text": "To",
-            "startFrame": 7245
-          },
-          {
-            "text": "recap:",
-            "startFrame": 7247
-          },
-          {
-            "text": "there",
-            "startFrame": 7274
+            "text": "There",
+            "startFrame": 7833
           },
           {
             "text": "is",
-            "startFrame": 7277
+            "startFrame": 7836
           },
           {
-            "text": "no",
-            "startFrame": 7280
+            "text": "a",
+            "startFrame": 7838
           },
           {
-            "text": "heeyID",
-            "startFrame": 7288
+            "text": "short",
+            "startFrame": 7839
           },
           {
-            "text": "SDK",
-            "startFrame": 7317
+            "text": "list",
+            "startFrame": 7850
+          },
+          {
+            "text": "of",
+            "startFrame": 7861
+          },
+          {
+            "text": "what",
+            "startFrame": 7863
           }
         ]
       },
       {
-        "startFrame": 7341,
+        "startFrame": 7867,
         "words": [
           {
-            "text": "in",
-            "startFrame": 7341
+            "text": "the",
+            "startFrame": 7867
           },
           {
-            "text": "this",
-            "startFrame": 7345
+            "text": "app",
+            "startFrame": 7871
           },
           {
-            "text": "release.",
-            "startFrame": 7350
+            "text": "may",
+            "startFrame": 7878
+          },
+          {
+            "text": "keep,",
+            "startFrame": 7883
+          }
+        ]
+      },
+      {
+        "startFrame": 7909,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 7909
+          },
+          {
+            "text": "a",
+            "startFrame": 7911
+          },
+          {
+            "text": "longer",
+            "startFrame": 7912
+          },
+          {
+            "text": "list",
+            "startFrame": 7925
+          },
+          {
+            "text": "of",
+            "startFrame": 7935
+          },
+          {
+            "text": "what",
+            "startFrame": 7936
+          },
+          {
+            "text": "it",
+            "startFrame": 7939
+          },
+          {
+            "text": "never",
+            "startFrame": 7941
+          },
+          {
+            "text": "keeps.",
+            "startFrame": 7947
           }
         ]
       }
@@ -3896,68 +4087,85 @@
   },
   {
     "index": 61,
-    "startFrame": 7378,
-    "endFrame": 7543,
-    "text": "There is the REST API, the OpenAPI contract and the integration guide.",
-    "prefix": "There is the REST API, the OpenAPI contract and the integration guide.",
+    "startFrame": 7974,
+    "endFrame": 8107,
+    "text": "With these foundations in place, Aziz can type his phone number for the first time.",
+    "prefix": "With these foundations in place, Aziz can type his phone number for the first time.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7379,
+        "startFrame": 7975,
         "words": [
           {
-            "text": "There",
-            "startFrame": 7379
+            "text": "With",
+            "startFrame": 7975
           },
           {
-            "text": "is",
-            "startFrame": 7383
+            "text": "these",
+            "startFrame": 7979
           },
           {
-            "text": "the",
-            "startFrame": 7385
+            "text": "foundations",
+            "startFrame": 7984
           },
           {
-            "text": "REST",
-            "startFrame": 7388
+            "text": "in",
+            "startFrame": 8001
           },
           {
-            "text": "API,",
-            "startFrame": 7405
+            "text": "place,",
+            "startFrame": 8004
           }
         ]
       },
       {
-        "startFrame": 7443,
+        "startFrame": 8031,
+        "words": [
+          {
+            "text": "Aziz",
+            "startFrame": 8031
+          },
+          {
+            "text": "can",
+            "startFrame": 8044
+          },
+          {
+            "text": "type",
+            "startFrame": 8049
+          },
+          {
+            "text": "his",
+            "startFrame": 8056
+          },
+          {
+            "text": "phone",
+            "startFrame": 8059
+          },
+          {
+            "text": "number",
+            "startFrame": 8067
+          },
+          {
+            "text": "for",
+            "startFrame": 8073
+          }
+        ]
+      },
+      {
+        "startFrame": 8076,
         "words": [
           {
             "text": "the",
-            "startFrame": 7443
+            "startFrame": 8076
           },
           {
-            "text": "OpenAPI",
-            "startFrame": 7447
+            "text": "first",
+            "startFrame": 8078
           },
           {
-            "text": "contract",
-            "startFrame": 7474
-          },
-          {
-            "text": "and",
-            "startFrame": 7501
-          },
-          {
-            "text": "the",
-            "startFrame": 7503
-          },
-          {
-            "text": "integration",
-            "startFrame": 7505
-          },
-          {
-            "text": "guide.",
-            "startFrame": 7520
+            "text": "time.",
+            "startFrame": 8087
           }
         ]
       }
@@ -3965,368 +4173,64 @@
   },
   {
     "index": 62,
-    "startFrame": 7543,
-    "endFrame": 7687,
-    "text": "The MyID and TAF SDKs are only in the master app.",
-    "prefix": "The MyID and TAF SDKs are only in the master app.",
+    "startFrame": 8107,
+    "endFrame": 8258,
+    "text": "Lesson 8 follows that number, from the first code to level one.",
+    "prefix": "Lesson 8 follows that number, from the first code to level one.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7545,
+        "startFrame": 8109,
         "words": [
           {
-            "text": "The",
-            "startFrame": 7545
+            "text": "Lesson 8",
+            "startFrame": 8109
           },
           {
-            "text": "MyID",
-            "startFrame": 7546
-          },
-          {
-            "text": "and",
-            "startFrame": 7568
-          },
-          {
-            "text": "TAF",
-            "startFrame": 7570
-          },
-          {
-            "text": "SDKs",
-            "startFrame": 7606
-          },
-          {
-            "text": "are",
-            "startFrame": 7636
-          },
-          {
-            "text": "only",
-            "startFrame": 7642
-          }
-        ]
-      },
-      {
-        "startFrame": 7652,
-        "words": [
-          {
-            "text": "in",
-            "startFrame": 7652
-          },
-          {
-            "text": "the",
-            "startFrame": 7654
-          },
-          {
-            "text": "master",
-            "startFrame": 7656
-          },
-          {
-            "text": "app.",
-            "startFrame": 7668
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 63,
-    "startFrame": 7688,
-    "endFrame": 7825,
-    "text": "There is a short list of what an app may keep, and a longer list of what it never keeps.",
-    "prefix": "There is a short list of what an app may keep, and a longer list of what it never keeps.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 7690,
-        "words": [
-          {
-            "text": "There",
-            "startFrame": 7690
-          },
-          {
-            "text": "is",
-            "startFrame": 7692
-          },
-          {
-            "text": "a",
-            "startFrame": 7694
-          },
-          {
-            "text": "short",
-            "startFrame": 7695
-          },
-          {
-            "text": "list",
-            "startFrame": 7705
-          },
-          {
-            "text": "of",
-            "startFrame": 7717
-          },
-          {
-            "text": "what",
-            "startFrame": 7720
-          }
-        ]
-      },
-      {
-        "startFrame": 7724,
-        "words": [
-          {
-            "text": "an",
-            "startFrame": 7724
-          },
-          {
-            "text": "app",
-            "startFrame": 7727
-          },
-          {
-            "text": "may",
-            "startFrame": 7733
-          },
-          {
-            "text": "keep,",
-            "startFrame": 7738
-          }
-        ]
-      },
-      {
-        "startFrame": 7760,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 7760
-          },
-          {
-            "text": "a",
-            "startFrame": 7763
-          },
-          {
-            "text": "longer",
-            "startFrame": 7764
-          },
-          {
-            "text": "list",
-            "startFrame": 7776
-          },
-          {
-            "text": "of",
-            "startFrame": 7786
-          },
-          {
-            "text": "what",
-            "startFrame": 7787
-          },
-          {
-            "text": "it",
-            "startFrame": 7790
-          },
-          {
-            "text": "never",
-            "startFrame": 7793
-          },
-          {
-            "text": "keeps.",
-            "startFrame": 7798
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 64,
-    "startFrame": 7825,
-    "endFrame": 7901,
-    "text": "And the server applies every limit.",
-    "prefix": "And the server applies every limit.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 7826,
-        "words": [
-          {
-            "text": "And",
-            "startFrame": 7826
-          },
-          {
-            "text": "the",
-            "startFrame": 7828
-          },
-          {
-            "text": "server",
-            "startFrame": 7831
-          },
-          {
-            "text": "applies",
-            "startFrame": 7842
-          },
-          {
-            "text": "every",
-            "startFrame": 7869
-          },
-          {
-            "text": "limit.",
-            "startFrame": 7877
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 65,
-    "startFrame": 7902,
-    "endFrame": 8034,
-    "text": "With these foundations in place, Aziz can type his phone number for the first time.",
-    "prefix": "With these foundations in place, Aziz can type his phone number for the first time.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 7903,
-        "words": [
-          {
-            "text": "With",
-            "startFrame": 7903
-          },
-          {
-            "text": "these",
-            "startFrame": 7907
-          },
-          {
-            "text": "foundations",
-            "startFrame": 7912
-          },
-          {
-            "text": "in",
-            "startFrame": 7929
-          },
-          {
-            "text": "place,",
-            "startFrame": 7931
-          }
-        ]
-      },
-      {
-        "startFrame": 7959,
-        "words": [
-          {
-            "text": "Aziz",
-            "startFrame": 7959
-          },
-          {
-            "text": "can",
-            "startFrame": 7972
-          },
-          {
-            "text": "type",
-            "startFrame": 7977
-          },
-          {
-            "text": "his",
-            "startFrame": 7984
-          },
-          {
-            "text": "phone",
-            "startFrame": 7987
-          },
-          {
-            "text": "number",
-            "startFrame": 7995
-          },
-          {
-            "text": "for",
-            "startFrame": 8001
-          }
-        ]
-      },
-      {
-        "startFrame": 8004,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 8004
-          },
-          {
-            "text": "first",
-            "startFrame": 8005
-          },
-          {
-            "text": "time.",
-            "startFrame": 8015
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 66,
-    "startFrame": 8035,
-    "endFrame": 8117,
-    "text": "What happens between that number and level one?",
-    "prefix": "What happens between that number and level one?",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 8036,
-        "words": [
-          {
-            "text": "What",
-            "startFrame": 8036
-          },
-          {
-            "text": "happens",
-            "startFrame": 8039
-          },
-          {
-            "text": "between",
-            "startFrame": 8048
+            "text": "follows",
+            "startFrame": 8122
           },
           {
             "text": "that",
-            "startFrame": 8058
+            "startFrame": 8140
           },
           {
-            "text": "number",
-            "startFrame": 8065
+            "text": "number,",
+            "startFrame": 8145
+          }
+        ]
+      },
+      {
+        "startFrame": 8168,
+        "words": [
+          {
+            "text": "from",
+            "startFrame": 8168
           },
           {
-            "text": "and",
-            "startFrame": 8085
+            "text": "the",
+            "startFrame": 8171
+          },
+          {
+            "text": "first",
+            "startFrame": 8173
+          },
+          {
+            "text": "code",
+            "startFrame": 8184
+          },
+          {
+            "text": "to",
+            "startFrame": 8197
           },
           {
             "text": "level",
-            "startFrame": 8090
+            "startFrame": 8200
           },
           {
-            "text": "one?",
-            "startFrame": 8097
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 67,
-    "startFrame": 8118,
-    "endFrame": 8206,
-    "text": "Next: registration.",
-    "prefix": "Next: registration.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 8119,
-        "words": [
-          {
-            "text": "Next:",
-            "startFrame": 8119
-          },
-          {
-            "text": "registration.",
-            "startFrame": 8142
+            "text": "one.",
+            "startFrame": 8208
           }
         ]
       }

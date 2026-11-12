@@ -88,7 +88,7 @@ export const HEEYID_CATALOG = {
   appTeam: { label: "App team", sublabel: "Of the bank", art: "admin" },
   contract: { label: "OpenAPI contract", sublabel: "Customer API", logo: siOpenapiinitiative.path },
   guide: { label: "Integration guide", sublabel: "Rules for apps", art: "journal" },
-  sdk: { label: "heeyID SDK", sublabel: "Not in this release", art: "tray" },
+  sdk: { label: "heeyID SDK", sublabel: "Does not exist", art: "tray" },
   keychain: { label: "Keychain · Keystore", sublabel: "On the phone", art: "vault" },
   memory: { label: "Memory", sublabel: "Until expiry or close", art: "phone" },
   neverKept: { label: "Never kept", sublabel: "On any app", art: "receipt" },
