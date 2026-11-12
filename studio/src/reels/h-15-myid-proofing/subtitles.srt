@@ -1,239 +1,327 @@
 1
-00:00:00,050 --> 00:00:06,144
-Aziz is in a lift, between the fourth and the fifth floor, when his phone loses the network.
+00:00:00,050 --> 00:00:01,872
+Saturday afternoon.
 
 2
-00:00:06,194 --> 00:00:09,552
-One second earlier, MyID finished the check of his face.
+00:00:01,922 --> 00:00:07,416
+Aziz steps into a lift with his phone in his hand, and the MyID screen of the mobile bank is open.
 
 3
-00:00:09,602 --> 00:00:12,432
-So did the check pass, or did it vanish?
+00:00:07,466 --> 00:00:11,352
+Between the fourth and the fifth floor, his phone loses the network.
 
 4
-00:00:12,482 --> 00:00:21,168
-In Lesson 14, Aziz accepted the consent screen, and the platform wrote an acceptance record that permits one session at MyID.
+00:00:11,402 --> 00:00:14,760
+One second earlier, MyID finished the check of his face.
 
 5
-00:00:21,218 --> 00:00:30,120
-This lesson follows that one session: who opens it, what travels back to the platform, and what happens when something goes wrong on the way.
+00:00:14,810 --> 00:00:19,640
+So did the check pass, or did it vanish?
 
 6
-00:00:30,170 --> 00:00:33,024
-Start one step earlier, in the marketplace app.
+00:00:19,690 --> 00:00:26,864
+An hour ago, Aziz said yes on the consent screen, and the platform wrote a record that permits one session at MyID.
 
 7
-00:00:33,074 --> 00:00:37,992
-Aziz wants to pay for a laptop in instalments, and the instalments need level two.
+00:00:26,914 --> 00:00:34,376
+That one session is the story of this hour: who opens it, what comes back, and what happens when something breaks on the way.
 
 8
-00:00:38,042 --> 00:00:41,088
-The marketplace asks the platform for a step-up.
+00:00:34,426 --> 00:00:36,536
+Go back to the moment after his yes.
 
 9
-00:00:41,138 --> 00:00:47,904
-The platform never refuses a step-up, but its answer to a side app is an instruction: continue in the mobile bank.
+00:00:36,586 --> 00:00:41,024
+Before the MyID screen opens, the mobile bank checks the phone itself.
 
 10
-00:00:47,954 --> 00:00:53,688
-If the marketplace still asks for a proofing session, it gets an error, and no session opens.
+00:00:41,074 --> 00:00:44,552
+It looks for root access, and for signs of an emulator.
 
 11
-00:00:53,738 --> 00:00:55,560
-Why this rule?
+00:00:44,602 --> 00:00:48,824
+On such a phone, the app asks for no session and starts no MyID check.
 
 12
-00:00:55,610 --> 00:01:03,192
-The mobile bank is the master app: it moves money, and the bank's team adds the MyID package to it, and to no other app.
+00:00:48,874 --> 00:00:51,728
+It shows that the check is not possible on this phone.
 
 13
-00:01:03,242 --> 00:01:09,168
-Only one app holds the camera that checks faces against state records, so only one app must be defended.
+00:00:51,778 --> 00:00:57,176
+This check belongs to the app, because the platform and MyID cannot see the phone itself.
 
 14
-00:01:09,218 --> 00:01:15,744
-I think this is the right trade: one more tap for Aziz, and one door for an attacker instead of one in every app.
+00:00:57,226 --> 00:01:01,352
+Aziz's phone is clean, so the app asks the platform for a session.
 
 15
-00:01:15,794 --> 00:01:20,016
-So Aziz opens the mobile bank, and accepts the consent there.
+00:01:01,402 --> 00:01:03,176
+Only the mobile bank can ask.
 
 16
-00:01:20,066 --> 00:01:23,400
-Now the backend opens the session, not the app.
+00:01:03,226 --> 00:01:07,616
+The bank's team adds the MyID part to the master app, and to no other app.
 
 17
-00:01:23,450 --> 00:01:28,512
-The platform calls MyID with the credentials of the installation, which never go to the phone.
+00:01:07,666 --> 00:01:13,592
+Only one app holds the camera that checks faces against state records, so only one app must be defended.
 
 18
-00:01:28,562 --> 00:01:34,080
-It sends the threshold of the bank: the minimum face match that MyID must apply.
+00:01:13,642 --> 00:01:16,976
+Now the backend opens the session, not the app.
 
 19
-00:01:34,130 --> 00:01:39,528
-It gets back a session identifier, and gives a handle to the mobile bank on this same device.
+00:01:17,026 --> 00:01:19,592
+First, the platform looks at his login.
 
 20
-00:01:39,578 --> 00:01:42,696
-This is the proofing session, and it is now Open.
+00:01:19,642 --> 00:01:23,576
+It must have a SIM match, like his login on Monday on the mobile network.
 
 21
-00:01:42,746 --> 00:01:49,128
-It belongs to one customer, one device and one purpose, here a step-up, so it is a full proofing.
+00:01:23,626 --> 00:01:30,416
+Without it, the platform calls nobody, counts nothing, and asks Aziz to log in again on the mobile network.
 
 22
-00:01:49,178 --> 00:01:52,824
-It lives for ten minutes, a value that MyID sets.
+00:01:30,466 --> 00:01:32,288
+His login has the match.
 
 23
-00:01:52,874 --> 00:01:56,520
-While it is open, no second session can open for Aziz.
+00:01:32,338 --> 00:01:37,400
+The platform calls MyID with the credentials of the installation, which never go to the phone.
 
 24
-00:01:56,570 --> 00:02:01,800
-Inside the mobile bank, the MyID screen captures his document and his face.
+00:01:37,450 --> 00:01:41,312
+It sends the bank's minimum face match, a configured value.
 
 25
-00:02:01,850 --> 00:02:07,416
-MyID checks that the face is live, and compares the face and the document with the state records.
+00:01:41,362 --> 00:01:47,648
+It gets back a session identifier, and gives the mobile bank on this same phone what it needs to start the MyID screen.
 
 26
-00:02:07,466 --> 00:02:11,184
-Then it gives the app one thing: a one-time result code.
+00:01:47,698 --> 00:01:50,816
+This is the proofing session, and it is now Open.
 
 27
-00:02:11,234 --> 00:02:13,608
-The result code is not the result.
+00:01:50,866 --> 00:01:55,616
+It belongs to one customer, one device and one purpose: the step-up.
 
 28
-00:02:13,658 --> 00:02:18,432
-It is a ticket that only the platform can exchange, within five minutes, one time.
+00:01:55,666 --> 00:01:59,312
+It lives for ten minutes, a value that MyID sets.
 
 29
-00:02:18,482 --> 00:02:22,200
-The app sends the code and the session identifier to the platform.
+00:01:59,362 --> 00:02:03,008
+While it is open, no second session can open for Aziz.
 
 30
-00:02:22,250 --> 00:02:29,616
-The platform accepts the code only from the device and the customer of the session, only while the session is Open, and only once.
+00:02:03,058 --> 00:02:08,048
+A request from a different phone gets a no, and the same phone gets back the same open session.
 
 31
-00:02:29,666 --> 00:02:33,360
-Then it calls MyID, exchanges the code, and gets the result.
+00:02:08,098 --> 00:02:13,328
+Inside the mobile bank, the MyID screen captures his document and his face.
 
 32
-00:02:33,410 --> 00:02:36,408
-Now imagine that the code was copied on the way.
+00:02:13,378 --> 00:02:18,944
+MyID checks that the face is live, and compares the face and the document with the state records.
 
 33
-00:02:36,458 --> 00:02:38,904
-Someone sends it again, from a different phone.
+00:02:18,994 --> 00:02:22,712
+Then it gives the app one thing: a one-time result code.
 
 34
-00:02:38,954 --> 00:02:43,368
-The platform refuses it: wrong device, or code already used.
+00:02:22,762 --> 00:02:25,136
+The result code is not the result.
 
 35
-00:02:43,418 --> 00:02:45,240
-It writes a security event.
+00:02:25,186 --> 00:02:29,960
+It is a ticket that only the platform can exchange, within five minutes, one time.
 
 36
-00:02:45,290 --> 00:02:49,224
-And it never stores the result code, so there is nothing to steal later.
+00:02:30,010 --> 00:02:32,504
+The app sends the code to the platform.
 
 37
-00:02:49,274 --> 00:02:53,328
-On success, the platform checks every field before it keeps it.
+00:02:32,554 --> 00:02:39,896
+The platform accepts it only from the device and the customer of the session, only while the session is open, and only once.
 
 38
-00:02:53,378 --> 00:02:57,168
-The personal identification number must have fourteen digits.
+00:02:39,946 --> 00:02:43,640
+Then it calls MyID, exchanges the code, and gets the result.
 
 39
-00:02:57,218 --> 00:03:03,384
-A document with an expiry date in the past is a failure, even when MyID says success.
+00:02:43,690 --> 00:02:46,280
+Now suppose the code was copied on the way.
 
 40
-00:03:03,434 --> 00:03:08,352
-A face match below the bank's own minimum is a failure too: face not matched.
+00:02:46,330 --> 00:02:48,776
+Someone sends it again, from a different phone.
 
 41
-00:03:08,402 --> 00:03:12,744
-Then the verified identity is kept, and the session is Succeeded.
+00:02:48,826 --> 00:02:53,240
+The platform refuses it: wrong device, or code already used.
 
 42
-00:03:12,794 --> 00:03:22,968
-Aziz sees his names, his date of birth, the last four characters of his document number, and the first two and last two digits of his personal identification number, and he confirms them.
+00:02:53,290 --> 00:02:55,112
+It writes a security event.
 
 43
-00:03:23,018 --> 00:03:24,864
-Failures get plain words.
+00:02:55,162 --> 00:02:59,096
+And it never stores the result code, so there is nothing to steal later.
 
 44
-00:03:24,914 --> 00:03:28,800
-On Aziz's first try, a lamp makes a glare on his document.
+00:02:59,146 --> 00:03:03,200
+On success, the platform checks every field before it keeps it.
 
 45
-00:03:28,850 --> 00:03:37,440
-MyID gives a reason code, the platform turns it into a reason key, poor image, and Aziz reads: try again now, without the glare.
+00:03:03,250 --> 00:03:07,040
+The personal identification number must have fourteen digits.
 
 46
-00:03:37,490 --> 00:03:39,864
-He never sees a code or a provider name.
+00:03:07,090 --> 00:03:15,584
+A person below the configured minimum age stays at level one, even when MyID says success, and that attempt is not counted.
 
 47
-00:03:39,914 --> 00:03:45,384
-A failure that the person or the capture caused is counted against the limits of Lesson 11.
+00:03:15,634 --> 00:03:19,424
+A document with an expiry date in the past is a failure.
 
 48
-00:03:45,434 --> 00:03:48,648
-A failure that the service caused is not counted.
+00:03:19,474 --> 00:03:24,104
+A face match below the bank's minimum is a failure too: face not matched.
 
 49
-00:03:48,698 --> 00:03:56,736
-When MyID is down, Aziz reads that the service is temporarily not available, his level does not move, and he can try again later.
+00:03:24,154 --> 00:03:26,000
+Failures get plain words.
 
 50
-00:03:56,786 --> 00:03:58,512
-There is no deferred proofing.
+00:03:26,050 --> 00:03:28,928
+Suppose a lamp makes a glare on his document.
 
 51
-00:03:58,562 --> 00:04:00,384
-And the lift?
+00:03:28,978 --> 00:03:34,568
+MyID gives a reason code, and the platform turns it into plain words: poor image.
 
 52
-00:04:00,434 --> 00:04:06,408
-When the network comes back, the app reports that the check is complete, but no code reached the platform.
+00:03:34,618 --> 00:03:38,240
+Aziz reads: try again now, without the glare.
 
 53
-00:04:06,458 --> 00:04:12,840
-The platform waits until MyID closes the session, and then asks MyID for the session status.
+00:03:38,290 --> 00:03:40,664
+He never sees a code or a provider name.
 
 54
-00:04:12,890 --> 00:04:17,664
-A code is there, so the exchange continues, and the check did not vanish.
+00:03:40,714 --> 00:03:43,064
+Each failure also meets the limits.
 
 55
-00:04:17,714 --> 00:04:23,136
-If no code had been there, the attempt would not count, and Aziz could simply try again.
+00:03:43,114 --> 00:03:49,616
+The platform counts failed attempts for the phone number, the device, and the personal identification number when it is known.
 
 56
-00:04:23,186 --> 00:04:36,336
-To recap: only the master app runs MyID, the platform opens the session with credentials that stay in the bank, the app carries back a one-use code, and every failure has a key, a counting rule and plain words.
+00:03:49,666 --> 00:03:55,808
+A failure that the person or the capture caused counts, like a poor image or a face that does not match.
 
 57
-00:04:36,386 --> 00:04:38,736
-Aziz is now at level two.
+00:03:55,858 --> 00:03:58,856
+A failure that the service caused does not count.
 
 58
-00:04:38,786 --> 00:04:40,488
-Next year, he buys a new phone.
+00:03:58,906 --> 00:04:06,944
+When MyID is down, Aziz reads that the service is temporarily not available, his level does not move, and he can try again later.
 
 59
-00:04:40,538 --> 00:04:43,080
-Must he show his passport to MyID again?
+00:04:06,994 --> 00:04:13,112
+After the first counted failure, a cool-down starts, and after the second, a second cool-down.
 
 60
-00:04:43,130 --> 00:04:44,952
-Next: prove once.
+00:04:13,162 --> 00:04:16,832
+At the daily cap, no attempt is possible until the next day.
+
+61
+00:04:16,882 --> 00:04:19,760
+The bank configures the cap and the cool-downs.
+
+62
+00:04:19,810 --> 00:04:27,704
+An operator can reset the counters, for example for a phone that two customers share, and a second operator must approve the reset.
+
+63
+00:04:27,754 --> 00:04:33,320
+And each new try starts again at the consent screen, because one yes opens one session.
+
+64
+00:04:33,370 --> 00:04:35,192
+Back to the lift.
+
+65
+00:04:35,242 --> 00:04:41,600
+When the network comes back, the app reports that the MyID screen ended, but no code reached the platform.
+
+66
+00:04:41,650 --> 00:04:45,848
+The platform asks MyID for the status of the session at once.
+
+67
+00:04:45,898 --> 00:04:50,672
+A code is there, so the exchange continues, and the check did not vanish.
+
+68
+00:04:50,722 --> 00:04:56,216
+If MyID were still busy, the platform would ask again after the session closes.
+
+69
+00:04:56,266 --> 00:05:01,352
+If no code were there, the attempt would not count, and Aziz could start again at once.
+
+70
+00:05:01,402 --> 00:05:07,496
+The result is valid, so the platform keeps his verified identity, and the session is Succeeded.
+
+71
+00:05:07,546 --> 00:05:17,504
+Aziz sees his names, his date of birth, the type of his document, the last four characters of its number, and the first two and last two digits of his personal identification number.
+
+72
+00:05:17,554 --> 00:05:19,376
+He confirms them.
+
+73
+00:05:19,426 --> 00:05:21,248
+Now a check for you.
+
+74
+00:05:21,298 --> 00:05:28,504
+In the lift, the code never reached the platform: does Aziz lose an attempt?
+
+75
+00:05:28,554 --> 00:05:36,184
+No: the platform asks MyID for the status, finds the code, and continues, and with no code the attempt would not count.
+
+76
+00:05:36,234 --> 00:05:41,464
+Only the mobile bank runs MyID, and only after the root and emulator check.
+
+77
+00:05:41,514 --> 00:05:45,688
+The platform opens the session, with credentials that stay in the bank.
+
+78
+00:05:45,738 --> 00:05:50,560
+The app carries back a one-use result code, and only the platform exchanges it.
+
+79
+00:05:50,610 --> 00:05:56,080
+Every failure has plain words and a counting rule, and the bank configures the limits.
+
+80
+00:05:56,130 --> 00:05:59,944
+Aziz has confirmed his data, but he is not at level two yet.
+
+81
+00:05:59,994 --> 00:06:04,696
+One step is left: the phone check, and the money for his mother still waits.
+
+82
+00:06:04,746 --> 00:06:09,184
+Lesson 14 first shows how the platform keeps his verified identity.
