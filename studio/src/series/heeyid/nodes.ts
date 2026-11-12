@@ -26,6 +26,7 @@ export const HEEYID_CATALOG = {
   // Lessons 3–9 (orientation and foundations).
   webLaptop: { label: "Laptop", sublabel: "Marketplace web", art: "shoeshop" },
   order: { label: "Order page", sublabel: "Personal data", art: "receipt" },
+  transfer: { label: "Transfer", sublabel: "To his mother", art: "wallet" },
   authn: { label: "Authentication", sublabel: "The owner?", art: "phone" },
   proofing: { label: "Identity proofing", sublabel: "The real person?", art: "reviewer" },
   authz: { label: "Authorisation", sublabel: "May do what?", art: "request" },
