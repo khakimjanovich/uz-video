@@ -3,181 +3,249 @@
 A new bank signs the contract on a Monday.
 
 2
-00:00:02,714 --> 00:00:10,008
-Somewhere in that bank, a platform team gets two new Kubernetes clusters, one in the test zone and one in the production zone.
+00:00:02,714 --> 00:00:08,688
+Its platform team gets two empty Linux hosts: one in the test zone, and one in the production zone.
 
 3
-00:00:10,058 --> 00:00:15,288
-Between that Monday and the day Aziz types his phone number for the first time, what has to happen?
+00:00:08,738 --> 00:00:12,768
+What has to happen before Aziz can type his phone number for the first time?
 
 4
-00:00:15,338 --> 00:00:26,208
-In Lesson 6, the configuration came from OpenTofu with no default in the code, and in Lesson 38, stage and production became two installations with no route between them.
+00:00:12,818 --> 00:00:18,528
+Lesson 4 gave the configuration, and Lesson 21 closed the trail with the audit.
 
 5
-00:00:26,258 --> 00:00:31,296
-This last lesson installs heeyID in a bank, and then looks back at the whole road.
+00:00:18,578 --> 00:00:24,000
+Now the whole platform goes into that bank, and Aziz walks his journey one last time.
 
 6
-00:00:31,346 --> 00:00:38,952
-One rule stands over everything: one installation serves one bank, and each zone of that bank gets its own installation.
+00:00:24,050 --> 00:00:28,632
+Each zone gets one Linux host, and each host runs its own installation.
 
 7
-00:00:39,002 --> 00:00:43,464
-There is never a second bank inside, and never a call home to the vendor.
+00:00:28,682 --> 00:00:34,176
+Each unit is an image, and Docker Compose runs one copy of each image on the host.
 
 8
-00:00:43,514 --> 00:00:45,408
-Start with the configuration.
+00:00:34,226 --> 00:00:36,792
+This set of units is the Compose stack.
 
 9
-00:00:45,458 --> 00:00:54,864
-The OpenTofu configuration of the installation gives the deploy values for that zone, and the defaults for every policy and every text, in the four languages.
+00:00:36,842 --> 00:00:45,696
+In front run the two gateways, Keycloak, the workers, and four adapters: MyID, TAF, SMS and push.
 
 10
-00:00:54,914 --> 00:01:01,920
-At setup, the platform reads that catalogue and writes it as version zero, marked as the product default.
+00:00:45,746 --> 00:00:51,672
+Behind them run Postgres, Valkey, Kafka and Vault, and each one is new for that zone.
 
 11
-00:01:01,970 --> 00:01:07,872
-If one value is missing, the setup stops with a clear error, and nothing starts half configured.
+00:00:51,722 --> 00:00:54,744
+Then OpenTofu does what Lesson 4 showed.
 
 12
-00:01:07,922 --> 00:01:09,744
-Then the units.
+00:00:54,794 --> 00:01:00,624
+It gives the deploy values of the zone, and the defaults for every policy and every text.
 
 13
-00:01:09,794 --> 00:01:12,264
-Each unit is an image with a Helm chart.
+00:01:00,674 --> 00:01:04,800
+It also writes the settings and the secrets of each unit into Vault.
 
 14
-00:01:12,314 --> 00:01:17,640
-The gateways, Keycloak, the workers, and the MyID and push adapters run in front.
+00:01:04,850 --> 00:01:08,184
+An install script reads them from Vault and starts the stack.
 
 15
-00:01:17,690 --> 00:01:24,456
-Postgres, Valkey, Kafka and Vault run behind them, and each one is a new installation for that zone.
+00:01:08,234 --> 00:01:12,048
+If one value is missing, the start stops with a clear error.
 
 16
-00:01:24,506 --> 00:01:30,432
-Vault makes the keys of the installation, and the bank's security team keeps the keys that unseal it.
+00:01:12,098 --> 00:01:15,912
+Vault starts sealed: it holds the keys, but it cannot use them.
 
 17
-00:01:30,482 --> 00:01:34,920
-Keycloak gets one realm, with one client for each app of the bank.
+00:01:15,962 --> 00:01:20,976
+It opens only with the unseal keys, and the bank's security team keeps them.
 
 18
-00:01:34,970 --> 00:01:36,792
-Then the gate.
+00:01:21,026 --> 00:01:25,632
+So the platform team starts the stack, and the security team opens Vault.
 
 19
-00:01:36,842 --> 00:01:42,000
-The service does not start until the bank has at least one active app with a required level.
+00:01:25,682 --> 00:01:28,968
+Now the stack runs, but customers still cannot come in.
 
 20
-00:01:42,050 --> 00:01:48,744
-The panel shows every policy and text that is still the product default, so the bank sees what it has not decided yet.
+00:01:29,018 --> 00:01:34,824
+The installation opens for customers only when the bank has at least one active app with a required level.
 
 21
-00:01:48,794 --> 00:01:52,488
-Stage goes first, against the MyID test environment.
+00:01:34,874 --> 00:01:36,960
+Here that app is the mobile bank.
 
 22
-00:01:52,538 --> 00:01:57,576
-Production follows as a difference in Helm values, approved by a second person.
+00:01:37,010 --> 00:01:40,584
+Until then, the platform refuses every journey.
 
 23
-00:01:57,626 --> 00:02:02,376
-And for the developers there is a third, smaller home: Compose on a laptop.
+00:01:40,634 --> 00:01:48,216
+The admin panel also lists each policy and text that still has its default value, so the bank sees what it has not decided yet.
 
 24
-00:02:02,426 --> 00:02:13,200
-One command starts Postgres, Valkey, Kafka, Vault in development mode, and Keycloak with a client for the mobile bank, the marketplace app and the marketplace web.
+00:01:48,266 --> 00:01:50,832
+Stage, in the test zone, goes first.
 
 25
-00:02:13,250 --> 00:02:19,008
-It also starts a simulator for each outside service, and a seed loads the default catalogue.
+00:01:50,882 --> 00:01:54,624
+And here is one more fact about Aziz: he is not a real person.
 
 26
-00:02:19,058 --> 00:02:22,128
-The acceptance suite then runs with no internet at all.
+00:01:54,674 --> 00:01:59,232
+The test team needs him every day, so in stage he is a test identity.
 
 27
-00:02:22,178 --> 00:02:24,000
-So when is it done?
+00:01:59,282 --> 00:02:09,312
+A test identity is a record in the MyID test environment, with a known result: success, or a named failure, such as a face that does not match.
 
 28
-00:02:24,050 --> 00:02:28,488
-I think a definition of done is only useful if each line can be checked.
+00:02:09,362 --> 00:02:14,280
+Each night, the acceptance tests run in stage against these test identities.
 
 29
-00:02:28,538 --> 00:02:30,816
-The decisions are written and accepted.
+00:02:14,330 --> 00:02:20,928
+Stage connects only to the MyID test environment, and each customer that it creates carries a test mark.
 
 30
-00:02:30,866 --> 00:02:34,272
-The API contracts of both gateways are published.
+00:02:20,978 --> 00:02:24,216
+Limits and reports never count test customers.
 
 31
-00:02:34,322 --> 00:02:38,520
-Each failure path has a test, and the app-separation test passes.
+00:02:24,266 --> 00:02:32,592
+Production connects only to the real MyID, and there every customer is a real person, even the people that the bank uses for its own checks.
 
 32
-00:02:38,570 --> 00:02:43,704
-Audit events reach the stream, and a simulator of the bank's monitoring reads them.
+00:02:32,642 --> 00:02:35,880
+No network route joins the two zones.
 
 33
-00:02:43,754 --> 00:02:49,152
-The code has a review, and the release has an independent security review and a penetration test.
+00:02:35,930 --> 00:02:42,048
+Only configuration moves from stage to production, as a difference that a second person approves.
 
 34
-00:02:49,202 --> 00:02:53,208
-The integration guide, the runbooks and the decision log exist.
+00:02:42,098 --> 00:02:46,272
+Customers, devices, sessions and audit events never move.
 
 35
-00:02:53,258 --> 00:03:00,264
-And the product manager signs off after a demo on real phones in the test zone, against the MyID test identities.
+00:02:46,322 --> 00:02:52,992
+And production guards itself: it does not start with a test address for MyID, or when test customers are allowed.
 
 36
-00:03:00,314 --> 00:03:01,704
-Now look back at the road.
+00:02:53,042 --> 00:02:56,376
+Its database refuses any customer with the test mark.
 
 37
-00:03:01,754 --> 00:03:07,008
-Aziz registered with his phone number, a code and one password, and reached level one.
+00:02:56,426 --> 00:02:58,944
+Developers do not wait for a zone.
 
 38
-00:03:07,058 --> 00:03:12,408
-He proved who he is one time, with MyID, in the master app, and reached level two.
+00:02:58,994 --> 00:03:02,016
+The same stack runs on a laptop with one command.
 
 39
-00:03:12,458 --> 00:03:17,112
-The platform linked him to the bank's records and made his phone a trusted device.
+00:03:02,066 --> 00:03:11,424
+The simulators of Lesson 5 play MyID, TAF, the SMS vendor and the push service, so the tests run with no internet.
 
 40
-00:03:17,162 --> 00:03:21,408
-His side apps asked the master app for an approval, not for his face.
+00:03:11,474 --> 00:03:15,528
+On the laptop, Aziz is a simulator that never gets tired.
 
 41
-00:03:21,458 --> 00:03:29,064
-His sessions got a rank, and a stranger with his number met a password, a TAF verdict, and his own phone saying this was not me.
+00:03:15,578 --> 00:03:20,088
+The installation is done only when each line of a short list can be checked.
 
 42
-00:03:29,114 --> 00:03:37,632
-His document expired and was refreshed, his account was blocked and unblocked, and every step went into a chain that nobody can rewrite.
+00:03:20,138 --> 00:03:22,416
+The decisions are written and accepted.
 
 43
-00:03:37,682 --> 00:03:44,448
-Behind him were operators with one role each, rules that need two people, and two zones that never touch.
+00:03:22,466 --> 00:03:25,344
+The contracts of both gateways are published.
 
 44
-00:03:44,498 --> 00:03:48,168
-All of it runs inside one bank, in one installation.
+00:03:25,394 --> 00:03:27,360
+Each failure path has a test.
 
 45
-00:03:48,218 --> 00:03:50,040
-Prove once, then bind.
+00:03:27,410 --> 00:03:32,184
+Audit events reach the stream, and a stand-in for the bank's monitoring reads them.
 
 46
-00:03:50,090 --> 00:03:51,912
-That is heeyID.
+00:03:32,234 --> 00:03:37,632
+The code has a review, and the release has an independent security review and a penetration test.
+
+47
+00:03:37,682 --> 00:03:41,832
+The guides for the app teams and for the people who run the platform exist.
+
+48
+00:03:41,882 --> 00:03:48,576
+The full acceptance run passes in stage, against the simulators and the MyID test identities.
+
+49
+00:03:48,626 --> 00:03:53,592
+And the product manager signs off after a demo on real phones in the test zone.
+
+50
+00:03:53,642 --> 00:03:57,936
+Now suppose that a test identity tries to reach the production zone.
+
+51
+00:03:57,986 --> 00:03:59,808
+What happens?
+
+52
+00:03:59,858 --> 00:04:07,320
+Nothing gets in: production talks only to the real MyID, and its database refuses any customer with the test mark.
+
+53
+00:04:07,370 --> 00:04:09,912
+Now walk Aziz's journey one last time.
+
+54
+00:04:09,962 --> 00:04:16,728
+On a Sunday he registered with his number, a code through TAF and a password, and reached level one.
+
+55
+00:04:16,778 --> 00:04:20,040
+On a Saturday he wanted to send money to his mother.
+
+56
+00:04:20,090 --> 00:04:27,072
+He gave his consent and passed MyID, and TAF confirmed that his number was his own: level two.
+
+57
+00:04:27,122 --> 00:04:29,304
+His phone became his one money phone.
+
+58
+00:04:29,354 --> 00:04:35,016
+He logged out because of his nephew, and logged in again on the same phone, with his password and a code.
+
+59
+00:04:35,066 --> 00:04:40,416
+When he lost the phone, one operator blocked it, and a second operator approved the unblock.
+
+60
+00:04:40,466 --> 00:04:43,248
+Months later, the audit answered his letter.
+
+61
+00:04:43,298 --> 00:04:49,272
+Each of those steps runs inside one bank, in one installation, on one host in each zone.
+
+62
+00:04:49,322 --> 00:04:52,248
+Prove once, then bind: that is heeyID.
+
+63
+00:04:52,298 --> 00:04:57,672
+The next module adds the one step that Aziz still cannot take alone: a new phone.
