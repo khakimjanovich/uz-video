@@ -6,17 +6,22 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
-  "In a lift", "Check done", "Passed or lost?",
-  "Lesson 14", "One session",
-  "The marketplace", "Level 2 needed", "Step-up", "Continue in the mobile bank", "No session", "Why?", "The master app", "One door", "One more tap", "Consent there",
-  "The backend opens it", "Credentials stay", "Threshold", "Session id", "Proofing session", "One purpose", "Ten minutes", "No second session",
+  "Saturday afternoon", "In a lift", "No network", "Check done", "Passed or lost?",
+  "One yes, one session", "This hour",
+  "After the yes", "The phone first", "Root? Emulator?", "No session", "Not possible here", "The app checks", "A clean phone",
+  "Only the mobile bank", "The MyID part", "One door",
+  "The backend opens it", "His login", "SIM match", "No match: no call", "Match", "Credentials stay", "Minimum face match",
+  "Session id", "Proofing session", "One purpose", "Ten minutes", "No second session", "Other phone: no",
   "Capture", "Live? Matches?", "Result code", "A code, not a result", "A ticket", "Back to the platform", "Only once", "Exchange",
   "Copied code", "Sent again", "Refused", "Security event", "Never stored",
-  "Check every field", "Fourteen digits", "Expired document", "Face not matched", "Succeeded", "Confirm",
-  "Plain words", "Glare", "Reason key", "No codes", "Counted", "Not counted", "MyID down", "No deferred proofing",
-  "The lift", "No code arrived", "Session status", "Code found", "Try again",
-  "Recap", "Level 2", "A new phone", "Passport again?",
-  "Next: prove once",
+  "Check every field", "Fourteen digits", "Minimum age", "Expired document", "Face not matched",
+  "Plain words", "Glare", "Poor image", "Try again now", "No codes",
+  "The limits", "Three counters", "Counted", "Not counted", "MyID down", "Cool-downs", "Daily cap", "Configured", "Operator reset", "A new yes",
+  "The lift", "No code arrived", "Session status", "Code found", "Still busy", "No code: not counted",
+  "Succeeded", "Masked data", "Confirmed",
+  "A check", "An attempt lost?", "Not lost",
+  "Mobile bank only", "Platform opens", "One-use code", "Plain words, limits",
+  "Not level 2 yet", "One step left", "Lesson 14: the identity",
 ];
 
 export const H15MyIdProofingComposition = createEpisode({
