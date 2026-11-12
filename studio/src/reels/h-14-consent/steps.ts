@@ -29,12 +29,12 @@ const CHECK_EDGES = [{ from: "consent", to: "myid" }, { from: "myid", to: "azizP
 const GATE = { aziz: [0, 1], mobileBank: [1, 1], consent: [2, 1], myid: [3, 1] } as const;
 const GATE_EDGES = [{ from: "aziz", to: "mobileBank" }, { from: "mobileBank", to: "consent" }, { from: "consent", to: "myid" }] as const;
 const READERS = { consent: [0.5, 1], taf: [2.5, 1] } as const;
-const VERSIONS = { staff: [0, 1], texts: [1.5, 1], consent: [3, 1] } as const;
-const VERSION_EDGES = [{ from: "staff", to: "texts" }, { from: "texts", to: "consent" }] as const;
+const VERSIONS = { tofu: [0, 1], texts: [1.5, 1], consent: [3, 1] } as const;
+const VERSION_EDGES = [{ from: "tofu", to: "texts" }, { from: "texts", to: "consent" }] as const;
 const ACCEPT = { ...GATE, acceptance: [2, 2] } as const;
 const ACCEPT_EDGES = [...GATE_EDGES, { from: "consent", to: "acceptance" }, { from: "acceptance", to: "myid" }] as const;
-const RACE = { staff: [0, 0.3], aziz: [0, 1.7], consent: [1.5, 1], platform: [3, 1] } as const;
-const RACE_EDGES = [{ from: "staff", to: "consent" }, { from: "aziz", to: "consent" }, { from: "consent", to: "platform" }] as const;
+const RACE = { tofu: [0, 0.3], aziz: [0, 1.7], consent: [1.5, 1], platform: [3, 1] } as const;
+const RACE_EDGES = [{ from: "tofu", to: "consent" }, { from: "aziz", to: "consent" }, { from: "consent", to: "platform" }] as const;
 const RECORD = { consent: [0.5, 1], acceptance: [2.5, 1] } as const;
 const CLOSE = { aziz: [0, 1], consent: [1, 1], myid: [2, 1], transfer: [3, 1] } as const;
 const CLOSE_EDGES = [{ from: "aziz", to: "consent" }, { from: "consent", to: "myid" }, { from: "myid", to: "transfer" }] as const;
@@ -56,7 +56,7 @@ export const diagram: DiagramStep<HeeyId>[] = [
   { cue: 10, layout: APPS, edges: [...APPS_EDGES], accent: ["apps"], badges: { apps: "required level = lowest asked" } },
   { cue: 11, layout: APPS, edges: [...APPS_EDGES], accent: ["mobileBank"], badges: { mobileBank: "required level 1" } },
   { cue: 12, layout: APPS, edges: [...APPS_EDGES], accent: ["mobileBank"], badges: { mobileBank: "own data: level 1" } },
-  { cue: 13, layout: APPS, edges: [...APPS_EDGES], accent: ["transfer"], badges: { mobileBank: "own data: level 1", transfer: "money · verified data: 2" } },
+  { cue: 13, layout: APPS, edges: [...APPS_EDGES], accent: ["transfer"], badges: { mobileBank: "own data: level 1", transfer: "money · verified identity: 2" } },
   { cue: 14, layout: APPS, edges: [APPS_EDGES[0], { from: "mobileBank", to: "transfer", broken: true }], accent: ["transfer"], badges: { transfer: "needs level 2" } },
   // The step-up: never a refusal, always the way up.
   { cue: 15, layout: STEP, edges: [STEP_EDGES[0]], badges: { platform: "not allowed?" } },
@@ -82,8 +82,8 @@ export const diagram: DiagramStep<HeeyId>[] = [
   // The words come in versions.
   { cue: 34, layout: VERSIONS, edges: [...VERSION_EDGES], accent: ["texts"], badges: { texts: "versions" } },
   { cue: 35, layout: VERSIONS, edges: [...VERSION_EDGES], accent: ["texts"], badges: { texts: "consent + terms · 4 languages" } },
-  { cue: 36, layout: VERSIONS, edges: [...VERSION_EDGES], accent: ["staff"], badges: { staff: "proposer ≠ approver" } },
-  { cue: 37, layout: VERSIONS, edges: [...VERSION_EDGES], accent: ["texts"], badges: { texts: "default · changed · all kept" } },
+  { cue: 36, layout: VERSIONS, edges: [...VERSION_EDGES], accent: ["texts"], badges: { texts: "publication date · all kept" } },
+  { cue: 37, layout: VERSIONS, edges: [...VERSION_EDGES], accent: ["tofu"], badges: { tofu: "new version", texts: "default text" } },
   { cue: 38, layout: VERSIONS, edges: [...VERSION_EDGES], accent: ["consent"], badges: { consent: "published now · his language" } },
   // Refuse: nothing at MyID.
   { cue: 39, layout: GATE, edges: [...GATE_EDGES], packets: [{ from: "mobileBank", to: "consent", label: "Refuse" }], badges: { consent: "Refuse" } },
@@ -106,7 +106,7 @@ export const diagram: DiagramStep<HeeyId>[] = [
   // An answer to an old version.
   { cue: 55, layout: RACE, edges: [...RACE_EDGES], badges: { consent: "v1" } },
   { cue: 56, layout: RACE, edges: [...RACE_EDGES], accent: ["aziz"], badges: { consent: "v1", aziz: "reading v1" } },
-  { cue: 57, layout: RACE, edges: [...RACE_EDGES], accent: ["staff"], packets: [{ from: "staff", to: "consent", label: "v2" }], badges: { consent: "v2 published", aziz: "reading v1" } },
+  { cue: 57, layout: RACE, edges: [...RACE_EDGES], accent: ["tofu"], packets: [{ from: "tofu", to: "consent", label: "v2" }], badges: { consent: "v2 published", aziz: "reading v1" } },
   { cue: 58, layout: RACE, edges: [...RACE_EDGES], packets: [{ from: "aziz", to: "consent", label: "Accept v1" }, { from: "consent", to: "platform", label: "Accept v1", delay: 50 }], badges: { consent: "v2 published" } },
   { cue: 59, layout: RACE, edges: [...RACE_EDGES], danger: ["platform"], packets: [{ from: "platform", to: "consent", label: "show v2" }], badges: { platform: "answer refused" } },
   { cue: 60, layout: RECORD, edges: [{ from: "consent", to: "acceptance" }], accent: ["acceptance", "consent"], badges: { acceptance: "the version he saw", consent: "word for word" } },

@@ -11,7 +11,7 @@ const TITLES = [
   "Each app", "Required level", "Mobile bank: level 1", "Own data: level 1", "Money: level 2", "Transfer: level 2",
   "Not allowed?", "Never refused", "Step-up", "Three parts", "Current: 1", "Required: 2", "The checks", "Only MyID", "Nobody else", "The way up",
   "Consent gate", "Before every MyID call", "Four parts", "1 · The data", "2 · The provider", "3 · The purpose", "4 · Who reads later", "TAF: the ID number", "The bank's words",
-  "Versions", "Four languages", "Proposer, approver", "Every version kept", "Published version",
+  "Versions", "Four languages", "Date, all kept", "New configuration", "Published version",
   "Refuse", "No session", "No attempt", "One event", "No costs nothing", "A real choice",
   "The rent", "Send again", "Nothing selected", "No earlier yes", "Accept", "Record first", "What it holds", "Then MyID", "One yes, one session", "No second use",
   "One more case", "Reading slowly", "A new version", "Accept, old text", "Refused", "Word for word",
