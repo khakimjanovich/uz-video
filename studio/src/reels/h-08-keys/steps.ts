@@ -2,7 +2,7 @@ import { BuildMapStep, DiagramFrame, DiagramStep } from "../../components";
 import { HeeyMapId } from "../../series/heeyid/map";
 import { HeeyId } from "../../series/heeyid/nodes";
 
-// Lesson 6: keys. The disk (0–4); bridge (5–7); Vault in the bank (8–14); envelope encryption (15–24);
+// Lesson 6: keys. The disk (0–4); bridge (5–7); Vault in the bank (8–14); encryption inside Vault (15–24);
 // blind index (25–31); pepper (32–36); the other keys (37–42); passwords (43–45); rotation (46–47);
 // the disk again (48–52); check (53–55); summary and lesson 7 (56–60).
 export const map: BuildMapStep<HeeyMapId>[] = [
@@ -16,10 +16,8 @@ const wall = (at: [number, number]): DiagramFrame => ({ label: "the bank", from:
 const DISK = { thief: [0, 1], disk: [1.5, 1] } as const;
 const DISK_V = { ...DISK, vault: [3, 1] } as const;
 const VAULT = { vendor: [0.5, 1], vault: [2.5, 1] } as const;
-const ENV = { identity: [0, 1], dataKey: [1.5, 1], kek: [3, 1] } as const;
-const ENV_EDGES = [{ from: "dataKey", to: "identity", label: "encrypts" }, { from: "kek", to: "dataKey", label: "locks" }] as const;
-const READ = { platform: [0, 1], dataKey: [1.5, 0.4], vault: [3, 1], identity: [1.5, 1.8] } as const;
-const READ_EDGES = [{ from: "platform", to: "vault" }, { from: "platform", to: "identity" }] as const;
+const SEAL = { platform: [0, 1], vault: [1.5, 1], identity: [3, 1] } as const;
+const SEAL_EDGES = [{ from: "platform", to: "vault" }, { from: "platform", to: "identity" }] as const;
 const SEARCH = { platform: [0, 1], blindIndex: [1.5, 1], identity: [3, 1] } as const;
 const SEARCH_EDGES = [{ from: "platform", to: "blindIndex" }, { from: "blindIndex", to: "identity" }] as const;
 const THIEF = (target: HeeyId): DiagramStep<HeeyId>["layout"] => ({ thief: [0, 1], [target]: [1.5, 1], vault: [3, 1] });
@@ -48,22 +46,22 @@ export const diagram: DiagramStep<HeeyId>[] = [
   { cue: 12, layout: VAULT, frames: [wall([2.5, 1])], crossed: ["vendor"], accent: ["vault"], badges: { vault: "the bank keeps the keys" } },
   { cue: 13, layout: { vault: [1.5, 1] }, frames: [wall([1.5, 1])], accent: ["vault"], badges: { vault: "9 kinds of keys" } },
   { cue: 14, layout: THREE, edges: [...THREE_EDGES], accent: ["identity", "blindIndex", "codeDigest"] },
-  // 1 · Envelope encryption.
+  // 1 · Encryption inside Vault.
   { cue: 15, layout: { identity: [1.5, 1] }, accent: ["identity"], badges: { identity: "1 · names · passport · number · address" } },
-  { cue: 16, layout: { identity: [0.5, 1], dataKey: [2.5, 1] }, edges: [{ from: "dataKey", to: "identity", label: "encrypts" }], accent: ["dataKey"] },
-  { cue: 17, layout: { identity: [0.5, 1], dataKey: [2.5, 1] }, edges: [{ from: "dataKey", to: "identity", label: "encrypts" }], badges: { dataKey: "locked" } },
-  { cue: 18, layout: ENV, edges: [...ENV_EDGES], accent: ["kek"] },
-  { cue: 19, layout: ENV, frames: [wall([3, 1])], edges: [...ENV_EDGES], badges: { kek: "in Vault" } },
-  { cue: 20, layout: READ, edges: [...READ_EDGES], packets: [{ from: "platform", to: "vault", label: "locked key" }] },
-  { cue: 21, layout: READ, edges: [...READ_EDGES], packets: [{ from: "vault", to: "platform", label: "open, one request" }], badges: { platform: "then forgets" } },
-  { cue: 22, layout: ENV, edges: [...ENV_EDGES], accent: ["identity", "dataKey", "kek"], badges: { dataKey: "envelope encryption" } },
+  { cue: 16, layout: { platform: [0.5, 1], identity: [2.5, 1] }, edges: [{ from: "platform", to: "identity", broken: true }], badges: { platform: "never encrypts itself" } },
+  { cue: 17, layout: SEAL, edges: [...SEAL_EDGES], packets: [{ from: "platform", to: "vault", label: "value" }, { from: "vault", to: "platform", label: "sealed value", delay: 60 }] },
+  { cue: 18, layout: SEAL, frames: [wall([1.5, 1])], edges: [...SEAL_EDGES], accent: ["vault"], badges: { vault: "encryption inside Vault" } },
+  { cue: 19, layout: SEAL, frames: [wall([1.5, 1])], edges: [...SEAL_EDGES], accent: ["identity"], badges: { identity: "sealed values · no key" } },
+  { cue: 20, layout: SEAL, frames: [wall([1.5, 1])], edges: [...SEAL_EDGES], packets: [{ from: "platform", to: "vault", label: "sealed value" }] },
+  { cue: 21, layout: SEAL, frames: [wall([1.5, 1])], edges: [...SEAL_EDGES], packets: [{ from: "vault", to: "platform", label: "open, one request" }], badges: { platform: "then forgets" } },
+  { cue: 22, layout: { identity: [0.5, 1], otherRecord: [2.5, 1] }, edges: [{ from: "identity", to: "otherRecord", label: "copied" }], danger: ["otherRecord"], badges: { otherRecord: "does not open" } },
   { cue: 23, layout: { vault: [1.5, 1] }, accent: ["vault"], badges: { vault: "each opening recorded" } },
-  { cue: 24, layout: THIEF("identity"), edges: THIEF_EDGES("identity"), danger: ["thief"], packets: [{ from: "thief", to: "identity", label: "open?", stopAt: 0.6 }], badges: { identity: "locked" } },
+  { cue: 24, layout: THIEF("identity"), edges: THIEF_EDGES("identity"), danger: ["thief"], packets: [{ from: "thief", to: "identity", label: "open?", stopAt: 0.6 }], badges: { identity: "sealed" } },
   // 2 · Blind index.
   { cue: 25, layout: SEARCH, edges: [...SEARCH_EDGES], accent: ["blindIndex"], badges: { blindIndex: "2 · search" } },
   { cue: 26, layout: { platform: [0, 1], identity: [3, 1] }, edges: [{ from: "platform", to: "identity", label: "find by number" }], badges: { identity: "millions" } },
   { cue: 27, layout: { platform: [0, 1], identity: [3, 1] }, edges: [{ from: "platform", to: "identity", broken: true }], badges: { identity: "number encrypted" } },
-  { cue: 28, layout: { blindIndex: [0.5, 1], vault: [2.5, 1] }, edges: [{ from: "vault", to: "blindIndex", label: "index key" }], accent: ["blindIndex"] },
+  { cue: 28, layout: { blindIndex: [0.5, 1], vault: [2.5, 1] }, edges: [{ from: "vault", to: "blindIndex", label: "makes it" }], accent: ["blindIndex"] },
   { cue: 29, layout: SEARCH, edges: [...SEARCH_EDGES], packets: [{ from: "platform", to: "identity", label: "same fingerprint" }], badges: { identity: "found ✓" } },
   { cue: 30, layout: { blindIndex: [0.5, 1], person: [2.5, 1] }, edges: [{ from: "blindIndex", to: "person", broken: true }], badges: { blindIndex: "one-way" } },
   { cue: 31, layout: THIEF("blindIndex"), edges: THIEF_EDGES("blindIndex"), danger: ["thief"], packets: [{ from: "thief", to: "blindIndex", label: "fingerprint?", stopAt: 0.6 }], badges: { vault: "index key" } },
@@ -86,7 +84,7 @@ export const diagram: DiagramStep<HeeyId>[] = [
   { cue: 45, layout: { thief: [0.5, 1], passwordHash: [2.5, 1] }, edges: [{ from: "thief", to: "passwordHash" }], danger: ["thief"], badges: { passwordHash: "nothing to decrypt" } },
   // Rotation.
   { cue: 46, layout: { platformTeam: [0.5, 1], vault: [2.5, 1] }, edges: [{ from: "platformTeam", to: "vault", label: "sets the period" }], badges: { platformTeam: "the bank" } },
-  { cue: 47, layout: ENV, edges: [...ENV_EDGES], packets: [{ from: "kek", to: "dataKey", label: "lock again" }], badges: { kek: "new + old versions" } },
+  { cue: 47, layout: SEAL, edges: [...SEAL_EDGES], packets: [{ from: "platform", to: "vault", label: "seal again" }], badges: { vault: "new key" } },
   // The disk again: the plain answer.
   { cue: 48, layout: DISK_V, frames: [wall([3, 1])], edges: [{ from: "disk", to: "thief" }], danger: ["thief"] },
   { cue: 49, layout: { thief: [0.5, 1], login: [2.5, 1] }, edges: [{ from: "thief", to: "login" }], danger: ["thief"], badges: { login: "readable · masked parts" } },
@@ -99,7 +97,7 @@ export const diagram: DiagramStep<HeeyId>[] = [
   { cue: 55, layout: THIEF("blindIndex"), frames: [wall([3, 1])], edges: THIEF_EDGES("blindIndex"), danger: ["thief"], packets: [{ from: "thief", to: "blindIndex", label: "guess", stopAt: 0.6 }], badges: { blindIndex: "no index key, no match" } },
   // Summary and lesson 7.
   { cue: 56, layout: VAULT, frames: [wall([2.5, 1])], crossed: ["vendor"], accent: ["vault"], badges: { vault: "one per zone" } },
-  { cue: 57, layout: THREE, frames: [wall([1.5, 1.8])], edges: [...THREE_EDGES], accent: ["identity", "blindIndex", "codeDigest"], badges: { identity: "envelope", blindIndex: "blind index", codeDigest: "pepper" } },
+  { cue: 57, layout: THREE, edges: [...THREE_EDGES], accent: ["identity", "blindIndex", "codeDigest"], badges: { identity: "inside Vault", blindIndex: "blind index", codeDigest: "pepper" } },
   { cue: 58, layout: { vault: [0.5, 1], trusted: [2.5, 1] }, frames: [wall([0.5, 1])], edges: [{ from: "vault", to: "trusted", broken: true }], badges: { trusted: "no key on the phone" } },
   { cue: 59, layout: { mobileBank: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "mobileBank", to: "platform" }], accent: ["mobileBank"], badges: { mobileBank: "no key" } },
   { cue: 60, layout: { mobileBank: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "mobileBank", to: "platform", label: "API contract" }], accent: ["platform"], badges: { platform: "Lesson 7" } },
