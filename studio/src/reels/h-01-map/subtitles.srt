@@ -1,303 +1,239 @@
 1
-00:00:00,050 --> 00:00:05,856
-Aziz uses three apps from his bank: the mobile bank, the marketplace and the credit service.
+00:00:00,050 --> 00:00:05,280
+Aziz sends money to his mother from his phone, and the bank asks for no face check.
 
 2
-00:00:05,906 --> 00:00:08,304
-Each app must know that it is really Aziz.
+00:00:05,330 --> 00:00:07,872
+Yet the bank is sure that it is really Aziz.
 
 3
-00:00:08,354 --> 00:00:11,760
-But nobody wants a face check every time they open an app.
+00:00:07,922 --> 00:00:14,624
+So how can a bank know it is really Aziz, without a face check every time?
 
 4
-00:00:11,810 --> 00:00:20,432
-So how can a bank know it is really Aziz, in every app, without checking his face every time?
+00:00:14,674 --> 00:00:20,672
+The answer is heeyID, a customer identity platform that the bank runs inside its own perimeter.
 
 5
-00:00:20,482 --> 00:00:27,128
-This course builds the answer: heeyID, a customer identity platform that the bank runs inside its own walls.
+00:00:20,722 --> 00:00:28,160
+This course follows Aziz on one journey, from his first code to his first transfer, and the map of the platform appears on the way.
 
 6
-00:00:27,178 --> 00:00:30,848
-Follow Aziz for one day, and the whole map appears.
+00:00:28,210 --> 00:00:31,376
+On a Sunday, Aziz installs the mobile bank.
 
 7
-00:00:30,898 --> 00:00:33,104
-Aziz installs the mobile bank.
+00:00:31,426 --> 00:00:34,808
+It is the master app of the bank: the app that moves money.
 
 8
-00:00:33,154 --> 00:00:39,128
-It is the master app: it moves money, so only it may run MyID and TAF.
-
-9
-00:00:39,178 --> 00:00:43,064
+00:00:34,858 --> 00:00:38,744
 He types his phone number, and an SMS code arrives.
 
+9
+00:00:38,794 --> 00:00:44,096
+TAF sends it: the state antifraud service of the mobile operators.
+
 10
-00:00:43,114 --> 00:00:48,416
-It comes through TAF, the state antifraud service of the mobile operators.
+00:00:44,146 --> 00:00:45,968
+He types the code.
 
 11
-00:00:48,466 --> 00:00:54,008
+00:00:46,018 --> 00:00:51,560
 TAF checks that the code arrived on this phone, with this SIM card, and its verdict is green.
 
 12
-00:00:54,058 --> 00:00:58,016
-He types the code, then sets a password and types it a second time.
+00:00:51,610 --> 00:00:54,776
+Then he sets a password and types it a second time.
 
 13
-00:00:58,066 --> 00:01:01,328
-This one password opens every app of the bank.
-
-14
-00:01:01,378 --> 00:01:03,848
+00:00:54,826 --> 00:00:57,296
 Now Aziz has an account at level one.
 
+14
+00:00:57,346 --> 00:01:00,968
+The bank knows his phone number, but it does not yet know the person.
+
 15
-00:01:03,898 --> 00:01:07,160
-The bank knows his phone, but it does not yet know the person.
+00:01:01,018 --> 00:01:04,616
+The next Saturday, Aziz wants to send money to his mother.
 
 16
-00:01:07,210 --> 00:01:10,472
-In the marketplace, Aziz wants to buy a phone on credit.
+00:01:04,666 --> 00:01:09,584
+Money needs level two: the bank must know the real person, with a real passport.
 
 17
-00:01:10,522 --> 00:01:15,824
-The credit service needs level two: it must know the real person, with a real passport.
+00:01:09,634 --> 00:01:13,808
+First, the app asks for his consent, and the platform records it.
 
 18
-00:01:15,874 --> 00:01:21,680
-The marketplace is a side app, and it never checks a face, so it sends Aziz to the mobile bank.
-
-19
-00:01:21,730 --> 00:01:25,568
-There, the app first asks for his consent, and records it.
-
-20
-00:01:25,618 --> 00:01:31,112
+00:01:13,858 --> 00:01:19,352
 Then MyID, the national identity service, opens inside the mobile bank.
 
+19
+00:01:19,402 --> 00:01:23,312
+It compares his live face and his passport with the state records.
+
+20
+00:01:23,362 --> 00:01:26,480
+Next, the platform checks that the phone number is his.
+
 21
-00:01:31,162 --> 00:01:34,784
-It checks his face and his passport against the state records.
+00:01:26,530 --> 00:01:29,168
+It looks first at the number on his MyID record.
 
 22
-00:01:34,834 --> 00:01:38,864
-The platform also checks his phone number against the numbers that MyID knows.
+00:01:29,218 --> 00:01:34,856
+When MyID has no number, or a different one, TAF says who owns the number.
 
 23
-00:01:38,914 --> 00:01:41,264
-Aziz is now at level two.
+00:01:34,906 --> 00:01:37,088
+Now Aziz is at level two.
 
 24
-00:01:41,314 --> 00:01:47,792
-Next, the platform looks for Aziz in the bank's own customer records, by his personal identification number.
+00:01:37,138 --> 00:01:41,600
+And his phone becomes the trusted phone: the one phone that moves his money.
 
 25
-00:01:47,842 --> 00:01:49,880
-It finds him, and links the two.
+00:01:41,650 --> 00:01:43,616
+The transfer to his mother goes.
 
 26
-00:01:49,930 --> 00:01:52,184
-His phone becomes a trusted device.
+00:01:43,666 --> 00:01:48,944
+The next day, Aziz opens the mobile bank again, and there is no face check.
 
 27
-00:01:52,234 --> 00:01:59,192
-Back in the marketplace, Aziz taps Approve in the mobile bank, and the marketplace session gets level two too.
+00:01:48,994 --> 00:01:53,936
+When he logs out, he logs in again on the same phone, with his password and a code.
 
 28
-00:01:59,242 --> 00:02:05,000
-Each app gets its own access grant: this is Aziz, at level two, for this app only.
-
-29
-00:02:05,050 --> 00:02:09,392
-Next morning, Aziz opens the marketplace, then the mobile bank.
-
-30
-00:02:09,442 --> 00:02:11,264
-No face check.
-
-31
-00:02:11,314 --> 00:02:13,136
-No new code.
-
-32
-00:02:13,186 --> 00:02:16,232
-His sessions simply continue on his trusted phone.
-
-33
-00:02:16,282 --> 00:02:19,208
-One proofing serves every app of the bank.
-
-34
-00:02:19,258 --> 00:02:21,080
+00:01:53,986 --> 00:01:55,808
 Now the worry.
 
+29
+00:01:55,858 --> 00:02:00,296
+A stranger talks the mobile operator into a new SIM card with Aziz's number.
+
+30
+00:02:00,346 --> 00:02:04,400
+He also has Aziz's password, from a leak on another website.
+
+31
+00:02:04,450 --> 00:02:08,024
+He puts the SIM card in his own phone and installs the mobile bank.
+
+32
+00:02:08,074 --> 00:02:12,248
+He has the number and the password, but he does not have the trusted phone.
+
+33
+00:02:12,298 --> 00:02:19,376
+A phone becomes trusted only when Aziz's own face passes MyID on it, and TAF confirms its SIM card.
+
+34
+00:02:19,426 --> 00:02:22,568
+The stranger cannot bring Aziz's face.
+
 35
-00:02:21,130 --> 00:02:25,976
-A stranger talks the mobile operator into moving Aziz's number to a new SIM card.
+00:02:22,618 --> 00:02:25,136
+So his phone never moves Aziz's money.
 
 36
-00:02:26,026 --> 00:02:31,184
-He puts it in a new phone, installs the mobile bank and tries to log in as Aziz.
+00:02:25,186 --> 00:02:31,304
+Only the trusted phone moves money, and only the face of the real person makes a phone trusted.
 
 37
-00:02:31,234 --> 00:02:33,056
-He even guessed the password.
+00:02:31,354 --> 00:02:33,680
+Now look at the map behind that journey.
 
 38
-00:02:33,106 --> 00:02:36,928
-What stops him?
+00:02:33,730 --> 00:02:40,040
+The mobile bank calls the heeyID API, and every request enters through one edge.
 
 39
-00:02:36,978 --> 00:02:42,592
-Not TAF alone: the SIM card really has Aziz's number, so the verdict can be green.
+00:02:40,090 --> 00:02:42,632
+The edge sends it to the customer gateway.
 
 40
-00:02:42,642 --> 00:02:48,976
-But it is a new phone, and Aziz was at level two, so the mobile bank asks for MyID on this phone.
-
-41
-00:02:49,026 --> 00:02:52,072
-The stranger's face is not Aziz's face.
-
-42
-00:02:52,122 --> 00:02:59,776
-At the same time, Aziz's trusted phone shows the login request, with two buttons: Approve, and This was not me.
-
-43
-00:02:59,826 --> 00:03:03,232
-Aziz presses This was not me, and the login stops.
-
-44
-00:03:03,282 --> 00:03:08,872
-His number now goes on hold: no codes and no SMS to it, only push.
-
-45
-00:03:08,922 --> 00:03:15,184
-So the marketplace web cannot help the stranger either: its login request also goes to Aziz's phone.
-
-46
-00:03:15,234 --> 00:03:17,632
-Aziz changes his password at once.
-
-47
-00:03:17,682 --> 00:03:20,680
-Then the app asks him: does your SIM card still work?
-
-48
-00:03:20,730 --> 00:03:27,592
-It does not, so Aziz passes MyID again, the number leaves his account, and Aziz adds a new one.
-
-49
-00:03:27,642 --> 00:03:29,512
-Now look at the map behind that day.
-
-50
-00:03:29,562 --> 00:03:34,864
-The bank builds its own apps, and every app calls the heeyID API.
-
-51
-00:03:34,914 --> 00:03:40,144
-Only the mobile bank holds the MyID and TAF SDKs.
-
-52
-00:03:40,194 --> 00:03:46,648
-The other apps are side apps: they use the password, then an approval in the mobile bank or an SMS code.
-
-53
-00:03:46,698 --> 00:03:51,928
-Every request from the apps enters through one edge, and goes to the customer gateway.
-
-54
-00:03:51,978 --> 00:03:59,032
+00:02:42,682 --> 00:02:49,736
 All the rules of the bank live in that gateway: levels, limits, devices, sessions and consent.
 
-55
-00:03:59,082 --> 00:04:01,336
-Behind the gateway is Keycloak.
+41
+00:02:49,786 --> 00:02:55,832
+Next to the gateway is Keycloak, and it does one job: it issues the tokens that the app carries.
 
-56
-00:04:01,386 --> 00:04:05,200
-It does one job: it issues the tokens for the access grant.
-
-57
-00:04:05,250 --> 00:04:12,520
-Each app is one client, and each token names its app, so a marketplace token never opens the mobile bank.
-
-58
-00:04:12,570 --> 00:04:15,856
-The gateway never calls the outside world directly.
-
-59
-00:04:15,906 --> 00:04:24,472
-It uses adapters: one each for TAF, MyID, the SMS service, the customer records and the push service.
-
-60
-00:04:24,522 --> 00:04:28,024
-In the mobile bank, TAF sends the codes.
-
-61
-00:04:28,074 --> 00:04:34,528
-The bank's SMS service sends them in the side apps, and in the mobile bank only when TAF is down.
-
-62
-00:04:34,578 --> 00:04:37,072
-Behind the gateway are four stores.
-
-63
-00:04:37,122 --> 00:04:38,944
-Postgres keeps the records.
-
-64
-00:04:38,994 --> 00:04:42,184
-Valkey keeps the counters and the cool-downs.
-
-65
-00:04:42,234 --> 00:04:45,592
-Kafka carries every event out, through an outbox.
-
-66
-00:04:45,642 --> 00:04:47,464
-Vault keeps the keys.
-
-67
-00:04:47,514 --> 00:04:50,296
+42
+00:02:55,882 --> 00:02:58,664
 The bank's staff work in the administrator panel.
 
-68
-00:04:50,346 --> 00:04:55,264
+43
+00:02:58,714 --> 00:03:03,632
 It talks to the admin gateway, which uses the same rules, not a second copy.
 
-69
-00:04:55,314 --> 00:04:59,560
+44
+00:03:03,682 --> 00:03:06,200
+Under the gateways are four stores.
+
+45
+00:03:06,250 --> 00:03:08,072
+Postgres keeps the records.
+
+46
+00:03:08,122 --> 00:03:11,240
+Valkey keeps the counters and the cool-downs.
+
+47
+00:03:11,290 --> 00:03:13,112
+Kafka carries the events out.
+
+48
+00:03:13,162 --> 00:03:14,984
+Vault keeps the keys.
+
+49
+00:03:15,034 --> 00:03:18,320
+The gateway never calls the outside world directly.
+
+50
+00:03:18,370 --> 00:03:26,120
+It uses adapters, one for each service: MyID, TAF, SMS and push.
+
+51
+00:03:26,170 --> 00:03:31,592
+Only the customer gateway and the workers, which run the background jobs, call the adapters.
+
+52
+00:03:31,642 --> 00:03:35,888
 Now draw one frame around all of it: the bank's perimeter.
 
-70
-00:04:59,610 --> 00:05:04,432
-One installation serves one bank, and a second bank gets its own installation.
+53
+00:03:35,938 --> 00:03:38,288
+One installation serves one bank.
 
-71
-00:05:04,482 --> 00:05:09,064
-TAF reaches the platform through its own agent in the bank's network.
+54
+00:03:38,338 --> 00:03:44,912
+The TAF agent runs inside, in the bank's network, and the TAF adapter calls it.
 
-72
-00:05:09,114 --> 00:05:14,296
-Only MyID and the push service are outside, and the push service gets no personal data.
+55
+00:03:44,962 --> 00:03:50,384
+Three services are outside: MyID, the SMS vendor and the push service.
 
-73
-00:05:14,346 --> 00:05:21,016
-To recap: Aziz proved who he is one time, and his trusted phone carries that proof to every app of the bank.
+56
+00:03:50,434 --> 00:03:52,856
+The push service gets no personal data.
 
-74
-00:05:21,066 --> 00:05:25,536
+57
+00:03:52,906 --> 00:04:02,384
+One person, one phone number, one password and one trusted phone: Aziz proves who he is one time, and his phone carries that proof every day.
+
+58
+00:04:02,434 --> 00:04:06,904
 So how many times does Aziz meet MyID?
 
-75
-00:05:25,586 --> 00:05:29,640
-Once, and again only on a new phone, or when something risky happens.
+59
+00:04:06,954 --> 00:04:08,776
+Once.
 
-76
-00:05:29,690 --> 00:05:34,416
-Next: the words of identity, from authentication to assurance level.
+60
+00:04:08,826 --> 00:04:15,664
+Lesson 2 gives the words behind this journey: authentication, identity proofing and authorisation.
