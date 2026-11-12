@@ -7,18 +7,20 @@ import { diagram, map } from "./steps";
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
   "Two in the morning", "A code", "Another one", "Not asked", "A script", "Who stops it?",
-  "Lesson 10: a digest", "Rules around the code",
-  "The code", "Random", "A table of codes", "No code inside", "Pepper", "A copy is useless", "Older codes void", "One alive", "Never in clear",
+  "Lesson 8: a fingerprint", "A stranger", "Rules around the code",
+  "The code", "Random", "A table of codes", "No code inside", "Keyed digest", "A copy is useless", "Older codes void", "One alive", "Never in clear",
   "Constant time", "Timing tells nothing",
   "Limits on one code", "Bank policy", "Short life", "Few wrong entries", "Tries remain", "Void", "Minimum interval", "Few resends",
-  "From outside", "TAF's own lock", "Never looser", "Or TAF locks first",
+  "From outside", "TAF's own lock", "Never more than 3", "Or TAF locks first",
   "Guessing fails", "It does not guess", "It asks", "Rate limits", "Three counters", "Per number", "Per address", "Per device", "Bank policy",
+  "All codes, one hour", "Alert",
   "Limit reached", "Too many requests", "Audit and antifraud", "Quiet",
-  "Where?", "Valkey", "Cool-downs expire", "Not the only copy", "Rebuilt or expires",
+  "Valkey", "Cool-downs expire", "Under a millisecond", "Wrong entries too", "Not the only copy", "Comes again or expires",
   "The key rule", "App: convenience", "The server counts", "No app at all", "The API says no",
-  "MyID attempts", "Three subjects", "One at the limit", "Cap and cool-downs", "Next try at", "Only the person's failure", "Face mismatch counts", "Outage does not", "Operator reset", "Test customers",
-  "Recap", "One code", "Rate limits", "Server decides",
-  "Monday's code", "Right code", "Which phone?", "Next: the TAF verdict",
+  "MyID too", "Lesson 13: MyID limits",
+  "A slower script", "Which counter?", "Per number, any address",
+  "One code", "Rate limits", "Server decides",
+  "Sunday's code", "Lesson 10: the TAF verdict",
 ];
 
 export const H11CodesAndLimitsComposition = createEpisode({
