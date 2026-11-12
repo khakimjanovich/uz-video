@@ -8,7 +8,7 @@ English first (TTS voice); an Uzbek copy only when asked (never for heeyID). Vid
 | Product | Audience | Goal | Status |
 |---|---|---|---|
 | **heeyMerchant** (Series B, build an acquiring system): [`SERIES-MERCHANT.md`](SERIES-MERCHANT.md), ids `c-NN-<slug>`, Studio folder `heeyMerchant` | backend developers new to payments | build a working acquiring system | producing |
-| **heeyID** (build a customer identity platform): [`SERIES-HEEYID.md`](SERIES-HEEYID.md), ids `h-NN-<slug>`, Studio folder `heeyID` | backend developers new to identity | build heeyID MVP 1 | planning |
+| **heeyID** (build a customer identity platform): [`SERIES-HEEYID.md`](SERIES-HEEYID.md), ids `h-NN-<slug>`, Studio folder `heeyID` | backend developers new to identity | build heeyID MVP 1 (the first money phone) | producing: 22 lessons, being corrected |
 
 Retired on 2026-10-18: Tier 1 (`ep01`–`ep07`) and Tier 2 (`t2-00`–`t2-08`). The owner pitch was retired on 2026-11-01 (tag `owner-pitch`). Restore from commit `67f4751` if ever needed.
 

@@ -23,7 +23,7 @@ const TITLES = [
 export const H09ApiContractComposition = createEpisode({
   course: HEEYID,
   id: "h-09-api-contract",
-  number: 9,
+  number: 7,
   part: 2,
   footer: "The contract is the product",
   subtitles: subtitlesJson as SubtitleCue[],

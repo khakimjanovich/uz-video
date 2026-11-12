@@ -8,18 +8,18 @@ import { HeeyId } from "../../series/heeyid/nodes";
 const UNIT = { heeyid: "registration" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
-  { cue: 0, part: 3, current: ["customer", "sideapps"], dot: "sideapps" },
-  { cue: 4, part: 3, rows: [2, 3], current: ["mobile", "sideapps", "edge", "custgw"], dot: "custgw", units: UNIT },
-  { cue: 6, part: 3, current: ["sideapps", "edge", "custgw"], dot: "custgw" },
+  { cue: 0, part: 3, current: ["customer", "mobile"], dot: "mobile" },
+  { cue: 4, part: 3, rows: [2, 3], current: ["mobile", "edge", "custgw"], dot: "custgw", units: UNIT },
+  { cue: 6, part: 3, current: ["mobile", "edge", "custgw"], dot: "custgw" },
   { cue: 13, part: 3, current: ["custgw", "postgres"], dot: "postgres" },
   { cue: 21, part: 3, current: ["custgw", "adapters", "sms"], dot: "sms", units: { heeyid: "side app: bank SMS" } },
-  { cue: 26, part: 3, current: ["sideapps", "custgw", "postgres"], dot: "custgw", units: UNIT },
+  { cue: 26, part: 3, current: ["mobile", "custgw", "postgres"], dot: "custgw", units: UNIT },
   { cue: 42, part: 3, current: ["custgw", "postgres", "keycloak"], dot: "postgres", units: { heeyid: "level 1" } },
   { cue: 49, part: 3, current: ["mobile", "custgw", "adapters", "taf"], dot: "taf", units: { heeyid: "master app: TAF" } },
   { cue: 53, part: 3, current: ["adapters", "taf", "sms"], dot: "sms", units: { heeyid: "TAF down: bank SMS" } },
   { cue: 55, part: 3, current: ["mobile", "custgw", "postgres"], dot: "postgres", units: { heeyid: "known number: a login" } },
   { cue: 64, part: 3, current: ["postgres", "workers"], dot: "postgres", units: UNIT },
-  { cue: 69, part: 3, rows: [3], current: ["mobile", "sideapps", "custgw", "taf", "sms"], dot: "off", units: UNIT },
+  { cue: 69, part: 3, rows: [3], current: ["mobile", "custgw", "taf", "sms"], dot: "off", units: UNIT },
 ];
 
 const WEB = { aziz: [0, 1], webProfile: [1.1, 1], platform: [2.2, 1] } as const;

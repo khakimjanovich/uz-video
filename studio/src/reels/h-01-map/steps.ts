@@ -7,7 +7,7 @@ import { HeeyId } from "../../series/heeyid/nodes";
 // (48–71); the close (72–75).
 const INSIDE: HeeyMapId[] = ["edge", "custgw", "keycloak", "admingw", "workers", "postgres", "valkey", "kafka", "vault", "adapters"];
 const STORES: HeeyMapId[] = ["postgres", "valkey", "kafka", "vault"];
-const OUTSIDE: HeeyMapId[] = ["taf", "myid", "sms", "lookup", "push"];
+const OUTSIDE: HeeyMapId[] = ["taf", "myid", "sms", "push"];
 const UNIT = { heeyid: "in the bank" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
@@ -20,23 +20,23 @@ export const map: BuildMapStep<HeeyMapId>[] = [
   { cue: 9, part: 1, current: ["custgw", "adapters", "taf"], dot: "taf", units: { heeyid: "code through TAF" } },
   { cue: 10, part: 1, current: ["mobile", "taf"], dot: "taf", units: { heeyid: "verdict: green" } },
   { cue: 11, part: 1, current: ["custgw", "postgres", "valkey"], dot: "custgw" },
-  { cue: 12, part: 1, current: ["mobile", "sideapps", "custgw", "postgres"], dot: "postgres", units: { heeyid: "one password, all apps" } },
+  { cue: 12, part: 1, current: ["mobile", "custgw", "postgres"], dot: "postgres", units: { heeyid: "one password, all apps" } },
   { cue: 18, part: 1, current: ["mobile", "custgw", "postgres"], dot: "postgres" },
   { cue: 19, part: 1, current: ["mobile", "custgw", "adapters", "myid"], dot: "myid" },
   { cue: 21, part: 1, current: ["custgw", "adapters", "myid"], dot: "custgw" },
-  { cue: 23, part: 1, current: ["custgw", "adapters", "lookup"], dot: "lookup" },
-  { cue: 24, part: 1, current: ["custgw", "postgres", "lookup"], dot: "postgres" },
-  { cue: 27, part: 1, current: ["custgw", "keycloak", "mobile", "sideapps"], dot: "mobile" },
+  { cue: 23, part: 1, current: ["custgw", "adapters"], dot: "postgres" },
+  { cue: 24, part: 1, current: ["custgw", "postgres"], dot: "postgres" },
+  { cue: 27, part: 1, current: ["custgw", "keycloak", "mobile"], dot: "mobile" },
   // The map behind that day: one box per sentence.
   { cue: 48, part: 1, dot: "off", units: UNIT },
-  { cue: 49, part: 1, current: ["mobile", "sideapps", "edge", "custgw"], units: { heeyid: "every app calls the API" } },
+  { cue: 49, part: 1, current: ["mobile", "edge", "custgw"], units: { heeyid: "every app calls the API" } },
   { cue: 50, part: 1, current: ["mobile", "taf", "myid"], units: { heeyid: "MyID + TAF SDKs: master app" } },
-  { cue: 51, part: 1, current: ["sideapps", "sms"], units: { heeyid: "side apps: approval or SMS" } },
-  { cue: 52, part: 1, current: ["mobile", "sideapps", "edge", "custgw"], units: UNIT },
+  { cue: 51, part: 1, current: ["mobile", "sms"], units: { heeyid: "side apps: approval or SMS" } },
+  { cue: 52, part: 1, current: ["mobile", "edge", "custgw"], units: UNIT },
   { cue: 53, part: 1, current: ["custgw"], units: UNIT },
   { cue: 54, part: 1, current: ["custgw", "keycloak"], units: UNIT },
   { cue: 55, part: 1, current: ["keycloak"], units: UNIT },
-  { cue: 56, part: 1, current: ["keycloak", "mobile", "sideapps"], units: { heeyid: "one client per app" } },
+  { cue: 56, part: 1, current: ["keycloak", "mobile"], units: { heeyid: "one client per app" } },
   { cue: 57, part: 1, current: ["custgw", "adapters"], units: UNIT },
   { cue: 58, part: 1, current: ["adapters", ...OUTSIDE], units: UNIT },
   { cue: 59, part: 1, current: ["adapters", "taf"], units: { heeyid: "codes: TAF in the master app" } },
@@ -48,12 +48,12 @@ export const map: BuildMapStep<HeeyMapId>[] = [
   { cue: 65, part: 1, current: ["vault"], units: UNIT },
   { cue: 66, part: 1, current: ["staff"], units: UNIT },
   { cue: 67, part: 1, current: ["staff", "admingw"], units: UNIT },
-  { cue: 68, part: 1, current: ["perimeter", "customer", "mobile", "sideapps", "staff", ...INSIDE, "taf", "sms", "lookup"], units: UNIT },
+  { cue: 68, part: 1, current: ["perimeter", "customer", "mobile", "staff", ...INSIDE, "taf", "sms"], units: UNIT },
   { cue: 69, part: 1, current: ["perimeter"], units: { heeyid: "one installation, one bank" } },
   { cue: 70, part: 1, current: ["taf"], units: { heeyid: "TAF agent in the bank" } },
   { cue: 71, part: 1, current: ["myid", "push"], units: UNIT },
   // Recap, the question (held 2 s), the answer, and where the course goes next.
-  { cue: 72, part: 1, current: ["customer", "mobile", "sideapps", "keycloak"], dot: "mobile", units: UNIT },
+  { cue: 72, part: 1, current: ["customer", "mobile", "keycloak"], dot: "mobile", units: UNIT },
   { cue: 73, part: 1, current: ["myid"], dot: "myid", units: UNIT },
   { cue: 75, part: 1, rows: [1], dot: "off", units: UNIT },
 ];

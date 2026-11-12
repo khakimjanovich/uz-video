@@ -23,7 +23,7 @@ const TITLES = [
 export const H13PasswordComposition = createEpisode({
   course: HEEYID,
   id: "h-13-password",
-  number: 13,
+  number: 11,
   part: 3,
   footer: "One row, slow digest, checked first",
   subtitles: subtitlesJson as SubtitleCue[],

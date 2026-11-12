@@ -22,7 +22,7 @@ const TITLES = [
 export const H06ConfigurationComposition = createEpisode({
   course: HEEYID,
   id: "h-06-configuration",
-  number: 6,
+  number: 4,
   part: 2,
   footer: "No default in the code",
   subtitles: subtitlesJson as SubtitleCue[],

@@ -24,7 +24,7 @@ const TITLES = [
 export const H23KnownDeviceLoginComposition = createEpisode({
   course: HEEYID,
   id: "h-23-known-device-login",
-  number: 23,
+  number: 18,
   part: 5,
   footer: "Password, then code",
   subtitles: subtitlesJson as SubtitleCue[],

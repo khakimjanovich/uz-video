@@ -22,7 +22,7 @@ const TITLES = [
 export const H17VerifiedIdentityComposition = createEpisode({
   course: HEEYID,
   id: "h-17-verified-identity",
-  number: 17,
+  number: 14,
   part: 4,
   footer: "Encrypted, masked, audited",
   subtitles: subtitlesJson as SubtitleCue[],

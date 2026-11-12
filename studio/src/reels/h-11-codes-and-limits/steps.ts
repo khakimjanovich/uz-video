@@ -9,14 +9,14 @@ const UNIT = { heeyid: "codes and limits" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
   { cue: 0, part: 3, current: ["customer"], dot: "customer" },
-  { cue: 4, part: 3, current: ["sideapps", "edge", "custgw", "sms"], dot: "sideapps" },
+  { cue: 4, part: 3, current: ["mobile", "edge", "custgw", "sms"], dot: "mobile" },
   { cue: 6, part: 3, rows: [3], current: ["custgw", "postgres", "valkey"], dot: "custgw", units: UNIT },
   { cue: 10, part: 3, current: ["custgw", "postgres", "vault"], dot: "postgres", units: { heeyid: "code: keyed digest" } },
   { cue: 19, part: 3, current: ["custgw", "postgres"], dot: "postgres", units: UNIT },
   { cue: 27, part: 3, current: ["adapters", "taf"], dot: "taf", units: { heeyid: "TAF has its own lock" } },
-  { cue: 34, part: 3, current: ["sideapps", "custgw", "valkey"], dot: "valkey", units: { heeyid: "rate limits" } },
+  { cue: 34, part: 3, current: ["mobile", "custgw", "valkey"], dot: "valkey", units: { heeyid: "rate limits" } },
   { cue: 44, part: 3, current: ["valkey", "postgres"], dot: "valkey", units: UNIT },
-  { cue: 49, part: 3, current: ["mobile", "sideapps", "edge", "custgw"], dot: "custgw", units: { heeyid: "only the server counts" } },
+  { cue: 49, part: 3, current: ["mobile", "edge", "custgw"], dot: "custgw", units: { heeyid: "only the server counts" } },
   { cue: 54, part: 3, rows: [3, 4], current: ["custgw", "valkey", "myid"], dot: "myid", units: { heeyid: "MyID attempts" } },
   { cue: 64, part: 3, rows: [3], current: ["custgw", "postgres", "valkey"], dot: "off", units: UNIT },
   { cue: 68, part: 3, current: ["mobile", "taf"], dot: "taf", units: UNIT },

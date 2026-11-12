@@ -24,7 +24,7 @@ const TITLES = [
 export const H11CodesAndLimitsComposition = createEpisode({
   course: HEEYID,
   id: "h-11-codes-and-limits",
-  number: 11,
+  number: 9,
   part: 3,
   footer: "One code, few tries, server counts",
   subtitles: subtitlesJson as SubtitleCue[],

@@ -8,16 +8,16 @@ import { HeeyId } from "../../series/heeyid/nodes";
 const UNIT = { heeyid: "password" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
-  { cue: 0, part: 3, current: ["sideapps"], dot: "sideapps" },
+  { cue: 0, part: 3, current: ["mobile"], dot: "mobile" },
   { cue: 5, part: 3, rows: [3], current: ["custgw", "postgres"], dot: "postgres", units: UNIT },
   { cue: 9, part: 3, current: ["custgw", "postgres", "keycloak"], dot: "postgres", units: { heeyid: "one row, not Keycloak" } },
   { cue: 24, part: 3, current: ["custgw", "postgres"], dot: "custgw", units: { heeyid: "settings: installation config" } },
-  { cue: 27, part: 3, current: ["sideapps", "edge", "custgw", "postgres"], dot: "custgw", units: UNIT },
+  { cue: 27, part: 3, current: ["mobile", "edge", "custgw", "postgres"], dot: "custgw", units: UNIT },
   { cue: 35, part: 3, current: ["custgw", "postgres", "kafka"], dot: "kafka", units: { heeyid: "audit · antifraud" } },
   { cue: 37, part: 3, current: ["custgw", "sms", "push"], dot: "sms", units: UNIT },
   { cue: 40, part: 3, current: ["mobile", "custgw", "keycloak"], dot: "mobile", units: { heeyid: "lock ≠ block" } },
   { cue: 45, part: 3, current: ["mobile", "custgw", "postgres", "kafka"], dot: "postgres", units: { heeyid: "change: one transaction" } },
-  { cue: 52, part: 3, current: ["custgw", "keycloak", "sideapps"], dot: "sideapps", units: UNIT },
+  { cue: 52, part: 3, current: ["custgw", "keycloak", "mobile"], dot: "mobile", units: UNIT },
   { cue: 60, part: 3, rows: [3], current: ["custgw", "postgres"], dot: "off", units: UNIT },
   { cue: 67, part: 3, rows: [4], current: ["mobile", "myid"], dot: "myid", units: UNIT },
 ];

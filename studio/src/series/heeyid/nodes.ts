@@ -1,4 +1,4 @@
-import { siApachekafka, siDocker, siFirebase, siHelm, siKeycloak, siKotlin, siKubernetes, siOpenapiinitiative, siOpenid, siOpentofu, siPostgresql, siVault } from "simple-icons";
+import { siApachekafka, siDocker, siFirebase, siKeycloak, siOpenapiinitiative, siOpenid, siOpenjdk, siOpentofu, siPostgresql, siVault } from "simple-icons";
 import { NodeDef } from "../../components/diagram";
 import { Course } from "../../utils/createEpisode";
 import { HEEYID_MAP, HeeyMapId } from "./map";
@@ -16,9 +16,9 @@ export const HEEYID_CATALOG = {
   taf: { label: "TAF", sublabel: "Antifraud verdict", art: "sim" },
   myid: { label: "MyID", sublabel: "Face · passport", art: "checker" },
   records: { label: "Customer records", sublabel: "Of the bank", art: "journal" },
-  person: { label: "Person", sublabel: "PINFL · level", art: "buyer" },
+  person: { label: "Person", sublabel: "ID number · level", art: "buyer" },
   login: { label: "Phone number", sublabel: "One password", art: "phone" },
-  laptop: { label: "Work laptop", sublabel: "Browser", art: "admin" },
+  laptop: { label: "Laptop", sublabel: "Browser", art: "admin" },
   operator: { label: "Bank operator", sublabel: "Ends sessions", art: "reviewer" },
   checkLog: { label: "Check log", sublabel: "Provider · app · time", art: "journal" },
   secondBank: { label: "Second bank", sublabel: "Own installation", art: "bank" },
@@ -55,7 +55,7 @@ export const HEEYID_CATALOG = {
   tests: { label: "Acceptance tests", sublabel: "Each release", art: "checker" },
   newApp: { label: "New app", sublabel: "One more client", art: "salespoint" },
   tofu: { label: "OpenTofu", sublabel: "Installation config", logo: siOpentofu.path },
-  code: { label: "Platform code", sublabel: "No default values", logo: siKotlin.path },
+  code: { label: "Platform code", sublabel: "No default values", logo: siOpenjdk.path },
   policies: { label: "Policies", sublabel: "Versions", art: "journal" },
   maker: { label: "Security admin", sublabel: "Proposes", art: "admin" },
   checker: { label: "Second admin", sublabel: "Approves", art: "checker" },
@@ -136,8 +136,8 @@ export const HEEYID_CATALOG = {
   proposal: { label: "Proposal", sublabel: "Current · proposed", art: "receipt" },
   testId: { label: "Test identity", sublabel: "Expected result", art: "journal" },
   simulators: { label: "Simulators", sublabel: "No internet", art: "workflow" },
-  helm: { label: "Helm chart", sublabel: "The units", logo: siHelm.path },
-  cluster: { label: "Kubernetes", sublabel: "One per zone", logo: siKubernetes.path },
+  stack: { label: "Compose stack", sublabel: "The units", logo: siDocker.path },
+  host: { label: "Linux host", sublabel: "One per zone", art: "bank" },
   goLive: { label: "Go-live check", sublabel: "One app with a level", art: "checker" },
   compose: { label: "Compose", sublabel: "On a laptop", logo: siDocker.path },
   ev1: { label: "Event 41", sublabel: "Audit", art: "receipt" },

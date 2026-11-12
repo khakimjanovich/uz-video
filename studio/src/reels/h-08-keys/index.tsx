@@ -25,7 +25,7 @@ const TITLES = [
 export const H08KeysComposition = createEpisode({
   course: HEEYID,
   id: "h-08-keys",
-  number: 8,
+  number: 6,
   part: 2,
   footer: "The bank keeps the keys",
   subtitles: subtitlesJson as SubtitleCue[],

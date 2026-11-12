@@ -1,20 +1,19 @@
-// The heeyID build map: one platform inside the bank's perimeter, with MyID and the push service outside; TAF answers through its agent inside.
+// The heeyID build map (MVP 1, the master app only): one platform inside the bank's perimeter, with MyID, the SMS vendor and the push service outside; TAF answers through its agent inside.
 // Coordinates are in BuildMap's 680×500 design space.
 import { siApachekafka, siKeycloak, siPostgresql, siVault } from "simple-icons";
 import type { MapDef } from "../../components/BuildMap";
 
 export type HeeyMapId =
-  | "customer" | "mobile" | "sideapps" | "staff"
+  | "customer" | "mobile" | "staff"
   | "edge" | "custgw" | "keycloak" | "admingw" | "workers"
   | "postgres" | "valkey" | "kafka" | "vault" | "adapters"
-  | "taf" | "sms" | "lookup" | "myid" | "push"
+  | "taf" | "sms" | "myid" | "push"
   | "perimeter";
 
 export const HEEYID_MAP: MapDef<HeeyMapId> = {
   nodes: {
     customer: { label: "Aziz", sub: "Customer", x: 40, y: 10, w: 140, h: 52 },
-    mobile: { label: "Mobile bank", sub: "Master app", x: 200, y: 10, w: 125, h: 52 },
-    sideapps: { label: "Side apps", sub: "Marketplace · web", x: 335, y: 10, w: 125, h: 52 },
+    mobile: { label: "Mobile bank", sub: "Master app", x: 200, y: 10, w: 160, h: 52 },
     staff: { label: "Bank staff", sub: "Admin panel", x: 480, y: 10, w: 160, h: 52 },
     edge: { label: "Edge", x: 52, y: 116, w: 576, h: 28 },
     custgw: { label: "Customer gateway", sub: "The bank's rules", x: 52, y: 156, w: 200, h: 52 },
@@ -25,36 +24,30 @@ export const HEEYID_MAP: MapDef<HeeyMapId> = {
     valkey: { label: "Counters", sub: "Valkey", x: 128, y: 220, w: 70, h: 52 },
     kafka: { label: "Events", x: 204, y: 220, w: 70, h: 52, logos: [siApachekafka.path] },
     vault: { label: "Keys", x: 280, y: 220, w: 70, h: 52, logos: [siVault.path] },
-    adapters: { label: "Adapters", sub: "One per outside service", x: 362, y: 220, w: 266, h: 52 },
-    taf: { label: "TAF", sub: "Antifraud", x: 362, y: 316, w: 90, h: 52 },
-    sms: { label: "SMS", sub: "Of the bank", x: 476, y: 316, w: 80, h: 52 },
-    lookup: { label: "Customers", sub: "The bank's", x: 564, y: 316, w: 88, h: 52 },
-    myid: { label: "MyID", sub: "Face · passport", x: 384, y: 440, w: 120, h: 48 },
-    push: { label: "Push service", sub: "No personal data", x: 514, y: 440, w: 138, h: 48 },
+    adapters: { label: "Adapters", sub: "MyID · TAF · SMS · push", x: 362, y: 220, w: 266, h: 52 },
+    taf: { label: "TAF", sub: "Antifraud agent", x: 476, y: 316, w: 110, h: 52 },
+    sms: { label: "SMS vendor", sub: "Sends the texts", x: 270, y: 440, w: 120, h: 48 },
+    myid: { label: "MyID", sub: "Face · passport", x: 400, y: 440, w: 120, h: 48 },
+    push: { label: "Push service", sub: "No personal data", x: 530, y: 440, w: 126, h: 48 },
     perimeter: { label: "The bank's perimeter", x: 20, y: 76, w: 640, h: 330 },
   },
   arrows: [
-    [262, 62, 116],
-    [397, 62, 116],
+    [280, 62, 116],
     [560, 62, 116],
-    [407, 272, 316],
-    [516, 272, 316],
-    [608, 272, 316],
-    [464, 272, 440],
+    [531, 272, 316],
+    [376, 272, 440],
+    [460, 272, 440],
   ],
-  arrowEnds: [["mobile", "edge"], ["sideapps", "edge"], ["staff", "edge"], ["adapters", "taf"], ["adapters", "sms"], ["adapters", "lookup"], ["adapters", "myid"]],
+  arrowEnds: [["mobile", "edge"], ["staff", "edge"], ["adapters", "taf"], ["adapters", "sms"], ["adapters", "myid"]],
   units: [{ id: "heeyid", x: 36, y: 92, w: 608, h: 196, label: "heeyID" }],
   // The course's modules (SERIES-HEEYID.md), with the boxes each puts in place.
   parts: [
-    { n: 1, title: "Orientation", lessons: 3, nodes: [] },
-    { n: 2, title: "Foundations", lessons: 6, nodes: ["edge", "keycloak", "vault", "adapters", "mobile", "sideapps", "postgres"] },
+    { n: 1, title: "Orientation", lessons: 2, nodes: [] },
+    { n: 2, title: "Foundations", lessons: 5, nodes: ["edge", "keycloak", "vault", "adapters", "mobile", "postgres"] },
     { n: 3, title: "Registration", lessons: 4, nodes: ["customer", "custgw", "valkey", "taf", "sms"] },
-    { n: 4, title: "Proofing", lessons: 6, nodes: ["myid", "lookup"] },
-    { n: 5, title: "Devices and login", lessons: 6, nodes: ["push"] },
-    { n: 6, title: "Side apps and the master app", lessons: 3, nodes: [] },
-    { n: 7, title: "Sessions and recovery", lessons: 4, nodes: [] },
-    { n: 8, title: "Lifecycle and trail", lessons: 4, nodes: ["kafka", "workers"] },
-    { n: 9, title: "Operations", lessons: 3, nodes: ["staff", "admingw", "perimeter"] },
+    { n: 4, title: "Proofing", lessons: 4, nodes: ["myid"] },
+    { n: 5, title: "The money phone", lessons: 3, nodes: ["push"] },
+    { n: 6, title: "Operations and trail", lessons: 4, nodes: ["staff", "admingw", "kafka", "workers", "perimeter"] },
   ],
   frame: "perimeter",
 };
