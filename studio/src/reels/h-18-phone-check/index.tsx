@@ -20,7 +20,7 @@ const TITLES = [
 export const H18PhoneCheckComposition = createEpisode({
   course: HEEYID,
   id: "h-18-phone-check",
-  number: 18,
+  number: 15,
   part: 4,
   footer: "Person and number, together",
   subtitles: subtitlesJson as SubtitleCue[],

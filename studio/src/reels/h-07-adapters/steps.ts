@@ -5,7 +5,7 @@ import { HeeyId } from "../../series/heeyid/nodes";
 // Lesson 7: adapters. The spinner (0–5); domain, ports, adapters (6–13); simulators (14–19); timeout,
 // breaker, probe (20–28); the fixed behaviours (29–38); back to Aziz (39–45); two more rules (46–50);
 // recap and the way to keys (51–58).
-const OUTSIDE: HeeyMapId[] = ["taf", "sms", "lookup", "myid", "push"];
+const OUTSIDE: HeeyMapId[] = ["taf", "sms", "myid", "push"];
 
 export const map: BuildMapStep<HeeyMapId>[] = [
   { cue: 4, part: 2, current: ["adapters", "myid", "taf", "sms"], units: { heeyid: "timeouts" } },

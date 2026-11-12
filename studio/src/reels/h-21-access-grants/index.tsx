@@ -25,7 +25,7 @@ const TITLES = [
 export const H21AccessGrantsComposition = createEpisode({
   course: HEEYID,
   id: "h-21-access-grants",
-  number: 21,
+  number: 17,
   part: 5,
   footer: "Gateway decides, Keycloak issues",
   subtitles: subtitlesJson as SubtitleCue[],

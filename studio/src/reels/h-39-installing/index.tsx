@@ -19,8 +19,8 @@ const TITLES = [
 export const H39InstallingComposition = createEpisode({
   course: HEEYID,
   id: "h-39-installing",
-  number: 39,
-  part: 9,
+  number: 22,
+  part: 6,
   footer: "Prove once, then bind",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

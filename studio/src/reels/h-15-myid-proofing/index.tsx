@@ -22,7 +22,7 @@ const TITLES = [
 export const H15MyIdProofingComposition = createEpisode({
   course: HEEYID,
   id: "h-15-myid-proofing",
-  number: 15,
+  number: 13,
   part: 4,
   footer: "One session, one-use code",
   subtitles: subtitlesJson as SubtitleCue[],

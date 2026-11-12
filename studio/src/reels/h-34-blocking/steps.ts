@@ -8,11 +8,11 @@ import { HeeyId } from "../../series/heeyid/nodes";
 const UNIT = { heeyid: "in the bank" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
-  { cue: 4, part: 8, rows: [8], current: ["postgres", "myid"], dot: "myid", units: { heeyid: "lesson 33: a refresh mismatch" } },
-  { cue: 5, part: 8, rows: [8], current: ["staff", "admingw", "custgw"], dot: "admingw", units: { heeyid: "block · unblock" } },
-  { cue: 27, part: 8, rows: [8], current: ["custgw", "postgres", "keycloak", "kafka"], dot: "custgw", units: { heeyid: "three writes together" } },
-  { cue: 28, part: 8, rows: [8], current: ["custgw", "valkey"], dot: "valkey", units: { heeyid: "revocation list" } },
-  { cue: 55, part: 8, rows: [8], dot: "off", units: UNIT },
+  { cue: 4, part: 6, rows: [6], current: ["postgres", "myid"], dot: "myid", units: { heeyid: "lesson 33: a refresh mismatch" } },
+  { cue: 5, part: 6, rows: [6], current: ["staff", "admingw", "custgw"], dot: "admingw", units: { heeyid: "block · unblock" } },
+  { cue: 27, part: 6, rows: [6], current: ["custgw", "postgres", "keycloak", "kafka"], dot: "custgw", units: { heeyid: "three writes together" } },
+  { cue: 28, part: 6, rows: [6], current: ["custgw", "valkey"], dot: "valkey", units: { heeyid: "revocation list" } },
+  { cue: 55, part: 6, rows: [6], dot: "off", units: UNIT },
 ];
 
 const BAZAAR = { phoneThief: [0, 0.4], trusted: [1.5, 0.4], aziz: [0, 1.7], operator: [3, 1.7] } as const;

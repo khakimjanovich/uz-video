@@ -21,7 +21,7 @@ const TITLES = [
 export const H07AdaptersComposition = createEpisode({
   course: HEEYID,
   id: "h-07-adapters",
-  number: 7,
+  number: 5,
   part: 2,
   footer: "A fixed answer for each outage",
   subtitles: subtitlesJson as SubtitleCue[],

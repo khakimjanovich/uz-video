@@ -26,7 +26,7 @@ const TITLES = [
 export const H10RegistrationComposition = createEpisode({
   course: HEEYID,
   id: "h-10-registration",
-  number: 10,
+  number: 8,
   part: 3,
   footer: "Number, code, password, level 1",
   subtitles: subtitlesJson as SubtitleCue[],

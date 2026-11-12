@@ -6,7 +6,7 @@ import { HeeyId } from "../../series/heeyid/nodes";
 // (28–31); levels (32–38); person level vs session level (39–50); the SMS evening (51–59); the standards
 // (60–65); recap and the way to the perimeter (66–74).
 export const map: BuildMapStep<HeeyMapId>[] = [
-  { cue: 72, part: 1, current: ["myid", "taf", "lookup", "postgres"], units: { heeyid: "passports and phone numbers" } },
+  { cue: 72, part: 1, current: ["myid", "taf", "postgres"], units: { heeyid: "passports and phone numbers" } },
   { cue: 73, part: 1, current: ["perimeter"], units: { heeyid: "where does it run?" } },
   { cue: 74, part: 2, rows: [2], dot: "off" },
 ];

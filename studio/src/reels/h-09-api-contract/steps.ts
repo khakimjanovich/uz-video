@@ -7,7 +7,7 @@ import { HeeyId } from "../../series/heeyid/nodes";
 // (55–58); recap and the way to registration (59–66).
 export const map: BuildMapStep<HeeyMapId>[] = [
   { cue: 5, part: 2, current: ["vault"], units: { heeyid: "keys stay in the bank" } },
-  { cue: 6, part: 2, rows: [2], current: ["mobile", "sideapps", "edge", "custgw"], units: { heeyid: "what reaches the apps" } },
+  { cue: 6, part: 2, rows: [2], current: ["mobile", "edge", "custgw"], units: { heeyid: "what reaches the apps" } },
   { cue: 64, part: 3, rows: [3], current: ["customer", "mobile", "custgw"], dot: "customer", units: { heeyid: "next: registration" } },
   { cue: 66, part: 3, rows: [3], dot: "off" },
 ];

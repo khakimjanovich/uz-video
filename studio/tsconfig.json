@@ -12,5 +12,24 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true
   },
-  "exclude": ["remotion.config.ts"]
+  "exclude": [
+    "remotion.config.ts",
+    "src/reels/h-02-one-identity",
+    "src/reels/h-05-apps-and-tokens",
+    "src/reels/h-16-prove-once",
+    "src/reels/h-19-linking",
+    "src/reels/h-22-step-up",
+    "src/reels/h-24-new-device",
+    "src/reels/h-25-remote-access",
+    "src/reels/h-26-side-app-login",
+    "src/reels/h-27-account-link",
+    "src/reels/h-28-address-sharing",
+    "src/reels/h-29-sessions-and-rank",
+    "src/reels/h-30-password-reset",
+    "src/reels/h-31-this-was-not-me",
+    "src/reels/h-32-number-changes",
+    "src/reels/h-33-refresh",
+    "src/reels/h-37-admin-panel",
+    "src/reels/h-38-test-identities"
+  ]
 }

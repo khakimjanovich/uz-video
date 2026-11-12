@@ -22,7 +22,7 @@ const TITLES = [
 export const H14ConsentComposition = createEpisode({
   course: HEEYID,
   id: "h-14-consent",
-  number: 14,
+  number: 12,
   part: 4,
   footer: "Consent before every MyID call",
   subtitles: subtitlesJson as SubtitleCue[],

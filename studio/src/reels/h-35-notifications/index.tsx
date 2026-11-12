@@ -21,8 +21,8 @@ const TITLES = [
 export const H35NotificationsComposition = createEpisode({
   course: HEEYID,
   id: "h-35-notifications",
-  number: 35,
-  part: 8,
+  number: 20,
+  part: 6,
   footer: "A push is a doorbell, not a letter",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

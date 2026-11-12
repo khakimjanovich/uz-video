@@ -8,11 +8,11 @@ import { HeeyId } from "../../series/heeyid/nodes";
 const UNIT = { heeyid: "in the bank" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
-  { cue: 5, part: 8, rows: [8], current: ["kafka", "workers"], dot: "kafka", units: { heeyid: "lesson 35: the outbox" } },
-  { cue: 6, part: 8, rows: [8], current: ["postgres", "kafka", "vault", "workers"], dot: "postgres", units: { heeyid: "audit events" } },
-  { cue: 27, part: 8, rows: [8], current: ["kafka", "perimeter"], dot: "kafka", units: { heeyid: "audit topic → the bank's monitoring" } },
-  { cue: 38, part: 8, rows: [8], current: ["postgres", "workers"], dot: "workers", units: { heeyid: "retention: the deletion job" } },
-  { cue: 52, part: 8, rows: [9], dot: "off", units: UNIT },
+  { cue: 5, part: 6, rows: [6], current: ["kafka", "workers"], dot: "kafka", units: { heeyid: "lesson 35: the outbox" } },
+  { cue: 6, part: 6, rows: [6], current: ["postgres", "kafka", "vault", "workers"], dot: "postgres", units: { heeyid: "audit events" } },
+  { cue: 27, part: 6, rows: [6], current: ["kafka", "perimeter"], dot: "kafka", units: { heeyid: "audit topic → the bank's monitoring" } },
+  { cue: 38, part: 6, rows: [6], current: ["postgres", "workers"], dot: "workers", units: { heeyid: "retention: the deletion job" } },
+  { cue: 52, part: 6, rows: [6], dot: "off", units: UNIT },
 ];
 
 const LETTER = { aziz: [0.5, 1], platform: [2.5, 1] } as const;

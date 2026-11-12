@@ -25,7 +25,7 @@ const TITLES = [
 export const H12TafVerdictComposition = createEpisode({
   course: HEEYID,
   id: "h-12-taf-verdict",
-  number: 12,
+  number: 10,
   part: 3,
   footer: "TAF advises, the platform decides",
   subtitles: subtitlesJson as SubtitleCue[],

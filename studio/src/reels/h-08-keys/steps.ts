@@ -6,7 +6,7 @@ import { HeeyId } from "../../series/heeyid/nodes";
 // rotation (46–50); the disk again (51–54); recap and the way to the API contract (55–61).
 export const map: BuildMapStep<HeeyMapId>[] = [
   { cue: 6, part: 2, rows: [2], current: ["vault"], units: { heeyid: "all keys: Vault" } },
-  { cue: 59, part: 2, current: ["mobile", "sideapps", "edge"], units: { heeyid: "what may an app keep?" } },
+  { cue: 59, part: 2, current: ["mobile", "edge"], units: { heeyid: "what may an app keep?" } },
   { cue: 61, part: 2, rows: [2], dot: "off" },
 ];
 

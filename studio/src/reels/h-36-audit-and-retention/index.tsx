@@ -19,8 +19,8 @@ const TITLES = [
 export const H36AuditAndRetentionComposition = createEpisode({
   course: HEEYID,
   id: "h-36-audit-and-retention",
-  number: 36,
-  part: 8,
+  number: 21,
+  part: 6,
   footer: "Add only, check daily",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

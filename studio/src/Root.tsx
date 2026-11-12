@@ -43,10 +43,8 @@ import { C36bOneInstallComposition } from "./reels/c-36b-one-install";
 import { C37ReleasesComposition } from "./reels/c-37-releases";
 import { C38ResponsibilityComposition } from "./reels/c-38-responsibility";
 import { H01MapComposition } from "./reels/h-01-map";
-import { H02OneIdentityComposition } from "./reels/h-02-one-identity";
 import { H03IdentityWordsComposition } from "./reels/h-03-identity-words";
 import { H04PerimeterComposition } from "./reels/h-04-perimeter";
-import { H05AppsAndTokensComposition } from "./reels/h-05-apps-and-tokens";
 import { H06ConfigurationComposition } from "./reels/h-06-configuration";
 import { H07AdaptersComposition } from "./reels/h-07-adapters";
 import { H08KeysComposition } from "./reels/h-08-keys";
@@ -57,29 +55,14 @@ import { H12TafVerdictComposition } from "./reels/h-12-taf-verdict";
 import { H13PasswordComposition } from "./reels/h-13-password";
 import { H14ConsentComposition } from "./reels/h-14-consent";
 import { H15MyIdProofingComposition } from "./reels/h-15-myid-proofing";
-import { H16ProveOnceComposition } from "./reels/h-16-prove-once";
 import { H17VerifiedIdentityComposition } from "./reels/h-17-verified-identity";
 import { H18PhoneCheckComposition } from "./reels/h-18-phone-check";
-import { H19LinkingComposition } from "./reels/h-19-linking";
 import { H20TrustedDeviceComposition } from "./reels/h-20-trusted-device";
 import { H21AccessGrantsComposition } from "./reels/h-21-access-grants";
-import { H22StepUpComposition } from "./reels/h-22-step-up";
 import { H23KnownDeviceLoginComposition } from "./reels/h-23-known-device-login";
-import { H24NewDeviceComposition } from "./reels/h-24-new-device";
-import { H25RemoteAccessComposition } from "./reels/h-25-remote-access";
-import { H26SideAppLoginComposition } from "./reels/h-26-side-app-login";
-import { H27AccountLinkComposition } from "./reels/h-27-account-link";
-import { H28AddressSharingComposition } from "./reels/h-28-address-sharing";
-import { H29SessionsAndRankComposition } from "./reels/h-29-sessions-and-rank";
-import { H30PasswordResetComposition } from "./reels/h-30-password-reset";
-import { H31ThisWasNotMeComposition } from "./reels/h-31-this-was-not-me";
-import { H32NumberChangesComposition } from "./reels/h-32-number-changes";
-import { H33RefreshComposition } from "./reels/h-33-refresh";
 import { H34BlockingComposition } from "./reels/h-34-blocking";
 import { H35NotificationsComposition } from "./reels/h-35-notifications";
 import { H36AuditAndRetentionComposition } from "./reels/h-36-audit-and-retention";
-import { H37AdminPanelComposition } from "./reels/h-37-admin-panel";
-import { H38TestIdentitiesComposition } from "./reels/h-38-test-identities";
 import { H39InstallingComposition } from "./reels/h-39-installing";
 
 // One Studio folder per product (heeyMerchant, heeyID), inside it one folder per module.
@@ -143,15 +126,14 @@ export const RemotionRoot: React.FC = () => {
           <C38ResponsibilityComposition />
         </Folder>
       </Folder>
+      {/* heeyID MVP 1: 22 lessons. Folder ids keep their first numbers; the later-module folders are not registered (SERIES-HEEYID.md, "Later modules"). */}
       <Folder name="heeyID">
         <Folder name="h1-Orientation">
           <H01MapComposition />
-          <H02OneIdentityComposition />
           <H03IdentityWordsComposition />
         </Folder>
         <Folder name="h2-Foundations">
           <H04PerimeterComposition />
-          <H05AppsAndTokensComposition />
           <H06ConfigurationComposition />
           <H07AdaptersComposition />
           <H08KeysComposition />
@@ -166,39 +148,18 @@ export const RemotionRoot: React.FC = () => {
         <Folder name="h4-Proofing">
           <H14ConsentComposition />
           <H15MyIdProofingComposition />
-          <H16ProveOnceComposition />
           <H17VerifiedIdentityComposition />
           <H18PhoneCheckComposition />
-          <H19LinkingComposition />
         </Folder>
-        <Folder name="h5-Devices-and-login">
+        <Folder name="h5-The-money-phone">
           <H20TrustedDeviceComposition />
           <H21AccessGrantsComposition />
-          <H22StepUpComposition />
           <H23KnownDeviceLoginComposition />
-          <H24NewDeviceComposition />
-          <H25RemoteAccessComposition />
         </Folder>
-        <Folder name="h6-Side-apps">
-          <H26SideAppLoginComposition />
-          <H27AccountLinkComposition />
-          <H28AddressSharingComposition />
-        </Folder>
-        <Folder name="h7-Sessions-and-recovery">
-          <H29SessionsAndRankComposition />
-          <H30PasswordResetComposition />
-          <H31ThisWasNotMeComposition />
-          <H32NumberChangesComposition />
-        </Folder>
-        <Folder name="h8-Lifecycle-and-trail">
-          <H33RefreshComposition />
+        <Folder name="h6-Operations-and-trail">
           <H34BlockingComposition />
           <H35NotificationsComposition />
           <H36AuditAndRetentionComposition />
-        </Folder>
-        <Folder name="h9-Operations">
-          <H37AdminPanelComposition />
-          <H38TestIdentitiesComposition />
           <H39InstallingComposition />
         </Folder>
       </Folder>

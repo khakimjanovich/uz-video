@@ -19,8 +19,8 @@ const TITLES = [
 export const H34BlockingComposition = createEpisode({
   course: HEEYID,
   id: "h-34-blocking",
-  number: 34,
-  part: 8,
+  number: 19,
+  part: 6,
   footer: "Two can block, one can unblock",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,

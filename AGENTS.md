@@ -123,7 +123,7 @@ cd studio && npm run dev
 
 Products and rules live in [`SERIES.md`](SERIES.md); the programmer series plan in [`SERIES-MERCHANT.md`](SERIES-MERCHANT.md). Order of work: **plan → script → voice → stills check**. English first; Uzbek copies only on request. MP4s are rendered only on request; review happens in Studio or on stills.
 
-Every video is **one architecture diagram that evolves with the voiceover**, 1080×1920 (9:16). `captions={false}` on `ReelScaffold` turns the caption tape off.
+Every video is **one architecture diagram that evolves with the voiceover**. Reels are 1080×1920 (9:16); course lessons (heeyMerchant `c-NN`, heeyID `h-NN`, built with `createEpisode`) are 16:9. `captions={false}` on `ReelScaffold` turns the caption tape off.
 
 ### A. The four acts
 Pass `acts` to `ReelScaffold`. Each value is the **subtitle cue index** where that act starts:

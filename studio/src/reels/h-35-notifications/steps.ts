@@ -8,11 +8,11 @@ import { HeeyId } from "../../series/heeyid/nodes";
 const UNIT = { heeyid: "in the bank" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
-  { cue: 4, part: 8, rows: [3, 6], current: ["mobile", "sideapps", "taf", "sms"], dot: "taf", units: { heeyid: "lesson 12: TAF · lesson 26: bank SMS" } },
-  { cue: 5, part: 8, rows: [8], current: ["kafka", "workers", "adapters", "sms", "push"], dot: "kafka", units: { heeyid: "every message" } },
-  { cue: 19, part: 8, rows: [8], current: ["kafka", "workers", "adapters", "sms", "push"], dot: "workers", units: { heeyid: "relay → Kafka → worker" } },
-  { cue: 42, part: 8, rows: [8], current: ["perimeter", "push"], dot: "push", units: { heeyid: "push: outside, no personal data" } },
-  { cue: 53, part: 8, rows: [8], dot: "off", units: UNIT },
+  { cue: 4, part: 6, rows: [3, 6], current: ["mobile", "taf", "sms"], dot: "taf", units: { heeyid: "lesson 12: TAF · lesson 26: bank SMS" } },
+  { cue: 5, part: 6, rows: [6], current: ["kafka", "workers", "adapters", "sms", "push"], dot: "kafka", units: { heeyid: "every message" } },
+  { cue: 19, part: 6, rows: [6], current: ["kafka", "workers", "adapters", "sms", "push"], dot: "workers", units: { heeyid: "relay → Kafka → worker" } },
+  { cue: 42, part: 6, rows: [6], current: ["perimeter", "push"], dot: "push", units: { heeyid: "push: outside, no personal data" } },
+  { cue: 53, part: 6, rows: [6], dot: "off", units: UNIT },
 ];
 
 const POCKET = { phoneThief: [0.3, 1], trusted: [1.7, 1], platform: [3, 1] } as const;

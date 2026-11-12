@@ -25,7 +25,7 @@ const TITLES = [
 export const H03IdentityWordsComposition = createEpisode({
   course: HEEYID,
   id: "h-03-identity-words",
-  number: 3,
+  number: 2,
   part: 1,
   footer: "Owner, person, permission",
   subtitles: subtitlesJson as SubtitleCue[],

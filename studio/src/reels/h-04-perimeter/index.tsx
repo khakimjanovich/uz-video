@@ -24,7 +24,7 @@ const TITLES = [
 export const H04PerimeterComposition = createEpisode({
   course: HEEYID,
   id: "h-04-perimeter",
-  number: 4,
+  number: 3,
   part: 2,
   footer: "Inside the bank, no vendor",
   subtitles: subtitlesJson as SubtitleCue[],

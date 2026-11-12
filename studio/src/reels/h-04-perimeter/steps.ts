@@ -7,25 +7,25 @@ import { HeeyId } from "../../series/heeyid/nodes";
 // recap and the way to tokens (51–57).
 const INSIDE: HeeyMapId[] = ["edge", "custgw", "keycloak", "admingw", "workers", "postgres", "valkey", "kafka", "vault", "adapters"];
 const STORES: HeeyMapId[] = ["postgres", "valkey", "kafka", "vault"];
-const OUTSIDE: HeeyMapId[] = ["taf", "sms", "lookup", "myid", "push"];
+const OUTSIDE: HeeyMapId[] = ["taf", "sms", "myid", "push"];
 const UNIT = { heeyid: "in the bank" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
-  { cue: 4, part: 2, current: ["myid", "taf", "lookup"], units: UNIT },
+  { cue: 4, part: 2, current: ["myid", "taf"], units: UNIT },
   { cue: 5, part: 2, rows: [2], current: ["perimeter"], units: UNIT },
   { cue: 7, part: 2, current: ["perimeter"], units: UNIT },
   { cue: 8, part: 2, current: ["perimeter", ...INSIDE], units: { heeyid: "the bank runs it" } },
-  { cue: 9, part: 2, current: ["perimeter", "mobile", "sideapps", "staff"], units: { heeyid: "one installation, one bank" } },
+  { cue: 9, part: 2, current: ["perimeter", "mobile", "staff"], units: { heeyid: "one installation, one bank" } },
   // The short list of names outside.
   { cue: 16, part: 2, current: ["perimeter", "edge"], units: UNIT },
   { cue: 18, part: 2, current: ["adapters"], units: { heeyid: "configured hosts only" } },
-  { cue: 19, part: 2, current: ["adapters", "sms", "lookup"], units: { heeyid: "1 · the bank's services" } },
+  { cue: 19, part: 2, current: ["adapters", "sms"], units: { heeyid: "1 · the bank's services" } },
   { cue: 20, part: 2, current: ["adapters", "taf"], units: { heeyid: "2 · TAF" } },
   { cue: 21, part: 2, current: ["taf"], units: { heeyid: "TAF agent: inside the bank" } },
   { cue: 23, part: 2, current: ["adapters", "myid"], units: { heeyid: "3 · MyID, outside" } },
   { cue: 24, part: 2, current: ["adapters", "myid", "vault"], units: { heeyid: "pinned · credential from Vault" } },
   { cue: 29, part: 2, current: ["adapters", ...OUTSIDE], units: UNIT },
-  { cue: 30, part: 2, current: ["edge", "myid", "push", "taf", "sms", "lookup"], units: { heeyid: "egress: only these names" } },
+  { cue: 30, part: 2, current: ["edge", "myid", "push", "taf", "sms"], units: { heeyid: "egress: only these names" } },
   // Zones inside.
   { cue: 31, part: 2, current: ["perimeter"], units: UNIT },
   { cue: 32, part: 2, current: ["edge"], units: UNIT },
@@ -39,7 +39,7 @@ export const map: BuildMapStep<HeeyMapId>[] = [
   // Recap.
   { cue: 51, part: 2, current: ["perimeter", ...INSIDE], dot: "off", units: { heeyid: "one installation, one bank" } },
   { cue: 53, part: 2, current: OUTSIDE, units: UNIT },
-  { cue: 55, part: 2, current: ["keycloak", "mobile", "sideapps"], units: { heeyid: "one Keycloak, many apps" } },
+  { cue: 55, part: 2, current: ["keycloak", "mobile"], units: { heeyid: "one Keycloak, many apps" } },
   { cue: 57, part: 2, rows: [2], dot: "off", units: UNIT },
 ];
 
