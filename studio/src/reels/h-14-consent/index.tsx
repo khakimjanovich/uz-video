@@ -6,17 +6,18 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
-  "A washing machine", "A screen first", "Before the camera", "Why first?",
-  "Lesson 13", "Phone, not person", "The consent gate",
-  "The screen", "Four parts", "1 · The data", "2 · The provider", "3 · The purpose", "4 · Who reads later", "The bank's words", "Phone verified",
-  "Refuse", "What happens?", "Nothing at MyID", "No session, no attempt", "One event", "Saying no is free",
-  "Again", "The screen again", "Nothing pre-selected", "Accept", "Acceptance record", "What it holds", "Then MyID", "One yes, one session", "No second use",
-  "Not only registration", "Every MyID call", "A new phone",
-  "Versions", "Four languages", "Maker and checker", "Every version kept",
-  "The race", "Reading", "A new version", "Accept, old text", "Refused", "Why so strict?", "The version he saw", "Word for word",
+  "Saturday", "Send", "Money waits", "A screen of text", "Why text?",
+  "Since Sunday", "Number · code · password", "Level 1", "Toward level 2",
+  "Each app", "Required level", "Mobile bank: level 1", "Own data: level 1", "Money: level 2", "Transfer: level 2",
+  "Not allowed?", "Never refused", "Step-up", "Three parts", "Current: 1", "Required: 2", "The checks", "Only MyID", "Nobody else", "The way up",
+  "Consent gate", "Before every MyID call", "Four parts", "1 · The data", "2 · The provider", "3 · The purpose", "4 · Who reads later", "TAF: the ID number", "The bank's words",
+  "Versions", "Four languages", "Date, all kept", "New configuration", "Published version",
+  "Refuse", "No session", "No attempt", "One event", "No costs nothing", "A real choice",
+  "The rent", "Send again", "Nothing selected", "No earlier yes", "Accept", "Record first", "What it holds", "Then MyID", "One yes, one session", "No second use",
+  "One more case", "Reading slowly", "A new version", "Accept, old text", "Refused", "Word for word",
   "On the map", "The app",
-  "Recap", "Yes", "The camera", "Who opens it?", "The marketplace?",
-  "Next: proofing with MyID",
+  "Your check", "Refuse: attempts?", "None",
+  "Required level", "Step-up", "Consent gate", "One yes, one session", "Transfer waits", "Lesson 13: MyID",
 ];
 
 export const H14ConsentComposition = createEpisode({
