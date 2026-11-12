@@ -65,9 +65,8 @@ export const HEEYID_CATALOG = {
   panel: { label: "Admin panel", sublabel: "Of the bank", art: "salespoint" },
   texts: { label: "Texts", sublabel: "Four languages", art: "receipt" },
   installKeys: { label: "Installation keys", sublabel: "One zone", art: "vault" },
-  domain: { label: "Domain", sublabel: "Rules, no I/O", art: "workflow" },
-  simulator: { label: "Simulator", sublabel: "Same port", art: "tray" },
-  port: { label: "Port", sublabel: "Words of the domain", art: "request" },
+  domain: { label: "Core", sublabel: "The rules only", art: "workflow" },
+  simulator: { label: "Simulator", sublabel: "Plays the outside service", art: "tray" },
   adapter: { label: "Adapter", sublabel: "Talks to one service", art: "transit" },
   breaker: { label: "Breaker", sublabel: "Opens after failures", art: "workflow" },
   antifraud: { label: "Antifraud", sublabel: "Of the bank", art: "reviewer" },
@@ -146,6 +145,8 @@ export const HEEYID_CATALOG = {
   ev3: { label: "Event 43", sublabel: "Audit", art: "receipt" },
   otc: { label: "One-time code", sublabel: "Digest only", art: "sim" },
   registrationRec: { label: "Registration", sublabel: "Not finished", art: "request" },
+  // Lesson 5: adapters.
+  customerGw: { label: "Customer gateway", sublabel: "Calls the adapters", art: "bank" },
   versions: { label: "Policy versions", sublabel: "And texts", art: "receipt" },
 } satisfies Record<string, NodeDef>;
 

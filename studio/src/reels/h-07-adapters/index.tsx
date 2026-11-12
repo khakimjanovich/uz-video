@@ -6,16 +6,21 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
-  "Friday evening", "MyID goes quiet", "A spinner", "What happens?",
-  "Lesson 6", "Walls around calls",
-  "The domain", "Rules only", "No I/O", "Never calls out", "A port", "Domain words", "An adapter", "Eight ports",
-  "Simulators", "Every answer", "Tests, no internet", "Nightly: MyID test", "The skipped part", "Not only good days",
-  "The walls", "Timeout", "Breaker", "Breaker opens", "Probe", "Alert", "One fixed behaviour", "No bypass", "Named outcome",
-  "Fixed behaviours", "MyID down", "Not counted", "TAF down", "No fallback", "SMS down", "Kafka waits", "Push down", "Lookup down", "Antifraud down",
-  "Back to Aziz", "Named outcome", "Level kept", "Not counted", "Breaker open", "Provider status", "MyID back",
-  "Two rules", "No bodies in logs", "Reference, outcome, time", "Config and Vault", "Own services",
-  "Recap", "Ports and simulators", "Timeout and breaker", "Seconds, not forever",
-  "Adapter secrets", "Encrypted passports", "Where are the keys?", "Next: keys",
+  "Suppose", "MyID check", "MyID goes quiet", "A spinner", "What happens?",
+  "Lessons 3 and 4", "Talking to the outside",
+  "The core", "Rules only", "No input, no output", "No connection", "No direct call", "Its own words", "An adapter",
+  "Four adapters", "TAF inside", "Egress proxy", "Own units",
+  "The tests", "One real adapter", "A simulator", "Same API", "Every answer", "No internet", "Each night",
+  "Good days only", "Bad days too",
+  "The walls", "Timeout", "Breaker", "Breaker opens", "Fail at once", "Test call", "Alert",
+  "Installation settings", "New deployment",
+  "One fixed behaviour", "No bypass", "One plain answer", "MyID down", "Level kept", "Nothing later",
+  "TAF down", "Not an outage", "SMS vendor down", "Kafka waits", "Push down",
+  "Back to Aziz", "Plain answer", "Level kept", "Not counted", "Breaker opens", "At once", "MyID back",
+  "Two rules", "No bodies in logs", "Reference, outcome, time", "Config and Vault", "Own credential",
+  "Check", "Bank SMS, not scored",
+  "No input, no output", "Adapters and simulators", "Timeout and breaker", "Seconds, not forever",
+  "Adapter secrets", "Lesson 6: keys",
 ];
 
 export const H07AdaptersComposition = createEpisode({
