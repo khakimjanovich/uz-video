@@ -6,17 +6,16 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
-  "A stolen disk", "The identity table", "What can he read?",
-  "Lesson 16", "How it is protected",
-  "Protected", "The identity", "MyID phone number", "Reusable identifier", "Images, if kept", "Nothing else", "Other rules",
-  "The keys", "A key per record", "Wrapped", "The bank's Vault", "One request", "No copies", "Ciphertext",
-  "Find by number?", "Blind index", "A keyed digest", "Look it up", "Useless without the key",
-  "One module", "Others ask", "Masked by default", "The short list", "Keep a result", "Confirmation screen", "Phone check", "Customer lookup", "Cases and reviews", "Compliance export", "Deletion job", "Shared address",
-  "Never", "Apps: a summary", "Never to antifraud", "Other apps",
-  "Every release", "A case", "Masked values", "Recorded", "The audit line", "Thief and insider", "Who read what",
-  "History", "Only a refresh", "A new version", "Same number",
-  "Recap", "MyID phone number", "An old number?", "His number?",
-  "Next: the phone check",
+  "The lift doors open", "His data", "In the bank", "Who can read it?",
+  "Lesson 13", "Verified identity", "Three guards",
+  "What it holds", "Protected class", "The identity", "MyID number, identifier", "Images, if kept", "Nothing else", "Other rules",
+  "Lesson 6: Vault", "No copies",
+  "Who may open it", "One closed part", "Ask with a purpose", "Masked values", "The short list", "Keep a result", "Confirmation screen", "Phone check", "Deletion job", "Cases and reviews",
+  "Never", "Identity summary", "Nothing more", "Never to the others",
+  "The trace", "Every release", "A case", "Masked values", "Recorded", "Encryption", "The audit trail", "Who · when · why",
+  "Check", "His number in the app?", "Summary only",
+  "One protected class", "The bank's keys", "Masked and audited",
+  "MyID phone number", "An old number", "The phone check",
 ];
 
 export const H17VerifiedIdentityComposition = createEpisode({
