@@ -2,7 +2,7 @@
   {
     "index": 1,
     "startFrame": 1,
-    "endFrame": 56,
+    "endFrame": 57,
     "text": "Thursday, eleven at night.",
     "prefix": "Thursday, eleven at night.",
     "highlight": "",
@@ -33,10 +33,10 @@
   },
   {
     "index": 2,
-    "startFrame": 56,
+    "startFrame": 57,
     "endFrame": 292,
-    "text": "Somebody opens the marketplace web page, types Aziz's phone number, and starts to try passwords from a leaked list, one after another.",
-    "prefix": "Somebody opens the marketplace web page, types Aziz's phone number, and starts to try passwords from a leaked list, one after another.",
+    "text": "A script calls the API of the platform with Aziz's phone number, and tries passwords from a leaked list, one after another.",
+    "prefix": "A script calls the API of the platform with Aziz's phone number, and tries passwords from a leaked list, one after another.",
     "highlight": "",
     "suffix": "",
     "phrases": [
@@ -44,11 +44,15 @@
         "startFrame": 58,
         "words": [
           {
-            "text": "Somebody",
+            "text": "A",
             "startFrame": 58
           },
           {
-            "text": "opens",
+            "text": "script",
+            "startFrame": 60
+          },
+          {
+            "text": "calls",
             "startFrame": 70
           },
           {
@@ -56,87 +60,83 @@
             "startFrame": 79
           },
           {
-            "text": "marketplace",
-            "startFrame": 81
+            "text": "API",
+            "startFrame": 85
           },
           {
-            "text": "web",
-            "startFrame": 100
+            "text": "of",
+            "startFrame": 114
           },
           {
-            "text": "page,",
-            "startFrame": 107
+            "text": "the",
+            "startFrame": 116
+          },
+          {
+            "text": "platform",
+            "startFrame": 118
           }
         ]
       },
       {
-        "startFrame": 128,
+        "startFrame": 141,
         "words": [
           {
-            "text": "types",
-            "startFrame": 128
+            "text": "with",
+            "startFrame": 141
           },
           {
             "text": "Aziz's",
-            "startFrame": 137
+            "startFrame": 145
           },
           {
             "text": "phone",
-            "startFrame": 150
+            "startFrame": 159
           },
           {
             "text": "number,",
-            "startFrame": 159
+            "startFrame": 167
           }
         ]
       },
       {
-        "startFrame": 179,
+        "startFrame": 187,
         "words": [
           {
             "text": "and",
-            "startFrame": 179
+            "startFrame": 187
           },
           {
-            "text": "starts",
-            "startFrame": 181
-          },
-          {
-            "text": "to",
-            "startFrame": 191
-          },
-          {
-            "text": "try",
-            "startFrame": 192
+            "text": "tries",
+            "startFrame": 189
           },
           {
             "text": "passwords",
-            "startFrame": 201
+            "startFrame": 199
           },
           {
             "text": "from",
-            "startFrame": 219
+            "startFrame": 214
           },
           {
             "text": "a",
-            "startFrame": 222
+            "startFrame": 217
           },
           {
             "text": "leaked",
-            "startFrame": 223
+            "startFrame": 219
+          },
+          {
+            "text": "list,",
+            "startFrame": 229
           }
         ]
       },
       {
-        "startFrame": 234,
+        "startFrame": 254,
         "words": [
           {
-            "text": "list,",
-            "startFrame": 234
-          },
-          {
             "text": "one",
-            "startFrame": 253
+            "startFrame": 254
           },
           {
             "text": "after",
@@ -153,7 +153,7 @@
   {
     "index": 3,
     "startFrame": 293,
-    "endFrame": 348,
+    "endFrame": 336,
     "text": "Aziz is asleep.",
     "prefix": "Aziz is asleep.",
     "highlight": "",
@@ -180,39 +180,39 @@
   },
   {
     "index": 4,
-    "startFrame": 349,
-    "endFrame": 413,
+    "startFrame": 337,
+    "endFrame": 401,
     "text": "His password is in the platform.",
     "prefix": "His password is in the platform.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 350,
+        "startFrame": 338,
         "words": [
           {
             "text": "His",
-            "startFrame": 350
+            "startFrame": 338
           },
           {
             "text": "password",
-            "startFrame": 354
+            "startFrame": 341
           },
           {
             "text": "is",
-            "startFrame": 379
+            "startFrame": 366
           },
           {
             "text": "in",
-            "startFrame": 382
+            "startFrame": 370
           },
           {
             "text": "the",
-            "startFrame": 383
+            "startFrame": 371
           },
           {
             "text": "platform.",
-            "startFrame": 385
+            "startFrame": 373
           }
         ]
       }
@@ -220,89 +220,89 @@
   },
   {
     "index": 5,
-    "startFrame": 414,
-    "endFrame": 600,
+    "startFrame": 401,
+    "endFrame": 588,
     "text": "So how does a platform keep a password that it must check, but can never read?",
     "prefix": "So how does a platform keep a password that it must check, but can never read?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 415,
+        "startFrame": 403,
         "words": [
           {
             "text": "So",
-            "startFrame": 415
+            "startFrame": 403
           },
           {
             "text": "how",
-            "startFrame": 419
+            "startFrame": 407
           },
           {
             "text": "does",
-            "startFrame": 422
+            "startFrame": 409
           },
           {
             "text": "a",
-            "startFrame": 425
+            "startFrame": 413
           },
           {
             "text": "platform",
-            "startFrame": 426
+            "startFrame": 414
           },
           {
             "text": "keep",
-            "startFrame": 444
+            "startFrame": 432
           },
           {
             "text": "a",
-            "startFrame": 449
+            "startFrame": 437
           },
           {
             "text": "password",
-            "startFrame": 451
+            "startFrame": 438
           }
         ]
       },
       {
-        "startFrame": 472,
+        "startFrame": 460,
         "words": [
           {
             "text": "that",
-            "startFrame": 472
+            "startFrame": 460
           },
           {
             "text": "it",
-            "startFrame": 475
+            "startFrame": 463
           },
           {
             "text": "must",
-            "startFrame": 477
+            "startFrame": 465
           },
           {
             "text": "check,",
-            "startFrame": 485
+            "startFrame": 473
           }
         ]
       },
       {
-        "startFrame": 503,
+        "startFrame": 491,
         "words": [
           {
             "text": "but",
-            "startFrame": 503
+            "startFrame": 491
           },
           {
             "text": "can",
-            "startFrame": 507
+            "startFrame": 495
           },
           {
             "text": "never",
-            "startFrame": 513
+            "startFrame": 501
           },
           {
             "text": "read?",
-            "startFrame": 520
+            "startFrame": 508
           }
         ]
       }
@@ -310,80 +310,68 @@
   },
   {
     "index": 6,
-    "startFrame": 600,
-    "endFrame": 778,
-    "text": "In Lesson 10, Aziz typed his password two times, and the platform made him a customer.",
-    "prefix": "In Lesson 10, Aziz typed his password two times, and the platform made him a customer.",
+    "startFrame": 588,
+    "endFrame": 742,
+    "text": "On Sunday, Aziz typed that password two times, and became a customer.",
+    "prefix": "On Sunday, Aziz typed that password two times, and became a customer.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 601,
+        "startFrame": 589,
         "words": [
           {
-            "text": "In",
-            "startFrame": 601
+            "text": "On",
+            "startFrame": 589
           },
           {
-            "text": "Lesson 10,",
-            "startFrame": 605
+            "text": "Sunday,",
+            "startFrame": 594
           },
           {
             "text": "Aziz",
-            "startFrame": 639
+            "startFrame": 622
           },
           {
             "text": "typed",
-            "startFrame": 654
+            "startFrame": 633
           },
           {
-            "text": "his",
-            "startFrame": 663
+            "text": "that",
+            "startFrame": 644
           },
           {
             "text": "password",
-            "startFrame": 667
+            "startFrame": 649
           },
           {
             "text": "two",
-            "startFrame": 687
+            "startFrame": 667
           },
           {
             "text": "times,",
-            "startFrame": 694
+            "startFrame": 673
           }
         ]
       },
       {
-        "startFrame": 723,
+        "startFrame": 702,
         "words": [
           {
             "text": "and",
-            "startFrame": 723
+            "startFrame": 702
           },
           {
-            "text": "the",
-            "startFrame": 725
-          },
-          {
-            "text": "platform",
-            "startFrame": 727
-          },
-          {
-            "text": "made",
-            "startFrame": 743
-          },
-          {
-            "text": "him",
-            "startFrame": 747
+            "text": "became",
+            "startFrame": 704
           },
           {
             "text": "a",
-            "startFrame": 749
+            "startFrame": 714
           },
           {
             "text": "customer.",
-            "startFrame": 751
+            "startFrame": 715
           }
         ]
       }
@@ -391,68 +379,77 @@
   },
   {
     "index": 7,
-    "startFrame": 779,
-    "endFrame": 908,
-    "text": "Lessons eleven and twelve guarded the code that comes after the password.",
-    "prefix": "Lessons eleven and twelve guarded the code that comes after the password.",
+    "startFrame": 743,
+    "endFrame": 862,
+    "text": "On Monday at the café, his login began with it, before any code.",
+    "prefix": "On Monday at the café, his login began with it, before any code.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 780,
+        "startFrame": 744,
         "words": [
           {
-            "text": "Lessons",
-            "startFrame": 780
+            "text": "On",
+            "startFrame": 744
           },
           {
-            "text": "eleven",
-            "startFrame": 793
+            "text": "Monday",
+            "startFrame": 747
           },
           {
-            "text": "and",
-            "startFrame": 808
-          },
-          {
-            "text": "twelve",
-            "startFrame": 812
-          },
-          {
-            "text": "guarded",
-            "startFrame": 827
+            "text": "at",
+            "startFrame": 759
           },
           {
             "text": "the",
-            "startFrame": 835
+            "startFrame": 761
           },
           {
-            "text": "code",
-            "startFrame": 838
-          },
-          {
-            "text": "that",
-            "startFrame": 857
+            "text": "café,",
+            "startFrame": 763
           }
         ]
       },
       {
-        "startFrame": 860,
+        "startFrame": 781,
         "words": [
           {
-            "text": "comes",
-            "startFrame": 860
+            "text": "his",
+            "startFrame": 781
           },
           {
-            "text": "after",
-            "startFrame": 870
+            "text": "login",
+            "startFrame": 785
           },
           {
-            "text": "the",
-            "startFrame": 876
+            "text": "began",
+            "startFrame": 798
           },
           {
-            "text": "password.",
-            "startFrame": 878
+            "text": "with",
+            "startFrame": 809
+          },
+          {
+            "text": "it,",
+            "startFrame": 814
+          }
+        ]
+      },
+      {
+        "startFrame": 818,
+        "words": [
+          {
+            "text": "before",
+            "startFrame": 818
+          },
+          {
+            "text": "any",
+            "startFrame": 833
+          },
+          {
+            "text": "code.",
+            "startFrame": 838
           }
         ]
       }
@@ -460,60 +457,68 @@
   },
   {
     "index": 8,
-    "startFrame": 908,
-    "endFrame": 1017,
-    "text": "This lesson opens the box that holds the password itself.",
-    "prefix": "This lesson opens the box that holds the password itself.",
+    "startFrame": 862,
+    "endFrame": 979,
+    "text": "Behind that first step is a box that holds the password itself.",
+    "prefix": "Behind that first step is a box that holds the password itself.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 910,
+        "startFrame": 864,
         "words": [
           {
-            "text": "This",
-            "startFrame": 910
-          },
-          {
-            "text": "lesson",
-            "startFrame": 914
-          },
-          {
-            "text": "opens",
-            "startFrame": 928
-          },
-          {
-            "text": "the",
-            "startFrame": 939
-          },
-          {
-            "text": "box",
-            "startFrame": 941
+            "text": "Behind",
+            "startFrame": 864
           },
           {
             "text": "that",
-            "startFrame": 954
+            "startFrame": 872
           },
           {
-            "text": "holds",
-            "startFrame": 958
+            "text": "first",
+            "startFrame": 876
+          },
+          {
+            "text": "step",
+            "startFrame": 884
+          },
+          {
+            "text": "is",
+            "startFrame": 897
+          },
+          {
+            "text": "a",
+            "startFrame": 900
+          },
+          {
+            "text": "box",
+            "startFrame": 902
+          },
+          {
+            "text": "that",
+            "startFrame": 918
           }
         ]
       },
       {
-        "startFrame": 968,
+        "startFrame": 922,
         "words": [
           {
+            "text": "holds",
+            "startFrame": 922
+          },
+          {
             "text": "the",
-            "startFrame": 968
+            "startFrame": 931
           },
           {
             "text": "password",
-            "startFrame": 971
+            "startFrame": 933
           },
           {
             "text": "itself.",
-            "startFrame": 988
+            "startFrame": 950
           }
         ]
       }
@@ -521,31 +526,31 @@
   },
   {
     "index": 9,
-    "startFrame": 1017,
-    "endFrame": 1069,
+    "startFrame": 980,
+    "endFrame": 1035,
     "text": "First, where it lives.",
     "prefix": "First, where it lives.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1020,
+        "startFrame": 982,
         "words": [
           {
             "text": "First,",
-            "startFrame": 1020
+            "startFrame": 982
           },
           {
             "text": "where",
-            "startFrame": 1038
+            "startFrame": 1000
           },
           {
             "text": "it",
-            "startFrame": 1041
+            "startFrame": 1004
           },
           {
             "text": "lives.",
-            "startFrame": 1044
+            "startFrame": 1006
           }
         ]
       }
@@ -553,114 +558,64 @@
   },
   {
     "index": 10,
-    "startFrame": 1070,
-    "endFrame": 1289,
-    "text": "Aziz has one password for every app of the bank, so the platform keeps exactly one row for him, in Postgres.",
-    "prefix": "Aziz has one password for every app of the bank, so the platform keeps exactly one row for him, in Postgres.",
+    "startFrame": 1036,
+    "endFrame": 1146,
+    "text": "Aziz has one phone number, and the number has one password.",
+    "prefix": "Aziz has one phone number, and the number has one password.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1071,
+        "startFrame": 1037,
         "words": [
           {
             "text": "Aziz",
-            "startFrame": 1071
+            "startFrame": 1037
           },
           {
             "text": "has",
-            "startFrame": 1080
+            "startFrame": 1047
           },
           {
             "text": "one",
-            "startFrame": 1086
+            "startFrame": 1052
           },
           {
-            "text": "password",
-            "startFrame": 1095
+            "text": "phone",
+            "startFrame": 1058
           },
           {
-            "text": "for",
-            "startFrame": 1115
-          },
-          {
-            "text": "every",
-            "startFrame": 1124
-          },
-          {
-            "text": "app",
-            "startFrame": 1135
+            "text": "number,",
+            "startFrame": 1066
           }
         ]
       },
       {
-        "startFrame": 1140,
+        "startFrame": 1087,
         "words": [
           {
-            "text": "of",
-            "startFrame": 1140
+            "text": "and",
+            "startFrame": 1087
           },
           {
             "text": "the",
-            "startFrame": 1142
+            "startFrame": 1088
           },
           {
-            "text": "bank,",
-            "startFrame": 1144
-          }
-        ]
-      },
-      {
-        "startFrame": 1164,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 1164
+            "text": "number",
+            "startFrame": 1090
           },
           {
-            "text": "the",
-            "startFrame": 1168
-          },
-          {
-            "text": "platform",
-            "startFrame": 1170
-          },
-          {
-            "text": "keeps",
-            "startFrame": 1188
-          },
-          {
-            "text": "exactly",
-            "startFrame": 1195
+            "text": "has",
+            "startFrame": 1099
           },
           {
             "text": "one",
-            "startFrame": 1213
+            "startFrame": 1105
           },
           {
-            "text": "row",
-            "startFrame": 1221
-          }
-        ]
-      },
-      {
-        "startFrame": 1229,
-        "words": [
-          {
-            "text": "for",
-            "startFrame": 1229
-          },
-          {
-            "text": "him,",
-            "startFrame": 1234
-          },
-          {
-            "text": "in",
-            "startFrame": 1254
-          },
-          {
-            "text": "Postgres.",
-            "startFrame": 1257
+            "text": "password.",
+            "startFrame": 1114
           }
         ]
       }
@@ -668,48 +623,121 @@
   },
   {
     "index": 11,
-    "startFrame": 1289,
-    "endFrame": 1389,
-    "text": "It belongs to the customer gateway, not to Keycloak.",
-    "prefix": "It belongs to the customer gateway, not to Keycloak.",
+    "startFrame": 1147,
+    "endFrame": 1282,
+    "text": "So the platform keeps exactly one row for that number, in Postgres.",
+    "prefix": "So the platform keeps exactly one row for that number, in Postgres.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1291,
+        "startFrame": 1148,
         "words": [
           {
-            "text": "It",
-            "startFrame": 1291
-          },
-          {
-            "text": "belongs",
-            "startFrame": 1292
-          },
-          {
-            "text": "to",
-            "startFrame": 1304
+            "text": "So",
+            "startFrame": 1148
           },
           {
             "text": "the",
-            "startFrame": 1307
+            "startFrame": 1150
           },
           {
-            "text": "customer",
-            "startFrame": 1309
+            "text": "platform",
+            "startFrame": 1152
           },
           {
-            "text": "gateway,",
-            "startFrame": 1321
+            "text": "keeps",
+            "startFrame": 1167
+          },
+          {
+            "text": "exactly",
+            "startFrame": 1175
+          },
+          {
+            "text": "one",
+            "startFrame": 1194
+          },
+          {
+            "text": "row",
+            "startFrame": 1203
           }
         ]
       },
       {
-        "startFrame": 1348,
+        "startFrame": 1219,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 1219
+          },
+          {
+            "text": "that",
+            "startFrame": 1223
+          },
+          {
+            "text": "number,",
+            "startFrame": 1229
+          },
+          {
+            "text": "in",
+            "startFrame": 1246
+          },
+          {
+            "text": "Postgres.",
+            "startFrame": 1249
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "startFrame": 1282,
+    "endFrame": 1388,
+    "text": "The row belongs to the customer gateway, not to Keycloak.",
+    "prefix": "The row belongs to the customer gateway, not to Keycloak.",
+    "highlight": "",
+    "suffix": "",
+    "phrases": [
+      {
+        "startFrame": 1283,
+        "words": [
+          {
+            "text": "The",
+            "startFrame": 1283
+          },
+          {
+            "text": "row",
+            "startFrame": 1286
+          },
+          {
+            "text": "belongs",
+            "startFrame": 1291
+          },
+          {
+            "text": "to",
+            "startFrame": 1303
+          },
+          {
+            "text": "the",
+            "startFrame": 1305
+          },
+          {
+            "text": "customer",
+            "startFrame": 1307
+          },
+          {
+            "text": "gateway,",
+            "startFrame": 1320
+          }
+        ]
+      },
+      {
+        "startFrame": 1349,
         "words": [
           {
             "text": "not",
-            "startFrame": 1348
+            "startFrame": 1349
           },
           {
             "text": "to",
@@ -724,40 +752,40 @@
     ]
   },
   {
-    "index": 12,
+    "index": 13,
     "startFrame": 1389,
-    "endFrame": 1459,
+    "endFrame": 1458,
     "text": "Keycloak never sees the password at all.",
     "prefix": "Keycloak never sees the password at all.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1391,
+        "startFrame": 1390,
         "words": [
           {
             "text": "Keycloak",
-            "startFrame": 1391
+            "startFrame": 1390
           },
           {
             "text": "never",
-            "startFrame": 1407
+            "startFrame": 1406
           },
           {
             "text": "sees",
-            "startFrame": 1415
+            "startFrame": 1414
           },
           {
             "text": "the",
-            "startFrame": 1422
+            "startFrame": 1421
           },
           {
             "text": "password",
-            "startFrame": 1425
+            "startFrame": 1424
           },
           {
             "text": "at",
-            "startFrame": 1438
+            "startFrame": 1437
           },
           {
             "text": "all.",
@@ -768,20 +796,20 @@
     ]
   },
   {
-    "index": 13,
+    "index": 14,
     "startFrame": 1459,
-    "endFrame": 1511,
+    "endFrame": 1514,
     "text": "Why not let Keycloak keep it?",
     "prefix": "Why not let Keycloak keep it?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1461,
+        "startFrame": 1460,
         "words": [
           {
             "text": "Why",
-            "startFrame": 1461
+            "startFrame": 1460
           },
           {
             "text": "not",
@@ -789,11 +817,11 @@
           },
           {
             "text": "let",
-            "startFrame": 1467
+            "startFrame": 1466
           },
           {
             "text": "Keycloak",
-            "startFrame": 1471
+            "startFrame": 1470
           },
           {
             "text": "keep",
@@ -801,76 +829,7 @@
           },
           {
             "text": "it?",
-            "startFrame": 1495
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 14,
-    "startFrame": 1512,
-    "endFrame": 1627,
-    "text": "Because the gateway must check the password before it sends any code.",
-    "prefix": "Because the gateway must check the password before it sends any code.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 1513,
-        "words": [
-          {
-            "text": "Because",
-            "startFrame": 1513
-          },
-          {
-            "text": "the",
-            "startFrame": 1521
-          },
-          {
-            "text": "gateway",
-            "startFrame": 1524
-          },
-          {
-            "text": "must",
-            "startFrame": 1539
-          },
-          {
-            "text": "check",
-            "startFrame": 1547
-          },
-          {
-            "text": "the",
-            "startFrame": 1552
-          },
-          {
-            "text": "password",
-            "startFrame": 1555
-          },
-          {
-            "text": "before",
-            "startFrame": 1570
-          }
-        ]
-      },
-      {
-        "startFrame": 1579,
-        "words": [
-          {
-            "text": "it",
-            "startFrame": 1579
-          },
-          {
-            "text": "sends",
-            "startFrame": 1580
-          },
-          {
-            "text": "any",
-            "startFrame": 1598
-          },
-          {
-            "text": "code.",
-            "startFrame": 1603
+            "startFrame": 1494
           }
         ]
       }
@@ -878,105 +837,68 @@
   },
   {
     "index": 15,
-    "startFrame": 1628,
-    "endFrame": 1829,
-    "text": "If Keycloak held it, the code would go out first, and the password would travel to Keycloak at every login.",
-    "prefix": "If Keycloak held it, the code would go out first, and the password would travel to Keycloak at every login.",
+    "startFrame": 1515,
+    "endFrame": 1630,
+    "text": "Because the gateway must check the password before it sends any code.",
+    "prefix": "Because the gateway must check the password before it sends any code.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1629,
+        "startFrame": 1516,
         "words": [
           {
-            "text": "If",
-            "startFrame": 1629
-          },
-          {
-            "text": "Keycloak",
-            "startFrame": 1633
-          },
-          {
-            "text": "held",
-            "startFrame": 1650
-          },
-          {
-            "text": "it,",
-            "startFrame": 1658
-          }
-        ]
-      },
-      {
-        "startFrame": 1668,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 1668
-          },
-          {
-            "text": "code",
-            "startFrame": 1671
-          },
-          {
-            "text": "would",
-            "startFrame": 1681
-          },
-          {
-            "text": "go",
-            "startFrame": 1686
-          },
-          {
-            "text": "out",
-            "startFrame": 1691
-          },
-          {
-            "text": "first,",
-            "startFrame": 1696
-          }
-        ]
-      },
-      {
-        "startFrame": 1722,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 1722
+            "text": "Because",
+            "startFrame": 1516
           },
           {
             "text": "the",
-            "startFrame": 1724
+            "startFrame": 1524
+          },
+          {
+            "text": "gateway",
+            "startFrame": 1527
+          },
+          {
+            "text": "must",
+            "startFrame": 1542
+          },
+          {
+            "text": "check",
+            "startFrame": 1550
+          },
+          {
+            "text": "the",
+            "startFrame": 1555
           },
           {
             "text": "password",
-            "startFrame": 1727
+            "startFrame": 1558
           },
           {
-            "text": "would",
-            "startFrame": 1746
+            "text": "before",
+            "startFrame": 1572
+          }
+        ]
+      },
+      {
+        "startFrame": 1581,
+        "words": [
+          {
+            "text": "it",
+            "startFrame": 1581
           },
           {
-            "text": "travel",
-            "startFrame": 1749
+            "text": "sends",
+            "startFrame": 1583
           },
           {
-            "text": "to",
-            "startFrame": 1762
+            "text": "any",
+            "startFrame": 1601
           },
           {
-            "text": "Keycloak",
-            "startFrame": 1765
-          },
-          {
-            "text": "at",
-            "startFrame": 1794
-          },
-          {
-            "text": "every",
-            "startFrame": 1797
-          },
-          {
-            "text": "login.",
-            "startFrame": 1804
+            "text": "code.",
+            "startFrame": 1606
           }
         ]
       }
@@ -984,39 +906,105 @@
   },
   {
     "index": 16,
-    "startFrame": 1829,
-    "endFrame": 1885,
-    "text": "Now, what is in the row.",
-    "prefix": "Now, what is in the row.",
+    "startFrame": 1631,
+    "endFrame": 1832,
+    "text": "If Keycloak held it, the code would go out first, and the password would travel to Keycloak at every login.",
+    "prefix": "If Keycloak held it, the code would go out first, and the password would travel to Keycloak at every login.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1831,
+        "startFrame": 1632,
         "words": [
           {
-            "text": "Now,",
-            "startFrame": 1831
+            "text": "If",
+            "startFrame": 1632
           },
           {
-            "text": "what",
-            "startFrame": 1834
+            "text": "Keycloak",
+            "startFrame": 1636
           },
           {
-            "text": "is",
-            "startFrame": 1839
+            "text": "held",
+            "startFrame": 1653
           },
           {
-            "text": "in",
-            "startFrame": 1842
+            "text": "it,",
+            "startFrame": 1661
+          }
+        ]
+      },
+      {
+        "startFrame": 1671,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 1671
+          },
+          {
+            "text": "code",
+            "startFrame": 1674
+          },
+          {
+            "text": "would",
+            "startFrame": 1684
+          },
+          {
+            "text": "go",
+            "startFrame": 1688
+          },
+          {
+            "text": "out",
+            "startFrame": 1694
+          },
+          {
+            "text": "first,",
+            "startFrame": 1699
+          }
+        ]
+      },
+      {
+        "startFrame": 1724,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 1724
           },
           {
             "text": "the",
-            "startFrame": 1845
+            "startFrame": 1727
           },
           {
-            "text": "row.",
-            "startFrame": 1846
+            "text": "password",
+            "startFrame": 1729
+          },
+          {
+            "text": "would",
+            "startFrame": 1748
+          },
+          {
+            "text": "travel",
+            "startFrame": 1752
+          },
+          {
+            "text": "to",
+            "startFrame": 1764
+          },
+          {
+            "text": "Keycloak",
+            "startFrame": 1768
+          },
+          {
+            "text": "at",
+            "startFrame": 1797
+          },
+          {
+            "text": "every",
+            "startFrame": 1800
+          },
+          {
+            "text": "login.",
+            "startFrame": 1807
           }
         ]
       }
@@ -1024,27 +1012,39 @@
   },
   {
     "index": 17,
-    "startFrame": 1885,
-    "endFrame": 1941,
-    "text": "Not the password.",
-    "prefix": "Not the password.",
+    "startFrame": 1832,
+    "endFrame": 1888,
+    "text": "Now, what is in the row.",
+    "prefix": "Now, what is in the row.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1886,
+        "startFrame": 1834,
         "words": [
           {
-            "text": "Not",
-            "startFrame": 1886
+            "text": "Now,",
+            "startFrame": 1834
+          },
+          {
+            "text": "what",
+            "startFrame": 1837
+          },
+          {
+            "text": "is",
+            "startFrame": 1842
+          },
+          {
+            "text": "in",
+            "startFrame": 1845
           },
           {
             "text": "the",
-            "startFrame": 1890
+            "startFrame": 1847
           },
           {
-            "text": "password.",
-            "startFrame": 1891
+            "text": "row.",
+            "startFrame": 1849
           }
         ]
       }
@@ -1052,64 +1052,27 @@
   },
   {
     "index": 18,
-    "startFrame": 1942,
-    "endFrame": 2102,
-    "text": "The gateway runs the password through Argon2id, a memory-hard hashing function.",
-    "prefix": "The gateway runs the password through Argon2id, a memory-hard hashing function.",
+    "startFrame": 1888,
+    "endFrame": 1944,
+    "text": "Not the password.",
+    "prefix": "Not the password.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 1943,
+        "startFrame": 1889,
         "words": [
           {
-            "text": "The",
-            "startFrame": 1943
-          },
-          {
-            "text": "gateway",
-            "startFrame": 1946
-          },
-          {
-            "text": "runs",
-            "startFrame": 1958
+            "text": "Not",
+            "startFrame": 1889
           },
           {
             "text": "the",
-            "startFrame": 1968
+            "startFrame": 1893
           },
           {
-            "text": "password",
-            "startFrame": 1970
-          },
-          {
-            "text": "through",
-            "startFrame": 1989
-          },
-          {
-            "text": "Argon2id,",
-            "startFrame": 1995
-          }
-        ]
-      },
-      {
-        "startFrame": 2044,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 2044
-          },
-          {
-            "text": "memory-hard",
-            "startFrame": 2046
-          },
-          {
-            "text": "hashing",
-            "startFrame": 2065
-          },
-          {
-            "text": "function.",
-            "startFrame": 2077
+            "text": "password.",
+            "startFrame": 1894
           }
         ]
       }
@@ -1117,80 +1080,64 @@
   },
   {
     "index": 19,
-    "startFrame": 2103,
-    "endFrame": 2254,
-    "text": "Memory-hard means that every single check needs a real block of memory and real time.",
-    "prefix": "Memory-hard means that every single check needs a real block of memory and real time.",
+    "startFrame": 1945,
+    "endFrame": 2105,
+    "text": "The gateway runs the password through Argon2id, a memory-hard hashing function.",
+    "prefix": "The gateway runs the password through Argon2id, a memory-hard hashing function.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2104,
+        "startFrame": 1946,
         "words": [
           {
-            "text": "Memory-hard",
-            "startFrame": 2104
+            "text": "The",
+            "startFrame": 1946
           },
           {
-            "text": "means",
-            "startFrame": 2121
+            "text": "gateway",
+            "startFrame": 1949
           },
           {
-            "text": "that",
-            "startFrame": 2128
+            "text": "runs",
+            "startFrame": 1961
           },
           {
-            "text": "every",
-            "startFrame": 2137
+            "text": "the",
+            "startFrame": 1971
           },
           {
-            "text": "single",
-            "startFrame": 2145
+            "text": "password",
+            "startFrame": 1973
           },
           {
-            "text": "check",
-            "startFrame": 2154
+            "text": "through",
+            "startFrame": 1992
           },
           {
-            "text": "needs",
-            "startFrame": 2162
+            "text": "Argon2id,",
+            "startFrame": 1998
           }
         ]
       },
       {
-        "startFrame": 2168,
+        "startFrame": 2047,
         "words": [
           {
             "text": "a",
-            "startFrame": 2168
+            "startFrame": 2047
           },
           {
-            "text": "real",
-            "startFrame": 2170
+            "text": "memory-hard",
+            "startFrame": 2049
           },
           {
-            "text": "block",
-            "startFrame": 2182
+            "text": "hashing",
+            "startFrame": 2068
           },
           {
-            "text": "of",
-            "startFrame": 2192
-          },
-          {
-            "text": "memory",
-            "startFrame": 2194
-          },
-          {
-            "text": "and",
-            "startFrame": 2219
-          },
-          {
-            "text": "real",
-            "startFrame": 2224
-          },
-          {
-            "text": "time.",
-            "startFrame": 2231
+            "text": "function.",
+            "startFrame": 2079
           }
         ]
       }
@@ -1198,56 +1145,80 @@
   },
   {
     "index": 20,
-    "startFrame": 2255,
-    "endFrame": 2342,
-    "text": "For the gateway, that is one check per login.",
-    "prefix": "For the gateway, that is one check per login.",
+    "startFrame": 2106,
+    "endFrame": 2257,
+    "text": "Memory-hard means that every single check needs a real block of memory and real time.",
+    "prefix": "Memory-hard means that every single check needs a real block of memory and real time.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2257,
+        "startFrame": 2107,
         "words": [
           {
-            "text": "For",
-            "startFrame": 2257
+            "text": "Memory-hard",
+            "startFrame": 2107
           },
           {
-            "text": "the",
-            "startFrame": 2259
+            "text": "means",
+            "startFrame": 2124
           },
           {
-            "text": "gateway,",
-            "startFrame": 2260
+            "text": "that",
+            "startFrame": 2131
+          },
+          {
+            "text": "every",
+            "startFrame": 2140
+          },
+          {
+            "text": "single",
+            "startFrame": 2148
+          },
+          {
+            "text": "check",
+            "startFrame": 2156
+          },
+          {
+            "text": "needs",
+            "startFrame": 2165
           }
         ]
       },
       {
-        "startFrame": 2290,
+        "startFrame": 2171,
         "words": [
           {
-            "text": "that",
-            "startFrame": 2290
+            "text": "a",
+            "startFrame": 2171
           },
           {
-            "text": "is",
-            "startFrame": 2293
+            "text": "real",
+            "startFrame": 2173
           },
           {
-            "text": "one",
-            "startFrame": 2296
+            "text": "block",
+            "startFrame": 2185
           },
           {
-            "text": "check",
-            "startFrame": 2307
+            "text": "of",
+            "startFrame": 2195
           },
           {
-            "text": "per",
-            "startFrame": 2314
+            "text": "memory",
+            "startFrame": 2197
           },
           {
-            "text": "login.",
-            "startFrame": 2318
+            "text": "and",
+            "startFrame": 2221
+          },
+          {
+            "text": "real",
+            "startFrame": 2227
+          },
+          {
+            "text": "time.",
+            "startFrame": 2234
           }
         ]
       }
@@ -1255,135 +1226,56 @@
   },
   {
     "index": 21,
-    "startFrame": 2343,
-    "endFrame": 2611,
-    "text": "For an attacker with a stolen copy of the table, every guess costs the same, so millions of guesses become very slow and very expensive.",
-    "prefix": "For an attacker with a stolen copy of the table, every guess costs the same, so millions of guesses become very slow and very expensive.",
+    "startFrame": 2258,
+    "endFrame": 2345,
+    "text": "For the gateway, that is one check per login.",
+    "prefix": "For the gateway, that is one check per login.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2345,
+        "startFrame": 2259,
         "words": [
           {
             "text": "For",
-            "startFrame": 2345
-          },
-          {
-            "text": "an",
-            "startFrame": 2349
-          },
-          {
-            "text": "attacker",
-            "startFrame": 2350
-          },
-          {
-            "text": "with",
-            "startFrame": 2370
-          },
-          {
-            "text": "a",
-            "startFrame": 2375
-          },
-          {
-            "text": "stolen",
-            "startFrame": 2377
-          },
-          {
-            "text": "copy",
-            "startFrame": 2392
-          }
-        ]
-      },
-      {
-        "startFrame": 2402,
-        "words": [
-          {
-            "text": "of",
-            "startFrame": 2402
+            "startFrame": 2259
           },
           {
             "text": "the",
-            "startFrame": 2403
+            "startFrame": 2262
           },
           {
-            "text": "table,",
-            "startFrame": 2405
+            "text": "gateway,",
+            "startFrame": 2263
           }
         ]
       },
       {
-        "startFrame": 2429,
+        "startFrame": 2293,
         "words": [
           {
-            "text": "every",
-            "startFrame": 2429
+            "text": "that",
+            "startFrame": 2293
           },
           {
-            "text": "guess",
-            "startFrame": 2437
+            "text": "is",
+            "startFrame": 2296
           },
           {
-            "text": "costs",
-            "startFrame": 2446
+            "text": "one",
+            "startFrame": 2299
           },
           {
-            "text": "the",
-            "startFrame": 2457
+            "text": "check",
+            "startFrame": 2310
           },
           {
-            "text": "same,",
-            "startFrame": 2460
-          }
-        ]
-      },
-      {
-        "startFrame": 2485,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 2485
+            "text": "per",
+            "startFrame": 2317
           },
           {
-            "text": "millions",
-            "startFrame": 2489
-          },
-          {
-            "text": "of",
-            "startFrame": 2505
-          },
-          {
-            "text": "guesses",
-            "startFrame": 2508
-          },
-          {
-            "text": "become",
-            "startFrame": 2518
-          },
-          {
-            "text": "very",
-            "startFrame": 2529
-          },
-          {
-            "text": "slow",
-            "startFrame": 2540
-          }
-        ]
-      },
-      {
-        "startFrame": 2564,
-        "words": [
-          {
-            "text": "and",
-            "startFrame": 2564
-          },
-          {
-            "text": "very",
-            "startFrame": 2571
-          },
-          {
-            "text": "expensive.",
-            "startFrame": 2581
+            "text": "login.",
+            "startFrame": 2321
           }
         ]
       }
@@ -1391,81 +1283,135 @@
   },
   {
     "index": 22,
-    "startFrame": 2612,
-    "endFrame": 2796,
-    "text": "Before the hashing, the gateway adds a salt: random bytes, new for each password.",
-    "prefix": "Before the hashing, the gateway adds a salt: random bytes, new for each password.",
+    "startFrame": 2346,
+    "endFrame": 2614,
+    "text": "For an attacker with a stolen copy of the table, every guess costs the same, so millions of guesses become very slow and very expensive.",
+    "prefix": "For an attacker with a stolen copy of the table, every guess costs the same, so millions of guesses become very slow and very expensive.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2613,
+        "startFrame": 2348,
         "words": [
           {
-            "text": "Before",
-            "startFrame": 2613
+            "text": "For",
+            "startFrame": 2348
           },
           {
-            "text": "the",
-            "startFrame": 2620
+            "text": "an",
+            "startFrame": 2352
           },
           {
-            "text": "hashing,",
-            "startFrame": 2622
-          }
-        ]
-      },
-      {
-        "startFrame": 2648,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 2648
+            "text": "attacker",
+            "startFrame": 2353
           },
           {
-            "text": "gateway",
-            "startFrame": 2650
-          },
-          {
-            "text": "adds",
-            "startFrame": 2674
+            "text": "with",
+            "startFrame": 2373
           },
           {
             "text": "a",
-            "startFrame": 2681
+            "startFrame": 2378
           },
           {
-            "text": "salt:",
-            "startFrame": 2683
+            "text": "stolen",
+            "startFrame": 2380
+          },
+          {
+            "text": "copy",
+            "startFrame": 2395
           }
         ]
       },
       {
-        "startFrame": 2710,
+        "startFrame": 2405,
         "words": [
           {
-            "text": "random",
-            "startFrame": 2710
+            "text": "of",
+            "startFrame": 2405
           },
           {
-            "text": "bytes,",
-            "startFrame": 2720
+            "text": "the",
+            "startFrame": 2406
           },
           {
-            "text": "new",
-            "startFrame": 2744
+            "text": "table,",
+            "startFrame": 2408
+          }
+        ]
+      },
+      {
+        "startFrame": 2432,
+        "words": [
+          {
+            "text": "every",
+            "startFrame": 2432
           },
           {
-            "text": "for",
-            "startFrame": 2753
+            "text": "guess",
+            "startFrame": 2440
           },
           {
-            "text": "each",
-            "startFrame": 2761
+            "text": "costs",
+            "startFrame": 2449
           },
           {
-            "text": "password.",
-            "startFrame": 2767
+            "text": "the",
+            "startFrame": 2460
+          },
+          {
+            "text": "same,",
+            "startFrame": 2463
+          }
+        ]
+      },
+      {
+        "startFrame": 2488,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 2488
+          },
+          {
+            "text": "millions",
+            "startFrame": 2492
+          },
+          {
+            "text": "of",
+            "startFrame": 2508
+          },
+          {
+            "text": "guesses",
+            "startFrame": 2511
+          },
+          {
+            "text": "become",
+            "startFrame": 2521
+          },
+          {
+            "text": "very",
+            "startFrame": 2532
+          },
+          {
+            "text": "slow",
+            "startFrame": 2543
+          }
+        ]
+      },
+      {
+        "startFrame": 2567,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2567
+          },
+          {
+            "text": "very",
+            "startFrame": 2574
+          },
+          {
+            "text": "expensive.",
+            "startFrame": 2584
           }
         ]
       }
@@ -1473,101 +1419,81 @@
   },
   {
     "index": 23,
-    "startFrame": 2797,
-    "endFrame": 2998,
-    "text": "So two customers with the same password still get two different digests, and no table of ready answers works.",
-    "prefix": "So two customers with the same password still get two different digests, and no table of ready answers works.",
+    "startFrame": 2615,
+    "endFrame": 2799,
+    "text": "Before the hashing, the gateway adds a salt: random bytes, new for each password.",
+    "prefix": "Before the hashing, the gateway adds a salt: random bytes, new for each password.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 2798,
+        "startFrame": 2616,
         "words": [
           {
-            "text": "So",
-            "startFrame": 2798
-          },
-          {
-            "text": "two",
-            "startFrame": 2804
-          },
-          {
-            "text": "customers",
-            "startFrame": 2809
-          },
-          {
-            "text": "with",
-            "startFrame": 2824
+            "text": "Before",
+            "startFrame": 2616
           },
           {
             "text": "the",
-            "startFrame": 2827
+            "startFrame": 2623
           },
           {
-            "text": "same",
-            "startFrame": 2829
-          },
-          {
-            "text": "password",
-            "startFrame": 2840
-          },
-          {
-            "text": "still",
-            "startFrame": 2863
+            "text": "hashing,",
+            "startFrame": 2625
           }
         ]
       },
       {
-        "startFrame": 2874,
+        "startFrame": 2650,
         "words": [
           {
-            "text": "get",
-            "startFrame": 2874
+            "text": "the",
+            "startFrame": 2650
           },
           {
-            "text": "two",
-            "startFrame": 2883
+            "text": "gateway",
+            "startFrame": 2653
           },
           {
-            "text": "different",
-            "startFrame": 2893
+            "text": "adds",
+            "startFrame": 2677
           },
           {
-            "text": "digests,",
-            "startFrame": 2903
+            "text": "a",
+            "startFrame": 2684
+          },
+          {
+            "text": "salt:",
+            "startFrame": 2685
           }
         ]
       },
       {
-        "startFrame": 2932,
+        "startFrame": 2713,
         "words": [
           {
-            "text": "and",
-            "startFrame": 2932
+            "text": "random",
+            "startFrame": 2713
           },
           {
-            "text": "no",
-            "startFrame": 2938
+            "text": "bytes,",
+            "startFrame": 2723
           },
           {
-            "text": "table",
-            "startFrame": 2943
+            "text": "new",
+            "startFrame": 2747
           },
           {
-            "text": "of",
-            "startFrame": 2953
+            "text": "for",
+            "startFrame": 2755
           },
           {
-            "text": "ready",
-            "startFrame": 2956
+            "text": "each",
+            "startFrame": 2764
           },
           {
-            "text": "answers",
-            "startFrame": 2962
-          },
-          {
-            "text": "works.",
-            "startFrame": 2971
+            "text": "password.",
+            "startFrame": 2769
           }
         ]
       }
@@ -1575,93 +1501,101 @@
   },
   {
     "index": 24,
-    "startFrame": 2999,
-    "endFrame": 3181,
-    "text": "The row keeps one string: the name of the algorithm, its settings, the salt and the digest.",
-    "prefix": "The row keeps one string: the name of the algorithm, its settings, the salt and the digest.",
+    "startFrame": 2800,
+    "endFrame": 3001,
+    "text": "So two customers with the same password still get two different digests, and no table of ready answers works.",
+    "prefix": "So two customers with the same password still get two different digests, and no table of ready answers works.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3000,
+        "startFrame": 2801,
         "words": [
           {
-            "text": "The",
-            "startFrame": 3000
+            "text": "So",
+            "startFrame": 2801
           },
           {
-            "text": "row",
-            "startFrame": 3002
+            "text": "two",
+            "startFrame": 2807
           },
           {
-            "text": "keeps",
-            "startFrame": 3010
+            "text": "customers",
+            "startFrame": 2812
           },
           {
-            "text": "one",
-            "startFrame": 3020
+            "text": "with",
+            "startFrame": 2827
           },
           {
-            "text": "string:",
-            "startFrame": 3030
+            "text": "the",
+            "startFrame": 2830
+          },
+          {
+            "text": "same",
+            "startFrame": 2832
+          },
+          {
+            "text": "password",
+            "startFrame": 2843
+          },
+          {
+            "text": "still",
+            "startFrame": 2866
           }
         ]
       },
       {
-        "startFrame": 3057,
+        "startFrame": 2877,
         "words": [
           {
-            "text": "the",
-            "startFrame": 3057
+            "text": "get",
+            "startFrame": 2877
           },
           {
-            "text": "name",
-            "startFrame": 3060
+            "text": "two",
+            "startFrame": 2886
+          },
+          {
+            "text": "different",
+            "startFrame": 2896
+          },
+          {
+            "text": "digests,",
+            "startFrame": 2906
+          }
+        ]
+      },
+      {
+        "startFrame": 2935,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 2935
+          },
+          {
+            "text": "no",
+            "startFrame": 2941
+          },
+          {
+            "text": "table",
+            "startFrame": 2946
           },
           {
             "text": "of",
-            "startFrame": 3065
+            "startFrame": 2956
           },
           {
-            "text": "the",
-            "startFrame": 3067
+            "text": "ready",
+            "startFrame": 2959
           },
           {
-            "text": "algorithm,",
-            "startFrame": 3069
-          }
-        ]
-      },
-      {
-        "startFrame": 3096,
-        "words": [
-          {
-            "text": "its",
-            "startFrame": 3096
+            "text": "answers",
+            "startFrame": 2965
           },
           {
-            "text": "settings,",
-            "startFrame": 3100
-          },
-          {
-            "text": "the",
-            "startFrame": 3125
-          },
-          {
-            "text": "salt",
-            "startFrame": 3128
-          },
-          {
-            "text": "and",
-            "startFrame": 3146
-          },
-          {
-            "text": "the",
-            "startFrame": 3148
-          },
-          {
-            "text": "digest.",
-            "startFrame": 3150
+            "text": "works.",
+            "startFrame": 2974
           }
         ]
       }
@@ -1669,72 +1603,93 @@
   },
   {
     "index": 25,
-    "startFrame": 3181,
-    "endFrame": 3303,
-    "text": "The settings come from the configuration of the installation, not from the code.",
-    "prefix": "The settings come from the configuration of the installation, not from the code.",
+    "startFrame": 3001,
+    "endFrame": 3184,
+    "text": "The row keeps one string: the name of the algorithm, its settings, the salt and the digest.",
+    "prefix": "The row keeps one string: the name of the algorithm, its settings, the salt and the digest.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3182,
+        "startFrame": 3003,
         "words": [
           {
             "text": "The",
-            "startFrame": 3182
+            "startFrame": 3003
           },
           {
-            "text": "settings",
-            "startFrame": 3185
+            "text": "row",
+            "startFrame": 3005
           },
           {
-            "text": "come",
-            "startFrame": 3196
+            "text": "keeps",
+            "startFrame": 3013
           },
           {
-            "text": "from",
-            "startFrame": 3204
+            "text": "one",
+            "startFrame": 3023
           },
           {
-            "text": "the",
-            "startFrame": 3208
-          },
-          {
-            "text": "configuration",
-            "startFrame": 3210
-          },
-          {
-            "text": "of",
-            "startFrame": 3232
+            "text": "string:",
+            "startFrame": 3032
           }
         ]
       },
       {
-        "startFrame": 3234,
+        "startFrame": 3060,
         "words": [
           {
             "text": "the",
-            "startFrame": 3234
+            "startFrame": 3060
           },
           {
-            "text": "installation,",
-            "startFrame": 3235
+            "text": "name",
+            "startFrame": 3062
           },
           {
-            "text": "not",
-            "startFrame": 3269
-          },
-          {
-            "text": "from",
-            "startFrame": 3274
+            "text": "of",
+            "startFrame": 3068
           },
           {
             "text": "the",
-            "startFrame": 3278
+            "startFrame": 3070
           },
           {
-            "text": "code.",
-            "startFrame": 3280
+            "text": "algorithm,",
+            "startFrame": 3072
+          }
+        ]
+      },
+      {
+        "startFrame": 3099,
+        "words": [
+          {
+            "text": "its",
+            "startFrame": 3099
+          },
+          {
+            "text": "settings,",
+            "startFrame": 3103
+          },
+          {
+            "text": "the",
+            "startFrame": 3128
+          },
+          {
+            "text": "salt",
+            "startFrame": 3131
+          },
+          {
+            "text": "and",
+            "startFrame": 3149
+          },
+          {
+            "text": "the",
+            "startFrame": 3151
+          },
+          {
+            "text": "digest.",
+            "startFrame": 3153
           }
         ]
       }
@@ -1742,76 +1697,72 @@
   },
   {
     "index": 26,
-    "startFrame": 3303,
-    "endFrame": 3457,
-    "text": "Older digests are never kept, and only the login module may read the row.",
-    "prefix": "Older digests are never kept, and only the login module may read the row.",
+    "startFrame": 3184,
+    "endFrame": 3306,
+    "text": "The settings come from the configuration of the installation, not from the code.",
+    "prefix": "The settings come from the configuration of the installation, not from the code.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3305,
+        "startFrame": 3185,
         "words": [
           {
-            "text": "Older",
-            "startFrame": 3305
+            "text": "The",
+            "startFrame": 3185
           },
           {
-            "text": "digests",
-            "startFrame": 3312
+            "text": "settings",
+            "startFrame": 3188
           },
           {
-            "text": "are",
-            "startFrame": 3330
+            "text": "come",
+            "startFrame": 3199
           },
           {
-            "text": "never",
-            "startFrame": 3334
+            "text": "from",
+            "startFrame": 3207
           },
           {
-            "text": "kept,",
-            "startFrame": 3344
+            "text": "the",
+            "startFrame": 3211
+          },
+          {
+            "text": "configuration",
+            "startFrame": 3213
+          },
+          {
+            "text": "of",
+            "startFrame": 3235
           }
         ]
       },
       {
-        "startFrame": 3368,
+        "startFrame": 3236,
         "words": [
           {
-            "text": "and",
-            "startFrame": 3368
+            "text": "the",
+            "startFrame": 3236
           },
           {
-            "text": "only",
-            "startFrame": 3375
+            "text": "installation,",
+            "startFrame": 3238
+          },
+          {
+            "text": "not",
+            "startFrame": 3272
+          },
+          {
+            "text": "from",
+            "startFrame": 3277
           },
           {
             "text": "the",
-            "startFrame": 3383
+            "startFrame": 3281
           },
           {
-            "text": "login",
-            "startFrame": 3387
-          },
-          {
-            "text": "module",
-            "startFrame": 3400
-          },
-          {
-            "text": "may",
-            "startFrame": 3421
-          },
-          {
-            "text": "read",
-            "startFrame": 3426
-          },
-          {
-            "text": "the",
-            "startFrame": 3433
-          },
-          {
-            "text": "row.",
-            "startFrame": 3436
+            "text": "code.",
+            "startFrame": 3283
           }
         ]
       }
@@ -1819,68 +1770,97 @@
   },
   {
     "index": 27,
-    "startFrame": 3457,
-    "endFrame": 3614,
-    "text": "Older functions like bcrypt were not chosen, because they are not memory-hard.",
-    "prefix": "Older functions like bcrypt were not chosen, because they are not memory-hard.",
+    "startFrame": 3306,
+    "endFrame": 3488,
+    "text": "The platform keeps no older password, and only the login check of the gateway may read the row.",
+    "prefix": "The platform keeps no older password, and only the login check of the gateway may read the row.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3459,
+        "startFrame": 3307,
         "words": [
           {
-            "text": "Older",
-            "startFrame": 3459
+            "text": "The",
+            "startFrame": 3307
           },
           {
-            "text": "functions",
-            "startFrame": 3466
+            "text": "platform",
+            "startFrame": 3309
           },
           {
-            "text": "like",
-            "startFrame": 3480
+            "text": "keeps",
+            "startFrame": 3327
           },
           {
-            "text": "bcrypt",
-            "startFrame": 3489
+            "text": "no",
+            "startFrame": 3337
           },
           {
-            "text": "were",
-            "startFrame": 3524
+            "text": "older",
+            "startFrame": 3350
           },
           {
-            "text": "not",
-            "startFrame": 3528
-          },
-          {
-            "text": "chosen,",
-            "startFrame": 3536
+            "text": "password,",
+            "startFrame": 3359
           }
         ]
       },
       {
-        "startFrame": 3560,
+        "startFrame": 3387,
         "words": [
           {
-            "text": "because",
-            "startFrame": 3560
+            "text": "and",
+            "startFrame": 3387
           },
           {
-            "text": "they",
-            "startFrame": 3569
+            "text": "only",
+            "startFrame": 3395
           },
           {
-            "text": "are",
-            "startFrame": 3572
+            "text": "the",
+            "startFrame": 3404
           },
           {
-            "text": "not",
-            "startFrame": 3574
+            "text": "login",
+            "startFrame": 3407
           },
           {
-            "text": "memory-hard.",
-            "startFrame": 3582
+            "text": "check",
+            "startFrame": 3419
+          },
+          {
+            "text": "of",
+            "startFrame": 3426
+          },
+          {
+            "text": "the",
+            "startFrame": 3427
+          },
+          {
+            "text": "gateway",
+            "startFrame": 3429
+          }
+        ]
+      },
+      {
+        "startFrame": 3452,
+        "words": [
+          {
+            "text": "may",
+            "startFrame": 3452
+          },
+          {
+            "text": "read",
+            "startFrame": 3459
+          },
+          {
+            "text": "the",
+            "startFrame": 3466
+          },
+          {
+            "text": "row.",
+            "startFrame": 3467
           }
         ]
       }
@@ -1888,31 +1868,68 @@
   },
   {
     "index": 28,
-    "startFrame": 3614,
-    "endFrame": 3663,
-    "text": "Back to Thursday night.",
-    "prefix": "Back to Thursday night.",
+    "startFrame": 3489,
+    "endFrame": 3623,
+    "text": "Older functions like bcrypt were not chosen, because they are not memory-hard.",
+    "prefix": "Older functions like bcrypt were not chosen, because they are not memory-hard.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3616,
+        "startFrame": 3490,
         "words": [
           {
-            "text": "Back",
-            "startFrame": 3616
+            "text": "Older",
+            "startFrame": 3490
           },
           {
-            "text": "to",
-            "startFrame": 3624
+            "text": "functions",
+            "startFrame": 3498
           },
           {
-            "text": "Thursday",
-            "startFrame": 3627
+            "text": "like",
+            "startFrame": 3512
           },
           {
-            "text": "night.",
-            "startFrame": 3641
+            "text": "bcrypt",
+            "startFrame": 3517
+          },
+          {
+            "text": "were",
+            "startFrame": 3533
+          },
+          {
+            "text": "not",
+            "startFrame": 3536
+          },
+          {
+            "text": "chosen,",
+            "startFrame": 3547
+          }
+        ]
+      },
+      {
+        "startFrame": 3568,
+        "words": [
+          {
+            "text": "because",
+            "startFrame": 3568
+          },
+          {
+            "text": "they",
+            "startFrame": 3577
+          },
+          {
+            "text": "are",
+            "startFrame": 3580
+          },
+          {
+            "text": "not",
+            "startFrame": 3581
+          },
+          {
+            "text": "memory-hard.",
+            "startFrame": 3591
           }
         ]
       }
@@ -1920,98 +1937,31 @@
   },
   {
     "index": 29,
-    "startFrame": 3664,
-    "endFrame": 3857,
-    "text": "Every login starts with the password, before a code, before a new-device request, before a web approval.",
-    "prefix": "Every login starts with the password, before a code, before a new-device request, before a web approval.",
+    "startFrame": 3624,
+    "endFrame": 3679,
+    "text": "Back to Thursday night.",
+    "prefix": "Back to Thursday night.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3665,
+        "startFrame": 3626,
         "words": [
           {
-            "text": "Every",
-            "startFrame": 3665
+            "text": "Back",
+            "startFrame": 3626
           },
           {
-            "text": "login",
-            "startFrame": 3671
+            "text": "to",
+            "startFrame": 3633
           },
           {
-            "text": "starts",
-            "startFrame": 3688
+            "text": "Thursday",
+            "startFrame": 3637
           },
           {
-            "text": "with",
-            "startFrame": 3700
-          },
-          {
-            "text": "the",
-            "startFrame": 3702
-          },
-          {
-            "text": "password,",
-            "startFrame": 3704
-          }
-        ]
-      },
-      {
-        "startFrame": 3730,
-        "words": [
-          {
-            "text": "before",
-            "startFrame": 3730
-          },
-          {
-            "text": "a",
-            "startFrame": 3741
-          },
-          {
-            "text": "code,",
-            "startFrame": 3742
-          }
-        ]
-      },
-      {
-        "startFrame": 3761,
-        "words": [
-          {
-            "text": "before",
-            "startFrame": 3761
-          },
-          {
-            "text": "a",
-            "startFrame": 3771
-          },
-          {
-            "text": "new-device",
-            "startFrame": 3772
-          },
-          {
-            "text": "request,",
-            "startFrame": 3789
-          }
-        ]
-      },
-      {
-        "startFrame": 3813,
-        "words": [
-          {
-            "text": "before",
-            "startFrame": 3813
-          },
-          {
-            "text": "a",
-            "startFrame": 3822
-          },
-          {
-            "text": "web",
-            "startFrame": 3824
-          },
-          {
-            "text": "approval.",
-            "startFrame": 3830
+            "text": "night.",
+            "startFrame": 3650
           }
         ]
       }
@@ -2019,47 +1969,64 @@
   },
   {
     "index": 30,
-    "startFrame": 3858,
-    "endFrame": 3955,
-    "text": "The gateway compares the digests in constant time.",
-    "prefix": "The gateway compares the digests in constant time.",
+    "startFrame": 3680,
+    "endFrame": 3794,
+    "text": "Every login starts with the password, before any code goes out.",
+    "prefix": "Every login starts with the password, before any code goes out.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3859,
+        "startFrame": 3681,
         "words": [
           {
-            "text": "The",
-            "startFrame": 3859
+            "text": "Every",
+            "startFrame": 3681
           },
           {
-            "text": "gateway",
-            "startFrame": 3861
+            "text": "login",
+            "startFrame": 3687
           },
           {
-            "text": "compares",
-            "startFrame": 3875
+            "text": "starts",
+            "startFrame": 3702
+          },
+          {
+            "text": "with",
+            "startFrame": 3713
           },
           {
             "text": "the",
-            "startFrame": 3891
+            "startFrame": 3715
           },
           {
-            "text": "digests",
-            "startFrame": 3894
+            "text": "password,",
+            "startFrame": 3718
+          }
+        ]
+      },
+      {
+        "startFrame": 3739,
+        "words": [
+          {
+            "text": "before",
+            "startFrame": 3739
           },
           {
-            "text": "in",
-            "startFrame": 3916
+            "text": "any",
+            "startFrame": 3750
           },
           {
-            "text": "constant",
-            "startFrame": 3920
+            "text": "code",
+            "startFrame": 3755
           },
           {
-            "text": "time.",
-            "startFrame": 3934
+            "text": "goes",
+            "startFrame": 3765
+          },
+          {
+            "text": "out.",
+            "startFrame": 3773
           }
         ]
       }
@@ -2067,47 +2034,47 @@
   },
   {
     "index": 31,
-    "startFrame": 3955,
-    "endFrame": 4015,
-    "text": "And here is a detail I really like.",
-    "prefix": "And here is a detail I really like.",
+    "startFrame": 3794,
+    "endFrame": 3892,
+    "text": "The gateway compares the digests in constant time.",
+    "prefix": "The gateway compares the digests in constant time.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 3956,
+        "startFrame": 3796,
         "words": [
           {
-            "text": "And",
-            "startFrame": 3956
+            "text": "The",
+            "startFrame": 3796
           },
           {
-            "text": "here",
-            "startFrame": 3959
+            "text": "gateway",
+            "startFrame": 3798
           },
           {
-            "text": "is",
-            "startFrame": 3963
+            "text": "compares",
+            "startFrame": 3812
           },
           {
-            "text": "a",
-            "startFrame": 3966
+            "text": "the",
+            "startFrame": 3828
           },
           {
-            "text": "detail",
-            "startFrame": 3969
+            "text": "digests",
+            "startFrame": 3831
           },
           {
-            "text": "I",
-            "startFrame": 3982
+            "text": "in",
+            "startFrame": 3853
           },
           {
-            "text": "really",
-            "startFrame": 3984
+            "text": "constant",
+            "startFrame": 3856
           },
           {
-            "text": "like.",
-            "startFrame": 3991
+            "text": "time.",
+            "startFrame": 3870
           }
         ]
       }
@@ -2115,93 +2082,43 @@
   },
   {
     "index": 32,
-    "startFrame": 4015,
-    "endFrame": 4200,
-    "text": "When the number belongs to nobody, the gateway still runs a check, against a fixed dummy digest.",
-    "prefix": "When the number belongs to nobody, the gateway still runs a check, against a fixed dummy digest.",
+    "startFrame": 3892,
+    "endFrame": 3960,
+    "text": "And here is a detail worth copying.",
+    "prefix": "And here is a detail worth copying.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4016,
+        "startFrame": 3893,
         "words": [
           {
-            "text": "When",
-            "startFrame": 4016
+            "text": "And",
+            "startFrame": 3893
           },
           {
-            "text": "the",
-            "startFrame": 4018
+            "text": "here",
+            "startFrame": 3895
           },
           {
-            "text": "number",
-            "startFrame": 4020
-          },
-          {
-            "text": "belongs",
-            "startFrame": 4029
-          },
-          {
-            "text": "to",
-            "startFrame": 4041
-          },
-          {
-            "text": "nobody,",
-            "startFrame": 4043
-          }
-        ]
-      },
-      {
-        "startFrame": 4068,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 4068
-          },
-          {
-            "text": "gateway",
-            "startFrame": 4072
-          },
-          {
-            "text": "still",
-            "startFrame": 4088
-          },
-          {
-            "text": "runs",
-            "startFrame": 4100
+            "text": "is",
+            "startFrame": 3902
           },
           {
             "text": "a",
-            "startFrame": 4107
+            "startFrame": 3906
           },
           {
-            "text": "check,",
-            "startFrame": 4109
-          }
-        ]
-      },
-      {
-        "startFrame": 4133,
-        "words": [
-          {
-            "text": "against",
-            "startFrame": 4133
+            "text": "detail",
+            "startFrame": 3909
           },
           {
-            "text": "a",
-            "startFrame": 4141
+            "text": "worth",
+            "startFrame": 3926
           },
           {
-            "text": "fixed",
-            "startFrame": 4143
-          },
-          {
-            "text": "dummy",
-            "startFrame": 4158
-          },
-          {
-            "text": "digest.",
-            "startFrame": 4167
+            "text": "copying.",
+            "startFrame": 3934
           }
         ]
       }
@@ -2209,85 +2126,93 @@
   },
   {
     "index": 33,
-    "startFrame": 4200,
-    "endFrame": 4342,
-    "text": "The answer is the same, wrong number or password, and it takes the same time.",
-    "prefix": "The answer is the same, wrong number or password, and it takes the same time.",
+    "startFrame": 3961,
+    "endFrame": 4143,
+    "text": "When the number belongs to nobody, the gateway still runs a check, against a fixed fake digest.",
+    "prefix": "When the number belongs to nobody, the gateway still runs a check, against a fixed fake digest.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4202,
+        "startFrame": 3962,
         "words": [
           {
-            "text": "The",
-            "startFrame": 4202
-          },
-          {
-            "text": "answer",
-            "startFrame": 4204
-          },
-          {
-            "text": "is",
-            "startFrame": 4215
+            "text": "When",
+            "startFrame": 3962
           },
           {
             "text": "the",
-            "startFrame": 4218
-          },
-          {
-            "text": "same,",
-            "startFrame": 4220
-          }
-        ]
-      },
-      {
-        "startFrame": 4246,
-        "words": [
-          {
-            "text": "wrong",
-            "startFrame": 4246
+            "startFrame": 3964
           },
           {
             "text": "number",
-            "startFrame": 4254
+            "startFrame": 3965
           },
           {
-            "text": "or",
-            "startFrame": 4264
+            "text": "belongs",
+            "startFrame": 3974
           },
           {
-            "text": "password,",
-            "startFrame": 4268
+            "text": "to",
+            "startFrame": 3986
+          },
+          {
+            "text": "nobody,",
+            "startFrame": 3988
           }
         ]
       },
       {
-        "startFrame": 4298,
+        "startFrame": 4017,
         "words": [
           {
-            "text": "and",
-            "startFrame": 4298
-          },
-          {
-            "text": "it",
-            "startFrame": 4301
-          },
-          {
-            "text": "takes",
-            "startFrame": 4303
-          },
-          {
             "text": "the",
-            "startFrame": 4309
+            "startFrame": 4017
           },
           {
-            "text": "same",
-            "startFrame": 4311
+            "text": "gateway",
+            "startFrame": 4020
           },
           {
-            "text": "time.",
-            "startFrame": 4319
+            "text": "still",
+            "startFrame": 4037
+          },
+          {
+            "text": "runs",
+            "startFrame": 4050
+          },
+          {
+            "text": "a",
+            "startFrame": 4057
+          },
+          {
+            "text": "check,",
+            "startFrame": 4059
+          }
+        ]
+      },
+      {
+        "startFrame": 4079,
+        "words": [
+          {
+            "text": "against",
+            "startFrame": 4079
+          },
+          {
+            "text": "a",
+            "startFrame": 4089
+          },
+          {
+            "text": "fixed",
+            "startFrame": 4090
+          },
+          {
+            "text": "fake",
+            "startFrame": 4102
+          },
+          {
+            "text": "digest.",
+            "startFrame": 4112
           }
         ]
       }
@@ -2295,60 +2220,85 @@
   },
   {
     "index": 34,
-    "startFrame": 4342,
-    "endFrame": 4453,
-    "text": "So the stranger cannot even learn whether a customer exists.",
-    "prefix": "So the stranger cannot even learn whether a customer exists.",
+    "startFrame": 4143,
+    "endFrame": 4285,
+    "text": "The answer is the same, wrong number or password, and it takes the same time.",
+    "prefix": "The answer is the same, wrong number or password, and it takes the same time.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4343,
+        "startFrame": 4145,
         "words": [
           {
-            "text": "So",
-            "startFrame": 4343
+            "text": "The",
+            "startFrame": 4145
+          },
+          {
+            "text": "answer",
+            "startFrame": 4147
+          },
+          {
+            "text": "is",
+            "startFrame": 4158
           },
           {
             "text": "the",
-            "startFrame": 4347
+            "startFrame": 4161
           },
           {
-            "text": "stranger",
-            "startFrame": 4349
-          },
-          {
-            "text": "cannot",
-            "startFrame": 4368
-          },
-          {
-            "text": "even",
-            "startFrame": 4383
-          },
-          {
-            "text": "learn",
-            "startFrame": 4391
-          },
-          {
-            "text": "whether",
-            "startFrame": 4401
+            "text": "same,",
+            "startFrame": 4163
           }
         ]
       },
       {
-        "startFrame": 4409,
+        "startFrame": 4189,
         "words": [
           {
-            "text": "a",
-            "startFrame": 4409
+            "text": "wrong",
+            "startFrame": 4189
           },
           {
-            "text": "customer",
-            "startFrame": 4410
+            "text": "number",
+            "startFrame": 4197
           },
           {
-            "text": "exists.",
-            "startFrame": 4423
+            "text": "or",
+            "startFrame": 4207
+          },
+          {
+            "text": "password,",
+            "startFrame": 4211
+          }
+        ]
+      },
+      {
+        "startFrame": 4242,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 4242
+          },
+          {
+            "text": "it",
+            "startFrame": 4244
+          },
+          {
+            "text": "takes",
+            "startFrame": 4246
+          },
+          {
+            "text": "the",
+            "startFrame": 4252
+          },
+          {
+            "text": "same",
+            "startFrame": 4254
+          },
+          {
+            "text": "time.",
+            "startFrame": 4262
           }
         ]
       }
@@ -2356,64 +2306,60 @@
   },
   {
     "index": 35,
-    "startFrame": 4454,
-    "endFrame": 4550,
-    "text": "Each wrong password adds one to a counter in the row.",
-    "prefix": "Each wrong password adds one to a counter in the row.",
+    "startFrame": 4285,
+    "endFrame": 4389,
+    "text": "So the script cannot even learn whether a customer exists.",
+    "prefix": "So the script cannot even learn whether a customer exists.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4455,
+        "startFrame": 4287,
         "words": [
           {
-            "text": "Each",
-            "startFrame": 4455
+            "text": "So",
+            "startFrame": 4287
           },
           {
-            "text": "wrong",
-            "startFrame": 4460
+            "text": "the",
+            "startFrame": 4290
           },
           {
-            "text": "password",
-            "startFrame": 4468
+            "text": "script",
+            "startFrame": 4293
           },
           {
-            "text": "adds",
-            "startFrame": 4493
+            "text": "cannot",
+            "startFrame": 4303
           },
           {
-            "text": "one",
-            "startFrame": 4503
+            "text": "even",
+            "startFrame": 4321
           },
           {
-            "text": "to",
-            "startFrame": 4511
+            "text": "learn",
+            "startFrame": 4329
           },
           {
-            "text": "a",
-            "startFrame": 4515
-          },
-          {
-            "text": "counter",
-            "startFrame": 4517
+            "text": "whether",
+            "startFrame": 4338
           }
         ]
       },
       {
-        "startFrame": 4527,
+        "startFrame": 4346,
         "words": [
           {
-            "text": "in",
-            "startFrame": 4527
+            "text": "a",
+            "startFrame": 4346
           },
           {
-            "text": "the",
-            "startFrame": 4528
+            "text": "customer",
+            "startFrame": 4347
           },
           {
-            "text": "row.",
-            "startFrame": 4530
+            "text": "exists.",
+            "startFrame": 4359
           }
         ]
       }
@@ -2421,80 +2367,72 @@
   },
   {
     "index": 36,
-    "startFrame": 4551,
-    "endFrame": 4715,
-    "text": "The same transaction writes an audit event and an event for the bank's antifraud system.",
-    "prefix": "The same transaction writes an audit event and an event for the bank's antifraud system.",
+    "startFrame": 4390,
+    "endFrame": 4530,
+    "text": "Each wrong password adds one to a counter in Valkey, for this number.",
+    "prefix": "Each wrong password adds one to a counter in Valkey, for this number.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4552,
+        "startFrame": 4391,
         "words": [
           {
-            "text": "The",
-            "startFrame": 4552
+            "text": "Each",
+            "startFrame": 4391
           },
           {
-            "text": "same",
-            "startFrame": 4555
+            "text": "wrong",
+            "startFrame": 4396
           },
           {
-            "text": "transaction",
-            "startFrame": 4562
+            "text": "password",
+            "startFrame": 4405
           },
           {
-            "text": "writes",
-            "startFrame": 4590
+            "text": "adds",
+            "startFrame": 4425
           },
           {
-            "text": "an",
-            "startFrame": 4601
+            "text": "one",
+            "startFrame": 4434
           },
           {
-            "text": "audit",
-            "startFrame": 4606
+            "text": "to",
+            "startFrame": 4443
           },
           {
-            "text": "event",
-            "startFrame": 4614
+            "text": "a",
+            "startFrame": 4447
+          },
+          {
+            "text": "counter",
+            "startFrame": 4450
           }
         ]
       },
       {
-        "startFrame": 4636,
+        "startFrame": 4464,
         "words": [
           {
-            "text": "and",
-            "startFrame": 4636
+            "text": "in",
+            "startFrame": 4464
           },
           {
-            "text": "an",
-            "startFrame": 4639
-          },
-          {
-            "text": "event",
-            "startFrame": 4641
+            "text": "Valkey,",
+            "startFrame": 4468
           },
           {
             "text": "for",
-            "startFrame": 4650
+            "startFrame": 4498
           },
           {
-            "text": "the",
-            "startFrame": 4653
+            "text": "this",
+            "startFrame": 4502
           },
           {
-            "text": "bank's",
-            "startFrame": 4656
-          },
-          {
-            "text": "antifraud",
-            "startFrame": 4672
-          },
-          {
-            "text": "system.",
-            "startFrame": 4691
+            "text": "number.",
+            "startFrame": 4507
           }
         ]
       }
@@ -2502,72 +2440,72 @@
   },
   {
     "index": 37,
-    "startFrame": 4716,
-    "endFrame": 4858,
-    "text": "At the configured limit, the gateway locks password login for the configured time.",
-    "prefix": "At the configured limit, the gateway locks password login for the configured time.",
+    "startFrame": 4530,
+    "endFrame": 4674,
+    "text": "The gateway also writes an audit event and tells the bank's antifraud system.",
+    "prefix": "The gateway also writes an audit event and tells the bank's antifraud system.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4716,
+        "startFrame": 4531,
         "words": [
           {
-            "text": "At",
-            "startFrame": 4716
+            "text": "The",
+            "startFrame": 4531
           },
           {
-            "text": "the",
-            "startFrame": 4719
+            "text": "gateway",
+            "startFrame": 4534
           },
           {
-            "text": "configured",
-            "startFrame": 4721
+            "text": "also",
+            "startFrame": 4549
           },
           {
-            "text": "limit,",
-            "startFrame": 4738
+            "text": "writes",
+            "startFrame": 4562
+          },
+          {
+            "text": "an",
+            "startFrame": 4570
+          },
+          {
+            "text": "audit",
+            "startFrame": 4574
+          },
+          {
+            "text": "event",
+            "startFrame": 4582
           }
         ]
       },
       {
-        "startFrame": 4755,
+        "startFrame": 4605,
         "words": [
           {
-            "text": "the",
-            "startFrame": 4755
+            "text": "and",
+            "startFrame": 4605
           },
           {
-            "text": "gateway",
-            "startFrame": 4758
-          },
-          {
-            "text": "locks",
-            "startFrame": 4769
-          },
-          {
-            "text": "password",
-            "startFrame": 4780
-          },
-          {
-            "text": "login",
-            "startFrame": 4797
-          },
-          {
-            "text": "for",
-            "startFrame": 4816
+            "text": "tells",
+            "startFrame": 4608
           },
           {
             "text": "the",
-            "startFrame": 4819
+            "startFrame": 4616
           },
           {
-            "text": "configured",
-            "startFrame": 4821
+            "text": "bank's",
+            "startFrame": 4620
           },
           {
-            "text": "time.",
-            "startFrame": 4836
+            "text": "antifraud",
+            "startFrame": 4631
+          },
+          {
+            "text": "system.",
+            "startFrame": 4650
           }
         ]
       }
@@ -2575,68 +2513,85 @@
   },
   {
     "index": 38,
-    "startFrame": 4858,
-    "endFrame": 5003,
-    "text": "Aziz gets a message by SMS and by push: password login locked.",
-    "prefix": "Aziz gets a message by SMS and by push: password login locked.",
+    "startFrame": 4675,
+    "endFrame": 4829,
+    "text": "At the configured limit, the gateway sets a lock in Valkey, for the configured time.",
+    "prefix": "At the configured limit, the gateway sets a lock in Valkey, for the configured time.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 4859,
+        "startFrame": 4676,
         "words": [
           {
-            "text": "Aziz",
-            "startFrame": 4859
+            "text": "At",
+            "startFrame": 4676
           },
           {
-            "text": "gets",
-            "startFrame": 4868
+            "text": "the",
+            "startFrame": 4678
           },
           {
-            "text": "a",
-            "startFrame": 4872
+            "text": "configured",
+            "startFrame": 4681
           },
           {
-            "text": "message",
-            "startFrame": 4873
-          },
-          {
-            "text": "by",
-            "startFrame": 4885
-          },
-          {
-            "text": "SMS",
-            "startFrame": 4892
-          },
-          {
-            "text": "and",
-            "startFrame": 4917
+            "text": "limit,",
+            "startFrame": 4696
           }
         ]
       },
       {
-        "startFrame": 4921,
+        "startFrame": 4713,
         "words": [
           {
-            "text": "by",
-            "startFrame": 4921
+            "text": "the",
+            "startFrame": 4713
           },
           {
-            "text": "push:",
-            "startFrame": 4926
+            "text": "gateway",
+            "startFrame": 4715
           },
           {
-            "text": "password",
-            "startFrame": 4953
+            "text": "sets",
+            "startFrame": 4728
           },
           {
-            "text": "login",
-            "startFrame": 4969
+            "text": "a",
+            "startFrame": 4736
           },
           {
-            "text": "locked.",
-            "startFrame": 4979
+            "text": "lock",
+            "startFrame": 4738
+          },
+          {
+            "text": "in",
+            "startFrame": 4751
+          },
+          {
+            "text": "Valkey,",
+            "startFrame": 4755
+          }
+        ]
+      },
+      {
+        "startFrame": 4788,
+        "words": [
+          {
+            "text": "for",
+            "startFrame": 4788
+          },
+          {
+            "text": "the",
+            "startFrame": 4791
+          },
+          {
+            "text": "configured",
+            "startFrame": 4793
+          },
+          {
+            "text": "time.",
+            "startFrame": 4807
           }
         ]
       }
@@ -2644,56 +2599,47 @@
   },
   {
     "index": 39,
-    "startFrame": 5003,
-    "endFrame": 5111,
-    "text": "The stranger gets one answer: Too many wrong passwords.",
-    "prefix": "The stranger gets one answer: Too many wrong passwords.",
+    "startFrame": 4830,
+    "endFrame": 4908,
+    "text": "Now password login for this number is locked.",
+    "prefix": "Now password login for this number is locked.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5005,
+        "startFrame": 4831,
         "words": [
           {
-            "text": "The",
-            "startFrame": 5005
+            "text": "Now",
+            "startFrame": 4831
           },
           {
-            "text": "stranger",
-            "startFrame": 5007
+            "text": "password",
+            "startFrame": 4836
           },
           {
-            "text": "gets",
-            "startFrame": 5018
+            "text": "login",
+            "startFrame": 4850
           },
           {
-            "text": "one",
-            "startFrame": 5022
+            "text": "for",
+            "startFrame": 4859
           },
           {
-            "text": "answer:",
-            "startFrame": 5028
-          }
-        ]
-      },
-      {
-        "startFrame": 5052,
-        "words": [
-          {
-            "text": "Too",
-            "startFrame": 5052
+            "text": "this",
+            "startFrame": 4863
           },
           {
-            "text": "many",
-            "startFrame": 5057
+            "text": "number",
+            "startFrame": 4867
           },
           {
-            "text": "wrong",
-            "startFrame": 5063
+            "text": "is",
+            "startFrame": 4879
           },
           {
-            "text": "passwords.",
-            "startFrame": 5074
+            "text": "locked.",
+            "startFrame": 4883
           }
         ]
       }
@@ -2701,60 +2647,60 @@
   },
   {
     "index": 40,
-    "startFrame": 5112,
-    "endFrame": 5214,
-    "text": "Try again at the given time, or reset the password.",
-    "prefix": "Try again at the given time, or reset the password.",
+    "startFrame": 4909,
+    "endFrame": 5036,
+    "text": "Aziz gets an SMS and a push: password login locked.",
+    "prefix": "Aziz gets an SMS and a push: password login locked.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5113,
+        "startFrame": 4910,
         "words": [
           {
-            "text": "Try",
-            "startFrame": 5113
+            "text": "Aziz",
+            "startFrame": 4910
           },
           {
-            "text": "again",
-            "startFrame": 5119
+            "text": "gets",
+            "startFrame": 4919
           },
           {
-            "text": "at",
-            "startFrame": 5126
+            "text": "an",
+            "startFrame": 4924
           },
           {
-            "text": "the",
-            "startFrame": 5128
+            "text": "SMS",
+            "startFrame": 4929
           },
           {
-            "text": "given",
-            "startFrame": 5130
+            "text": "and",
+            "startFrame": 4954
           },
           {
-            "text": "time,",
-            "startFrame": 5137
+            "text": "a",
+            "startFrame": 4959
+          },
+          {
+            "text": "push:",
+            "startFrame": 4962
           }
         ]
       },
       {
-        "startFrame": 5162,
+        "startFrame": 4988,
         "words": [
           {
-            "text": "or",
-            "startFrame": 5162
+            "text": "password",
+            "startFrame": 4988
           },
           {
-            "text": "reset",
-            "startFrame": 5165
+            "text": "login",
+            "startFrame": 5004
           },
           {
-            "text": "the",
-            "startFrame": 5181
-          },
-          {
-            "text": "password.",
-            "startFrame": 5183
+            "text": "locked.",
+            "startFrame": 5014
           }
         ]
       }
@@ -2762,52 +2708,73 @@
   },
   {
     "index": 41,
-    "startFrame": 5214,
-    "endFrame": 5321,
-    "text": "On Friday morning, Aziz opens the mobile bank.",
-    "prefix": "On Friday morning, Aziz opens the mobile bank.",
+    "startFrame": 5036,
+    "endFrame": 5170,
+    "text": "The script gets one answer: too many wrong passwords, try again later.",
+    "prefix": "The script gets one answer: too many wrong passwords, try again later.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5215,
+        "startFrame": 5038,
         "words": [
           {
-            "text": "On",
-            "startFrame": 5215
+            "text": "The",
+            "startFrame": 5038
           },
           {
-            "text": "Friday",
-            "startFrame": 5219
+            "text": "script",
+            "startFrame": 5039
           },
           {
-            "text": "morning,",
-            "startFrame": 5228
+            "text": "gets",
+            "startFrame": 5048
+          },
+          {
+            "text": "one",
+            "startFrame": 5052
+          },
+          {
+            "text": "answer:",
+            "startFrame": 5061
           }
         ]
       },
       {
-        "startFrame": 5253,
+        "startFrame": 5084,
         "words": [
           {
-            "text": "Aziz",
-            "startFrame": 5253
+            "text": "too",
+            "startFrame": 5084
           },
           {
-            "text": "opens",
-            "startFrame": 5276
+            "text": "many",
+            "startFrame": 5089
           },
           {
-            "text": "the",
-            "startFrame": 5287
+            "text": "wrong",
+            "startFrame": 5095
           },
           {
-            "text": "mobile",
-            "startFrame": 5289
+            "text": "passwords,",
+            "startFrame": 5104
+          }
+        ]
+      },
+      {
+        "startFrame": 5134,
+        "words": [
+          {
+            "text": "try",
+            "startFrame": 5134
           },
           {
-            "text": "bank.",
-            "startFrame": 5298
+            "text": "again",
+            "startFrame": 5140
+          },
+          {
+            "text": "later.",
+            "startFrame": 5149
           }
         ]
       }
@@ -2815,23 +2782,60 @@
   },
   {
     "index": 42,
-    "startFrame": 5321,
-    "endFrame": 5377,
-    "text": "It works.",
-    "prefix": "It works.",
+    "startFrame": 5171,
+    "endFrame": 5270,
+    "text": "When the time is over, the lock ends by itself.",
+    "prefix": "When the time is over, the lock ends by itself.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5323,
+        "startFrame": 5172,
         "words": [
           {
-            "text": "It",
-            "startFrame": 5323
+            "text": "When",
+            "startFrame": 5172
           },
           {
-            "text": "works.",
-            "startFrame": 5326
+            "text": "the",
+            "startFrame": 5174
+          },
+          {
+            "text": "time",
+            "startFrame": 5176
+          },
+          {
+            "text": "is",
+            "startFrame": 5184
+          },
+          {
+            "text": "over,",
+            "startFrame": 5188
+          }
+        ]
+      },
+      {
+        "startFrame": 5210,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 5210
+          },
+          {
+            "text": "lock",
+            "startFrame": 5213
+          },
+          {
+            "text": "ends",
+            "startFrame": 5230
+          },
+          {
+            "text": "by",
+            "startFrame": 5234
+          },
+          {
+            "text": "itself.",
+            "startFrame": 5240
           }
         ]
       }
@@ -2839,39 +2843,68 @@
   },
   {
     "index": 43,
-    "startFrame": 5377,
-    "endFrame": 5433,
-    "text": "A lock is not a block.",
-    "prefix": "A lock is not a block.",
+    "startFrame": 5271,
+    "endFrame": 5410,
+    "text": "On Friday morning, Aziz reads the message and opens the mobile bank.",
+    "prefix": "On Friday morning, Aziz reads the message and opens the mobile bank.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5378,
+        "startFrame": 5272,
         "words": [
           {
-            "text": "A",
-            "startFrame": 5378
+            "text": "On",
+            "startFrame": 5272
           },
           {
-            "text": "lock",
-            "startFrame": 5380
+            "text": "Friday",
+            "startFrame": 5275
           },
           {
-            "text": "is",
+            "text": "morning,",
+            "startFrame": 5285
+          }
+        ]
+      },
+      {
+        "startFrame": 5308,
+        "words": [
+          {
+            "text": "Aziz",
+            "startFrame": 5308
+          },
+          {
+            "text": "reads",
+            "startFrame": 5322
+          },
+          {
+            "text": "the",
+            "startFrame": 5330
+          },
+          {
+            "text": "message",
+            "startFrame": 5332
+          },
+          {
+            "text": "and",
+            "startFrame": 5352
+          },
+          {
+            "text": "opens",
+            "startFrame": 5364
+          },
+          {
+            "text": "the",
+            "startFrame": 5375
+          },
+          {
+            "text": "mobile",
+            "startFrame": 5377
+          },
+          {
+            "text": "bank.",
             "startFrame": 5387
-          },
-          {
-            "text": "not",
-            "startFrame": 5390
-          },
-          {
-            "text": "a",
-            "startFrame": 5393
-          },
-          {
-            "text": "block.",
-            "startFrame": 5395
           }
         ]
       }
@@ -2879,64 +2912,23 @@
   },
   {
     "index": 44,
-    "startFrame": 5434,
-    "endFrame": 5570,
-    "text": "His sessions keep running, because renewing a session needs no password.",
-    "prefix": "His sessions keep running, because renewing a session needs no password.",
+    "startFrame": 5411,
+    "endFrame": 5466,
+    "text": "It works.",
+    "prefix": "It works.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5435,
+        "startFrame": 5412,
         "words": [
           {
-            "text": "His",
-            "startFrame": 5435
+            "text": "It",
+            "startFrame": 5412
           },
           {
-            "text": "sessions",
-            "startFrame": 5438
-          },
-          {
-            "text": "keep",
-            "startFrame": 5450
-          },
-          {
-            "text": "running,",
-            "startFrame": 5459
-          }
-        ]
-      },
-      {
-        "startFrame": 5477,
-        "words": [
-          {
-            "text": "because",
-            "startFrame": 5477
-          },
-          {
-            "text": "renewing",
-            "startFrame": 5486
-          },
-          {
-            "text": "a",
-            "startFrame": 5497
-          },
-          {
-            "text": "session",
-            "startFrame": 5498
-          },
-          {
-            "text": "needs",
-            "startFrame": 5522
-          },
-          {
-            "text": "no",
-            "startFrame": 5531
-          },
-          {
-            "text": "password.",
-            "startFrame": 5537
+            "text": "works.",
+            "startFrame": 5415
           }
         ]
       }
@@ -2944,93 +2936,39 @@
   },
   {
     "index": 45,
-    "startFrame": 5570,
-    "endFrame": 5768,
-    "text": "The lock ends by itself after the lock time, or after a password reset, which Lesson 30 explains.",
-    "prefix": "The lock ends by itself after the lock time, or after a password reset, which Lesson 30 explains.",
+    "startFrame": 5467,
+    "endFrame": 5522,
+    "text": "A lock is not a block.",
+    "prefix": "A lock is not a block.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5572,
+        "startFrame": 5468,
         "words": [
           {
-            "text": "The",
-            "startFrame": 5572
+            "text": "A",
+            "startFrame": 5468
           },
           {
             "text": "lock",
-            "startFrame": 5574
+            "startFrame": 5469
           },
           {
-            "text": "ends",
-            "startFrame": 5586
+            "text": "is",
+            "startFrame": 5476
           },
           {
-            "text": "by",
-            "startFrame": 5590
-          },
-          {
-            "text": "itself",
-            "startFrame": 5596
-          },
-          {
-            "text": "after",
-            "startFrame": 5616
-          },
-          {
-            "text": "the",
-            "startFrame": 5623
-          },
-          {
-            "text": "lock",
-            "startFrame": 5625
-          }
-        ]
-      },
-      {
-        "startFrame": 5635,
-        "words": [
-          {
-            "text": "time,",
-            "startFrame": 5635
-          },
-          {
-            "text": "or",
-            "startFrame": 5658
-          },
-          {
-            "text": "after",
-            "startFrame": 5661
+            "text": "not",
+            "startFrame": 5479
           },
           {
             "text": "a",
-            "startFrame": 5669
+            "startFrame": 5483
           },
           {
-            "text": "password",
-            "startFrame": 5670
-          },
-          {
-            "text": "reset,",
-            "startFrame": 5685
-          }
-        ]
-      },
-      {
-        "startFrame": 5712,
-        "words": [
-          {
-            "text": "which",
-            "startFrame": 5712
-          },
-          {
-            "text": "Lesson 30",
-            "startFrame": 5718
-          },
-          {
-            "text": "explains.",
-            "startFrame": 5736
+            "text": "block.",
+            "startFrame": 5484
           }
         ]
       }
@@ -3038,60 +2976,72 @@
   },
   {
     "index": 46,
-    "startFrame": 5768,
-    "endFrame": 5873,
-    "text": "But the message worries Aziz, so he changes his password.",
-    "prefix": "But the message worries Aziz, so he changes his password.",
+    "startFrame": 5523,
+    "endFrame": 5668,
+    "text": "His session keeps running, because the renewal of a session needs no password.",
+    "prefix": "His session keeps running, because the renewal of a session needs no password.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5770,
+        "startFrame": 5525,
         "words": [
           {
-            "text": "But",
-            "startFrame": 5770
+            "text": "His",
+            "startFrame": 5525
           },
           {
-            "text": "the",
-            "startFrame": 5771
+            "text": "session",
+            "startFrame": 5528
           },
           {
-            "text": "message",
-            "startFrame": 5773
+            "text": "keeps",
+            "startFrame": 5542
           },
           {
-            "text": "worries",
-            "startFrame": 5784
-          },
-          {
-            "text": "Aziz,",
-            "startFrame": 5794
+            "text": "running,",
+            "startFrame": 5554
           }
         ]
       },
       {
-        "startFrame": 5823,
+        "startFrame": 5570,
         "words": [
           {
-            "text": "so",
-            "startFrame": 5823
+            "text": "because",
+            "startFrame": 5570
           },
           {
-            "text": "he",
-            "startFrame": 5826
+            "text": "the",
+            "startFrame": 5579
           },
           {
-            "text": "changes",
-            "startFrame": 5829
+            "text": "renewal",
+            "startFrame": 5582
           },
           {
-            "text": "his",
-            "startFrame": 5841
+            "text": "of",
+            "startFrame": 5594
+          },
+          {
+            "text": "a",
+            "startFrame": 5595
+          },
+          {
+            "text": "session",
+            "startFrame": 5596
+          },
+          {
+            "text": "needs",
+            "startFrame": 5621
+          },
+          {
+            "text": "no",
+            "startFrame": 5628
           },
           {
             "text": "password.",
-            "startFrame": 5843
+            "startFrame": 5635
           }
         ]
       }
@@ -3099,106 +3049,105 @@
   },
   {
     "index": 47,
-    "startFrame": 5874,
-    "endFrame": 6037,
-    "text": "In the mobile bank, he types the current password, then the new one, and then the new one again.",
-    "prefix": "In the mobile bank, he types the current password, then the new one, and then the new one again.",
+    "startFrame": 5668,
+    "endFrame": 5906,
+    "text": "Leaked lists are also why, at registration, the platform refuses each password from its list of common and breached passwords.",
+    "prefix": "Leaked lists are also why, at registration, the platform refuses each password from its list of common and breached passwords.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5875,
+        "startFrame": 5669,
         "words": [
           {
-            "text": "In",
-            "startFrame": 5875
+            "text": "Leaked",
+            "startFrame": 5669
           },
           {
-            "text": "the",
-            "startFrame": 5877
+            "text": "lists",
+            "startFrame": 5677
           },
           {
-            "text": "mobile",
-            "startFrame": 5878
+            "text": "are",
+            "startFrame": 5685
           },
           {
-            "text": "bank,",
-            "startFrame": 5887
+            "text": "also",
+            "startFrame": 5693
+          },
+          {
+            "text": "why,",
+            "startFrame": 5706
           }
         ]
       },
       {
-        "startFrame": 5903,
+        "startFrame": 5727,
         "words": [
           {
-            "text": "he",
-            "startFrame": 5903
+            "text": "at",
+            "startFrame": 5727
           },
           {
-            "text": "types",
-            "startFrame": 5908
+            "text": "registration,",
+            "startFrame": 5731
           },
           {
             "text": "the",
-            "startFrame": 5917
+            "startFrame": 5762
           },
           {
-            "text": "current",
-            "startFrame": 5920
+            "text": "platform",
+            "startFrame": 5764
           },
           {
-            "text": "password,",
-            "startFrame": 5930
+            "text": "refuses",
+            "startFrame": 5778
+          },
+          {
+            "text": "each",
+            "startFrame": 5800
+          },
+          {
+            "text": "password",
+            "startFrame": 5805
           }
         ]
       },
       {
-        "startFrame": 5958,
+        "startFrame": 5824,
         "words": [
           {
-            "text": "then",
-            "startFrame": 5958
+            "text": "from",
+            "startFrame": 5824
           },
           {
-            "text": "the",
-            "startFrame": 5963
+            "text": "its",
+            "startFrame": 5827
           },
           {
-            "text": "new",
-            "startFrame": 5965
+            "text": "list",
+            "startFrame": 5830
           },
           {
-            "text": "one,",
-            "startFrame": 5972
-          }
-        ]
-      },
-      {
-        "startFrame": 5995,
-        "words": [
+            "text": "of",
+            "startFrame": 5839
+          },
+          {
+            "text": "common",
+            "startFrame": 5841
+          },
           {
             "text": "and",
-            "startFrame": 5995
+            "startFrame": 5858
           },
           {
-            "text": "then",
-            "startFrame": 5998
+            "text": "breached",
+            "startFrame": 5860
           },
           {
-            "text": "the",
-            "startFrame": 6003
-          },
-          {
-            "text": "new",
-            "startFrame": 6005
-          },
-          {
-            "text": "one",
-            "startFrame": 6012
-          },
-          {
-            "text": "again.",
-            "startFrame": 6016
+            "text": "passwords.",
+            "startFrame": 5872
           }
         ]
       }
@@ -3206,97 +3155,47 @@
   },
   {
     "index": 48,
-    "startFrame": 6038,
-    "endFrame": 6238,
-    "text": "The same rules as at registration apply: long enough, not on the breached list, no phone number inside.",
-    "prefix": "The same rules as at registration apply: long enough, not on the breached list, no phone number inside.",
+    "startFrame": 5907,
+    "endFrame": 5981,
+    "text": "A few things never happen to a password.",
+    "prefix": "A few things never happen to a password.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6039,
+        "startFrame": 5908,
         "words": [
           {
-            "text": "The",
-            "startFrame": 6039
+            "text": "A",
+            "startFrame": 5908
           },
           {
-            "text": "same",
-            "startFrame": 6041
+            "text": "few",
+            "startFrame": 5910
           },
           {
-            "text": "rules",
-            "startFrame": 6050
+            "text": "things",
+            "startFrame": 5917
           },
           {
-            "text": "as",
-            "startFrame": 6061
+            "text": "never",
+            "startFrame": 5925
           },
           {
-            "text": "at",
-            "startFrame": 6066
+            "text": "happen",
+            "startFrame": 5936
           },
           {
-            "text": "registration",
-            "startFrame": 6069
+            "text": "to",
+            "startFrame": 5946
           },
           {
-            "text": "apply:",
-            "startFrame": 6086
-          }
-        ]
-      },
-      {
-        "startFrame": 6113,
-        "words": [
-          {
-            "text": "long",
-            "startFrame": 6113
+            "text": "a",
+            "startFrame": 5951
           },
           {
-            "text": "enough,",
-            "startFrame": 6120
-          },
-          {
-            "text": "not",
-            "startFrame": 6144
-          },
-          {
-            "text": "on",
-            "startFrame": 6151
-          },
-          {
-            "text": "the",
-            "startFrame": 6154
-          },
-          {
-            "text": "breached",
-            "startFrame": 6156
-          },
-          {
-            "text": "list,",
-            "startFrame": 6168
-          }
-        ]
-      },
-      {
-        "startFrame": 6192,
-        "words": [
-          {
-            "text": "no",
-            "startFrame": 6192
-          },
-          {
-            "text": "phone",
-            "startFrame": 6198
-          },
-          {
-            "text": "number",
-            "startFrame": 6206
-          },
-          {
-            "text": "inside.",
-            "startFrame": 6212
+            "text": "password.",
+            "startFrame": 5952
           }
         ]
       }
@@ -3304,64 +3203,68 @@
   },
   {
     "index": 49,
-    "startFrame": 6239,
-    "endFrame": 6363,
-    "text": "A wrong current password would count as one more wrong entry.",
-    "prefix": "A wrong current password would count as one more wrong entry.",
+    "startFrame": 5982,
+    "endFrame": 6106,
+    "text": "The platform never shows it, returns it, logs it or sends it.",
+    "prefix": "The platform never shows it, returns it, logs it or sends it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6240,
+        "startFrame": 5983,
         "words": [
           {
-            "text": "A",
-            "startFrame": 6240
+            "text": "The",
+            "startFrame": 5983
           },
           {
-            "text": "wrong",
-            "startFrame": 6241
+            "text": "platform",
+            "startFrame": 5984
           },
           {
-            "text": "current",
-            "startFrame": 6251
+            "text": "never",
+            "startFrame": 6000
           },
           {
-            "text": "password",
-            "startFrame": 6259
+            "text": "shows",
+            "startFrame": 6009
           },
           {
-            "text": "would",
-            "startFrame": 6283
-          },
-          {
-            "text": "count",
-            "startFrame": 6287
-          },
-          {
-            "text": "as",
-            "startFrame": 6309
-          },
-          {
-            "text": "one",
-            "startFrame": 6313
+            "text": "it,",
+            "startFrame": 6020
           }
         ]
       },
       {
-        "startFrame": 6321,
+        "startFrame": 6031,
         "words": [
           {
-            "text": "more",
-            "startFrame": 6321
+            "text": "returns",
+            "startFrame": 6031
           },
           {
-            "text": "wrong",
-            "startFrame": 6329
+            "text": "it,",
+            "startFrame": 6045
           },
           {
-            "text": "entry.",
-            "startFrame": 6339
+            "text": "logs",
+            "startFrame": 6060
+          },
+          {
+            "text": "it",
+            "startFrame": 6071
+          },
+          {
+            "text": "or",
+            "startFrame": 6076
+          },
+          {
+            "text": "sends",
+            "startFrame": 6078
+          },
+          {
+            "text": "it.",
+            "startFrame": 6089
           }
         ]
       }
@@ -3369,81 +3272,68 @@
   },
   {
     "index": 50,
-    "startFrame": 6363,
-    "endFrame": 6524,
-    "text": "In one transaction, the platform writes the new digest and removes the old one.",
-    "prefix": "In one transaction, the platform writes the new digest and removes the old one.",
+    "startFrame": 6107,
+    "endFrame": 6192,
+    "text": "The app masks it on the screen and does not keep it.",
+    "prefix": "The app masks it on the screen and does not keep it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6364,
+        "startFrame": 6108,
         "words": [
           {
-            "text": "In",
-            "startFrame": 6364
+            "text": "The",
+            "startFrame": 6108
           },
           {
-            "text": "one",
-            "startFrame": 6368
+            "text": "app",
+            "startFrame": 6111
           },
           {
-            "text": "transaction,",
-            "startFrame": 6376
+            "text": "masks",
+            "startFrame": 6116
+          },
+          {
+            "text": "it",
+            "startFrame": 6127
+          },
+          {
+            "text": "on",
+            "startFrame": 6129
+          },
+          {
+            "text": "the",
+            "startFrame": 6132
+          },
+          {
+            "text": "screen",
+            "startFrame": 6134
           }
         ]
       },
       {
-        "startFrame": 6409,
+        "startFrame": 6157,
         "words": [
-          {
-            "text": "the",
-            "startFrame": 6409
-          },
-          {
-            "text": "platform",
-            "startFrame": 6411
-          },
-          {
-            "text": "writes",
-            "startFrame": 6436
-          },
-          {
-            "text": "the",
-            "startFrame": 6443
-          },
-          {
-            "text": "new",
-            "startFrame": 6446
-          },
-          {
-            "text": "digest",
-            "startFrame": 6453
-          },
           {
             "text": "and",
-            "startFrame": 6480
+            "startFrame": 6157
           },
           {
-            "text": "removes",
-            "startFrame": 6483
-          }
-        ]
-      },
-      {
-        "startFrame": 6494,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 6494
+            "text": "does",
+            "startFrame": 6158
           },
           {
-            "text": "old",
-            "startFrame": 6497
+            "text": "not",
+            "startFrame": 6162
           },
           {
-            "text": "one.",
-            "startFrame": 6504
+            "text": "keep",
+            "startFrame": 6169
+          },
+          {
+            "text": "it.",
+            "startFrame": 6176
           }
         ]
       }
@@ -3451,51 +3341,80 @@
   },
   {
     "index": 51,
-    "startFrame": 6524,
-    "endFrame": 6607,
-    "text": "The counter goes to zero and the lock ends.",
-    "prefix": "The counter goes to zero and the lock ends.",
+    "startFrame": 6193,
+    "endFrame": 6314,
+    "text": "And it is not the app PIN, which only opens the app on his phone.",
+    "prefix": "And it is not the app PIN, which only opens the app on his phone.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6526,
+        "startFrame": 6194,
         "words": [
           {
-            "text": "The",
-            "startFrame": 6526
+            "text": "And",
+            "startFrame": 6194
           },
           {
-            "text": "counter",
-            "startFrame": 6528
+            "text": "it",
+            "startFrame": 6196
           },
           {
-            "text": "goes",
-            "startFrame": 6537
+            "text": "is",
+            "startFrame": 6198
           },
           {
-            "text": "to",
-            "startFrame": 6546
-          },
-          {
-            "text": "zero",
-            "startFrame": 6548
-          },
-          {
-            "text": "and",
-            "startFrame": 6568
+            "text": "not",
+            "startFrame": 6201
           },
           {
             "text": "the",
-            "startFrame": 6571
+            "startFrame": 6208
           },
           {
-            "text": "lock",
-            "startFrame": 6574
+            "text": "app",
+            "startFrame": 6214
           },
           {
-            "text": "ends.",
-            "startFrame": 6583
+            "text": "PIN,",
+            "startFrame": 6221
+          }
+        ]
+      },
+      {
+        "startFrame": 6257,
+        "words": [
+          {
+            "text": "which",
+            "startFrame": 6257
+          },
+          {
+            "text": "only",
+            "startFrame": 6261
+          },
+          {
+            "text": "opens",
+            "startFrame": 6269
+          },
+          {
+            "text": "the",
+            "startFrame": 6278
+          },
+          {
+            "text": "app",
+            "startFrame": 6281
+          },
+          {
+            "text": "on",
+            "startFrame": 6288
+          },
+          {
+            "text": "his",
+            "startFrame": 6290
+          },
+          {
+            "text": "phone.",
+            "startFrame": 6293
           }
         ]
       }
@@ -3503,85 +3422,35 @@
   },
   {
     "index": 52,
-    "startFrame": 6607,
-    "endFrame": 6748,
-    "text": "The events go to the outbox in the same transaction, so nothing is half done.",
-    "prefix": "The events go to the outbox in the same transaction, so nothing is half done.",
+    "startFrame": 6315,
+    "endFrame": 6371,
+    "text": "Now a check for you.",
+    "prefix": "Now a check for you.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6609,
+        "startFrame": 6316,
         "words": [
           {
-            "text": "The",
-            "startFrame": 6609
+            "text": "Now",
+            "startFrame": 6316
           },
           {
-            "text": "events",
-            "startFrame": 6610
+            "text": "a",
+            "startFrame": 6319
           },
           {
-            "text": "go",
-            "startFrame": 6619
+            "text": "check",
+            "startFrame": 6320
           },
           {
-            "text": "to",
-            "startFrame": 6622
+            "text": "for",
+            "startFrame": 6327
           },
           {
-            "text": "the",
-            "startFrame": 6624
-          },
-          {
-            "text": "outbox",
-            "startFrame": 6628
-          },
-          {
-            "text": "in",
-            "startFrame": 6646
-          }
-        ]
-      },
-      {
-        "startFrame": 6648,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 6648
-          },
-          {
-            "text": "same",
-            "startFrame": 6651
-          },
-          {
-            "text": "transaction,",
-            "startFrame": 6659
-          }
-        ]
-      },
-      {
-        "startFrame": 6691,
-        "words": [
-          {
-            "text": "so",
-            "startFrame": 6691
-          },
-          {
-            "text": "nothing",
-            "startFrame": 6696
-          },
-          {
-            "text": "is",
-            "startFrame": 6713
-          },
-          {
-            "text": "half",
-            "startFrame": 6716
-          },
-          {
-            "text": "done.",
-            "startFrame": 6726
+            "text": "you.",
+            "startFrame": 6332
           }
         ]
       }
@@ -3589,88 +3458,80 @@
   },
   {
     "index": 53,
-    "startFrame": 6748,
-    "endFrame": 6888,
-    "text": "Then every other session of the same or a lower rank than the one he used ends.",
-    "prefix": "Then every other session of the same or a lower rank than the one he used ends.",
+    "startFrame": 6371,
+    "endFrame": 6572,
+    "text": "Suppose the script types a number that belongs to nobody: does the answer come faster?",
+    "prefix": "Suppose the script types a number that belongs to nobody: does the answer come faster?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6750,
+        "startFrame": 6372,
         "words": [
           {
-            "text": "Then",
-            "startFrame": 6750
-          },
-          {
-            "text": "every",
-            "startFrame": 6754
-          },
-          {
-            "text": "other",
-            "startFrame": 6763
-          },
-          {
-            "text": "session",
-            "startFrame": 6769
-          },
-          {
-            "text": "of",
-            "startFrame": 6780
+            "text": "Suppose",
+            "startFrame": 6372
           },
           {
             "text": "the",
-            "startFrame": 6782
+            "startFrame": 6383
           },
           {
-            "text": "same",
-            "startFrame": 6784
+            "text": "script",
+            "startFrame": 6386
+          },
+          {
+            "text": "types",
+            "startFrame": 6396
+          },
+          {
+            "text": "a",
+            "startFrame": 6405
+          },
+          {
+            "text": "number",
+            "startFrame": 6406
+          },
+          {
+            "text": "that",
+            "startFrame": 6419
+          },
+          {
+            "text": "belongs",
+            "startFrame": 6422
           }
         ]
       },
       {
-        "startFrame": 6807,
+        "startFrame": 6435,
         "words": [
           {
-            "text": "or",
-            "startFrame": 6807
+            "text": "to",
+            "startFrame": 6435
           },
           {
-            "text": "a",
-            "startFrame": 6809
+            "text": "nobody:",
+            "startFrame": 6438
           },
           {
-            "text": "lower",
-            "startFrame": 6811
-          },
-          {
-            "text": "rank",
-            "startFrame": 6824
-          },
-          {
-            "text": "than",
-            "startFrame": 6838
+            "text": "does",
+            "startFrame": 6464
           },
           {
             "text": "the",
-            "startFrame": 6842
+            "startFrame": 6468
           },
           {
-            "text": "one",
-            "startFrame": 6844
+            "text": "answer",
+            "startFrame": 6471
           },
           {
-            "text": "he",
-            "startFrame": 6850
+            "text": "come",
+            "startFrame": 6480
           },
           {
-            "text": "used",
-            "startFrame": 6854
-          },
-          {
-            "text": "ends.",
-            "startFrame": 6863
+            "text": "faster?",
+            "startFrame": 6485
           }
         ]
       }
@@ -3678,51 +3539,113 @@
   },
   {
     "index": 54,
-    "startFrame": 6889,
-    "endFrame": 6990,
-    "text": "His marketplace session on the laptop ends at once.",
-    "prefix": "His marketplace session on the laptop ends at once.",
+    "startFrame": 6572,
+    "endFrame": 6779,
+    "text": "No: the gateway checks the fixed fake digest, so the answer and its time are the same as for a wrong password.",
+    "prefix": "No: the gateway checks the fixed fake digest, so the answer and its time are the same as for a wrong password.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6890,
+        "startFrame": 6573,
         "words": [
           {
-            "text": "His",
-            "startFrame": 6890
-          },
-          {
-            "text": "marketplace",
-            "startFrame": 6893
-          },
-          {
-            "text": "session",
-            "startFrame": 6910
-          },
-          {
-            "text": "on",
-            "startFrame": 6926
+            "text": "No:",
+            "startFrame": 6573
           },
           {
             "text": "the",
-            "startFrame": 6929
+            "startFrame": 6595
           },
           {
-            "text": "laptop",
-            "startFrame": 6932
+            "text": "gateway",
+            "startFrame": 6597
           },
           {
-            "text": "ends",
-            "startFrame": 6955
+            "text": "checks",
+            "startFrame": 6609
           },
           {
-            "text": "at",
-            "startFrame": 6960
+            "text": "the",
+            "startFrame": 6618
           },
           {
-            "text": "once.",
-            "startFrame": 6962
+            "text": "fixed",
+            "startFrame": 6621
+          },
+          {
+            "text": "fake",
+            "startFrame": 6632
+          },
+          {
+            "text": "digest,",
+            "startFrame": 6641
+          }
+        ]
+      },
+      {
+        "startFrame": 6671,
+        "words": [
+          {
+            "text": "so",
+            "startFrame": 6671
+          },
+          {
+            "text": "the",
+            "startFrame": 6675
+          },
+          {
+            "text": "answer",
+            "startFrame": 6679
+          },
+          {
+            "text": "and",
+            "startFrame": 6693
+          },
+          {
+            "text": "its",
+            "startFrame": 6695
+          },
+          {
+            "text": "time",
+            "startFrame": 6698
+          },
+          {
+            "text": "are",
+            "startFrame": 6706
+          }
+        ]
+      },
+      {
+        "startFrame": 6707,
+        "words": [
+          {
+            "text": "the",
+            "startFrame": 6707
+          },
+          {
+            "text": "same",
+            "startFrame": 6710
+          },
+          {
+            "text": "as",
+            "startFrame": 6731
+          },
+          {
+            "text": "for",
+            "startFrame": 6735
+          },
+          {
+            "text": "a",
+            "startFrame": 6739
+          },
+          {
+            "text": "wrong",
+            "startFrame": 6740
+          },
+          {
+            "text": "password.",
+            "startFrame": 6750
           }
         ]
       }
@@ -3730,51 +3653,69 @@
   },
   {
     "index": 55,
-    "startFrame": 6990,
-    "endFrame": 7067,
-    "text": "He logs in there again with the new password.",
-    "prefix": "He logs in there again with the new password.",
+    "startFrame": 6780,
+    "endFrame": 6956,
+    "text": "One row for each number, with a slow, salted Argon2id digest.",
+    "prefix": "One row for each number, with a slow, salted Argon2id digest.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6992,
+        "startFrame": 6781,
         "words": [
           {
-            "text": "He",
-            "startFrame": 6992
+            "text": "One",
+            "startFrame": 6781
           },
           {
-            "text": "logs",
-            "startFrame": 6993
+            "text": "row",
+            "startFrame": 6790
           },
           {
-            "text": "in",
-            "startFrame": 7001
+            "text": "for",
+            "startFrame": 6800
           },
           {
-            "text": "there",
-            "startFrame": 7003
+            "text": "each",
+            "startFrame": 6809
           },
           {
-            "text": "again",
-            "startFrame": 7007
-          },
+            "text": "number,",
+            "startFrame": 6816
+          }
+        ]
+      },
+      {
+        "startFrame": 6835,
+        "words": [
           {
             "text": "with",
-            "startFrame": 7023
+            "startFrame": 6835
           },
           {
-            "text": "the",
-            "startFrame": 7027
+            "text": "a",
+            "startFrame": 6838
           },
           {
-            "text": "new",
-            "startFrame": 7028
+            "text": "slow,",
+            "startFrame": 6839
+          }
+        ]
+      },
+      {
+        "startFrame": 6864,
+        "words": [
+          {
+            "text": "salted",
+            "startFrame": 6864
           },
           {
-            "text": "password.",
-            "startFrame": 7034
+            "text": "Argon2id",
+            "startFrame": 6877
+          },
+          {
+            "text": "digest.",
+            "startFrame": 6924
           }
         ]
       }
@@ -3782,43 +3723,89 @@
   },
   {
     "index": 56,
-    "startFrame": 7067,
-    "endFrame": 7154,
-    "text": "And a message goes out: password changed.",
-    "prefix": "And a message goes out: password changed.",
+    "startFrame": 6957,
+    "endFrame": 7132,
+    "text": "The password is checked first, in constant time, even for a number that belongs to nobody.",
+    "prefix": "The password is checked first, in constant time, even for a number that belongs to nobody.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7068,
+        "startFrame": 6958,
         "words": [
           {
-            "text": "And",
-            "startFrame": 7068
-          },
-          {
-            "text": "a",
-            "startFrame": 7070
-          },
-          {
-            "text": "message",
-            "startFrame": 7072
-          },
-          {
-            "text": "goes",
-            "startFrame": 7082
-          },
-          {
-            "text": "out:",
-            "startFrame": 7090
+            "text": "The",
+            "startFrame": 6958
           },
           {
             "text": "password",
-            "startFrame": 7109
+            "startFrame": 6960
           },
           {
-            "text": "changed.",
-            "startFrame": 7125
+            "text": "is",
+            "startFrame": 6983
+          },
+          {
+            "text": "checked",
+            "startFrame": 6987
+          },
+          {
+            "text": "first,",
+            "startFrame": 6997
+          }
+        ]
+      },
+      {
+        "startFrame": 7023,
+        "words": [
+          {
+            "text": "in",
+            "startFrame": 7023
+          },
+          {
+            "text": "constant",
+            "startFrame": 7028
+          },
+          {
+            "text": "time,",
+            "startFrame": 7044
+          }
+        ]
+      },
+      {
+        "startFrame": 7068,
+        "words": [
+          {
+            "text": "even",
+            "startFrame": 7068
+          },
+          {
+            "text": "for",
+            "startFrame": 7075
+          },
+          {
+            "text": "a",
+            "startFrame": 7079
+          },
+          {
+            "text": "number",
+            "startFrame": 7080
+          },
+          {
+            "text": "that",
+            "startFrame": 7090
+          },
+          {
+            "text": "belongs",
+            "startFrame": 7093
+          },
+          {
+            "text": "to",
+            "startFrame": 7103
+          },
+          {
+            "text": "nobody.",
+            "startFrame": 7106
           }
         ]
       }
@@ -3826,47 +3813,60 @@
   },
   {
     "index": 57,
-    "startFrame": 7154,
-    "endFrame": 7229,
-    "text": "A few things never happen to a password.",
-    "prefix": "A few things never happen to a password.",
+    "startFrame": 7132,
+    "endFrame": 7254,
+    "text": "Wrong guesses lock password login, but they block nothing else.",
+    "prefix": "Wrong guesses lock password login, but they block nothing else.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7156,
+        "startFrame": 7134,
         "words": [
           {
-            "text": "A",
-            "startFrame": 7156
+            "text": "Wrong",
+            "startFrame": 7134
           },
           {
-            "text": "few",
-            "startFrame": 7158
+            "text": "guesses",
+            "startFrame": 7143
           },
           {
-            "text": "things",
-            "startFrame": 7164
+            "text": "lock",
+            "startFrame": 7154
           },
           {
-            "text": "never",
-            "startFrame": 7173
+            "text": "password",
+            "startFrame": 7163
           },
           {
-            "text": "happen",
-            "startFrame": 7184
+            "text": "login,",
+            "startFrame": 7178
+          }
+        ]
+      },
+      {
+        "startFrame": 7197,
+        "words": [
+          {
+            "text": "but",
+            "startFrame": 7197
           },
           {
-            "text": "to",
-            "startFrame": 7194
-          },
-          {
-            "text": "a",
-            "startFrame": 7198
-          },
-          {
-            "text": "password.",
+            "text": "they",
             "startFrame": 7200
+          },
+          {
+            "text": "block",
+            "startFrame": 7203
+          },
+          {
+            "text": "nothing",
+            "startFrame": 7219
+          },
+          {
+            "text": "else.",
+            "startFrame": 7228
           }
         ]
       }
@@ -3874,68 +3874,77 @@
   },
   {
     "index": 58,
-    "startFrame": 7229,
-    "endFrame": 7354,
-    "text": "The platform never shows it, returns it, logs it or sends it.",
-    "prefix": "The platform never shows it, returns it, logs it or sends it.",
+    "startFrame": 7254,
+    "endFrame": 7382,
+    "text": "Aziz has a number, a password and a session, all at level one.",
+    "prefix": "Aziz has a number, a password and a session, all at level one.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7230,
+        "startFrame": 7255,
         "words": [
           {
-            "text": "The",
-            "startFrame": 7230
+            "text": "Aziz",
+            "startFrame": 7255
           },
           {
-            "text": "platform",
-            "startFrame": 7232
+            "text": "has",
+            "startFrame": 7265
           },
           {
-            "text": "never",
-            "startFrame": 7248
+            "text": "a",
+            "startFrame": 7270
           },
           {
-            "text": "shows",
-            "startFrame": 7257
-          },
-          {
-            "text": "it,",
-            "startFrame": 7268
+            "text": "number,",
+            "startFrame": 7271
           }
         ]
       },
       {
-        "startFrame": 7279,
+        "startFrame": 7292,
         "words": [
           {
-            "text": "returns",
-            "startFrame": 7279
+            "text": "a",
+            "startFrame": 7292
           },
           {
-            "text": "it,",
+            "text": "password",
             "startFrame": 7293
           },
           {
-            "text": "logs",
-            "startFrame": 7308
+            "text": "and",
+            "startFrame": 7315
           },
           {
-            "text": "it",
-            "startFrame": 7319
+            "text": "a",
+            "startFrame": 7320
           },
           {
-            "text": "or",
-            "startFrame": 7324
+            "text": "session,",
+            "startFrame": 7321
+          }
+        ]
+      },
+      {
+        "startFrame": 7350,
+        "words": [
+          {
+            "text": "all",
+            "startFrame": 7350
           },
           {
-            "text": "sends",
-            "startFrame": 7326
+            "text": "at",
+            "startFrame": 7355
           },
           {
-            "text": "it.",
-            "startFrame": 7337
+            "text": "level",
+            "startFrame": 7358
+          },
+          {
+            "text": "one.",
+            "startFrame": 7364
           }
         ]
       }
@@ -3943,68 +3952,60 @@
   },
   {
     "index": 59,
-    "startFrame": 7355,
-    "endFrame": 7440,
-    "text": "The app masks it on the screen and does not keep it.",
-    "prefix": "The app masks it on the screen and does not keep it.",
+    "startFrame": 7383,
+    "endFrame": 7471,
+    "text": "The bank knows his phone, but not yet the person.",
+    "prefix": "The bank knows his phone, but not yet the person.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7356,
+        "startFrame": 7385,
         "words": [
           {
             "text": "The",
-            "startFrame": 7356
+            "startFrame": 7385
           },
           {
-            "text": "app",
-            "startFrame": 7358
+            "text": "bank",
+            "startFrame": 7387
           },
           {
-            "text": "masks",
-            "startFrame": 7364
+            "text": "knows",
+            "startFrame": 7394
           },
           {
-            "text": "it",
-            "startFrame": 7375
+            "text": "his",
+            "startFrame": 7401
           },
           {
-            "text": "on",
-            "startFrame": 7377
-          },
-          {
-            "text": "the",
-            "startFrame": 7380
-          },
-          {
-            "text": "screen",
-            "startFrame": 7382
+            "text": "phone,",
+            "startFrame": 7404
           }
         ]
       },
       {
-        "startFrame": 7405,
+        "startFrame": 7423,
         "words": [
           {
-            "text": "and",
-            "startFrame": 7405
-          },
-          {
-            "text": "does",
-            "startFrame": 7406
+            "text": "but",
+            "startFrame": 7423
           },
           {
             "text": "not",
-            "startFrame": 7410
+            "startFrame": 7427
           },
           {
-            "text": "keep",
-            "startFrame": 7416
+            "text": "yet",
+            "startFrame": 7435
           },
           {
-            "text": "it.",
-            "startFrame": 7423
+            "text": "the",
+            "startFrame": 7441
+          },
+          {
+            "text": "person.",
+            "startFrame": 7444
           }
         ]
       }
@@ -4012,654 +4013,76 @@
   },
   {
     "index": 60,
-    "startFrame": 7440,
-    "endFrame": 7562,
-    "text": "And it is not the app PIN, which only opens the app on his phone.",
-    "prefix": "And it is not the app PIN, which only opens the app on his phone.",
+    "startFrame": 7471,
+    "endFrame": 7650,
+    "text": "Lesson 12 starts on a Saturday, when Aziz wants to send money to his mother.",
+    "prefix": "Lesson 12 starts on a Saturday, when Aziz wants to send money to his mother.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7442,
+        "startFrame": 7472,
         "words": [
           {
-            "text": "And",
-            "startFrame": 7442
+            "text": "Lesson 12",
+            "startFrame": 7472
           },
           {
-            "text": "it",
-            "startFrame": 7444
-          },
-          {
-            "text": "is",
-            "startFrame": 7446
-          },
-          {
-            "text": "not",
-            "startFrame": 7448
-          },
-          {
-            "text": "the",
-            "startFrame": 7456
-          },
-          {
-            "text": "app",
-            "startFrame": 7461
-          },
-          {
-            "text": "PIN,",
-            "startFrame": 7468
-          }
-        ]
-      },
-      {
-        "startFrame": 7505,
-        "words": [
-          {
-            "text": "which",
-            "startFrame": 7505
-          },
-          {
-            "text": "only",
-            "startFrame": 7509
-          },
-          {
-            "text": "opens",
-            "startFrame": 7516
-          },
-          {
-            "text": "the",
-            "startFrame": 7526
-          },
-          {
-            "text": "app",
-            "startFrame": 7528
+            "text": "starts",
+            "startFrame": 7495
           },
           {
             "text": "on",
-            "startFrame": 7536
+            "startFrame": 7507
           },
           {
-            "text": "his",
-            "startFrame": 7538
+            "text": "a",
+            "startFrame": 7510
           },
           {
-            "text": "phone.",
+            "text": "Saturday,",
+            "startFrame": 7511
+          }
+        ]
+      },
+      {
+        "startFrame": 7541,
+        "words": [
+          {
+            "text": "when",
             "startFrame": 7541
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 61,
-    "startFrame": 7563,
-    "endFrame": 7618,
-    "text": "To recap.",
-    "prefix": "To recap.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 7564,
-        "words": [
-          {
-            "text": "To",
-            "startFrame": 7564
           },
           {
-            "text": "recap.",
-            "startFrame": 7566
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 62,
-    "startFrame": 7619,
-    "endFrame": 7796,
-    "text": "One row for each customer, with a slow, salted Argon2id digest.",
-    "prefix": "One row for each customer, with a slow, salted Argon2id digest.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 7620,
-        "words": [
-          {
-            "text": "One",
-            "startFrame": 7620
+            "text": "Aziz",
+            "startFrame": 7544
           },
           {
-            "text": "row",
-            "startFrame": 7629
-          },
-          {
-            "text": "for",
-            "startFrame": 7637
-          },
-          {
-            "text": "each",
-            "startFrame": 7642
-          },
-          {
-            "text": "customer,",
-            "startFrame": 7648
-          }
-        ]
-      },
-      {
-        "startFrame": 7673,
-        "words": [
-          {
-            "text": "with",
-            "startFrame": 7673
-          },
-          {
-            "text": "a",
-            "startFrame": 7676
-          },
-          {
-            "text": "slow,",
-            "startFrame": 7678
-          }
-        ]
-      },
-      {
-        "startFrame": 7705,
-        "words": [
-          {
-            "text": "salted",
-            "startFrame": 7705
-          },
-          {
-            "text": "Argon2id",
-            "startFrame": 7718
-          },
-          {
-            "text": "digest.",
-            "startFrame": 7764
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 63,
-    "startFrame": 7797,
-    "endFrame": 7972,
-    "text": "The password is checked first, in constant time, even for a number that belongs to nobody.",
-    "prefix": "The password is checked first, in constant time, even for a number that belongs to nobody.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 7798,
-        "words": [
-          {
-            "text": "The",
-            "startFrame": 7798
-          },
-          {
-            "text": "password",
-            "startFrame": 7800
-          },
-          {
-            "text": "is",
-            "startFrame": 7823
-          },
-          {
-            "text": "checked",
-            "startFrame": 7827
-          },
-          {
-            "text": "first,",
-            "startFrame": 7837
-          }
-        ]
-      },
-      {
-        "startFrame": 7863,
-        "words": [
-          {
-            "text": "in",
-            "startFrame": 7863
-          },
-          {
-            "text": "constant",
-            "startFrame": 7868
-          },
-          {
-            "text": "time,",
-            "startFrame": 7884
-          }
-        ]
-      },
-      {
-        "startFrame": 7908,
-        "words": [
-          {
-            "text": "even",
-            "startFrame": 7908
-          },
-          {
-            "text": "for",
-            "startFrame": 7915
-          },
-          {
-            "text": "a",
-            "startFrame": 7919
-          },
-          {
-            "text": "number",
-            "startFrame": 7920
-          },
-          {
-            "text": "that",
-            "startFrame": 7930
-          },
-          {
-            "text": "belongs",
-            "startFrame": 7933
+            "text": "wants",
+            "startFrame": 7557
           },
           {
             "text": "to",
-            "startFrame": 7943
+            "startFrame": 7562
           },
           {
-            "text": "nobody.",
-            "startFrame": 7946
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 64,
-    "startFrame": 7972,
-    "endFrame": 8094,
-    "text": "Wrong guesses lock password login, but they block nothing else.",
-    "prefix": "Wrong guesses lock password login, but they block nothing else.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 7974,
-        "words": [
-          {
-            "text": "Wrong",
-            "startFrame": 7974
+            "text": "send",
+            "startFrame": 7564
           },
           {
-            "text": "guesses",
-            "startFrame": 7983
+            "text": "money",
+            "startFrame": 7574
           },
           {
-            "text": "lock",
-            "startFrame": 7994
-          },
-          {
-            "text": "password",
-            "startFrame": 8003
-          },
-          {
-            "text": "login,",
-            "startFrame": 8018
-          }
-        ]
-      },
-      {
-        "startFrame": 8037,
-        "words": [
-          {
-            "text": "but",
-            "startFrame": 8037
-          },
-          {
-            "text": "they",
-            "startFrame": 8040
-          },
-          {
-            "text": "block",
-            "startFrame": 8043
-          },
-          {
-            "text": "nothing",
-            "startFrame": 8059
-          },
-          {
-            "text": "else.",
-            "startFrame": 8068
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 65,
-    "startFrame": 8094,
-    "endFrame": 8173,
-    "text": "A change ends the weaker sessions.",
-    "prefix": "A change ends the weaker sessions.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 8095,
-        "words": [
-          {
-            "text": "A",
-            "startFrame": 8095
-          },
-          {
-            "text": "change",
-            "startFrame": 8096
-          },
-          {
-            "text": "ends",
-            "startFrame": 8121
-          },
-          {
-            "text": "the",
-            "startFrame": 8126
-          },
-          {
-            "text": "weaker",
-            "startFrame": 8130
-          },
-          {
-            "text": "sessions.",
-            "startFrame": 8141
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 66,
-    "startFrame": 8173,
-    "endFrame": 8312,
-    "text": "Aziz now has a number, a password and a session, all at level one.",
-    "prefix": "Aziz now has a number, a password and a session, all at level one.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 8175,
-        "words": [
-          {
-            "text": "Aziz",
-            "startFrame": 8175
-          },
-          {
-            "text": "now",
-            "startFrame": 8185
-          },
-          {
-            "text": "has",
-            "startFrame": 8190
-          },
-          {
-            "text": "a",
-            "startFrame": 8196
-          },
-          {
-            "text": "number,",
-            "startFrame": 8196
-          }
-        ]
-      },
-      {
-        "startFrame": 8223,
-        "words": [
-          {
-            "text": "a",
-            "startFrame": 8223
-          },
-          {
-            "text": "password",
-            "startFrame": 8224
-          },
-          {
-            "text": "and",
-            "startFrame": 8245
-          },
-          {
-            "text": "a",
-            "startFrame": 8248
-          },
-          {
-            "text": "session,",
-            "startFrame": 8250
-          }
-        ]
-      },
-      {
-        "startFrame": 8280,
-        "words": [
-          {
-            "text": "all",
-            "startFrame": 8280
-          },
-          {
-            "text": "at",
-            "startFrame": 8285
-          },
-          {
-            "text": "level",
-            "startFrame": 8287
-          },
-          {
-            "text": "one.",
-            "startFrame": 8294
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 67,
-    "startFrame": 8312,
-    "endFrame": 8400,
-    "text": "The bank knows his phone, but not yet the person.",
-    "prefix": "The bank knows his phone, but not yet the person.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 8314,
-        "words": [
-          {
-            "text": "The",
-            "startFrame": 8314
-          },
-          {
-            "text": "bank",
-            "startFrame": 8316
-          },
-          {
-            "text": "knows",
-            "startFrame": 8323
+            "text": "to",
+            "startFrame": 7589
           },
           {
             "text": "his",
-            "startFrame": 8330
+            "startFrame": 7593
           },
           {
-            "text": "phone,",
-            "startFrame": 8333
-          }
-        ]
-      },
-      {
-        "startFrame": 8352,
-        "words": [
-          {
-            "text": "but",
-            "startFrame": 8352
-          },
-          {
-            "text": "not",
-            "startFrame": 8356
-          },
-          {
-            "text": "yet",
-            "startFrame": 8364
-          },
-          {
-            "text": "the",
-            "startFrame": 8370
-          },
-          {
-            "text": "person.",
-            "startFrame": 8373
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 68,
-    "startFrame": 8401,
-    "endFrame": 8506,
-    "text": "To prove the person, the platform must call MyID.",
-    "prefix": "To prove the person, the platform must call MyID.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 8402,
-        "words": [
-          {
-            "text": "To",
-            "startFrame": 8402
-          },
-          {
-            "text": "prove",
-            "startFrame": 8404
-          },
-          {
-            "text": "the",
-            "startFrame": 8416
-          },
-          {
-            "text": "person,",
-            "startFrame": 8419
-          }
-        ]
-      },
-      {
-        "startFrame": 8441,
-        "words": [
-          {
-            "text": "the",
-            "startFrame": 8441
-          },
-          {
-            "text": "platform",
-            "startFrame": 8443
-          },
-          {
-            "text": "must",
-            "startFrame": 8464
-          },
-          {
-            "text": "call",
-            "startFrame": 8471
-          },
-          {
-            "text": "MyID.",
-            "startFrame": 8476
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 69,
-    "startFrame": 8507,
-    "endFrame": 8623,
-    "text": "But before it may call MyID, what must Aziz agree to?",
-    "prefix": "But before it may call MyID, what must Aziz agree to?",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 8508,
-        "words": [
-          {
-            "text": "But",
-            "startFrame": 8508
-          },
-          {
-            "text": "before",
-            "startFrame": 8510
-          },
-          {
-            "text": "it",
-            "startFrame": 8518
-          },
-          {
-            "text": "may",
-            "startFrame": 8519
-          },
-          {
-            "text": "call",
-            "startFrame": 8523
-          },
-          {
-            "text": "MyID,",
-            "startFrame": 8531
-          }
-        ]
-      },
-      {
-        "startFrame": 8564,
-        "words": [
-          {
-            "text": "what",
-            "startFrame": 8564
-          },
-          {
-            "text": "must",
-            "startFrame": 8569
-          },
-          {
-            "text": "Aziz",
-            "startFrame": 8576
-          },
-          {
-            "text": "agree",
-            "startFrame": 8589
-          },
-          {
-            "text": "to?",
-            "startFrame": 8600
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "index": 70,
-    "startFrame": 8624,
-    "endFrame": 8710,
-    "text": "Next: consent.",
-    "prefix": "Next: consent.",
-    "highlight": "",
-    "suffix": "",
-    "phrases": [
-      {
-        "startFrame": 8625,
-        "words": [
-          {
-            "text": "Next:",
-            "startFrame": 8625
-          },
-          {
-            "text": "consent.",
-            "startFrame": 8645
+            "text": "mother.",
+            "startFrame": 7596
           }
         ]
       }
