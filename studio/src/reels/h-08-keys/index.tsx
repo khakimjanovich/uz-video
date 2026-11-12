@@ -6,20 +6,18 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
-  "A lost disk", "Everything on it", "Aziz too", "What can they read?",
-  "Lesson 7", "Where keys live",
-  "Vault", "The bank's Vault", "Never the vendor", "The bank keeps the keys", "Six kinds", "Across the disk",
-  "1 · Identity", "A data key", "Wrapped", "Never leaves Vault", "Unwrap, one request", "Envelope encryption", "Cannot open", "Each unwrap recorded",
-  "2 · Search", "Exact number", "Encrypted", "Blind index", "Exact search works", "No key, no test", "Device binding",
-  "3 · Codes", "Pepper", "Short codes", "No check possible",
-  "4 · Audit", "HMAC chain", "Change breaks it", "Daily verifier",
-  "5 · Signatures", "Realm keys", "Encrypted keystore",
-  "6 · Credentials", "Only its adapter", "A file for push", "Never code, phone, log",
-  "Passwords?", "Not encrypted", "Slow, salted hash", "Nothing to steal",
-  "Keys age", "Rotation", "Re-wrap", "Old chains verify", "Owners approve",
-  "The disk again", "What they have", "Keys stay", "Hardware, not identities",
-  "Recap", "Six kinds", "Envelope, index, digests", "Never on a phone",
-  "The apps", "What may an app keep?", "Next: the API contract",
+  "A lost disk", "Nobody should have it", "Everything on it", "Aziz too", "What can they read?",
+  "Lesson 5: the adapters", "Credentials from Vault", "Vault opens",
+  "A safe for keys", "One per zone", "The bank unlocks it", "Never the vendor", "The bank keeps the keys", "Nine kinds", "Three lock the disk",
+  "1 · Identity", "A data key", "Locked", "Key-encryption key", "Never leaves Vault", "Read: ask Vault", "Open, one request", "Envelope encryption", "Each opening recorded", "Nothing opens them",
+  "2 · Search", "Find by number", "Encrypted", "Blind index", "Exact search works", "No way back", "No key, no fingerprint",
+  "3 · Codes", "Only a fingerprint", "Few digits", "Pepper", "Tries give nothing",
+  "Six more kinds", "Audit seal", "Keycloak's keys", "Adapter credentials", "Between the units", "Never code, log, phone",
+  "Passwords", "Slow, salted", "Nothing to decrypt",
+  "Keys grow old", "Lock again",
+  "The disk again", "Readable: the number", "Unreadable: the identity", "Keys stay", "Only lost hardware",
+  "A guessed number", "A match?", "No index key, no match",
+  "One Vault per zone", "Envelope · index · pepper", "No key on a phone", "No key, many calls", "Lesson 7: the API contract",
 ];
 
 export const H08KeysComposition = createEpisode({
