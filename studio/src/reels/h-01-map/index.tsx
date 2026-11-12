@@ -6,21 +6,20 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
-  "Three apps", "Is it really Aziz?", "No face check every time", "How?", "heeyID", "One day",
-  "Registration", "Master app", "SMS code", "Through TAF", "Verdict: green", "Password", "One password",
+  "Money to his mother", "Really Aziz", "No face check every time?", "heeyID", "One journey",
+  "Sunday", "Master app", "SMS code", "Through TAF", "The code", "Verdict: green", "Password, two times",
   "Level 1", "Phone, not person",
-  "Credit", "Level 2", "Side app", "Consent", "MyID", "Face and passport", "Phone check", "Level 2",
-  "Link", "Link", "Trusted device", "Approve", "Own access grant",
-  "Next morning", "No face check", "No new code", "Sessions continue", "One proofing",
-  "The worry", "SIM swap", "A new phone", "Password guessed", "What stops him?",
-  "TAF can say green", "New phone: MyID", "Not his face", "Approve or not", "This was not me",
-  "Number on hold", "Web: same request", "New password", "SIM still works?", "New number",
-  "The map", "Apps call the API", "MyID and TAF SDKs", "Side apps", "One edge", "The bank's rules", "Keycloak", "Tokens only",
-  "One client per app", "No direct calls", "Adapters", "Codes: TAF", "Codes: SMS",
-  "Four stores", "Records", "Counters", "Events", "Keys",
-  "Bank staff", "Admin gateway", "The bank's perimeter", "One bank", "TAF agent inside", "Outside",
-  "Recap", "How many times?", "Once",
-  "Next: identity words",
+  "Saturday", "Money needs level 2", "Consent", "MyID", "Face and passport",
+  "Phone check", "MyID number first", "TAF: who owns it", "Level 2", "Trusted phone", "Transfer goes",
+  "No face check", "Same phone: password + code",
+  "The worry", "SIM of Aziz's number", "Leaked password", "His own phone", "Not the trusted phone",
+  "Face + SIM", "Not Aziz's face", "No money moves", "Only the trusted phone",
+  "The map", "One edge", "Customer gateway", "The bank's rules", "Keycloak: tokens",
+  "Bank staff", "Admin gateway", "Four stores", "Records", "Counters", "Events", "Keys",
+  "No direct calls", "Adapters", "Gateway and workers",
+  "The bank's perimeter", "One bank", "TAF agent inside", "Three outside", "No personal data",
+  "Proved once", "How many times?", "Once",
+  "Lesson 2: identity words",
 ];
 
 export const H01MapComposition = createEpisode({
@@ -35,5 +34,5 @@ export const H01MapComposition = createEpisode({
   diagram,
   focus: true,
   keepLabels: true,
-  hidePanelBefore: 4,
+  hidePanelBefore: 3,
 });
