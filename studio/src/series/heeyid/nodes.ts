@@ -139,6 +139,8 @@ export const HEEYID_CATALOG = {
   simulators: { label: "Simulators", sublabel: "No internet", art: "workflow" },
   stack: { label: "Compose stack", sublabel: "The units", logo: siDocker.path },
   host: { label: "Linux host", sublabel: "One per zone", art: "bank" },
+  securityTeam: { label: "Security team", sublabel: "Of the bank", art: "admin" },
+  doneList: { label: "Done list", sublabel: "Each line checked", art: "checker" },
   goLive: { label: "Go-live check", sublabel: "One app with a level", art: "checker" },
   compose: { label: "Compose", sublabel: "On a laptop", logo: siDocker.path },
   ev1: { label: "Event 41", sublabel: "Audit", art: "receipt" },
