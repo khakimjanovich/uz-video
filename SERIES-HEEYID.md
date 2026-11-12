@@ -64,7 +64,7 @@ Each lesson arrives because the one before it leaves a question open.
 |---|---|---|
 | 12 | `h-14-consent` | Each app has a required level; money needs level 2 (takes in `h-22`). The consent gate before each MyID call; versioned consent screens. |
 | 13 | `h-15-myid-proofing` | The root and emulator check, then MyID. The backend opens the session. The one-use result code. Limits and counters for the MyID check. |
-| 14 | `h-17-verified-identity` | The protected class: keys of the bank, versions, masked reads, each read audited. |
+| 14 | `h-17-verified-identity` | The protected class: the keys of the bank (one line; lesson 6 teaches them), one closed door, masked reads, the short list of full reads, each read audited. |
 | 15 | `h-18-phone-check` | The number from MyID first; TAF only when MyID has no number or a different one; "not owner" closes; a phone review by an operator. |
 
 ### Module 5. The money phone

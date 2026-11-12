@@ -1,223 +1,187 @@
 1
-00:00:00,050 --> 00:00:04,968
-Imagine that a copy of the platform's database leaves the bank on a stolen disk.
+00:00:00,050 --> 00:00:04,080
+The lift doors open, and Aziz taps Confirm under his own data.
 
 2
-00:00:05,018 --> 00:00:08,856
-The thief opens the table with Aziz's verified identity.
+00:00:04,130 --> 00:00:09,504
+His names, his date of birth, and parts of his document number and his personal identification number.
 
 3
-00:00:08,906 --> 00:00:12,728
-What can he read?
+00:00:09,554 --> 00:00:15,456
+A minute ago, MyID read all of it from state records, and now it sits in a database of the bank.
 
 4
-00:00:12,778 --> 00:00:21,728
-In Lesson 16, the platform kept Aziz's verified identity after one full proofing, with the reusable identifier from MyID next to it.
+00:00:15,506 --> 00:00:19,328
+Who can read it there?
 
 5
-00:00:21,778 --> 00:00:30,248
-This lesson shows how that record is protected: who holds its keys, who may read it, and how every read leaves a trace.
+00:00:19,378 --> 00:00:25,256
+In the lift, MyID checked his face, and the platform exchanged the one-time code for the result.
 
 6
-00:00:30,298 --> 00:00:32,480
-First, what counts as protected.
+00:00:25,306 --> 00:00:29,144
+The platform now keeps that result as his verified identity.
 
 7
-00:00:32,530 --> 00:00:45,032
-The verified identity, in all its versions: names, date and place of birth, the personal identification number, gender, citizenship, nationality, document data and registered addresses.
+00:00:29,194 --> 00:00:35,696
+Three things guard it: what the record holds, who may open it, and the trace that each read leaves.
 
 8
-00:00:45,082 --> 00:00:46,928
-The phone number that MyID gave.
+00:00:35,746 --> 00:00:37,568
+First, what it holds.
 
 9
-00:00:46,978 --> 00:00:50,360
-The reusable identifier, and its expiry date.
+00:00:37,618 --> 00:00:43,448
+The verified identity is a protected class of data, with stricter rules than any other record.
 
 10
-00:00:50,410 --> 00:00:54,728
-And the images from the camera, but only if the bank turns image storage on.
+00:00:43,498 --> 00:00:53,720
+It holds his names, his date and place of birth, his personal identification number, gender, citizenship and nationality, his document data and his registered addresses.
 
 11
-00:00:54,778 --> 00:00:56,864
-Nothing else lives in this class.
+00:00:53,770 --> 00:00:59,936
+It also holds the phone number that MyID gave, and an identifier from MyID with its expiry date.
 
 12
-00:00:56,914 --> 00:01:02,384
-Phone numbers, devices and network addresses are personal data too, but other rules handle them.
+00:00:59,986 --> 00:01:04,184
+Images from the camera stay only when the bank turns image storage on.
 
 13
-00:01:02,434 --> 00:01:04,256
-Now the keys.
+00:01:04,234 --> 00:01:06,320
+Nothing else lives in this class.
 
 14
-00:01:04,306 --> 00:01:06,968
-Each identity record has its own data key.
+00:01:06,370 --> 00:01:11,936
+His phone number, his phone and his network address are personal data too, but other rules handle them.
 
 15
-00:01:07,018 --> 00:01:14,528
-The record is encrypted with that key, and the key itself is stored only in wrapped form, locked by the installation key.
+00:01:11,986 --> 00:01:17,792
+The record is encrypted, and only the Vault of the bank can open it, as Lesson 6 showed.
 
 16
-00:01:14,578 --> 00:01:17,576
-The installation key never leaves the bank's Vault.
+00:01:17,842 --> 00:01:24,344
+No part of the system keeps a clear copy longer than one request, and the identity never goes to a log.
 
 17
-00:01:17,626 --> 00:01:25,880
-When the platform must read the record, it sends the wrapped key to Vault, gets it unwrapped for that one request, and forgets it when the request ends.
+00:01:24,394 --> 00:01:26,216
+Now, who may open it.
 
 18
-00:01:25,930 --> 00:01:32,792
-No part of the system keeps a decrypted copy longer than the request, and the identity never goes to a log.
+00:01:26,266 --> 00:01:30,968
+Inside the gateway, only one closed part of the code may touch this record.
 
 19
-00:01:32,842 --> 00:01:38,648
-So the thief with the disk reads only ciphertext, and a wrapped key that he cannot open.
+00:01:31,018 --> 00:01:34,376
+Every other part must ask it, and name a purpose.
 
 20
-00:01:38,698 --> 00:01:47,560
-But then, how does the platform find Aziz by his personal identification number, without decrypting every row?
+00:01:34,426 --> 00:01:40,496
+By default, the answer has masked values: only a few characters of each value show.
 
 21
-00:01:47,610 --> 00:01:49,432
-With a blind index.
+00:01:40,546 --> 00:01:44,024
+Full values leave only for a short list of purposes.
 
 22
-00:01:49,482 --> 00:01:56,272
-Next to the record, the platform keeps a keyed digest of the number, made with a second key from Vault: the index key.
+00:01:44,074 --> 00:01:45,896
+Keeping a new MyID result.
 
 23
-00:01:56,322 --> 00:02:00,040
-To find a person, it makes the same digest and looks it up.
+00:01:45,946 --> 00:01:51,896
+The confirmation screen that Aziz just saw, and only on the phone of the session that gave the result.
 
 24
-00:02:00,090 --> 00:02:07,240
-It is fast, it allows one active customer for each number, and without the index key the digest tells the thief nothing.
+00:01:51,946 --> 00:01:55,208
+The phone check, which compares his number with the number from MyID.
 
 25
-00:02:07,290 --> 00:02:12,736
-Inside the gateway, only one module may touch this table: the identity module.
+00:01:55,258 --> 00:01:58,280
+And the deletion job, when the retention time ends.
 
 26
-00:02:12,786 --> 00:02:14,608
-Every other module asks it.
+00:01:58,330 --> 00:02:02,768
+An operator who opens a case or a phone review sees masked values only.
 
 27
-00:02:14,658 --> 00:02:19,048
-And it answers with masked values, unless the purpose is on a short list.
+00:02:02,818 --> 00:02:05,192
+Now the other side: who never gets it.
 
 28
-00:02:19,098 --> 00:02:20,920
-Here is that list.
+00:02:05,242 --> 00:02:09,944
+The mobile bank gets only an identity summary: his level and his display name.
 
 29
-00:02:20,970 --> 00:02:22,936
-Keeping a new proofing result.
+00:02:09,994 --> 00:02:15,632
+No personal identification number, no document number, no address and no image.
 
 30
-00:02:22,986 --> 00:02:27,064
-The confirmation screen, on the device of the session that gave the result.
+00:02:15,682 --> 00:02:20,984
+The bank's antifraud system, the notifications and the audit trail never get it either.
 
 31
-00:02:27,114 --> 00:02:28,936
-The phone check.
+00:02:21,034 --> 00:02:22,496
+Last, the trace.
 
 32
-00:02:28,986 --> 00:02:32,488
-The customer lookup, with the personal identification number only.
-
-33
-00:02:32,538 --> 00:02:36,040
-A case or a phone review, with masked values only.
-
-34
-00:02:36,090 --> 00:02:39,568
-A compliance export, when a customer asks for his own data.
-
-35
-00:02:39,618 --> 00:02:41,440
-The deletion job.
-
-36
-00:02:41,490 --> 00:02:46,000
-And a verified address, when Aziz approves a sharing request.
-
-37
-00:02:46,050 --> 00:02:48,664
-Now look at the other side: who never gets it.
-
-38
-00:02:48,714 --> 00:02:58,696
-The bank's apps get only an identity summary, with the level and the display name, but no personal identification number, no document number, no address and no image.
-
-39
-00:02:58,746 --> 00:03:03,952
-The bank's antifraud system, the notifications and the audit trail never get it.
-
-40
-00:03:04,002 --> 00:03:08,896
-And a different app never gets it, except the address that Aziz chose to share.
-
-41
-00:03:08,946 --> 00:03:12,952
+00:02:22,546 --> 00:02:26,552
 Every release is an audit event, with the reader and the purpose.
 
+33
+00:02:26,602 --> 00:02:29,384
+Suppose an operator opens a case about Aziz.
+
+34
+00:02:29,434 --> 00:02:36,512
+She sees the first two and last two digits of his personal identification number, and the last four characters of his document.
+
+35
+00:02:36,562 --> 00:02:40,112
+The audit trail records her, the purpose and the time.
+
+36
+00:02:40,162 --> 00:02:43,328
+Encryption stops a person who steals a copy of the disk.
+
+37
+00:02:43,378 --> 00:02:49,280
+The audit trail stops a person who already has access, because each read carries a name.
+
+38
+00:02:49,330 --> 00:02:53,024
+So the bank can always tell Aziz who read his data, when, and why.
+
+39
+00:02:53,074 --> 00:02:54,896
+Now a check for you.
+
+40
+00:02:54,946 --> 00:03:03,424
+The mobile bank shows Aziz his name on the home screen: does the app also get his personal identification number?
+
+41
+00:03:03,474 --> 00:03:11,224
+No: the app gets only the identity summary, his level and his display name, and the full number stays behind the one closed door.
+
 42
-00:03:13,002 --> 00:03:16,240
-Last month, an operator opened a case about Aziz.
+00:03:11,274 --> 00:03:15,448
+One protected class holds his verified identity, and nothing else.
 
 43
-00:03:16,290 --> 00:03:23,632
-She saw only masked values: the first two and last two digits of his number, and the last four characters of his document.
+00:03:15,498 --> 00:03:19,480
+The keys of the bank lock it, and only one part of the gateway opens it.
 
 44
-00:03:23,682 --> 00:03:27,208
-The audit trail recorded her, the purpose, and the time.
+00:03:19,530 --> 00:03:26,896
+Reads are masked by default, full values go only to a short list of purposes, and every release leaves an audit event.
 
 45
-00:03:27,258 --> 00:03:30,064
-I think this line matters more than the encryption.
+00:03:26,946 --> 00:03:31,456
+One field in the record still waits for a check: the phone number from MyID.
 
 46
-00:03:30,114 --> 00:03:36,208
-Encryption stops the thief with the disk, and the audit line stops the person who already has access.
+00:03:31,506 --> 00:03:35,968
+On his record, it is his old university number, not the number in his phone.
 
 47
-00:03:36,258 --> 00:03:41,248
-It also means that a later phase can show Aziz who read which data, when, and why.
-
-48
-00:03:41,298 --> 00:03:44,008
-One more rule keeps the history honest.
-
-49
-00:03:44,058 --> 00:03:49,672
-Identity data changes only through a refresh, which is a new full proofing.
-
-50
-00:03:49,722 --> 00:03:54,712
-A refresh writes a new version, and keeps the old one for the configured retention time.
-
-51
-00:03:54,762 --> 00:03:59,776
-The personal identification number is the same in every version of one customer.
-
-52
-00:03:59,826 --> 00:04:13,408
-To recap: one protected class, a key for each record, the installation key in the bank's Vault, a blind index for search, one module at the door, masked reads by default, and an audit event for every release.
-
-53
-00:04:13,458 --> 00:04:17,632
-One field in that record still needs a check: the phone number from MyID.
-
-54
-00:04:17,682 --> 00:04:19,696
-It may be an old number from years ago.
-
-55
-00:04:19,746 --> 00:04:22,648
-Does Aziz's phone number really belong to Aziz?
-
-56
-00:04:22,698 --> 00:04:24,616
-Next: the phone check.
+00:03:36,018 --> 00:03:40,312
+Lesson 15 shows how the platform finds out who owns his number.
