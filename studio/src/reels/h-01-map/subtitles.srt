@@ -183,57 +183,57 @@ Postgres keeps the records.
 Valkey keeps the counters and the cool-downs.
 
 47
-00:03:11,290 --> 00:03:13,064
+00:03:11,290 --> 00:03:13,112
 Kafka carries the events out.
 
 48
-00:03:13,114 --> 00:03:14,936
+00:03:13,162 --> 00:03:14,984
 Vault keeps the keys.
 
 49
-00:03:14,986 --> 00:03:18,272
+00:03:15,034 --> 00:03:18,320
 The gateway never calls the outside world directly.
 
 50
-00:03:18,322 --> 00:03:26,072
+00:03:18,370 --> 00:03:26,120
 It uses adapters, one for each service: MyID, TAF, SMS and push.
 
 51
-00:03:26,122 --> 00:03:31,544
+00:03:26,170 --> 00:03:31,592
 Only the customer gateway and the workers, which run the background jobs, call the adapters.
 
 52
-00:03:31,594 --> 00:03:35,840
+00:03:31,642 --> 00:03:35,888
 Now draw one frame around all of it: the bank's perimeter.
 
 53
-00:03:35,890 --> 00:03:38,240
+00:03:35,938 --> 00:03:38,288
 One installation serves one bank.
 
 54
-00:03:38,290 --> 00:03:44,864
+00:03:38,338 --> 00:03:44,912
 The TAF agent runs inside, in the bank's network, and the TAF adapter calls it.
 
 55
-00:03:44,914 --> 00:03:50,336
+00:03:44,962 --> 00:03:50,384
 Three services are outside: MyID, the SMS vendor and the push service.
 
 56
-00:03:50,386 --> 00:03:52,808
+00:03:50,434 --> 00:03:52,856
 The push service gets no personal data.
 
 57
-00:03:52,858 --> 00:03:58,472
-Aziz proves who he is one time, and his trusted phone carries that proof every day.
+00:03:52,906 --> 00:04:02,384
+One person, one phone number, one password and one trusted phone: Aziz proves who he is one time, and his phone carries that proof every day.
 
 58
-00:03:58,522 --> 00:04:02,992
+00:04:02,434 --> 00:04:06,904
 So how many times does Aziz meet MyID?
 
 59
-00:04:03,042 --> 00:04:04,864
+00:04:06,954 --> 00:04:08,776
 Once.
 
 60
-00:04:04,914 --> 00:04:11,752
+00:04:08,826 --> 00:04:15,664
 Lesson 2 gives the words behind this journey: authentication, identity proofing and authorisation.

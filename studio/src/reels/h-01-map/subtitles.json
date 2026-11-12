@@ -3150,7 +3150,7 @@
   {
     "index": 47,
     "startFrame": 5738,
-    "endFrame": 5792,
+    "endFrame": 5794,
     "text": "Kafka carries the events out.",
     "prefix": "Kafka carries the events out.",
     "highlight": "",
@@ -3185,31 +3185,31 @@
   },
   {
     "index": 48,
-    "startFrame": 5793,
-    "endFrame": 5849,
+    "startFrame": 5794,
+    "endFrame": 5850,
     "text": "Vault keeps the keys.",
     "prefix": "Vault keeps the keys.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5794,
+        "startFrame": 5795,
         "words": [
           {
             "text": "Vault",
-            "startFrame": 5794
+            "startFrame": 5795
           },
           {
             "text": "keeps",
-            "startFrame": 5801
+            "startFrame": 5802
           },
           {
             "text": "the",
-            "startFrame": 5809
+            "startFrame": 5810
           },
           {
             "text": "keys.",
-            "startFrame": 5811
+            "startFrame": 5813
           }
         ]
       }
@@ -3217,47 +3217,47 @@
   },
   {
     "index": 49,
-    "startFrame": 5849,
-    "endFrame": 5949,
+    "startFrame": 5851,
+    "endFrame": 5950,
     "text": "The gateway never calls the outside world directly.",
     "prefix": "The gateway never calls the outside world directly.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5850,
+        "startFrame": 5852,
         "words": [
           {
             "text": "The",
-            "startFrame": 5850
+            "startFrame": 5852
           },
           {
             "text": "gateway",
-            "startFrame": 5853
+            "startFrame": 5854
           },
           {
             "text": "never",
-            "startFrame": 5865
+            "startFrame": 5867
           },
           {
             "text": "calls",
-            "startFrame": 5877
+            "startFrame": 5878
           },
           {
             "text": "the",
-            "startFrame": 5885
+            "startFrame": 5886
           },
           {
             "text": "outside",
-            "startFrame": 5888
+            "startFrame": 5890
           },
           {
             "text": "world",
-            "startFrame": 5907
+            "startFrame": 5908
           },
           {
             "text": "directly.",
-            "startFrame": 5920
+            "startFrame": 5921
           }
         ]
       }
@@ -3265,73 +3265,73 @@
   },
   {
     "index": 50,
-    "startFrame": 5949,
-    "endFrame": 6183,
+    "startFrame": 5951,
+    "endFrame": 6184,
     "text": "It uses adapters, one for each service: MyID, TAF, SMS and push.",
     "prefix": "It uses adapters, one for each service: MyID, TAF, SMS and push.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 5951,
+        "startFrame": 5952,
         "words": [
           {
             "text": "It",
-            "startFrame": 5951
+            "startFrame": 5952
           },
           {
             "text": "uses",
-            "startFrame": 5953
+            "startFrame": 5954
           },
           {
             "text": "adapters,",
-            "startFrame": 5962
+            "startFrame": 5964
           }
         ]
       },
       {
-        "startFrame": 5991,
+        "startFrame": 5992,
         "words": [
           {
             "text": "one",
-            "startFrame": 5991
+            "startFrame": 5992
           },
           {
             "text": "for",
-            "startFrame": 6000
+            "startFrame": 6002
           },
           {
             "text": "each",
-            "startFrame": 6006
+            "startFrame": 6007
           },
           {
             "text": "service:",
-            "startFrame": 6012
+            "startFrame": 6013
           }
         ]
       },
       {
-        "startFrame": 6040,
+        "startFrame": 6042,
         "words": [
           {
             "text": "MyID,",
-            "startFrame": 6040
+            "startFrame": 6042
           },
           {
             "text": "TAF,",
-            "startFrame": 6075
+            "startFrame": 6076
           },
           {
             "text": "SMS",
-            "startFrame": 6118
+            "startFrame": 6120
           },
           {
             "text": "and",
-            "startFrame": 6151
+            "startFrame": 6152
           },
           {
             "text": "push.",
-            "startFrame": 6154
+            "startFrame": 6156
           }
         ]
       }
@@ -3339,85 +3339,85 @@
   },
   {
     "index": 51,
-    "startFrame": 6183,
-    "endFrame": 6347,
+    "startFrame": 6185,
+    "endFrame": 6348,
     "text": "Only the customer gateway and the workers, which run the background jobs, call the adapters.",
     "prefix": "Only the customer gateway and the workers, which run the background jobs, call the adapters.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6185,
+        "startFrame": 6186,
         "words": [
           {
             "text": "Only",
-            "startFrame": 6185
+            "startFrame": 6186
           },
           {
             "text": "the",
-            "startFrame": 6191
+            "startFrame": 6192
           },
           {
             "text": "customer",
-            "startFrame": 6193
+            "startFrame": 6195
           },
           {
             "text": "gateway",
-            "startFrame": 6205
+            "startFrame": 6206
           },
           {
             "text": "and",
-            "startFrame": 6227
+            "startFrame": 6229
           },
           {
             "text": "the",
-            "startFrame": 6232
+            "startFrame": 6233
           },
           {
             "text": "workers,",
-            "startFrame": 6234
+            "startFrame": 6236
           }
         ]
       },
       {
-        "startFrame": 6258,
+        "startFrame": 6259,
         "words": [
           {
             "text": "which",
-            "startFrame": 6258
+            "startFrame": 6259
           },
           {
             "text": "run",
-            "startFrame": 6263
+            "startFrame": 6264
           },
           {
             "text": "the",
-            "startFrame": 6267
+            "startFrame": 6268
           },
           {
             "text": "background",
-            "startFrame": 6269
+            "startFrame": 6270
           },
           {
             "text": "jobs,",
-            "startFrame": 6284
+            "startFrame": 6285
           }
         ]
       },
       {
-        "startFrame": 6306,
+        "startFrame": 6307,
         "words": [
           {
             "text": "call",
-            "startFrame": 6306
+            "startFrame": 6307
           },
           {
             "text": "the",
-            "startFrame": 6311
+            "startFrame": 6312
           },
           {
             "text": "adapters.",
-            "startFrame": 6313
+            "startFrame": 6315
           }
         ]
       }
@@ -3425,64 +3425,64 @@
   },
   {
     "index": 52,
-    "startFrame": 6347,
-    "endFrame": 6476,
+    "startFrame": 6349,
+    "endFrame": 6477,
     "text": "Now draw one frame around all of it: the bank's perimeter.",
     "prefix": "Now draw one frame around all of it: the bank's perimeter.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6349,
+        "startFrame": 6350,
         "words": [
           {
             "text": "Now",
-            "startFrame": 6349
+            "startFrame": 6350
           },
           {
             "text": "draw",
-            "startFrame": 6359
+            "startFrame": 6360
           },
           {
             "text": "one",
-            "startFrame": 6368
+            "startFrame": 6369
           },
           {
             "text": "frame",
-            "startFrame": 6380
+            "startFrame": 6381
           },
           {
             "text": "around",
-            "startFrame": 6398
+            "startFrame": 6399
           },
           {
             "text": "all",
-            "startFrame": 6411
+            "startFrame": 6412
           },
           {
             "text": "of",
-            "startFrame": 6418
+            "startFrame": 6420
           },
           {
             "text": "it:",
-            "startFrame": 6422
+            "startFrame": 6423
           }
         ]
       },
       {
-        "startFrame": 6437,
+        "startFrame": 6439,
         "words": [
           {
             "text": "the",
-            "startFrame": 6437
+            "startFrame": 6439
           },
           {
             "text": "bank's",
-            "startFrame": 6440
+            "startFrame": 6442
           },
           {
             "text": "perimeter.",
-            "startFrame": 6448
+            "startFrame": 6449
           }
         ]
       }
@@ -3490,35 +3490,35 @@
   },
   {
     "index": 53,
-    "startFrame": 6476,
-    "endFrame": 6548,
+    "startFrame": 6478,
+    "endFrame": 6549,
     "text": "One installation serves one bank.",
     "prefix": "One installation serves one bank.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6478,
+        "startFrame": 6479,
         "words": [
           {
             "text": "One",
-            "startFrame": 6478
+            "startFrame": 6479
           },
           {
             "text": "installation",
-            "startFrame": 6482
+            "startFrame": 6483
           },
           {
             "text": "serves",
-            "startFrame": 6507
+            "startFrame": 6508
           },
           {
             "text": "one",
-            "startFrame": 6515
+            "startFrame": 6516
           },
           {
             "text": "bank.",
-            "startFrame": 6523
+            "startFrame": 6524
           }
         ]
       }
@@ -3526,85 +3526,85 @@
   },
   {
     "index": 54,
-    "startFrame": 6548,
-    "endFrame": 6746,
+    "startFrame": 6550,
+    "endFrame": 6748,
     "text": "The TAF agent runs inside, in the bank's network, and the TAF adapter calls it.",
     "prefix": "The TAF agent runs inside, in the bank's network, and the TAF adapter calls it.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6550,
+        "startFrame": 6551,
         "words": [
           {
             "text": "The",
-            "startFrame": 6550
+            "startFrame": 6551
           },
           {
             "text": "TAF",
-            "startFrame": 6552
+            "startFrame": 6553
           },
           {
             "text": "agent",
-            "startFrame": 6579
+            "startFrame": 6581
           },
           {
             "text": "runs",
-            "startFrame": 6592
+            "startFrame": 6593
           },
           {
             "text": "inside,",
-            "startFrame": 6603
+            "startFrame": 6604
           }
         ]
       },
       {
-        "startFrame": 6632,
+        "startFrame": 6634,
         "words": [
           {
             "text": "in",
-            "startFrame": 6632
+            "startFrame": 6634
           },
           {
             "text": "the",
-            "startFrame": 6635
+            "startFrame": 6636
           },
           {
             "text": "bank's",
-            "startFrame": 6638
+            "startFrame": 6639
           },
           {
             "text": "network,",
-            "startFrame": 6647
+            "startFrame": 6648
           }
         ]
       },
       {
-        "startFrame": 6671,
+        "startFrame": 6672,
         "words": [
           {
             "text": "and",
-            "startFrame": 6671
-          },
-          {
-            "text": "the",
             "startFrame": 6672
           },
           {
+            "text": "the",
+            "startFrame": 6674
+          },
+          {
             "text": "TAF",
-            "startFrame": 6675
+            "startFrame": 6676
           },
           {
             "text": "adapter",
-            "startFrame": 6707
+            "startFrame": 6709
           },
           {
             "text": "calls",
-            "startFrame": 6720
+            "startFrame": 6722
           },
           {
             "text": "it.",
-            "startFrame": 6730
+            "startFrame": 6731
           }
         ]
       }
@@ -3612,68 +3612,68 @@
   },
   {
     "index": 55,
-    "startFrame": 6747,
-    "endFrame": 6911,
+    "startFrame": 6748,
+    "endFrame": 6912,
     "text": "Three services are outside: MyID, the SMS vendor and the push service.",
     "prefix": "Three services are outside: MyID, the SMS vendor and the push service.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6750,
+        "startFrame": 6752,
         "words": [
           {
             "text": "Three",
-            "startFrame": 6750
+            "startFrame": 6752
           },
           {
             "text": "services",
-            "startFrame": 6756
+            "startFrame": 6757
           },
           {
             "text": "are",
-            "startFrame": 6770
+            "startFrame": 6771
           },
           {
             "text": "outside:",
-            "startFrame": 6773
+            "startFrame": 6774
           }
         ]
       },
       {
-        "startFrame": 6803,
+        "startFrame": 6804,
         "words": [
           {
             "text": "MyID,",
-            "startFrame": 6803
+            "startFrame": 6804
           },
           {
             "text": "the",
-            "startFrame": 6832
+            "startFrame": 6833
           },
           {
             "text": "SMS",
-            "startFrame": 6838
+            "startFrame": 6840
           },
           {
             "text": "vendor",
-            "startFrame": 6851
+            "startFrame": 6853
           },
           {
             "text": "and",
-            "startFrame": 6870
-          },
-          {
-            "text": "the",
             "startFrame": 6872
           },
           {
-            "text": "push",
+            "text": "the",
             "startFrame": 6874
           },
           {
+            "text": "push",
+            "startFrame": 6876
+          },
+          {
             "text": "service.",
-            "startFrame": 6882
+            "startFrame": 6884
           }
         ]
       }
@@ -3681,43 +3681,43 @@
   },
   {
     "index": 56,
-    "startFrame": 6911,
-    "endFrame": 6985,
+    "startFrame": 6913,
+    "endFrame": 6986,
     "text": "The push service gets no personal data.",
     "prefix": "The push service gets no personal data.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6913,
+        "startFrame": 6914,
         "words": [
           {
             "text": "The",
-            "startFrame": 6913
+            "startFrame": 6914
           },
           {
             "text": "push",
-            "startFrame": 6915
+            "startFrame": 6916
           },
           {
             "text": "service",
-            "startFrame": 6921
+            "startFrame": 6922
           },
           {
             "text": "gets",
-            "startFrame": 6933
+            "startFrame": 6935
           },
           {
             "text": "no",
-            "startFrame": 6940
+            "startFrame": 6941
           },
           {
             "text": "personal",
-            "startFrame": 6949
+            "startFrame": 6950
           },
           {
             "text": "data.",
-            "startFrame": 6962
+            "startFrame": 6963
           }
         ]
       }
@@ -3725,84 +3725,134 @@
   },
   {
     "index": 57,
-    "startFrame": 6985,
-    "endFrame": 7155,
-    "text": "Aziz proves who he is one time, and his trusted phone carries that proof every day.",
-    "prefix": "Aziz proves who he is one time, and his trusted phone carries that proof every day.",
+    "startFrame": 6987,
+    "endFrame": 7272,
+    "text": "One person, one phone number, one password and one trusted phone: Aziz proves who he is one time, and his phone carries that proof every day.",
+    "prefix": "One person, one phone number, one password and one trusted phone: Aziz proves who he is one time, and his phone carries that proof every day.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 6986,
+        "startFrame": 6988,
         "words": [
           {
-            "text": "Aziz",
-            "startFrame": 6986
+            "text": "One",
+            "startFrame": 6988
           },
           {
-            "text": "proves",
-            "startFrame": 6999
-          },
-          {
-            "text": "who",
-            "startFrame": 7013
-          },
-          {
-            "text": "he",
-            "startFrame": 7017
-          },
-          {
-            "text": "is",
-            "startFrame": 7023
+            "text": "person,",
+            "startFrame": 6994
           },
           {
             "text": "one",
-            "startFrame": 7027
+            "startFrame": 7018
           },
           {
-            "text": "time,",
-            "startFrame": 7036
+            "text": "phone",
+            "startFrame": 7024
+          },
+          {
+            "text": "number,",
+            "startFrame": 7032
           }
         ]
       },
       {
-        "startFrame": 7062,
+        "startFrame": 7049,
         "words": [
           {
-            "text": "and",
-            "startFrame": 7062
+            "text": "one",
+            "startFrame": 7049
           },
           {
-            "text": "his",
-            "startFrame": 7063
+            "text": "password",
+            "startFrame": 7056
+          },
+          {
+            "text": "and",
+            "startFrame": 7079
+          },
+          {
+            "text": "one",
+            "startFrame": 7084
           },
           {
             "text": "trusted",
-            "startFrame": 7065
+            "startFrame": 7093
+          },
+          {
+            "text": "phone:",
+            "startFrame": 7105
+          }
+        ]
+      },
+      {
+        "startFrame": 7130,
+        "words": [
+          {
+            "text": "Aziz",
+            "startFrame": 7130
+          },
+          {
+            "text": "proves",
+            "startFrame": 7141
+          },
+          {
+            "text": "who",
+            "startFrame": 7152
+          },
+          {
+            "text": "he",
+            "startFrame": 7156
+          },
+          {
+            "text": "is",
+            "startFrame": 7160
+          },
+          {
+            "text": "one",
+            "startFrame": 7164
+          },
+          {
+            "text": "time,",
+            "startFrame": 7173
+          }
+        ]
+      },
+      {
+        "startFrame": 7200,
+        "words": [
+          {
+            "text": "and",
+            "startFrame": 7200
+          },
+          {
+            "text": "his",
+            "startFrame": 7201
           },
           {
             "text": "phone",
-            "startFrame": 7077
+            "startFrame": 7204
           },
           {
             "text": "carries",
-            "startFrame": 7087
+            "startFrame": 7213
           },
           {
             "text": "that",
-            "startFrame": 7099
+            "startFrame": 7223
           },
           {
             "text": "proof",
-            "startFrame": 7103
+            "startFrame": 7227
           },
           {
             "text": "every",
-            "startFrame": 7125
+            "startFrame": 7244
           },
           {
             "text": "day.",
-            "startFrame": 7131
+            "startFrame": 7250
           }
         ]
       }
@@ -3810,47 +3860,47 @@
   },
   {
     "index": 58,
-    "startFrame": 7155,
-    "endFrame": 7290,
+    "startFrame": 7273,
+    "endFrame": 7408,
     "text": "So how many times does Aziz meet MyID?",
     "prefix": "So how many times does Aziz meet MyID?",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7157,
+        "startFrame": 7274,
         "words": [
           {
             "text": "So",
-            "startFrame": 7157
+            "startFrame": 7274
           },
           {
             "text": "how",
-            "startFrame": 7160
+            "startFrame": 7278
           },
           {
             "text": "many",
-            "startFrame": 7163
+            "startFrame": 7280
           },
           {
             "text": "times",
-            "startFrame": 7168
+            "startFrame": 7285
           },
           {
             "text": "does",
-            "startFrame": 7179
+            "startFrame": 7296
           },
           {
             "text": "Aziz",
-            "startFrame": 7183
+            "startFrame": 7300
           },
           {
             "text": "meet",
-            "startFrame": 7195
+            "startFrame": 7313
           },
           {
             "text": "MyID?",
-            "startFrame": 7201
+            "startFrame": 7319
           }
         ]
       }
@@ -3858,19 +3908,19 @@
   },
   {
     "index": 59,
-    "startFrame": 7291,
-    "endFrame": 7346,
+    "startFrame": 7408,
+    "endFrame": 7464,
     "text": "Once.",
     "prefix": "Once.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7292,
+        "startFrame": 7410,
         "words": [
           {
             "text": "Once.",
-            "startFrame": 7292
+            "startFrame": 7410
           }
         ]
       }
@@ -3878,68 +3928,68 @@
   },
   {
     "index": 60,
-    "startFrame": 7347,
-    "endFrame": 7583,
+    "startFrame": 7464,
+    "endFrame": 7700,
     "text": "Lesson 2 gives the words behind this journey: authentication, identity proofing and authorisation.",
     "prefix": "Lesson 2 gives the words behind this journey: authentication, identity proofing and authorisation.",
     "highlight": "",
     "suffix": "",
     "phrases": [
       {
-        "startFrame": 7348,
+        "startFrame": 7465,
         "words": [
           {
             "text": "Lesson 2",
-            "startFrame": 7348
+            "startFrame": 7465
           },
           {
             "text": "gives",
-            "startFrame": 7370
+            "startFrame": 7488
           },
           {
             "text": "the",
-            "startFrame": 7379
+            "startFrame": 7496
           },
           {
             "text": "words",
-            "startFrame": 7381
+            "startFrame": 7499
           },
           {
             "text": "behind",
-            "startFrame": 7391
+            "startFrame": 7508
           },
           {
             "text": "this",
-            "startFrame": 7406
+            "startFrame": 7524
           },
           {
             "text": "journey:",
-            "startFrame": 7412
+            "startFrame": 7530
           }
         ]
       },
       {
-        "startFrame": 7439,
+        "startFrame": 7556,
         "words": [
           {
             "text": "authentication,",
-            "startFrame": 7439
+            "startFrame": 7556
           },
           {
             "text": "identity",
-            "startFrame": 7470
+            "startFrame": 7587
           },
           {
             "text": "proofing",
-            "startFrame": 7483
+            "startFrame": 7600
           },
           {
             "text": "and",
-            "startFrame": 7510
+            "startFrame": 7628
           },
           {
             "text": "authorisation.",
-            "startFrame": 7518
+            "startFrame": 7636
           }
         ]
       }
