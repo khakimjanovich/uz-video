@@ -8,7 +8,7 @@ import { diagram, map } from "./steps";
 const TITLES = [
   "Suppose", "MyID check", "MyID goes quiet", "A spinner", "What happens?",
   "Lessons 3 and 4", "Talking to the outside",
-  "The core", "Rules only", "No input, no output", "Never calls out", "A port", "Words of the rules", "An adapter",
+  "The core", "Rules only", "No input, no output", "No connection", "No direct call", "Its own words", "An adapter",
   "Four adapters", "TAF inside", "Egress proxy", "Own units",
   "The tests", "One real adapter", "A simulator", "Same API", "Every answer", "No internet", "Each night",
   "Good days only", "Bad days too",
@@ -19,7 +19,7 @@ const TITLES = [
   "Back to Aziz", "Plain answer", "Level kept", "Not counted", "Breaker opens", "At once", "MyID back",
   "Two rules", "No bodies in logs", "Reference, outcome, time", "Config and Vault", "Own credential",
   "Check", "Bank SMS, not scored",
-  "No input, no output", "Ports and simulators", "Timeout and breaker", "Seconds, not forever",
+  "No input, no output", "Adapters and simulators", "Timeout and breaker", "Seconds, not forever",
   "Adapter secrets", "Lesson 6: keys",
 ];
 

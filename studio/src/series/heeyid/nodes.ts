@@ -67,7 +67,6 @@ export const HEEYID_CATALOG = {
   installKeys: { label: "Installation keys", sublabel: "One zone", art: "vault" },
   domain: { label: "Core", sublabel: "The rules only", art: "workflow" },
   simulator: { label: "Simulator", sublabel: "Plays the outside service", art: "tray" },
-  port: { label: "Port", sublabel: "Words of the rules", art: "request" },
   adapter: { label: "Adapter", sublabel: "Talks to one service", art: "transit" },
   breaker: { label: "Breaker", sublabel: "Opens after failures", art: "workflow" },
   antifraud: { label: "Antifraud", sublabel: "Of the bank", art: "reviewer" },

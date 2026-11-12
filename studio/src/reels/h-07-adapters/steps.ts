@@ -2,7 +2,7 @@ import { BuildMapStep, DiagramStep } from "../../components";
 import { HeeyMapId } from "../../series/heeyid/map";
 import { HeeyId } from "../../series/heeyid/nodes";
 
-// Lesson 5: adapters. Suppose MyID goes quiet (0–4); the bridge (5–6); the core, ports and four adapters (7–17);
+// Lesson 5: adapters. Suppose MyID goes quiet (0–4); the bridge (5–6); the core and the four adapters (7–17);
 // simulators (18–26); timeout, breaker, test call (27–35); one fixed behaviour for each outage (36–46);
 // back to Aziz (47–53); two more rules (54–58); the check (59–60); the summary and the way to the keys (61–66).
 const OUTSIDE: HeeyMapId[] = ["taf", "sms", "myid", "push"];
@@ -19,12 +19,12 @@ const SPIN = { aziz: [0, 1], mobileBank: [1.5, 1], myid: [3, 1] } as const;
 const SPIN_EDGES = [{ from: "aziz", to: "mobileBank" }, { from: "mobileBank", to: "myid" }] as const;
 const OUT = { platform: [0, 1], taf: [1.5, 1.9], myid: [3, 0.2], sms: [3, 1], push: [3, 1.8] } as const;
 const OUT_EDGES = [{ from: "platform", to: "taf" }, { from: "platform", to: "myid" }, { from: "platform", to: "sms" }, { from: "platform", to: "push" }] as const;
-const CHAIN = { domain: [0, 1], port: [1, 1], adapter: [2, 1], myid: [3, 1] } as const;
-const CHAIN_EDGES = [{ from: "domain", to: "port" }, { from: "port", to: "adapter" }, { from: "adapter", to: "myid" }] as const;
+const CHAIN = { domain: [0, 1], adapter: [1.5, 1], myid: [3, 1] } as const;
+const CHAIN_EDGES = [{ from: "domain", to: "adapter" }, { from: "adapter", to: "myid" }] as const;
 const FOUR = { adapter: [0.3, 1], myid: [2, 0.3], taf: [3, 0.3], sms: [2, 1.7], push: [3, 1.7] } as const;
 const FOUR_EDGES = [{ from: "adapter", to: "myid" }, { from: "adapter", to: "taf" }, { from: "adapter", to: "sms" }, { from: "adapter", to: "push" }] as const;
-const SIM = { port: [0, 1], adapter: [1.5, 1], myid: [3, 0.3], simulator: [3, 1.7] } as const;
-const SIM_EDGES = [{ from: "port", to: "adapter" }, { from: "adapter", to: "myid" }, { from: "adapter", to: "simulator" }] as const;
+const SIM = { domain: [0, 1], adapter: [1.5, 1], myid: [3, 0.3], simulator: [3, 1.7] } as const;
+const SIM_EDGES = [{ from: "domain", to: "adapter" }, { from: "adapter", to: "myid" }, { from: "adapter", to: "simulator" }] as const;
 const TESTS = { tests: [0, 1], adapter: [1.5, 1], simulator: [3, 1] } as const;
 const TESTS_EDGES = [{ from: "tests", to: "adapter" }, { from: "adapter", to: "simulator" }] as const;
 const WALL = { adapter: [0, 1], breaker: [1.5, 1], myid: [3, 1] } as const;
@@ -52,17 +52,17 @@ export const diagram: DiagramStep<HeeyId>[] = [
   { cue: 7, layout: { domain: [1.5, 1] }, accent: ["domain"] },
   { cue: 8, layout: { domain: [1.5, 1] }, badges: { domain: "registration · proofing · devices · login" } },
   { cue: 9, layout: { domain: [1.5, 1] }, badges: { domain: "no input, no output" } },
-  { cue: 10, layout: { domain: [0.5, 1], myid: [2.5, 1] }, edges: [{ from: "domain", to: "myid", broken: true }], crossed: ["myid"], badges: { domain: "never calls out" } },
-  { cue: 11, layout: { domain: [0.5, 1], port: [2, 1] }, edges: [{ from: "domain", to: "port" }], accent: ["port"] },
-  { cue: 12, layout: { domain: [0.5, 1], port: [2, 1] }, edges: [{ from: "domain", to: "port" }], packets: [{ from: "domain", to: "port", label: "open proofing session" }], badges: { port: "words of the rules" } },
-  { cue: 13, layout: CHAIN, edges: [...CHAIN_EDGES], accent: ["adapter"], packets: [{ from: "adapter", to: "myid", label: "HTTPS" }] },
+  { cue: 10, layout: { domain: [1.5, 1] }, badges: { domain: "no connection" } },
+  { cue: 11, layout: { domain: [0.5, 1], myid: [2.5, 1] }, edges: [{ from: "domain", to: "myid", broken: true }], crossed: ["myid"], badges: { domain: "no direct call" } },
+  { cue: 12, layout: { domain: [1.5, 1] }, accent: ["domain"], badges: { domain: "open proofing session · send a code" } },
+  { cue: 13, layout: CHAIN, edges: [...CHAIN_EDGES], accent: ["adapter"], packets: [{ from: "domain", to: "adapter", label: "open proofing session" }, { from: "adapter", to: "myid", label: "HTTPS", delay: 70 }] },
   { cue: 14, layout: FOUR, edges: [...FOUR_EDGES], accent: ["adapter"], badges: { adapter: "four adapters" } },
   { cue: 15, layout: FOUR, edges: [...FOUR_EDGES], accent: ["taf"], badges: { taf: "agent in the bank" } },
   { cue: 16, layout: FOUR, edges: [...FOUR_EDGES], accent: ["myid", "sms", "push"], badges: { adapter: "egress proxy" } },
   { cue: 17, layout: { customerGw: [0, 0.4], workers: [0, 1.7], adapter: [1.5, 1], myid: [3, 1] }, edges: [{ from: "customerGw", to: "adapter" }, { from: "workers", to: "adapter" }, { from: "adapter", to: "myid" }], badges: { adapter: "own unit" } },
   // Simulators.
   { cue: 18, layout: TESTS, edges: [...TESTS_EDGES], accent: ["tests"] },
-  { cue: 19, layout: { port: [0.5, 1], adapter: [2.5, 1] }, edges: [{ from: "port", to: "adapter" }], accent: ["adapter"], badges: { adapter: "one real adapter" } },
+  { cue: 19, layout: { domain: [0.5, 1], adapter: [2.5, 1] }, edges: [{ from: "domain", to: "adapter" }], accent: ["adapter"], badges: { adapter: "one real adapter" } },
   { cue: 20, layout: SIM, edges: [...SIM_EDGES], accent: ["simulator"], crossed: ["myid"] },
   { cue: 21, layout: SIM, edges: [...SIM_EDGES], crossed: ["myid"], badges: { simulator: "same API" } },
   { cue: 22, layout: SIM, edges: [...SIM_EDGES], crossed: ["myid"], packets: [{ from: "simulator", to: "adapter", label: "timeout" }], badges: { simulator: "success · failures · timeout · down" } },
