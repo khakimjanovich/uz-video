@@ -1,231 +1,235 @@
 1
-00:00:00,050 --> 00:00:04,248
-Imagine that the company that wrote heeyID closes its doors tonight.
+00:00:00,050 --> 00:00:04,128
+Suppose the company that wrote heeyID closes its doors tonight.
 
 2
-00:00:04,298 --> 00:00:07,104
+00:00:04,178 --> 00:00:06,984
 Its office is dark, and its servers are off.
 
 3
-00:00:07,154 --> 00:00:11,232
+00:00:07,034 --> 00:00:11,112
 Tomorrow at eight, Aziz opens the mobile bank and logs in.
 
 4
-00:00:11,282 --> 00:00:15,104
+00:00:11,162 --> 00:00:14,984
 Does it work?
 
 5
-00:00:15,154 --> 00:00:19,400
-In Lesson 3, the three checks touched passports and phone numbers.
+00:00:15,034 --> 00:00:20,528
+Lessons one and two followed Aziz on his journey, and gave the map and the words for it.
 
 6
-00:00:19,450 --> 00:00:24,848
-This lesson shows where those checks run, and the short list of places that heeyID may call.
+00:00:20,578 --> 00:00:23,360
+This lesson shows where all of that runs.
 
 7
-00:00:24,898 --> 00:00:28,088
+00:00:23,410 --> 00:00:26,600
 The answer is yes, and that answer is the whole design.
 
 8
-00:00:28,138 --> 00:00:31,112
+00:00:26,650 --> 00:00:29,624
 heeyID runs inside the perimeter of the bank.
 
 9
-00:00:31,162 --> 00:00:35,240
-The bank installs it on its own infrastructure, and the bank operates it.
+00:00:29,674 --> 00:00:33,608
+The bank installs it on its own servers, and the bank operates it.
 
 10
-00:00:35,290 --> 00:00:38,696
-One installation serves one bank, with all its apps.
+00:00:33,658 --> 00:00:38,264
+That copy is called an installation, and one installation serves one bank.
 
 11
-00:00:38,746 --> 00:00:43,040
-A second bank gets a second installation, on its own infrastructure.
+00:00:38,314 --> 00:00:42,056
+A second bank gets a second installation, on its own servers.
 
 12
-00:00:43,090 --> 00:00:45,536
+00:00:42,106 --> 00:00:44,552
 Nothing in the installation calls the vendor.
 
 13
-00:00:45,586 --> 00:00:49,424
-There is no control plane at the vendor, and no data that goes home.
+00:00:44,602 --> 00:00:48,584
+There is no switch at the vendor that turns it off, and no data goes home.
 
 14
-00:00:49,474 --> 00:00:55,280
-The installation does not need the vendor to work, so the dark office changes nothing for Aziz.
+00:00:48,634 --> 00:00:51,704
+So the dark office changes nothing for Aziz.
 
 15
-00:00:55,330 --> 00:01:00,920
-I think this is the most useful promise a vendor can give a bank: at night, the vendor is not needed.
+00:00:51,754 --> 00:00:56,984
+This is the most useful promise a vendor can give a bank: at night, the vendor is not needed.
 
 16
-00:01:00,970 --> 00:01:07,136
-The personal data stays in the bank, in the Republic of Uzbekistan, as the personal-data law says.
+00:00:57,034 --> 00:01:01,160
+The personal data stays in the bank, in the Republic of Uzbekistan.
 
 17
-00:01:07,186 --> 00:01:09,488
+00:01:01,210 --> 00:01:03,512
 Now look at the edge of the perimeter.
 
 18
-00:01:09,538 --> 00:01:11,360
-What may cross it?
+00:01:03,562 --> 00:01:07,232
+Every call that goes out passes one gate, the egress proxy.
 
 19
-00:01:11,410 --> 00:01:16,400
-The list is short, and the installation configuration names every host on it.
+00:01:07,282 --> 00:01:11,936
+The proxy lets out only the host names in the configuration of the installation.
 
 20
-00:01:16,450 --> 00:01:24,416
-First, the services of the bank: the SMS service, the customer records, the antifraud system and the security monitoring.
+00:01:11,986 --> 00:01:16,040
+The list has three names, and all three are outside the bank.
 
 21
-00:01:24,466 --> 00:01:29,312
-Second, TAF, the antifraud service of the mobile operators.
+00:01:16,090 --> 00:01:19,880
+The first is MyID, which checks Aziz's face and passport.
 
 22
-00:01:29,362 --> 00:01:35,624
-Its agent already runs inside the bank network, so heeyID calls only the API of that agent.
+00:01:19,930 --> 00:01:24,320
+Only the MyID adapter calls it, with a credential from the key store of the bank.
 
 23
-00:01:35,674 --> 00:01:37,736
-Nobody installs anything for it.
+00:01:24,370 --> 00:01:29,024
+The second is the SMS vendor, which sends the text messages.
 
 24
-00:01:37,786 --> 00:01:40,712
-Third, MyID, outside the perimeter.
+00:01:29,074 --> 00:01:35,240
+It sends its delivery reports back through the edge, to one address of the SMS adapter.
 
 25
-00:01:40,762 --> 00:01:47,480
-heeyID calls it only from its MyID adapter, over a pinned connection, with a credential from the key store of the bank.
+00:01:35,290 --> 00:01:39,392
+The third is the push service, which wakes up the app on Aziz's phone.
 
 26
-00:01:47,530 --> 00:01:51,824
-And one more: the push service, which wakes up the app on Aziz's phone.
+00:01:39,442 --> 00:01:44,528
+Because it is outside, a push carries only the type of the message and a reference.
 
 27
-00:01:51,874 --> 00:01:56,744
-It is outside too, so a push carries only the type of the message and a reference.
-
-28
-00:01:56,794 --> 00:02:00,416
-It has no code, no text and no personal data.
-
-29
-00:02:00,466 --> 00:02:04,064
+00:01:44,578 --> 00:01:48,176
 The app then gets the text from heeyID, over its own session.
 
+28
+00:01:48,226 --> 00:01:50,984
+TAF is missing from that list.
+
+29
+00:01:51,034 --> 00:01:57,488
+Its agent already runs inside the bank network, and the TAF adapter calls only that agent.
+
 30
-00:02:04,114 --> 00:02:05,936
-That is the whole list.
+00:01:57,538 --> 00:01:59,600
+Nobody installs anything for it.
 
 31
-00:02:05,986 --> 00:02:09,392
-An egress proxy at the edge lets only these names out.
+00:01:59,650 --> 00:02:05,000
+That is the whole outside world of heeyID: three names, through one gate.
 
 32
-00:02:09,442 --> 00:02:13,424
-Inside the perimeter, the installation has zones of its own.
+00:02:05,050 --> 00:02:09,248
+Inside the installation, there are three networks, one behind the other.
 
 33
-00:02:13,474 --> 00:02:15,848
-All traffic comes in through one edge.
+00:02:09,298 --> 00:02:12,464
+First comes the edge, where all traffic enters.
 
 34
-00:02:15,898 --> 00:02:21,968
-Behind the edge are the application services: the two gateways, Keycloak and the workers.
+00:02:12,514 --> 00:02:18,704
+Then the application network, with the two gateways, Keycloak, the workers and the four adapters.
 
 35
-00:02:22,018 --> 00:02:26,864
-Behind them is the data zone: Postgres, Valkey, Kafka and Vault.
+00:02:18,754 --> 00:02:23,288
+Then the data network, with Postgres, Valkey, Kafka and Vault.
 
 36
-00:02:26,914 --> 00:02:30,056
-The data zone accepts no connection from the edge.
+00:02:23,338 --> 00:02:25,904
+The edge has no connection to the data network.
 
 37
-00:02:30,106 --> 00:02:33,272
+00:02:25,954 --> 00:02:29,120
 A request must pass a gateway first.
 
 38
-00:02:33,322 --> 00:02:34,904
-Now the second kind of zone.
+00:02:29,170 --> 00:02:34,064
+The bank also has two zones of its own: a test zone and a production zone.
 
 39
-00:02:34,954 --> 00:02:41,216
-The bank runs heeyID two times: stage in its test zone, and production in its production zone.
+00:02:34,114 --> 00:02:39,848
+heeyID runs in both: stage in the test zone, and production in the production zone.
 
 40
-00:02:41,266 --> 00:02:44,648
-They are the same units, with no network route between them.
+00:02:39,898 --> 00:02:44,744
+In each zone, one Linux host runs the same units with Docker Compose.
 
 41
-00:02:44,698 --> 00:02:49,232
-Stage talks only to the MyID test environment, with test identities.
+00:02:44,794 --> 00:02:47,456
+There is no network route between the two zones.
 
 42
-00:02:49,282 --> 00:02:53,048
-Production talks to the real MyID, with its own credential.
+00:02:47,506 --> 00:02:51,920
+Stage talks only to the MyID test service, with test identities.
 
 43
-00:02:53,098 --> 00:02:59,240
-Only configuration moves from stage to production, and a second person approves the move.
+00:02:51,970 --> 00:02:55,736
+Production talks to the real MyID, with its own credential.
 
 44
-00:02:59,290 --> 00:03:01,376
-No database content moves.
+00:02:55,786 --> 00:03:01,928
+Only configuration moves from stage to production, and a second person approves the move.
 
 45
-00:03:01,426 --> 00:03:02,984
-And there is a guard at start-up.
+00:03:01,978 --> 00:03:04,064
+No database content moves.
 
 46
-00:03:03,034 --> 00:03:09,800
-A production build refuses to start when its MyID host is a test host, or when test customers are allowed.
+00:03:04,114 --> 00:03:05,936
+And there is a guard at start-up.
 
 47
-00:03:09,850 --> 00:03:12,080
-Back to Aziz at eight in the morning.
+00:03:05,986 --> 00:03:12,752
+A production build refuses to start when its MyID host is a test host, or when test customers are allowed.
 
 48
-00:03:12,130 --> 00:03:19,280
-His login goes to the edge of his bank, then to the customer gateway, then to the records and the counters in the data zone.
+00:03:12,802 --> 00:03:15,032
+Back to Aziz at eight in the morning.
 
 49
-00:03:19,330 --> 00:03:22,688
-His code comes through the TAF agent, inside the bank.
+00:03:15,082 --> 00:03:21,728
+His login goes to the edge of his bank, then to the customer gateway, then to the records and the counters.
 
 50
-00:03:22,738 --> 00:03:27,104
-Nothing on that path leaves the country, and nothing touches the vendor.
+00:03:21,778 --> 00:03:25,136
+His code comes through the TAF agent, inside the bank.
 
 51
-00:03:27,154 --> 00:03:29,360
-So the dark office does not matter.
+00:03:25,186 --> 00:03:29,432
+Nothing on that path touches the vendor, so the dark office does not matter.
 
 52
-00:03:29,410 --> 00:03:33,824
-To recap: one installation for one bank, inside its perimeter.
+00:03:29,482 --> 00:03:37,240
+Now a check: the push service is outside the bank, so what may a push to Aziz's phone carry?
 
 53
-00:03:33,874 --> 00:03:35,696
-No call to the vendor.
+00:03:37,290 --> 00:03:41,296
+Only the type of the message and a reference, never his personal data.
 
 54
-00:03:35,746 --> 00:03:42,896
-A short list of names outside: the services of the bank, the TAF agent, MyID and the push service.
+00:03:41,346 --> 00:03:46,264
+One installation for one bank, inside its perimeter, operated by the bank.
 
 55
-00:03:42,946 --> 00:03:47,864
-Zones inside the installation, and two installations: stage and production.
+00:03:46,314 --> 00:03:48,136
+No call to the vendor.
 
 56
-00:03:47,914 --> 00:03:54,896
-But inside one installation, the mobile bank, the marketplace and the credit service all share one Keycloak.
+00:03:48,186 --> 00:03:55,024
+Three names outside, through the egress proxy: MyID, the SMS vendor and the push service.
 
 57
-00:03:54,946 --> 00:03:59,600
-If the marketplace leaks a token, what stops that token from opening the mobile bank?
+00:03:55,074 --> 00:03:57,808
+Two zones, and the same units in each.
 
 58
-00:03:59,650 --> 00:04:01,760
-Next: apps and tokens.
+00:03:57,858 --> 00:04:04,072
+Every installation starts from its configuration, and the MyID host is only one value in it.
+
+59
+00:04:04,122 --> 00:04:08,824
+Lesson 4 shows that configuration, and why a missing value stops the start.

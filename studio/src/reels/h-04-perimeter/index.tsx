@@ -7,18 +7,19 @@ import { diagram, map } from "./steps";
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
   "The vendor closes", "Dark office", "Eight o'clock", "Does it work?",
-  "Lesson 3", "Where it runs", "Yes",
-  "The bank's perimeter", "The bank operates it", "One installation, one bank", "Second bank, second installation",
-  "No call to the vendor", "No control plane", "Not needed", "Not needed at night", "Data stays in Uzbekistan",
-  "The edge", "What may cross?", "Configured hosts", "1 · Bank services", "2 · TAF", "TAF agent inside", "Nothing to install",
-  "3 · MyID", "Pinned, from Vault", "4 · Push service", "Type and reference", "No personal data", "Text over the session",
-  "The whole list", "Egress proxy",
-  "Zones inside", "One edge", "Application services", "Data zone", "No edge connection", "Gateway first",
-  "Two installations", "Stage and production", "No route between", "Stage: MyID test", "Production: real MyID", "Only configuration", "No data moves",
-  "Start-up guard", "Test host? No start",
-  "Eight o'clock", "The path", "Code through TAF", "Nothing leaves", "Vendor not needed",
-  "Recap", "No vendor", "Four outside names", "Zones and installations",
-  "One Keycloak", "A leaked token?", "Next: apps and tokens",
+  "Journey, map, words", "Where it runs", "Yes",
+  "The bank's perimeter", "The bank operates it", "Installation", "Second bank, second installation",
+  "No call to the vendor", "No switch, no data home", "Nothing changes for Aziz", "Not needed at night", "Data stays in Uzbekistan",
+  "The edge", "Egress proxy", "Configured host names", "Three names outside", "1 · MyID", "MyID adapter, Vault",
+  "2 · SMS vendor", "Delivery reports", "3 · Push service", "Type and reference", "Text over the session",
+  "TAF: not on the list", "TAF agent inside", "Nothing to install", "Three names, one gate",
+  "Three networks", "Edge", "Application network", "Data network", "No edge connection", "Gateway first",
+  "Two zones", "Stage and production", "One host, Docker Compose", "No route between", "Stage: MyID test", "Production: real MyID",
+  "Only configuration moves", "No data moves", "Start-up guard", "Test host? No start",
+  "Eight o'clock", "Edge, gateway, records", "Code through TAF", "Vendor not needed",
+  "What may a push carry?", "Type and reference only",
+  "One installation, one bank", "No vendor", "Three names outside", "Two zones",
+  "Starts from configuration", "Lesson 4: configuration",
 ];
 
 export const H04PerimeterComposition = createEpisode({
