@@ -6,14 +6,17 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
-  "Friday night", "Phone gone", "Lock everything", "Who may block?", "A refresh mismatch", "Block and unblock",
-  "A short list", "Only two", "One automatic block", "Reassignment: no block", "A failed face", "Counted attempt", "Cool-downs", "Counted", "Not counted",
-  "Back to Aziz", "Block, with a reason", "One block", "Grants ended", "Requests refused", "Login refused", "Proofing stopped", "Data kept", "Account blocked", "A case", "Audit and antifraud",
-  "At the next request?", "Three writes", "Revocation list", "Next request", "Same writes",
-  "The case", "One folder", "What it shows", "Other triggers", "Phone reviews", "Case results",
-  "Saturday", "Unblock", "Only an operator", "Trusted again", "The devices", "The thief's too", "Revoke first", "New phone",
-  "The exception", "No device back", "Full proofing first", "Which face?",
-  "Recap", "What a block does", "Unblock", "Still strange", "Push to a stolen phone", "What can it show?", "Next: notifications",
+  "A Friday", "The bazaar", "Pocket empty", "Phone gone", "Lock everything", "Who may lock him out?",
+  "Lesson 18: same phone", "Lesson 15: phone review", "The operator panel",
+  "The people", "Staff identity", "No staff passwords", "Staff session", "One role", "Checked on the server", "Exact number only",
+  "Four actions", "1. Phone review", "Approve", "Reject", "2. Block", "3. Unblock", "4. Reset", "Reason and audit",
+  "Back to Friday", "Block", "One operator", "What a block does", "Grants end", "No money", "Requests refused", "Login refused", "MyID check stops",
+  "Nothing deleted", "A pause", "Account blocked", "Audit and antifraud", "Not a lock", "Only operators lift it", "Only an operator", "Never by itself",
+  "Saturday", "Sunday", "The second call", "Unblock asked", "A proposal", "Second operator", "Not his own", "Maker-checker", "Two people",
+  "Unblock starts", "Devices back", "Money phone again", "Account unblocked", "Same rule", "Rejection: one",
+  "Why two?", "Access back",
+  "Staff identity", "Four actions", "One blocks, two unblock", "Reason and audit",
+  "One night", "Lesson 20: the push",
 ];
 
 export const H34BlockingComposition = createEpisode({
@@ -21,11 +24,12 @@ export const H34BlockingComposition = createEpisode({
   id: "h-34-blocking",
   number: 19,
   part: 6,
-  footer: "Two can block, one can unblock",
+  footer: "One blocks, two unblock",
   subtitles: subtitlesJson as SubtitleCue[],
   titles: TITLES,
   map,
   diagram,
   focus: true,
   keepLabels: true,
+  hidePanelBefore: 6,
 });

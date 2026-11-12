@@ -2,90 +2,136 @@ import { BuildMapStep, DiagramStep } from "../../components";
 import { HeeyMapId } from "../../series/heeyid/map";
 import { HeeyId } from "../../series/heeyid/nodes";
 
-// Lesson 34: blocks. The stolen phone (0–5); who can block, and why a failed face never does (6–14);
-// what one block does, and why at the next request (15–30); the case (31–36); Saturday's unblock and the
-// mismatch exception (37–48); the close and the open question (49–55).
-const UNIT = { heeyid: "in the bank" };
+// Lesson 19: the operator panel, a Friday months later. The lost phone and the question (0–5); the bridge (6–8);
+// staff identity and roles (9–15); the four actions (16–23); Friday's block and what it does (24–40);
+// Sunday's unblock by two operators (41–55); the check (56–57); summary and hand-off (58–63).
+const UNIT = { heeyid: "operator panel" };
 
 export const map: BuildMapStep<HeeyMapId>[] = [
-  { cue: 4, part: 6, rows: [6], current: ["postgres", "myid"], dot: "myid", units: { heeyid: "lesson 33: a refresh mismatch" } },
-  { cue: 5, part: 6, rows: [6], current: ["staff", "admingw", "custgw"], dot: "admingw", units: { heeyid: "block · unblock" } },
-  { cue: 27, part: 6, rows: [6], current: ["custgw", "postgres", "keycloak", "kafka"], dot: "custgw", units: { heeyid: "three writes together" } },
-  { cue: 28, part: 6, rows: [6], current: ["custgw", "valkey"], dot: "valkey", units: { heeyid: "revocation list" } },
-  { cue: 55, part: 6, rows: [6], dot: "off", units: UNIT },
+  { cue: 0, part: 6, rows: [6], current: ["customer", "mobile"], dot: "mobile" },
+  { cue: 6, part: 6, rows: [5], current: ["mobile", "custgw", "keycloak"], dot: "custgw", units: { heeyid: "lesson 18: same phone" } },
+  { cue: 7, part: 6, rows: [4], current: ["staff", "admingw"], dot: "admingw", units: { heeyid: "lesson 15: phone review" } },
+  { cue: 8, part: 6, rows: [6], current: ["staff", "edge", "admingw"], dot: "admingw", units: UNIT },
+  { cue: 10, part: 6, rows: [6], current: ["staff", "edge", "admingw", "keycloak"], dot: "staff", units: { heeyid: "staff sign-in" } },
+  { cue: 16, part: 6, rows: [6], current: ["staff", "admingw", "postgres"], dot: "admingw", units: { heeyid: "four actions" } },
+  { cue: 24, part: 6, rows: [6], current: ["staff", "admingw", "postgres"], dot: "postgres", units: { heeyid: "block: one operator" } },
+  { cue: 27, part: 6, rows: [6], current: ["mobile", "custgw", "keycloak", "valkey"], dot: "valkey", units: { heeyid: "grants end at the next request" } },
+  { cue: 35, part: 6, rows: [6], current: ["kafka", "adapters", "sms", "push"], dot: "push", units: { heeyid: "account blocked" } },
+  { cue: 41, part: 6, rows: [6], current: ["customer", "mobile"], dot: "mobile", units: UNIT },
+  { cue: 44, part: 6, rows: [6], current: ["staff", "admingw", "postgres"], dot: "admingw", units: { heeyid: "unblock: two operators" } },
+  { cue: 53, part: 6, rows: [6], current: ["kafka", "adapters", "sms", "push"], dot: "push", units: { heeyid: "account unblocked" } },
+  { cue: 58, part: 6, rows: [6], current: ["staff", "edge", "admingw"], dot: "off", units: UNIT },
+  { cue: 63, part: 6, rows: [6], current: ["kafka", "adapters", "push"], dot: "push", units: { heeyid: "lesson 20: notifications" } },
 ];
 
-const BAZAAR = { phoneThief: [0, 0.4], trusted: [1.5, 0.4], aziz: [0, 1.7], operator: [3, 1.7] } as const;
-const BAZAAR_EDGES = [{ from: "phoneThief", to: "trusted" }, { from: "aziz", to: "operator", label: "lock everything" }] as const;
-const WHO = { platform: [0.8, 1], operator: [2.4, 1] } as const;
-const FACE = { trusted: [0, 1], myid: [1.5, 1], platform: [3, 1] } as const;
-const FACE_EDGES = [{ from: "trusted", to: "myid" }, { from: "myid", to: "platform" }] as const;
-const GRANTS = { platform: [0.2, 1], keycloak: [1.6, 1], mobileBank: [3, 0.3], marketplace: [3, 1.7] } as const;
-const GRANTS_EDGES = [{ from: "platform", to: "keycloak" }, { from: "keycloak", to: "mobileBank" }, { from: "keycloak", to: "marketplace" }] as const;
-const POCKET = { phoneThief: [0, 1], trusted: [1.4, 1], platform: [3, 1] } as const;
-const POCKET_EDGES = [{ from: "phoneThief", to: "trusted" }, { from: "trusted", to: "platform" }] as const;
-const TRAIL = { platform: [0.3, 1], auditTrail: [2.3, 0.3], antifraud: [2.3, 1.7] } as const;
+const PHONE = { aziz: [0.5, 1], trusted: [2.5, 1] } as const;
+const PHONE_EDGES = [{ from: "aziz", to: "trusted" }] as const;
+const CALL = { aziz: [0, 1.7], trusted: [0, 0.3], panelOperator: [3, 1.7] } as const;
+const CALL_EDGES = [{ from: "aziz", to: "panelOperator", label: "lock everything" }] as const;
+const DOOR = { panelOperator: [0, 1], staffId: [1.5, 1], adminGw: [3, 1] } as const;
+const DOOR_EDGES = [{ from: "panelOperator", to: "staffId" }, { from: "staffId", to: "adminGw" }] as const;
+const SCREEN = { panelOperator: [0, 1], adminGw: [1.5, 1], aziz: [3, 1] } as const;
+const SCREEN_EDGES = [{ from: "panelOperator", to: "adminGw" }, { from: "adminGw", to: "aziz" }] as const;
+const ACT = { panelOperator: [0, 1], adminGw: [1.5, 1], phoneReview: [3, 0.3], valkey: [3, 1.7] } as const;
+const ACT_EDGES = [{ from: "panelOperator", to: "adminGw" }, { from: "adminGw", to: "phoneReview" }, { from: "adminGw", to: "valkey" }] as const;
+const TRAIL1 = { panelOperator: [0, 1], adminGw: [1.5, 1], auditTrail: [3, 1] } as const;
+const TRAIL1_EDGES = [{ from: "panelOperator", to: "adminGw" }, { from: "adminGw", to: "auditTrail" }] as const;
+const GRANTS = { platform: [0, 1.7], revocation: [0, 0.3], keycloak: [1.5, 1], trusted: [3, 1] } as const;
+const GRANTS_EDGES = [{ from: "platform", to: "revocation" }, { from: "platform", to: "keycloak" }, { from: "keycloak", to: "trusted" }] as const;
+const REFUSE = { trusted: [0.5, 1], platform: [2.5, 1] } as const;
+const REFUSE_EDGES = [{ from: "trusted", to: "platform" }] as const;
+const KEPT = { platform: [0.5, 1], trusted: [2.5, 0.3], identity: [2.5, 1.7] } as const;
+const KEPT_EDGES = [{ from: "platform", to: "trusted" }, { from: "platform", to: "identity" }] as const;
+const NOTIFY = { platform: [0.3, 1], smsService: [2.5, 0.3], pushService: [2.5, 1.7] } as const;
+const NOTIFY_EDGES = [{ from: "platform", to: "smsService" }, { from: "platform", to: "pushService" }] as const;
+const TRAIL = { platform: [0.3, 1], auditTrail: [2.5, 0.3], antifraud: [2.5, 1.7] } as const;
 const TRAIL_EDGES = [{ from: "platform", to: "auditTrail" }, { from: "platform", to: "antifraud" }] as const;
-const CASE = { operator: [0.5, 1], caseFile: [2.5, 1] } as const;
-const UNBLOCK = { aziz: [0, 1.7], operator: [1.5, 1.7], platform: [3, 1] } as const;
-const UNBLOCK_EDGES = [{ from: "aziz", to: "operator" }, { from: "operator", to: "platform" }] as const;
-const BACK = { operator: [0, 1.6], platform: [1.4, 1.6], trusted: [2, 0.3], phoneThief: [3.2, 0.3] } as const;
-const BACK_EDGES = [{ from: "operator", to: "platform" }, { from: "platform", to: "trusted" }, { from: "phoneThief", to: "trusted" }] as const;
-const PROOF = { newPhone: [0, 1], myid: [1.5, 1], platform: [3, 1] } as const;
-const PROOF_EDGES = [{ from: "newPhone", to: "myid" }, { from: "myid", to: "platform" }] as const;
+const WHO = { panelOperator: [0.8, 1], platform: [2.4, 1] } as const;
+const BACK = { finder: [0, 1], trusted: [1.5, 1], aziz: [3, 1] } as const;
+const BACK_EDGES = [{ from: "finder", to: "trusted" }, { from: "trusted", to: "aziz" }] as const;
+const MC = { panelOperator: [0, 1.6], proposal: [1.5, 1], secondOperator: [3, 1.6], platform: [3, 0.3] } as const;
+const MC_EDGES = [{ from: "panelOperator", to: "proposal" }, { from: "secondOperator", to: "proposal" }, { from: "proposal", to: "platform" }] as const;
+const BOTH = { secondOperator: [0.5, 1], phoneReview: [2.5, 0.3], valkey: [2.5, 1.7] } as const;
+const BOTH_EDGES = [{ from: "secondOperator", to: "phoneReview" }, { from: "secondOperator", to: "valkey" }] as const;
+const CHECK = { panelOperator: [0, 1], adminGw: [1.5, 1], secondOperator: [3, 1] } as const;
+const CHECK_EDGES = [{ from: "panelOperator", to: "adminGw" }, { from: "secondOperator", to: "adminGw" }] as const;
+const LAST = { pushService: [0, 1], trusted: [1.5, 1], finder: [3, 1] } as const;
+const LAST_EDGES = [{ from: "pushService", to: "trusted" }, { from: "finder", to: "trusted" }] as const;
 
 export const diagram: DiagramStep<HeeyId>[] = [
-  // Friday night at the bazaar.
-  { cue: 0, layout: { phoneThief: [0, 0.4], trusted: [1.5, 0.4], aziz: [0, 1.7] }, edges: [{ from: "phoneThief", to: "trusted" }], danger: ["phoneThief"] },
-  { cue: 1, layout: { phoneThief: [0, 0.4], trusted: [1.5, 0.4], aziz: [0, 1.7] }, edges: [{ from: "phoneThief", to: "trusted" }], danger: ["phoneThief"], badges: { trusted: "stolen · signed in" } },
-  { cue: 2, layout: BAZAAR, edges: [...BAZAAR_EDGES], accent: ["operator"], packets: [{ from: "aziz", to: "operator", label: "sister's phone" }], badges: { trusted: "stolen · signed in" } },
-  { cue: 3, layout: BAZAAR, edges: [...BAZAAR_EDGES], badges: { operator: "who may?" } },
-  // Who can block: two, and a failed face is not one of them.
-  { cue: 6, layout: WHO, badges: { platform: "who can block?" } },
-  { cue: 7, layout: WHO, accent: ["platform", "operator"], badges: { platform: "different number at a refresh", operator: "with a reason" } },
-  { cue: 8, layout: WHO, accent: ["platform"], badges: { platform: "the only automatic block" } },
-  { cue: 9, layout: { ...WHO, stranger: [1.6, 0] }, accent: ["stranger"], badges: { stranger: "number reassigned: no block" } },
-  { cue: 10, layout: FACE, edges: [...FACE_EDGES], shake: { myid: 0.4 }, badges: { myid: "face ✕", platform: "no block" } },
-  { cue: 11, layout: FACE, edges: [...FACE_EDGES], badges: { platform: "+1: number · device · ID number" } },
-  { cue: 12, layout: FACE, edges: [...FACE_EDGES], badges: { platform: "cool-down · daily cap" } },
-  { cue: 13, layout: FACE, edges: [...FACE_EDGES], badges: { myid: "counted: person or capture" } },
-  { cue: 14, layout: FACE, edges: [...FACE_EDGES], badges: { myid: "service failed: not counted" } },
-  // One block, one reason, and what it does.
-  { cue: 16, layout: { operator: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "operator", to: "platform" }], accent: ["operator"], packets: [{ from: "operator", to: "platform", label: "block: phone stolen" }] },
-  { cue: 18, layout: GRANTS, edges: [...GRANTS_EDGES], crossed: ["mobileBank", "marketplace"], badges: { keycloak: "all grants ended" } },
-  { cue: 19, layout: POCKET, edges: [...POCKET_EDGES], danger: ["phoneThief"], packets: [{ from: "trusted", to: "platform", label: "balance?", stopAt: 0.6 }], badges: { platform: "refused" } },
-  { cue: 20, layout: { newPhone: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "newPhone", to: "platform" }], packets: [{ from: "newPhone", to: "platform", label: "login: Aziz's number", stopAt: 0.6 }], badges: { platform: "refused" } },
-  { cue: 21, layout: { platform: [0.5, 1], myid: [2.5, 1] }, edges: [{ from: "platform", to: "myid", broken: true }], badges: { myid: "open sessions stopped" } },
-  { cue: 22, layout: { platform: [0.5, 1], identity: [2.5, 0.4], trusted: [2.5, 1.6] }, edges: [{ from: "platform", to: "identity" }, { from: "platform", to: "trusted" }], accent: ["identity", "trusted"], badges: { identity: "kept", trusted: "kept" } },
-  { cue: 23, layout: { platform: [0.5, 1], aziz: [2.5, 1] }, edges: [{ from: "platform", to: "aziz" }], packets: [{ from: "platform", to: "aziz", label: "account blocked" }] },
-  { cue: 24, layout: { platform: [0.5, 1], caseFile: [2.5, 1] }, edges: [{ from: "platform", to: "caseFile" }], accent: ["caseFile"], badges: { caseFile: "opened or updated" } },
-  { cue: 25, layout: TRAIL, edges: [...TRAIL_EDGES], packets: [{ from: "platform", to: "auditTrail", label: "blocked" }, { from: "platform", to: "antifraud", label: "risk event", delay: 40 }] },
-  // Why it holds at the very next request.
-  { cue: 29, layout: { trusted: [0, 1], platform: [1.5, 1], revocation: [3, 1] }, edges: [{ from: "trusted", to: "platform" }, { from: "platform", to: "revocation" }], accent: ["revocation"], packets: [{ from: "trusted", to: "platform", label: "renew", stopAt: 0.7 }], badges: { platform: "binding check first" } },
-  { cue: 30, layout: { operator: [0, 0.3], myid: [0, 1.7], platform: [1.8, 1] }, edges: [{ from: "operator", to: "platform" }, { from: "myid", to: "platform" }], badges: { platform: "same three writes" } },
-  // The case: the operator's folder for one problem.
-  { cue: 32, layout: CASE, edges: [{ from: "operator", to: "caseFile" }], accent: ["caseFile"] },
-  { cue: 33, layout: CASE, edges: [{ from: "operator", to: "caseFile" }], badges: { caseFile: "trigger · masked values · notes" } },
-  { cue: 34, layout: CASE, edges: [{ from: "operator", to: "caseFile" }], badges: { caseFile: "data refused · re-registration · link" } },
-  { cue: 35, layout: CASE, edges: [{ from: "operator", to: "caseFile" }], badges: { operator: "phone reviews: own list" } },
-  { cue: 36, layout: CASE, edges: [{ from: "operator", to: "caseFile" }], badges: { caseFile: "no action · unblocked · link · contacted" } },
-  // Saturday: revoke the stolen phone, then unblock.
-  { cue: 37, layout: { aziz: [0.5, 1], newPhone: [2.5, 1] }, edges: [{ from: "aziz", to: "newPhone" }], accent: ["newPhone"], badges: { newPhone: "old number" } },
-  { cue: 38, layout: UNBLOCK, edges: [...UNBLOCK_EDGES], packets: [{ from: "operator", to: "platform", label: "unblock, with a reason" }] },
-  { cue: 39, layout: UNBLOCK, edges: [...UNBLOCK_EDGES], accent: ["operator"], badges: { operator: "only an operator" } },
-  { cue: 40, layout: { platform: [0.5, 1], trusted: [2.5, 1] }, edges: [{ from: "platform", to: "trusted" }], accent: ["trusted"], badges: { trusted: "trusted again" } },
-  { cue: 42, layout: BACK, edges: [...BACK_EDGES], danger: ["phoneThief"], badges: { trusted: "trusted again?" } },
-  { cue: 43, layout: BACK, edges: [...BACK_EDGES], crossed: ["trusted"], packets: [{ from: "operator", to: "platform", label: "revoke first" }], badges: { trusted: "revoked" } },
-  { cue: 44, layout: { newPhone: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "newPhone", to: "platform" }], accent: ["newPhone"], badges: { newPhone: "checks of lesson 24" } },
-  // The exception: after a mismatch, no device comes back.
-  { cue: 45, layout: { myid: [0.5, 1], identity: [2.5, 1] }, edges: [{ from: "myid", to: "identity", label: "different number", broken: true }], danger: ["identity"] },
-  { cue: 46, layout: { platform: [0.5, 1], trusted: [2.5, 1] }, edges: [{ from: "platform", to: "trusted", broken: true }], crossed: ["trusted"], badges: { platform: "no device back" } },
-  { cue: 47, layout: PROOF, edges: [...PROOF_EDGES], accent: ["myid"], packets: [{ from: "newPhone", to: "myid", label: "full proofing" }], badges: { newPhone: "then trusted" } },
-  // Recap and the open question.
-  { cue: 49, layout: WHO, accent: ["platform", "operator"], badges: { platform: "different number", operator: "with a reason" } },
-  { cue: 50, layout: { platform: [0.3, 1], keycloak: [2, 0.3], caseFile: [2, 1.7] }, edges: [{ from: "platform", to: "keycloak" }, { from: "platform", to: "caseFile" }], badges: { keycloak: "sessions end", caseFile: "case" } },
-  { cue: 51, layout: { operator: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "operator", to: "platform" }], accent: ["operator"], badges: { operator: "only an operator unblocks" } },
-  { cue: 52, layout: { phoneThief: [0.3, 1], trusted: [1.7, 1], platform: [3, 1] }, edges: [{ from: "phoneThief", to: "trusted" }, { from: "platform", to: "trusted" }], danger: ["phoneThief"] },
-  { cue: 53, layout: { phoneThief: [0.3, 1], trusted: [1.7, 1], platform: [3, 1] }, edges: [{ from: "phoneThief", to: "trusted" }, { from: "platform", to: "trusted" }], danger: ["phoneThief"], packets: [{ from: "platform", to: "trusted", label: "account blocked" }] },
-  { cue: 54, layout: { phoneThief: [0.3, 1], trusted: [1.7, 1], platform: [3, 1] }, edges: [{ from: "phoneThief", to: "trusted" }, { from: "platform", to: "trusted" }], danger: ["phoneThief"], badges: { trusted: "what does it show?" } },
+  // A Friday at the bazaar: the phone is gone.
+  { cue: 0, layout: PHONE, edges: [...PHONE_EDGES], accent: ["trusted"], badges: { trusted: "money phone" } },
+  { cue: 1, layout: PHONE, edges: [...PHONE_EDGES], badges: { aziz: "the bazaar", trusted: "money phone" } },
+  { cue: 2, layout: PHONE, edges: [...PHONE_EDGES], danger: ["trusted"], badges: { trusted: "gone" } },
+  { cue: 3, layout: PHONE, edges: [...PHONE_EDGES], danger: ["trusted"], badges: { trusted: "mobile bank on it" } },
+  { cue: 4, layout: CALL, edges: [...CALL_EDGES], danger: ["trusted"], accent: ["panelOperator"], packets: [{ from: "aziz", to: "panelOperator", label: "sister's phone" }], badges: { trusted: "lost" } },
+  { cue: 5, layout: CALL, edges: [...CALL_EDGES], danger: ["trusted"], badges: { trusted: "lost", panelOperator: "who may?" } },
+  // The bridge: lesson 18's logins, lesson 15's phone review.
+  { cue: 6, layout: { aziz: [0, 1], trusted: [1.5, 1], platform: [3, 1] }, edges: [{ from: "aziz", to: "trusted" }, { from: "trusted", to: "platform" }], badges: { trusted: "password · code" } },
+  { cue: 7, layout: { phoneReview: [0.5, 1], panelOperator: [2.5, 1] }, edges: [{ from: "phoneReview", to: "panelOperator" }], accent: ["phoneReview"], badges: { phoneReview: "lesson 15" } },
+  { cue: 8, layout: SCREEN, edges: [...SCREEN_EDGES], accent: ["adminGw"], badges: { adminGw: "4 actions" } },
+  // Staff identity and one role each.
+  { cue: 9, layout: DOOR, edges: [...DOOR_EDGES], accent: ["panelOperator"] },
+  { cue: 10, layout: DOOR, edges: [...DOOR_EDGES], accent: ["staffId"], packets: [{ from: "panelOperator", to: "staffId", label: "sign in + second factor" }] },
+  { cue: 11, layout: DOOR, edges: [...DOOR_EDGES], badges: { adminGw: "no staff passwords" } },
+  { cue: 12, layout: DOOR, edges: [...DOOR_EDGES], badges: { panelOperator: "quiet time · lifetime" } },
+  { cue: 13, layout: DOOR, edges: [...DOOR_EDGES], badges: { panelOperator: "one role: operator" } },
+  { cue: 14, layout: DOOR, edges: [...DOOR_EDGES], accent: ["adminGw"], badges: { adminGw: "role checked at each action" } },
+  { cue: 15, layout: SCREEN, edges: [...SCREEN_EDGES], badges: { adminGw: "exact phone number", aziz: "no name search" } },
+  // The four actions.
+  { cue: 16, layout: ACT, edges: [...ACT_EDGES], accent: ["adminGw"], badges: { adminGw: "4 actions" } },
+  { cue: 17, layout: ACT, edges: [...ACT_EDGES], accent: ["phoneReview"], badges: { adminGw: "1. phone review" } },
+  { cue: 18, layout: ACT, edges: [...ACT_EDGES], badges: { phoneReview: "approve: level 2" } },
+  { cue: 19, layout: ACT, edges: [...ACT_EDGES], badges: { phoneReview: "reject: level 1 closed · SMS" } },
+  { cue: 20, layout: ACT, edges: [...ACT_EDGES], badges: { adminGw: "2. block" } },
+  { cue: 21, layout: ACT, edges: [...ACT_EDGES], badges: { adminGw: "3. unblock" } },
+  { cue: 22, layout: ACT, edges: [...ACT_EDGES], accent: ["valkey"], badges: { adminGw: "4. reset", valkey: "counters · no-check mark" } },
+  { cue: 23, layout: TRAIL1, edges: [...TRAIL1_EDGES], accent: ["auditTrail"], packets: [{ from: "panelOperator", to: "adminGw", label: "written reason" }], badges: { auditTrail: "operator's identity" } },
+  // Friday: one operator blocks, at once.
+  { cue: 24, layout: SCREEN, edges: [...SCREEN_EDGES], badges: { aziz: "Friday" } },
+  { cue: 25, layout: SCREEN, edges: [...SCREEN_EDGES], accent: ["panelOperator"], packets: [{ from: "panelOperator", to: "adminGw", label: "block: phone lost" }] },
+  { cue: 26, layout: SCREEN, edges: [...SCREEN_EDGES], danger: ["aziz"], badges: { panelOperator: "one operator · at once", aziz: "blocked" } },
+  // What one block does.
+  { cue: 27, layout: GRANTS, edges: [...GRANTS_EDGES], danger: ["trusted"], badges: { platform: "blocked", trusted: "lost" } },
+  { cue: 28, layout: GRANTS, edges: [...GRANTS_EDGES], accent: ["revocation"], danger: ["trusted"], packets: [{ from: "keycloak", to: "trusted", label: "next request", stopAt: 0.6 }], badges: { trusted: "grant ended" } },
+  { cue: 29, layout: GRANTS, edges: [...GRANTS_EDGES], crossed: ["trusted"], badges: { trusted: "no money · no balance" } },
+  { cue: 30, layout: REFUSE, edges: [...REFUSE_EDGES], packets: [{ from: "trusted", to: "platform", label: "request", stopAt: 0.6 }], badges: { platform: "refused" } },
+  { cue: 31, layout: { mobileBank: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "mobileBank", to: "platform" }], packets: [{ from: "mobileBank", to: "platform", label: "login: right password", stopAt: 0.6 }], badges: { platform: "refused" } },
+  { cue: 32, layout: { platform: [0.5, 1], myid: [2.5, 1] }, edges: [{ from: "platform", to: "myid", broken: true }], badges: { myid: "open check stops" } },
+  { cue: 33, layout: KEPT, edges: [...KEPT_EDGES], accent: ["trusted", "identity"], badges: { trusted: "kept", identity: "kept" } },
+  { cue: 34, layout: KEPT, edges: [...KEPT_EDGES], badges: { platform: "a pause, not an end" } },
+  { cue: 35, layout: NOTIFY, edges: [...NOTIFY_EDGES], packets: [{ from: "platform", to: "smsService", label: "account blocked" }, { from: "platform", to: "pushService", label: "account blocked", delay: 30 }] },
+  { cue: 36, layout: TRAIL, edges: [...TRAIL_EDGES], packets: [{ from: "platform", to: "auditTrail", label: "blocked" }, { from: "platform", to: "antifraud", label: "event", delay: 30 }] },
+  // A block is not the password lock; who may block.
+  { cue: 37, layout: { aziz: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "aziz", to: "platform" }], badges: { platform: "block ≠ lock" } },
+  { cue: 38, layout: { aziz: [0.5, 1], platform: [2.5, 1] }, edges: [{ from: "aziz", to: "platform" }], badges: { aziz: "lock: ends by itself", platform: "block: operators lift it" } },
+  { cue: 39, layout: WHO, edges: [{ from: "panelOperator", to: "platform" }], accent: ["panelOperator"], badges: { panelOperator: "only an operator · a reason" } },
+  { cue: 40, layout: WHO, edges: [{ from: "panelOperator", to: "platform" }], badges: { platform: "never by itself" } },
+  // Sunday: the phone comes back.
+  { cue: 41, layout: { finder: [0.5, 1], trusted: [2.5, 1] }, edges: [{ from: "finder", to: "trusted" }], badges: { finder: "Saturday" } },
+  { cue: 42, layout: BACK, edges: [...BACK_EDGES], accent: ["aziz"], packets: [{ from: "trusted", to: "aziz", label: "handed in" }], badges: { finder: "Sunday" } },
+  { cue: 43, layout: CALL, edges: [{ from: "aziz", to: "panelOperator", label: "unblock, please" }], accent: ["trusted"], badges: { trusted: "back" } },
+  // The unblock: maker-checker.
+  { cue: 44, layout: MC, edges: [...MC_EDGES], accent: ["panelOperator"], packets: [{ from: "panelOperator", to: "proposal", label: "unblock + reason" }] },
+  { cue: 45, layout: MC, edges: [...MC_EDGES], accent: ["proposal"], badges: { proposal: "waits", platform: "nothing yet" } },
+  { cue: 46, layout: MC, edges: [...MC_EDGES], accent: ["secondOperator"], packets: [{ from: "secondOperator", to: "proposal", label: "approve" }] },
+  { cue: 47, layout: MC, edges: [...MC_EDGES], badges: { panelOperator: "cannot approve own" } },
+  { cue: 48, layout: MC, edges: [...MC_EDGES], accent: ["proposal"], badges: { proposal: "maker-checker" } },
+  { cue: 49, layout: MC, edges: [...MC_EDGES], badges: { panelOperator: "maker", secondOperator: "checker" } },
+  { cue: 50, layout: MC, edges: [...MC_EDGES], accent: ["platform"], packets: [{ from: "proposal", to: "platform", label: "unblock" }] },
+  { cue: 51, layout: { platform: [0.5, 1], trusted: [2.5, 1] }, edges: [{ from: "platform", to: "trusted" }], accent: ["trusted"], badges: { trusted: "state from before" } },
+  { cue: 52, layout: { platform: [0.5, 1], trusted: [2.5, 1] }, edges: [{ from: "platform", to: "trusted" }], accent: ["trusted"], badges: { trusted: "money phone · no MyID" } },
+  { cue: 53, layout: NOTIFY, edges: [...NOTIFY_EDGES], packets: [{ from: "platform", to: "smsService", label: "account unblocked" }, { from: "platform", to: "pushService", label: "account unblocked", delay: 30 }] },
+  { cue: 54, layout: BOTH, edges: [...BOTH_EDGES], accent: ["secondOperator"], badges: { phoneReview: "approval: two", valkey: "reset: two" } },
+  { cue: 55, layout: { panelOperator: [0.5, 1], phoneReview: [2.5, 1] }, edges: [{ from: "panelOperator", to: "phoneReview" }], badges: { phoneReview: "reject: one operator" } },
+  // The check.
+  { cue: 56, layout: CHECK, edges: [...CHECK_EDGES], badges: { panelOperator: "block: one", secondOperator: "unblock: two", adminGw: "why?" } },
+  { cue: 57, layout: CHECK, edges: [...CHECK_EDGES], accent: ["secondOperator"], badges: { panelOperator: "takes access away", secondOperator: "gives it back" } },
+  // Summary and hand-off.
+  { cue: 58, layout: DOOR, edges: [...DOOR_EDGES], accent: ["staffId"], badges: { staffId: "second factor · one role" } },
+  { cue: 59, layout: ACT, edges: [...ACT_EDGES], accent: ["adminGw"], badges: { adminGw: "review · block · unblock · reset" } },
+  { cue: 60, layout: CHECK, edges: [...CHECK_EDGES], badges: { panelOperator: "block: at once", secondOperator: "access back: approves" } },
+  { cue: 61, layout: TRAIL1, edges: [...TRAIL1_EDGES], accent: ["auditTrail"], badges: { auditTrail: "reason · audit event" } },
+  { cue: 62, layout: LAST, edges: [...LAST_EDGES], packets: [{ from: "pushService", to: "trusted", label: "account blocked" }], badges: { finder: "one night" } },
+  { cue: 63, layout: LAST, edges: [...LAST_EDGES], accent: ["pushService"], badges: { pushService: "lesson 20" } },
 ];

@@ -1,223 +1,255 @@
 1
-00:00:00,050 --> 00:00:05,496
-Friday, nine at night, the bazaar is loud, and Aziz's bag is lighter than it was.
+00:00:00,050 --> 00:00:02,400
+A Friday, months after the money phone.
 
 2
-00:00:05,546 --> 00:00:09,672
-His phone is gone, with the mobile bank and the marketplace still signed in.
+00:00:02,450 --> 00:00:05,880
+Aziz is at the bazaar, and the bazaar is loud.
 
 3
-00:00:09,722 --> 00:00:16,152
-From his sister's phone he calls the bank and says one sentence: lock everything until I have a phone again.
+00:00:05,930 --> 00:00:08,928
+He reaches for his phone, and his pocket is empty.
 
 4
-00:00:16,202 --> 00:00:20,184
-Who in this system is allowed to lock Aziz out of his own account?
+00:00:08,978 --> 00:00:11,544
+The phone is gone, and the mobile bank is on it.
 
 5
-00:00:20,234 --> 00:00:26,472
-In Lesson 33, a refresh that gives a different personal identification number ended in a block.
+00:00:11,594 --> 00:00:16,944
+From his sister's phone, he calls the bank and says one thing: lock everything.
 
 6
-00:00:26,522 --> 00:00:31,824
-This lesson opens that block: who can set it, what it does at once, and who can lift it.
+00:00:16,994 --> 00:00:20,976
+Who in this system is allowed to lock Aziz out of his own account?
 
 7
-00:00:31,874 --> 00:00:36,744
-The list of who can block is short, and I think its shortness is the design.
+00:00:21,026 --> 00:00:27,408
+Lesson 18 ended with normal days: Aziz logs in on the same phone, with his password and a code.
 
 8
-00:00:36,794 --> 00:00:45,144
-Only two: the platform itself, when a refresh gives a different personal identification number, and an operator, with a reason.
+00:00:27,458 --> 00:00:32,424
+Lesson 15 sent one kind of question to a person at the bank: the phone review.
 
 9
-00:00:45,194 --> 00:00:48,144
-No other automatic block exists in this version.
+00:00:32,474 --> 00:00:37,800
+This lesson opens the panel where those people work, and shows the four things that they can do there.
 
 10
-00:00:48,194 --> 00:00:53,064
-A number that the mobile operator gives to a new person never blocks its old owner.
+00:00:37,850 --> 00:00:39,672
+Start with the people.
 
 11
-00:00:53,114 --> 00:00:56,040
-And a failed face check never blocks anybody.
+00:00:39,722 --> 00:00:45,720
+Bank staff sign in to the panel only through the bank's own staff identity, with a second factor there.
 
 12
-00:00:56,090 --> 00:01:01,584
-It only counts an attempt, for the phone number, the device and the personal identification number.
+00:00:45,770 --> 00:00:51,384
+The platform keeps no staff passwords, so there is no staff password list in it to steal.
 
 13
-00:01:01,634 --> 00:01:10,008
-After the first counted failure and after the second, a cool-down starts, and after the daily cap no attempt is possible until the next day.
+00:00:51,434 --> 00:00:58,104
+A staff session ends after a quiet time, and after a fixed lifetime, and the bank sets both.
 
 14
-00:01:10,058 --> 00:01:18,072
-Only failures that the person or the capture caused are counted: a wrong document, a face that does not match, a poor image.
+00:00:58,154 --> 00:01:03,840
+Each staff user has exactly one role, and only the operator role acts on customers.
 
 15
-00:01:18,122 --> 00:01:22,296
-A failure that the service caused, like a timeout, is not counted.
+00:01:03,890 --> 00:01:08,808
+The platform checks the role at each action on the server, not only on the screen.
 
 16
-00:01:22,346 --> 00:01:24,168
-Back to Aziz.
+00:01:08,858 --> 00:01:13,824
+An operator finds a customer only with an exact phone number, never with a name.
 
 17
-00:01:24,218 --> 00:01:30,600
-The operator finds him in the panel and presses block, with the reason: phone stolen, customer request.
+00:01:13,874 --> 00:01:17,688
+In this panel, an operator has exactly four actions.
 
 18
-00:01:30,650 --> 00:01:32,520
-Now watch what one block does.
+00:01:17,738 --> 00:01:22,464
+First, the phone review from Lesson 15: approve it, or reject it.
 
 19
-00:01:32,570 --> 00:01:37,944
-It ends every access grant of Aziz, in every app, on every device.
+00:01:22,514 --> 00:01:24,816
+An approval gives the customer level two.
 
 20
-00:01:37,994 --> 00:01:44,808
-It refuses every request from each of his devices, so the phone in the thief's pocket gets an error, not a balance.
+00:01:24,866 --> 00:01:31,368
+A rejection closes the customer at level one at once, and an SMS goes to the number.
 
 21
-00:01:44,858 --> 00:01:48,432
-It refuses a registration or a login with his number.
+00:01:31,418 --> 00:01:33,240
+Second, the block.
 
 22
-00:01:48,482 --> 00:01:51,072
-It stops each open proofing session.
+00:01:33,290 --> 00:01:35,112
+Third, the unblock.
 
 23
-00:01:51,122 --> 00:01:56,904
-It keeps his devices and his identity data, because a block is a pause, not a deletion.
+00:01:35,162 --> 00:01:40,728
+Fourth, a reset of the attempt counters, or of the mark that stops new MyID checks.
 
 24
-00:01:56,954 --> 00:02:00,048
-It sends the security notification account blocked.
+00:01:40,778 --> 00:01:47,232
+Each action needs a written reason, and each action writes an audit event with the identity of the operator.
 
 25
-00:02:00,098 --> 00:02:02,904
-It opens a case, or updates an open one.
+00:01:47,282 --> 00:01:49,104
+Back to Friday.
 
 26
-00:02:02,954 --> 00:02:07,704
-And it writes an audit event and sends an event to the bank's antifraud system.
+00:01:49,154 --> 00:01:56,736
+The operator types Aziz's number, finds him, and presses block, with the reason: phone lost, customer request.
 
 27
-00:02:07,754 --> 00:02:10,680
-How can all of that be true at the very next request?
+00:01:56,786 --> 00:02:00,240
+The block starts at once, and one operator is enough.
 
 28
-00:02:10,730 --> 00:02:17,760
-The block makes three writes together: the customer state in Postgres, the sessions in Keycloak, and the outbox.
+00:02:00,290 --> 00:02:02,160
+Now watch what one block does.
 
 29
-00:02:17,810 --> 00:02:24,648
-The gateway also keeps a revocation list in Valkey, and every renewal passes the binding check first.
+00:02:02,210 --> 00:02:08,088
+Every access grant of Aziz ends at its next request, as Lesson 17 showed.
 
 30
-00:02:24,698 --> 00:02:28,800
-So the stop is real at the next request, even at the busiest hour.
+00:02:08,138 --> 00:02:12,528
+So the lost phone cannot move money, and it cannot even show a balance.
 
 31
-00:02:28,850 --> 00:02:35,232
-The operator path and the automatic path make the same three writes, and only the actor is different.
+00:02:12,578 --> 00:02:15,384
+Every request from his devices is refused.
 
 32
-00:02:35,282 --> 00:02:37,104
-Now the case.
+00:02:15,434 --> 00:02:19,512
+A login with his number is refused too, even with the right password.
 
 33
-00:02:37,154 --> 00:02:40,224
-A case is the operator's folder for one problem.
+00:02:19,562 --> 00:02:21,432
+An open MyID check stops.
 
 34
-00:02:40,274 --> 00:02:45,840
-It shows the customer, the trigger, the related values, masked, and the comparison notes.
+00:02:21,482 --> 00:02:27,120
+But nothing is deleted: his devices and his verified identity stay as they are.
 
 35
-00:02:45,890 --> 00:02:54,480
-Cases also open for other reasons: data that the customer refused, a stopped re-registration, a link that was refused or expired.
+00:02:27,170 --> 00:02:29,448
+A block is a pause, not an end.
 
 36
-00:02:54,530 --> 00:02:56,472
-Phone reviews have their own list.
+00:02:29,498 --> 00:02:36,864
+The platform sends the message account blocked, as an SMS to his number and as a push to his devices.
 
 37
-00:02:56,522 --> 00:03:03,336
-Each case ends with one result: no action, unblocked, link set by the bank, or customer contacted.
+00:02:36,914 --> 00:02:41,424
+It also writes an audit event and tells the antifraud system of the bank.
 
 38
-00:03:03,386 --> 00:03:06,720
-On Saturday, Aziz has a new phone with his old number.
+00:02:41,474 --> 00:02:44,616
+A block is not the password lock of Lesson 11.
 
 39
-00:03:06,770 --> 00:03:10,488
-He calls again, and the operator unblocks him, with a reason.
+00:02:44,666 --> 00:02:50,400
+That lock ends by itself after a time, but a block ends only when the operators lift it.
 
 40
-00:03:10,538 --> 00:03:12,432
-Only an operator can unblock.
+00:02:50,450 --> 00:02:55,104
+So the answer to the first question is short: only an operator, with a reason.
 
 41
-00:03:12,482 --> 00:03:18,744
-An unblock makes the devices trusted again and sends the notification account unblocked, with no new proofing.
+00:02:55,154 --> 00:02:58,272
+The platform never blocks a customer by itself.
 
 42
-00:03:18,794 --> 00:03:21,432
-Read that once more: the devices.
+00:02:58,322 --> 00:03:01,560
+On Saturday, a stranger finds the phone in the bazaar.
 
 43
-00:03:21,482 --> 00:03:24,696
-All of them, and that includes the phone the thief has.
+00:03:01,610 --> 00:03:07,200
+On Sunday, the stranger hands it in at the bazaar office, and Aziz has his phone again.
 
 44
-00:03:24,746 --> 00:03:30,096
-So the careful operator first revokes the stolen phone, and only then unblocks.
+00:03:07,250 --> 00:03:09,072
+He calls the bank one more time.
 
 45
-00:03:30,146 --> 00:03:35,016
-The new phone then joins like any new device, with the checks of Lesson 24.
+00:03:09,122 --> 00:03:12,504
+The first operator asks for an unblock, with a reason.
 
 46
-00:03:35,066 --> 00:03:37,848
-There is one exception to the easy unblock.
+00:03:12,554 --> 00:03:16,296
+Nothing happens yet: the request waits as a proposal.
 
 47
-00:03:37,898 --> 00:03:43,896
-When the block came from a different personal identification number, an unblock does not give back any device.
+00:03:16,346 --> 00:03:20,352
+A second operator opens it, reads the reason, and approves it.
 
 48
-00:03:43,946 --> 00:03:51,552
-The customer must log in on a device and pass a full proofing, and only then does the platform record a trusted device again.
+00:03:20,402 --> 00:03:23,544
+The operator who asked can never approve his own request.
 
 49
-00:03:51,602 --> 00:03:57,864
-That makes sense to me: after a mismatch, the platform does not know yet which face was the real one.
+00:03:23,594 --> 00:03:26,136
+This rule has a name: maker-checker.
 
 50
-00:03:57,914 --> 00:04:03,480
-To recap: two can block, the platform on a different number and an operator with a reason.
+00:03:26,186 --> 00:03:30,192
+One person makes the request, and a different person checks it.
 
 51
-00:04:03,530 --> 00:04:09,000
-A block ends every session at the next request, keeps the data, and opens a case.
+00:03:30,242 --> 00:03:32,352
+Only now does the unblock start.
 
 52
-00:04:09,050 --> 00:04:14,328
-Only an operator unblocks, and the devices come back, except after a mismatch.
+00:03:32,402 --> 00:03:35,376
+Each device gets back its state from before the block.
 
 53
-00:04:14,378 --> 00:04:17,520
-But one thing from Friday night is still strange.
+00:03:35,426 --> 00:03:40,104
+His phone is the trusted phone again, the money phone, with no new MyID check.
 
 54
-00:04:17,570 --> 00:04:24,072
-Aziz got account blocked by SMS and by push, and one of his devices was in a thief's pocket.
+00:03:40,154 --> 00:03:45,504
+The platform sends the message account unblocked, and Aziz opens the mobile bank.
 
 55
-00:04:24,122 --> 00:04:26,304
-What can a message on a stolen phone show?
+00:03:45,554 --> 00:03:50,280
+The same two-person rule covers the approval of a phone review, and the reset.
 
 56
-00:04:26,354 --> 00:04:28,488
-Next: notifications.
+00:03:50,330 --> 00:03:55,104
+A rejection of a phone review gives nothing back, so it needs no second operator.
+
+57
+00:03:55,154 --> 00:04:00,312
+Now a question for you: why does a block need one operator, but an unblock needs two?
+
+58
+00:04:00,362 --> 00:04:09,816
+Because a block only takes access away and must be fast, but an unblock gives access back, and one tired or tricked person must not do that alone.
+
+59
+00:04:09,866 --> 00:04:15,384
+Staff come in through the bank's own staff identity, with a second factor and one role each.
+
+60
+00:04:15,434 --> 00:04:21,168
+An operator has four actions: the phone review, the block, the unblock and the reset.
+
+61
+00:04:21,218 --> 00:04:27,024
+One operator blocks at once, and each action that gives access back needs a second operator.
+
+62
+00:04:27,074 --> 00:04:29,952
+Every action has a reason and an audit event.
+
+63
+00:04:30,002 --> 00:04:34,440
+The stranger held the phone for a night, and the push account blocked was on its screen.
+
+64
+00:04:34,490 --> 00:04:40,080
+Lesson 20 shows what that push says, and why it says almost nothing about Aziz.
