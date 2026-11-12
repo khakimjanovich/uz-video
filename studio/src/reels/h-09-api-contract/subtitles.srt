@@ -1,267 +1,247 @@
 1
-00:00:00,050 --> 00:00:02,448
-Monday morning, in the mobile bank team.
+00:00:00,050 --> 00:00:07,248
+Suppose Jasur, an iOS developer in the mobile bank team, gets his task: connect the app to heeyID.
 
 2
-00:00:02,498 --> 00:00:07,824
-Jasur, an iOS developer, gets his task: connect the app to heeyID.
-
-3
-00:00:07,874 --> 00:00:12,840
+00:00:07,298 --> 00:00:12,264
 He searches for the heeyID SDK, a package that he can add with one line.
 
-4
-00:00:12,890 --> 00:00:14,712
+3
+00:00:12,314 --> 00:00:14,136
 There is none.
 
-5
-00:00:14,762 --> 00:00:20,624
+4
+00:00:14,186 --> 00:00:20,048
 So how does a team build against heeyID with no SDK?
 
+5
+00:00:20,098 --> 00:00:24,920
+Lesson 6 kept every key in the Vault of the bank, and no key reached a phone.
+
 6
-00:00:20,674 --> 00:00:25,040
-In Lesson 8, every key stayed in the Vault of the bank, and none reached a phone.
+00:00:24,970 --> 00:00:32,336
+This lesson shows what reaches the mobile bank instead: a contract, a guide, and a short list of things that the app may keep.
 
 7
-00:00:25,090 --> 00:00:31,640
-This lesson shows what reaches the apps instead: a contract, a guide, and a short list of things that an app may keep.
-
-8
-00:00:31,690 --> 00:00:34,304
+00:00:32,386 --> 00:00:35,000
 First, why there is no SDK.
 
+8
+00:00:35,050 --> 00:00:37,640
+The bank's own team builds the mobile bank.
+
 9
-00:00:34,354 --> 00:00:37,160
-The teams of the bank build the apps of the bank.
+00:00:37,690 --> 00:00:43,808
+An SDK from heeyID would add more work, and a second release train beside the app.
 
 10
-00:00:37,210 --> 00:00:44,168
-An SDK from heeyID would add work before the first release, and a second release train for every app.
+00:00:43,858 --> 00:00:50,792
+No SDK is the honest choice: the contract is the product, and each team owns its own code.
 
 11
-00:00:44,218 --> 00:00:52,112
-I think no SDK is the honest choice for a first release: the contract is the product, and each team owns its own code.
-
-12
-00:00:52,162 --> 00:00:54,248
+00:00:50,842 --> 00:00:52,928
 So heeyID gives three things.
 
-13
-00:00:54,298 --> 00:00:56,120
+12
+00:00:52,978 --> 00:00:54,800
 The REST API.
 
-14
-00:00:56,170 --> 00:00:59,120
+13
+00:00:54,850 --> 00:00:57,800
 The OpenAPI contract that describes it.
 
-15
-00:00:59,170 --> 00:01:02,120
-And an integration guide with the rules for the apps.
+14
+00:00:57,850 --> 00:01:00,752
+And an integration guide with the rules for the app.
 
-16
-00:01:02,170 --> 00:01:08,048
+15
+00:01:00,802 --> 00:01:06,680
 The contract describes every call: the path, the request, the answer and the errors.
 
-17
-00:01:08,098 --> 00:01:19,544
-There is one call for each step: start a registration, verify the code, set the password, log in, approve a login, give consent, open a proofing session and renew a session.
+16
+00:01:06,730 --> 00:01:18,320
+There is one call for each step: start a registration, verify the code, set the password, log in, give consent, open a proofing session, set the app PIN and renew a session.
 
-18
-00:01:19,594 --> 00:01:25,976
+17
+00:01:18,370 --> 00:01:24,752
 Each request carries a correlation identifier, and after registration also the device identifier.
 
-19
-00:01:26,026 --> 00:01:34,472
+18
+00:01:24,802 --> 00:01:33,248
 Each error has one shape: a code, a reason key, a message for the customer, and whether a retry is allowed, and after how long.
 
+19
+00:01:33,298 --> 00:01:36,848
+Each code names one outcome of the product, one to one.
+
 20
-00:01:34,522 --> 00:01:38,024
-The codes are the error outcomes of the requirements, one to one.
+00:01:36,898 --> 00:01:40,880
+So Jasur's app never reads a sentence to find out what went wrong.
 
 21
-00:01:38,074 --> 00:01:42,416
-So the app of Jasur never reads a sentence to find out what went wrong.
-
-22
-00:01:42,466 --> 00:01:45,176
+00:01:40,930 --> 00:01:43,640
 It reads the code, and shows the message.
 
-23
-00:01:45,226 --> 00:01:47,936
+22
+00:01:43,690 --> 00:01:46,400
 Then come the SDKs that do exist.
 
-24
-00:01:47,986 --> 00:01:56,192
-The bank adds the MyID SDK and the TAF SDK to the master app, and only to the master app.
+23
+00:01:46,450 --> 00:01:53,120
+The bank adds the MyID SDK and the TAF SDK to the mobile bank.
 
-25
-00:01:56,242 --> 00:01:59,072
+24
+00:01:53,170 --> 00:01:56,000
 MyID runs as a native check inside the app.
 
-26
-00:01:59,122 --> 00:02:05,624
+25
+00:01:56,050 --> 00:02:02,552
 The backend opens the session, and the customer never leaves the app: no web view, and no web frame.
 
-27
-00:02:05,674 --> 00:02:08,672
+26
+00:02:02,602 --> 00:02:05,600
 The MyID credential never goes to the phone.
 
-28
-00:02:08,722 --> 00:02:13,376
-Each app also gets the push SDK of the bank, to receive the wake-up signals.
+27
+00:02:05,650 --> 00:02:10,712
+The mobile bank also gets the push SDK of the bank, to receive the wake-up signals.
 
-29
-00:02:13,426 --> 00:02:15,248
+28
+00:02:10,762 --> 00:02:12,584
 Now the guide.
 
+29
+00:02:12,634 --> 00:02:17,288
+Its most important page is a table: what the app can keep, and where.
+
 30
-00:02:15,298 --> 00:02:20,072
-Its most important page is a table: what an app can keep, and where.
+00:02:17,338 --> 00:02:25,496
+The device identifier, and the identifier of a running registration or login, in the storage that the Keychain or the Keystore protects.
 
 31
-00:02:20,122 --> 00:02:24,752
-The device identifier, in the storage that the Keychain or the Keystore protects.
-
-32
-00:02:24,802 --> 00:02:30,080
+00:02:25,546 --> 00:02:30,824
 The refresh token, in the Keychain, or in storage that the Android Keystore protects.
 
-33
-00:02:30,130 --> 00:02:36,920
+32
+00:02:30,874 --> 00:02:37,664
 The access token and the identity summary, in memory only, until they expire or the app closes.
 
-34
-00:02:36,970 --> 00:02:42,272
-An approval request, in memory and on the screen, until Aziz answers it.
-
-35
-00:02:42,322 --> 00:02:44,144
+33
+00:02:37,714 --> 00:02:39,536
 The push token.
 
-36
-00:02:44,194 --> 00:02:48,968
-The app PIN, only as a slow, salted hash, on the device.
+34
+00:02:39,586 --> 00:02:45,752
+The app PIN, only as a slow, salted hash, in the Keychain or the Keystore.
 
-37
-00:02:49,018 --> 00:02:50,840
+35
+00:02:45,802 --> 00:02:47,624
 And the language.
 
-38
-00:02:50,890 --> 00:02:53,744
-Then the other column: what an app never keeps.
+36
+00:02:47,674 --> 00:02:50,600
+Then the other column: what the app never keeps.
 
-39
-00:02:53,794 --> 00:02:55,616
+37
+00:02:50,650 --> 00:02:52,472
 The password.
 
-40
-00:02:55,666 --> 00:02:57,272
+38
+00:02:52,522 --> 00:02:54,344
 The MyID credential.
 
-41
-00:02:57,322 --> 00:03:00,032
+39
+00:02:54,394 --> 00:02:57,104
 The MyID result code, after its one upload.
 
-42
-00:03:00,082 --> 00:03:02,000
+40
+00:02:57,154 --> 00:02:59,072
 The personal identification number.
 
-43
-00:03:02,050 --> 00:03:04,904
+41
+00:02:59,122 --> 00:03:01,976
 Document data, addresses and images.
 
-44
-00:03:04,954 --> 00:03:07,616
+42
+00:03:02,026 --> 00:03:04,688
 A one-time code, after Aziz types it.
 
-45
-00:03:07,666 --> 00:03:09,824
-A limit that the gateway uses.
+43
+00:03:04,738 --> 00:03:10,880
+A limit that the gateway uses: the app may show a counter, but the server applies every limit.
 
-46
-00:03:09,874 --> 00:03:11,696
+44
+00:03:10,930 --> 00:03:12,752
 And biometric data.
 
-47
-00:03:11,746 --> 00:03:13,568
-The row about limits matters.
-
-48
-00:03:13,618 --> 00:03:15,992
-An app may show a counter, for comfort.
-
-49
-00:03:16,042 --> 00:03:20,120
-But the platform applies every limit itself, on the server.
-
-50
-00:03:20,170 --> 00:03:23,672
-A limit in the app is only a convenience, never a control.
-
-51
-00:03:23,722 --> 00:03:26,024
+45
+00:03:12,802 --> 00:03:15,104
 Now be honest about the edge of this design.
 
-52
-00:03:26,074 --> 00:03:28,976
+46
+00:03:15,154 --> 00:03:18,056
 heeyID cannot enforce these rules inside an app.
 
-53
-00:03:29,026 --> 00:03:31,904
-It cannot look into the Keychain on the phone of Aziz.
+47
+00:03:18,106 --> 00:03:20,888
+It cannot look into the Keychain on Aziz's phone.
 
-54
-00:03:31,954 --> 00:03:36,176
-So the guide gives the rules, and the API tests keep the apps correct.
+48
+00:03:20,938 --> 00:03:25,376
+So the guide gives the rules, and the API tests keep the app correct.
 
-55
-00:03:36,226 --> 00:03:39,488
-Each app is a client of the contract, and nothing more.
+49
+00:03:25,426 --> 00:03:29,144
+The mobile bank is a client of the contract, and nothing more.
 
-56
-00:03:39,538 --> 00:03:41,360
+50
+00:03:29,194 --> 00:03:31,016
 Back to Jasur.
 
-57
-00:03:41,410 --> 00:03:49,904
-By Wednesday, his app calls the contract, keeps the device identifier in the Keychain and the access token in memory, and shows the errors by code.
+51
+00:03:31,066 --> 00:03:39,296
+In the end, his app calls the contract, keeps the device identifier in the Keychain and the access token in memory, and shows the errors by code.
 
-58
-00:03:49,954 --> 00:03:55,928
+52
+00:03:39,346 --> 00:03:45,320
 He adds the MyID and TAF SDKs, and nothing from heeyID.
 
-59
-00:03:55,978 --> 00:04:01,424
-When the contract changes, the OpenAPI file shows the change first.
+53
+00:03:45,370 --> 00:03:51,104
+The contract lives apart from the platform code, so every team reads the same file.
 
-60
-00:04:01,474 --> 00:04:05,888
-To recap: there is no heeyID SDK in this release.
+54
+00:03:51,154 --> 00:03:55,136
+When the contract changes, that file shows the change first.
 
-61
-00:04:05,938 --> 00:04:11,408
+55
+00:03:55,186 --> 00:04:02,848
+Check yourself: Aziz types his password in the mobile bank, so may the app keep it for next time?
+
+56
+00:04:02,898 --> 00:04:07,816
+No: the password is on the never list, so the app sends it once and forgets it.
+
+57
+00:04:07,866 --> 00:04:10,504
+There is no heeyID SDK.
+
+58
+00:04:10,554 --> 00:04:16,024
 There is the REST API, the OpenAPI contract and the integration guide.
 
-62
-00:04:11,458 --> 00:04:16,232
-The MyID and TAF SDKs are only in the master app.
+59
+00:04:16,074 --> 00:04:21,016
+The MyID and TAF SDKs live in the mobile bank.
 
-63
-00:04:16,282 --> 00:04:20,816
-There is a short list of what an app may keep, and a longer list of what it never keeps.
+60
+00:04:21,066 --> 00:04:25,768
+There is a short list of what the app may keep, and a longer list of what it never keeps.
 
-64
-00:04:20,866 --> 00:04:23,360
-And the server applies every limit.
-
-65
-00:04:23,410 --> 00:04:27,800
+61
+00:04:25,818 --> 00:04:30,208
 With these foundations in place, Aziz can type his phone number for the first time.
 
-66
-00:04:27,850 --> 00:04:30,560
-What happens between that number and level one?
-
-67
-00:04:30,610 --> 00:04:32,504
-Next: registration.
+62
+00:04:30,258 --> 00:04:34,240
+Lesson 8 follows that number, from the first code to level one.
