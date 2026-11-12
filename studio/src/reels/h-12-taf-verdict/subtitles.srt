@@ -7,313 +7,309 @@ Monday, ten in the morning.
 Aziz sits in a café, on the café Wi-Fi, and logs in to the mobile bank.
 
 3
-00:00:07,178 --> 00:00:09,672
-He types the code from the SMS.
+00:00:07,178 --> 00:00:10,536
+He types his password, then the code from the SMS.
 
 4
-00:00:09,722 --> 00:00:16,304
+00:00:10,586 --> 00:00:15,168
 It is the right code, and still the app says: We cannot complete this now.
 
 5
-00:00:16,354 --> 00:00:18,728
+00:00:15,218 --> 00:00:19,592
 Why would a platform refuse a correct code?
 
 6
-00:00:18,778 --> 00:00:25,208
-In Lesson 11, the counters guarded the code itself: its life, its tries, its requests.
+00:00:19,642 --> 00:00:25,736
+The counters of Lesson 9 guard the code itself: its life, its tries, its requests.
 
 7
-00:00:25,258 --> 00:00:28,448
-This lesson adds the check that no counter can do.
+00:00:25,786 --> 00:00:29,264
+They cannot see where the code arrived, but TAF can.
 
 8
-00:00:28,498 --> 00:00:30,752
-TAF looks at where the code arrived.
+00:00:29,314 --> 00:00:33,032
+And TAF works only in the master app, the mobile bank.
 
 9
-00:00:30,802 --> 00:00:32,864
-And it does this only in the master app.
-
-10
-00:00:32,914 --> 00:00:35,120
+00:00:33,082 --> 00:00:35,288
 First, what TAF is.
 
+10
+00:00:35,338 --> 00:00:37,856
+It is a state service of the mobile operators.
+
 11
-00:00:35,170 --> 00:00:40,472
-It is a state service of the mobile operators, and its agent already runs in the bank's network.
+00:00:37,906 --> 00:00:43,808
+Its agent already runs in the bank's network, and heeyID talks to it only through its TAF adapter.
 
 12
-00:00:40,522 --> 00:00:45,824
+00:00:43,858 --> 00:00:49,160
 In the master app, TAF sends every code for a registration and a login.
 
 13
-00:00:45,874 --> 00:00:50,888
+00:00:49,210 --> 00:00:54,224
 Its part inside the app checks that the SMS arrived on this phone, with this SIM card.
 
 14
-00:00:50,938 --> 00:00:53,360
+00:00:54,274 --> 00:00:56,696
 Then TAF gives a verdict.
 
 15
-00:00:53,410 --> 00:00:57,344
-I think the most important word in this lesson is recommendation.
+00:00:56,746 --> 00:01:00,176
+The most important word in this lesson is recommendation.
 
 16
-00:00:57,394 --> 00:00:59,216
+00:01:00,226 --> 00:01:02,048
 The verdict is advice.
 
 17
-00:00:59,266 --> 00:01:02,864
+00:01:02,098 --> 00:01:05,696
 The platform makes the decision, with the policy of the bank.
 
 18
-00:01:02,914 --> 00:01:04,736
+00:01:05,746 --> 00:01:07,568
 The app has a job too.
 
 19
-00:01:04,786 --> 00:01:07,568
+00:01:07,618 --> 00:01:10,400
 It starts the TAF part after an install.
 
 20
-00:01:07,618 --> 00:01:10,952
-It sends the id of that part with each code request.
+00:01:10,450 --> 00:01:13,952
+It sends the identifier of that part with each code request.
 
 21
-00:01:11,002 --> 00:01:14,768
+00:01:14,002 --> 00:01:17,768
 It gives each typed code to the TAF part first.
 
 22
-00:01:14,818 --> 00:01:18,176
+00:01:17,818 --> 00:01:21,176
 And it tells the TAF part at each logout.
 
 23
-00:01:18,226 --> 00:01:22,040
+00:01:21,226 --> 00:01:25,040
 If the app skips a step, the verdict simply comes back negative.
 
 24
-00:01:22,090 --> 00:01:26,624
+00:01:25,090 --> 00:01:29,624
 After a correct code, the platform asks TAF for two verdicts.
 
 25
-00:01:26,674 --> 00:01:40,592
+00:01:29,674 --> 00:01:43,592
 The basic verdict is seven plain answers: the account is active, the code is usable, the SMS was sent, the status is valid, the code was verified, the device and the SIM card match, and the phone is not a clone.
 
 26
-00:01:40,642 --> 00:01:45,752
+00:01:43,642 --> 00:01:48,752
 The risk verdict is a colour: Green, Yellow or Red, with a main reason.
 
 27
-00:01:45,802 --> 00:01:52,664
+00:01:48,802 --> 00:01:55,664
 The risk verdict can take a moment, so the platform asks again at a set interval, until the configured waiting time ends.
 
 28
-00:01:52,714 --> 00:01:56,096
+00:01:55,714 --> 00:01:59,096
 If it is still not ready, the basic verdict decides.
 
 29
-00:01:56,146 --> 00:01:58,520
+00:01:59,146 --> 00:02:01,520
 All seven answers true means Green.
 
 30
-00:01:58,570 --> 00:02:00,392
+00:02:01,570 --> 00:02:03,392
 One false answer means Red.
 
 31
-00:02:00,442 --> 00:02:02,264
-Back to the café.
+00:02:03,442 --> 00:02:09,176
+The platform records the result, where it came from, and whether the device and the SIM card matched.
 
 32
-00:02:02,314 --> 00:02:04,712
-The risk verdict did not arrive in time.
+00:02:09,226 --> 00:02:11,792
+Lesson 16 needs that SIM match.
 
 33
-00:02:04,762 --> 00:02:10,784
-On the café Wi-Fi, the device and the SIM card did not match, so the basic verdict said Red.
+00:02:11,842 --> 00:02:13,664
+Back to the café.
 
 34
-00:02:10,834 --> 00:02:12,656
-Red means refuse.
+00:02:13,714 --> 00:02:16,112
+The risk verdict did not arrive in time.
 
 35
-00:02:12,706 --> 00:02:14,408
-The login attempt ends.
+00:02:16,162 --> 00:02:22,184
+On the café Wi-Fi, the device and the SIM card did not match, so the basic verdict said Red.
 
 36
-00:02:14,458 --> 00:02:18,056
-But a refusal blocks nothing, and it changes no counter.
+00:02:22,234 --> 00:02:24,056
+Red means refuse.
 
 37
-00:02:18,106 --> 00:02:23,528
-The app shows one piece of advice: use the mobile network of your operator, not Wi-Fi.
+00:02:24,106 --> 00:02:25,928
+The login attempt ends.
 
 38
-00:02:23,578 --> 00:02:26,456
-Aziz switches off the Wi-Fi and tries again.
+00:02:25,978 --> 00:02:29,576
+But a refusal blocks nothing, and it changes no counter.
 
 39
-00:02:26,506 --> 00:02:28,400
-This time the verdict is Green.
+00:02:29,626 --> 00:02:35,048
+The app shows one piece of advice: use the mobile network of your operator, not Wi-Fi.
 
 40
-00:02:28,450 --> 00:02:34,952
-The login continues, and his session in the master app gets the stronger rank, which Lesson 29 explains.
+00:02:35,098 --> 00:02:37,976
+Aziz switches off the Wi-Fi and tries again.
 
 41
-00:02:35,002 --> 00:02:37,160
-Yellow is the careful colour.
+00:02:38,026 --> 00:02:41,768
+This time the risk verdict arrives in time, and it is Green.
 
 42
-00:02:37,210 --> 00:02:44,720
-For a customer who was ever at level two, Yellow means: show the consent screen, and then a MyID re-check on this device.
+00:02:41,818 --> 00:02:44,936
+The login continues, with the SIM match on record.
 
 43
-00:02:44,770 --> 00:02:50,144
-If his face passes, the device becomes trusted and the session gets the stronger rank.
+00:02:44,986 --> 00:02:47,144
+Yellow is the careful colour.
 
 44
-00:02:50,194 --> 00:02:52,952
-If it fails, the platform refuses.
+00:02:47,194 --> 00:02:53,504
+It also means refuse, with the reason text of TAF, in the language of the journey.
 
 45
-00:02:53,002 --> 00:03:02,552
-For anyone else, and that includes every new registration, Yellow means refuse, with the reason text of TAF, in the language of the journey.
+00:02:53,554 --> 00:02:58,088
+The texts come from the configuration of the bank, and again, nothing is blocked.
 
 46
-00:03:02,602 --> 00:03:04,832
-There is no MyID to fall back on yet.
+00:02:58,138 --> 00:03:02,144
+Aziz is at level one, so his login asks for nothing more.
 
 47
-00:03:04,882 --> 00:03:06,704
-Now fast forward.
+00:03:02,194 --> 00:03:07,280
+At level two, a login after Green also asks for the face biometric of the phone.
 
 48
-00:03:06,754 --> 00:03:10,832
-Aziz is at level two, and he logs in with a Green verdict.
-
-49
-00:03:10,882 --> 00:03:14,816
-The app asks for one more thing: the face biometric of his own phone.
-
-50
-00:03:14,866 --> 00:03:17,744
+00:03:07,330 --> 00:03:10,208
 This is not MyID, and it gives no level.
 
+49
+00:03:10,258 --> 00:03:15,296
+If the face check of the phone fails, the login stops, and the customer can try again.
+
+50
+00:03:15,346 --> 00:03:21,224
+If the phone has no face biometric at all, the login continues, and nothing goes to TAF.
+
 51
-00:03:17,794 --> 00:03:25,304
-When it succeeds, the platform sends a face confirmation to TAF, with his personal identification number and his phone number.
+00:03:21,274 --> 00:03:28,928
+When the check succeeds, the platform sends a face confirmation to TAF, with the personal identification number and the phone number.
 
 52
-00:03:25,354 --> 00:03:31,160
+00:03:28,978 --> 00:03:34,784
 The platform sends it, never the app, so the personal identification number never reaches the phone.
 
 53
-00:03:31,210 --> 00:03:37,928
-If TAF fails to answer, the login still continues, and the confirmation waits for the next login.
+00:03:34,834 --> 00:03:41,576
+If TAF does not answer, the login still continues, and the confirmation waits for the next login.
 
 54
-00:03:37,978 --> 00:03:41,696
-For a customer at level one, there is no face confirmation at all.
+00:03:41,626 --> 00:03:46,784
+The same confirmation also comes before the phone ownership check of Lesson 15.
 
 55
-00:03:41,746 --> 00:03:43,664
-What if TAF is down?
+00:03:46,834 --> 00:03:49,112
+TAF can also be down.
 
 56
-00:03:43,714 --> 00:03:48,344
+00:03:49,162 --> 00:03:53,792
 The platform checks its health at a set interval, and each call has a timeout.
 
 57
-00:03:48,394 --> 00:03:53,384
-When TAF does not answer, the bank's SMS service sends the code.
+00:03:53,842 --> 00:03:58,832
+When TAF does not answer, the SMS vendor sends the code.
 
 58
-00:03:53,434 --> 00:03:55,520
+00:03:58,882 --> 00:04:00,968
 The attempt is marked not scored.
 
 59
-00:03:55,570 --> 00:03:59,624
-There is no verdict, no face confirmation and no ownership check.
+00:04:01,018 --> 00:04:06,440
+There is no verdict, no face confirmation, no ownership check, and no SIM match.
 
 60
-00:03:59,674 --> 00:04:05,744
+00:04:06,490 --> 00:04:12,560
 The platform writes an audit event, tells the bank's antifraud system, and alerts operations.
 
 61
-00:04:05,794 --> 00:04:09,776
-The session keeps the weaker rank, until a later Green raises it.
-
-62
-00:04:09,826 --> 00:04:14,312
+00:04:12,610 --> 00:04:17,096
 When TAF is back, the next code goes through TAF again.
 
-63
-00:04:14,362 --> 00:04:17,600
-And one case where the platform must not fall back.
+62
+00:04:17,146 --> 00:04:19,256
+And one case is not an outage.
 
-64
-00:04:17,650 --> 00:04:21,968
+63
+00:04:19,306 --> 00:04:23,624
 On the state services portal, a person can choose one trusted bank.
 
+64
+00:04:23,674 --> 00:04:28,424
+If a person chose a different bank, TAF refuses to send the code.
+
 65
-00:04:22,018 --> 00:04:26,960
-If Aziz once chose a different bank, TAF refuses to send the code.
+00:04:28,474 --> 00:04:33,368
+The app tells the person to change the setting on the portal, or to contact the bank.
 
 66
-00:04:27,010 --> 00:04:28,328
-That is not an outage.
-
-67
-00:04:28,378 --> 00:04:32,624
-The platform stops, and it sends no code through any other channel.
-
-68
-00:04:32,674 --> 00:04:36,920
-The app tells Aziz to change the setting there, or to contact the bank.
-
-69
-00:04:36,970 --> 00:04:39,872
+00:04:33,418 --> 00:04:36,320
 Last, what TAF receives.
 
+67
+00:04:36,370 --> 00:04:42,536
+The phone number, a request identifier, the code, the type of message, the device model and the language.
+
+68
+00:04:42,586 --> 00:04:46,760
+The personal identification number goes only with the face confirmation.
+
+69
+00:04:46,810 --> 00:04:50,888
+The phone ownership check sends only the identifier of the TAF part.
+
 70
-00:04:39,922 --> 00:04:46,304
-The phone number, a request id, the code, the type of message, the device model and the language.
-
-71
-00:04:46,354 --> 00:04:53,000
-The personal identification number goes only for the face confirmation, and for the phone ownership check in Lesson 18.
-
-72
-00:04:53,050 --> 00:04:57,032
+00:04:50,938 --> 00:04:54,920
 Never a name, a document, an address or a photo.
 
+71
+00:04:54,970 --> 00:05:00,608
+Now suppose TAF refuses a code because the person chose another bank on the portal.
+
+72
+00:05:00,658 --> 00:05:06,016
+Does the SMS vendor send the code instead?
+
 73
-00:04:57,082 --> 00:04:58,904
-To recap.
+00:05:06,066 --> 00:05:12,496
+No: the refusal is not an outage, so the platform stops and sends no code through any channel.
 
 74
-00:04:58,954 --> 00:05:03,248
+00:05:12,546 --> 00:05:16,840
 In the master app, TAF sends the code and gives a verdict.
 
 75
-00:05:03,298 --> 00:05:10,256
-The platform decides: Green continues, Yellow asks for MyID or refuses, Red refuses.
+00:05:16,890 --> 00:05:21,928
+The platform decides: Green continues, Yellow and Red refuse.
 
 76
-00:05:10,306 --> 00:05:14,504
+00:05:21,978 --> 00:05:26,176
 When TAF is down, the code still comes, but not scored.
 
 77
-00:05:14,554 --> 00:05:17,600
-When the customer chose another bank, nothing comes.
+00:05:26,226 --> 00:05:29,464
+When the person chose another bank, no code comes.
 
 78
-00:05:17,650 --> 00:05:21,776
-But every one of these logins began before any code, with a password.
+00:05:29,514 --> 00:05:33,376
+Every one of these logins began with a password, before any code.
 
 79
-00:05:21,826 --> 00:05:26,072
-How does the platform keep a password that it must check, but can never read?
-
-80
-00:05:26,122 --> 00:05:27,944
-Next: the password.
+00:05:33,426 --> 00:05:37,096
+Lesson 11 shows how the platform keeps that password.
