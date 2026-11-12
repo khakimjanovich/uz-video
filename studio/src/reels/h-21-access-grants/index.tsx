@@ -6,20 +6,22 @@ import { diagram, map } from "./steps";
 
 // One headline per cue (sentence): the beat's key word; it changes only when the beat does.
 const TITLES = [
-  "Breakfast", "Lunch, night", "No password", "What lets him in?",
-  "Lesson 20: the device", "This lesson: the grant",
+  "Sunday breakfast", "Lunch, night", "No password", "What lets him in?",
+  "Lesson 16: the money phone", "Between two logins",
   "Access grant", "One app, one device", "Level 1 first", "Each login",
-  "Two jobs", "Gateway decides", "The checks", "Keycloak issues", "A signed note", "Three things", "Short, one use", "Two tokens",
-  "My view", "Tokens only", "Rules in the gateway",
-  "The token", "Its own app", "Lesson 5", "Session level", "Level 2 rule", "Level 1", "MyID: new token", "At once", "Read the level",
+  "Two jobs", "Gateway decides", "The checks", "Keycloak issues", "Gateway only", "A signed note", "Three things", "Short, one use", "Two tokens",
+  "Knows no rules", "Rules in the gateway",
+  "The token", "Its app, two times", "The mobile bank", "Own tokens only", "Different app", "Signed, not a header",
+  "Session level", "Level 2 rule", "Level 1", "MyID: new token", "At once", "Money phone", "Read from the token",
   "Breakfast", "Short token", "Nothing asked", "Refresh token", "Renewal", "Same device, same app", "Binding check",
-  "Revocation list", "Every call", "Fresh tokens", "Used up", "Reuse seen",
-  "No password", "Not a login", "Continues",
-  "One more limit", "App PIN", "Grant continues", "Unlock only", "Policies",
-  "How a grant ends", "The tablet", "Lost", "Revoked", "Next request", "Refused", "No renewal", "Other ends",
-  "Grant ended", "Try renewal", "Log in again",
-  "Recap", "Decide, issue", "App and level", "Renewal", "Revocation",
-  "The marketplace", "Level 1", "Refuse?", "Too low?", "Next: step-up",
+  "Ended grants", "Fresh tokens", "Used up",
+  "No password", "Not a login", "Lock: grant goes on",
+  "Inactivity", "App PIN", "Grant goes on", "Policies",
+  "How a grant ends", "Lifetime", "Block: lesson 19", "Next request", "Binding mismatch", "Closure",
+  "Grant ended", "Log in again",
+  "A check", "At lunch?", "The app PIN",
+  "Decide, issue", "App and level", "Renewal", "Next request",
+  "Lesson 18: log in again",
 ];
 
 export const H21AccessGrantsComposition = createEpisode({
