@@ -1,299 +1,239 @@
 1
-00:00:00,050 --> 00:00:03,096
-It is Sunday evening, and Aziz sits at his laptop.
+00:00:00,050 --> 00:00:04,824
+On a Saturday, Aziz logs in to the mobile bank with his password and a code.
 
 2
-00:00:03,146 --> 00:00:07,560
-He opens the marketplace web profile to see where his new kettle is.
+00:00:04,874 --> 00:00:07,512
+The password is right, and the code is right.
 
 3
-00:00:07,610 --> 00:00:11,928
-He types his phone number, then his password, and the password is right.
+00:00:07,562 --> 00:00:09,576
+The mobile bank opens for him.
 
 4
-00:00:11,978 --> 00:00:13,968
-But the page does not open his order.
+00:00:09,626 --> 00:00:11,568
+He wants to send money to his mother.
 
 5
-00:00:14,018 --> 00:00:16,992
-It asks him to approve the login in the mobile bank.
+00:00:11,618 --> 00:00:13,440
+But the money does not move.
 
 6
-00:00:17,042 --> 00:00:21,872
-The password is right, so why is it not enough?
+00:00:13,490 --> 00:00:19,688
+His password and his code are both right, so why are they not enough for money?
 
 7
-00:00:21,922 --> 00:00:29,768
-In Lesson 2, Aziz became one person, with one phone number, one password, and one session on each device.
+00:00:19,738 --> 00:00:25,784
+Lesson 1 showed this Saturday as one step of his journey, and it drew the map of the platform.
 
 8
-00:00:29,818 --> 00:00:37,112
-This lesson gives the three words that identity work uses for this moment, and it explains what a level really is.
+00:00:25,834 --> 00:00:31,040
+This lesson gives the three words behind that step, and it explains what a level is.
 
 9
-00:00:37,162 --> 00:00:39,536
-Each word answers a different question.
+00:00:31,090 --> 00:00:32,912
+Each word checks a different thing.
 
 10
-00:00:39,586 --> 00:00:41,792
+00:00:32,962 --> 00:00:35,168
 The first word is authentication.
 
 11
-00:00:41,842 --> 00:00:45,416
-Authentication asks: is this the owner of the account?
+00:00:35,218 --> 00:00:39,032
+Authentication checks that this is the owner of the account.
 
 12
-00:00:45,466 --> 00:00:50,840
-Aziz answers with something he knows, the password, and something he has, his phone.
+00:00:39,082 --> 00:00:44,888
+Aziz shows something he knows, his password, and something he has, his phone, which gets the code.
 
 13
-00:00:50,890 --> 00:00:56,120
-On his phone, the mobile bank shows the request, with Approve and This was not me.
-
-14
-00:00:56,170 --> 00:00:59,768
-In other cases, the phone gets a one-time code instead.
-
-15
-00:00:59,818 --> 00:01:02,408
+00:00:44,938 --> 00:00:47,528
 Notice what authentication does not say.
 
-16
-00:01:02,458 --> 00:01:05,600
+14
+00:00:47,578 --> 00:00:50,720
 It does not say that this is Aziz from the state records.
 
-17
-00:01:05,650 --> 00:01:09,056
+15
+00:00:50,770 --> 00:00:54,176
 It says only that this is the person who registered the account.
 
-18
-00:01:09,106 --> 00:01:15,368
-A stranger can register with their own phone and their own password, and pass authentication perfectly every day.
+16
+00:00:54,226 --> 00:01:00,320
+A stranger can register with his own phone and his own password, and he passes authentication every day.
 
-19
-00:01:15,418 --> 00:01:17,696
+17
+00:01:00,370 --> 00:01:02,648
 The second word is identity proofing.
 
+18
+00:01:02,698 --> 00:01:07,544
+Identity proofing checks that this is a real person in the state records.
+
+19
+00:01:07,594 --> 00:01:11,960
+heeyID does it in one way only: MyID, in the mobile bank.
+
 20
-00:01:17,746 --> 00:01:22,952
-Identity proofing asks: is this the real person in the state records?
+00:01:12,010 --> 00:01:16,208
+MyID compares a live face and a passport with the state records.
 
 21
-00:01:23,002 --> 00:01:27,680
-heeyID does it in one way only: MyID, in the master app.
+00:01:16,258 --> 00:01:19,160
+Proofing is slow, and Aziz does it one time.
 
 22
-00:01:27,730 --> 00:01:31,928
-MyID compares a live face and a document with the state records.
-
-23
-00:01:31,978 --> 00:01:35,312
-Aziz did it one time, in the mobile bank, last week.
-
-24
-00:01:35,362 --> 00:01:37,424
-Proofing is slow and rare.
-
-25
-00:01:37,474 --> 00:01:41,936
+00:01:19,210 --> 00:01:23,672
 Authentication is fast, and it happens at every login.
 
-26
-00:01:41,986 --> 00:01:48,176
-I think the most common mistake in identity work is to treat a strong login as proof of a person.
+23
+00:01:23,722 --> 00:01:29,792
+The most common mistake in identity work is to treat a strong login as proof of a person.
 
-27
-00:01:48,226 --> 00:01:50,048
-It is not.
-
-28
-00:01:50,098 --> 00:01:54,320
+24
+00:01:29,842 --> 00:01:34,064
 A password and a code prove that you hold the account, not who you are.
 
-29
-00:01:54,370 --> 00:01:56,480
+25
+00:01:34,114 --> 00:01:36,224
 The third word is authorisation.
 
+26
+00:01:36,274 --> 00:01:39,608
+Authorisation decides what this session may do, now.
+
+27
+00:01:39,658 --> 00:01:44,960
+The rule is simple: money data and the verified identity need level two.
+
+28
+00:01:45,010 --> 00:01:48,032
+Cards, accounts and transfers are money data.
+
+29
+00:01:48,082 --> 00:01:51,056
+The app's own data needs only level one.
+
 30
-00:01:56,530 --> 00:02:00,056
-Authorisation asks: what may this session do, now?
+00:01:51,106 --> 00:01:52,952
+That rule stopped the transfer.
 
 31
-00:02:00,106 --> 00:02:06,632
-The marketplace must see level two before it shows personal data, like orders, addresses or cards.
+00:01:53,002 --> 00:01:55,376
+heeyID has three levels.
 
 32
-00:02:06,682 --> 00:02:08,912
-That is the rule that stopped the page.
+00:01:55,426 --> 00:01:58,280
+At level zero, nothing is verified.
 
 33
-00:02:08,962 --> 00:02:10,784
-So what is a level?
+00:01:58,330 --> 00:02:01,640
+At level one, a code verified the phone number.
 
 34
-00:02:10,834 --> 00:02:12,656
-heeyID has three.
+00:02:01,690 --> 00:02:06,992
+At level two, MyID proved the person, and the phone number is confirmed as his.
 
 35
-00:02:12,706 --> 00:02:15,464
-Level zero: nothing is verified.
-
-36
-00:02:15,514 --> 00:02:19,184
-Level one: a one-time code verified the phone number.
-
-37
-00:02:19,234 --> 00:02:24,872
-Level two: MyID proved the person against the state records, and the phone number is confirmed.
-
-38
-00:02:24,922 --> 00:02:27,824
+00:02:07,042 --> 00:02:09,944
 Only the check for a level gives that level.
 
+36
+00:02:09,994 --> 00:02:14,888
+No operator and no setting puts a person at level two without MyID.
+
+37
+00:02:14,938 --> 00:02:18,560
+A person has a level, and each session has a level too.
+
+38
+00:02:18,610 --> 00:02:22,568
+A session in the mobile bank gets level two only on the trusted phone.
+
 39
-00:02:27,874 --> 00:02:32,648
-No operator and no setting can put a person at level two without MyID.
+00:02:22,618 --> 00:02:28,472
+The trusted phone is the one phone where Aziz passed MyID, and where TAF confirmed his SIM card.
 
 40
-00:02:32,698 --> 00:02:35,648
-Now the part that surprises most developers.
+00:02:28,522 --> 00:02:31,232
+Only a session on that phone moves money.
 
 41
-00:02:35,698 --> 00:02:39,176
-A person has a level, and a session has a level too.
+00:02:31,282 --> 00:02:36,296
+On that Saturday, Aziz is still at level one, and his phone is not trusted.
 
 42
-00:02:39,226 --> 00:02:42,176
-Aziz, the person, is at level two.
+00:02:36,346 --> 00:02:38,168
+The app does not refuse him.
 
 43
-00:02:42,226 --> 00:02:47,000
-But a session gets level two only on a trusted device of a person at level two.
+00:02:38,218 --> 00:02:41,720
+It names the level that it needs, and the check that gives that level.
 
 44
-00:02:47,050 --> 00:02:50,768
-A trusted device is a phone where the person passed MyID.
+00:02:41,770 --> 00:02:45,896
+First his consent, then MyID, then the check of his phone number.
 
 45
-00:02:50,818 --> 00:02:52,640
-His phone is one.
+00:02:45,946 --> 00:02:49,328
+Aziz passes all three, and he is at level two.
 
 46
-00:02:52,690 --> 00:02:54,512
-A browser is never one.
+00:02:49,378 --> 00:02:53,480
+His phone becomes the trusted phone, and the transfer to his mother goes.
 
 47
-00:02:54,562 --> 00:03:01,568
-So the laptop session can reach level two in one way only: Aziz approves it in the master app, on his trusted phone.
+00:02:53,530 --> 00:02:58,544
+Same person, same password: the level and the phone make the difference.
 
 48
-00:03:01,618 --> 00:03:03,440
-Back to Sunday evening.
+00:02:58,594 --> 00:03:03,920
+Keycloak issues the tokens for the app, and each token holds the level of its session.
 
 49
-00:03:03,490 --> 00:03:07,736
-The request on his phone shows the browser, the network address and the time.
-
-50
-00:03:07,786 --> 00:03:09,608
-Aziz taps Approve.
-
-51
-00:03:09,658 --> 00:03:13,448
-The laptop session gets level two, and the order page opens.
-
-52
-00:03:13,498 --> 00:03:15,320
-Now take a different evening.
-
-53
-00:03:15,370 --> 00:03:19,160
-Aziz has no session in the mobile bank, so nobody can approve.
-
-54
-00:03:19,210 --> 00:03:24,560
-After the password, the bank's SMS service sends him a code, and he types it.
-
-55
-00:03:24,610 --> 00:03:27,056
-He is in: authentication passed.
-
-56
-00:03:27,106 --> 00:03:31,256
-But the laptop session is at level one, and the order stays closed.
-
-57
-00:03:31,306 --> 00:03:33,656
-The marketplace does not refuse him.
-
-58
-00:03:33,706 --> 00:03:38,144
-It asks for a step-up: it names the level it needs, and the check that gives it.
-
-59
-00:03:38,194 --> 00:03:41,672
-Same person, same password, two different answers.
-
-60
-00:03:41,722 --> 00:03:44,744
-The difference is the session, not the person.
-
-61
-00:03:44,794 --> 00:03:48,392
-Two more names, and you can read any identity document.
-
-62
-00:03:48,442 --> 00:03:55,376
-OAuth 2.1 is the open standard for authorisation: how an app gets a token, and what the token lets it do.
-
-63
-00:03:55,426 --> 00:04:01,208
-OpenID Connect sits on top of it, and adds authentication: who logged in, and how.
-
-64
-00:04:01,258 --> 00:04:04,112
+00:03:03,970 --> 00:03:06,824
 heeyID has no token format of its own.
 
-65
-00:04:04,162 --> 00:04:09,656
-Keycloak issues standard tokens, and each token carries the level of its session.
+50
+00:03:06,874 --> 00:03:12,608
+The tokens follow two open standards, and their names are in every identity document.
 
-66
-00:04:09,706 --> 00:04:13,832
-So the marketplace reads the level from the token, and decides.
+51
+00:03:12,658 --> 00:03:17,432
+OAuth 2.1 says how an app gets a token, and what the token lets it do.
 
-67
-00:04:13,882 --> 00:04:17,552
-To recap: authentication asks if this is the owner.
+52
+00:03:17,482 --> 00:03:21,776
+OpenID Connect sits on top of it, and adds who logged in, and how.
 
-68
-00:04:17,602 --> 00:04:21,416
-Identity proofing asks if this is the real person.
+53
+00:03:21,826 --> 00:03:25,400
+The mobile bank reads the level of the session, and decides.
 
-69
-00:04:21,466 --> 00:04:24,032
-Authorisation asks what the session may do.
+54
+00:03:25,450 --> 00:03:29,096
+So why did the right password and the right code not move his money?
 
-70
-00:04:24,082 --> 00:04:27,440
-A person has a level, and each session has its own.
+55
+00:03:29,146 --> 00:03:34,232
+Because they pass only authentication, and money needs level two on the trusted phone.
 
-71
-00:04:27,490 --> 00:04:31,700
-So why did the right password not open the order?
+56
+00:03:34,282 --> 00:03:37,184
+Authentication checks the owner of the account.
 
-72
-00:04:31,750 --> 00:04:34,628
-Because a password answers only the first question.
+57
+00:03:37,234 --> 00:03:41,408
+Identity proofing checks the real person, one time, with MyID.
 
-73
-00:04:34,678 --> 00:04:37,268
-These checks touch passports and phone numbers.
+58
+00:03:41,458 --> 00:03:45,488
+Authorisation decides what each session may do, from its level.
 
-74
-00:04:37,318 --> 00:04:40,172
-So where does heeyID run, and whom may it call?
+59
+00:03:45,538 --> 00:03:50,264
+Today, Aziz is at level two, and his phone is the money phone.
 
-75
-00:04:40,222 --> 00:04:41,924
-Next: the perimeter.
+60
+00:03:50,314 --> 00:03:55,712
+Lesson 3 shows the perimeter: where the platform runs, and which services it may call.
