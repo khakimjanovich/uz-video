@@ -1,311 +1,311 @@
 1
-00:00:00,050 --> 00:00:05,784
-On Sunday evening, Aziz wants to save a pair of running shoes in the marketplace, on his laptop.
+00:00:00,050 --> 00:00:02,328
+Go back to the first day of this journey.
 
 2
-00:00:05,834 --> 00:00:07,776
-The web page asks for his phone number.
+00:00:02,378 --> 00:00:08,184
+It is a Sunday, in Aziz's first week, and he installs the mobile bank on his one phone.
 
 3
-00:00:07,826 --> 00:00:09,648
-Nothing more.
+00:00:08,234 --> 00:00:10,056
+All he has is a phone number.
 
 4
-00:00:09,698 --> 00:00:16,664
-So what happens between that phone number and a customer who can use every app of the bank?
+00:00:10,106 --> 00:00:15,440
+So how does a phone number become an account that the bank can trust?
 
 5
-00:00:16,714 --> 00:00:26,024
-In Lesson 9, the apps learned to call the heeyID API through its contract, and only the master app got the MyID and TAF parts.
+00:00:15,490 --> 00:00:20,120
+Lesson 7 gave the apps a contract, with one call for each step.
 
 6
-00:00:26,074 --> 00:00:32,408
-This lesson follows the first call of that contract: the registration, from a phone number to level one.
+00:00:20,170 --> 00:00:26,000
+This lesson follows the first of those calls: the registration, from a phone number to level one.
 
 7
-00:00:32,458 --> 00:00:35,240
-Aziz types his number and taps Continue.
+00:00:26,050 --> 00:00:30,056
+The app opens with two buttons: Register, and Log in.
 
 8
-00:00:35,290 --> 00:00:41,504
-The marketplace sends the app, the number, the language of the journey and a short description of the device.
+00:00:30,106 --> 00:00:36,080
+On the login screen, a link leads to the registration, and its text is always the same.
 
 9
-00:00:41,554 --> 00:00:44,312
-The request also carries its network address.
+00:00:36,130 --> 00:00:41,648
+That text never depends on the number, so the screen tells nobody if a number already has an account.
 
 10
-00:00:44,362 --> 00:00:46,832
-The platform checks three facts.
+00:00:41,698 --> 00:00:43,520
+Aziz taps Register.
 
 11
-00:00:46,882 --> 00:00:49,880
-The number is a real mobile number of Uzbekistan.
+00:00:43,570 --> 00:00:48,464
+First, the app shows the terms and the privacy text, in his language.
 
 12
-00:00:49,930 --> 00:00:51,752
-The app is active.
+00:00:48,514 --> 00:00:55,736
+The text names TAF, the antifraud service of the mobile operators, as a receiver of his phone number and his phone model.
 
 13
-00:00:51,802 --> 00:00:56,024
-And no limit is reached, which is the subject of Lesson 11.
+00:00:55,786 --> 00:00:57,608
+Aziz accepts.
 
 14
-00:00:56,074 --> 00:01:00,104
-Then the platform opens a registration record, in the state Started.
+00:00:57,658 --> 00:01:00,320
+Then he types his number and taps Continue.
 
 15
-00:01:00,154 --> 00:01:05,912
-From now on, every text and every code message to Aziz is in his language.
+00:01:00,370 --> 00:01:08,360
+The app sends one request: the number, the language, the version of the terms that Aziz accepted, and a short description of the phone.
 
 16
-00:01:05,962 --> 00:01:08,768
-Next, the platform makes a one-time code.
+00:01:08,410 --> 00:01:13,352
+The description is the platform, the model, the system version and the app version.
 
 17
-00:01:08,818 --> 00:01:10,640
-The code is random.
+00:01:13,402 --> 00:01:16,160
+The request also carries its network address.
 
 18
-00:01:10,690 --> 00:01:14,048
-It never comes from the number, the time or the device.
+00:01:16,210 --> 00:01:18,344
+The platform checks four facts.
 
 19
-00:01:14,098 --> 00:01:19,640
-The platform keeps it only as a digest, so even the database cannot say the code back.
+00:01:18,394 --> 00:01:21,392
+The number is a real mobile number of Uzbekistan.
 
 20
-00:01:19,690 --> 00:01:24,440
-The marketplace gets the lifetime of the code and the number of resends that remain.
+00:01:21,442 --> 00:01:23,264
+The app is active.
 
 21
-00:01:24,490 --> 00:01:26,312
-It never gets the code.
+00:01:23,314 --> 00:01:28,712
+The terms version is the current one for his language, and the platform records his acceptance.
 
 22
-00:01:26,362 --> 00:01:28,256
-Who sends the SMS?
+00:01:28,762 --> 00:01:31,760
+And no limit is reached, which Lesson 9 shows.
 
 23
-00:01:28,306 --> 00:01:30,128
-Here the app decides.
+00:01:31,810 --> 00:01:36,080
+Now the platform opens a registration record, in the state Started.
 
 24
-00:01:30,178 --> 00:01:35,480
-The marketplace web profile is a side app, and side apps do not contain the TAF part.
+00:01:36,130 --> 00:01:41,888
+From now on, every text and every code message to Aziz is in his language.
 
 25
-00:01:35,530 --> 00:01:41,264
-The TAF check works only when TAF itself sends the code to the phone that types it.
+00:01:41,938 --> 00:01:46,304
+The platform also gives the app a device identifier, and keeps it on the record.
 
 26
-00:01:41,314 --> 00:01:47,336
-So in a side app, on a phone or on the web, the bank's own SMS service always sends the code.
+00:01:46,354 --> 00:01:49,232
+Only this phone can continue this registration.
 
 27
-00:01:47,386 --> 00:01:50,816
-Aziz reads the code on his phone and types it on his laptop.
+00:01:49,282 --> 00:01:51,944
+Then the platform makes a one-time code.
 
 28
-00:01:50,866 --> 00:01:53,264
-The platform compares it with the digest.
+00:01:51,994 --> 00:01:56,192
+It is random, and it never comes from the number, the time or the phone.
 
 29
-00:01:53,314 --> 00:01:57,824
-They match, so the record moves to Number verified, and the code is void.
+00:01:56,242 --> 00:02:01,880
+The platform keeps only a fingerprint of the code, so even the database cannot say the code back.
 
 30
-00:01:57,874 --> 00:01:59,696
-There is no verdict on the web.
+00:02:01,930 --> 00:02:07,832
+The app gets the lifetime of the code and the number of resends that remain, but never the code itself.
 
 31
-00:01:59,746 --> 00:02:02,912
-The audit event simply says that the source was web.
+00:02:07,882 --> 00:02:13,040
+The mobile bank is the master app, so TAF sends the SMS.
 
 32
-00:02:02,962 --> 00:02:06,896
-Now one rule that I think every identity team should copy.
+00:02:13,090 --> 00:02:17,600
+Its part inside the app checks that the code arrived on this phone, with this SIM card.
 
 33
-00:02:06,946 --> 00:02:14,336
-Until the number is verified, the platform makes nothing for it: no consent, no device record, no session.
+00:02:17,650 --> 00:02:25,760
+If TAF does not answer, the SMS vendor sends the code instead, and Lesson 10 shows what that changes.
 
 34
-00:02:14,386 --> 00:02:18,608
-A request that tries gets one answer: number not verified.
+00:02:25,810 --> 00:02:28,640
+Today the SMS is slow.
 
 35
-00:02:18,658 --> 00:02:20,816
-Next, the platform looks up the number.
+00:02:28,690 --> 00:02:32,336
+After a minute, Aziz goes back and taps Register again.
 
 36
-00:02:20,866 --> 00:02:24,176
-It belongs to nobody, so this is a new person.
+00:02:32,386 --> 00:02:37,184
+A second registration for the same number ends the open one, and its code is void.
 
 37
-00:02:24,226 --> 00:02:29,648
-The marketplace asks Aziz for a password, and then for the same password a second time.
+00:02:37,234 --> 00:02:40,760
+So one number has only one open registration at a time.
 
 38
-00:02:29,698 --> 00:02:36,008
-Aziz types two different words by mistake, and the platform refuses: the two entries are not the same.
+00:02:40,810 --> 00:02:45,608
+Then two messages arrive, and only the code in the second one is alive.
 
 39
-00:02:36,058 --> 00:02:37,880
-He tries again.
+00:02:45,658 --> 00:02:47,480
+Aziz types it.
 
 40
-00:02:37,930 --> 00:02:45,512
-This time the password is long enough, it is not on the list of common and breached passwords, and it does not contain his phone number.
+00:02:47,530 --> 00:02:51,536
+The platform takes a code only from the phone that started the registration.
 
 41
-00:02:45,562 --> 00:02:48,848
-Nobody asks him for a symbol or a capital letter.
+00:02:51,586 --> 00:02:55,880
+A code from another device counts as a wrong entry, even when it is right.
 
 42
-00:02:48,898 --> 00:02:51,776
-Lesson 13 shows how the platform keeps it.
+00:02:55,930 --> 00:02:58,952
+Here the phone is the same, and the fingerprints match.
 
 43
-00:02:51,826 --> 00:02:53,744
-Now four things appear at once.
+00:02:59,002 --> 00:03:02,504
+The record moves to Number verified, and the code is void.
 
 44
-00:02:53,794 --> 00:02:55,616
-A customer at level one.
+00:03:02,554 --> 00:03:09,176
+Then TAF gives its verdict, and today it is Green; Lesson 10 explains the colours.
 
 45
-00:02:55,666 --> 00:02:57,656
-An app account in the marketplace.
+00:03:09,226 --> 00:03:12,656
+Only after the verdict does the platform look up the number.
 
 46
-00:02:57,706 --> 00:03:01,016
-A device record for the browser, which can never become trusted.
+00:03:12,706 --> 00:03:16,544
+It belongs to nobody, so Aziz is a new person.
 
 47
-00:03:01,066 --> 00:03:02,888
-And a session for this browser.
+00:03:16,594 --> 00:03:23,984
+Until the number is verified, the platform makes nothing for it: no consent, no device record, no session.
 
 48
-00:03:02,938 --> 00:03:05,528
-The registration record is now Onboarded.
+00:03:24,034 --> 00:03:25,856
+Now the app asks for a password.
 
 49
-00:03:05,578 --> 00:03:11,480
-The marketplace needs only level one to keep a wish list, so Aziz uses it at once.
+00:03:25,906 --> 00:03:29,576
+Then the phone rings, and Aziz's mother talks for ten minutes.
 
 50
-00:03:11,530 --> 00:03:17,096
-On Monday morning, Aziz installs the mobile bank on his phone, and types the same number.
+00:03:29,626 --> 00:03:32,312
+In the background, the phone closes the app.
 
 51
-00:03:17,146 --> 00:03:19,376
-This time the code goes another way.
+00:03:32,362 --> 00:03:37,496
+When Aziz opens it again, the app asks the platform for the state of its registration.
 
 52
-00:03:19,426 --> 00:03:24,320
-The mobile bank is the master app, so the platform sends the code through TAF.
+00:03:37,546 --> 00:03:43,064
+The answer is Number verified, so the app opens the password screen again, not the start.
 
 53
-00:03:24,370 --> 00:03:31,304
-TAF sends the SMS, and its part inside the app checks that the code arrived on this phone, with this SIM card.
+00:03:43,114 --> 00:03:49,256
+Only the phone that started the registration gets this answer; any other device gets the state Expired.
 
 54
-00:03:31,354 --> 00:03:38,816
-If TAF does not answer, the bank's SMS service sends the code instead, and Lesson 12 shows what that costs.
+00:03:49,306 --> 00:03:53,288
+Aziz types a password, and then the same password a second time.
 
 55
-00:03:38,866 --> 00:03:42,296
-Aziz types the code, and the number is verified again.
+00:03:53,338 --> 00:03:57,416
+The two entries differ by one letter, and the platform refuses.
 
 56
-00:03:42,346 --> 00:03:47,168
-But now the number belongs to a customer: Aziz himself, from Sunday.
+00:03:57,466 --> 00:03:59,816
+He types them again, and now they match.
 
 57
-00:03:47,218 --> 00:03:49,256
-So this is not a registration.
+00:03:59,866 --> 00:04:04,592
+The rules for a good password, and how the platform keeps it, are in Lesson 11.
 
 58
-00:03:49,306 --> 00:03:52,184
-The platform does not show the existing account.
+00:04:04,642 --> 00:04:06,560
+Now four things appear at once.
 
 59
-00:03:52,234 --> 00:03:55,136
-It asks for the same password, the one from Sunday.
+00:04:06,610 --> 00:04:08,432
+A customer at level one.
 
 60
-00:03:55,186 --> 00:04:00,032
-Then it continues as a login from a new device, and it adds an app account for the mobile bank.
+00:04:08,482 --> 00:04:10,328
+An app account in the mobile bank.
 
 61
-00:04:00,082 --> 00:04:03,416
-Still one person, one number, one password.
+00:04:10,378 --> 00:04:14,408
+A device record for his phone, known, but not yet trusted.
 
 62
-00:04:03,466 --> 00:04:06,608
-What if the person on Monday did not know that password?
+00:04:14,458 --> 00:04:16,280
+And a session for this phone.
 
 63
-00:04:06,658 --> 00:04:10,856
-Then the only way forward is a password reset, never a second account.
+00:04:16,330 --> 00:04:18,920
+The registration record is now Onboarded.
 
 64
-00:04:10,906 --> 00:04:17,168
-And if the number belonged to a blocked customer, the journey stops with one sentence: Please contact the bank.
+00:04:18,970 --> 00:04:24,536
+The platform sends the message registration complete as an SMS at once.
 
 65
-00:04:17,218 --> 00:04:19,040
-One more case.
+00:04:24,586 --> 00:04:28,064
+A push follows when the phone gives its push token to the platform.
 
 66
-00:04:19,090 --> 00:04:23,768
+00:04:28,114 --> 00:04:32,792
 A registration that never reaches level one does not wait forever.
 
 67
-00:04:23,818 --> 00:04:26,960
+00:04:32,842 --> 00:04:35,984
 After the configured time, the record expires.
 
 68
-00:04:27,010 --> 00:04:30,920
+00:04:36,034 --> 00:04:39,944
 The platform deletes its data and keeps only the audit events.
 
 69
-00:04:30,970 --> 00:04:32,816
+00:04:39,994 --> 00:04:41,840
 A new try starts from the beginning.
 
 70
-00:04:32,866 --> 00:04:34,688
-To recap.
+00:04:41,890 --> 00:04:47,816
+Now take the slow SMS again, and suppose that Aziz types the code from the first message.
 
 71
-00:04:34,738 --> 00:04:36,560
-The app sends the number.
+00:04:47,866 --> 00:04:51,688
+Does it work?
 
 72
-00:04:36,610 --> 00:04:41,936
-The platform opens a record, and makes a random code that it keeps only as a digest.
+00:04:51,738 --> 00:04:59,584
+No: the second registration ended the first one, so only the newest code is alive, and the old code counts as a wrong entry.
 
 73
-00:04:41,986 --> 00:04:48,776
-The master app gets its code through TAF, and every side app through the bank's SMS service.
+00:04:59,634 --> 00:05:03,136
+Two entries, and a link that never depends on the number.
 
 74
-00:04:48,826 --> 00:04:55,496
-A verified number then becomes a new customer at level one, or a login for a customer who already exists.
+00:05:03,186 --> 00:05:07,816
+The terms first, then one request, four checks and a registration record.
 
 75
-00:04:55,546 --> 00:04:57,368
-But look at Sunday evening again.
+00:05:07,866 --> 00:05:11,776
+A code through TAF, taken only from the phone that started.
 
 76
-00:04:57,418 --> 00:04:59,912
-The code went to a number that anyone can type.
+00:05:11,826 --> 00:05:17,056
+One open registration for each number, and a restart that continues where it stopped.
 
 77
-00:04:59,962 --> 00:05:04,088
-What stops a stranger from asking for codes all night, or from guessing one?
+00:05:17,106 --> 00:05:22,072
+A password two times, then level one, and a message that says so.
 
 78
-00:05:04,138 --> 00:05:06,368
-Next: codes and limits.
+00:05:22,122 --> 00:05:31,576
+The code that Aziz typed lives on only as a fingerprint, and Lesson 9 shows the limits around it: its lifetime, its tries and the cool-downs.
