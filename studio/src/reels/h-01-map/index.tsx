@@ -18,7 +18,7 @@ const TITLES = [
   "Bank staff", "Admin gateway", "Four stores", "Records", "Counters", "Events", "Keys",
   "No direct calls", "Adapters", "Gateway and workers",
   "The bank's perimeter", "One bank", "TAF agent inside", "Three outside", "No personal data",
-  "One person, one phone", "How many times?", "Once",
+  "One trusted phone", "How many times?", "Once",
   "Lesson 2: identity words",
 ];
 
