@@ -247,3 +247,4 @@ On-screen text stays technical; `script.txt` is spelled so `edge-tts` reads it c
 | `aud` | A U D | yes |
 | `azp` | A Z P | yes |
 | `Argon2id` | argon two I D | yes |
+| `bcrypt` | B crypt | yes |
