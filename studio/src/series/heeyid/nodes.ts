@@ -64,7 +64,7 @@ export const HEEYID_CATALOG = {
   setup: { label: "Setup", sublabel: "Reads the catalogue", art: "workflow" },
   panel: { label: "Admin panel", sublabel: "Of the bank", art: "salespoint" },
   texts: { label: "Texts", sublabel: "Four languages", art: "receipt" },
-  installKeys: { label: "Installation keys", sublabel: "One zone", art: "vault" },
+  installSettings: { label: "Installation settings", sublabel: "One zone", art: "vault" },
   domain: { label: "Domain", sublabel: "Rules, no I/O", art: "workflow" },
   simulator: { label: "Simulator", sublabel: "Same port", art: "tray" },
   port: { label: "Port", sublabel: "Words of the domain", art: "request" },
